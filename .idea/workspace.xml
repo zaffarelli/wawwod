@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="346f49c9-ffeb-4324-94a2-67713079f8d7" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileColors">
+    <fileColor scope="Project Files" color="183956" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="ProjectId" id="1qwIydqj7dmUErNFGki4GgaLSh4" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/collector/templates/collector/creature" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.file-colors" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/collector/templates/collector/creature" />
+      <recent name="$PROJECT_DIR$/storytelling/mixins" />
+      <recent name="$PROJECT_DIR$/storytelling/templatetags" />
+      <recent name="$PROJECT_DIR$/scripts" />
+      <recent name="$PROJECT_DIR$/collector/static/collector/clans" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/collector/static/collector/fonts" />
+      <recent name="$PROJECT_DIR$/raw" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="346f49c9-ffeb-4324-94a2-67713079f8d7" name="Default Changelist" comment="" />
+      <created>1617984481535</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1617984481535</updated>
+      <workItem from="1619566816035" duration="51000" />
+      <workItem from="1619566890127" duration="1731000" />
+      <workItem from="1619848366839" duration="4675000" />
+      <workItem from="1619944489007" duration="1531000" />
+      <workItem from="1622750286878" duration="56643000" />
+      <workItem from="1623252145355" duration="67000" />
+      <workItem from="1623252239564" duration="761000" />
+      <workItem from="1623656985839" duration="19274000" />
+      <workItem from="1623946087851" duration="470000" />
+      <workItem from="1623958287037" duration="10796000" />
+      <workItem from="1624094986946" duration="66243000" />
+      <workItem from="1624266249160" duration="5450000" />
+      <workItem from="1624358025845" duration="2548000" />
+      <workItem from="1624452719423" duration="31000" />
+      <workItem from="1624467468937" duration="27960000" />
+      <workItem from="1624548057503" duration="11753000" />
+      <workItem from="1624609074089" duration="55184000" />
+      <workItem from="1624915166186" duration="1229000" />
+      <workItem from="1625041129080" duration="702000" />
+      <workItem from="1625122221157" duration="599000" />
+      <workItem from="1625179623247" duration="1199000" />
+      <workItem from="1625267814634" duration="2695000" />
+      <workItem from="1625554436364" duration="2733000" />
+      <workItem from="1625660033000" duration="596000" />
+      <workItem from="1625698539322" duration="1692000" />
+      <workItem from="1625841423225" duration="2446000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+</project>
