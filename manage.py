@@ -1,7 +1,3 @@
-#          /       '_ /_/ 
-#         ()(/__/)/(//)/  
-#           /     _/      
-#
 #!/usr/bin/env python
 import os
 import sys
