@@ -113,7 +113,6 @@ class WawwodCollector {
             $.ajax({
                 url: url,
                 success: function (answer) {
-                    console.log("ok")
                     me.rebootLinks();
                 },
                 error: function (answer) {
@@ -191,7 +190,6 @@ class WawwodCollector {
         $('.toggle').off().on('click', function (event) {
             event.preventDefault();
             event.stopPropagation();
-            console.log('Toggle click!')
             let tgt = $(this).attr('param');
             $('.'+tgt).toggleClass('hidden');
             me.rebootLinks();

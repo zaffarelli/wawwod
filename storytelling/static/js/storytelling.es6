@@ -19,10 +19,10 @@ class Storytelling {
         me.day_start = 3 + 0.1;
         me.scene_dim = me.time_coeff * 3;
         me.hour = (me.stepy * 3) / 24;
-        me.diagonal = d3.svg.diagonal()
-            .projection(function (d) {
-                return [d.x, d.y];
-            });
+        // me.diagonal = d3.svg.diagonal()
+        //     .projection(function (d) {
+        //         return [d.x, d.y];
+        //     });
         me.debug = true
         me.selected_scenes = []
     }
@@ -109,8 +109,8 @@ class Storytelling {
         me.title_font = 'Khand';
         me.logo_font = 'Trade Winds';
         me.base_font = 'Philosopher';
-        me.x = d3.scale.linear().domain([0, me.w]).range([0, me.width]);
-        me.y = d3.scale.linear().domain([0, me.h]).range([0, me.height]);
+        me.x = d3.scaleLinear().domain([0, me.w]).range([0, me.width]);
+        me.y = d3.scaleLinear().domain([0, me.h]).range([0, me.height]);
         me.pre_title = me.config['pre_title'];
         me.scenario = me.config['scenario'];
         me.post_title = me.config['post_title'];
@@ -320,28 +320,30 @@ class Storytelling {
     drawWatermark() {
         let me = this;
         d3.select(me.parent).selectAll("svg").remove();
-        me.vis = d3.select(me.parent).append("svg:svg")
-            .attr("viewBox", "0 0 " + me.w + " " + me.h)
-            .attr("width", me.w)
-            .attr("height", me.h)
-            .append("svg:g")
-            .attr("class", "all")
-            //.attr("transform", "translate(0,0)")
+        me.vis = d3.select(me.parent).append("svg")
+                .attr("viewBox", "0 0 " + me.w + " " + me.h)
+                .attr("width", me.w)
+                .attr("height", me.h)
+            ;
+            me.svg = me.vis.append("g")
+                .attr("class", "all")
+                .attr("transform", "translate(0,0)")
 
 
-            .call(d3.behavior.zoom()
-                .x(me.x)
-                .y(me.y)
-                .scaleExtent([1, 4])
-                .on("zoom", function () {
-                    let drawing = me.vis.select("#storyboard");
-                    drawing.attr("transform", function () {
-                        return "translate(" + me.x(me.ax) + "," + me.y(me.ay) + ") ";
-                    });
-                })
-            );
+            // .call(d3.behavior.zoom()
+            //     .x(me.x)
+            //     .y(me.y)
+            //     .scaleExtent([1, 4])
+            //     .on("zoom", function () {
+            //         let drawing = me.vis.select("#storyboard");
+            //         drawing.attr("transform", function () {
+            //             return "translate(" + me.x(me.ax) + "," + me.y(me.ay) + ") ";
+            //         });
+            //     })
+            // )
+        ;
 
-        me.back = me.vis.append("g")
+        me.back = me.svg.append("g")
             .attr("id", "storyboard");
         me.defs = me.vis.append('defs');
         me.defs.append('marker')
@@ -489,10 +491,10 @@ class Storytelling {
         _.forEach(j, function (d) {
             _.forEach(me.scenes, function (e) {
                 if (e.id == d.id) {
-                    console.log(e);
-                    console.log(e.time);
+                    // console.log(e);
+                    // console.log(e.time);
                     e.time = d.time;
-                    console.log(e.time);
+                    // console.log(e.time);
                     changes = true;
                 }
             })
@@ -505,7 +507,7 @@ class Storytelling {
 
     drawStory() {
         let me = this;
-        console.log(me.selected_scenes);
+        // console.log(me.selected_scenes);
         me.drawLinks()
         d3.select(me.parent).selectAll(".scenes").remove();
         let scenes = me.story_map.append('g')
@@ -593,7 +595,7 @@ class Storytelling {
                             me.co.rebootLinks();
                         },
                         error: function (answer) {
-                            console.log('View error...' + answer);
+                            console.error('View error...' + answer);
                         }
                     });
                 }
@@ -697,6 +699,30 @@ class Storytelling {
         })
     }
 
+    zoomActivate() {
+        let me = this;
+        let zoom = d3.zoom()
+            .scaleExtent([0.25, 4]) // I don't want a zoom, i want panning :)
+            .on('zoom', function (event) {
+                me.svg.selectAll('path')
+                    .attr('transform', event.transform);
+                me.svg.selectAll('rect')
+                    .attr('transform', event.transform);
+                me.svg.selectAll('text')
+                    .attr('transform', event.transform);
+                me.svg.selectAll('line')
+                    .attr('transform', event.transform);
+                me.svg.selectAll('path')
+                    .attr('transform', event.transform);
+
+                me.svg.selectAll('image')
+                    .attr('transform', event.transform);
+            });
+        me.vis.call(zoom);
+    }
+
+
+
     perform(data) {
         let me = this;
         me.data = data;
@@ -711,7 +737,7 @@ class Storytelling {
         me.init();
         me.drawWatermark()
         me.drawStory()
-
+        me.zoomActivate()
     }
 
 }

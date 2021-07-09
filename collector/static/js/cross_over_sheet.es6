@@ -916,7 +916,7 @@ class CrossOverSheet{
                     bonuses += " "+da+".";
                 });
                 me.statText(d['form'],bonuses,ax,ay,d['form'],d['form'],me.character,false,true);
-                console.log(bonuses);
+                //console.log(bonuses);
             });
         }
 
@@ -1037,7 +1037,7 @@ class CrossOverSheet{
         me.svg.selectAll('.do_not_print').attr('opacity',0);
         let base_svg = d3.select("svg").html();
         let flist = '<style>';
-        console.log(me.config['fontset']);
+        //console.log(me.config['fontset']);
         for (let f of me.config['fontset']){
             flist += '@import url("https://fonts.googleapis.com/css2?family='+f+'");';
         }

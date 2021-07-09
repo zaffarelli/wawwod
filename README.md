@@ -1,5 +1,5 @@
 # WaWWoD
 
-The by_night tool aims at registering the kindred for a given chronicle...
+The WaWWoD tool aims at recording all kindreds for a given chronicle...
 
 

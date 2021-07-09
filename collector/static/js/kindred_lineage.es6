@@ -286,7 +286,7 @@ class KindredLineage {
             .attr('width', me.boxWidth * 1)
             .attr('height', me.boxHeight * 5)
             .on("click", function (e, d) {
-                console.log("Frame click " + d.id + " [" + d.data.name + "]!");
+                //console.log("Frame click " + d.id + " [" + d.data.name + "]!");
                 me.uncollapse(d)
                 me.update(d);
 
@@ -308,7 +308,7 @@ class KindredLineage {
         // IMAGE
         r.append("image")
             .attr("xlink:href", function (d) {
-                console.log(d)
+                //console.log(d)
                 let s;
                 if (d.data.clan) {
                     s = 'static/collector/clans/' + d.data.clan.split(" ").join("_").toLowerCase() + '.webp';
@@ -328,7 +328,7 @@ class KindredLineage {
             .attr("width", me.boxWidth * 0.30)
             .attr("height", me.boxHeight * 1)
             .on("click", function (e, d) {
-                console.log("Just ctrl+clicked on image for " + d.id + " [" + d.data.name + "]!");
+                //console.log("Just ctrl+clicked on image for " + d.id + " [" + d.data.name + "]!");
                 // if (e.ctrlKey) {
                 //     //toggleSimple(d);
                 //     me.uncollapse(d)
@@ -367,7 +367,7 @@ class KindredLineage {
             .call(me.wrap, me.boxWidth * 0.9)
             .on("click", function (e, d) {
                 if (e.ctrlKey) {
-                    console.log("Just ctrl+clicked on text for " + d.id + " [" + d.data.name + "]!");
+                    //console.log("Just ctrl+clicked on text for " + d.id + " [" + d.data.name + "]!");
 
                     $.ajax({
                         url: 'ajax/view/creature/' + d.data.rid + '/',
@@ -378,7 +378,8 @@ class KindredLineage {
                             me.co.rebootLinks();
                         },
                         error: function (answer) {
-                            console.log('View error...' + answer);
+                            console.error('View error...' + answer);
+                            me.co.rebootLinks();
                         }
                     });
                 }
@@ -449,13 +450,15 @@ class KindredLineage {
             .size([width, height]);
         let nodes = d3.hierarchy(me.data);
         nodes = treemap(nodes);
+        d3.select(me.parent).selectAll("svg").remove();
         me.svg = d3.select(me.parent).append("svg")
             .attr('class', 'lineage')
             .attr("width", width + margin.left + margin.right)
             .attr("height", height + margin.top + margin.bottom),
             me.g = me.svg.append("g")
                 .attr("transform",
-                    "translate(" + margin.left + "," + margin.top + ")");
+                    "translate(" + margin.left + "," + margin.top + ")")
+            ;
 
 
         let link = me.g.selectAll(".link")
