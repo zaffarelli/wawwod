@@ -1,0 +1,33 @@
+{% load wod_filters %}
+<tr>
+    <td colspan=2>Physical ({{c.total_physical}})</td>
+    <td colspan=2>Social ({{c.total_social}})</td>
+    <td colspan=2>Mental ({{c.total_mental}})</td>
+    <td colspan=2>Topic</td>
+</tr>
+
+<tr>
+    <th>Strength</th>
+    <td class='editable updown' id='{{c.rid}}__attribute0'>{{ c.attribute0|as_bullets|safe }}</td>
+    <th>Charisma</th>
+    <td class='editable updown' id='{{c.rid}}__attribute3'>{{ c.attribute3|as_bullets|safe }}</td>
+    <th>Perception</th>
+    <td class='editable updown' id='{{c.rid}}__attribute6'>{{c.attribute6|as_bullets|safe }}</td>
+    <th rowspan=3 colspan=2>{{c.topic}}</th>
+</tr>
+<tr>
+    <th>Dexterity</th>
+    <td class='editable updown' id='{{c.rid}}__attribute1'>{{ c.attribute1|as_bullets|safe }}</td>
+    <th>Manipulation</th>
+    <td class='editable updown' id='{{c.rid}}__attribute4'>{{ c.attribute4|as_bullets|safe }}</td>
+    <th>Intelligence</th>
+    <td class='editable updown' id='{{c.rid}}__attribute7'>{{c.attribute7|as_bullets|safe }}</td>
+</tr>
+<tr>
+    <th>Stamina</th>
+    <td class='editable updown' id='{{c.rid}}__attribute2'>{{ c.attribute2|as_bullets|safe }}</td>
+    <th>Appearance</th>
+    <td class='editable updown' id='{{c.rid}}__attribute5'>{{ c.attribute5|as_bullets|safe }}</td>
+    <th>Wits</th>
+    <td class='editable updown' id='{{c.rid}}__attribute8'>{{c.attribute8|as_bullets|safe }}</td>
+</tr>

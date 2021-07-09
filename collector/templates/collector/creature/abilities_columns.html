@@ -1,0 +1,93 @@
+{% load wod_filters %}
+<tr>
+    <th>{{ c.creature|param_stack:0|as_stat_name:"talent"|safe }}</th>
+    <td class='editable updown' id='{{c.rid}}__talent0'>{{ c.talent0|as_bullets|safe }}</td>
+    <th>{{ c.creature|param_stack:0|as_stat_name:"skill"|safe }}</th>
+    <td class='editable updown' id='{{c.rid}}__skill0'>{{ c.skill0|as_bullets|safe }}</td>
+    <th>{{ c.creature|param_stack:0|as_stat_name:"knowledge"|safe }}</th>
+    <td class='editable updown' id='{{c.rid}}__knowledge0'>{{c.knowledge0|as_bullets|safe }}</td>
+    {{ c.merit0|param_stack:c.rid|as_discipline2:"merit0"|safe }}
+</tr>
+<tr>
+    <th>{{ c.creature|param_stack:1|as_stat_name:"talent"|safe }}</th>
+    <td class='editable updown' id='{{c.rid}}__talent1'>{{ c.talent1|as_bullets|safe }}</td>
+    <th>{{ c.creature|param_stack:1|as_stat_name:"skill"|safe }}</th>
+    <td class='editable updown' id='{{c.rid}}__skill1'>{{ c.skill1|as_bullets|safe }}</td>
+    <th>{{ c.creature|param_stack:1|as_stat_name:"knowledge"|safe }}</th>
+    <td class='editable updown' id='{{c.rid}}__knowledge1'>{{c.knowledge1|as_bullets|safe }}</td>
+    {{ c.merit1|param_stack:c.rid|as_discipline2:"merit1"|safe }}
+</tr>
+<tr>
+    <th>{{ c.creature|param_stack:2|as_stat_name:"talent"|safe }}</th>
+    <td class='editable updown' id='{{c.rid}}__talent2'>{{ c.talent2|as_bullets|safe }}</td>
+    <th>{{ c.creature|param_stack:2|as_stat_name:"skill"|safe }}</th>
+    <td class='editable updown' id='{{c.rid}}__skill2'>{{ c.skill2|as_bullets|safe }}</td>
+    <th>{{ c.creature|param_stack:2|as_stat_name:"knowledge"|safe }}</th>
+    <td class='editable updown' id='{{c.rid}}__knowledge2'>{{c.knowledge2|as_bullets|safe }}</td>
+    {{ c.merit2|param_stack:c.rid|as_discipline2:"merit2"|safe }}
+</tr>
+<tr>
+    <th>{{ c.creature|param_stack:3|as_stat_name:"talent"|safe }}</th>
+    <td class='editable updown' id='{{c.rid}}__talent3'>{{ c.talent3|as_bullets|safe }}</td>
+    <th>{{ c.creature|param_stack:3|as_stat_name:"skill"|safe }}</th>
+    <td class='editable updown' id='{{c.rid}}__skill3'>{{ c.skill3|as_bullets|safe }}</td>
+    <th>{{ c.creature|param_stack:3|as_stat_name:"knowledge"|safe }}</th>
+    <td class='editable updown' id='{{c.rid}}__knowledge3'>{{c.knowledge3|as_bullets|safe }}</td>
+    {{ c.merit3|param_stack:c.rid|as_discipline2:"merit3"|safe }}
+</tr>
+<tr>
+    <th>{{ c.creature|param_stack:4|as_stat_name:"talent"|safe }}</th>
+    <td class='editable updown' id='{{c.rid}}__talent4'>{{ c.talent4|as_bullets|safe }}</td>
+    <th>{{ c.creature|param_stack:4|as_stat_name:"skill"|safe }}</th>
+    <td class='editable updown' id='{{c.rid}}__skill4'>{{ c.skill4|as_bullets|safe }}</td>
+    <th>{{ c.creature|param_stack:4|as_stat_name:"knowledge"|safe }}</th>
+    <td class='editable updown' id='{{c.rid}}__knowledge4'>{{c.knowledge4|as_bullets|safe }}</td>
+    <th></th><td></td>
+</tr>
+
+<tr>
+    <th>{{ c.creature|param_stack:5|as_stat_name:"talent"|safe }}</th>
+    <td class='editable updown' id='{{c.rid}}__talent5'>{{ c.talent5|as_bullets|safe }}</td>
+    <th>{{ c.creature|param_stack:5|as_stat_name:"skill"|safe }}</th>
+    <td class='editable updown' id='{{c.rid}}__skill5'>{{ c.skill5|as_bullets|safe }}</td>
+    <th>{{ c.creature|param_stack:5|as_stat_name:"knowledge"|safe }}</th>
+    <td class='editable updown' id='{{c.rid}}__knowledge5'>{{c.knowledge5|as_bullets|safe }}</td>
+    <td colspan="2">Flaws</td>
+</tr>
+<tr>
+    <th>{{ c.creature|param_stack:6|as_stat_name:"talent"|safe }}</th>
+    <td class='editable updown' id='{{c.rid}}__talent6'>{{ c.talent6|as_bullets|safe }}</td>
+    <th>{{ c.creature|param_stack:6|as_stat_name:"skill"|safe }}</th>
+    <td class='editable updown' id='{{c.rid}}__skill6'>{{ c.skill6|as_bullets|safe }}</td>
+    <th>{{ c.creature|param_stack:6|as_stat_name:"knowledge"|safe }}</th>
+    <td class='editable updown' id='{{c.rid}}__knowledge6'>{{c.knowledge6|as_bullets|safe }}</td>
+    {{ c.flaw0|param_stack:c.rid|as_discipline2:"flaw0"|safe }}
+</tr>
+<tr>
+    <th>{{ c.creature|param_stack:7|as_stat_name:"talent"|safe }}</th>
+    <td class='editable updown' id='{{c.rid}}__talent7'>{{ c.talent7|as_bullets|safe }}</td>
+    <th>{{ c.creature|param_stack:7|as_stat_name:"skill"|safe }}</th>
+    <td class='editable updown' id='{{c.rid}}__skill7'>{{ c.skill7|as_bullets|safe }}</td>
+    <th>{{ c.creature|param_stack:7|as_stat_name:"knowledge"|safe }}</th>
+    <td class='editable updown' id='{{c.rid}}__knowledge7'>{{c.knowledge7|as_bullets|safe }}</td>
+    {{ c.flaw1|param_stack:c.rid|as_discipline2:"flaw1"|safe }}
+</tr>
+
+<tr>
+    <th>{{ c.creature|param_stack:8|as_stat_name:"talent"|safe }}</th>
+    <td class='editable updown' id='{{c.rid}}__talent8'>{{ c.talent8|as_bullets|safe }}</td>
+    <th>{{ c.creature|param_stack:8|as_stat_name:"skill"|safe }}</th>
+    <td class='editable updown' id='{{c.rid}}__skill8'>{{ c.skill8|as_bullets|safe }}</td>
+    <th>{{ c.creature|param_stack:8|as_stat_name:"knowledge"|safe }}</th>
+    <td class='editable updown' id='{{c.rid}}__knowledge8'>{{c.knowledge8|as_bullets|safe }}</td>
+    {{ c.flaw2|param_stack:c.rid|as_discipline2:"flaw2"|safe }}
+</tr>
+<tr>
+    <th>{{ c.creature|param_stack:9|as_stat_name:"talent"|safe }}</th>
+    <td class='editable updown' id='{{c.rid}}__talent9'>{{ c.talent9|as_bullets|safe }}</td>
+    <th>{{ c.creature|param_stack:9|as_stat_name:"skill"|safe }}</th>
+    <td class='editable updown' id='{{c.rid}}__skill9'>{{ c.skill9|as_bullets|safe }}</td>
+    <th>{{ c.creature|param_stack:9|as_stat_name:"knowledge"|safe }}</th>
+    <td class='editable updown' id='{{c.rid}}__knowledge9'>{{c.knowledge9|as_bullets|safe }}</td>
+    {{ c.flaw3|param_stack:c.rid|as_discipline2:"flaw3"|safe }}
+</tr>

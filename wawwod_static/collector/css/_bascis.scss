@@ -1,0 +1,134 @@
+@charset "UTF-8";
+$st_color: #F0F0F0;
+$st_background: #305030;
+
+
+$body_color: #101010;
+$plate_color: #C0C0C0;
+$plate_highlight: #FFFFFF;
+$plate: #3a343e;
+$plate_shadow: #101010;
+$plate_selected: lighten($plate, 10%);
+$dark_plate: darken($plate, 5%);
+$very_dark_plate: darken($dark_plate, 5%);
+$focus_color: #F781F7;
+
+
+$list_width: 260px;
+$ghost_opacity: 0.0;
+
+
+$wyld_fill: #150637;
+$weaver_fill: #334ba9;
+$wyrm_fill: #567737;
+$wyld_counter_fill: #623804;
+$wyrm_counter_fill: #3a3c35;
+$weaver_counter_fill: #429bcb;
+
+$mortal_fill: #424748;
+$mortal_counter_fill: #76878f;
+$garou_fill: #531803;
+$kindred_fill: #101010;
+
+
+$camarilla_fill: #104010;
+$sabbat_fill: #401010;
+$inconnu_fill: #5d3636;
+$anarchs_fill: #252572;
+
+@mixin body_background {
+    background: transparent url('../colorful-grunge-texture-10.jpg') fixed;// 100% 100% no-repeat fixed;
+}
+
+
+
+@mixin kinfolk_taint {
+    background: repeating-linear-gradient(90deg, $wyld_fill, $mortal_fill 25%, $mortal_counter_fill 100%);
+}
+
+@mixin mortal_taint {
+    background: repeating-linear-gradient(90deg, $weaver_fill, $mortal_fill 25%, $mortal_counter_fill 100%);
+}
+
+
+@mixin fomori_taint {
+    background: repeating-linear-gradient(90deg, $wyrm_fill, $mortal_fill 25%, $mortal_counter_fill 100%);
+}
+
+@mixin ghoul_taint {
+    background: repeating-linear-gradient(90deg, $camarilla_fill, $mortal_fill 25%, $wyrm_counter_fill 100%);
+}
+
+
+@mixin pentex_taint {
+    background: repeating-linear-gradient(90deg, $wyrm_fill, $garou_fill 25%, $wyrm_counter_fill 100%);
+}
+
+@mixin gaia_taint {
+    background: repeating-linear-gradient(90deg, $wyld_fill, $garou_fill 25%, $wyld_counter_fill 100%);
+}
+
+@mixin sabbat_taint {
+    background: repeating-linear-gradient(90deg, $sabbat_fill, $kindred_fill 25%, $wyrm_counter_fill 100%);
+}
+
+@mixin camarilla_taint {
+    background: repeating-linear-gradient(90deg, $camarilla_fill, $kindred_fill 25%, $wyrm_counter_fill 100%);
+}
+
+@mixin inconnu_taint {
+    background: repeating-linear-gradient(90deg, $inconnu_fill, $kindred_fill 25%, $wyrm_counter_fill 100%);
+}
+
+@mixin anarchs_taint {
+    background: repeating-linear-gradient(90deg, $anarchs_fill, $kindred_fill 25%, $wyrm_counter_fill 100%);
+}
+
+
+@font-face {
+    font-family: 'Titre';
+    src: url('../fonts/marcellus_sc_regular.ttf');
+}
+
+@font-face {
+    font-family: 'marcellus_sc_regular';
+    src: url('../fonts/marcellus_sc_regular.ttf');
+}
+
+
+@font-face {
+    font-family: 'Texte';
+    src: url('../fonts/marcellus_sc_regular.ttf');
+}
+
+@font-face {
+    font-family: 'logo';
+    src: url('../fonts/ShadowsIntoLight-Regular.ttf');
+}
+
+
+
+@font-face {
+    font-family: 'wyld';
+    src: url('../fonts/fanjofey.ttf');
+}
+
+
+
+
+@font-face {
+    font-family: 'weaver';
+    src: url('../fonts/plank.ttf');
+}
+
+@font-face {
+    font-family: 'wyrm';
+    src: url('../fonts/another_danger.otf');
+}
+
+
+@font-face {
+    font-family: 'TexteLibre';
+    src: url("../fonts/Lato-Regular.ttf");
+}
+

@@ -1,0 +1,25 @@
+{% load static %}
+{% load storytelling_filters %}
+
+<div class="scene">
+    <div class="plank entry toggle" action="toggle" param="details">
+        <div class="shard label"><i class="fa fa-times"></i></div>
+        <div class="shard data"></div>
+    </div>
+    {{ c.name|param_stack:c.id|as_entry:"Name"|safe }}
+    {{ c.time_offset_hours|param_stack:c.id|as_entry:"Hours"|safe }}
+    {{ c.time_offset_custom|param_stack:c.id|as_entry:"Days Hours"|safe }}
+    {{ c.story_time|param_stack:c.id|as_entry:"Exact Date"|safe }}
+    {{ c.place|param_stack:c.id|as_entry:"Place"|safe }}
+    {{ c.place_order|param_stack:c.id|as_entry:"Place Order"|safe }}
+    {{ c.preamble|param_stack:c.id|as_entry:"Preamble"|safe }}
+    {{ c.description|param_stack:c.id|as_entry:"Description"|safe }}
+    {{ c.rewards|param_stack:c.id|as_entry:"Rewards"|safe }}
+    {{ c.consequences|param_stack:c.id|as_entry:"Consequences"|safe }}
+    {{ c.is_event|param_stack:c.id|as_entry:"is Event"|safe }}
+    {{ c.is_downtime|param_stack:c.id|as_entry:"is Downtime"|safe }}
+    {{ c.links_from|param_stack:c.id|as_entry:"Links From"|safe }}
+    {{ c.links_to|param_stack:c.id|as_entry:"Links To"|safe }}
+    {{ c.verified_cast|param_stack:c.id|as_entry:"Cast"|safe }}
+
+</div>

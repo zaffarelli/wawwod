@@ -1,0 +1,50 @@
+{% if creature_items %}
+<div class='pagination'>
+	<span class='toggle_list'><i class='fa fa-times' style="color:white;"></i></span><br/>
+	{% if creature_items.has_previous %}
+	<span class='nav' page='1'>
+		<i class='fas fa-angle-double-left'></i>
+	</span>
+	<span class='nav' page='{{ creature_items.previous_page_number }}'>
+		<i class='fas fa-angle-left'></i>
+	</span>
+	{%else%}
+	<strong>&nbsp;</strong>
+	<strong>&nbsp;</strong>
+	<strong>&nbsp;</strong>
+	{% endif %}
+	{% for num in creature_items.paginator.page_range %}
+		{% if creature_items.number == num %}
+		<strong>{{ num }}</strong>
+		{% elif num > creature_items.number|add:'-2' and num < creature_items.number|add:'2' %}
+		<span class='nav' page='{{num}}'>{{num}}</span>
+		{% endif %}
+	{% endfor %}
+	{% if creature_items.has_next %}
+	<span class='nav' page='{{ creature_items.next_page_number }}'>
+		<i class='fas fa-angle-right'></i>
+	</span>
+	<span class='nav' page='{{ creature_items.paginator.num_pages }}'>
+		<i class='fas fa-angle-double-right'></i>
+	</span>
+	{%else%}
+	<strong>&nbsp;</strong>
+	<strong>&nbsp;</strong>
+	<strong>&nbsp;</strong>	
+	{%endif%}  
+
+</div>	    
+
+    <ul>
+    {% for c in creature_items %}
+       <li id='{{c.rid}}'>
+       {% include "collector/creature_link.html" with c=c %}
+       </li>
+    {% endfor %}
+    </ul>
+
+{% else %}
+    <p>No creature available.</p>
+{% endif %} 
+
+

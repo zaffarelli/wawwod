@@ -1,0 +1,5 @@
+{% for ch in c %}
+<li class="switch {% if ch.active %}wod{%endif%}" action='chronicle' param="{{ch.acronym}}">{{ch.name}}</li>
+{% endfor %}
+
+

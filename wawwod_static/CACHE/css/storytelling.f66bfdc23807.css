@@ -1,0 +1,175 @@
+@font-face {
+  font-family: 'Titre';
+  src: url("/static/storytelling/fonts/marcellus_sc_regular.ttf"); }
+
+@font-face {
+  font-family: 'marcellus_sc_regular';
+  src: url("/static/storytelling/fonts/marcellus_sc_regular.ttf"); }
+
+@font-face {
+  font-family: 'Texte';
+  src: url("/static/storytelling/fonts/marcellus_sc_regular.ttf"); }
+
+@font-face {
+  font-family: 'logo';
+  src: url("/static/storytelling/fonts/ShadowsIntoLight-Regular.ttf"); }
+
+@font-face {
+  font-family: 'wyld';
+  src: url("/static/storytelling/fonts/fanjofey.ttf"); }
+
+@font-face {
+  font-family: 'weaver';
+  src: url("/static/storytelling/fonts/plank.ttf"); }
+
+@font-face {
+  font-family: 'wyrm';
+  src: url("/static/storytelling/fonts/another_danger.otf"); }
+
+@font-face {
+  font-family: 'TexteLibre';
+  src: url("/static/storytelling/fonts/Lato-Regular.ttf"); }
+
+/* line 4, storytelling/static/storytelling/css/storytelling.scss */
+svg {
+  fill: yellow; }
+
+/* line 11, storytelling/static/storytelling/css/storytelling.scss */
+.storytelling {
+  fill: #305030;
+  stroke: #F0F0F0; }
+
+/* line 18, storytelling/static/storytelling/css/storytelling.scss */
+div.box.scene table {
+  background: #3a343e;
+  color: #F0F0F0;
+  border-radius: 5px; }
+  /* line 24, storytelling/static/storytelling/css/storytelling.scss */
+  div.box.scene table tr th {
+    background: #1d301d;
+    font-family: Titre;
+    font-size: 12pt;
+    width: 120px;
+    word-wrap: normal; }
+  /* line 33, storytelling/static/storytelling/css/storytelling.scss */
+  div.box.scene table tr td {
+    padding: 3px;
+    width: 350px;
+    word-wrap: normal;
+    font-family: TexteLibre;
+    font-size: 10pt; }
+
+/* line 44, storytelling/static/storytelling/css/storytelling.scss */
+div.handler {
+  background: transparent;
+  position: fixed;
+  left: 0;
+  top: auto;
+  bottom: 0;
+  right: auto;
+  width: 400px;
+  height: auto;
+  background: transparent; }
+
+/* line 56, storytelling/static/storytelling/css/storytelling.scss */
+.storyboard_handler {
+  background: #138;
+  color: #FFF;
+  border: 1px solid #CCC;
+  border-radius: 5px;
+  padding: 5px;
+  box-shadow: 0 0 5px #0b225b;
+  font-family: Roboto;
+  font-size: 9pt;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-flow: column nowrap;
+  word-wrap: normal;
+  height: 100%; }
+  /* line 109, collector/static/collector/css/_basics.scss */
+  .storyboard_handler .plank {
+    text-align: center;
+    color: #FFF;
+    background: #1744b5;
+    border: 1px solid #0b225b;
+    padding: 5px;
+    border-radius: 5px; }
+  /* line 117, collector/static/collector/css/_basics.scss */
+  .storyboard_handler .shard {
+    background: #1a4dcc;
+    color: #FFF;
+    border: 1px solid #0b225b;
+    border-radius: 5px; }
+    /* line 125, collector/static/collector/css/_basics.scss */
+    .storyboard_handler .shard.data {
+      font-widht: "Mono Syne";
+      background: black; }
+  /* line 63, storytelling/static/storytelling/css/storytelling.scss */
+  .storyboard_handler.hidden {
+    transition: all 0.3s ease;
+    transform: translateX(-500px); }
+
+/* line 69, storytelling/static/storytelling/css/storytelling.scss */
+.scene {
+  background: #138;
+  color: #FFF;
+  border: 1px solid #CCC;
+  border-radius: 5px;
+  padding: 5px;
+  box-shadow: 0 0 5px #0b225b;
+  font-family: Roboto;
+  font-size: 9pt;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-content: flex-start;
+  align-items: flex-start;
+  height: auto; }
+  /* line 109, collector/static/collector/css/_basics.scss */
+  .scene .plank {
+    text-align: center;
+    color: #FFF;
+    background: #1744b5;
+    border: 1px solid #0b225b;
+    padding: 5px;
+    border-radius: 5px; }
+  /* line 117, collector/static/collector/css/_basics.scss */
+  .scene .shard {
+    background: #1a4dcc;
+    color: #FFF;
+    border: 1px solid #0b225b;
+    border-radius: 5px; }
+    /* line 125, collector/static/collector/css/_basics.scss */
+    .scene .shard.data {
+      font-widht: "Mono Syne";
+      background: black; }
+  /* line 78, storytelling/static/storytelling/css/storytelling.scss */
+  .scene .entry {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+    align-items: stretch;
+    height: auto;
+    flex-grow: 1;
+    flex-shrink: 1; }
+    /* line 88, storytelling/static/storytelling/css/storytelling.scss */
+    .scene .entry .label {
+      width: 100px;
+      font-family: "Textelibre";
+      font-weight: 400;
+      flex-grow: 1;
+      flex-shrink: 1;
+      text-align: center; }
+    /* line 97, storytelling/static/storytelling/css/storytelling.scss */
+    .scene .entry .text {
+      background: #201d22;
+      color: #C0C0C0;
+      width: 450px;
+      flex-grow: 1;
+      flex-shrink: 1;
+      padding: 3px;
+      border-radius: 5px;
+      border: 1px solid #3a343e;
+      font-family: "Zilla Slab"; }

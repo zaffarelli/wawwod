@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "wawwod"
+version = "0.1.0"
+description = ""
+authors = ["Zaffarelli <zaffarelli@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.6"
+Django = "3.2.1"
+flake8 = "^3.9.2"
+django-libsass = "^0.8"
+django-compressor = "^2.4.1"
+django-colorfield = "^0.4.1"
+django-mysql = "^3.11.1"
+django-fixture-magic = "^0.1.5"
+xmltodict = "^0.12.0"
+gunicorn = "^20.1.0"
+
+
+[tool.poetry.dev-dependencies]
+factory-boy = "^3.2.0"
+pytest = "^6.2.4"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

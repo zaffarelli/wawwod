@@ -1,0 +1,16 @@
+{% load wod_filters %}
+<table cellspacing=0 cellpadding=0>
+    {% include "collector/creature/main_header.html" with c=c %}
+    {% include "collector/creature/mortal_header.html" with c=c %}
+    {% include "collector/creature/attributes_header.html" with c=c %}
+    {% include "collector/creature/abilities_header.html" with c=c %}
+    {% include "collector/creature/abilities_columns.html" with c=c %}
+    <tr>
+        <td colspan=2>Backgrounds ({{c.total_backgrounds}})</td>
+        <td colspan=2>Arcanoi ({{c.total_traits}})</td>
+        <td colspan=2>Passions</td>
+        <td colspan=2>Fetters</td>
+    </tr>
+    {% include "collector/creature/backgrounds_columns.html" with c=c %}
+</table>
+

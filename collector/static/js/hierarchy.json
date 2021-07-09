@@ -1,0 +1,1846 @@
+ {
+        "name": "Caine",
+        "clan": "",
+        "family": "",
+        "sire": "",
+        "condition": "OK",
+        "status": "OK",
+        "generation": 1,
+        "ghost": true,
+        "mythic": true,
+        "faction": "",
+        "children": [
+            {
+                "name": "Enoch",
+                "clan": "",
+                "family": "",
+                "sire": "Caine",
+                "condition": "OK",
+                "status": "OK",
+                "generation": 2,
+                "ghost": true,
+                "mythic": true,
+                "faction": "",
+                "children": [
+                    {
+                        "name": "Arikel",
+                        "clan": "Toreador",
+                        "family": "Toreador",
+                        "sire": "Enoch",
+                        "condition": "OK",
+                        "status": "OK",
+                        "generation": 3,
+                        "ghost": true,
+                        "mythic": true,
+                        "faction": "",
+                        "children": [
+                            {
+                                "name": "zyhmha",
+                                "clan": "Toreador",
+                                "family": "Toreador",
+                                "sire": "Arikel",
+                                "condition": "OK",
+                                "status": "OK",
+                                "generation": 4,
+                                "ghost": true,
+                                "mythic": false,
+                                "faction": "",
+                                "children": [
+                                    {
+                                        "name": "wyxpxl",
+                                        "clan": "Toreador",
+                                        "family": "Toreador",
+                                        "sire": "zyhmha",
+                                        "condition": "OK",
+                                        "status": "OK",
+                                        "generation": "5",
+                                        "ghost": true,
+                                        "mythic": false,
+                                        "faction": "",
+                                        "children": [
+                                            {
+                                                "name": "Isabella",
+                                                "clan": "Toreador",
+                                                "family": "Toreador",
+                                                "condition": "DEAD",
+                                                "status": "OK+",
+                                                "sire": "wyxpxl",
+                                                "generation": 6,
+                                                "ghost": false,
+                                                "faction": "Camarilla",
+                                                "rid": "isabella",
+                                                "children": [
+                                                    {
+                                                        "name": "Jonas Hirch",
+                                                        "clan": "Toreador",
+                                                        "family": "Toreador",
+                                                        "condition": "DEAD",
+                                                        "status": "OK+",
+                                                        "sire": "Isabella",
+                                                        "generation": 7,
+                                                        "ghost": false,
+                                                        "faction": "Camarilla",
+                                                        "rid": "jonas_hirch",
+                                                        "children": [
+                                                            {
+                                                                "name": "Rebecca Pfeiner",
+                                                                "clan": "Toreador",
+                                                                "family": "Toreador",
+                                                                "condition": "OK",
+                                                                "status": "OK",
+                                                                "sire": "Jonas Hirch",
+                                                                "generation": 8,
+                                                                "ghost": false,
+                                                                "faction": "Camarilla",
+                                                                "rid": "rebecca_pfeiner",
+                                                                "children": [],
+                                                                "ghouls": ""
+                                                            },
+                                                            {
+                                                                "name": "Kurt",
+                                                                "clan": "Toreador",
+                                                                "family": "Toreador",
+                                                                "condition": "OK",
+                                                                "status": "OK+",
+                                                                "sire": "Jonas Hirch",
+                                                                "generation": 8,
+                                                                "ghost": false,
+                                                                "faction": "Camarilla",
+                                                                "rid": "kurt",
+                                                                "children": [
+                                                                    {
+                                                                        "name": "Michael",
+                                                                        "clan": "Toreador",
+                                                                        "family": "Toreador",
+                                                                        "condition": "OK",
+                                                                        "status": "OK+",
+                                                                        "sire": "Kurt",
+                                                                        "generation": 9,
+                                                                        "ghost": false,
+                                                                        "faction": "Camarilla",
+                                                                        "rid": "michael",
+                                                                        "children": [
+                                                                            {
+                                                                                "name": "Elliot Summer",
+                                                                                "clan": "Toreador Antitribu",
+                                                                                "family": "Toreador",
+                                                                                "sire": "Michael",
+                                                                                "condition": "OK",
+                                                                                "status": "OK",
+                                                                                "generation": 10,
+                                                                                "ghost": true,
+                                                                                "mythic": false,
+                                                                                "faction": "",
+                                                                                "children": [
+                                                                                    {
+                                                                                        "name": "Alphonse \u00dcberziegt",
+                                                                                        "clan": "Toreador Antitribu",
+                                                                                        "family": "Toreador",
+                                                                                        "condition": "OK",
+                                                                                        "status": "OK",
+                                                                                        "sire": "Elliot Summer",
+                                                                                        "generation": 11,
+                                                                                        "ghost": false,
+                                                                                        "faction": "Sabbat",
+                                                                                        "rid": "alphonse_ueberziegt",
+                                                                                        "children": [
+                                                                                            {
+                                                                                                "name": "Paola Bommer",
+                                                                                                "clan": "Toreador Antitribu",
+                                                                                                "family": "Toreador",
+                                                                                                "condition": "OK",
+                                                                                                "status": "OK+",
+                                                                                                "sire": "Alphonse \u00dcberziegt",
+                                                                                                "generation": 12,
+                                                                                                "ghost": false,
+                                                                                                "faction": "Sabbat",
+                                                                                                "rid": "paola_bommer",
+                                                                                                "children": [],
+                                                                                                "ghouls": ""
+                                                                                            }
+                                                                                        ],
+                                                                                        "ghouls": ""
+                                                                                    }
+                                                                                ]
+                                                                            }
+                                                                        ],
+                                                                        "ghouls": ""
+                                                                    }
+                                                                ],
+                                                                "ghouls": ""
+                                                            }
+                                                        ],
+                                                        "ghouls": ""
+                                                    },
+                                                    {
+                                                        "name": "egmnxx",
+                                                        "clan": "Toreador",
+                                                        "family": "Toreador",
+                                                        "sire": "Isabella",
+                                                        "condition": "OK",
+                                                        "status": "OK",
+                                                        "generation": "7",
+                                                        "ghost": true,
+                                                        "mythic": false,
+                                                        "faction": "",
+                                                        "children": [
+                                                            {
+                                                                "name": "Jacques de Bourbon",
+                                                                "clan": "Toreador",
+                                                                "family": "Toreador",
+                                                                "condition": "OK",
+                                                                "status": "OK+",
+                                                                "sire": "egmnxx",
+                                                                "generation": 8,
+                                                                "ghost": false,
+                                                                "faction": "Camarilla",
+                                                                "rid": "jacques_de_bourbon",
+                                                                "children": [],
+                                                                "ghouls": ""
+                                                            }
+                                                        ]
+                                                    }
+                                                ],
+                                                "ghouls": "Unknown 0,Unknown 1,Unknown 2,Unknown 3"
+                                            },
+                                            {
+                                                "name": "isabella",
+                                                "clan": "Toreador",
+                                                "family": "Toreador",
+                                                "sire": "wyxpxl",
+                                                "condition": "OK",
+                                                "status": "OK",
+                                                "generation": 6,
+                                                "ghost": true,
+                                                "mythic": false,
+                                                "faction": "",
+                                                "children": [
+                                                    {
+                                                        "name": "Saint Cyr",
+                                                        "clan": "Toreador",
+                                                        "family": "Toreador",
+                                                        "condition": "MISSING",
+                                                        "status": "OK+",
+                                                        "sire": "isabella",
+                                                        "generation": 7,
+                                                        "ghost": false,
+                                                        "faction": "Camarilla",
+                                                        "rid": "saint_cyr",
+                                                        "children": [
+                                                            {
+                                                                "name": "Roxanne",
+                                                                "clan": "Toreador",
+                                                                "family": "Toreador",
+                                                                "condition": "OK",
+                                                                "status": "OK+",
+                                                                "sire": "Saint Cyr",
+                                                                "generation": 8,
+                                                                "ghost": false,
+                                                                "faction": "Camarilla",
+                                                                "rid": "roxanne",
+                                                                "children": [],
+                                                                "ghouls": ""
+                                                            }
+                                                        ],
+                                                        "ghouls": "Louisa Shermann"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Malkav",
+                        "clan": "Malkavian",
+                        "family": "Malkavian",
+                        "sire": "Enoch",
+                        "condition": "OK",
+                        "status": "OK",
+                        "generation": 3,
+                        "ghost": true,
+                        "mythic": true,
+                        "faction": "",
+                        "children": [
+                            {
+                                "name": "zqxfez",
+                                "clan": "Malkavian",
+                                "family": "Malkavian",
+                                "sire": "Malkav",
+                                "condition": "OK",
+                                "status": "OK",
+                                "generation": 4,
+                                "ghost": true,
+                                "mythic": false,
+                                "faction": "",
+                                "children": [
+                                    {
+                                        "name": "ewusks",
+                                        "clan": "Malkavian",
+                                        "family": "Malkavian",
+                                        "sire": "zqxfez",
+                                        "condition": "OK",
+                                        "status": "OK",
+                                        "generation": 5,
+                                        "ghost": true,
+                                        "mythic": false,
+                                        "faction": "",
+                                        "children": [
+                                            {
+                                                "name": "jhrkwj",
+                                                "clan": "Malkavian",
+                                                "family": "Malkavian",
+                                                "sire": "ewusks",
+                                                "condition": "OK",
+                                                "status": "OK",
+                                                "generation": "6",
+                                                "ghost": true,
+                                                "mythic": false,
+                                                "faction": "",
+                                                "children": [
+                                                    {
+                                                        "name": "Giulietta",
+                                                        "clan": "Malkavian",
+                                                        "family": "Malkavian",
+                                                        "condition": "DEAD",
+                                                        "status": "OK+",
+                                                        "sire": "jhrkwj",
+                                                        "generation": 7,
+                                                        "ghost": false,
+                                                        "faction": "Camarilla",
+                                                        "rid": "giulietta",
+                                                        "children": [
+                                                            {
+                                                                "name": "Pulcinella",
+                                                                "clan": "Malkavian",
+                                                                "family": "Malkavian",
+                                                                "condition": "OK",
+                                                                "status": "OK",
+                                                                "sire": "Giulietta",
+                                                                "generation": 8,
+                                                                "ghost": false,
+                                                                "faction": "Camarilla",
+                                                                "rid": "pulcinella",
+                                                                "children": [
+                                                                    {
+                                                                        "name": "Wolfgang",
+                                                                        "clan": "Malkavian",
+                                                                        "family": "Malkavian",
+                                                                        "condition": "OK",
+                                                                        "status": "OK+",
+                                                                        "sire": "Pulcinella",
+                                                                        "generation": 9,
+                                                                        "ghost": false,
+                                                                        "faction": "Camarilla",
+                                                                        "rid": "wolfgang",
+                                                                        "children": [
+                                                                            {
+                                                                                "name": "Kuntz",
+                                                                                "clan": "Malkavian",
+                                                                                "family": "Malkavian",
+                                                                                "condition": "OK",
+                                                                                "status": "OK+",
+                                                                                "sire": "Wolfgang",
+                                                                                "generation": 10,
+                                                                                "ghost": false,
+                                                                                "faction": "Camarilla",
+                                                                                "rid": "kuntz",
+                                                                                "children": [],
+                                                                                "ghouls": ""
+                                                                            },
+                                                                            {
+                                                                                "name": "fdhvcm",
+                                                                                "clan": "Malkavian",
+                                                                                "family": "Malkavian",
+                                                                                "sire": "Wolfgang",
+                                                                                "condition": "OK",
+                                                                                "status": "OK",
+                                                                                "generation": "10",
+                                                                                "ghost": true,
+                                                                                "mythic": false,
+                                                                                "faction": "",
+                                                                                "children": [
+                                                                                    {
+                                                                                        "name": "Christophe Valmont",
+                                                                                        "clan": "Malkavian Antitribu",
+                                                                                        "family": "Malkavian",
+                                                                                        "condition": "OK",
+                                                                                        "status": "OK",
+                                                                                        "sire": "fdhvcm",
+                                                                                        "generation": 11,
+                                                                                        "ghost": false,
+                                                                                        "faction": "Sabbat",
+                                                                                        "rid": "christophe_valmont",
+                                                                                        "children": [],
+                                                                                        "ghouls": ""
+                                                                                    }
+                                                                                ]
+                                                                            }
+                                                                        ],
+                                                                        "ghouls": "Loren,Whitney"
+                                                                    },
+                                                                    {
+                                                                        "name": "Fran\u00e7ois Lapointe",
+                                                                        "clan": "Malkavian",
+                                                                        "family": "Malkavian",
+                                                                        "condition": "OK",
+                                                                        "status": "OK+",
+                                                                        "sire": "Pulcinella",
+                                                                        "generation": 9,
+                                                                        "ghost": false,
+                                                                        "faction": "Camarilla",
+                                                                        "rid": "francois_lapointe",
+                                                                        "children": [],
+                                                                        "ghouls": "Ekatherina,Justine,Kelly,Unknown 0"
+                                                                    },
+                                                                    {
+                                                                        "name": "francois_lapointe",
+                                                                        "clan": "Malkavian",
+                                                                        "family": "Malkavian",
+                                                                        "sire": "Pulcinella",
+                                                                        "condition": "OK",
+                                                                        "status": "OK",
+                                                                        "generation": 9,
+                                                                        "ghost": true,
+                                                                        "mythic": false,
+                                                                        "faction": "",
+                                                                        "children": [
+                                                                            {
+                                                                                "name": "Julian Bennett",
+                                                                                "clan": "Malkavian",
+                                                                                "family": "Malkavian",
+                                                                                "condition": "OK",
+                                                                                "status": "OK+",
+                                                                                "sire": "francois_lapointe",
+                                                                                "generation": 10,
+                                                                                "ghost": false,
+                                                                                "faction": "Camarilla",
+                                                                                "rid": "julian_bennett",
+                                                                                "children": [],
+                                                                                "ghouls": "Suzanna"
+                                                                            }
+                                                                        ]
+                                                                    },
+                                                                    {
+                                                                        "name": "Fendor",
+                                                                        "clan": "Malkavian Antitribu",
+                                                                        "family": "Malkavian",
+                                                                        "sire": "Pulcinella",
+                                                                        "condition": "OK",
+                                                                        "status": "OK",
+                                                                        "generation": 9,
+                                                                        "ghost": true,
+                                                                        "mythic": false,
+                                                                        "faction": "",
+                                                                        "children": [
+                                                                            {
+                                                                                "name": "Lazarino Coppa",
+                                                                                "clan": "Malkavian Antitribu",
+                                                                                "family": "Malkavian",
+                                                                                "condition": "OK",
+                                                                                "status": "OK",
+                                                                                "sire": "Fendor",
+                                                                                "generation": 10,
+                                                                                "ghost": false,
+                                                                                "faction": "Sabbat",
+                                                                                "rid": "lazarino_coppa",
+                                                                                "children": [],
+                                                                                "ghouls": ""
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                ],
+                                                                "ghouls": "Columbine"
+                                                            },
+                                                            {
+                                                                "name": "Babydoll",
+                                                                "clan": "Malkavian",
+                                                                "family": "Malkavian",
+                                                                "condition": "MISSING",
+                                                                "status": "OK+",
+                                                                "sire": "Giulietta",
+                                                                "generation": 8,
+                                                                "ghost": false,
+                                                                "faction": "Anarchs",
+                                                                "rid": "babydoll",
+                                                                "children": [
+                                                                    {
+                                                                        "name": "Cheyenne",
+                                                                        "clan": "Malkavian Antitribu",
+                                                                        "family": "Malkavian",
+                                                                        "condition": "DEAD",
+                                                                        "status": "OK",
+                                                                        "sire": "Babydoll",
+                                                                        "generation": 9,
+                                                                        "ghost": false,
+                                                                        "faction": "Sabbat",
+                                                                        "rid": "cheyenne",
+                                                                        "children": [
+                                                                            {
+                                                                                "name": "Alfonso",
+                                                                                "clan": "Malkavian",
+                                                                                "family": "Malkavian",
+                                                                                "condition": "OK",
+                                                                                "status": "OK+",
+                                                                                "sire": "Cheyenne",
+                                                                                "generation": 10,
+                                                                                "ghost": false,
+                                                                                "faction": "Camarilla",
+                                                                                "rid": "alfonso",
+                                                                                "children": [],
+                                                                                "ghouls": ""
+                                                                            }
+                                                                        ],
+                                                                        "ghouls": ""
+                                                                    }
+                                                                ],
+                                                                "ghouls": ""
+                                                            }
+                                                        ],
+                                                        "ghouls": ""
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Saulot",
+                        "clan": "Salubri",
+                        "family": "Salubri",
+                        "sire": "Enoch",
+                        "condition": "OK",
+                        "status": "OK",
+                        "generation": 3,
+                        "ghost": true,
+                        "mythic": true,
+                        "faction": "",
+                        "children": [
+                            {
+                                "name": "Tremere",
+                                "clan": "Tremere",
+                                "family": "Tremere",
+                                "sire": "Saulot",
+                                "condition": "OK",
+                                "status": "OK",
+                                "generation": 4,
+                                "ghost": true,
+                                "mythic": true,
+                                "faction": "",
+                                "children": [
+                                    {
+                                        "name": "anmknv",
+                                        "clan": "Tremere",
+                                        "family": "Tremere",
+                                        "sire": "Tremere",
+                                        "condition": "OK",
+                                        "status": "OK",
+                                        "generation": 5,
+                                        "ghost": true,
+                                        "mythic": false,
+                                        "faction": "",
+                                        "children": [
+                                            {
+                                                "name": "lshpaa",
+                                                "clan": "Tremere",
+                                                "family": "Tremere",
+                                                "sire": "anmknv",
+                                                "condition": "OK",
+                                                "status": "OK",
+                                                "generation": 6,
+                                                "ghost": true,
+                                                "mythic": false,
+                                                "faction": "",
+                                                "children": [
+                                                    {
+                                                        "name": "yocgmw",
+                                                        "clan": "Tremere",
+                                                        "family": "Tremere",
+                                                        "sire": "lshpaa",
+                                                        "condition": "OK",
+                                                        "status": "OK",
+                                                        "generation": "7",
+                                                        "ghost": true,
+                                                        "mythic": false,
+                                                        "faction": "",
+                                                        "children": [
+                                                            {
+                                                                "name": "Jacob Landzmann",
+                                                                "clan": "Tremere",
+                                                                "family": "Tremere",
+                                                                "condition": "OK",
+                                                                "status": "OK+",
+                                                                "sire": "yocgmw",
+                                                                "generation": 8,
+                                                                "ghost": false,
+                                                                "faction": "Camarilla",
+                                                                "rid": "jacob_landzmann",
+                                                                "children": [
+                                                                    {
+                                                                        "name": "Greta Manzen",
+                                                                        "clan": "Tremere",
+                                                                        "family": "Tremere",
+                                                                        "condition": "OK",
+                                                                        "status": "OK+",
+                                                                        "sire": "Jacob Landzmann",
+                                                                        "generation": 9,
+                                                                        "ghost": false,
+                                                                        "faction": "Camarilla",
+                                                                        "rid": "greta_manzen",
+                                                                        "children": [],
+                                                                        "ghouls": "Unknown 0,Unknown 1"
+                                                                    }
+                                                                ],
+                                                                "ghouls": "Unknown 0,Unknown 1,Unknown 2"
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Irad",
+                "clan": "",
+                "family": "",
+                "sire": "Caine",
+                "condition": "OK",
+                "status": "OK",
+                "generation": 2,
+                "ghost": true,
+                "mythic": true,
+                "faction": "",
+                "children": [
+                    {
+                        "name": "Ventru",
+                        "clan": "Ventrue",
+                        "family": "Ventrue",
+                        "sire": "Irad",
+                        "condition": "OK",
+                        "status": "OK",
+                        "generation": 3,
+                        "ghost": true,
+                        "mythic": true,
+                        "faction": "",
+                        "children": [
+                            {
+                                "name": "czjpfc",
+                                "clan": "Ventrue",
+                                "family": "Ventrue",
+                                "sire": "Ventru",
+                                "condition": "OK",
+                                "status": "OK",
+                                "generation": 4,
+                                "ghost": true,
+                                "mythic": false,
+                                "faction": "",
+                                "children": [
+                                    {
+                                        "name": "latjdb",
+                                        "clan": "Ventrue",
+                                        "family": "Ventrue",
+                                        "sire": "czjpfc",
+                                        "condition": "OK",
+                                        "status": "OK",
+                                        "generation": "5",
+                                        "ghost": true,
+                                        "mythic": false,
+                                        "faction": "",
+                                        "children": [
+                                            {
+                                                "name": "Drenzig",
+                                                "clan": "Ventrue",
+                                                "family": "Ventrue",
+                                                "condition": "DEAD",
+                                                "status": "OK+",
+                                                "sire": "latjdb",
+                                                "generation": 6,
+                                                "ghost": false,
+                                                "faction": "Camarilla",
+                                                "rid": "drenzig",
+                                                "children": [
+                                                    {
+                                                        "name": "Ludwig",
+                                                        "clan": "Ventrue",
+                                                        "family": "Ventrue",
+                                                        "condition": "DEAD",
+                                                        "status": "OK+",
+                                                        "sire": "Drenzig",
+                                                        "generation": 7,
+                                                        "ghost": false,
+                                                        "faction": "Camarilla",
+                                                        "rid": "ludwig",
+                                                        "children": [
+                                                            {
+                                                                "name": "Ursula Eidenstadt",
+                                                                "clan": "Ventrue",
+                                                                "family": "Ventrue",
+                                                                "condition": "OK",
+                                                                "status": "OK",
+                                                                "sire": "Ludwig",
+                                                                "generation": 8,
+                                                                "ghost": false,
+                                                                "faction": "Camarilla",
+                                                                "rid": "ursula_eidenstadt",
+                                                                "children": [
+                                                                    {
+                                                                        "name": "Bergman",
+                                                                        "clan": "Ventrue Antitribu",
+                                                                        "family": "Ventrue",
+                                                                        "sire": "Ursula Eidenstadt",
+                                                                        "condition": "OK",
+                                                                        "status": "OK",
+                                                                        "generation": 9,
+                                                                        "ghost": true,
+                                                                        "mythic": false,
+                                                                        "faction": "",
+                                                                        "children": [
+                                                                            {
+                                                                                "name": "Natacha Remco",
+                                                                                "clan": "Ventrue Antitribu",
+                                                                                "family": "Ventrue",
+                                                                                "condition": "OK",
+                                                                                "status": "OK",
+                                                                                "sire": "Bergman",
+                                                                                "generation": 10,
+                                                                                "ghost": false,
+                                                                                "faction": "Sabbat",
+                                                                                "rid": "natacha_remco",
+                                                                                "children": [],
+                                                                                "ghouls": ""
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                ],
+                                                                "ghouls": "Nathan Dourif,Piotr Stravinski"
+                                                            },
+                                                            {
+                                                                "name": "Franz",
+                                                                "clan": "Ventrue",
+                                                                "family": "Ventrue",
+                                                                "condition": "DEAD",
+                                                                "status": "OK+",
+                                                                "sire": "Ludwig",
+                                                                "generation": 8,
+                                                                "ghost": false,
+                                                                "faction": "Camarilla",
+                                                                "rid": "franz",
+                                                                "children": [],
+                                                                "ghouls": ""
+                                                            },
+                                                            {
+                                                                "name": "Markus",
+                                                                "clan": "Ventrue",
+                                                                "family": "Ventrue",
+                                                                "condition": "OK",
+                                                                "status": "OK",
+                                                                "sire": "Ludwig",
+                                                                "generation": 8,
+                                                                "ghost": false,
+                                                                "faction": "Camarilla",
+                                                                "rid": "markus",
+                                                                "children": [
+                                                                    {
+                                                                        "name": "Anastasia",
+                                                                        "clan": "Ventrue",
+                                                                        "family": "Ventrue",
+                                                                        "condition": "OK",
+                                                                        "status": "OK+",
+                                                                        "sire": "Markus",
+                                                                        "generation": 9,
+                                                                        "ghost": false,
+                                                                        "faction": "Camarilla",
+                                                                        "rid": "anastasia",
+                                                                        "children": [],
+                                                                        "ghouls": ""
+                                                                    },
+                                                                    {
+                                                                        "name": "Maximillian",
+                                                                        "clan": "Ventrue",
+                                                                        "family": "Ventrue",
+                                                                        "condition": "OK",
+                                                                        "status": "OK",
+                                                                        "sire": "Markus",
+                                                                        "generation": 9,
+                                                                        "ghost": false,
+                                                                        "faction": "Camarilla",
+                                                                        "rid": "maximillian",
+                                                                        "children": [
+                                                                            {
+                                                                                "name": "Heinke Grimlen",
+                                                                                "clan": "Ventrue",
+                                                                                "family": "Ventrue",
+                                                                                "condition": "OK",
+                                                                                "status": "OK+",
+                                                                                "sire": "Maximillian",
+                                                                                "generation": 10,
+                                                                                "ghost": false,
+                                                                                "faction": "Camarilla",
+                                                                                "rid": "heinke_grimlen",
+                                                                                "children": [
+                                                                                    {
+                                                                                        "name": "Gaspard",
+                                                                                        "clan": "Ventrue",
+                                                                                        "family": "Ventrue",
+                                                                                        "condition": "OK",
+                                                                                        "status": "OK+",
+                                                                                        "sire": "Heinke Grimlen",
+                                                                                        "generation": 11,
+                                                                                        "ghost": false,
+                                                                                        "faction": "Camarilla",
+                                                                                        "rid": "gaspard",
+                                                                                        "children": [
+                                                                                            {
+                                                                                                "name": "Sofia",
+                                                                                                "clan": "Ventrue",
+                                                                                                "family": "Ventrue",
+                                                                                                "condition": "OK",
+                                                                                                "status": "UNBALANCED",
+                                                                                                "sire": "Gaspard",
+                                                                                                "generation": 12,
+                                                                                                "ghost": false,
+                                                                                                "faction": "Camarilla",
+                                                                                                "rid": "sofia",
+                                                                                                "children": [],
+                                                                                                "ghouls": "Unknown 0,Unknown 1"
+                                                                                            }
+                                                                                        ],
+                                                                                        "ghouls": ""
+                                                                                    }
+                                                                                ],
+                                                                                "ghouls": ""
+                                                                            }
+                                                                        ],
+                                                                        "ghouls": ""
+                                                                    }
+                                                                ],
+                                                                "ghouls": "Pieter,Unknown 0,Unknown 1"
+                                                            }
+                                                        ],
+                                                        "ghouls": ""
+                                                    }
+                                                ],
+                                                "ghouls": ""
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "name": "bnlkod",
+                                        "clan": "Ventrue",
+                                        "family": "Ventrue",
+                                        "sire": "czjpfc",
+                                        "condition": "OK",
+                                        "status": "OK",
+                                        "generation": "5",
+                                        "ghost": true,
+                                        "mythic": false,
+                                        "faction": "",
+                                        "children": [
+                                            {
+                                                "name": "Klaus",
+                                                "clan": "Ventrue",
+                                                "family": "Ventrue",
+                                                "condition": "MISSING",
+                                                "status": "OK+",
+                                                "sire": "bnlkod",
+                                                "generation": 6,
+                                                "ghost": false,
+                                                "faction": "Camarilla",
+                                                "rid": "klaus",
+                                                "children": [
+                                                    {
+                                                        "name": "Dieter Rinsberg",
+                                                        "clan": "Ventrue",
+                                                        "family": "Ventrue",
+                                                        "condition": "DEAD",
+                                                        "status": "OK+",
+                                                        "sire": "Klaus",
+                                                        "generation": 7,
+                                                        "ghost": false,
+                                                        "faction": "Camarilla",
+                                                        "rid": "dieter_rinsberg",
+                                                        "children": [
+                                                            {
+                                                                "name": "Ludmilla Obermann",
+                                                                "clan": "Ventrue",
+                                                                "family": "Ventrue",
+                                                                "condition": "OK",
+                                                                "status": "OK",
+                                                                "sire": "Dieter Rinsberg",
+                                                                "generation": 8,
+                                                                "ghost": false,
+                                                                "faction": "Camarilla",
+                                                                "rid": "ludmilla_obermann",
+                                                                "children": [],
+                                                                "ghouls": "Unknown 0"
+                                                            },
+                                                            {
+                                                                "name": "ursula_eidenstadt",
+                                                                "clan": "Ventrue",
+                                                                "family": "Ventrue",
+                                                                "sire": "Dieter Rinsberg",
+                                                                "condition": "OK",
+                                                                "status": "OK",
+                                                                "generation": 8,
+                                                                "ghost": true,
+                                                                "mythic": false,
+                                                                "faction": "",
+                                                                "children": [
+                                                                    {
+                                                                        "name": "Dietrich",
+                                                                        "clan": "Ventrue",
+                                                                        "family": "Ventrue",
+                                                                        "condition": "OK",
+                                                                        "status": "OK+",
+                                                                        "sire": "ursula_eidenstadt",
+                                                                        "generation": 9,
+                                                                        "ghost": false,
+                                                                        "faction": "Camarilla",
+                                                                        "rid": "dietrich",
+                                                                        "children": [
+                                                                            {
+                                                                                "name": "Stanislas Bergstadt",
+                                                                                "clan": "Ventrue",
+                                                                                "family": "Ventrue",
+                                                                                "condition": "OK",
+                                                                                "status": "OK+",
+                                                                                "sire": "Dietrich",
+                                                                                "generation": 10,
+                                                                                "ghost": false,
+                                                                                "faction": "Camarilla",
+                                                                                "rid": "stanislas_bergstadt",
+                                                                                "children": [],
+                                                                                "ghouls": ""
+                                                                            }
+                                                                        ],
+                                                                        "ghouls": ""
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ],
+                                                        "ghouls": ""
+                                                    }
+                                                ],
+                                                "ghouls": ""
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Brujah",
+                        "clan": "True Brujah",
+                        "family": "True Brujah",
+                        "sire": "Irad",
+                        "condition": "OK",
+                        "status": "OK",
+                        "generation": 3,
+                        "ghost": true,
+                        "mythic": true,
+                        "faction": "",
+                        "children": [
+                            {
+                                "name": "Troile",
+                                "clan": "Brujah",
+                                "family": "Brujah",
+                                "sire": "Brujah",
+                                "condition": "OK",
+                                "status": "OK",
+                                "generation": 4,
+                                "ghost": true,
+                                "mythic": true,
+                                "faction": "",
+                                "children": [
+                                    {
+                                        "name": "prizhc",
+                                        "clan": "Brujah",
+                                        "family": "Brujah",
+                                        "sire": "Troile",
+                                        "condition": "OK",
+                                        "status": "OK",
+                                        "generation": "5",
+                                        "ghost": true,
+                                        "mythic": false,
+                                        "faction": "",
+                                        "children": [
+                                            {
+                                                "name": "Oskar",
+                                                "clan": "Brujah",
+                                                "family": "Brujah",
+                                                "condition": "MISSING",
+                                                "status": "OK",
+                                                "sire": "prizhc",
+                                                "generation": 6,
+                                                "ghost": false,
+                                                "faction": "Camarilla",
+                                                "rid": "oskar",
+                                                "children": [],
+                                                "ghouls": "Unknown 0,Unknown 1"
+                                            },
+                                            {
+                                                "name": "jenriy",
+                                                "clan": "Brujah",
+                                                "family": "Brujah",
+                                                "sire": "prizhc",
+                                                "condition": "OK",
+                                                "status": "OK",
+                                                "generation": "6",
+                                                "ghost": true,
+                                                "mythic": false,
+                                                "faction": "",
+                                                "children": [
+                                                    {
+                                                        "name": "Otto",
+                                                        "clan": "Brujah",
+                                                        "family": "Brujah",
+                                                        "condition": "DEAD",
+                                                        "status": "OK",
+                                                        "sire": "jenriy",
+                                                        "generation": 7,
+                                                        "ghost": false,
+                                                        "faction": "Camarilla",
+                                                        "rid": "otto",
+                                                        "children": [
+                                                            {
+                                                                "name": "Siegfried",
+                                                                "clan": "Brujah",
+                                                                "family": "Brujah",
+                                                                "condition": "MISSING",
+                                                                "status": "OK+",
+                                                                "sire": "Otto",
+                                                                "generation": 8,
+                                                                "ghost": false,
+                                                                "faction": "Camarilla",
+                                                                "rid": "siegfried",
+                                                                "children": [
+                                                                    {
+                                                                        "name": "Kasimir",
+                                                                        "clan": "Brujah",
+                                                                        "family": "Brujah",
+                                                                        "condition": "OK",
+                                                                        "status": "OK+",
+                                                                        "sire": "Siegfried",
+                                                                        "generation": 9,
+                                                                        "ghost": false,
+                                                                        "faction": "Camarilla",
+                                                                        "rid": "kasimir",
+                                                                        "children": [],
+                                                                        "ghouls": ""
+                                                                    },
+                                                                    {
+                                                                        "name": "cqbvps",
+                                                                        "clan": "Brujah",
+                                                                        "family": "Brujah",
+                                                                        "sire": "Siegfried",
+                                                                        "condition": "OK",
+                                                                        "status": "OK",
+                                                                        "generation": "9",
+                                                                        "ghost": true,
+                                                                        "mythic": false,
+                                                                        "faction": "",
+                                                                        "children": [
+                                                                            {
+                                                                                "name": "Nestor Diemerisch",
+                                                                                "clan": "Brujah Antitribu",
+                                                                                "family": "Brujah",
+                                                                                "condition": "OK",
+                                                                                "status": "OK",
+                                                                                "sire": "cqbvps",
+                                                                                "generation": 10,
+                                                                                "ghost": false,
+                                                                                "faction": "Sabbat",
+                                                                                "rid": "nestor_diemerisch",
+                                                                                "children": [],
+                                                                                "ghouls": "Unknown 0"
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                ],
+                                                                "ghouls": ""
+                                                            },
+                                                            {
+                                                                "name": "Damienka",
+                                                                "clan": "Brujah",
+                                                                "family": "Brujah",
+                                                                "condition": "OK",
+                                                                "status": "OK+",
+                                                                "sire": "Otto",
+                                                                "generation": 8,
+                                                                "ghost": false,
+                                                                "faction": "Camarilla",
+                                                                "rid": "damienka",
+                                                                "children": [
+                                                                    {
+                                                                        "name": "Friedrich Baum",
+                                                                        "clan": "Brujah",
+                                                                        "family": "Brujah",
+                                                                        "condition": "OK",
+                                                                        "status": "OK+",
+                                                                        "sire": "Damienka",
+                                                                        "generation": 9,
+                                                                        "ghost": false,
+                                                                        "faction": "Camarilla",
+                                                                        "rid": "friedrich_baum",
+                                                                        "children": [],
+                                                                        "ghouls": ""
+                                                                    }
+                                                                ],
+                                                                "ghouls": ""
+                                                            },
+                                                            {
+                                                                "name": "Karen",
+                                                                "clan": "Brujah",
+                                                                "family": "Brujah",
+                                                                "condition": "OK",
+                                                                "status": "OK",
+                                                                "sire": "Otto",
+                                                                "generation": 8,
+                                                                "ghost": false,
+                                                                "faction": "Camarilla",
+                                                                "rid": "karen",
+                                                                "children": [
+                                                                    {
+                                                                        "name": "Rudolph",
+                                                                        "clan": "Brujah",
+                                                                        "family": "Brujah",
+                                                                        "condition": "DEAD",
+                                                                        "status": "OK+",
+                                                                        "sire": "Karen",
+                                                                        "generation": 9,
+                                                                        "ghost": false,
+                                                                        "faction": "Anarchs",
+                                                                        "rid": "rudolph",
+                                                                        "children": [],
+                                                                        "ghouls": ""
+                                                                    }
+                                                                ],
+                                                                "ghouls": "Unknown 0"
+                                                            }
+                                                        ],
+                                                        "ghouls": "Unknown 0"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Cappadocius",
+                        "clan": "Cappadocian",
+                        "family": "Cappadocian",
+                        "sire": "Irad",
+                        "condition": "OK",
+                        "status": "OK",
+                        "generation": 3,
+                        "ghost": true,
+                        "mythic": true,
+                        "faction": "",
+                        "children": [
+                            {
+                                "name": "Augustus Giovanni",
+                                "clan": "Giovanni",
+                                "family": "Giovanni",
+                                "sire": "Cappadocius",
+                                "condition": "OK",
+                                "status": "OK",
+                                "generation": 4,
+                                "ghost": true,
+                                "mythic": true,
+                                "faction": "",
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Lasombra",
+                        "clan": "Lasombra",
+                        "family": "Lasombra",
+                        "sire": "Irad",
+                        "condition": "OK",
+                        "status": "OK",
+                        "generation": 3,
+                        "ghost": true,
+                        "mythic": true,
+                        "faction": "",
+                        "children": [
+                            {
+                                "name": "ghqkma",
+                                "clan": "Lasombra",
+                                "family": "Lasombra",
+                                "sire": "Lasombra",
+                                "condition": "OK",
+                                "status": "OK",
+                                "generation": 4,
+                                "ghost": true,
+                                "mythic": false,
+                                "faction": "",
+                                "children": [
+                                    {
+                                        "name": "fqpzut",
+                                        "clan": "Lasombra",
+                                        "family": "Lasombra",
+                                        "sire": "ghqkma",
+                                        "condition": "OK",
+                                        "status": "OK",
+                                        "generation": 5,
+                                        "ghost": true,
+                                        "mythic": false,
+                                        "faction": "",
+                                        "children": [
+                                            {
+                                                "name": "fozfsv",
+                                                "clan": "Lasombra",
+                                                "family": "Lasombra",
+                                                "sire": "fqpzut",
+                                                "condition": "OK",
+                                                "status": "OK",
+                                                "generation": "6",
+                                                "ghost": true,
+                                                "mythic": false,
+                                                "faction": "",
+                                                "children": [
+                                                    {
+                                                        "name": "Don Piazzatelli",
+                                                        "clan": "Lasombra",
+                                                        "family": "Lasombra",
+                                                        "condition": "OK",
+                                                        "status": "OK+",
+                                                        "sire": "fozfsv",
+                                                        "generation": 7,
+                                                        "ghost": false,
+                                                        "faction": "Sabbat",
+                                                        "rid": "don_piazzatelli",
+                                                        "children": [],
+                                                        "ghouls": ""
+                                                    },
+                                                    {
+                                                        "name": "Gorven",
+                                                        "clan": "Lasombra",
+                                                        "family": "Lasombra",
+                                                        "sire": "fozfsv",
+                                                        "condition": "OK",
+                                                        "status": "OK",
+                                                        "generation": 7,
+                                                        "ghost": true,
+                                                        "mythic": false,
+                                                        "faction": "",
+                                                        "children": [
+                                                            {
+                                                                "name": "Albrecht Tiberius",
+                                                                "clan": "Lasombra",
+                                                                "family": "Lasombra",
+                                                                "condition": "OK",
+                                                                "status": "OK",
+                                                                "sire": "Gorven",
+                                                                "generation": 8,
+                                                                "ghost": false,
+                                                                "faction": "Sabbat",
+                                                                "rid": "albrecht_tiberius",
+                                                                "children": [
+                                                                    {
+                                                                        "name": "hjwzyf",
+                                                                        "clan": "Lasombra",
+                                                                        "family": "Lasombra",
+                                                                        "sire": "Albrecht Tiberius",
+                                                                        "condition": "OK",
+                                                                        "status": "OK",
+                                                                        "generation": 9,
+                                                                        "ghost": true,
+                                                                        "mythic": false,
+                                                                        "faction": "",
+                                                                        "children": [
+                                                                            {
+                                                                                "name": "axoywp",
+                                                                                "clan": "Lasombra",
+                                                                                "family": "Lasombra",
+                                                                                "sire": "hjwzyf",
+                                                                                "condition": "OK",
+                                                                                "status": "OK",
+                                                                                "generation": "10",
+                                                                                "ghost": true,
+                                                                                "mythic": false,
+                                                                                "faction": "",
+                                                                                "children": [
+                                                                                    {
+                                                                                        "name": "Pomede Ricci",
+                                                                                        "clan": "Lasombra",
+                                                                                        "family": "Lasombra",
+                                                                                        "condition": "OK",
+                                                                                        "status": "OK",
+                                                                                        "sire": "axoywp",
+                                                                                        "generation": 11,
+                                                                                        "ghost": false,
+                                                                                        "faction": "Sabbat",
+                                                                                        "rid": "pomede_ricci",
+                                                                                        "children": [],
+                                                                                        "ghouls": ""
+                                                                                    }
+                                                                                ]
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                ],
+                                                                "ghouls": "Unknown 0,Unknown 1"
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "name": "ylqcwt",
+                                                        "clan": "Lasombra",
+                                                        "family": "Lasombra",
+                                                        "sire": "fozfsv",
+                                                        "condition": "OK",
+                                                        "status": "OK",
+                                                        "generation": "7",
+                                                        "ghost": true,
+                                                        "mythic": false,
+                                                        "faction": "",
+                                                        "children": [
+                                                            {
+                                                                "name": "Hermann Longsdale",
+                                                                "clan": "Lasombra Antitribu",
+                                                                "family": "Lasombra",
+                                                                "condition": "OK",
+                                                                "status": "OK+",
+                                                                "sire": "ylqcwt",
+                                                                "generation": 8,
+                                                                "ghost": false,
+                                                                "faction": "Camarilla",
+                                                                "rid": "hermann_longsdale",
+                                                                "children": [],
+                                                                "ghouls": ""
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Zillah",
+                "clan": "",
+                "family": "",
+                "sire": "Caine",
+                "condition": "OK",
+                "status": "OK",
+                "generation": 2,
+                "ghost": true,
+                "mythic": true,
+                "faction": "",
+                "children": [
+                    {
+                        "name": "Absimilard",
+                        "clan": "Nosferatu",
+                        "family": "Nosferatu",
+                        "sire": "Zillah",
+                        "condition": "OK",
+                        "status": "OK",
+                        "generation": 3,
+                        "ghost": true,
+                        "mythic": true,
+                        "faction": "",
+                        "children": [
+                            {
+                                "name": "ligrhv",
+                                "clan": "Nosferatu",
+                                "family": "Nosferatu",
+                                "sire": "Absimilard",
+                                "condition": "OK",
+                                "status": "OK",
+                                "generation": 4,
+                                "ghost": true,
+                                "mythic": false,
+                                "faction": "",
+                                "children": [
+                                    {
+                                        "name": "trrlqu",
+                                        "clan": "Nosferatu",
+                                        "family": "Nosferatu",
+                                        "sire": "ligrhv",
+                                        "condition": "OK",
+                                        "status": "OK",
+                                        "generation": 5,
+                                        "ghost": true,
+                                        "mythic": false,
+                                        "faction": "",
+                                        "children": [
+                                            {
+                                                "name": "vuqhlw",
+                                                "clan": "Nosferatu",
+                                                "family": "Nosferatu",
+                                                "sire": "trrlqu",
+                                                "condition": "OK",
+                                                "status": "OK",
+                                                "generation": "6",
+                                                "ghost": true,
+                                                "mythic": false,
+                                                "faction": "",
+                                                "children": [
+                                                    {
+                                                        "name": "Bismark",
+                                                        "clan": "Nosferatu",
+                                                        "family": "Nosferatu",
+                                                        "condition": "OK",
+                                                        "status": "OK",
+                                                        "sire": "vuqhlw",
+                                                        "generation": 7,
+                                                        "ghost": false,
+                                                        "faction": "Camarilla",
+                                                        "rid": "bismark",
+                                                        "children": [
+                                                            {
+                                                                "name": "Camilla",
+                                                                "clan": "Nosferatu",
+                                                                "family": "Nosferatu",
+                                                                "condition": "DEAD",
+                                                                "status": "OK+",
+                                                                "sire": "Bismark",
+                                                                "generation": 8,
+                                                                "ghost": false,
+                                                                "faction": "Camarilla",
+                                                                "rid": "camilla",
+                                                                "children": [
+                                                                    {
+                                                                        "name": "Thorsten",
+                                                                        "clan": "Nosferatu",
+                                                                        "family": "Nosferatu",
+                                                                        "condition": "OK",
+                                                                        "status": "OK",
+                                                                        "sire": "Camilla",
+                                                                        "generation": 9,
+                                                                        "ghost": false,
+                                                                        "faction": "Camarilla",
+                                                                        "rid": "thorsten",
+                                                                        "children": [],
+                                                                        "ghouls": "Unknown 0"
+                                                                    },
+                                                                    {
+                                                                        "name": "Hans",
+                                                                        "clan": "Nosferatu",
+                                                                        "family": "Nosferatu",
+                                                                        "condition": "OK",
+                                                                        "status": "OK",
+                                                                        "sire": "Camilla",
+                                                                        "generation": 9,
+                                                                        "ghost": false,
+                                                                        "faction": "Camarilla",
+                                                                        "rid": "hans",
+                                                                        "children": [],
+                                                                        "ghouls": "Unknown 0,Unknown 1"
+                                                                    },
+                                                                    {
+                                                                        "name": "Joseph",
+                                                                        "clan": "Nosferatu",
+                                                                        "family": "Nosferatu",
+                                                                        "condition": "OK",
+                                                                        "status": "OK",
+                                                                        "sire": "Camilla",
+                                                                        "generation": 9,
+                                                                        "ghost": false,
+                                                                        "faction": "Camarilla",
+                                                                        "rid": "joseph",
+                                                                        "children": [],
+                                                                        "ghouls": "Unknown 0,Unknown 1"
+                                                                    }
+                                                                ],
+                                                                "ghouls": "Unknown 0,Unknown 1"
+                                                            }
+                                                        ],
+                                                        "ghouls": "Edmund von Rotturm,Leon Fritzmann,Unknown 0"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Set",
+                        "clan": "Setite",
+                        "family": "Setite",
+                        "sire": "Zillah",
+                        "condition": "OK",
+                        "status": "OK",
+                        "generation": 3,
+                        "ghost": true,
+                        "mythic": true,
+                        "faction": "",
+                        "children": []
+                    },
+                    {
+                        "name": "Haqim",
+                        "clan": "Assamite",
+                        "family": "Assamite",
+                        "sire": "Zillah",
+                        "condition": "OK",
+                        "status": "OK",
+                        "generation": 3,
+                        "ghost": true,
+                        "mythic": true,
+                        "faction": "",
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "name": "The Crone",
+                "clan": "",
+                "family": "",
+                "sire": "Caine",
+                "condition": "OK",
+                "status": "OK",
+                "generation": 2,
+                "ghost": true,
+                "mythic": true,
+                "faction": "",
+                "children": [
+                    {
+                        "name": "Ravnos",
+                        "clan": "Ravnos",
+                        "family": "Ravnos",
+                        "sire": "The Crone",
+                        "condition": "OK",
+                        "status": "OK",
+                        "generation": 3,
+                        "ghost": true,
+                        "mythic": true,
+                        "faction": "",
+                        "children": []
+                    },
+                    {
+                        "name": "The Elder One",
+                        "clan": "Tzimisce",
+                        "family": "Tzimisce",
+                        "sire": "The Crone",
+                        "condition": "OK",
+                        "status": "OK",
+                        "generation": 3,
+                        "ghost": true,
+                        "mythic": true,
+                        "faction": "",
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "name": "Lilith",
+                "clan": "",
+                "family": "",
+                "sire": "Caine",
+                "condition": "OK",
+                "status": "OK",
+                "generation": 2,
+                "ghost": true,
+                "mythic": true,
+                "faction": "",
+                "children": [
+                    {
+                        "name": "Ennoia",
+                        "clan": "Gangrel",
+                        "family": "Gangrel",
+                        "sire": "Lilith",
+                        "condition": "OK",
+                        "status": "OK",
+                        "generation": 3,
+                        "ghost": true,
+                        "mythic": true,
+                        "faction": "",
+                        "children": [
+                            {
+                                "name": "scswfl",
+                                "clan": "Gangrel",
+                                "family": "Gangrel",
+                                "sire": "Ennoia",
+                                "condition": "OK",
+                                "status": "OK",
+                                "generation": 4,
+                                "ghost": true,
+                                "mythic": false,
+                                "faction": "",
+                                "children": [
+                                    {
+                                        "name": "jbbjok",
+                                        "clan": "Gangrel",
+                                        "family": "Gangrel",
+                                        "sire": "scswfl",
+                                        "condition": "OK",
+                                        "status": "OK",
+                                        "generation": 5,
+                                        "ghost": true,
+                                        "mythic": false,
+                                        "faction": "",
+                                        "children": [
+                                            {
+                                                "name": "szzxqo",
+                                                "clan": "Gangrel",
+                                                "family": "Gangrel",
+                                                "sire": "jbbjok",
+                                                "condition": "OK",
+                                                "status": "OK",
+                                                "generation": 6,
+                                                "ghost": true,
+                                                "mythic": false,
+                                                "faction": "",
+                                                "children": [
+                                                    {
+                                                        "name": "ujpzqy",
+                                                        "clan": "Gangrel",
+                                                        "family": "Gangrel",
+                                                        "sire": "szzxqo",
+                                                        "condition": "OK",
+                                                        "status": "OK",
+                                                        "generation": "7",
+                                                        "ghost": true,
+                                                        "mythic": false,
+                                                        "faction": "",
+                                                        "children": [
+                                                            {
+                                                                "name": "Fritz Dole",
+                                                                "clan": "Gangrel",
+                                                                "family": "Gangrel",
+                                                                "condition": "DEAD",
+                                                                "status": "OK+",
+                                                                "sire": "ujpzqy",
+                                                                "generation": 8,
+                                                                "ghost": false,
+                                                                "faction": "Independant",
+                                                                "rid": "fritz_dole",
+                                                                "children": [
+                                                                    {
+                                                                        "name": "Stefan",
+                                                                        "clan": "Gangrel",
+                                                                        "family": "Gangrel",
+                                                                        "condition": "OK",
+                                                                        "status": "OK+",
+                                                                        "sire": "Fritz Dole",
+                                                                        "generation": 9,
+                                                                        "ghost": false,
+                                                                        "faction": "Independant",
+                                                                        "rid": "stefan",
+                                                                        "children": [
+                                                                            {
+                                                                                "name": "Nathanael",
+                                                                                "clan": "Gangrel",
+                                                                                "family": "Gangrel",
+                                                                                "condition": "OK",
+                                                                                "status": "OK+",
+                                                                                "sire": "Stefan",
+                                                                                "generation": 10,
+                                                                                "ghost": false,
+                                                                                "faction": "Independant",
+                                                                                "rid": "nathanael",
+                                                                                "children": [],
+                                                                                "ghouls": ""
+                                                                            }
+                                                                        ],
+                                                                        "ghouls": "Unknown 0,Unknown 1,Unknown 2"
+                                                                    },
+                                                                    {
+                                                                        "name": "Elisa",
+                                                                        "clan": "Gangrel",
+                                                                        "family": "Gangrel",
+                                                                        "condition": "OK",
+                                                                        "status": "OK+",
+                                                                        "sire": "Fritz Dole",
+                                                                        "generation": 9,
+                                                                        "ghost": false,
+                                                                        "faction": "Independant",
+                                                                        "rid": "elisa",
+                                                                        "children": [],
+                                                                        "ghouls": "Unknown 0,Unknown 1,Unknown 2"
+                                                                    }
+                                                                ],
+                                                                "ghouls": ""
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "xlpqla",
+        "clan": "Caitiff",
+        "family": "Caitiff",
+        "sire": "TBD",
+        "condition": "OK",
+        "status": "OK",
+        "generation": 1,
+        "ghost": true,
+        "mythic": false,
+        "faction": "",
+        "children": [
+            {
+                "name": "vglhco",
+                "clan": "Caitiff",
+                "family": "Caitiff",
+                "sire": "xlpqla",
+                "condition": "OK",
+                "status": "OK",
+                "generation": 2,
+                "ghost": true,
+                "mythic": false,
+                "faction": "",
+                "children": [
+                    {
+                        "name": "nhsslc",
+                        "clan": "Caitiff",
+                        "family": "Caitiff",
+                        "sire": "vglhco",
+                        "condition": "OK",
+                        "status": "OK",
+                        "generation": 3,
+                        "ghost": true,
+                        "mythic": false,
+                        "faction": "",
+                        "children": [
+                            {
+                                "name": "vmazjg",
+                                "clan": "Caitiff",
+                                "family": "Caitiff",
+                                "sire": "nhsslc",
+                                "condition": "OK",
+                                "status": "OK",
+                                "generation": 4,
+                                "ghost": true,
+                                "mythic": false,
+                                "faction": "",
+                                "children": [
+                                    {
+                                        "name": "qeffgt",
+                                        "clan": "Caitiff",
+                                        "family": "Caitiff",
+                                        "sire": "vmazjg",
+                                        "condition": "OK",
+                                        "status": "OK",
+                                        "generation": 5,
+                                        "ghost": true,
+                                        "mythic": false,
+                                        "faction": "",
+                                        "children": [
+                                            {
+                                                "name": "ktnjsj",
+                                                "clan": "Caitiff",
+                                                "family": "Caitiff",
+                                                "sire": "qeffgt",
+                                                "condition": "OK",
+                                                "status": "OK",
+                                                "generation": 6,
+                                                "ghost": true,
+                                                "mythic": false,
+                                                "faction": "",
+                                                "children": [
+                                                    {
+                                                        "name": "pdgszh",
+                                                        "clan": "Caitiff",
+                                                        "family": "Caitiff",
+                                                        "sire": "ktnjsj",
+                                                        "condition": "OK",
+                                                        "status": "OK",
+                                                        "generation": 7,
+                                                        "ghost": true,
+                                                        "mythic": false,
+                                                        "faction": "",
+                                                        "children": [
+                                                            {
+                                                                "name": "dlihtl",
+                                                                "clan": "Caitiff",
+                                                                "family": "Caitiff",
+                                                                "sire": "pdgszh",
+                                                                "condition": "OK",
+                                                                "status": "OK",
+                                                                "generation": "8",
+                                                                "ghost": true,
+                                                                "mythic": false,
+                                                                "faction": "",
+                                                                "children": [
+                                                                    {
+                                                                        "name": "Sonia Fritzel",
+                                                                        "clan": "Caitiff",
+                                                                        "family": "Caitiff",
+                                                                        "condition": "OK",
+                                                                        "status": "OK+",
+                                                                        "sire": "dlihtl",
+                                                                        "generation": 9,
+                                                                        "ghost": false,
+                                                                        "faction": "Camarilla",
+                                                                        "rid": "sonia_fritzel",
+                                                                        "children": [],
+                                                                        "ghouls": ""
+                                                                    },
+                                                                    {
+                                                                        "name": "qtooej",
+                                                                        "clan": "Caitiff",
+                                                                        "family": "Caitiff",
+                                                                        "sire": "dlihtl",
+                                                                        "condition": "OK",
+                                                                        "status": "OK",
+                                                                        "generation": "9",
+                                                                        "ghost": true,
+                                                                        "mythic": false,
+                                                                        "faction": "",
+                                                                        "children": [
+                                                                            {
+                                                                                "name": "Sebastian Kyne",
+                                                                                "clan": "Caitiff",
+                                                                                "family": "Caitiff",
+                                                                                "condition": "OK",
+                                                                                "status": "OK",
+                                                                                "sire": "qtooej",
+                                                                                "generation": 10,
+                                                                                "ghost": false,
+                                                                                "faction": "Camarilla",
+                                                                                "rid": "sebastian_kyne",
+                                                                                "children": [],
+                                                                                "ghouls": "Unknown 0"
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }

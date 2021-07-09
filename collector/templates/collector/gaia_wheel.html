@@ -1,0 +1,9 @@
+{% load static %}
+<script>
+    let data = {{data|safe}};
+    gw = new GaiaWheel(data);
+    gw.perform();
+</script>
+
+
+

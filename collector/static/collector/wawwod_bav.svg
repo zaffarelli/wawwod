@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="122.31979mm"
+   height="109.78545mm"
+   viewBox="0 0 122.31979 109.78545"
+   version="1.1"
+   id="svg8"
+   inkscape:version="1.0.2 (e86c870879, 2021-01-15)"
+   sodipodi:docname="wawwod_bav.svg"
+   inkscape:export-filename="/home/zaffarelli/Perso/github/wawwod/collector/static/collector/wawwod_bav.png"
+   inkscape:export-xdpi="104.3591"
+   inkscape:export-ydpi="104.3591">
+  <defs
+     id="defs2">
+    <rect
+       x="70.031898"
+       y="75.819664"
+       width="10.639439"
+       height="16.161434"
+       id="rect843" />
+    <filter
+       inkscape:label="Metallized Ridge"
+       inkscape:menu="Ridges"
+       inkscape:menu-tooltip="Gel Ridge metallized at its top"
+       height="2"
+       y="-0.5"
+       width="2"
+       x="-0.5"
+       style="color-interpolation-filters:sRGB"
+       id="filter3060">
+      <feGaussianBlur
+         stdDeviation="1"
+         result="result1"
+         id="feGaussianBlur3036" />
+      <feGaussianBlur
+         stdDeviation="8"
+         result="result6"
+         in="result1"
+         id="feGaussianBlur3038" />
+      <feComposite
+         operator="atop"
+         in="result6"
+         in2="result1"
+         result="result8"
+         id="feComposite3040" />
+      <feComposite
+         operator="xor"
+         result="fbSourceGraphic"
+         in="result6"
+         in2="result8"
+         id="feComposite3042" />
+      <feColorMatrix
+         result="fbSourceGraphicAlpha"
+         in="fbSourceGraphic"
+         values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 2 0 "
+         id="feColorMatrix3044" />
+      <feGaussianBlur
+         result="result0"
+         in="fbSourceGraphicAlpha"
+         stdDeviation="2.5"
+         id="feGaussianBlur3046" />
+      <feSpecularLighting
+         specularExponent="35"
+         specularConstant="1"
+         surfaceScale="4"
+         lighting-color="#ffffff"
+         result="result1"
+         in="result0"
+         id="feSpecularLighting3050">
+        <fePointLight
+           z="20000"
+           y="-10000"
+           x="-5000"
+           id="fePointLight3048" />
+      </feSpecularLighting>
+      <feComposite
+         operator="in"
+         result="result2"
+         in="result1"
+         in2="fbSourceGraphicAlpha"
+         id="feComposite3052" />
+      <feComposite
+         k3="1"
+         k2="1"
+         operator="arithmetic"
+         result="result4"
+         in="fbSourceGraphic"
+         in2="result2"
+         id="feComposite3054"
+         k1="0"
+         k4="0" />
+      <feComposite
+         operator="atop"
+         in2="result4"
+         result="result91"
+         id="feComposite3056" />
+      <feBlend
+         mode="multiply"
+         in2="result91"
+         id="feBlend3058" />
+    </filter>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.8567357"
+     inkscape:cx="256.20082"
+     inkscape:cy="213.40331"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1014"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-49.697934,-97.919235)">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.1111px;line-height:1.25;font-family:'Nimbus Sans Narrow';-inkscape-font-specification:'Nimbus Sans Narrow, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:#f8f8f8;stroke-width:0.264583;stroke-opacity:0.778956"
+       x="71.233749"
+       y="74.824516"
+       id="text839"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><tspan
+         sodipodi:role="line"
+         id="tspan837"
+         x="71.233749"
+         y="74.824516"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.5778px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke:#f8f8f8;stroke-width:0.264583;stroke-opacity:0.778956">MUNICH</tspan></text>
+    <text
+       xml:space="preserve"
+       id="text841"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect843);fill:#000000;fill-opacity:1;stroke:none;"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <g
+       id="g913"
+       transform="translate(0,2.707395)">
+      <path
+         style="mix-blend-mode:color-dodge;fill:#d3998c;fill-opacity:1;stroke:#87400b;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:0.793875;filter:url(#filter3060)"
+         d="m 73.100973,175.88244 c 1.07689,-5.56718 5.01467,-9.06869 8.50299,-13.18783 1.59779,-1.88673 2.48464,-4.21235 3.83734,-6.24399 0.52518,-0.78878 2.99484,-3.72904 3.71452,-4.4532 1.63417,-1.64434 3.59456,-3.04087 5.13101,-4.79392 1.02569,-1.17028 2.39793,-2.00519 3.43722,-3.04448 0.28891,-0.46062 0.26048,-0.84023 0.75595,-0.76334 0.56041,-0.56479 1.07261,-1.61489 1.51781,-2.28705 0.404247,-0.61031 2.626007,-2.22416 3.096157,-2.68865 0.32899,-0.32502 0.41395,-0.85856 0.76925,-1.1546 0.44133,-0.36773 1.06947,-0.44321 1.54143,-0.77072 0.21219,-0.14724 4.42874,-3.66034 4.6243,-3.83439 1.9607,-2.79403 2.14736,-3.12669 4.64213,-5.65519 1.09218,-1.75713 1.26605,-1.44295 4.84272,-4.60036 0.13883,-0.0714 0.50927,-0.267 0.35731,-0.30268 -0.65605,0.98742 -1.63078,2.36669 -2.39688,3.26038 -2.41369,3.44128 -4.37045,4.64891 -8.36771,10.82066 -0.7798,1.17047 -3.19428,4.1221 -4.14186,5.30796 -0.97256,1.21711 -2.09219,2.15576 -3.05186,3.43574 -0.87017,0.7369 -1.53773,3.59267 -2.650267,3.42098 -0.60846,0.62037 -0.67831,1.61044 -1.1546,2.33725 -0.78552,2.02123 -2.77511,3.7054 -3.80191,4.95651 -0.2393,0.31855 -4.03271,2.55524 -4.21089,2.9116 -1.0207,2.0414 -3.17477,2.52307 -5.04989,4.45635 -9.19489,9.48005 -10.79013,12.87297 -11.94427,12.87297"
+         id="path847-6"
+         sodipodi:nodetypes="cssssccssssccccccsccccssc" />
+      <path
+         style="mix-blend-mode:color-dodge;fill:#d3998c;fill-opacity:1;stroke:#87400b;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:0.793875;filter:url(#filter3060)"
+         d="m 87.418858,178.10709 c 1.0769,-5.56718 5.01467,-9.06869 8.50299,-13.18783 1.5978,-1.88674 2.48465,-4.21236 3.83735,-6.24399 0.525182,-0.78879 3.500072,-3.08366 4.219752,-3.80782 1.63417,-1.64434 3.08933,-3.68626 4.62578,-5.43931 1.02569,-1.17027 2.39793,-2.00518 3.43722,-3.04448 0.28891,-0.46061 0.26048,-0.84023 0.75595,-0.76334 0.56041,-0.56478 1.07261,-1.61489 1.51781,-2.28704 0.40425,-0.61032 2.62601,-2.22416 3.09616,-2.68866 0.32899,-0.32502 0.41395,-0.85856 0.76925,-1.1546 0.44133,-0.36773 1.06947,-0.44321 1.54143,-0.77071 0.21219,-0.14724 4.42874,-3.66034 4.6243,-3.83439 1.9607,-2.79403 2.14736,-3.12669 4.64213,-5.6552 1.09218,-1.75712 1.26605,-1.44295 4.84271,-4.60036 0.13883,-0.0714 0.50927,-0.267 0.35731,-0.30268 -0.65605,0.98743 -1.63078,2.3667 -2.39688,3.26038 -2.41368,3.44129 -4.37044,4.64892 -8.3677,10.82067 -0.7798,1.17046 -3.19428,4.1221 -4.14186,5.30795 -0.97256,1.21712 -2.09219,2.15577 -3.05186,3.43574 -0.87017,0.7369 -1.53773,3.59267 -2.65027,3.42098 -0.60846,0.62038 -0.67831,1.61045 -1.1546,2.33726 -0.78552,2.02123 -2.77511,3.70539 -3.80191,4.95651 -0.2393,0.31855 -4.03271,2.55523 -4.21089,2.91159 -1.0207,2.0414 -3.17477,2.52308 -5.049902,4.45636 -9.19488,9.48005 -10.79012,12.87297 -11.94427,12.87297"
+         id="path847-6-0"
+         sodipodi:nodetypes="cssssccssssccccccsccccssc" />
+      <path
+         style="mix-blend-mode:color-dodge;fill:#d3998c;fill-opacity:1;stroke:#87400b;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:0.793875;filter:url(#filter3060)"
+         d="m 67.612158,164.75405 c 3.001054,-7.58003 4.603093,-8.67845 8.770617,-15.04607 0.52519,-0.78879 3.50007,-3.08366 4.21975,-3.80782 1.63417,-1.64434 3.08932,-3.68626 4.62578,-5.43931 1.02568,-1.17027 2.39792,-2.00518 3.43722,-3.04448 0.2889,-0.46061 0.26047,-0.84023 0.75595,-0.76333 0.56041,-0.56479 1.07261,-1.6149 1.51781,-2.28705 0.40424,-0.61032 2.626,-2.22416 3.09616,-2.68866 3.65514,-3.00355 7.440005,-6.51832 8.380515,-7.32669 -2.519155,4.06669 -5.955175,7.35022 -7.967815,10.42439 -1.03015,1.77772 -1.61516,1.65636 -1.59388,3.4091 -0.87017,0.7369 -1.53773,3.59267 -2.65026,3.42098 -0.60847,0.62038 -0.67832,1.61044 -1.1546,2.33725 -0.7855,2.02121 -2.77515,3.70541 -3.80191,4.95651 -0.2393,0.31855 -17.457156,15.49882 -17.635337,15.85518"
+         id="path847"
+         sodipodi:nodetypes="ccssccscccccccc"
+         inkscape:export-xdpi="104.3591"
+         inkscape:export-ydpi="104.3591" />
+      <path
+         style="mix-blend-mode:color-dodge;fill:#d3998c;fill-opacity:1;stroke:#87400b;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:0.793875;filter:url(#filter3060)"
+         d="m 110.50747,171.06226 c 2.68459,-6.44355 4.956,-7.70725 8.89893,-13.73167 0.52518,-0.78878 3.50007,-3.08365 4.21975,-3.80781 1.63417,-1.64435 3.08933,-3.68626 4.62578,-5.43931 1.02569,-1.17028 2.39793,-2.00519 3.43722,-3.04448 0.28891,-0.46062 0.26048,-0.84023 0.75595,-0.76334 0.56041,-0.56479 1.07261,-1.6149 1.51781,-2.28705 0.40425,-0.61031 2.62601,-2.22416 3.09616,-2.68865 0.32899,-0.32502 0.41395,-0.85856 0.76925,-1.1546 0.44133,-0.36773 1.06947,-0.44321 1.54143,-0.77072 0.21219,-0.14724 4.42874,-3.66034 4.6243,-3.83439 2.44134,-4.21904 4.69572,-5.67548 7.52026,-8.60045 -3.28701,5.05468 -6.66719,9.4113 -8.44269,12.12326 -0.7798,1.17047 -3.19428,4.1221 -4.14186,5.30796 -0.97256,1.21711 -2.09219,2.15576 -3.05186,3.43574 -0.87017,0.7369 -1.53773,3.59266 -2.65027,3.42098 -0.60846,0.62037 -0.67831,1.61044 -1.1546,2.33725 -0.2958,0.45139 -2.67148,4.20406 -3.03857,4.57115 -0.20155,0.20155 -0.59214,0.15747 -0.76334,0.38536 -0.2393,0.31855 -4.03271,2.55524 -4.21089,2.9116 -1.0207,2.0414 -11.67763,9.69589 -13.55276,11.62917"
+         id="path847-6-0-2"
+         sodipodi:nodetypes="ccssccsssscccsccssssc"
+         inkscape:export-xdpi="104.3591"
+         inkscape:export-ydpi="104.3591" />
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#ddc490;fill-opacity:1;stroke:#261102;stroke-width:0.264583;stroke-opacity:1"
+       x="111.95458"
+       y="130.7019"
+       id="text2435-2"
+       inkscape:export-xdpi="104.3591"
+       inkscape:export-ydpi="104.3591"><tspan
+         sodipodi:role="line"
+         x="111.95458"
+         y="130.7019"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5833px;font-family:'Cinzel Decorative';-inkscape-font-specification:'Cinzel Decorative, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#ddc490;fill-opacity:1;stroke:#261102;stroke-width:0.264583;stroke-opacity:1"
+         id="tspan2437-4" /><tspan
+         sodipodi:role="line"
+         x="111.95458"
+         y="154.87399"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.5778px;font-family:UnifrakturMaguntia;-inkscape-font-specification:'UnifrakturMaguntia, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#ddc490;fill-opacity:1;stroke:#261102;stroke-width:0.264583;stroke-opacity:1"
+         id="tspan2441-0">Bavaria</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="112.47118"
+       y="136.66054"
+       id="text2435"
+       inkscape:export-xdpi="104.3591"
+       inkscape:export-ydpi="104.3591"><tspan
+         sodipodi:role="line"
+         x="112.47118"
+         y="136.66054"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:'Marcellus SC';-inkscape-font-specification:'Marcellus SC, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;stroke-width:0.264583"
+         id="tspan2437">What a Wonderful World of Darkness</tspan><tspan
+         sodipodi:role="line"
+         x="112.47118"
+         y="149.88966"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.5778px;font-family:'Who asks Satan';-inkscape-font-specification:'Who asks Satan, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;stroke-width:0.264583"
+         id="tspan2441" /></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="113.58365"
+       y="160.33009"
+       id="text2435-9"
+       inkscape:export-xdpi="104.3591"
+       inkscape:export-ydpi="104.3591"><tspan
+         sodipodi:role="line"
+         x="113.58365"
+         y="160.33009"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:Balthazar;-inkscape-font-specification:'Balthazar, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;stroke-width:0.264583"
+         id="tspan943">Kristall Weissbier Familientradition seit 1908</tspan><tspan
+         sodipodi:role="line"
+         x="113.58365"
+         y="173.55922"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.5778px;font-family:'Who asks Satan';-inkscape-font-specification:'Who asks Satan, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;stroke-width:0.264583"
+         id="tspan2441-5" /></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="113.29173"
+       y="163.90799"
+       id="text2435-9-0"
+       inkscape:export-xdpi="104.3591"
+       inkscape:export-ydpi="104.3591"><tspan
+         sodipodi:role="line"
+         x="113.29173"
+         y="163.90799"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;font-family:Balthazar;-inkscape-font-specification:'Balthazar, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;stroke-width:0.264583"
+         id="tspan943-1">Gebraut nach dem bayerischen reinheitsgebot</tspan><tspan
+         sodipodi:role="line"
+         x="113.29173"
+         y="177.13712"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.5778px;font-family:'Who asks Satan';-inkscape-font-specification:'Who asks Satan, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;stroke-width:0.264583"
+         id="tspan2441-5-0" /></text>
+  </g>
+</svg>

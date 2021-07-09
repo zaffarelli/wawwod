@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<django-objects version="1.0">
+    <object model="collector.chronicle" pk="1">
+        <field name="name" type="CharField">New York By Night</field>
+        <field name="acronym" type="CharField">NYBN</field>
+        <field name="era" type="IntegerField">2006</field>
+        <field name="main_creature" type="CharField">kindred</field>
+        <field name="image_logo" type="CharField">nybn_wawwod.png</field>
+        <field name="description" type="TextField">The current chronicle, that started in 1997 and up to 2006. Losely
+            based on the Great Quail work.
+        </field>
+        <field name="is_current" type="BooleanField">False</field>
+    </object>
+    <object model="collector.chronicle" pk="2">
+        <field name="name" type="CharField">Rage Across New York</field>
+        <field name="acronym" type="CharField">RANY</field>
+        <field name="era" type="IntegerField">2002</field>
+        <field name="main_creature" type="CharField">garou</field>
+        <field name="image_logo" type="CharField">rany_wawwod.png</field>
+        <field name="description" type="TextField">The Syracuse werewolf chronicle.</field>
+        <field name="is_current" type="BooleanField">False</field>
+    </object>
+    <object model="collector.chronicle" pk="3">
+        <field name="name" type="CharField">Munich by Night</field>
+        <field name="acronym" type="CharField">MBN</field>
+        <field name="era" type="IntegerField">2019</field>
+        <field name="main_creature" type="CharField">kindred</field>
+        <field name="image_logo" type="CharField">mbn_wawwod.png</field>
+        <field name="description" type="TextField">The Camarilla of 2019 before the COVID-19 issue.</field>
+        <field name="is_current" type="BooleanField">False</field>
+    </object>
+    <object model="collector.chronicle" pk="4">
+        <field name="name" type="CharField">Rage Across Munich</field>
+        <field name="acronym" type="CharField">RAM</field>
+        <field name="era" type="IntegerField">2019</field>
+        <field name="main_creature" type="CharField">garou</field>
+        <field name="image_logo" type="CharField">ram_wawwod.png</field>
+        <field name="description" type="TextField">The same context as MBN from the garou point of view.</field>
+        <field name="is_current" type="BooleanField">True</field>
+    </object>
+</django-objects>

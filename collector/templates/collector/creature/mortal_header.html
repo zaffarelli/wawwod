@@ -1,0 +1,105 @@
+{% load wod_filters %}
+    <tr>
+        <th>Age</th>
+        <td class='editable userinput' id='{{c.rid}}__age'>{{c.age}}</td>
+        {% if c.creature == 'kindred' or c.creature == 'ghoul' %}
+        <th>Embrace</th>
+        <td class="editable userinput" id='{{c.rid}}__embrace'>{{ c.embrace }}</td>
+        {% elif c.creature == 'changeling' %}
+        <th>Seeming</th>
+        <td class='editable userinput' id='{{c.rid}}__seeming'>{{c.seeming}}</td>
+
+        {% elif c.creature == 'wraith' %}
+        <th>Time of Death</th>
+        <td class="editable userinput" id='{{c.rid}}__embrace'>{{ c.embrace }}</td>
+        {%else%}
+        <th></th>
+        <td></td>
+        {%endif%}
+        <th>Position</th>
+        <td class="editable userinput" id='{{c.rid}}__position'>{{ c.position }}</td>
+        <th>Nature</th>
+        <td class='editable userinput' id='{{c.rid}}__nature'>{{c.nature}}</td>
+    </tr>
+    <tr>
+        {% if c.creature == 'kindred' or c.creature == 'ghoul' or c.creature == 'wraith' %}
+        <th>True Age</th>
+        <td class='editable userinput' id='{{c.rid}}__trueage'>{{c.trueage}}</td>
+        {% elif c.creature == 'changeling' %}
+        <th>House</th>
+        <td class='editable userinput' id='{{c.rid}}__house'>{{c.house}}</td>
+        {% elif c.creature == 'mage' %}
+        <th>Tradition</th>
+        <td class='editable userinput' id='{{c.rid}}__family'>{{c.family}}</td>
+        {%else%}
+        <th></th>
+        <td></td>
+        {%endif%}
+        <th>Status</th>
+        <td class='editable userinput' id='{{c.rid}}__status'>{{c.status}}</td>
+        <th>Concept</th>
+        <td class='editable userinput' id='{{c.rid}}__concept'>{{ c.concept }}</td>
+        <th>Demeanor</th>
+        <td class='editable userinput' id='{{c.rid}}__demeanor'>{{c.demeanor}}</td>
+    </tr>
+    <tr>
+        {% if c.creature == 'kindred' or c.creature == 'ghoul' %}
+        <th>Clan</th>
+        <td class='editable userinput' id='{{c.rid}}__family'>{{ c.family }}</td>
+        {% elif c.creature == 'garou' or c.creature == 'kinfolk' %}
+        <th>Tribe</th>
+        <td class='editable userinput' id='{{c.rid}}__family'>{{ c.family }}</td>
+        {% elif c.creature == 'wraith' %}
+        <th>Tribe</th>
+        <td class='editable userinput' id='{{c.rid}}__family'>{{ c.family }}</td>
+        {% elif c.creature == 'changeling'  %}
+        <th>Kith</th>
+        <td class='editable userinput' id='{{c.rid}}__family'>{{ c.family }}</td>
+        {% else %}
+        <th></th>
+        <td></td>
+        {% endif %}
+        {% if c.creature == 'kindred' or c.creature == 'ghoul' %}
+            <th>Sire</th>
+            <td class='editable userinput' id='{{c.rid}}__sire'>{{ c.sire }}</td>
+        {% elif c.creature == 'garou' %}
+            <th>Totem Spirit</th>
+            <td class='editable userinput' id='{{c.rid}}__sire'>{{ c.sire }}</td>
+        {% else %}
+            <th></th><td></td>
+        {% endif %}
+        <th>Group</th>
+        <td class='editable userinput' id='{{c.rid}}__group'>{{c.group}}</td>
+        <th>Subgroup</th>
+        <td class='editable userinput' id='{{c.rid}}__groupspec'>{{c.groupspec}}</td>
+        </td>
+    </tr>
+    <tr>
+        <th>Faction</th>
+        <td class='editable userinput' id='{{c.rid}}__faction'>{{ c.faction }}</td>
+        <th>Freebies</th>
+        <td id='{{c.rid}}__freebies'>{{ c.freebies }}</td>
+        <th>Sex</th>
+        <td class='editable userinput' id='{{c.rid}}__sex'>{% if c.sex == False %}Female{%else%}Male{%endif%}</td>
+        <th>Condition</th>
+        <td class='editable userinput' id='{{c.rid}}__condition'>{{c.condition}}</td>
+    </tr>
+
+    <tr>
+        {% if c.creature == 'kindred' %}
+        <th>Torpor</th>
+        <td class='editable userinput' id='{{c.rid}}__timeintorpor'>{{ c.timeintorpor }}</td>
+        {% elif c.creature == 'changeling' %}
+        <th>Motley</th>
+        <td class='editable userinput' id='{{c.rid}}__motley'>{{c.motley}}</td>
+
+        {%else%}
+        <th></th><td></td>
+        {%endif%}
+        <th>Expected Freebies</th>
+        <td id='{{c.rid}}__expectedfreebies'>{{ c.expectedfreebies }}</td>
+        <th>New Name</th>
+        <td class='editable userinput' id='{{c.rid}}__new_name'>{{ c.new_name }}</td>
+        <th>Creature</th>
+        <td class='editable userinput' id='{{c.rid}}__creature'>{{ c.creature }}</td>
+    </tr>

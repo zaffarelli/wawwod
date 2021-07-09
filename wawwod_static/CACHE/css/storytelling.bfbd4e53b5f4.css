@@ -1,0 +1,76 @@
+@font-face {
+  font-family: 'Titre';
+  src: url("/static/storytelling/fonts/marcellus_sc_regular.ttf"); }
+
+@font-face {
+  font-family: 'marcellus_sc_regular';
+  src: url("/static/storytelling/fonts/marcellus_sc_regular.ttf"); }
+
+@font-face {
+  font-family: 'Texte';
+  src: url("/static/storytelling/fonts/marcellus_sc_regular.ttf"); }
+
+@font-face {
+  font-family: 'logo';
+  src: url("/static/storytelling/fonts/ShadowsIntoLight-Regular.ttf"); }
+
+@font-face {
+  font-family: 'wyld';
+  src: url("/static/storytelling/fonts/fanjofey.ttf"); }
+
+@font-face {
+  font-family: 'weaver';
+  src: url("/static/storytelling/fonts/plank.ttf"); }
+
+@font-face {
+  font-family: 'wyrm';
+  src: url("/static/storytelling/fonts/another_danger.otf"); }
+
+@font-face {
+  font-family: 'TexteLibre';
+  src: url("/static/storytelling/fonts/Lato-Regular.ttf"); }
+
+/* line 4, storytelling/static/storytelling/css/storytelling.scss */
+svg {
+  fill: yellow; }
+
+/* line 11, storytelling/static/storytelling/css/storytelling.scss */
+.storytelling {
+  fill: #305030;
+  stroke: #F0F0F0; }
+
+/* line 18, storytelling/static/storytelling/css/storytelling.scss */
+div.box.scene table {
+  background: #3a343e;
+  color: #F0F0F0;
+  border-radius: 5px; }
+  /* line 23, storytelling/static/storytelling/css/storytelling.scss */
+  div.box.scene table tr th {
+    background: #1d301d;
+    font-family: Titre;
+    font-size: 12pt;
+    width: 120px;
+    word-wrap: normal; }
+  /* line 32, storytelling/static/storytelling/css/storytelling.scss */
+  div.box.scene table tr td {
+    padding: 3px;
+    width: 350px;
+    word-wrap: normal;
+    font-family: TexteLibre;
+    font-size: 10pt; }
+
+/* line 43, storytelling/static/storytelling/css/storytelling.scss */
+div.handler {
+  width: 300px;
+  height: 300px;
+  position: fixed;
+  left: 0;
+  top: auto;
+  bottom: 0;
+  right: auto;
+  word-wrap: normal;
+  font-family: TexteLibre;
+  background: #1d301d;
+  color: #F0F0F0;
+  border: 1px solid #F0F0F0;
+  border-radius: 5px; }

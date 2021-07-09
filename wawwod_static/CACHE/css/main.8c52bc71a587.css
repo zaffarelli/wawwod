@@ -1,0 +1,675 @@
+@font-face {
+  font-family: 'Titre';
+  src: url("/static/collector/fonts/marcellus_sc_regular.ttf?da6cf3faafab"); }
+
+@font-face {
+  font-family: 'marcellus_sc_regular';
+  src: url("/static/collector/fonts/marcellus_sc_regular.ttf?da6cf3faafab"); }
+
+@font-face {
+  font-family: 'Texte';
+  src: url("/static/collector/fonts/marcellus_sc_regular.ttf?da6cf3faafab"); }
+
+@font-face {
+  font-family: 'logo';
+  src: url("/static/collector/fonts/ShadowsIntoLight-Regular.ttf?da6cf3faafab"); }
+
+@font-face {
+  font-family: 'wyld';
+  src: url("/static/collector/fonts/fanjofey.ttf?da6cf3faafab"); }
+
+@font-face {
+  font-family: 'weaver';
+  src: url("/static/collector/fonts/plank.ttf?da6cf3faafab"); }
+
+@font-face {
+  font-family: 'wyrm';
+  src: url("/static/collector/fonts/another_danger.otf?da6cf3faafab"); }
+
+@font-face {
+  font-family: 'TexteLibre';
+  src: url("/static/collector/fonts/Lato-Regular.ttf?da6cf3faafab"); }
+
+/* line 51, collector/static/collector/css/main.scss */
+body {
+  font-family: Texte;
+  background: transparent url("/static/collector/colorful-grunge-texture-10.jpg?da6cf3faafab") fixed;
+  color: #101010;
+  min-height: 98%; }
+
+/* line 65, collector/static/collector/css/main.scss */
+.subsection {
+  font-weight: bold;
+  color: #DBCA86;
+  text-decoration: underline; }
+
+/* line 71, collector/static/collector/css/main.scss */
+.pdflink {
+  color: #E5DECA;
+  text-decoration: none;
+  background: #1d1d1d;
+  display: inline-block;
+  padding: 3px; }
+
+/* line 79, collector/static/collector/css/main.scss */
+.ping {
+  background: orange; }
+
+/* line 84, collector/static/collector/css/main.scss */
+.toggle_name {
+  font-weight: bold;
+  font-style: normal;
+  font-family: Titre;
+  width: auto;
+  display: inline-block; }
+
+/* line 93, collector/static/collector/css/main.scss */
+.waiting {
+  cursor: progress;
+  opacity: 0.95; }
+
+/* line 98, collector/static/collector/css/main.scss */
+.golden {
+  color: #ffcc22; }
+
+/* line 102, collector/static/collector/css/main.scss */
+.blank {
+  color: #C0C0C0;
+  opacity: 0.5; }
+
+/* line 107, collector/static/collector/css/main.scss */
+.embedded_link {
+  color: #DBCA86;
+  text-decoration: none; }
+
+/* line 112, collector/static/collector/css/main.scss */
+.custom_glance {
+  cursor: help; }
+
+/* line 116, collector/static/collector/css/main.scss */
+.shown {
+  display: block; }
+
+/* line 120, collector/static/collector/css/main.scss */
+.noPDF:before {
+  content: '(x) '; }
+
+/* Normal --------------------------------------------------------------------*/
+@media all and (min-width: 1024px) {
+  /* line 127, collector/static/collector/css/main.scss */
+  body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    overflow-y: scroll; }
+    /* line 133, collector/static/collector/css/main.scss */
+    body input#userinput {
+      order: 2;
+      border: 1px solid silver;
+      border-radius: 5px;
+      box-shadow: 0 0 5px black;
+      display: inline-block;
+      font-size: 12px;
+      padding: 3px;
+      margin: 0 3px 0 3px;
+      height: 18px; }
+  /* line 145, collector/static/collector/css/main.scss */
+  .wrapper {
+    background: transparent url(/static/collector/css?c4f44f0cc1c6) 100% 100% no-repeat fixed;
+    z-index: 60;
+    width: 100%;
+    min-height: 1200px;
+    padding-top: 0;
+    margin: 0; }
+    /* line 155, collector/static/collector/css/main.scss */
+    .wrapper .caine_roots {
+      background: transparent;
+      width: 100%;
+      display: block;
+      z-index: 60;
+      padding: 0;
+      margin: 0; }
+    /* line 164, collector/static/collector/css/main.scss */
+    .wrapper .details {
+      background: transparent;
+      width: auto;
+      right: 0px;
+      left: auto;
+      top: auto;
+      bottom: 0px;
+      display: block;
+      position: fixed;
+      z-index: 110;
+      transition: all 0.3s ease;
+      box-shadow: -5px -5px 10px #2d2830; }
+      /* line 177, collector/static/collector/css/main.scss */
+      .wrapper .details.hidden {
+        transition: all 0.3s ease;
+        transform: translateX(1000px); } }
+
+/* line 186, collector/static/collector/css/main.scss */
+.charlist {
+  background: #136;
+  color: #FFF;
+  border: 1px solid #CCC;
+  border-radius: 3px;
+  padding: 3px;
+  box-shadow: 0 0 3px #0d2850;
+  font-family: Roboto;
+  font-size: 10pt;
+  background: #136;
+  color: #FFF;
+  border: 1px solid #CCC;
+  border-radius: 3px;
+  padding: 3px;
+  box-shadow: 0 0 3px #0d2850;
+  font-family: Roboto;
+  font-size: 10pt;
+  border-radius: 5px;
+  width: 260px;
+  display: block;
+  position: fixed;
+  z-index: 70;
+  padding-top: 0px;
+  margin: auto;
+  top: 0;
+  bottom: auto;
+  right: 5px;
+  left: auto;
+  box-shadow: 0 0 5px #201d22;
+  transition: all 0.3s ease;
+  border-color: #CCC; }
+  /* line 189, collector/static/collector/css/main.scss */
+  .charlist .pagination {
+    text-align: center;
+    margin-top: 1em;
+    width: 260px; }
+    /* line 195, collector/static/collector/css/main.scss */
+    .charlist .pagination a, .charlist .pagination strong, .charlist .pagination span.nav {
+      background: #136;
+      color: #FFF;
+      border: 1px solid #CCC;
+      border-radius: 3px;
+      padding: 3px;
+      box-shadow: 0 0 3px #0d2850;
+      font-family: Roboto;
+      font-size: 10pt;
+      margin: 0 0.2em;
+      display: inline-block;
+      color: #FFFFFF;
+      font-size: 0.7em;
+      font-family: 'TexteLibre';
+      padding: 0.3em 0.4em;
+      text-decoration: none;
+      cursor: pointer;
+      background: #201d22;
+      border-radius: 5px;
+      width: 2ex; }
+  /* line 218, collector/static/collector/css/main.scss */
+  .charlist .avatar_link {
+    background: #136;
+    color: #FFF;
+    border: 1px solid #CCC;
+    border-radius: 3px;
+    padding: 3px;
+    box-shadow: 0 0 3px #0d2850;
+    font-family: Roboto;
+    font-size: 10pt;
+    margin: 0.5em 1ex 0.5em 1ex;
+    padding: 2px;
+    border-radius: 0 0 5px 0;
+    border-color: #201d22; }
+    /* line 225, collector/static/collector/css/main.scss */
+    .charlist .avatar_link a {
+      text-decoration: none; }
+      /* line 228, collector/static/collector/css/main.scss */
+      .charlist .avatar_link a:hover {
+        color: #3a343e; }
+      /* line 232, collector/static/collector/css/main.scss */
+      .charlist .avatar_link a .small {
+        font-size: 0.75em; }
+  /* line 238, collector/static/collector/css/main.scss */
+  .charlist ul, .charlist ol {
+    width: 260px;
+    text-indent: 0;
+    margin-left: 0;
+    padding-left: 0;
+    list-style-type: none; }
+    /* line 246, collector/static/collector/css/main.scss */
+    .charlist ul li, .charlist ol li {
+      margin: 0; }
+  /* line 271, collector/static/collector/css/main.scss */
+  .charlist.hidden {
+    transform: translateY(-1800px);
+    transition: all 0.3s ease; }
+
+/* Details - Creature Block */
+/* line 280, collector/static/collector/css/main.scss */
+.creature {
+  font-size: 9pt;
+  border-radius: 8px;
+  background: transparent; }
+  /* line 285, collector/static/collector/css/main.scss */
+  .creature.navigator {
+    background: #101010;
+    color: #D0D0D0;
+    text-align: center;
+    font-family: TexteLibre;
+    font-size: 16px; }
+  /* line 294, collector/static/collector/css/main.scss */
+  .creature a:visited, .creature a:link, .creature a:hover, .creature a:active {
+    color: black; }
+  /* line 299, collector/static/collector/css/main.scss */
+  .creature strong {
+    font-family: Titre;
+    font-weight: normal;
+    font-size: 2em;
+    line-height: 1.4em; }
+  /* line 306, collector/static/collector/css/main.scss */
+  .creature table {
+    font-family: Texte;
+    color: black;
+    background: #303030;
+    border: 1px solid #C0C0C0;
+    border-radius: 10px 0 0 0;
+    box-shadow: -2px -2px 8px #101010;
+    margin: auto; }
+    /* line 315, collector/static/collector/css/main.scss */
+    .creature table tr {
+      padding: 0;
+      margin: 0; }
+      /* line 319, collector/static/collector/css/main.scss */
+      .creature table tr th {
+        background: #3a343e;
+        color: #fff;
+        font-size: 9pt;
+        font-family: TexteLibre;
+        font-weight: normal;
+        margin: 0;
+        border: none;
+        width: 110px;
+        border: 2px solid transparent;
+        padding: 1px; }
+        /* line 331, collector/static/collector/css/main.scss */
+        .creature table tr th[colspan='5'] {
+          background: #201d22;
+          height: 90px;
+          padding: 0;
+          padding-left: 3ex;
+          text-align: left; }
+        /* line 339, collector/static/collector/css/main.scss */
+        .creature table tr th.clan_logo {
+          background: #201d22;
+          overflow: hidden;
+          padding: 0; }
+          /* line 344, collector/static/collector/css/main.scss */
+          .creature table tr th.clan_logo img {
+            width: 80px;
+            filter: invert(75%); }
+        /* line 350, collector/static/collector/css/main.scss */
+        .creature table tr th.back {
+          background: #201d22; }
+      /* line 355, collector/static/collector/css/main.scss */
+      .creature table tr:last-child th {
+        border-radius: 0 0 6px 6px; }
+      /* line 359, collector/static/collector/css/main.scss */
+      .creature table tr td {
+        font-size: 8pt;
+        font-family: TexteLibre;
+        text-align: left;
+        margin: 0;
+        padding: 1px;
+        width: 110px;
+        background: transparent;
+        border: 2px solid transparent;
+        color: #E0E0E0; }
+        /* line 370, collector/static/collector/css/main.scss */
+        .creature table tr td[colspan='2'], .creature table tr td[colspan='8'] {
+          border-radius: 5px;
+          background: #101010;
+          color: #E0E0E0;
+          text-align: center;
+          font-family: Titre;
+          font-size: 12pt; }
+        /* line 379, collector/static/collector/css/main.scss */
+        .creature table tr td.topic {
+          background: transparent;
+          font-size: 8pt;
+          font-family: TexteLibre;
+          text-align: left;
+          margin: 0;
+          padding: 1px; }
+        /* line 389, collector/static/collector/css/main.scss */
+        .creature table tr td.editable.userinput.focus {
+          border-color: #F781F7; }
+    /* line 396, collector/static/collector/css/main.scss */
+    .creature table.freewidth tr td {
+      width: auto; }
+
+/* line 406, collector/static/collector/css/main.scss */
+.mortal table tr.tainted {
+  background: repeating-linear-gradient(90deg, #334ba9, #424748 25%, #76878f 100%); }
+  /* line 409, collector/static/collector/css/main.scss */
+  .mortal table tr.tainted th.tainted {
+    background: transparent; }
+
+/* line 418, collector/static/collector/css/main.scss */
+.fomori table tr.tainted {
+  background: repeating-linear-gradient(90deg, #567737, #424748 25%, #76878f 100%); }
+  /* line 421, collector/static/collector/css/main.scss */
+  .fomori table tr.tainted th.tainted {
+    background: transparent; }
+
+/* line 431, collector/static/collector/css/main.scss */
+.Camarilla.kindred table tr.tainted {
+  background: repeating-linear-gradient(90deg, #104010, #101010 25%, #3a3c35 100%); }
+  /* line 434, collector/static/collector/css/main.scss */
+  .Camarilla.kindred table tr.tainted th.tainted {
+    background: transparent; }
+
+/* line 443, collector/static/collector/css/main.scss */
+.Sabbat.kindred table tr.tainted {
+  background: repeating-linear-gradient(90deg, #401010, #101010 25%, #3a3c35 100%); }
+  /* line 446, collector/static/collector/css/main.scss */
+  .Sabbat.kindred table tr.tainted th.tainted {
+    background: transparent; }
+
+/* line 456, collector/static/collector/css/main.scss */
+.ghoul table tr.tainted {
+  background: repeating-linear-gradient(90deg, #104010, #424748 25%, #3a3c35 100%); }
+  /* line 459, collector/static/collector/css/main.scss */
+  .ghoul table tr.tainted th.tainted {
+    background: transparent; }
+
+/* line 468, collector/static/collector/css/main.scss */
+.garou table tr.tainted {
+  background: repeating-linear-gradient(90deg, #150637, #531803 25%, #623804 100%); }
+  /* line 471, collector/static/collector/css/main.scss */
+  .garou table tr.tainted th.tainted {
+    background: transparent; }
+
+/* line 480, collector/static/collector/css/main.scss */
+.kinfolk table tr.tainted {
+  background: repeating-linear-gradient(90deg, #150637, #424748 25%, #76878f 100%); }
+  /* line 483, collector/static/collector/css/main.scss */
+  .kinfolk table tr.tainted th.tainted {
+    background: transparent; }
+
+/* line 492, collector/static/collector/css/main.scss */
+.Pentex table tr.tainted {
+  background: repeating-linear-gradient(90deg, #567737, #531803 25%, #3a3c35 100%); }
+  /* line 495, collector/static/collector/css/main.scss */
+  .Pentex table tr.tainted th.tainted {
+    background: transparent; }
+
+/* line 503, collector/static/collector/css/main.scss */
+.list .goodies {
+  width: auto;
+  height: auto;
+  margin: 5px;
+  text-align: center;
+  padding: 5px; }
+  /* line 510, collector/static/collector/css/main.scss */
+  .list .goodies span {
+    cursor: pointer;
+    font-family: Titre; }
+
+/* line 517, collector/static/collector/css/main.scss */
+.bar {
+  position: fixed;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+  width: 100%;
+  top: 0;
+  padding: 3px;
+  height: auto;
+  background: transparent;
+  margin: 0;
+  color: white;
+  z-index: 100; }
+  /* line 533, collector/static/collector/css/main.scss */
+  .bar .pull_down {
+    order: 1;
+    display: inline-block;
+    font-family: TexteLibre;
+    font-size: 12px;
+    height: 24px;
+    margin: 0 3px 0 3px;
+    width: 300px;
+    background: #136;
+    color: #FFF;
+    border: 1px solid #CCC;
+    border-radius: 3px;
+    padding: 3px;
+    box-shadow: 0 0 3px #0d2850;
+    font-family: Roboto;
+    font-size: 10pt; }
+    /* line 546, collector/static/collector/css/main.scss */
+    .bar .pull_down.chronicle {
+      font-family: Titre;
+      font-size: 16px;
+      text-align: center; }
+    /* line 552, collector/static/collector/css/main.scss */
+    .bar .pull_down ul.drop_down {
+      display: none;
+      list-style-type: none;
+      text-indent: 0;
+      margin-left: 0;
+      padding-left: 2ex; }
+      /* line 560, collector/static/collector/css/main.scss */
+      .bar .pull_down ul.drop_down li {
+        color: #C0C0C0;
+        padding: 2px;
+        margin: 2px;
+        border-radius: 5px; }
+    /* line 568, collector/static/collector/css/main.scss */
+    .bar .pull_down:hover {
+      height: auto; }
+      /* line 573, collector/static/collector/css/main.scss */
+      .bar .pull_down:hover ul.drop_down {
+        display: block; }
+        /* line 577, collector/static/collector/css/main.scss */
+        .bar .pull_down:hover ul.drop_down li.wod {
+          background: #544b5a; }
+        /* line 582, collector/static/collector/css/main.scss */
+        .bar .pull_down:hover ul.drop_down li:hover {
+          color: #FFFFFF;
+          background: #664411;
+          cursor: pointer; }
+
+/* line 593, collector/static/collector/css/main.scss */
+#caine_roots {
+  text-align: center;
+  font-size: 14px; }
+
+/* line 598, collector/static/collector/css/main.scss */
+svg {
+  margin: 10px;
+  border: 1px dashed #111;
+  background: transparent;
+  margin-top: 50px; }
+  /* line 609, collector/static/collector/css/main.scss */
+  svg rect.overlay {
+    cursor: move;
+    stroke-width: 0px;
+    stroke: #701070;
+    fill: transparent;
+    opacity: 0.25; }
+  /* line 617, collector/static/collector/css/main.scss */
+  svg rect.band {
+    fill: #AAA;
+    stroke: #505050;
+    stroke-width: 0; }
+    /* line 622, collector/static/collector/css/main.scss */
+    svg rect.band.ghost {
+      opacity: 0; }
+    /* line 626, collector/static/collector/css/main.scss */
+    svg rect.band.dead {
+      fill: #A09090; }
+  /* line 631, collector/static/collector/css/main.scss */
+  svg rect.frame {
+    fill: transparent;
+    stroke: #888;
+    stroke-width: 1pt; }
+    /* line 636, collector/static/collector/css/main.scss */
+    svg rect.frame.ghost {
+      opacity: 0; }
+    /* line 640, collector/static/collector/css/main.scss */
+    svg rect.frame.dead {
+      stroke: #A09090;
+      stroke-width: 3pt; }
+  /* line 647, collector/static/collector/css/main.scss */
+  svg rect.plate {
+    fill: #2d2830;
+    stroke: #888;
+    stroke-width: 0.5px; }
+    /* line 652, collector/static/collector/css/main.scss */
+    svg rect.plate.Sabbat {
+      fill: #401010; }
+    /* line 656, collector/static/collector/css/main.scss */
+    svg rect.plate.Camarilla {
+      fill: #104010; }
+    /* line 660, collector/static/collector/css/main.scss */
+    svg rect.plate.Anarchs {
+      fill: #101040; }
+    /* line 664, collector/static/collector/css/main.scss */
+    svg rect.plate.Inconnu {
+      fill: #401020; }
+  /* line 673, collector/static/collector/css/main.scss */
+  svg rect.ghost {
+    opacity: 0; }
+  /* line 678, collector/static/collector/css/main.scss */
+  svg .ghost {
+    fill: none;
+    stroke: #666;
+    stroke-width: 0.25px;
+    opacity: 0;
+    stroke-dasharray: "10"; }
+  /* line 686, collector/static/collector/css/main.scss */
+  svg .link {
+    fill: none;
+    stroke: #FEB;
+    stroke-width: 6px;
+    opacity: 0.5; }
+    /* line 692, collector/static/collector/css/main.scss */
+    svg .link.ghost {
+      stroke: #CCC;
+      stroke-width: 3px;
+      opacity: 0; }
+  /* line 699, collector/static/collector/css/main.scss */
+  svg .name {
+    font-size: 1em;
+    font-family: "Titre";
+    stroke: #666;
+    fill: #000;
+    stroke-width: 0.7px;
+    cursor: pointer; }
+    /* line 707, collector/static/collector/css/main.scss */
+    svg .name:hover {
+      fill: #FFFFFF;
+      stroke: #000; }
+  /* line 713, collector/static/collector/css/main.scss */
+  svg .property {
+    font-family: "TexteLibre";
+    font-size: 0.8em;
+    stroke: #888;
+    fill: #fff;
+    stroke-width: 0.6px; }
+
+/* line 722, collector/static/collector/css/main.scss */
+.tooltip {
+  position: absolute;
+  opacity: 0;
+  text-align: center;
+  color: black;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 2px;
+  width: 120px;
+  height: 160px;
+  pointer-events: none;
+  font-family: "TexteLibre";
+  font-size: 8pt;
+  background: #C0C0C0;
+  padding-left: 15px;
+  padding-right: 15px;
+  box-shadow: 0 0 15px #222;
+  zindex: 45000;
+  background: #136;
+  color: #FFF;
+  border: 1px solid #CCC;
+  border-radius: 3px;
+  padding: 3px;
+  box-shadow: 0 0 3px #0d2850;
+  font-family: Roboto;
+  font-size: 10pt; }
+  /* line 741, collector/static/collector/css/main.scss */
+  .tooltip strong {
+    font-variant: small-caps;
+    font-weight: bold;
+    font-size: 1.2em; }
+
+/* line 751, collector/static/collector/css/main.scss */
+svg .node_circle {
+  fill: #AAA;
+  stroke: #A22;
+  stroke-width: 3pt; }
+  /* line 756, collector/static/collector/css/main.scss */
+  svg .node_circle.wyld {
+    fill: #150637;
+    fill: #B74; }
+    /* line 760, collector/static/collector/css/main.scss */
+    svg .node_circle.wyld.kinfolk {
+      fill: #DA7; }
+  /* line 765, collector/static/collector/css/main.scss */
+  svg .node_circle.wyrm {
+    fill: #567737; }
+  /* line 769, collector/static/collector/css/main.scss */
+  svg .node_circle.weaver {
+    fill: #334ba9; }
+  /* line 773, collector/static/collector/css/main.scss */
+  svg .node_circle.balanced {
+    stroke-width: 2pt;
+    stroke: #333; }
+
+/* line 779, collector/static/collector/css/main.scss */
+.footnote {
+  text-align: center;
+  width: 100%;
+  background: transparent;
+  color: white;
+  padding: 5px;
+  font-family: TexteLibre;
+  font-size: 11px; }
+  /* line 788, collector/static/collector/css/main.scss */
+  .footnote span.display {
+    color: #F781F7;
+    cursor: pointer; }
+  /* line 793, collector/static/collector/css/main.scss */
+  .footnote a {
+    color: red; }
+    /* line 794, collector/static/collector/css/main.scss */
+    .footnote a:visited, .footnote alink, .footnote a:active, .footnote a :hover {
+      color: red; }
+
+/* line 803, collector/static/collector/css/main.scss */
+td.editable.updown i.blank.focus {
+  color: #F781F7; }
+
+/* line 808, collector/static/collector/css/main.scss */
+#d3area {
+  width: 90%; }
+
+/* line 812, collector/static/collector/css/main.scss */
+div.creature_links {
+  display: inline-block;
+  float: right; }
+  /* line 816, collector/static/collector/css/main.scss */
+  div.creature_links i {
+    margin-left: 1ex; }
+    /* line 819, collector/static/collector/css/main.scss */
+    div.creature_links i:hover {
+      color: #F781F7; }

@@ -1,0 +1,117 @@
+@font-face {
+  font-family: 'Titre';
+  src: url("/static/storytelling/fonts/marcellus_sc_regular.ttf"); }
+
+@font-face {
+  font-family: 'marcellus_sc_regular';
+  src: url("/static/storytelling/fonts/marcellus_sc_regular.ttf"); }
+
+@font-face {
+  font-family: 'Texte';
+  src: url("/static/storytelling/fonts/marcellus_sc_regular.ttf"); }
+
+@font-face {
+  font-family: 'logo';
+  src: url("/static/storytelling/fonts/ShadowsIntoLight-Regular.ttf"); }
+
+@font-face {
+  font-family: 'wyld';
+  src: url("/static/storytelling/fonts/fanjofey.ttf"); }
+
+@font-face {
+  font-family: 'weaver';
+  src: url("/static/storytelling/fonts/plank.ttf"); }
+
+@font-face {
+  font-family: 'wyrm';
+  src: url("/static/storytelling/fonts/another_danger.otf"); }
+
+@font-face {
+  font-family: 'TexteLibre';
+  src: url("/static/storytelling/fonts/Lato-Regular.ttf"); }
+
+/* line 4, storytelling/static/storytelling/css/storytelling.scss */
+svg {
+  fill: yellow; }
+
+/* line 11, storytelling/static/storytelling/css/storytelling.scss */
+.storytelling {
+  fill: #305030;
+  stroke: #F0F0F0; }
+
+/* line 18, storytelling/static/storytelling/css/storytelling.scss */
+div.box.scene table {
+  background: #3a343e;
+  color: #F0F0F0;
+  border-radius: 5px; }
+  /* line 24, storytelling/static/storytelling/css/storytelling.scss */
+  div.box.scene table tr th {
+    background: #1d301d;
+    font-family: Titre;
+    font-size: 12pt;
+    width: 120px;
+    word-wrap: normal; }
+  /* line 33, storytelling/static/storytelling/css/storytelling.scss */
+  div.box.scene table tr td {
+    padding: 3px;
+    width: 350px;
+    word-wrap: normal;
+    font-family: TexteLibre;
+    font-size: 10pt; }
+
+/* line 44, storytelling/static/storytelling/css/storytelling.scss */
+div.handler {
+  background: transparent;
+  position: fixed;
+  left: 0;
+  top: auto;
+  bottom: 0;
+  right: auto;
+  width: 400px;
+  height: auto;
+  background: transparent; }
+
+/* line 56, storytelling/static/storytelling/css/storytelling.scss */
+div.storyboard_handler {
+  display: flex;
+  flex-flow: column nowrap;
+  word-wrap: normal;
+  height: 100;
+  font-family: TexteLibre;
+  background: #3a343e;
+  color: #C0C0C0;
+  border: 2px solid #C0C0C0;
+  border-radius: 5px;
+  box-shadow: 5px -5px 10px #2d2830;
+  transition: all 0.3s ease; }
+  /* line 68, storytelling/static/storytelling/css/storytelling.scss */
+  div.storyboard_handler .box {
+    padding: 3px;
+    margin: 2px;
+    background: #2d2830;
+    color: #C0C0C0;
+    border: 1px solid #201d22;
+    border-radius: 5px;
+    font-family: "TexteLibre";
+    font-size: 0.8em;
+    text-align: center; }
+    /* line 79, storytelling/static/storytelling/css/storytelling.scss */
+    div.storyboard_handler .box.txt {
+      background: #201d22;
+      color: #C0C0C0;
+      text-align: justify;
+      height: 150px;
+      font-family: "Syne Mono"; }
+  /* line 90, storytelling/static/storytelling/css/storytelling.scss */
+  div.storyboard_handler.hidden {
+    transition: all 0.3s ease;
+    transform: translateX(-500px); }
+
+/* line 96, storytelling/static/storytelling/css/storytelling.scss */
+.box.scene {
+  display: flex;
+  flex-flow: column nowrap; }
+  /* line 99, storytelling/static/storytelling/css/storytelling.scss */
+  .box.scene .entry {
+    display: flex;
+    flex-flow: row nowrap; }

@@ -1,0 +1,44 @@
+/* line 4, storytelling/static/storytelling/css/storytelling.scss */
+svg {
+  fill: yellow; }
+
+/* line 11, storytelling/static/storytelling/css/storytelling.scss */
+.storytelling {
+  fill: #305030;
+  stroke: #F0F0F0; }
+
+/* line 18, storytelling/static/storytelling/css/storytelling.scss */
+div.box.scene table {
+  background: #305030;
+  color: #F0F0F0;
+  border-radius: 5px; }
+  /* line 23, storytelling/static/storytelling/css/storytelling.scss */
+  div.box.scene table tr th {
+    background: #1d301d;
+    font-family: Titre;
+    font-size: 12pt;
+    width: 120px;
+    word-wrap: normal; }
+  /* line 32, storytelling/static/storytelling/css/storytelling.scss */
+  div.box.scene table tr td {
+    padding: 3px;
+    width: 350px;
+    word-wrap: normal;
+    font-family: TexteLibre;
+    font-size: 10pt; }
+
+/* line 43, storytelling/static/storytelling/css/storytelling.scss */
+div.handler {
+  width: 300px;
+  height: 300px;
+  position: fixed;
+  left: 0;
+  top: auto;
+  bottom: 0;
+  right: auto;
+  word-wrap: normal;
+  font-family: TexteLibre;
+  background: #1d301d;
+  color: #F0F0F0;
+  border: 1px solid #F0F0F0;
+  border-radius: 5px; }

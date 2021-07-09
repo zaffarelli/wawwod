@@ -1,0 +1,21 @@
+/* line 4, storytelling/static/storytelling/css/storytelling.scss */
+svg {
+  fill: yellow; }
+
+/* line 11, storytelling/static/storytelling/css/storytelling.scss */
+.storytelling {
+  fill: #301030;
+  stroke: #F0F0F0; }
+
+/* line 18, storytelling/static/storytelling/css/storytelling.scss */
+div.box.scene table {
+  background: #301030;
+  color: #F0F0F0;
+  border-radius: 5px; }
+  /* line 23, storytelling/static/storytelling/css/storytelling.scss */
+  div.box.scene table tr th {
+    background: #0a030a; }
+  /* line 27, storytelling/static/storytelling/css/storytelling.scss */
+  div.box.scene table tr td {
+    padding: 3px;
+    font-family: TexteLibre; }

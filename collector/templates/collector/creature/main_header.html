@@ -1,0 +1,51 @@
+{% load wod_filters %}
+<tr class="tainted">
+    <th colspan=2 class='tainted clan_logo'>
+        {% if c.creature == 'ghoul' %}
+            {{c.family|to_logo|safe}}
+        {% elif c.creature == "garou" %}
+            {{c.family|as_tribe_plural|to_tribe_logo|safe}}
+        {% elif c.creature == "kindred" %}
+            {{c.family|to_logo|safe}}
+        {% elif c.creature == "mage" %}
+            {{c.family|to_tradition_logo|safe}}
+
+        {% elif c.creature == "kinfolk" %}
+            {{"kinfolk"|to_logo|safe}}
+        {% else %}
+
+        {% endif %}
+    </th>
+    <th colspan=5 class="tainted">
+        <strong> {{ c.name }}</strong>
+        {% if c.nickname != '' %}
+            &nbsp;({{c.nickname}})
+        {%endif%}
+        {% if c.creature == 'garou' %}
+            <br/>{{c.rank|as_rank}} (Rank {{c.rank}}) {{c.breed|as_breed}} {{c.auspice|as_auspice}} of the {{ c.family|as_tribe_plural }}
+            <br/>{{c.group}}
+        {% elif c.creature == 'kindred' %}
+            <br/>{{c.background3|as_generation }} generation {{ c.family }}
+        {% else %}
+            <br/>{{c.concept}}
+        {%endif%}
+        {% if c.sire %}
+            {% if c.creature == 'ghoul' %}
+            <br/>Ghoul of <em>{{ c.sire|from_rid }}</em>
+            {% endif %}
+        {%endif%}
+        {% if c.patron %}
+            {% if c.creature == 'kinfolk'%}
+            <br/>Kinfolk of <em>{{ c.patron }}</em>
+            {% endif %}
+        {%endif%}
+
+        {% if c.player != '' %}
+            <br/>({{c.player}})
+        {%endif%}
+    </th>
+    <th class='tainted back'><strong><i class='fa fa-times ' id='toggle_details2'></i></strong></th>
+</tr>
+<tr>
+    <td colspan="8"> &nbsp; </td>
+</tr>

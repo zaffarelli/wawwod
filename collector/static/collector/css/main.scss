@@ -1,0 +1,876 @@
+@import 'basics';
+
+
+body {
+  font-family: Texte;
+  @include body_background;
+  color: $body_color;
+  min-height: 98%;
+}
+
+
+.subsection {
+  font-weight: bold;
+  color: #DBCA86;
+  text-decoration: underline;
+}
+
+.pdflink {
+  color: #E5DECA;
+  text-decoration: none;
+  background: #1d1d1d;
+  display: inline-block;
+  padding: 3px;
+}
+
+.ping {
+  background: orange;
+}
+
+
+.toggle_name {
+  font-weight: bold;
+  font-style: normal;
+  font-family: Titre;
+  width: auto;
+  display: inline-block;
+}
+
+
+.waiting {
+  cursor: progress;
+  opacity: 0.95;
+}
+
+.golden {
+  color: #ffcc22;
+}
+
+.blank {
+  color: #C0C0C0;
+  opacity: 0.5;
+}
+
+.embedded_link {
+  color: #DBCA86;
+  text-decoration: none;
+}
+
+.custom_glance {
+  cursor: help;
+}
+
+.shown {
+  display: block;
+}
+
+.noPDF:before {
+  content: '(x) ';
+}
+
+
+/* Normal --------------------------------------------------------------------*/
+@media all and (min-width: 1024px) {
+  body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hide;
+    overflow-y: scroll;
+
+    & input#userinput, & #text_edit {
+      order: 2;
+      border: 1px solid silver;
+      border-radius: 5px;
+      box-shadow: 0 0 5px black;
+      display: inline-block;
+      font-size: 12px;
+      padding: 3px;
+      margin: 1px 3px 1px 3px;
+      height: 18px;
+      background: #C0C0C0;
+      color: black;
+    }
+
+    & #text_edit {
+      height: 54px;
+    }
+  }
+  .wrapper {
+    background: transparent url() 100% 100% no-repeat fixed;
+    z-index: 60;
+    width: 100%;
+    min-height: 1200px;
+
+    padding-top: 0;
+    margin: 0;
+
+
+    & .caine_roots {
+      background: transparent;
+      width: 100%;
+      display: block;
+      z-index: 60;
+      padding: 0;
+      margin: 0;
+    }
+
+    & .details {
+      background: transparent;
+      width: auto;
+      right: 10px;
+      left: auto;
+      top: auto;
+      bottom: 0px;
+      display: block;
+      position: fixed;
+      z-index: 110;
+      transition: all 0.3s ease;
+      box-shadow: -5px -5px 10px $dark_plate;
+
+      &.hidden {
+        transition: all 0.3s ease;
+        transform: translateX(1000px);
+      }
+    }
+  }
+}
+
+
+.charlist {
+  @include panel;
+
+  & .pagination {
+    text-align: center;
+    margin-top: 1em;
+    width: $list_width;
+
+    & a, & strong, & span.nav {
+      @include panel;
+      margin: 0 0.2em;
+      display: inline-block;
+      color: $plate_highlight;
+      font-size: 0.7em;
+      font-family: 'TexteLibre';
+      padding: 0.3em 0.4em;
+      text-decoration: none;
+      cursor: pointer;
+      background: $very_dark_plate;
+      border-radius: 5px;
+      width: 2ex;
+    }
+  }
+
+  & .avatar_link {
+    @include panel;
+
+    margin: 2px;
+
+    padding: 2px;
+    border-radius: 0 0 5px 0;
+    border-color: darken($panel_border, 30%);
+
+    & a {
+      text-decoration: none;
+    }
+  }
+
+  & ul {
+    width: $list_width;
+    text-indent: 0;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    & li {
+      padding: 0;
+      margin: 0;
+
+    }
+
+
+  }
+
+  @include panel;
+  //background: $plate;
+  border-radius: 5px;
+
+  width: $list_width;
+  display: block;
+  position: fixed;
+  z-index: 70;
+  padding-top: 0px;
+  margin: auto;
+  top: 0;
+  bottom: auto;
+  right: 5px;
+  left: auto;
+  box-shadow: 0 0 5px $very_dark_plate;
+  transition: all 0.3s ease;
+
+
+  &.hidden {
+    transform: translateY(-1800px);
+    transition: all 0.3s ease;
+  }
+
+  border-color: $panel_border;
+}
+
+
+/* Details - Creature Block */
+.creature {
+  font-size: 9pt;
+  border-radius: 8px;
+  background: transparent;
+
+  //&.navigator {
+  //  background: #101010;
+  //  color: #D0D0D0;
+  //  text-align: center;
+  //  font-family: TexteLibre;
+  //  font-size: 16px;
+  //}
+
+  //& a {
+  //  &:visited, &:link, &:hover, &:active {
+  //    color: black;
+  //  }
+  //}
+
+  & strong {
+    font-family: Titre;
+    font-weight: normal;
+    font-size: 2em;
+    line-height: 1.4em;
+  }
+
+  & table {
+    font-family: Texte;
+    color: black;
+    background: #303030;
+    border: 1px solid transparent;
+    border-radius: 10px 0 0 0;
+    box-shadow: -2px -2px 8px $panel_shadow;
+    margin: auto;
+
+    & tr {
+      padding: 0;
+      margin: 0;
+
+      & th {
+        padding: 5px;
+
+        &[colspan='5'] {
+          background: $very_dark_plate;
+          height: 90px;
+          padding: 0;
+          padding-left: 3ex;
+          text-align: left;
+        }
+
+        &.clan_logo {
+          background: $very_dark_plate;
+          overflow: hidden;
+          padding: 0;
+          height: 50px;
+          overflow-y: hidden;
+
+          & img {
+            width: 80px;
+            filter: invert(75%);
+          }
+        }
+
+        &.back {
+          background: $very_dark_plate;
+        }
+
+        //@include panel;
+        background: $panel_background;
+        color: $panel_color;
+        font-size: 8pt;
+        font-family: TexteLibre;
+        font-weight: normal;
+        margin: 0;
+        border: none;
+        width: 110px;
+        border: 1px solid $very_dark_plate;
+        padding: 1px;
+
+        height: auto;
+        padding: 0;
+
+        &.tainted {
+          border-color: transparent;
+        }
+
+      }
+
+      &:first-child th {
+        border-radius: 3px 6px 0 0;
+      }
+
+      &:last-child th {
+        border-radius: 0 0 3px 6px;
+      }
+
+      & td {
+        font-size: 8pt;
+        font-family: TexteLibre;
+        text-align: left;
+        margin: 0;
+        padding: 1px;
+        width: 110px;
+        background: transparent;
+        border: 1px solid transparent;
+        color: $panel_color;
+        text-align: center;
+
+        &[colspan='2'], &[colspan='8'] {
+          border-radius: 5px;
+          background: $panel_shadow;
+          color: $panel_color;
+          text-align: center;
+          font-family: "Marcellus SC";
+          font-size: 12pt;
+        }
+
+        &.topic {
+          background: transparent;
+          font-size: 8pt;
+          font-family: TexteLibre;
+          text-align: left;
+          margin: 0;
+          padding: 1px;
+        }
+
+        &.editable {
+          &.userinput.focus {
+            border-color: $focus_color;
+          }
+        }
+      }
+    }
+
+    &.freewidth tr td {
+      width: auto;
+    }
+  }
+
+
+}
+
+
+table {
+  & tr.tainted {
+    & th.tainted {
+      border: none;
+      background: transparent;
+    }
+  }
+}
+
+.mortal {
+  & table {
+    & tr.tainted {
+      @include mortal_taint;
+    }
+  }
+}
+
+.fomori {
+  & table {
+    & tr.tainted {
+      @include fomori_taint;
+    }
+  }
+}
+
+.Camarilla.kindred {
+  & table {
+    & tr.tainted {
+      @include camarilla_taint;
+    }
+  }
+}
+
+.changeling {
+  & table {
+    & tr.tainted {
+      @include changeling_taint;
+    }
+  }
+}
+
+.wraith {
+  & table {
+    & tr.tainted {
+      @include wraith_taint;
+    }
+  }
+}
+
+.mage {
+  & table {
+    & tr.tainted {
+      @include mage_taint;
+    }
+  }
+}
+
+
+.Sabbat.kindred {
+  & table {
+    & tr.tainted {
+      @include sabbat_taint;
+    }
+  }
+}
+
+
+.ghoul {
+  & table {
+    & tr.tainted {
+      @include ghoul_taint;
+    }
+  }
+}
+
+.garou {
+  & table {
+    & tr.tainted {
+      @include garou_taint;
+    }
+  }
+}
+
+.kinfolk {
+  & table {
+    & tr.tainted {
+      @include kinfolk_taint;
+    }
+  }
+}
+
+.Pentex {
+  & table {
+    & tr.tainted {
+      @include pentex_taint;
+    }
+  }
+}
+
+
+.list .goodies {
+  width: auto;
+  height: auto;
+  margin: 5px;
+  text-align: center;
+  padding: 5px;
+
+  & span {
+    cursor: pointer;
+    font-family: Titre;
+  }
+}
+
+
+.bar {
+  position: fixed;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+  width: 100%;
+  top: 0;
+  padding: 3px;
+  height: auto;
+  background: transparent;
+  margin: 0;
+  color: white;
+  z-index: 100;
+
+  & .pull_down {
+    order: 1;
+    display: inline-block;
+
+    font-family: TexteLibre;
+    font-size: 12px;
+    height: 24px;
+
+    margin: 0 3px 0 3px;
+    width: 300px;
+
+    @include panel;
+
+    &.chronicle {
+      font-family: Titre;
+      font-size: 16px;
+      text-align: center;
+    }
+
+    & ul.drop_down {
+      display: none;
+
+      list-style-type: none;
+      text-indent: 0;
+      margin-left: 0;
+      padding-left: 2ex;
+
+      & li {
+        color: $plate_color;
+        padding: 2px;
+        margin: 2px;
+        border-radius: 5px;
+      }
+    }
+
+    &:hover {
+
+      height: auto;
+
+
+      & ul.drop_down {
+        display: block;
+
+
+        & li.wod {
+          background: $plate_selected;
+        }
+
+
+        & li:hover {
+          color: $plate_highlight;
+          background: complement($panel_background);
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+
+#caine_roots {
+  text-align: center;
+  font-size: 14px;
+}
+
+svg.lineage {
+  margin: 10px;
+  border: 1px dashed #CCC;
+  background: transparent;
+  margin-top: 50px;
+
+
+  & .node {
+    & .property {
+      font-family: "Roboto";
+      font-size: 9pt;
+      stroke: #888;
+      fill: #fff;
+      stroke-width: 0.6px;
+    }
+
+    & rect {
+      &.band {
+        fill: #333;
+        stroke: #666;
+        stroke-width: 0.5pt;
+
+
+      }
+
+      &.frame {
+        fill: transparent;
+        stroke: #FFF;
+        stroke-width: 1pt;
+      }
+
+      &.plate {
+        fill: #444;
+        stroke: #888;
+        stroke-width: 0.5pt;
+
+        &.Camarilla {
+          fill: $camarilla_fill;
+        }
+
+        &.Anarchs {
+          fill: $anarchs_fill;
+        }
+
+        &.Sabbat {
+          fill: $sabbat_fill;
+        }
+
+        &.Independants {
+          fill: $independants_fill;
+        }
+
+      }
+    }
+
+    &.dead {
+      & rect {
+        &.frame {
+          stroke: $dead_background;
+          stroke-width: 3pt;
+          stroke-linecap: butt;
+          stroke-opacity: 0.25;
+
+        }
+
+        &.band {
+          stroke-width: 0;
+          fill-opacity: 0.25;
+        }
+
+        &.plate {
+          stroke-width: 0;
+          fill-opacity: 0.25;
+        }
+      }
+    }
+
+    &.missing {
+      & rect {
+        &.frame {
+          stroke: $missing_background;
+          stroke-width: 3pt;
+          stroke-linecap: butt;
+          stroke-opacity: 0.25;
+        }
+
+        &.band {
+          stroke-width: 0;
+          fill-opacity: 0.75;
+        }
+
+        &.plate {
+          stroke-width: 0;
+          fill-opacity: 0.75;
+        }
+      }
+    }
+
+    & .ghost {
+      opacity: $ghost_opacity;
+    }
+
+  }
+
+  & .link {
+    fill: #822;
+    fill-opacity: 0.15;
+    stroke: #822;
+    stroke-width: 3pt;
+
+    &.ghost {
+      opacity: $ghost_opacity;
+    }
+  }
+
+}
+
+.tooltip {
+  position: absolute;
+  opacity: 0;
+  text-align: center;
+  color: black;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 2px;
+  width: 160px;
+  height: 180px;
+  pointer-events: none;
+  font-family: "TexteLibre";
+  font-size: 8pt;
+  background: #C0C0C0;
+  padding-left: 15px;
+  padding-right: 15px;
+  box-shadow: 0 0 15px #222;
+  zindex: 45000;
+
+  & strong {
+    font-variant: small-caps;
+    font-weight: bold;
+    font-size: 1.6em;
+  }
+
+  & ol {
+    margin: 0;
+    padding: 0;
+    padding-left: 10px;
+    text-align: left;
+
+    & li {
+    }
+  }
+
+}
+
+
+svg .node_circle {
+  //fill: $panel_color;
+  stroke: $focus_color;
+  stroke-width: 3pt;
+
+
+  &.garou {
+    fill: $garou_fill;
+  }
+
+  &.kinfolk {
+    fill: $kinfolk_fill;
+  }
+
+  &.kindred {
+    fill: $kindred_fill;
+  }
+
+
+  &.ghoul {
+    fill: $ghoul_fill;
+  }
+
+  &.fomori {
+    fill: $fomori_fill;
+  }
+
+  &.mage {
+    fill: $mage_fill;
+  }
+
+  &.changeling {
+    fill: $changeling_fill;
+  }
+
+  &.wraith {
+    fill: $wraith_fill;
+  }
+
+  &.mortal {
+    fill: $mortal_fill;
+  }
+
+  &.balanced {
+    stroke-width: 1pt;
+    stroke: $panel_color;
+  }
+}
+
+.footnote {
+  text-align: center;
+  width: 100%;
+  background: transparent;
+  color: white;
+  padding: 5px;
+  font-family: TexteLibre;
+  font-size: 11px;
+
+  & span.display {
+    color: $focus_color;
+    cursor: pointer;
+  }
+
+  & a {
+    &:visited, &link, &:active, :hover {
+      color: red;
+    }
+
+    color: red;
+  }
+}
+
+td.editable.updown {
+  & i.blank.focus {
+    color: $focus_color;
+  }
+}
+
+#d3area {
+  width: 90%;
+}
+
+div.creature_links {
+  display: inline-block;
+  float: right;
+
+  & i {
+    margin-left: 1ex;
+
+    &:hover {
+      color: $focus_color;
+    }
+  }
+
+}
+
+
+.avatar_link {
+  &.ghoul {
+    background: $ghoul_fill;
+  }
+
+  &.kinfolk {
+    background: $kinfolk_fill;
+  }
+
+  &.kindred {
+    background: $kindred_fill;
+  }
+
+  &.garou {
+    background: $garou_fill;
+  }
+
+  &.mage {
+    background: $mage_fill;
+  }
+
+  &.wraith {
+    background: $wraith_fill;
+  }
+
+  &.changeling {
+    background: $changeling_fill;
+  }
+}
+
+
+.creature_img {
+  filter: invert(90%);
+  box-shadow: 2px 2px 5px #111;
+}
+
+
+text.kindred_name {
+  & tspan {
+    font-family: "Philosopher";
+    font-size: 12pt;
+    font-variant: small-caps;
+    fill: #FFF;
+    stroke: #DDD;
+
+    &.property tspan {
+      font-family: "Philosopher";
+      font-size: 9pt;
+      fill: #EEE;
+      stroke: #CCC;
+    }
+  }
+
+}
+
+
+.node {
+  fill: steelblue;
+  stroke: none;
+}
+
+.link {
+  fill: none;
+  stroke: #ccc;
+  stroke-width: 1px;
+}

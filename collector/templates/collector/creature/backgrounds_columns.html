@@ -1,0 +1,233 @@
+{% load wod_filters %}
+<tr>
+    <th>{{ c.creature|param_stack:0|as_stat_name:"background"|safe }}</th>
+    <td class='editable updown' id='{{c.rid}}__background0'>{{ c.background0|as_bullets|safe }}</td>
+    {% if c.creature == 'garou' or c.creature == 'kindred' or c.creature == 'wraith' or c.creature == 'mage' or c.creature == 'changeling' or c.creature == 'kinfolk' or c.creature == 'ghoul' %}
+    {{ c.trait0|param_stack:c.rid|as_discipline2:"trait0"|safe }}
+    {%else%}
+    <th></th>
+    <td></td>
+    {%endif%}
+    {% if c.creature == 'garou' %}
+    <th>Glory</th>
+    <td class='editable updown' id='{{c.rid}}__glory'>{{ c.glory|as_bullets|safe }}</td>
+    {% elif c.creature == 'kindred' %}
+    <th>Conscience</th>
+    <td class='editable updown' id='{{c.rid}}__virtue0'>{{ c.virtue0|as_bullets|safe }}</td>
+    {% elif c.creature == 'wraith' %}
+    {{ c.passion0|param_stack:c.rid|as_discipline2:"passion0"|safe }}
+    {% elif c.creature == 'changeling' %}
+    {{ c.realm1|param_stack:c.rid|as_discipline2:"realm1"|safe }}
+    {% elif c.creature == 'mage' %}
+    <th>Dynamic</th>
+    <td class='editable updown' id='{{c.rid}}__dynamic'>{{ c.dynamic|as_bullets|safe }}</td>
+    {%else%}
+    <th></th>
+    <td></td>
+    {%endif%}
+    {{ c.rite0|param_stack:c.rid|as_discipline2:"rite0"|safe }}
+</tr>
+<tr>
+    <th>{{ c.creature|param_stack:1|as_stat_name:"background"|safe }}</th>
+    <td class='editable updown' id='{{c.rid}}__background1'>{{ c.background1|as_bullets|safe }}</td>
+    {% if c.creature == 'garou' or c.creature == 'kindred' or c.creature == 'wraith' or c.creature == 'mage' or c.creature == 'changeling' or c.creature == 'kinfolk' or c.creature == 'ghoul' %}
+    {{ c.trait1|param_stack:c.rid|as_discipline2:"trait1"|safe }}
+    {%else%}
+    <th></th>
+    <td></td>
+    {%endif%}
+    {% if c.creature == 'garou' %}
+    <th>Honor</th>
+    <td class='editable updown' id='{{c.rid}}__honor'>{{ c.honor|as_bullets|safe }}</td>
+    {% elif c.creature == 'kindred' %}
+    <th>Self-Control</th>
+    <td class='editable updown' id='{{c.rid}}__virtue1'>{{ c.virtue1|as_bullets|safe }}</td>
+    {% elif c.creature == 'wraith' %}
+    {{ c.passion1|param_stack:c.rid|as_discipline2:"passion1"|safe }}
+    {% elif c.creature == 'changeling' %}
+    {{ c.realm2|param_stack:c.rid|as_discipline2:"realm2"|safe }}
+    {% elif c.creature == 'mage' %}
+    <th>Entropic</th>
+    <td class='editable updown' id='{{c.rid}}__entropic'>{{ c.entropic|as_bullets|safe }}</td>
+    {%else%}
+    <th></th>
+    <td></td>
+    {%endif%}
+    {{ c.rite1|param_stack:c.rid|as_discipline2:"rite1"|safe }}
+</tr>
+<tr>
+    <th>{{ c.creature|param_stack:2|as_stat_name:"background"|safe }}</th>
+    <td class='editable updown' id='{{c.rid}}__background2'>{{ c.background2|as_bullets|safe }}</td>
+    {% if c.creature == 'garou' or c.creature == 'kindred' or c.creature == 'wraith' or c.creature == 'mage' or c.creature == 'changeling' or c.creature == 'kinfolk' or c.creature == 'ghoul' %}
+    {{ c.trait2|param_stack:c.rid|as_discipline2:"trait2"|safe }}
+    {%else%}
+    <th></th>
+    <td></td>
+    {%endif%}
+    {% if c.creature == 'garou' %}
+    <th>Wisdom</th>
+    <td class='editable updown' id='{{c.rid}}__wisdom'>{{ c.wisdom|as_bullets|safe }}</td>
+    {% elif c.creature == 'kindred' %}
+    <th>Courage</th>
+    <td class='editable updown' id='{{c.rid}}__virtue2'>{{ c.virtue2|as_bullets|safe }}</td>
+    {% elif c.creature == 'wraith' %}
+    {{ c.passion2|param_stack:c.rid|as_discipline2:"passion2"|safe }}
+    {% elif c.creature == 'changeling' %}
+    {{ c.realm2|param_stack:c.rid|as_discipline2:"realm2"|safe }}
+    {% elif c.creature == 'mage' %}
+    <th>Static</th>
+    <td class='editable updown' id='{{c.rid}}__static'>{{ c.static|as_bullets|safe }}</td>
+    {%else%}
+    <th></th>
+    <td></td>
+    {%endif%}
+    {{ c.rite2|param_stack:c.rid|as_discipline2:"rite2"|safe }}
+</tr>
+<tr> <!-- 4 -->
+    <th>{{ c.creature|param_stack:3|as_stat_name:"background"|safe }}</th>
+    <td class='editable updown' id='{{c.rid}}__background3'>{{ c.background3|as_bullets|safe }}</td>
+    {% if c.creature == 'garou' or c.creature == 'kindred' or c.creature == 'wraith' or c.creature == 'mage' or c.creature == 'changeling' or c.creature == 'kinfolk' or c.creature == 'ghoul' %}
+    {{ c.trait3|param_stack:c.rid|as_discipline2:"trait3"|safe }}
+    {%else%}
+    <th></th>
+    <td></td>
+    {%endif%}
+    {% if c.creature == 'wraith' %}
+    {{ c.passion3|param_stack:c.rid|as_discipline2:"passion3"|safe }}
+    {% elif c.creature == 'changeling' %}
+    {{ c.realm3|param_stack:c.rid|as_discipline2:"realm3"|safe }}
+    {%else%}
+    <th></th>
+    <td></td>
+    {%endif%}
+    {{ c.rite3|param_stack:c.rid|as_discipline2:"rite3"|safe }}
+</tr>
+<tr> <!-- 5 -->
+    <th>{{ c.creature|param_stack:4|as_stat_name:"background"|safe }}</th>
+    <td class='editable updown' id='{{c.rid}}__background4'>{{ c.background4|as_bullets|safe }}</td>
+    {% if c.creature == 'garou' or c.creature == 'kindred' or c.creature == 'wraith' or c.creature == 'mage' or c.creature == 'changeling' or c.creature == 'kinfolk' or c.creature == 'ghoul' %}
+    {{ c.trait4|param_stack:c.rid|as_discipline2:"trait4"|safe }}
+    {%else%}
+    <th></th>
+    <td></td>
+    {%endif%}
+    {% if c.creature == 'wraith' %}
+    {{ c.passion4|param_stack:c.rid|as_discipline2:"passion4"|safe }}
+    {% elif c.creature == 'changeling' %}
+    {{ c.realm4|param_stack:c.rid|as_discipline2:"realm4"|safe }}
+    {%else%}
+    <th></th>
+    <td></td>
+    {%endif%}
+    {{ c.rite4|param_stack:c.rid|as_discipline2:"rite4"|safe }}
+</tr>
+<tr> <!-- 6 -->
+    <th>{{ c.creature|param_stack:5|as_stat_name:"background"|safe }}</th>
+    <td class='editable updown' id='{{c.rid}}__background5'>{{ c.background5|as_bullets|safe }}</td>
+    {% if c.creature == 'garou' or c.creature == 'kindred' or c.creature == 'wraith' or c.creature == 'mage' or c.creature == 'changeling' or c.creature == 'kinfolk' or c.creature == 'ghoul' %}
+    {{ c.trait5|param_stack:c.rid|as_discipline2:"trait5"|safe }}
+    {%else%}
+    <th></th>
+    <td></td>
+    {%endif%}
+    <th></th>
+    <td></td>
+    <th></th>
+    <td></td>
+</tr>
+<tr> <!-- 7 -->
+    <th>{{ c.creature|param_stack:6|as_stat_name:"background"|safe }}</th>
+    <td class='editable updown' id='{{c.rid}}__background6'>{{ c.background6|as_bullets|safe }}</td>
+    {% if c.creature == 'garou' or c.creature == 'kindred' or c.creature == 'wraith' or c.creature == 'mage' or c.creature == 'changeling' or c.creature == 'kinfolk' or c.creature == 'ghoul' %}
+    {{ c.trait6|param_stack:c.rid|as_discipline2:"trait6"|safe }}
+    {%else%}
+    <th></th>
+    <td></td>
+    {%endif%}
+    {% if c.creature == 'mage' %}
+    <th>Paradox</th>
+    <td class='editable updown' id='{{c.rid}}__paradox'>{{ c.paradox|as_bullets|safe }}</td>
+
+    {% else %}
+    <th></th>
+    <td></td>
+    {%endif%}
+    <th></th>
+    <td></td>
+</tr>
+<tr> <!-- 8 -->
+    <th>{{ c.creature|param_stack:7|as_stat_name:"background"|safe }}</th>
+    <td class='editable updown' id='{{c.rid}}__background7'>{{ c.background7|as_bullets|safe }}</td>
+    {% if c.creature == 'garou' or c.creature == 'kindred' or c.creature == 'wraith' or c.creature == 'mage' or c.creature == 'changeling' or c.creature == 'kinfolk' or c.creature == 'ghoul' %}
+    {{ c.trait7|param_stack:c.rid|as_discipline2:"trait7"|safe }}
+    {%else%}
+    <th></th>
+    <td></td>
+    {%endif%}
+    {% if c.creature == 'garou'  or c.creature == 'kinfolk' %}
+    <th>Gnosis</th>
+    <td class='editable updown' id='{{c.rid}}__gnosis'>{{ c.gnosis|as_bullets|safe }}</td>
+    {% elif c.creature == 'mage' %}
+    <th>Quintessence</th>
+    <td class='editable updown' id='{{c.rid}}__quintessence'>{{ c.quintessence|as_bullets|safe }}</td>
+    {% elif c.creature == 'wraith' %}
+    <th>Pathos</th>
+    <td class='editable updown' id='{{c.rid}}__pathos'>{{ c.pathos|as_bullets|safe }}</td>
+    {% elif c.creature == 'kindred' %}
+    <th>Blood Pool</th>
+    <td>{{ c.bloodpool }}</td>
+    {% elif c.creature == 'changeling' %}
+    <th>Glamour</th>
+    <td class='editable updown' id='{{c.rid}}__glamour'>{{ c.glamour|as_bullets|safe }}</td>
+    {% else %}
+    <th></th>
+    <td></td>
+    {%endif%}
+    <th></th>
+    <td></td>
+</tr>
+<tr> <!-- 9 -->
+    <th>{{ c.creature|param_stack:8|as_stat_name:"background"|safe }}</th>
+    <td class='editable updown' id='{{c.rid}}__background8'>{{ c.background8|as_bullets|safe }}</td>
+    {% if c.creature == 'garou' or c.creature == 'kindred' or c.creature == 'wraith' or c.creature == 'mage' or c.creature == 'changeling' or c.creature == 'kinfolk' or c.creature == 'ghoul' %}
+    {{ c.trait8|param_stack:c.rid|as_discipline2:"trait8"|safe }}
+    {%else%}
+    <th></th>
+    <td></td>
+    {%endif%}
+    {% if c.creature == 'garou' or c.creature == 'kinfolk' %}
+    <th>Rage</th>
+    <td class='editable updown' id='{{c.rid}}__rage'>{{ c.rage|as_bullets|safe }}</td>
+    {% elif c.creature == 'kindred' %}
+    <th>Path of {{c.path}}</th>
+    <td class='editable updown' id='{{c.rid}}__humanity'>{{ c.humanity|as_bullets|safe }}</td>
+    {% elif c.creature == 'wraith' %}
+    <th>Corpus</th>
+    <td class='editable updown' id='{{c.rid}}__corpus'>{{ c.corpus|as_bullets|safe }}</td>
+    {% elif c.creature == 'mage' %}
+    <th>Arete</th>
+    <td class='editable updown' id='{{c.rid}}__arete'>{{ c.arete|as_bullets|safe }}</td>
+    {% elif c.creature == 'changeling' %}
+    <th>Banality</th>
+    <td class='editable updown' id='{{c.rid}}__banality'>{{ c.banality|as_bullets|safe }}</td>
+    {% else %}
+    <th></th>
+    <td></td>
+    {% endif %}
+    <th></th>
+    <td></td>
+</tr>
+<tr> <!-- 10 -->
+    <th>{{ c.creature|param_stack:9|as_stat_name:"background"|safe }}</th>
+    <td class='editable updown' id='{{c.rid}}__background9'>{{ c.background9|as_bullets|safe }}</td>
+    {% if c.creature == 'garou' or c.creature == 'kindred' or c.creature == 'wraith' or c.creature == 'mage' or c.creature == 'changeling' or c.creature == 'kinfolk' or c.creature == 'ghoul' %}
+    {{ c.trait9|param_stack:c.rid|as_discipline2:"trait9"|safe }}
+    {%else%}
+    <th></th>
+    <td></td>
+    {%endif%}
+    <th>Willpower</th>
+    <td class='editable updown' id='{{c.rid}}__willpower'>{{ c.willpower|as_bullets|safe }}</td>
+    <th></th>
+    <td></td>
+</tr>

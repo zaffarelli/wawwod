@@ -1,0 +1,6 @@
+{% for p in c %}
+<li>
+    <span class="display" action="crossover_sheet" param="{{p.rid}}"><i class="fas fa-file"></i>&nbsp;{{p.name}} ({{p.player}})</span>
+    <span class='view_creature' id="{{p.rid}}" title='See {{c.name|safe}}: {{p.rid}}'><i class="fas fa-eye"></i>&nbsp; edit</span>
+</li>
+{% endfor %}

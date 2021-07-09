@@ -1,0 +1,34 @@
+{% load wod_filters %}
+{% block creature %}
+<div class='creature {{c.faction}} {{c.creature}}'>
+    {% if c.creature == 'kindred' %}
+        {% include "./creature/kindred.html" with c=c %}
+    {% elif c.creature == 'mortal' %}
+        {% include "./creature/mortal.html" with c=c %}
+    {% elif c.creature == 'kinfolk' %}
+        {% include "./creature/kinfolk.html" with c=c %}
+    {% elif c.creature == 'ghoul' %}
+        {% include "./creature/ghoul.html" with c=c %}
+    {% elif c.creature == 'garou' %}
+        {% include "./creature/garou.html" with c=c%}
+    {% elif c.creature == 'mage' %}
+        {% include "./creature/mage.html" with c=c%}
+    {% elif c.creature == 'changeling' %}
+        {% include "./creature/changeling.html" with c=c%}
+    {% elif c.creature == 'wraith' %}
+        {% include "./creature/wraith.html" with c=c%}
+    {% elif c.creature == 'fomori' %}
+        {% include "./creature/fomori.html" with c=c%}
+    {% else %}
+    <table>
+        <tr>
+            <th colspan=6><strong>{{ c.name }}</strong></th>
+        </tr>
+        <tr>
+            <td colspan=6><em>{{c.name}}</em> has an unhandled creature type ({{c.creature}})...</td>
+        </tr>
+    </table>
+    {% endif %}
+    {% include "collector/creature/stat_line.html" with c=c %}
+</div>
+{% endblock creature %}

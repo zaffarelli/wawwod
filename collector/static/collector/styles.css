@@ -1,0 +1,327 @@
+@charset "UTF-8";
+ @font-face {
+     font-family: 'Titre';
+     src: url("MarcellusSC-Regular.ttf");
+}
+ @font-face {
+     font-family: 'Texte';
+     src: url("Balthazar-Regular.ttf");
+}
+ @font-face {
+     font-family: 'TexteLibre';
+     src: url("WorkSans-Regular.ttf");
+}
+ @font-face {
+     font-family: 'Emphase';
+     src: url("Eczar-Regular.ttf");
+}
+ .fixed {
+     position: fixed;
+     top: 0;
+     left: 0;
+     width: 99%;
+}
+ h1, h2, h3, h4, h5, h6 {
+     font-family: Titre;
+     font-weight: normal;
+}
+ body {
+     font-family: Texte;
+     background: #C0C0C0;
+}
+ body .logo {
+     background: transparent url("nybn_wawwod.png") center center no-repeat;
+     position:fixed;
+     display:block;
+     left:auto;
+     right:0px;
+     width:600px;
+     top:-50px;
+     height:100px;
+     z-index:50;
+}
+
+body .wrapper .list{
+  
+}
+
+ body .wrapper .list .pagination {
+     text-align: center;
+     margin-top: 1em;
+  
+}
+ body .wrapper .list .pagination a,
+ body .wrapper .list .pagination strong,
+ body .wrapper .list .pagination span.nav {
+     margin: 0 0.1em;
+     display: inline-block;
+     padding: 0.5em;
+     color: white;
+     font-size: 0.77em;
+     background: #1d1d1d;
+     padding: 0.5em 0.8em;
+     border-radius: 2px;
+     text-decoration: none;
+     cursor: pointer;
+}
+ body .wrapper .list .creature_actions {
+     display: inline-block;
+     cursor:pointer;
+     color: black;
+     padding: 2px;
+     border: 1px solid transparent;
+     border-radius: 2px;
+     
+}
+ body .wrapper .list .creature_actions a, body .wrapper .list .character_actions span.nav {
+     cursor: pointer;
+}
+ body .wrapper .list .creature_actions a:hover, body .wrapper .list .character_actions span.nav:hover {
+     color: #6a6a6a;
+}
+ body .wrapper .list ul, body .wrapper .list ol {
+     text-indent: 0;
+     margin-left: 0;
+     padding-left: 0;
+     list-style-type: none;
+     
+}
+ body .wrapper .list ul li, body .wrapper .list ol li {
+     margin: 0;
+     
+}
+
+ .subsection {
+     font-weight: bold;
+     color: #DBCA86;
+     text-decoration: underline;
+}
+ .pdflink {
+     color: #E5DECA;
+     text-decoration: none;
+     background: #1d1d1d;
+     display: inline-block;
+     padding: 3px;
+}
+ .ping {
+     background: orange;
+}
+ .avatar_link {
+     margin: 0.5em 1ex 0.5em 1ex;
+     box-shadow: 2px 2px 8px #040404;
+     padding: 5px;
+     border: 1px solid black;
+     font-size: 0.83em;
+     border-radius: 5px;
+     background: #E0E0E0;
+     color:#202020;
+}
+ .avatar_link a {
+     color: white;
+     text-decoration: none;
+}
+ .avatar_link a:hover {
+     color: #6a6a6a;
+}
+ .avatar_link small {
+     font-size: 0.75em;
+}
+ .avatar_link em {
+  
+     font-weight: bold;
+     font-style:normal;
+     font-family: Titre;
+}
+ .avatar_link.locked {
+     background: #221a00;
+     border-color: #DBCA86;
+}
+ .avatar_link.selected {
+     border-color: #DBCA86;
+     background: #6a6a6a;
+     color: black;
+}
+ .waiting {
+     cursor: progress;
+     opacity: 0.95;
+}
+ .golden {
+     color: #ffcc22;
+}
+ .blank {
+     color: #C0C0C0;
+     opacity: 0.5;
+}
+ .embedded_link {
+     color: #DBCA86;
+     text-decoration: none;
+}
+ .custom_glance {
+     cursor: help;
+}
+ 
+ .shown {
+     display: block;
+}
+ .noPDF:before {
+     content: '(x) ';
+}
+
+/* Normal --------------------------------------------------------------------*/
+ @media all and (min-width: 1024px) {
+     body {
+         margin: 0;
+         padding: 0;
+         overflow-x: hidden;
+         overflow-y: scroll;
+    }
+     body .wrapper {
+         z-index: 60;
+         margin-left: 0;
+         width: 99%;
+         min-height: 1000px;
+         display: grid;
+         grid-template-columns: 0.5% 250px 1fr 200px 0.5%;
+         grid-column-gap: 5px;
+         justify-content: center;
+         align-content: stretch;
+    }
+     body .wrapper .list {
+         grid-column: 1 / 3;
+    }
+     body .wrapper .details {
+         grid-column: 3 / 3;
+         min-height: 1000px;
+    }
+     body .wrapper .menuright {
+         grid-column: 4 / 6;
+    }
+}
+ .creature a:visited, .creature a:link, .creature a:hover, .creature a:active{
+     color:black;
+}
+ .creature {
+     font-size:9pt;
+     border-radius:8px;
+     background:transparent;
+     
+}
+ .creature table{
+     font-family:Texte;
+     color:black;
+     background:#FFFFFF;
+     margin:auto;
+     top:50px;
+     padding:5px;
+}
+ .creature table tr{
+     padding:0;
+     margin:0;
+}
+ .creature table th{
+     background:silver;
+     color:black;
+     //text-shadow: 0px 0px 4px white;
+     font-size:10pt;
+     font-family:Titre;
+     margin:0;
+     border:none;
+     width:110px;
+     border:2px solid transparent;
+     padding:3px;
+}
+ .creature table tr:last-child th{
+     border-radius: 0 0 6px 6px;
+}
+ .creature table tr:first-child td{
+     border-radius: 5px 5px 0 0 ;
+     background: #F0F0F0;
+}
+ .creature .navigator {
+     background:#C0C0C0;
+     text-align:center;
+     font-family:TexteLibre;
+     font-size:16px;
+}
+ .creature table td{
+     font-size:8pt;
+     font-family:TexteLibre;
+     text-align:left;
+     margin:0;
+     padding:3px;
+     width:110px;
+     background:transparent;
+     border:2px solid transparent;
+}
+
+ 
+
+ .creature table td.editable.updown.focus{
+  border:2px solid green;
+ }
+
+ .creature table td.editable.userinput.focus{
+  border:2px solid orange;
+ }
+
+ .clan_logo{
+     width:80px;
+}
+ .creature strong{
+     font-family:Titre;
+     font-weight: normal;
+     font-size:2em;
+     line-height:1.4em;
+}
+ .creature.Sabbat table th{
+     background: #A09090 ;#url('colorful-grunge-texture-3.jpg') center center;
+}
+ .creature.Camarilla table th{
+     background: #90A090;# url('colorful-grunge-texture-13.jpg')  center center;
+}
+ .creature.Independant table th{
+     background: #A090A0;# url('colorful-grunge-texture-24.jpg') center center;
+}
+ .creature.Inconnu table th{
+     background: #A0A0A0;# url('colorful-grunge-texture-10.jpg') center center;
+}
+ .creature.Anarchs table th{
+     background: #90A0A0;# url('colorful-grunge-texture-20.jpg')center center;
+}
+
+.avatar_link.Sabbat{
+     background: #A09090;
+}
+.avatar_link.Camarilla{
+     background: #90A090;
+}
+.avatar_link.Independant{
+     background: #A090A0;
+}
+.avatar_link.Inconnu{
+     background: #A0A0A0;
+}
+.avatar_link.Anarchs{
+     background: #90A0A0;
+}
+
+.creature table.freewidth tr td{
+  width:auto;
+}
+
+.list .goodies{
+  width:auto;
+  height:auto;
+  margin:5px;  
+  text-align:center;
+  padding:5px;
+}
+.list .goodies span{
+  cursor:pointer;
+  font-family:Titre;
+}
+
+
+
+
+}
