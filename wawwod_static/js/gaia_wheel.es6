@@ -71,7 +71,7 @@ class GaiaWheel {
             .append("line")
             .style("stroke", function (d) {
                 let res = "transparent";//me.scales_stroke;
-                console.log(me.starts)
+                //console.log(me.starts)
                 if (me.starts.includes(d)) {
                     res = me.scales_stroke_special;
                 }

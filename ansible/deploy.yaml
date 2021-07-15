@@ -1,0 +1,72 @@
+---
+- name: WaWWoD Installation
+  hosts: raspberry_pi
+  gather_facts: no
+  remote_user: root
+  become: true
+
+  vars:
+    - github_user: alexgdc
+    - github_token: d146b48d166717c1a346d9ff410732bb7d87a98d
+
+
+  tasks:
+  - name: Clean up yum
+    command: yum clean all
+    args:
+      warn: no
+
+#  - name: Installing EPEL
+#    yum:
+#      name:
+#        - https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm   # << See the README.md file to check for EPEL repo if there are problems with reaching metalink
+#      state: present
+#      update_cache: yes
+
+  - name: Installing basic dependencies
+    yum:
+      name:
+        - vim
+        - ntp
+        - git
+        - yum-utils
+        - dpkg
+        - python-pip
+        - multitail
+        - nginx
+        - python36
+        - rust
+        - cargo
+        - certbot
+        - python2-certbot-nginx
+        - gcc
+      state: present
+      update_cache: yes
+
+  - name: Clone WaWWoD from Github
+    git:
+       repo: https://github.com/zaffarelli/wawwod.git
+       dest: /srv/wawwod/
+       clone: yes
+       force: yes
+
+  - name: Create Virtual Environment for WaWWoD
+    shell: python3 -m venv wawwod
+
+  - name: Put settings.py on target
+    copy:
+      src: ../assets/settings.py
+      dest: /usr/lib/python3.6/site-packages/airshield/settings.py
+      owner: root
+      group: root
+      mode: 0755
+      remote_src: no
+
+  - name: Put create_new_secret.py on target
+    copy:
+      src: ../assets/create_new_secret.py
+      dest: /root/create_new_secret.py
+      owner: root
+      group: root
+      mode: 0755
+      remote_src: no

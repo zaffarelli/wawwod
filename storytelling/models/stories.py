@@ -42,7 +42,7 @@ class Story(models.Model):
 
             day = -5
             for s in p_scenes:
-                new_day = int(s.time_offset_hours/24)
+                new_day = int(s.time_offset_hours/(24*7))
                 if new_day != day:
                     day = new_day
                     po = 1
