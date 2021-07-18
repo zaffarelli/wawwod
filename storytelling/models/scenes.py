@@ -11,6 +11,8 @@ logger = logging.Logger(__name__)
 
 
 class Scene(models.Model):
+    class Meta:
+        ordering = ['time_offset_hours']
     name = models.CharField(max_length=128, default='')
     story = models.ForeignKey(Story, on_delete=models.SET_NULL, null=True)
     place = models.ForeignKey(Place, on_delete=models.SET_NULL, null=True)
@@ -18,9 +20,12 @@ class Scene(models.Model):
     time_offset_custom = models.CharField(default='', max_length=32, blank=True)
     day = models.DateTimeField(default=datetime.now,blank=True,null=True)
     place_order = models.PositiveIntegerField(default=0, blank=True)
-    exact_place = models.TextField(max_length=256, blank=True, default='')
+    tags = models.TextField(max_length=256, blank=True, default='')
+    exact_place = models.CharField(max_length=256, blank=True, default='')
     preamble = models.TextField(max_length=1024, blank=True, default='')
-    description = models.TextField(max_length=1024, blank=True, default='')
+    objectives = models.TextField(max_length=1024, blank=True, default='')
+    fallback = models.TextField(max_length=1024, blank=True, default='')
+    description = models.TextField(max_length=4096, blank=True, default='')
     rewards = models.TextField(max_length=1024, blank=True, default='')
     consequences = models.TextField(max_length=1024, blank=True, default='')
     cast = models.TextField(max_length=1024, blank=True, default='')

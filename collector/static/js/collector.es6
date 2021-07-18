@@ -71,6 +71,9 @@ class WawwodCollector {
                         me.d3 = new Storytelling(s, "#d3area", me);
                         me.d3.perform(d);
                     }
+                    if (action == 'pdf_story') {
+                        console.log(anwwer);
+                    }
                     me.rebootLinks();
                 },
                 error: function (answer) {

@@ -51,7 +51,7 @@ class Story(models.Model):
                 po += 1
                 if po > 5:
                     po = 1
-            list.append({'name': p.name, 'id': p.id, 'acronym': p.acronym, 'scenes_count': len(p_scenes)})
+            list.append({'name': p.name, 'id': p.id, 'acronym': p.acronym, 'scenes_count': len(p_scenes), 'description': p.description})
         return list
 
     @property

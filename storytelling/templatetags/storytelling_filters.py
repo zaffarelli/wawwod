@@ -84,3 +84,18 @@ def as_boolean_entry(stack, x_field=''):
         res = f'<div class="plank entry"><div class="shard label " id="trigger_{x_id}__{x_field}__{x_datafield}">{x_field}</div><div class="shard data editable userinput edit_field" id="field_{x_id}__{x_field}__{x_datafield}">{b}</div></div>'
     return res
 
+@register.filter(name='as_tags')
+def as_tags(value):
+    tags = value.split(" ")
+    answer = ''
+    for tag in tags:
+        if tag:
+            k = ""
+            if tag in ["DREAM", "MYSTIC", "WEIRD"]:
+                k = ' class="blue" '
+            if tag in ["HEROIC", "EPIC", "BADASS"]:
+                k = ' class="red" '
+            if tag in ["OPTION", "MAJOR", "KEY_SCENE"]:
+                k = ' class="purple" '
+            answer += "<tt "+k+">&square;&nbsp;"+tag+"</tt>   "
+    return answer

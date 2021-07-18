@@ -1,0 +1,194 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+{% load static %}
+{% load storytelling_filters %}
+<html lang="en">
+<head>
+    <style>
+
+
+        @font-face {
+            font-family: 'Hind';
+            src: url('storytelling/static/storytelling/fonts/Hind-Regular.ttf');
+        }
+
+        @font-face {
+            font-family: 'Teko';
+            src: url('storytelling/static/storytelling/fonts/Teko-Regular.ttf');
+        }
+
+        @page {
+            size: a4 portrait;
+
+
+            @frame col_left {
+            left: 0.2cm;
+            width: 10cm;
+            top: 1.5cm;
+            height: 28cm;
+            padding: 0cm;
+
+        }
+
+        @frame col_right {
+        left: 10.8cm;
+        width: 10cm;
+        top: 2cm;
+        height: 27.5cm;
+        padding: 0.125cm;
+
+        }
+
+        @frame header_frame {
+        -pdf-frame-content:header_content;
+        right: 0.5cm;
+        width: 0.5cm;
+        top: 0.5cm;
+        height: 1cm;
+        text-align:right;
+        }
+
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            margin: 0;
+            padding: 0;
+            line-height: 0.8em;
+            font-family: 'Teko';
+        }
+
+        h1 {
+
+            font-size: 16pt;
+            font-weight: 800;
+            color: #202020;
+            margin-bottom: 0.5em;
+        }
+
+        h2 {
+            font-size: 14pt;
+            color: #404040;
+            margin-bottom: 0.5em;
+        }
+
+        h3 {
+            font-size: 12pt;
+            color: #606060;
+            background: #4CF;
+            margin-bottom: 0.25em;
+        }
+
+        h4 {
+            font-size: 11pt;
+            font-variant: small-caps;
+            margin-bottom: 0.5em;
+        }
+
+
+        p {
+            font-family: 'Hind';
+            font-size: 8pt;
+            text-align: left;
+            line-height: 0.97em;
+            margin: 0;
+            margin-bottom: 0.8em;
+            padding-left: 2ex;
+
+        }
+
+
+        tt{
+            display:inline-block;
+            color:#2A2;
+            font-weight:bold;
+            font-style:normal;
+            border:6px solid #2A2;
+            margin:2px;
+            padding:2px;
+            width:2cm;
+        }
+
+
+        .blue{
+            color:#148;
+            border-color:#148;
+        }
+
+        .red{
+            color:#A22;
+            border-color:#A22;
+        }
+
+        .purple{
+            color:#A2A;
+            border-color:#A2A;
+        }
+
+
+    </style>
+
+
+
+</head>
+<body>
+
+<h1>{{data.story.name}}</h1>
+
+<pdf:toc />
+
+<h2>List of all Places</h2>
+{% for d in data.story.place_set.all %}
+<h3>{{d.acronym|safe}}</h3>
+<p>{{d.name|safe}}</p>
+<p>{{d.description|safe}}</p>
+{% endfor %}
+
+
+<h2>Events</h2>
+<p>Those special scenes happen out of the scope of the players. They reflect the plans of the antagonists and allies,
+their natural reactions. They do not change anything most of the time, but if they are linked to another scene, that
+scene might show the consequences of an event.</p>
+{% for s in data.story.scene_set.all %}
+{% if s.is_event %}
+<h3>H{{s.time_offset_hours|safe}} - {{s.name|safe}}</h3>
+{{ "EVENT"|as_tags|safe }}
+{% if c.is_downtime %}{{ "DOWNTIME"|as_tags|safe }}{% endif %}
+<p>
+    Date: {{s.story_time|safe}}<BR/>
+    Location: {{s.place.acronym|safe}}<BR/>
+    Cast: {{s.validated_cast|safe}}<BR/>
+</p>
+<p>{{s.objectives|safe}}</p>
+<p>{{s.fallback|safe}}</p>
+<p>{{s.description|safe}}</p>
+{% endif %}
+{% endfor %}
+
+<h2>Scenes</h2>
+{% for s in data.story.scene_set.all %}
+{% if not s.is_event %}
+<h3>H{{s.time_offset_hours|safe}} - {{s.name|safe}}</h3>
+{{s.tags|as_tags|safe}}
+{% if s.is_downtime %}{{ "DOWNTIME"|as_tags|safe }}{% endif %}
+<p>
+    Date: {{s.story_time|safe}}<BR/>
+    Location: {{s.place.acronym|safe}}<BR/>
+    Day/hours: {{s.time_offset_custom|safe}}<BR/>
+    Cast: {{s.validated_cast|safe}}<BR/>
+</p>
+<p><u>Preamble:</u> {{s.preamble|safe}}</p>
+<p><u>Description:</u>{{s.description|safe}}</p>
+<p><u>Consequences:</u> {{s.consequences|safe}}</p>
+<p><u>Rewards:</u> {{s.consequences|safe}}</p>
+<p>
+    To: {{s.links_from|safe}}<BR/>
+    From: {{s.links_to|safe}}
+</p>
+
+
+{% endif %}
+{% endfor %}
+
+
+
+</body>
+</html>
