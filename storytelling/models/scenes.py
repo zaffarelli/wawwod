@@ -76,7 +76,7 @@ class Scene(models.Model):
         list = []
         from_list = ScenesLink.objects.filter(scene_from=self)
         for l in from_list:
-            list.append(f'[{l.category}]{l.scene_to}')
+            list.append(f'<b> H{l.scene_to.time_offset_hours}-{l.scene_to.name}</b> [{l.get_category_display()}]')
         return ", ".join(list)
 
     @property
@@ -84,7 +84,7 @@ class Scene(models.Model):
         list = []
         to_list = ScenesLink.objects.filter(scene_to=self)
         for l in to_list:
-            list.append(f'{l.scene_from}[{l.category}]')
+            list.append(f'<b>H{l.scene_from.time_offset_hours}-{l.scene_from.name}</b> [{l.get_category_display()}]')
         return ", ".join(list)
 
     @property
@@ -109,6 +109,37 @@ class Scene(models.Model):
             strl = ", ".join(list)
             return f'Expected: {len(cast)}, found {len(list)}: {strl}'
 
+    @property
+    def ultimate_cast(self):
+        if self.cast == '':
+            return ""
+        else:
+            from collector.models.creatures import Creature
+            cast = self.cast.split(', ')
+            cast_list = Creature.objects.filter(rid__in=cast)
+            list = []
+            for c in cast_list:
+                list.append('<b>'+c.name+'</b> ['+c.storyteller_entrance+']')
+            strl = ", ".join(list)
+            if len(cast) == len(list):
+                return f'{strl}'
+            else:
+                return f'Expected: {len(cast)}, found {len(list)}: {strl} [{self.cast}]'
+
+
+    @property
+    def all_as_tags(self):
+        list = self.tags.split(" ")
+        if self.is_downtime:
+            list.append("DOWNTIME")
+        if self.is_event:
+            list.append("EVENT")
+        if self.is_briefing:
+            list.append("INTRODUCTION")
+        if self.is_debriefing:
+            list.append("DEBRIEFING")
+        return " ".join(list)
+
 
 def refix(modeladmin, request, queryset):
     for scene in queryset:
@@ -120,11 +151,11 @@ def refix(modeladmin, request, queryset):
 
 
 LINK_CATEGORIES = (
-    ('FOE', 'Enemies action consequences'),
-    ('FRIEND', 'Allies action consequences'),
-    ('THIRD', 'Third Party action consequences'),
-    ('TIME', 'Time passing consequences'),
-    ('FATE', 'Randomness, luck, fate consequences'),
+    ('FOE', 'Enemies actions'),
+    ('FRIEND', 'Allies actions'),
+    ('THIRD', 'Others actions'),
+    ('TIME', '-'),
+    ('FATE', 'Fate or ill luck'),
 )
 
 
@@ -158,7 +189,7 @@ class SceneToInline(admin.TabularInline):
 
 
 class SceneAdmin(admin.ModelAdmin):
-    list_display = ['name', 'story', 'place', 'place_order', 'time_offset_hours', 'story_time', 'links_to', 'links_from', 'verified_cast']
+    list_display = ['name', 'place', 'place_order', 'time_offset_hours', 'story_time', 'links_to', 'links_from', 'verified_cast']
     ordering = ['time_offset_hours', 'place', 'name']
     list_filter = ['story', 'place']
     search_fields = ['name', 'description', 'preamble', 'rewards', 'consequences']

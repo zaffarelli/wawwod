@@ -2,43 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="346f49c9-ffeb-4324-94a2-67713079f8d7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/storytelling/migrations/0005_auto_20210718_1830.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storytelling/migrations/0006_scene_fallback.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storytelling/migrations/0007_auto_20210718_1842.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storytelling/static/storytelling/fonts/Hind-Bold.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storytelling/static/storytelling/fonts/Hind-Light.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storytelling/static/storytelling/fonts/Hind-Medium.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storytelling/static/storytelling/fonts/Hind-Regular.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storytelling/static/storytelling/fonts/Hind-SemiBold.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storytelling/static/storytelling/fonts/Teko-Bold.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storytelling/static/storytelling/fonts/Teko-Light.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storytelling/static/storytelling/fonts/Teko-Medium.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storytelling/static/storytelling/fonts/Teko-Regular.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storytelling/static/storytelling/fonts/Teko-SemiBold.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storytelling/templates/storytelling/pdf/story.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/avatar_oktoberbluntefest.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/avatar_story1.pdf.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/story_oktoberbluntefest.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_static/storytelling/fonts/Hind-Bold.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_static/storytelling/fonts/Hind-Light.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_static/storytelling/fonts/Hind-Medium.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_static/storytelling/fonts/Hind-Regular.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_static/storytelling/fonts/Hind-SemiBold.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_static/storytelling/fonts/Teko-Bold.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_static/storytelling/fonts/Teko-Light.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_static/storytelling/fonts/Teko-Medium.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_static/storytelling/fonts/Teko-Regular.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_static/storytelling/fonts/Teko-SemiBold.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/collector/static/collector/clans/ravnos_antitribu.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storytelling/templates/storytelling/pdf/scene.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/story_oktoberblütenfest.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/static/js/collector.es6" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/js/collector.es6" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/models/creatures.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/models/creatures.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/wawwod.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/wawwod.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poetry.lock" beforeDir="false" afterPath="$PROJECT_DIR$/poetry.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storytelling/models/scenes.py" beforeDir="false" afterPath="$PROJECT_DIR$/storytelling/models/scenes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storytelling/models/stories.py" beforeDir="false" afterPath="$PROJECT_DIR$/storytelling/models/stories.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storytelling/templates/storytelling/pdf/story.html" beforeDir="false" afterPath="$PROJECT_DIR$/storytelling/templates/storytelling/pdf/story.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storytelling/templatetags/storytelling_filters.py" beforeDir="false" afterPath="$PROJECT_DIR$/storytelling/templatetags/storytelling_filters.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storytelling/views/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/storytelling/views/base.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod_static/js/collector.es6" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/js/collector.es6" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/avatar_oktoberbluntefest.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/avatar_story1.pdf.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/story_oktoberbluntefest.pdf" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,7 +112,7 @@
       <workItem from="1626226870306" duration="6898000" />
       <workItem from="1626283788557" duration="1576000" />
       <workItem from="1626288721953" duration="12514000" />
-      <workItem from="1626474367576" duration="40970000" />
+      <workItem from="1626474367576" duration="50653000" />
     </task>
     <servers />
   </component>

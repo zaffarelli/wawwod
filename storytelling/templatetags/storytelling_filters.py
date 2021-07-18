@@ -95,7 +95,7 @@ def as_tags(value):
                 k = ' class="blue" '
             if tag in ["HEROIC", "EPIC", "BADASS"]:
                 k = ' class="red" '
-            if tag in ["OPTION", "MAJOR", "KEY_SCENE"]:
+            if tag in ["MAJOR", "KEY_SCENE", "INTRODUCTION", "DEBRIEFING", "DOWNTIME", "EVENT"]:
                 k = ' class="purple" '
             answer += "<tt "+k+">&square;&nbsp;"+tag+"</tt>   "
     return answer

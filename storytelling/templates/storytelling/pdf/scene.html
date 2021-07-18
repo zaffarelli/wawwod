@@ -1,0 +1,43 @@
+{% load static %}
+{% load storytelling_filters %}
+
+<h3>H{{c.time_offset_hours|safe}} - {{c.name|safe}}</h3>
+{{c.all_as_tags|as_tags|safe}}
+<p class="boxed">
+    Date: {{c.story_time|safe}}<BR/>
+    Location: {{c.place.acronym|safe}}<BR/>
+    Day/hours: {{c.time_offset_custom|safe}}<BR/>
+    Cast: {{c.ultimate_cast|safe}}
+</p>
+
+{% if c.preamble %}
+<p><u>Preamble:</u> {{c.preamble|safe}}</p>
+{% endif %}
+
+{% if c.objectives %}
+<p><u>Objectives:</u> {{c.objectives|safe}}</p>
+{% endif %}
+{% if c.fallbacks %}
+<p><u>Fallbacks:</u> {{c.fallbacks|safe}}</p>
+{% endif %}
+
+<p><u>Description:</u> {{c.description|safe}}</p>
+
+
+{% if c.consequences %}
+<p><u>Consequences:</u> {{c.consequences|safe}}</p>
+{% endif %}
+{% if c.rewards %}
+<p><u>Rewards:</u> {{c.rewards|safe}}</p>
+
+<p class="boxed">
+    From: {{c.links_to|safe}}<BR/>
+    To: {{c.links_from|safe}}
+</p>
+
+
+{% endif %}
+
+
+
+<center>&middot; &middot; &middot;</center>

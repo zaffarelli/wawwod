@@ -70,7 +70,7 @@ def display_pdf_story(request):
             all_stories.append(s.toJSON())
             selected_story = s
     data = {'story': selected_story, 'end_time': selected_story.story_end_time, 'places': selected_story.all_places, 'scenes': selected_story.all_scenes, 'links': selected_story.all_links}
-    context = {'data': data, 'settings': settings, 'filename': "oktoberbluntefest"}
+    context = {'data': data, 'settings': settings, 'filename': selected_story.name.lower()}
     # print(context)
     template = get_template("storytelling/pdf/story.html")
     html = template.render(context)

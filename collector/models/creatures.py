@@ -342,7 +342,15 @@ class Creature(models.Model):
             shortcuts.append(sc)
         return shortcuts
 
-
+    @property
+    def storyteller_entrance(self):
+        from collector.templatetags.wod_filters import as_generation, as_rank, as_breed, as_auspice, as_tribe_plural
+        entrance = ''
+        if self.creature == 'kindred':
+            entrance = f'{self.family} {as_generation(self.background3)} ({self.faction}/{self.group}/{self.groupspec}) ({self.demeanor} ({self.nature}))'
+        elif self.creature == 'garou':
+            entrance = f'{as_rank(self.rank)} {as_breed(self.breed)} {as_auspice(self.auspice)} of the  {as_tribe_plural(self.family)} ({self.group})'
+        return entrance
 
     @property
     def entrance(self):

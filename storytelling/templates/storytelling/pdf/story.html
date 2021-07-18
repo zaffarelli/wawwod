@@ -3,6 +3,7 @@
 {% load storytelling_filters %}
 <html lang="en">
 <head>
+    <meta charset="utf-8" />
     <style>
 
 
@@ -21,19 +22,19 @@
 
 
             @frame col_left {
-            left: 0.2cm;
-            width: 10cm;
-            top: 1.5cm;
-            height: 28cm;
-            padding: 0cm;
+            left: 0.8cm;
+            width: 9.5cm;
+            top: 2cm;
+            height: 26cm;
+            padding: 0.125cm;
 
         }
 
         @frame col_right {
-        left: 10.8cm;
-        width: 10cm;
+        right: 0.8cm;
+        width: 9.5cm;
         top: 2cm;
-        height: 27.5cm;
+        height: 26cm;
         padding: 0.125cm;
 
         }
@@ -52,47 +53,48 @@
         h1, h2, h3, h4, h5, h6 {
             margin: 0;
             padding: 0;
-            line-height: 0.8em;
             font-family: 'Teko';
         }
 
         h1 {
-
-            font-size: 16pt;
+            font-size: 20pt;
             font-weight: 800;
-            color: #202020;
             margin-bottom: 0.5em;
+            line-height: 0.8em;
         }
 
         h2 {
-            font-size: 14pt;
-            color: #404040;
-            margin-bottom: 0.5em;
+            font-size: 16pt;
+            line-height: 0.83em;
+            margin-top:0.5em;
+            -pdf-keep-with-next: true;
         }
 
         h3 {
             font-size: 12pt;
+            line-height: 0.8em;
             color: #606060;
             background: #4CF;
-            margin-bottom: 0.25em;
+            line-height: 0.83em;
+            margin-top:0.5em;
+            -pdf-keep-with-next: true;
         }
 
         h4 {
             font-size: 11pt;
             font-variant: small-caps;
-            margin-bottom: 0.5em;
+            line-height: 0.83em;
         }
 
 
         p {
             font-family: 'Hind';
             font-size: 8pt;
-            text-align: left;
+            text-align: justify;
             line-height: 0.97em;
             margin: 0;
-            margin-bottom: 0.8em;
             padding-left: 2ex;
-
+            -pdf-keep-with-next: false;
         }
 
 
@@ -105,6 +107,7 @@
             margin:2px;
             padding:2px;
             width:2cm;
+            -pdf-keep-with-next: true;
         }
 
 
@@ -116,6 +119,7 @@
         .red{
             color:#A22;
             border-color:#A22;
+            border:1px solid black;
         }
 
         .purple{
@@ -123,6 +127,16 @@
             border-color:#A2A;
         }
 
+        .boxed{
+            margin-left:3ex;
+            border-left:5px double #CCC;
+            padding-left:1ex;
+            text-align: left;
+        }
+
+        .boxed b{
+            color:#A22;
+        }
 
     </style>
 
@@ -131,9 +145,16 @@
 </head>
 <body>
 
-<h1>{{data.story.name}}</h1>
+<h1>Drama: {{data.story.name}}</h1>
+<p class="boxed">
+    Chronicle: {{data.story.chronicle.name}}<BR/>
+    Era: {{data.story.chronicle.era}}<BR/>
+    In-game Start: {{data.story.dday}}
+</p>
 
-<pdf:toc />
+<p><u>Description:</u> {{data.story.description|safe}}
+</p>
+
 
 <h2>List of all Places</h2>
 {% for d in data.story.place_set.all %}
@@ -149,43 +170,17 @@ their natural reactions. They do not change anything most of the time, but if th
 scene might show the consequences of an event.</p>
 {% for s in data.story.scene_set.all %}
 {% if s.is_event %}
-<h3>H{{s.time_offset_hours|safe}} - {{s.name|safe}}</h3>
-{{ "EVENT"|as_tags|safe }}
-{% if c.is_downtime %}{{ "DOWNTIME"|as_tags|safe }}{% endif %}
-<p>
-    Date: {{s.story_time|safe}}<BR/>
-    Location: {{s.place.acronym|safe}}<BR/>
-    Cast: {{s.validated_cast|safe}}<BR/>
-</p>
-<p>{{s.objectives|safe}}</p>
-<p>{{s.fallback|safe}}</p>
-<p>{{s.description|safe}}</p>
+    {% include "storytelling/pdf/scene.html" with c=s %}
 {% endif %}
 {% endfor %}
 
 <h2>Scenes</h2>
+<p>This is the adventure, running from the introduction scene to the multiple debriefings. The first introduction is often global,
+you might found individual introductions for each players (if they are prerolled characters).</p>
 {% for s in data.story.scene_set.all %}
-{% if not s.is_event %}
-<h3>H{{s.time_offset_hours|safe}} - {{s.name|safe}}</h3>
-{{s.tags|as_tags|safe}}
-{% if s.is_downtime %}{{ "DOWNTIME"|as_tags|safe }}{% endif %}
-<p>
-    Date: {{s.story_time|safe}}<BR/>
-    Location: {{s.place.acronym|safe}}<BR/>
-    Day/hours: {{s.time_offset_custom|safe}}<BR/>
-    Cast: {{s.validated_cast|safe}}<BR/>
-</p>
-<p><u>Preamble:</u> {{s.preamble|safe}}</p>
-<p><u>Description:</u>{{s.description|safe}}</p>
-<p><u>Consequences:</u> {{s.consequences|safe}}</p>
-<p><u>Rewards:</u> {{s.consequences|safe}}</p>
-<p>
-    To: {{s.links_from|safe}}<BR/>
-    From: {{s.links_to|safe}}
-</p>
-
-
-{% endif %}
+    {% if not s.is_event %}
+        {% include "storytelling/pdf/scene.html" with c=s %}
+    {% endif %}
 {% endfor %}
 
 
