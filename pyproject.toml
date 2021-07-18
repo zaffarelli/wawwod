@@ -6,7 +6,7 @@ authors = ["Zaffarelli <zaffarelli@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.6"
-django = "3.2.1"
+django = "3.2.4"
 flake8 = "3.9.2"
 django-libsass = "^0.8"
 django-compressor = "^2.4.1"
