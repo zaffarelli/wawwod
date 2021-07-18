@@ -2,20 +2,45 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="346f49c9-ffeb-4324-94a2-67713079f8d7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ansible/assets/create_new_secret.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ansible/assets/settings.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backup/20210718/chronicles.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backup/20210718/creatures.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backup/20210718/gifts.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backup/20210718/places.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backup/20210718/rites.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backup/20210718/scenes.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backup/20210718/stories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storytelling/migrations/0003_scene_exact_place.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storytelling/migrations/0004_auto_20210718_0217.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.04658525a138.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.a7c3f246c288.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.eedb130ba327.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/storytelling.5f538184c2f1.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/storytelling.5f98142ce99d.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/storytelling.6c04d0cd8aa8.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/storytelling.7111c9bb673f.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/storytelling.8611329f11fe.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/storytelling.9484ed9fe4af.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/storytelling.9c94da5b2331.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/storytelling.cc28402d1bb3.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/storytelling.d708200fd08f.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/storytelling.f015c1fb32a4.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ansible/deploy.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/ansible/deploy.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ansible/hosts" beforeDir="false" afterPath="$PROJECT_DIR$/ansible/hosts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/static/collector/css/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/collector/css/main.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/static/js/collector.es6" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/js/collector.es6" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/collector/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/collector/templates/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/wawwod.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/wawwod.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storytelling/models/scenes.py" beforeDir="false" afterPath="$PROJECT_DIR$/storytelling/models/scenes.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storytelling/models/stories.py" beforeDir="false" afterPath="$PROJECT_DIR$/storytelling/models/stories.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storytelling/static/js/storytelling.es6" beforeDir="false" afterPath="$PROJECT_DIR$/storytelling/static/js/storytelling.es6" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storytelling/static/storytelling/css/storytelling.scss" beforeDir="false" afterPath="$PROJECT_DIR$/storytelling/static/storytelling/css/storytelling.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storytelling/templates/storytelling/scene_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/storytelling/templates/storytelling/scene_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storytelling/templatetags/storytelling_filters.py" beforeDir="false" afterPath="$PROJECT_DIR$/storytelling/templatetags/storytelling_filters.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storytelling/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/storytelling/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storytelling/views/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/storytelling/views/base.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_static/collector/css/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/collector/css/main.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wawwod_static/js/collector.es6" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/js/collector.es6" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod_static/js/cross_over_sheet.es6" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/js/cross_over_sheet.es6" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod_static/js/gaia_wheel.es6" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/js/gaia_wheel.es6" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod_static/js/kindred_lineage.es6" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/js/kindred_lineage.es6" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wawwod_static/js/storytelling.es6" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/js/storytelling.es6" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_static/storytelling/css/storytelling.scss" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/storytelling/css/storytelling.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,7 +137,8 @@
       <workItem from="1626038041230" duration="6591000" />
       <workItem from="1626226870306" duration="6898000" />
       <workItem from="1626283788557" duration="1576000" />
-      <workItem from="1626288721953" duration="12297000" />
+      <workItem from="1626288721953" duration="12514000" />
+      <workItem from="1626474367576" duration="28448000" />
     </task>
     <servers />
   </component>

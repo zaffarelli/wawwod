@@ -103,6 +103,36 @@ class WawwodCollector {
         });
     }
 
+    registerTriggers(){
+        let me = this;
+        $('.edit_trigger').off().on('click', function (event) {
+            let id = $(this).attr('id');
+            $(".storyboard_handler").removeClass('hidden');
+            console.log('Nice, you just clicked on ['+id+']');
+            let field_id = id.replace("trigger_","field_");
+            let resend_tags = id.replace("trigger_","").replace("__","_").split("_");
+            console.log(resend_tags);
+            let resend_id = resend_tags[0]+'_'+resend_tags[3];
+            console.log(field_id);
+            let grabbed_data = $("#"+field_id).html();
+            console.log(grabbed_data);
+            $("#text_edit").html(grabbed_data);
+            $("#resend").html(resend_id+" <i class='fa fa-arrow-right'></i>");
+            $("#resend").attr('param',resend_id);
+        })
+        $('.edit_trigger').on('mouseover', function(e){
+            $(this).css('border-color','#A22').attr('title','Click to edit');
+            $("#text_edit").css('border-color','#A22');
+        })
+        $('.edit_trigger').on('mouseout', function(e){
+            $(this).css('border-color','#000').attr('title','');
+            $("#text_edit").css('border-color','#999');
+
+        })
+
+    }
+
+
     registerCollectorAction() {
         let me = this;
         $('.collector_action').off().on('click', function (event) {
@@ -206,6 +236,7 @@ class WawwodCollector {
             me.registerAction();
             me.registerToggle();
             me.registerCollectorAction();
+            me.registerTriggers();
             $('#go').off();
             $('#go').on('click', function (event) {
                 event.preventDefault();

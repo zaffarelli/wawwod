@@ -42,13 +42,15 @@ class Story(models.Model):
 
             day = -5
             for s in p_scenes:
-                new_day = int(s.time_offset_hours/(24*7))
+                new_day = int(s.time_offset_hours/(24*7*10))
                 if new_day != day:
                     day = new_day
                     po = 1
                 s.place_order = po
                 s.save()
                 po += 1
+                if po > 5:
+                    po = 1
             list.append({'name': p.name, 'id': p.id, 'acronym': p.acronym, 'scenes_count': len(p_scenes)})
         return list
 

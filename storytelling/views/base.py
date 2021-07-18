@@ -53,3 +53,22 @@ def action_timeslip(request, slug='m0d_m0h__'):
     changes_json = json.dumps(changes, default=json_default, sort_keys=True, indent=4)
     answer = {'changes_on_scenes': changes_json}
     return JsonResponse(answer)
+
+
+def display_pdf_story(request):
+    all = Story.objects.all()
+    all_stories = []
+    settings = {}
+    selected_story = None
+    for s in all:
+        if s.is_current:
+            all_stories.append(s.toJSON())
+            selected_story = s
+    settings_json = json.dumps(settings, default=json_default, sort_keys=True, indent=4)
+    places_json = json.dumps(selected_story.all_places, default=json_default, sort_keys=True, indent=4)
+    scenes_json = json.dumps(selected_story.all_scenes, default=json_default, sort_keys=True, indent=4)
+    links_json = json.dumps(selected_story.all_links, default=json_default, sort_keys=True, indent=4)
+    data = {'story': selected_story.toJSON(), 'end_time': selected_story.story_end_time, 'places': places_json, 'scenes': scenes_json, 'links': links_json}
+    data_json = json.dumps(data, default=json_default, sort_keys=True, indent=4)
+    answer = {'data': data_json, 'settings': settings_json}
+    return JsonResponse(answer)

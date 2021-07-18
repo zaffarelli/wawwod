@@ -39,8 +39,14 @@ def param_stack(x_trait, x_id=''):
 @register.filter(name='as_entry')
 def as_entry(stack, x_field=''):
     """ Display table lines as editable disciplines """
-    x_trait, x_id = stack
-    return f'<div class="plank entry"><div class="shard label">{x_field}</div><div class="shard data editable userinput" id="{x_id}__{x_field}">{x_trait}</div></div>'
+    x_t, x_id = stack
+    x_trait, x_datafield = x_t
+    if x_datafield != "xxx":
+        res = f'<div class="plank entry"><div class="shard label edit_trigger" id="trigger_{x_id}__{x_field}__{x_datafield}">{x_field}</div><div class="shard data editable userinput edit_field" id="field_{x_id}__{x_field}__{x_datafield}">{x_trait}</div></div>'
+    else:
+        res = f'<div class="plank entry"><div class="shard label " id="trigger_{x_id}__{x_field}__{x_datafield}">{x_field}</div><div class="shard data editable userinput edit_field" id="field_{x_id}__{x_field}__{x_datafield}">{x_trait}</div></div>'
+    return res
+
 
 
 @register.filter(name='as_stat_name')
@@ -57,3 +63,24 @@ def as_editable_updown(value, options=''):
     afield = keys[1]
     res = "<td class='editable updown' id='%d_%s'>" % (aid, afield)
     return res
+
+
+@register.filter(name='as_boolean_entry')
+def as_boolean_entry(stack, x_field=''):
+    """ Display table lines as editable disciplines """
+    from django.utils.safestring import SafeString
+    x_t, x_id = stack
+    x_trait, x_datafield = x_t
+    print(x_trait)
+    if x_trait !=  False:
+        b = SafeString("<i class='fa fa-check-square'></i>")
+    else:
+        b = SafeString("<i class='fa fa-square'></i>")
+
+
+    if x_datafield:
+        res = f'<div class="plank entry"><div class="shard label edit_trigger" id="trigger_{x_id}__{x_field}__{x_datafield}">{x_field}</div><div class="shard data editable userinput edit_field" id="field_{x_id}__{x_field}__{x_datafield}">{b}</div></div>'
+    else:
+        res = f'<div class="plank entry"><div class="shard label " id="trigger_{x_id}__{x_field}__{x_datafield}">{x_field}</div><div class="shard data editable userinput edit_field" id="field_{x_id}__{x_field}__{x_datafield}">{b}</div></div>'
+    return res
+

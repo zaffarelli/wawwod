@@ -66,6 +66,7 @@
             {% include "collector/page/chronicles.html" with c=chronicles%}
             <HR/>
             <li class="display" action="storytelling">Storyboard</li>
+            <li class="display" action="pdf_story">PDF</li>
         </ul>
     </li>
     <li class="pull_down">
@@ -94,15 +95,16 @@
     </div>
     <div class='handler'>
         <div class="storyboard_handler">
-            <div class="plank tag toggle" action="toggle" param="storyboard_handler"><i class='fa fa-times'></i></div>
-            <div class="plank action" id="time_slip_m1d" action="time_slip" param="m1d_m0h">One day in the past</div>
-            <div class="plank action" id="time_slip_m1h" action="time_slip" param="m0d_m1h">One hour in the past</div>
-            <div class="plank action" id="time_slip_p1h" action="time_slip" param="m0d_p1h">One hour in the future</div>
-            <div class="plank action" id="time_slip_p1d" action="time_slip" param="p1d_p0h">One day in the future</div>
+            <div class="plank tag toggle small" action="toggle" param="storyboard_handler"><i class='fa fa-times'></i></div>
+            <div class="plank action small" id="time_slip_m1d" action="time_slip" param="m1d_m0h">-1D</div>
+            <div class="plank action small" id="time_slip_m1h" action="time_slip" param="m0d_m1h">-1H</div>
+            <div class="plank action small" id="time_slip_p1h" action="time_slip" param="m0d_p1h">+1H</div>
+            <div class="plank action small" id="time_slip_p1d" action="time_slip" param="p1d_p0h">+1D</div>
             <div class="plank action" id="create_link" action="create_link">Create Link</div>
             <div class="plank action" id="create_link" action="create_link">Clear Selection</div>
-            <textarea class="plank text" id="text_edit"></textarea>
             <div class="plank tag action" id="resend" action="create_link"><i class="fa fa-arrow-right"></i></div>
+            <textarea class="plank text" id="text_edit"></textarea>
+
             <input type='text' id='userinput' placeholder='Free text here...'>
         </div>
     </div>

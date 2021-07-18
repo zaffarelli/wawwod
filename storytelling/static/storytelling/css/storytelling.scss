@@ -56,14 +56,30 @@ div.handler {
 .storyboard_handler {
   @include wawwod_panel;
   display: flex;
-  flex-flow: column nowrap;
+  flex-flow: row wrap;
   word-wrap: normal;
   height: 100%;
+
+  & .action, &  textarea, & input{
+    order:2;
+    width:100%;
+  }
+
+  & .small{
+    order:1;
+    width:18%;
+  }
 
   &.hidden {
     transition: all 0.3s ease;
     transform: translateX(-500px);
   }
+
+  & textarea{
+    height:25em;
+  }
+
+
 }
 
 .scene {

@@ -18,6 +18,7 @@ class Scene(models.Model):
     time_offset_custom = models.CharField(default='', max_length=32, blank=True)
     day = models.DateTimeField(default=datetime.now,blank=True,null=True)
     place_order = models.PositiveIntegerField(default=0, blank=True)
+    exact_place = models.TextField(max_length=256, blank=True, default='')
     preamble = models.TextField(max_length=1024, blank=True, default='')
     description = models.TextField(max_length=1024, blank=True, default='')
     rewards = models.TextField(max_length=1024, blank=True, default='')
@@ -26,6 +27,8 @@ class Scene(models.Model):
     # era = models.CharField(max_length=16, blank=True, default='2019')
     is_event = models.BooleanField(default=False)
     is_downtime = models.BooleanField(default=False)
+    is_briefing = models.BooleanField(default=False)
+    is_debriefing = models.BooleanField(default=False)
 
     def fix(self):
         if self.time_offset_hours >= 0:
@@ -150,9 +153,9 @@ class SceneToInline(admin.TabularInline):
 
 
 class SceneAdmin(admin.ModelAdmin):
-    list_display = ['name', 'story', 'place', 'place_order', 'time_offset_custom', 'story_time', 'links_to', 'links_from', 'verified_cast']
+    list_display = ['name', 'story', 'place', 'place_order', 'time_offset_hours', 'story_time', 'links_to', 'links_from', 'verified_cast']
     ordering = ['time_offset_hours', 'place', 'name']
     list_filter = ['story', 'place']
-    search_fields = ['name', 'description', 'preamble', 'reward', 'consequences']
+    search_fields = ['name', 'description', 'preamble', 'rewards', 'consequences']
     actions = [refix]
     inlines = [SceneFromInline, SceneToInline]

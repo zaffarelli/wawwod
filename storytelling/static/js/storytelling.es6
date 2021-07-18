@@ -16,13 +16,16 @@ class Storytelling {
         me.d_start_y = me.stepy * 5;
         me.p_start_x = me.stepx * 4;
         me.p_start_y = me.stepy * 4;
-        me.day_start = 3 + 0.1;
+        me.day_size = 6;
+        me.day_start = me.day_size + 1;
         me.scene_dim = me.time_coeff * 8;
         me.scene_height = me.scene_dim / 2;
         me.scene_width = me.scene_dim;
-        me.hour = (me.stepy * 3) / 24;
-        me.debug = true
+        me.hour = (me.stepy * me.day_size) / 24;
+        me.debug = true;
+        me.place_width = 10;
         me.selected_scenes = []
+        me.link_opacity = 0.5;
     }
 
     decorationText(x, y, d = 0, a = 'middle', f, s, b, c, w, t, v, o = 1) {
@@ -81,8 +84,8 @@ class Storytelling {
     init() {
         let me = this;
         me.stretch_coeff = 2;
-        me.width = (me.story['places_count'] * 4 + 6) * me.stepx;
-        me.height = ((Math.trunc(me.end_time / 24) + 2) * 4 + 8) * me.stepy;
+        me.width = (me.story['places_count'] * (me.place_width+1) + 6) * me.stepx;
+        me.height = ((Math.trunc(me.end_time / 24) + 2) * me.day_size + 1.5*me.day_size) * me.stepy;
         me.w = parseInt($("body").css("width")) * 1;
         me.h = me.w * 0.52;
 
@@ -115,7 +118,7 @@ class Storytelling {
 
     drawTimeScale() {
         let me = this;
-        let days_count = (me.end_time / 24) + 1;
+        let days_count = (me.end_time / 24) ;
         let days = me.back.append('g')
             .attr('class', 'days')
             .selectAll("g")
@@ -123,6 +126,8 @@ class Storytelling {
         let day_in = days.enter()
         day_in.append('rect')
             .attr('class', 'day_rect')
+            .attr('rx', 25)
+            .attr('ry', 25)
             .attr('x', function (d) {
                 return me.d_start_x + 0;
             })
@@ -133,7 +138,7 @@ class Storytelling {
                 return me.width - me.stepx * 5;
             })
             .attr('height', function (d) {
-                return me.stepy * 3;
+                return me.stepy * me.day_size;
             })
             .style('fill', '#0F0')
             .style('stroke', 'transparent')
@@ -142,6 +147,8 @@ class Storytelling {
         ;
         day_in.append('rect')
             .attr('class', 'day_rect_morning')
+            .attr('rx', 25)
+            .attr('ry', 25)
             .attr('x', function (d) {
                 return me.d_start_x + 0;
             })
@@ -152,7 +159,7 @@ class Storytelling {
                 return me.width - me.stepx * 5;
             })
             .attr('height', function (d) {
-                return (3 / 24) * 6.5 * me.stepy;
+                return (me.day_size / 24) * 6.5 * me.stepy;
             })
             .style('fill', '#CCC')
             .style('stroke', 'transparent')
@@ -161,17 +168,19 @@ class Storytelling {
         ;
         day_in.append('rect')
             .attr('class', 'day_rect_evening')
+            .attr('rx', 25)
+            .attr('ry', 25)
             .attr('x', function (d) {
                 return me.d_start_x + 0;
             })
             .attr('y', function (d) {
-                return me.d_start_y + d * (me.stepy * (me.day_start)) + (3 / 24) * 19.5 * me.stepy;
+                return me.d_start_y + d * (me.stepy * (me.day_start)) + (me.day_size / 24) * 19.5 * me.stepy;
             })
             .attr('width', function (d) {
                 return me.width - me.stepx * 5;
             })
             .attr('height', function (d) {
-                return (3 / 24) * 4.5 * me.stepy;
+                return (me.day_size / 24) * 4.5 * me.stepy;
             })
             .style('fill', '#CCC')
             .style('stroke', 'transparent')
@@ -184,13 +193,13 @@ class Storytelling {
                 return me.d_start_x + 0;
             })
             .attr('y1', function (d) {
-                return me.d_start_y + d * (me.stepy * (me.day_start)) + (3 / 24) * 12 * me.stepy;
+                return me.d_start_y + d * (me.stepy * (me.day_start)) + (me.day_size / 24) * 12 * me.stepy;
             })
             .attr('x2', function (d) {
                 return me.d_start_x + me.width - me.stepx * 5;
             })
             .attr('y2', function (d) {
-                return me.d_start_y + d * (me.stepy * (me.day_start)) + (3 / 24) * 12 * me.stepy;
+                return me.d_start_y + d * (me.stepy * (me.day_start)) + (me.day_size / 24) * 12 * me.stepy;
             })
             .style('fill', 'transparent')
             .style('stroke', '#000')
@@ -248,14 +257,16 @@ class Storytelling {
         let place_in = places.enter();
         place_in.append('rect')
             .attr('class', 'place_rect')
+            .attr('rx',25)
+            .attr('ry',25)
             .attr('x', function (d, i) {
-                return me.p_start_x + i * (me.stepx * (3 + 1));
+                return me.p_start_x + i * (me.stepx * (me.place_width + 1));
             })
             .attr('y', function (d) {
                 return me.p_start_y + 0;
             })
             .attr('width', function (d) {
-                return me.stepx * 3;
+                return me.place_width * me.stepx;
             })
             .attr('height', function (d) {
                 return (me.stepy) * (me.story['places_count'] + 2) * me.day_start;
@@ -268,7 +279,7 @@ class Storytelling {
         place_in.append('text')
             .attr('class', 'place_txt')
             .attr('x', function (d, i) {
-                return me.p_start_x + i * (me.stepx * (3 + 1));
+                return me.p_start_x + i * (me.stepx * (me.place_width + 1));
             })
             .attr('y', function (d) {
                 return me.p_start_y + 0;
@@ -281,13 +292,13 @@ class Storytelling {
             .style("stroke", me.draw_stroke)
             .style("stroke-width", '0.5pt')
             .text(function (d) {
-                return d['acronym'] + " (" + d['id'] + ")";
+                return d['acronym'];
             })
         ;
         place_in.append('text')
             .attr('class', 'place_txt')
             .attr('x', function (d, i) {
-                return me.p_start_x + i * (me.stepx * (3 + 1));
+                return me.p_start_x + i * (me.stepx * (me.place_width + 1));
             })
             .attr('y', function (d) {
                 return me.p_start_y + 0;
@@ -456,17 +467,34 @@ class Storytelling {
                 return 'link_' + d.id;
             })
             .attr("d", function (d) {
+                let is_time_flat = Math.abs(d.xo - d.xe) > Math.abs(d.yo - d.ye);
                 let x_in = d.xo + (d.order_out - 2) * 16;
-                let x_mid = d.xo + 1 * Math.abs(d.yo - d.ye) / 2;
+                let x_mid = d.xe + 1 * Math.abs(d.xo - d.xe) / 5;
                 let x_out = d.xe + (d.order_in - 2) * 16;
                 let y_in = d.yo;
-                let y_mid = d.ye - 1 * Math.abs(d.yo - d.ye) / 5;
-                let y_out = d.ye;
+                let y_mid1 = d.yo + 1 * Math.abs(d.yo - d.ye) / 15 ;
+                let y_mid2 = d.ye - 1 * Math.abs(d.yo - d.ye) / 15 ;
+                let y_out = d.ye ;
+                let x_middle = d.xe - 1 * Math.abs(d.xo - d.xe) / 15;
+                let y_middle1 = d.yo + 1 * Math.abs(d.yo - d.ye) / 7;
+                let y_middle2 = d.ye - 1 * Math.abs(d.yo - d.ye) / 7;
                 let path = ""
-                path += "M " + x_in + " " + y_in + " ";
-                path += "L " + x_in + " " + y_mid + " ";
-                path += "  " + x_out + " " + y_mid + " ";
-                path += "  " + x_out + " " + y_out + " ";
+                if (is_time_flat){
+                    path += "M " + x_in + " " + y_in + " ";
+                    path += "L " + x_in + " " + (y_middle1) + " ";
+                    // path += "  " + x_mid + " " + y_mid1 + " ";
+                    // path += "  " + x_mid + " " + y_mid2 + " ";
+                    path += "  " + x_out + " " + (y_middle2) + " ";
+                    path += "  " + x_out + " " + y_out + " ";
+
+                }else {
+                    path += "M " + x_in + " " + y_in + " ";
+                    path += "L " + x_in + " " + y_mid1 + " ";
+                    // path += "  " + x_mid + " " + y_mid1 + " ";
+                    // path += "  " + x_mid + " " + y_mid2 + " ";
+                    path += "  " + x_out + " " + y_mid2 + " ";
+                    path += "  " + x_out + " " + y_out + " ";
+                }
                 return path;
             })
             .style('fill', 'transparent')
@@ -486,7 +514,7 @@ class Storytelling {
             .attr('marker-start', "url(#arrowtail)")
             .attr('marker-end', "url(#arrowlink)")
             .style('stroke-width', '3pt')
-            .attr('opacity', 0.25)
+            .attr('opacity', me.link_opacity)
         ;
         let link_out = links.exit()
             .remove();
@@ -506,6 +534,7 @@ class Storytelling {
         if (changes) {
             me.updateScenes();
             me.drawStory();
+            me.vis.call(zoom);
         }
     }
 
@@ -522,6 +551,8 @@ class Storytelling {
             .attr('id', function (d) {
                 return "rect_scene__" + d.id;
             })
+            .attr('rx',5)
+            .attr('ry',5)
             .attr('x', function (d, i) {
                 return d.x;
             })
@@ -541,21 +572,157 @@ class Storytelling {
             })
             .attr('fill-opacity', 0.90)
             .on('mouseover', function (e, d) {
-
+                if (e.ctrlKey) {
                     d3.selectAll('.link')
                         .attr('opacity', 0)
                     ;
                     d3.selectAll('.linked_' + d.id)
                         .attr('opacity', 1.0)
                     ;
-
+                }
             })
             .on('mouseout', function (e, d) {
                 d3.selectAll('.link')
-                    .attr('opacity', 0.25)
+                    .attr('opacity', me.link_opacity)
                 ;
             })
         ;
+        scene_in.append("circle")
+            .attr('id', function (d) {
+                return "rect_tagup__" + d.id;
+            })
+            .attr('cx', function (d, i) {
+                return d.x+10;
+            })
+            .attr('cy', function (d, i) {
+                return d.y+10;
+            })
+            .attr('r', 4)
+            .style('fill', "#DC6")
+            .style('stroke', "#000")
+            .style('stroke-width', '1pt')
+            .attr('fill-opacity', 0.90)
+            .on('click', function (e, d) {
+                // if (e.ctrlKey) {
+                    console.log("One hour in the past...")
+                    $.ajax({
+                        url: 'ajax/action/time_slip/m0d_m1h__' + d.id + '/',
+                        success: function (answer) {
+                            let d = JSON.parse(answer["changes_on_scenes"])
+                            me.changeScenes(d);
+                            me.rebootLinks();
+                        },
+                        error: function (answer) {
+                            console.error(answer);
+                            me.rebootLinks();
+                        },
+                    });
+                // }
+            })
+        ;
+        scene_in.append("circle")
+            .attr('id', function (d) {
+                return "rect_tagddydown__" + d.id;
+            })
+            .attr('cx', function (d, i) {
+                return d.x+20;
+            })
+            .attr('cy', function (d, i) {
+                return d.y+10;
+            })
+            .attr('r', 4)
+            .style('fill', "#DC6")
+            .style('stroke', "#000")
+            .style('stroke-width', '1pt')
+            .attr('fill-opacity', 0.90)
+            .on('click', function (e, d) {
+                // if (e.ctrlKey) {
+                    console.log("One day in the past...")
+                    $.ajax({
+                        url: 'ajax/action/time_slip/m1d_p0h__' + d.id + '/',
+                        success: function (answer) {
+                            let d = JSON.parse(answer["changes_on_scenes"])
+                            me.changeScenes(d);
+                            me.rebootLinks();
+                        },
+                        error: function (answer) {
+                            console.error(answer);
+                            me.rebootLinks();
+                        },
+                    });
+                // }
+            })
+        ;
+
+        scene_in.append("circle")
+            .attr('id', function (d) {
+                return "rect_tagdown__" + d.id;
+            })
+            .attr('cx', function (d, i) {
+                return d.x+10;
+            })
+            .attr('cy', function (d, i) {
+                return d.y-10+me.scene_height;
+            })
+            .attr('r', 4)
+            .style('fill', "#DC2")
+            .style('stroke', "#000")
+            .style('stroke-width', '1pt')
+            .attr('fill-opacity', 0.90)
+            .on('click', function (e, d) {
+                // if (e.ctrlKey) {
+                    console.log("One hour in the future...")
+                    $.ajax({
+                        url: 'ajax/action/time_slip/m0d_p1h__' + d.id + '/',
+                        success: function (answer) {
+                            let d = JSON.parse(answer["changes_on_scenes"])
+                            me.changeScenes(d);
+                            me.rebootLinks();
+                        },
+                        error: function (answer) {
+                            console.error(answer);
+                            me.rebootLinks();
+                        },
+                    });
+                // }
+            })
+        ;
+        scene_in.append("circle")
+            .attr('id', function (d) {
+                return "rect_tagdaydown__" + d.id;
+            })
+            .attr('cx', function (d, i) {
+                return d.x+20;
+            })
+            .attr('cy', function (d, i) {
+                return d.y-10+me.scene_height;
+            })
+            .attr('r', 4)
+            .style('fill', "#DC6")
+            .style('stroke', "#000")
+            .style('stroke-width', '1pt')
+            .attr('fill-opacity', 0.90)
+            .on('click', function (e, d) {
+                // if (e.ctrlKey) {
+                    console.log("One day in the future...")
+                    $.ajax({
+                        url: 'ajax/action/time_slip/p1d_p0h__' + d.id + '/',
+                        success: function (answer) {
+                            let d = JSON.parse(answer["changes_on_scenes"])
+                            me.changeScenes(d);
+                            me.rebootLinks();
+                        },
+                        error: function (answer) {
+                            console.error(answer);
+                            me.rebootLinks();
+                        },
+                    });
+                // }
+            })
+        ;
+
+
+
         scene_in.append('text')
             .attr('class', 'scene_txt')
             .attr('x', function (d, i) {
@@ -604,6 +771,7 @@ class Storytelling {
                         me.selected_scenes.pop(d.id);
                     }
                     me.drawStory();
+                    me.co.rebootLinks();
                 } else {
                     $.ajax({
                         url: 'ajax/view/scene/' + d.id + '/',
@@ -614,6 +782,7 @@ class Storytelling {
                         },
                         error: function (answer) {
                             console.error('View error...' + answer);
+                            me.co.rebootLinks();
                         }
                     });
                 }
@@ -629,14 +798,14 @@ class Storytelling {
                 return d.y + (me.scene_height / 2);
             })
             .attr('dy', me.small_font_size / 3)
-            .style("text-anchor", 'middle')
+            .style("text-anchor", 'start')
             .style("font-family", me.mono_font)
             .style("font-size", me.small_font_size + 'px')
             .style("fill", me.draw_fill)
             .style("stroke", me.draw_stroke)
             .style("stroke-width", '0.5pt')
             .text(function (d) {
-                return d['time'];
+                return String(d['time']).padStart(3,'0');
             })
         ;
         scene_in.append('text')
@@ -679,11 +848,12 @@ class Storytelling {
             d.y = me.p_start_y
                 + me.stepy
                 + Math.trunc(d['time'] / 24) * me.stepy * (me.day_start)
-                + (d['time'] % 24) * me.hour;
+                + (d['time'] % 24) * me.hour
+                - me.scene_height/2;
             d.x = 0;
             _.forEach(me.places, function (e, i) {
                 if (e['id'] == d['place']) {
-                    d.x = (1 * me.scene_width / 2) * (d['place_order'] - 1) + e.x;
+                    d.x = (me.scene_width*2 ) * (d['place_order'] - 3) + e.x + (me.stepx * me.place_width)/2 - me.scene_width/2;
                 }
             })
         })
@@ -713,7 +883,7 @@ class Storytelling {
     updatePlaces() {
         let me = this;
         _.forEach(me.places, function (d, i) {
-            d.x = me.p_start_x + i * (me.stepx * (3 + 1));
+            d.x = me.p_start_x + i * (me.stepx * (me.place_width+1));
         })
     }
 
@@ -734,6 +904,9 @@ class Storytelling {
                     .attr('transform', event.transform);
                 me.svg.selectAll('image')
                     .attr('transform', event.transform);
+                me.svg.selectAll('circle')
+                    .attr('transform', event.transform);
+
             });
         me.vis.call(zoom);
     }
