@@ -58,7 +58,7 @@ class Story(models.Model):
     def all_scenes(self):
         from storytelling.models.scenes import Scene
         list = []
-        all = Scene.objects.filter(story=self)
+        all = Scene.objects.filter(story=self).order_by('timeline', 'time_offset_hours')
         for s in all:
             list.append({'name': s.name, 'id': s.id, 'time': s.time_offset_hours, 'place': s.place.id,
                          'place_order': s.place_order, 'is_event': s.is_event,'is_downtime': s.is_downtime, 'story_time': s.story_time})

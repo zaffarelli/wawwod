@@ -22,9 +22,24 @@ class WawwodCollector {
 
     loadAjax() {
         let me = this;
+    }
+
+    revealUI() {
+        let me = this;
+        $('.charlist').removeClass('hidden');
+        $('.storyboard_handler').removeClass('hidden');
+        $('.bar').removeClass('hidden');
+        $('.wrapper').removeClass('hidden');
+    }
+
+    hideUI() {
+        let me = this;
         $('.charlist').addClass('hidden');
         $('.storyboard_handler').addClass('hidden');
+        $('.bar').addClass('hidden');
+        $('.wrapper').addClass('hidden');
     }
+
 
     registerDisplay() {
         let me = this;
@@ -106,30 +121,72 @@ class WawwodCollector {
         });
     }
 
-    registerTriggers(){
+    registerResend() {
+        let me = this;
+        $('#resend').off().on('click', function (event) {
+            let param = $(this).attr('param');
+            if (param) {
+                let data = param.split('__');
+                let url = 'ajax/scene/' + data[0] + '/update/' + data[1] + '/';
+                let grabbed_data = $("#text_edit").val();
+                let keys_set = {text: grabbed_data}
+                // console.log(grabbed_data);
+                $.ajax({
+                    url: url,
+                    method: 'POST',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    },
+                    dataType: 'json',
+                    data: keys_set,
+                    success: function (answer) {
+                        let d = JSON.parse(answer["changes_on_scenes"])
+                        console.log(answer.changes_on_scenes);
+                        console.log(d['field']);
+                        console.log(d['value']);
+
+                        $("#"+d['field']).html(d['value']);
+
+                        me.rebootLinks();
+                    },
+                    error: function (answer) {
+                        console.error(answer);
+                        me.rebootLinks();
+                    },
+                });
+            }
+        });
+    }
+
+
+    registerTriggers() {
         let me = this;
         $('.edit_trigger').off().on('click', function (event) {
             let id = $(this).attr('id');
+            let fields = id.split("__");
+            let tgt_id = fields[0].replace('trigger_', '');
+            let hr_field = $(this).attr('field');
+            let bz_field = fields[1];
             $(".storyboard_handler").removeClass('hidden');
-            console.log('Nice, you just clicked on ['+id+']');
-            let field_id = id.replace("trigger_","field_");
-            let resend_tags = id.replace("trigger_","").replace("__","_").split("_");
-            console.log(resend_tags);
-            let resend_id = resend_tags[0]+'_'+resend_tags[3];
-            console.log(field_id);
-            let grabbed_data = $("#"+field_id).html();
-            console.log(grabbed_data);
-            $("#text_edit").html(grabbed_data);
-            $("#resend").html(resend_id+" <i class='fa fa-arrow-right'></i>");
-            $("#resend").attr('param',resend_id);
+            let field_id = "field_" + tgt_id + "__" + bz_field;
+            console.log(field_id)
+            let grabbed_data = $("#" + field_id).html();
+            // $("#" + field_id).css('border-color','red')
+            // console.log(grabbed_data)
+            $("#text_edit").val(grabbed_data);
+            $("#text_edit").focus();
+            $("#resend").html("[" + tgt_id + "&gt;" + hr_field + "] <i class='fa fa-arrow-right'></i>");
+            $("#resend").attr('param', tgt_id + '__' + bz_field);
+            me.registerResend();
         })
-        $('.edit_trigger').on('mouseover', function(e){
-            $(this).css('border-color','#A22').attr('title','Click to edit');
-            $("#text_edit").css('border-color','#A22');
+        $('.edit_trigger').on('mouseover', function (e) {
+            $(this).css('border-color', '#A22').attr('title', 'Click to edit');
+            $("#text_edit").css('border-color', '#A22');
         })
-        $('.edit_trigger').on('mouseout', function(e){
-            $(this).css('border-color','#000').attr('title','');
-            $("#text_edit").css('border-color','#999');
+        $('.edit_trigger').on('mouseout', function (e) {
+            $(this).css('border-color', '#000').attr('title', '');
+            $("#text_edit").css('border-color', '#999');
 
         })
 
@@ -142,7 +199,7 @@ class WawwodCollector {
             let action = $(this).attr('action');
             let param = $('#userinput').val();
             let newparam = (param.split(" ")).join("_");
-            let url = 'ajax/collector_action/' + action + '/' + newparam +'/';
+            let url = 'ajax/collector_action/' + action + '/' + newparam + '/';
             $.ajax({
                 url: url,
                 success: function (answer) {
@@ -155,7 +212,6 @@ class WawwodCollector {
             });
         });
     }
-
 
 
     registerSwitch() {
@@ -224,7 +280,7 @@ class WawwodCollector {
             event.preventDefault();
             event.stopPropagation();
             let tgt = $(this).attr('param');
-            $('.'+tgt).toggleClass('hidden');
+            $('.' + tgt).toggleClass('hidden');
             me.rebootLinks();
         });
     }

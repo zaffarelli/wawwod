@@ -12,6 +12,7 @@ from collector.utils.wod_reference import STATS_NAMES
 import json
 from collector.utils.wod_reference import FONTSET
 from collector.utils.data_collection import improvise_id
+from django.contrib.auth.decorators import login_required
 
 chronicle = get_current_chronicle()
 
@@ -29,7 +30,10 @@ def prepare_index(request):
     return context
 
 
+@login_required
 def index(request):
+    if not request.user.is_authenticated:
+        return render(request, 'collector/registration/login_error.html')
     context = prepare_index(request)
     return render(request, 'collector/index.html', context=context)
 

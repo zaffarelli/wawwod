@@ -5,8 +5,6 @@
 <head>
     <meta charset="utf-8" />
     <style>
-
-
         @font-face {
             font-family: 'Hind';
             src: url('storytelling/static/storytelling/fonts/Hind-Regular.ttf');
@@ -19,35 +17,30 @@
 
         @page {
             size: a4 portrait;
-
-
             @frame col_left {
-            left: 0.8cm;
-            width: 9.5cm;
-            top: 2cm;
-            height: 26cm;
-            padding: 0.125cm;
-
-        }
-
-        @frame col_right {
-        right: 0.8cm;
-        width: 9.5cm;
-        top: 2cm;
-        height: 26cm;
-        padding: 0.125cm;
-
-        }
-
-        @frame header_frame {
-        -pdf-frame-content:header_content;
-        right: 0.5cm;
-        width: 0.5cm;
-        top: 0.5cm;
-        height: 1cm;
-        text-align:right;
-        }
-
+                left: 0.8cm;
+                width: 9.5cm;
+                top: 2cm;
+                height: 26cm;
+                padding: 0.125cm;
+            }
+            @frame col_right {
+                right: 0.8cm;
+                width: 9.5cm;
+                top: 2cm;
+                height: 26cm;
+                padding: 0.125cm;
+            }
+            @frame footer_frame {
+                -pdf-frame-content:footer_content;
+                right: 0.5cm;
+                left: 0.5cm;
+                top: 28.0cm;
+                height: 1cm;
+                padding: 0.25cm;
+                text-align:center;
+                border:1px solid silver;
+            }
         }
 
         h1, h2, h3, h4, h5, h6 {
@@ -61,6 +54,9 @@
             font-weight: 800;
             margin-bottom: 0.5em;
             line-height: 0.8em;
+            -pdf-outline: true;
+            -pdf-level:0;
+            -pdf-open:true;
         }
 
         h2 {
@@ -68,6 +64,9 @@
             line-height: 0.83em;
             margin-top:0.5em;
             -pdf-keep-with-next: true;
+            -pdf-outline: true;
+            -pdf-level:1;
+            -pdf-open:true;
         }
 
         h3 {
@@ -78,14 +77,53 @@
             line-height: 0.83em;
             margin-top:0.5em;
             -pdf-keep-with-next: true;
+            -pdf-outline: true;
+            -pdf-level:2;
+            -pdf-open:true;
         }
 
         h4 {
             font-size: 11pt;
-            font-variant: small-caps;
+            color: #707070;
             line-height: 0.83em;
+            text-decoration:underline;
+            -pdf-outline: true;
+            -pdf-level:3;
+            -pdf-open:false;
+            margin-left:0.4cm;
         }
 
+        h5 {
+            font-size: 10pt;
+            line-height: 0.83em;
+            color: #707070;
+            font-style:italic;
+            -pdf-outline: false;
+            -pdf-level:4;
+            -pdf-open:false;
+            margin-left:0.5cm;
+        }
+
+        h6{
+            font-size: 10pt;
+            line-height: 0.83em;
+            -pdf-outline: false;
+            -pdf-level:5;
+            -pdf-open:false;
+            margin-left:0.5cm;
+        }
+
+        ul{
+            margin-left:0.5cm;
+            text-indent:-0.25cm;
+            list-style-type: square;
+
+        }
+
+        li{
+            margin-left:0.25cm;
+            list-style-type: square;
+        }
 
         p {
             font-family: 'Hind';
@@ -134,16 +172,89 @@
             text-align: left;
         }
 
+        .boxed.timeline1{
+            border-color:#A22;
+        }
+
+        .boxed.timeline2{
+            border-color:#2A2;
+        }
+
+        .boxed.timeline3{
+            border-color:#22A;
+        }
+
+        .boxed.timeline4{
+            border-color: #5422aa;
+        }
+
+        .boxed.timeline5{
+            border-color: #aa2293;
+        }
+
+        .boxed.timeline6{
+            border-color: #22aa81;
+        }
+
+        .boxed.timeline7{
+            border-color: #aa5f22;
+        }
+
+        .boxed.timeline8{
+            border-color: #8daa22;
+        }
+
+        .boxed.timeline9{
+            border-color: #3d622b;
+        }
+
+        .boxed.timeline0{
+            border-color: #934d4d;
+        }
+
+
+
+
+
+
+
+
+
+
         .boxed b{
             color:#A22;
         }
 
+        pdftoc{
+            color:#666;
+            padding:0.5cm;
+            border:1px solid silver;
+        }
+        pdftoc.pdftoclevel0 {
+            font-weight: bold;
+            margin-top: 0.5em;
+            font-height:1.25em;
+            color:#A22;
+        }
+        pdftoc.pdftoclevel1 {
+            margin-left: 1em;
+            font-height:1.15em;
+            color:#A22;
+        }
+        pdftoc.pdftoclevel2 {
+            margin-left: 2em;
+            font-style: italic;
+        }
+
     </style>
-
-
-
 </head>
 <body>
+
+<div id="footer_content">
+    Page <pdf:pagenumber/> / <pdf:pagecount/>
+</div>
+
+
 
 <h1>Drama: {{data.story.name}}</h1>
 <p class="boxed">
@@ -151,9 +262,7 @@
     Era: {{data.story.chronicle.era}}<BR/>
     In-game Start: {{data.story.dday}}
 </p>
-
-<p><u>Description:</u> {{data.story.description|safe}}
-</p>
+<p><u>Description:</u> {{data.story.description|safe}}</p>
 
 
 <h2>List of all Places</h2>
@@ -183,6 +292,10 @@ you might found individual introductions for each players (if they are prerolled
     {% endif %}
 {% endfor %}
 
+<br/>
+<div>
+   <pdf:toc />
+</div>
 
 
 </body>

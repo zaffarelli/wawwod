@@ -21,7 +21,7 @@
     <script type="text/javascript" src='{% static "js/kindred_lineage.es6" %}'></script>
     <script type="text/javascript" src='{% static "js/storytelling.es6" %}'></script>
     {% for font in fontset %}
-        <link rel='stylesheet' href="https://fonts.googleapis.com/css2?family={{font}}">
+    <link rel='stylesheet' href="https://fonts.googleapis.com/css2?family={{font}}">
     {% endfor %}
     {% load compress %}
     {% compress css %}
@@ -30,7 +30,7 @@
     {% endcompress %}
 </head>
 <body>
-<ul class='bar'>
+<ul class='bar hidden'>
     <li class="pull_down">
         <i id='toggle_list' class='fa fa-users'></i>&nbsp;Creatures
         <ul class="drop_down">
@@ -75,15 +75,18 @@
             <li class="action" id="settings">Settings</li>
             <li class="toggle" action="toggle" param="storyboard_handler">Show/Hide storyboard options</li>
             <li class="toggle" action="toggle" param="details">Show/Hide details</li>
+            <HR/>
+            <li><a href="accounts/logout">log out</a></li>
         </ul>
     </li>
 
 </ul>
 
+{% block userzone %}
+{% endblock userzone %}
 
-
-<div class='wrapper' style="background-image: url('{% static chronicle_logo %}')">
-    <div class='charlist'>
+<div class='wrapper hidden' style="background-image: url('{% static chronicle_logo %}')">
+    <div class='charlist hidden'>
         {% block list %}
         {% endblock list %}
     </div>
@@ -94,15 +97,19 @@
         {% endblock creature %}
     </div>
     <div class='handler'>
-        <div class="storyboard_handler">
+        <div class="storyboard_handler hidden">
             <div class="plank tag toggle small" action="toggle" param="storyboard_handler"><i class='fa fa-times'></i></div>
-            <div class="plank action small" id="time_slip_m1d" action="time_slip" param="m1d_m0h">-1D</div>
-            <div class="plank action small" id="time_slip_m1h" action="time_slip" param="m0d_m1h">-1H</div>
-            <div class="plank action small" id="time_slip_p1h" action="time_slip" param="m0d_p1h">+1H</div>
-            <div class="plank action small" id="time_slip_p1d" action="time_slip" param="p1d_p0h">+1D</div>
-            <div class="plank action" id="create_link" action="create_link">Create Link</div>
-            <div class="plank action" id="create_link" action="create_link">Clear Selection</div>
-            <div class="plank tag action" id="resend" action="create_link"><i class="fa fa-arrow-right"></i></div>
+            <div class="plank tag toggle small" action="toggle" param="storyboard_handler"><i class='fa fa-arrow-circle-left'></i></div>
+            <div class="plank tag toggle small" action="toggle" param="storyboard_handler"><i class='fa fa-arrow-circle-right'></i></div>
+            <div class="plank tag toggle small" action="toggle" param="storyboard_handler"><i class='fa fa-arrow-circle-up'></i></div>
+            <div class="plank tag toggle small" action="toggle" param="storyboard_handler"><i class='fa fa-arrow-circle-down'></i></div>
+            <div class="plank action small" id="time_slip_m1d" action="time_slip" param="m1d_m0h"><i class='fa fa-calendar'></i> -1D</div>
+            <div class="plank action small" id="time_slip_m1h" action="time_slip" param="m0d_m1h"><i class='fa fa-hourglass-end'></i> -1H</div>
+            <div class="plank action small" id="time_slip_p1h" action="time_slip" param="m0d_p1h"><i class='fa fa-hourglass-start'></i> +1H</div>
+            <div class="plank action small" id="time_slip_p1d" action="time_slip" param="p1d_p0h"><i class='fa fa-calendar'></i>+ 1D</div>
+            <div class="plank action" id="create_link" action="create_link"><i class='fa fa-link'></i> Create Link</div>
+            <div class="plank action" id="create_link" action="create_link"><i class='fa fa-bolt'></i> Clear Selection</div>
+            <div class="plank tag action" id="resend"><i class="fa fa-arrow-right"></i></div>
             <textarea class="plank text" id="text_edit"></textarea>
 
             <input type='text' id='userinput' placeholder='Free text here...'>
@@ -115,14 +122,12 @@
 {% block javascript %}
 {% endblock javascript %}
 <div id="custom_js"></div>
-    <script>
-    _.defer(function(){
+<script>
+    _.defer(function () {
         let co = new WawwodCollector()
         co.perform();
     });
-    </script>
-
-
-
+</script>
+</div>
 </body>
 </html>

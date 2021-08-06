@@ -44,6 +44,8 @@ ROOT_URLCONF = 'wawwod.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
+
+
         'DIRS': [os.path.join(BASE_DIR, 'collector/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -57,6 +59,7 @@ TEMPLATES = [
         },
     },
 ]
+
 
 LOGPATH = os.path.join(BASE_DIR, 'logs/')
 
@@ -143,3 +146,5 @@ STATIC_ROOT = 'wawwod_static/'
 MEDIA_ROOT = 'wawwod_media/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'

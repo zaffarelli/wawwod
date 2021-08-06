@@ -1,0 +1,223 @@
+@font-face {
+  font-family: 'Titre';
+  src: url("/static/storytelling/fonts/marcellus_sc_regular.ttf"); }
+
+@font-face {
+  font-family: 'marcellus_sc_regular';
+  src: url("/static/storytelling/fonts/marcellus_sc_regular.ttf"); }
+
+@font-face {
+  font-family: 'Texte';
+  src: url("/static/storytelling/fonts/marcellus_sc_regular.ttf"); }
+
+@font-face {
+  font-family: 'logo';
+  src: url("/static/storytelling/fonts/ShadowsIntoLight-Regular.ttf"); }
+
+@font-face {
+  font-family: 'wyld';
+  src: url("/static/storytelling/fonts/fanjofey.ttf"); }
+
+@font-face {
+  font-family: 'weaver';
+  src: url("/static/storytelling/fonts/plank.ttf"); }
+
+@font-face {
+  font-family: 'wyrm';
+  src: url("/static/storytelling/fonts/another_danger.otf"); }
+
+@font-face {
+  font-family: 'TexteLibre';
+  src: url("/static/storytelling/fonts/Lato-Regular.ttf"); }
+
+/* line 4, storytelling/static/storytelling/css/storytelling.scss */
+svg {
+  fill: yellow; }
+
+/* line 11, storytelling/static/storytelling/css/storytelling.scss */
+.storytelling {
+  fill: #305030;
+  stroke: #F0F0F0; }
+
+/* line 18, storytelling/static/storytelling/css/storytelling.scss */
+div.box.scene table {
+  background: #3a343e;
+  color: #F0F0F0;
+  border-radius: 5px; }
+  /* line 24, storytelling/static/storytelling/css/storytelling.scss */
+  div.box.scene table tr th {
+    background: #1d301d;
+    font-family: Titre;
+    font-size: 12pt;
+    width: 120px;
+    word-wrap: normal; }
+  /* line 33, storytelling/static/storytelling/css/storytelling.scss */
+  div.box.scene table tr td {
+    padding: 3px;
+    width: 350px;
+    word-wrap: normal;
+    font-family: TexteLibre;
+    font-size: 10pt; }
+
+/* line 44, storytelling/static/storytelling/css/storytelling.scss */
+div.handler {
+  background: transparent;
+  position: fixed;
+  left: 0;
+  top: auto;
+  bottom: 0;
+  right: auto;
+  width: 400px;
+  height: auto;
+  background: transparent; }
+
+/* line 56, storytelling/static/storytelling/css/storytelling.scss */
+.storyboard_handler {
+  background: #474747;
+  color: #c7c7c7;
+  border: 1px solid #616161;
+  border-radius: 3px;
+  padding: 3px;
+  box-shadow: 0 0 3px black;
+  font-family: Roboto;
+  font-size: 10pt;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-flow: row wrap;
+  word-wrap: normal;
+  height: 100%; }
+  /* line 115, collector/static/collector/css/_basics.scss */
+  .storyboard_handler .plank {
+    text-align: center;
+    color: #c7c7c7;
+    background: #474747;
+    border: 1px solid #3a3a3a;
+    padding: 2px;
+    border-radius: 3px; }
+    /* line 123, collector/static/collector/css/_basics.scss */
+    .storyboard_handler .plank.text {
+      font-width: "Syne Mono";
+      background: black;
+      word-wrap: normal;
+      text-align: justify; }
+  /* line 131, collector/static/collector/css/_basics.scss */
+  .storyboard_handler .shard {
+    background: #474747;
+    color: #c7c7c7;
+    border: 1px solid black;
+    padding: 2px;
+    border-radius: 3px; }
+  /* line 138, collector/static/collector/css/_basics.scss */
+  .storyboard_handler .tag {
+    background: #474747; }
+  /* line 141, collector/static/collector/css/_basics.scss */
+  .storyboard_handler .data {
+    font-width: "Syne Mono";
+    background: black;
+    word-wrap: normal;
+    text-align: justify; }
+    /* line 147, collector/static/collector/css/_basics.scss */
+    .storyboard_handler .data:hover {
+      border-color: #c7c7c7; }
+  /* line 63, storytelling/static/storytelling/css/storytelling.scss */
+  .storyboard_handler .action, .storyboard_handler textarea, .storyboard_handler input {
+    order: 2;
+    width: 100%; }
+  /* line 68, storytelling/static/storytelling/css/storytelling.scss */
+  .storyboard_handler .small {
+    order: 1;
+    width: 18%; }
+  /* line 73, storytelling/static/storytelling/css/storytelling.scss */
+  .storyboard_handler.hidden {
+    transition: all 0.3s ease;
+    transform: translateX(-500px); }
+  /* line 78, storytelling/static/storytelling/css/storytelling.scss */
+  .storyboard_handler textarea {
+    height: 25em; }
+
+/* line 85, storytelling/static/storytelling/css/storytelling.scss */
+.scene {
+  background: #474747;
+  color: #c7c7c7;
+  border: 1px solid #616161;
+  border-radius: 3px;
+  padding: 3px;
+  box-shadow: 0 0 3px black;
+  font-family: Roboto;
+  font-size: 10pt;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-content: flex-start;
+  align-items: flex-start;
+  height: auto; }
+  /* line 115, collector/static/collector/css/_basics.scss */
+  .scene .plank {
+    text-align: center;
+    color: #c7c7c7;
+    background: #474747;
+    border: 1px solid #3a3a3a;
+    padding: 2px;
+    border-radius: 3px; }
+    /* line 123, collector/static/collector/css/_basics.scss */
+    .scene .plank.text {
+      font-width: "Syne Mono";
+      background: black;
+      word-wrap: normal;
+      text-align: justify; }
+  /* line 131, collector/static/collector/css/_basics.scss */
+  .scene .shard {
+    background: #474747;
+    color: #c7c7c7;
+    border: 1px solid black;
+    padding: 2px;
+    border-radius: 3px; }
+  /* line 138, collector/static/collector/css/_basics.scss */
+  .scene .tag {
+    background: #474747; }
+  /* line 141, collector/static/collector/css/_basics.scss */
+  .scene .data {
+    font-width: "Syne Mono";
+    background: black;
+    word-wrap: normal;
+    text-align: justify; }
+    /* line 147, collector/static/collector/css/_basics.scss */
+    .scene .data:hover {
+      border-color: #c7c7c7; }
+  /* line 94, storytelling/static/storytelling/css/storytelling.scss */
+  .scene .entry {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+    align-items: stretch;
+    height: auto;
+    flex-grow: 1;
+    flex-shrink: 1; }
+    /* line 104, storytelling/static/storytelling/css/storytelling.scss */
+    .scene .entry .label {
+      width: 100px;
+      flex-grow: 1;
+      flex-shrink: 1;
+      text-align: center; }
+    /* line 111, storytelling/static/storytelling/css/storytelling.scss */
+    .scene .entry .data {
+      width: 750px;
+      flex-grow: 1;
+      flex-shrink: 1; }
+
+/* line 120, storytelling/static/storytelling/css/storytelling.scss */
+ul {
+  margin: 0;
+  text-indent: 0; }
+  /* line 123, storytelling/static/storytelling/css/storytelling.scss */
+  ul li.scene_jump {
+    margin-left: 0;
+    text-indent: 0;
+    padding: 0;
+    list-style-type: square; }
+    /* line 129, storytelling/static/storytelling/css/storytelling.scss */
+    ul li.scene_jump:hover {
+      color: orange;
+      cursor: pointer; }

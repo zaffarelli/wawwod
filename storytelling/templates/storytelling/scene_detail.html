@@ -13,12 +13,14 @@
     {{ c.place|param_stack:"place"|param_stack:c.id|as_entry:"Place"|safe }}
     {{ c.place_order|param_stack:"place_order"|param_stack:c.id|as_entry:"Place Order"|safe }}
     {{ c.exact_place|param_stack:"exact_place"|param_stack:c.id|as_entry:"Exact Place"|safe }}
+    {{ c.timeline|param_stack:"timeline"|param_stack:c.id|as_entry:"Timeline"|safe }}
     {{ c.preamble|param_stack:"preamble"|param_stack:c.id|as_entry:"Preamble"|safe }}
     {{ c.description|param_stack:"description"|param_stack:c.id|as_entry:"Description"|safe }}
     {{ c.rewards|param_stack:"rewards"|param_stack:c.id|as_entry:"Rewards"|safe }}
     {{ c.consequences|param_stack:"consequences"|param_stack:c.id|as_entry:"Consequences"|safe }}
-    {{ c.links_from|param_stack:"xxx"|param_stack:c.id|as_entry:"Links From"|safe }}
-    {{ c.links_to|param_stack:"xxx"|param_stack:c.id|as_entry:"Links To"|safe }}
+    {{ c.links_to|param_stack:"links_to"|param_stack:c.id|as_link_entry:"Links To"|safe }}
+    {{ c.links_from|param_stack:"links_from"|param_stack:c.id|as_link_entry:"Links From"|safe }}
+
     {{ c.is_event|param_stack:"xxx"|param_stack:c.id|as_boolean_entry:"is Event"|safe }}
     {{ c.is_downtime|param_stack:"xxx"|param_stack:c.id|as_boolean_entry:"is Downtime"|safe }}
     {{ c.is_briefing|param_stack:"xxx"|param_stack:c.id|as_boolean_entry:"is Briefing"|safe }}

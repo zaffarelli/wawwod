@@ -1,7 +1,11 @@
 {% extends "base.html" %}
 {% block javascript %}
 <script>
-
+        _.defer(function () {
+        let co = new WawwodCollector()
+        co.perform();
+        co.revealUI();
+    });
 </script>
 {% endblock javascript %}
 

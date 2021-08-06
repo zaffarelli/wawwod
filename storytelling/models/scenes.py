@@ -12,12 +12,13 @@ logger = logging.Logger(__name__)
 
 class Scene(models.Model):
     class Meta:
-        ordering = ['time_offset_hours']
+        ordering = ['timeline', 'time_offset_hours']
     name = models.CharField(max_length=128, default='')
     story = models.ForeignKey(Story, on_delete=models.SET_NULL, null=True)
     place = models.ForeignKey(Place, on_delete=models.SET_NULL, null=True)
     time_offset_hours = models.IntegerField(default=-1, blank=True)
     time_offset_custom = models.CharField(default='', max_length=32, blank=True)
+    timeline = models.CharField(default='', max_length=32, blank=True)
     day = models.DateTimeField(default=datetime.now,blank=True,null=True)
     place_order = models.PositiveIntegerField(default=0, blank=True)
     tags = models.TextField(max_length=256, blank=True, default='')
@@ -76,16 +77,16 @@ class Scene(models.Model):
         list = []
         from_list = ScenesLink.objects.filter(scene_from=self)
         for l in from_list:
-            list.append(f'<b> H{l.scene_to.time_offset_hours}-{l.scene_to.name}</b> [{l.get_category_display()}]')
-        return ", ".join(list)
+            list.append(f'H{l.scene_to.time_offset_hours}-{l.scene_to.name}/{l.scene_to.id}')
+        return "|".join(list)
 
     @property
     def links_to(self):
         list = []
         to_list = ScenesLink.objects.filter(scene_to=self)
         for l in to_list:
-            list.append(f'<b>H{l.scene_from.time_offset_hours}-{l.scene_from.name}</b> [{l.get_category_display()}]')
-        return ", ".join(list)
+            list.append(f'H{l.scene_from.time_offset_hours}-{l.scene_from.name}/{l.scene_from.id}')
+        return "|".join(list)
 
     @property
     def story_time(self):
@@ -189,7 +190,7 @@ class SceneToInline(admin.TabularInline):
 
 
 class SceneAdmin(admin.ModelAdmin):
-    list_display = ['name', 'place', 'place_order', 'time_offset_hours', 'story_time', 'links_to', 'links_from', 'verified_cast']
+    list_display = ['name', 'place', 'timeline', 'time_offset_hours', 'story_time', 'links_to', 'links_from', 'verified_cast']
     ordering = ['time_offset_hours', 'place', 'name']
     list_filter = ['story', 'place']
     search_fields = ['name', 'description', 'preamble', 'rewards', 'consequences']

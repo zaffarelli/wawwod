@@ -6,6 +6,7 @@ from storytelling.models.stories import Story
 from storytelling.models.scenes import Scene
 from collector.utils.helper import json_default
 from django.conf import settings
+from django.views.decorators.csrf import csrf_exempt
 import os
 import json
 
@@ -92,5 +93,24 @@ def display_pdf_story(request):
         es_pdf.close()
         return HttpResponse(status=204)
     return HttpResponse(pdf.err, content_type='text/plain')
-    
-    
+
+
+@csrf_exempt
+def update_scene(request, id: None, field: None):
+    if request.is_ajax:
+        answer = {'error': 'bad_id'}
+        if id:
+            print(id, field)
+            scene = Scene.objects.get(pk=id)
+            print(getattr(scene, field))
+            answer = {'error': 'bad_scene'}
+            if getattr(scene, field) is not None:
+                value = request.POST['text']
+                setattr(scene, field, value)
+                scene.save()
+                changes = {'field': 'field_'+id+'__'+field, 'value': value}
+                changes_json = json.dumps(changes, default=json_default, sort_keys=True, indent=4)
+                answer = {'changes_on_scenes': changes_json}
+    return JsonResponse(answer)
+
+

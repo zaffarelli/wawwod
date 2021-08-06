@@ -39,12 +39,15 @@ def param_stack(x_trait, x_id=''):
 @register.filter(name='as_entry')
 def as_entry(stack, x_field=''):
     """ Display table lines as editable disciplines """
+    import markdown
     x_t, x_id = stack
     x_trait, x_datafield = x_t
+    # if type(x_trait) == type("hello"):
+    #     x_trait = markdown.markdown(x_trait)
     if x_datafield != "xxx":
-        res = f'<div class="plank entry"><div class="shard label edit_trigger" id="trigger_{x_id}__{x_field}__{x_datafield}">{x_field}</div><div class="shard data editable userinput edit_field" id="field_{x_id}__{x_field}__{x_datafield}">{x_trait}</div></div>'
+        res = f'<div class="plank entry"><div class="shard label edit_trigger" id="trigger_{x_id}__{x_datafield}" field="{x_field}">{x_field}</div><div class="shard data editable userinput edit_field" id="field_{x_id}__{x_datafield}">{x_trait}</div></div>'
     else:
-        res = f'<div class="plank entry"><div class="shard label " id="trigger_{x_id}__{x_field}__{x_datafield}">{x_field}</div><div class="shard data editable userinput edit_field" id="field_{x_id}__{x_field}__{x_datafield}">{x_trait}</div></div>'
+        res = f'<div class="plank entry"><div class="shard label " id="trigger_{x_id}__{x_datafield}" field="{x_field}">{x_field}</div><div class="shard data editable userinput edit_field" id="field_{x_id}__{x_datafield}">{x_trait}</div></div>'
     return res
 
 
@@ -76,13 +79,12 @@ def as_boolean_entry(stack, x_field=''):
         b = SafeString("<i class='fa fa-check-square'></i>")
     else:
         b = SafeString("<i class='fa fa-square'></i>")
-
-
     if x_datafield:
-        res = f'<div class="plank entry"><div class="shard label edit_trigger" id="trigger_{x_id}__{x_field}__{x_datafield}">{x_field}</div><div class="shard data editable userinput edit_field" id="field_{x_id}__{x_field}__{x_datafield}">{b}</div></div>'
+        res = f'<div class="plank entry"><div class="shard label edit_trigger" id="trigger_{x_id}__{x_field}__{x_datafield}" field="{x_field}">{x_field}</div><div class="shard data editable userinput edit_field" id="field_{x_id}__{x_datafield}">{b}</div></div>'
     else:
-        res = f'<div class="plank entry"><div class="shard label " id="trigger_{x_id}__{x_field}__{x_datafield}">{x_field}</div><div class="shard data editable userinput edit_field" id="field_{x_id}__{x_field}__{x_datafield}">{b}</div></div>'
+        res = f'<div class="plank entry"><div class="shard label " id="trigger_{x_id}__{x_field}__{x_datafield}" field="{x_field}">{x_field}</div><div class="shard data editable userinput edit_field" id="field_{x_id}__{x_datafield}">{b}</div></div>'
     return res
+
 
 @register.filter(name='as_tags')
 def as_tags(value):
@@ -99,3 +101,42 @@ def as_tags(value):
                 k = ' class="purple" '
             answer += "<tt "+k+">&square;&nbsp;"+tag+"</tt>   "
     return answer
+
+
+@register.filter(name='as_md')
+def as_md(value):
+    import markdown
+    return markdown.markdown(value)
+
+
+@register.filter(name='as_class')
+def as_class(value):
+    return value.replace(' ', '_').lower()
+
+
+@register.filter(name='as_link_entry')
+def as_link_entry(stack, x_field=''):
+    """ Display table lines as editable disciplines """
+    import markdown
+    x_t, x_id = stack
+    x_trait, x_datafield = x_t
+    # if type(x_trait) == type("hello"):
+    #     x_trait = markdown.markdown(x_trait)
+    links = x_trait.split('|')
+    res = ''
+    res += f'<div class="plank entry">'
+    res += f'<div class="shard label edit_trigger" id="trigger_{x_id}__{x_datafield}" field="{x_field}">'
+    res += f'{x_field}'
+    res += f'</div>'
+    res += f'<div class="shard data editable userinput edit_field" id="field_{x_id}__{x_datafield}">'
+    if len(links):
+        res += f'<ul>'
+        for l in links:
+            if len(l):
+                print(">  ",l)
+                w = l.split('/')
+                res += f'<li class="scene_jump" jump_to="{w[1]}">{w[0]}</li>'
+        res += f'</ul>'
+    res += f'</div>'
+    res += f'</div>'
+    return res

@@ -85,7 +85,7 @@ class Storytelling {
         let me = this;
         me.stretch_coeff = 2;
         me.width = (me.story['places_count'] * (me.place_width+1) + 6) * me.stepx;
-        me.height = ((Math.trunc(me.end_time / 24) + 2) * me.day_size + 1.5*me.day_size) * me.stepy;
+        me.height = ((Math.trunc(me.end_time / 24) + 4) * me.day_size ) * me.stepy;
         me.w = parseInt($("body").css("width")) * 1;
         me.h = me.w * 0.52;
 
@@ -269,7 +269,8 @@ class Storytelling {
                 return me.place_width * me.stepx;
             })
             .attr('height', function (d) {
-                return (me.stepy) * (me.story['places_count'] + 2) * me.day_start;
+                let days_count = (me.end_time / 24) ;
+                return me.stepy * ((days_count+1) * (me.day_size+1));
             })
             .style('fill', '#00F')
             .style('stroke', 'transparent')
@@ -472,12 +473,12 @@ class Storytelling {
                 let x_mid = d.xe + 1 * Math.abs(d.xo - d.xe) / 5;
                 let x_out = d.xe + (d.order_in - 2) * 16;
                 let y_in = d.yo;
-                let y_mid1 = d.yo + 1 * Math.abs(d.yo - d.ye) / 15 ;
-                let y_mid2 = d.ye - 1 * Math.abs(d.yo - d.ye) / 15 ;
+                let y_mid1 = d.yo + 7.5 * Math.abs(d.yo - d.ye) / 15 ;
+                let y_mid2 = d.ye - 7.5 * Math.abs(d.yo - d.ye) / 15 ;
                 let y_out = d.ye ;
                 let x_middle = d.xe - 1 * Math.abs(d.xo - d.xe) / 15;
-                let y_middle1 = d.yo + 1 * Math.abs(d.yo - d.ye) / 7;
-                let y_middle2 = d.ye - 1 * Math.abs(d.yo - d.ye) / 7;
+                let y_middle1 = d.yo + 1 * Math.max(Math.abs(d.yo - d.ye) / 3,25) ;
+                let y_middle2 = d.ye - 1 * Math.max(Math.abs(d.yo - d.ye) / 3,25) ;
                 let path = ""
                 if (is_time_flat){
                     path += "M " + x_in + " " + y_in + " ";

@@ -17,6 +17,7 @@ django-fixture-magic = "^0.1.5"
 django-gunicorn = "^0.1.1"
 mysqlclient = "^2.0.3"
 xhtml2pdf = "^0.2.5"
+Markdown = "^3.3.4"
 
 [tool.poetry.dev-dependencies]
 

@@ -84,10 +84,10 @@ class Storytelling {
     init() {
         let me = this;
         me.stretch_coeff = 2;
-        me.width = (me.story['places_count'] * (me.place_width+1) + 6) * me.stepx;
-        me.height = ((Math.trunc(me.end_time / 24) + 2) * me.day_size + 1.5*me.day_size) * me.stepy;
+        me.width = (me.story['places_count'] * (me.place_width + 1) + 6) * me.stepx;
+        me.height = ((Math.trunc(me.end_time / 24) + 4) * me.day_size) * me.stepy;
         me.w = parseInt($("body").css("width")) * 1;
-        me.h = me.w * 0.52;
+        //me.h = me.w * 0.52;
 
         me.h = parseInt($("body").css("height")) * 0.90;
         me.tiny_font_size = me.time_coeff;
@@ -107,8 +107,8 @@ class Storytelling {
         me.title_font = 'Khand';
         me.logo_font = 'Trade Winds';
         me.base_font = 'Philosopher';
-        me.x = d3.scaleLinear().domain([0, me.w]).range([0, me.width]);
-        me.y = d3.scaleLinear().domain([0, me.h]).range([0, me.height]);
+        // me.x = d3.scaleLinear().domain([0, me.w]).range([0, me.width]);
+        // me.y = d3.scaleLinear().domain([0, me.h]).range([0, me.height]);
         me.pre_title = me.config['pre_title'];
         me.scenario = me.config['scenario'];
         me.post_title = me.config['post_title'];
@@ -118,7 +118,7 @@ class Storytelling {
 
     drawTimeScale() {
         let me = this;
-        let days_count = (me.end_time / 24) ;
+        let days_count = (me.end_time / 24);
         let days = me.back.append('g')
             .attr('class', 'days')
             .selectAll("g")
@@ -257,8 +257,8 @@ class Storytelling {
         let place_in = places.enter();
         place_in.append('rect')
             .attr('class', 'place_rect')
-            .attr('rx',25)
-            .attr('ry',25)
+            .attr('rx', 25)
+            .attr('ry', 25)
             .attr('x', function (d, i) {
                 return me.p_start_x + i * (me.stepx * (me.place_width + 1));
             })
@@ -269,7 +269,8 @@ class Storytelling {
                 return me.place_width * me.stepx;
             })
             .attr('height', function (d) {
-                return (me.stepy) * (me.story['places_count'] + 2) * me.day_start;
+                let days_count = (me.end_time / 24);
+                return me.stepy * ((days_count + 1) * (me.day_size + 1));
             })
             .style('fill', '#00F')
             .style('stroke', 'transparent')
@@ -370,7 +371,7 @@ class Storytelling {
             .style('fill', '#000')
             .style('stroke', 'transparent')
             .style('stroke-width', '0pt')
-            .style('opacity',1.0)
+            .style('opacity', 1.0)
         ;
         me.defs.append('marker')
             .attr('id', 'arrowtail')
@@ -388,7 +389,7 @@ class Storytelling {
             .style('fill', '#000')
             .style('stroke', 'transparent')
             .style('stroke-width', '0pt')
-            .style('opacity',1.0)
+            .style('opacity', 1.0)
         ;
 
         me.back.append('rect')
@@ -472,14 +473,14 @@ class Storytelling {
                 let x_mid = d.xe + 1 * Math.abs(d.xo - d.xe) / 5;
                 let x_out = d.xe + (d.order_in - 2) * 16;
                 let y_in = d.yo;
-                let y_mid1 = d.yo + 1 * Math.abs(d.yo - d.ye) / 15 ;
-                let y_mid2 = d.ye - 1 * Math.abs(d.yo - d.ye) / 15 ;
-                let y_out = d.ye ;
+                let y_mid1 = d.yo + 7.5 * Math.abs(d.yo - d.ye) / 15;
+                let y_mid2 = d.ye - 7.5 * Math.abs(d.yo - d.ye) / 15;
+                let y_out = d.ye;
                 let x_middle = d.xe - 1 * Math.abs(d.xo - d.xe) / 15;
-                let y_middle1 = d.yo + 1 * Math.abs(d.yo - d.ye) / 7;
-                let y_middle2 = d.ye - 1 * Math.abs(d.yo - d.ye) / 7;
+                let y_middle1 = d.yo + 1 * Math.max(Math.abs(d.yo - d.ye) / 3, 25);
+                let y_middle2 = d.ye - 1 * Math.max(Math.abs(d.yo - d.ye) / 3, 25);
                 let path = ""
-                if (is_time_flat){
+                if (is_time_flat) {
                     path += "M " + x_in + " " + y_in + " ";
                     path += "L " + x_in + " " + (y_middle1) + " ";
                     // path += "  " + x_mid + " " + y_mid1 + " ";
@@ -487,7 +488,7 @@ class Storytelling {
                     path += "  " + x_out + " " + (y_middle2) + " ";
                     path += "  " + x_out + " " + y_out + " ";
 
-                }else {
+                } else {
                     path += "M " + x_in + " " + y_in + " ";
                     path += "L " + x_in + " " + y_mid1 + " ";
                     // path += "  " + x_mid + " " + y_mid1 + " ";
@@ -515,6 +516,13 @@ class Storytelling {
             .attr('marker-end', "url(#arrowlink)")
             .style('stroke-width', '3pt')
             .attr('opacity', me.link_opacity)
+            .on('click', function (e, d) {
+                if (e.ctrlKey) {
+                    me.centerNode(d.xo, d.yo);
+                } else {
+                    me.centerNode(d.xe, d.ye);
+                }
+            })
         ;
         let link_out = links.exit()
             .remove();
@@ -551,8 +559,8 @@ class Storytelling {
             .attr('id', function (d) {
                 return "rect_scene__" + d.id;
             })
-            .attr('rx',5)
-            .attr('ry',5)
+            .attr('rx', 5)
+            .attr('ry', 5)
             .attr('x', function (d, i) {
                 return d.x;
             })
@@ -592,10 +600,10 @@ class Storytelling {
                 return "rect_tagup__" + d.id;
             })
             .attr('cx', function (d, i) {
-                return d.x+10;
+                return d.x + 10;
             })
             .attr('cy', function (d, i) {
-                return d.y+10;
+                return d.y + 10;
             })
             .attr('r', 4)
             .style('fill', "#DC6")
@@ -604,19 +612,20 @@ class Storytelling {
             .attr('fill-opacity', 0.90)
             .on('click', function (e, d) {
                 // if (e.ctrlKey) {
-                    console.log("One hour in the past...")
-                    $.ajax({
-                        url: 'ajax/action/time_slip/m0d_m1h__' + d.id + '/',
-                        success: function (answer) {
-                            let d = JSON.parse(answer["changes_on_scenes"])
-                            me.changeScenes(d);
-                            me.rebootLinks();
-                        },
-                        error: function (answer) {
-                            console.error(answer);
-                            me.rebootLinks();
-                        },
-                    });
+                console.log("One hour in the past...")
+                $.ajax({
+                    url: 'ajax/action/time_slip/m0d_m1h__' + d.id + '/',
+                    success: function (answer) {
+                        let d = JSON.parse(answer["changes_on_scenes"])
+                        me.changeScenes(d);
+                        // me.centerNode(d.x,d.y);
+                        me.rebootLinks();
+                    },
+                    error: function (answer) {
+                        console.error(answer);
+                        me.rebootLinks();
+                    },
+                });
                 // }
             })
         ;
@@ -625,10 +634,10 @@ class Storytelling {
                 return "rect_tagddydown__" + d.id;
             })
             .attr('cx', function (d, i) {
-                return d.x+20;
+                return d.x + 20;
             })
             .attr('cy', function (d, i) {
-                return d.y+10;
+                return d.y + 10;
             })
             .attr('r', 4)
             .style('fill', "#DC6")
@@ -637,19 +646,20 @@ class Storytelling {
             .attr('fill-opacity', 0.90)
             .on('click', function (e, d) {
                 // if (e.ctrlKey) {
-                    console.log("One day in the past...")
-                    $.ajax({
-                        url: 'ajax/action/time_slip/m1d_p0h__' + d.id + '/',
-                        success: function (answer) {
-                            let d = JSON.parse(answer["changes_on_scenes"])
-                            me.changeScenes(d);
-                            me.rebootLinks();
-                        },
-                        error: function (answer) {
-                            console.error(answer);
-                            me.rebootLinks();
-                        },
-                    });
+                console.log("One day in the past...")
+                $.ajax({
+                    url: 'ajax/action/time_slip/m1d_p0h__' + d.id + '/',
+                    success: function (answer) {
+                        let d = JSON.parse(answer["changes_on_scenes"])
+                        me.changeScenes(d);
+                        // me.centerNode(d.x,d.y);
+                        me.rebootLinks();
+                    },
+                    error: function (answer) {
+                        console.error(answer);
+                        me.rebootLinks();
+                    },
+                });
                 // }
             })
         ;
@@ -659,10 +669,10 @@ class Storytelling {
                 return "rect_tagdown__" + d.id;
             })
             .attr('cx', function (d, i) {
-                return d.x+10;
+                return d.x + 10;
             })
             .attr('cy', function (d, i) {
-                return d.y-10+me.scene_height;
+                return d.y - 10 + me.scene_height;
             })
             .attr('r', 4)
             .style('fill', "#DC2")
@@ -671,19 +681,19 @@ class Storytelling {
             .attr('fill-opacity', 0.90)
             .on('click', function (e, d) {
                 // if (e.ctrlKey) {
-                    console.log("One hour in the future...")
-                    $.ajax({
-                        url: 'ajax/action/time_slip/m0d_p1h__' + d.id + '/',
-                        success: function (answer) {
-                            let d = JSON.parse(answer["changes_on_scenes"])
-                            me.changeScenes(d);
-                            me.rebootLinks();
-                        },
-                        error: function (answer) {
-                            console.error(answer);
-                            me.rebootLinks();
-                        },
-                    });
+                console.log("One hour in the future...")
+                $.ajax({
+                    url: 'ajax/action/time_slip/m0d_p1h__' + d.id + '/',
+                    success: function (answer) {
+                        let d = JSON.parse(answer["changes_on_scenes"])
+                        me.changeScenes(d);
+                        me.rebootLinks();
+                    },
+                    error: function (answer) {
+                        console.error(answer);
+                        me.rebootLinks();
+                    },
+                });
                 // }
             })
         ;
@@ -692,10 +702,10 @@ class Storytelling {
                 return "rect_tagdaydown__" + d.id;
             })
             .attr('cx', function (d, i) {
-                return d.x+20;
+                return d.x + 20;
             })
             .attr('cy', function (d, i) {
-                return d.y-10+me.scene_height;
+                return d.y - 10 + me.scene_height;
             })
             .attr('r', 4)
             .style('fill', "#DC6")
@@ -704,23 +714,22 @@ class Storytelling {
             .attr('fill-opacity', 0.90)
             .on('click', function (e, d) {
                 // if (e.ctrlKey) {
-                    console.log("One day in the future...")
-                    $.ajax({
-                        url: 'ajax/action/time_slip/p1d_p0h__' + d.id + '/',
-                        success: function (answer) {
-                            let d = JSON.parse(answer["changes_on_scenes"])
-                            me.changeScenes(d);
-                            me.rebootLinks();
-                        },
-                        error: function (answer) {
-                            console.error(answer);
-                            me.rebootLinks();
-                        },
-                    });
+                console.log("One day in the future...")
+                $.ajax({
+                    url: 'ajax/action/time_slip/p1d_p0h__' + d.id + '/',
+                    success: function (answer) {
+                        let d = JSON.parse(answer["changes_on_scenes"])
+                        me.changeScenes(d);
+                        me.rebootLinks();
+                    },
+                    error: function (answer) {
+                        console.error(answer);
+                        me.rebootLinks();
+                    },
+                });
                 // }
             })
         ;
-
 
 
         scene_in.append('text')
@@ -759,18 +768,19 @@ class Storytelling {
             .style("stroke", me.draw_stroke)
             .style("stroke-width", '0.5pt')
             .text(function (d) {
-                return d['name'];
+                return d['name'];//+" "+d.x+" / "+d.y;
             })
             .on("click", function (e, d) {
                 if (e.ctrlKey) {
                     d.selected = !d.selected;
                     let col = d.selected ? '#A22' : '#000';
-                    if (d.selected) {
-                        me.selected_scenes.push(d.id);
-                    } else {
-                        me.selected_scenes.pop(d.id);
-                    }
-                    me.drawStory();
+                    // if (d.selected) {
+                    //     me.selected_scenes.push(d.id);
+                    // } else {
+                    //     me.selected_scenes.pop(d.id);
+                    // }
+                    // me.drawStory();
+                    me.centerNode(d.x, d.y);
                     me.co.rebootLinks();
                 } else {
                     $.ajax({
@@ -805,7 +815,7 @@ class Storytelling {
             .style("stroke", me.draw_stroke)
             .style("stroke-width", '0.5pt')
             .text(function (d) {
-                return String(d['time']).padStart(3,'0');
+                return String(d['time']).padStart(3, '0');
             })
         ;
         scene_in.append('text')
@@ -816,7 +826,7 @@ class Storytelling {
             .attr('y', function (d) {
                 return d.y + (me.scene_dim) * 0;
             })
-            .attr('dy', me.tiny_font_size + 2)
+            .attr('dy', me.tiny_font_size)
             .style("text-anchor", 'start')
             .style("font-family", me.mono_font)
             .style("font-size", (me.tiny_font_size + 2) + 'px')
@@ -833,7 +843,7 @@ class Storytelling {
                     timeZone: 'Europe/Berlin'
                 }
                 let new_d = Intl.DateTimeFormat('de-DE', options).format(res);
-                return new_d;
+                return new_d + " [" + d.id + "]";
             })
         ;
 
@@ -849,11 +859,11 @@ class Storytelling {
                 + me.stepy
                 + Math.trunc(d['time'] / 24) * me.stepy * (me.day_start)
                 + (d['time'] % 24) * me.hour
-                - me.scene_height/2;
+                - me.scene_height / 2;
             d.x = 0;
             _.forEach(me.places, function (e, i) {
                 if (e['id'] == d['place']) {
-                    d.x = (me.scene_width*2 ) * (d['place_order'] - 3) + e.x + (me.stepx * me.place_width)/2 - me.scene_width/2;
+                    d.x = (me.scene_width * 2) * (d['place_order'] - 3) + e.x + (me.stepx * me.place_width) / 2 - me.scene_width / 2;
                 }
             })
         })
@@ -883,32 +893,47 @@ class Storytelling {
     updatePlaces() {
         let me = this;
         _.forEach(me.places, function (d, i) {
-            d.x = me.p_start_x + i * (me.stepx * (me.place_width+1));
+            d.x = me.p_start_x + i * (me.stepx * (me.place_width + 1));
         })
+    }
+
+    centerNode(x, y) {
+        let me = this;
+        me.svg
+            .transition()
+            .duration(750)
+            .call(me.zoom.scaleTo, 0.5)
+
+            .transition()
+            .duration(750)
+            .call(me.zoom.translateTo, x + me.w / 4, y)
+
+            .transition()
+            .duration(750)
+            .call(me.zoom.scaleBy, 2)
+        ;
+
+    }
+
+
+    centerToScene(id) {
+        let me = this;
+        _.forEach(me.scenes, function (e) {
+            if (e.id == id) {
+                me.centerNode(e.x, e.y);
+            }
+        })
+
     }
 
     zoomActivate() {
         let me = this;
-        let zoom = d3.zoom()
+        me.zoom = d3.zoom()
             .scaleExtent([0.25, 4])
             .on('zoom', function (event) {
-                me.svg.selectAll('path')
-                    .attr('transform', event.transform);
-                me.svg.selectAll('rect')
-                    .attr('transform', event.transform);
-                me.svg.selectAll('text')
-                    .attr('transform', event.transform);
-                me.svg.selectAll('line')
-                    .attr('transform', event.transform);
-                me.svg.selectAll('path')
-                    .attr('transform', event.transform);
-                me.svg.selectAll('image')
-                    .attr('transform', event.transform);
-                me.svg.selectAll('circle')
-                    .attr('transform', event.transform);
-
+                me.svg.attr('transform', event.transform)
             });
-        me.vis.call(zoom);
+        me.vis.call(me.zoom);
     }
 
     perform(data) {
@@ -925,6 +950,7 @@ class Storytelling {
         me.init();
         me.drawWatermark()
         me.drawStory()
+
         me.zoomActivate()
     }
 

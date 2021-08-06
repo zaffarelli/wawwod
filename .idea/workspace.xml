@@ -1,20 +1,101 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="346f49c9-ffeb-4324-94a2-67713079f8d7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/collector/static/collector/clans/ravnos_antitribu.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storytelling/templates/storytelling/pdf/scene.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/story_oktoberblütenfest.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pipfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pipfile.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backup/20210729/chronicles.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backup/20210729/creatures.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backup/20210729/gifts.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backup/20210729/places.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backup/20210729/rites.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backup/20210729/scenes.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backup/20210729/stories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/collector/templates/registration/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/collector/templates/registration/login_error.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storytelling/migrations/0009_auto_20210724_1745.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storytelling/migrations/0010_auto_20210729_2230.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storytelling/migrations/0011_scene_timeline.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.08fd863e4dd6.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.143e54decbb6.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.17f5d08ce656.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.2133041382c8.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.2957b27cad8c.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.2ccf9acfa494.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.313812bec938.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.324e10c4832b.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.347fd50ccfd0.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.35423d0b92ba.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.39abe0c5cbda.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.3b6e778e8bea.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.3e50decdea70.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.525af6ca6949.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.555d67af7e2b.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.557582da06e7.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.56456212aa5d.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.592f634957b4.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.5a91a2a2adc5.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.5ff8dec27d61.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.60262bd64580.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.6116fd59fd71.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.6dd6c831e0d2.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.87aa52493518.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.8f4a072f5588.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.9394cba015b5.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.9625586a92ca.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.974a0cff5f92.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.b15637f623b8.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.b30b99f188d8.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.bf090e05feff.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.c01e48b347a1.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.c3547d149ecf.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.c95f297149fa.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.c989057005be.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.d22fc7f01553.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.d2adea3b11c7.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.d53fa3b50224.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.d7fbd19f14b5.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.e53655a8f7d0.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.e53834810d6e.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.e56521bbd0a7.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.ebd56914b585.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.fb919857599a.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/admin/js/actions.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/admin/js/collapse.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/admin/js/inlines.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/admin/js/prepopulate.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/admin/js/timeparse.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/collector/clans/ravnos_antitribu.webp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/models/creatures.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/models/creatures.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/static/collector/css/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/collector/css/main.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/static/js/collector.es6" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/js/collector.es6" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/collector/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/templates/collector/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/collector/templates/collector/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/views/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/views/base.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/wawwod.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/wawwod.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/poetry.lock" beforeDir="false" afterPath="$PROJECT_DIR$/poetry.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/load_db.sh" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/load_db.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storytelling/models/scenes.py" beforeDir="false" afterPath="$PROJECT_DIR$/storytelling/models/scenes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storytelling/models/stories.py" beforeDir="false" afterPath="$PROJECT_DIR$/storytelling/models/stories.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storytelling/static/js/storytelling.es6" beforeDir="false" afterPath="$PROJECT_DIR$/storytelling/static/js/storytelling.es6" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storytelling/static/storytelling/css/storytelling.scss" beforeDir="false" afterPath="$PROJECT_DIR$/storytelling/static/storytelling/css/storytelling.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storytelling/templates/storytelling/pdf/scene.html" beforeDir="false" afterPath="$PROJECT_DIR$/storytelling/templates/storytelling/pdf/scene.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storytelling/templates/storytelling/pdf/story.html" beforeDir="false" afterPath="$PROJECT_DIR$/storytelling/templates/storytelling/pdf/story.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storytelling/templates/storytelling/scene_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/storytelling/templates/storytelling/scene_detail.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storytelling/templatetags/storytelling_filters.py" beforeDir="false" afterPath="$PROJECT_DIR$/storytelling/templatetags/storytelling_filters.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storytelling/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/storytelling/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storytelling/views/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/storytelling/views/base.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/avatar_oktoberbluntefest.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/avatar_story1.pdf.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/story_oktoberbluntefest.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/story_oktoberblütenfest.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/story_oktoberblütenfest.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_static/collector/css/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/collector/css/main.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_static/js/collector.es6" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/js/collector.es6" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_static/js/storytelling.es6" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/js/storytelling.es6" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_static/storytelling/css/storytelling.scss" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/storytelling/css/storytelling.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,7 +193,15 @@
       <workItem from="1626226870306" duration="6898000" />
       <workItem from="1626283788557" duration="1576000" />
       <workItem from="1626288721953" duration="12514000" />
-      <workItem from="1626474367576" duration="50653000" />
+      <workItem from="1626474367576" duration="51081000" />
+      <workItem from="1626706214693" duration="1840000" />
+      <workItem from="1627028856401" duration="21000" />
+      <workItem from="1627141450873" duration="4295000" />
+      <workItem from="1627308099953" duration="2578000" />
+      <workItem from="1627590071257" duration="13506000" />
+      <workItem from="1627689434525" duration="1135000" />
+      <workItem from="1627809179030" duration="17088000" />
+      <workItem from="1627907576606" duration="29085000" />
     </task>
     <servers />
   </component>
@@ -133,5 +222,23 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/storytelling/static/js/storytelling.es6</url>
+          <line>853</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/storytelling/static/js/storytelling.es6</url>
+          <line>46</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

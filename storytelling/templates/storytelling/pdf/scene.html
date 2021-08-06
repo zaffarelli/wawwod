@@ -3,32 +3,40 @@
 
 <h3>H{{c.time_offset_hours|safe}} - {{c.name|safe}}</h3>
 {{c.all_as_tags|as_tags|safe}}
-<p class="boxed">
+<p class="boxed {{c.timeline|as_class}}">
     Date: {{c.story_time|safe}}<BR/>
     Location: {{c.place.acronym|safe}}<BR/>
     Day/hours: {{c.time_offset_custom|safe}}<BR/>
     Cast: {{c.ultimate_cast|safe}}
+    {% if c.timeline %}
+    <BR/>Timeline: {{c.timeline|safe}}
+    {% endif %}
 </p>
 
 {% if c.preamble %}
-<p><u>Preamble:</u> {{c.preamble|safe}}</p>
+<h4>Preamble</h4><p>{{c.preamble|as_md|safe}}</p>
 {% endif %}
 
 {% if c.objectives %}
-<p><u>Objectives:</u> {{c.objectives|safe}}</p>
+<h4>Objectives</h4>
+<p>{{c.objectives|as_md|safe}}</p>
 {% endif %}
 {% if c.fallbacks %}
-<p><u>Fallbacks:</u> {{c.fallbacks|safe}}</p>
+<h4>Fallbacks</h4>
+<p>{{c.fallbacks|as_md|safe}}</p>
 {% endif %}
 
-<p><u>Description:</u> {{c.description|safe}}</p>
+<h4>Description</h4>
+<p>{{c.description|as_md|safe}}</p>
 
 
 {% if c.consequences %}
-<p><u>Consequences:</u> {{c.consequences|safe}}</p>
+<h4>Consequences</h4>
+<p>{{c.consequences|as_md|safe}}</p>
 {% endif %}
 {% if c.rewards %}
-<p><u>Rewards:</u> {{c.rewards|safe}}</p>
+<h4>Rewards</h4>
+<p>{{c.rewards|as_md|safe}}</p>
 
 <p class="boxed">
     From: {{c.links_to|safe}}<BR/>

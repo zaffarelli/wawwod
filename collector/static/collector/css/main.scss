@@ -104,6 +104,9 @@ body {
     padding-top: 0;
     margin: 0;
 
+    &.hidden{
+      display:none;
+    }
 
     & .caine_roots {
       background: transparent;
@@ -548,6 +551,9 @@ table {
       }
     }
   }
+  &.hidden{
+    display:none;
+  }
 }
 
 
@@ -873,4 +879,57 @@ text.kindred_name {
   fill: none;
   stroke: #ccc;
   stroke-width: 1px;
+}
+
+#user_wrapper {
+  position: absolute;
+  display: flex;
+  flex-flow: row no-wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: space-evenly;
+  width: 100%;
+  height: 100%;
+  background: #10101060;
+  z-index: 10000;
+
+
+  & #user_panel {
+    flex-order: 1;
+    flex-grow: 1;
+    z-index: 10001;
+    position: absolute;
+    padding: 5px;
+    margin: auto;
+    width: 400px;
+    height: 200px;
+    border: 3px solid $panel_border;
+    border-radius: 20px;
+    background: $panel_background;
+    color: $panel_color;
+    opacity: 1.0;
+    box-shadow: 0 0 10px #000000;
+    text-align: center;
+
+    & table {
+      width: 100%;
+    }
+
+    & A {
+      color: $focus_color;
+      text-decoration: none;
+    }
+
+    & input {
+      background: #000;
+      color: #FFF;
+      padding: 5px;
+      border: 2px groove $panel_border;
+
+      &[type='submit'] {
+        border: 2px ridge $panel_border;
+        border-radius: 3px;
+      }
+    }
+  }
 }
