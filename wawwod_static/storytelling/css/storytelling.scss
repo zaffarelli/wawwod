@@ -60,14 +60,14 @@ div.handler {
   word-wrap: normal;
   height: 100%;
 
-  & .action, &  textarea, & input{
-    order:2;
-    width:100%;
+  & .action, & textarea, & input {
+    order: 2;
+    width: 100%;
   }
 
-  & .small{
-    order:1;
-    width:18%;
+  & .small {
+    order: 1;
+    width: 18%;
   }
 
   &.hidden {
@@ -75,8 +75,8 @@ div.handler {
     transform: translateX(-500px);
   }
 
-  & textarea{
-    height:25em;
+  & textarea {
+    height: 25em;
   }
 
 
@@ -111,9 +111,77 @@ div.handler {
     & .data {
       width: 750px;
       flex-grow: 1;
-      flex-shrink: 1;
-      ;
+      flex-shrink: 1;;
 
     }
+  }
+}
+
+ul {
+  margin: 0;
+  margin-left: 3ex;
+  text-indent: 0;
+  padding: 0;
+
+  li.scene_jump {
+    margin-left: 0;
+    text-indent: 0;
+    padding: 0;
+    list-style-type: square;
+
+    &:hover {
+      color: orange;
+      cursor: pointer;
+    }
+  }
+}
+
+
+.timeline1 {
+  fill: #A99;
+}
+
+.timeline2 {
+  fill: #2A2;
+}
+
+.timeline3 {
+  fill: #22A;
+}
+
+.timeline4 {
+  fill: #5422aa;
+}
+
+.timeline5 {
+  fill: #aa2293;
+}
+
+.timeline6 {
+  fill: #22aa81;
+}
+
+.timeline7 {
+  fill: #aa5f22;
+}
+
+.timeline8 {
+  fill: #8daa22;
+}
+
+.timeline9 {
+  fill: #3d622b;
+}
+
+.timeline {
+  fill: #934d4d;
+}
+
+
+a{
+  text-decoration:none;
+  color:white;
+  &:hover{
+    color:orange;
   }
 }

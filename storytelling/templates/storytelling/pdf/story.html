@@ -11,6 +11,20 @@
         }
 
         @font-face {
+            font-family: 'Hind';
+            font-weight:bold;
+            src: url('storytelling/static/storytelling/fonts/Hind-Bold.ttf');
+        }
+
+        @font-face {
+            font-family: 'Hind';
+            font-weight:italic;
+            src: url('storytelling/static/storytelling/fonts/Hind-Light.ttf');
+        }
+
+
+
+        @font-face {
             font-family: 'Teko';
             src: url('storytelling/static/storytelling/fonts/Teko-Regular.ttf');
         }
@@ -41,6 +55,11 @@
                 text-align:center;
                 border:1px solid silver;
             }
+        }
+
+
+        p, ul, li{
+            font-family: 'Hind';
         }
 
         h1, h2, h3, h4, h5, h6 {
@@ -87,7 +106,7 @@
             color: #707070;
             line-height: 0.83em;
             text-decoration:underline;
-            -pdf-outline: true;
+            -pdf-outline: false;
             -pdf-level:3;
             -pdf-open:false;
             margin-left:0.4cm;
@@ -113,20 +132,47 @@
             margin-left:0.5cm;
         }
 
-        ul{
+        li{
+            margin-left:0.25cm;
+            /*list-style-type: square;*/
+        }
+
+        ol, ul{
             margin-left:0.5cm;
             text-indent:-0.25cm;
-            list-style-type: square;
+        }
+
+        ul.boxed{
+            /*list-style-type: square;*/
+            vertical-align: middle;
+            font-height:0.75em;
+            padding-top:0.1cm;
+            padding-bottom:0.1cm;
+        }
+
+        ul.boxed.from{
+            border-color:#ccc;
 
         }
 
-        li{
-            margin-left:0.25cm;
-            list-style-type: square;
+        ul.boxed.to{
+            border-color:#444;
+        }
+
+
+
+        ul.boxed li{
+            list-style-type: none;
+
+        }
+
+        ul.boxed li a {
+            text-decoration:none;
+            color:purple;
         }
 
         p {
-            font-family: 'Hind';
+
             font-size: 8pt;
             text-align: justify;
             line-height: 0.97em;
@@ -135,10 +181,20 @@
             -pdf-keep-with-next: false;
         }
 
+        b, strong{
+            color: #411616;
+            font-weight:bold;
+        }
+
+        i, em{
+            color: #2f1e21;
+            font-style:italic;
+        }
+
 
         tt{
             display:inline-block;
-            color:#2A2;
+            color:#232;
             font-weight:bold;
             font-style:normal;
             border:6px solid #2A2;
@@ -211,15 +267,6 @@
         .boxed.timeline0{
             border-color: #934d4d;
         }
-
-
-
-
-
-
-
-
-
 
         .boxed b{
             color:#A22;

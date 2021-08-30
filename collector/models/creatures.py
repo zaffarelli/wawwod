@@ -347,9 +347,11 @@ class Creature(models.Model):
         from collector.templatetags.wod_filters import as_generation, as_rank, as_breed, as_auspice, as_tribe_plural
         entrance = ''
         if self.creature == 'kindred':
-            entrance = f'{self.family} {as_generation(self.background3)} ({self.faction}/{self.group}/{self.groupspec}) ({self.demeanor} ({self.nature}))'
+            entrance = f'{self.family} {as_generation(self.background3)} ({self.group}/{self.groupspec})'
         elif self.creature == 'garou':
             entrance = f'{as_rank(self.rank)} {as_breed(self.breed)} {as_auspice(self.auspice)} of the  {as_tribe_plural(self.family)} ({self.group})'
+        elif self.creature == 'ghoul':
+            entrance = f'Ghoul of {self.sire_name}'
         return entrance
 
     @property

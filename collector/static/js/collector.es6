@@ -524,7 +524,6 @@ class WawwodCollector {
         });
     }
 
-
     perform() {
         let me = this;
         me.loadAjax();

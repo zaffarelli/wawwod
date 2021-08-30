@@ -555,6 +555,29 @@ class Storytelling {
             .selectAll("g")
             .data(me.scenes);
         let scene_in = scenes.enter()
+
+        scene_in.append("rect")
+            .attr('id', function (d) {
+                return "rect_scene_timeline__" + d.id;
+            })
+            .attr('class', function (d) {
+                return d.timeline_name;
+            })
+            .attr('rx', 5)
+            .attr('ry', 5)
+            .attr('x', function (d, i) {
+                return d.x - 20;
+            })
+            .attr('y', function (d, i) {
+                return d.y;
+            })
+            .attr('width', 15 )
+            .attr('height', me.scene_height)
+            .style('stroke', "#CCC")
+            .style('stroke-width', "1pt")
+            .attr('fill-opacity', 0.90)
+            ;
+
         scene_in.append("rect")
             .attr('id', function (d) {
                 return "rect_scene__" + d.id;
@@ -843,7 +866,7 @@ class Storytelling {
                     timeZone: 'Europe/Berlin'
                 }
                 let new_d = Intl.DateTimeFormat('de-DE', options).format(res);
-                return new_d + " [" + d.id + "]";
+                return new_d + " [Sc:" + String(d.id).padStart(4, '0') + "]";
             })
         ;
 
@@ -866,6 +889,15 @@ class Storytelling {
                     d.x = (me.scene_width * 2) * (d['place_order'] - 3) + e.x + (me.stepx * me.place_width) / 2 - me.scene_width / 2;
                 }
             })
+            d.timeline_name = 'timeline';
+            _.forEach(me.timelines, function (e, i) {
+                console.log(d['timeline'])
+                console.log(e['label'])
+                if (e['label'] == d['timeline']) {
+                    d.timeline_name = e['name'];
+                }
+            })
+
         })
         me.updateLinks()
     }
@@ -906,7 +938,7 @@ class Storytelling {
 
             .transition()
             .duration(750)
-            .call(me.zoom.translateTo, x + me.w / 4, y)
+            .call(me.zoom.translateTo, x + me.w / 4, y + me.h / 4)
 
             .transition()
             .duration(750)
@@ -942,6 +974,7 @@ class Storytelling {
         me.story = JSON.parse(data['story']);
         me.places = JSON.parse(data['places']);
         me.scenes = JSON.parse(data['scenes']);
+        me.timelines = JSON.parse(data['timelines']);
         me.links = JSON.parse(data['links']);
         me.end_time = JSON.parse(data['end_time'])
         me.updatePlaces()

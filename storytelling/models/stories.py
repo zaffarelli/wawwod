@@ -32,6 +32,20 @@ class Story(models.Model):
         return end_time
 
     @property
+    def all_timelines(self):
+        timelines = []
+        cnt = 0
+        timeline = 'sdfssqsf'
+        for s in self.scene_set.all().order_by('timeline'):
+            if s.timeline != timeline:
+                timeline = s.timeline
+                cnt += 1
+                timelines.append({'id': cnt, 'label': s.timeline, 'name': f'timeline{cnt}'})
+        return timelines
+
+
+
+    @property
     def all_places(self):
         from storytelling.models.places import Place
         from storytelling.models.scenes import Scene
@@ -60,7 +74,7 @@ class Story(models.Model):
         list = []
         all = Scene.objects.filter(story=self).order_by('timeline', 'time_offset_hours')
         for s in all:
-            list.append({'name': s.name, 'id': s.id, 'time': s.time_offset_hours, 'place': s.place.id,
+            list.append({'name': s.name, 'id': s.id, 'time': s.time_offset_hours, 'place': s.place.id, 'timeline': s.timeline, 'external_links': s.external_links,
                          'place_order': s.place_order, 'is_event': s.is_event,'is_downtime': s.is_downtime, 'story_time': s.story_time})
         return list
 

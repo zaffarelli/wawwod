@@ -24,7 +24,8 @@ def display_storytelling(request):
     places_json = json.dumps(selected_story.all_places, default=json_default, sort_keys=True, indent=4)
     scenes_json = json.dumps(selected_story.all_scenes, default=json_default, sort_keys=True, indent=4)
     links_json = json.dumps(selected_story.all_links, default=json_default, sort_keys=True, indent=4)
-    data = {'story': selected_story.toJSON(), 'end_time': selected_story.story_end_time, 'places': places_json, 'scenes': scenes_json, 'links': links_json}
+    timelines_json = json.dumps(selected_story.all_timelines, default=json_default, sort_keys=True, indent=4)
+    data = {'story': selected_story.toJSON(), 'end_time': selected_story.story_end_time, 'places': places_json, 'scenes': scenes_json, 'links': links_json, 'timelines': timelines_json}
     data_json = json.dumps(data, default=json_default, sort_keys=True, indent=4)
     answer = {'data': data_json, 'settings': settings_json}
     return JsonResponse(answer)
@@ -70,7 +71,7 @@ def display_pdf_story(request):
         if s.is_current:
             all_stories.append(s.toJSON())
             selected_story = s
-    data = {'story': selected_story, 'end_time': selected_story.story_end_time, 'places': selected_story.all_places, 'scenes': selected_story.all_scenes, 'links': selected_story.all_links}
+    data = {'story': selected_story, 'end_time': selected_story.story_end_time, 'places': selected_story.all_places, 'scenes': selected_story.all_scenes, 'links': selected_story.all_links, 'timelines': selected_story.all_timelines}
     context = {'data': data, 'settings': settings, 'filename': selected_story.name.lower()}
     # print(context)
     template = get_template("storytelling/pdf/story.html")

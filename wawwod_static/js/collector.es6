@@ -121,6 +121,27 @@ class WawwodCollector {
         });
     }
 
+    registerJump() {
+        let me = this;
+        $('li.scene_jump').off().on('click', function (event) {
+            let tgt = $(this).attr('jump_to');
+            $.ajax({
+                url: 'ajax/view/scene/' + tgt + '/',
+                success: function (answer) {
+                    $('.details').html(answer)
+                    $('.details').removeClass('hidden');
+                    me.d3.centerToScene(tgt);
+                    me.rebootLinks();
+                },
+                error: function (answer) {
+                    console.error('View error...' + answer);
+                    me.rebootLinks();
+                }
+            });
+
+        })
+    }
+
     registerResend() {
         let me = this;
         $('#resend').off().on('click', function (event) {
@@ -146,7 +167,7 @@ class WawwodCollector {
                         console.log(d['field']);
                         console.log(d['value']);
 
-                        $("#"+d['field']).html(d['value']);
+                        $("#" + d['field']).html(d['value']);
 
                         me.rebootLinks();
                     },
@@ -296,6 +317,7 @@ class WawwodCollector {
             me.registerToggle();
             me.registerCollectorAction();
             me.registerTriggers();
+            me.registerJump();
             $('#go').off();
             $('#go').on('click', function (event) {
                 event.preventDefault();
@@ -501,7 +523,6 @@ class WawwodCollector {
 
         });
     }
-
 
     perform() {
         let me = this;

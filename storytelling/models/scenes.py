@@ -23,12 +23,13 @@ class Scene(models.Model):
     place_order = models.PositiveIntegerField(default=0, blank=True)
     tags = models.TextField(max_length=256, blank=True, default='')
     exact_place = models.CharField(max_length=256, blank=True, default='')
-    preamble = models.TextField(max_length=1024, blank=True, default='')
-    objectives = models.TextField(max_length=1024, blank=True, default='')
-    fallback = models.TextField(max_length=1024, blank=True, default='')
+    preamble = models.TextField(max_length=2048, blank=True, default='')
+    objectives = models.TextField(max_length=2048, blank=True, default='')
+    fallback = models.TextField(max_length=2048, blank=True, default='')
     description = models.TextField(max_length=4096, blank=True, default='')
+    side_treks = models.TextField(max_length=4096, blank=True, default='')
     rewards = models.TextField(max_length=1024, blank=True, default='')
-    consequences = models.TextField(max_length=1024, blank=True, default='')
+    consequences = models.TextField(max_length=2048, blank=True, default='')
     cast = models.TextField(max_length=1024, blank=True, default='')
     # era = models.CharField(max_length=16, blank=True, default='2019')
     is_event = models.BooleanField(default=False)
@@ -73,12 +74,29 @@ class Scene(models.Model):
         return f'{self.name}'
 
     @property
+    def timeline_name(self):
+        res = 'timeline'
+        story = self.story
+        for x in story.all_timelines:
+            if x['label'] == self.timeline:
+                res = x['name']
+        return res
+
+    @property
+    def external_links(self):
+        lst = []
+        for e in ExternalLink.objects.filter(parent_scene=self):
+            lst.append(f'<a href="{e.url}" target="_blank">{e.name}</a>')
+        return "<BR/>".join(lst)
+
+    @property
     def links_from(self):
         list = []
         from_list = ScenesLink.objects.filter(scene_from=self)
         for l in from_list:
             list.append(f'H{l.scene_to.time_offset_hours}-{l.scene_to.name}/{l.scene_to.id}')
         return "|".join(list)
+
 
     @property
     def links_to(self):
@@ -131,6 +149,7 @@ class Scene(models.Model):
     @property
     def all_as_tags(self):
         list = self.tags.split(" ")
+        list.append(f'Sc:{self.id:04}')
         if self.is_downtime:
             list.append("DOWNTIME")
         if self.is_event:
@@ -175,18 +194,37 @@ class ScenesLink(models.Model):
         return f'{self.scene_from.name} [{self.category}] {self.scene_to.name}'
 
 
+class ExternalLink(models.Model):
+    class Meta:
+        ordering = ['name']
+    url = models.CharField(default='', max_length=1024, blank=True)
+    parent_scene = models.ForeignKey(Scene, on_delete=models.CASCADE, related_name='parent_scene', null=True)
+    name = models.CharField(default='', max_length=256, blank=True)
+    notes = models.TextField(default='', max_length=1024, blank=True)
+
+    def __str__(self):
+        return f'{self.name} ({self.url})';
+
+
 class SceneFromInline(admin.TabularInline):
     model = ScenesLink
-    extras = 3
+    extras = 1
     fk_name = 'scene_from'
     ordering = ('scene_to',)
 
 
 class SceneToInline(admin.TabularInline):
     model = ScenesLink
-    extras = 3
+    extras = 1
     fk_name = 'scene_to'
     ordering = ('scene_from',)
+
+
+class ExternalLinkInline(admin.TabularInline):
+    model = ExternalLink
+    extras = 1
+    fk_name = 'parent_scene'
+    ordering = ('name',)
 
 
 class SceneAdmin(admin.ModelAdmin):
@@ -195,4 +233,4 @@ class SceneAdmin(admin.ModelAdmin):
     list_filter = ['story', 'place']
     search_fields = ['name', 'description', 'preamble', 'rewards', 'consequences']
     actions = [refix]
-    inlines = [SceneFromInline, SceneToInline]
+    inlines = [SceneFromInline, SceneToInline, ExternalLinkInline]

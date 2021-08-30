@@ -1,15 +1,23 @@
 {% load static %}
 {% load storytelling_filters %}
 
+<a name="{{c.id}}">
 <h3>H{{c.time_offset_hours|safe}} - {{c.name|safe}}</h3>
+</a>
 {{c.all_as_tags|as_tags|safe}}
-<p class="boxed {{c.timeline|as_class}}">
+<p class="boxed {{c.timeline_name|as_class}}">
     Date: {{c.story_time|safe}}<BR/>
     Location: {{c.place.acronym|safe}}<BR/>
-    Day/hours: {{c.time_offset_custom|safe}}<BR/>
+    Custom time (D H): {{c.time_offset_custom|safe}}<BR/>
     Cast: {{c.ultimate_cast|safe}}
     {% if c.timeline %}
     <BR/>Timeline: {{c.timeline|safe}}
+    {% endif %}
+    {% if c.exact_place %}
+    <BR/>Exact place: <em>{{c.exact_place|safe}}</em>
+    {% endif %}
+    {% if c.external_links %}
+    <BR/>External Links:<BR/>{{c.external_links|safe}}
     {% endif %}
 </p>
 
@@ -29,6 +37,9 @@
 <h4>Description</h4>
 <p>{{c.description|as_md|safe}}</p>
 
+{% if c.side_treks %}
+<p>{{c.side_treks|as_md|safe}}</p>
+{% endif %}
 
 {% if c.consequences %}
 <h4>Consequences</h4>
@@ -37,15 +48,9 @@
 {% if c.rewards %}
 <h4>Rewards</h4>
 <p>{{c.rewards|as_md|safe}}</p>
-
-<p class="boxed">
-    From: {{c.links_to|safe}}<BR/>
-    To: {{c.links_from|safe}}
-</p>
-
-
 {% endif %}
 
+{{c.links_to|as_pdf_nav_from|safe}}
+{{c.links_from|as_pdf_nav_to|safe}}
 
-
-<center>&middot; &middot; &middot;</center>
+<div style="text-align:center;">&middot; &middot; &middot;</div>

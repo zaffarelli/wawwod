@@ -140,3 +140,32 @@ def as_link_entry(stack, x_field=''):
     res += f'</div>'
     res += f'</div>'
     return res
+
+
+@register.filter(name='as_pdf_nav')
+def as_pdf_nav(value):
+    lst = []
+    vals = value.split('|')
+    ll = ''
+    if len(vals) > 0:
+        for v in vals:
+            if len(v)>0:
+                words = v.split('/')
+                lst.append(f'<li><a href="#{words[1]}">{words[0]}</a></li>')
+        ll = " ".join(lst)
+    return ll
+
+
+@register.filter(name='as_pdf_nav_from')
+def as_pdf_nav_from(value):
+    ll = as_pdf_nav(value)
+    # print(value)
+    x = f'<ul class="boxed from">{ll}</ul>'
+    # print(x)
+    return x
+
+
+@register.filter(name='as_pdf_nav_to')
+def as_pdf_nav_to(value):
+    ll = as_pdf_nav(value)
+    return f'<ul class="boxed to">{ll}</ul>'
