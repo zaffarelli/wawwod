@@ -45,6 +45,13 @@
 <h4>Consequences</h4>
 <p>{{c.consequences|as_md|safe}}</p>
 {% endif %}
+
+{% if c.special %}
+<h4>Special</h4>
+<p>{{c.special|as_md|safe}}</p>
+{% endif %}
+
+
 {% if c.rewards %}
 <h4>Rewards</h4>
 <p>{{c.rewards|as_md|safe}}</p>

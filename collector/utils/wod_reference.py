@@ -139,6 +139,18 @@ STATS_NAMES = {
         'backgrounds': ['allies', 'career', 'contacts', 'fame', 'family', 'equipment', 'influence',
                         'resources', 'status', 'true faith']
     },
+    'spirit': {
+        'attributes': ['strength', 'dexterity', 'stamina', 'charisma', 'manipulation', 'appearance', 'perception',
+                       'intelligence', 'wits'],
+        'talents': ['alertness', 'athletics', 'awareness', 'brawl', 'dodge', 'expression', 'intimidation', 'leadership',
+                    'streetwise', 'subterfuge'],
+        'skills': ['crafts', 'drive', 'etiquette', 'firearms', 'meditation', 'melee', 'performance',
+                   'stealth', 'survival', 'technology'],
+        'knowledges': ['academics', 'computer', 'cosmology', 'enigmas', 'investigation', 'law', 'linguistics',
+                       'medicine', 'occult', 'science'],
+        'backgrounds': ['allies', 'arcane', 'avatar', 'contacts', 'destiny', 'dream', 'influence', 'library', 'node',
+                        'resources', 'wonder']
+    },
     'wraith': {
         'attributes': ['strength', 'dexterity', 'stamina', 'charisma', 'manipulation', 'appearance', 'perception',
                        'intelligence', 'wits'],
@@ -178,13 +190,6 @@ STATS_TEMPLATES = {
         'attributes': '7/5/3',
         'abilities': '13/9/5',
         'traits': '3',
-        'backgrounds': '5',
-        'freebies': '15'
-    },
-    'mage': {
-        'attributes': '7/5/3',
-        'abilities': '13/9/5',
-        'traits': '5',
         'backgrounds': '5',
         'freebies': '15'
     },
@@ -228,6 +233,13 @@ STATS_TEMPLATES = {
         'backgrounds': '7',
         'willpower': '3',
         'freebies': '21'
+    },
+    'spirit': {
+        'attributes': '7/5/3',
+        'abilities': '13/9/5',
+        'traits': '5',
+        'backgrounds': '5',
+        'freebies': '15'
     },
     'wraith': {
         'attributes': '7/5/3',

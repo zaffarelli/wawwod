@@ -99,9 +99,25 @@ class Story(models.Model):
             ch = self.chronicle.name
         return f'{self.name} ({ch})'
 
+    @property
+    def all_cast(self):
+        from storytelling.models.scenes import Scene
+        lst = []
+        all_scenes = Scene.objects.filter(story=self).order_by('timeline', 'time_offset_hours')
+        for scene in all_scenes:
+            scene_list = scene.cast.split(',')
+            lst.extend(scene_list)
+        lst.sort()
+        return list(set(lst))
+
+    @property
+    def all_cast_str(self):
+        return " ".join(self.all_cast)
+
+
 
 class StoryAdmin(admin.ModelAdmin):
-    list_display = ['name', 'acronym','chronicle', 'dday', 'description', 'is_current']
+    list_display = ['name', 'acronym','chronicle', 'dday', 'description', 'all_cast_str', 'is_current']
     ordering = ['dday', 'name']
     list_filter = ['dday', 'chronicle']
     search_fields = ['name', 'description']

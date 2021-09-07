@@ -156,12 +156,22 @@ def as_pdf_nav(value):
     return ll
 
 
+@register.filter(name='pdf_stat')
+def pdf_stat(value):
+    lst = []
+    for v in range(5):
+        if value > v:
+            lst.append('&#9733;')
+        else:
+            lst.append('&middot;')
+    ll = "".join(lst)
+    return "<tt>"+ll+"</tt>"
+
+
 @register.filter(name='as_pdf_nav_from')
 def as_pdf_nav_from(value):
     ll = as_pdf_nav(value)
-    # print(value)
     x = f'<ul class="boxed from">{ll}</ul>'
-    # print(x)
     return x
 
 

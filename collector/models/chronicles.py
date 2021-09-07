@@ -25,6 +25,14 @@ class Chronicle(models.Model):
         all = Creature.objects.filter(chronicle=self.acronym)
         return len(all)
 
+    def population_of(self, creature=None):
+        from collector.models.creatures import Creature
+        if creature is None:
+            all = Creature.objects.filter(chronicle=self.acronym)
+        else:
+            all = Creature.objects.filter(chronicle=self.acronym, creature=creature)
+        return len(all)
+
     def __str__(self):
         return self.acronym
 

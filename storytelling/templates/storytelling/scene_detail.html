@@ -19,6 +19,7 @@
     {{ c.side_treks|param_stack:"side_treks"|param_stack:c.id|as_entry:"Red Herring/Side Treks"|safe }}
     {{ c.rewards|param_stack:"rewards"|param_stack:c.id|as_entry:"Rewards"|safe }}
     {{ c.consequences|param_stack:"consequences"|param_stack:c.id|as_entry:"Consequences"|safe }}
+    {{ c.special|param_stack:"special"|param_stack:c.id|as_entry:"Special"|safe }}
     {{ c.links_to|param_stack:"links_to"|param_stack:c.id|as_link_entry:"Links To"|safe }}
     {{ c.links_from|param_stack:"links_from"|param_stack:c.id|as_link_entry:"Links From"|safe }}
 
@@ -26,6 +27,6 @@
     {{ c.is_downtime|param_stack:"xxx"|param_stack:c.id|as_boolean_entry:"is Downtime"|safe }}
     {{ c.is_briefing|param_stack:"xxx"|param_stack:c.id|as_boolean_entry:"is Briefing"|safe }}
     {{ c.is_debriefing|param_stack:"xxx"|param_stack:c.id|as_boolean_entry:"is Debriefing"|safe }}
-    {{ c.verified_cast|param_stack:"xxx"|param_stack:c.id|as_entry:"Cast"|safe }}
+    {{ c.cast|param_stack:"cast"|param_stack:c.id|as_entry:"Cast"|safe }}
     {{ c.external_links|param_stack:"xxx"|param_stack:c.id|as_entry:"External links"|safe }}
 </div>

@@ -30,6 +30,7 @@ class Scene(models.Model):
     side_treks = models.TextField(max_length=4096, blank=True, default='')
     rewards = models.TextField(max_length=1024, blank=True, default='')
     consequences = models.TextField(max_length=2048, blank=True, default='')
+    special = models.TextField(max_length=2048, blank=True, default='')
     cast = models.TextField(max_length=1024, blank=True, default='')
     # era = models.CharField(max_length=16, blank=True, default='2019')
     is_event = models.BooleanField(default=False)
@@ -124,7 +125,7 @@ class Scene(models.Model):
             cast_list = Creature.objects.filter(rid__in=cast)
             list = []
             for c in cast_list:
-                list.append(c.name)
+                list.append(f'<a href="#{c.rid}">{c.name}</a>')
             strl = ", ".join(list)
             return f'Expected: {len(cast)}, found {len(list)}: {strl}'
 
@@ -138,7 +139,7 @@ class Scene(models.Model):
             cast_list = Creature.objects.filter(rid__in=cast)
             list = []
             for c in cast_list:
-                list.append('<b>'+c.name+'</b> ['+c.storyteller_entrance+']')
+                list.append(f'<a href="#{c.rid}">{c.name}</a>')
             strl = ", ".join(list)
             if len(cast) == len(list):
                 return f'{strl}'

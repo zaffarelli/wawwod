@@ -191,6 +191,15 @@
             font-style:italic;
         }
 
+        a{
+            color:#A05050;
+            text-decoration:none;
+            border-radius:1px;
+            padding:2px;
+            display:inline-block;
+            font-weight:bold;
+        }
+
 
         tt{
             display:inline-block;
@@ -311,6 +320,14 @@
 </p>
 <p><u>Description:</u> {{data.story.description|safe}}</p>
 
+<pdf:nextpage/>
+<h2>Dramatis Personae</h2>
+{% for x in data.full_cast %}
+    {% include "collector/pdf/creature_roster.html" with c=x %}
+{% endfor %}
+
+<pdf:nextpage/>
+
 
 <h2>List of all Places</h2>
 {% for d in data.story.place_set.all %}
@@ -319,6 +336,7 @@
 <p>{{d.description|safe}}</p>
 {% endfor %}
 
+<pdf:nextpage/>
 
 <h2>Events</h2>
 <p>Those special scenes happen out of the scope of the players. They reflect the plans of the antagonists and allies,
@@ -330,6 +348,8 @@ scene might show the consequences of an event.</p>
 {% endif %}
 {% endfor %}
 
+<pdf:nextpage/>
+
 <h2>Scenes</h2>
 <p>This is the adventure, running from the introduction scene to the multiple debriefings. The first introduction is often global,
 you might found individual introductions for each players (if they are prerolled characters).</p>
@@ -338,6 +358,8 @@ you might found individual introductions for each players (if they are prerolled
         {% include "storytelling/pdf/scene.html" with c=s %}
     {% endif %}
 {% endfor %}
+
+<pdf:nextpage/>
 
 <br/>
 <div>

@@ -219,6 +219,7 @@ class Creature(models.Model):
     background7 = models.PositiveIntegerField(default=0)
     background8 = models.PositiveIntegerField(default=0)
     background9 = models.PositiveIntegerField(default=0)
+    background10 = models.PositiveIntegerField(default=0)
     trait0 = models.CharField(max_length=64, blank=True, default='')
     trait1 = models.CharField(max_length=64, blank=True, default='')
     trait2 = models.CharField(max_length=64, blank=True, default='')
@@ -337,7 +338,7 @@ class Creature(models.Model):
         shortcuts = []
         base = GM_SHORTCUTS[self.creature]
         for s in base:
-            print(s)
+            # print(s)
             sc = f'{s[0].title()}+{s[1].title()}={self.value_of(s[0])+self.value_of(s[1])}'
             shortcuts.append(sc)
         return shortcuts
@@ -352,6 +353,8 @@ class Creature(models.Model):
             entrance = f'{as_rank(self.rank)} {as_breed(self.breed)} {as_auspice(self.auspice)} of the  {as_tribe_plural(self.family)} ({self.group})'
         elif self.creature == 'ghoul':
             entrance = f'Ghoul of {self.sire_name}'
+        else:
+            entrance = f'{self.concept} ({self.group})'
         return entrance
 
     @property
@@ -362,6 +365,11 @@ class Creature(models.Model):
             entrance = f'{as_generation(self.background3)} generation {self.family} of the {self.faction} ({self.group}).'
         elif self.creature == 'garou':
             entrance = f'{as_rank(self.rank)} {as_breed(self.breed)} {as_auspice(self.auspice)} of the  {as_tribe_plural(self.family)} ({self.group}).'
+        elif self.creature == 'ghoul':
+            entrance = f'Ghoul of {self.sire_name}'
+        else:
+            entrance = f'{self.concept} ({self.group}).'
+
         return entrance
 
     def __str__(self):
@@ -639,6 +647,102 @@ class Creature(models.Model):
         self.changeName()
         self.need_fix = False
 
+    @property
+    def roster_base(self):
+        lines = []
+        if (self.entrance):
+            lines.append(f'<i>{self.entrance}</i>')
+        # if (self.storyteller_entrance):
+        #     lines.append(f'<i>{self.storyteller_entrance}</i>')
+        if (self.concept):
+            lines.append(f'<em>Concept:</em> {self.concept}')
+        lines.append(f'<em>Creature Type:</em> {self.creature.title()}')
+        if self.freebies == self.expectedfreebies:
+            lines.append(f'<em>Freebies:</em> {self.freebies}')
+        else:
+            lines.append(f'<em>Freebies:</em> {self.freebies} ({self.expectedfreebies} / {self.freebiedif})')
+        if self.creature == 'kindred' or self.creature == 'ghoul':
+            lines.append(f'<em>Age:</em> {self.age} (Real: {self.trueage}, Embrace: {self.embrace})')
+        else:
+            lines.append(f'<em>Age:</em> {self.age}')
+        lines.append(f'<em>Nature (Demeanor):</em> {self.nature} ({self.demeanor})')
+
+        return "<br/>".join(lines)
+
+    @property
+    def roster_attributes(self):
+        lines = []
+        lines.append(f'<b>Physical  <small>({self.total_physical})</small>:</b> Strength {self.attribute0}, Dexterity {self.attribute1}, Stamina {self.attribute2}')
+        lines.append(f'<b>Social  <small>({self.total_social})</small>:</b> Charisma {self.attribute3}, Manipulation {self.attribute4}, Appearance {self.attribute5}')
+        lines.append(f'<b>Mental <small>({self.total_mental})</small>:</b> Perception {self.attribute6}, Intelligence {self.attribute7}, Wits {self.attribute8}')
+        return "<br/>".join(lines)
+
+    @property
+    def roster_talents(self):
+        str = f'<b>Talents <small>({self.total_talents})</small>:</b> '
+        abilities_list = []
+        topics = ['talents']
+        for topic in topics:
+            for ability in STATS_NAMES[self.creature][topic]:
+                val = self.value_of(ability)
+                if val > 0:
+                    abilities_list.append(f'{ability.title()} {val}')
+        str = str + ", ".join(abilities_list)+"."
+        return str
+
+    @property
+    def roster_skills(self):
+        str = f'<b>Skills <small>({self.total_skills})</small>:</b> '
+        abilities_list = []
+        topics = ['skills']
+        for topic in topics:
+            for ability in STATS_NAMES[self.creature][topic]:
+                val = self.value_of(ability)
+                if val > 0:
+                    abilities_list.append(f'{ability.title()} {val}')
+        str = str + ", ".join(abilities_list)+"."
+        return str
+
+    @property
+    def roster_knowledges(self):
+        str = f'<b>Knowledges <small>({self.total_knowledges})</small>:</b> '
+        abilities_list = []
+        topics = ['knowledges']
+        for topic in topics:
+            for ability in STATS_NAMES[self.creature][topic]:
+                val = self.value_of(ability)
+                if val > 0:
+                    abilities_list.append(f'{ability.title()} {val}')
+        str = str + ", ".join(abilities_list)+"."
+        return str
+
+    @property
+    def roster_end(self):
+        lines = []
+        backgrounds_list = []
+        topics = ['backgrounds']
+        for topic in topics:
+            for ability in STATS_NAMES[self.creature][topic]:
+                val = self.value_of(ability)
+                # print(val)
+                if val > 0:
+                    backgrounds_list.append(f'{ability.title()} {val}')
+        if len(backgrounds_list) > 0:
+            lines.append(
+                f'<b>Backgrounds</b> <small>({self.total_backgrounds})</small>: {", ".join(backgrounds_list)}.')
+        gifts_list = []
+        for n in range(10):
+            if getattr(self, f"trait{n}"):
+                gifts_list.append(f'{getattr(self, f"trait{n}")}')
+        if len(gifts_list) > 0:
+            if self.creature == 'kindred' or self.creature == 'ghoul':
+                lines.append(f'<b>Disciplines</b>: {", ".join(gifts_list)}.')
+            else:
+                lines.append(f'<b>Gifts</b>: {", ".join(gifts_list)}.')
+        str = "<br/>".join(lines) + "."
+        return str
+
+
     def changeName(self):
         if self.new_name:
             all = Creature.objects.filter(sire=self.rid)
@@ -819,7 +923,7 @@ class Creature(models.Model):
                 for d in CLANS_SPECIFICS[self.family]['disciplines']:
                     setattr(self, f'trait{x}', d)
                     x+=1
-                    print(d)
+                    # print(d)
             virtues = 7
             self.virtue0 = 1
             self.virtue1 = 1
@@ -907,7 +1011,7 @@ class Creature(models.Model):
         self.total_traits = 0
         for i in range(16):
             trait = getattr(self, f'trait{i}')
-            print(trait)
+            # print(trait)
             if trait:
                 self.total_traits += int(trait.split('(')[1].replace('(', '').replace(')', ''))
         # Sort traits

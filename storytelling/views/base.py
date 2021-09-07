@@ -25,7 +25,8 @@ def display_storytelling(request):
     scenes_json = json.dumps(selected_story.all_scenes, default=json_default, sort_keys=True, indent=4)
     links_json = json.dumps(selected_story.all_links, default=json_default, sort_keys=True, indent=4)
     timelines_json = json.dumps(selected_story.all_timelines, default=json_default, sort_keys=True, indent=4)
-    data = {'story': selected_story.toJSON(), 'end_time': selected_story.story_end_time, 'places': places_json, 'scenes': scenes_json, 'links': links_json, 'timelines': timelines_json}
+    data = {'story': selected_story.toJSON(), 'end_time': selected_story.story_end_time, 'places': places_json,
+            'scenes': scenes_json, 'links': links_json, 'timelines': timelines_json}
     data_json = json.dumps(data, default=json_default, sort_keys=True, indent=4)
     answer = {'data': data_json, 'settings': settings_json}
     return JsonResponse(answer)
@@ -63,6 +64,7 @@ def action_timeslip(request, slug='m0d_m0h__'):
 
 
 def display_pdf_story(request):
+    from collector.models.creatures import Creature
     all = Story.objects.all()
     all_stories = []
     settings = {}
@@ -71,7 +73,14 @@ def display_pdf_story(request):
         if s.is_current:
             all_stories.append(s.toJSON())
             selected_story = s
-    data = {'story': selected_story, 'end_time': selected_story.story_end_time, 'places': selected_story.all_places, 'scenes': selected_story.all_scenes, 'links': selected_story.all_links, 'timelines': selected_story.all_timelines}
+    full_cast = []
+    casted = Creature.objects.filter(rid__in=selected_story.all_cast).order_by('player', 'faction', 'creature', 'name')
+    for c in casted:
+        full_cast.append(c)
+    print(full_cast)
+    data = {'story': selected_story, 'end_time': selected_story.story_end_time, 'places': selected_story.all_places,
+            'scenes': selected_story.all_scenes, 'links': selected_story.all_links,
+            'timelines': selected_story.all_timelines, 'full_cast': full_cast}
     context = {'data': data, 'settings': settings, 'filename': selected_story.name.lower()}
     # print(context)
     template = get_template("storytelling/pdf/story.html")
@@ -86,7 +95,7 @@ def display_pdf_story(request):
     #     return response
     filename = 'story_%s.pdf' % context['filename']
 
-    #fname = os.path.join(settings.MEDIA_ROOT, 'pdf/results/' + filename)
+    # fname = os.path.join(settings.MEDIA_ROOT, 'pdf/results/' + filename)
     fname = os.path.join('wawwod_media/', 'pdf/results/' + filename)
     es_pdf = open(fname, 'wb')
     pdf = pisa.pisaDocument(BytesIO(html.encode('utf-8')), es_pdf)
@@ -109,9 +118,7 @@ def update_scene(request, id: None, field: None):
                 value = request.POST['text']
                 setattr(scene, field, value)
                 scene.save()
-                changes = {'field': 'field_'+id+'__'+field, 'value': value}
+                changes = {'field': 'field_' + id + '__' + field, 'value': value}
                 changes_json = json.dumps(changes, default=json_default, sort_keys=True, indent=4)
                 answer = {'changes_on_scenes': changes_json}
     return JsonResponse(answer)
-
-

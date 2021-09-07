@@ -1,0 +1,26 @@
+{% load static %}
+{% load storytelling_filters %}
+<h3>{{c.name|safe}} (<a name="{{c.rid}}">{{c.rid}}</a>)</h3>
+<p>{{c.roster_base|safe}}</p>
+<!--table>
+    <tr>
+        <th style="width:2cm;">Strength</th><td style="width:1.25cm; text-align:center;">{{c.attribute0|pdf_stat|safe}}</td>
+        <th style="width:2cm;">Charisma</th><td style="width:1.25cm; text-align:center;">{{c.attribute3|pdf_stat|safe}}</td>
+        <th style="width:2cm;">Perception</th><td style="width:1.25cm; text-align:center;">{{c.attribute6|pdf_stat|safe}}</td>
+    </tr>
+    <tr>
+        <th style="width:2cm;">Dexterity</th><td style="width:1.25cm; text-align:center;">{{c.attribute1|pdf_stat|safe}}</td>
+        <th style="width:2cm;">Manipulation</th><td style="width:1.25cm; text-align:center;">{{c.attribute4|pdf_stat|safe}}</td>
+        <th style="width:2cm;">Intelligence</th><td style="width:1.25cm; text-align:center;">{{c.attribute7|pdf_stat|safe}}</td>
+    </tr>
+    <tr>
+        <th style="width:2cm;">Stamina</th><td style="width:1.25cm; text-align:center;">{{c.attribute2|pdf_stat|safe}}</td>
+        <th style="width:2cm;">Appearance</th><td style="width:1.25cm; text-align:center;">{{c.attribute4|pdf_stat|safe}}</td>
+        <th style="width:2cm;">Wits</th><td style="width:1.25cm; text-align:center;">{{c.attribute8|pdf_stat|safe}}</td>
+    </tr>
+</table-->
+<p>{{c.roster_attributes|safe}}</p>
+<p>{{c.roster_talents|safe}}</p>
+<p>{{c.roster_skills|safe}}</p>
+<p>{{c.roster_knowledges|safe}}</p>
+<p>{{c.roster_end|safe}}</p>
