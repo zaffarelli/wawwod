@@ -5,22 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="346f49c9-ffeb-4324-94a2-67713079f8d7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/collector/migrations/0014_creature_background10.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collector/templates/collector/pdf/creature_roster.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storytelling/migrations/0017_scene_special.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/collector/migrations/0015_creature_residence.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storytelling/migrations/0018_auto_20211202_2146.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storytelling/migrations/0019_auto_20220111_0047.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/models/chronicles.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/models/chronicles.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/collector/models/creatures.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/models/creatures.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/utils/wod_reference.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/utils/wod_reference.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/static/js/collector.es6" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/js/collector.es6" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/static/js/cross_over_sheet.es6" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/js/cross_over_sheet.es6" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/templates/blank.html" beforeDir="false" afterPath="$PROJECT_DIR$/collector/templates/blank.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/templates/collector/page/players_sheets.html" beforeDir="false" afterPath="$PROJECT_DIR$/collector/templates/collector/page/players_sheets.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/views/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/views/base.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/wawwod.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/wawwod.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storytelling/models/scenes.py" beforeDir="false" afterPath="$PROJECT_DIR$/storytelling/models/scenes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storytelling/models/stories.py" beforeDir="false" afterPath="$PROJECT_DIR$/storytelling/models/stories.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storytelling/templates/storytelling/pdf/scene.html" beforeDir="false" afterPath="$PROJECT_DIR$/storytelling/templates/storytelling/pdf/scene.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storytelling/templates/storytelling/pdf/story.html" beforeDir="false" afterPath="$PROJECT_DIR$/storytelling/templates/storytelling/pdf/story.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storytelling/templates/storytelling/scene_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/storytelling/templates/storytelling/scene_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storytelling/templatetags/storytelling_filters.py" beforeDir="false" afterPath="$PROJECT_DIR$/storytelling/templatetags/storytelling_filters.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storytelling/views/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/storytelling/views/base.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/poetry.lock" beforeDir="false" afterPath="$PROJECT_DIR$/poetry.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/story_oktoberblütenfest.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/story_oktoberblütenfest.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_static/admin/js/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/admin/js/actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_static/js/collector.es6" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/js/collector.es6" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_static/js/cross_over_sheet.es6" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/js/cross_over_sheet.es6" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,13 +58,13 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../dramatis_personae" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../rpg_sessions" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="web.server" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -132,7 +134,22 @@
       <workItem from="1629202503135" duration="49000" />
       <workItem from="1630259561920" duration="5275000" />
       <workItem from="1630432040713" duration="12244000" />
-      <workItem from="1630581938423" duration="9071000" />
+      <workItem from="1630581938423" duration="9130000" />
+      <workItem from="1631109427831" duration="604000" />
+      <workItem from="1631262985015" duration="619000" />
+      <workItem from="1633073588318" duration="981000" />
+      <workItem from="1633783596749" duration="613000" />
+      <workItem from="1634381221467" duration="5888000" />
+      <workItem from="1634942626005" duration="1204000" />
+      <workItem from="1634952145239" duration="1111000" />
+      <workItem from="1634958352927" duration="1358000" />
+      <workItem from="1635148361700" duration="843000" />
+      <workItem from="1635168398748" duration="87000" />
+      <workItem from="1635598603909" duration="1911000" />
+      <workItem from="1638477922600" duration="655000" />
+      <workItem from="1641858443249" duration="1384000" />
+      <workItem from="1641932165734" duration="8898000" />
+      <workItem from="1646349760648" duration="3608000" />
     </task>
     <servers />
   </component>

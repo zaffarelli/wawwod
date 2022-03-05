@@ -60,7 +60,7 @@ class CrossOverSheet{
 
     init(){
         let me = this;
-        me.debug = true;
+        me.debug = false;
         me.width = parseInt($(me.parent).css("width"),10) * 0.75;
         me.height = me.width *1.4;
         me.w = 1.25 * me.width;
@@ -79,8 +79,8 @@ class CrossOverSheet{
         me.shadow_stroke = "#A0A0A0";
         me.draw_stroke = '#111';
         me.draw_fill = '#222';
-        me.user_stroke = '#911';
-        me.user_fill = '#A22';
+        me.user_stroke = '#644';
+        me.user_fill = '#422';
         me.user_font = 'Gochi Hand';
         me.mono_font = 'Syne Mono';
         me.title_font = 'Khand';
@@ -222,7 +222,7 @@ class CrossOverSheet{
         me.decorationText(12,1.8,0,'middle',me.logo_font,me.fat_font_size,"#fff","#fff",5,me.scenario,me.back,0.75);
 
         me.decorationText(12,1.8,0,'middle',me.logo_font,me.fat_font_size,me.shadow_fill,me.shadow_stroke,0.5,me.scenario,me.back,0.5);
-        me.decorationText(12,2.75,0,'middle',me.title_font,me.fat_font_size*2,me.shadow_fill,me.shadow_stroke,1,txt,me.back,0.75);
+        me.decorationText(12,2.75,0,'middle',me.title_font,me.fat_font_size*2,me.draw_fill,me.shadow_stroke,1,txt,me.back,0.75);
 
         //me.decorationText(12,1.8,0,'middle',me.logo_font,me.fat_font_size,"transparent",me.draw_stroke,0.5,me.scenario,me.back,0.5);
 
@@ -557,7 +557,7 @@ class CrossOverSheet{
         if (me.data["creature"]=='kindred'){
             me.statText('Position',me.data['position'],ox+me.stepx*9,oy,'group','group',me.character);
         }else{
-            me.statText('Residence',me.data['group'],ox+me.stepx*9,oy,'group','group',me.character);
+            me.statText('Residence',me.data['residence'],ox+me.stepx*9,oy,'group','group',me.character);
         }
         me.statText('Concept',me.data['concept'],ox+me.stepx*16,oy,'concept','concept',me.character);
 
@@ -649,8 +649,9 @@ class CrossOverSheet{
 
         }else{
             me.title('Other Traits',ox+me.stepx*12,oy,me.character);
-            me.title('Other Traits',ox+me.stepx*19,oy,me.character);
-
+            if ((me.data['creature'] == 'mortal')) {
+                me.title('Virtues', ox + me.stepx * 19, oy, me.character);
+            }
         }
         oy += 0.5*me.stepy;
 
@@ -853,7 +854,9 @@ class CrossOverSheet{
         let stat = '';
         me.title('Specialities',ox+me.stepx*5,oy,me.character);
         me.title('Action Shortcuts',ox+me.stepx*12,oy,me.character);
-        me.title('Many Forms',ox+me.stepx*19,oy,me.character);
+        if (me.data['creature'] == 'garou') {
+            me.title('Many Forms', ox + me.stepx * 19, oy, me.character);
+        }
         oy += 0.5*me.stepy;
         stat = 'speciality';
         me.config['specialities'].forEach(function(d,idx) {

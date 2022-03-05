@@ -46,11 +46,17 @@ class WawwodCollector {
         $('.display').off().on('click', function (event) {
             let action = $(this).attr('action');
             let param = $(this).attr('param');
+            let option = $(this).attr('option');
             let key = $('#userinput').val();
             let url = 'ajax/display/' + action + '/';
             if (param != undefined) {
                 if (action == 'crossover_sheet') {
-                    url = 'ajax/display/' + action + '/' + param + '/';
+                    if (option) {
+                        url = 'ajax/display/' + action + '/' + param + '/' + option + '/';
+                    }
+                    else{
+                        url = 'ajax/display/' + action + '/' + param + '/' ;
+                    }
                 }
                 if (action == 'kindred_lineage') {
                     url = 'ajax/display/' + action + '/' + param + '/';

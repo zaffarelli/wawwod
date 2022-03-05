@@ -212,16 +212,22 @@ def add_ghoul(request, slug=None):
         return HttpResponse(status=204)
 
 
-def display_crossover_sheet(request, slug=None):
+def display_crossover_sheet(request, slug=None, option=None):
     if request.is_ajax:
         chronicle = get_current_chronicle()
         if slug is None:
             slug = 'julius_von_blow'
         c = Creature.objects.get(rid=slug)
-
+        if option is not None:
+            c.id = None
+            c.name = " "+c.name
+            c.creature = option
+            c.debuff()
+            c.need_fix = True
+            c.save()
         if chronicle.acronym == 'BAV':
             scenario = "Bayerische Nächte"
-            pre_title = 'Munich'
+            pre_title = 'München'
             post_title = "Oktoberfest, 2019"
         else:
             pre_title = 'World of Darkness'
@@ -233,6 +239,8 @@ def display_crossover_sheet(request, slug=None):
         k = json.loads(j)
         k["sire_name"] = c.sire_name
         j = json.dumps(k)
+        if option is not None:
+            c.delete()
         settings = {'version': 1.0, 'labels': STATS_NAMES[c.creature], 'pre_title': pre_title, 'scenario': scenario, 'post_title': post_title, 'fontset': FONTSET, 'specialities': spe, 'shortcuts': shc}
         crossover_sheet_context = {'settings': json.dumps(settings, sort_keys=True, indent=4), 'data': j}
 
