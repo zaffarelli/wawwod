@@ -213,6 +213,17 @@
             -pdf-keep-with-next: true;
         }
 
+        table.calendar th{
+            font-family:'teko';
+            font-size:12pt;
+            border:1px solid transparent;
+            padding:1mm;
+        }
+        table.calendar td{
+            border:1px solid silver;
+            padding:1mm;
+            font-size:9px;
+        }
 
         .blue{
             color:#148;
@@ -302,6 +313,16 @@
             font-style: italic;
         }
 
+        .tag{
+            border-left-color:#606;
+            border-left-width:2mm;
+            border-left-style:solid;
+            display:inline-block;
+            color:purple;
+            font-weight:bold;
+            font-size:8px;
+        }
+
     </style>
 </head>
 <body>
@@ -316,9 +337,12 @@
 <p class="boxed">
     Chronicle: {{data.story.chronicle.name}}<BR/>
     Era: {{data.story.chronicle.era}}<BR/>
-    In-game Start: {{data.story.dday}}
+    In-game Start: {{data.story.dday}}<BR/>
+    Population: {{data.story.chronicle.population}}<BR/>
 </p>
 <p><u>Description:</u> {{data.story.description|safe}}</p>
+<p><u>Calendar</u>:</p>
+{{data.story.calendar|safe}}
 
 <pdf:nextpage/>
 <h2>Dramatis Personae</h2>

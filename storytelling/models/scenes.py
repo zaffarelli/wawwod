@@ -13,13 +13,14 @@ logger = logging.Logger(__name__)
 class Scene(models.Model):
     class Meta:
         ordering = ['timeline', 'time_offset_hours']
+
     name = models.CharField(max_length=128, default='')
     story = models.ForeignKey(Story, on_delete=models.SET_NULL, null=True)
     place = models.ForeignKey(Place, on_delete=models.SET_NULL, null=True)
     time_offset_hours = models.IntegerField(default=-1, blank=True)
     time_offset_custom = models.CharField(default='', max_length=32, blank=True)
     timeline = models.CharField(default='', max_length=32, blank=True)
-    day = models.DateTimeField(default=datetime.now,blank=True,null=True)
+    day = models.DateTimeField(default=datetime.now, blank=True, null=True)
     place_order = models.PositiveIntegerField(default=0, blank=True)
     tags = models.TextField(max_length=256, blank=True, default='')
     exact_place = models.CharField(max_length=256, blank=True, default='')
@@ -40,11 +41,11 @@ class Scene(models.Model):
 
     def fix(self):
         if self.time_offset_hours >= 0:
-            self.time_offset_custom = f'{int(self.time_offset_hours/24)} {self.time_offset_hours%24}'
+            self.time_offset_custom = f'{int(self.time_offset_hours / 24)} {self.time_offset_hours % 24}'
         else:
             words = self.time_offset_custom.split(' ')
             if len(words) == 2:
-                self.time_offset_hours = int(words[0])*24+int(words[1])
+                self.time_offset_hours = int(words[0]) * 24 + int(words[1])
             else:
                 self.time_offset_hours = -1
             if self.time_offset_hours < -1:
@@ -98,7 +99,6 @@ class Scene(models.Model):
             list.append(f'H{l.scene_to.time_offset_hours}-{l.scene_to.name}/{l.scene_to.id}')
         return "|".join(list)
 
-
     @property
     def links_to(self):
         list = []
@@ -114,6 +114,14 @@ class Scene(models.Model):
             refdatetime = datetime.combine(self.story.dday, datetime.min.time())
             d = refdatetime + timedelta(hours=self.time_offset_hours)
         return d
+
+    @property
+    def story_day(self):
+        d = None
+        if self.story:
+            refdatetime = datetime.combine(self.story.dday, datetime.min.time())
+            # d = refdatetime #+ timedelta(hours=self.time_offset_hours)
+        return refdatetime
 
     @property
     def verified_cast(self):
@@ -146,7 +154,6 @@ class Scene(models.Model):
             else:
                 return f'Expected: {len(cast)}, found {len(list)}: {strl} [{self.cast}]'
 
-
     @property
     def all_as_tags(self):
         list = self.tags.split(" ")
@@ -169,8 +176,6 @@ def refix(modeladmin, request, queryset):
     short_description = 'Fix scenes'
 
 
-
-
 LINK_CATEGORIES = (
     ('FOE', 'Enemies actions'),
     ('FRIEND', 'Allies actions'),
@@ -183,6 +188,7 @@ LINK_CATEGORIES = (
 class ScenesLink(models.Model):
     class Meta:
         ordering = ['category', 'scene_from', 'scene_to']
+
     category = models.CharField(default='TIME', max_length=10, choices=LINK_CATEGORIES)
     description = models.TextField(max_length=1024, default='', blank=True)
     scene_from = models.ForeignKey(Scene, on_delete=models.CASCADE, related_name='scenefrom', null=True)
@@ -198,6 +204,7 @@ class ScenesLink(models.Model):
 class ExternalLink(models.Model):
     class Meta:
         ordering = ['name']
+
     url = models.CharField(default='', max_length=1024, blank=True)
     parent_scene = models.ForeignKey(Scene, on_delete=models.CASCADE, related_name='parent_scene', null=True)
     name = models.CharField(default='', max_length=256, blank=True)
@@ -229,7 +236,8 @@ class ExternalLinkInline(admin.TabularInline):
 
 
 class SceneAdmin(admin.ModelAdmin):
-    list_display = ['name', 'place', 'timeline', 'time_offset_hours', 'story_time', 'links_to', 'links_from', 'verified_cast']
+    list_display = ['name', 'place', 'timeline', 'time_offset_hours', 'story_time', 'links_to', 'links_from',
+                    'verified_cast']
     ordering = ['time_offset_hours', 'place', 'name']
     list_filter = ['story', 'place']
     search_fields = ['name', 'description', 'preamble', 'rewards', 'consequences']

@@ -103,3 +103,19 @@
         <th>Creature</th>
         <td class='editable userinput' id='{{c.rid}}__creature'>{{ c.creature }}</td>
     </tr>
+
+    <tr>
+        {% if c.creature == 'kindred' %}
+        <th>Weakness</th>
+        <td class='editable userinput' id='{{c.rid}}__weakness'>{{ c.weakness }}</td>
+        {% else %}
+        <th></th>
+        <td></td>
+        {% endif %}
+        <th></th>
+        <td></td>
+        <th></th>
+        <td></td>
+        <th></th>
+        <td></td>
+    </tr>

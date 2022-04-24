@@ -292,18 +292,7 @@ def build_per_primogen(param=None):
     return str
 
 
-def domitor_from_sire():
-    kindreds = Creature.objects.filter(chronicle=chronicle.acronym)
-    for k in kindreds:
-        if k.sire != '':
-            sires = Creature.objects.filter(name=k.sire)
-            if len(sires) == 1:
-                s = sires.first()
-            else:
-                s = None
-            if s is not None:
-                k.domitor = s
-                k.save()
+
 
 
 def build_gaia_wheel():

@@ -114,6 +114,37 @@ class Story(models.Model):
     def all_cast_str(self):
         return " ".join(self.all_cast)
 
+    @property
+    def calendar(self):
+        from storytelling.models.scenes import Scene
+        import calendar
+        scene_list = []
+        all_scenes = Scene.objects.filter(story=self).order_by('time_offset_hours')
+        current_day = 0
+        for scene in all_scenes:
+            # tags = scene.tags
+            # if scene.is_briefing:
+            #     tags += ' BRIEFING'
+            # if scene.is_debriefing:
+            #     tags += ' DEBRIEFING'
+            # if scene.is_event:
+            #     tags += ' EVENT'
+            # if scene.is_downtime:
+            #     tags += ' DOWNTIME'
+            # all_tags = tags.strip().rstrip().split(' ')
+            # pretty_tags = ''
+            # for t in all_tags:
+            #     pretty_tags += f'<div class="tag">[{t}]</div> '
+            if current_day == 0:
+                current_day = scene.time_offset_custom.split(" ")[0]
+                scene_list.append(f"<tr><th colspan=4>{calendar.day_name[scene.story_time.weekday()]} {scene.story_time.date()}</th></tr>")
+            if current_day == scene.time_offset_custom.split(" ")[0]:
+                scene_list.append(f"<tr><td width='3cm'>{scene.name}<br/>{scene.all_as_tags}</td><td width='3cm'>{scene.timeline}</td><td width='2cm'>{scene.place.acronym}</td><td width='1cm'>{scene.time_offset_hours % 24}h00</td></tr>")
+            else:
+                current_day = scene.time_offset_custom.split(" ")[0]
+                scene_list.append(f"<tr><th colspan=4>{calendar.day_name[scene.story_time.weekday()]} {scene.story_time.date()}</th></tr>")
+        txt = "<center><table width='8cm' class='calendar'>"+"".join(scene_list)+"</table></center>"
+        return txt
 
 
 class StoryAdmin(admin.ModelAdmin):

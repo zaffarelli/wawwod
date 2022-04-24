@@ -227,6 +227,8 @@ def display_crossover_sheet(request, slug=None, option=None):
             c.save()
         if chronicle.acronym == 'BAV':
             scenario = "Bayerische Nächte"
+            if c.creature == 'kindred' or c.creature == 'ghoul':
+                scenario = "Munich by Night"
             pre_title = 'München'
             post_title = "Oktoberfest, 2019"
         else:
@@ -263,3 +265,17 @@ def display_lineage(request, slug=None):
         lineage_context = {'data': data}
         return JsonResponse(lineage_context)
 
+
+def svg_to_pdf(request, slug):
+    import cairosvg
+    response = {'status': 'error'}
+    if request.is_ajax():
+        pdf_name = os.path.join(settings.MEDIA_ROOT, 'pdf/results/' + request.POST["pdf_name"])
+        svg_name = os.path.join(settings.MEDIA_ROOT, 'pdf/results/' + request.POST["svg_name"])
+        svgtxt = request.POST["svg"]
+        with open(svg_name, "w") as f:
+            f.write(svgtxt)
+            f.close()
+        cairosvg.svg2pdf(url=svg_name, write_to=pdf_name, scale=1.0)
+        response['status'] = 'ok'
+    return JsonResponse(response)

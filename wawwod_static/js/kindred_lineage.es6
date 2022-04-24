@@ -282,6 +282,8 @@ class KindredLineage {
         r.append("rect")
             .attr('class', 'frame')
             .attr('x', -me.boxWidth * 0.5)
+            .attr('rx', me.boxWidth * 0.05)
+            .attr('ry', me.boxWidth * 0.05)
             .attr('y', -me.boxHeight * 1)
             .attr('width', me.boxWidth * 1)
             .attr('height', me.boxHeight * 5)
@@ -404,7 +406,7 @@ class KindredLineage {
                             str = d.data.generation + 'th gen.';
                             str += ' ' + d.data.clan;
                         }
-                        str += " " + line_jump_code + " "  + d.data.trueage;
+                        str += " " + line_jump_code + " Born "  + d.data.trueage+" years ago. ";
                     }
                 }
                 return str
@@ -415,16 +417,16 @@ class KindredLineage {
         r.select("text.kindred_name")
             .append('tspan')
             .attr('class', 'property')
-            .attr('text-anchor', 'middle')
-            .attr('x', me.boxWidth * 0)
+            .attr('text-anchor', 'start')
+            .attr('x', -me.boxWidth * 0.5)
             .attr('y', me.boxHeight * 2)
-            .attr('dx', '0')
+            .attr('dx', '5px')
             .attr('dy', '0')
             .text(function (d) {
                 let str = '';
                 if (d.data.ghost == false) {
                     if (d.data.ghouls != '') {
-                        str = 'GHOULS';
+                        str = '-Ghouls-';
                         let list = d.data.ghouls.split(',')
                         _.forEach(list,function(x){
                             str += " " + line_jump_code + " "  + x;

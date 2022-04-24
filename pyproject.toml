@@ -19,6 +19,7 @@ mysqlclient = "^2.0.3"
 xhtml2pdf = "^0.2.5"
 Markdown = "^3.3.4"
 reportlab="3.6.6"
+CairoSVG = "^2.5.2"
 
 [tool.poetry.dev-dependencies]
 

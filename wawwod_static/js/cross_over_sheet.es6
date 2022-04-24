@@ -343,6 +343,7 @@ class CrossOverSheet{
             me.reinHagenStat('   ',0,ox,oy,type,statcode,source)
         }else{
             let words = name.split(' (');
+            console.log(name)
             let power = words[0];
             let val = (words[1].split(')'))[0];
             if (type=='flaw'){
@@ -678,7 +679,7 @@ class CrossOverSheet{
             [0,1,2].forEach(function(d) {
               let x = ox+me.stepx*19;
               let y = oy + 1.20*me.stepy*(d);
-              me.gaugeStat(levels[d],me.data[levels[d].toLowerCase()],x,y,me.character,true,true);
+              me.gaugeStat(levels[d],me.data[levels[d].toLowerCase()],x,y,me.character,true,false);
             });
         }else{
             levels = ['Conscience','Self-Control','Courage'];
@@ -1022,7 +1023,7 @@ class CrossOverSheet{
                 }else if (num==1){
                     me.savePNG();
                 }else if (num==2){
-                    me.savePDF();
+                    me.createPDF();
                 }else if (num==3){
                     me.editCreature();
                 }
@@ -1033,6 +1034,7 @@ class CrossOverSheet{
     drawButtons(){
         let me = this;
         me.addButton(0,'Save SVG');
+        me.addButton(2,'Save PDF');
     }
 
     saveSVG(){
@@ -1074,6 +1076,56 @@ xmlns:xlink="http://www.w3.org/1999/xlink"> \
         me.drawButtons();
     }
 
+    createPDF() {
+        let me = this;
+        me.svg.selectAll('.do_not_print').attr('opacity', 0);
+        let base_svg = d3.select("#d3area svg").html();
+        let flist = '<style>';
+        for (let f of me.config['fontset']) {
+
+            flist += '@import url("https://fonts.googleapis.com/css2?family=' + f + '");';
+        }
+        // console.log(flist)
+        flist += '</style>';
+        let lpage = "";
+        let exportable_svg = '<?xml version="1.0" encoding="ISO-8859-1" ?> \
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"> \
+<svg class="crossover_sheet" \
+xmlns="http://www.w3.org/2000/svg" version="1.1" \
+xmlns:xlink="http://www.w3.org/1999/xlink" width="' + me.width + '" height="' + me.height + '"> \
+' + flist + base_svg + '</svg>';
+
+        if (me.page == 0) {
+            lpage = "_recto";
+        } else {
+            lpage = "_verso"
+        }
+        let svg_name = me.data['rid'] + lpage + ".svg"
+        let pdf_name = me.data['rid'] + lpage + ".pdf"
+        let sheet_data = {
+            'pdf_name': pdf_name,
+            'svg_name': svg_name,
+            'svg': exportable_svg
+        }
+        me.svg.selectAll('.do_not_print').attr('opacity', 1);
+        $.ajax({
+            url: 'ajax/character/svg2pdf/' + me.data['rid'] + '/',
+            type: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            data: sheet_data,
+            dataType: 'json',
+            success: function (answer) {
+                console.log("PDF generated for [" + me.data['rid'] + "]...")
+            },
+            error: function (answer) {
+                console.error('Error generating the PDF...');
+                console.error(answer);
+            }
+        });
+    }
 
     fillCharacter(){
         let me = this;

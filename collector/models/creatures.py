@@ -419,7 +419,7 @@ class Creature(models.Model):
             self.humanity = self.virtue0 + self.virtue1
         # Bloodpool
         self.bloodpool = bloodpool[13 - self.value_of('generation')]
-
+        self.weakness = CLANS_SPECIFICS[self.family]['clan_weakness']
         self.display_gauge = self.value_of('generation') * 2 + self.value_of('status') * 2
         self.display_pole = self.groupspec
 
@@ -1198,7 +1198,7 @@ class Creature(models.Model):
         for i in range(10):
             kn[i] = getattr(self, f'knowledge{i}')
         for i in range(7):
-            setattr(self, f'knowledge{i+1}', kn[i])
+            setattr(self, f'knowledge{i + 1}', kn[i])
         setattr(self, f'knowledge0', 0)
         setattr(self, f'knowledge9', kn[9])
         setattr(self, f'background1', 0)
@@ -1208,7 +1208,6 @@ class Creature(models.Model):
         setattr(self, f'background6', 0)
         setattr(self, f'background8', 0)
         setattr(self, f'background9', 0)
-
 
 
 def refix(modeladmin, request, queryset):
@@ -1308,14 +1307,11 @@ def randomize_all(modeladmin, request, queryset):
 
 class CreatureAdmin(admin.ModelAdmin):
     list_display = [  # 'domitor',
-        'name', 'rid', 'sire', 'player', 'retainers', 'total_backgrounds', 'total_physical', 'total_social',
-        'total_mental', 'total_talents', 'total_skills', 'total_knowledges', 'family', 'display_gauge', 'display_pole',
-        'freebies', 'concept', 'groupspec',
-        'faction',
-        'status', 'embrace', 'condition']
+        'name', 'rid', 'freebies', 'expectedfreebies', 'sire', 'player', 'family',
+        'concept', 'group', 'groupspec', 'faction', 'status', 'embrace', 'condition']
     ordering = ['name', 'group', 'creature']
     actions = [randomize_backgrounds, randomize_all, randomize_archetypes, randomize_attributes, randomize_abilities,
                refix, set_male, set_female, push_to_munich, push_to_newyork, push_to_world]
-    list_filter = ['chronicle', 'is_new', 'primogen', 'group', 'sire', 'groupspec', 'faction', 'family', 'creature',
+    list_filter = ['chronicle','faction', 'family', 'is_new', 'condition', 'group', 'sire', 'groupspec',  'creature',
                    'mythic', 'ghost']
-    search_fields = ['name']
+    search_fields = ['name', 'groupspec']

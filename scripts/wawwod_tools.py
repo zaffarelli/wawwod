@@ -100,9 +100,9 @@ class ToolsForWawwod:
 
     def retrieve_ghouls_and_childers(self):
         print(f'Choice 4: searching for childers and ghouls...')
-        arid = input('  Sire/domitor full rid ? [marius_flavius_vespasianus] ')
+        arid = input('  Sire/domitor full rid ? [_marius_flavius_vespasianus] ')
         if arid == '':
-            arid = 'marius_flavius_vespasianus'
+            arid = '_marius_flavius_vespasianus'
         domitor = Creature.objects.get(rid=arid)
         r = domitor.value_of('retainers')
         ghouls = Creature.objects.filter(creature='ghoul', sire=arid)
