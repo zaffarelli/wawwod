@@ -5,6 +5,7 @@ import logging
 from collector.utils.wod_reference import get_current_chronicle, find_stat_property, STATS_NAMES, GM_SHORTCUTS, \
     bloodpool, STATS_TEMPLATES, ARCHETYPES, CLANS_SPECIFICS
 from collector.utils.helper import json_default, toRID
+from collector.models.adventures import Adventure
 import random
 
 logger = logging.Logger(__name__)
@@ -90,6 +91,15 @@ class Creature(models.Model):
     condition = models.CharField(max_length=32, blank=True, default='OK')
     territory = models.CharField(max_length=128, blank=True, default='')
     weakness = models.CharField(max_length=128, blank=True, default='')
+
+    # Player specific
+    notes_on_backgrounds = models.TextField(max_length=2048, default='', blank=True)
+    notes_on_meritsflaws = models.TextField(max_length=2048, default='', blank=True)
+    notes_on_history = models.TextField(max_length=2048, default='', blank=True)
+    notes_on_naturedemeanor = models.TextField(max_length=2048, default='', blank=True)
+    notes_on_traits = models.TextField(max_length=2048, default='', blank=True)
+    adventure = models.ForeignKey(Adventure, on_delete=models.SET_NULL, null=True, default=None)
+
 
     # All
     willpower = models.PositiveIntegerField(default=1)
@@ -378,7 +388,8 @@ class Creature(models.Model):
         aging = {'0': 15, '50': 30, '100': 60, '150': 90, '200': 120, '250': 150, '300': 190, '400': 240,
                  '500': 280, '700': 320, '900': 360, '1100': 400, '1300': 425, '1500': 495, '1700': 565,
                  '2000': 645, '2500': 735, '3000': 825}
-        time_awake = int(self.trueage) - int(self.timeintorpor)
+        time_awake = int(self.trueage) - int(self.age)  - int(self.timeintorpor)
+        print(f'{self.name} time awake --> ', time_awake)
         x = 0
         for key, val in aging.items():
             if int(key) <= time_awake:
@@ -397,7 +408,7 @@ class Creature(models.Model):
         pass
 
     def fix_kindred(self):
-        logger.info(f'Fixing kindred')
+        print(f'Fixing kindred {self.name}')
         # Embrace and Age
         condi = self.condition.split('-')
         if condi.count == 2:
@@ -410,7 +421,11 @@ class Creature(models.Model):
             self.embrace = chronicle.era - (self.trueage - self.age)
         if self.trueage == 0:
             self.trueage = chronicle.era - (self.embrace - self.age)
+        # if self.player:
+        #     self.expectedfreebies = 0
+        # else:
         self.expectedfreebies = self.freebies_per_age_threshold
+        print(f'{self.name} expected freebies is {self.expectedfreebies}')
         # Willpower
         if self.willpower < self.virtue2:
             self.willpower = self.virtue2
@@ -1105,6 +1120,7 @@ class Creature(models.Model):
             'sire': sire,
             'generation': (13 - self.background3),
             'ghost': self.ghost,
+            'primogen': self.primogen,
             'faction': self.faction,
             'rid': self.rid,
             'id': 0,
@@ -1135,10 +1151,10 @@ class Creature(models.Model):
     def retainers(self):
         list = []
         if self.creature == 'kindred':
-            ghouls = Creature.objects.filter(sire=self.rid, creature='ghoul')
+            ghouls = Creature.objects.filter(sire=self.rid, creature='ghoul').order_by('-trueage', 'position')
             cnt = self.value_of('retainers')
             for g in ghouls:
-                list.append(g.name)
+                list.append(f'{g.name} ({g.position}/{g.trueage})')
             if len(ghouls) < cnt:
                 for x in range(cnt - len(ghouls)):
                     list.append(f'Unknown {x}')
@@ -1208,6 +1224,31 @@ class Creature(models.Model):
         setattr(self, f'background6', 0)
         setattr(self, f'background8', 0)
         setattr(self, f'background9', 0)
+
+    def background_notes(self):
+        list = self.notes_on_backgrounds.split('\r\n');
+        fmt_list = []
+        idx = 0;
+        for e in list:
+            print(e)
+            if len(e) > 2:
+                words = e.split('§');
+                fmt_list.append({'idx': idx, 'item': f'{words[0]}', 'notes': f'{words[1]}'})
+                idx += 1
+
+        return fmt_list
+
+    def timeline(self):
+        list = self.notes_on_history.split('\r\n');
+        fmt_list = []
+        idx = 0;
+        for e in list:
+            if len(e) > 2:
+                words = e.split('§');
+                fmt_list.append({'idx': idx, 'item': f'{words[0]}','date': f'{words[1]}', 'notes': f'{words[2]}'})
+                idx += 1
+
+        return fmt_list
 
 
 def refix(modeladmin, request, queryset):
@@ -1312,6 +1353,6 @@ class CreatureAdmin(admin.ModelAdmin):
     ordering = ['name', 'group', 'creature']
     actions = [randomize_backgrounds, randomize_all, randomize_archetypes, randomize_attributes, randomize_abilities,
                refix, set_male, set_female, push_to_munich, push_to_newyork, push_to_world]
-    list_filter = ['chronicle','faction', 'family', 'is_new', 'condition', 'group', 'sire', 'groupspec',  'creature',
-                   'mythic', 'ghost']
+    list_filter = ['chronicle', 'adventure', 'faction', 'family', 'is_new', 'condition', 'group', 'sire', 'groupspec',
+                   'creature', 'mythic', 'ghost']
     search_fields = ['name', 'groupspec']

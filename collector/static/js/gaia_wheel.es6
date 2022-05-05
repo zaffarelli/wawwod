@@ -471,30 +471,21 @@ class GaiaWheel {
         })
     }
 
-    // zoomActivate() {
-    //     let me = this;
-    //     let zoom = d3.zoom()
-    //         .scaleExtent([0.25, 4]) // I don't want a zoom, i want panning :)
-    //         .on('zoom', function (event) {
-    //             me.g.selectAll('path')
-    //                 .attr('transform', event.transform);
-    //             me.g.selectAll('rect')
-    //                 .attr('transform', event.transform);
-    //             me.g.selectAll('text')
-    //                 .attr('transform', event.transform);
-    //             me.g.selectAll('circle')
-    //                 .attr('transform', event.transform);
-    //
-    //             me.g.selectAll('image')
-    //                 .attr('transform', event.transform);
-    //         });
-    //     me.svg.call(zoom);
-    // }
+    zoomActivate() {
+        let me = this;
+        let zoom = d3.zoom()
+            .scaleExtent([0.25, 4]) // I don't want a zoom, i want panning :)
+            .on('zoom', function (event) {
+                me.svg.attr('transform', event.transform);
+            });
+        me.back.call(zoom);
+    }
 
 
     perform() {
         let me = this;
         me.watermark()
         me.update();
+        me.zoomActivate()
     }
 }

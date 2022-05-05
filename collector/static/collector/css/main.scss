@@ -31,7 +31,7 @@ body {
 .toggle_name {
   font-weight: bold;
   font-style: normal;
-  font-family: Titre;
+  font-family: "Marcellus SC";
   width: auto;
   display: inline-block;
 }
@@ -623,18 +623,18 @@ svg.lineage {
           stroke: $dead_background;
           stroke-width: 3pt;
           stroke-linecap: butt;
-          stroke-opacity: 0.25;
+          //stroke-opacity: 0.25;
 
         }
 
         &.band {
           stroke-width: 0;
-          fill-opacity: 0.25;
+          //fill-opacity: 0.25;
         }
 
         &.plate {
           stroke-width: 0;
-          fill-opacity: 0.25;
+          //fill-opacity: 0.25;
         }
       }
     }
@@ -645,7 +645,7 @@ svg.lineage {
           stroke: $missing_background;
           stroke-width: 3pt;
           stroke-linecap: butt;
-          stroke-opacity: 0.25;
+          //stroke-opacity: 0.25;
         }
 
         &.band {
@@ -667,7 +667,7 @@ svg.lineage {
   }
 
   & .link {
-    fill: #822;
+    fill: none;
     fill-opacity: 0.15;
     stroke: #822;
     stroke-width: 3pt;

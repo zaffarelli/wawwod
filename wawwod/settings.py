@@ -60,6 +60,11 @@ TEMPLATES = [
     },
 ]
 
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend'
+]
+
+
 
 LOGPATH = os.path.join(BASE_DIR, 'logs/')
 

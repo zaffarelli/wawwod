@@ -122,3 +122,17 @@ def update_scene(request, id: None, field: None):
                 changes_json = json.dumps(changes, default=json_default, sort_keys=True, indent=4)
                 answer = {'changes_on_scenes': changes_json}
     return JsonResponse(answer)
+
+
+def display_map(request, slug=None):
+    from collector.utils.data_collection import get_districts
+    response = {'html':''}
+    if request.is_ajax:
+        if not slug:
+            slug = 'munich'
+            context = get_districts(slug)
+            print(context)
+            template = get_template("storytelling/munich.html")
+            html = template.render(context)
+            response['html'] = html
+    return JsonResponse(response)

@@ -1,56 +1,4 @@
-let line_jump_code = "*N*L*";
-
-// /* Callback functions */
-// function toggleAll(d) {
-//     if (d.children) {
-//         d.children.forEach(toggleAll);
-//         toggle(d);
-//     }
-// }
-//
-// function toggle(d) {
-//     if (d.children) {
-//         d._children = d.children;
-//         d.children = null;
-//     } else {
-//         closeSiblings(d);
-//         d.children = d._children;
-//         d._children = null;
-//     }
-// }
-//
-// function collapse(d) {
-//     let me = this;
-//     if (d.children) {
-//         d._children = d.children
-//         d._children.forEach(collapse)
-//         d.children = null
-//     }
-// }
-//
-//
-// function toggleSimple(d) {
-//     if (d.children) {
-//         d._children = d.children;
-//         d.children = null;
-//     } else {
-//         d.children = d._children;
-//         d._children = null;
-//         d.children.forEach(toggleSimple);
-//     }
-// }
-//
-// function closeSiblings(d) {
-//     if (!d.parent)
-//         return;
-//     d.parent.children.forEach(function (c) {
-//         if (c === d || !c.children)
-//             return;
-//         c._children = c.children;
-//         c.children = null;
-//     });
-// }
-
+let line_jump_code = "NR";
 
 /* The kindred tree display class */
 class KindredLineage {
@@ -59,12 +7,9 @@ class KindredLineage {
         me.parent = parent;
         me.co = collector;
         me.data = data[0];
-        me.boxWidth = 150;
-        me.boxHeight = 30;
-
-        //me.init();
+        me.boxWidth = 100;
+        me.boxHeight = 80;
         me.duration = 500;
-
     }
 
     wrap(text, width) {
@@ -110,143 +55,7 @@ class KindredLineage {
             }
         });
     }
-    //
-    //
-    // init() {
-    //     let me = this;
-    //
-    //     me.width = parseInt($(me.parent).css("width"));
-    //     me.height = me.width * 0.58;
-    //     me.w = me.width * 1;
-    //     me.h = me.height * 1;
-    //     me.i = 0;
-    //     d3.select(me.parent).selectAll("svg").remove();
-    //     me.vis = d3.select(me.parent).append("svg")
-    //         .attr("viewBox", "0 0 " + me.w + " " + me.h)
-    //         .attr("width", me.width)
-    //         .attr("height", me.height)
-    //         .append('g')
-    //         .attr("transform", "translate(" + (me.w / 2) + "," + (me.h / 2) + ")")
-    //     me.tree = d3.tree().size([me.height, me.width]);
-    //     me.root = d3.hierarchy(me.data);
-    //     // me.root.x0 = 0;
-    //     // me.root.y0 = 0;
-    //     _.forEach(me.root.children, collapse);
-    //     me.update(me.root)
-    // }
-    //
-    //
-    // // Toggle children on click.
-    // uncollapse(d) {
-    //     let me = this;
-    //     if (d.children) {
-    //         d._children = d.children;
-    //         d.children = null;
-    //     } else {
-    //         d.children = d._children;
-    //         d._children = null;
-    //     }
-    // }
-    //
-    // // Creates a curved (diagonal) path from parent to the child nodes
-    // diagonal(s, d) {
-    //     let path = `M ${s.x} ${s.y}
-    //         C ${(s.x)} ${(s.y + d.y) / 2},
-    //           ${(s.x)} ${(s.y + d.y) / 2},
-    //           ${d.x} ${d.y}`
-    //     return path
-    // }
-    //
-    // update(source) {
-    //     let me = this;
-    //     me.treedata = me.tree(me.root);
-    //     me.nodes = me.treedata.descendants();
-    //     me.links = me.treedata.descendants().slice(1);
-    //     let i = 0;
-    //     // me.nodes.forEach(function (d) {
-    //     //     d.y = d.depth * 180;
-    //     //     //d.id = ++i
-    //     //
-    //     // });
-    //
-    //
-    //     i = 0;
-    //     me.node = me.vis.selectAll("g.node")
-    //         .data(me.nodes, function (d) {
-    //             //    console.log(d)
-    //             return d.id || (d.id = ++i);
-    //         });
-    //
-    //     // // *** NODE UPDATE ***
-    //     // me.nodeUpdate = me.node.transition()
-    //     //     .duration(me.duration)
-    //     //     .attr("transform", function (d) {
-    //     //         return "translate(" + d.x + "," + d.y + ")";
-    //     //     });
-    //     // me.nodeUpdate.select("text")
-    //     //     .style("fill-opacity", 1);
-    //
-    //     // // *** NODE EXIT ***
-    //     // me.nodeExit = me.node.exit().transition()
-    //     //     .duration(me.duration)
-    //     //     .attr("transform", function (d) {
-    //     //         return "translate(" + source.x + "," + source.y + ")";
-    //     //     })
-    //     //     .remove();
-    //     //
-    //     // me.nodeExit.select('rect')
-    //     //     .attr('x', 0)
-    //     //     .attr('y', 0)
-    //     //     .attr('width', 0)
-    //     //     .attr('height', 0)
-    //     // ;
-    //     // me.nodeExit.select("text")
-    //     //     .style("fill-opacity", 1e-6);
-    //
-    //     // *** LINKS ***
-    //     me.link = me.vis.selectAll("path.link")
-    //         .data(me.links, function (d) {
-    //             return d.id;
-    //         });
-    //
-    //     me.link_in = me.link.enter().insert("path", "g")
-    //         .attr("class", function (d) {
-    //             let c = 'link ';
-    //             if ((d.data.ghost) || (d.data.parent.ghost)) {
-    //                 c += ' ghost';
-    //             }
-    //             return c;
-    //         })
-    //         .attr("d", function (d) {
-    //             let o = {x: source.y0, y: source.x0};
-    //             return me.diagonal(o, o);
-    //         })
-    //         .style('stroke', 'red')
-    //         .style('fill', 'transparent')
-    //         .style('stroke-width', '3pt')
-    //     ;
-    //
-    //     // me.link_update = me.link_in.merge(me.link);
-    //     // me.link_update.transition()
-    //     //     .duration(me.duration)
-    //     //     .attr('d', function (d) {
-    //     //         return me.diagonal(d, d.parent)
-    //     //     });
-    //     //
-    //     //
-    //     // me.link_out = me.link.exit().transition()
-    //     //     .duration(me.duration)
-    //     //     .attr('d', function (d) {
-    //     //         var o = {x: source.y, y: source.x}
-    //     //         return me.diagonal(o, o)
-    //     //     })
-    //     //     .remove();
-    //
-    //     me.nodes.forEach(function (d) {
-    //         d.x0 = d.x;
-    //         d.y0 = d.y;
-    //     });
-    // }
+
 
     insertNode(x) {
         let me = this;
@@ -266,34 +75,49 @@ class KindredLineage {
             });
         r.append("rect")
             .attr('class', 'band')
-            .attr('x', -me.boxWidth * 0.5)
+            .attr('x', -me.boxWidth * 1)
             .attr('y', -me.boxHeight * 1)
-            .attr('width', me.boxWidth * 1)
+            .attr('width', me.boxWidth * 2)
             .attr('height', me.boxHeight * 1)
         ;
         r.append("rect")
             .attr('class', 'plate')
-            .attr('x', -me.boxWidth * 0.5)
+            .attr('x', -me.boxWidth * 1)
             .attr('y', -me.boxHeight * 0)
-            .attr('width', me.boxWidth * 1)
-            .attr('height', me.boxHeight * 4)
+            .attr('width', me.boxWidth * 2)
+            .attr('height', me.boxHeight * 2)
         ;
-
+        let ghouls = undefined;
         r.append("rect")
             .attr('class', 'frame')
-            .attr('x', -me.boxWidth * 0.5)
+            .attr('x', -me.boxWidth * 1)
+            .attr('y', -me.boxHeight * 1)
+            .attr('width', me.boxWidth * 2)
+            .attr('height', me.boxHeight * 3)
             .attr('rx', me.boxWidth * 0.05)
             .attr('ry', me.boxWidth * 0.05)
-            .attr('y', -me.boxHeight * 1)
-            .attr('width', me.boxWidth * 1)
-            .attr('height', me.boxHeight * 5)
             .on("click", function (e, d) {
                 //console.log("Frame click " + d.id + " [" + d.data.name + "]!");
                 me.uncollapse(d)
                 me.update(d);
-
+                ghouls = d.data.ghouls.split(',')
             });
         ;
+
+
+        // _.forEach(ghouls,function(x,i){
+        //     let g = r.append("g")
+        //         .attr("class","ghoul")
+        //     g.append("rect")
+        //         .attr("x",me.boxWidth*0.5)
+        //         .attr("y",me.boxHeight+me.boxHeight*0.5*i)
+        //         .style("stroke","#fc4")
+        //         .style("fill","#111")
+        //     g.append("text")
+        //         .text(x)
+        // })
+
+
         r.selectAll("rect.band")
             .attr('class', function (d) {
                 return 'band ' + (d.data.ghost ? ' ghost' : '') + (d.data.condition == 'DEAD' ? ' dead' : '');
@@ -306,6 +130,7 @@ class KindredLineage {
             .attr('class', function (d) {
                 return 'plate ' + d.data.faction + (d.data.ghost ? ' ghost' : '') + (d.data.condition == 'DEAD' ? ' dead' : '');
             });
+
 
         // IMAGE
         r.append("image")
@@ -325,23 +150,11 @@ class KindredLineage {
             .attr('id', function (d) {
                 return d.id;
             })
-            .attr("x", (-me.boxWidth * 0.70))
+            .attr("x", (-me.boxWidth * 1.0))
             .attr("y", (-me.boxHeight * 1.25))
             .attr("width", me.boxWidth * 0.30)
             .attr("height", me.boxHeight * 1)
-            .on("click", function (e, d) {
-                //console.log("Just ctrl+clicked on image for " + d.id + " [" + d.data.name + "]!");
-                // if (e.ctrlKey) {
-                //     //toggleSimple(d);
-                //     me.uncollapse(d)
-                // } else {
-                //     //toggle(d);
-                //     me.uncollapse(d)
-                //
-                // }
-               // me.update(d);
-
-            });
+        ;
         // TEXT
         r.append("text")
             .attr('class', function (d) {
@@ -359,14 +172,14 @@ class KindredLineage {
                 let n = d.data.name;
                 if (d.data.ghost) {
                     if (d.data.mythic) {
-                        n = d.data.name ;
+                        n = d.data.name + " " + d.id;
                     } else {
                         n = 'Unknown';
                     }
                 }
                 return n;
             })
-            .call(me.wrap, me.boxWidth * 0.9)
+            .call(me.wrap, me.boxWidth * 1.8)
             .on("click", function (e, d) {
                 if (e.ctrlKey) {
                     //console.log("Just ctrl+clicked on text for " + d.id + " [" + d.data.name + "]!");
@@ -388,12 +201,11 @@ class KindredLineage {
             });
 
         // Display of the properties
-        r.select("text.kindred_name")
-            .append('tspan')
+        r.append('text')
             .attr('class', 'property')
             .attr('text-anchor', 'start')
-            .attr('x', -me.boxWidth * 0.45)
-            .attr('y', me.boxHeight * 0.5)
+            .attr('x', -me.boxWidth * 0.9)
+            .attr('y', me.boxHeight * 0.2)
             .attr('dx', '0')
             .attr('dy', '0')
             .text(function (d) {
@@ -406,66 +218,127 @@ class KindredLineage {
                             str = d.data.generation + 'th gen.';
                             str += ' ' + d.data.clan;
                         }
-                        str += " " + line_jump_code + " Born "  + d.data.trueage+" years ago. ";
+                        str += " " + line_jump_code + " Born " + d.data.trueage + " years ago. ";
                     }
                 }
                 return str
             })
-            .call(me.wrap, me.boxWidth * 0.9);
+            .call(me.wrap, me.boxWidth * 1.8);
 
         // Display of the ghouls
-        r.select("text.kindred_name")
-            .append('tspan')
-            .attr('class', 'property')
+        r.append("text")
+            // .append('tspan')
+            .attr('class', 'ghouls_list')
             .attr('text-anchor', 'start')
-            .attr('x', -me.boxWidth * 0.5)
-            .attr('y', me.boxHeight * 2)
+            .attr('x', -me.boxWidth * 0.95)
+            .attr('y', me.boxHeight * 0.8)
             .attr('dx', '5px')
             .attr('dy', '0')
             .text(function (d) {
                 let str = '';
                 if (d.data.ghost == false) {
                     if (d.data.ghouls != '') {
-                        str = '-Ghouls-';
+                        str = 'Retainers:';
                         let list = d.data.ghouls.split(',')
-                        _.forEach(list,function(x){
-                            str += " " + line_jump_code + " "  + x;
+                        _.forEach(list, function (x) {
+                            str += " " + line_jump_code + " - " + x;
                         })
                     }
                 }
                 return str
             })
-            .style('fill','#EEE')
-            .style('stroke','#BBB')
-            .style('stroke-width','0.5pt')
-            .call(me.wrap, me.boxWidth * 0.9);
+            .style('fill', '#CCC')
+            .style('stroke', '#888')
+            .style('stroke-width', '0.5pt')
+            .call(me.wrap, me.boxWidth * 1.9)
+        ;
+        // r.append('line')
+        //     .attr("x1", 0)
+        //     .attr("y1", 0)
+        //     .attr("x2", me.boxWidth * 1)
+        //     .attr("y2", me.boxHeight * 0.5)
+        //     .style("fill", '#A00')
+        //     .style("stroke", '#A00')
+        //     .style("stroke-width","3px")
+        // ;
+
+        r.append("circle")
+            .attr("cx",90)
+            .attr("cy",-70)
+            .attr("r",5)
+            .attr("stroke", "transparent")
+            .attr("stroke-width", "2pt")
+            .attr("fill", function (d) {
+                let col = "transparent";
+                if (d.data.primogen){
+                    col = '#E08080'
+                }
+
+                return col;
+            })
+        ;
+
+        r.append("path")
+            .attr("class", "icon_condition")
+            .attr("d", function (d) {
+                let str = ''
+                if (d.data.condition == "MISSING") {
+                    str = "M -80 160 l -20 0 l 0 -20 l 180 -140 20 0 0 20 -180 140 Z "
+                } else if (d.data.condition == "DEAD"){
+                    str = "M -80 160 l -20 0 l 0 -20 l 180 -140 20 0 0 20 -180 140 Z "
+
+                }
+                return str;
+            })
+            .attr("stroke", "transparent")
+            .attr("stroke-width", "2pt")
+            .attr("fill", function (d) {
+                let col = "transparent";
+                if (d.data.condition == "MISSING"){
+                    col = '#208080'
+                }
+                if (d.data.condition == "DEAD"){
+                    col = '#802020'
+                }
+                return col;
+            })
+            .attr("fill-opacity",0.75)
+        ;
 
         return r;
     }
 
     go() {
         let me = this;
-        let margin = {top: 40, right: 90, bottom: 50, left: 90},
+        let margin = {top: 0, right: 0, bottom: 0, left: 0},
             width = me.boxWidth * 60 - margin.left - margin.right,
             height = me.boxWidth * 20 - margin.top - margin.bottom;
         let treemap = d3.tree()
-            .size([width, height]);
+            .size([width, height])
+            .nodeSize([me.boxWidth * 2.5, me.boxHeight * 4.5])
+        ;
         let nodes = d3.hierarchy(me.data);
         nodes = treemap(nodes);
         d3.select(me.parent).selectAll("svg").remove();
         me.svg = d3.select(me.parent).append("svg")
             .attr('class', 'lineage')
-            .attr("width", width + margin.left + margin.right)
-            .attr("height", height + margin.top + margin.bottom),
-            me.g = me.svg.append("g")
-                .attr("transform",
-                    "translate(" + margin.left + "," + margin.top + ")")
-            ;
+            .attr("width", width)
+            .attr("height", height);
+        me.g = me.svg.append("g")
+            .attr("transform",
+                "translate(0,0)")
+        ;
 
 
-        let link = me.g.selectAll(".link")
+        let node = me.g.selectAll(".node")
+            .data(nodes.descendants())
+
+        let node_in = me.insertNode(node);
+
+        let link = me.g.selectAll(".links")
             .data(nodes.descendants().slice(1))
-            .enter().append("path")
+            .enter()
+        link.append("g")
             .attr("class", function (d) {
                 let res = "link ";
                 if (d.data.ghost | d.parent.data.ghost) {
@@ -473,32 +346,24 @@ class KindredLineage {
                 }
                 return res;
             })
+            .append("path")
             .attr("d", function (d) {
-                return "M" + d.x + "," + (d.y - me.boxHeight)
+                return "M" + d.x + "," + (d.y - me.boxHeight * 1)
                     + "C" + d.x + "," + (d.y + d.parent.y) / 2
-                    + " " + d.parent.x + "," + (d.y + d.parent.y+me.boxHeight*3) / 2
-                    + " " + d.parent.x + "," + (d.parent.y + me.boxHeight * 4);
+                    + " " + d.parent.x + "," + (d.y + d.parent.y + me.boxHeight * 2) / 2
+                    + " " + d.parent.x + "," + (d.parent.y + me.boxHeight * 2);
 
             })
         ;
-        let node = me.g.selectAll(".node")
-            .data(nodes.descendants())
-        let node_in = me.insertNode(node);
+
     }
 
     zoomActivate() {
         let me = this;
         let zoom = d3.zoom()
-            .scaleExtent([1, 1]) // I don't want a zoom, i want panning :)
+            .scaleExtent([0.125, 4]) // I don't want a zoom, i want panning :)
             .on('zoom', function (event) {
-                me.g.selectAll('path')
-                    .attr('transform', event.transform);
-                me.g.selectAll('rect')
-                    .attr('transform', event.transform);
-                me.g.selectAll('text')
-                    .attr('transform', event.transform);
-                me.g.selectAll('image')
-                    .attr('transform', event.transform);
+                me.g.attr('transform', event.transform)
             });
         me.svg.call(zoom);
     }

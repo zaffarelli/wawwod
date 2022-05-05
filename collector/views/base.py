@@ -13,6 +13,8 @@ import json
 from collector.utils.wod_reference import FONTSET
 from collector.utils.data_collection import improvise_id
 from django.contrib.auth.decorators import login_required
+from django.conf import settings
+import os
 
 chronicle = get_current_chronicle()
 
@@ -20,10 +22,19 @@ chronicle = get_current_chronicle()
 def prepare_index(request):
     chronicles = []
     players = []
-    plist = Creature.objects.filter(chronicle=chronicle.acronym).exclude(player='')
+    plist = Creature.objects.filter(chronicle=chronicle.acronym).exclude(player='').order_by('adventure')
+    adv = ''
     for p in plist:
-        players.append({'name': p.name, 'rid': p.rid, 'player': p.player})
-    print(players)
+        if p.adventure != adv:
+            if adv != '':
+                players.append(adventure)
+            adventure = {'adventure': p.adventure.name, 'players': []}
+            adv = p.adventure
+            adventure['players'].append({'name': p.name, 'rid': p.rid, 'player': p.player})
+        else:
+            adventure['players'].append({'name': p.name, 'rid': p.rid, 'player': p.player})
+    players.append(adventure)
+
     for c in Chronicle.objects.all():
         chronicles.append({'name': c.name, 'acronym': c.acronym, 'active': c == chronicle})
     context = {'chronicles': chronicles, 'fontset': FONTSET, 'players': players}
@@ -52,22 +63,22 @@ def get_list(request, pid=1, slug=None):
     if request.is_ajax:
         if 'vtm' == slug:
             print('vampires')
-            creature_items = Creature.objects.filter(chronicle=chronicle.acronym, creature__in=['ghoul', 'kindred'])\
-                .order_by('name')
+            creature_items = Creature.objects.filter(chronicle=chronicle.acronym, creature__in=['ghoul', 'kindred']) \
+                .order_by('family','name')
         elif 'mta' == slug:
-            creature_items = Creature.objects.filter(chronicle=chronicle.acronym, creature__in=['mage'])\
+            creature_items = Creature.objects.filter(chronicle=chronicle.acronym, creature__in=['mage']) \
                 .order_by('name')
         elif 'wta' == slug:
-            creature_items = Creature.objects.filter(chronicle=chronicle.acronym, creature__in=['garou', 'kinfolk'])\
+            creature_items = Creature.objects.filter(chronicle=chronicle.acronym, creature__in=['garou', 'kinfolk']) \
                 .order_by('name')
         elif 'ctd' == slug:
-            creature_items = Creature.objects.filter(chronicle=chronicle.acronym, creature__in=['changeling'])\
+            creature_items = Creature.objects.filter(chronicle=chronicle.acronym, creature__in=['changeling']) \
                 .order_by('name')
         elif 'wto' == slug:
-            creature_items = Creature.objects.filter(chronicle=chronicle.acronym, creature__in=['wraith'])\
+            creature_items = Creature.objects.filter(chronicle=chronicle.acronym, creature__in=['wraith']) \
                 .order_by('name')
         elif 'mor' == slug:
-            creature_items = Creature.objects.filter(chronicle=chronicle.acronym, creature__in=['mortal'])\
+            creature_items = Creature.objects.filter(chronicle=chronicle.acronym, creature__in=['mortal']) \
                 .order_by('name')
         elif 'new' == slug:
             creature_items = Creature.objects.filter(chronicle=chronicle.acronym, is_new=True).order_by('name')
@@ -138,7 +149,7 @@ def userinput(request):
 
 def add_creature(request, slug=None):
     if request.is_ajax:
-        
+
         name = " ".join(slug.split("_"))
         chronicle = get_current_chronicle()
         item = Creature()
@@ -196,7 +207,7 @@ def add_ghoul(request, slug=None):
                 item.name = improvise_id()
                 item.chronicle = domitor.chronicle
                 item.creature = 'ghoul'
-                item.age = random.randrange(0,19)+20
+                item.age = random.randrange(0, 19) + 20
                 item.family = domitor.family
                 item.groupspec = domitor.groupspec
                 item.sire = domitor.rid
@@ -220,7 +231,7 @@ def display_crossover_sheet(request, slug=None, option=None):
         c = Creature.objects.get(rid=slug)
         if option is not None:
             c.id = None
-            c.name = " "+c.name
+            c.name = " " + c.name
             c.creature = option
             c.debuff()
             c.need_fix = True
@@ -230,7 +241,7 @@ def display_crossover_sheet(request, slug=None, option=None):
             if c.creature == 'kindred' or c.creature == 'ghoul':
                 scenario = "Munich by Night"
             pre_title = 'München'
-            post_title = "Oktoberfest, 2019"
+            post_title = "Camarilla"
         else:
             pre_title = 'World of Darkness'
             scenario = "NEW YORK CITY"
@@ -240,10 +251,14 @@ def display_crossover_sheet(request, slug=None, option=None):
         j = c.toJSON()
         k = json.loads(j)
         k["sire_name"] = c.sire_name
+        k["background_notes"] = c.background_notes()
+        k["timeline"] = c.timeline()
+        print(k)
         j = json.dumps(k)
         if option is not None:
             c.delete()
-        settings = {'version': 1.0, 'labels': STATS_NAMES[c.creature], 'pre_title': pre_title, 'scenario': scenario, 'post_title': post_title, 'fontset': FONTSET, 'specialities': spe, 'shortcuts': shc}
+        settings = {'version': 1.0, 'labels': STATS_NAMES[c.creature], 'pre_title': pre_title, 'scenario': scenario,
+                    'post_title': post_title, 'fontset': FONTSET, 'specialities': spe, 'shortcuts': shc}
         crossover_sheet_context = {'settings': json.dumps(settings, sort_keys=True, indent=4), 'data': j}
 
         return JsonResponse(crossover_sheet_context)
@@ -265,7 +280,7 @@ def display_lineage(request, slug=None):
         lineage_context = {'data': data}
         return JsonResponse(lineage_context)
 
-
+@csrf_exempt
 def svg_to_pdf(request, slug):
     import cairosvg
     response = {'status': 'error'}

@@ -308,7 +308,7 @@ AUSPICES = ['Ragabasch', 'Theurge', 'Philodox', 'Galliard', 'Ahroun']
 RANKS = ['Cliath', 'Fostern', 'Adren', 'Athro', 'Elder']
 
 FONTSET = ['Cinzel', 'Trade+Winds', 'Imprima', 'Roboto', 'Philosopher', 'Ruda', 'Khand', 'Allura', 'Gochi+Hand',
-           'Reggae+One', 'Syne+Mono', 'Zilla+Slab', 'Spartan']
+           'Reggae+One', 'Syne+Mono', 'Zilla+Slab', 'Spartan', 'Marcellus+SC']
 
 GM_SHORTCUTS = {
     'garou': [
@@ -319,7 +319,17 @@ GM_SHORTCUTS = {
         ['wits', 'enigmas'],
         ['appearance', 'subterfuge']
     ],
-    'kindred': [],
+    'kindred': [
+        ['dexterity', 'stealth'],
+        ['dexterity', 'dodge'],
+        ['charisma', 'performance'],
+        ['manipulation', 'subterfuge'],
+        ['appearance', 'subterfuge'],
+        ['perception', 'alertness'],
+        ['perception', 'empathy'],
+        ['perception', 'dodge'],
+        ['wits', 'streetwise'],
+    ],
     'mortal': [],
     'kinfolk': [],
     'ghoul': [],

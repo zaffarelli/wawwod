@@ -151,8 +151,9 @@ def blank_str(name, gen, sire, clan=''):
         'sire': sire,
         'condition': 'OK',
         'status': 'OK',
-         'generation': gen,
+        'generation': gen,
         'ghost': True,
+        'primogen': False,
         'mythic': False,
         'faction': '',
         'children': [],
@@ -160,7 +161,7 @@ def blank_str(name, gen, sire, clan=''):
         'rid': toRID(name),
         'id': 0,
         'key': 0
-         }
+    }
     return x
 
 
@@ -232,10 +233,10 @@ def build_per_primogen(param=None):
     cainites = create_mythics()
     if param is None:
         kindreds = Creature.objects.filter(creature='kindred', ghost=False, mythic=False,
-                                           chronicle=chronicle.acronym).order_by('-trueage','family')
+                                           chronicle=chronicle.acronym).order_by('-trueage', 'family')
     else:
         kindreds = Creature.objects.filter(creature='kindred', faction=param, ghost=False, mythic=False,
-                                           chronicle=chronicle.acronym).order_by('-trueage','family')
+                                           chronicle=chronicle.acronym).order_by('-trueage', 'family')
     # Improvise empty sires
     for kindred in kindreds:
         gen = 13 - kindred.value_of('generation')
@@ -249,7 +250,7 @@ def build_per_primogen(param=None):
     # Try to fill empty lineages
     for gen in range(13, 0, -1):
         for k in cainites[f'{gen}']:
-            if gen > 1: # Caine has no sire
+            if gen > 1:  # Caine has no sire
                 if k['sire'].startswith('temporary-'):
                     sire = None
                     for item in cainites[f'{gen - 1}']:
@@ -288,11 +289,8 @@ def build_per_primogen(param=None):
                             k['sire'] = sire['rid']
                             cainites[f'{gen - 1}'].append(sire)
     str = json.dumps(cainites['1'], indent=4, sort_keys=False)
-    print(str)
+    # print(str)
     return str
-
-
-
 
 
 def build_gaia_wheel():
@@ -363,3 +361,98 @@ def build_gaia_wheel():
 
     all = json.dumps(d3js_data, indent=4, sort_keys=False)
     return all
+
+
+malkavian = "#602010"
+ventrue = "#A02010"
+toreador = "#904010"
+tremere = "#806020"
+nosferatu = "#602040"
+brujah = "#203060"
+gangrel = "#206090"
+noone = "#808080"
+
+MUNICH_DISTRICTS = {
+    'd01': {'name':'Old Town & Lehel','description':'', 'clan': ventrue},
+    'd02': {'name':'Ludwigvorstadt and Isarvorstadt','description':'', 'clan': toreador},
+    'd03': {'name':'Maxvorstadt','description':'', 'clan': ventrue},
+    'd04': {'name':'Schwabing West','description':'', 'clan': ventrue},
+    'd05': {'name':'Au-Haidhausen','description':'', 'clan': malkavian},
+    'd06': {'name':'Sendling','description':'', 'clan': ventrue},
+    'd07': {'name':'Sendling – Westpark','description':'', 'clan': gangrel},
+    'd08': {'name':'Schwanthalerhöhe','description':'', 'clan': toreador},
+    'd09': {'name':'Neuhausen Nymphenburg','description':'', 'clan':toreador},
+    'd10': {'name':'Moosach','description':'', 'clan': tremere},
+    'd11': {'name':'Milbertshofen und Am Hart','description':'', 'clan': brujah},
+    'd12': {'name':'Schwabing-Freimann','description':'','clan':brujah},
+    'd13': {'name':'Bogenhausen','description':'','clan':ventrue},
+    'd14': {'name':'Berg am Laim','description':'','clan':nosferatu},
+    'd15': {'name':'Trudering – Riem','description':'','clan':ventrue},
+    'd16': {'name':'Ramersdorf und Perlach','description':'','clan':nosferatu},
+    'd17': {'name':'Obergiesing','description':'','clan':tremere},
+    'd18': {'name':'Untergiesing und Harlaching','description':'','clan':gangrel},
+    'd19': {'name':'Thalkirchen-Obersendling-Forstenried-Fürstenried-Solln','description':'','clan':ventrue},
+    'd20': {'name':'Hadern','description':'','clan':malkavian},
+    'd21': {'name':'Pasing – Obermenzing','description':'','clan':toreador},
+    'd22': {'name':'Aubing-Lochhausen-Langwied','description':'','clan':gangrel},
+    'd23': {'name':'Allach Untermenzing','description':'','clan':nosferatu},
+    'd24': {'name':'Feldmoching-Hasenbergl','description':'','clan':ventrue},
+    'd25': {'name':'Laim','description':'','clan':brujah},
+
+
+}
+
+
+
+
+def get_districts(city):
+    import random
+    context = {'districts': {}}
+    if city == 'munich':
+
+        odds = (
+            malkavian,
+            toreador, toreador, toreador,
+            ventrue, ventrue, ventrue, ventrue,
+            brujah, brujah,
+            gangrel,
+            tremere,
+            nosferatu, nosferatu)
+
+        for x in range(25):
+            context['districts'][f'd{x+1:02}'] = {'code': f'd{x+1:02}', 's': {}}
+            # col = random.choice(odds)
+            col = MUNICH_DISTRICTS[f'd{x+1:02}']['clan']
+            for y in range(10):
+                context['districts'][f'd{x+1:02}']['s'][f's{y + 1:02}'] = {'code': f'd{x + 1:02}', 'fill': col}
+        # context['districts']['d01']['s']['s01']['fill'] = ventrue
+        # context['districts']['d01']['s']['s02']['fill'] = ventrue
+        # context['districts']['d01']['s']['s03']['fill'] = ventrue
+        # context['districts']['d01']['s']['s04']['fill'] = ventrue
+        # context['districts']['d01']['s']['s05']['fill'] = toreador
+        # context['districts']['d01']['s']['s06']['fill'] = ventrue
+        #
+        # context['districts']['d02']['s']['s01']['fill'] = ventrue
+        # context['districts']['d02']['s']['s02']['fill'] = ventrue
+        # context['districts']['d02']['s']['s03']['fill'] = tremere
+        # context['districts']['d02']['s']['s04']['fill'] = ventrue
+        # context['districts']['d02']['s']['s05']['fill'] = ventrue
+        # context['districts']['d02']['s']['s06']['fill'] = ventrue
+        #
+        # context['districts']['d03']['s']['s01']['fill'] = toreador
+        # context['districts']['d04']['s']['s01']['fill'] = tremere
+        # context['districts']['d05']['s']['s01']['fill'] = malkavian
+        # context['districts']['d06']['s']['s01']['fill'] = brujah
+        # context['districts']['d09']['s']['s01']['fill'] = toreador
+        # context['districts']['d12']['s']['s01']['fill'] = nosferatu
+        # context['districts']['d16']['s']['s01']['fill'] = ventrue
+        #
+        # context['districts']['d20']['s']['s01']['fill'] = gangrel
+        # context['districts']['d20']['s']['s02']['fill'] = nosferatu
+        # context['districts']['d20']['s']['s03']['fill'] = nosferatu
+        #
+        # context['districts']['d19']['s']['s03']['fill'] = brujah
+        # context['districts']['d14']['s']['s01']['fill'] = ventrue
+
+
+    return context

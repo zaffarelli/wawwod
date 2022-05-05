@@ -1,8 +1,12 @@
 # exec(open('scripts/wawwod_tools.py').read())
 from collector.models.creatures import Creature
 from collector.utils.wod_reference import ARCHETYPES
-import xmltodict
+# import xmltodict
 import random
+
+from collector.utils.wod_reference import get_current_chronicle
+
+chronicle = get_current_chronicle()
 
 
 class ToolsForWawwod:
@@ -14,6 +18,7 @@ class ToolsForWawwod:
         print('    4 - Retrieve ghouls and childers (kindred)')
         print('    5 - XML rescue (kindred)')
         print('    6 - Sire as RID')
+        print('    7 - Name ghouls...')
         print('    0 - Quit')
         topic = ''
         while topic != '0':
@@ -26,10 +31,12 @@ class ToolsForWawwod:
                 self.randomize_archetypes()
             elif topic == '4':
                 self.retrieve_ghouls_and_childers()
-            elif topic == '5':
-                self.xml_rescue()
+            # elif topic == '5':
+            #     self.xml_rescue()
             elif topic == '6':
                 self.sire_as_rid()
+            elif topic == '7':
+                self.rename_ghouls()
 
     def fmt(self, txt):
         new_txt = "\033[1;39m".join(txt.split('µ'))
@@ -140,41 +147,98 @@ class ToolsForWawwod:
                     x.need_fix = True
                     x.save()
 
-
-
     def xml_rescue(self):
+        pass
         # import xml.dom.minidom
         # import xml.etree.ElementTree as ET
-        # mytree = ET.parse('scripts/creatures.xml')
-        # myroot = mytree.getroot()
-        # for x in myroot[0]:
-        #     for f in x:
-        #         pk = f.find('rid').text
-        #         print(pk)
+        # # mytree = ET.parse('scripts/creatures.xml')
+        # # myroot = mytree.getroot()
+        # # for x in myroot[0]:
+        # #     for f in x:
+        # #         pk = f.find('rid').text
+        # #         print(pk)
+        #
+        # with open('scripts/creatures.xml') as fd:
+        #     doc = xmltodict.parse(fd.read())
+        # for creature in doc['django-objects']['object']:
+        #     print(creature['@pk'])
+        #     c = Creature.objects.get(rid=creature['@pk'])
+        #     print(c)
+        #     for field in creature['field']:
+        #         if field['@name'] == 'age':
+        #             c.age = int(field['#text'])
+        #             print(field['@name'], field['#text'])
+        #         if field['@name'] == 'creature':
+        #             c.creature = field['#text']
+        #             print(field['@name'], field['#text'])
+        #         if field['@name'] == 'trueage':
+        #             c.trueage = int(field['#text'])
+        #             print(field['@name'], field['#text'])
+        #         if field['@name'] == 'embrace':
+        #             c.embrace = int(field['#text'])
+        #             print(field['@name'], field['#text'])
+        #         if field['@name'] == 'torpor':
+        #             c.torpor = int(field['#text'])
+        #             print(field['@name'], field['#text'])
+        #         c.need_fix = True
+        #         c.save()
 
-        with open('scripts/creatures.xml') as fd:
-            doc = xmltodict.parse(fd.read())
-        for creature in doc['django-objects']['object']:
-            print(creature['@pk'])
-            c = Creature.objects.get(rid=creature['@pk'])
-            print(c)
-            for field in creature['field']:
-                if field['@name'] == 'age':
-                    c.age = int(field['#text'])
-                    print(field['@name'], field['#text'])
-                if field['@name'] == 'creature':
-                    c.creature = field['#text']
-                    print(field['@name'], field['#text'])
-                if field['@name'] == 'trueage':
-                    c.trueage = int(field['#text'])
-                    print(field['@name'], field['#text'])
-                if field['@name'] == 'embrace':
-                    c.embrace = int(field['#text'])
-                    print(field['@name'], field['#text'])
-                if field['@name'] == 'torpor':
-                    c.torpor = int(field['#text'])
-                    print(field['@name'], field['#text'])
-                c.need_fix = True
-                c.save()
+    def rename_ghouls(self):
+        from random import random, randrange
+        # Get the chronicle kindreds having retainers:
+        stop_it = False
+        kindreds = Creature.objects.filter(chronicle=chronicle.acronym, background8__gt=0, creature='kindred')
+        for k in kindreds:
+            if stop_it:
+                print("(kindred loop stopped)")
+                break
+            ghouls = Creature.objects.filter(chronicle=chronicle.acronym, sire=k.rid, creature='ghoul')
+            print()
+            print("--", "Kindred", k.name, f"(Retainers={k.background8})")
+            if len(ghouls):
+                print("    ", "Current ghouls:")
+            for g in ghouls:
+                print("    --", g.name, f'(domitor={g.sire})')
+                if g.position == '':
+                    x = randrange(0, 10) + 1
+                    if x > 9:  # 10
+                        g.position = "Leisure"
+                    elif x > 8:  # 9
+                        g.position = "Operative"
+                    elif x > 6:  # 7-8
+                        g.position = "Intelligence"
+                    elif x > 3:  # 4-6
+                        g.position = "Enforcer"
+                    else:  # 1-3
+                        g.position = "Valet"
+                if k.condition == "MISSING":
+                    g.condition = "DEAD"
+                elif k.condition == "DEAD":
+                    g.condition = "DEAD"
+                if g.is_new:
+                    done = False
+                    while not done:
+                        new_name = input(f"> New name for {g.name} ? [=] ")
+                        if new_name == '=':
+                            done = True
+                            g.need_fix = True
+                            g.is_new = False
+                            g.save()
+                            print("(passed)")
+                        elif new_name == '*':
+                            done = True
+                            stop_it = True
+                        else:
+                            g.name = new_name
+                            g.need_fix = True
+                            g.is_new = False
+                            g.save()
+                            print("(changed)")
+                            print("    ->", g.name, f'(domitor={g.sire})')
+                            done = True
+                if stop_it:
+                    print("(ghoul loop stopped)")
+                    break
+
 
 ToolsForWawwod()

@@ -27,7 +27,7 @@ class WawwodCollector {
     revealUI() {
         let me = this;
         $('.charlist').removeClass('hidden');
-        $('.storyboard_handler').removeClass('hidden');
+        // $('.storyboard_handler').removeClass('hidden');
         $('.bar').removeClass('hidden');
         $('.wrapper').removeClass('hidden');
     }
@@ -94,6 +94,10 @@ class WawwodCollector {
                     }
                     if (action == 'pdf_story') {
                         console.log(anwwer);
+                    }
+                    if (action == 'map') {
+                        $('#d3area').html(answer.html)
+                        console.log(answer);
                     }
                     me.rebootLinks();
                 },
