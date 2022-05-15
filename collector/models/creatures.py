@@ -94,12 +94,11 @@ class Creature(models.Model):
 
     # Player specific
     notes_on_backgrounds = models.TextField(max_length=2048, default='', blank=True)
-    notes_on_meritsflaws = models.TextField(max_length=2048, default='', blank=True)
-    notes_on_history = models.TextField(max_length=2048, default='', blank=True)
-    notes_on_naturedemeanor = models.TextField(max_length=2048, default='', blank=True)
+    notes_on_meritsflaws = models.TextField(max_length=1024, default='', blank=True)
+    notes_on_history = models.TextField(max_length=3072, default='', blank=True)
+    notes_on_naturedemeanor = models.TextField(max_length=1024, default='', blank=True)
     notes_on_traits = models.TextField(max_length=2048, default='', blank=True)
     adventure = models.ForeignKey(Adventure, on_delete=models.SET_NULL, null=True, default=None)
-
 
     # All
     willpower = models.PositiveIntegerField(default=1)
@@ -388,7 +387,7 @@ class Creature(models.Model):
         aging = {'0': 15, '50': 30, '100': 60, '150': 90, '200': 120, '250': 150, '300': 190, '400': 240,
                  '500': 280, '700': 320, '900': 360, '1100': 400, '1300': 425, '1500': 495, '1700': 565,
                  '2000': 645, '2500': 735, '3000': 825}
-        time_awake = int(self.trueage) - int(self.age)  - int(self.timeintorpor)
+        time_awake = int(self.trueage) - int(self.age) - int(self.timeintorpor)
         print(f'{self.name} time awake --> ', time_awake)
         x = 0
         for key, val in aging.items():
@@ -660,39 +659,41 @@ class Creature(models.Model):
     @property
     def roster_base(self):
         lines = []
+        if (self.position):
+            lines.append(f'<b>{self.position.title()}</b>')
         if (self.entrance):
             lines.append(f'<i>{self.entrance}</i>')
         # if (self.storyteller_entrance):
         #     lines.append(f'<i>{self.storyteller_entrance}</i>')
         if (self.concept):
-            lines.append(f'<em>Concept:</em> {self.concept}')
-        lines.append(f'<em>Creature Type:</em> {self.creature.title()}')
-        if self.freebies == self.expectedfreebies:
-            lines.append(f'<em>Freebies:</em> {self.freebies}')
-        else:
-            lines.append(f'<em>Freebies:</em> {self.freebies} ({self.expectedfreebies} / {self.freebiedif})')
-        if self.creature == 'kindred' or self.creature == 'ghoul':
-            lines.append(f'<em>Age:</em> {self.age} (Real: {self.trueage}, Embrace: {self.embrace})')
-        else:
-            lines.append(f'<em>Age:</em> {self.age}')
-        lines.append(f'<em>Nature (Demeanor):</em> {self.nature} ({self.demeanor})')
+            lines.append(f'<b>Concept:</b> {self.concept}')
 
+        lines.append(f'<b>Creature Type:</b> {self.creature.title()}')
+        if self.creature == 'kindred' or self.creature == 'ghoul':
+            lines.append(f'<b>Age:</b> {self.age} (Real: {self.trueage}, Embrace: {self.embrace})')
+        else:
+            lines.append(f'<b>Age:</b> {self.age}')
+        lines.append(f'<b>Nature (Demeanor):</b> {self.nature} ({self.demeanor})')
+        if self.freebies == self.expectedfreebies:
+            lines.append(f'<b>Freebies:</b> {self.freebies}')
+        else:
+            lines.append(f'<b>Freebies:</b> {self.freebies} ({self.expectedfreebies} / {self.freebiedif})')
         return "<br/>".join(lines)
 
     @property
     def roster_attributes(self):
         lines = []
         lines.append(
-            f'<b>Physical  <small>({self.total_physical})</small>:</b> Strength {self.attribute0}, Dexterity {self.attribute1}, Stamina {self.attribute2}')
+            f'<br/><b>Physical  <small>({self.total_physical})</small>:</b> Strength {self.attribute0}, Dexterity {self.attribute1}, Stamina {self.attribute2}')
         lines.append(
-            f'<b>Social  <small>({self.total_social})</small>:</b> Charisma {self.attribute3}, Manipulation {self.attribute4}, Appearance {self.attribute5}')
+            f'<br/><b>Social  <small>({self.total_social})</small>:</b> Charisma {self.attribute3}, Manipulation {self.attribute4}, Appearance {self.attribute5}')
         lines.append(
-            f'<b>Mental <small>({self.total_mental})</small>:</b> Perception {self.attribute6}, Intelligence {self.attribute7}, Wits {self.attribute8}')
-        return "<br/>".join(lines)
+            f'<br/><b>Mental <small>({self.total_mental})</small>:</b> Perception {self.attribute6}, Intelligence {self.attribute7}, Wits {self.attribute8}')
+        return "".join(lines)
 
     @property
     def roster_talents(self):
-        str = f'<b>Talents <small>({self.total_talents})</small>:</b> '
+        str = f'<br/><b>Talents <small>({self.total_talents})</small>:</b> '
         abilities_list = []
         topics = ['talents']
         for topic in topics:
@@ -705,7 +706,7 @@ class Creature(models.Model):
 
     @property
     def roster_skills(self):
-        str = f'<b>Skills <small>({self.total_skills})</small>:</b> '
+        str = f'<br/><b>Skills <small>({self.total_skills})</small>:</b> '
         abilities_list = []
         topics = ['skills']
         for topic in topics:
@@ -718,7 +719,7 @@ class Creature(models.Model):
 
     @property
     def roster_knowledges(self):
-        str = f'<b>Knowledges <small>({self.total_knowledges})</small>:</b> '
+        str = f'<br/><b>Knowledges <small>({self.total_knowledges})</small>:</b> '
         abilities_list = []
         topics = ['knowledges']
         for topic in topics:
@@ -733,26 +734,60 @@ class Creature(models.Model):
     def roster_end(self):
         lines = []
         backgrounds_list = []
+        merits_list = []
+        flaws_list = []
         topics = ['backgrounds']
         for topic in topics:
             for ability in STATS_NAMES[self.creature][topic]:
                 val = self.value_of(ability)
-                # print(val)
                 if val > 0:
                     backgrounds_list.append(f'{ability.title()} {val}')
         if len(backgrounds_list) > 0:
             lines.append(
-                f'<b>Backgrounds</b> <small>({self.total_backgrounds})</small>: {", ".join(backgrounds_list)}.')
+                f'<br/><b>Backgrounds</b> <small>({self.total_backgrounds})</small>: {", ".join(backgrounds_list)}.')
         gifts_list = []
         for n in range(10):
             if getattr(self, f"trait{n}"):
-                gifts_list.append(f'{getattr(self, f"trait{n}")}')
+                sentence = getattr(self, f"trait{n}")
+                words = sentence.split("(")
+                val = int(words[1].split(")")[0])
+                gifts_list.append(f'{sentence.replace(" (","&nbsp; (")}')
         if len(gifts_list) > 0:
             if self.creature == 'kindred' or self.creature == 'ghoul':
-                lines.append(f'<b>Disciplines</b>: {", ".join(gifts_list)}.')
+                lines.append(f'<br/><b>Disciplines</b>: {", ".join(gifts_list)}')
             else:
-                lines.append(f'<b>Gifts</b>: {", ".join(gifts_list)}.')
-        str = "<br/>".join(lines) + "."
+                lines.append(f'<br/><b>Gifts</b>: {", ".join(gifts_list)}')
+        lines.append(f'<br/><b>Willpower</b>: {self.as_dot(self.willpower,max=20,to_spend=True)}')
+        if self.creature == 'kindred' or self.creature == 'ghoul':
+            lines.append(f'<br/><b>Blood Pool</b>: {self.as_dot(self.bloodpool,max=20,to_spend=True)}')
+            lines.append(f'<br/><b>Conscience</b>:{self.as_dot(self.virtue0)}  <b>Self-control</b>:{self.as_dot(self.virtue1)}  <b>Courage</b>:{self.as_dot(self.virtue2)}')
+        return "".join(lines) + "."
+
+    @property
+    def roster_shortcuts(self):
+        lines = self.get_shortcuts()
+        return "<b>Shortcuts:</b><br/>➤ "+"<br/>➤ ".join(lines) + "."
+
+
+
+    def as_dot(self, value, max=5, to_spend=False):
+        str = ""
+        if to_spend:
+            str = f"{value}"
+            for x in range(value):
+                if x % 5 == 0:
+                    str += "-"
+                str += "❍"
+
+        else:
+            for x in range(value):
+                str += "●"
+                if x % 5 == 4:
+                    str += " "
+            for x in range(max - value):
+                str += "❍"
+                if x % 5 == 4:
+                    str += " "
         return str
 
     def changeName(self):
@@ -855,7 +890,7 @@ class Creature(models.Model):
         # lines.append(powers_line)
         # lines.append(" ")
         # lines.append(" ")
-        return "<BR/>".join(lines)
+        return "".join(lines)
 
     def extract_roster(self):
         return self.get_roster()
@@ -1239,15 +1274,52 @@ class Creature(models.Model):
         return fmt_list
 
     def timeline(self):
-        list = self.notes_on_history.split('\r\n');
+        list = self.notes_on_history.split('\r\n')
         fmt_list = []
-        idx = 0;
+        idx = 0
         for e in list:
             if len(e) > 2:
-                words = e.split('§');
-                fmt_list.append({'idx': idx, 'item': f'{words[0]}','date': f'{words[1]}', 'notes': f'{words[2]}'})
+                words = e.split('§')
+                fmt_list.append({'idx': idx, 'item': f'{words[0]}', 'date': f'{words[1]}', 'notes': f'{words[2]}'})
                 idx += 1
 
+        return fmt_list
+
+    def disciplines_notes(self):
+        list = self.notes_on_traits.split('\r\n');
+        fmt_list = []
+        idx = 0
+        for e in list:
+            if len(e) > 2:
+                words = e.split('§')
+                fmt_list.append(
+                    {'idx': idx, 'item': f'{words[0].upper()}', 'score': f'{words[1]}', 'title': f'{words[2]}',
+                     'notes': f'{words[3]}'})
+                idx += 1
+        return fmt_list
+
+    def nature_notes(self):
+        list = self.notes_on_naturedemeanor.split('\r\n');
+        fmt_list = []
+        idx = 0
+        for e in list:
+            if len(e) > 2:
+                words = e.split('§')
+                fmt_list.append({'idx': idx, 'item': f'{words[0].upper()}', 'notes': f'{words[1]}'})
+                idx += 1
+        return fmt_list
+
+    def meritsflaws_notes(self):
+        list = self.notes_on_meritsflaws.split('\r\n');
+        fmt_list = []
+        idx = 0
+        for e in list:
+            if len(e) > 2:
+                words = e.split('§')
+                fmt_list.append(
+                    {'idx': idx, 'item': f'{words[0].upper()}', 'type': f'{words[1]}', 'value': f'{words[2]}',
+                     'notes': f'{words[3]}'})
+                idx += 1
         return fmt_list
 
 

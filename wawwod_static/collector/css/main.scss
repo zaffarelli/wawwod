@@ -589,8 +589,9 @@ svg.lineage {
 
       &.frame {
         fill: transparent;
-        stroke: #FFF;
+        stroke: #D0D0D0;
         stroke-width: 1pt;
+        stroke-opacity:0.5;
       }
 
       &.plate {

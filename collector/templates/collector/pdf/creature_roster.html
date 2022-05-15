@@ -1,7 +1,8 @@
 {% load static %}
 {% load storytelling_filters %}
 <h3>{{c.name|safe}} (<a name="{{c.rid}}">{{c.rid}}</a>)</h3>
-<p>{{c.roster_base|safe}}</p>
+<div class="roster">
+{{c.roster_base|safe}}
 <!--table>
     <tr>
         <th style="width:2cm;">Strength</th><td style="width:1.25cm; text-align:center;">{{c.attribute0|pdf_stat|safe}}</td>
@@ -19,8 +20,10 @@
         <th style="width:2cm;">Wits</th><td style="width:1.25cm; text-align:center;">{{c.attribute8|pdf_stat|safe}}</td>
     </tr>
 </table-->
-<p>{{c.roster_attributes|safe}}</p>
-<p>{{c.roster_talents|safe}}</p>
-<p>{{c.roster_skills|safe}}</p>
-<p>{{c.roster_knowledges|safe}}</p>
-<p>{{c.roster_end|safe}}</p>
+{{c.roster_attributes|safe}}
+{{c.roster_talents|safe}}
+{{c.roster_skills|safe}}
+{{c.roster_knowledges|safe}}
+{{c.roster_end|safe}}
+{#{{c.roster_shortcuts|safe}}#}
+</div>

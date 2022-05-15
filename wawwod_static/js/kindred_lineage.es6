@@ -150,7 +150,7 @@ class KindredLineage {
             .attr('id', function (d) {
                 return d.id;
             })
-            .attr("x", (-me.boxWidth * 1.0))
+            .attr("x", (-me.boxWidth * 1.15))
             .attr("y", (-me.boxHeight * 1.25))
             .attr("width", me.boxWidth * 0.30)
             .attr("height", me.boxHeight * 1)

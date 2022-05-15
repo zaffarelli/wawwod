@@ -1,63 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="346f49c9-ffeb-4324-94a2-67713079f8d7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/collector/migrations/0016_auto_20220425_0950.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collector/migrations/0017_auto_20220502_1609.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collector/models/adventures.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collector/models/munich.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collector/static/js/wawwod_sheet.es6" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storytelling/templates/storytelling/munich.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storytelling/templates/storytelling/svg/munich.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/_jane_doe_recto.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/_jane_doe_recto.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.0625962fa09d.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.130d73688dab.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.23a53d7eb53c.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.3cbe7ffa15a6.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.4cbf0e8faae0.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.6c3cbb748cbd.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.a3df1dadcd1c.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/storytelling.beda4e7e3379.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_static/js/wawwod_sheet.es6" afterDir="false" />
+    <list default="true" id="c5f4ae22-1e7a-419c-ac9f-80da089b72d4" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/scripts/populate_munich.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storytelling/models/cities.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storytelling/models/districts.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storytelling/signals/districts.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storytelling/templates/storytelling/de_munich_muc_districts.geojson" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storytelling/templates/storytelling/geojson.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_media/munich.geojson" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/character_sheet_hermann_volkstadt_1.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/character_sheet_hermann_volkstadt_2.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/character_sheet_hermann_volkstadt_3.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/character_sheet_laura_hoffman_1.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/character_sheet_laura_hoffman_2.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/character_sheet_laura_hoffman_3.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/character_sheet_simon_krutze_3.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/hermann/character_sheet_hermann_volkstadt_1.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/hermann/character_sheet_hermann_volkstadt_2.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/hermann/character_sheet_hermann_volkstadt_3.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/laura/character_sheet_laura_hoffman_1.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/laura/character_sheet_laura_hoffman_2.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/laura/character_sheet_laura_hoffman_3.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/simon/character_sheet_simon_krutze_1.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/simon/character_sheet_simon_krutze_2.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/simon/character_sheet_simon_krutze_3.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/story_the choice i never had.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.01f261a63fb4.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.04658accf537.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.0c5eb2131f0d.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.144f3e690e31.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.29c609805027.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.6f12c4fb78b0.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.6fb3211ff225.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.7fa909b9c334.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.8acd5be38e97.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.9ca06dcf8654.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.ab6ba545e14f.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.af7fb38b1604.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.c520bb288b4e.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.c8750e409554.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.d953d3e4b8e1.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.e1ec584f7861.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.e4b03f5e37e9.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.e72d35c356e6.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.fffe3ebcc502.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/collector/models/creatures.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/models/creatures.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/signals/creatures.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/signals/creatures.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/static/collector/css/_basics.scss" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/collector/css/_basics.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/collector/static/collector/css/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/collector/css/main.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/static/js/collector.es6" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/js/collector.es6" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/collector/static/js/cross_over_sheet.es6" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/js/cross_over_sheet.es6" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/static/js/gaia_wheel.es6" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/js/gaia_wheel.es6" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/collector/static/js/kindred_lineage.es6" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/js/kindred_lineage.es6" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/static/js/wawwod_sheet.es6" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/js/wawwod_sheet.es6" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/collector/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/collector/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/templates/collector/creature_link.html" beforeDir="false" afterPath="$PROJECT_DIR$/collector/templates/collector/creature_link.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/templates/collector/page/players_sheets.html" beforeDir="false" afterPath="$PROJECT_DIR$/collector/templates/collector/page/players_sheets.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/templates/collector/pdf/creature_roster.html" beforeDir="false" afterPath="$PROJECT_DIR$/collector/templates/collector/pdf/creature_roster.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/collector/utils/data_collection.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/utils/data_collection.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/collector/utils/wod_reference.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/utils/wod_reference.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/collector/views/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/views/base.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/wawwod.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/wawwod.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/wawwod_tools.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/wawwod_tools.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/poetry.lock" beforeDir="false" afterPath="$PROJECT_DIR$/poetry.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storytelling/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/storytelling/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storytelling/templates/storytelling/pdf/story.html" beforeDir="false" afterPath="$PROJECT_DIR$/storytelling/templates/storytelling/pdf/story.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storytelling/templates/storytelling/svg/munich.svg" beforeDir="false" afterPath="$PROJECT_DIR$/storytelling/templates/storytelling/svg/munich.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storytelling/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/storytelling/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storytelling/views/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/storytelling/views/base.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wawwod/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod_static/collector/css/_basics.scss" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/collector/css/_basics.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/_jane_doe_recto.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/_jane_doe_recto.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/anneke_della_corte.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/grigori_zentgraf.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/niklas_waldkauz.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/sarah_strijd.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/story_oktoberblütenfest.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/vidar_grimsdottir.pdf" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/wawwod_static/collector/css/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/collector/css/main.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod_static/js/collector.es6" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/js/collector.es6" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wawwod_static/js/cross_over_sheet.es6" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/js/cross_over_sheet.es6" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod_static/js/gaia_wheel.es6" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/js/gaia_wheel.es6" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wawwod_static/js/kindred_lineage.es6" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/js/kindred_lineage.es6" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_static/js/wawwod_sheet.es6" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/js/wawwod_sheet.es6" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
   <component name="FileColors">
-    <fileColor scope="Project Files" color="183956" />
+    <fileColor scope="Project Files" color="Blue" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -70,20 +99,8 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/collector/views/base.py" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/collector/templates/collector/index.html" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/collector/templates/collector/list.html" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/collector/static/js/collector.es6" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/collector/utils/wod_reference.py" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/collector/templates/base.html" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/collector/admin.py" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/collector/apps.py" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/storytelling/models/stories.py" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/.gitignore" root0="FORCE_HIGHLIGHTING" />
-  </component>
-  <component name="ProjectId" id="1qwIydqj7dmUErNFGki4GgaLSh4" />
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectId" id="28kHdK8Bj8frqfoYNawetIxCdPz" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -95,118 +112,58 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/scripts" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/storytelling/templates/storytelling" />
     <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.file-colors" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/storytelling/templates/storytelling" />
       <recent name="$PROJECT_DIR$/scripts" />
-      <recent name="$PROJECT_DIR$/ansible/assets" />
-      <recent name="$PROJECT_DIR$/collector/templates/collector/creature" />
-      <recent name="$PROJECT_DIR$/storytelling/mixins" />
-      <recent name="$PROJECT_DIR$/storytelling/templatetags" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/collector/static/collector/fonts" />
-      <recent name="$PROJECT_DIR$/raw" />
-    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="wawwod" type="Python.DjangoServer" factoryName="Django server">
+      <module name="wawwod" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="346f49c9-ffeb-4324-94a2-67713079f8d7" name="Default Changelist" comment="" />
-      <created>1617984481535</created>
+      <changelist id="c5f4ae22-1e7a-419c-ac9f-80da089b72d4" name="Changes" comment="" />
+      <created>1651753752558</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1617984481535</updated>
-      <workItem from="1619566816035" duration="51000" />
-      <workItem from="1619566890127" duration="1731000" />
-      <workItem from="1619848366839" duration="4675000" />
-      <workItem from="1619944489007" duration="1531000" />
-      <workItem from="1622750286878" duration="56643000" />
-      <workItem from="1623252145355" duration="67000" />
-      <workItem from="1623252239564" duration="761000" />
-      <workItem from="1623656985839" duration="19274000" />
-      <workItem from="1623946087851" duration="470000" />
-      <workItem from="1623958287037" duration="10796000" />
-      <workItem from="1624094986946" duration="66243000" />
-      <workItem from="1624266249160" duration="5450000" />
-      <workItem from="1624358025845" duration="2548000" />
-      <workItem from="1624452719423" duration="31000" />
-      <workItem from="1624467468937" duration="27960000" />
-      <workItem from="1624548057503" duration="11753000" />
-      <workItem from="1624609074089" duration="55184000" />
-      <workItem from="1624915166186" duration="1229000" />
-      <workItem from="1625041129080" duration="702000" />
-      <workItem from="1625122221157" duration="599000" />
-      <workItem from="1625179623247" duration="1199000" />
-      <workItem from="1625267814634" duration="2695000" />
-      <workItem from="1625554436364" duration="2733000" />
-      <workItem from="1625660033000" duration="596000" />
-      <workItem from="1625698539322" duration="1692000" />
-      <workItem from="1625841423225" duration="6673000" />
-      <workItem from="1625865049802" duration="8000" />
-      <workItem from="1625865077079" duration="8424000" />
-      <workItem from="1626030753876" duration="2104000" />
-      <workItem from="1626038041230" duration="6591000" />
-      <workItem from="1626226870306" duration="6898000" />
-      <workItem from="1626283788557" duration="1576000" />
-      <workItem from="1626288721953" duration="12514000" />
-      <workItem from="1626474367576" duration="51081000" />
-      <workItem from="1626706214693" duration="1840000" />
-      <workItem from="1627028856401" duration="21000" />
-      <workItem from="1627141450873" duration="4295000" />
-      <workItem from="1627308099953" duration="2578000" />
-      <workItem from="1627590071257" duration="13506000" />
-      <workItem from="1627689434525" duration="1135000" />
-      <workItem from="1627809179030" duration="17088000" />
-      <workItem from="1627907576606" duration="55200000" />
-      <workItem from="1628831645268" duration="796000" />
-      <workItem from="1629055311791" duration="1247000" />
-      <workItem from="1629202503135" duration="49000" />
-      <workItem from="1630259561920" duration="5275000" />
-      <workItem from="1630432040713" duration="12244000" />
-      <workItem from="1630581938423" duration="9130000" />
-      <workItem from="1631109427831" duration="604000" />
-      <workItem from="1631262985015" duration="619000" />
-      <workItem from="1633073588318" duration="981000" />
-      <workItem from="1633783596749" duration="613000" />
-      <workItem from="1634381221467" duration="5888000" />
-      <workItem from="1634942626005" duration="1204000" />
-      <workItem from="1634952145239" duration="1111000" />
-      <workItem from="1634958352927" duration="1358000" />
-      <workItem from="1635148361700" duration="843000" />
-      <workItem from="1635168398748" duration="87000" />
-      <workItem from="1635598603909" duration="1911000" />
-      <workItem from="1638477922600" duration="655000" />
-      <workItem from="1641858443249" duration="1384000" />
-      <workItem from="1641932165734" duration="8898000" />
-      <workItem from="1646349760648" duration="10239000" />
-      <workItem from="1646958574452" duration="1716000" />
-      <workItem from="1647019062987" duration="9624000" />
-      <workItem from="1647307401538" duration="690000" />
-      <workItem from="1647612589857" duration="946000" />
-      <workItem from="1647706524683" duration="1234000" />
-      <workItem from="1648367590092" duration="1213000" />
-      <workItem from="1648447373644" duration="613000" />
-      <workItem from="1648453255987" duration="622000" />
-      <workItem from="1648474915394" duration="272000" />
-      <workItem from="1648475635719" duration="701000" />
-      <workItem from="1648499600492" duration="647000" />
-      <workItem from="1649150976632" duration="1925000" />
-      <workItem from="1649459466790" duration="3859000" />
-      <workItem from="1650585424843" duration="34435000" />
-      <workItem from="1650905305905" duration="779000" />
-      <workItem from="1651442989932" duration="7068000" />
-      <workItem from="1651499908443" duration="54921000" />
-      <workItem from="1651742768412" duration="1251000" />
+      <updated>1651753752558</updated>
+      <workItem from="1651753757875" duration="15345000" />
+      <workItem from="1651827414470" duration="148000" />
+      <workItem from="1651827587182" duration="11338000" />
+      <workItem from="1652092996742" duration="8806000" />
+      <workItem from="1652229043457" duration="22129000" />
+      <workItem from="1652433408185" duration="610000" />
+      <workItem from="1652453151474" duration="16930000" />
     </task>
     <servers />
   </component>
@@ -227,26 +184,5 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/storytelling/static/js/storytelling.es6</url>
-          <line>876</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/storytelling/static/js/storytelling.es6</url>
-          <line>46</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/scripts/wawwod_tools.py</url>
-          <line>12</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

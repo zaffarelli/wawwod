@@ -323,6 +323,7 @@ GM_SHORTCUTS = {
         ['dexterity', 'stealth'],
         ['dexterity', 'dodge'],
         ['charisma', 'performance'],
+        ['charisma', 'intimidation'],
         ['manipulation', 'subterfuge'],
         ['appearance', 'subterfuge'],
         ['perception', 'alertness'],
@@ -442,6 +443,10 @@ CLANS_SPECIFICS = {
         'disciplines': ['Animalism (1)', 'Chimerstry (1)', 'Fortitude (1)'],
         'clan_weakness': 'Vice addiction'
     },
+    'Salubri': {
+        'disciplines': ['Auspex (1)', 'Fortitude (1)', 'Obeah (1)'],
+        'clan_weakness': 'Must feed under passion'
+    },
     'Salubri Antitribu': {
         'disciplines': ['Auspex (1)', 'Fortitude (1)', 'Valeren (1)'],
         'clan_weakness': 'Must feed under passion'
@@ -465,6 +470,10 @@ CLANS_SPECIFICS = {
     'Tremere': {
         'disciplines': ['Auspex (1)', 'Dominate (1)', 'Thaumaturgy (1)'],
         'clan_weakness': 'Blood thrall'
+    },
+    'True Brujah': {
+        'disciplines': ['Temporis (1)', 'Potence (1)', 'Presence (1)'],
+        'clan_weakness': 'Short fuse'
     },
     'Tzimisce': {
         'disciplines': ['Animalism (1)', 'Auspex (1)', 'Vicissitude (1)'],

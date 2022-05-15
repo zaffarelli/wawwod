@@ -240,7 +240,7 @@ def display_crossover_sheet(request, slug=None, option=None):
             scenario = "Bayerische Nächte"
             if c.creature == 'kindred' or c.creature == 'ghoul':
                 scenario = "Munich by Night"
-            pre_title = 'München'
+            pre_title = "Munich"
             post_title = "Camarilla"
         else:
             pre_title = 'World of Darkness'
@@ -253,7 +253,10 @@ def display_crossover_sheet(request, slug=None, option=None):
         k["sire_name"] = c.sire_name
         k["background_notes"] = c.background_notes()
         k["timeline"] = c.timeline()
-        print(k)
+        k["disciplines_notes"] = c.disciplines_notes()
+        k["nature_notes"] = c.nature_notes()
+        k["meritsflaws_notes"] = c.meritsflaws_notes()
+        # print("DISCPLINES NOTES ---> ", k["disciplines_notes"])
         j = json.dumps(k)
         if option is not None:
             c.delete()
@@ -283,6 +286,7 @@ def display_lineage(request, slug=None):
 @csrf_exempt
 def svg_to_pdf(request, slug):
     import cairosvg
+    print("svg_to_pdf")
     response = {'status': 'error'}
     if request.is_ajax():
         pdf_name = os.path.join(settings.MEDIA_ROOT, 'pdf/results/' + request.POST["pdf_name"])

@@ -312,7 +312,7 @@ def build_gaia_wheel():
 
     for c in creatures:
         creature_dict = c.toDict
-        if (c.faction == 'Camarilla') or (c.faction == 'Independant') or (
+        if (c.faction == 'Camarilla') or (c.faction == 'Independents') or (
                 c.faction == 'Anarchs') or (
                 c.faction == 'Inconnu'):
             wyrm_list.append(creature_dict)
@@ -373,86 +373,52 @@ gangrel = "#206090"
 noone = "#808080"
 
 MUNICH_DISTRICTS = {
-    'd01': {'name':'Old Town & Lehel','description':'', 'clan': ventrue},
-    'd02': {'name':'Ludwigvorstadt and Isarvorstadt','description':'', 'clan': toreador},
-    'd03': {'name':'Maxvorstadt','description':'', 'clan': ventrue},
-    'd04': {'name':'Schwabing West','description':'', 'clan': ventrue},
-    'd05': {'name':'Au-Haidhausen','description':'', 'clan': malkavian},
-    'd06': {'name':'Sendling','description':'', 'clan': ventrue},
-    'd07': {'name':'Sendling – Westpark','description':'', 'clan': gangrel},
-    'd08': {'name':'Schwanthalerhöhe','description':'', 'clan': toreador},
-    'd09': {'name':'Neuhausen Nymphenburg','description':'', 'clan':toreador},
-    'd10': {'name':'Moosach','description':'', 'clan': tremere},
-    'd11': {'name':'Milbertshofen und Am Hart','description':'', 'clan': brujah},
-    'd12': {'name':'Schwabing-Freimann','description':'','clan':brujah},
-    'd13': {'name':'Bogenhausen','description':'','clan':ventrue},
-    'd14': {'name':'Berg am Laim','description':'','clan':nosferatu},
-    'd15': {'name':'Trudering – Riem','description':'','clan':ventrue},
-    'd16': {'name':'Ramersdorf und Perlach','description':'','clan':nosferatu},
-    'd17': {'name':'Obergiesing','description':'','clan':tremere},
-    'd18': {'name':'Untergiesing und Harlaching','description':'','clan':gangrel},
-    'd19': {'name':'Thalkirchen-Obersendling-Forstenried-Fürstenried-Solln','description':'','clan':ventrue},
-    'd20': {'name':'Hadern','description':'','clan':malkavian},
-    'd21': {'name':'Pasing – Obermenzing','description':'','clan':toreador},
-    'd22': {'name':'Aubing-Lochhausen-Langwied','description':'','clan':gangrel},
-    'd23': {'name':'Allach Untermenzing','description':'','clan':nosferatu},
-    'd24': {'name':'Feldmoching-Hasenbergl','description':'','clan':ventrue},
-    'd25': {'name':'Laim','description':'','clan':brujah},
-
+    'd01': {'name': 'Old Town & Lehel', 'description': '', 'clan': ventrue, 'sectors': 6},
+    'd02': {'name': 'Ludwigvorstadt and Isarvorstadt', 'description': '', 'clan': toreador, 'sectors': 8},
+    'd03': {'name': 'Maxvorstadt', 'description': '', 'clan': ventrue, 'sectors': 9},
+    'd04': {'name': 'Schwabing West', 'description': '', 'clan': ventrue, 'sectors': 3},
+    'd05': {'name': 'Au-Haidhausen', 'description': '', 'clan': malkavian, 'sectors': 6},
+    'd06': {'name': 'Sendling', 'description': '', 'clan': ventrue, 'sectors': 2},
+    'd07': {'name': 'Sendling – Westpark', 'description': '', 'clan': gangrel, 'sectors': 3},
+    'd08': {'name': 'Schwanthalerhöhe', 'description': '', 'clan': toreador, 'sectors': 2},
+    'd09': {'name': 'Neuhausen Nymphenburg', 'description': '', 'clan': toreador, 'sectors': 6},
+    'd10': {'name': 'Moosach', 'description': '', 'clan': tremere, 'sectors': 2},
+    'd11': {'name': 'Milbertshofen und Am Hart', 'description': '', 'clan': brujah, 'sectors': 3},
+    'd12': {'name': 'Schwabing-Freimann', 'description': '', 'clan': brujah, 'sectors': 8},
+    'd13': {'name': 'Bogenhausen', 'description': '', 'clan': ventrue, 'sectors': 7},
+    'd14': {'name': 'Berg am Laim', 'description': '', 'clan': nosferatu, 'sectors': 1},
+    'd15': {'name': 'Trudering – Riem', 'description': '', 'clan': ventrue, 'sectors': 4},
+    'd16': {'name': 'Ramersdorf und Perlach', 'description': '', 'clan': nosferatu, 'sectors': 5},
+    'd17': {'name': 'Obergiesing', 'description': '', 'clan': tremere, 'sectors': 2},
+    'd18': {'name': 'Untergiesing und Harlaching', 'description': '', 'clan': gangrel, 'sectors': 5},
+    'd19': {'name': 'Thalkirchen-Obersendling-Forstenried-Fürstenried-Solln', 'description': '', 'clan': ventrue,
+            'sectors': 6},
+    'd20': {'name': 'Hadern', 'description': '', 'clan': malkavian, 'sectors': 3},
+    'd21': {'name': 'Pasing – Obermenzing', 'description': '', 'clan': toreador, 'sectors': 4},
+    'd22': {'name': 'Aubing-Lochhausen-Langwied', 'description': '', 'clan': gangrel, 'sectors': 3},
+    'd23': {'name': 'Allach Untermenzing', 'description': '', 'clan': nosferatu, 'sectors': 2},
+    'd24': {'name': 'Feldmoching-Hasenbergl', 'description': '', 'clan': ventrue, 'sectors': 4},
+    'd25': {'name': 'Laim', 'description': '', 'clan': brujah, 'sectors': 2},
 
 }
 
 
-
-
-def get_districts(city):
-    import random
+def get_districts(cityname):
+    from storytelling.models.cities import City
+    from storytelling.models.districts import District
+    cities = City.objects.filter(name=cityname.title())
     context = {'districts': {}}
-    if city == 'munich':
-
-        odds = (
-            malkavian,
-            toreador, toreador, toreador,
-            ventrue, ventrue, ventrue, ventrue,
-            brujah, brujah,
-            gangrel,
-            tremere,
-            nosferatu, nosferatu)
-
-        for x in range(25):
-            context['districts'][f'd{x+1:02}'] = {'code': f'd{x+1:02}', 's': {}}
-            # col = random.choice(odds)
-            col = MUNICH_DISTRICTS[f'd{x+1:02}']['clan']
-            for y in range(10):
-                context['districts'][f'd{x+1:02}']['s'][f's{y + 1:02}'] = {'code': f'd{x + 1:02}', 'fill': col}
-        # context['districts']['d01']['s']['s01']['fill'] = ventrue
-        # context['districts']['d01']['s']['s02']['fill'] = ventrue
-        # context['districts']['d01']['s']['s03']['fill'] = ventrue
-        # context['districts']['d01']['s']['s04']['fill'] = ventrue
-        # context['districts']['d01']['s']['s05']['fill'] = toreador
-        # context['districts']['d01']['s']['s06']['fill'] = ventrue
-        #
-        # context['districts']['d02']['s']['s01']['fill'] = ventrue
-        # context['districts']['d02']['s']['s02']['fill'] = ventrue
-        # context['districts']['d02']['s']['s03']['fill'] = tremere
-        # context['districts']['d02']['s']['s04']['fill'] = ventrue
-        # context['districts']['d02']['s']['s05']['fill'] = ventrue
-        # context['districts']['d02']['s']['s06']['fill'] = ventrue
-        #
-        # context['districts']['d03']['s']['s01']['fill'] = toreador
-        # context['districts']['d04']['s']['s01']['fill'] = tremere
-        # context['districts']['d05']['s']['s01']['fill'] = malkavian
-        # context['districts']['d06']['s']['s01']['fill'] = brujah
-        # context['districts']['d09']['s']['s01']['fill'] = toreador
-        # context['districts']['d12']['s']['s01']['fill'] = nosferatu
-        # context['districts']['d16']['s']['s01']['fill'] = ventrue
-        #
-        # context['districts']['d20']['s']['s01']['fill'] = gangrel
-        # context['districts']['d20']['s']['s02']['fill'] = nosferatu
-        # context['districts']['d20']['s']['s03']['fill'] = nosferatu
-        #
-        # context['districts']['d19']['s']['s03']['fill'] = brujah
-        # context['districts']['d14']['s']['s01']['fill'] = ventrue
-
-
+    if len(cities) == 1:
+        city = cities.first()
+        districts = District.objects.filter(city=city)
+        for d in districts:
+            words = d.code.split(' ')
+            code_d = words[0]
+            code_s = words[1]
+            if code_s == 's01':
+                context['districts'][code_d] = {'code': code_d, 's':{}}
+            context['districts'][code_d]['s'][code_s] = {'code': code_s, 'fill': d.color, 'title': d.title}
+    import json
+    x = json.dumps(context, indent=4, sort_keys=True)
+    print(x)
     return context

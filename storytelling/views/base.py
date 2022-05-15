@@ -1,5 +1,6 @@
 from django.http import JsonResponse, HttpResponse
 from django.template.loader import get_template
+from django.shortcuts import render
 from xhtml2pdf import pisa
 from io import BytesIO
 from storytelling.models.stories import Story
@@ -126,13 +127,18 @@ def update_scene(request, id: None, field: None):
 
 def display_map(request, slug=None):
     from collector.utils.data_collection import get_districts
-    response = {'html':''}
+    response = {'html': ''}
     if request.is_ajax:
         if not slug:
             slug = 'munich'
             context = get_districts(slug)
             print(context)
-            template = get_template("storytelling/munich.html")
+            template = get_template("storytelling/geojson.html")
             html = template.render(context)
             response['html'] = html
     return JsonResponse(response)
+
+
+def show_munich(request):
+    context = {}
+    return render(request, 'storytelling/geojson.html')

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.4.4/d3.min.js"></script>
+<link rel='stylesheet' href="https://fonts.googleapis.com/css2?family=Roboto">
+<svg id="my_dataviz" width="1200" height="900"></svg>
+<script>
+    let svg = d3.select("svg")
+    width = +svg.attr("width"),
+        height = +svg.attr("height");
+    let projection = d3.geoAlbers()
+        .rotate([0, 0])
+  //  d3.json("https://raw.githubusercontent.com/oztuncbilek/geoTimeFilter/master/munich_25_districts.geojson").then(function (data) {
+    d3.json("static/storytelling/geojson/de_munich_muc_districts.geojson").then(function (data) {
+
+
+        projection.fitSize([width, height], data)
+        let districts = svg.append("g")
+            .selectAll("path")
+            .data(data.features)
+        ;
+        let district_in = districts.enter()
+        let item = district_in.append("g");
+        item.append("path")
+            .attr("id", function (d) {
+                return "path_" + d.properties.Nr;
+            })
+            .attr("d", d3.geoPath().projection(projection))
+            .style("fill", "#ccc")
+            .style("stroke", "#fff")
+
+            .on('mouseover',function(h,e){
+                let label = "District "+e.properties.Nr + ": "+ e.properties.FIRST_Bezi;
+                d3.select("#infotext").text(label);
+                d3.select("#path_"+e.properties.Nr).style("fill","#a88");
+            })
+            .on('mouseout',function(h,e){
+                {#let label = "District "+e.properties.Nr + ": "+ e.properties.FIRST_Bezi;#}
+                {#d3.select("#infotext").text(label);#}
+                d3.select("#path_"+e.properties.Nr).style("fill","#ccc");
+            })
+        ;
+        {#item.append('text')#}
+        {#    .attr("x", function (e, i) {#}
+        {#        return d3.geoPath().projection(projection).centroid(e)[0];#}
+        {#    })#}
+        {#    .attr("y", function (e, i) {#}
+        {#        return d3.geoPath().projection(projection).centroid(e)[1];#}
+        {#    })#}
+        {##}
+        {#    .style("font-family", "Roboto")#}
+        {#    .style("text-anchor", "middle")#}
+        {#    .style("font-size", "12pt")#}
+        {#    .style("stroke", "#888")#}
+        {#    .style("stroke-width", "0.25")#}
+        {#    .style("fill", "#000")#}
+        {#.text(function (e,i) {#}
+            {#return e.properties.FIRST_Bezi;#}
+        {#    return e.properties.Nr;#}
+        {#})#}
+        {#;#}
+        let infotext = svg.append('text')
+            .attr("id", "infotext" )
+            .attr("x", function (e, i) {
+                return 3*width/4;
+            })
+            .attr("y", function (e, i) {
+                return height-4;
+            })
+
+            .style("font-family", "Roboto")
+            .style("text-anchor", "middle")
+            .style("font-size", "12pt")
+            .style("stroke", "#888")
+            .style("stroke-width", "0.25")
+            .style("fill", "#000")
+        .text(function (e,i) {
+            {#return e.properties.FIRST_Bezi;#}
+            return "Munich";
+        })
+        ;
+    })
+</script>

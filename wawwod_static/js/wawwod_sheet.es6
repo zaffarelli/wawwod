@@ -84,7 +84,6 @@ class WawwodSheet {
         me.mono_font = 'Syne Mono';
         me.title_font = 'Khand';
         me.logo_font = 'Trade Winds';
-        //me.logo_font = 'Reggae One';
         me.base_font = 'Philosopher';
         me.x = d3.scaleLinear().domain([0, me.width]).range([0, me.width]);
         me.y = d3.scaleLinear().domain([0, me.height]).range([0, me.height]);
@@ -977,9 +976,11 @@ class WawwodSheet {
                 } else if (num == 4) {
                     me.page = 0;
                     me.perform(me.data)
-
                 } else if (num == 5) {
                     me.page = 1;
+                    me.perform(me.data)
+                } else if (num == 6) {
+                    me.page = 2;
                     me.perform(me.data)
                 }
             })
@@ -1035,7 +1036,7 @@ class WawwodSheet {
         }
         flist += '</style>';
 
-        let exportable_svg = '<?xml version="1.0" encoding="ISO-8859-1" ?> \
+        let exportable_svg = '<?xml version="1.0" encoding="UTF-8" ?> \
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"> \
 <svg class="crossover_sheet" \
 xmlns="http://www.w3.org/2000/svg" version="1.1" \
@@ -1054,26 +1055,25 @@ xmlns:xlink="http://www.w3.org/1999/xlink"> \
         me.svg.selectAll('.do_not_print').attr('opacity', 0);
         let base_svg = d3.select("#d3area svg").html();
         let flist = '<style>';
+        console.log(me.config['fontset']);
         for (let f of me.config['fontset']) {
 
             flist += '@import url("https://fonts.googleapis.com/css2?family=' + f + '");';
         }
         flist += '</style>';
         let lpage = "";
-        let exportable_svg = '<?xml version="1.0" encoding="ISO-8859-1" ?> \
+        let exportable_svg = '<?xml version="1.0" encoding="UTF-8" ?> \
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"> \
 <svg class="crossover_sheet" \
 xmlns="http://www.w3.org/2000/svg" version="1.1" \
 xmlns:xlink="http://www.w3.org/1999/xlink" width="' + me.width + '" height="' + me.height + '"> \
 ' + flist + base_svg + '</svg>';
 
-        if (me.page == 0) {
-            lpage = "_recto";
-        } else {
-            lpage = "_verso"
-        }
-        let svg_name = me.data['rid'] + lpage + ".svg"
-        let pdf_name = me.data['rid'] + lpage + ".pdf"
+
+        lpage = "_"+(me.page+1);
+
+        let svg_name = "character_sheet"+me.data['rid'] + lpage + ".svg"
+        let pdf_name = "character_sheet"+me.data['rid'] + lpage + ".pdf"
         let sheet_data = {
             'pdf_name': pdf_name,
             'svg_name': svg_name,
