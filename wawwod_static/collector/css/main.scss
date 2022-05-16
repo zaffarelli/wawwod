@@ -94,50 +94,57 @@ body {
     & #text_edit {
       height: 18em;
     }
-  }
-  .wrapper {
-    background: transparent url() 100% 100% no-repeat fixed;
-    z-index: 60;
-    width: 100%;
-    min-height: 1200px;
 
-    padding-top: 0;
-    margin: 0;
-
-    &.hidden{
-      display:none;
-    }
-
-    & .caine_roots {
-      background: transparent;
-      width: 100%;
-      display: block;
+    & .wrapper {
+      background: transparent url() 100% 100% no-repeat fixed;
       z-index: 60;
+      width: auto;
+      height: auto;
       padding: 0;
       margin: 0;
-    }
 
-    & .details {
-      background: transparent;
-      width: auto;
-      right: 10px;
-      left: auto;
-      top: auto;
-      bottom: 0px;
-      display: block;
-      position: fixed;
-      z-index: 110;
-      transition: all 0.3s ease;
-      box-shadow: -5px -5px 10px $dark_plate;
+      position:fixed;
+      top:0;
+      left:0;
+      bottom:10px;
+      right:0;
 
       &.hidden {
-        transition: all 0.3s ease;
-        transform: translateX(1000px);
+        display: none;
       }
+
+      //& .caine_roots {
+      //  background: transparent;
+      //  width: 100%;
+      //  display: block;
+      //  z-index: 60;
+      //  padding: 0;
+      //  margin: 0;
+      //}
+
+
     }
   }
 }
 
+.details {
+  background: transparent;
+  width: auto;
+  right: 10px;
+  left: auto;
+  top: auto;
+  bottom: 0px;
+  display: block;
+  position: fixed;
+  z-index: 110;
+  transition: all 0.3s ease;
+  box-shadow: -5px -5px 10px $dark_plate;
+
+  &.hidden {
+    transition: all 0.3s ease;
+    transform: translateX(1000px);
+  }
+}
 
 .charlist {
   @include panel;
@@ -551,8 +558,9 @@ table {
       }
     }
   }
-  &.hidden{
-    display:none;
+
+  &.hidden {
+    display: none;
   }
 }
 
@@ -591,7 +599,7 @@ svg.lineage {
         fill: transparent;
         stroke: #D0D0D0;
         stroke-width: 1pt;
-        stroke-opacity:0.5;
+        stroke-opacity: 0.5;
       }
 
       &.plate {
@@ -797,7 +805,12 @@ td.editable.updown {
 }
 
 #d3area {
-  width: 90%;
+  position:absolute;
+  top:50px;
+  width: calc(100% - 50px);
+  height: calc(100% - 100px);
+  //border:1px solid saddlebrown;
+
 }
 
 div.creature_links {
@@ -936,7 +949,7 @@ text.kindred_name {
 }
 
 
-.ghouls_list{
-  font-family:Roboto;
-  font-size:9pt;
+.ghouls_list {
+  font-family: Roboto;
+  font-size: 9pt;
 }

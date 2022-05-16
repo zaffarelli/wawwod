@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <meta charset="UTF-8">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.4.4/d3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
 <link rel='stylesheet' href="https://fonts.googleapis.com/css2?family=Roboto">
 <svg id="my_dataviz" width="1200" height="900"></svg>
 <script>
@@ -9,9 +10,14 @@
         height = +svg.attr("height");
     let projection = d3.geoAlbers()
         .rotate([0, 0])
-  //  d3.json("https://raw.githubusercontent.com/oztuncbilek/geoTimeFilter/master/munich_25_districts.geojson").then(function (data) {
-    d3.json("static/storytelling/geojson/de_munich_muc_districts.geojson").then(function (data) {
+//    d3.json("https://raw.githubusercontent.com/oztuncbilek/geoTimeFilter/master/munich_25_districts.geojson").then(function (data) {
+  //  d3.json("https://raw.githubusercontent.com/zaffarelli/wawwod/master/storytelling/static/storytelling/geojson/de_munich_muc_districts.geojson").then(function (data) {
+    d3.json("https://gist.githubusercontent.com/p3t3r67x0/f8c1ea64b2862c6eda8771daba4f297b/raw/f35cc5e3994ee4862e5101de107f2aba33e7d658/muenchen_city_districts.geojson").then(function (data) {
 
+        _.forEach(data.features, function(e,i){
+            e.properties.id = i+1;
+            console.log(e)
+        });
 
         projection.fitSize([width, height], data)
         let districts = svg.append("g")
@@ -21,22 +27,22 @@
         let district_in = districts.enter()
         let item = district_in.append("g");
         item.append("path")
-            .attr("id", function (d) {
-                return "path_" + d.properties.Nr;
+            .attr("id", function (e) {
+                return "path_" + e.properties.id;
             })
             .attr("d", d3.geoPath().projection(projection))
             .style("fill", "#ccc")
             .style("stroke", "#fff")
 
             .on('mouseover',function(h,e){
-                let label = "District "+e.properties.Nr + ": "+ e.properties.FIRST_Bezi;
+                let label = "District "+e.properties.id + ": "+ e.properties.name;
                 d3.select("#infotext").text(label);
-                d3.select("#path_"+e.properties.Nr).style("fill","#a88");
+                d3.select("#path_"+e.properties.id).style("fill","#a88");
             })
             .on('mouseout',function(h,e){
                 {#let label = "District "+e.properties.Nr + ": "+ e.properties.FIRST_Bezi;#}
                 {#d3.select("#infotext").text(label);#}
-                d3.select("#path_"+e.properties.Nr).style("fill","#ccc");
+                d3.select("#path_"+e.properties.id).style("fill","#ccc");
             })
         ;
         {#item.append('text')#}
@@ -58,6 +64,27 @@
         {#    return e.properties.Nr;#}
         {#})#}
         {#;#}
+        let mastertext = svg.append('text')
+            .attr("id", "mastertext" )
+            .attr("x", function (e, i) {
+                return 3*width/4;
+            })
+            .attr("y", function (e, i) {
+                return height-4;
+            })
+            .attr("dy",-24)
+
+            .style("font-family", "Roboto")
+            .style("text-anchor", "middle")
+            .style("font-size", "20pt")
+            .style("stroke", "#888")
+            .style("stroke-width", "0.25")
+            .style("fill", "#000")
+        .text(function (e,i) {
+            {#return e.properties.FIRST_Bezi;#}
+            return "Munich by Night";
+        })
+        ;
         let infotext = svg.append('text')
             .attr("id", "infotext" )
             .attr("x", function (e, i) {
@@ -75,7 +102,7 @@
             .style("fill", "#000")
         .text(function (e,i) {
             {#return e.properties.FIRST_Bezi;#}
-            return "Munich";
+            return "";
         })
         ;
     })

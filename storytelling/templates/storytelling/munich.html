@@ -1,4 +1,85 @@
-{% load static %}
-<div class="map" style="width:1200px; height:900px;margin:50px; position:relative;" >
-    {% include "storytelling/svg/munich.svg" with d=districts %}
-</div>
+
+
+{% block javascript %}
+    <script>
+    d3.select("#d3area").remove('svg');
+    let svg = d3.select("#d3area").append('svg');
+    let width = d3.select("#d3area").style("width"),
+        height = d3.select("#d3area").style("height");
+    let projection = d3.geoAlbers()
+        .rotate([0, 0])
+    d3.json("https://gist.githubusercontent.com/p3t3r67x0/f8c1ea64b2862c6eda8771daba4f297b/raw/f35cc5e3994ee4862e5101de107f2aba33e7d658/muenchen_city_districts.geojson").then(function (data) {
+
+        _.forEach(data.features, function(e,i){
+            e.properties.id = i+1;
+            console.log(e)
+        });
+
+        projection.fitSize([width, height], data)
+        let districts = svg.append("g")
+            .selectAll("path")
+            .data(data.features)
+        ;
+        let district_in = districts.enter()
+        let item = district_in.append("g");
+        item.append("path")
+            .attr("id", function (e) {
+                return "path_" + e.properties.id;
+            })
+            .attr("d", d3.geoPath().projection(projection))
+            .style("fill", "#ccc")
+            .style("stroke", "#fff")
+
+            .on('mouseover',function(h,e){
+                let label = "District "+e.properties.id + ": "+ e.properties.name;
+                d3.select("#infotext").text(label);
+                d3.select("#path_"+e.properties.id).style("fill","#a88");
+            })
+            .on('mouseout',function(h,e){
+                {#let label = "District "+e.properties.Nr + ": "+ e.properties.FIRST_Bezi;#}
+                {#d3.select("#infotext").text(label);#}
+                d3.select("#path_"+e.properties.id).style("fill","#ccc");
+            })
+        ;
+        let mastertext = svg.append('text')
+            .attr("id", "mastertext" )
+            .attr("x", function (e, i) {
+                return width/8;
+            })
+            .attr("y", function (e, i) {
+                return height-4;
+            })
+            .attr("dy",-24)
+
+            .style("font-family", "Roboto")
+            .style("text-anchor", "start")
+            .style("font-size", "20pt")
+            .style("stroke", "#888")
+            .style("stroke-width", "0.25")
+            .style("fill", "#fff")
+        .text(function (e,i) {
+            return "Munich by Night";
+        })
+        ;
+        let infotext = svg.append('text')
+            .attr("id", "infotext" )
+            .attr("x", function (e, i) {
+                return width/8;
+            })
+            .attr("y", function (e, i) {
+                return height-4;
+            })
+
+            .style("font-family", "Roboto")
+            .style("text-anchor", "start")
+            .style("font-size", "12pt")
+            .style("stroke", "#888")
+            .style("stroke-width", "0.25")
+            .style("fill", "#fff")
+        .text(function (e,i) {
+            return "";
+        })
+        ;
+    })
+    </script>
+{% endblock javascript %}

@@ -93,11 +93,12 @@ class WawwodCollector {
                         me.d3.perform(d);
                     }
                     if (action == 'pdf_story') {
-                        console.log(anwwer);
+                        console.log(answer);
                     }
                     if (action == 'map') {
-                        $('#d3area').html(answer.html)
-                        console.log(answer);
+                        let d = JSON.parse(answer.data);
+                        me.d3 = new GeoCity(param,d, "#d3area", me);
+                        me.d3.perform();
                     }
                     me.rebootLinks();
                 },

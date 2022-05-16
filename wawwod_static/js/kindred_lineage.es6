@@ -320,10 +320,13 @@ class KindredLineage {
         let nodes = d3.hierarchy(me.data);
         nodes = treemap(nodes);
         d3.select(me.parent).selectAll("svg").remove();
+        let pwidth = d3.select(me.parent).style("width");
+        let pheight = d3.select(me.parent).style("height");
+        console.log(me.parent+" "+pwidth+" "+pheight)
         me.svg = d3.select(me.parent).append("svg")
             .attr('class', 'lineage')
-            .attr("width", width)
-            .attr("height", height);
+            .attr("width", pwidth)
+            .attr("height", pheight);
         me.g = me.svg.append("g")
             .attr("transform",
                 "translate(0,0)")

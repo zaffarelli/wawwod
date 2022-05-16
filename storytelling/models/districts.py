@@ -29,7 +29,7 @@ CLAN_COLORS = {
 class District(models.Model):
     code = models.CharField(max_length=64, default='', unique=True)
     name = models.CharField(max_length=96, default='')
-    sector_name = models.CharField(max_length=96, default='')
+    sector_name = models.CharField(max_length=96, default='', blank=True, null=True)
     d_num = models.PositiveIntegerField(default=1)
     s_num = models.PositiveIntegerField(default=1)
     description = models.TextField(max_length=1024, blank=True, default='')
@@ -37,7 +37,7 @@ class District(models.Model):
     color = ColorField(default='#808080')
     proeminent = models.CharField(max_length=64, default='', blank=True, null=True)
     title = models.CharField(max_length=256, default='', blank=True, null=True)
-
+    status = models.CharField(max_length=64, default='neutral', blank=True, null=True)
     def __str__(self):
         return f'{self.name} [{self.code}]'
 

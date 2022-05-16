@@ -417,8 +417,8 @@ def get_districts(cityname):
             code_s = words[1]
             if code_s == 's01':
                 context['districts'][code_d] = {'code': code_d, 's':{}}
-            context['districts'][code_d]['s'][code_s] = {'code': code_s, 'fill': d.color, 'title': d.title}
+            context['districts'][code_d]['s'][code_s] = {'code': code_s, 'fill': d.color, 'title': d.title, 'status': d.status}
     import json
     x = json.dumps(context, indent=4, sort_keys=True)
-    print(x)
-    return context
+
+    return x

@@ -127,15 +127,15 @@ def update_scene(request, id: None, field: None):
 
 def display_map(request, slug=None):
     from collector.utils.data_collection import get_districts
-    response = {'html': ''}
+    response = {'html': '', 'data': {}}
     if request.is_ajax:
         if not slug:
             slug = 'munich'
             context = get_districts(slug)
-            print(context)
-            template = get_template("storytelling/geojson.html")
-            html = template.render(context)
-            response['html'] = html
+            # print(context)
+            # template = get_template("storytelling/munich.html")
+            # html = template.render(context)
+            response['data'] = context
     return JsonResponse(response)
 
 
