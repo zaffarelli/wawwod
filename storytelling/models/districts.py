@@ -38,6 +38,12 @@ class District(models.Model):
     proeminent = models.CharField(max_length=64, default='', blank=True, null=True)
     title = models.CharField(max_length=256, default='', blank=True, null=True)
     status = models.CharField(max_length=64, default='neutral', blank=True, null=True)
+    population = models.PositiveIntegerField(default=0, blank=True, null=True)
+    camarilla_resources = models.PositiveIntegerField(default=0, blank=True, null=True)
+    camarilla_intelligence = models.PositiveIntegerField(default=0, blank=True, null=True)
+    camarilla_power = models.PositiveIntegerField(default=0, blank=True, null=True)
+    camarilla_leisure = models.PositiveIntegerField(default=0, blank=True, null=True)
+
     def __str__(self):
         return f'{self.name} [{self.code}]'
 
@@ -49,123 +55,81 @@ class District(models.Model):
         jstr = json.dumps(self, default=json_default, sort_keys=True, indent=4)
         return jstr
 
+    def populate(self):
+        from collector.models.creatures import Creature
+        all_denizens = Creature.objects.filter(chronicle='BAV',faction='Camarilla', creature='kindred', district=f'd{self.d_num:02}', condition='OK')
+        self.population = len(all_denizens)
+
 
 # Actions
 
-
-def not_controlled(modeladmin, request, queryset):
-    for creature in queryset:
-        creature.set_proeminent('none')
-        creature.save()
-    short_description = 'Not Controlled'
-
-
-def assamites_controlled(modeladmin, request, queryset):
-    for creature in queryset:
-        creature.set_proeminent('assamites')
-        creature.save()
-    short_description = 'Assamites Controlled'
+def status_camarilla_contested_giovanni(modeladmin, request, queryset):
+    for district in queryset:
+        district.status = 'camarilla-contested-giovanni'
+        district.save()
+    short_description = 'Status: Camarilla Contested Giovanni'
 
 
-def brujah_controlled(modeladmin, request, queryset):
-    for creature in queryset:
-        creature.set_proeminent('brujah')
-        creature.save()
-    short_description = 'Brujah Controlled'
+def status_neutral(modeladmin, request, queryset):
+    for district in queryset:
+        district.status = "neutral"
+        district.save()
+    short_description = 'Status: Neutral'
 
 
-def giovanni_controlled(modeladmin, request, queryset):
-    for creature in queryset:
-        creature.set_proeminent('giovanni')
-        creature.save()
-    short_description = 'Giovanni Controlled'
+def status_gangrel_territory(modeladmin, request, queryset):
+    for district in queryset:
+        district.status = 'gangrel-territory'
+        district.save()
+    short_description = 'Status: Gangrel Territory'
 
 
-def gangrel_controlled(modeladmin, request, queryset):
-    for creature in queryset:
-        creature.set_proeminent('gangrel')
-        creature.save()
-    short_description = 'Gangrel Controlled'
-
-def lasombra_controlled(modeladmin, request, queryset):
-    for creature in queryset:
-        creature.set_proeminent('lasombra')
-        creature.save()
-    short_description = 'Lasombra Controlled'
-
-def malkavian_controlled(modeladmin, request, queryset):
-    for creature in queryset:
-        creature.set_proeminent('malkavian')
-        creature.save()
-    short_description = 'Malkavian Controlled'
+def status_sparse_incursions(modeladmin, request, queryset):
+    for district in queryset:
+        district.status = "sparse-incursions"
+        district.save()
+    short_description = 'Status: Sparse Incursions'
 
 
-def nosferatu_controlled(modeladmin, request, queryset):
-    for creature in queryset:
-        creature.set_proeminent('nosferatu')
-        creature.save()
-    short_description = 'Nosferatu Controlled'
+def status_camarilla_presence(modeladmin, request, queryset):
+    for district in queryset:
+        district.status = 'camarilla-presence'
+        district.save()
+    short_description = 'Status: Camarilla Presence'
 
 
-def ravnos_controlled(modeladmin, request, queryset):
-    for creature in queryset:
-        creature.set_proeminent('ravnos')
-        creature.save()
-    short_description = 'Ravnos Controlled'
+def status_camarilla_controlled(modeladmin, request, queryset):
+    for district in queryset:
+        district.status = 'camarilla-controlled'
+        district.save()
+    short_description = 'Status: Camarilla Controlled'
 
 
-def setite_controlled(modeladmin, request, queryset):
-    for creature in queryset:
-        creature.set_proeminent('setite')
-        creature.save()
-    short_description = 'Setite Controlled'
+def status_camarilla(modeladmin, request, queryset):
+    for district in queryset:
+        district.status = 'camarilla'
+        district.save()
+    short_description = 'Status: Camarilla'
 
 
-def toreador_controlled(modeladmin, request, queryset):
-    for creature in queryset:
-        creature.set_proeminent('toreador')
-        creature.save()
-    short_description = 'Toreador Controlled'
+def repopulate(modeladmin, request, queryset):
+    for district in queryset:
+        district.save()
+    short_description = 'Repopulate'
 
-
-def tzimisce_controlled(modeladmin, request, queryset):
-    for creature in queryset:
-        creature.set_proeminent('tzimisce')
-        creature.save()
-    short_description = 'Tzimisce Controlled'
-
-
-def tremere_controlled(modeladmin, request, queryset):
-    for creature in queryset:
-        creature.set_proeminent('tremere')
-        creature.save()
-    short_description = 'Tremere Controlled'
-
-
-def ventrue_controlled(modeladmin, request, queryset):
-    for creature in queryset:
-        creature.set_proeminent('ventrue')
-        creature.save()
-    short_description = 'Ventrue Controlled'
 
 
 class DistrictAdmin(admin.ModelAdmin):
-    list_display = ['name', 'sector_name', 'proeminent', 'title', 'code', 'city', 'color', 'description']
+    list_display = ['name', 'sector_name', 'proeminent', 'title', 'd_num', 's_num', 'population', 'code', 'city', 'color', 'description']
     ordering = ['code']
     search_fields = ['name', 'description', 'proeminent']
     list_filter = ['city', 'd_num', 'proeminent', 'color']
-    actions = [not_controlled,
-               assamites_controlled,
-               brujah_controlled,
-               gangrel_controlled,
-               giovanni_controlled,
-               lasombra_controlled,
-               malkavian_controlled,
-               nosferatu_controlled,
-               ravnos_controlled,
-               setite_controlled,
-               toreador_controlled,
-               tremere_controlled,
-               tzimisce_controlled,
-               ventrue_controlled
+    actions = [repopulate,
+               status_neutral,
+               status_camarilla,
+               status_camarilla_controlled,
+               status_camarilla_presence,
+               status_gangrel_territory,
+               status_camarilla_contested_giovanni,
+               status_sparse_incursions
                ]

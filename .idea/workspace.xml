@@ -2,31 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c5f4ae22-1e7a-419c-ac9f-80da089b72d4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/collector/static/js/geocity.es6" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storytelling/migrations/0033_district_status.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storytelling/migrations/0034_alter_district_sector_name.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.01dca366facd.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.16d144b7f1b0.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.27ad72522759.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.93c2ec94577c.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.d47161a1819b.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.e5fdc9aa5f9e.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.ee537791619f.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_static/js/geocity.es6" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/collector/migrations/0020_creature_district.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/collector/migrations/0021_alter_creature_adventure.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storytelling/migrations/0035_district_population.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storytelling/migrations/0036_auto_20220517_1110.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/storytelling/geojson/munich_city_districts.geojson" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/storytelling/geojson/nyc_city_districts.geojson" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/static/collector/css/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/collector/css/main.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/static/js/collector.es6" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/js/collector.es6" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/collector/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/models/creatures.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/models/creatures.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/static/js/geocity.es6" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/js/geocity.es6" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/collector/utils/data_collection.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/utils/data_collection.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/wawwod.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/wawwod.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storytelling/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/storytelling/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storytelling/models/cities.py" beforeDir="false" afterPath="$PROJECT_DIR$/storytelling/models/cities.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storytelling/models/districts.py" beforeDir="false" afterPath="$PROJECT_DIR$/storytelling/models/districts.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storytelling/templates/storytelling/geojson.html" beforeDir="false" afterPath="$PROJECT_DIR$/storytelling/templates/storytelling/geojson.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storytelling/templates/storytelling/munich.html" beforeDir="false" afterPath="$PROJECT_DIR$/storytelling/templates/storytelling/munich.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storytelling/views/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/storytelling/views/base.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/story_the choice i never had.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/story_the choice i never had.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod_static/collector/css/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/collector/css/main.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod_static/js/collector.es6" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/js/collector.es6" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod_static/js/kindred_lineage.es6" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/js/kindred_lineage.es6" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storytelling/signals/districts.py" beforeDir="false" afterPath="$PROJECT_DIR$/storytelling/signals/districts.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_static/js/geocity.es6" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/js/geocity.es6" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +105,8 @@
       <workItem from="1652092996742" duration="8806000" />
       <workItem from="1652229043457" duration="22129000" />
       <workItem from="1652433408185" duration="610000" />
-      <workItem from="1652453151474" duration="37632000" />
+      <workItem from="1652453151474" duration="38082000" />
+      <workItem from="1652735471173" duration="7167000" />
     </task>
     <servers />
   </component>

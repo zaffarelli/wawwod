@@ -22,6 +22,8 @@ class City(models.Model):
         return jstr
 
 
+
+
 class CityAdmin(admin.ModelAdmin):
     list_display = ['name']
     ordering = ['name']

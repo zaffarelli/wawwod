@@ -6,5 +6,4 @@ class StorytellingConfig(AppConfig):
     name = 'storytelling'
 
     def ready(self):
-        #import storytelling.signals.creatures
-        pass
+        import storytelling.signals.districts

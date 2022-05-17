@@ -92,13 +92,15 @@ class Creature(models.Model):
     territory = models.CharField(max_length=128, blank=True, default='')
     weakness = models.CharField(max_length=128, blank=True, default='')
 
+    district = models.CharField(max_length=8, blank=True, default='d01')
+
     # Player specific
     notes_on_backgrounds = models.TextField(max_length=2048, default='', blank=True)
     notes_on_meritsflaws = models.TextField(max_length=1024, default='', blank=True)
     notes_on_history = models.TextField(max_length=3072, default='', blank=True)
     notes_on_naturedemeanor = models.TextField(max_length=1024, default='', blank=True)
     notes_on_traits = models.TextField(max_length=2048, default='', blank=True)
-    adventure = models.ForeignKey(Adventure, on_delete=models.SET_NULL, null=True, default=None)
+    adventure = models.ForeignKey(Adventure, on_delete=models.SET_NULL, null=True, default=None, blank=True)
 
     # All
     willpower = models.PositiveIntegerField(default=1)
@@ -1420,11 +1422,11 @@ def randomize_all(modeladmin, request, queryset):
 
 class CreatureAdmin(admin.ModelAdmin):
     list_display = [  # 'domitor',
-        'name', 'rid', 'freebies', 'expectedfreebies', 'sire', 'player', 'family',
+        'name', 'rid', 'freebies', 'expectedfreebies', 'district', 'sire', 'player', 'family',
         'concept', 'group', 'groupspec', 'faction', 'status', 'embrace', 'condition']
     ordering = ['name', 'group', 'creature']
     actions = [randomize_backgrounds, randomize_all, randomize_archetypes, randomize_attributes, randomize_abilities,
                refix, set_male, set_female, push_to_munich, push_to_newyork, push_to_world]
-    list_filter = ['chronicle', 'adventure', 'faction', 'family', 'is_new', 'condition', 'group', 'sire', 'groupspec',
-                   'creature', 'mythic', 'ghost']
+    list_filter = ['chronicle', 'adventure', 'faction', 'family', 'is_new', 'condition', 'group',  'groupspec',
+                   'creature', 'mythic', 'ghost', 'sire']
     search_fields = ['name', 'groupspec']

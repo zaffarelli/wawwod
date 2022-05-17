@@ -19,103 +19,238 @@ class GeoCity {
         ;
         if (me.cityName == "munich") {
             me.dataUrl = "https://gist.githubusercontent.com/p3t3r67x0/f8c1ea64b2862c6eda8771daba4f297b/raw/f35cc5e3994ee4862e5101de107f2aba33e7d658/muenchen_city_districts.geojson";
+
+        }
+        if (me.cityName == "nyc") {
+            me.dataUrl = "https://github.com/dwillis/nyc-maps/blob/master/police_precincts.geojson";
         }
     }
 
-    buildPatterns(){
+    buildPatterns() {
         let me = this;
         let defs = me.svg.append('defs');
         defs.append("pattern")
-            .attr('id',"neutral")
-            .attr('patternUnits',"userSpaceOnUse")
-            .attr('width',10)
-            .attr('height',10)
-            .attr('patternTransform',"rotate(-45)")
-            .style("fill","#666")
+            .attr('id', "neutral")
+            .attr('patternUnits', "userSpaceOnUse")
+            .attr('width', 10)
+            .attr('height', 10)
+            .attr('patternTransform', "rotate(-45)")
+            .style("fill", "#666")
             .append("rect")
-		        .attr("width",10)
-                .attr("height",10)
-                // .attr("transform","translate(0,0)")
-                .style("fill","#888")
+            .attr("width", 10)
+            .attr("height", 10)
+            // .attr("transform","translate(0,0)")
+            .style("fill", "#888")
         ;
         defs.append("pattern")
-            .attr('id',"pure-camarilla")
-            .attr('patternUnits',"userSpaceOnUse")
-            .attr('width',10)
-            .attr('height',10)
-            .attr('patternTransform',"rotate(-45)")
-            .style("fill","#666")
+            .attr('id', "pure-camarilla")
+            .attr('patternUnits', "userSpaceOnUse")
+            .attr('width', 10)
+            .attr('height', 10)
+            .attr('patternTransform', "rotate(-45)")
+            .style("fill", "#666")
             .append("rect")
-		        .attr("width",10)
-                .attr("height",10)
-                // .attr("transform","translate(0,0)")
-                .style("fill","#A22")
+            .attr("width", 10)
+            .attr("height", 10)
+            // .attr("transform","translate(0,0)")
+            .style("fill", "#A22")
         ;
         defs.append("pattern")
-            .attr('id',"camarilla-contested-giovanni")
-            .attr('patternUnits',"userSpaceOnUse")
-            .attr('width',10)
-            .attr('height',10)
-            .attr('patternTransform',"rotate(-45)")
-            .style("fill","#111")
+            .attr('id', "camarilla-controlled")
+            .attr('patternUnits', "userSpaceOnUse")
+            .attr('width', 10)
+            .attr('height', 10)
+            .attr('patternTransform', "rotate(45)")
             .append("rect")
-		        .attr("width",5)
-                .attr("height",10)
-                // .attr("transform","translate(0,0)")
-                .style("fill","#A22")
+            .attr("width", 14)
+            .attr("height", 10)
+            .attr("transform", "translate(-2,0)")
+            .style("fill", "#a22")
+            .style("stroke", "#888")
+            .style("stroke-width", "2")
         ;
+
+        defs.append("pattern")
+            .attr('id', "camarilla-presence")
+            .attr('patternUnits', "userSpaceOnUse")
+            .attr('width', 10)
+            .attr('height', 10)
+            .attr('patternTransform', "rotate(45)")
+            .append("rect")
+            .attr("width", 26)
+            .attr("height", 10)
+            .attr("transform", "translate(-8,0)")
+            .style("fill", "#a22")
+            .style("stroke", "#888")
+            .style("stroke-width", "8")
+        ;
+        defs.append("pattern")
+            .attr('id', "camarilla-contested-giovanni")
+            .attr('patternUnits', "userSpaceOnUse")
+            .attr('width', 10)
+            .attr('height', 10)
+            .attr('patternTransform', "rotate(-45)")
+            .append("rect")
+            .attr("width", 14)
+            .attr("height", 10)
+            .attr("transform", "translate(-2,0)")
+            .style("fill", "#a22")
+            .style("stroke", "#111")
+            .style("stroke-width", "2")
+        ;
+        defs.append("pattern")
+            .attr('id', "sparse-intrusions")
+            .attr('patternUnits', "userSpaceOnUse")
+            .attr('width', 10)
+            .attr('height', 10)
+            .attr('patternTransform', "rotate(-45)")
+            .append("rect")
+            .attr("width", 10)
+            .attr("height", 14)
+            .attr("transform", "translate(0,-2)")
+            .style("fill", "#888")
+            .style("stroke", "#666")
+            .style("stroke-width", 2)
+        ;
+
+        defs.append("pattern")
+            .attr('id', "gangrel-territory")
+            .attr('patternUnits', "userSpaceOnUse")
+            .attr('width', 10)
+            .attr('height', 10)
+            .attr('patternTransform', "rotate(45)")
+            .append("rect")
+            .attr("width", 22)
+            .attr("height", 10)
+            .attr("transform", "translate(-6,0)")
+            .style("fill", "#141")
+            .style("stroke", "#a22")
+            .style("stroke-width", "6")
+        ;
+
+    }
+
+    drawLegend(){
+        let me = this;
+        let legend_data = [
+            {'pattern':'pure-camarilla', 'text': 'Camarilla'},
+            {'pattern':'camarilla-controlled', 'text': 'Controllé par la Camarilla'},
+            {'pattern':'camarilla-presence', 'text': 'Présence de la Camarilla'},
+            {'pattern':'neutral', 'text': 'Non contesté'},
+            {'pattern':'gangrel-territory', 'text': 'Territoire Gangrel'},
+            {'pattern':'camarilla-contested-giovanni', 'text': "Incursions notables"},
+            {'pattern':'sparse-intrusions', 'text': "Légères incursions"}
+        ]
+        let legend = me.svg.append("g")
+                .selectAll(".legend_item")
+                .data(legend_data)
+            ;
+            let legend_in = legend.enter()
+            let item = legend_in.append("g")
+                .attr("class",'legend_item');
+            item.append("rect")
+                .attr("x", me.width/64)
+                .attr("y", function(d,i){
+                    return i*30;
+                })
+                .attr('height', 20)
+                .attr('width', 30)
+                .style('fill',function(d,i){
+                    return 'url(#'+d.pattern+')'
+                })
+                .style('stroke', '#ccc')
+                .style('stroke-width', '0.5pt')
+            ;
+            item.append("text")
+                .attr("x", me.width/64+50)
+                .attr("y", function(d,i){
+                    return i*30;
+                })
+                .attr("dy", 15)
+                .style('fill', '#fff')
+                .style('stroke', '#888')
+                .style('stroke-width', '0.5pt')
+                .style('font-family', 'Roboto')
+                .text(function(d,i){
+                    return d.text;
+                })
+            ;
     }
 
 
     perform() {
         let me = this;
         me.buildPatterns();
+        me.drawLegend();
         d3.json(me.dataUrl).then(function (data) {
             _.each(data.features, function (e, i) {
                 e.id = i + 1;
-                e.status = me.wawwod_data["d"+String(i+1).padStart(2,'0')]['s']['s01'].status
+                e.status = me.wawwod_data["d" + String(i + 1).padStart(2, '0')]['s']['s01'].status
             });
-            console.log(me.wawwod_data)
             me.projection = d3.geoAlbers()
                 .rotate([0, 0]);
             me.projection.fitSize([me.width, me.height], data)
             let districts = me.svg.append("g")
+                .attr('class','districts')
                 .selectAll("path")
                 .data(data.features)
             ;
             let district_in = districts.enter()
-            let item = district_in.append("g");
+            let item = district_in.append("g")
+                .attr('class','district_item');
             item.append("path")
-                .attr("id", function (e,i) {
+                .attr("id", function (e, i) {
                     return "path_" + e.id;
                 })
                 .attr("d", d3.geoPath().projection(me.projection))
-                .style("fill", function(e,i){
-                    return "url(#"+e.status+")"
+                .style("fill", function (e, i) {
+                    return "url(#" + e.status + ")"
                 })
                 .style("stroke", "#ddd")
 
                 .on('mouseover', function (h, e) {
                     let label = "District " + e.id + ": " + e.properties.name;
                     d3.select("#infotext").text(label);
-                    d3.select("#path_" + e.id).style("fill", "#a88");
+                    d3.select("#path_" + e.id).style("fill", "#fc4");
                 })
                 .on('mouseout', function (h, e) {
-                    d3.select("#path_" + e.id).style("fill", "url(#"+e.status+")");
+                      d3.select("#infotext").text("");
+                    d3.select("#path_" + e.id).style("fill", "url(#" + e.status + ")");
+                })
+            ;
+            item.append('text')
+                .attr("x", function (e, i) {
+                    return d3.geoPath().projection(me.projection).centroid(e)[0];
+                })
+                .attr("y", function (e, i) {
+                    return d3.geoPath().projection(me.projection).centroid(e)[1];
+                })
+                .attr('dx',10)
+                .attr('dy',20)
+                .style("font-family", "Roboto")
+                .style("text-anchor", "middle")
+                .style("font-size", "16pt")
+                .style("font-weight", "bold")
+                .style("stroke", "#888")
+                .style("stroke-width", "0.25pt")
+                .style("fill", "#000")
+                .text(function (e, i) {
+                    return e.id;
+
                 })
             ;
             let mastertext = me.svg.append('text')
                 .attr("id", "mastertext")
                 .attr("x", function (e, i) {
-                    return me.width / 16;
+                    return me.width / 8;
                 })
                 .attr("y", function (e, i) {
-                    return 9*me.height/10 - 4;
+                    return 9 * me.height / 10 - 4;
                 })
-                .attr("dy", -24)
+                .attr("dy", -48)
 
                 .style("font-family", "Roboto")
-                .style("text-anchor", "start")
+                .style("text-anchor", "middle")
                 .style("font-size", "20pt")
                 .style("stroke", "#888")
                 .style("stroke-width", "0.25")
@@ -124,16 +259,36 @@ class GeoCity {
                     return "Munich by Night";
                 })
             ;
+            let subtext = me.svg.append('text')
+                .attr("id", "mastertext")
+                .attr("x", function (e, i) {
+                    return me.width / 8;
+                })
+                .attr("y", function (e, i) {
+                    return 9 * me.height / 10 - 4;
+                })
+                .attr("dy", -24)
+
+                .style("font-family", "Roboto")
+                .style("text-anchor", "middle")
+                .style("font-size", "16pt")
+                .style("stroke", "#888")
+                .style("stroke-width", "0.25")
+                .style("fill", "#fff")
+                .text(function (e, i) {
+                    return "Camarilla Territories";
+                })
+            ;
             let infotext = me.svg.append('text')
                 .attr("id", "infotext")
                 .attr("x", function (e, i) {
-                    return me.width / 16;
+                    return me.width / 8;
                 })
                 .attr("y", function (e, i) {
-                    return 9*me.height/10 - 4;
+                    return 9 * me.height / 10 - 4;
                 })
                 .style("font-family", "Roboto")
-                .style("text-anchor", "start")
+                .style("text-anchor", "middle")
                 .style("font-size", "12pt")
                 .style("stroke", "#888")
                 .style("stroke-width", "0.25")
@@ -142,6 +297,8 @@ class GeoCity {
                     return "";
                 })
             ;
+
         })
+
     }
 }

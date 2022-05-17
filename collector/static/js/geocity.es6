@@ -185,7 +185,9 @@ class GeoCity {
         d3.json(me.dataUrl).then(function (data) {
             _.each(data.features, function (e, i) {
                 e.id = i + 1;
-                e.status = me.wawwod_data["d" + String(i + 1).padStart(2, '0')]['s']['s01'].status
+                let entry = me.wawwod_data["d" + String(i + 1).padStart(2, '0')]['s']['s01'];
+                e.population = entry.population;
+                e.status = entry.status
             });
             me.projection = d3.geoAlbers()
                 .rotate([0, 0]);
@@ -211,12 +213,28 @@ class GeoCity {
                 .on('mouseover', function (h, e) {
                     let label = "District " + e.id + ": " + e.properties.name;
                     d3.select("#infotext").text(label);
-                    d3.select("#path_" + e.id).style("fill", "#fc4");
+                    d3.select("#path_" + e.id).style("fill", "#863");
                 })
                 .on('mouseout', function (h, e) {
                       d3.select("#infotext").text("");
                     d3.select("#path_" + e.id).style("fill", "url(#" + e.status + ")");
                 })
+            ;
+            item.append('rect')
+                .attr("x", function (e, i) {
+                    return d3.geoPath().projection(me.projection).centroid(e)[0]-10;
+                })
+                .attr("y", function (e, i) {
+                    return d3.geoPath().projection(me.projection).centroid(e)[1]-10;
+                })
+                .attr('width',40)
+                .attr('height',30)
+                .attr('rx',3)
+                .attr('ry',3)
+                .style("stroke", "#ccc")
+                .style("stroke-width", "1pt")
+                .style("fill", "#311")
+
             ;
             item.append('text')
                 .attr("x", function (e, i) {
@@ -226,19 +244,20 @@ class GeoCity {
                     return d3.geoPath().projection(me.projection).centroid(e)[1];
                 })
                 .attr('dx',10)
-                .attr('dy',20)
+                .attr('dy',10)
                 .style("font-family", "Roboto")
                 .style("text-anchor", "middle")
-                .style("font-size", "16pt")
+                .style("font-size", "10pt")
                 .style("font-weight", "bold")
                 .style("stroke", "#888")
                 .style("stroke-width", "0.25pt")
-                .style("fill", "#000")
+                .style("fill", "#fff")
                 .text(function (e, i) {
                     return e.id;
 
                 })
             ;
+
             let mastertext = me.svg.append('text')
                 .attr("id", "mastertext")
                 .attr("x", function (e, i) {
