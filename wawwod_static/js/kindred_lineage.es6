@@ -56,7 +56,6 @@ class KindredLineage {
         });
     }
 
-
     insertNode(x) {
         let me = this;
         let r = x.enter().append("g")
@@ -322,14 +321,17 @@ class KindredLineage {
         d3.select(me.parent).selectAll("svg").remove();
         let pwidth = d3.select(me.parent).style("width");
         let pheight = d3.select(me.parent).style("height");
-        console.log(me.parent+" "+pwidth+" "+pheight)
+        let pox = -(parseInt(pwidth)/2);
+        let poy = -(parseInt(pheight)/2);
+        console.log(me.parent+" "+pwidth+" "+pheight+" "+pox+" "+poy)
         me.svg = d3.select(me.parent).append("svg")
             .attr('class', 'lineage')
             .attr("width", pwidth)
             .attr("height", pheight);
         me.g = me.svg.append("g")
-            .attr("transform",
-                "translate(0,0)")
+            .attr("viewBox", pox+"  "+poy+ " " + pwidth + " " + pheight)
+            .attr("transform",             "translate(0,0)")
+            //.attr("transform", "translate(" + me.width / 2 + "," + me.height / 2 + ")")
         ;
 
 
@@ -364,7 +366,7 @@ class KindredLineage {
     zoomActivate() {
         let me = this;
         let zoom = d3.zoom()
-            .scaleExtent([0.125, 4]) // I don't want a zoom, i want panning :)
+            .scaleExtent([0.125, 4])
             .on('zoom', function (event) {
                 me.g.attr('transform', event.transform)
             });

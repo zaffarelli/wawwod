@@ -67,9 +67,11 @@
         <ul class="drop_down">
             {% include "collector/page/chronicles.html" with c=chronicles%}
             <HR/>
-            <li class="display" action="storytelling">Storyboard</li>
-            <li class="display" action="pdf_story">PDF</li>
-            <li class="display" action="map" param="munich">Munich</li>
+            <li class="display" action="storytelling"><i class="fa fa-comment"></i> Storyboard</li>
+            <li class="display" action="pdf_story"><i class="fa fa-file-pdf"></i> PDF</li>
+            {% for ci in cities  %}
+            <li class="display" action="map" param="{{ ci.tag }}"><i class="fa fa-map"></i> City Map: {{ ci.name}}</li>
+            {% endfor %}
         </ul>
     </li>
     <li class="pull_down">
@@ -126,12 +128,12 @@
 {% endblock javascript %}
 
 <div id="custom_js">
-<script>
-    _.defer(function () {
-        let co = new WawwodCollector()
-        co.perform();
-    });
-</script>
+{#<script>#}
+{#    _.defer(function () {#}
+{#        let co = new WawwodCollector()#}
+{#        co.perform();#}
+{#    });#}
+{#</script>#}
 </div>
 </body>
 </html>

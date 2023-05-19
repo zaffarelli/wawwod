@@ -1,6 +1,6 @@
 {% load static %}
 {% load storytelling_filters %}
-<h3>{{c.name|safe}} (<a name="{{c.rid}}">{{c.rid}}</a>)</h3>
+<a id="{{c.rid}}"><h3>{{c.name|safe}}</h3></a>
 <div class="roster">
 {{c.roster_base|safe}}
 <!--table>
@@ -25,5 +25,8 @@
 {{c.roster_skills|safe}}
 {{c.roster_knowledges|safe}}
 {{c.roster_end|safe}}
+{% if c.equipment %}
+    {{c.equipment|safe}}
+{% endif  %}
 {#{{c.roster_shortcuts|safe}}#}
 </div>

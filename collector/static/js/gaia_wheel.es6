@@ -15,17 +15,16 @@ class GaiaWheel {
     init() {
         let me = this;
         me.global_rotation = 0;
-        me.sector_size = 15;
+        me.sector_size = 30;
         me.sector_data = []
         me.starts = []
         _.forEach(me.data, function (v, k) {
-            me.sector_data.push(v);
-            me.starts.push(v['start']*me.sector_size);
+            if (v['value'] > 0) { // Only deal with sectors with at least 1 creature
+                me.sector_data.push(v);
+                me.starts.push(v['start']);
+            }
         });
-        me.weaver = me.data[0]['collection'];
-        me.wyrm = me.data[1]['collection'];
-        me.wyld = me.data[2]['collection'];
-
+        console.log(me.sector_data)
         me.boxWidth = 7;
         me.boxHeight = 4;
         let re = new RegExp("\d+");
@@ -43,101 +42,28 @@ class GaiaWheel {
     watermark() {
         let me = this;
         d3.select(me.parent).selectAll("svg").remove();
+        let pwidth = d3.select(me.parent).style("width");
+        let pheight = d3.select(me.parent).style("height");
         me.svg = d3.select(me.parent).append("svg")
-            //.attr("viewBox", "0 0 " + me.width + " " + me.height)
-            .attr("width", me.width)
-            .attr("height", me.height)
+            .attr("viewBox", (-me.width / 2) + "  " + (-me.height / 2) + " " + me.width + " " + me.height)
+            .attr("class", "gaia_wheel")
+            .attr("width", pwidth)
+            .attr("height", pheight)
+        //.attr("transform","translate(" + (me.width / 2) + "," + (me.height / 2) + ")")
         ;
 
-        me.back = me.svg
-            .append("g")
-            .attr("transform", "translate(" + me.width / 2 + "," + me.height / 2 + ") rotate(" + (me.global_rotation) + ")")
+        me.g = me.svg.append("g")
+            .attr("transform", "rotate(" + (me.global_rotation) + ")")
         ;
-
+        me.back = me.g
         me.tooltip = d3.select("body").append("div")
-            .attr("class", "tooltip")
-            .style("opacity", 0.5);
-        me.draw_sectors();
-        let radial_lines = me.svg.append("g")
-            .attr("class", "radiuses")
-            .selectAll("g")
-            .data(d3.range(0, 360, 5))
-        ;
-        radial_lines.enter()
-            .append("g")
-            .attr("transform", function (d) {
-                return "translate(" + (me.width / 2) + "," + (me.height / 2) + ") rotate(" + (d-90) + ")";
-            })
-            .append("line")
-            .style("stroke", function (d) {
-                let res = "transparent";//me.scales_stroke;
-                //console.log(me.starts)
-                if (me.starts.includes(d)) {
-                    res = me.scales_stroke_special;
-                }
-                if (d ==0){
-                    res = "#a99";
-                }
-                return res;
-            })
-            .style("stroke-dasharray", function (d) {
-                let res = me.base_dash;
-                if (me.starts.includes(d)) {
-                    res = "20 5";
-                }
-                return res;
-            })
-            .style("stroke-width", function (d) {
-                let res = "0.25pt";
-                if (me.starts.includes(d)) {
-                    res = "1pt";
-                }
-                return res;
-            })
-            .attr("x1", me.radiused(0))
-            .attr("x2", me.radiused(me.max_gauge))
-        ;
-        radial_lines.exit()
-            .remove()
+            .attr("class", "tooltip hidden")
         ;
 
-        me.inner_circles = me.back.append("g")
-            .attr("class", "angulars")
-            .selectAll("g")
-            .data(d3.range(0, me.max_gauge + 1, 1));
-        me.inner_circles.enter()
-            .append('circle')
-            .attr("cx", 0)
-            .attr("cy", 0)
-            .attr("r", function (d) {
-                return me.radiused(d)
-            })
-            .style("fill", 'transparent')
-            .style("stroke", function (d) {
-                let res = me.scales_stroke;
-                if (d % 5 == 0) {
-                    res = me.scales_stroke_special;
-                }
-                return res;
-            })
-            .style("stroke-dasharray", function (d) {
-                let res = me.base_dash;
-                if (d % 5 == 0) {
-                    res = '2 2';
-                }
-                return res;
-            })
-            .style("stroke-width", function (d) {
-                let res = '0.5pt';
-                if (d % 5 == 0) {
-                    res = '1pt';
-                }
-                return res;
-            })
-        ;
-        me.inner_circles.exit()
-            .remove()
-        ;
+        me.draw_sectors();
+        //me.draw_radials();
+        me.draw_circles();
+
 
         me.cross = me.back.append('path')
             .attr("d", "M 0 10 v -20 M 10 0 h -20 Z")
@@ -146,7 +72,8 @@ class GaiaWheel {
             .style("stroke-width", '5pt')
             .on("click", function (e) {
                 let x = 10;
-                if (d3.event.ctrlKey) {
+                // console.log("Cross click")
+                if (e.ctrlKey) {
                     me.global_rotation += x;
                 } else {
                     me.global_rotation -= x;
@@ -157,62 +84,86 @@ class GaiaWheel {
     }
 
 
-    display_branch(angle, arr, ty, total, span) {
+    display_poles(angle, arr, ty, total, span, grandtotal) {
         let me = this;
+        let pos = 0
+        let coords = []
         let poles = {}
         _.forEach(arr, function (d, idx) {
-            d.order = idx;
-            d.angular = (((d.order + 1) * span / (total + 1)) + angle)  * me.sector_size -90 ;
-            d.radial = me.radiused(d.display_gauge);
-            d.x = Math.cos((d.angular) * Math.PI / 180) * d.radial;
-            d.y = Math.sin((d.angular) * Math.PI / 180) * d.radial;
             if (d.display_pole != '') {
-                if (poles[d.display_pole]) {
+                if (poles[d.display_pole]) { // Cumulate on actual pole
+                    d.order = d.index;
+                    coords = me.polar_to_orthographic(d.index, d.display_gauge, span, total, angle, grandtotal);
+
+                    // console.log(coords)
                     poles[d.display_pole]['count'] += 1;
                     poles[d.display_pole]['list'].push({
                         'name': d.name,
-                        'x': d.x,
-                        'y': d.y,
-                        'angular': d.angular,
-                        'radial': d.radial,
-                        'display_gauge': d.display_gauge
+                        'rid': d.rid,
+                        'creature': d.creature,
+                        'order': d.order,
+                        'index': d.index,
+                        'x': coords[0],
+                        'y': coords[1],
+                        'angular': coords[2],
+                        'radial': coords[3],
+                        'display_gauge': coords[4],
+                        'data': d
                     });
-                } else {
+
+                } else { // New pole
+                    d.order = d.index;
+                    pos = 0
+                    coords = me.polar_to_orthographic(d.index, d.display_gauge, span, total, angle, grandtotal);
+
                     poles[d.display_pole] = {
                         'count': 1,
                         'list': [{
                             'name': d.name,
-                            'x': d.x,
-                            'y': d.y,
-                            'angular': d.angular,
-                            'radial': d.radial,
-                            'display_gauge': d.display_gauge
+                            'rid': d.rid,
+                            'creature': d.creature,
+                            'order': d.order,
+                            'index': d.index,
+                            'x': coords[0],
+                            'y': coords[1],
+                            'angular': coords[2],
+                            'radial': coords[3],
+                            'display_gauge': coords[4],
+                            'data': d
                         }]
                     };
                 }
+
             }
         });
-        //console.log(poles);
+
         let all_poles = []
         let links = [];
+        let cnt = 0;
         for (let pole in poles) {
             let cx = 0;
             let cy = 0;
-            let cnt = poles[pole]['list'].length;
+            cnt = poles[pole]['list'].length;
             poles[pole]['list'].forEach(function (v, k) {
-                cx += v.x + Math.cos((v.angular) * Math.PI / 180) * 50;
-                cy += v.y + Math.sin((v.angular) * Math.PI / 180) * 50;
+                if (v['creature'] != 'ghoul') {
+                    cx += v.x + Math.cos((v.angular) * Math.PI / 180) * 50;
+                    cy += v.y + Math.sin((v.angular) * Math.PI / 180) * 50;
+                }else{
+                    cnt -= 1
+                }
             });
 
             poles[pole]['center'] = {'x': Math.round(cx / cnt), 'y': Math.round(cy / cnt)};
             all_poles.push({'name': pole, 'x': Math.round(cx / cnt), 'y': Math.round(cy / cnt)})
+
         }
         for (let pole in poles) {
-            let first = poles[pole]['list'][0];
-            let previous = first;
             let center = poles[pole]['center'];
             poles[pole]['list'].forEach(function (v, k) {
-                links.push({'x1': v.x, 'y1': v.y, 'x2': center.x, 'y2': center.y})
+                if (v['creature'] != 'ghoul') {
+                    console.log(v['creature']);
+                    links.push({'x1': v.x, 'y1': v.y, 'x2': center.x, 'y2': center.y})
+                }
             });
         }
         let pole_centers = me.back.selectAll(".pole_center_" + ty)
@@ -262,6 +213,24 @@ class GaiaWheel {
             .attr('opacity', 0.5)
         ;
 
+    }
+
+    polar_to_orthographic(idx, pow, span, total, angle, grandtotal) {
+        let me = this;
+        let angular = (((idx + angle + 0.5) / total) * (total / grandtotal) * 360) - 90;
+        let radial = me.radiused(pow);
+        let coords = []
+        coords[0] = Math.cos((angular) * Math.PI / 180) * radial;
+        coords[1] = Math.sin((angular) * Math.PI / 180) * radial;
+        coords[2] = angular
+        coords[3] = radial
+        coords[4] = pow
+        return coords
+    } //
+
+    display_branch(angle, arr, ty, total, span, grandtotal) {
+        let me = this;
+        let coords = []
 
         let nodes = me.back.selectAll("." + ty)
             .data(arr)
@@ -270,11 +239,12 @@ class GaiaWheel {
             .append("g")
             .attr("transform", function (d) {
                 let trans = "";
-                trans += "translate(" + d.x + "," + d.y + ") ";
+                coords = me.polar_to_orthographic(d.index, d.display_gauge, span, total, angle, grandtotal);
+                trans += "translate(" + coords[0] + "," + coords[1] + ") ";
                 return trans;
             })
             .attr("class", "creature_view " + ty)
-            .attr("id", function (e, d) {
+            .attr("id", function (d) {
                 return d.id;
             })
             .attr("character", function (d) {
@@ -283,7 +253,7 @@ class GaiaWheel {
             .attr("creature", function (d) {
                 return d.creature;
             })
-            .on("mouseover", function (e,d) {
+            .on("mouseover", function (e, d) {
                 let breeds = ['Homid', 'Metis', 'Lupus'];
                 let auspices = ['Ragabash', 'Theurge', 'Philodox', 'Galliard', 'Ahroun'];
                 let str = ''
@@ -294,9 +264,9 @@ class GaiaWheel {
                 if (d.faction) {
                     str += "<br/>" + d.faction + "";
                 }
-                str += "<br/>" + d.creature + "";
+                str += " " + d.creature + "";
                 if (d.position) {
-                    str += "<br/>" + d.position + "";
+                    str += " " + d.position + "";
                 }
 
                 if (d.creature == 'garou') {
@@ -304,34 +274,34 @@ class GaiaWheel {
                     str += " " + breeds[d.breed];
                     str += " " + auspices[d.auspice];
                     str += " " + d.family + "</i>";
+                } else if (d.creature == 'ghoul') {
+                    str += "<br/>" + d.group;
                 } else if (d.creature == 'kindred') {
                     str += "<br/>" + d.generation + "th generation " + d.family + " ";
-                    let arr = d.ghouls.split(',')
+                    let arrg = d.ghouls.split(',')
                     if (d.ghouls != '') {
                         str += "<br/><u>Ghouls Retainers:</u>";
                         str += "<ol>";
-                        _.forEach(arr, function (v) {
+                        _.forEach(arrg, function (v) {
                             str += "<li>" + v + "</li>";
                         })
                         str += "</ol>";
                     }
 
                 }
-                //str += "<br/> (" + d.display_pole+ ", " + d.display_gauge + ")";
-
+                $(".tooltip").removeClass("hidden");
                 me.tooltip.transition()
-                    .duration(200)
+                    .duration(100)
                     .style("opacity", 1.0);
-                me.tooltip.html(str)
-                    .style("left", Math.round(me.width / 2 - 75) + "px")
-                    .style("top", Math.round(me.height / 2 - 30) + "px");
+                me.tooltip.html(str);
             })
-            .on("mouseout", function (e,d) {
+            .on("mouseout", function (e, d) {
                 me.tooltip.transition()
-                    .duration(1000)
+                    .duration(500)
                     .style("opacity", 0);
+                $(".tooltip").removeClass("hidden");
             })
-            .on("click", function (e,d) {
+            .on("click", function (e, d) {
                 if (e.ctrlKey) {
                     $.ajax({
                         url: 'ajax/view/creature/' + d.rid + '/',
@@ -377,11 +347,12 @@ class GaiaWheel {
             .style("stroke", '#888')
             .style("stroke-width", '0.5pt')
             .text(function (d) {
-                let name = '';
+                let name = "";//d.name;
                 let words = d.name.split(' ');
                 words.forEach(function (word, k) {
                     name += word[0];
                 })
+                // name += " "+d.index
                 let x = (d.condition == "DEAD" ? "(D)" : (d.condition == "MISSING" ? "(M)" : ""))
                 return name + x;//+" ("+d.order+" / "+(Math.round(d.angular*100)/100)+")";
             })
@@ -407,17 +378,52 @@ class GaiaWheel {
             .remove();
     }
 
+    draw_circles() {
+        let me = this;
+        me.inner_circles = me.back.append("g")
+            .attr("class", "angulars")
+            .selectAll("g")
+            .data(d3.range(0, me.max_gauge + 1, 1));
+        me.inner_circles.enter()
+            .append('circle')
+            .attr("cx", 0)
+            .attr("cy", 0)
+            .attr("r", function (d) {
+                return me.radiused(d)
+            })
+            .style("fill", 'transparent')
+            .style("stroke", function (d) {
+                let res = me.scales_stroke;
+                if (d % 5 == 0) {
+                    res = me.scales_stroke_special;
+                }
+                return res;
+            })
+            .style("stroke-dasharray", function (d) {
+                let res = me.base_dash;
+                if (d % 5 == 0) {
+                    res = '2 2';
+                }
+                return res;
+            })
+            .style("stroke-width", function (d) {
+                let res = '0.5pt';
+                if (d % 5 == 0) {
+                    res = '1pt';
+                }
+                return res;
+            })
+        ;
+        me.inner_circles.exit()
+            .remove()
+        ;
+    }
+
+
     draw_sectors() {
         let me = this;
-        // me.position = me.radius * 0.65;
-        let sects = me.sector_data; //[{ 'name':'Wyrm','value':3, 'color':"#A22"}, { 'name':'Wyld','value':6, 'color':"#2A2"}, {'name':'Weaver', 'value':3, "color": "#22A"}];
-        let color = d3.scaleOrdinal().range(d3.schemeSet2);
-
         let pie = d3.pie()
             .sort(null)
-            .sortValues(null)
-            // .startAngle(90*Math.PI/180)
-            // .endAngle(-270*Math.PI/180)
             .value(function (d) {
                 return d.value;
             })
@@ -429,7 +435,7 @@ class GaiaWheel {
         let sectors = me.back.append("g")
             .attr("class", 'sectors')
             .selectAll(".sectors")
-            .data(pie(sects));
+            .data(pie(me.sector_data));
         let sector_in = sectors.enter()
             .append("g")
             .attr("class", "sector")
@@ -440,21 +446,31 @@ class GaiaWheel {
             .style("fill", function (d) {
                 return d.data.color;
             })
-            .attr("opacity", "0.05")
+            .style("stroke", "#888")
+            .attr("fill-opacity", "0.05")
+            .attr("stroke-opacity", "0.5")
         ;
         sector_in.append("text")
             .attr('transform', function (d) {
                 return "translate(" + sector_arc.centroid(d) + ")";
             })
             .attr('text-anchor', "middle")
-            .attr('font-size', "30pt")
-            .attr('font-family',function(d){ return  d.data.font; })
+            .attr('font-size', "20pt")
+            .attr('font-family', function (d) {
+                return d.data.font;
+            })
             .style("fill", "#CCC")
             .style("stroke", "#EEE")
             .text(function (d) {
                 return d.data.name.charAt(0).toUpperCase() + d.data.name.slice(1);
+                //return d.data.value+"/"+d.data.total;
             })
-            .attr("opacity", "0.3")
+            .attr("opacity", function (d) {
+                if (d.value == 0) {
+                    return "0.0"
+                }
+                return "0.3"
+            })
         ;
         let sector_out = sectors.exit();
         sector_out.remove();
@@ -463,24 +479,22 @@ class GaiaWheel {
 
     update() {
         let me = this;
-        // me.display_branch(0, me.weaver, "weaver", me.weaver.length, me.sector_size *4);
-        // me.display_branch(4, me.wyrm, "wyrm", me.wyrm.length, me.sector_size *5);
-        // me.display_branch(9, me.wyld, "wyld", me.wyld.length, me.sector_size * 3);
         _.forEach(me.sector_data, function (v, k) {
-            me.display_branch(v.start, v.collection, v.name, v.collection.length, v.value);
+            // console.log(v);
+            me.display_branch(v.start, v.collection, v.name, v.collection.length, v.value, v.total);
+            me.display_poles(v.start, v.collection, v.name, v.collection.length, v.value, v.total);
         })
     }
 
     zoomActivate() {
         let me = this;
         let zoom = d3.zoom()
-            .scaleExtent([0.25, 4]) // I don't want a zoom, i want panning :)
+            .scaleExtent([0.125, 8])
             .on('zoom', function (event) {
-                me.svg.attr('transform', event.transform);
+                me.g.attr('transform', event.transform);
             });
-        me.back.call(zoom);
+        me.svg.call(zoom);
     }
-
 
     perform() {
         let me = this;

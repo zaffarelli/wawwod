@@ -59,6 +59,7 @@ class WawwodSheet {
     init() {
         let me = this;
         me.debug = false;
+        me.blank = false;
         me.page = 0;
         me.width = parseInt($(me.parent).css("width"), 10) * 0.75;
         me.height = me.width * 1.4;
@@ -281,6 +282,9 @@ class WawwodSheet {
             .text(function () {
                 return name.charAt(0).toUpperCase() + name.slice(1);
             })
+        if (me.blank) {
+            value = 0;
+        }
         let max = me.stat_max;
         if (value > me.stat_max) {
             max = me.stat_max * 2;
@@ -375,6 +379,10 @@ class WawwodSheet {
             .style("stroke-dasharray", '2 7')
         ;
 
+        if (me.blank) {
+            value = "";
+        }
+
         item.append('text')
             .attr("x", ox)
             .attr("y", oy)
@@ -466,6 +474,10 @@ class WawwodSheet {
         if (automax) {
             tempmax = (Math.round(value / 10) + 1) * 10;
             lines = tempmax / 10;
+        }
+
+        if (me.blank) {
+            value = 0;
         }
 
         let dots = item.append('g')
@@ -578,10 +590,16 @@ class WawwodSheet {
         } else {
             oy += 1.5 * me.stepy;
         }
-        me.title('Physical (' + me.data['total_physical'] + ')', ox + me.stepx * 5, oy, me.character);
-        me.title('Social (' + me.data['total_social'] + ')', ox + me.stepx * 12, oy, me.character);
-        me.title('Mental (' + me.data['total_mental'] + ')', ox + me.stepx * 19, oy, me.character);
 
+        if (me.blank) {
+            me.title('Physical (  )', ox + me.stepx * 5, oy, me.character);
+            me.title('Social (  )', ox + me.stepx * 12, oy, me.character);
+            me.title('Mental (  )', ox + me.stepx * 19, oy, me.character);
+        } else {
+            me.title('Physical (' + me.data['total_physical'] + ')', ox + me.stepx * 5, oy, me.character);
+            me.title('Social (' + me.data['total_social'] + ')', ox + me.stepx * 12, oy, me.character);
+            me.title('Mental (' + me.data['total_mental'] + ')', ox + me.stepx * 19, oy, me.character);
+        }
         oy += 0.5 * me.stepy;
         ox = 2 * me.stepx;
         [0, 1, 2, 3, 4, 5, 6, 7, 8].forEach(function (d) {
@@ -598,10 +616,15 @@ class WawwodSheet {
         let oy = basey;
         let stat = '';
 
-        me.title('Talents (' + me.data['total_talents'] + ')', ox + me.stepx * 5, oy, me.character);
-        me.title('Skills (' + me.data['total_skills'] + ')', ox + me.stepx * 12, oy, me.character);
-        me.title('Knowledges (' + me.data['total_knowledges'] + ')', ox + me.stepx * 19, oy, me.character);
-
+        if (me.blank) {
+            me.title('Talents (  )', ox + me.stepx * 5, oy, me.character);
+            me.title('Skills (  )', ox + me.stepx * 12, oy, me.character);
+            me.title('Knowledges (  )', ox + me.stepx * 19, oy, me.character);
+        } else {
+            me.title('Talents (' + me.data['total_talents'] + ')', ox + me.stepx * 5, oy, me.character);
+            me.title('Skills (' + me.data['total_skills'] + ')', ox + me.stepx * 12, oy, me.character);
+            me.title('Knowledges (' + me.data['total_knowledges'] + ')', ox + me.stepx * 19, oy, me.character);
+        }
         oy += 0.5 * me.stepy;
 
         stat = 'talent';
@@ -630,12 +653,21 @@ class WawwodSheet {
         let oy = basey;
         let stat = '';
 
-        me.title('Backgrounds (' + me.data['total_backgrounds'] + ')', ox + me.stepx * 5, oy, me.character);
+        if (me.blank) {
+            me.title('Backgrounds (  )', ox + me.stepx * 5, oy, me.character);
+
+        } else {
+            me.title('Backgrounds (' + me.data['total_backgrounds'] + ')', ox + me.stepx * 5, oy, me.character);
+        }
         if (me.data['creature'] == 'garou') {
             me.title('Gifts (' + me.data['total_traits'] + ')', ox + me.stepx * 12, oy, me.character);
 
         } else if (me.data['creature'] == 'kindred') {
-            me.title('Disciplines (' + me.data['total_traits'] + ')', ox + me.stepx * 12, oy, me.character);
+            if (me.blank) {
+                me.title('Disciplines (  )', ox + me.stepx * 12, oy, me.character);
+            } else {
+                me.title('Disciplines (' + me.data['total_traits'] + ')', ox + me.stepx * 12, oy, me.character);
+            }
             me.title('Virtues', ox + me.stepx * 19, oy, me.character);
 
         } else {
@@ -853,15 +885,20 @@ class WawwodSheet {
         me.config['specialities'].forEach(function (d, idx) {
             let x = ox + me.stepx * 2;
             let y = oy + 0.5 * me.stepy * (idx);
-            me.statText(d, '', x, y, stat, stat + idx, me.character);
+            if (me.blank) {
+            } else {
+                me.statText(d, '', x, y, stat, stat + idx, me.character);
+            }
         });
         stat = 'shortcuts';
         me.config['shortcuts'].forEach(function (d, idx) {
             let x = ox + me.stepx * 9 + Math.floor(idx / 7) * me.stepx * 7;
             let y = oy + 0.5 * me.stepy * (idx % 7);
             let w = d.split('=');
-
-            me.statText(w[0], w[1], x, y, stat, stat + idx, me.character);
+            if (me.blank) {
+            } else {
+                me.statText(w[0], w[1], x, y, stat, stat + idx, me.character);
+            }
         });
 
         if (me.data['creature'] == 'garou') {
@@ -1070,10 +1107,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" width="' + me.width + '" height="' + 
 ' + flist + base_svg + '</svg>';
 
 
-        lpage = "_"+(me.page+1);
+        lpage = "_" + (me.page + 1);
 
-        let svg_name = "character_sheet"+me.data['rid'] + lpage + ".svg"
-        let pdf_name = "character_sheet"+me.data['rid'] + lpage + ".pdf"
+        let svg_name = "character_sheet" + me.data['rid'] + lpage + ".svg"
+        let pdf_name = "character_sheet" + me.data['rid'] + lpage + ".pdf"
         let sheet_data = {
             'pdf_name': pdf_name,
             'svg_name': svg_name,
@@ -1174,7 +1211,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" width="' + me.width + '" height="' + 
 
 }
 
-function wrap(text, width, stacked=false) {
+function wrap(text, width, stacked = false) {
     let font = "Gochi Hand",
         user_fill = '#A8A',
         user_stroke = '#828',

@@ -17,13 +17,17 @@ class GeoCity {
             .attr("width", me.width)
             .attr("height", me.height)
         ;
+
         if (me.cityName == "munich") {
             me.dataUrl = "https://gist.githubusercontent.com/p3t3r67x0/f8c1ea64b2862c6eda8771daba4f297b/raw/f35cc5e3994ee4862e5101de107f2aba33e7d658/muenchen_city_districts.geojson";
 
-        }
-        if (me.cityName == "nyc") {
+        }else if (me.cityName == "hamburg") {
+            me.dataUrl = "https://gist.githubusercontent.com/p3t3r67x0/935759ba975ffd9f6df6d1059fe5ad82/raw/191f44e01e8d5f71451170b9d6746eefddb5c8da/hamburg_city_districts.geojson";
+        }else if (me.cityName == "new york") {
             me.dataUrl = "https://github.com/dwillis/nyc-maps/blob/master/police_precincts.geojson";
         }
+
+        console.log(me.cityName)
     }
 
     buildPatterns() {
@@ -134,12 +138,12 @@ class GeoCity {
         let me = this;
         let legend_data = [
             {'pattern':'pure-camarilla', 'text': 'Camarilla'},
-            {'pattern':'camarilla-controlled', 'text': 'Controllé par la Camarilla'},
-            {'pattern':'camarilla-presence', 'text': 'Présence de la Camarilla'},
-            {'pattern':'neutral', 'text': 'Non contesté'},
-            {'pattern':'gangrel-territory', 'text': 'Territoire Gangrel'},
-            {'pattern':'camarilla-contested-giovanni', 'text': "Incursions notables"},
-            {'pattern':'sparse-intrusions', 'text': "Légères incursions"}
+            {'pattern':'camarilla-controlled', 'text': 'Camarilla controlled'},
+            {'pattern':'camarilla-presence', 'text': 'Camarilla presence'},
+            {'pattern':'neutral', 'text': 'Uncontested'},
+            {'pattern':'gangrel-territory', 'text': 'Gangrel clan territory'},
+            {'pattern':'camarilla-contested-giovanni', 'text': "Highly contested"},
+            {'pattern':'sparse-intrusions', 'text': "Sparse intrusions"}
         ]
         let legend = me.svg.append("g")
                 .selectAll(".legend_item")
@@ -183,12 +187,14 @@ class GeoCity {
         me.buildPatterns();
         me.drawLegend();
         d3.json(me.dataUrl).then(function (data) {
-            _.each(data.features, function (e, i) {
-                e.id = i + 1;
-                let entry = me.wawwod_data["d" + String(i + 1).padStart(2, '0')]['s']['s01'];
-                e.population = entry.population;
-                e.status = entry.status
-            });
+            if (me.cityName == 'munich') {
+                _.each(data.features, function (e, i) {
+                    e.id = i + 1;
+                    let entry = me.wawwod_data["d" + String(i + 1).padStart(2, '0')]['s']['s01'];
+                    e.population = entry.population;
+                    e.status = entry.status
+                });
+            }
             me.projection = d3.geoAlbers()
                 .rotate([0, 0]);
             me.projection.fitSize([me.width, me.height], data)
@@ -222,10 +228,10 @@ class GeoCity {
             ;
             item.append('rect')
                 .attr("x", function (e, i) {
-                    return d3.geoPath().projection(me.projection).centroid(e)[0]-10;
+                    return d3.geoPath().projection(me.projection).centroid(e)[0]-20;
                 })
                 .attr("y", function (e, i) {
-                    return d3.geoPath().projection(me.projection).centroid(e)[1]-10;
+                    return d3.geoPath().projection(me.projection).centroid(e)[1];
                 })
                 .attr('width',40)
                 .attr('height',30)
@@ -243,8 +249,29 @@ class GeoCity {
                 .attr("y", function (e, i) {
                     return d3.geoPath().projection(me.projection).centroid(e)[1];
                 })
-                .attr('dx',10)
-                .attr('dy',10)
+                .attr('dx',0)
+                .attr('dy',-14)
+                .style("font-family", "Roboto")
+                .style("text-anchor", "middle")
+                .style("font-size", "10pt")
+                .style("font-weight", "bold")
+                .style("stroke", "#000")
+                .style("stroke-width", "0.25pt")
+                .style("fill", "#111")
+                .text(function (e, i) {
+                    return e.population;
+
+                })
+            ;
+            item.append('text')
+                .attr("x", function (e, i) {
+                    return d3.geoPath().projection(me.projection).centroid(e)[0];
+                })
+                .attr("y", function (e, i) {
+                    return d3.geoPath().projection(me.projection).centroid(e)[1];
+                })
+                .attr('dx',0)
+                .attr('dy',20)
                 .style("font-family", "Roboto")
                 .style("text-anchor", "middle")
                 .style("font-size", "10pt")
@@ -257,6 +284,7 @@ class GeoCity {
 
                 })
             ;
+
 
             let mastertext = me.svg.append('text')
                 .attr("id", "mastertext")
@@ -275,7 +303,7 @@ class GeoCity {
                 .style("stroke-width", "0.25")
                 .style("fill", "#fff")
                 .text(function (e, i) {
-                    return "Munich by Night";
+                    return me.cityName+" by Night";
                 })
             ;
             let subtext = me.svg.append('text')

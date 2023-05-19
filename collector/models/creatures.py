@@ -52,6 +52,7 @@ class Creature(models.Model):
     display_gauge = models.IntegerField(default=0)
     display_pole = models.CharField(max_length=64, default='', blank=True)
     residence = models.CharField(max_length=64, default='', blank=True)
+    list_pos = models.IntegerField(default=0, blank=True)
 
     finaldeath = models.IntegerField(default=0)
     timeintorpor = models.PositiveIntegerField(default=0)
@@ -61,6 +62,7 @@ class Creature(models.Model):
     rank = models.CharField(max_length=32, blank=True, default='')
     topic = models.TextField(max_length=1024, blank=True, default='')
     status = models.CharField(max_length=32, blank=True, default='OK')
+    cast_figure = models.CharField(max_length=128, blank=True, default='')
     position = models.CharField(max_length=64, blank=True, default='')
     maj = models.PositiveIntegerField(default=0)
     need_fix = models.BooleanField(default=False)
@@ -104,6 +106,7 @@ class Creature(models.Model):
 
     # All
     willpower = models.PositiveIntegerField(default=1)
+    equipment = models.TextField(max_length=2048, default='', blank=True)
 
     # CTD
     glamour = models.PositiveIntegerField(default=0)
@@ -371,7 +374,10 @@ class Creature(models.Model):
         from collector.templatetags.wod_filters import as_generation, as_rank, as_breed, as_auspice, as_tribe_plural
         entrance = ''
         if self.creature == 'kindred':
-            entrance = f'{as_generation(self.background3)} generation {self.family} of the {self.faction} ({self.group}).'
+            g = ""
+            if self.group:
+                g = f' ({self.group})'
+            entrance = f'{as_generation(self.background3)} generation {self.family} of the {self.faction}{g}.'
         elif self.creature == 'garou':
             entrance = f'{as_rank(self.rank)} {as_breed(self.breed)} {as_auspice(self.auspice)} of the  {as_tribe_plural(self.family)} ({self.group}).'
         elif self.creature == 'ghoul':
@@ -435,21 +441,28 @@ class Creature(models.Model):
             self.humanity = self.virtue0 + self.virtue1
         # Bloodpool
         self.bloodpool = bloodpool[13 - self.value_of('generation')]
+        self.family = self.family.title()
         self.weakness = CLANS_SPECIFICS[self.family]['clan_weakness']
         self.display_gauge = self.value_of('generation') * 2 + self.value_of('status') * 2
         self.display_pole = self.groupspec
 
     def fix_ghoul(self):
-        self.display_gauge = 3
+        self.display_gauge = 2
+        if self.embrace == 0:
+            self.embrace = chronicle.era - (self.trueage - self.age)
+        self.trueage = chronicle.era - (self.embrace - self.age)
         if self.sire:
-            if self.family == '':
-                domitor = Creature.objects.get(name=self.sire)
-                self.family = domitor.family
-                self.faction = domitor.faction
-                if domitor:
-                    self.display_gauge = domitor.display_gauge / 3
+            # if self.family == '':
+            domitor = Creature.objects.get(rid=self.sire)
+            self.family = domitor.family
+            self.faction = domitor.faction
+            if domitor:
+                self.display_gauge = domitor.display_gauge / 3
+            self.group = "Ghoul of " + domitor.name
+            self.groupspec = domitor.groupspec
         self.expectedfreebies = self.freebies_per_immortal_age
         self.bloodpool = 10
+        self.display_gauge = int(self.trueage/50)
         self.display_pole = self.groupspec
 
     def fix_mortal(self):
@@ -606,11 +619,11 @@ class Creature(models.Model):
 
     @property
     def freebies_per_mortal_age(self):
-        return (int((self.age - 25) / 10) + 1) * 10
+        return (int((int(self.age) - 25) / 10) + 1) * 10
 
     @property
     def freebies_per_immortal_age(self):
-        return int(((self.trueage - 10) / 5))
+        return int(((int(self.trueage) - 10) / 5))
 
     def update_rid(self):
         self.rid = toRID(self.name)
@@ -665,12 +678,14 @@ class Creature(models.Model):
             lines.append(f'<b>{self.position.title()}</b>')
         if (self.entrance):
             lines.append(f'<i>{self.entrance}</i>')
-        # if (self.storyteller_entrance):
-        #     lines.append(f'<i>{self.storyteller_entrance}</i>')
+        if (self.group):
+            lines.append(f'<i>{self.group}</i>')
+        if (self.groupspec):
+            lines.append(f'<i>{self.groupspec}</i>')
         if (self.concept):
             lines.append(f'<b>Concept:</b> {self.concept}')
 
-        lines.append(f'<b>Creature Type:</b> {self.creature.title()}')
+        # lines.append(f'<b>Creature Type:</b> {self.creature.title()}')
         if self.creature == 'kindred' or self.creature == 'ghoul':
             lines.append(f'<b>Age:</b> {self.age} (Real: {self.trueage}, Embrace: {self.embrace})')
         else:
@@ -753,24 +768,23 @@ class Creature(models.Model):
                 sentence = getattr(self, f"trait{n}")
                 words = sentence.split("(")
                 val = int(words[1].split(")")[0])
-                gifts_list.append(f'{sentence.replace(" (","&nbsp; (")}')
+                gifts_list.append(f'{sentence.replace(" (", "&nbsp; (")}')
         if len(gifts_list) > 0:
             if self.creature == 'kindred' or self.creature == 'ghoul':
                 lines.append(f'<br/><b>Disciplines</b>: {", ".join(gifts_list)}')
             else:
                 lines.append(f'<br/><b>Gifts</b>: {", ".join(gifts_list)}')
-        lines.append(f'<br/><b>Willpower</b>: {self.as_dot(self.willpower,max=20,to_spend=True)}')
+        lines.append(f'<br/><b>Willpower</b>: {self.as_dot(self.willpower, max=20, to_spend=True)}')
         if self.creature == 'kindred' or self.creature == 'ghoul':
-            lines.append(f'<br/><b>Blood Pool</b>: {self.as_dot(self.bloodpool,max=20,to_spend=True)}')
-            lines.append(f'<br/><b>Conscience</b>:{self.as_dot(self.virtue0)}  <b>Self-control</b>:{self.as_dot(self.virtue1)}  <b>Courage</b>:{self.as_dot(self.virtue2)}')
+            lines.append(f'<br/><b>Blood Pool</b>: {self.as_dot(self.bloodpool, max=20, to_spend=True)}')
+            lines.append(
+                f'<br/><b>Conscience</b>:{self.as_dot(self.virtue0)}  <b>Self-control</b>:{self.as_dot(self.virtue1)}  <b>Courage</b>:{self.as_dot(self.virtue2)}')
         return "".join(lines) + "."
 
     @property
     def roster_shortcuts(self):
         lines = self.get_shortcuts()
-        return "<b>Shortcuts:</b><br/>➤ "+"<br/>➤ ".join(lines) + "."
-
-
+        return "<b>Shortcuts:</b><br/>➤ " + "<br/>➤ ".join(lines) + "."
 
     def as_dot(self, value, max=5, to_spend=False):
         str = ""
@@ -906,7 +920,8 @@ class Creature(models.Model):
         attributes = []
         for x in range(3):
             attributes.append(int(attributes_points[x]))
-        random.shuffle(attributes)
+        for x in range(random.randrange(0, 9)):
+            random.shuffle(attributes)
         for t in range(3):
             while attributes[t] > 0:
                 attributes[t] -= 1
@@ -983,36 +998,36 @@ class Creature(models.Model):
                     virtues -= 1
             self.weakness = CLANS_SPECIFICS[self.family]['clan_weakness']
 
-    # def extract_raw(self):
-    #     # filename = f'./raw/{self.rid}.txt'
-    #     lines = []
-    #     lines.append(f'{self.name}\n')
-    #     lines.append(f'Nature\t\t{self.nature}\tDemeanor\t{self.demeanor}\n')
-    #     lines.append(f'Concept\t\t{self.concept}\tAge\t{self.age}\n')
-    #     lines.append(
-    #         f'Physical\t({self.total_physical})\tSocial\t({self.total_social})\tMental\t({self.total_mental})\n')
-    #     lines.append(
-    #         f'Strength\t{self.val_as_dots(self.attribute0)}\tCharisma\t{self.val_as_dots(self.attribute3)}\tPerception\t{self.val_as_dots(self.attribute6)}\n')
-    #     lines.append(
-    #         f'Dexterity\t{self.val_as_dots(self.attribute1)}\tManipulation\t{self.val_as_dots(self.attribute4)}\tIntelligence\t{self.val_as_dots(self.attribute7)}\n')
-    #     lines.append(
-    #         f'Stamina\t{self.val_as_dots(self.attribute2)}\tAppearance\t{self.val_as_dots(self.attribute5)}\tWits\t{self.val_as_dots(self.attribute8)}\n')
-    #     lines.append(
-    #         f'Talents\t({self.total_talents})\tSkills\t({self.total_skills})\tKnowledges\t({self.total_knowledges})\t\n')
-    #     for n in range(10):
-    #         lines.append(
-    #             f'{STATS_NAMES[self.creature]["talents"][n]}\t{self.val_as_dots(getattr(self, f"talent{n}"))}\t{STATS_NAMES[self.creature]["skills"][n]}\t{self.val_as_dots(getattr(self, f"skill{n}"))}\t{STATS_NAMES[self.creature]["knowledges"][n]}\t{self.val_as_dots(getattr(self, f"knowledge{n}"))}\n')
-    #     blines = []
-    #     for n in range(10):
-    #         if getattr(self, f"background{n}") > 0:
-    #             blines.append(f'{STATS_NAMES[self.creature]["backgrounds"][n]} ({getattr(self, f"background{n}")})')
-    #     lines.append(f'Backgrounds: {", ".join(blines)}.\n')
-    #     glines = []
-    #     for n in range(20):
-    #         if getattr(self, f"gift{n}"):
-    #             glines.append(f'{getattr(self, f"gift{n}")}')
-    #     lines.append(f'Gifts: {", ".join(glines)}.\n')
-    #     return "".join(lines)
+    def extract_raw(self):
+        # filename = f'./raw/{self.rid}.txt'
+        lines = []
+        lines.append(f'{self.name}\n')
+        lines.append(f'Nature\t\t{self.nature}\tDemeanor\t{self.demeanor}\n')
+        lines.append(f'Concept\t\t{self.concept}\tAge\t{self.age}\n')
+        lines.append(
+            f'Physical\t({self.total_physical})\tSocial\t({self.total_social})\tMental\t({self.total_mental})\n')
+        lines.append(
+            f'Strength\t{self.val_as_dots(self.attribute0)}\tCharisma\t{self.val_as_dots(self.attribute3)}\tPerception\t{self.val_as_dots(self.attribute6)}\n')
+        lines.append(
+            f'Dexterity\t{self.val_as_dots(self.attribute1)}\tManipulation\t{self.val_as_dots(self.attribute4)}\tIntelligence\t{self.val_as_dots(self.attribute7)}\n')
+        lines.append(
+            f'Stamina\t{self.val_as_dots(self.attribute2)}\tAppearance\t{self.val_as_dots(self.attribute5)}\tWits\t{self.val_as_dots(self.attribute8)}\n')
+        lines.append(
+            f'Talents\t({self.total_talents})\tSkills\t({self.total_skills})\tKnowledges\t({self.total_knowledges})\t\n')
+        for n in range(10):
+            lines.append(
+                f'{STATS_NAMES[self.creature]["talents"][n]}\t{self.val_as_dots(getattr(self, f"talent{n}"))}\t{STATS_NAMES[self.creature]["skills"][n]}\t{self.val_as_dots(getattr(self, f"skill{n}"))}\t{STATS_NAMES[self.creature]["knowledges"][n]}\t{self.val_as_dots(getattr(self, f"knowledge{n}"))}\n')
+        blines = []
+        for n in range(10):
+            if getattr(self, f"background{n}") > 0:
+                blines.append(f'{STATS_NAMES[self.creature]["backgrounds"][n]} ({getattr(self, f"background{n}")})')
+        lines.append(f'Backgrounds: {", ".join(blines)}.\n')
+        glines = []
+        for n in range(16):
+            if getattr(self, f"trait{n}"):
+                glines.append(f'{getattr(self, f"trait{n}")}')
+        lines.append(f'Traits: {", ".join(glines)}.\n')
+        return "".join(lines)
 
     def calculate_freebies(self):
         # Attributes
@@ -1081,6 +1096,8 @@ class Creature(models.Model):
             self.freebies += getattr(self, 'gnosis') * 2
             self.freebies += getattr(self, 'willpower')
             self.freebies += self.total_traits * 7  # 7 pts per gift level
+        elif 'ghoul' == self.creature:
+            self.freebies += self.total_traits * 7  # 7 pts per discipline pts
         elif 'kindred' == self.creature:
             # Virtues
             for i in range(3):
@@ -1138,7 +1155,9 @@ class Creature(models.Model):
             'position': self.position,
             'status': self.status,
             'generation': self.generation,
-            'ghouls': ",".join(self.retainers)
+            'ghouls': ",".join(self.retainers),
+            'sire': self.sire,
+            'index': 0,
         }
         return d
 
@@ -1356,6 +1375,14 @@ def set_male(modeladmin, request, queryset):
     short_description = 'Make male'
 
 
+def no_longer_new(modeladmin, request, queryset):
+    for creature in queryset:
+        creature.is_new = False
+        creature.need_fix = True
+        creature.save()
+    short_description = 'No longer new'
+
+
 def push_to_newyork(modeladmin, request, queryset):
     for creature in queryset:
         creature.chronicle = 'NYC'
@@ -1422,11 +1449,15 @@ def randomize_all(modeladmin, request, queryset):
 
 class CreatureAdmin(admin.ModelAdmin):
     list_display = [  # 'domitor',
-        'name', 'rid', 'freebies', 'expectedfreebies', 'district', 'sire', 'player', 'family',
+        'name', 'age', 'trueage', 'rid', 'cast_figure', 'freebies', 'expectedfreebies', 'district', 'sire', 'player',
+        'family',
         'concept', 'group', 'groupspec', 'faction', 'status', 'embrace', 'condition']
-    ordering = ['name', 'group', 'creature']
-    actions = [randomize_backgrounds, randomize_all, randomize_archetypes, randomize_attributes, randomize_abilities,
+    ordering = ['-trueage', 'name', 'group', 'creature']
+    actions = [no_longer_new, randomize_backgrounds, randomize_all, randomize_archetypes, randomize_attributes,
+               randomize_abilities,
                refix, set_male, set_female, push_to_munich, push_to_newyork, push_to_world]
-    list_filter = ['chronicle', 'adventure', 'faction', 'family', 'is_new', 'condition', 'group',  'groupspec',
+    list_filter = ['chronicle', 'adventure', 'district', 'faction', 'family', 'is_new', 'condition', 'group',
+                   'groupspec',
                    'creature', 'mythic', 'ghost', 'sire']
     search_fields = ['name', 'groupspec']
+    list_editable = ['cast_figure']

@@ -1,6 +1,7 @@
 from django.http import HttpResponse, Http404, JsonResponse
 from django.shortcuts import render, get_object_or_404
 from collector.models.creatures import Creature
+from storytelling.models.cities import City
 from django.core.paginator import Paginator
 from django.template.loader import get_template
 from django.views.decorators.csrf import csrf_exempt
@@ -22,22 +23,23 @@ chronicle = get_current_chronicle()
 def prepare_index(request):
     chronicles = []
     players = []
-    plist = Creature.objects.filter(chronicle=chronicle.acronym).exclude(player='').order_by('adventure')
-    adv = ''
+    cities = []
+    plist = Creature.objects.filter(chronicle=chronicle.acronym).exclude(player='').exclude(adventure_id__isnull=True).order_by('adventure')
+    adv = None
     for p in plist:
         if p.adventure != adv:
-            if adv != '':
-                players.append(adventure)
-            adventure = {'adventure': p.adventure.name, 'players': []}
             adv = p.adventure
+            adventure = {'adventure': p.adventure.name, 'players': []}
             adventure['players'].append({'name': p.name, 'rid': p.rid, 'player': p.player})
+            players.append(adventure)
         else:
             adventure['players'].append({'name': p.name, 'rid': p.rid, 'player': p.player})
-    players.append(adventure)
 
     for c in Chronicle.objects.all():
-        chronicles.append({'name': c.name, 'acronym': c.acronym, 'active': c == chronicle})
-    context = {'chronicles': chronicles, 'fontset': FONTSET, 'players': players}
+        chronicles.append({'name': c.name, 'acronym': c.acronym, 'active': c.is_current})
+    for ci in City.objects.all():
+        cities.append({'name': ci.name, 'tag': ci.name.lower()})
+    context = {'chronicles': chronicles, 'fontset': FONTSET, 'players': players, 'cities': cities}
     return context
 
 
@@ -95,7 +97,7 @@ def get_list(request, pid=1, slug=None):
         answer = {
             'list': list_html,
         }
-        print(answer)
+        # print(answer)
         return JsonResponse(answer)
     else:
         return HttpResponse(status=204)
@@ -242,8 +244,12 @@ def display_crossover_sheet(request, slug=None, option=None):
                 scenario = "Munich by Night"
             pre_title = "Munich"
             post_title = "Camarilla"
+        elif chronicle.acronym == 'HbN':
+            scenario = "The Northeast Passage"
+            pre_title = "Hamburg"
+            post_title = "by Night"
+
         else:
-            pre_title = 'World of Darkness'
             scenario = "NEW YORK CITY"
             post_title = "feat. Julius Von Blow"
         spe = c.get_specialities()

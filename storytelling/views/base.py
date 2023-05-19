@@ -6,7 +6,6 @@ from io import BytesIO
 from storytelling.models.stories import Story
 from storytelling.models.scenes import Scene
 from collector.utils.helper import json_default
-from django.conf import settings
 from django.views.decorators.csrf import csrf_exempt
 import os
 import json
@@ -75,7 +74,8 @@ def display_pdf_story(request):
             all_stories.append(s.toJSON())
             selected_story = s
     full_cast = []
-    casted = Creature.objects.filter(rid__in=selected_story.all_cast).order_by('player', 'faction', 'creature', 'name')
+    # casted = Creature.objects.filter(rid__in=selected_story.all_cast).order_by('faction', '-freebies', 'family', '-background3','name')
+    casted = Creature.objects.filter(chronicle="HbN", player="").order_by('faction', 'family', '-freebies',   'groupspec', 'group')
     for c in casted:
         full_cast.append(c)
     print(full_cast)
@@ -131,11 +131,8 @@ def display_map(request, slug=None):
     if request.is_ajax:
         if not slug:
             slug = 'munich'
-            context = get_districts(slug)
-            # print(context)
-            # template = get_template("storytelling/munich.html")
-            # html = template.render(context)
-            response['data'] = context
+        context = get_districts(slug)
+        response['data'] = context
     return JsonResponse(response)
 
 

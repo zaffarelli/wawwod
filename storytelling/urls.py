@@ -12,5 +12,5 @@ urlpatterns = [
     re_path(r'^ajax/action/time_slip/(?P<slug>\w+)/$', action_timeslip, name='action_time_slip'),
     re_path(r'^ajax/scene/(?P<id>\d+)/update/(?P<field>\w+)/$', update_scene, name='update_scene'),
     re_path(r'^munich/$', show_munich, name='show_munich'),
-    re_path(r'^ajax/display/map/$', display_map, name='display_map'),
+    re_path(r'^ajax/display/map/(?P<slug>\w+)/$', display_map, name='display_map'),
 ]

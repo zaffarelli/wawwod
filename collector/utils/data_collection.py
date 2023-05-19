@@ -4,7 +4,7 @@ import logging
 from django.conf import settings
 from collector.utils.wod_reference import get_current_chronicle
 from collector.utils.helper import toRID
-
+from collector.utils.kindred_stuff import resort
 chronicle = get_current_chronicle()
 logger = logging.Logger(__name__)
 
@@ -295,9 +295,11 @@ def build_per_primogen(param=None):
 
 def build_gaia_wheel():
     chronicle = get_current_chronicle()
-    creatures = Creature.objects.filter(chronicle=chronicle.acronym).exclude(mythic=True).exclude(
-        condition="DEAD").exclude(ghost=True).order_by(
-        '-faction', 'display_pole')
+    creatures = Creature.objects.filter(chronicle=chronicle.acronym) \
+        .exclude(mythic=True) \
+        .exclude(condition="DEAD") \
+        .exclude(ghost=True) \
+        .order_by('display_pole')
     for creature in creatures:
         creature.need_fix = True
         creature.save()
@@ -310,6 +312,7 @@ def build_gaia_wheel():
     kith_list = []
     underworld_list = []
 
+    total = 0
     for c in creatures:
         creature_dict = c.toDict
         if (c.faction == 'Camarilla') or (c.faction == 'Independents') or (
@@ -328,27 +331,42 @@ def build_gaia_wheel():
             kith_list.append(creature_dict)
         elif (c.creature == 'wraith'):
             underworld_list.append(creature_dict)
-
         else:
             weaver_list.append(creature_dict)
+        total += 1
+
+    for list in [weaver_list, underworld_list, traditions_list, pentex_list, sabbat_list, wyrm_list, underworld_list,
+                 wyld_list]:
+        icnt = 0
+        for item in list:
+            item['index'] = icnt
+            icnt += 1
+
+    wyrm_list = resort(wyrm_list)
+    sabbat_list = resort(sabbat_list)
+    # w = [f"[{item['display_pole']:30}:{item['index']:3}:{item['group']:25}]  {item['name']}" for item in wyrm_list]
+    # print("\n".join(w))
+
     d3js_data = {
         'lists': [
-            {'name': 'humans', 'index': 0, 'color': '#28F', 'value': 4, 'start': 0, 'font': 'Roboto',
-             'collection': weaver_list},
-            {'name': 'camarilla', 'index': 0, 'color': '#2A2', 'value': 5, 'start': 0, 'font': 'Cinzel',
-             'collection': wyrm_list},
-            {'name': 'sabbat', 'index': 0, 'color': '#E66', 'value': 2, 'start': 0, 'font': 'Roboto',
-             'collection': sabbat_list},
-            {'name': 'kith', 'index': 0, 'color': '#FC8', 'value': 1, 'start': 0, 'font': 'Allura',
-             'collection': kith_list},
-            {'name': 'garou', 'index': 0, 'color': '#A82', 'value': 8, 'start': 0, 'font': 'Trade Winds',
-             'collection': wyld_list},
-            {'name': 'traditions', 'index': 0, 'color': '#828', 'value': 1, 'start': 0, 'font': 'Allura',
-             'collection': traditions_list},
-            {'name': 'underworld', 'index': 0, 'color': '#447', 'value': 1, 'start': 0, 'font': 'Khand',
-             'collection': underworld_list},
-            {'name': 'pentex', 'index': 0, 'color': '#25A', 'value': 2, 'start': 0, 'font': 'Ruda',
-             'collection': pentex_list},
+            {'name': 'humans', 'index': 0, 'color': '#28F', 'value': len(weaver_list), 'start': 0, 'font': 'Roboto',
+             'collection': weaver_list, 'total': total},
+            {'name': 'camarilla', 'index': 0, 'color': '#2A2', 'value': len(wyrm_list), 'start': 0, 'font': 'Cinzel',
+             'collection': wyrm_list, 'total': total},
+            {'name': 'sabbat', 'index': 0, 'color': '#E66', 'value': len(sabbat_list), 'start': 0, 'font': 'Roboto',
+             'collection': sabbat_list, 'total': total},
+            {'name': 'kith', 'index': 0, 'color': '#FC8', 'value': len(kith_list), 'start': 0, 'font': 'Allura',
+             'collection': kith_list, 'total': total},
+            {'name': 'garou', 'index': 0, 'color': '#A82', 'value': len(wyld_list), 'start': 0, 'font': 'Trade Winds',
+             'collection': wyld_list, 'total': total},
+            {'name': 'traditions', 'index': 0, 'color': '#828', 'value': len(traditions_list), 'start': 0,
+             'font': 'Allura',
+             'collection': traditions_list, 'total': total},
+            {'name': 'underworld', 'index': 0, 'color': '#447', 'value': len(underworld_list), 'start': 0,
+             'font': 'Khand',
+             'collection': underworld_list, 'total': total},
+            {'name': 'pentex', 'index': 0, 'color': '#25A', 'value': len(pentex_list), 'start': 0, 'font': 'Ruda',
+             'collection': pentex_list, 'total': total},
         ]
     }
     idx = 0
@@ -358,8 +376,10 @@ def build_gaia_wheel():
         idx += 1
         list['start'] = cumul
         cumul += list['value']
+    d3js_data['cumul'] = cumul
 
     all = json.dumps(d3js_data, indent=4, sort_keys=False)
+    # print(all)
     return all
 
 
@@ -399,6 +419,36 @@ MUNICH_DISTRICTS = {
     'd23': {'name': 'Allach Untermenzing', 'description': '', 'clan': nosferatu, 'sectors': 2},
     'd24': {'name': 'Feldmoching-Hasenbergl', 'description': '', 'clan': ventrue, 'sectors': 4},
     'd25': {'name': 'Laim', 'description': '', 'clan': brujah, 'sectors': 2},
+
+}
+
+HAMBURG_DISTRICTS = {
+    'h01': {'name': 'Allermöhe', 'description': '', 'clan': ventrue, 'sectors': 6},
+    'h02': {'name': 'Ludwigvorstadt and Isarvorstadt', 'description': '', 'clan': toreador, 'sectors': 8},
+    'h03': {'name': 'Maxvorstadt', 'description': '', 'clan': ventrue, 'sectors': 9},
+    'h04': {'name': 'Schwabing West', 'description': '', 'clan': ventrue, 'sectors': 3},
+    'h05': {'name': 'Au-Haidhausen', 'description': '', 'clan': malkavian, 'sectors': 6},
+    'h06': {'name': 'Sendling', 'description': '', 'clan': ventrue, 'sectors': 2},
+    'h07': {'name': 'Sendling – Westpark', 'description': '', 'clan': gangrel, 'sectors': 3},
+    'h08': {'name': 'Schwanthalerhöhe', 'description': '', 'clan': toreador, 'sectors': 2},
+    'h09': {'name': 'Neuhausen Nymphenburg', 'description': '', 'clan': toreador, 'sectors': 6},
+    'h10': {'name': 'Moosach', 'description': '', 'clan': tremere, 'sectors': 2},
+    'h11': {'name': 'Milbertshofen und Am Hart', 'description': '', 'clan': brujah, 'sectors': 3},
+    'h12': {'name': 'Schwabing-Freimann', 'description': '', 'clan': brujah, 'sectors': 8},
+    'h13': {'name': 'Bogenhausen', 'description': '', 'clan': ventrue, 'sectors': 7},
+    'h14': {'name': 'Berg am Laim', 'description': '', 'clan': nosferatu, 'sectors': 1},
+    'h15': {'name': 'Trudering – Riem', 'description': '', 'clan': ventrue, 'sectors': 4},
+    'h16': {'name': 'Ramersdorf und Perlach', 'description': '', 'clan': nosferatu, 'sectors': 5},
+    'h17': {'name': 'Obergiesing', 'description': '', 'clan': tremere, 'sectors': 2},
+    'h18': {'name': 'Untergiesing und Harlaching', 'description': '', 'clan': gangrel, 'sectors': 5},
+    'h19': {'name': 'Thalkirchen-Obersendling-Forstenried-Fürstenried-Solln', 'description': '', 'clan': ventrue,
+            'sectors': 6},
+    'h20': {'name': 'Hadern', 'description': '', 'clan': malkavian, 'sectors': 3},
+    'h21': {'name': 'Pasing – Obermenzing', 'description': '', 'clan': toreador, 'sectors': 4},
+    'h22': {'name': 'Aubing-Lochhausen-Langwied', 'description': '', 'clan': gangrel, 'sectors': 3},
+    'h23': {'name': 'Allach Untermenzing', 'description': '', 'clan': nosferatu, 'sectors': 2},
+    'h24': {'name': 'Feldmoching-Hasenbergl', 'description': '', 'clan': ventrue, 'sectors': 4},
+    'h25': {'name': 'Laim', 'description': '', 'clan': brujah, 'sectors': 2},
 
 }
 

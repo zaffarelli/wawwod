@@ -14,6 +14,7 @@ def get_current_chronicle():
         first_chronicle.is_current = True
         first_chronicle.save()
         ch = first_chronicle
+        print(f"Error with get_chronicle {ch}")
     return ch
 
 
@@ -21,11 +22,11 @@ def set_chronicle(acro):
     for c in Chronicle.objects.all():
         if c.acronym == acro:
             c.is_current = True
-            logger.debug(f'Current Chronicle set to is {c.acronym}.')
         else:
             c.is_current = False
         c.save()
-
+    c = get_current_chronicle()
+    print(f'Current Chronicle set to is {c.acronym}.')
 
 def find_stat_property(creature, statistic):
     # You give 'kindred' / 'generation', it returns 'background3'
@@ -361,6 +362,10 @@ CLANS_SPECIFICS = {
         'disciplines': ['Celerity (1)', 'Obfuscate (1)', 'Quietus (1)'],
         'clan_weakness': 'Kindred blood addiction'
     },
+    'Baali': {
+        'disciplines': ['Dominate (1)', 'Obfuscate (1)', 'Potence (1)'],
+        'clan_weakness': 'I do not know'
+    },
     'Assamite Antitribu': {
         'disciplines': ['Celerity (1)', 'Obfuscate (1)', 'Quietus (1)'],
         'clan_weakness': 'Kindred blood addiction'
@@ -451,6 +456,10 @@ CLANS_SPECIFICS = {
         'disciplines': ['Auspex (1)', 'Fortitude (1)', 'Valeren (1)'],
         'clan_weakness': 'Must feed under passion'
     },
+    'Samedi': {
+        'disciplines': ['Animalism (1)', 'Obfuscate (1)', 'Potence (1)'],
+        'clan_weakness': 'Hideous Appearence'
+    },
     'Setite': {
         'disciplines': ['Obfuscate (1)', 'Presence (1)', 'Serpentis (1)'],
         'clan_weakness': 'Light sensitive'
@@ -459,7 +468,15 @@ CLANS_SPECIFICS = {
         'disciplines': ['Obfuscate (1)', 'Presence (1)', 'Serpentis (1)'],
         'clan_weakness': 'Light sensitive'
     },
+    'Serpent Of The Light': {
+        'disciplines': ['Obfuscate (1)', 'Presence (1)', 'Serpentis (1)'],
+        'clan_weakness': 'Light sensitive'
+    },
     'Toreador': {
+        'disciplines': ['Auspex (1)', 'Celerity (1)', 'Presence (1)'],
+        'clan_weakness': 'Fascination'
+    },
+    'Daughter Of Cacophony': {
         'disciplines': ['Auspex (1)', 'Celerity (1)', 'Presence (1)'],
         'clan_weakness': 'Fascination'
     },

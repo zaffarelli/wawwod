@@ -86,10 +86,11 @@ class Storytelling {
         me.stretch_coeff = 2;
         me.width = (me.story['places_count'] * (me.place_width + 1) + 6) * me.stepx;
         me.height = ((Math.trunc(me.end_time / 24) + 4) * me.day_size) * me.stepy;
+        console.log(me.height)
         me.w = parseInt($("body").css("width")) * 1;
-        //me.h = me.w * 0.52;
+        me.h = me.w * 0.52;
 
-        me.h = parseInt($("body").css("height")) * 0.90;
+        //me.h = parseInt($("body").css("height")) * 0.90;
         me.tiny_font_size = me.time_coeff;
         me.small_font_size = 2 * me.time_coeff;
         me.medium_font_size = 3 * me.time_coeff;
@@ -635,7 +636,7 @@ class Storytelling {
             .attr('fill-opacity', 0.90)
             .on('click', function (e, d) {
                 // if (e.ctrlKey) {
-                console.log("One hour in the past...")
+                // console.log("One hour in the past...")
                 $.ajax({
                     url: 'ajax/action/time_slip/m0d_m1h__' + d.id + '/',
                     success: function (answer) {
@@ -669,7 +670,7 @@ class Storytelling {
             .attr('fill-opacity', 0.90)
             .on('click', function (e, d) {
                 // if (e.ctrlKey) {
-                console.log("One day in the past...")
+                // console.log("One day in the past...")
                 $.ajax({
                     url: 'ajax/action/time_slip/m1d_p0h__' + d.id + '/',
                     success: function (answer) {
@@ -704,7 +705,7 @@ class Storytelling {
             .attr('fill-opacity', 0.90)
             .on('click', function (e, d) {
                 // if (e.ctrlKey) {
-                console.log("One hour in the future...")
+                // console.log("One hour in the future...")
                 $.ajax({
                     url: 'ajax/action/time_slip/m0d_p1h__' + d.id + '/',
                     success: function (answer) {
@@ -737,7 +738,7 @@ class Storytelling {
             .attr('fill-opacity', 0.90)
             .on('click', function (e, d) {
                 // if (e.ctrlKey) {
-                console.log("One day in the future...")
+                // console.log("One day in the future...")
                 $.ajax({
                     url: 'ajax/action/time_slip/p1d_p0h__' + d.id + '/',
                     success: function (answer) {
@@ -891,8 +892,8 @@ class Storytelling {
             })
             d.timeline_name = 'timeline';
             _.forEach(me.timelines, function (e, i) {
-                console.log(d['timeline'])
-                console.log(e['label'])
+                // console.log(d['timeline'])
+                // console.log(e['label'])
                 if (e['label'] == d['timeline']) {
                     d.timeline_name = e['name'];
                 }
@@ -977,6 +978,9 @@ class Storytelling {
         me.timelines = JSON.parse(data['timelines']);
         me.links = JSON.parse(data['links']);
         me.end_time = JSON.parse(data['end_time'])
+
+        console.log('yo')
+
         me.updatePlaces()
         me.updateScenes()
         me.story['places_count'] = Object.keys(me.places).length;

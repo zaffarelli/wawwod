@@ -96,7 +96,7 @@ body {
     }
 
     & .wrapper {
-      background: transparent url() 100% 100% no-repeat fixed;
+      background: transparent url() 98% 98% no-repeat fixed;
       z-index: 60;
       width: auto;
       height: auto;
@@ -514,6 +514,8 @@ table {
 
     @include panel;
 
+
+
     &.chronicle {
       font-family: Titre;
       font-size: 16px;
@@ -530,14 +532,14 @@ table {
 
       & li {
         color: $plate_color;
-        padding: 2px;
+        padding: 5px;
         margin: 2px;
         border-radius: 5px;
       }
     }
 
     &:hover {
-
+      //background:#2d2614;
       height: auto;
 
 
@@ -552,7 +554,7 @@ table {
 
         & li:hover {
           color: $plate_highlight;
-          background: complement($panel_background);
+          background: #2d052d; //complement($panel_background);
           cursor: pointer;
         }
       }
@@ -570,11 +572,12 @@ table {
   font-size: 14px;
 }
 
+svg.lineage, svg.gaia_wheel{
+  margin: 0;
+  border: 3px ridge #CCC;
+}
+
 svg.lineage {
-  margin: 10px;
-  border: 1px dashed #CCC;
-  background: transparent;
-  margin-top: 50px;
 
 
   & .node {
@@ -699,13 +702,17 @@ svg.lineage {
   width: 160px;
   height: 180px;
   pointer-events: none;
-  font-family: "TexteLibre";
+  font-family: TexteLibre;
   font-size: 8pt;
+  color:black;
   background: #C0C0C0;
   padding-left: 15px;
   padding-right: 15px;
   box-shadow: 0 0 15px #222;
-  zindex: 45000;
+  z-index: 40000;
+  left:10vw;
+  bottom:20vh;
+
 
   & strong {
     font-variant: small-caps;
@@ -721,6 +728,9 @@ svg.lineage {
 
     & li {
     }
+  }
+  &.hidden{
+    display:none;
   }
 
 }
@@ -806,10 +816,12 @@ td.editable.updown {
 
 #d3area {
   position:absolute;
-  top:50px;
-  width: calc(100% - 50px);
-  height: calc(100% - 100px);
+  top:5vh;
+  left:1vw;
+  width: 98vw;
+  height: 85vh;
   //border:1px solid saddlebrown;
+  //background:lightgoldenrodyellow;
 
 }
 

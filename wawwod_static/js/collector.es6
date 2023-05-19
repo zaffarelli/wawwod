@@ -61,6 +61,9 @@ class WawwodCollector {
                 if (action == 'kindred_lineage') {
                     url = 'ajax/display/' + action + '/' + param + '/';
                 }
+                if (action == 'map') {
+                    url = 'ajax/display/' + action + '/' + param + '/';
+                }
             }
             if (key != '') {
                 if (action == 'crossover_sheet') {

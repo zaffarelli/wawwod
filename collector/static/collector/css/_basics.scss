@@ -35,13 +35,13 @@ $wyld_fill: #c264d4;
 $weaver_fill: #334ba9;
 $wyrm_fill: #221338;
 $mortal_fill: #4e4e4e;
-$garou_fill: #382b18;
-$kindred_fill: #870931;
+$garou_fill: #5b3b19;
+$kindred_fill: #A20000;
 $mage_fill: #3c18de;
 $wraith_fill: #2f3345;
 $changeling_fill: #684203;
 
-$ghoul_fill: desaturate($kindred_fill,50%);
+$ghoul_fill: desaturate($kindred_fill,75%);
 $kinfolk_fill: desaturate($garou_fill,50%);
 $fomori_fill: #C0D43B;
 

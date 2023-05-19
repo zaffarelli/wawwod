@@ -39,4 +39,5 @@ class Chronicle(models.Model):
 
 class ChronicleAdmin(admin.ModelAdmin):
     list_display = ['acronym', 'name', 'description', 'main_creature', 'is_current', 'population']
+    list_editable = ['is_current']
     ordering = ['acronym']

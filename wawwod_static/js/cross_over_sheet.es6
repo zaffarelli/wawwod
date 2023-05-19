@@ -28,11 +28,11 @@ class CrossOverSheet extends WawwodSheet {
             me.midline(30);
             // Title
             let txt = me.sheet_type(me.data['creature']).toUpperCase();
-            me.decorationText(12, 2.75, 0, 'middle', me.title_font, me.fat_font_size * 2, '#FFF', '#FFF', 10, txt, me.back, 1);
-            me.decorationText(12, 1.8, 0, 'middle', me.logo_font, me.fat_font_size, "#fff", "#fff", 5, me.scenario, me.back, 0.75);
+            me.decorationText(12, 2.75, 0, 'middle', me.logo_font, me.fat_font_size * 2, '#FFF', '#FFF', 10, txt, me.back, 1);
+            me.decorationText(12, 1.8, 0, 'middle', me.title_font, me.fat_font_size, "#fff", "#fff", 5, me.scenario, me.back, 0.75);
 
-            me.decorationText(12, 1.8, 0, 'middle', me.logo_font, me.fat_font_size, me.shadow_fill, me.shadow_stroke, 0.5, me.scenario, me.back, 0.5);
-            me.decorationText(12, 2.75, 0, 'middle', me.title_font, me.fat_font_size * 2, me.draw_fill, me.shadow_stroke, 1, txt, me.back, 0.75);
+            me.decorationText(12, 1.8, 0, 'middle', me.title_font, me.fat_font_size, me.draw_fill, me.shadow_stroke, 0.5, me.scenario, me.back, 0.5);
+            me.decorationText(12, 2.75, 0, 'middle', me.logo_font, me.fat_font_size * 2, me.shadow_fill, me.shadow_stroke, 1, txt, me.back, 0.75);
 
             me.decorationText(2.5, 1.75, 0, 'middle', me.title_font, me.medium_font_size, me.draw_fill, me.draw_stroke, 0.5, "What a Wonderful", me.back);
             me.decorationText(2.5, 2.25, 0, 'middle', me.title_font, me.medium_font_size, me.draw_fill, me.draw_stroke, 0.5, "World of Darkness", me.back);
@@ -56,12 +56,22 @@ class CrossOverSheet extends WawwodSheet {
 
         }
         if (me.page > 0) {
-            me.decorationText(1.5, 2.25, 0, 'start', me.user_font, me.medium_font_size, me.user_fill, me.user_stroke, 0.5, me.data["name"] + " (p." + (me.page + 1) + ")", me.back);
+            if (me.blank){
+                me.decorationText(1.5, 2.25, 0, 'start', me.user_font, me.medium_font_size, me.user_fill, me.user_stroke, 0.5, " (p." + (me.page + 1) + ")", me.back);
+            }else {
+                me.decorationText(1.5, 2.25, 0, 'start', me.user_font, me.medium_font_size, me.user_fill, me.user_stroke, 0.5, me.data["name"] + " (p." + (me.page + 1) + ")", me.back);
+            }
         }
         me.decorationText(21.5, 1.75, 0, 'middle', me.title_font, me.medium_font_size, me.draw_fill, me.draw_stroke, 0.5, me.pre_title, me.back);
         me.decorationText(21.5, 2.25, 0, 'middle', me.title_font, me.medium_font_size, me.draw_fill, me.draw_stroke, 0.5, me.post_title, me.back);
         me.decorationText(1.5, 35.8, -16, 'start', me.base_font, me.small_font_size, me.draw_fill, me.draw_stroke, 0.5, me.guideline, me.back);
-        me.decorationText(22.5, 35.8, -16, 'end', me.base_font, me.small_font_size, me.draw_fill, me.draw_stroke, 0.5, "WAWWOD Cross+Over Sheet ©2022, Pentex Inc.", me.back);me.decorationText(22.5, 34.8, 0, 'end', me.base_font, me.small_font_size, me.draw_fill, me.draw_stroke, 0.5, 'Challenge:' + me.data['freebies'], me.back);
+        me.decorationText(22.5, 35.8, -16, 'end', me.base_font, me.small_font_size, me.draw_fill, me.draw_stroke, 0.5, "WAWWOD Cross+Over Sheet ©2022, Pentex Inc.", me.back);
+        if (me.blank){
+            me.decorationText(22.5, 34.8, 0, 'end', me.base_font, me.small_font_size, me.draw_fill, me.draw_stroke, 0.5, 'Challenge: you make us laugh punk!' , me.back);
+        }else {
+
+            me.decorationText(22.5, 34.8, 0, 'end', me.base_font, me.small_font_size, me.draw_fill, me.draw_stroke, 0.5, 'Challenge:' + me.data['freebies'], me.back);
+        }
     }
 
     drawButtons() {

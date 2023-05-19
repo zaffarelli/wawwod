@@ -105,7 +105,7 @@ class Story(models.Model):
         lst = []
         all_scenes = Scene.objects.filter(story=self).order_by('timeline', 'time_offset_hours')
         for scene in all_scenes:
-            scene_list = scene.cast.split(',')
+            scene_list = scene.cast.split(', ')
             lst.extend(scene_list)
         lst.sort()
         return list(set(lst))

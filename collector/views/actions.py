@@ -1,4 +1,8 @@
-def extract_raw(request,slug):
+from django.http import HttpResponse
+from collector.models.creatures import Creature
+
+
+def extract_raw(request, slug):
     found = Creature.objects.all().filter(rid=slug)
     if len(found) == 1:
         lines = found.first().extract_raw()
@@ -6,7 +10,7 @@ def extract_raw(request,slug):
     return HttpResponse(status=204)
 
 
-def extract_roster(request,slug):
+def extract_roster(request, slug):
     found = Creature.objects.all().filter(rid=slug)
     if len(found) == 1:
         lines = found.first().extract_roster()
@@ -14,7 +18,7 @@ def extract_roster(request,slug):
     return HttpResponse(status=204)
 
 
-def extract_per_group(request,slug):
+def extract_per_group(request, slug):
     grp_name = slug.replace('_', ' ')
     lines = []
     creatures = Creature.objects.all().filter(group=grp_name).order_by('groupspec')
@@ -73,20 +77,20 @@ def extract_mechanics(request):
             num = 50
         my_kinfolk = []
         for n in range(num):
-            my_kinfolk.append(f'- unknown #{n+1} ({c.name})')
+            my_kinfolk.append(f'- unknown #{n + 1} ({c.name})')
         x = 0
-        found_folks = Creature.objects.filter(creature='kinfolk',patron=c.name)
+        found_folks = Creature.objects.filter(creature='kinfolk', patron=c.name)
         for k in found_folks:
             my_kinfolk[x] = f'- {k.name} ({c.name})'
             x += 1
         for n in range(num):
-            if my_kinfolk[n].startswith(f'- unknown #{n+1}'):
+            if my_kinfolk[n].startswith(f'- unknown #{n + 1}'):
                 nk = Creature()
                 nk.faction = 'Gaia'
                 nk.patron = c.name
                 nk.creature = 'kinfolk'
-                nk.name = f'NewKinfolk for {c.name} #{n+1}'
-                nk.age = random.randrange(18,58)
+                nk.name = f'NewKinfolk for {c.name} #{n + 1}'
+                nk.age = random.randrange(18, 58)
                 nk.need_fix = True
                 nk.save()
         x = 0
@@ -114,7 +118,7 @@ def extract_mechanics(request):
     rites = Rite.objects.all()
     all_garous = Creature.objects.filter(creature='garou')
     for garou in all_garous:
-        if garou.value_of("rites")>0:
+        if garou.value_of("rites") > 0:
             pass
     # all = Creature.objects.all()
     # for c in all:
@@ -131,3 +135,23 @@ def change_settings(request):
 
 def refix_all(request):
     pass
+
+
+def randomize_attributes(request, slug):
+    found = Creature.objects.all().filter(rid=slug)
+    if len(found) == 1:
+        x = found.first()
+        x.randomize_attributes()
+        x.need_fix = True
+        x.save()
+    return HttpResponse(status=204)
+
+
+def randomize_abilities(request, slug):
+    found = Creature.objects.all().filter(rid=slug)
+    if len(found) == 1:
+        x = found.first()
+        x.randomize_abilities()
+        x.need_fix = True
+        x.save()
+    return HttpResponse(status=204)
