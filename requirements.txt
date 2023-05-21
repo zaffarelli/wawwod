@@ -25,7 +25,7 @@ rcssmin==1.0.6
 reportlab==3.5.67
 rjsmin==1.1.0
 six==1.15.0
-sqlparse==0.4.1
+sqlparse==0.4.4
 typing-extensions==4.1.1
 webencodings==0.5.1
 xhtml2pdf==0.2.5
