@@ -1,42 +1,32 @@
-arabic-reshaper @ file:///home/zaffarelli/.cache/pypoetry/artifacts/91/2c/4e/a479e57736e97eedeafc13ee90db38a88a4f12021d1f48bf29a984955d/arabic_reshaper-2.1.3-py3-none-any.whl
-asgiref @ file:///home/zaffarelli/.cache/pypoetry/artifacts/89/53/ea/fd0193a80122afe31caafa12b90953ef7fe9db67f9dec5523fd7c9cd9b/asgiref-3.4.1-py3-none-any.whl
-cairocffi @ file:///home/zaffarelli/.cache/pypoetry/artifacts/11/36/5c/554e3f3b47023776346842caacdc1b9f1d75ca90010b438d964d9d6d60/cairocffi-1.2.0.tar.gz
-CairoSVG @ file:///home/zaffarelli/.cache/pypoetry/artifacts/43/54/e0/5ab416f0f3c74a048b69dae13e0526d55f9017cc3459f2d8e05b7053d2/CairoSVG-2.5.2-py3-none-any.whl
-cffi @ file:///home/zaffarelli/.cache/pypoetry/artifacts/14/99/91/d976a3848a4c47c73bdeba45e2bb0943c5edbc3f462407c0b6c039de8e/cffi-1.15.0-cp36-cp36m-manylinux_2_5_x86_64.manylinux1_x86_64.whl
-cssselect2 @ file:///home/zaffarelli/.cache/pypoetry/artifacts/2a/82/f8/de6973b0fb4c6b9b9a4d32971be34d28736bd56d8237ae34ee8f1f6805/cssselect2-0.4.1-py3-none-any.whl
-defusedxml @ file:///home/zaffarelli/.cache/pypoetry/artifacts/39/7d/17/0e60ad1148917a45addfaf179073674572063d010cb07b5e95d4c89e1b/defusedxml-0.7.1-py2.py3-none-any.whl
-Django @ file:///home/zaffarelli/.cache/pypoetry/artifacts/6d/09/da/2cb28540ebe73eaa9b25fd3bf9f399c7ddba96d432c9feda0d4ce453b3/Django-3.2.13-py3-none-any.whl
-django-appconf @ file:///home/zaffarelli/.cache/pypoetry/artifacts/ad/96/64/70528ac83f06ce3788431470ea1da9c67bc0986e7120b799549dd33013/django_appconf-1.0.5-py3-none-any.whl
-django-colorfield @ file:///home/zaffarelli/.cache/pypoetry/artifacts/81/fe/da/772c308823168febce95e9953daf3bd6cd768e3b7ef6bd0fa5af97d8e3/django_colorfield-0.4.5-py3-none-any.whl
-django-compressor @ file:///home/zaffarelli/.cache/pypoetry/artifacts/22/e4/b5/aaa22d373156cfb8ad7ec0f2481309dee07c7da0d5fc88cdb8843976ba/django_compressor-2.4.1-py2.py3-none-any.whl
-django-fixture-magic @ file:///home/zaffarelli/.cache/pypoetry/artifacts/70/64/93/b9f9ff297cb6cf46b17e4b4713eec27fa8b42cb06e49987287e71ef109/django-fixture-magic-0.1.5.tar.gz
-django-gunicorn @ file:///home/zaffarelli/.cache/pypoetry/artifacts/7a/f6/d4/bbe659c56660c0707473b1c90d635ea86e1522e8525b46af6f5ce13abd/django-gunicorn-0.1.1.tar.gz
-django-libsass @ file:///home/zaffarelli/.cache/pypoetry/artifacts/06/73/06/696da1a708f8d5d6e8d9d0dbb8568feca1348d0b36858214d9888260a8/django_libsass-0.8-py3-none-any.whl
-django-mysql @ file:///home/zaffarelli/.cache/pypoetry/artifacts/d8/29/cd/a1a59fa7bb70bf63e9e7b91d481b33407d72d61396dc486b3eadfee1f6/django_mysql-3.12.0-py3-none-any.whl
-flake8 @ file:///home/zaffarelli/.cache/pypoetry/artifacts/7b/45/b1/0594ea778bdc5d9b9d01e83e7375f53040fd4cb90149f4f7d6d56873be/flake8-3.9.2-py2.py3-none-any.whl
-future @ file:///home/zaffarelli/.cache/pypoetry/artifacts/8c/84/e9/16e2a01bd1155e53b60e1d54b8c9ce342b354a58f7559e889d5089239d/future-0.18.2.tar.gz
-gunicorn @ file:///home/zaffarelli/.cache/pypoetry/artifacts/4c/d7/7e/672c026805ef914cef88eaa7acedc8c77415a48ebcdc5fe1bfe78790a6/gunicorn-20.1.0-py3-none-any.whl
-html5lib @ file:///home/zaffarelli/.cache/pypoetry/artifacts/9e/00/aa/e9e4de0b70f50a872aaa2318e1f59b51bc22207920be4325a33070af2c/html5lib-1.1-py2.py3-none-any.whl
-importlib-metadata @ file:///home/zaffarelli/.cache/pypoetry/artifacts/45/f8/bb/526562b19d60ace8d4035aca37b290421adf57c44114efc32078b14480/importlib_metadata-4.8.3-py3-none-any.whl
-libsass @ file:///home/zaffarelli/.cache/pypoetry/artifacts/2f/93/7e/3c24c7b036129a11c461d27846aa29e12e31840e441dc481f7f9223c35/libsass-0.21.0-cp36-abi3-manylinux_2_5_x86_64.manylinux1_x86_64.whl
-Markdown @ file:///home/zaffarelli/.cache/pypoetry/artifacts/08/cd/4c/a286f976cd5695b193aada7803cd5d5f8bf2a7473e4f9664327608c5cd/Markdown-3.3.6-py3-none-any.whl
-mccabe @ file:///home/zaffarelli/.cache/pypoetry/artifacts/1e/5b/32/e78ec93754c8a551ba3672cd8324dfb4f298d5b0d2c111f7633a018b81/mccabe-0.6.1-py2.py3-none-any.whl
-mysqlclient @ file:///home/zaffarelli/.cache/pypoetry/artifacts/22/47/8b/72b533db3908e1782d4527c6011a19e12edba9e15ed6fa38c773741c07/mysqlclient-2.1.0.tar.gz
-Pillow @ file:///home/zaffarelli/.cache/pypoetry/artifacts/55/cc/31/2789ec5c9490dc1c38781af22b6bfe151ed772afa5f958e70b7c416e33/Pillow-8.4.0-cp36-cp36m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
-pycodestyle @ file:///home/zaffarelli/.cache/pypoetry/artifacts/1f/82/dd/3d79aaeade274c383aa05fd97b3d326f6ca2bafd4204809cfcf3d73efd/pycodestyle-2.7.0-py2.py3-none-any.whl
-pycparser @ file:///home/zaffarelli/.cache/pypoetry/artifacts/8b/ba/a3/dc15da9b3bfb91bf1f1727a9dfef32188b27012c3bcf31fbb50cc1e32b/pycparser-2.21-py2.py3-none-any.whl
-pyflakes @ file:///home/zaffarelli/.cache/pypoetry/artifacts/24/f4/8d/99367d74b5110daf3587f53d8f574f164857b6d1517cbf6b0dbf25aebc/pyflakes-2.3.1-py2.py3-none-any.whl
-PyPDF2 @ file:///home/zaffarelli/.cache/pypoetry/artifacts/43/7e/a9/8d1020ce980b5d2826684e3b0320636f2c7329004824634b2339cb9aca/PyPDF2-1.27.12-py3-none-any.whl
-python-bidi @ file:///home/zaffarelli/.cache/pypoetry/artifacts/d6/33/58/990aff4f6fc0535db18159e3431019ace72d324fd0c6a8b8bb615ff3fa/python_bidi-0.4.2-py2.py3-none-any.whl
-pytz @ file:///home/zaffarelli/.cache/pypoetry/artifacts/1a/48/33/3d491e3bea641ff01c8502ee17e8bc74742d5cde72957a8c07ce08c993/pytz-2022.1-py2.py3-none-any.whl
-rcssmin @ file:///home/zaffarelli/.cache/pypoetry/artifacts/08/28/1b/9628a1ba73f6c133af968d60fe39236b8cdf4ca4a7d0aaf4514ba0cf1c/rcssmin-1.0.6.tar.gz
-reportlab @ file:///home/zaffarelli/.cache/pypoetry/artifacts/57/86/3f/c495ce02b7e5382620b61f760880cd33ef630f2bfa91e560be92a42c1a/reportlab-3.6.6.tar.gz
-rjsmin @ file:///home/zaffarelli/.cache/pypoetry/artifacts/63/08/d8/aa64a0f5d4ee81168b5589ef3949f2add1732b2b80124d95122af1468b/rjsmin-1.1.0-cp36-cp36m-manylinux1_x86_64.whl
-six @ file:///home/zaffarelli/.cache/pypoetry/artifacts/35/2c/d9/b456d499f884f0bea2387181b83b4e3f38dcf13e41bf80dbfa857740ef/six-1.16.0-py2.py3-none-any.whl
-sqlparse @ file:///home/zaffarelli/.cache/pypoetry/artifacts/89/ed/86/a7718b54608a58f2ec82a3293169e14efda0d130199394b90271aae96b/sqlparse-0.4.2-py3-none-any.whl
-tinycss2 @ file:///home/zaffarelli/.cache/pypoetry/artifacts/9d/c5/7f/da1ecd28f3cb0dad53371990976ca6c1227619c45aebde80ebeafa28d5/tinycss2-1.1.1-py3-none-any.whl
-typing-extensions @ file:///home/zaffarelli/.cache/pypoetry/artifacts/5d/02/c6/eb206cb53cc5fb3be3de70b18b85758ea66a0ef87d4115c830d1ef4719/typing_extensions-4.1.1-py3-none-any.whl
-wawwod==0.8.0
-webencodings @ file:///home/zaffarelli/.cache/pypoetry/artifacts/f5/32/de/17ed7bd1722d45675b1c26686a5df3c2487ccc688c6cbdc0df2268dffa/webencodings-0.5.1-py2.py3-none-any.whl
-xhtml2pdf @ file:///home/zaffarelli/.cache/pypoetry/artifacts/9e/67/2f/26c44f3c3df2489f60f75de8160249d3f881387a1f0414566ebec6bb0e/xhtml2pdf-0.2.5.tar.gz
-zipp @ file:///home/zaffarelli/.cache/pypoetry/artifacts/9e/4b/5d/cf2f39813d202bb18682519dab76e12b1ea280382dc624df134428e413/zipp-3.6.0-py3-none-any.whl
+arabic-reshaper==2.1.3
+certifi==2020.12.5
+Django==2.2.4
+django-admin-interface==0.10.5
+django-appconf==1.0.3
+django-colorfield==0.1.15
+django-compressor==2.3
+django-fixture-magic==0.1.5
+django-flat-responsive==2.0
+django-flat-theme==1.1.4
+django-libsass==0.7
+django-mysql==3.2.0
+future==0.18.2
+html5lib==1.1
+importlib-metadata==4.8.3
+libsass==0.20.1
+Markdown==3.3.7
+mysqlclient==2.0.3
+pdfrw==0.4
+Pillow==8.2.0
+PyPDF2==1.26.0
+python-bidi==0.4.2
+pytz==2021.1
+rcssmin==1.0.6
+reportlab==3.5.67
+rjsmin==1.1.0
+six==1.15.0
+sqlparse==0.4.1
+typing-extensions==4.1.1
+webencodings==0.5.1
+xhtml2pdf==0.2.5
+zipp==3.6.0

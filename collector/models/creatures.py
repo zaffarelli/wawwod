@@ -12,16 +12,6 @@ logger = logging.Logger(__name__)
 chronicle = get_current_chronicle()
 
 
-# GAROU_TALENTS = ["Alertness", "Athletics", "Brawl", "Dodge", "Empathy", "Expression", "Intimidation", "Primal-Urge",
-#                  "Streetwise", "Subterfuge"]
-# GAROU_SKILLS = ["Animal Ken", "Crafts", "Drive", "Etiquette", "Firearms", "Leadership", "Melee", "Performance",
-#                 "Stealth", "Survival"]
-# GAROU_KNOWLEDGES = ["Computer", "Enigmas", "Investigation", "Law", "Linguistics", "Medicine", "Occult", "Politics",
-#                     "Rituals", "Science"]
-# GAROU_BACKGROUNDS = ["Allies", "Ancestors", "Contacts", "Fetish", "Kinfolk", "Mentor", "Pure Breed", "Resources",
-#                      "Rites", "Totem"]
-
-
 class Creature(models.Model):
     class Meta:
         verbose_name = 'Creature'
@@ -462,7 +452,7 @@ class Creature(models.Model):
             self.groupspec = domitor.groupspec
         self.expectedfreebies = self.freebies_per_immortal_age
         self.bloodpool = 10
-        self.display_gauge = int(self.trueage/50)
+        self.display_gauge = int(self.trueage / 50)
         self.display_pole = self.groupspec
 
     def fix_mortal(self):

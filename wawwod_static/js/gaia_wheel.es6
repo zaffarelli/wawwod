@@ -101,14 +101,15 @@ class GaiaWheel {
                         'name': d.name,
                         'rid': d.rid,
                         'creature': d.creature,
+                        'sire': d.sire,
                         'order': d.order,
                         'index': d.index,
                         'x': coords[0],
                         'y': coords[1],
                         'angular': coords[2],
                         'radial': coords[3],
-                        'display_gauge': coords[4],
-                        'data': d
+                        'display_gauge': coords[4]
+
                     });
 
                 } else { // New pole
@@ -122,14 +123,15 @@ class GaiaWheel {
                             'name': d.name,
                             'rid': d.rid,
                             'creature': d.creature,
+                            'sire': d.sire,
                             'order': d.order,
                             'index': d.index,
                             'x': coords[0],
                             'y': coords[1],
                             'angular': coords[2],
                             'radial': coords[3],
-                            'display_gauge': coords[4],
-                            'data': d
+                            'display_gauge': coords[4]
+
                         }]
                     };
                 }
@@ -161,8 +163,18 @@ class GaiaWheel {
             let center = poles[pole]['center'];
             poles[pole]['list'].forEach(function (v, k) {
                 if (v['creature'] != 'ghoul') {
-                    console.log(v['creature']);
-                    links.push({'x1': v.x, 'y1': v.y, 'x2': center.x, 'y2': center.y})
+                    console.log(v['name']);
+                    links.push({'x1': v.x, 'y1': v.y, 'x2': center.x, 'y2': center.y, 'category': 0})
+                    if (v['creature'] == 'kindred') {
+                        poles[pole]['list'].forEach(function (w, l) {
+                            console.log(w['sire']);
+                            if (w['creature'] == 'ghoul') {
+                                if (w['sire'] == v['rid']){
+                                    links.push({'x1': v.x, 'y1': v.y, 'x2': w.x, 'y2': w.y, 'category': 1});
+                                }
+                            }
+                        })
+                    }
                 }
             });
         }
@@ -206,9 +218,24 @@ class GaiaWheel {
             .attr("y2", function (d) {
                 return d.y2;
             })
-            .style('stroke', '#AAA')
-            .style('stroke-width', '1pt')
-            .style('stroke-dasharray', '7 3')
+            .style('stroke', function(d){
+                if (d.category == 0) {
+                    return '#AAA';
+                }
+                return '#fc4';
+            })
+            .style('stroke-width', function(d){
+                if (d.category == 0) {
+                    return '1pt';
+                }
+                return '2pt';
+            })
+            .style('stroke-dasharray', function(d){
+                if (d.category == 0) {
+                    return '3 3';
+                }
+                return '5 2';
+            })
             .style('fill', 'transparent')
             .attr('opacity', 0.5)
         ;
@@ -481,8 +508,8 @@ class GaiaWheel {
         let me = this;
         _.forEach(me.sector_data, function (v, k) {
             // console.log(v);
-            me.display_branch(v.start, v.collection, v.name, v.collection.length, v.value, v.total);
             me.display_poles(v.start, v.collection, v.name, v.collection.length, v.value, v.total);
+            me.display_branch(v.start, v.collection, v.name, v.collection.length, v.value, v.total);
         })
     }
 

@@ -18,16 +18,19 @@ class GeoCity {
             .attr("height", me.height)
         ;
 
+        me.g = me.svg.append('g');
+
         if (me.cityName == "munich") {
-            me.dataUrl = "https://gist.githubusercontent.com/p3t3r67x0/f8c1ea64b2862c6eda8771daba4f297b/raw/f35cc5e3994ee4862e5101de107f2aba33e7d658/muenchen_city_districts.geojson";
+            //me.dataUrl = "https://gist.githubusercontent.com/p3t3r67x0/f8c1ea64b2862c6eda8771daba4f297b/raw/f35cc5e3994ee4862e5101de107f2aba33e7d658/muenchen_city_districts.geojson";
+            me.dataUrl = "https://raw.githubusercontent.com/zaffarelli/wawwod/master/storytelling/static/storytelling/geojson/munich_city_districts.geojson";
 
         }else if (me.cityName == "hamburg") {
-            me.dataUrl = "https://gist.githubusercontent.com/p3t3r67x0/935759ba975ffd9f6df6d1059fe5ad82/raw/191f44e01e8d5f71451170b9d6746eefddb5c8da/hamburg_city_districts.geojson";
+            //me.dataUrl = "https://gist.githubusercontent.com/p3t3r67x0/935759ba975ffd9f6df6d1059fe5ad82/raw/191f44e01e8d5f71451170b9d6746eefddb5c8da/hamburg_city_districts.geojson";
+            me.dataUrl = "https://raw.githubusercontent.com/zaffarelli/wawwod/master/storytelling/static/storytelling/geojson/hamburg_city_districts.geojson";
         }else if (me.cityName == "new york") {
             me.dataUrl = "https://github.com/dwillis/nyc-maps/blob/master/police_precincts.geojson";
-        }
 
-        console.log(me.cityName)
+        }
     }
 
     buildPatterns() {
@@ -181,24 +184,36 @@ class GeoCity {
             ;
     }
 
-
     perform() {
         let me = this;
         me.buildPatterns();
         me.drawLegend();
         d3.json(me.dataUrl).then(function (data) {
-            if (me.cityName == 'munich') {
+            if (['munich','hamburg'].includes(me.cityName)) {
                 _.each(data.features, function (e, i) {
                     e.id = i + 1;
-                    let entry = me.wawwod_data["d" + String(i + 1).padStart(2, '0')]['s']['s01'];
-                    e.population = entry.population;
-                    e.status = entry.status
+                    e.population = 0;
+                    e.status = "neutral";
+                    if (me.wawwod_data.length>1){
+
+                        let entry = me.wawwod_data["d" + String(i + 1).padStart(2, '0')]['s']['s01'];
+                        e.population = entry.population;
+                        e.status = entry.status;
+
+                    }
+                    if (e.properties['Stadtteil']) {
+                        e.properties['name'] = e.properties['Stadtteil'];
+                        delete e.properties['Stadtteil'];
+                    }
+                    console.log(e)
                 });
             }
-            me.projection = d3.geoAlbers()
-                .rotate([0, 0]);
-            me.projection.fitSize([me.width, me.height], data)
-            let districts = me.svg.append("g")
+            me.projection = d3.geoConicEqualArea()
+                .rotate([0, 0])
+                .fitSize([me.width, me.height], data)
+                // .center([10,53])
+            ;
+            let districts = me.g.append("g")
                 .attr('class','districts')
                 .selectAll("path")
                 .data(data.features)
@@ -210,8 +225,9 @@ class GeoCity {
                 .attr("id", function (e, i) {
                     return "path_" + e.id;
                 })
-                .attr("d", d3.geoPath().projection(me.projection))
+                .attr("d",d3.geoPath().projection(me.projection))
                 .style("fill", function (e, i) {
+                   // console.log(e);
                     return "url(#" + e.status + ")"
                 })
                 .style("stroke", "#ddd")
@@ -237,9 +253,10 @@ class GeoCity {
                 .attr('height',30)
                 .attr('rx',3)
                 .attr('ry',3)
-                .style("stroke", "#ccc")
+                .style("stroke", "transparent")
                 .style("stroke-width", "1pt")
                 .style("fill", "#311")
+                .attr("fill-opacity", "0.5")
 
             ;
             item.append('text')
@@ -259,7 +276,11 @@ class GeoCity {
                 .style("stroke-width", "0.25pt")
                 .style("fill", "#111")
                 .text(function (e, i) {
-                    return e.population;
+                    //return e.population;
+                    if (e.id == 0) {
+                        console.log(e);
+                    }
+                    return e.properties.name;
 
                 })
             ;
@@ -303,7 +324,7 @@ class GeoCity {
                 .style("stroke-width", "0.25")
                 .style("fill", "#fff")
                 .text(function (e, i) {
-                    return me.cityName+" by Night";
+                    return me.cityName.charAt(0).toUpperCase() + me.cityName.slice(1)+" by Night";
                 })
             ;
             let subtext = me.svg.append('text')
@@ -346,6 +367,17 @@ class GeoCity {
             ;
 
         })
-
+        me.zoomActivate();
     }
+
+    zoomActivate() {
+        let me = this;
+        let zoom = d3.zoom()
+            .scaleExtent([0.125, 8])
+            .on('zoom', function (event) {
+                me.g.attr('transform', event.transform);
+            });
+        me.g.call(zoom);
+    }
+
 }

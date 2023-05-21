@@ -7,10 +7,57 @@
    viewBox="0 0 124.23147 20.002744"
    version="1.1"
    id="svg5"
+   sodipodi:docname="wawwod_hbn.svg"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview17"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="2.5791405"
+     inkscape:cx="296.22271"
+     inkscape:cy="12.019508"
+     inkscape:window-width="1920"
+     inkscape:window-height="1014"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g986" />
   <defs
-     id="defs2" />
+     id="defs2">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient4025">
+      <stop
+         style="stop-color:#383838;stop-opacity:1;"
+         offset="0"
+         id="stop4021" />
+      <stop
+         style="stop-color:#383838;stop-opacity:0;"
+         offset="1"
+         id="stop4023" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4025"
+       id="linearGradient4027"
+       x1="40.931885"
+       y1="94.363903"
+       x2="157.2068"
+       y2="94.363903"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
   <g
      id="layer1"
      transform="translate(-39.867325,-114.02654)" />
@@ -35,25 +82,25 @@
            id="tspan234-9"
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:QTUSA-Uncial;-inkscape-font-specification:'QTUSA-Uncial, Normal';font-variant-ligatures:normal;font-variant-caps:small-caps;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.264583"
            x="36.818142"
-           y="85.086403">Summer Sessions 2023</tspan></text>
+           y="85.086403" /></text>
       <text
          xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:12.7px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Bold';font-variant-ligatures:normal;font-variant-caps:small-caps;font-variant-numeric:normal;font-variant-east-asian:normal;opacity:0.8;fill:#474545;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:12.7px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Bold';font-variant-ligatures:normal;font-variant-caps:small-caps;font-variant-numeric:normal;font-variant-east-asian:normal;opacity:0.8;fill:#d1cece;fill-opacity:1;stroke:none;stroke-width:0.264583"
          x="35.899509"
          y="94.61821"
          id="text240-7"><tspan
            id="tspan238-5"
-           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:12.7px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Bold';font-variant-ligatures:normal;font-variant-caps:small-caps;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#747070;fill-opacity:0.448095;stroke:none;stroke-width:0.264583"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:12.7px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Bold';font-variant-ligatures:normal;font-variant-caps:small-caps;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#d1cece;fill-opacity:1;stroke:none;stroke-width:0.264583"
            x="35.899509"
            y="94.61821">Hamburg By Night</tspan></text>
       <text
          xml:space="preserve"
-         style="font-weight:600;font-size:8.46667px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-caps:small-caps;fill:#721504;fill-opacity:1;stroke:#efefef;stroke-width:0.264583;stroke-opacity:1"
+         style="font-weight:600;font-size:8.46667px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-caps:small-caps;fill:#e4b5ab;fill-opacity:1;stroke:url(#linearGradient4027);stroke-width:0.264583;stroke-opacity:1"
          x="40.72551"
          y="97.183304"
          id="text356"><tspan
            id="tspan354"
-           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.46667px;font-family:QTGraveure;-inkscape-font-specification:'QTGraveure, Bold';font-variant-ligatures:normal;font-variant-caps:small-caps;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#721504;fill-opacity:1;stroke:#efefef;stroke-width:0.264583;stroke-opacity:1"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.46667px;font-family:QTGraveure;-inkscape-font-specification:'QTGraveure, Bold';font-variant-ligatures:normal;font-variant-caps:small-caps;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#e4b5ab;fill-opacity:1;stroke:url(#linearGradient4027);stroke-width:0.264583;stroke-opacity:1"
            x="40.72551"
            y="97.183304">The Northeast Passage</tspan></text>
       <text
@@ -61,9 +108,12 @@
          style="font-weight:600;font-size:8.46667px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-caps:small-caps;stroke-width:0.264583"
          x="119.08041"
          y="100.81631"
-         id="text1119-9"><tspan
+         id="text1119-9"
+         inkscape:export-filename="wawwo_dark_hbn.png"
+         inkscape:export-xdpi="96"
+         inkscape:export-ydpi="96"><tspan
            id="tspan1117-8"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:QTVagaRound;-inkscape-font-specification:'QTVagaRound, Normal';font-variant-ligatures:normal;font-variant-caps:small-caps;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.264583"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:QTVagaRound;-inkscape-font-specification:'QTVagaRound, Normal';font-variant-ligatures:normal;font-variant-caps:small-caps;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#e8e8e8;fill-opacity:1;stroke-width:0.264583"
            x="119.08041"
            y="100.81631">Vampire the Masquerade</tspan></text>
     </g>
