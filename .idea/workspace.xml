@@ -2,22 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c5f4ae22-1e7a-419c-ac9f-80da089b72d4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/storytelling/static/storytelling/geojson/hamburg_city_districts2.geojson" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.bd33f30bc263.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_static/collector/wawwo_dark_hbn.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/static/js/geocity.es6" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/js/geocity.es6" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/collector/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/utils/data_collection.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/utils/data_collection.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/views/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/views/base.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/storytelling/geojson/hamburg_city_districts2.geojson" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/wawwod.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/wawwod.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storytelling/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/storytelling/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storytelling/views/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/storytelling/views/base.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod_static/collector/css/_basics.scss" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/collector/css/_basics.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod_static/collector/wawwod_hbn.svg" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/collector/wawwod_hbn.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod_static/js/gaia_wheel.es6" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/js/gaia_wheel.es6" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storytelling/static/storytelling/geojson/hamburg_city_districts2.geojson" beforeDir="false" afterPath="$PROJECT_DIR$/storytelling/static/storytelling/geojson/hamburg_city_districts2.geojson" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wawwod_static/js/geocity.es6" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/js/geocity.es6" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod_static/storytelling/geojson/hamburg_city_districts.geojson" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/storytelling/geojson/hamburg_city_districts.geojson" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,7 +111,7 @@
       <workItem from="1684163159070" duration="592000" />
       <workItem from="1684170361922" duration="2595000" />
       <workItem from="1684269255926" duration="71310000" />
-      <workItem from="1684776555960" duration="1116000" />
+      <workItem from="1684776555960" duration="1217000" />
     </task>
     <servers />
   </component>

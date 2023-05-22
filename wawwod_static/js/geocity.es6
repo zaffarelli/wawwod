@@ -21,7 +21,7 @@ class GeoCity {
         if (me.cityName == "munich") {
             me.dataUrl = "https://raw.githubusercontent.com/zaffarelli/wawwod/master/storytelling/static/storytelling/geojson/munich_city_districts.geojson";
         } else if (me.cityName == "hamburg") {
-            me.dataUrl = "https://raw.githubusercontent.com/zaffarelli/wawwod/master/storytelling/static/storytelling/geojson/hamburg_city_districts.geojson";
+            me.dataUrl = "https://raw.githubusercontent.com/zaffarelli/wawwod/master/storytelling/static/storytelling/geojson/hamburg_city_districts2.geojson";
         } else if (me.cityName == "new york") {
             me.dataUrl = "https://raw.githubusercontent.com/zaffarelli/wawwod/master/storytelling/static/storytelling/geojson/nyc_city_districts.geojson";
         }
@@ -190,8 +190,8 @@ class GeoCity {
                 if (_.size(me.wawwod_data) > 0) {
                     let entry = me.wawwod_data["d" + String(i + 1).padStart(2, '0')]['s']['s01'];
                     e.population = entry.population;
-                    console.log(entry)
                     e.status = entry.status;
+                    console.log(entry)
 
                 }
                 if (e.properties['Stadtteil']) {
@@ -199,6 +199,8 @@ class GeoCity {
                     delete e.properties['Stadtteil'];
                 }
             });
+            console.log(me.width)
+            console.log(me.height)
             me.projection = d3.geoAlbers()
                 .rotate([0, 0])
                 .fitSize([me.width, me.height], data)
@@ -212,10 +214,10 @@ class GeoCity {
             let item = district_in.append("g")
                 .attr('class', 'district_item');
             item.append("path")
-                .attr("id", function (e, i) {
+                .attr("id", function (e) {
                     return "path_" + e.id;
                 })
-                .attr("d", d3.geoPath().projection(me.projection))
+                .attr("d", d3.geoPath(me.projection))
                 .style("fill", function (e, i) {
                     // console.log(e);
                     return "url(#" + e.status + ")"
