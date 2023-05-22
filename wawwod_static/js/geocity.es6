@@ -21,7 +21,7 @@ class GeoCity {
         if (me.cityName == "munich") {
             me.dataUrl = "https://raw.githubusercontent.com/zaffarelli/wawwod/master/storytelling/static/storytelling/geojson/munich_city_districts.geojson";
         } else if (me.cityName == "hamburg") {
-            me.dataUrl = "https://raw.githubusercontent.com/zaffarelli/wawwod/master/storytelling/static/storytelling/geojson/hamburg_city_districts2.geojson";
+            me.dataUrl = "https://raw.githubusercontent.com/zaffarelli/wawwod/master/storytelling/static/storytelling/geojson/hamburg_city_districts.geojson";
         } else if (me.cityName == "new york") {
             me.dataUrl = "https://raw.githubusercontent.com/zaffarelli/wawwod/master/storytelling/static/storytelling/geojson/nyc_city_districts.geojson";
         }
@@ -187,13 +187,13 @@ class GeoCity {
                 e.id = i + 1;
                 e.population = 0;
                 e.status = "neutral";
-                if (_.size(me.wawwod_data) > 0) {
-                    let entry = me.wawwod_data["d" + String(i + 1).padStart(2, '0')]['s']['s01'];
-                    e.population = entry.population;
-                    e.status = entry.status;
-                    console.log(entry)
-
-                }
+                // if (_.size(me.wawwod_data) > 0) {
+                //     let entry = me.wawwod_data["d" + String(i + 1).padStart(2, '0')]['s']['s01'];
+                //     e.population = entry.population;
+                //     e.status = entry.status;
+                //     console.log(entry)
+                //
+                // }
                 if (e.properties['Stadtteil']) {
                     e.properties['name'] = e.properties['Stadtteil'];
                     delete e.properties['Stadtteil'];
@@ -201,7 +201,7 @@ class GeoCity {
             });
             console.log(me.width)
             console.log(me.height)
-            me.projection = d3.geoAlbers()
+            me.projection = d3.geoMercator()
                 .rotate([0, 0])
                 .fitSize([me.width, me.height], data)
             ;
