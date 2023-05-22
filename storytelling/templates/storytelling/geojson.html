@@ -11,9 +11,9 @@
     let projection = d3.geoAlbers()
         .rotate([0, 0])
 //    d3.json("https://raw.githubusercontent.com/oztuncbilek/geoTimeFilter/master/munich_25_districts.geojson").then(function (data) {
-  //  d3.json("https://raw.githubusercontent.com/zaffarelli/wawwod/master/storytelling/static/storytelling/geojson/de_munich_muc_districts.geojson").then(function (data) {
+      d3.json("https://raw.githubusercontent.com/zaffarelli/wawwod/master/storytelling/static/storytelling/geojson/hamburg_city_districts.geojson").then(function (data) {
     //d3.json("https://gist.githubusercontent.com/p3t3r67x0/f8c1ea64b2862c6eda8771daba4f297b/raw/f35cc5e3994ee4862e5101de107f2aba33e7d658/muenchen_city_districts.geojson").then(function (data) {
-    d3.json("https://gist.githubusercontent.com/p3t3r67x0/935759ba975ffd9f6df6d1059fe5ad82/raw/191f44e01e8d5f71451170b9d6746eefddb5c8da/hamburg_city_districts.geojson").then(function (data) {
+    //d3.json("https://gist.githubusercontent.com/p3t3r67x0/935759ba975ffd9f6df6d1059fe5ad82/raw/191f44e01e8d5f71451170b9d6746eefddb5c8da/hamburg_city_districts.geojson").then(function (data) {
         _.forEach(data.features, function(e,i){
             e.properties.id = i+1;
             console.log(e)

@@ -63,6 +63,7 @@ class WawwodCollector {
                 }
                 if (action == 'map') {
                     url = 'ajax/display/' + action + '/' + param + '/';
+                    console.log(param);
                 }
             }
             if (key != '') {
