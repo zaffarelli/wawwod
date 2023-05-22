@@ -8,7 +8,7 @@
 		}
 	},
 	"features": [{
-			"type": "Feature","properties": {"Stadtteil": "Allermöhe"},"geometry": {"type": "MultiPolygon",	"coordinates": [
+			"type": "Feature","properties": {"name": "Allermöhe"},"geometry": {"type": "MultiPolygon",	"coordinates": [
 					[
 						[
 							[10.125787023020145, 53.494745766131743],
@@ -372,7 +372,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Alsterdorf"
+				"name": "Alsterdorf"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -597,7 +597,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Altengamme"
+				"name": "Altengamme"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -1363,7 +1363,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Altenwerder"
+				"name": "Altenwerder"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -1913,7 +1913,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Altona-Altstadt"
+				"name": "Altona-Altstadt"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -2263,7 +2263,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Altona-Nord"
+				"name": "Altona-Nord"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -2713,7 +2713,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Bahrenfeld"
+				"name": "Bahrenfeld"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -3299,7 +3299,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Barmbek-Nord"
+				"name": "Barmbek-Nord"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -3690,7 +3690,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Barmbek-Süd"
+				"name": "Barmbek-Süd"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -3879,7 +3879,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Bergedorf"
+				"name": "Bergedorf"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -5060,7 +5060,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Bergstedt"
+				"name": "Bergstedt"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -6660,7 +6660,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Billbrook"
+				"name": "Billbrook"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -7020,7 +7020,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Billstedt"
+				"name": "Billstedt"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -7962,7 +7962,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Billwerder"
+				"name": "Billwerder"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -8997,7 +8997,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Blankenese"
+				"name": "Blankenese"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -9260,7 +9260,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Borgfelde"
+				"name": "Borgfelde"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -9416,7 +9416,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Bramfeld"
+				"name": "Bramfeld"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -10316,7 +10316,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Cranz"
+				"name": "Cranz"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -10559,7 +10559,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Curslack"
+				"name": "Curslack"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -11104,7 +11104,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Dulsberg"
+				"name": "Dulsberg"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -11384,7 +11384,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Duvenstedt"
+				"name": "Duvenstedt"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -12032,7 +12032,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Eidelstedt"
+				"name": "Eidelstedt"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -12665,7 +12665,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Eilbek"
+				"name": "Eilbek"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -12964,7 +12964,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Eimsbüttel"
+				"name": "Eimsbüttel"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -13323,7 +13323,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Eißendorf"
+				"name": "Eißendorf"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -13643,7 +13643,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Eppendorf"
+				"name": "Eppendorf"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -14016,7 +14016,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Farmsen-Berne"
+				"name": "Farmsen-Berne"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -14684,7 +14684,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Finkenwerder"
+				"name": "Finkenwerder"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -14956,7 +14956,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Francop"
+				"name": "Francop"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -15599,7 +15599,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Fuhlsbüttel"
+				"name": "Fuhlsbüttel"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -16208,7 +16208,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Groß Borstel"
+				"name": "Groß Borstel"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -16463,7 +16463,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Groß Flottbek"
+				"name": "Groß Flottbek"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -16656,7 +16656,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Gut Moor"
+				"name": "Gut Moor"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -17063,7 +17063,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "HafenCity"
+				"name": "HafenCity"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -17171,7 +17171,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Hamburg-Altstadt"
+				"name": "Hamburg-Altstadt"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -17347,7 +17347,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Hamm"
+				"name": "Hamm"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -17562,7 +17562,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Hammerbrook"
+				"name": "Hammerbrook"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -17764,7 +17764,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Harburg"
+				"name": "Harburg"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -18053,7 +18053,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Harvestehude"
+				"name": "Harvestehude"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -18256,7 +18256,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Hausbruch"
+				"name": "Hausbruch"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -19039,7 +19039,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Heimfeld"
+				"name": "Heimfeld"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -19547,7 +19547,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Hoheluft-Ost"
+				"name": "Hoheluft-Ost"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -19666,7 +19666,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Hoheluft-West"
+				"name": "Hoheluft-West"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -19836,7 +19836,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Hohenfelde"
+				"name": "Hohenfelde"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -20022,7 +20022,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Horn"
+				"name": "Horn"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -20312,7 +20312,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Hummelsbüttel"
+				"name": "Hummelsbüttel"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -21160,7 +21160,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Iserbrook"
+				"name": "Iserbrook"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -21569,7 +21569,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Jenfeld"
+				"name": "Jenfeld"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -21981,7 +21981,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Kirchwerder"
+				"name": "Kirchwerder"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -23126,7 +23126,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Kleiner Grasbrook"
+				"name": "Kleiner Grasbrook"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -23276,7 +23276,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Langenbek"
+				"name": "Langenbek"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -23550,7 +23550,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Langenhorn"
+				"name": "Langenhorn"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -24008,7 +24008,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Lemsahl-Mellingstedt"
+				"name": "Lemsahl-Mellingstedt"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -24834,7 +24834,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Lohbrügge"
+				"name": "Lohbrügge"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -26480,7 +26480,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Lokstedt"
+				"name": "Lokstedt"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -26959,7 +26959,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Lurup"
+				"name": "Lurup"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -27393,7 +27393,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Marienthal"
+				"name": "Marienthal"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -27651,7 +27651,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Marmstorf"
+				"name": "Marmstorf"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -28088,7 +28088,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Moorburg"
+				"name": "Moorburg"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -28966,7 +28966,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Moorfleet"
+				"name": "Moorfleet"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -29255,7 +29255,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Neuallermöhe"
+				"name": "Neuallermöhe"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -29375,7 +29375,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Neuenfelde"
+				"name": "Neuenfelde"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -30235,7 +30235,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Neuengamme"
+				"name": "Neuengamme"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -31314,7 +31314,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Neugraben-Fischbek"
+				"name": "Neugraben-Fischbek"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -32128,7 +32128,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Neuland"
+				"name": "Neuland"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -32627,7 +32627,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Neustadt"
+				"name": "Neustadt"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -32869,7 +32869,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Neuwerk"
+				"name": "Neuwerk"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -33018,7 +33018,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Niendorf"
+				"name": "Niendorf"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -33573,7 +33573,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Nienstedten"
+				"name": "Nienstedten"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -33807,7 +33807,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Ochsenwerder"
+				"name": "Ochsenwerder"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -34438,7 +34438,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Ohlsdorf"
+				"name": "Ohlsdorf"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -35076,7 +35076,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Osdorf"
+				"name": "Osdorf"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -35624,7 +35624,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Othmarschen"
+				"name": "Othmarschen"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -35859,7 +35859,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Ottensen"
+				"name": "Ottensen"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -36030,7 +36030,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Poppenbüttel"
+				"name": "Poppenbüttel"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -36881,7 +36881,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Rahlstedt"
+				"name": "Rahlstedt"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -37931,7 +37931,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Reitbrook"
+				"name": "Reitbrook"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -38417,7 +38417,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Rissen"
+				"name": "Rissen"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -39068,7 +39068,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Rönneburg"
+				"name": "Rönneburg"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -39380,7 +39380,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Rothenburgsort"
+				"name": "Rothenburgsort"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -39611,7 +39611,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Rotherbaum"
+				"name": "Rotherbaum"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -40012,7 +40012,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Sasel"
+				"name": "Sasel"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -40814,7 +40814,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Schnelsen"
+				"name": "Schnelsen"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -41514,7 +41514,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Sinstorf"
+				"name": "Sinstorf"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -41891,7 +41891,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Spadenland"
+				"name": "Spadenland"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -42271,7 +42271,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "St.Georg"
+				"name": "St.Georg"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -42507,7 +42507,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "St.Pauli"
+				"name": "St.Pauli"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -43011,7 +43011,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Steilshoop"
+				"name": "Steilshoop"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -43313,7 +43313,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Steinwerder"
+				"name": "Steinwerder"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -43568,7 +43568,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Stellingen"
+				"name": "Stellingen"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -44046,7 +44046,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Sternschanze"
+				"name": "Sternschanze"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -44353,7 +44353,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Sülldorf"
+				"name": "Sülldorf"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -44855,7 +44855,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Tatenberg"
+				"name": "Tatenberg"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -45168,7 +45168,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Tonndorf"
+				"name": "Tonndorf"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -45500,7 +45500,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Uhlenhorst"
+				"name": "Uhlenhorst"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -45604,7 +45604,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Veddel"
+				"name": "Veddel"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -45877,7 +45877,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Volksdorf"
+				"name": "Volksdorf"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -47229,7 +47229,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Waltershof"
+				"name": "Waltershof"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -47535,7 +47535,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Wandsbek"
+				"name": "Wandsbek"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -48071,7 +48071,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Wellingsbüttel"
+				"name": "Wellingsbüttel"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -48589,7 +48589,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Wilhelmsburg"
+				"name": "Wilhelmsburg"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -49287,7 +49287,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Wilstorf"
+				"name": "Wilstorf"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -49639,7 +49639,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Winterhude"
+				"name": "Winterhude"
 			},
 			"geometry": {
 				"type": "MultiPolygon",
@@ -49879,7 +49879,7 @@
 		{
 			"type": "Feature",
 			"properties": {
-				"Stadtteil": "Wohldorf-Ohlstedt"
+				"name": "Wohldorf-Ohlstedt"
 			},
 			"geometry": {
 				"type": "MultiPolygon",

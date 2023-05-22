@@ -17,17 +17,14 @@ class GeoCity {
             .attr("width", me.width)
             .attr("height", me.height)
         ;
-
+        me.g = me.svg.append('g');
         if (me.cityName == "munich") {
-            me.dataUrl = "https://gist.githubusercontent.com/p3t3r67x0/f8c1ea64b2862c6eda8771daba4f297b/raw/f35cc5e3994ee4862e5101de107f2aba33e7d658/muenchen_city_districts.geojson";
-
-        }else if (me.cityName == "hamburg") {
-            me.dataUrl = "https://gist.githubusercontent.com/p3t3r67x0/935759ba975ffd9f6df6d1059fe5ad82/raw/191f44e01e8d5f71451170b9d6746eefddb5c8da/hamburg_city_districts.geojson";
-        }else if (me.cityName == "new york") {
-            me.dataUrl = "https://github.com/dwillis/nyc-maps/blob/master/police_precincts.geojson";
+            me.dataUrl = "https://raw.githubusercontent.com/zaffarelli/wawwod/master/storytelling/static/storytelling/geojson/munich_city_districts.geojson";
+        } else if (me.cityName == "hamburg") {
+            me.dataUrl = "https://raw.githubusercontent.com/zaffarelli/wawwod/master/storytelling/static/storytelling/geojson/hamburg_city_districts.geojson";
+        } else if (me.cityName == "new york") {
+            me.dataUrl = "https://raw.githubusercontent.com/zaffarelli/wawwod/master/storytelling/static/storytelling/geojson/nyc_city_districts.geojson";
         }
-
-        console.log(me.cityName)
     }
 
     buildPatterns() {
@@ -134,84 +131,93 @@ class GeoCity {
 
     }
 
-    drawLegend(){
+    drawLegend() {
         let me = this;
         let legend_data = [
-            {'pattern':'pure-camarilla', 'text': 'Camarilla'},
-            {'pattern':'camarilla-controlled', 'text': 'Camarilla controlled'},
-            {'pattern':'camarilla-presence', 'text': 'Camarilla presence'},
-            {'pattern':'neutral', 'text': 'Uncontested'},
-            {'pattern':'gangrel-territory', 'text': 'Gangrel clan territory'},
-            {'pattern':'camarilla-contested-giovanni', 'text': "Highly contested"},
-            {'pattern':'sparse-intrusions', 'text': "Sparse intrusions"}
+            {'pattern': 'pure-camarilla', 'text': 'Camarilla'},
+            {'pattern': 'camarilla-controlled', 'text': 'Camarilla controlled'},
+            {'pattern': 'camarilla-presence', 'text': 'Camarilla presence'},
+            {'pattern': 'neutral', 'text': 'Uncontested'},
+            {'pattern': 'gangrel-territory', 'text': 'Gangrel clan territory'},
+            {'pattern': 'camarilla-contested-giovanni', 'text': "Highly contested"},
+            {'pattern': 'sparse-intrusions', 'text': "Sparse intrusions"}
         ]
         let legend = me.svg.append("g")
-                .selectAll(".legend_item")
-                .data(legend_data)
-            ;
-            let legend_in = legend.enter()
-            let item = legend_in.append("g")
-                .attr("class",'legend_item');
-            item.append("rect")
-                .attr("x", me.width/64)
-                .attr("y", function(d,i){
-                    return i*30;
-                })
-                .attr('height', 20)
-                .attr('width', 30)
-                .style('fill',function(d,i){
-                    return 'url(#'+d.pattern+')'
-                })
-                .style('stroke', '#ccc')
-                .style('stroke-width', '0.5pt')
-            ;
-            item.append("text")
-                .attr("x", me.width/64+50)
-                .attr("y", function(d,i){
-                    return i*30;
-                })
-                .attr("dy", 15)
-                .style('fill', '#fff')
-                .style('stroke', '#888')
-                .style('stroke-width', '0.5pt')
-                .style('font-family', 'Roboto')
-                .text(function(d,i){
-                    return d.text;
-                })
-            ;
+            .selectAll(".legend_item")
+            .data(legend_data)
+        ;
+        let legend_in = legend.enter()
+        let item = legend_in.append("g")
+            .attr("class", 'legend_item');
+        item.append("rect")
+            .attr("x", me.width / 64)
+            .attr("y", function (d, i) {
+                return i * 30;
+            })
+            .attr('height', 20)
+            .attr('width', 30)
+            .style('fill', function (d, i) {
+                return 'url(#' + d.pattern + ')'
+            })
+            .style('stroke', '#ccc')
+            .style('stroke-width', '0.5pt')
+        ;
+        item.append("text")
+            .attr("x", me.width / 64 + 50)
+            .attr("y", function (d, i) {
+                return i * 30;
+            })
+            .attr("dy", 15)
+            .style('fill', '#fff')
+            .style('stroke', '#888')
+            .style('stroke-width', '0.5pt')
+            .style('font-family', 'Roboto')
+            .text(function (d, i) {
+                return d.text;
+            })
+        ;
     }
-
 
     perform() {
         let me = this;
         me.buildPatterns();
         me.drawLegend();
         d3.json(me.dataUrl).then(function (data) {
-            if (me.cityName == 'munich') {
-                _.each(data.features, function (e, i) {
-                    e.id = i + 1;
+            _.each(data.features, function (e, i) {
+                e.id = i + 1;
+                e.population = 0;
+                e.status = "neutral";
+                if (_.size(me.wawwod_data) > 0) {
                     let entry = me.wawwod_data["d" + String(i + 1).padStart(2, '0')]['s']['s01'];
                     e.population = entry.population;
-                    e.status = entry.status
-                });
-            }
+                    console.log(entry)
+                    e.status = entry.status;
+
+                }
+                if (e.properties['Stadtteil']) {
+                    e.properties['name'] = e.properties['Stadtteil'];
+                    delete e.properties['Stadtteil'];
+                }
+            });
             me.projection = d3.geoAlbers()
-                .rotate([0, 0]);
-            me.projection.fitSize([me.width, me.height], data)
-            let districts = me.svg.append("g")
-                .attr('class','districts')
+                .rotate([0, 0])
+                .fitSize([me.width, me.height], data)
+            ;
+            let districts = me.g.append("g")
+                .attr('class', 'districts')
                 .selectAll("path")
                 .data(data.features)
             ;
             let district_in = districts.enter()
             let item = district_in.append("g")
-                .attr('class','district_item');
+                .attr('class', 'district_item');
             item.append("path")
                 .attr("id", function (e, i) {
                     return "path_" + e.id;
                 })
                 .attr("d", d3.geoPath().projection(me.projection))
                 .style("fill", function (e, i) {
+                    // console.log(e);
                     return "url(#" + e.status + ")"
                 })
                 .style("stroke", "#ddd")
@@ -222,24 +228,25 @@ class GeoCity {
                     d3.select("#path_" + e.id).style("fill", "#863");
                 })
                 .on('mouseout', function (h, e) {
-                      d3.select("#infotext").text("");
+                    d3.select("#infotext").text("");
                     d3.select("#path_" + e.id).style("fill", "url(#" + e.status + ")");
                 })
             ;
             item.append('rect')
                 .attr("x", function (e, i) {
-                    return d3.geoPath().projection(me.projection).centroid(e)[0]-20;
+                    return d3.geoPath().projection(me.projection).centroid(e)[0] - 20;
                 })
                 .attr("y", function (e, i) {
                     return d3.geoPath().projection(me.projection).centroid(e)[1];
                 })
-                .attr('width',40)
-                .attr('height',30)
-                .attr('rx',3)
-                .attr('ry',3)
-                .style("stroke", "#ccc")
+                .attr('width', 40)
+                .attr('height', 30)
+                .attr('rx', 3)
+                .attr('ry', 3)
+                .style("stroke", "transparent")
                 .style("stroke-width", "1pt")
                 .style("fill", "#311")
+                .attr("fill-opacity", "0.5")
 
             ;
             item.append('text')
@@ -249,17 +256,21 @@ class GeoCity {
                 .attr("y", function (e, i) {
                     return d3.geoPath().projection(me.projection).centroid(e)[1];
                 })
-                .attr('dx',0)
-                .attr('dy',-14)
+                .attr('dx', 0)
+                .attr('dy', -14)
                 .style("font-family", "Roboto")
                 .style("text-anchor", "middle")
-                .style("font-size", "10pt")
+                .style("font-size", "9pt")
                 .style("font-weight", "bold")
                 .style("stroke", "#000")
                 .style("stroke-width", "0.25pt")
                 .style("fill", "#111")
                 .text(function (e, i) {
-                    return e.population;
+                    return "K=" + e.population;
+                    if (e.id == 0) {
+                        console.log(e);
+                    }
+                    return e.properties.name;
 
                 })
             ;
@@ -270,8 +281,8 @@ class GeoCity {
                 .attr("y", function (e, i) {
                     return d3.geoPath().projection(me.projection).centroid(e)[1];
                 })
-                .attr('dx',0)
-                .attr('dy',20)
+                .attr('dx', 0)
+                .attr('dy', 20)
                 .style("font-family", "Roboto")
                 .style("text-anchor", "middle")
                 .style("font-size", "10pt")
@@ -303,7 +314,7 @@ class GeoCity {
                 .style("stroke-width", "0.25")
                 .style("fill", "#fff")
                 .text(function (e, i) {
-                    return me.cityName+" by Night";
+                    return me.cityName.charAt(0).toUpperCase() + me.cityName.slice(1) + " by Night";
                 })
             ;
             let subtext = me.svg.append('text')
@@ -346,6 +357,17 @@ class GeoCity {
             ;
 
         })
-
+        me.zoomActivate();
     }
+
+    zoomActivate() {
+        let me = this;
+        let zoom = d3.zoom()
+            .scaleExtent([0.125, 8])
+            .on('zoom', function (event) {
+                me.g.attr('transform', event.transform);
+            });
+        me.g.call(zoom);
+    }
+
 }

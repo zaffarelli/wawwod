@@ -38,7 +38,8 @@ def prepare_index(request):
     for c in Chronicle.objects.all():
         chronicles.append({'name': c.name, 'acronym': c.acronym, 'active': c.is_current})
     for ci in City.objects.all():
-        cities.append({'name': ci.name, 'tag': ci.name.lower()})
+        tag = ci.name.replace(' ', '_')
+        cities.append({'name': ci.name, 'tag': tag.lower()})
     context = {'chronicles': chronicles, 'fontset': FONTSET, 'players': players, 'cities': cities}
     return context
 

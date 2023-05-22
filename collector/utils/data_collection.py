@@ -456,6 +456,9 @@ HAMBURG_DISTRICTS = {
 def get_districts(cityname):
     from storytelling.models.cities import City
     from storytelling.models.districts import District
+
+    print(cityname.title())
+
     cities = City.objects.filter(name=cityname.title())
     context = {'districts': {}}
     if len(cities) == 1:

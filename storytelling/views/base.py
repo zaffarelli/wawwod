@@ -75,7 +75,8 @@ def display_pdf_story(request):
             selected_story = s
     full_cast = []
     # casted = Creature.objects.filter(rid__in=selected_story.all_cast).order_by('faction', '-freebies', 'family', '-background3','name')
-    casted = Creature.objects.filter(chronicle="HbN", player="").order_by('faction', 'family', '-freebies',   'groupspec', 'group')
+    casted = Creature.objects.filter(chronicle="HbN", player="").order_by('faction', 'family', '-freebies', 'groupspec',
+                                                                          'group')
     for c in casted:
         full_cast.append(c)
     print(full_cast)
@@ -131,11 +132,12 @@ def display_map(request, slug=None):
     if request.is_ajax:
         if not slug:
             slug = 'munich'
-        context = get_districts(slug)
+        x = slug.replace('_', ' ')
+        context = get_districts(x)
         response['data'] = context
     return JsonResponse(response)
 
 
-def show_munich(request):
-    context = {}
-    return render(request, 'storytelling/geojson.html')
+# def show_munich(request):
+#     context = {}
+#     return render(request, 'storytelling/geojson.html')

@@ -222,13 +222,13 @@ class GaiaWheel {
                 if (d.category == 0) {
                     return '#AAA';
                 }
-                return '#fc4';
+                return '#BA8';
             })
             .style('stroke-width', function(d){
                 if (d.category == 0) {
-                    return '1pt';
+                    return '3pt';
                 }
-                return '2pt';
+                return '1pt';
             })
             .style('stroke-dasharray', function(d){
                 if (d.category == 0) {
@@ -371,13 +371,13 @@ class GaiaWheel {
             .style("font-family", 'Ruda')
             .style("font-size", '8pt')
             .style("fill", '#CCC')
-            .style("stroke", '#888')
-            .style("stroke-width", '0.5pt')
+            .style("stroke", '#111')
+            .style("stroke-width", '0.125pt')
             .text(function (d) {
-                let name = "";//d.name;
+                let name = d.name;
                 let words = d.name.split(' ');
                 words.forEach(function (word, k) {
-                    name += word[0];
+                    //name += word[0];
                 })
                 // name += " "+d.index
                 let x = (d.condition == "DEAD" ? "(D)" : (d.condition == "MISSING" ? "(M)" : ""))
