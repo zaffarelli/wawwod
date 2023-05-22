@@ -4,8 +4,7 @@
     <list default="true" id="c5f4ae22-1e7a-419c-ac9f-80da089b72d4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/wawwod.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/wawwod.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storytelling/static/storytelling/geojson/hamburg_city_districts2.geojson" beforeDir="false" afterPath="$PROJECT_DIR$/storytelling/static/storytelling/geojson/hamburg_city_districts2.geojson" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod_static/js/geocity.es6" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/js/geocity.es6" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storytelling/static/storytelling/geojson/hamburg_city_districts.geojson" beforeDir="false" afterPath="$PROJECT_DIR$/storytelling/static/storytelling/geojson/hamburg_city_districts.geojson" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wawwod_static/storytelling/geojson/hamburg_city_districts2.geojson" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/storytelling/geojson/hamburg_city_districts2.geojson" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -112,7 +111,7 @@
       <workItem from="1684163159070" duration="592000" />
       <workItem from="1684170361922" duration="2595000" />
       <workItem from="1684269255926" duration="71310000" />
-      <workItem from="1684776555960" duration="4595000" />
+      <workItem from="1684776555960" duration="4710000" />
     </task>
     <servers />
   </component>
