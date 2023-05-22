@@ -21,7 +21,11 @@ class GeoCity {
         if (me.cityName == "munich") {
             me.dataUrl = "https://raw.githubusercontent.com/zaffarelli/wawwod/master/storytelling/static/storytelling/geojson/munich_city_districts.geojson";
         } else if (me.cityName == "hamburg") {
-            me.dataUrl = "https://raw.githubusercontent.com/zaffarelli/wawwod/master/storytelling/static/storytelling/geojson/hamburg_city_districts2.geojson";
+            me.dataUrl = "https://raw.githubusercontent.com/zaffarelli/wawwod/master/storytelling/static/storytelling/geojson/hamburg_city_districts.geojson";
+            me.dataUrl = "https://raw.githubusercontent.com/zaffarelli/wawwod/master/storytelling/static/storytelling/geojson/nyc.city_districts.geojson";
+            me.dataUrl = "https://raw.githubusercontent.com/geopandas/scipy2018-geospatial-data/master/data/berlin-districts.geojson";
+            me.dataUrl = "https://gist.githubusercontent.com/p3t3r67x0/935759ba975ffd9f6df6d1059fe5ad82/raw/191f44e01e8d5f71451170b9d6746eefddb5c8da/hamburg_city_districts.geojson";
+            me.dataUrl = "https://gist.githubusercontent.com/p3t3r67x0/935759ba975ffd9f6df6d1059fe5ad82/raw/191f44e01e8d5f71451170b9d6746eefddb5c8da/hamburg.geojson";
         } else if (me.cityName == "new york") {
             me.dataUrl = "https://raw.githubusercontent.com/zaffarelli/wawwod/master/storytelling/static/storytelling/geojson/qnd.geojson";
         }
@@ -201,7 +205,7 @@ class GeoCity {
             });
             console.log(me.width)
             console.log(me.height)
-            me.projection = d3.geoMercator()
+            me.projection = d3.geoAlbers()
                 .rotate([0, 0])
                 .fitSize([me.width, me.height], data)
             ;
