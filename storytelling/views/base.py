@@ -109,7 +109,7 @@ def display_pdf_story(request):
 
 @csrf_exempt
 def update_scene(request, id: None, field: None):
-    if request.is_ajax:
+    if is_ajax(request):
         answer = {'error': 'bad_id'}
         if id:
             print(id, field)
@@ -129,7 +129,7 @@ def update_scene(request, id: None, field: None):
 def display_map(request, slug=None):
     from collector.utils.data_collection import get_districts
     response = {'html': '', 'data': {}}
-    if request.is_ajax:
+    if is_ajax(request):
         if not slug:
             slug = 'munich'
         x = slug.replace('_', ' ')

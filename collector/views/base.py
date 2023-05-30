@@ -15,6 +15,7 @@ from collector.utils.wod_reference import FONTSET
 from collector.utils.data_collection import improvise_id
 from django.contrib.auth.decorators import login_required
 from django.conf import settings
+from collector.utils.helper import is_ajax
 import os
 
 chronicle = get_current_chronicle()
@@ -54,7 +55,7 @@ def index(request):
 
 
 def change_chronicle(request, slug=None):
-    if request.is_ajax:
+    if is_ajax(request):
         from collector.utils.wod_reference import set_chronicle
         set_chronicle(slug)
         context = prepare_index(request)
@@ -64,7 +65,7 @@ def change_chronicle(request, slug=None):
 def get_list(request, pid=1, slug=None):
     print(slug)
     print(chronicle.acronym)
-    if request.is_ajax:
+    if is_ajax(request):
         if 'vtm' == slug:
             print('vampires')
             creature_items = Creature.objects.filter(chronicle=chronicle.acronym, creature__in=['ghoul', 'kindred']) \
@@ -110,7 +111,7 @@ def get_list(request, pid=1, slug=None):
 
 @csrf_exempt
 def updown(request):
-    if request.is_ajax():
+    if is_ajax(request)():
         answer = 'error'
         if request.method == 'POST':
             answer = {}
@@ -134,7 +135,7 @@ def updown(request):
 
 @csrf_exempt
 def userinput(request):
-    if request.is_ajax():
+    if is_ajax(request)():
         answer = 'error'
         if request.method == 'POST':
             answer = {}
@@ -155,7 +156,7 @@ def userinput(request):
 
 
 def add_creature(request, slug=None):
-    if request.is_ajax:
+    if is_ajax(request):
 
         name = " ".join(slug.split("_"))
         chronicle = get_current_chronicle()
@@ -180,7 +181,7 @@ def add_creature(request, slug=None):
 
 
 def add_kindred(request, slug=None):
-    if request.is_ajax:
+    if is_ajax(request):
         name = " ".join(slug.split("_"))
         chronicle = get_current_chronicle()
         item = Creature()
@@ -200,7 +201,7 @@ def add_kindred(request, slug=None):
 
 
 def add_ghoul(request, slug=None):
-    if request.is_ajax:
+    if is_ajax(request):
         needed_ghouls = 0
         domitor_rid = toRID(slug)
         domitors = Creature.objects.filter(creature='kindred', rid=domitor_rid)
@@ -231,7 +232,7 @@ def add_ghoul(request, slug=None):
 
 
 def display_crossover_sheet(request, slug=None, option=None):
-    if request.is_ajax:
+    if is_ajax(request):
         chronicle = get_current_chronicle()
         if slug is None:
             slug = 'julius_von_blow'
@@ -280,13 +281,13 @@ def display_crossover_sheet(request, slug=None, option=None):
 
 
 def display_gaia_wheel(request):
-    if request.is_ajax:
+    if is_ajax(request):
         gaia_wheel_context = {'data': build_gaia_wheel()}
         return JsonResponse(gaia_wheel_context)
 
 
 def display_lineage(request, slug=None):
-    if request.is_ajax:
+    if is_ajax(request):
         if slug is None:
             data = build_per_primogen()
         else:
@@ -301,7 +302,7 @@ def svg_to_pdf(request, slug):
     import cairosvg
     print("svg_to_pdf")
     response = {'status': 'error'}
-    if request.is_ajax():
+    if is_ajax(request)():
         pdf_name = os.path.join(settings.MEDIA_ROOT, 'pdf/results/' + request.POST["pdf_name"])
         svg_name = os.path.join(settings.MEDIA_ROOT, 'pdf/results/' + request.POST["svg_name"])
         svgtxt = request.POST["svg"]
