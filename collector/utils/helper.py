@@ -18,3 +18,13 @@ def toRID(txt):
         .replace('à', 'a').replace('-', '').replace('ö', 'oe') \
         .replace('ä', 'ae').replace('ü', 'ue').replace('ß', 'ss').replace('ç', 'c')
     return f'_{x.lower()}'
+
+# Converting lat/long to cartesian
+def get_cartesian(lat=None,lon=None):
+    import numpy as np
+    lat, lon = np.deg2rad(lat), np.deg2rad(lon)
+    R = 6371 # radius of the earth
+    x = R * np.cos(lat) * np.cos(lon)
+    y = R * np.cos(lat) * np.sin(lon)
+    z = R *np.sin(lat)
+    return x,y,z

@@ -698,20 +698,26 @@ svg.lineage {
   color: black;
   border: 1px solid black;
   border-radius: 5px;
+
   padding: 2px;
-  width: 160px;
-  height: 180px;
+  width: 15vw;
+  height: 30vh;
   pointer-events: none;
-  font-family: TexteLibre;
-  font-size: 8pt;
+  font-family: "Ruda";
+  font-size: 11pt;
   color:black;
   background: #C0C0C0;
   padding-left: 15px;
   padding-right: 15px;
-  box-shadow: 0 0 15px #222;
+  box-shadow: 0 0 5px #111;
   z-index: 40000;
-  left:10vw;
-  bottom:20vh;
+  right:5vw;
+  top:10vh;
+
+
+  & p{
+    text-align: left;
+  }
 
 
   & strong {

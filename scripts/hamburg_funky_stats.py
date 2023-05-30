@@ -1,7 +1,7 @@
 # exec(open('scripts/hamburg_funky_stats.py').read())
 from collector.models.creatures import Creature
 
-hamburgers = Creature.objects.filter(chronicle="HbN", creature__in=["kindred","ghoul"]).order_by("-freebies")
+hamburgers = Creature.objects.filter(chronicle="HbN", hidden=False,creature__in=["kindred","ghoul"]).order_by("-creature","-freebies")
 lines = []
 entry = []
 entry.append(f"Name")
@@ -18,6 +18,7 @@ entry.append(f"Demeanor")
 entry.append(f"Type")
 entry.append(f"Group")
 entry.append(f"Subgroup")
+entry.append(f"Condition")
 lines.append(", ".join(entry))
 for h in hamburgers:
     entry = []
@@ -38,5 +39,7 @@ for h in hamburgers:
     entry.append(f"{h.creature}")
     entry.append(f"{h.group}")
     entry.append(f"{h.groupspec}")
+    entry.append(f"{h.status}")
     lines.append(", ".join(entry))
+
 print("\n".join(lines))

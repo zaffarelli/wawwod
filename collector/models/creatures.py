@@ -317,6 +317,14 @@ class Creature(models.Model):
         else:
             return self.family
 
+    def get_traits(self):
+        list = []
+        for x in range(16):
+            trait = getattr(self, f'trait{x}', '')
+            if trait != '':
+                list.append(trait)
+        return list
+
     def value_of(self, stat):
         found = find_stat_property(self.creature, stat)
         logger.info(f'Searching value of {stat} for {self.creature} ({self.name})')
@@ -382,9 +390,38 @@ class Creature(models.Model):
 
     @property
     def freebies_per_age_threshold(self):
-        aging = {'0': 15, '50': 30, '100': 60, '150': 90, '200': 120, '250': 150, '300': 190, '400': 240,
-                 '500': 280, '700': 320, '900': 360, '1100': 400, '1300': 425, '1500': 495, '1700': 565,
-                 '2000': 645, '2500': 735, '3000': 825}
+        aging = {
+            '0': 15,  # Neonate
+            '10': 25,
+            '20': 35,
+            '30': 45,
+            '40': 55,
+            '50': 65,
+            '60': 75,
+            '75': 100,  # Ancilla
+            '100': 120,
+            '125': 140,
+            '150': 160,
+            '175': 180,
+            '200': 200,  # Elder
+            '250': 220,
+            '300': 240,
+            '350': 260,
+            '400': 280,
+            '450': 300,
+            '500': 330,
+            '550': 360,
+            '600': 390,
+            '650': 430,
+            '700': 470,
+            '800': 520,
+            '900': 550,
+            '1000': 600,
+            '1500': 700,
+            '2000': 800,
+            '2500': 900,
+            '3000': 1000
+        }
         time_awake = int(self.trueage) - int(self.age) - int(self.timeintorpor)
         print(f'{self.name} time awake --> ', time_awake)
         x = 0
@@ -418,11 +455,13 @@ class Creature(models.Model):
             self.embrace = chronicle.era - (self.trueage - self.age)
         if self.trueage == 0:
             self.trueage = chronicle.era - (self.embrace - self.age)
-        # if self.player:
-        #     self.expectedfreebies = 0
-        # else:
-        self.expectedfreebies = self.freebies_per_age_threshold
-        print(f'{self.name} expected freebies is {self.expectedfreebies}')
+        if self.player:
+            from collector.models.chronicles import Chronicle
+            self.expectedfreebies = Chronicle.objects.get(acronym=self.chronicle).players_starting_freebies
+            print(f'{self.name} expected freebies is {self.expectedfreebies} (Player)')
+        else:
+            self.expectedfreebies = self.freebies_per_age_threshold
+            print(f'{self.name} expected freebies is {self.expectedfreebies} (NPC)')
         # Willpower
         if self.willpower < self.virtue2:
             self.willpower = self.virtue2
@@ -450,6 +489,10 @@ class Creature(models.Model):
                 self.display_gauge = domitor.display_gauge / 3
             self.group = "Ghoul of " + domitor.name
             self.groupspec = domitor.groupspec
+            self.hidden = domitor.hidden
+            if self.district is None:
+                self.district = domitor.district
+
         self.expectedfreebies = self.freebies_per_immortal_age
         self.bloodpool = 10
         self.display_gauge = int(self.trueage / 50)
@@ -629,7 +672,13 @@ class Creature(models.Model):
             self.fix_changeling()
         if 'kindred' == self.creature:
             # at:7/5/3 ab:13/9/5 b:5 d:21 v:7 wh:10 f:15
-            self.freebies = -((7 + 5 + 3 + 9) * 5 + (13 + 9 + 5) * 2 + 7 * 3 + (7 + 3) * 2 + 10 + 15)
+            self.freebies = 0
+            self.freebies -= (7 + 5 + 3 + 9) * 5  # Attributes
+            self.freebies -= (13 + 9 + 5) * 2  # Abilities
+            self.freebies -= 3 * 7  # Disciplines
+            self.freebies -= (7 + 3) * 2  # Virtues
+            self.freebies -= 5 * 1  # Backgrounds
+            self.freebies -= 15  # Pure freebies
             self.fix_kindred()
         elif 'garou' == self.creature:
             # at:7/5/3 ab:13/9/5 b:5 g:21 rgw:16 f:15
@@ -1092,8 +1141,8 @@ class Creature(models.Model):
             # Virtues
             for i in range(3):
                 self.freebies += getattr(self, f'virtue{i}') * 2
-            self.freebies += getattr(self, 'humanity')
-            self.freebies += getattr(self, 'willpower')
+            self.freebies += getattr(self, 'humanity') - self.virtue0 - self.virtue1
+            self.freebies += getattr(self, 'willpower') - self.virtue2
             self.freebies += self.total_traits * 7  # 7 pts per discipline pts
         elif 'mage' == self.creature:
             self.freebies += getattr(self, 'arete')
@@ -1297,9 +1346,46 @@ class Creature(models.Model):
         return fmt_list
 
     def disciplines_notes(self):
-        list = self.notes_on_traits.split('\r\n');
         fmt_list = []
         idx = 0
+        if self.creature in ["kindred", "ghoul"]:
+            from collector.models.disciplines import Discipline
+            extended_traits = []
+            traits = self.get_traits()
+            for t in traits:
+                words = t.split(' (')
+                d = words[0]
+                v = words[1]
+                v2 = v[:-1]
+                v3 = int(v2)
+                print(t, ":", d, ":", v, ":", v2, ":", v3)
+                for y in range(v3):
+                    extended_traits.append(f'{d} ({y + 1})')
+            print(extended_traits)
+            all = Discipline.objects.filter(code__in=extended_traits).order_by('name', 'level')
+            for z in all:
+                if z.is_linear:
+                    prefix = z.name
+                    for x in extended_traits:
+                        if x.startswith(prefix):
+                            extended_traits.remove(x)
+                    extended_traits.append(z.code)
+            print(extended_traits)
+            list = []
+            for et in reversed(extended_traits):
+                print(et)
+                zs = Discipline.objects.filter(code=et)
+                if len(zs) > 0:
+                    z = zs.first()
+                    a = z.name.upper()
+                    b = str(z.level)
+                    c = z.alternative_name
+                    d = z.technical_notes
+                    list.append(f"{a}§{b}§{c}§{d}")
+
+        else:
+            list = self.notes_on_traits.split('\r\n');
+
         for e in list:
             if len(e) > 2:
                 words = e.split('§')
@@ -1332,6 +1418,11 @@ class Creature(models.Model):
                      'notes': f'{words[3]}'})
                 idx += 1
         return fmt_list
+
+    def discipline_helpers(self):
+        if self.creature in ["kindred", "ghoul"]:
+            from collector.models.disciplines import Discipline
+            pass
 
 
 def refix(modeladmin, request, queryset):
@@ -1439,15 +1530,14 @@ def randomize_all(modeladmin, request, queryset):
 
 class CreatureAdmin(admin.ModelAdmin):
     list_display = [  # 'domitor',
-        'name', 'age', 'trueage', 'rid', 'cast_figure', 'freebies', 'expectedfreebies', 'district', 'sire', 'player',
-        'family',
-        'concept', 'group', 'groupspec', 'faction', 'status', 'embrace', 'condition']
+        'name', 'age', 'trueage', 'hidden', 'cast_figure', 'freebies', 'expectedfreebies', 'district',
+        'family', 'groupspec', 'faction', 'status', 'condition']
     ordering = ['-trueage', 'name', 'group', 'creature']
     actions = [no_longer_new, randomize_backgrounds, randomize_all, randomize_archetypes, randomize_attributes,
                randomize_abilities,
                refix, set_male, set_female, push_to_munich, push_to_newyork, push_to_world]
-    list_filter = ['chronicle', 'adventure', 'district', 'faction', 'family', 'is_new', 'condition', 'group',
+    list_filter = ['chronicle', 'hidden', 'adventure', 'district', 'faction', 'family', 'is_new', 'condition', 'group',
                    'groupspec',
                    'creature', 'mythic', 'ghost', 'sire']
     search_fields = ['name', 'groupspec']
-    list_editable = ['cast_figure']
+    list_editable = ['cast_figure', 'hidden', 'district']

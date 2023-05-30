@@ -7,6 +7,6 @@ from collector.utils.wod_reference import get_current_chronicle
 
 @receiver(pre_save, sender=District, dispatch_uid='update_district')
 def update_district(sender, instance, **kwargs):
-    instance.populate()
+    instance.fix()
 
 

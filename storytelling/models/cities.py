@@ -12,6 +12,7 @@ class City(models.Model):
     class Meta:
         verbose_name_plural = 'Cities'
     name = models.CharField(max_length=128, default='')
+    code = models.CharField(max_length=2, default='')
     description = models.TextField(max_length=1024, default='')
 
     def __str__(self):
@@ -25,6 +26,6 @@ class City(models.Model):
 
 
 class CityAdmin(admin.ModelAdmin):
-    list_display = ['name']
+    list_display = ['name', 'code', 'description']
     ordering = ['name']
-    search_fields = ['name', 'description']
+    search_fields = ['name', 'code', 'description']

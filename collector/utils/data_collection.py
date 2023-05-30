@@ -232,10 +232,10 @@ def build_per_primogen(param=None):
     chronicle = get_current_chronicle()
     cainites = create_mythics()
     if param is None:
-        kindreds = Creature.objects.filter(creature='kindred', ghost=False, mythic=False,
+        kindreds = Creature.objects.filter(creature='kindred', ghost=False, mythic=False, hidden=False,
                                            chronicle=chronicle.acronym).order_by('-trueage', 'family')
     else:
-        kindreds = Creature.objects.filter(creature='kindred', faction=param, ghost=False, mythic=False,
+        kindreds = Creature.objects.filter(creature='kindred', faction=param.lower(), ghost=False, mythic=False, hidden=False,
                                            chronicle=chronicle.acronym).order_by('-trueage', 'family')
     # Improvise empty sires
     for kindred in kindreds:
@@ -299,6 +299,7 @@ def build_gaia_wheel():
         .exclude(mythic=True) \
         .exclude(condition="DEAD") \
         .exclude(ghost=True) \
+        .exclude(hidden=True) \
         .order_by('display_pole')
     for creature in creatures:
         creature.need_fix = True
@@ -310,12 +311,13 @@ def build_gaia_wheel():
     pentex_list = []
     traditions_list = []
     kith_list = []
+    inde_list = []
     underworld_list = []
 
     total = 0
     for c in creatures:
         creature_dict = c.toDict
-        if (c.faction == 'Camarilla') or (c.faction == 'Independents') or (
+        if (c.faction == 'Camarilla') or (
                 c.faction == 'Anarchs') or (
                 c.faction == 'Inconnu'):
             wyrm_list.append(creature_dict)
@@ -331,11 +333,14 @@ def build_gaia_wheel():
             kith_list.append(creature_dict)
         elif (c.creature == 'wraith'):
             underworld_list.append(creature_dict)
+        if (c.faction == 'Independents'):
+            inde_list.append(creature_dict)
         else:
-            weaver_list.append(creature_dict)
+            if (c.creature == 'mortal'):
+                weaver_list.append(creature_dict)
         total += 1
 
-    for list in [weaver_list, underworld_list, traditions_list, pentex_list, sabbat_list, wyrm_list, underworld_list,
+    for list in [weaver_list, inde_list, underworld_list, traditions_list, pentex_list, sabbat_list, wyrm_list, underworld_list,
                  wyld_list]:
         icnt = 0
         for item in list:
@@ -343,6 +348,7 @@ def build_gaia_wheel():
             icnt += 1
 
     wyrm_list = resort(wyrm_list)
+    inde_list = resort(inde_list)
     sabbat_list = resort(sabbat_list)
     # w = [f"[{item['display_pole']:30}:{item['index']:3}:{item['group']:25}]  {item['name']}" for item in wyrm_list]
     # print("\n".join(w))
@@ -351,6 +357,8 @@ def build_gaia_wheel():
         'lists': [
             {'name': 'humans', 'index': 0, 'color': '#28F', 'value': len(weaver_list), 'start': 0, 'font': 'Roboto',
              'collection': weaver_list, 'total': total},
+            {'name': 'independents', 'index': 0, 'color': '#288', 'value': len(inde_list), 'start': 0, 'font': 'Roboto',
+             'collection': inde_list, 'total': total},
             {'name': 'camarilla', 'index': 0, 'color': '#2A2', 'value': len(wyrm_list), 'start': 0, 'font': 'Cinzel',
              'collection': wyrm_list, 'total': total},
             {'name': 'sabbat', 'index': 0, 'color': '#E66', 'value': len(sabbat_list), 'start': 0, 'font': 'Roboto',
@@ -393,37 +401,37 @@ gangrel = "#206090"
 noone = "#808080"
 
 MUNICH_DISTRICTS = {
-    'd01': {'name': 'Old Town & Lehel', 'description': '', 'clan': ventrue, 'sectors': 6},
-    'd02': {'name': 'Ludwigvorstadt and Isarvorstadt', 'description': '', 'clan': toreador, 'sectors': 8},
-    'd03': {'name': 'Maxvorstadt', 'description': '', 'clan': ventrue, 'sectors': 9},
-    'd04': {'name': 'Schwabing West', 'description': '', 'clan': ventrue, 'sectors': 3},
-    'd05': {'name': 'Au-Haidhausen', 'description': '', 'clan': malkavian, 'sectors': 6},
-    'd06': {'name': 'Sendling', 'description': '', 'clan': ventrue, 'sectors': 2},
-    'd07': {'name': 'Sendling – Westpark', 'description': '', 'clan': gangrel, 'sectors': 3},
-    'd08': {'name': 'Schwanthalerhöhe', 'description': '', 'clan': toreador, 'sectors': 2},
-    'd09': {'name': 'Neuhausen Nymphenburg', 'description': '', 'clan': toreador, 'sectors': 6},
-    'd10': {'name': 'Moosach', 'description': '', 'clan': tremere, 'sectors': 2},
-    'd11': {'name': 'Milbertshofen und Am Hart', 'description': '', 'clan': brujah, 'sectors': 3},
-    'd12': {'name': 'Schwabing-Freimann', 'description': '', 'clan': brujah, 'sectors': 8},
-    'd13': {'name': 'Bogenhausen', 'description': '', 'clan': ventrue, 'sectors': 7},
-    'd14': {'name': 'Berg am Laim', 'description': '', 'clan': nosferatu, 'sectors': 1},
-    'd15': {'name': 'Trudering – Riem', 'description': '', 'clan': ventrue, 'sectors': 4},
-    'd16': {'name': 'Ramersdorf und Perlach', 'description': '', 'clan': nosferatu, 'sectors': 5},
-    'd17': {'name': 'Obergiesing', 'description': '', 'clan': tremere, 'sectors': 2},
-    'd18': {'name': 'Untergiesing und Harlaching', 'description': '', 'clan': gangrel, 'sectors': 5},
-    'd19': {'name': 'Thalkirchen-Obersendling-Forstenried-Fürstenried-Solln', 'description': '', 'clan': ventrue,
+    'MU001': {'name': 'Old Town & Lehel', 'description': '', 'clan': ventrue, 'sectors': 6},
+    'MU002': {'name': 'Ludwigvorstadt and Isarvorstadt', 'description': '', 'clan': toreador, 'sectors': 8},
+    'MU0d03': {'name': 'Maxvorstadt', 'description': '', 'clan': ventrue, 'sectors': 9},
+    'MU004': {'name': 'Schwabing West', 'description': '', 'clan': ventrue, 'sectors': 3},
+    'MU005': {'name': 'Au-Haidhausen', 'description': '', 'clan': malkavian, 'sectors': 6},
+    'MU006': {'name': 'Sendling', 'description': '', 'clan': ventrue, 'sectors': 2},
+    'MU007': {'name': 'Sendling – Westpark', 'description': '', 'clan': gangrel, 'sectors': 3},
+    'MU008': {'name': 'Schwanthalerhöhe', 'description': '', 'clan': toreador, 'sectors': 2},
+    'MU009': {'name': 'Neuhausen Nymphenburg', 'description': '', 'clan': toreador, 'sectors': 6},
+    'MU010': {'name': 'Moosach', 'description': '', 'clan': tremere, 'sectors': 2},
+    'MU011': {'name': 'Milbertshofen und Am Hart', 'description': '', 'clan': brujah, 'sectors': 3},
+    'MU012': {'name': 'Schwabing-Freimann', 'description': '', 'clan': brujah, 'sectors': 8},
+    'MU013': {'name': 'Bogenhausen', 'description': '', 'clan': ventrue, 'sectors': 7},
+    'MU014': {'name': 'Berg am Laim', 'description': '', 'clan': nosferatu, 'sectors': 1},
+    'MU015': {'name': 'Trudering – Riem', 'description': '', 'clan': ventrue, 'sectors': 4},
+    'MU016': {'name': 'Ramersdorf und Perlach', 'description': '', 'clan': nosferatu, 'sectors': 5},
+    'MU017': {'name': 'Obergiesing', 'description': '', 'clan': tremere, 'sectors': 2},
+    'MU018': {'name': 'Untergiesing und Harlaching', 'description': '', 'clan': gangrel, 'sectors': 5},
+    'MU019': {'name': 'Thalkirchen-Obersendling-Forstenried-Fürstenried-Solln', 'description': '', 'clan': ventrue,
             'sectors': 6},
-    'd20': {'name': 'Hadern', 'description': '', 'clan': malkavian, 'sectors': 3},
-    'd21': {'name': 'Pasing – Obermenzing', 'description': '', 'clan': toreador, 'sectors': 4},
-    'd22': {'name': 'Aubing-Lochhausen-Langwied', 'description': '', 'clan': gangrel, 'sectors': 3},
-    'd23': {'name': 'Allach Untermenzing', 'description': '', 'clan': nosferatu, 'sectors': 2},
-    'd24': {'name': 'Feldmoching-Hasenbergl', 'description': '', 'clan': ventrue, 'sectors': 4},
-    'd25': {'name': 'Laim', 'description': '', 'clan': brujah, 'sectors': 2},
+    'MU020': {'name': 'Hadern', 'description': '', 'clan': malkavian, 'sectors': 3},
+    'MU021': {'name': 'Pasing – Obermenzing', 'description': '', 'clan': toreador, 'sectors': 4},
+    'MU022': {'name': 'Aubing-Lochhausen-Langwied', 'description': '', 'clan': gangrel, 'sectors': 3},
+    'MU023': {'name': 'Allach Untermenzing', 'description': '', 'clan': nosferatu, 'sectors': 2},
+    'MU024': {'name': 'Feldmoching-Hasenbergl', 'description': '', 'clan': ventrue, 'sectors': 4},
+    'MU025': {'name': 'Laim', 'description': '', 'clan': brujah, 'sectors': 2},
 
 }
 
 HAMBURG_DISTRICTS = {
-    'h01': {'name': 'Allermöhe', 'description': '', 'clan': ventrue, 'sectors': 6},
+    'HH001': {'name': 'Allermöhe', 'description': '', 'clan': ventrue, 'sectors': 6},
     # 'h02': {'name': 'Ludwigvorstadt and Isarvorstadt', 'description': '', 'clan': toreador, 'sectors': 8},
     # 'h03': {'name': 'Maxvorstadt', 'description': '', 'clan': ventrue, 'sectors': 9},
     # 'h04': {'name': 'Schwabing West', 'description': '', 'clan': ventrue, 'sectors': 3},
@@ -456,8 +464,8 @@ HAMBURG_DISTRICTS = {
 def get_districts(cityname):
     from storytelling.models.cities import City
     from storytelling.models.districts import District
-
-    print(cityname.title())
+    import json
+    #print(cityname.title())
 
     cities = City.objects.filter(name=cityname.title())
     context = {'districts': {}}
@@ -465,18 +473,21 @@ def get_districts(cityname):
         city = cities.first()
         districts = District.objects.filter(city=city)
         for d in districts:
-            words = d.code.split(' ')
-            code_d = words[0]
-            code_s = words[1]
-            if code_s == 's01':
-                context['districts'][code_d] = {'code': code_d, 's': {}}
-            context['districts'][code_d]['s'][code_s] = {'code': code_s, 'fill': d.color, 'title': d.title,
-                                                         'status': d.status, 'population': d.population,
-                                                         'camarilla_resources': d.camarilla_resources,
-                                                         'camarilla_power': d.camarilla_power,
-                                                         'camarilla_intelligence': d.camarilla_intelligence,
-                                                         'camarilla_leisure': d.camarilla_leisure}
-    import json
+            context['districts'][d.code] = {
+                'code': d.code,
+                'fill': d.color,
+                'title': d.title,
+                'status': d.status,
+                'district_name': d.district_name,
+                'sector_name': d.sector_name,
+                'population': d.population,
+                'population_details': d.population_details,
+                'camarilla_resources': d.camarilla_resources,
+                'camarilla_power': d.camarilla_power,
+                'camarilla_intelligence': d.camarilla_intelligence,
+                'camarilla_leisure': d.camarilla_leisure
+            }
+
     x = json.dumps(context, indent=4, sort_keys=True)
 
     return x

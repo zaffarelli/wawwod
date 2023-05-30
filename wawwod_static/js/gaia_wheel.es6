@@ -1,8 +1,3 @@
-/*
-    WaWWoD
-*/
-
-/* The Gaia wheel display class */
 class GaiaWheel {
     constructor(data, parent, collector) {
         let me = this;
@@ -446,7 +441,6 @@ class GaiaWheel {
         ;
     }
 
-
     draw_sectors() {
         let me = this;
         let pie = d3.pie()
@@ -490,7 +484,7 @@ class GaiaWheel {
             .style("stroke", "#EEE")
             .text(function (d) {
                 return d.data.name.charAt(0).toUpperCase() + d.data.name.slice(1);
-                //return d.data.value+"/"+d.data.total;
+                //return d.data.name+":"+d.data.value+"/"+d.data.total;
             })
             .attr("opacity", function (d) {
                 if (d.value == 0) {

@@ -25,20 +25,33 @@ CLAN_COLORS = {
     'ventrue': '#731919'
 }
 
+ALL_STATUS = (
+    ('full', 'Full'),
+    ('controlled', 'Controlled'),
+    ('presence', 'Presence'),
+    ('neutral', 'Neutral'),
+    ('incursions', 'Incursions'),
+    ('contested', 'Contested'),
+    ('lost', 'Lost')
+)
+
 
 class District(models.Model):
     code = models.CharField(max_length=64, default='', unique=True)
+
     name = models.CharField(max_length=96, default='')
+    district_name = models.CharField(max_length=96, default='', blank=True, null=True)
     sector_name = models.CharField(max_length=96, default='', blank=True, null=True)
     d_num = models.PositiveIntegerField(default=1)
-    s_num = models.PositiveIntegerField(default=1)
+    # s_num = models.PositiveIntegerField(default=1)
     description = models.TextField(max_length=1024, blank=True, default='')
     city = models.ForeignKey(City, on_delete=models.CASCADE, null=True)
     color = ColorField(default='#808080')
     proeminent = models.CharField(max_length=64, default='', blank=True, null=True)
     title = models.CharField(max_length=256, default='', blank=True, null=True)
-    status = models.CharField(max_length=64, default='neutral', blank=True, null=True)
+    status = models.CharField(max_length=64, default='neutral', choices=ALL_STATUS, blank=True, null=True)
     population = models.PositiveIntegerField(default=0, blank=True, null=True)
+    population_details = models.CharField(max_length=512, default='', blank=True, null=True)
     camarilla_resources = models.PositiveIntegerField(default=0, blank=True, null=True)
     camarilla_intelligence = models.PositiveIntegerField(default=0, blank=True, null=True)
     camarilla_power = models.PositiveIntegerField(default=0, blank=True, null=True)
@@ -55,10 +68,32 @@ class District(models.Model):
         jstr = json.dumps(self, default=json_default, sort_keys=True, indent=4)
         return jstr
 
+    def fix(self):
+        self.code = f'{self.city.code}{self.d_num:03}'
+        self.populate()
+        if (self.district_name != '') and (self.sector_name != ''):
+            self.name = f'{self.district_name} :: {self.sector_name}'
+
     def populate(self):
         from collector.models.creatures import Creature
-        all_denizens = Creature.objects.filter(chronicle='BAV',faction='Camarilla', creature='kindred', district=f'd{self.d_num:02}', condition='OK')
-        self.population = len(all_denizens)
+        from collector.utils.wod_reference import get_current_chronicle
+        chronicle = get_current_chronicle()
+        all_denizens = Creature.objects.filter(chronicle=chronicle.acronym, faction='Camarilla', creature='kindred',
+                                               hidden=False, district=self.code).order_by('-freebies')
+        self.population_details = ''
+        self.population  = 0
+        for k in all_denizens:
+            self.population_details += f'<li>{k.name} ({k.freebies})</li>'
+            self.population += k.freebies
+        if self.population > 90:
+            self.status = 'full'
+        elif self.population > 45:
+            self.status = 'controlled'
+        elif self.population > 10:
+            self.status = 'presence'
+        else:
+            self.status = 'neutral'
+
 
 
 # Actions
@@ -118,11 +153,11 @@ def repopulate(modeladmin, request, queryset):
     short_description = 'Repopulate'
 
 
-
 class DistrictAdmin(admin.ModelAdmin):
-    list_display = ['name', 'sector_name', 'proeminent', 'title', 'd_num', 's_num', 'population', 'code', 'city', 'color', 'description']
+    list_display = ['code', 'name', 'district_name', 'sector_name', 'status', 'proeminent', 'population', 'city']
     ordering = ['code']
     search_fields = ['name', 'description', 'proeminent']
+    list_editable = ['status', 'sector_name', 'district_name']
     list_filter = ['city', 'd_num', 'proeminent', 'color']
     actions = [repopulate,
                status_neutral,

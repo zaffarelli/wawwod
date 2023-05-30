@@ -5,6 +5,8 @@ logger = logging.Logger(__name__)
 
 
 def get_current_chronicle():
+    # When migrating
+    # return None
     ch = None
     try:
         current_chronicle = Chronicle.objects.filter(is_current=True).first()
@@ -98,7 +100,7 @@ STATS_NAMES = {
                     'streetwise', 'subterfuge'],
         'skills': ['animal ken', 'crafts', 'drive', 'etiquette', 'firearms', 'melee', 'performance', 'security',
                    'stealth', 'survival'],
-        'knowledges': ['academics', 'computer', 'finance', 'investigation', 'law', 'linguistics', 'medicine', 'occult',
+        'knowledges': ['academics', 'technology', 'finance', 'investigation', 'law', 'linguistics', 'medicine', 'occult',
                        'politics',
                        'science'],
         'backgrounds': ['allies', 'contacts', 'fame', 'generation', 'herd', 'influence', 'mentor',

@@ -14,7 +14,7 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.0/chart.min.js"></script>
     <!--script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script-->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/d3/7.4.4/d3.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/d3/7.8.4/d3.js"></script>
     <script type="text/javascript" src='{% static "js/wawwod_sheet.es6" %}'></script>
     <script type="text/javascript" src='{% static "js/cross_over_sheet.es6" %}'></script>
     <script type="text/javascript" src='{% static "js/collector.es6" %}'></script>
@@ -44,6 +44,9 @@
             <li class="list" id="wto">Wraith the Oblivion</li>
             <li class="list" id="ctd">Changeling the Dreaming</li>
             <HR/>
+            <li class="list" id="bal">List: TODO</li>
+            <li class="display" action="gaia_wheel">Gaia Wheel</li>
+            <HR/>
             <li class="list" id="pen">List: Pentex Forces</li>
             <li class="list" id="mor">List: Mortals</li>
             <li class="list" id="new">List: New creatures</li>
@@ -56,8 +59,7 @@
             <li class="display" action="kindred_lineage" param="Camarilla">Camarilla Lineage</li>
             <li class="display" action="kindred_lineage" param="Sabbat">Sabbat Lineage</li>
             <li class="display" action="kindred_lineage" param="Independents">Independents Lineage</li>
-            <HR/>
-            <li class="display" action="gaia_wheel">Gaia Wheel</li>
+
             <HR/>
             {% include "collector/page/players_sheets.html" with c=players %}
         </ul>

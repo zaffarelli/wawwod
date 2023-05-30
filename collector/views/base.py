@@ -24,7 +24,8 @@ def prepare_index(request):
     chronicles = []
     players = []
     cities = []
-    plist = Creature.objects.filter(chronicle=chronicle.acronym).exclude(player='').exclude(adventure_id__isnull=True).order_by('adventure')
+    plist = Creature.objects.filter(chronicle=chronicle.acronym).exclude(player='').exclude(
+        adventure_id__isnull=True).order_by('adventure')
     adv = None
     for p in plist:
         if p.adventure != adv:
@@ -67,7 +68,7 @@ def get_list(request, pid=1, slug=None):
         if 'vtm' == slug:
             print('vampires')
             creature_items = Creature.objects.filter(chronicle=chronicle.acronym, creature__in=['ghoul', 'kindred']) \
-                .order_by('family','name')
+                .order_by('family', 'name')
         elif 'mta' == slug:
             creature_items = Creature.objects.filter(chronicle=chronicle.acronym, creature__in=['mage']) \
                 .order_by('name')
@@ -85,6 +86,9 @@ def get_list(request, pid=1, slug=None):
                 .order_by('name')
         elif 'new' == slug:
             creature_items = Creature.objects.filter(chronicle=chronicle.acronym, is_new=True).order_by('name')
+        elif 'bal' == slug:
+            creature_items = Creature.objects.filter(chronicle=chronicle.acronym, status__in=["UNBALANCED", "OK+"],
+                                                     hidden=False, creature__in=['kindred']).order_by('creature','-expectedfreebies')
         elif 'pen' == slug:
             creature_items = Creature.objects.filter(chronicle=chronicle.acronym, faction='Pentex',
                                                      creature__in=['garou', 'kinfolk', 'fomori']).order_by('name')
@@ -252,6 +256,7 @@ def display_crossover_sheet(request, slug=None, option=None):
 
         else:
             scenario = "NEW YORK CITY"
+            pre_title = "New York By Night"
             post_title = "feat. Julius Von Blow"
         spe = c.get_specialities()
         shc = c.get_shortcuts()
@@ -289,6 +294,7 @@ def display_lineage(request, slug=None):
             data = build_per_primogen(slug)
         lineage_context = {'data': data}
         return JsonResponse(lineage_context)
+
 
 @csrf_exempt
 def svg_to_pdf(request, slug):

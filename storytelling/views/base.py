@@ -34,13 +34,13 @@ def display_storytelling(request):
 
 def action_timeslip(request, slug='m0d_m0h__'):
     targets = slug.split('__')[1]
-    print(targets)
+    # print(targets)
     times = slug.split('__')[0]
     times_off = times.split('_')
-    print(times_off)
+    # print(times_off)
     total_offset = 0
     for t in times_off:
-        print(t)
+        # print(t)
         offset = int(t[1])
         if t[0] == 'm':
             offset *= -1
@@ -48,7 +48,7 @@ def action_timeslip(request, slug='m0d_m0h__'):
             offset *= 24
         total_offset += offset
     scenes = targets.split('_')
-    print(f'Time offset: {total_offset}')
+    # print(f'Time offset: {total_offset}')
     changes = []
     for s in scenes:
         print(scenes)
@@ -79,7 +79,7 @@ def display_pdf_story(request):
                                                                           'group')
     for c in casted:
         full_cast.append(c)
-    print(full_cast)
+    # print(full_cast)
     data = {'story': selected_story, 'end_time': selected_story.story_end_time, 'places': selected_story.all_places,
             'scenes': selected_story.all_scenes, 'links': selected_story.all_links,
             'timelines': selected_story.all_timelines, 'full_cast': full_cast}

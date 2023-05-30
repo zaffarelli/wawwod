@@ -1019,6 +1019,9 @@ class WawwodSheet {
                 } else if (num == 6) {
                     me.page = 2;
                     me.perform(me.data)
+                } else if (num >= 7) {
+                    me.page = num-4;
+                    me.perform(me.data)
                 }
             })
         button.append('rect')
