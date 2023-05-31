@@ -348,7 +348,6 @@ class Creature(models.Model):
         shortcuts = []
         base = GM_SHORTCUTS[self.creature]
         for s in base:
-            # print(s)
             sc = f'{s[0].title()}+{s[1].title()}={self.value_of(s[0]) + self.value_of(s[1])}'
             shortcuts.append(sc)
         return shortcuts
@@ -423,7 +422,7 @@ class Creature(models.Model):
             '3000': 1000
         }
         time_awake = int(self.trueage) - int(self.age) - int(self.timeintorpor)
-        print(f'{self.name} time awake --> ', time_awake)
+        logger.info(f'{self.name} time awake --> {time_awake}')
         x = 0
         for key, val in aging.items():
             if int(key) <= time_awake:
@@ -442,7 +441,7 @@ class Creature(models.Model):
         pass
 
     def fix_kindred(self):
-        print(f'Fixing kindred {self.name}')
+        logger.info(f'Fixing kindred {self.name}')
         # Embrace and Age
         condi = self.condition.split('-')
         if condi.count == 2:
@@ -458,10 +457,10 @@ class Creature(models.Model):
         if self.player:
             from collector.models.chronicles import Chronicle
             self.expectedfreebies = Chronicle.objects.get(acronym=self.chronicle).players_starting_freebies
-            print(f'{self.name} expected freebies is {self.expectedfreebies} (Player)')
+            logger.info(f'{self.name} expected freebies is {self.expectedfreebies} (Player)')
         else:
             self.expectedfreebies = self.freebies_per_age_threshold
-            print(f'{self.name} expected freebies is {self.expectedfreebies} (NPC)')
+            logger.info(f'{self.name} expected freebies is {self.expectedfreebies} (NPC)')
         # Willpower
         if self.willpower < self.virtue2:
             self.willpower = self.virtue2
@@ -1103,17 +1102,23 @@ class Creature(models.Model):
         for n in range(4):
             merit = getattr(self, 'merit%d' % (n))
             if merit != '':
-                self.freebies += int(merit.split('(')[1].replace('(', '').replace(')', ''))
+                s, v = self.str2pair(merit)
+                if s:
+                    self.freebies += v
             flaw = getattr(self, 'flaw%d' % (n))
             if flaw != '':
-                self.freebies -= int(flaw.split('(')[1].replace('(', '').replace(')', ''))
+                s, v = self.str2pair(flaw)
+                if s:
+                    self.freebies -= v
         # Traits
         self.total_traits = 0
         for i in range(16):
             trait = getattr(self, f'trait{i}')
             # print(trait)
             if trait:
-                self.total_traits += int(trait.split('(')[1].replace('(', '').replace(')', ''))
+                s, v = self.str2pair(trait)
+                if s:
+                    self.total_traits += v
         # Sort traits
         traits = []
         for i in range(10):
@@ -1165,6 +1170,17 @@ class Creature(models.Model):
             self.status = 'UNBALANCED'
         else:
             self.status = 'OK+'
+
+    def str2pair(self, str):
+        w = str.split(' (')
+        if len(w) != 2:
+            s = ""
+            v = 0
+            logger.warning(f"Warning str2pair: {str} --> [{s}][{v}]: computation might be broken!")
+        else:
+            s = w[0]
+            v = int(w[1].replace(')', ''))
+        return s, v
 
     @property
     def sire_name(self):

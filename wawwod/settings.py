@@ -154,3 +154,8 @@ MEDIA_ROOT = 'wawwod_media/'
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
+
+if DEBUG:
+    import mimetypes
+    mimetypes.add_type("application/javascript;charset=utf-8", ".es6", True)
+    mimetypes.add_type("application/javascript;charset=utf-8", ".js", True)

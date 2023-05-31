@@ -5,7 +5,7 @@ from xhtml2pdf import pisa
 from io import BytesIO
 from storytelling.models.stories import Story
 from storytelling.models.scenes import Scene
-from collector.utils.helper import json_default
+from collector.utils.helper import json_default, is_ajax
 from django.views.decorators.csrf import csrf_exempt
 import os
 import json

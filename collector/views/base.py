@@ -111,7 +111,7 @@ def get_list(request, pid=1, slug=None):
 
 @csrf_exempt
 def updown(request):
-    if is_ajax(request)():
+    if is_ajax(request):
         answer = 'error'
         if request.method == 'POST':
             answer = {}
@@ -135,7 +135,7 @@ def updown(request):
 
 @csrf_exempt
 def userinput(request):
-    if is_ajax(request)():
+    if is_ajax(request):
         answer = 'error'
         if request.method == 'POST':
             answer = {}
@@ -302,7 +302,7 @@ def svg_to_pdf(request, slug):
     import cairosvg
     print("svg_to_pdf")
     response = {'status': 'error'}
-    if is_ajax(request)():
+    if is_ajax(request):
         pdf_name = os.path.join(settings.MEDIA_ROOT, 'pdf/results/' + request.POST["pdf_name"])
         svg_name = os.path.join(settings.MEDIA_ROOT, 'pdf/results/' + request.POST["svg_name"])
         svgtxt = request.POST["svg"]
