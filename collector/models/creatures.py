@@ -62,6 +62,8 @@ class Creature(models.Model):
     expectedfreebies = models.IntegerField(default=0)
     disciplinepoints = models.IntegerField(default=0)
     experience = models.IntegerField(default=0)
+    exp_pool = models.IntegerField(default=0)
+    exp_spent = models.IntegerField(default=0)
     extra = models.IntegerField(default=0)
     hidden = models.BooleanField(default=False)
     ghost = models.BooleanField(default=False)
@@ -473,6 +475,10 @@ class Creature(models.Model):
         self.weakness = CLANS_SPECIFICS[self.family]['clan_weakness']
         self.display_gauge = self.value_of('generation') * 2 + self.value_of('status') * 2
         self.display_pole = self.groupspec
+        self.disciplinepoints = self.total_traits
+        if self.player:
+            if self.experience > 0:
+                self.exp_pool = self.experience - self.exp_spent
 
     def fix_ghoul(self):
         self.display_gauge = 2
@@ -1213,6 +1219,7 @@ class Creature(models.Model):
             'ghouls': ",".join(self.retainers),
             'sire': self.sire,
             'index': 0,
+            'total_traits': self.total_traits,
         }
         return d
 
@@ -1546,7 +1553,7 @@ def randomize_all(modeladmin, request, queryset):
 
 class CreatureAdmin(admin.ModelAdmin):
     list_display = [  # 'domitor',
-        'name', 'age', 'trueage', 'hidden', 'cast_figure', 'freebies', 'expectedfreebies', 'district',
+        'name', 'age', 'trueage', 'experience', 'hidden', 'cast_figure', 'freebies', 'expectedfreebies', 'district',
         'family', 'groupspec', 'faction', 'status', 'condition']
     ordering = ['-trueage', 'name', 'group', 'creature']
     actions = [no_longer_new, randomize_backgrounds, randomize_all, randomize_archetypes, randomize_attributes,
@@ -1556,4 +1563,4 @@ class CreatureAdmin(admin.ModelAdmin):
                    'groupspec',
                    'creature', 'mythic', 'ghost', 'sire']
     search_fields = ['name', 'groupspec']
-    list_editable = ['cast_figure', 'hidden', 'district']
+    list_editable = ['cast_figure', 'hidden', 'experience', 'district']

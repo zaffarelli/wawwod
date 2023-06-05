@@ -333,16 +333,19 @@ class WawwodSheet {
 
     powerStat(name, ox, oy, type, statcode, source) {
         let me = this;
-        if (name == '') {
-            me.reinHagenStat('   ', 0, ox, oy, type, statcode, source)
+        if (me.blank) {
         } else {
-            let words = name.split(' (');
-            let power = words[0];
-            let val = (words[1].split(')'))[0];
-            if (type == 'flaw') {
-                power = power + ' -F-'
+            if (name == '') {
+                me.reinHagenStat('   ', 0, ox, oy, type, statcode, source)
+            } else {
+                let words = name.split(' (');
+                let power = words[0];
+                let val = (words[1].split(')'))[0];
+                if (type == 'flaw') {
+                    power = power + ' -F-'
+                }
+                me.reinHagenStat(power, val, ox, oy, type, statcode, source, power = true)
             }
-            me.reinHagenStat(power, val, ox, oy, type, statcode, source, power = true)
         }
     }
 
@@ -732,6 +735,14 @@ class WawwodSheet {
             me.statText('Generation', 13 - me.data['background3'] + 'th', ox + me.stepx * 16, oy, 'gener', 'gener', me.character);
             oy += 0.5 * me.stepy;
             me.statText('Sire', me.data['sire_name'], ox + me.stepx * 16, oy, 'sire', 'sire', me.character);
+            if (me.data['player']) {
+                oy += 1 * me.stepy;
+                me.statText('Experience', me.data['experience'], ox + me.stepx * 16, oy, 'sire', 'sire', me.character);
+                oy += 0.5 * me.stepy;
+                me.statText('Remaining', me.data['exp_pool'], ox + me.stepx * 16, oy, 'sire', 'sire', me.character);
+                oy += 0.5 * me.stepy;
+                me.statText('Spent', me.data['exp_spent'], ox + me.stepx * 16, oy, 'sire', 'sire', me.character);
+            }
         }
     }
 
@@ -1020,7 +1031,7 @@ class WawwodSheet {
                     me.page = 2;
                     me.perform(me.data)
                 } else if (num >= 7) {
-                    me.page = num-4;
+                    me.page = num - 4;
                     me.perform(me.data)
                 }
             })
@@ -1066,28 +1077,84 @@ class WawwodSheet {
         ;
     }
 
-    saveSVG() {
-        let me = this;
-        me.svg.selectAll('.do_not_print').attr('opacity', 0);
-        let base_svg = d3.select("svg").html();
-        let flist = '<style>';
-        for (let f of me.config['fontset']) {
-            flist += '@import url("https://fonts.googleapis.com/css2?family=' + f + '");';
-        }
-        flist += '</style>';
+    oldsaveSVG() {
+//         let me = this;
+//         me.svg.selectAll('.do_not_print').attr('opacity', 0);
+//         let base_svg = d3.select("svg").html();
+//         let flist = '<style>';
+//         for (let f of me.config['fontset']) {
+//             flist += '@import url("https://fonts.googleapis.com/css2?family=' + f + '");';
+//         }
+//         flist += '</style>';
+//
+//         let exportable_svg = '<?xml version="1.0" encoding="UTF-8" ?> \
+// <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"> \
+// <svg class="crossover_sheet" \
+// xmlns="http://www.w3.org/2000/svg" version="1.1" \
+// xmlns:xlink="http://www.w3.org/1999/xlink"> \
+// ' + flist + base_svg + '</svg>';
+//         let fname = me.data['rid'] + ".svg"
+//         let nuke = document.createElement("a");
+//         nuke.href = 'data:application/octet-stream;base64,' + btoa(me.formatXml(exportable_svg));
+//         nuke.setAttribute("download", fname);
+//         nuke.click();
+//         me.svg.selectAll('.do_not_print').attr('opacity', 1);
+    }
 
-        let exportable_svg = '<?xml version="1.0" encoding="UTF-8" ?> \
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"> \
-<svg class="crossover_sheet" \
-xmlns="http://www.w3.org/2000/svg" version="1.1" \
-xmlns:xlink="http://www.w3.org/1999/xlink"> \
-' + flist + base_svg + '</svg>';
-        let fname = me.data['rid'] + ".svg"
-        let nuke = document.createElement("a");
-        nuke.href = 'data:application/octet-stream;base64,' + btoa(me.formatXml(exportable_svg));
-        nuke.setAttribute("download", fname);
-        nuke.click();
-        me.svg.selectAll('.do_not_print').attr('opacity', 1);
+    saveSVG() {
+//         let me = this;
+//         me.svg.selectAll('.do_not_print').attr('opacity', 0);
+//         let base_svg = d3.select("#d3area svg").html();
+//         let flist = '<style>';
+//         for (let f of me.config['fontset']) {
+//             flist += '@import url("https://fonts.googleapis.com/css2?family=' + f + '");';
+//         }
+//         flist += '</style>';
+//         let lpage = "";
+//         let exportable_svg = '<?xml version="1.0" encoding="ISO-8859-1" ?> \
+// <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"> \
+// <svg class="crossover_sheet" \
+// xmlns="http://www.w3.org/2000/svg" version="1.1" \
+// xmlns:xlink="http://www.w3.org/1999/xlink"> \
+// ' + flist + base_svg + '</svg>';
+//
+//         // lpage = "_" + me.page;
+//         // let fname = "character_sheet"+me.data['rid'] + lpage + ".svg"
+//         // let nuke = document.createElement("a");
+//         // nuke.href = 'data:application/octet-stream;base64,' + btoa(me.formatXml(exportable_svg));
+//         // nuke.setAttribute("/media/results/svg/", fname);
+//         // nuke.click();
+//
+//         lpage = "_p" + (me.page);
+//
+//         let svg_name = "character_sheet" + me.data['rid'] + lpage + ".svg"
+//         let rid = me.data['rid'];
+//         let sheet_data = {
+//             'svg_name': svg_name,
+//             'rid': rid,
+//             'svg': exportable_svg
+//         }
+//         me.svg.selectAll('.do_not_print').attr('opacity', 1);
+//         $.ajax({
+//             url: 'ajax/character/save2svg/' + me.data['rid'] + '/',
+//             type: 'POST',
+//             headers: {
+//                 'Accept': 'application/json',
+//                 'Content-Type': 'application/x-www-form-urlencoded'
+//             },
+//             data: sheet_data,
+//             dataType: 'json',
+//             success: function (answer) {
+//                 console.log("Saved to svg [" + rid + "]["+svg_name+"]...")
+//             },
+//             error: function (answer) {
+//                 console.error('Error saving svg...');
+//                 console.error(answer);
+//             }
+//         });
+//
+//
+//         me.svg.selectAll('.do_not_print').attr('opacity', 1);
     }
 
     createPDF() {
@@ -1108,15 +1175,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink"> \
 xmlns="http://www.w3.org/2000/svg" version="1.1" \
 xmlns:xlink="http://www.w3.org/1999/xlink" width="' + me.width + '" height="' + me.height + '"> \
 ' + flist + base_svg + '</svg>';
-
-
-        lpage = "_" + (me.page + 1);
-
+        lpage = "_p" + (me.page);
         let svg_name = "character_sheet" + me.data['rid'] + lpage + ".svg"
         let pdf_name = "character_sheet" + me.data['rid'] + lpage + ".pdf"
+        let rid = me.data['rid'];
         let sheet_data = {
             'pdf_name': pdf_name,
             'svg_name': svg_name,
+            'rid': rid,
             'svg': exportable_svg
         }
         me.svg.selectAll('.do_not_print').attr('opacity', 1);
@@ -1130,7 +1196,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" width="' + me.width + '" height="' + 
             data: sheet_data,
             dataType: 'json',
             success: function (answer) {
-                console.log("PDF generated for [" + me.data['rid'] + "]...")
+                console.log("PDF generated for [" + rid + "]...")
+                console.error(answer);
             },
             error: function (answer) {
                 console.error('Error generating the PDF...');
@@ -1139,67 +1206,67 @@ xmlns:xlink="http://www.w3.org/1999/xlink" width="' + me.width + '" height="' + 
         });
     }
 
-    wrap(txt_src, y_met, y_coe, x_off, y_off, width, font = 'default') {
-        let me = this;
-        if (font == 'default') {
-            font = me.user_font;
-        }
-        let tgt = d3.select(this);
-        tgt.attr('x', function (d) {
-            return x_off;
-        })
-            .attr('y', function (d) {
-                return y_off + d[y_met] * y_coe * me.stepy;
-            })
-            .attr('dx', 0)
-            .attr('dy', 0)
-            .text(function (d) {
-                return d[txt_src];
-            })
-            .style("text-anchor", 'start')
-            .style("font-family", font)
-            .style("font-size", me.small_font_size + 'pt')
-            .style("fill", me.user_fill)
-            .style("stroke", me.user_stroke)
-            .style("stroke-width", '0.05pt');
-        let words = tgt.text().split(/\s+/).reverse(),
-            word,
-            line = [],
-            lineNumber = 0,
-            lineHeight = me.small_font_size * 1.15,
-            x = tgt.attr("x"),
-            y = tgt.attr("y");
-        tgt.text(null);
-        let tspan = tgt.append("tspan")
-            .attr("x", function (d) {
-                return x_off;
-            })
-            .attr('y', function (d) {
-                return y_off + d[y_met] * y_coe * me.stepy;
-            });
-
-        while (word = words.pop()) {
-            line.push(word);
-            tspan.text(line.join(" "));
-            if (tspan.node().getComputedTextLength() > width * me.stepy) {
-                line.pop();
-                tspan.text(line.join(" "));
-                line = [word];
-                tspan = tgt.append("tspan")
-                    .attr("x", function (d) {
-                        return x_off;
-                    })
-                    .attr('y', function (d) {
-                        return y_off + d[y_met] * y_coe * me.stepy;
-                    })
-                    .attr("dy", ++lineNumber * lineHeight)
-                    .style("font-size", me.small_font_size + 'pt')
-                    .style("stroke-width", '0.05pt')
-                    .text(word);
-            }
-        }
-        // return (lineNumber);
-    }
+    // wrap(txt_src, y_met, y_coe, x_off, y_off, width, font = 'default') {
+    //     let me = this;
+    //     if (font == 'default') {
+    //         font = me.user_font;
+    //     }
+    //     let tgt = d3.select(this);
+    //     tgt.attr('x', function (d) {
+    //         return x_off;
+    //     })
+    //         .attr('y', function (d) {
+    //             return y_off + d[y_met] * y_coe * me.stepy;
+    //         })
+    //         .attr('dx', 0)
+    //         .attr('dy', 0)
+    //         .text(function (d) {
+    //             return d[txt_src];
+    //         })
+    //         .style("text-anchor", 'start')
+    //         .style("font-family", font)
+    //         .style("font-size", me.small_font_size + 'pt')
+    //         .style("fill", me.user_fill)
+    //         .style("stroke", me.user_stroke)
+    //         .style("stroke-width", '0.05pt');
+    //     let words = tgt.text().split(/\s+/).reverse(),
+    //         word,
+    //         line = [],
+    //         lineNumber = 0,
+    //         lineHeight = me.small_font_size * 1.15,
+    //         x = tgt.attr("x"),
+    //         y = tgt.attr("y");
+    //     tgt.text(null);
+    //     let tspan = tgt.append("tspan")
+    //         .attr("x", function (d) {
+    //             return x_off;
+    //         })
+    //         .attr('y', function (d) {
+    //             return y_off + d[y_met] * y_coe * me.stepy;
+    //         });
+    //
+    //     while (word = words.pop()) {
+    //         line.push(word);
+    //         tspan.text(line.join(" "));
+    //         if (tspan.node().getComputedTextLength() > width * me.stepy) {
+    //             line.pop();
+    //             tspan.text(line.join(" "));
+    //             line = [word];
+    //             tspan = tgt.append("tspan")
+    //                 .attr("x", function (d) {
+    //                     return x_off;
+    //                 })
+    //                 .attr('y', function (d) {
+    //                     return y_off + d[y_met] * y_coe * me.stepy;
+    //                 })
+    //                 .attr("dy", ++lineNumber * lineHeight)
+    //                 .style("font-size", me.small_font_size + 'pt')
+    //                 .style("stroke-width", '0.05pt')
+    //                 .text(word);
+    //         }
+    //     }
+    //     // return (lineNumber);
+    // }
 
     zoomActivate() {
         let me = this;

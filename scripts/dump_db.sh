@@ -11,6 +11,7 @@ echo "Storytelling Objects"
 python ./manage.py dumpdata --format xml storytelling.Story --output backup/$1/stories.xml
 python ./manage.py dumpdata --format xml storytelling.City --output backup/$1/cities.xml
 python ./manage.py dumpdata --format xml storytelling.District --output backup/$1/districts.xml
+python ./manage.py dumpdata --format xml storytelling.HotSpot --output backup/$1/hotspots.xml
 python ./manage.py dumpdata --format xml storytelling.Place --output backup/$1/places.xml
 python ./manage.py dumpdata --format xml storytelling.Scene --output backup/$1/scenes.xml
 

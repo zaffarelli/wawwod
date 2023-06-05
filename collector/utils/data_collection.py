@@ -5,6 +5,7 @@ from django.conf import settings
 from collector.utils.wod_reference import get_current_chronicle
 from collector.utils.helper import toRID
 from collector.utils.kindred_stuff import resort
+
 chronicle = get_current_chronicle()
 logger = logging.Logger(__name__)
 
@@ -235,7 +236,8 @@ def build_per_primogen(param=None):
         kindreds = Creature.objects.filter(creature='kindred', ghost=False, mythic=False, hidden=False,
                                            chronicle=chronicle.acronym).order_by('-trueage', 'family')
     else:
-        kindreds = Creature.objects.filter(creature='kindred', faction=param.lower(), ghost=False, mythic=False, hidden=False,
+        kindreds = Creature.objects.filter(creature='kindred', faction=param.lower(), ghost=False, mythic=False,
+                                           hidden=False,
                                            chronicle=chronicle.acronym).order_by('-trueage', 'family')
     # Improvise empty sires
     for kindred in kindreds:
@@ -293,6 +295,9 @@ def build_per_primogen(param=None):
     return str
 
 
+CAM_CLANS = ['Brujah', 'Gangrel', 'Malkavian', 'Nosferatu', 'Toreador', 'Tremere', 'Ventrue']
+
+
 def build_gaia_wheel():
     chronicle = get_current_chronicle()
     creatures = Creature.objects.filter(chronicle=chronicle.acronym) \
@@ -313,7 +318,33 @@ def build_gaia_wheel():
     kith_list = []
     inde_list = []
     underworld_list = []
-
+    stats = {'status': [
+        {'label': 'Status 0', 'value': 0}, {'label': 'Status 1', 'value': 0}, {'label': 'Status 2', 'value': 0},
+        {'label': 'Status 3', 'value': 0}, {'label': 'Status 4', 'value': 0}, {'label': 'Status 5', 'value': 0},
+        {'label': 'Status 6', 'value': 0}, {'label': 'Status 7', 'value': 0}, {'label': 'Status 8', 'value': 0},
+        {'label': 'Status 9', 'value': 0}, {'label': 'Status 10', 'value': 0},
+    ],
+        'balanced': [
+            {'label': 'OK', 'value': 0}, {'label': 'OK+', 'value': 0}, {'label': 'UNB', 'value': 0}
+        ],
+        'creatures': [
+            {'label': 'kindred', 'value': 0}, {'label': 'ghoul', 'value': 0}
+        ],
+        'clans': [],
+        'disciplines': [
+            {'label': '++', 'value': 0},
+            {'label': '30', 'value': 0},
+            {'label': '20', 'value': 0},
+            {'label': '15', 'value': 0},
+            {'label': '10', 'value': 0},
+            {'label': '7', 'value': 0},
+            {'label': '5', 'value': 0},
+            {'label': '3', 'value': 0},
+            {'label': '--', 'value': 0}
+        ]
+    }
+    for x in CAM_CLANS:
+        stats['clans'].append({'label': x, 'value': 0})
     total = 0
     for c in creatures:
         creature_dict = c.toDict
@@ -339,8 +370,40 @@ def build_gaia_wheel():
             if (c.creature == 'mortal'):
                 weaver_list.append(creature_dict)
         total += 1
+        stats['status'][c.background9]['value'] += 1
+        if c.status == "OK":
+            stats['balanced'][0]['value'] += 1
+        elif c.status == "OK+":
+            stats['balanced'][1]['value'] += 1
+        else:
+            stats['balanced'][2]['value'] += 1
+        if c.creature == "ghoul" and c.faction == 'Camarilla':
+            stats['creatures'][1]['value'] += 1
+        elif c.creature == "kindred" and c.faction == 'Camarilla':
+            stats['creatures'][0]['value'] += 1
+            if c.family in CAM_CLANS:
+                stats['clans'][CAM_CLANS.index(c.family)]['value'] += 1
+            if c.total_traits > 40:
+                stats['disciplines'][0]['value'] += 1
+            elif c.total_traits > 30:
+                stats['disciplines'][1]['value'] += 1
+            elif c.total_traits > 20:
+                stats['disciplines'][2]['value'] += 1
+            elif c.total_traits > 15:
+                stats['disciplines'][3]['value'] += 1
+            elif c.total_traits > 10:
+                stats['disciplines'][4]['value'] += 1
+            elif c.total_traits > 7:
+                stats['disciplines'][5]['value'] += 1
+            elif c.total_traits > 5:
+                stats['disciplines'][6]['value'] += 1
+            elif c.total_traits > 3:
+                stats['disciplines'][7]['value'] += 1
+            else:
+                stats['disciplines'][8]['value'] += 1
 
-    for list in [weaver_list, inde_list, underworld_list, traditions_list, pentex_list, sabbat_list, wyrm_list, underworld_list,
+    for list in [weaver_list, inde_list, underworld_list, traditions_list, pentex_list, sabbat_list, wyrm_list,
+                 underworld_list,
                  wyld_list]:
         icnt = 0
         for item in list:
@@ -375,7 +438,8 @@ def build_gaia_wheel():
              'collection': underworld_list, 'total': total},
             {'name': 'pentex', 'index': 0, 'color': '#25A', 'value': len(pentex_list), 'start': 0, 'font': 'Ruda',
              'collection': pentex_list, 'total': total},
-        ]
+        ],
+        'stats': stats
     }
     idx = 0
     cumul = 0
@@ -420,7 +484,7 @@ MUNICH_DISTRICTS = {
     'MU017': {'name': 'Obergiesing', 'description': '', 'clan': tremere, 'sectors': 2},
     'MU018': {'name': 'Untergiesing und Harlaching', 'description': '', 'clan': gangrel, 'sectors': 5},
     'MU019': {'name': 'Thalkirchen-Obersendling-Forstenried-Fürstenried-Solln', 'description': '', 'clan': ventrue,
-            'sectors': 6},
+              'sectors': 6},
     'MU020': {'name': 'Hadern', 'description': '', 'clan': malkavian, 'sectors': 3},
     'MU021': {'name': 'Pasing – Obermenzing', 'description': '', 'clan': toreador, 'sectors': 4},
     'MU022': {'name': 'Aubing-Lochhausen-Langwied', 'description': '', 'clan': gangrel, 'sectors': 3},
@@ -464,11 +528,12 @@ HAMBURG_DISTRICTS = {
 def get_districts(cityname):
     from storytelling.models.cities import City
     from storytelling.models.districts import District
+    from storytelling.models.hotspots import HotSpot
     import json
-    #print(cityname.title())
+    # print(cityname.title())
 
     cities = City.objects.filter(name=cityname.title())
-    context = {'districts': {}}
+    context = {'districts': {}, 'hotspots': []}
     if len(cities) == 1:
         city = cities.first()
         districts = District.objects.filter(city=city)
@@ -487,6 +552,21 @@ def get_districts(cityname):
                 'camarilla_intelligence': d.camarilla_intelligence,
                 'camarilla_leisure': d.camarilla_leisure
             }
+        hotspots = HotSpot.objects.filter(city=city)
+        for hs in hotspots:
+            context['hotspots'].append({
+                'type': 'feature',
+                'geometry': {
+                    'type': "Point",
+                    "coordinates": [hs.latitude,hs.longitude]
+
+                },
+                'properties': {
+                    'name': hs.name,
+                    'color': hs.color,
+                }
+            });
+        # print(context)
 
     x = json.dumps(context, indent=4, sort_keys=True)
 

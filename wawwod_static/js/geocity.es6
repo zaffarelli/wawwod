@@ -10,6 +10,7 @@ class GeoCity {
         }
         this.parent = parent;
         this.wawwod_data = wdata['districts'];
+        this.wawwod_poi = wdata['hotspots'];
         this.co = collector;
         this.init()
     }
@@ -197,15 +198,30 @@ class GeoCity {
                     e.sector_name = entry.sector_name;
                     e.district_name = entry.district_name;
                     e.population_details = entry.population_details;
+                    e.category = "DISTRICT"
                 }
                 if (e.properties['Stadtteil']) {
                     e.name = e.properties['Stadtteil'];
                     delete e.properties['Stadtteil'];
                 }
-                console.log(e);
             });
-            // console.log(me.width)
-            // console.log(me.height)
+            // console.log("A")
+            // console.log(me.wawwod_poi.length)
+            _.each(me.wawwod_poi, function (poi) {
+                let poi_data = {
+                    "type": "Feature",
+                    "category": "POI",
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [poi['longitude'], poi['latitude']]
+                    },
+                    "properties": {"name": poi['name'], "color":poi["color"]}
+                }
+                console.log(poi_data)
+                // data.features.push(poi_data);
+            });
+
+            console.log(data);
             me.projection = d3.geoMercator()
                 .rotate([0, 0])
                 .fitSize([me.width, me.height], data)
@@ -221,58 +237,46 @@ class GeoCity {
                 .attr('class', 'district_item');
             item.append("path")
                 .attr("id", function (e) {
-                    console.log(e.properties.name)
+                    // console.log(e.properties.name)
                     return "path_" + e.id;
                 })
                 .attr("d", me.geoPath)
                 .style("fill", function (e, i) {
                     return "url(#" + e.status + ")"
                 })
-                .style("stroke", "#ddd")
+                .style("stroke", "#111")
+                .style("stroke-width", 0.125)
                 .style("fill-opacity", 0.5)
+                .style("stroke-opacity", 0.1)
 
                 .on('mouseover', function (h, e) {
                     let str = '';
                     str += "<p>";
-                    str += "<strong>" + e.code +" :: "+e.sector_name+"</strong>";
+                    str += "<strong>" + e.code + " :: " + e.sector_name + "</strong>";
                     str += "<br/><b>District:</b> " + e.district_name;
                     str += "<br/><b>Code:</b> " + e.code;
                     str += "<br/><b>Population:</b> " + e.population;
-                    str += "<br/><b>Details:</b> <ul>" + e.population_details+"</ul>";
+                    str += "<br/><b>Details:</b> <ul>" + e.population_details + "</ul>";
                     str += "</p>";
                     d3.select("#path_" + e.id).style("fill-opacity", 1);
+                    d3.select("#path_" + e.id).style("stroke-opacity", 0.8);
                     $(".tooltip").removeClass("hidden");
                     me.tooltip.transition()
-                    .duration(100)
-                    .style("opacity", 1.0);
+                        .duration(100)
+                        .style("opacity", 1.0);
                     me.tooltip.html(str);
                 })
                 .on('mouseout', function (h, e) {
 
                     d3.select("#path_" + e.id).style("fill-opacity", 0.5);
+                    d3.select("#path_" + e.id).style("stroke-opacity", 0.1);
                     me.tooltip.transition()
-                    .duration(500)
-                    .style("opacity", 0);
+                        .duration(500)
+                        .style("opacity", 0);
                     $(".tooltip").removeClass("hidden");
                 })
             ;
-            // item.append('rect')
-            //     .attr("x", function (e, i) {
-            //         return me.geoPath.centroid(e)[0] - 20;
-            //     })
-            //     .attr("y", function (e, i) {
-            //         return me.geoPath.centroid(e)[1];
-            //     })
-            //     .attr('width', 40)
-            //     .attr('height', 30)
-            //     .attr('rx', 3)
-            //     .attr('ry', 3)
-            //     .style("stroke", "transparent")
-            //     .style("stroke-width", "1pt")
-            //     .style("fill", "#311")
-            //     .attr("fill-opacity", "0.5")
-            //
-            // ;
+
             item.append('text')
                 .attr("x", function (e, i) {
                     return me.geoPath.centroid(e)[0];
@@ -284,37 +288,16 @@ class GeoCity {
                 .attr('dy', 6)
                 .style("font-family", "Roboto")
                 .style("text-anchor", "middle")
-                .style("font-size", "8pt")
+                .style("font-size", "3pt")
                 .style("font-weight", "bold")
                 .style("stroke", "#ccc")
                 .style("stroke-width", "0.15pt")
                 .style("fill", "#eee")
                 .text(function (e, i) {
-                    return e.code.slice(2);
+                    return e.sector_name;
 
                 })
             ;
-            // item.append('text')
-            //     .attr("x", function (e, i) {
-            //         return me.geoPath.centroid(e)[0];
-            //     })
-            //     .attr("y", function (e, i) {
-            //         return me.geoPath.centroid(e)[1];
-            //     })
-            //     .attr('dx', 0)
-            //     .attr('dy', 20)
-            //     .style("font-family", "Roboto")
-            //     .style("text-anchor", "middle")
-            //     .style("font-size", "10pt")
-            //     .style("font-weight", "bold")
-            //     .style("stroke", "#888")
-            //     .style("stroke-width", "0.25pt")
-            //     .style("fill", "#fff")
-            //     .text(function (e, i) {
-            //         return e.id;
-            //
-            //     })
-            // ;
 
 
             let mastertext = me.svg.append('text')
@@ -337,47 +320,52 @@ class GeoCity {
                     return "World of Darkness :: " + me.cityName.charAt(0).toUpperCase() + me.cityName.slice(1);
                 })
             ;
-            // let subtext = me.svg.append('text')
-            //     .attr("id", "mastertext")
-            //     .attr("x", function (e, i) {
-            //         return me.width / 8;
-            //     })
-            //     .attr("y", function (e, i) {
-            //         return 9 * me.height / 10 - 4;
-            //     })
-            //     .attr("dy", -24)
-            //
-            //     .style("font-family", "Roboto")
-            //     .style("text-anchor", "middle")
-            //     .style("font-size", "16pt")
-            //     .style("stroke", "#888")
-            //     .style("stroke-width", "0.25")
-            //     .style("fill", "#fff")
-            //     .text(function (e, i) {
-            //         return "Camarilla Territories";
-            //     })
-            // ;
-            // let infotext = me.svg.append('text')
-            //     .attr("id", "infotext")
-            //     .attr("x", function (e, i) {
-            //         return me.width / 8;
-            //     })
-            //     .attr("y", function (e, i) {
-            //         return 9 * me.height / 10 - 4;
-            //     })
-            //     .style("font-family", "Roboto")
-            //     .style("text-anchor", "middle")
-            //     .style("font-size", "12pt")
-            //     .style("stroke", "#888")
-            //     .style("stroke-width", "0.25")
-            //     .style("fill", "#fff")
-            //     .text(function (e, i) {
-            //         return e.name;
-            //     })
-            // ;
-
+            me.draw_poi();
         })
         me.zoomActivate();
+    }
+
+    draw_poi() {
+        let me = this;
+        console.log("POI");
+        let pois = me.g.append("g")
+            .attr('class', 'poi')
+            .selectAll(".poi")
+            .data(me.wawwod_poi)
+        ;
+        console.log("POIs");
+        let poi_in = pois.enter()
+            .append("g")
+            .attr('class', 'poi_item')
+            .attr("transform", function (d) {
+                console.log(d)
+                return "translate(" + me.projection(d.geometry.coordinates) + ")";
+            });
+        ;
+        poi_in.append('circle')
+            .attr('x', 0)
+            .attr('y', 0)
+            .attr('r', 3)
+            .style("stroke", "#ccccccc")
+            .style("stroke-width", "0.1pt")
+            .style("fill", function(d){
+                return d.properties.color;
+            })
+            .style("opacity", 1)
+        ;
+        poi_in.append('text')
+            .attr('dy', -3)
+            .style("font-family", "Roboto")
+            .style("text-anchor", "middle")
+            .style("font-size", "3pt")
+            .style("stroke", "#666666")
+            .style("stroke-width", "0.1pt")
+            .style("fill", "#ffffff")
+            .text(function (d) {
+                return d.properties.name;
+            })
+        ;
+
     }
 
     zoomActivate() {

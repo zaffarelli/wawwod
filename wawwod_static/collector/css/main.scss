@@ -1,6 +1,5 @@
 @import 'basics';
 
-
 body {
   font-family: Texte;
   @include body_background;
@@ -136,7 +135,7 @@ body {
   bottom: 0px;
   display: block;
   position: fixed;
-  z-index: 110;
+  z-index: 510;
   transition: all 0.3s ease;
   box-shadow: -5px -5px 10px $dark_plate;
 
@@ -505,14 +504,16 @@ table {
     order: 1;
     display: inline-block;
 
-    font-family: TexteLibre;
+    font-family: "Ruda";
     font-size: 12px;
     height: 24px;
 
     margin: 0 3px 0 3px;
     width: 300px;
 
+
     @include panel;
+
 
 
 
@@ -539,9 +540,8 @@ table {
     }
 
     &:hover {
-      //background:#2d2614;
+      //background:darkred;
       height: auto;
-
 
       & ul.drop_down {
         display: block;
@@ -556,6 +556,13 @@ table {
           color: $plate_highlight;
           background: #2d052d; //complement($panel_background);
           cursor: pointer;
+          & li{
+            background:#300542;
+            &:hover{
+              background: #200d65;
+            }
+          }
+
         }
       }
     }
@@ -710,7 +717,7 @@ svg.lineage {
   padding-left: 15px;
   padding-right: 15px;
   box-shadow: 0 0 5px #111;
-  z-index: 40000;
+  z-index: 400;
   right:5vw;
   top:10vh;
 

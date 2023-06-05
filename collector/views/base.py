@@ -17,7 +17,9 @@ from django.contrib.auth.decorators import login_required
 from django.conf import settings
 from collector.utils.helper import is_ajax
 import os
+import logging
 
+logger = logging.Logger(__name__)
 chronicle = get_current_chronicle()
 
 
@@ -298,17 +300,58 @@ def display_lineage(request, slug=None):
 
 
 @csrf_exempt
-def svg_to_pdf(request, slug):
-    import cairosvg
-    print("svg_to_pdf")
+def save_to_svg(request, slug):
     response = {'status': 'error'}
     if is_ajax(request):
-        pdf_name = os.path.join(settings.MEDIA_ROOT, 'pdf/results/' + request.POST["pdf_name"])
-        svg_name = os.path.join(settings.MEDIA_ROOT, 'pdf/results/' + request.POST["svg_name"])
+        svg_name = os.path.join(settings.MEDIA_ROOT, 'pdf/results/svg/' + request.POST["svg_name"])
         svgtxt = request.POST["svg"]
         with open(svg_name, "w") as f:
             f.write(svgtxt)
             f.close()
-        cairosvg.svg2pdf(url=svg_name, write_to=pdf_name, scale=1.0)
         response['status'] = 'ok'
     return JsonResponse(response)
+
+@csrf_exempt
+def svg_to_pdf(request, slug):
+
+    response = {'status': 'error'}
+    logger.info(f'Saving to PDF.')
+    if is_ajax(request):
+        import cairosvg
+        svg_name = os.path.join(settings.MEDIA_ROOT, 'pdf/results/svg/' + request.POST["svg_name"])
+        svgtxt = request.POST["svg"]
+        with open(svg_name, "w") as f:
+            f.write(svgtxt)
+            f.close()
+        logger.info(f'--> Created --> {svg_name}.')
+        pdf_name = os.path.join(settings.MEDIA_ROOT, 'pdf/results/pdf/' + request.POST["pdf_name"])
+        rid = request.POST["rid"]
+        cairosvg.svg2pdf(url=svg_name, write_to=pdf_name, scale=1.0)
+        logger.info(f'--> Created --> {pdf_name}.')
+        response['status'] = 'ok'
+        all_in_one_pdf(rid)
+    return JsonResponse(response)
+
+@csrf_exempt
+def all_in_one_pdf(rid):
+    logger.info(f'Starting PDFing for [{rid}].')
+    res = []
+    from PyPDF2 import PdfMerger
+    media_results = os.path.join(settings.MEDIA_ROOT, 'pdf/results/pdf/')
+    csheet_results = os.path.join(settings.MEDIA_ROOT, 'pdf/results/csheet/')
+    onlyfiles = [f for f in os.listdir(media_results) if os.path.isfile(os.path.join(media_results, f))]
+    pdfs = onlyfiles
+    merger = PdfMerger()
+    pdfs.sort()
+    i = 0
+    for pdf in pdfs:
+        if pdf.startswith("character_sheet"+rid):
+            # print(pdf)
+            merger.append(open(media_results + pdf, 'rb'))
+            i += 1
+    if i > 3:
+        des = f'{csheet_results}character_sheet{rid}.pdf'
+        with open(des, 'wb') as fout:
+            merger.write(fout)
+        logger.info(f'Successfully merged {i+1} pages as [{des}].')
+    return res

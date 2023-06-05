@@ -75,20 +75,18 @@ LOGGING = {
     'formatters': {
         'standard': {
             'format': "[%(asctime)s] %(message)s",
-            'datefmt': "%d:%H%M%S"
+            'datefmt': "%d/%m %H:%M:%S"
         },
     },
     'handlers': {
         'logfile': {
-            'level': 'DEBUG',
             'class': 'logging.handlers.RotatingFileHandler',
             'filename': LOGPATH + "wawwod.log",
-            'maxBytes': 1000000000,
+            'maxBytes': 10000000,
             'backupCount': 3,
             'formatter': 'standard',
         },
         'console': {
-            'level': 'DEBUG',
             'class': 'logging.StreamHandler',
             'formatter': 'standard'
         },
@@ -97,14 +95,18 @@ LOGGING = {
         'django': {
             'handlers': ['console','logfile'],
             'propagate': False,
-            'level': 'INFO',
+            'level': 'WARNING',
         },
         'django.db.backends': {
             'handlers': ['console','logfile'],
-            'level': 'INFO',
+            'level': 'WARNING',
             'propagate': False,
         },
-        'collector': {
+        'wawwod.collector': {
+            'handlers': ['console', 'logfile'],
+            'level': 'DEBUG',
+        },
+        'wawwod.storytelling': {
             'handlers': ['console', 'logfile'],
             'level': 'DEBUG',
         },
@@ -159,3 +161,5 @@ if DEBUG:
     import mimetypes
     mimetypes.add_type("application/javascript;charset=utf-8", ".es6", True)
     mimetypes.add_type("application/javascript;charset=utf-8", ".js", True)
+
+VERSION = '0.1'

@@ -78,17 +78,17 @@ class CrossOverSheet extends WawwodSheet {
 
     drawButtons() {
         let me = this;
-        me.addButton(0, 'Save SVG');
-        me.addButton(1, 'Save PNG');
+        // me.addButton(0, 'Save SVG');
+        // me.addButton(1, 'Save PNG');
         me.addButton(2, 'Save PDF');
-        me.addButton(3, 'Edit');
+        // me.addButton(3, 'Edit');
         me.addButton(4, 'Page 1');
         me.addButton(5, 'Page 2');
         me.addButton(6, 'Page 3');
         me.addButton(7, 'Page 4');
-        me.addButton(8, 'Page 5');
-        me.addButton(9, 'Page 6');
-        me.addButton(10, 'Page 7');
+        // me.addButton(8, 'Page 5');
+        // me.addButton(9, 'Page 6');
+        // me.addButton(10, 'Page 7');
     }
 
     fillBackgroundNotes(oy) {
@@ -99,7 +99,12 @@ class CrossOverSheet extends WawwodSheet {
         ;
 
 
+
         me.title('About Backgrounds', 5.5 * me.stepx, oy - 0.5 * me.stepy, background_note)
+
+        if (me.blank) {
+            return;
+        }
 
         let background_note_item = background_note.selectAll('background_note')
             .data(me.data['background_notes'])
@@ -260,6 +265,12 @@ class CrossOverSheet extends WawwodSheet {
         if (pos == '') {
             me.title('About Disciplines', 17 * me.stepx, oy - 0.5 * me.stepy, d_notes)
         }
+
+
+        if (me.blank) {
+            return;
+        }
+
         let d_notes_item = d_notes.selectAll('discipline_event')
             .data(me.data['disciplines_notes'])
         ;
@@ -347,6 +358,10 @@ class CrossOverSheet extends WawwodSheet {
         ;
         me.daddy = me.n_notes;
         me.title('About Nature & Demeanor', 6 * me.stepx, oy - 0.5 * me.stepy, n_notes)
+
+        if (me.blank) {
+            return;
+        }
 
         let n_notes_item = n_notes.selectAll('nature_event')
             .data(me.data['nature_notes'])

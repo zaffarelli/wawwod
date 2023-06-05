@@ -10,6 +10,7 @@ class GeoCity {
         }
         this.parent = parent;
         this.wawwod_data = wdata['districts'];
+        this.wawwod_poi = wdata['hotspots'];
         this.co = collector;
         this.init()
     }
@@ -36,9 +37,9 @@ class GeoCity {
         let defs = me.svg.append('defs');
 
 
-        let neutral_color = "#505050";
-        let sabbat_color = "#c3d584";
-        let camarilla_color = "#fc0000";
+        let neutral_color = "#202020";
+        let sabbat_color = "#cb367f";
+        let camarilla_color = "#6c0e0e";
 
         defs.append("pattern")
             .attr('id', "neutral")
@@ -65,25 +66,26 @@ class GeoCity {
             .attr('patternUnits', "userSpaceOnUse")
             .attr('width', 10)
             .attr('height', 10)
-            .append("rect")
-            .attr("width", 10)
-            .attr("height", 10)
-            .style("stroke", neutral_color)
-            .style("fill", camarilla_color)
-            .style("stroke-width", 3)
+            .append("circle")
+            .attr("cx", 5)
+            .attr("cy", 5)
+            .attr("r", 5)
+            .style("stroke", camarilla_color)
+            .style("fill", neutral_color)
+            .style("stroke-width", 8)
         ;
-
         defs.append("pattern")
             .attr('id', "presence")
             .attr('patternUnits', "userSpaceOnUse")
             .attr('width', 10)
             .attr('height', 10)
-            .append("rect")
-            .attr("width", 10)
-            .attr("height", 10)
-            .style("stroke", neutral_color)
-            .style("fill", camarilla_color)
-            .style("stroke-width", 6)
+            .append("circle")
+            .attr("cx", 5)
+            .attr("cy", 5)
+            .attr("r", 5)
+            .style("stroke", camarilla_color)
+            .style("fill", neutral_color)
+            .style("stroke-width", 4)
         ;
 
 
@@ -197,15 +199,30 @@ class GeoCity {
                     e.sector_name = entry.sector_name;
                     e.district_name = entry.district_name;
                     e.population_details = entry.population_details;
+                    e.category = "DISTRICT"
                 }
                 if (e.properties['Stadtteil']) {
                     e.name = e.properties['Stadtteil'];
                     delete e.properties['Stadtteil'];
                 }
-                console.log(e);
             });
-            // console.log(me.width)
-            // console.log(me.height)
+            // console.log("A")
+            // console.log(me.wawwod_poi.length)
+            _.each(me.wawwod_poi, function (poi) {
+                let poi_data = {
+                    "type": "Feature",
+                    "category": "POI",
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [poi['longitude'], poi['latitude']]
+                    },
+                    "properties": {"name": poi['name'], "color":poi["color"]}
+                }
+                console.log(poi_data)
+                // data.features.push(poi_data);
+            });
+
+            console.log(data);
             me.projection = d3.geoMercator()
                 .rotate([0, 0])
                 .fitSize([me.width, me.height], data)
@@ -221,58 +238,46 @@ class GeoCity {
                 .attr('class', 'district_item');
             item.append("path")
                 .attr("id", function (e) {
-                    console.log(e.properties.name)
+                    // console.log(e.properties.name)
                     return "path_" + e.id;
                 })
                 .attr("d", me.geoPath)
                 .style("fill", function (e, i) {
                     return "url(#" + e.status + ")"
                 })
-                .style("stroke", "#ddd")
+                .style("stroke", "#111")
+                .style("stroke-width", 0.125)
                 .style("fill-opacity", 0.5)
+                .style("stroke-opacity", 0.1)
 
                 .on('mouseover', function (h, e) {
                     let str = '';
                     str += "<p>";
-                    str += "<strong>" + e.code +" :: "+e.sector_name+"</strong>";
+                    str += "<strong>" + e.code + " :: " + e.sector_name + "</strong>";
                     str += "<br/><b>District:</b> " + e.district_name;
                     str += "<br/><b>Code:</b> " + e.code;
                     str += "<br/><b>Population:</b> " + e.population;
-                    str += "<br/><b>Details:</b> <ul>" + e.population_details+"</ul>";
+                    str += "<br/><b>Details:</b> <ul>" + e.population_details + "</ul>";
                     str += "</p>";
                     d3.select("#path_" + e.id).style("fill-opacity", 1);
+                    d3.select("#path_" + e.id).style("stroke-opacity", 0.8);
                     $(".tooltip").removeClass("hidden");
                     me.tooltip.transition()
-                    .duration(100)
-                    .style("opacity", 1.0);
+                        .duration(100)
+                        .style("opacity", 1.0);
                     me.tooltip.html(str);
                 })
                 .on('mouseout', function (h, e) {
 
                     d3.select("#path_" + e.id).style("fill-opacity", 0.5);
+                    d3.select("#path_" + e.id).style("stroke-opacity", 0.1);
                     me.tooltip.transition()
-                    .duration(500)
-                    .style("opacity", 0);
+                        .duration(500)
+                        .style("opacity", 0);
                     $(".tooltip").removeClass("hidden");
                 })
             ;
-            // item.append('rect')
-            //     .attr("x", function (e, i) {
-            //         return me.geoPath.centroid(e)[0] - 20;
-            //     })
-            //     .attr("y", function (e, i) {
-            //         return me.geoPath.centroid(e)[1];
-            //     })
-            //     .attr('width', 40)
-            //     .attr('height', 30)
-            //     .attr('rx', 3)
-            //     .attr('ry', 3)
-            //     .style("stroke", "transparent")
-            //     .style("stroke-width", "1pt")
-            //     .style("fill", "#311")
-            //     .attr("fill-opacity", "0.5")
-            //
-            // ;
+
             item.append('text')
                 .attr("x", function (e, i) {
                     return me.geoPath.centroid(e)[0];
@@ -282,39 +287,18 @@ class GeoCity {
                 })
                 .attr('dx', 0)
                 .attr('dy', 6)
-                .style("font-family", "Roboto")
+                .style("font-family", "Ruda")
                 .style("text-anchor", "middle")
-                .style("font-size", "8pt")
+                .style("font-size", "3pt")
                 .style("font-weight", "bold")
                 .style("stroke", "#ccc")
                 .style("stroke-width", "0.15pt")
                 .style("fill", "#eee")
                 .text(function (e, i) {
-                    return e.code.slice(2);
+                    return e.code;
 
                 })
             ;
-            // item.append('text')
-            //     .attr("x", function (e, i) {
-            //         return me.geoPath.centroid(e)[0];
-            //     })
-            //     .attr("y", function (e, i) {
-            //         return me.geoPath.centroid(e)[1];
-            //     })
-            //     .attr('dx', 0)
-            //     .attr('dy', 20)
-            //     .style("font-family", "Roboto")
-            //     .style("text-anchor", "middle")
-            //     .style("font-size", "10pt")
-            //     .style("font-weight", "bold")
-            //     .style("stroke", "#888")
-            //     .style("stroke-width", "0.25pt")
-            //     .style("fill", "#fff")
-            //     .text(function (e, i) {
-            //         return e.id;
-            //
-            //     })
-            // ;
 
 
             let mastertext = me.svg.append('text')
@@ -337,53 +321,58 @@ class GeoCity {
                     return "World of Darkness :: " + me.cityName.charAt(0).toUpperCase() + me.cityName.slice(1);
                 })
             ;
-            // let subtext = me.svg.append('text')
-            //     .attr("id", "mastertext")
-            //     .attr("x", function (e, i) {
-            //         return me.width / 8;
-            //     })
-            //     .attr("y", function (e, i) {
-            //         return 9 * me.height / 10 - 4;
-            //     })
-            //     .attr("dy", -24)
-            //
-            //     .style("font-family", "Roboto")
-            //     .style("text-anchor", "middle")
-            //     .style("font-size", "16pt")
-            //     .style("stroke", "#888")
-            //     .style("stroke-width", "0.25")
-            //     .style("fill", "#fff")
-            //     .text(function (e, i) {
-            //         return "Camarilla Territories";
-            //     })
-            // ;
-            // let infotext = me.svg.append('text')
-            //     .attr("id", "infotext")
-            //     .attr("x", function (e, i) {
-            //         return me.width / 8;
-            //     })
-            //     .attr("y", function (e, i) {
-            //         return 9 * me.height / 10 - 4;
-            //     })
-            //     .style("font-family", "Roboto")
-            //     .style("text-anchor", "middle")
-            //     .style("font-size", "12pt")
-            //     .style("stroke", "#888")
-            //     .style("stroke-width", "0.25")
-            //     .style("fill", "#fff")
-            //     .text(function (e, i) {
-            //         return e.name;
-            //     })
-            // ;
-
+            me.draw_poi();
         })
         me.zoomActivate();
+    }
+
+    draw_poi() {
+        let me = this;
+        console.log("POI");
+        let pois = me.g.append("g")
+            .attr('class', 'poi')
+            .selectAll(".poi")
+            .data(me.wawwod_poi)
+        ;
+        console.log("POIs");
+        let poi_in = pois.enter()
+            .append("g")
+            .attr('class', 'poi_item')
+            .attr("transform", function (d) {
+                console.log(d)
+                return "translate(" + me.projection(d.geometry.coordinates) + ")";
+            });
+        ;
+        poi_in.append('circle')
+            .attr('x', 0)
+            .attr('y', 0)
+            .attr('r', 1.5)
+            .style("stroke", "#606060")
+            .style("stroke-width", "0.25pt")
+            .style("fill", function(d){
+                return d.properties.color;
+            })
+            .style("opacity", 1)
+        ;
+        poi_in.append('text')
+            .attr('dy', -3)
+            .style("font-family", "Ruda")
+            .style("text-anchor", "start")
+            .style("font-size", "2pt")
+            .style("stroke", "#C0C0C0")
+            .style("stroke-width", "0.1pt")
+            .style("fill", "#F0F0F0")
+            .text(function (d) {
+                return d.properties.name;
+            })
+        ;
+
     }
 
     zoomActivate() {
         let me = this;
         let zoom = d3.zoom()
-            .scaleExtent([0.25, 32])
+            .scaleExtent([1, 64])
             .on('zoom', function (event) {
                 me.g.attr('transform', event.transform);
             });
