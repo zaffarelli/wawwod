@@ -37,55 +37,68 @@ class GeoCity {
         let defs = me.svg.append('defs');
 
 
-        let neutral_color = "#202020";
+        let neutral_color = "#354555";
         let sabbat_color = "#cb367f";
-        let camarilla_color = "#6c0e0e";
+        let camarilla_color = "#744406";
 
-        defs.append("pattern")
+        let p1 = defs.append("pattern")
             .attr('id', "neutral")
             .attr('patternUnits', "userSpaceOnUse")
             .attr('width', 10)
             .attr('height', 10)
-            .append("rect")
+        ;
+        p1.append("rect")
             .attr("width", 10)
             .attr("height", 10)
             .style("fill", neutral_color)
         ;
-        defs.append("pattern")
+        let p2 = defs.append("pattern")
             .attr('id', "full")
             .attr('patternUnits', "userSpaceOnUse")
             .attr('width', 10)
             .attr('height', 10)
-            .append("rect")
+        p2.append("rect")
             .attr("width", 10)
             .attr("height", 10)
             .style("fill", camarilla_color)
         ;
-        defs.append("pattern")
+        let p3 = defs.append("pattern")
             .attr('id', "controlled")
             .attr('patternUnits', "userSpaceOnUse")
-            .attr('width', 10)
-            .attr('height', 10)
-            .append("circle")
-            .attr("cx", 5)
-            .attr("cy", 5)
-            .attr("r", 5)
-            .style("stroke", camarilla_color)
-            .style("fill", neutral_color)
-            .style("stroke-width", 8)
+            .attr('width', 8)
+            .attr('height', 8)
+        p3.append("rect")
+            .attr("width", 10)
+            .attr("height", 10)
+            .attr("fill", neutral_color)
         ;
-        defs.append("pattern")
+
+        p3.append("path")
+            .attr("d", "M-1,1 l2,-2 M0,8 l8,-8 M7,9 l2,-2")
+            .attr("stroke", camarilla_color)
+            .attr("fill", neutral_color)
+            .attr("stroke-width", 3)
+        ;
+
+
+        let p4 = defs.append("pattern")
             .attr('id', "presence")
             .attr('patternUnits', "userSpaceOnUse")
-            .attr('width', 10)
-            .attr('height', 10)
-            .append("circle")
-            .attr("cx", 5)
-            .attr("cy", 5)
-            .attr("r", 5)
-            .style("stroke", camarilla_color)
-            .style("fill", neutral_color)
-            .style("stroke-width", 4)
+            .attr('width', 8)
+            .attr('height', 8)
+
+        p4.append('rect')
+            .attr('width', 8)
+            .attr('height', 8)
+            .attr("fill", neutral_color)
+            .attr("stroke-width", 0)
+        ;
+
+        p4.append("path")
+            .attr("d", "M-1,1 l2,-2 M0,8 l8,-8 M7,9 l2,-2")
+            .attr("stroke", camarilla_color)
+            .attr("fill", neutral_color)
+            .attr("stroke-width", 2)
         ;
 
 
@@ -216,7 +229,7 @@ class GeoCity {
                         "type": "Point",
                         "coordinates": [poi['longitude'], poi['latitude']]
                     },
-                    "properties": {"name": poi['name'], "color":poi["color"]}
+                    "properties": {"name": poi['name'], "color": poi["color"]}
                 }
                 console.log(poi_data)
                 // data.features.push(poi_data);
@@ -286,14 +299,14 @@ class GeoCity {
                     return me.geoPath.centroid(e)[1];
                 })
                 .attr('dx', 0)
-                .attr('dy', 6)
+                .attr('dy', -6)
                 .style("font-family", "Ruda")
                 .style("text-anchor", "middle")
                 .style("font-size", "3pt")
                 .style("font-weight", "bold")
-                .style("stroke", "#ccc")
+                .style("stroke", "#888888")
                 .style("stroke-width", "0.15pt")
-                .style("fill", "#eee")
+                .style("fill", "#cccccc")
                 .text(function (e, i) {
                     return e.code;
 
@@ -344,18 +357,35 @@ class GeoCity {
             });
         ;
         poi_in.append('circle')
+            .attr('class','poi_circle')
+            .attr('id',function(d){
+              return "poi_label_"+d.properties.code;
+            })
             .attr('x', 0)
             .attr('y', 0)
             .attr('r', 1.5)
             .style("stroke", "#606060")
             .style("stroke-width", "0.25pt")
-            .style("fill", function(d){
+            .style("fill", function (d) {
                 return d.properties.color;
             })
             .style("opacity", 1)
+            .on('mouseover',function(e,d){
+                $('#poi_path_'+d.properties.code).attr("opacity",1.0);
+                $('#poi_text_'+d.properties.code).attr("opacity",1.0);
+            })
+            .on('mouseout',function(e,d){
+                $('.poi_path').attr("opacity",0.0);
+                $('.poi_text').attr("opacity",0.0);
+            });
         ;
         poi_in.append('text')
-            .attr('dy', -3)
+            .attr('class','poi_text')
+            .attr('id',function(d){
+              return "poi_text_"+d.properties.code;
+            })
+            .attr('dx', 11)
+            .attr('dy', -27)
             .style("font-family", "Ruda")
             .style("text-anchor", "start")
             .style("font-size", "2pt")
@@ -365,6 +395,19 @@ class GeoCity {
             .text(function (d) {
                 return d.properties.name;
             })
+            .attr("opacity",0)
+        ;
+        poi_in.append('path')
+            .attr('class','poi_path')
+            .attr('id',function(d){
+              return "poi_path_"+d.properties.code;
+            })
+            .attr('d', "M1,-3 l10,-23 l6,0 l0,0.5 l-6,0")
+            .style("stroke", "#F0F0F0")
+            .style("fill", "transparent")
+            .style("stroke-width", "0.1pt")
+            .attr("opacity",0)
+
         ;
 
     }
@@ -372,7 +415,7 @@ class GeoCity {
     zoomActivate() {
         let me = this;
         let zoom = d3.zoom()
-            .scaleExtent([1, 64])
+            .scaleExtent([1, 32])
             .on('zoom', function (event) {
                 me.g.attr('transform', event.transform);
             });

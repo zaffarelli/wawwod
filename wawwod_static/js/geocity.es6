@@ -37,9 +37,9 @@ class GeoCity {
         let defs = me.svg.append('defs');
 
 
-        let neutral_color = "#505050";
-        let sabbat_color = "#c3d584";
-        let camarilla_color = "#fc0000";
+        let neutral_color = "#202020";
+        let sabbat_color = "#cb367f";
+        let camarilla_color = "#6c0e0e";
 
         defs.append("pattern")
             .attr('id', "neutral")
@@ -66,25 +66,26 @@ class GeoCity {
             .attr('patternUnits', "userSpaceOnUse")
             .attr('width', 10)
             .attr('height', 10)
-            .append("rect")
-            .attr("width", 10)
-            .attr("height", 10)
-            .style("stroke", neutral_color)
-            .style("fill", camarilla_color)
-            .style("stroke-width", 3)
+            .append("circle")
+            .attr("cx", 5)
+            .attr("cy", 5)
+            .attr("r", 5)
+            .style("stroke", camarilla_color)
+            .style("fill", neutral_color)
+            .style("stroke-width", 8)
         ;
-
         defs.append("pattern")
             .attr('id', "presence")
             .attr('patternUnits', "userSpaceOnUse")
             .attr('width', 10)
             .attr('height', 10)
-            .append("rect")
-            .attr("width", 10)
-            .attr("height", 10)
-            .style("stroke", neutral_color)
-            .style("fill", camarilla_color)
-            .style("stroke-width", 6)
+            .append("circle")
+            .attr("cx", 5)
+            .attr("cy", 5)
+            .attr("r", 5)
+            .style("stroke", camarilla_color)
+            .style("fill", neutral_color)
+            .style("stroke-width", 4)
         ;
 
 
@@ -286,7 +287,7 @@ class GeoCity {
                 })
                 .attr('dx', 0)
                 .attr('dy', 6)
-                .style("font-family", "Roboto")
+                .style("font-family", "Ruda")
                 .style("text-anchor", "middle")
                 .style("font-size", "3pt")
                 .style("font-weight", "bold")
@@ -294,7 +295,7 @@ class GeoCity {
                 .style("stroke-width", "0.15pt")
                 .style("fill", "#eee")
                 .text(function (e, i) {
-                    return e.sector_name;
+                    return e.code;
 
                 })
             ;
@@ -345,9 +346,9 @@ class GeoCity {
         poi_in.append('circle')
             .attr('x', 0)
             .attr('y', 0)
-            .attr('r', 3)
-            .style("stroke", "#ccccccc")
-            .style("stroke-width", "0.1pt")
+            .attr('r', 1.5)
+            .style("stroke", "#606060")
+            .style("stroke-width", "0.25pt")
             .style("fill", function(d){
                 return d.properties.color;
             })
@@ -355,12 +356,12 @@ class GeoCity {
         ;
         poi_in.append('text')
             .attr('dy', -3)
-            .style("font-family", "Roboto")
-            .style("text-anchor", "middle")
-            .style("font-size", "3pt")
-            .style("stroke", "#666666")
+            .style("font-family", "Ruda")
+            .style("text-anchor", "start")
+            .style("font-size", "2pt")
+            .style("stroke", "#C0C0C0")
             .style("stroke-width", "0.1pt")
-            .style("fill", "#ffffff")
+            .style("fill", "#F0F0F0")
             .text(function (d) {
                 return d.properties.name;
             })
@@ -371,7 +372,7 @@ class GeoCity {
     zoomActivate() {
         let me = this;
         let zoom = d3.zoom()
-            .scaleExtent([0.25, 32])
+            .scaleExtent([1, 64])
             .on('zoom', function (event) {
                 me.g.attr('transform', event.transform);
             });

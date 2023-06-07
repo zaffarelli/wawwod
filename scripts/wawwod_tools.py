@@ -3,6 +3,7 @@ from collector.models.creatures import Creature
 from collector.utils.wod_reference import ARCHETYPES
 # import xmltodict
 import random
+from collector.utils.kindred_stuff import manage_missing_ghouls, domitor_from_sire
 
 from collector.utils.wod_reference import get_current_chronicle
 
@@ -19,6 +20,7 @@ class ToolsForWawwod:
         print('    5 - XML rescue (kindred)')
         print('    6 - Sire as RID')
         print('    7 - Name ghouls...')
+        print('    8 - Reghoul (kindreds)...')
         print('    0 - Quit')
         topic = ''
         while topic != '0':
@@ -37,6 +39,9 @@ class ToolsForWawwod:
                 self.sire_as_rid()
             elif topic == '7':
                 self.rename_ghouls()
+            elif topic == '8':
+                manage_missing_ghouls()
+                domitor_from_sire()
 
     def fmt(self, txt):
         new_txt = "\033[1;39m".join(txt.split('µ'))

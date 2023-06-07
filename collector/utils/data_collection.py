@@ -564,6 +564,8 @@ def get_districts(cityname):
                 'properties': {
                     'name': hs.name,
                     'color': hs.color,
+                    'type': hs.type,
+                    'code': hs.id,
                 }
             });
         # print(context)

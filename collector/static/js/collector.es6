@@ -452,6 +452,7 @@ class WawwodCollector {
                 event.stopPropagation();
                 let target = $(this).attr('id')
                 let keys = $(this).attr('id').split('__')
+                consloe.log(target);
                 let shift = event.shiftKey
                 let block = $(this).parent();
                 let os = 1;

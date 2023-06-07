@@ -712,6 +712,7 @@ class Creature(models.Model):
         self.expectedfreebies += self.extra
         self.summary = f'Freebies: {self.freebies}'
         self.calculate_freebies()
+        self.balance_ghoul()
         self.changeName()
         self.need_fix = False
 
@@ -1041,6 +1042,17 @@ class Creature(models.Model):
                     setattr(self, f'virtue{a}', v + 1)
                     virtues -= 1
             self.weakness = CLANS_SPECIFICS[self.family]['clan_weakness']
+
+    def balance_ghoul(self):
+        if self.creature == "ghoul":
+            offset = self.expectedfreebies - self.freebies
+            if offset > 0:
+                if self.sire:
+                    # domitor = Creature.objects.get(rid=self.sire)
+                    if offset >= 7:
+                        disciplines = self.get_traits()
+                        if len(disciplines) == 0:
+                            self.trait0 = 'Potence (1)'
 
     def extract_raw(self):
         # filename = f'./raw/{self.rid}.txt'

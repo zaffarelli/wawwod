@@ -188,3 +188,328 @@ AttributeError: 'dict' object has no attribute 'append'
 [05/06 01:25:21] "GET /favicon.ico HTTP/1.1" 404 8687
 [05/06 02:06:28] Not Found: /favicon.ico
 [05/06 03:14:29] Not Found: /favicon.ico
+[05/06 13:53:59] Not Found: /favicon.ico
+[05/06 13:57:09] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1861
+[05/06 13:57:41] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1861
+[05/06 14:01:48] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1861
+[05/06 14:12:15] Internal Server Error: /ajax/editable/updown/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/backends/mysql/base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib64/python3.11/site-packages/MySQLdb/cursors.py", line 206, in execute
+    res = self._query(query)
+          ^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib64/python3.11/site-packages/MySQLdb/cursors.py", line 319, in _query
+    db.query(q)
+  File "/home/zaffarelli/.virtualenvs/owod/lib64/python3.11/site-packages/MySQLdb/connections.py", line 254, in query
+    _mysql.connection.query(self, query)
+MySQLdb.DataError: (1264, "Out of range value for column 'background8' at row 1")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Perso/github/wawwod/collector/views/base.py", line 129, in updown
+    item.save()
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/models/base.py", line 877, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/models/base.py", line 990, in _save_table
+    updated = self._do_update(
+              ^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/models/base.py", line 1054, in _do_update
+    return filtered._update(values) > 0
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/models/query.py", line 1231, in _update
+    return query.get_compiler(self.db).execute_sql(CURSOR)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1982, in execute_sql
+    cursor = super().execute_sql(result_type)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1560, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/backends/mysql/base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib64/python3.11/site-packages/MySQLdb/cursors.py", line 206, in execute
+    res = self._query(query)
+          ^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib64/python3.11/site-packages/MySQLdb/cursors.py", line 319, in _query
+    db.query(q)
+  File "/home/zaffarelli/.virtualenvs/owod/lib64/python3.11/site-packages/MySQLdb/connections.py", line 254, in query
+    _mysql.connection.query(self, query)
+django.db.utils.DataError: (1264, "Out of range value for column 'background8' at row 1")
+[05/06 14:12:15] "POST /ajax/editable/updown/ HTTP/1.1" 500 25907
+[05/06 14:32:53] "GET /static/collector/clans/blood_brothers.webp HTTP/1.1" 404 1861
+[05/06 14:32:53] "GET /static/collector/clans/gargoyle.webp HTTP/1.1" 404 1843
+[05/06 14:32:57] "GET /static/collector/clans/gargoyle.webp HTTP/1.1" 404 1843
+[05/06 14:32:57] "GET /static/collector/clans/blood_brothers.webp HTTP/1.1" 404 1861
+[07/06 01:59:56] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1861
+[07/06 02:48:58] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1861
+[07/06 02:53:16] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1861
+[07/06 02:54:08] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1861
+[07/06 02:59:06] Internal Server Error: /ajax/editable/updown/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Perso/github/wawwod/collector/views/base.py", line 123, in updown
+    item = Creature.objects.get(rid=rid)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/models/query.py", line 637, in get
+    raise self.model.DoesNotExist(
+collector.models.creatures.Creature.DoesNotExist: Creature matching query does not exist.
+[07/06 02:59:06] "POST /ajax/editable/updown/ HTTP/1.1" 500 21902
+[07/06 02:59:07] Internal Server Error: /ajax/editable/updown/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Perso/github/wawwod/collector/views/base.py", line 123, in updown
+    item = Creature.objects.get(rid=rid)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/models/query.py", line 637, in get
+    raise self.model.DoesNotExist(
+collector.models.creatures.Creature.DoesNotExist: Creature matching query does not exist.
+[07/06 02:59:07] "POST /ajax/editable/updown/ HTTP/1.1" 500 21902
+[07/06 02:59:10] Internal Server Error: /ajax/editable/updown/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Perso/github/wawwod/collector/views/base.py", line 123, in updown
+    item = Creature.objects.get(rid=rid)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/models/query.py", line 637, in get
+    raise self.model.DoesNotExist(
+collector.models.creatures.Creature.DoesNotExist: Creature matching query does not exist.
+[07/06 02:59:10] "POST /ajax/editable/updown/ HTTP/1.1" 500 21902
+[07/06 02:59:10] Internal Server Error: /ajax/editable/updown/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Perso/github/wawwod/collector/views/base.py", line 123, in updown
+    item = Creature.objects.get(rid=rid)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/models/query.py", line 637, in get
+    raise self.model.DoesNotExist(
+collector.models.creatures.Creature.DoesNotExist: Creature matching query does not exist.
+[07/06 02:59:10] "POST /ajax/editable/updown/ HTTP/1.1" 500 21902
+[07/06 02:59:11] Internal Server Error: /ajax/editable/updown/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Perso/github/wawwod/collector/views/base.py", line 123, in updown
+    item = Creature.objects.get(rid=rid)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/models/query.py", line 637, in get
+    raise self.model.DoesNotExist(
+collector.models.creatures.Creature.DoesNotExist: Creature matching query does not exist.
+[07/06 02:59:11] "POST /ajax/editable/updown/ HTTP/1.1" 500 21902
+[07/06 02:59:12] Internal Server Error: /ajax/editable/updown/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Perso/github/wawwod/collector/views/base.py", line 123, in updown
+    item = Creature.objects.get(rid=rid)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/models/query.py", line 637, in get
+    raise self.model.DoesNotExist(
+collector.models.creatures.Creature.DoesNotExist: Creature matching query does not exist.
+[07/06 02:59:12] "POST /ajax/editable/updown/ HTTP/1.1" 500 21901
+[07/06 02:59:13] Internal Server Error: /ajax/editable/updown/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Perso/github/wawwod/collector/views/base.py", line 123, in updown
+    item = Creature.objects.get(rid=rid)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/models/query.py", line 637, in get
+    raise self.model.DoesNotExist(
+collector.models.creatures.Creature.DoesNotExist: Creature matching query does not exist.
+[07/06 02:59:13] "POST /ajax/editable/updown/ HTTP/1.1" 500 21901
+[07/06 02:59:40] Internal Server Error: /ajax/editable/updown/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Perso/github/wawwod/collector/views/base.py", line 123, in updown
+    item = Creature.objects.get(rid=rid)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/models/query.py", line 637, in get
+    raise self.model.DoesNotExist(
+collector.models.creatures.Creature.DoesNotExist: Creature matching query does not exist.
+[07/06 02:59:40] "POST /ajax/editable/updown/ HTTP/1.1" 500 21902
+[07/06 02:59:42] Internal Server Error: /ajax/editable/updown/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Perso/github/wawwod/collector/views/base.py", line 123, in updown
+    item = Creature.objects.get(rid=rid)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/models/query.py", line 637, in get
+    raise self.model.DoesNotExist(
+collector.models.creatures.Creature.DoesNotExist: Creature matching query does not exist.
+[07/06 02:59:42] "POST /ajax/editable/updown/ HTTP/1.1" 500 21901
+[07/06 02:59:44] Internal Server Error: /ajax/editable/updown/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Perso/github/wawwod/collector/views/base.py", line 123, in updown
+    item = Creature.objects.get(rid=rid)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/models/query.py", line 637, in get
+    raise self.model.DoesNotExist(
+collector.models.creatures.Creature.DoesNotExist: Creature matching query does not exist.
+[07/06 02:59:44] "POST /ajax/editable/updown/ HTTP/1.1" 500 21901
+[07/06 03:01:06] Internal Server Error: /ajax/editable/updown/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Perso/github/wawwod/collector/views/base.py", line 123, in updown
+    item = Creature.objects.get(rid=rid)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/models/query.py", line 637, in get
+    raise self.model.DoesNotExist(
+collector.models.creatures.Creature.DoesNotExist: Creature matching query does not exist.
+[07/06 03:01:06] "POST /ajax/editable/updown/ HTTP/1.1" 500 21902
+[07/06 03:04:11] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1861
+[07/06 03:04:41] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1861
+[07/06 04:09:27] Not Found: /favicon.ico
+[07/06 04:09:27] "GET /favicon.ico HTTP/1.1" 404 8687
