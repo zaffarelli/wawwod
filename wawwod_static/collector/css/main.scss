@@ -718,8 +718,8 @@ svg.lineage {
   padding-right: 15px;
   box-shadow: 0 0 5px #111;
   z-index: 400;
-  right:5vw;
-  top:10vh;
+  right:1vw;
+  top:2vh;
 
 
   & p{
@@ -733,7 +733,7 @@ svg.lineage {
     font-size: 1.6em;
   }
 
-  & ol {
+  & ol, ul   {
     margin: 0;
     padding: 0;
     padding-left: 10px;
@@ -770,6 +770,7 @@ svg .node_circle {
 
   &.ghoul {
     fill: $ghoul_fill;
+    stroke: #FFCC88;
   }
 
   &.fomori {

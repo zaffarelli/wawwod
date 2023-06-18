@@ -18,7 +18,8 @@ class Chronicle(models.Model):
     players_starting_freebies = models.IntegerField(default=0, blank=True)
     image_logo = models.CharField(max_length=128, blank=True, default='')
     description = models.TextField(max_length=1024, blank=True, default='')
-    is_current = models.BooleanField(default=False)
+    is_current = models.BooleanField(default=False, blank=True)
+    is_storyteller_only = models.BooleanField(default=False, blank=True)
 
     @property
     def population(self):
@@ -39,6 +40,6 @@ class Chronicle(models.Model):
 
 
 class ChronicleAdmin(admin.ModelAdmin):
-    list_display = ['acronym', 'name', 'description', 'main_creature', 'is_current', 'population']
-    list_editable = ['is_current']
+    list_display = ['acronym', 'name', 'description', 'main_creature', 'is_current', 'population','is_storyteller_only']
+    list_editable = ['is_current','is_storyteller_only']
     ordering = ['acronym']

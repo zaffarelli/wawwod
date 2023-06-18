@@ -235,7 +235,10 @@ class WawwodCollector {
             let action = $(this).attr('action');
             let param = $('#userinput').val();
             let newparam = (param.split(" ")).join("_");
-            let url = 'ajax/collector_action/' + action + '/' + newparam + '/';
+            let url = 'ajax/collector_action/' + action + '/'
+            if (newparam) {
+                url += newparam + '/';
+            }
             $.ajax({
                 url: url,
                 success: function (answer) {
@@ -452,6 +455,7 @@ class WawwodCollector {
                 event.stopPropagation();
                 let target = $(this).attr('id')
                 let keys = $(this).attr('id').split('__')
+                console.log(target);
                 let shift = event.shiftKey
                 let block = $(this).parent();
                 let os = 1;

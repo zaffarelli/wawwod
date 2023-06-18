@@ -2,6 +2,7 @@ class CrossOverSheet extends WawwodSheet {
     constructor(data, parent, collector) {
         super(data, parent, collector);
         this.init();
+        this.release = "16.06";
     }
 
     init() {
@@ -67,7 +68,7 @@ class CrossOverSheet extends WawwodSheet {
         me.decorationText(21.5, 1.75, 0, 'middle', me.title_font, me.medium_font_size, me.draw_fill, me.draw_stroke, 0.5, me.pre_title, me.back);
         me.decorationText(21.5, 2.25, 0, 'middle', me.title_font, me.medium_font_size, me.draw_fill, me.draw_stroke, 0.5, me.post_title, me.back);
         me.decorationText(1.5, 35.8, -16, 'start', me.base_font, me.small_font_size, me.draw_fill, me.draw_stroke, 0.5, me.guideline, me.back);
-        me.decorationText(22.5, 35.8, -16, 'end', me.base_font, me.small_font_size, me.draw_fill, me.draw_stroke, 0.5, "WAWWOD Cross+Over Sheet ©2022, Pentex Inc.", me.back);
+        me.decorationText(22.5, 35.8, -16, 'end', me.base_font, me.small_font_size, me.draw_fill, me.draw_stroke, 0.5, "WaWWoD Cross+Over Sheet "+me.release+" ©2023, Pentex Inc.", me.back);
         if (me.blank) {
             me.decorationText(22.5, 34.8, 0, 'end', me.base_font, me.small_font_size, me.draw_fill, me.draw_stroke, 0.5, 'Challenge: you make us laugh punk!', me.back);
         } else {
@@ -142,7 +143,7 @@ class CrossOverSheet extends WawwodSheet {
                 return d['item']
             })
             .style('font-family', me.title_font)
-            .style('font-size', me.medium_font_size)
+            .style('font-size', me.medium_font_size + "px")
             .style('text-anchor', "middle")
             .style("fill", me.draw_fill)
             .style("stroke", me.draw_stroke)
@@ -159,12 +160,12 @@ class CrossOverSheet extends WawwodSheet {
                 return d['notes']
             })
             .style('font-family', me.user_font)
-            .style('font-size', me.small_font_size)
+            .style('font-size', me.small_font_size + "px")
             .style('text-anchor', "start")
             .style("fill", me.user_fill)
             .style("stroke", me.user_stroke)
             .style("stroke-width", "0.05pt");
-        background_note_in_note.call(wrap, 7 * me.stepx)
+        background_note_in_note.call(wrap, 7 * me.stepx, false,me.small_font_size )
     }
 
 
@@ -233,12 +234,12 @@ class CrossOverSheet extends WawwodSheet {
             })
             .style("text-anchor", 'start')
             .style("font-family", me.user_font)
-            .style("font-size", me.small_font_size)
+            .style("font-size", me.medium_font_size)
             .style("fill", me.user_fill)
             .style("stroke", me.user_stroke)
             .style("stroke-width", '0.05pt')
         ;
-        timeline_in_note.call(wrap, box_spacing_x * me.stepx, true);
+        timeline_in_note.call(wrap, box_spacing_x * me.stepx, true, me.medium_font_size);
     }
 
     fillDisciplinesNotes(oy, pos = '', pp = 0) {
@@ -313,7 +314,7 @@ class CrossOverSheet extends WawwodSheet {
                 return me.as_dots(d['score']) + ' - ' + d['item'] + ' - ' + d['title']
             })
             .style('font-family', me.user_font)
-            .style('font-size', me.medium_font_size)
+            .style('font-size', me.small_font_size + "px")
             .style('text-anchor', "start")
             .style("fill", me.user_fill)
             .style("stroke", me.user_stroke)
@@ -337,7 +338,7 @@ class CrossOverSheet extends WawwodSheet {
             })
             .style("text-anchor", 'start')
             .style("font-family", me.user_font)
-            .style("font-size", me.small_font_size)
+            .style("font-size", me.small_font_size + "px")
             .style("fill", me.user_fill)
             .style("stroke", me.user_stroke)
             .style("stroke-width", '0.05pt')
@@ -348,7 +349,7 @@ class CrossOverSheet extends WawwodSheet {
                 return 0;
             })
         ;
-        d_notes_in_note.call(wrap, 9 * me.stepx, true);
+        d_notes_in_note.call(wrap, 9 * me.stepx, true, me.small_font_size);
     }
 
     fillNatureNotes(oy) {
@@ -399,11 +400,11 @@ class CrossOverSheet extends WawwodSheet {
                 return d['item']
             })
             .style('font-family', me.user_font)
-            .style('font-size', me.medium_font_size)
+            .style('font-size', me.small_font_size + "px")
             .style('text-anchor', "start")
             .style("fill", me.user_fill)
             .style("stroke", me.user_stroke)
-        let n_notes_in_note = n_notes_in.append('text')
+        let n_notes_in_desc = n_notes_in.append('text')
             .attr('x', function (d) {
                 return 1.9 * me.stepx;
             })
@@ -413,16 +414,41 @@ class CrossOverSheet extends WawwodSheet {
             .attr('dx', 0)
             .attr('dy', 0)
             .text(function (d) {
-                return d['notes'];
+                return "Description --- "+d['description'];
             })
             .style("text-anchor", 'start')
             .style("font-family", me.user_font)
-            .style("font-size", me.small_font_size)
+            .style("font-size", me.small_font_size + "px")
             .style("fill", me.user_fill)
             .style("stroke", me.user_stroke)
             .style("stroke-width", '0.05pt')
         ;
-        n_notes_in_note.call(wrap, 8.5 * me.stepx, true);
+        n_notes_in_desc.call(wrap, 8.5 * me.stepx, true, me.small_font_size);
+        let zy = oy+ 2.0 * me.stepy;
+        let n_notes_in_note = n_notes_in.append('text')
+            .attr('x', function (d) {
+                return 1.9 * me.stepx;
+            })
+            .attr('y', function (d) {
+                return zy + 0.85 * me.stepy + d['idx'] * 3.5 * me.stepy;
+            })
+            .attr('dx', 0)
+            .attr('dy', 0)
+            .text(function (d) {
+                if (d['notes']) {
+                    return "System --- " + d['notes'];
+                }
+                return "";
+            })
+            .style("text-anchor", 'start')
+            .style("font-family", me.user_font)
+            .style("font-size", me.small_font_size + "px")
+            .style("fill", me.user_fill)
+            .style("stroke", me.user_stroke)
+            .style("stroke-width", '0.05pt')
+        ;
+        n_notes_in_note.call(wrap, 8.5 * me.stepx, true, me.small_font_size);
+
     }
 
     fillMeritsFlawsNotes(oy) {

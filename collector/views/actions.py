@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from collector.models.creatures import Creature
-
+from collector.utils.wod_reference import get_current_chronicle
 
 def extract_raw(request, slug):
     found = Creature.objects.all().filter(rid=slug)
@@ -134,8 +134,11 @@ def change_settings(request):
 
 
 def refix_all(request):
-    pass
-
+    chronicle = get_current_chronicle()
+    all = Creature.objects.all().filter(chronicle=chronicle.acronym)
+    for c in all:
+        c.save()
+    return HttpResponse(status=204)
 
 def randomize_attributes(request, slug):
     found = Creature.objects.all().filter(rid=slug)

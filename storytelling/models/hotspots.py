@@ -17,8 +17,18 @@ POI_TYPES = (
     ('ind', 'Indepentents PoI'),
     ('hou', 'House of'),
     ('poi', 'Point Of Interest'),
+    ('uba', 'U-bahn'),
 )
 
+POI_COLORS = {
+    'n/a': '#C0C0C0',
+    'ely': '#bed94c',
+    'hvn': '#7cd94c',
+    'ind': '#4cd96a',
+    'hou': '#d9b24c',
+    'poi': '#d94c4c',
+    'uba': '#1535EF'
+}
 
 class HotSpot(models.Model):
     name = models.CharField(max_length=256, default='')
@@ -30,6 +40,7 @@ class HotSpot(models.Model):
     city = models.ForeignKey(City, on_delete=models.CASCADE, null=True)
     longitude = models.FloatField(default=0.0, blank=True)
     latitude = models.FloatField(default=0.0, blank=True)
+    hyperlink = models.CharField(default="", max_length=1024, blank=True)
 
     def fix(self):
         if self.gps_coords != DEFAULT_GPS:
@@ -37,6 +48,8 @@ class HotSpot(models.Model):
             if len(words) == 2:
                 self.longitude = float(words[0])
                 self.latitude = float(words[1])
+        self.color = POI_COLORS[self.type]
+        self.hyperlink = f'https://www.google.com/maps/search/?api=1&query={self.longitude}%2C{self.latitude}'
 
     def __str__(self):
         return f'{self.name}'
@@ -47,7 +60,7 @@ class HotSpot(models.Model):
 
 
 class HotSpotAdmin(admin.ModelAdmin):
-    list_display = ['name', 'longitude', 'latitude', 'color', 'type', 'is_public']
+    list_display = ['name', 'longitude', 'latitude', "hyperlink", 'color', 'type', 'is_public']
     ordering = ['-type','name']
     search_fields = ['name', 'description', 'type']
     list_editable = ['color', 'type', 'is_public']

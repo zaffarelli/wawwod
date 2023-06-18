@@ -6,6 +6,4 @@ class StorytellingConfig(AppConfig):
     name = 'storytelling'
 
     def ready(self):
-        # When migrating
-        # pass
         import storytelling.signals.districts

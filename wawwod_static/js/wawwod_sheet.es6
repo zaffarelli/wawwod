@@ -68,7 +68,7 @@ class WawwodSheet {
         me.stepx = me.width / 24;
         me.stepy = me.height / 36;
         me.small_font_size = 1.3 * me.stepy / 5;
-        me.medium_font_size = 2 * me.stepy / 5;
+        me.medium_font_size = 1.7 * me.stepy / 5;
         me.big_font_size = 3 * me.stepy / 5;
         me.fat_font_size = 8 * me.stepy / 5;
         me.margin = [0, 0, 0, 0];
@@ -1281,14 +1281,15 @@ xmlns:xlink="http://www.w3.org/1999/xlink" width="' + me.width + '" height="' + 
 
 }
 
-function wrap(text, width, stacked = false) {
+function wrap(text, width, stacked = false, a_font_size) {
     let font = "Gochi Hand",
         user_fill = '#A8A',
         user_stroke = '#828',
-        small_font_size = 8,
+        font_size = a_font_size,
         base_y = 0,
         stackedHeight = 0
     ;
+
     text.each(function () {
         let tgt = d3.select(this),
             words = tgt.text().split(/\s+/).reverse(),
@@ -1297,8 +1298,7 @@ function wrap(text, width, stacked = false) {
             lineNumber = 0,
             x = tgt.attr("x"),
             y = tgt.attr("y"),
-            font_size = 10,
-            lineHeight = font_size * 1.8
+            lineHeight = a_font_size * 1.1
         ;
         let tspan = tgt.text(null).append("tspan")
             .attr("x", x)
@@ -1316,7 +1316,7 @@ function wrap(text, width, stacked = false) {
                     .attr("x", x)
                     .attr('y', y)
                     .attr("dy", ++lineNumber * lineHeight)
-                    .style("font-size", font_size)
+                    .style("font-size", a_font_size + 'px')
                     .style("stroke-width", '0.05pt')
                     .text(word)
             }

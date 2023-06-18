@@ -2,7 +2,7 @@ from django.urls import path, re_path
 from collector.views.base import index, get_list, updown, userinput, add_creature, change_chronicle, \
     display_gaia_wheel, display_lineage, display_crossover_sheet, add_kindred, svg_to_pdf, save_to_svg
 from collector.views.actions import change_settings, refix_all, extract_mechanics, extract_per_group, extract_raw, \
-    extract_roster, randomize_attributes, randomize_abilities
+    extract_roster, randomize_attributes, randomize_abilities, refix_all
 from collector.views.creature_views import CreatureDetailView
 
 urlpatterns = [
@@ -20,6 +20,7 @@ urlpatterns = [
     re_path(r'^ajax/editable/userinput/$', userinput, name='userinput'),
     re_path(r'^ajax/collector_action/add_creature/(?P<slug>\w+)/$', add_creature, name='add_creature'),
     re_path(r'^ajax/collector_action/add_kindred/(?P<slug>\w+)/$', add_kindred, name='add_kindred'),
+    re_path(r'^ajax/collector_action/refix_all/$', refix_all, name='refix_all'),
     re_path(r'^ajax/action/settings/$', change_settings, name='change_settings'),
     re_path(r'^ajax/collector_action/refix_all/$', refix_all, name='refix_all'),
     re_path(r'^api/text/(?P<slug>\w+)/$', extract_raw, name='extract_raw'),

@@ -61,10 +61,10 @@ class KindredLineage {
         let r = x.enter().append("g")
             .attr("class", function (d) {
                 let str = "node ";
-                if (d.data.condition == "MISSING") {
+                if (d.data.condition.startsWith("MISSING")==true) {
                     str += "missing ";
                 }
-                if (d.data.condition == "DEAD") {
+                if (d.data.condition.startsWith("DEAD")==true) {
                     str += "dead ";
                 }
                 return str;
@@ -119,15 +119,15 @@ class KindredLineage {
 
         r.selectAll("rect.band")
             .attr('class', function (d) {
-                return 'band ' + (d.data.ghost ? ' ghost' : '') + (d.data.condition == 'DEAD' ? ' dead' : '');
+                return 'band ' + (d.data.ghost ? ' ghost' : '') + (d.data.condition.startsWith("DEAD") ? ' dead' : '');
             });
         r.selectAll("rect.frame")
             .attr('class', function (d) {
-                return 'frame ' + (d.data.ghost ? ' ghost' : '') + (d.data.condition == 'DEAD' ? ' dead' : '');
+                return 'frame ' + (d.data.ghost ? ' ghost' : '') + (d.data.condition.startsWith("DEAD")==true ? ' dead' : '');
             });
         r.selectAll("rect.plate")
             .attr('class', function (d) {
-                return 'plate ' + d.data.faction + (d.data.ghost ? ' ghost' : '') + (d.data.condition == 'DEAD' ? ' dead' : '');
+                return 'plate ' + d.data.faction + (d.data.ghost ? ' ghost' : '') + (d.data.condition.startsWith("DEAD")==true ? ' dead' : '');
             });
 
 
@@ -281,9 +281,9 @@ class KindredLineage {
             .attr("class", "icon_condition")
             .attr("d", function (d) {
                 let str = ''
-                if (d.data.condition == "MISSING") {
+                if (d.data.condition.startsWith("MISSING")) {
                     str = "M -80 160 l -20 0 l 0 -20 l 180 -140 20 0 0 20 -180 140 Z "
-                } else if (d.data.condition == "DEAD"){
+                } else if (d.data.condition.startsWith("DEAD")){
                     str = "M -80 160 l -20 0 l 0 -20 l 180 -140 20 0 0 20 -180 140 Z "
 
                 }
@@ -293,10 +293,10 @@ class KindredLineage {
             .attr("stroke-width", "2pt")
             .attr("fill", function (d) {
                 let col = "transparent";
-                if (d.data.condition == "MISSING"){
+                if (d.data.condition.startsWith("MISSING")){
                     col = '#208080'
                 }
-                if (d.data.condition == "DEAD"){
+                if (d.data.condition.startsWith("DEAD")){
                     col = '#802020'
                 }
                 return col;

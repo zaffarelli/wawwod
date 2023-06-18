@@ -13,7 +13,6 @@ def update_creature(sender, instance, **kwargs):
         instance.name = f'new  {datetime.timestamp(datetime.now())}'
         instance.chronicle == chronicle.acronym
     instance.update_rid()
-    # if instance.need_fix:
     instance.need_fix = True
     instance.fix()
 

@@ -445,7 +445,7 @@ class Creature(models.Model):
     def fix_kindred(self):
         logger.info(f'Fixing kindred {self.name}')
         # Embrace and Age
-        condi = self.condition.split('-')
+        condi = self.condition.split('=')
         if condi.count == 2:
             if condi[0] == 'DEAD':
                 self.finaldeath == int(condi[1])
@@ -487,6 +487,7 @@ class Creature(models.Model):
         self.trueage = chronicle.era - (self.embrace - self.age)
         if self.sire:
             # if self.family == '':
+            print(self.sire)
             domitor = Creature.objects.get(rid=self.sire)
             self.family = domitor.family
             self.faction = domitor.faction
@@ -653,7 +654,7 @@ class Creature(models.Model):
             self.display_gauge -= 1
         self.display_pole = self.groupspec
         expected_freebies_by_rank = [0, 55, 134, 234, 345]
-        self.expectedfreebies = self.freebies_per_mortal_age + expected_freebies_by_rank[self.rank - 1]
+        self.expectedfreebies = self.freebies_per_mortal_age + expected_freebies_by_rank[int(self.rank) - 1]
 
     @property
     def freebies_per_mortal_age(self):
@@ -667,7 +668,7 @@ class Creature(models.Model):
         self.rid = toRID(self.name)
 
     def fix(self):
-        logger.info(f'Fixing ............ [{self.name}]')
+        logger.info(f'Fixing ............ [{self.name}] [{self.creature}]')
         # at:3/3/3 ab:7/5/3 b:3 w:2 f:15
         self.freebies = -((3 + 3 + 3 + 9) * 5 + (7 + 5 + 3) * 2 + 3 + 2 + 15)
         if 'changeling' == self.creature:
@@ -1356,15 +1357,36 @@ class Creature(models.Model):
         setattr(self, f'background9', 0)
 
     def background_notes(self):
-        list = self.notes_on_backgrounds.split('\r\n');
         fmt_list = []
-        idx = 0;
-        for e in list:
-            print(e)
-            if len(e) > 2:
-                words = e.split('§');
-                fmt_list.append({'idx': idx, 'item': f'{words[0]}', 'notes': f'{words[1]}'})
+        from collector.models.backgrounds import Background
+        backgrounds = ['allies', 'contacts', 'fame', 'generation', 'herd', 'influence', 'mentor', 'resources',
+                       'retainers', 'status']
+        idx = 0
+        for b in backgrounds:
+            v = self.value_of(b)
+            if v > 0:
+                txt_lines = []
+                entries = Background.objects.filter(name=b.title(), level__lte=v).order_by('level')
+                if len(entries) > 0:
+                    if entries.first().cumulate:
+                        for e in entries:
+                            txt_lines.append(e.description)
+                    else:
+                        txt_lines.append(entries.last().description)
+                print(b,v,txt_lines)
+                x = "\n".join(txt_lines)
+                fmt_list.append({'idx': idx, 'item': f'{b.title()} [{v}] ', 'notes': f'{x}'})
                 idx += 1
+
+        # list = self.notes_on_backgrounds.split('\r\n');
+        # fmt_list = []
+        # idx = 0;
+        # for e in list:
+        #     print(e)
+        #     if len(e) > 2:
+        #         words = e.split('§');
+        #         fmt_list.append({'idx': idx, 'item': f'{words[0]}', 'notes': f'{words[1]}'})
+        #         idx += 1
 
         return fmt_list
 
@@ -1431,14 +1453,27 @@ class Creature(models.Model):
         return fmt_list
 
     def nature_notes(self):
-        list = self.notes_on_naturedemeanor.split('\r\n');
         fmt_list = []
-        idx = 0
-        for e in list:
-            if len(e) > 2:
-                words = e.split('§')
-                fmt_list.append({'idx': idx, 'item': f'{words[0].upper()}', 'notes': f'{words[1]}'})
-                idx += 1
+        from collector.models.archetypes import Archetype
+        archetypes = Archetype.objects.filter(name=self.nature.lower())
+        if len(archetypes) == 1:
+            archetype = archetypes.first()
+            fmt_list.append({'idx': 0, 'item': f'{archetype.name.upper()}', 'notes': f'{archetype.system}',
+                             'description': f'{archetype.description}'})
+        archetypes = Archetype.objects.filter(name=self.demeanor.lower())
+        if len(archetypes) == 1:
+            archetype = archetypes.first()
+            fmt_list.append({'idx': 1, 'item': f'{archetype.name.upper()} (demeanor)', 'notes': f'',
+                             'description': f'{archetype.description}'})
+
+        # else:
+        #     list = self.notes_on_naturedemeanor.split('\r\n');
+        #     idx = 0
+        #     for e in list:
+        #         if len(e) > 2:
+        #             words = e.split('§')
+        #             fmt_list.append({'idx': idx, 'item': f'{words[0].upper()}', 'notes': f'{words[1]}'})
+        #             idx += 1
         return fmt_list
 
     def meritsflaws_notes(self):
@@ -1565,8 +1600,9 @@ def randomize_all(modeladmin, request, queryset):
 
 class CreatureAdmin(admin.ModelAdmin):
     list_display = [  # 'domitor',
-        'name', 'age', 'trueage', 'experience', 'hidden', 'cast_figure', 'freebies', 'expectedfreebies', 'district',
-        'family', 'groupspec', 'faction', 'status', 'condition']
+        'name', 'age', 'trueage', 'nature', 'demeanor', 'experience', 'hidden', 'cast_figure', 'freebies', 'player',
+        'district',
+        'family', 'groupspec', 'sire', 'status', 'condition']
     ordering = ['-trueage', 'name', 'group', 'creature']
     actions = [no_longer_new, randomize_backgrounds, randomize_all, randomize_archetypes, randomize_attributes,
                randomize_abilities,
@@ -1575,4 +1611,4 @@ class CreatureAdmin(admin.ModelAdmin):
                    'groupspec',
                    'creature', 'mythic', 'ghost', 'sire']
     search_fields = ['name', 'groupspec']
-    list_editable = ['cast_figure', 'hidden', 'experience', 'district']
+    list_editable = ['cast_figure', 'hidden', 'nature', 'experience', 'district', 'player', 'demeanor', 'condition']

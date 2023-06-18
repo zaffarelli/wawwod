@@ -3,18 +3,21 @@
         <th>Age</th>
         <td class='editable userinput' id='{{c.rid}}__age'>{{c.age}}</td>
         {% if c.creature == 'kindred' or c.creature == 'ghoul' %}
-        <th>Embrace</th>
-        <td class="editable userinput" id='{{c.rid}}__embrace'>{{ c.embrace }}</td>
+            <th>Embrace</th>
+            <td class="editable userinput" id='{{c.rid}}__embrace'>{{ c.embrace }}</td>
         {% elif c.creature == 'changeling' %}
-        <th>Seeming</th>
-        <td class='editable userinput' id='{{c.rid}}__seeming'>{{c.seeming}}</td>
+            <th>Seeming</th>
+            <td class='editable userinput' id='{{c.rid}}__seeming'>{{c.seeming}}</td>
 
         {% elif c.creature == 'wraith' %}
-        <th>Time of Death</th>
-        <td class="editable userinput" id='{{c.rid}}__embrace'>{{ c.embrace }}</td>
+            <th>Time of Death</th>
+            <td class="editable userinput" id='{{c.rid}}__embrace'>{{ c.embrace }}</td>
+        {% elif c.creature == 'garou' %}
+            <th>Breed</th>
+            <td class="editable userinput" id='{{c.rid}}__breed'>{{ c.breed | as_breed }}</td>
         {%else%}
-        <th></th>
-        <td></td>
+            <th></th>
+            <td></td>
         {%endif%}
         <th>Position</th>
         <td class="editable userinput" id='{{c.rid}}__position'>{{ c.position }}</td>
@@ -31,6 +34,9 @@
         {% elif c.creature == 'mage' %}
         <th>Tradition</th>
         <td class='editable userinput' id='{{c.rid}}__family'>{{c.family}}</td>
+        {% elif c.creature == 'garou' %}
+        <th>Auspice</th>
+        <td class='editable userinput' id='{{c.rid}}__auspice'>{{c.auspice|as_auspice}}</td>
         {%else%}
         <th></th>
         <td></td>
@@ -92,6 +98,9 @@
         {% elif c.creature == 'changeling' %}
         <th>Motley</th>
         <td class='editable userinput' id='{{c.rid}}__motley'>{{c.motley}}</td>
+        {% elif c.creature == 'garou' %}
+        <th>Rank</th>
+        <td class='editable userinput' id='{{c.rid}}__rank'>{{c.rank|as_rank}}</td>
 
         {%else%}
         <th></th><td></td>

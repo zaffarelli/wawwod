@@ -529,11 +529,15 @@ def get_districts(cityname):
     from storytelling.models.cities import City
     from storytelling.models.districts import District
     from storytelling.models.hotspots import HotSpot
+    from collector.utils.wod_reference import get_current_chronicle
     import json
     # print(cityname.title())
 
+    chronicle = get_current_chronicle()
+
     cities = City.objects.filter(name=cityname.title())
-    context = {'districts': {}, 'hotspots': []}
+    settings = {"player_safe": not chronicle.is_storyteller_only}
+    context = {'districts': {}, 'hotspots': [], 'settings': settings}
     if len(cities) == 1:
         city = cities.first()
         districts = District.objects.filter(city=city)
@@ -558,7 +562,7 @@ def get_districts(cityname):
                 'type': 'feature',
                 'geometry': {
                     'type': "Point",
-                    "coordinates": [hs.latitude,hs.longitude]
+                    "coordinates": [hs.latitude, hs.longitude]
 
                 },
                 'properties': {
@@ -566,6 +570,8 @@ def get_districts(cityname):
                     'color': hs.color,
                     'type': hs.type,
                     'code': hs.id,
+                    'is_public': hs.is_public,
+                    'hyperlink': hs.hyperlink
                 }
             });
         # print(context)
