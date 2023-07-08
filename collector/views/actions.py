@@ -138,6 +138,14 @@ def refix_all(request):
     all = Creature.objects.all().filter(chronicle=chronicle.acronym)
     for c in all:
         c.save()
+    from storytelling.models.districts import District
+    alld = District.objects.all()
+    for d in alld:
+        d.save()
+    from storytelling.models.hotspots import HotSpot
+    allhp = HotSpot.objects.all()
+    for h in allhp:
+        h.save()
     return HttpResponse(status=204)
 
 def randomize_attributes(request, slug):

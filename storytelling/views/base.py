@@ -74,9 +74,8 @@ def display_pdf_story(request):
             all_stories.append(s.toJSON())
             selected_story = s
     full_cast = []
-    # casted = Creature.objects.filter(rid__in=selected_story.all_cast).order_by('faction', '-freebies', 'family', '-background3','name')
-    casted = Creature.objects.filter(chronicle="HbN", player="").order_by('faction', 'family', '-freebies', 'groupspec',
-                                                                          'group')
+    casted = Creature.objects.filter(rid__in=selected_story.all_cast).order_by('faction', '-freebies', 'family', '-background3','name')
+    #casted = Creature.objects.filter(chronicle="HbN", player="", status__in=["OK"],hidden=False, creature__in=["kindred","ghoul","mortal"]).order_by('faction','-freebies', 'family', 'groupspec', 'group')
     for c in casted:
         full_cast.append(c)
     # print(full_cast)

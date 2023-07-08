@@ -724,8 +724,9 @@ class Creature(models.Model):
             lines.append(f'<b>{self.position.title()}</b>')
         if (self.entrance):
             lines.append(f'<i>{self.entrance}</i>')
-        if (self.group):
-            lines.append(f'<i>{self.group}</i>')
+        if self.creature != 'ghoul':
+            if (self.group):
+                lines.append(f'<i>{self.group}</i>')
         if (self.groupspec):
             lines.append(f'<i>{self.groupspec}</i>')
         if (self.concept):
@@ -1600,7 +1601,7 @@ def randomize_all(modeladmin, request, queryset):
 
 class CreatureAdmin(admin.ModelAdmin):
     list_display = [  # 'domitor',
-        'name', 'age', 'trueage', 'nature', 'demeanor', 'experience', 'hidden', 'cast_figure', 'freebies', 'player',
+        'name', 'age', 'trueage', 'nature', 'adventure', 'experience', 'hidden', 'cast_figure', 'freebies', 'player',
         'district',
         'family', 'groupspec', 'sire', 'status', 'condition']
     ordering = ['-trueage', 'name', 'group', 'creature']
@@ -1611,4 +1612,4 @@ class CreatureAdmin(admin.ModelAdmin):
                    'groupspec',
                    'creature', 'mythic', 'ghost', 'sire']
     search_fields = ['name', 'groupspec']
-    list_editable = ['cast_figure', 'hidden', 'nature', 'experience', 'district', 'player', 'demeanor', 'condition']
+    list_editable = ['cast_figure', 'hidden', 'nature', 'experience', 'district', 'player', 'adventure', 'condition']

@@ -100,8 +100,8 @@ class District(models.Model):
         for k in sabbat:
             self.population_details += f'<li><span class="sabbat">{k.name}</span> ({k.freebies})</li>'
             self.population += 1
-            sabb_pop += k.freebies
-        if inde_pop == 0 and sabb_pop == 0:
+            inde_pop += k.freebies
+        if inde_pop == 0:
             if cama_pop > 90:
                 self.status = 'full'
             elif cama_pop > 45:
@@ -111,14 +111,13 @@ class District(models.Model):
             else:
                 self.status = 'neutral'
         else:
-            if sabb_pop > cama_pop:
+            if inde_pop > cama_pop:
                 self.status = 'lost'
-                if sabb_pop < inde_pop:
-                    self.status = 'contested'
-            elif inde_pop > cama_pop and inde_pop > sabb_pop:
-                self.status = 'incursions'
+
+            elif inde_pop > 90:
+                self.status = 'contested'
             else:
-                self.status = 'neutral'
+                self.status = 'incursions'
 
 
 # Actions

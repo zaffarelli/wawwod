@@ -302,7 +302,8 @@ def build_gaia_wheel():
     chronicle = get_current_chronicle()
     creatures = Creature.objects.filter(chronicle=chronicle.acronym) \
         .exclude(mythic=True) \
-        .exclude(condition="DEAD") \
+        .exclude(condition__startswith="DEAD") \
+        .exclude(condition__startswith="MISSING") \
         .exclude(ghost=True) \
         .exclude(hidden=True) \
         .order_by('display_pole')
@@ -571,7 +572,10 @@ def get_districts(cityname):
                     'type': hs.type,
                     'code': hs.id,
                     'is_public': hs.is_public,
-                    'hyperlink': hs.hyperlink
+                    'visible': False,
+                    'pos_visible': 500,
+                    'hyperlink': hs.hyperlink,
+                    'episode': hs.episode
                 }
             });
         # print(context)

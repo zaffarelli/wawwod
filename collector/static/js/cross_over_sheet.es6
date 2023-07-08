@@ -2,7 +2,7 @@ class CrossOverSheet extends WawwodSheet {
     constructor(data, parent, collector) {
         super(data, parent, collector);
         this.init();
-        this.release = "16.06";
+        this.release = "18.06";
     }
 
     init() {

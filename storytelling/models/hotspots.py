@@ -18,6 +18,9 @@ POI_TYPES = (
     ('hou', 'House of'),
     ('poi', 'Point Of Interest'),
     ('uba', 'U-bahn'),
+    ('foe', 'Foes'),
+    ('upo', 'Unexplored Point Of Interest'),
+    ('mys', 'Mystery location'),
 )
 
 POI_COLORS = {
@@ -27,8 +30,12 @@ POI_COLORS = {
     'ind': '#4cd96a',
     'hou': '#d9b24c',
     'poi': '#d94c4c',
-    'uba': '#1535EF'
+    'uba': '#75b3ff',
+    'foe': '#F0c080',
+    'upo': '#4c4c4c',
+    'mys': '#FF22EE'
 }
+
 
 class HotSpot(models.Model):
     name = models.CharField(max_length=256, default='')
@@ -41,6 +48,7 @@ class HotSpot(models.Model):
     longitude = models.FloatField(default=0.0, blank=True)
     latitude = models.FloatField(default=0.0, blank=True)
     hyperlink = models.CharField(default="", max_length=1024, blank=True)
+    episode = models.CharField(max_length=128, default='', blank=True)
 
     def fix(self):
         if self.gps_coords != DEFAULT_GPS:
@@ -60,7 +68,8 @@ class HotSpot(models.Model):
 
 
 class HotSpotAdmin(admin.ModelAdmin):
-    list_display = ['name', 'longitude', 'latitude', "hyperlink", 'color', 'type', 'is_public']
-    ordering = ['-type','name']
+    list_display = ['name', 'type', 'is_public', 'episode', 'description']
+    ordering = ['-type', 'name']
     search_fields = ['name', 'description', 'type']
-    list_editable = ['color', 'type', 'is_public']
+    list_editable = [ 'type', 'is_public', 'description', 'episode']
+    list_filter = ['type', 'is_public', 'city']

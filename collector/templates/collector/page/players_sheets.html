@@ -1,8 +1,8 @@
 
 {% for x in c %}
     <li>
-        {{ x.adventure }}
-        <ul style="list-style-type: none;">
+        <span class="display" action="adventure_sheet" param="{{p.id}}" title="Adventure sheet {{p.name|safe}}">{{ x.adventure }}</span>
+        <ol style="list-style-type: none;">
 
             {% for p in x.players %}
             <li style="list-style-image: none;">
@@ -10,6 +10,7 @@
                 <span class='view_creature' id="{{p.rid}}" title='View/Edit {{p.name|safe}}'><i class="fas fa-eye"></i></span>
             </li>
             {% endfor %}
-        </ul>
+        </ol>
+
     </li>
 {% endfor %}
