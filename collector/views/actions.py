@@ -2,6 +2,7 @@ from django.http import HttpResponse
 from collector.models.creatures import Creature
 from collector.utils.wod_reference import get_current_chronicle
 
+
 def extract_raw(request, slug):
     found = Creature.objects.all().filter(rid=slug)
     if len(found) == 1:
@@ -135,7 +136,10 @@ def change_settings(request):
 
 def refix_all(request):
     chronicle = get_current_chronicle()
-    all = Creature.objects.all().filter(chronicle=chronicle.acronym)
+    all = Creature.objects.filter(concept='death_row')
+    for c in all:
+        c.delete()
+    all = Creature.objects.filter(chronicle=chronicle.acronym)
     for c in all:
         c.save()
     from storytelling.models.districts import District
@@ -147,6 +151,7 @@ def refix_all(request):
     for h in allhp:
         h.save()
     return HttpResponse(status=204)
+
 
 def randomize_attributes(request, slug):
     found = Creature.objects.all().filter(rid=slug)

@@ -302,8 +302,8 @@ def build_gaia_wheel():
     chronicle = get_current_chronicle()
     creatures = Creature.objects.filter(chronicle=chronicle.acronym) \
         .exclude(mythic=True) \
-        .exclude(condition__startswith="DEAD") \
-        .exclude(condition__startswith="MISSING") \
+        .exclude(condition__startswith="DEAD=19") \
+        .exclude(condition__startswith="MISSING=19") \
         .exclude(ghost=True) \
         .exclude(hidden=True) \
         .order_by('display_pole')

@@ -17,7 +17,6 @@ INSTALLED_APPS = [
     'compressor',
     'fixture_magic',
     'colorfield'
-
 ]
 
 MIDDLEWARE = [
@@ -114,17 +113,42 @@ LOGGING = {
 }
 WSGI_APPLICATION = 'wawwod.wsgi.application'
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'wawwod',
+#         # 'NAME': 'redfoxinc',
+#         'USER': 'root',
+#         'PASSWORD': 'root',
+#         'HOST': '',
+#         'PORT': '',
+#     }
+# }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'wawwod',
+#         'USER': 'dp',
+#         'PASSWORD': 'dp',
+#         'HOST': '',
+#         'PORT': '',
+#         'CONN_MAX_AGE': None,
+#         'TEST': {
+#             'NAME': 'test_wawwod',
+#         },
+#     },
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'wawwod',
-        # 'NAME': 'redfoxinc',
-        'USER': 'root',
-        'PASSWORD': 'root',
-        'HOST': '',
-        'PORT': '',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'wawwod.sqlite3', # This is where you put the name of the db file.
+                 # If one doesn't exist, it will be created at migration time.
     }
 }
+
+
 
 AUTH_PASSWORD_VALIDATORS = [
     {

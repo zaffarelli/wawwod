@@ -1,9 +1,3 @@
-'''
-           /       '_ /_/ 
-          ()(/__/)/(//)/  
-            /     _/      
-
-'''
 from collector.utils import wod_reference
 from django.conf import settings
 

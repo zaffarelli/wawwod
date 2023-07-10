@@ -36,7 +36,7 @@ class Creature(models.Model):
     embrace = models.IntegerField(default=0)
     faction = models.CharField(max_length=64, blank=True, default='')
     lastmod = models.DateTimeField(auto_now=True)
-    chronicle = models.CharField(max_length=8, default='NYBN')
+    chronicle = models.CharField(max_length=8, default='NYC')
     creature = models.CharField(max_length=20, default='kindred')
     sex = models.BooleanField(default=False)
     display_gauge = models.IntegerField(default=0)
@@ -695,6 +695,12 @@ class Creature(models.Model):
             self.freebies = -((7 + 5 + 3 + 9) * 5 + (13 + 9 + 5) * 2 + 5 + 7 * 3 + 16 + 15)
             self.fix_mage()
         elif 'ghoul' == self.creature:
+            self.freebies = 0
+            self.freebies -= (6 + 4 + 3 + 9) * 5  # Attributes
+            self.freebies -= (11 + 7 + 5) * 2  # Abilities
+            self.freebies -= 1 * 7  # Disciplines
+            self.freebies -= 7 * 1  # Backgrounds
+            self.freebies -= 21  # Pure freebies
             self.fix_ghoul()
         elif 'kinfolk' == self.creature:
             # at:6/4/3 ab:11/7/4 b:5 w:3 f:21
@@ -1537,7 +1543,7 @@ def no_longer_new(modeladmin, request, queryset):
 
 def push_to_newyork(modeladmin, request, queryset):
     for creature in queryset:
-        creature.chronicle = 'NYC'
+        creature.chronicle = 'UNY'
         creature.need_fix = True
         creature.save()
     short_description = 'Push to New York City'
@@ -1545,18 +1551,18 @@ def push_to_newyork(modeladmin, request, queryset):
 
 def push_to_munich(modeladmin, request, queryset):
     for creature in queryset:
-        creature.chronicle = 'BAV'
+        creature.chronicle = 'GMU'
         creature.need_fix = True
         creature.save()
     short_description = 'Push to Munich'
 
 
-def push_to_world(modeladmin, request, queryset):
+def push_to_hamburg(modeladmin, request, queryset):
     for creature in queryset:
-        creature.chronicle = 'NYC'
+        creature.chronicle = 'GHH'
         creature.need_fix = True
         creature.save()
-    short_description = 'Push to the world'
+    short_description = 'Push to the Hamburg'
 
 
 def randomize_attributes(modeladmin, request, queryset):
@@ -1601,15 +1607,15 @@ def randomize_all(modeladmin, request, queryset):
 
 class CreatureAdmin(admin.ModelAdmin):
     list_display = [  # 'domitor',
-        'name', 'age', 'trueage', 'nature', 'adventure', 'experience', 'hidden', 'cast_figure', 'freebies', 'player',
+        'name', 'age', 'trueage', 'nature', 'chronicle', 'hidden', 'cast_figure', 'freebies', 'player',
         'district',
         'family', 'groupspec', 'sire', 'status', 'condition']
     ordering = ['-trueage', 'name', 'group', 'creature']
     actions = [no_longer_new, randomize_backgrounds, randomize_all, randomize_archetypes, randomize_attributes,
                randomize_abilities,
-               refix, set_male, set_female, push_to_munich, push_to_newyork, push_to_world]
+               refix, set_male, set_female, push_to_munich, push_to_newyork, push_to_hamburg]
     list_filter = ['chronicle', 'hidden', 'adventure', 'district', 'faction', 'family', 'is_new', 'condition', 'group',
                    'groupspec',
                    'creature', 'mythic', 'ghost', 'sire']
     search_fields = ['name', 'groupspec']
-    list_editable = ['cast_figure', 'hidden', 'nature', 'experience', 'district', 'player', 'adventure', 'condition']
+    list_editable = ['cast_figure', 'hidden', 'nature', 'district', 'player',  'condition']

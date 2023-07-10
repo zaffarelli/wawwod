@@ -14,6 +14,7 @@ def get_current_chronicle():
     except:
         first_chronicle = Chronicle.objects.first()
         first_chronicle.is_current = True
+        first_chronicle.is_storyteller_only = True
         first_chronicle.save()
         ch = first_chronicle
         print(f"Error with get_chronicle {ch}")

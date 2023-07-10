@@ -216,9 +216,9 @@ class ToolsForWawwod:
                         g.position = "Enforcer"
                     else:  # 1-3
                         g.position = "Valet"
-                if k.condition == "MISSING":
+                if k.condition.startswith("MISSING"):
                     g.condition = "DEAD"
-                elif k.condition == "DEAD":
+                elif k.condition.startswith("DEAD"):
                     g.condition = "DEAD"
                 if g.is_new:
                     done = False

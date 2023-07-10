@@ -2245,3 +2245,632 @@ django.core.exceptions.FieldError: Cannot resolve keyword 'rids' into field. Cho
 [08/07 22:42:50] Not Found: /favicon.ico
 [08/07 22:44:03] Not Found: /favicon.ico
 [08/07 22:44:42] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1861
+[09/07 01:09:03] Internal Server Error: /admin/login/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/template/base.py", line 173, in render
+    with context.bind_template(self):
+  File "/usr/lib64/python3.11/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/template/context.py", line 254, in bind_template
+    updates.update(processor(self.request))
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Perso/github/wawwod/collector/context_processors.py", line 12, in commons
+    context = { 'chronicle': chronicle.acronym,'chronicle_name':chronicle.name,'chronicle_logo': "collector/"+chronicle.image_logo}
+                             ^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'acronym'
+[09/07 01:09:03] "GET /admin/login/?next=/admin/ HTTP/1.1" 500 105624
+[09/07 02:26:53] "GET /static/collector/ HTTP/1.1" 404 1784
+[09/07 02:27:22] "GET /static/collector/ HTTP/1.1" 404 1784
+[09/07 14:30:51] Not Found: /favicon.ico
+[09/07 14:35:05] Not Found: /favicon.ico
+[09/07 14:35:34] Internal Server Error: /admin/collector/creature/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/contrib/admin/options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/views/decorators/cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/contrib/admin/sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/contrib/admin/options.py", line 1959, in changelist_view
+    response = self.response_action(
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/contrib/admin/options.py", line 1593, in response_action
+    response = func(self, request, queryset)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Perso/github/wawwod/collector/models/creatures.py", line 1542, in push_to_newyork
+    creature.save()
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/models/base.py", line 861, in save_base
+    pre_save.send(
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/dispatch/dispatcher.py", line 176, in send
+    return [
+           ^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/dispatch/dispatcher.py", line 177, in <listcomp>
+    (receiver, receiver(signal=self, sender=sender, **named))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Perso/github/wawwod/collector/signals/creatures.py", line 17, in update_creature
+    instance.fix()
+  File "/home/zaffarelli/Perso/github/wawwod/collector/models/creatures.py", line 688, in fix
+    self.fix_kindred()
+  File "/home/zaffarelli/Perso/github/wawwod/collector/models/creatures.py", line 461, in fix_kindred
+    self.expectedfreebies = Chronicle.objects.get(acronym=self.chronicle).players_starting_freebies
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/models/query.py", line 637, in get
+    raise self.model.DoesNotExist(
+collector.models.chronicles.Chronicle.DoesNotExist: Chronicle matching query does not exist.
+[09/07 14:35:34] "POST /admin/collector/creature/ HTTP/1.1" 500 285682
+[09/07 14:36:39] Not Found: /favicon.ico
+[09/07 14:37:09] Not Found: /favicon.ico
+[09/07 14:44:51] Internal Server Error: /admin/collector/creature/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/contrib/admin/options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/views/decorators/cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/contrib/admin/sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/contrib/admin/options.py", line 1959, in changelist_view
+    response = self.response_action(
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/contrib/admin/options.py", line 1593, in response_action
+    response = func(self, request, queryset)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Perso/github/wawwod/collector/models/creatures.py", line 1561, in push_to_hamburg
+    creature.save()
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/models/base.py", line 877, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/models/base.py", line 990, in _save_table
+    updated = self._do_update(
+              ^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/models/base.py", line 1054, in _do_update
+    return filtered._update(values) > 0
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/models/query.py", line 1231, in _update
+    return query.get_compiler(self.db).execute_sql(CURSOR)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1982, in execute_sql
+    cursor = super().execute_sql(result_type)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1547, in execute_sql
+    sql, params = self.as_sql()
+                  ^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1940, in as_sql
+    raise TypeError(
+TypeError: Tried to update field collector.Creature.chronicle with a model instance, <Chronicle: GHH>. Use a value compatible with CharField.
+[09/07 14:44:51] "POST /admin/collector/creature/?chronicle=GHH&o=-11.-3.1 HTTP/1.1" 500 263529
+[09/07 14:48:11] Internal Server Error: /ajax/switch/chronicle/HH/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Perso/github/wawwod/collector/views/base.py", line 62, in change_chronicle
+    set_chronicle(slug)
+  File "/home/zaffarelli/Perso/github/wawwod/collector/utils/wod_reference.py", line 31, in set_chronicle
+    print(f'Current Chronicle set to is {c.acronym}.')
+                                         ^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'acronym'
+[09/07 14:48:11] "GET /ajax/switch/chronicle/HH/ HTTP/1.1" 500 81376
+[09/07 14:48:16] Internal Server Error: /ajax/display/map/hamburg/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Perso/github/wawwod/storytelling/views/base.py", line 135, in display_map
+    context = get_districts(x)
+              ^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Perso/github/wawwod/collector/utils/data_collection.py", line 540, in get_districts
+    settings = {"player_safe": not chronicle.is_storyteller_only}
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'is_storyteller_only'
+[09/07 14:48:16] "GET /ajax/display/map/hamburg/ HTTP/1.1" 500 83206
+[09/07 14:48:38] Internal Server Error: /admin/storytelling/district/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/template/base.py", line 173, in render
+    with context.bind_template(self):
+  File "/usr/lib64/python3.11/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/template/context.py", line 254, in bind_template
+    updates.update(processor(self.request))
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Perso/github/wawwod/collector/context_processors.py", line 12, in commons
+    context = { 'chronicle': chronicle.acronym,'chronicle_name':chronicle.name,'chronicle_logo': "collector/"+chronicle.image_logo}
+                             ^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'acronym'
+[09/07 14:48:38] "GET /admin/storytelling/district/ HTTP/1.1" 500 127029
+[09/07 14:48:45] Internal Server Error: /admin/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/template/base.py", line 173, in render
+    with context.bind_template(self):
+  File "/usr/lib64/python3.11/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/template/context.py", line 254, in bind_template
+    updates.update(processor(self.request))
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Perso/github/wawwod/collector/context_processors.py", line 12, in commons
+    context = { 'chronicle': chronicle.acronym,'chronicle_name':chronicle.name,'chronicle_logo': "collector/"+chronicle.image_logo}
+                             ^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'acronym'
+[09/07 14:48:45] "GET /admin/ HTTP/1.1" 500 126863
+[09/07 14:54:12] Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Perso/github/wawwod/collector/views/base.py", line 55, in index
+    context = prepare_index(request)
+              ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Perso/github/wawwod/collector/views/base.py", line 30, in prepare_index
+    plist = Creature.objects.filter(chronicle=chronicle.acronym).exclude(player='').exclude(
+                                              ^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'acronym'
+[09/07 14:54:12] "GET / HTTP/1.1" 500 86226
+[09/07 14:54:12] Not Found: /favicon.ico
+[09/07 14:54:12] "GET /favicon.ico HTTP/1.1" 404 8886
+[09/07 14:54:38] Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Perso/github/wawwod/collector/views/base.py", line 55, in index
+    context = prepare_index(request)
+              ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Perso/github/wawwod/collector/views/base.py", line 30, in prepare_index
+    plist = Creature.objects.filter(chronicle=chronicle.acronym).exclude(player='').exclude(
+                                              ^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'acronym'
+[09/07 14:54:38] "GET / HTTP/1.1" 500 85961
+[09/07 14:54:41] Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Perso/github/wawwod/collector/views/base.py", line 55, in index
+    context = prepare_index(request)
+              ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Perso/github/wawwod/collector/views/base.py", line 30, in prepare_index
+    plist = Creature.objects.filter(chronicle=chronicle.acronym).exclude(player='').exclude(
+                                              ^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'acronym'
+[09/07 14:54:41] "GET / HTTP/1.1" 500 86226
+[09/07 14:54:41] Not Found: /favicon.ico
+[09/07 14:54:41] "GET /favicon.ico HTTP/1.1" 404 8886
+[09/07 14:55:35] Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Perso/github/wawwod/collector/views/base.py", line 55, in index
+    context = prepare_index(request)
+              ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Perso/github/wawwod/collector/views/base.py", line 30, in prepare_index
+    plist = Creature.objects.filter(chronicle=chronicle.acronym).exclude(player='').exclude(
+                                              ^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'acronym'
+[09/07 14:55:35] "GET / HTTP/1.1" 500 85985
+[09/07 14:55:38] Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Perso/github/wawwod/collector/views/base.py", line 55, in index
+    context = prepare_index(request)
+              ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Perso/github/wawwod/collector/views/base.py", line 30, in prepare_index
+    plist = Creature.objects.filter(chronicle=chronicle.acronym).exclude(player='').exclude(
+                                              ^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'acronym'
+[09/07 14:55:38] "GET / HTTP/1.1" 500 85985
+[09/07 14:56:51] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1861
+[10/07 03:20:21] "GET /static/collector/clans/gargoyle.webp HTTP/1.1" 404 1843
+[10/07 03:20:21] "GET /static/collector/clans/blood_brothers.webp HTTP/1.1" 404 1861
+[10/07 03:23:42] Not Found: /favicon.ico
+[10/07 03:24:57] Not Found: /favicon.ico
+[10/07 03:30:52] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1861
+[10/07 03:49:20] Internal Server Error: /ajax/editable/userinput/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Perso/github/wawwod/collector/views/base.py", line 151, in userinput
+    item.save()
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/models/base.py", line 861, in save_base
+    pre_save.send(
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/dispatch/dispatcher.py", line 176, in send
+    return [
+           ^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/dispatch/dispatcher.py", line 177, in <listcomp>
+    (receiver, receiver(signal=self, sender=sender, **named))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Perso/github/wawwod/collector/signals/creatures.py", line 17, in update_creature
+    instance.fix()
+  File "/home/zaffarelli/Perso/github/wawwod/collector/models/creatures.py", line 698, in fix
+    self.fix_ghoul()
+  File "/home/zaffarelli/Perso/github/wawwod/collector/models/creatures.py", line 487, in fix_ghoul
+    self.trueage = chronicle.era - (self.embrace - self.age)
+                                    ~~~~~~~~~~~~~^~~~~~~~~~
+TypeError: unsupported operand type(s) for -: 'int' and 'str'
+[10/07 03:49:20] "POST /ajax/editable/userinput/ HTTP/1.1" 500 22714
+[10/07 03:49:24] Internal Server Error: /ajax/editable/userinput/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Perso/github/wawwod/collector/views/base.py", line 151, in userinput
+    item.save()
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/models/base.py", line 861, in save_base
+    pre_save.send(
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/dispatch/dispatcher.py", line 176, in send
+    return [
+           ^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/dispatch/dispatcher.py", line 177, in <listcomp>
+    (receiver, receiver(signal=self, sender=sender, **named))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Perso/github/wawwod/collector/signals/creatures.py", line 17, in update_creature
+    instance.fix()
+  File "/home/zaffarelli/Perso/github/wawwod/collector/models/creatures.py", line 698, in fix
+    self.fix_ghoul()
+  File "/home/zaffarelli/Perso/github/wawwod/collector/models/creatures.py", line 487, in fix_ghoul
+    self.trueage = chronicle.era - (self.embrace - self.age)
+                                    ~~~~~~~~~~~~~^~~~~~~~~~
+TypeError: unsupported operand type(s) for -: 'int' and 'str'
+[10/07 03:49:24] "POST /ajax/editable/userinput/ HTTP/1.1" 500 22714
+[10/07 03:49:56] Internal Server Error: /ajax/editable/userinput/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Perso/github/wawwod/collector/views/base.py", line 151, in userinput
+    item.save()
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/models/base.py", line 861, in save_base
+    pre_save.send(
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/dispatch/dispatcher.py", line 176, in send
+    return [
+           ^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/dispatch/dispatcher.py", line 177, in <listcomp>
+    (receiver, receiver(signal=self, sender=sender, **named))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Perso/github/wawwod/collector/signals/creatures.py", line 17, in update_creature
+    instance.fix()
+  File "/home/zaffarelli/Perso/github/wawwod/collector/models/creatures.py", line 698, in fix
+    self.fix_ghoul()
+  File "/home/zaffarelli/Perso/github/wawwod/collector/models/creatures.py", line 487, in fix_ghoul
+    self.trueage = chronicle.era - (self.embrace - self.age)
+                                    ~~~~~~~~~~~~~^~~~~~~~~~
+TypeError: unsupported operand type(s) for -: 'int' and 'str'
+[10/07 03:49:56] "POST /ajax/editable/userinput/ HTTP/1.1" 500 22714
+[10/07 03:49:57] Internal Server Error: /ajax/editable/userinput/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Perso/github/wawwod/collector/views/base.py", line 151, in userinput
+    item.save()
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/models/base.py", line 861, in save_base
+    pre_save.send(
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/dispatch/dispatcher.py", line 176, in send
+    return [
+           ^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/dispatch/dispatcher.py", line 177, in <listcomp>
+    (receiver, receiver(signal=self, sender=sender, **named))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Perso/github/wawwod/collector/signals/creatures.py", line 17, in update_creature
+    instance.fix()
+  File "/home/zaffarelli/Perso/github/wawwod/collector/models/creatures.py", line 698, in fix
+    self.fix_ghoul()
+  File "/home/zaffarelli/Perso/github/wawwod/collector/models/creatures.py", line 487, in fix_ghoul
+    self.trueage = chronicle.era - (self.embrace - self.age)
+                                    ~~~~~~~~~~~~~^~~~~~~~~~
+TypeError: unsupported operand type(s) for -: 'int' and 'str'
+[10/07 03:49:57] "POST /ajax/editable/userinput/ HTTP/1.1" 500 22714
+[10/07 03:50:05] Internal Server Error: /ajax/editable/userinput/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Perso/github/wawwod/collector/views/base.py", line 151, in userinput
+    item.save()
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/models/base.py", line 861, in save_base
+    pre_save.send(
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/dispatch/dispatcher.py", line 176, in send
+    return [
+           ^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/dispatch/dispatcher.py", line 177, in <listcomp>
+    (receiver, receiver(signal=self, sender=sender, **named))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Perso/github/wawwod/collector/signals/creatures.py", line 17, in update_creature
+    instance.fix()
+  File "/home/zaffarelli/Perso/github/wawwod/collector/models/creatures.py", line 698, in fix
+    self.fix_ghoul()
+  File "/home/zaffarelli/Perso/github/wawwod/collector/models/creatures.py", line 487, in fix_ghoul
+    self.trueage = chronicle.era - (self.embrace - self.age)
+                                    ~~~~~~~~~~~~~^~~~~~~~~~
+TypeError: unsupported operand type(s) for -: 'str' and 'int'
+[10/07 03:50:05] "POST /ajax/editable/userinput/ HTTP/1.1" 500 22717
+[10/07 05:56:21] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1861
+[10/07 05:57:58] Not Found: /ajax/collector_action/refix_all/death_row/
+[10/07 05:57:58] "GET /ajax/collector_action/refix_all/death_row/ HTTP/1.1" 404 8979
+[10/07 05:58:30] Internal Server Error: /ajax/collector_action/refix_all/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Perso/github/wawwod/collector/views/actions.py", line 140, in refix_all
+    c.remove()
+    ^^^^^^^^
+AttributeError: 'Creature' object has no attribute 'remove'
+[10/07 05:58:30] "GET /ajax/collector_action/refix_all/ HTTP/1.1" 500 77509
+[10/07 06:03:39] Not Found: /ajax/collector_action/refix_all/death_row/
+[10/07 06:03:39] "GET /ajax/collector_action/refix_all/death_row/ HTTP/1.1" 404 8979
+[10/07 06:08:19] Internal Server Error: /ajax/view/creature/_sebastian_gorlisch/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/views/generic/detail.py", line 108, in get
+    self.object = self.get_object()
+                  ^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/views/generic/detail.py", line 53, in get_object
+    obj = queryset.get()
+          ^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/models/query.py", line 640, in get
+    raise self.model.MultipleObjectsReturned(
+collector.models.creatures.Creature.MultipleObjectsReturned: get() returned more than one Creature -- it returned 2!
+[10/07 06:08:19] "GET /ajax/view/creature/_sebastian_gorlisch/ HTTP/1.1" 500 96930
+[10/07 06:11:02] Internal Server Error: /ajax/editable/userinput/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Perso/github/wawwod/collector/views/base.py", line 147, in userinput
+    item = Creature.objects.get(rid=rid)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/models/query.py", line 637, in get
+    raise self.model.DoesNotExist(
+collector.models.creatures.Creature.DoesNotExist: Creature matching query does not exist.
+[10/07 06:11:02] "POST /ajax/editable/userinput/ HTTP/1.1" 500 21923
+[10/07 06:11:25] Internal Server Error: /ajax/editable/userinput/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Perso/github/wawwod/collector/views/base.py", line 147, in userinput
+    item = Creature.objects.get(rid=rid)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/models/query.py", line 637, in get
+    raise self.model.DoesNotExist(
+collector.models.creatures.Creature.DoesNotExist: Creature matching query does not exist.
+[10/07 06:11:25] "POST /ajax/editable/userinput/ HTTP/1.1" 500 21922
+[10/07 06:18:24] Internal Server Error: /ajax/editable/userinput/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Perso/github/wawwod/collector/views/base.py", line 151, in userinput
+    item.save()
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/models/base.py", line 861, in save_base
+    pre_save.send(
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/dispatch/dispatcher.py", line 176, in send
+    return [
+           ^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/dispatch/dispatcher.py", line 177, in <listcomp>
+    (receiver, receiver(signal=self, sender=sender, **named))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Perso/github/wawwod/collector/signals/creatures.py", line 17, in update_creature
+    instance.fix()
+  File "/home/zaffarelli/Perso/github/wawwod/collector/models/creatures.py", line 704, in fix
+    self.fix_ghoul()
+  File "/home/zaffarelli/Perso/github/wawwod/collector/models/creatures.py", line 487, in fix_ghoul
+    self.trueage = chronicle.era - (self.embrace - self.age)
+                                    ~~~~~~~~~~~~~^~~~~~~~~~
+TypeError: unsupported operand type(s) for -: 'int' and 'str'
+[10/07 06:18:24] "POST /ajax/editable/userinput/ HTTP/1.1" 500 22650
+[10/07 06:40:26] Not Found: /ajax/collector_action/refix_all/Fortitude_(1)/
+[10/07 06:40:26] "GET /ajax/collector_action/refix_all/Fortitude_(1)/ HTTP/1.1" 404 8991
+[10/07 06:41:24] Not Found: /favicon.ico
+[10/07 06:48:37] Not Found: /ajax/collector_action/refix_all/DEAD=2023/
+[10/07 06:48:37] "GET /ajax/collector_action/refix_all/DEAD=2023/ HTTP/1.1" 404 8981
