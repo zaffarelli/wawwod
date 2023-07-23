@@ -6,10 +6,53 @@ class KindredLineage {
         let me = this;
         me.parent = parent;
         me.co = collector;
-        me.data = data[0];
+        me.config = data
         me.boxWidth = 100;
         me.boxHeight = 80;
         me.duration = 500;
+    }
+
+    saveSVG() {
+        let me = this;
+        me.svg.selectAll('.do_not_print').attr('opacity', 0);
+        let base_svg = d3.select("#d3area svg").html();
+        let flist = '<style>';
+        for (let f of me.config['fontset']) {
+            flist += '@import url("https://fonts.googleapis.com/css2?family=' + f + '");';
+        }
+        flist += '</style>';
+        let lpage = "";
+        let exportable_svg = '<?xml version="1.0" encoding="ISO-8859-1" ?> \
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"> \
+<svg class="crossover_sheet" \
+xmlns="http://www.w3.org/2000/svg" version="1.1" \
+xmlns:xlink="http://www.w3.org/1999/xlink"> \
+' + flist + base_svg + '</svg>';
+        let svg_name = "kindred_lineage.svg"
+        let rid = "kindred_lineage";
+        let sheet_data = {
+            'svg_name': svg_name,
+            'rid': rid,
+            'svg': exportable_svg
+        }
+        me.svg.selectAll('.do_not_print').attr('opacity', 1);
+        $.ajax({
+            url: 'ajax/character/save2svg/' +rid + '/',
+            type: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            data: sheet_data,
+            dataType: 'json',
+            success: function (answer) {
+                console.log("Saved to svg [" + rid + "]["+svg_name+"]...")
+            },
+            error: function (answer) {
+                console.error('Error saving svg...');
+                console.error(answer);
+            }
+        });
     }
 
     wrap(text, width) {
@@ -59,13 +102,17 @@ class KindredLineage {
     insertNode(x) {
         let me = this;
         let r = x.enter().append("g")
-            .attr("class", function (d) {
+            .attr("class", (d) => {
                 let str = "node ";
-                if (d.data.condition.startsWith("MISSING")==true) {
-                    str += "missing ";
-                }
-                if (d.data.condition.startsWith("DEAD")==true) {
-                    str += "dead ";
+                let x = d.data.condition;
+                console.log(d.data.name);
+                if (x != undefined) {
+                    if (x.startsWith("MISSING") == true) {
+                        str += "missing ";
+                    }
+                    if (x.startsWith("DEAD") == true) {
+                        str += "dead ";
+                    }
                 }
                 return str;
             })
@@ -97,7 +144,7 @@ class KindredLineage {
             .attr('ry', me.boxWidth * 0.05)
             .on("click", function (e, d) {
                 //console.log("Frame click " + d.id + " [" + d.data.name + "]!");
-                me.uncollapse(d)
+                //me.uncollapse(d)
                 me.update(d);
                 ghouls = d.data.ghouls.split(',')
             });
@@ -117,8 +164,11 @@ class KindredLineage {
         // })
 
 
+
         r.selectAll("rect.band")
             .attr('class', function (d) {
+                console.log(d.data.ghost);
+                console.log(d.data.condition);
                 return 'band ' + (d.data.ghost ? ' ghost' : '') + (d.data.condition.startsWith("DEAD") ? ' dead' : '');
             });
         r.selectAll("rect.frame")
@@ -196,6 +246,8 @@ class KindredLineage {
                             me.co.rebootLinks();
                         }
                     });
+                }else{
+                    me.saveSVG();
                 }
             });
 
@@ -230,18 +282,30 @@ class KindredLineage {
             .attr('class', 'ghouls_list')
             .attr('text-anchor', 'start')
             .attr('x', -me.boxWidth * 0.95)
-            .attr('y', me.boxHeight * 0.8)
+            .attr('y', me.boxHeight * 0.5)
             .attr('dx', '5px')
             .attr('dy', '0')
             .text(function (d) {
                 let str = '';
                 if (d.data.ghost == false) {
-                    if (d.data.ghouls != '') {
-                        str = 'Retainers:';
-                        let list = d.data.ghouls.split(',')
-                        _.forEach(list, function (x) {
-                            str += " " + line_jump_code + " - " + x;
-                        })
+                    if (d.data.condition.startsWith('MISSING')) {
+                        let wc = d.data.condition.split("=");
+                        if (wc.length == 2) {
+                            str = 'Missing since ' + wc[1];
+                        }
+                    } else if (d.data.condition.startsWith('DEAD')){
+                        let wc = d.data.condition.split("=");
+                        if (wc.length==2) {
+                            str = 'Final Death in '+wc[1];
+                        }
+                    }else {
+                        if (d.data.ghouls != '') {
+                            str = 'Retainers:';
+                            let list = d.data.ghouls.split(',')
+                            _.forEach(list, function (x) {
+                                str += " " + line_jump_code + " - " + x;
+                            })
+                        }
                     }
                 }
                 return str
@@ -263,8 +327,8 @@ class KindredLineage {
 
         r.append("circle")
             .attr("cx",90)
-            .attr("cy",-70)
-            .attr("r",5)
+            .attr("cy",-60)
+            .attr("r",3)
             .attr("stroke", "transparent")
             .attr("stroke-width", "2pt")
             .attr("fill", function (d) {
@@ -277,11 +341,29 @@ class KindredLineage {
             })
         ;
 
+        r.append("circle")
+            .attr("cx",75)
+            .attr("cy",-60)
+            .attr("r",function(d){
+                return 2+d.data.is_ancient;
+            })
+            .attr("stroke", "#a0a0a0")
+            .attr("stroke-width", "0.5pt")
+            .attr("fill", function (d) {
+                let col = "transparent";
+                let colors = ["transparent","#C01010","#A01010","#801010","#601010","#401010"]
+                if (d.data.is_ancient > 0){
+                    col = colors[d.data.is_ancient];
+                }
+                return col;
+            })
+        ;
+
         r.append("path")
             .attr("class", "icon_condition")
             .attr("d", function (d) {
                 let str = ''
-                if (d.data.condition.startsWith("MISSING")) {
+                if ((d.data.condition).startsWith("MISSING")) {
                     str = "M -80 160 l -20 0 l 0 -20 l 180 -140 20 0 0 20 -180 140 Z "
                 } else if (d.data.condition.startsWith("DEAD")){
                     str = "M -80 160 l -20 0 l 0 -20 l 180 -140 20 0 0 20 -180 140 Z "
@@ -316,22 +398,22 @@ class KindredLineage {
             .size([width, height])
             .nodeSize([me.boxWidth * 2.5, me.boxHeight * 4.5])
         ;
-        let nodes = d3.hierarchy(me.data);
+        let nodes = d3.hierarchy(me.data[0]);
         nodes = treemap(nodes);
         d3.select(me.parent).selectAll("svg").remove();
         let pwidth = d3.select(me.parent).style("width");
         let pheight = d3.select(me.parent).style("height");
         let pox = -(parseInt(pwidth)/2);
         let poy = -(parseInt(pheight)/2);
-        console.log(me.parent+" "+pwidth+" "+pheight+" "+pox+" "+poy)
+        //console.log(me.parent+" "+pwidth+" "+pheight+" "+pox+" "+poy)
         me.svg = d3.select(me.parent).append("svg")
             .attr('class', 'lineage')
             .attr("width", pwidth)
             .attr("height", pheight);
         me.g = me.svg.append("g")
             .attr("viewBox", pox+"  "+poy+ " " + pwidth + " " + pheight)
-            .attr("transform",             "translate(0,0)")
-            //.attr("transform", "translate(" + me.width / 2 + "," + me.height / 2 + ")")
+            //.attr("transform","translate(0,0)")
+            .attr("transform", "translate(" + parseInt(pwidth) / 2 + "," + parseInt(pheight) / 2 + ")")
         ;
 
 
@@ -347,7 +429,7 @@ class KindredLineage {
             .attr("class", function (d) {
                 let res = "link ";
                 if (d.data.ghost | d.parent.data.ghost) {
-                    res += "ghost";
+                    res += " ghost";
                 }
                 return res;
             })
@@ -373,8 +455,9 @@ class KindredLineage {
         me.svg.call(zoom);
     }
 
-    perform() {
+    perform(data) {
         let me = this;
+        me.data = data;
         me.go()
         me.zoomActivate()
     }

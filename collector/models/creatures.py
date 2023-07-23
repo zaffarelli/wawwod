@@ -1239,6 +1239,7 @@ class Creature(models.Model):
             'ghouls': ",".join(self.retainers),
             'sire': self.sire,
             'index': 0,
+            'is_dead': "dead_node" if self.condition.startswith("DEAD") else "",
             'total_traits': self.total_traits,
         }
         return d
@@ -1264,10 +1265,28 @@ class Creature(models.Model):
             'id': 0,
             'key': self.id,
             'trueage': self.trueage,
+            'is_ancient': self.isAncient,
             'children': [],
             'ghouls': ",".join(self.retainers)
         }
         return d
+
+    @property
+    def isAncient(self):
+        res = 0
+        if self.trueage > 1000:
+            res = 5
+        elif self.trueage > 500:
+            res = 4
+        elif self.trueage > 300:
+            res = 3
+        elif self.trueage > 150:
+            res = 2
+        elif self.trueage >= 50:
+            res = 1
+        return res
+
+
 
     def find_lineage(self, lockup=False):
         """ Find the full lineage for this character

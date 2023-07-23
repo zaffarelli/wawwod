@@ -31,6 +31,7 @@ def set_chronicle(acro):
     c = get_current_chronicle()
     print(f'Current Chronicle set to is {c.acronym}.')
 
+
 def find_stat_property(creature, statistic):
     # You give 'kindred' / 'generation', it returns 'background3'
     lists = ['attributes', 'talents', 'skills', 'knowledges', 'backgrounds']
@@ -101,7 +102,8 @@ STATS_NAMES = {
                     'streetwise', 'subterfuge'],
         'skills': ['animal ken', 'crafts', 'drive', 'etiquette', 'firearms', 'melee', 'performance', 'security',
                    'stealth', 'survival'],
-        'knowledges': ['academics', 'technology', 'finance', 'investigation', 'law', 'linguistics', 'medicine', 'occult',
+        'knowledges': ['academics', 'technology', 'finance', 'investigation', 'law', 'linguistics', 'medicine',
+                       'occult',
                        'politics',
                        'science'],
         'backgrounds': ['allies', 'contacts', 'fame', 'generation', 'herd', 'influence', 'mentor',
@@ -334,6 +336,9 @@ GM_SHORTCUTS = {
         ['perception', 'empathy'],
         ['perception', 'dodge'],
         ['wits', 'streetwise'],
+        ['strength', 'athletics'],
+        ['intelligence', 'academics'],
+        ['wits', 'etiquette'],
     ],
     'mortal': [],
     'kinfolk': [],
@@ -389,6 +394,11 @@ CLANS_SPECIFICS = {
         'disciplines': [],
         'clan_weakness': ''
     },
+    'Cappadocian': {
+        'disciplines': ['Auspex (1)', 'Fortitude (1)', 'Necromancy (1)'],
+        'clan_weakness': 'Corpse Appeareance'
+    },
+
     'Gangrel': {
         'disciplines': ['Animalism (1)', ' Fortitude (1)', 'Protean (1)'],
         'clan_weakness': 'Animal traits'
@@ -406,7 +416,7 @@ CLANS_SPECIFICS = {
         'disciplines': ['Dominate (1)', 'Necromancy (1)', 'Potence (1)'],
         'clan_weakness': 'Painful kiss'
     },
-    'Harbinger of Skulls': {
+    'Harbinger Of Skulls': {
         'disciplines': ['Auspex (1)', 'Fortitude (1)', 'Necromancy (1)'],
         'clan_weakness': 'Corpse Appeareance'
     },

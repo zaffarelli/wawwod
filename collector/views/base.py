@@ -91,7 +91,8 @@ def get_list(request, pid=1, slug=None):
             creature_items = Creature.objects.filter(chronicle=chronicle.acronym, is_new=True).order_by('name')
         elif 'bal' == slug:
             creature_items = Creature.objects.filter(chronicle=chronicle.acronym, status__in=["UNBALANCED", "OK+"],
-                                                     hidden=False, creature__in=['kindred']).order_by('creature','-expectedfreebies')
+                                                     hidden=False, creature__in=['kindred']).order_by('creature',
+                                                                                                      '-expectedfreebies')
         elif 'pen' == slug:
             creature_items = Creature.objects.filter(chronicle=chronicle.acronym, faction='Pentex',
                                                      creature__in=['garou', 'kinfolk', 'fomori']).order_by('name')
@@ -293,9 +294,11 @@ def display_lineage(request, slug=None):
         if slug is None:
             data = build_per_primogen()
         else:
-            print(slug)
+            # print(slug)
             data = build_per_primogen(slug)
-        lineage_context = {'data': data}
+        settings = {'fontset': FONTSET}
+        lineage_context = {'settings': json.dumps(settings, sort_keys=True, indent=4), 'data': data};
+        #print(lineage_context);
         return JsonResponse(lineage_context)
 
 
@@ -311,9 +314,9 @@ def save_to_svg(request, slug):
         response['status'] = 'ok'
     return JsonResponse(response)
 
+
 @csrf_exempt
 def svg_to_pdf(request, slug):
-
     response = {'status': 'error'}
     logger.info(f'Saving to PDF.')
     if is_ajax(request):
@@ -332,6 +335,7 @@ def svg_to_pdf(request, slug):
         all_in_one_pdf(rid)
     return JsonResponse(response)
 
+
 @csrf_exempt
 def all_in_one_pdf(rid):
     logger.info(f'Starting PDFing for [{rid}].')
@@ -345,7 +349,7 @@ def all_in_one_pdf(rid):
     pdfs.sort()
     i = 0
     for pdf in pdfs:
-        if pdf.startswith("character_sheet"+rid):
+        if pdf.startswith("character_sheet" + rid):
             # print(pdf)
             merger.append(open(media_results + pdf, 'rb'))
             i += 1
@@ -353,5 +357,5 @@ def all_in_one_pdf(rid):
         des = f'{csheet_results}character_sheet{rid}.pdf'
         with open(des, 'wb') as fout:
             merger.write(fout)
-        logger.info(f'Successfully merged {i+1} pages as [{des}].')
+        logger.info(f'Successfully merged {i + 1} pages as [{des}].')
     return res

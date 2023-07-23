@@ -403,6 +403,15 @@ table {
   }
 }
 
+.Independents.kindred {
+  & table {
+    & tr.tainted {
+      @include independents_taint;
+    }
+  }
+}
+
+
 .changeling {
   & table {
     & tr.tainted {
@@ -629,8 +638,8 @@ svg.lineage {
           fill: $sabbat_fill;
         }
 
-        &.Independants {
-          fill: $independants_fill;
+        &.Independents {
+          fill: $independents_fill;
         }
 
       }
@@ -919,6 +928,10 @@ text.kindred_name {
   fill: none;
   stroke: #ccc;
   stroke-width: 1px;
+}
+
+.dead_node{
+  stroke-dasharray:"2 3";
 }
 
 #user_wrapper {

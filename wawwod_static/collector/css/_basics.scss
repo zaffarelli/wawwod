@@ -28,15 +28,15 @@ $focus_color: #20C020;
 
 
 $list_width: 260px;
-$ghost_opacity: 0.0;
+$ghost_opacity: 0.3;
 
 
 $wyld_fill: #c264d4;
 $weaver_fill: #334ba9;
 $wyrm_fill: #221338;
 $mortal_fill: #4e4e4e;
-$garou_fill: #5b3b19;
-$kindred_fill: #A20000;
+$garou_fill: #422e1a;
+$kindred_fill: #70785c;
 $mage_fill: #3c18de;
 $wraith_fill: #2f3345;
 $changeling_fill: #684203;
@@ -46,11 +46,11 @@ $kinfolk_fill: desaturate($garou_fill,50%);
 $fomori_fill: #C0D43B;
 
 
-$camarilla_fill: #104010;
-$sabbat_fill: #401010;
-$inconnu_fill: #5d3636;
-$anarchs_fill: #252572;
-$independants_fill: #104c5e;
+$camarilla_fill: #132b13;
+$sabbat_fill: #341d10;
+$inconnu_fill: #2b1a1a;
+$anarchs_fill: #320732;
+$independents_fill: #0c253b;
 
 //@font-face {
 //  font-family: 'Titre';
@@ -191,6 +191,11 @@ $independants_fill: #104c5e;
 @mixin inconnu_taint {
   background: repeating-linear-gradient(90deg, $inconnu_fill, $kindred_fill 50%, $panel_background 100%);
 }
+
+@mixin independents_taint {
+  background: repeating-linear-gradient(90deg, $independents_fill, $kindred_fill 50%, $panel_background 100%);
+}
+
 
 @mixin anarchs_taint {
   background: repeating-linear-gradient(90deg, $anarchs_fill, $kindred_fill 50%, $panel_background 100%);

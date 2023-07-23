@@ -80,9 +80,11 @@ class WawwodCollector {
                         me.d3.perform();
                     }
                     if (action == 'kindred_lineage') {
+                        //console.log(answer)
+                        let s = JSON.parse(answer.settings);
                         let d = JSON.parse(answer.data);
-                        me.d3 = new KindredLineage(d, "#d3area", me);
-                        me.d3.perform();
+                        me.d3 = new KindredLineage(s, "#d3area", me);
+                        me.d3.perform(d);
                     }
                     if (action == 'crossover_sheet') {
                         let s = JSON.parse(answer.settings);

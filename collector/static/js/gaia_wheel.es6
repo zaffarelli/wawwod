@@ -270,7 +270,9 @@ class GaiaWheel {
                 trans += "translate(" + coords[0] + "," + coords[1] + ") ";
                 return trans;
             })
-            .attr("class", "creature_view " + ty)
+            .attr("class", function(d){
+                return "creature_view " + ty ;
+            })
             .attr("id", function (d) {
                 return d.id;
             })
@@ -356,17 +358,22 @@ class GaiaWheel {
             })
             .style("fill", 'transparent')
             .style("stroke", function (d) {
-                let x = (d.condition == "DEAD" ? "#A22" : (d.condition == "MISSING" ? "#FC4" : "#111"))
+                let x = (d.condition.startsWith("DEAD") ? "#A22" : (d.condition.startsWith("MISSING") ? "#FC4" : "transparent"))
                 return x;
             })
             .style("stroke-width", function (d) {
-                let x = (d.condition == "DEAD" ? "1pt" : (d.condition == "MISSING" ? "1pt" : "1pt"))
+                let x = (d.condition.startsWith("DEAD") ? "3pt" : (d.condition.startsWith("MISSING") ? "3pt" : "1pt"))
                 return x;
             })
         ;
         node_cross.append('text')
             .attr("transform", "rotate(" + (-me.global_rotation) + ")")
-            .attr("dy", '-12px')
+            .attr("dy", function(d){
+                if (d.index % 2 == 0) {
+                    return '-12px';
+                }
+                return "20px";
+            })
             .style("text-anchor", 'middle')
             .style("font-family", 'Ruda')
             .style("font-size", '8pt')
@@ -375,12 +382,13 @@ class GaiaWheel {
             .style("stroke-width", '0.125pt')
             .text(function (d) {
                 let name = d.name;
+                name ="";
                 let words = d.name.split(' ');
                 words.forEach(function (word, k) {
-                    //name += word[0];
+                    name += word[0];
                 })
                 // name += " "+d.index
-                let x = (d.condition == "DEAD" ? "(D)" : (d.condition == "MISSING" ? "(M)" : ""))
+                let x = (d.condition.startsWith("DEAD") ? "(D)" : (d.condition.startsWith("MISSING") ? "(M)" : ""))
                 return name + x;//+" ("+d.order+" / "+(Math.round(d.angular*100)/100)+")";
             })
         ;
@@ -510,11 +518,11 @@ class GaiaWheel {
             me.display_poles(v.start, v.collection, v.name, v.collection.length, v.value, v.total);
             me.display_branch(v.start, v.collection, v.name, v.collection.length, v.value, v.total);
         })
-        me.draw_stats(-me.step_x*97,me.step_y*2,'status',"#A08020");
-        me.draw_stats(-me.step_x*97,me.step_y*25,'balanced',"#A02020");
-        me.draw_stats(-me.step_x*97,me.step_y*35,'creatures',"#208020");
-        me.draw_stats(-me.step_x*97,me.step_y*45,'clans',"#808020");
-        me.draw_stats(-me.step_x*97,me.step_y*60,'disciplines',"#802080");
+        me.draw_stats(-me.step_x*90,me.step_y*2,'status',"#A08020");
+        me.draw_stats(-me.step_x*90,me.step_y*25,'balanced',"#A02020");
+        me.draw_stats(-me.step_x*90,me.step_y*35,'creatures',"#208020");
+        me.draw_stats(-me.step_x*90,me.step_y*45,'clans',"#808020");
+        me.draw_stats(-me.step_x*90,me.step_y*60,'disciplines',"#802080");
     }
 
     zoomActivate() {

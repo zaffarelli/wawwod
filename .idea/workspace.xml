@@ -2,22 +2,46 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c5f4ae22-1e7a-419c-ac9f-80da089b72d4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/collector/migrations/0048_alter_creature_chronicle.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collector/static/collector/wawwod_ft.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod.sqlite3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_static/collector/wawwod_ft.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/collector/static/collector/clans/blood_brothers.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/collector/static/collector/clans/gargoyle.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/collector/static/collector/clans/harbinger_of_skulls.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/kindred_lineage.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.193ab711092b.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.4299b4d0cb03.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.52366a6bfdc4.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.80b34933fd97.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.937e1ab00993.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.a6f4feeca470.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.c35b7e080b9b.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.c913d1deb790.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.d7a9a7dfd09d.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.dd5c94cea3a8.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.eea2368d44c6.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.f65b879d009a.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.f6b81f3e457b.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.f70b9b6d7ba0.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.f9d4bac06a02.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/collector/clans/blood_brothers.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/collector/clans/gargoyle.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/collector/clans/harbinger_of_skulls.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/collector/clans/harbingers_of_skulls.webp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/apps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/context_processors.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/context_processors.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/collector/models/creatures.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/models/creatures.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/static/collector/css/_basics.scss" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/collector/css/_basics.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/static/collector/css/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/collector/css/main.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/static/js/collector.es6" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/js/collector.es6" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/static/js/gaia_wheel.es6" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/js/gaia_wheel.es6" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/static/js/kindred_lineage.es6" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/js/kindred_lineage.es6" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/collector/utils/data_collection.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/utils/data_collection.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/collector/utils/wod_reference.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/utils/wod_reference.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/views/actions.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/views/actions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/views/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/views/base.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/wawwod.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/wawwod.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/load_db.sh" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/load_db.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/wawwod_tools.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/wawwod_tools.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storytelling/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/storytelling/apps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_static/collector/css/_basics.scss" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/collector/css/_basics.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_static/collector/css/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/collector/css/main.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_static/js/collector.es6" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/js/collector.es6" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_static/js/gaia_wheel.es6" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/js/gaia_wheel.es6" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_static/js/kindred_lineage.es6" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/js/kindred_lineage.es6" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,7 +181,12 @@
       <workItem from="1688418169988" duration="1132000" />
       <workItem from="1688676983198" duration="11922000" />
       <workItem from="1688856424246" duration="9057000" />
-      <workItem from="1688956244536" duration="2623000" />
+      <workItem from="1688956244536" duration="21741000" />
+      <workItem from="1689266128362" duration="4791000" />
+      <workItem from="1689599591739" duration="1979000" />
+      <workItem from="1689702647921" duration="6672000" />
+      <workItem from="1690015757133" duration="4627000" />
+      <workItem from="1690097017313" duration="4862000" />
     </task>
     <servers />
   </component>

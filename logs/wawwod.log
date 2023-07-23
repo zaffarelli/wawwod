@@ -2874,3 +2874,721 @@ TypeError: unsupported operand type(s) for -: 'int' and 'str'
 [10/07 06:41:24] Not Found: /favicon.ico
 [10/07 06:48:37] Not Found: /ajax/collector_action/refix_all/DEAD=2023/
 [10/07 06:48:37] "GET /ajax/collector_action/refix_all/DEAD=2023/ HTTP/1.1" 404 8981
+[10/07 07:18:57] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1861
+[10/07 07:23:23] Not Found: /ajax/collector_action/refix_all/Necromancy_(5)/
+[10/07 07:23:23] "GET /ajax/collector_action/refix_all/Necromancy_(5)/ HTTP/1.1" 404 8994
+[10/07 07:24:54] Internal Server Error: /ajax/editable/userinput/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Perso/github/wawwod/collector/views/base.py", line 151, in userinput
+    item.save()
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/models/base.py", line 861, in save_base
+    pre_save.send(
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/dispatch/dispatcher.py", line 176, in send
+    return [
+           ^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/dispatch/dispatcher.py", line 177, in <listcomp>
+    (receiver, receiver(signal=self, sender=sender, **named))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Perso/github/wawwod/collector/signals/creatures.py", line 17, in update_creature
+    instance.fix()
+  File "/home/zaffarelli/Perso/github/wawwod/collector/models/creatures.py", line 688, in fix
+    self.fix_kindred()
+  File "/home/zaffarelli/Perso/github/wawwod/collector/models/creatures.py", line 475, in fix_kindred
+    self.weakness = CLANS_SPECIFICS[self.family]['clan_weakness']
+                    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'Harbinger Of Skulls'
+[10/07 07:24:54] "POST /ajax/editable/userinput/ HTTP/1.1" 500 22603
+[10/07 07:24:55] Internal Server Error: /ajax/editable/userinput/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Perso/github/wawwod/collector/views/base.py", line 151, in userinput
+    item.save()
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/models/base.py", line 861, in save_base
+    pre_save.send(
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/dispatch/dispatcher.py", line 176, in send
+    return [
+           ^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/dispatch/dispatcher.py", line 177, in <listcomp>
+    (receiver, receiver(signal=self, sender=sender, **named))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Perso/github/wawwod/collector/signals/creatures.py", line 17, in update_creature
+    instance.fix()
+  File "/home/zaffarelli/Perso/github/wawwod/collector/models/creatures.py", line 688, in fix
+    self.fix_kindred()
+  File "/home/zaffarelli/Perso/github/wawwod/collector/models/creatures.py", line 475, in fix_kindred
+    self.weakness = CLANS_SPECIFICS[self.family]['clan_weakness']
+                    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'Harbinger Of Skulls'
+[10/07 07:24:55] "POST /ajax/editable/userinput/ HTTP/1.1" 500 22603
+[10/07 07:25:03] Internal Server Error: /ajax/editable/userinput/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Perso/github/wawwod/collector/views/base.py", line 151, in userinput
+    item.save()
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/models/base.py", line 861, in save_base
+    pre_save.send(
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/dispatch/dispatcher.py", line 176, in send
+    return [
+           ^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/dispatch/dispatcher.py", line 177, in <listcomp>
+    (receiver, receiver(signal=self, sender=sender, **named))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Perso/github/wawwod/collector/signals/creatures.py", line 17, in update_creature
+    instance.fix()
+  File "/home/zaffarelli/Perso/github/wawwod/collector/models/creatures.py", line 688, in fix
+    self.fix_kindred()
+  File "/home/zaffarelli/Perso/github/wawwod/collector/models/creatures.py", line 475, in fix_kindred
+    self.weakness = CLANS_SPECIFICS[self.family]['clan_weakness']
+                    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'Harbinger Of Skulls'
+[10/07 07:25:03] "POST /ajax/editable/userinput/ HTTP/1.1" 500 22603
+[10/07 07:25:36] Internal Server Error: /ajax/editable/userinput/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Perso/github/wawwod/collector/views/base.py", line 151, in userinput
+    item.save()
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/models/base.py", line 861, in save_base
+    pre_save.send(
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/dispatch/dispatcher.py", line 176, in send
+    return [
+           ^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/dispatch/dispatcher.py", line 177, in <listcomp>
+    (receiver, receiver(signal=self, sender=sender, **named))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Perso/github/wawwod/collector/signals/creatures.py", line 17, in update_creature
+    instance.fix()
+  File "/home/zaffarelli/Perso/github/wawwod/collector/models/creatures.py", line 688, in fix
+    self.fix_kindred()
+  File "/home/zaffarelli/Perso/github/wawwod/collector/models/creatures.py", line 475, in fix_kindred
+    self.weakness = CLANS_SPECIFICS[self.family]['clan_weakness']
+                    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'Harbinger Of Skulls'
+[10/07 07:25:36] "POST /ajax/editable/userinput/ HTTP/1.1" 500 22603
+[10/07 07:25:36] Internal Server Error: /ajax/editable/userinput/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Perso/github/wawwod/collector/views/base.py", line 151, in userinput
+    item.save()
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/models/base.py", line 861, in save_base
+    pre_save.send(
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/dispatch/dispatcher.py", line 176, in send
+    return [
+           ^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/dispatch/dispatcher.py", line 177, in <listcomp>
+    (receiver, receiver(signal=self, sender=sender, **named))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Perso/github/wawwod/collector/signals/creatures.py", line 17, in update_creature
+    instance.fix()
+  File "/home/zaffarelli/Perso/github/wawwod/collector/models/creatures.py", line 688, in fix
+    self.fix_kindred()
+  File "/home/zaffarelli/Perso/github/wawwod/collector/models/creatures.py", line 475, in fix_kindred
+    self.weakness = CLANS_SPECIFICS[self.family]['clan_weakness']
+                    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'Harbinger Of Skulls'
+[10/07 07:25:36] "POST /ajax/editable/userinput/ HTTP/1.1" 500 22603
+[10/07 07:25:37] Internal Server Error: /ajax/editable/userinput/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Perso/github/wawwod/collector/views/base.py", line 151, in userinput
+    item.save()
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/models/base.py", line 861, in save_base
+    pre_save.send(
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/dispatch/dispatcher.py", line 176, in send
+    return [
+           ^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/dispatch/dispatcher.py", line 177, in <listcomp>
+    (receiver, receiver(signal=self, sender=sender, **named))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Perso/github/wawwod/collector/signals/creatures.py", line 17, in update_creature
+    instance.fix()
+  File "/home/zaffarelli/Perso/github/wawwod/collector/models/creatures.py", line 688, in fix
+    self.fix_kindred()
+  File "/home/zaffarelli/Perso/github/wawwod/collector/models/creatures.py", line 475, in fix_kindred
+    self.weakness = CLANS_SPECIFICS[self.family]['clan_weakness']
+                    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'Harbinger Of Skulls'
+[10/07 07:25:37] "POST /ajax/editable/userinput/ HTTP/1.1" 500 22603
+[10/07 07:28:13] Internal Server Error: /ajax/editable/userinput/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Perso/github/wawwod/collector/views/base.py", line 151, in userinput
+    item.save()
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/models/base.py", line 861, in save_base
+    pre_save.send(
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/dispatch/dispatcher.py", line 176, in send
+    return [
+           ^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/dispatch/dispatcher.py", line 177, in <listcomp>
+    (receiver, receiver(signal=self, sender=sender, **named))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Perso/github/wawwod/collector/signals/creatures.py", line 17, in update_creature
+    instance.fix()
+  File "/home/zaffarelli/Perso/github/wawwod/collector/models/creatures.py", line 688, in fix
+    self.fix_kindred()
+  File "/home/zaffarelli/Perso/github/wawwod/collector/models/creatures.py", line 475, in fix_kindred
+    self.weakness = CLANS_SPECIFICS[self.family]['clan_weakness']
+                    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'Harbinger Of Skulls'
+[10/07 07:28:13] "POST /ajax/editable/userinput/ HTTP/1.1" 500 22603
+[10/07 07:28:50] "GET /static/collector/clans/harbinger_of_skulls.webp HTTP/1.1" 404 1876
+[10/07 07:30:10] Internal Server Error: /ajax/editable/userinput/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Perso/github/wawwod/collector/views/base.py", line 151, in userinput
+    item.save()
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/models/base.py", line 861, in save_base
+    pre_save.send(
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/dispatch/dispatcher.py", line 176, in send
+    return [
+           ^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/dispatch/dispatcher.py", line 177, in <listcomp>
+    (receiver, receiver(signal=self, sender=sender, **named))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Perso/github/wawwod/collector/signals/creatures.py", line 17, in update_creature
+    instance.fix()
+  File "/home/zaffarelli/Perso/github/wawwod/collector/models/creatures.py", line 688, in fix
+    self.fix_kindred()
+  File "/home/zaffarelli/Perso/github/wawwod/collector/models/creatures.py", line 475, in fix_kindred
+    self.weakness = CLANS_SPECIFICS[self.family]['clan_weakness']
+                    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'Cappadocian'
+[10/07 07:30:10] "POST /ajax/editable/userinput/ HTTP/1.1" 500 22579
+[10/07 07:31:26] "GET /static/collector/clans/harbinger_of_skulls.webp HTTP/1.1" 404 1876
+[10/07 07:31:26] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1861
+[10/07 07:34:27] "GET /static/collector/clans/harbinger_of_skulls.webp HTTP/1.1" 404 1876
+[10/07 12:38:57] "GET /static/collector/clans/blood_brothers.webp HTTP/1.1" 404 1861
+[10/07 12:38:57] "GET /static/collector/clans/gargoyle.webp HTTP/1.1" 404 1843
+[10/07 17:35:17] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1861
+[10/07 17:46:07] Internal Server Error: /ajax/editable/updown/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.IntegrityError: CHECK constraint failed: skill5
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Perso/github/wawwod/collector/views/base.py", line 129, in updown
+    item.save()
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/models/base.py", line 877, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/models/base.py", line 990, in _save_table
+    updated = self._do_update(
+              ^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/models/base.py", line 1054, in _do_update
+    return filtered._update(values) > 0
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/models/query.py", line 1231, in _update
+    return query.get_compiler(self.db).execute_sql(CURSOR)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1982, in execute_sql
+    cursor = super().execute_sql(result_type)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1560, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: CHECK constraint failed: skill5
+[10/07 17:46:07] "POST /ajax/editable/updown/ HTTP/1.1" 500 24777
+[10/07 20:39:13] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1861
+[10/07 20:43:46] Not Found: /ajax/collector_action/refix_all/death_row/
+[10/07 20:43:46] "GET /ajax/collector_action/refix_all/death_row/ HTTP/1.1" 404 8979
+[10/07 22:27:23] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1861
+[11/07 01:38:06] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1861
+[11/07 01:40:40] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1861
+[11/07 01:42:37] Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Perso/github/wawwod/collector/views/base.py", line 56, in index
+    return render(request, 'collector/index.html', context=context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/compressor/templatetags/compress.py", line 160, in render
+    return self.render_compressed(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/compressor/templatetags/compress.py", line 131, in render_compressed
+    rendered_output = compressor.output(mode, forced=forced, basename=file_basename)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/compressor/css.py", line 55, in output
+    ret.append(subnode.output(*args, **kwargs))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/compressor/css.py", line 57, in output
+    return super().output(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/compressor/base.py", line 367, in output
+    output = "\n".join(self.filter_input(forced))
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/compressor/base.py", line 294, in filter_input
+    for hunk in self.hunks(forced):
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/compressor/base.py", line 269, in hunks
+    precompiled, value = self.precompile(value, **options)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/compressor/base.py", line 347, in precompile
+    return True, filter.input(**kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django_libsass.py", line 148, in input
+    return compile(filename=self.filename,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django_libsass.py", line 135, in compile
+    output = sass.compile(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib64/python3.11/site-packages/sass.py", line 725, in compile
+    raise CompileError(v)
+sass.CompileError: Error: Undefined variable: "$independents-fill".
+        on line 196:48 of collector/static/collector/css/_basics.scss, in mixin `independents-taint`
+        from line 409:16 of collector/static/collector/css/main.scss
+>> kground: repeating-linear-gradient(90deg, $independents_fill, $kindred_fill 
+   ------------------------------------------^
+
+[11/07 01:42:37] "GET / HTTP/1.1" 500 264883
+[11/07 01:42:37] Not Found: /favicon.ico
+[11/07 01:42:37] "GET /favicon.ico HTTP/1.1" 404 8886
+[11/07 01:44:01] Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Perso/github/wawwod/collector/views/base.py", line 56, in index
+    return render(request, 'collector/index.html', context=context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/compressor/templatetags/compress.py", line 160, in render
+    return self.render_compressed(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/compressor/templatetags/compress.py", line 131, in render_compressed
+    rendered_output = compressor.output(mode, forced=forced, basename=file_basename)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/compressor/css.py", line 55, in output
+    ret.append(subnode.output(*args, **kwargs))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/compressor/css.py", line 57, in output
+    return super().output(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/compressor/base.py", line 367, in output
+    output = "\n".join(self.filter_input(forced))
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/compressor/base.py", line 294, in filter_input
+    for hunk in self.hunks(forced):
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/compressor/base.py", line 269, in hunks
+    precompiled, value = self.precompile(value, **options)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/compressor/base.py", line 347, in precompile
+    return True, filter.input(**kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django_libsass.py", line 148, in input
+    return compile(filename=self.filename,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django_libsass.py", line 135, in compile
+    output = sass.compile(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib64/python3.11/site-packages/sass.py", line 725, in compile
+    raise CompileError(v)
+sass.CompileError: Error: Undefined variable: "$independants-fill".
+        on line 642:17 of collector/static/collector/css/main.scss
+>>           fill: $independants_fill;
+
+   ----------------^
+
+[11/07 01:44:01] "GET / HTTP/1.1" 500 263670
+[11/07 01:44:01] Not Found: /favicon.ico
+[11/07 01:44:01] "GET /favicon.ico HTTP/1.1" 404 8886
+[11/07 01:45:22] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1861
+[11/07 01:53:11] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1861
+[11/07 01:56:03] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1861
+[11/07 01:57:53] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1861
+[11/07 01:59:23] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1861
+[11/07 02:03:11] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1861
+[11/07 02:04:49] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1861
+[11/07 13:55:22] Not Found: /ajax/collector_action/add_creature/
+[11/07 13:55:22] "GET /ajax/collector_action/add_creature/ HTTP/1.1" 404 8958
+[11/07 13:55:44] Not Found: /favicon.ico
+[11/07 13:57:19] Internal Server Error: /ajax/display/crossover_sheet/Barbara/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Perso/github/wawwod/collector/views/base.py", line 241, in display_crossover_sheet
+    c = Creature.objects.get(rid=slug)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/models/query.py", line 637, in get
+    raise self.model.DoesNotExist(
+collector.models.creatures.Creature.DoesNotExist: Creature matching query does not exist.
+[11/07 13:57:19] "GET /ajax/display/crossover_sheet/Barbara/ HTTP/1.1" 500 87599
+[11/07 13:57:52] Not Found: /ajax/collector_action/refix_all/Gaia/
+[11/07 13:57:52] "GET /ajax/collector_action/refix_all/Gaia/ HTTP/1.1" 404 8964
+[11/07 13:58:27] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1861
+[11/07 13:58:39] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1861
+[11/07 13:59:29] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1861
+[11/07 14:02:23] Not Found: /ajax/display/crossover_sheet/Call of the Wyld (1)/
+[11/07 14:02:23] "GET /ajax/display/crossover_sheet/Call%20of%20the%20Wyld%20(1)/ HTTP/1.1" 404 9011
+[11/07 14:02:43] Not Found: /ajax/display/crossover_sheet/Call of the Wyld (1)/
+[11/07 14:02:43] "GET /ajax/display/crossover_sheet/Call%20of%20the%20Wyld%20(1)/ HTTP/1.1" 404 9011
+[11/07 14:03:02] Not Found: /ajax/display/crossover_sheet/Call of the Wyld (1)/
+[11/07 14:03:02] "GET /ajax/display/crossover_sheet/Call%20of%20the%20Wyld%20(1)/ HTTP/1.1" 404 9011
+[11/07 22:26:39] Not Found: /ajax/collector_action/refix_all/0/
+[11/07 22:26:39] "GET /ajax/collector_action/refix_all/0/ HTTP/1.1" 404 8955
+[11/07 22:28:22] "GET /static/collector/clans/blood_brothers.webp HTTP/1.1" 404 1861
+[11/07 22:28:22] "GET /static/collector/clans/gargoyle.webp HTTP/1.1" 404 1843
+[11/07 22:29:30] Not Found: /ajax/collector_action/refix_all/_rufus/
+[11/07 22:29:30] "GET /ajax/collector_action/refix_all/_rufus/ HTTP/1.1" 404 8970
+[11/07 22:29:52] "GET /static/collector/clans/gargoyle.webp HTTP/1.1" 404 1843
+[11/07 22:29:52] "GET /static/collector/clans/blood_brothers.webp HTTP/1.1" 404 1861
+[11/07 22:41:31] Not Found: /ajax/collector_action/refix_all/_thomas/
+[11/07 22:41:31] "GET /ajax/collector_action/refix_all/_thomas/ HTTP/1.1" 404 8973
+[11/07 22:41:34] Not Found: /ajax/collector_action/refix_all/_thomas/
+[11/07 22:41:34] "GET /ajax/collector_action/refix_all/_thomas/ HTTP/1.1" 404 8973
+[11/07 22:42:01] "GET /static/collector/clans/blood_brothers.webp HTTP/1.1" 404 1861
+[11/07 22:42:01] "GET /static/collector/clans/gargoyle.webp HTTP/1.1" 404 1843
+[11/07 22:43:09] "GET /static/collector/clans/blood_brothers.webp HTTP/1.1" 404 1861
+[11/07 22:43:09] "GET /static/collector/clans/gargoyle.webp HTTP/1.1" 404 1843
+[11/07 22:44:28] "GET /static/collector/clans/blood_brothers.webp HTTP/1.1" 404 1861
+[11/07 22:44:28] "GET /static/collector/clans/gargoyle.webp HTTP/1.1" 404 1843
+[11/07 22:44:39] Not Found: /ajax/collector_action/refix_all/_olga/
+[11/07 22:44:39] "GET /ajax/collector_action/refix_all/_olga/ HTTP/1.1" 404 8967
+[11/07 22:44:53] "GET /static/collector/clans/blood_brothers.webp HTTP/1.1" 404 1861
+[11/07 22:44:53] "GET /static/collector/clans/gargoyle.webp HTTP/1.1" 404 1843
+[11/07 22:45:26] "GET /static/collector/clans/gargoyle.webp HTTP/1.1" 404 1843
+[11/07 22:45:26] "GET /static/collector/clans/blood_brothers.webp HTTP/1.1" 404 1861
+[11/07 22:45:40] "GET /static/collector/clans/gargoyle.webp HTTP/1.1" 404 1843
+[11/07 22:45:40] "GET /static/collector/clans/blood_brothers.webp HTTP/1.1" 404 1861
+[11/07 22:47:06] "GET /static/collector/clans/blood_brothers.webp HTTP/1.1" 404 1861
+[11/07 22:47:06] "GET /static/collector/clans/gargoyle.webp HTTP/1.1" 404 1843
+[11/07 22:49:10] "GET /static/collector/clans/blood_brothers.webp HTTP/1.1" 404 1861
+[11/07 22:49:10] "GET /static/collector/clans/gargoyle.webp HTTP/1.1" 404 1843
+[11/07 22:55:04] "GET /static/collector/clans/blood_brothers.webp HTTP/1.1" 404 1861
+[11/07 22:55:04] "GET /static/collector/clans/gargoyle.webp HTTP/1.1" 404 1843
+[11/07 22:56:45] "GET /static/collector/clans/blood_brothers.webp HTTP/1.1" 404 1861
+[11/07 22:56:45] "GET /static/collector/clans/gargoyle.webp HTTP/1.1" 404 1843
+[11/07 23:03:09] "GET /static/collector/clans/blood_brothers.webp HTTP/1.1" 404 1861
+[11/07 23:03:09] "GET /static/collector/clans/gargoyle.webp HTTP/1.1" 404 1843
+[11/07 23:05:15] "GET /static/collector/clans/blood_brothers.webp HTTP/1.1" 404 1861
+[11/07 23:05:15] "GET /static/collector/clans/gargoyle.webp HTTP/1.1" 404 1843
+[11/07 23:08:45] "GET /static/collector/clans/blood_brothers.webp HTTP/1.1" 404 1861
+[11/07 23:08:45] "GET /static/collector/clans/gargoyle.webp HTTP/1.1" 404 1843
+[11/07 23:09:19] "GET /static/collector/clans/blood_brothers.webp HTTP/1.1" 404 1861
+[11/07 23:09:19] "GET /static/collector/clans/gargoyle.webp HTTP/1.1" 404 1843
+[11/07 23:10:39] "GET /static/collector/clans/gargoyle.webp HTTP/1.1" 404 1843
+[11/07 23:10:39] "GET /static/collector/clans/blood_brothers.webp HTTP/1.1" 404 1861
+[11/07 23:22:43] "GET /static/collector/clans/blood_brothers.webp HTTP/1.1" 404 1861
+[11/07 23:22:43] "GET /static/collector/clans/gargoyle.webp HTTP/1.1" 404 1843
+[11/07 23:24:35] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1861
+[11/07 23:26:05] Internal Server Error: /ajax/editable/userinput/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Perso/github/wawwod/collector/views/base.py", line 151, in userinput
+    item.save()
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/db/models/base.py", line 861, in save_base
+    pre_save.send(
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/dispatch/dispatcher.py", line 176, in send
+    return [
+           ^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/dispatch/dispatcher.py", line 177, in <listcomp>
+    (receiver, receiver(signal=self, sender=sender, **named))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Perso/github/wawwod/collector/signals/creatures.py", line 17, in update_creature
+    instance.fix()
+  File "/home/zaffarelli/Perso/github/wawwod/collector/models/creatures.py", line 688, in fix
+    self.fix_kindred()
+  File "/home/zaffarelli/Perso/github/wawwod/collector/models/creatures.py", line 475, in fix_kindred
+    self.weakness = CLANS_SPECIFICS[self.family]['clan_weakness']
+                    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'Brujahh'
+[11/07 23:26:05] "POST /ajax/editable/userinput/ HTTP/1.1" 500 22568
+[11/07 23:28:30] "GET /static/collector/clans/gargoyle.webp HTTP/1.1" 404 1843
+[11/07 23:28:30] "GET /static/collector/clans/blood_brothers.webp HTTP/1.1" 404 1861
+[11/07 23:31:34] "GET /static/collector/clans/blood_brothers.webp HTTP/1.1" 404 1861
+[11/07 23:31:34] "GET /static/collector/clans/gargoyle.webp HTTP/1.1" 404 1843
+[11/07 23:31:52] Not Found: /ajax/collector_action/refix_all/_andersen/
+[11/07 23:31:52] "GET /ajax/collector_action/refix_all/_andersen/ HTTP/1.1" 404 8979
+[11/07 23:32:53] "GET /static/collector/clans/blood_brothers.webp HTTP/1.1" 404 1861
+[11/07 23:32:53] "GET /static/collector/clans/gargoyle.webp HTTP/1.1" 404 1843
+[11/07 23:33:05] "GET /static/collector/clans/blood_brothers.webp HTTP/1.1" 404 1861
+[11/07 23:33:05] "GET /static/collector/clans/gargoyle.webp HTTP/1.1" 404 1843
+[11/07 23:35:50] "GET /static/collector/clans/gargoyle.webp HTTP/1.1" 404 1843
+[11/07 23:35:50] "GET /static/collector/clans/blood_brothers.webp HTTP/1.1" 404 1861
+[11/07 23:47:21] "GET /static/collector/clans/blood_brothers.webp HTTP/1.1" 404 1861
+[11/07 23:47:21] "GET /static/collector/clans/gargoyle.webp HTTP/1.1" 404 1843
+[11/07 23:59:23] "GET /static/collector/clans/blood_brothers.webp HTTP/1.1" 404 1861
+[11/07 23:59:23] "GET /static/collector/clans/gargoyle.webp HTTP/1.1" 404 1843
+[11/07 23:59:35] "GET /static/collector/clans/blood_brothers.webp HTTP/1.1" 404 1861
+[11/07 23:59:35] "GET /static/collector/clans/gargoyle.webp HTTP/1.1" 404 1843
+[12/07 00:16:50] Not Found: /favicon.ico
+[12/07 00:27:34] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1861
+[12/07 22:06:21] Not Found: /ajax/collector_action/refix_all/1/
+[12/07 22:06:21] "GET /ajax/collector_action/refix_all/1/ HTTP/1.1" 404 8955
+[12/07 22:49:21] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1861
+[12/07 22:53:53] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1861
+[13/07 00:12:33] The number of GET/POST parameters exceeded settings.DATA_UPLOAD_MAX_NUMBER_FIELDS.
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/http/request.py", line 514, in __init__
+    for key, value in parse_qsl(query_string, **parse_qsl_kwargs):
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.11/urllib/parse.py", line 770, in parse_qsl
+    raise ValueError('Max number of fields exceeded')
+ValueError: Max number of fields exceeded
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = middleware_method(
+               ^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/middleware/csrf.py", line 470, in process_view
+    self._check_token(request)
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/middleware/csrf.py", line 373, in _check_token
+    request_csrf_token = request.POST.get("csrfmiddlewaretoken", "")
+                         ^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/wsgi.py", line 93, in _get_post
+    self._load_post_and_files()
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/http/request.py", line 383, in _load_post_and_files
+    QueryDict(self.body, encoding=self._encoding),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/http/request.py", line 521, in __init__
+    raise TooManyFieldsSent(
+django.core.exceptions.TooManyFieldsSent: The number of GET/POST parameters exceeded settings.DATA_UPLOAD_MAX_NUMBER_FIELDS.
+[13/07 00:12:33] Bad Request: /admin/collector/creature/
+[13/07 00:12:33] "POST /admin/collector/creature/?all=&chronicle=GHH&condition=OK&q= HTTP/1.1" 400 121728
+[13/07 00:15:00] Not Found: /favicon.ico
+[18/07 22:26:45] Not Found: /favicon.ico
+[22/07 23:57:39] Not Found: /ajax/collector_action/add_kindred/
+[22/07 23:57:39] "GET /ajax/collector_action/add_kindred/ HTTP/1.1" 404 8955
+[23/07 11:05:35] Internal Server Error: /ajax/display/kindred_lineage/Camarilla/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Perso/github/wawwod/collector/views/base.py", line 302, in display_lineage
+    return JsonResponse(lineage_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/http/response.py", line 724, in __init__
+    raise TypeError(
+TypeError: In order to allow non-dict objects to be serialized set the safe parameter to False.
+[23/07 11:05:35] "GET /ajax/display/kindred_lineage/Camarilla/ HTTP/1.1" 500 101288
+[23/07 12:06:23] Not Found: /favicon.ico
+[23/07 12:41:09] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1861
