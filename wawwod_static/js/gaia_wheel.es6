@@ -518,11 +518,11 @@ class GaiaWheel {
             me.display_poles(v.start, v.collection, v.name, v.collection.length, v.value, v.total);
             me.display_branch(v.start, v.collection, v.name, v.collection.length, v.value, v.total);
         })
-        me.draw_stats(-me.step_x*90,me.step_y*2,'status',"#A08020");
-        me.draw_stats(-me.step_x*90,me.step_y*25,'balanced',"#A02020");
-        me.draw_stats(-me.step_x*90,me.step_y*35,'creatures',"#208020");
-        me.draw_stats(-me.step_x*90,me.step_y*45,'clans',"#808020");
-        me.draw_stats(-me.step_x*90,me.step_y*60,'disciplines',"#802080");
+        // me.draw_stats(-me.step_x*90,me.step_y*2,'status',"#A08020");
+        // me.draw_stats(-me.step_x*90,me.step_y*25,'balanced',"#A02020");
+        // me.draw_stats(-me.step_x*90,me.step_y*35,'creatures',"#208020");
+        // me.draw_stats(-me.step_x*90,me.step_y*45,'clans',"#808020");
+        // me.draw_stats(-me.step_x*90,me.step_y*60,'disciplines',"#802080");
     }
 
     zoomActivate() {

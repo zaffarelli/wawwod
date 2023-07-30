@@ -2,41 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c5f4ae22-1e7a-419c-ac9f-80da089b72d4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/collector/static/collector/clans/blood_brothers.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collector/static/collector/clans/gargoyle.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collector/static/collector/clans/harbinger_of_skulls.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/kindred_lineage.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.193ab711092b.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.4299b4d0cb03.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.52366a6bfdc4.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.80b34933fd97.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.937e1ab00993.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.a6f4feeca470.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.c35b7e080b9b.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.c913d1deb790.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.d7a9a7dfd09d.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.dd5c94cea3a8.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.eea2368d44c6.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.f65b879d009a.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.f6b81f3e457b.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.f70b9b6d7ba0.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.f9d4bac06a02.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_static/collector/clans/blood_brothers.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_static/collector/clans/gargoyle.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_static/collector/clans/harbinger_of_skulls.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_static/collector/clans/harbingers_of_skulls.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/collector/static/js/dashboard.es6" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storytelling/static/js/pc.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.0fddbd8fa7b2.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.40e72711ddde.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.e75478052fd5.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.ed4b78e1d3e9.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.fc183517b5ea.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/js/dashboard.es6" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_static/js/pc.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/models/creatures.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/models/creatures.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/static/collector/css/_basics.scss" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/collector/css/_basics.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/collector/static/collector/css/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/collector/css/main.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/collector/static/js/collector.es6" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/js/collector.es6" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/collector/static/js/gaia_wheel.es6" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/js/gaia_wheel.es6" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/collector/static/js/kindred_lineage.es6" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/js/kindred_lineage.es6" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/collector/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/collector/utils/data_collection.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/utils/data_collection.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/utils/wod_reference.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/utils/wod_reference.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/collector/views/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/views/base.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/wawwod.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/wawwod.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wawwod.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/kindred_lineage.svg" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/kindred_lineage.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wawwod_static/collector/css/_basics.scss" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/collector/css/_basics.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wawwod_static/collector/css/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/collector/css/main.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wawwod_static/js/collector.es6" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/js/collector.es6" afterDir="false" />
@@ -79,7 +65,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/scripts" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/collector/static/js" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
@@ -90,8 +76,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/scripts" />
       <recent name="$PROJECT_DIR$/collector/static/js" />
+      <recent name="$PROJECT_DIR$/scripts" />
       <recent name="$PROJECT_DIR$/collector/signals" />
       <recent name="$PROJECT_DIR$/collector/models" />
       <recent name="$PROJECT_DIR$/storytelling/models" />
@@ -186,7 +172,11 @@
       <workItem from="1689599591739" duration="1979000" />
       <workItem from="1689702647921" duration="6672000" />
       <workItem from="1690015757133" duration="4627000" />
-      <workItem from="1690097017313" duration="4862000" />
+      <workItem from="1690097017313" duration="5202000" />
+      <workItem from="1690222451605" duration="5797000" />
+      <workItem from="1690316258514" duration="10611000" />
+      <workItem from="1690578566928" duration="959000" />
+      <workItem from="1690652406255" duration="624000" />
     </task>
     <servers />
   </component>

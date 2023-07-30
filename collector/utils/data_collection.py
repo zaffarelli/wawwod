@@ -305,9 +305,9 @@ def build_gaia_wheel():
         .exclude(ghost=True) \
         .exclude(hidden=True) \
         .order_by('display_pole')
-    for creature in creatures:
-        creature.need_fix = True
-        creature.save()
+    # for creature in creatures:
+    #     creature.need_fix = True
+    #     creature.save()
     wyrm_list = []
     weaver_list = []
     wyld_list = []
@@ -322,7 +322,23 @@ def build_gaia_wheel():
         {'label': 'Status 3', 'value': 0}, {'label': 'Status 4', 'value': 0}, {'label': 'Status 5', 'value': 0},
         {'label': 'Status 6', 'value': 0}, {'label': 'Status 7', 'value': 0}, {'label': 'Status 8', 'value': 0},
         {'label': 'Status 9', 'value': 0}, {'label': 'Status 10', 'value': 0},
-    ],
+        ],
+        'generation': [
+            {'label': '13', 'value': 0},
+            {'label': '12', 'value': 0},
+            {'label': '11', 'value': 0},
+            {'label': '10', 'value': 0},
+            {'label': '9', 'value': 0},
+            {'label': '8', 'value': 0},
+            {'label': '7', 'value': 0},
+            {'label': '6', 'value': 0},
+            {'label': '5', 'value': 0},
+            {'label': '4', 'value': 0},
+            {'label': '3', 'value': 0},
+        ],
+        'sect': [
+            {'label': 'camarilla', 'value': 0}, {'label': 'independents', 'value': 0}, {'label': 'sabbat', 'value': 0}
+        ],
         'balanced': [
             {'label': 'OK', 'value': 0}, {'label': 'OK+', 'value': 0}, {'label': 'UNB', 'value': 0}
         ],
@@ -369,7 +385,10 @@ def build_gaia_wheel():
             if (c.creature == 'mortal'):
                 weaver_list.append(creature_dict)
         total += 1
-        stats['status'][c.background9]['value'] += 1
+        if c.creature == "kindred":
+            stats['status'][c.background9]['value'] += 1
+            stats['generation'][c.background3]['value'] += 1
+
         if c.status == "OK":
             stats['balanced'][0]['value'] += 1
         elif c.status == "OK+":
@@ -378,7 +397,9 @@ def build_gaia_wheel():
             stats['balanced'][2]['value'] += 1
         if c.creature == "ghoul" and c.faction == 'Camarilla':
             stats['creatures'][1]['value'] += 1
-        elif c.creature == "kindred" and c.faction == 'Camarilla':
+
+        elif c.creature == "kindred" and c.faction.lower() == 'camarilla':
+            stats['sect'][0]['value'] += 1
             stats['creatures'][0]['value'] += 1
             if c.family in CAM_CLANS:
                 stats['clans'][CAM_CLANS.index(c.family)]['value'] += 1
@@ -400,6 +421,10 @@ def build_gaia_wheel():
                 stats['disciplines'][7]['value'] += 1
             else:
                 stats['disciplines'][8]['value'] += 1
+        elif c.creature == "kindred" and c.faction.lower() == 'independents':
+            stats['sect'][1]['value'] += 1
+        elif c.creature == "kindred" and c.faction.lower() == 'sabbat':
+            stats['sect'][2]['value'] += 1
 
     for list in [weaver_list, inde_list, underworld_list, traditions_list, pentex_list, sabbat_list, wyrm_list,
                  underworld_list,
@@ -579,5 +604,4 @@ def get_districts(cityname):
         # print(context)
 
     x = json.dumps(context, indent=4, sort_keys=True)
-
     return x

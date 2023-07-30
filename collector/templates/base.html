@@ -19,6 +19,7 @@
     <script type="text/javascript" src='{% static "js/cross_over_sheet.es6" %}'></script>
     <script type="text/javascript" src='{% static "js/collector.es6" %}'></script>
     <script type="text/javascript" src='{% static "js/gaia_wheel.es6" %}'></script>
+    <script type="text/javascript" src='{% static "js/dashboard.es6" %}'></script>
     <script type="text/javascript" src='{% static "js/kindred_lineage.es6" %}'></script>
     <script type="text/javascript" src='{% static "js/storytelling.es6" %}'></script>
     <script type="text/javascript" src='{% static "js/geocity.es6" %}'></script>
@@ -39,27 +40,28 @@
         <ul class="drop_down">
             <li class="list" id="all">List: All</li>
             <HR/>
-            <li class="list" id="vtm">Vampire the Masquerade</li>
-            <li class="list" id="wta">Werewolf the Apocalypse</li>
-            <li class="list" id="mta">Mage the Ascension</li>
-            <li class="list" id="wto">Wraith the Oblivion</li>
-            <li class="list" id="ctd">Changeling the Dreaming</li>
+            <li class="list" id="vtm"><i class="fas fa-users"></i> Vampire the Masquerade</li>
+            <li class="list" id="wta"><i class="fas fa-users"></i> Werewolf the Apocalypse</li>
+            <li class="list" id="mta"><i class="fas fa-users"></i> Mage the Ascension</li>
+            <li class="list" id="wto"><i class="fas fa-users"></i> Wraith the Oblivion</li>
+            <li class="list" id="ctd"><i class="fas fa-users"></i> Changeling the Dreaming</li>
             <HR/>
-            <li class="list" id="bal">List: TODO</li>
-            <li class="display" action="gaia_wheel">Gaia Wheel</li>
+            <li class="display" action="gaia_wheel"><i class="fas fa-globe"></i> Gaia Wheel</li>
+            <li class="display" action="dashboard"><i class="fas fa-star"></i> Dashboard</li>
             <HR/>
-            <li class="list" id="pen">List: Pentex Forces</li>
-            <li class="list" id="mor">List: Mortals</li>
-            <li class="list" id="new">List: New creatures</li>
+            <li class="list" id="pen"><i class="fas fa-list"></i> List: Pentex Forces</li>
+            <li class="list" id="mor"><i class="fas fa-list"></i> List: Mortals</li>
+            <li class="list" id="new"><i class="fas fa-list"></i> List: New creatures</li>
+            <li class="list" id="bal"><i class="fas fa-list"></i> List: TODO</li>
             <HR/>
-            <li class="collector_action" action="add_creature">Add new creature</li>
-            <li class="collector_action" action="add_kindred">Add new kindred</li>
-            <li class="collector_action" action="refix_all">Refix all</li>
+            <li class="collector_action" action="add_creature"><i class="fas fa-user-plus"></i> Add new creature</li>
+            <li class="collector_action" action="add_kindred"><i class="fas fa-user-plus"></i> Add new kindred</li>
+            <li class="collector_action" action="refix_all"><i class="fas fa-cogs"></i> Refix all</li>
             <HR/>
-            <li class="display" action="kindred_lineage">Kindred Lineage</li>
-            <li class="display" action="kindred_lineage" param="Camarilla">Camarilla Lineage</li>
-            <li class="display" action="kindred_lineage" param="Sabbat">Sabbat Lineage</li>
-            <li class="display" action="kindred_lineage" param="Independents">Independents Lineage</li>
+            <li class="display" action="kindred_lineage"><i class="fas fa-sitemap"></i> Kindred Lineage</li>
+            <li class="display" action="kindred_lineage" param="Camarilla"><i class="fas fa-sitemap"></i> Camarilla Lineage</li>
+            <li class="display" action="kindred_lineage" param="Sabbat"><i class="fas fa-sitemap"></i> Sabbat Lineage</li>
+            <li class="display" action="kindred_lineage" param="Independents"><i class="fas fa-sitemap"></i> Independents Lineage</li>
 
             <HR/>
             {% include "collector/page/players_sheets.html" with c=players %}

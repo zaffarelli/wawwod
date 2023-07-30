@@ -105,7 +105,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink"> \
             .attr("class", (d) => {
                 let str = "node ";
                 let x = d.data.condition;
-                // console.log(d.data.rid+" "+d.data.condition);
+                console.log(d.data.name);
                 if (x != undefined) {
                     if (x.startsWith("MISSING") == true) {
                         str += "missing ";
@@ -131,7 +131,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink"> \
             .attr('x', -me.boxWidth * 1)
             .attr('y', -me.boxHeight * 0)
             .attr('width', me.boxWidth * 2)
-            .attr('height', me.boxHeight * 2)
+            .attr('height', me.boxHeight * 3)
         ;
         let ghouls = undefined;
         r.append("rect")
@@ -139,35 +139,45 @@ xmlns:xlink="http://www.w3.org/1999/xlink"> \
             .attr('x', -me.boxWidth * 1)
             .attr('y', -me.boxHeight * 1)
             .attr('width', me.boxWidth * 2)
-            .attr('height', me.boxHeight * 3)
+            .attr('height', me.boxHeight * 4)
             .attr('rx', me.boxWidth * 0.05)
             .attr('ry', me.boxWidth * 0.05)
             .on("click", function (e, d) {
                 //console.log("Frame click " + d.id + " [" + d.data.name + "]!");
-                me.uncollapse(d)
+                //me.uncollapse(d)
                 me.update(d);
                 ghouls = d.data.ghouls.split(',')
+                console.log(ghouls)
             });
         ;
 
-
-        // _.forEach(ghouls,function(x,i){
-        //     let g = r.append("g")
-        //         .attr("class","ghoul")
-        //     g.append("rect")
-        //         .attr("x",me.boxWidth*0.5)
-        //         .attr("y",me.boxHeight+me.boxHeight*0.5*i)
+        // let ghoulish = r.append('g')
+        //     .attr('class','ghoulish_set')
+        //     .attr('id',(d) => 'ghoulish_'+d.id)
+        //     .data(d.ghoul_list)
+        //     ;
+        // let ghoulish_in = ghoulish.selectAll('ghoulish').enter();
+        // let gg = ghoulish_in.append("g")
+        //         .attr("class","ghoulish")
+        // gg.append("rect")
+        //         .attr("x",me.boxWidth*2)
+        //         .attr("y",(g,i) => me.boxHeight+me.boxHeight*0.5*i)
+        //         .attr("width",me.boxWidth*1)
+        //         .attr("height",(g,i) => me.boxHeight+me.boxHeight*0.5*i)
         //         .style("stroke","#fc4")
         //         .style("fill","#111")
-        //     g.append("text")
-        //         .text(x)
-        // })
+        // gg.append("text")
+        //     .style("stroke","#fc4")
+        //     .style("fill","#111")
+        //     .text((g,i)=> `${i} ${g}`)
+
 
 
 
         r.selectAll("rect.band")
             .attr('class', function (d) {
-                console.log(d);
+                console.log(d.data.ghost);
+                console.log(d.data.condition);
                 return 'band ' + (d.data.ghost ? ' ghost' : '') + (d.data.condition.startsWith("DEAD") ? ' dead' : '');
             });
         r.selectAll("rect.frame")
@@ -358,11 +368,25 @@ xmlns:xlink="http://www.w3.org/1999/xlink"> \
             })
         ;
 
+        r.append("circle")
+            .attr("cx",75)
+            .attr("cy",-10)
+            .attr("r",function(d){
+                return 2+d.data.is_ancient;
+            })
+            .attr("stroke", "#a0a0a0")
+            .attr("stroke-width", "0.5pt")
+            .attr("fill", function (d) {
+                let col = "#bab151";
+                return col;
+            })
+        ;
+
         r.append("path")
             .attr("class", "icon_condition")
             .attr("d", function (d) {
                 let str = ''
-                if (d.data.condition.startsWith("MISSING")) {
+                if ((d.data.condition).startsWith("MISSING")) {
                     str = "M -80 160 l -20 0 l 0 -20 l 180 -140 20 0 0 20 -180 140 Z "
                 } else if (d.data.condition.startsWith("DEAD")){
                     str = "M -80 160 l -20 0 l 0 -20 l 180 -140 20 0 0 20 -180 140 Z "
@@ -395,9 +419,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink"> \
             height = me.boxWidth * 20 - margin.top - margin.bottom;
         let treemap = d3.tree()
             .size([width, height])
-            .nodeSize([me.boxWidth * 2.5, me.boxHeight * 4.5])
+            .nodeSize([me.boxWidth * 2.5, me.boxHeight * 7.5])
         ;
-        let nodes = d3.hierarchy(me.data);
+        let nodes = d3.hierarchy(me.data[0]);
         nodes = treemap(nodes);
         d3.select(me.parent).selectAll("svg").remove();
         let pwidth = d3.select(me.parent).style("width");
@@ -411,8 +435,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink"> \
             .attr("height", pheight);
         me.g = me.svg.append("g")
             .attr("viewBox", pox+"  "+poy+ " " + pwidth + " " + pheight)
-            .attr("transform",             "translate(0,0)")
-            //.attr("transform", "translate(" + me.width / 2 + "," + me.height / 2 + ")")
+            //.attr("transform","translate(0,0)")
+            .attr("transform", "translate(" + parseInt(pwidth) / 2 + "," + parseInt(pheight) / 2 + ")")
         ;
 
 
@@ -428,12 +452,12 @@ xmlns:xlink="http://www.w3.org/1999/xlink"> \
             .attr("class", function (d) {
                 let res = "link ";
                 if (d.data.ghost | d.parent.data.ghost) {
-                    res += "ghost";
+                    res += " ghost";
                 }
                 return res;
             })
             .append("path")
-            .attr("d", function (d) {
+            .attr("d", (d) => {
                 return "M" + d.x + "," + (d.y - me.boxHeight * 1)
                     + "C" + d.x + "," + (d.y + d.parent.y) / 2
                     + " " + d.parent.x + "," + (d.y + d.parent.y + me.boxHeight * 2) / 2

@@ -288,6 +288,10 @@ def display_gaia_wheel(request):
         gaia_wheel_context = {'data': build_gaia_wheel()}
         return JsonResponse(gaia_wheel_context)
 
+def display_dashboard(request):
+    if is_ajax(request):
+        gaia_wheel_context = {'data': build_gaia_wheel()}
+        return JsonResponse(gaia_wheel_context)
 
 def display_lineage(request, slug=None):
     if is_ajax(request):

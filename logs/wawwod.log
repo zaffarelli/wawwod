@@ -3592,3 +3592,38 @@ TypeError: In order to allow non-dict objects to be serialized set the safe para
 [23/07 11:05:35] "GET /ajax/display/kindred_lineage/Camarilla/ HTTP/1.1" 500 101288
 [23/07 12:06:23] Not Found: /favicon.ico
 [23/07 12:41:09] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1861
+[25/07 07:35:27] Internal Server Error: /ajax/display/dashboard/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/owod/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Perso/github/wawwod/collector/views/base.py", line 293, in display_dashboard
+    gaia_wheel_context = {'data': build_gaia_wheel()}
+                                  ^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Perso/github/wawwod/collector/utils/data_collection.py", line 391, in build_gaia_wheel
+    stats['sect'][c.faction]['value'] += 1
+    ~~~~~~~~~~~~~^^^^^^^^^^^
+TypeError: list indices must be integers or slices, not str
+[25/07 07:35:27] "GET /ajax/display/dashboard/ HTTP/1.1" 500 90035
+[26/07 23:33:52] Not Found: /ajax/collector_action/add_creature/
+[26/07 23:33:52] "GET /ajax/collector_action/add_creature/ HTTP/1.1" 404 9156
+[26/07 23:40:15] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1861
+[26/07 23:42:51] Not Found: /ajax/collector_action/refix_all/Jonas_Cheng/
+[26/07 23:42:51] "GET /ajax/collector_action/refix_all/Jonas_Cheng/ HTTP/1.1" 404 9183
+[26/07 23:43:30] "GET /static/collector/tribes/stargazerss.webp HTTP/1.1" 404 1855
+[26/07 23:45:37] Not Found: /ajax/collector_action/refix_all/Gaia/
+[26/07 23:45:37] "GET /ajax/collector_action/refix_all/Gaia/ HTTP/1.1" 404 9162
+[26/07 23:46:15] Not Found: /ajax/collector_action/refix_all/Gaia/
+[26/07 23:46:15] "GET /ajax/collector_action/refix_all/Gaia/ HTTP/1.1" 404 9162
+[27/07 00:14:00] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1861
+[27/07 00:17:50] Not Found: /ajax/collector_action/refix_all/Albert_Vierklaus/
+[27/07 00:17:50] "GET /ajax/collector_action/refix_all/Albert_Vierklaus/ HTTP/1.1" 404 9198
+[27/07 00:21:06] Not Found: /ajax/collector_action/refix_all/Volkskampf/
+[27/07 00:21:06] "GET /ajax/collector_action/refix_all/Volkskampf/ HTTP/1.1" 404 9180
+[27/07 00:24:10] Not Found: /ajax/collector_action/refix_all/Glass_Walker/
+[27/07 00:24:10] "GET /ajax/collector_action/refix_all/Glass_Walker/ HTTP/1.1" 404 9186
+[27/07 01:45:00] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1861
+[29/07 20:12:32] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1861

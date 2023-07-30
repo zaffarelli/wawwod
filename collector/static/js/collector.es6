@@ -79,6 +79,11 @@ class WawwodCollector {
                         me.d3 = new GaiaWheel(d, "#d3area", me);
                         me.d3.perform();
                     }
+                    if (action == 'dashboard') {
+                        let d = JSON.parse(answer.data);
+                        me.d3 = new Dashboard(d, "#d3area", me);
+                        me.d3.perform();
+                    }
                     if (action == 'kindred_lineage') {
                         //console.log(answer)
                         let s = JSON.parse(answer.settings);

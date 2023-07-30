@@ -588,9 +588,13 @@ table {
   font-size: 14px;
 }
 
-svg.lineage, svg.gaia_wheel{
+svg.lineage{
   margin: 0;
   border: 3px ridge #CCC;
+}
+
+svg{
+
 }
 
 svg.lineage {
@@ -695,9 +699,9 @@ svg.lineage {
   }
 
   & .link {
-    fill: none;
-    fill-opacity: 0.15;
-    stroke: #822;
+    fill: transparent;
+    fill-opacity: 0;
+    stroke: #c44e4e;
     stroke-width: 3pt;
 
     &.ghost {
@@ -842,7 +846,7 @@ td.editable.updown {
   top:4vh;
   left:1vw;
   width: 98vw;
-  height: 90vh;
+  height: 88vh;
   //border:1px solid saddlebrown;
   //background:lightgoldenrodyellow;
 

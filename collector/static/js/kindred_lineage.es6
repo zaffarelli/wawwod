@@ -131,7 +131,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink"> \
             .attr('x', -me.boxWidth * 1)
             .attr('y', -me.boxHeight * 0)
             .attr('width', me.boxWidth * 2)
-            .attr('height', me.boxHeight * 2)
+            .attr('height', me.boxHeight * 3)
         ;
         let ghouls = undefined;
         r.append("rect")
@@ -139,7 +139,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink"> \
             .attr('x', -me.boxWidth * 1)
             .attr('y', -me.boxHeight * 1)
             .attr('width', me.boxWidth * 2)
-            .attr('height', me.boxHeight * 3)
+            .attr('height', me.boxHeight * 4)
             .attr('rx', me.boxWidth * 0.05)
             .attr('ry', me.boxWidth * 0.05)
             .on("click", function (e, d) {
@@ -147,21 +147,30 @@ xmlns:xlink="http://www.w3.org/1999/xlink"> \
                 //me.uncollapse(d)
                 me.update(d);
                 ghouls = d.data.ghouls.split(',')
+                console.log(ghouls)
             });
         ;
 
-
-        // _.forEach(ghouls,function(x,i){
-        //     let g = r.append("g")
-        //         .attr("class","ghoul")
-        //     g.append("rect")
-        //         .attr("x",me.boxWidth*0.5)
-        //         .attr("y",me.boxHeight+me.boxHeight*0.5*i)
+        // let ghoulish = r.append('g')
+        //     .attr('class','ghoulish_set')
+        //     .attr('id',(d) => 'ghoulish_'+d.id)
+        //     .data(d.ghoul_list)
+        //     ;
+        // let ghoulish_in = ghoulish.selectAll('ghoulish').enter();
+        // let gg = ghoulish_in.append("g")
+        //         .attr("class","ghoulish")
+        // gg.append("rect")
+        //         .attr("x",me.boxWidth*2)
+        //         .attr("y",(g,i) => me.boxHeight+me.boxHeight*0.5*i)
+        //         .attr("width",me.boxWidth*1)
+        //         .attr("height",(g,i) => me.boxHeight+me.boxHeight*0.5*i)
         //         .style("stroke","#fc4")
         //         .style("fill","#111")
-        //     g.append("text")
-        //         .text(x)
-        // })
+        // gg.append("text")
+        //     .style("stroke","#fc4")
+        //     .style("fill","#111")
+        //     .text((g,i)=> `${i} ${g}`)
+
 
 
 
@@ -359,6 +368,20 @@ xmlns:xlink="http://www.w3.org/1999/xlink"> \
             })
         ;
 
+        r.append("circle")
+            .attr("cx",75)
+            .attr("cy",-10)
+            .attr("r",function(d){
+                return 2+d.data.is_ancient;
+            })
+            .attr("stroke", "#a0a0a0")
+            .attr("stroke-width", "0.5pt")
+            .attr("fill", function (d) {
+                let col = "#bab151";
+                return col;
+            })
+        ;
+
         r.append("path")
             .attr("class", "icon_condition")
             .attr("d", function (d) {
@@ -396,7 +419,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink"> \
             height = me.boxWidth * 20 - margin.top - margin.bottom;
         let treemap = d3.tree()
             .size([width, height])
-            .nodeSize([me.boxWidth * 2.5, me.boxHeight * 4.5])
+            .nodeSize([me.boxWidth * 2.5, me.boxHeight * 7.5])
         ;
         let nodes = d3.hierarchy(me.data[0]);
         nodes = treemap(nodes);
@@ -434,7 +457,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink"> \
                 return res;
             })
             .append("path")
-            .attr("d", function (d) {
+            .attr("d", (d) => {
                 return "M" + d.x + "," + (d.y - me.boxHeight * 1)
                     + "C" + d.x + "," + (d.y + d.parent.y) / 2
                     + " " + d.parent.x + "," + (d.y + d.parent.y + me.boxHeight * 2) / 2

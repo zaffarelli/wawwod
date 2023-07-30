@@ -1,0 +1,80 @@
+Bonjour,
+
+suite à l'attribution d'un PC, nous avons ouvert auprès d'Airbus Aircraft une demande de masterisation à votre nom.
+
+Ci-dessous les informations indispensables à cette étape (merci de transmettre si nécessaire à l'utilisateur) à effectuer sous 15 jours ouvrés:
+
+    Lieu
+        Accueil au B43, porte B ou C (badge ou Uvisit nécessaire)
+        Sans rendez-vous de 9h à 17h chaque jour ouvré
+
+
+    Référence ServiceNow
+        RITM2531176   (à communiquer lors du dépôt)
+
+
+
+Attention, le présent ticket GLPI concerne uniquement le process de masterisation et non la fourniture du PC.
+
+Pour toute question sur la mise à disposition du PC, merci de consulter le ticket GLPI dédié à la fourniture du PC
+
+Le PC est masterisé dans un délai variable, nous vous relayerons l’avis de fin d’intervention quand nous en serons prévenus.
+
+Le PC masterisé sera ensuite remis en main propre à l’intéressé(e) à son point de dépôt.
+
+Une première connexion avec le compte Airbus de l'utilisateur du PC devra être faite sur le réseau Airbus au moment de la récupération du PC.
+
+---
+
+Une fois le PC masterisé et la première connexion effectuée avec votre compte sur le réseau Airbus Aircraft, vous devrez utiliser votre PC en établissant une connexion VPN dite "Nomad".Consultez la documentation Airbus ici et suivez les instructions :
+
+    p.3 : installation application smartphone
+    p.7 : appairage application et compte Airbus
+    p.26 : établissement connexion VPN/Nomad
+
+Pour tout support sur l'utilisation du PC, sa configuration ou les outils fournis par Airbus (y compris Nomad), merci de vous adresser exlusivement au ServiceDesk AIRBUS Aircraft au 01.57.32.48.05
+Ticket : Description
+
+Titre :[Airbus] Airbus PC master for Alexandre GUYON DE CHEMILLY (VCD (hérité)) - 17-07-2023
+Demandeurs : Aineto Nicolas, Guyon Alexandre
+Date d'ouverture :11-07-2023 12:20
+Date de clôture :
+Source de la demande :Interface simplifiée
+
+Assigné aux techniciens : Aineto Nicolas
+Statut  : Résolu
+Assigné aux groupes : apsys > IT > Support ASO > ISR
+Urgence : Moyenne
+Impact : Moyen
+Priorité : Moyenne
+
+Catégorie  :Airbus Aircraft
+Description :
+Données du formulaire
+User identity
+1) Open ticket on behalf of : :
+Aineto Nicolas
+2) First name : Alexandre
+3) Last name : GUYON DE CHEMILLY
+4) User contract : AIRBUS PROTECT contract
+5) Airbus login : NA
+6) Airbus department : VCD (hérité)
+7) Airbus Responsible : Nicolas REICHERT (hérité)
+8) Select Requested Service : Airbus PC master
+Mandatory information
+9) Airbus Master - PC serial number and model : 5CD31446YZ - 655 G9
+10) Airbus Master - Location : BL
+11) Airbus Master - Date : 17-07-2023
+12) Airbus Master - Alternate Contact : Self (remplacement)
+13) Is user switching to an Airbus activity ? : Already on Airbus activity or Newcomer
+Contextual information
+14) Context for this Airbus Master request : Replacing this user's existing Airbus-master PC
+15) Current computer : status : No reassignment within 6 weeks/Don't know
+16) Current computer : de-master process :
+I have read and understood the Airbus de-master process
+17) Current computer : confirm serial number : 5CG81160XC
+
+
+Nombre de suivis : 0
+
+Nombre de tâches : 0
