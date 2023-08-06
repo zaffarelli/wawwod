@@ -1,4 +1,9 @@
 # exec(open('scripts/reghoul.py').read())
-from collector.utils.kindred_stuff import manage_missing_ghouls, domitor_from_sire
-manage_missing_ghouls()
-domitor_from_sire()
+from collector.models.creatures import Creature
+all_ghouls = Creature.objects.filter(chronicle="GHH", creature="ghoul", status__in=['UNBALANCED','OK+'])
+for g in all_ghouls:
+    print(g.name)
+    g.randomize_all()
+    g.need_fix = True
+    g.save();
+    g.balance_ghoul()

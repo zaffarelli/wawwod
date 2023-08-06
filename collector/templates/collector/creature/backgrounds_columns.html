@@ -12,7 +12,7 @@
     <th>Glory</th>
     <td class='editable updown' id='{{c.rid}}__glory'>{{ c.glory|as_bullets|safe }}</td>
     {% elif c.creature == 'kindred' %}
-    <th>Conscience</th>
+    <th>{{ c.virtue_name0|safe }}</th>
     <td class='editable updown' id='{{c.rid}}__virtue0'>{{ c.virtue0|as_bullets|safe }}</td>
     {% elif c.creature == 'wraith' %}
     {{ c.passion0|param_stack:c.rid|as_discipline2:"passion0"|safe }}
@@ -40,7 +40,7 @@
     <th>Honor</th>
     <td class='editable updown' id='{{c.rid}}__honor'>{{ c.honor|as_bullets|safe }}</td>
     {% elif c.creature == 'kindred' %}
-    <th>Self-Control</th>
+    <th>{{ c.virtue_name1|safe }}</th>
     <td class='editable updown' id='{{c.rid}}__virtue1'>{{ c.virtue1|as_bullets|safe }}</td>
     {% elif c.creature == 'wraith' %}
     {{ c.passion1|param_stack:c.rid|as_discipline2:"passion1"|safe }}
@@ -68,7 +68,7 @@
     <th>Wisdom</th>
     <td class='editable updown' id='{{c.rid}}__wisdom'>{{ c.wisdom|as_bullets|safe }}</td>
     {% elif c.creature == 'kindred' %}
-    <th>Courage</th>
+    <th>{{ c.virtue_name2|safe }}</th>
     <td class='editable updown' id='{{c.rid}}__virtue2'>{{ c.virtue2|as_bullets|safe }}</td>
     {% elif c.creature == 'wraith' %}
     {{ c.passion2|param_stack:c.rid|as_discipline2:"passion2"|safe }}
@@ -147,7 +147,9 @@
     {% if c.creature == 'mage' %}
     <th>Paradox</th>
     <td class='editable updown' id='{{c.rid}}__paradox'>{{ c.paradox|as_bullets|safe }}</td>
-
+    {% elif c.creature == 'kindred' %}
+    <th>Enlightenment</th>
+    <td class='editable userinput' id='{{c.rid}}__path'>{{c.path}}</td>
     {% else %}
     <th></th>
     <td></td>

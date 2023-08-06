@@ -1,6 +1,8 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
+from django.shortcuts import redirect
 from collector.models.creatures import Creature
 from collector.utils.wod_reference import get_current_chronicle
+import random
 
 
 def extract_raw(request, slug):
@@ -85,6 +87,7 @@ def extract_mechanics(request):
             my_kinfolk[x] = f'- {k.name} ({c.name})'
             x += 1
         for n in range(num):
+
             if my_kinfolk[n].startswith(f'- unknown #{n + 1}'):
                 nk = Creature()
                 nk.faction = 'Gaia'
@@ -158,16 +161,26 @@ def randomize_attributes(request, slug):
     if len(found) == 1:
         x = found.first()
         x.randomize_attributes()
-        x.need_fix = True
         x.save()
     return HttpResponse(status=204)
 
 
-def randomize_abilities(request, slug):
-    found = Creature.objects.all().filter(rid=slug)
+def balance(request, slug):
+    answer = {}
+    found = Creature.objects.filter(rid=slug)
     if len(found) == 1:
         x = found.first()
-        x.randomize_abilities()
-        x.need_fix = True
+        x.balance_ghoul()
+        answer['rid'] = x.rid
+    return JsonResponse(answer)
+
+
+def randomize(request, slug):
+    answer = {}
+    found = Creature.objects.filter(rid=slug)
+    if len(found) == 1:
+        x = found.first()
+        x.randomize_all()
         x.save()
-    return HttpResponse(status=204)
+        answer['rid'] = x.rid
+    return JsonResponse(answer)

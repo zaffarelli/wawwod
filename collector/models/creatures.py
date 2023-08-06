@@ -127,6 +127,9 @@ class Creature(models.Model):
     virtue0 = models.PositiveIntegerField(default=0)
     virtue1 = models.PositiveIntegerField(default=0)
     virtue2 = models.PositiveIntegerField(default=0)
+    virtue_name0 = models.CharField(max_length=32, blank=True, default='')
+    virtue_name1 = models.CharField(max_length=32, blank=True, default='')
+    virtue_name2 = models.CharField(max_length=32, blank=True, default='')
 
     # WTA
     gnosis = models.PositiveIntegerField(default=0)
@@ -174,15 +177,15 @@ class Creature(models.Model):
     thorn4 = models.CharField(max_length=64, blank=True, default='')
 
     summary = models.TextField(default='', blank=True, max_length=2048)
-    attribute0 = models.PositiveIntegerField(default=1)
-    attribute1 = models.PositiveIntegerField(default=1)
-    attribute2 = models.PositiveIntegerField(default=1)
-    attribute3 = models.PositiveIntegerField(default=1)
-    attribute4 = models.PositiveIntegerField(default=1)
-    attribute5 = models.PositiveIntegerField(default=1)
-    attribute6 = models.PositiveIntegerField(default=1)
-    attribute7 = models.PositiveIntegerField(default=1)
-    attribute8 = models.PositiveIntegerField(default=1)
+    attribute0 = models.PositiveIntegerField(default=0)
+    attribute1 = models.PositiveIntegerField(default=0)
+    attribute2 = models.PositiveIntegerField(default=0)
+    attribute3 = models.PositiveIntegerField(default=0)
+    attribute4 = models.PositiveIntegerField(default=0)
+    attribute5 = models.PositiveIntegerField(default=0)
+    attribute6 = models.PositiveIntegerField(default=0)
+    attribute7 = models.PositiveIntegerField(default=0)
+    attribute8 = models.PositiveIntegerField(default=0)
     talent0 = models.PositiveIntegerField(default=0)
     talent1 = models.PositiveIntegerField(default=0)
     talent2 = models.PositiveIntegerField(default=0)
@@ -327,6 +330,36 @@ class Creature(models.Model):
                 list.append(trait)
         return list
 
+    def get_trait_value(self, label):
+        code = ''
+        value = -1
+        trait = ''
+        for x in range(16):
+            trait = getattr(self, f'trait{x}', '')
+            if trait.startswith(label.lower()):
+                code = f'trait{x}'
+                value = int(trait.split(" ")[1].replace(")", ""))
+                print(trait, value, code)
+        return value, code, trait
+
+    def set_trait_value(self, label, val):
+        code = ''
+        value = ''
+        cnt = -1
+        for x in range(16):
+            trait = getattr(self, f'trait{x}', '')
+            if len(trait) > 0:
+                cnt += 1
+                if trait.startswith(label.lower()):
+                    code = f'trait{x}'
+                    value = trait.split(" ")[0] + f'({val})'
+            print(trait, code, value)
+        if code != '':
+            setattr(self, code, value)
+        else:
+            setattr(self, f"trait{cnt + 1}", f"{label.title()} ({val})")
+        return value, code
+
     def value_of(self, stat):
         found = find_stat_property(self.creature, stat)
         logger.info(f'Searching value of {stat} for {self.creature} ({self.name})')
@@ -467,6 +500,13 @@ class Creature(models.Model):
         if self.willpower < self.virtue2:
             self.willpower = self.virtue2
         # Humanity
+        from collector.utils.wod_reference import ENLIGHTENMENT
+        if self.path not in ENLIGHTENMENT:
+            self.path = 'Humanity'
+        self.virtue_name0 = ENLIGHTENMENT[self.path]['virtues'][0]
+        self.virtue_name1 = ENLIGHTENMENT[self.path]['virtues'][1]
+        self.virtue_name2 = ENLIGHTENMENT[self.path]['virtues'][2]
+
         if self.humanity < self.virtue0 + self.virtue1:
             self.humanity = self.virtue0 + self.virtue1
         # Bloodpool
@@ -719,7 +759,7 @@ class Creature(models.Model):
         self.expectedfreebies += self.extra
         self.summary = f'Freebies: {self.freebies}'
         self.calculate_freebies()
-        self.balance_ghoul()
+        # self.balance_ghoul()
         self.changeName()
         self.need_fix = False
 
@@ -964,66 +1004,71 @@ class Creature(models.Model):
     def extract_roster(self):
         return self.get_roster()
 
+    def randomize_stats(self, stats_count=9, min_value=0, pools=[]):
+        stats = []
+        for n in range(stats_count):
+            stats.append(min_value)
+        random.shuffle(pools)
+        pidx = 0
+        set_length = int(stats_count / len(pools))
+        print("Randomize Stats (", set_length, "stats per pool)")
+        for p in pools:
+            choices = [item for item in range(set_length)]
+            weights = [pow(2, 6) for item in range(set_length)]
+            while p > 0:
+                a = random.choices(choices, weights=weights, k=1)[0]
+                p -= 1
+                stats[a + pidx * set_length] += 1
+                weights[a] = weights[a] / 2
+            pidx += 1
+            print("POOLS=", pools, pidx, ") WEIGHTS=", weights, "ATTR=", stats)
+        return stats
+
     def randomize_attributes(self):
-        # Initialize
-        for t in range(10):
-            setattr(self, f'attribute{t}', 1)
-        # Grab relevant values per creature
         attributes_points = STATS_TEMPLATES[self.creature]['attributes'].split('/')
-        attributes = []
+        pools = []
         for x in range(3):
-            attributes.append(int(attributes_points[x]))
-        for x in range(random.randrange(0, 9)):
-            random.shuffle(attributes)
-        for t in range(3):
-            while attributes[t] > 0:
-                attributes[t] -= 1
-                a = random.randrange(0, 3) + t * 3
-                stat = f'attribute{a}'
-                v = getattr(self, stat)
-                setattr(self, stat, v + 1)
+            pools.append(int(attributes_points[x]))
+        attributes = self.randomize_stats(stats_count=9, min_value=1, pools=pools)
+        for x in range(9):
+            setattr(self, f'attribute{x}', attributes[x])
+        self.need_fix = True
 
     def randomize_abilities(self):
-        # Initialize
-        for t in range(10):
-            setattr(self, f'talent{t}', 0)
-            setattr(self, f'skill{t}', 0)
-            setattr(self, f'knowledge{t}', 0)
-        # Grab relevant values per creature
         abilities_points = STATS_TEMPLATES[self.creature]['abilities'].split('/')
-        abilities = []
+        pools = []
         for x in range(3):
-            abilities.append(int(abilities_points[x]))
-        random.shuffle(abilities)
-        abilities_titles = ['talent', 'skill', 'knowledge']
-        for t in range(3):
-            while abilities[t] > 0:
-                a = random.randrange(0, 10)
-                stat = f'{abilities_titles[t]}{a}'
-                v = getattr(self, stat)
-                if v < 3:
-                    abilities[t] -= 1
-                    setattr(self, stat, v + 1)
+            pools.append(int(abilities_points[x]))
+        abilities = self.randomize_stats(stats_count=30, min_value=0, pools=pools)
+        for t in range(10):
+            setattr(self, f'talent{t}', abilities[t])
+            setattr(self, f'skill{t}', abilities[t + 10])
+            setattr(self, f'knowledge{t}', abilities[t + 20])
+        self.need_fix = True
 
     def randomize_backgrounds(self):
-        # Initialize
+        background_points = int(STATS_TEMPLATES[self.creature]['backgrounds'])
+        pools = []
+        pools.append(int(background_points))
+        backgrounds = self.randomize_stats(stats_count=10, min_value=0, pools=pools)
         for i in range(10):
-            setattr(self, f'background{i}', 0)
-        # Grab relevant values per creature
-        backgrounds = int(STATS_TEMPLATES[self.creature]['backgrounds'])
-        while backgrounds > 0:
-            idx = random.randrange(0, 10)
-            stat = f'background{idx}'
-            value = getattr(self, stat)
-            if value < 3:
-                backgrounds -= 1
-                setattr(self, stat, value + 1)
+            setattr(self, f'background{i}', backgrounds[i])
+        self.need_fix = True
 
     def randomize_archetypes(self):
         if not self.nature:
             self.nature = random.choice(ARCHETYPES)
         if not self.demeanor:
             self.demeanor = random.choice(ARCHETYPES)
+
+    def randomize_disciplines(self):
+        if self.family:
+            for i in range(16):
+                setattr(self, f'trait{i}', '')
+            x = 0
+            for d in CLANS_SPECIFICS[self.family]['disciplines']:
+                setattr(self, f'trait{x}', d)
+                x += 1
 
     def randomize_all(self):
         self.randomize_attributes()
@@ -1032,13 +1077,7 @@ class Creature(models.Model):
         self.randomize_backgrounds()
         if self.creature == 'kindred':
             if self.family:
-                for i in range(16):
-                    setattr(self, f'trait{i}', '')
-                x = 0
-                for d in CLANS_SPECIFICS[self.family]['disciplines']:
-                    setattr(self, f'trait{x}', d)
-                    x += 1
-                    # print(d)
+                self.randomize_disciplines()
             virtues = 7
             self.virtue0 = 1
             self.virtue1 = 1
@@ -1050,17 +1089,124 @@ class Creature(models.Model):
                     setattr(self, f'virtue{a}', v + 1)
                     virtues -= 1
             self.weakness = CLANS_SPECIFICS[self.family]['clan_weakness']
+        if self.creature == 'ghoul':
+            self.virtue0 = 0
+            self.virtue1 = 0
+            self.virtue2 = 0
+            for x in range(4):
+                setattr(self, f'merit{x}', '');
+                setattr(self, f'flaw{x}', '');
+            for x in range(16):
+                setattr(self,f'trait{x}','');
+            due_willpower = int(STATS_TEMPLATES[self.creature]['willpower'])
+            # if self.willpower < due_willpower:
+            self.willpower = due_willpower
 
     def balance_ghoul(self):
         if self.creature == "ghoul":
+            discipline_points = 0
+            print(f"=> BALANCE GHOUL [{self.name}].")
             offset = self.expectedfreebies - self.freebies
-            if offset > 0:
-                if self.sire:
-                    # domitor = Creature.objects.get(rid=self.sire)
-                    if offset >= 7:
-                        disciplines = self.get_traits()
-                        if len(disciplines) == 0:
-                            self.trait0 = 'Potence (1)'
+            while offset > 0:
+                str = ''
+                str += f'[offset={offset:3}] '
+                solution_pick = []
+                if offset >= 15:
+                    solution_pick.append(1)
+                if offset > 5:
+                    solution_pick.append(2)
+                    solution_pick.append(2)
+                if offset >= 2:
+                    solution_pick.append(3)
+                    solution_pick.append(3)
+                    solution_pick.append(3)
+                if offset >= 1:
+                    solution_pick.append(4)
+                    solution_pick.append(4)
+                random.shuffle(solution_pick)
+                solution = random.choice(solution_pick)
+                # str += f'[{",".join(solution_pick)} -> {solution:2}]'
+                if solution == 1:
+                    str += f'[{f"DISCIPLINES +1]":30}'
+                    discipline_points += 1
+                    offset -= 7
+                    str += "[spend -> 7]"
+                if solution == 2:
+                    str += f'[{f"ATTR {self.position}":30}]'
+                    if self.position == "Intelligence":
+                        targets = ["Perception", "Intelligence", "Wits"]
+                    elif self.position == "Enforcer":
+                        targets = ["Strength", "Dexterity", "Stamina"]
+                    elif self.position == "Valet":
+                        targets = ["Manipulation", "Appareance", "Perception"]
+                    elif self.position == "Operative":
+                        targets = ["Dexterity", "Manipulation", "Wits"]
+                    elif self.position == "Leisure":
+                        targets = ["Charisma", "Manipulation", "Appareance"]
+                    r, l = self.increase_random_stat(targets)
+                    if r == 1:
+                        offset -= 5
+                        str += l
+                        str += "[spend -> 5]"
+                if solution == 3:
+                    str += f'[{f"SKILL {self.position}":30}]'
+                    if self.position == "Intelligence":
+                        targets = ["Politics", "Investigation", "Subterfuge", "Stealth", "Linguistics", "Academics"]
+                    elif self.position == "Enforcer":
+                        targets = ["Athletics", "Brawl", "Dodge", "Melee", "Intimidation", "Firearms"]
+                    elif self.position == "Valet":
+                        targets = ["Alertness", "Empathy", "Etiquette", "Drive", "Linguistics"]
+                    elif self.position == "Operative":
+                        targets = ["Survival", "Investigation", "Alertness", "Technology", "Stealth"]
+                    elif self.position == "Leisure":
+                        targets = ["Athletics", "Empathy", "Etiquette", "Performance", "Subterfuge"]
+                    r, l = self.increase_random_stat(targets)
+                    if r == 1:
+                        offset -= 2
+                        str += l
+                        str += "[spend -> 2]"
+                if solution == 4:
+                    str += f'[{"Willpower/backgrounds":30}]'
+                    targets = ["Willpower", "Allies", "Contacts", "Resources", "Equipment", "Innovation", "Trust",
+                               "Bond"]
+                    r, l = self.increase_random_stat(targets)
+                    if r == 1:
+                        offset -= 1
+                        str += l
+                        str += "[spend -> 1]"
+                if str:
+                    print(str)
+
+            if discipline_points > 0:
+                str = ''
+                #potence, ref, tr = self.get_trait_value("Potence")
+                str += f'[Boost potence --> value={discipline_points}]'
+                self.set_trait_value("Potence", discipline_points)
+                print(str)
+            self.need_fix = True
+            self.save()
+            print(f'{self.name} has been balanced...')
+
+    def increase_random_stat(self, stats_set=[]):
+        res = 0
+        log = ""
+        choices = [0 for c in range(len(stats_set))]
+        choices[random.randrange(len(stats_set))] = 1
+        random.shuffle(choices)
+        ch = 0
+        for x in stats_set:
+            stat = find_stat_property(self.creature, x)
+            if stat == 'n/a':
+                log  += f"[OOPS:{x}=>{stat}"
+            else:
+                old_value = getattr(self, stat)
+                setattr(self, stat, choices[ch] + old_value)
+                if choices[ch] == 1:
+                    log += f"[Upgrading {x:20} by 1] "
+                    res = 1
+                    break
+                ch += 1
+        return res, log
 
     def extract_raw(self):
         # filename = f'./raw/{self.rid}.txt'
@@ -1286,8 +1432,6 @@ class Creature(models.Model):
             res = 1
         return res
 
-
-
     def find_lineage(self, lockup=False):
         """ Find the full lineage for this character
         """
@@ -1399,7 +1543,7 @@ class Creature(models.Model):
                             txt_lines.append(e.description)
                     else:
                         txt_lines.append(entries.last().description)
-                print(b,v,txt_lines)
+                print(b, v, txt_lines)
                 x = "\n".join(txt_lines)
                 fmt_list.append({'idx': idx, 'item': f'{b.title()} [{v}] ', 'notes': f'{x}'})
                 idx += 1
@@ -1637,4 +1781,4 @@ class CreatureAdmin(admin.ModelAdmin):
                    'groupspec',
                    'creature', 'mythic', 'ghost', 'sire']
     search_fields = ['name', 'groupspec']
-    list_editable = ['cast_figure', 'hidden', 'nature', 'district', 'player',  'condition']
+    list_editable = ['cast_figure', 'hidden', 'nature', 'district', 'player', 'condition']

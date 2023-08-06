@@ -27,23 +27,23 @@ $very_dark_plate: darken($dark_plate, 5%);
 $focus_color: #20C020;
 
 
-$list_width: 260px;
+$list_width: 25vw;
 $ghost_opacity: 0;
 
 
-$wyld_fill: #c264d4;
-$weaver_fill: #334ba9;
-$wyrm_fill: #221338;
+$wyld_fill: #49071d;
+$weaver_fill: #034370;
+$wyrm_fill: #480aa5;
 $mortal_fill: #4e4e4e;
-$garou_fill: #422e1a;
-$kindred_fill: #70785c;
-$mage_fill: #3c18de;
-$wraith_fill: #2f3345;
+$garou_fill: #381e05;
+$kindred_fill: #0f2402;
+$mage_fill: #61bdd9;
+$wraith_fill: #d060bc;
 $changeling_fill: #684203;
 
-$ghoul_fill: #906421;
+$ghoul_fill: desaturate($kindred_fill,50%);
 $kinfolk_fill: desaturate($garou_fill,50%);
-$fomori_fill: #C0D43B;
+$fomori_fill: desaturate($wyrm_fill,50%);
 
 
 $camarilla_fill: #132b13;

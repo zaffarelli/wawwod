@@ -65,6 +65,7 @@ def change_chronicle(request, slug=None):
 
 
 def get_list(request, pid=1, slug=None):
+    chronicle = get_current_chronicle()
     print(slug)
     print(chronicle.acronym)
     if is_ajax(request):
@@ -90,14 +91,18 @@ def get_list(request, pid=1, slug=None):
         elif 'new' == slug:
             creature_items = Creature.objects.filter(chronicle=chronicle.acronym, is_new=True).order_by('name')
         elif 'bal' == slug:
-            creature_items = Creature.objects.filter(chronicle=chronicle.acronym, status__in=["UNBALANCED", "OK+"],
-                                                     hidden=False, creature__in=['kindred']).order_by('creature',
+            creature_items = Creature.objects.filter(chronicle=chronicle.acronym, status__in=["UNBALANCED","OK+"],
+                                                     hidden=False).order_by('creature',
                                                                                                       '-expectedfreebies')
         elif 'pen' == slug:
             creature_items = Creature.objects.filter(chronicle=chronicle.acronym, faction='Pentex',
                                                      creature__in=['garou', 'kinfolk', 'fomori']).order_by('name')
+        elif 'ccm' == slug:
+            creature_items = Creature.objects.filter(chronicle=chronicle.acronym, creature__in=['mortal', 'ghoul', 'kinfolk', 'fomori']).order_by('name')
+        elif 'ccs' == slug:
+            creature_items = Creature.objects.filter(chronicle=chronicle.acronym, creature__in=['garou', 'kindred', 'wraith', 'changeling', 'mage']).order_by('name')
         else:
-            creature_items = Creature.objects.all().filter(chronicle=chronicle.acronym).order_by('name')
+            creature_items = Creature.objects.filter(chronicle=chronicle.acronym).order_by('name')
         paginator = Paginator(creature_items, 25)
         creature_items = paginator.get_page(pid)
         list_context = {'creature_items': creature_items}
@@ -288,10 +293,12 @@ def display_gaia_wheel(request):
         gaia_wheel_context = {'data': build_gaia_wheel()}
         return JsonResponse(gaia_wheel_context)
 
+
 def display_dashboard(request):
     if is_ajax(request):
         gaia_wheel_context = {'data': build_gaia_wheel()}
         return JsonResponse(gaia_wheel_context)
+
 
 def display_lineage(request, slug=None):
     if is_ajax(request):
@@ -302,7 +309,7 @@ def display_lineage(request, slug=None):
             data = build_per_primogen(slug)
         settings = {'fontset': FONTSET}
         lineage_context = {'settings': json.dumps(settings, sort_keys=True, indent=4), 'data': data};
-        #print(lineage_context);
+        # print(lineage_context);
         return JsonResponse(lineage_context)
 
 

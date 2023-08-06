@@ -387,7 +387,7 @@ class WawwodCollector {
             $('.toggle_list').off();
             $('.toggle_list').on('click', function (event) {
                 console.log('click');
-                $('.charlist').addClass('hidden');
+                $('.charlist').toggleClass('hidden');
                 me.rebootLinks();
             });
 

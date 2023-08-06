@@ -3,5 +3,9 @@
     [roster:<a href="/api/roster/{{c.rid}}/" target="wawwod_roster">{{c.id}}</a>]
     [text:<a href="/api/text/{{c.rid}}/" target="wawwod_roster">{{c.id}}</a>]
     {{c.stats_template}}
-    [RANDOMIZE:<a href="/api/randomize/attributes/{{c.rid}}/">ATTR</a> | <a href="/api/randomize/abilities/{{c.rid}}/">ABI</a>]
+    [
+    <span class="line_link" id="llb{{c.rid}}" action="balance" param="{{c.rid}}">BALANCE</span>
+    |
+    <span class="line_link" id="llr{{c.rid}}" action="randomize" param="{{c.rid}}">RANDOMIZE</span>
+    ]
 </div>

@@ -98,7 +98,7 @@ def resort(list):
         for ghoul in ghouls:
             if ghoul['sire'] == vampire['rid']:
                 if pre:
-                    sublist.insert(0,ghoul)
+                    sublist.insert(0, ghoul)
                 else:
                     sublist.append(ghoul)
                 pre = not pre
@@ -111,4 +111,7 @@ def resort(list):
     return sorted_list
 
 
-
+def roll(x):
+    import random
+    x = random.randint(0, x - 1) + 1
+    return x

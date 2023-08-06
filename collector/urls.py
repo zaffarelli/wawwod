@@ -2,7 +2,7 @@ from django.urls import path, re_path
 from collector.views.base import index, get_list, updown, userinput, add_creature, change_chronicle, \
     display_gaia_wheel, display_dashboard, display_lineage, display_crossover_sheet, add_kindred, svg_to_pdf, save_to_svg
 from collector.views.actions import change_settings, refix_all, extract_mechanics, extract_per_group, extract_raw, \
-    extract_roster, randomize_attributes, randomize_abilities, refix_all
+    extract_roster, randomize, balance, refix_all
 from collector.views.creature_views import CreatureDetailView
 
 urlpatterns = [
@@ -30,7 +30,7 @@ urlpatterns = [
     re_path(r'^api/group/(?P<slug>\w+)/$', extract_per_group, name='extract_per_group'),
     re_path(r'^ajax/character/svg2pdf/(?P<slug>[\w-]+)/$', svg_to_pdf, name='svg_to_pdf'),
     re_path(r'^ajax/character/save2svg/(?P<slug>[\w-]+)/$', save_to_svg, name='save_to_svg'),
-    re_path(r'^api/randomize/attributes/(?P<slug>\w+)/$', randomize_attributes, name='randomize_attributes'),
-    re_path(r'^api/randomize/abilities/(?P<slug>\w+)/$', randomize_abilities, name='randomize_abilities')
+    re_path(r'^api/balance/(?P<slug>\w+)/$', balance, name='balance'),
+    re_path(r'^api/randomize/(?P<slug>\w+)/$', randomize, name='randomize')
 ]
 

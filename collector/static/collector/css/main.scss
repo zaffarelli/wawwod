@@ -159,7 +159,7 @@ body {
       display: inline-block;
       color: $plate_highlight;
       font-size: 0.7em;
-      font-family: 'TexteLibre';
+      font-family: TexteLibre;
       padding: 0.3em 0.4em;
       text-decoration: none;
       cursor: pointer;
@@ -181,6 +181,7 @@ body {
     & a {
       text-decoration: none;
     }
+    //color:black;
   }
 
   & ul {
@@ -995,4 +996,13 @@ text.kindred_name {
 .ghouls_list {
   font-family: Roboto;
   font-size: 9pt;
+}
+
+
+.line_link{
+  color:$focus_color;
+  cursor:pointer;
+  &:hover{
+    color:$plate_highlight;
+  }
 }

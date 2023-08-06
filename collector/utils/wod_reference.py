@@ -37,10 +37,12 @@ def find_stat_property(creature, statistic):
     lists = ['attributes', 'talents', 'skills', 'knowledges', 'backgrounds']
     property = 'n/a'
     for list in lists:
-        if statistic in STATS_NAMES[creature][list]:
-            property = f'{list[:-1]}{STATS_NAMES[creature][list].index(statistic)}'
-            logger.debug(f'Parsing --> {property}')
+        if statistic.lower() in STATS_NAMES[creature][list]:
+            property = f'{list[:-1]}{STATS_NAMES[creature][list].index(statistic.lower())}'
+            # print(f'Parsing --> {property}')
             break
+    if statistic.lower() == "willpower":
+        property = "willpower"
     return property
 
 
@@ -90,9 +92,9 @@ STATS_NAMES = {
                     'streetwise', 'subterfuge'],
         'skills': ['animal ken', 'crafts', 'drive', 'etiquette', 'firearms', 'leadership', 'melee', 'performance',
                    'stealth', 'survival'],
-        'knowledges': ['academics', 'computer', 'finance', 'investigation', 'law', 'linguistics', 'medicine',
+        'knowledges': ['academics', 'technology', 'finance', 'investigation', 'law', 'linguistics', 'medicine',
                        'occult', 'politics', 'science'],
-        'backgrounds': ['allies', 'bond', 'contacts', 'fame', 'equipment', 'influence', 'mentor',
+        'backgrounds': ['allies', 'bond', 'contacts', 'fame', 'equipment', 'influence', 'innovation',
                         'resources', 'status', 'trust']
     },
     'kindred': {
@@ -517,4 +519,67 @@ CLANS_SPECIFICS = {
         'disciplines': ['Dominate (1)', 'Fortitude (1)', 'Presence (1)'],
         'clan_weakness': 'Prey Exclusive'
     }
+}
+
+ENLIGHTENMENT = {
+    'Humanity': {
+        'virtues': ['Conscience', 'Self-Control', 'Courage'],
+        'clans': []
+    },
+    'Caine': {
+        'virtues': ['Conviction', 'Instinct', 'Courage'],
+        'clans': []
+    },
+    'Cathari': {
+        'virtues': ['Conviction', 'Instinct', 'Courage'],
+        'clans': []
+    },
+    'Death and the Soul': {
+        'virtues': ['Conviction', 'Self-Control', 'Courage'],
+        'clans': []
+    },
+    'Evil Revelations': {
+        'virtues': ['Conviction', 'Instinct', 'Courage'],
+        'clans': []
+    },
+    'Feral Heart': {
+        'virtues': ['Conviction', 'Instinct', 'Courage'],
+        'clans': []
+    },
+    'Honorable Accord': {
+        'virtues': ['Conscience', 'Self-Control', 'Courage'],
+        'clans': []
+    },
+    'Lilith': {
+        'virtues': ['Conviction', 'Instinct', 'Courage'],
+        'clans': []
+    },
+    'Power and the Inner Voice': {
+        'virtues': ['Conviction', 'Instinct', 'Courage'],
+        'clans': []
+    },
+    'Blood': {
+        'virtues': ['Conviction', 'Self-Control', 'Courage'],
+        'clans': ['Assamite']
+    },
+    'Bones': {
+        'virtues': ['Conviction', 'Self-Control', 'Courage'],
+        'clans': ['Giovanni']
+    },
+    'Night': {
+        'virtues': ['Conviction', 'Instinct', 'Courage'],
+        'clans': ['Lasombra']
+    },
+    'Metamorphosis': {
+        'virtues': ['Conviction', 'Instinct', 'Courage'],
+        'clans': ['Tzimisce']
+    },
+    'Paradox': {
+        'virtues': ['Conviction', 'Self-Control', 'Courage'],
+        'clans': ['Ravnos']
+    },
+    'Typhon': {
+        'virtues': ['Conviction', 'Self-Control', 'Courage'],
+        'clans': ['Setite']
+    },
 }
