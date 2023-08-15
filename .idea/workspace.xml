@@ -2,41 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c5f4ae22-1e7a-419c-ac9f-80da089b72d4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/collector/migrations/0049_alter_creature_attribute0_alter_creature_attribute1_and_more.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collector/migrations/0050_creature_virtue_name0_creature_virtue_name1_and_more.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.00cfe8a6596f.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.0c6defa652b2.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.1d7958cc3c6b.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.266a03e8fe91.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.3ef84c8d84f3.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.5618a6c1a3b0.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.5847316d7b7c.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.6a898c5c6068.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.9542197d380b.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.e030859577cd.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.eeca5f08be84.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/main.f6909d2acbfb.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_static/CACHE/css/storytelling.c5441cfce33f.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_static/collector/clans/blood_brother.webp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/models/creatures.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/models/creatures.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/static/collector/clans/blood_brothers.webp" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/collector/clans/blood_brother.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/static/collector/css/_basics.scss" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/collector/css/_basics.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/static/collector/css/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/collector/css/main.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/static/js/collector.es6" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/js/collector.es6" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/collector/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/templates/collector/creature/backgrounds_columns.html" beforeDir="false" afterPath="$PROJECT_DIR$/collector/templates/collector/creature/backgrounds_columns.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/templates/collector/creature/stat_line.html" beforeDir="false" afterPath="$PROJECT_DIR$/collector/templates/collector/creature/stat_line.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/templates/collector/creature_link.html" beforeDir="false" afterPath="$PROJECT_DIR$/collector/templates/collector/creature_link.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/utils/kindred_stuff.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/utils/kindred_stuff.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/utils/wod_reference.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/utils/wod_reference.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/views/actions.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/views/actions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/views/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/views/base.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/wawwod.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/wawwod.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/reghoul.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/reghoul.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod_static/collector/css/_basics.scss" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/collector/css/_basics.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wawwod_static/collector/css/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/collector/css/main.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wawwod_static/js/collector.es6" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/js/collector.es6" afterDir="false" />
     </list>
@@ -189,7 +155,7 @@
       <workItem from="1690578566928" duration="959000" />
       <workItem from="1690652406255" duration="1971000" />
       <workItem from="1691085139893" duration="22883000" />
-      <workItem from="1691239375954" duration="20598000" />
+      <workItem from="1691239375954" duration="21171000" />
     </task>
     <servers />
   </component>

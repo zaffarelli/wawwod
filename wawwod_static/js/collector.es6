@@ -320,6 +320,39 @@ class WawwodCollector {
         });
     }
 
+    registerLineLink() {
+        let me = this;
+        $('.line_link').off().on('click', function (e){
+            e.preventDefault();
+            e.stopPropagation();
+            console.log("LineLink click");
+            let param = $(this).attr('param');
+            let action = $(this).attr('action');
+            let ln = "api/"+action+"/"+param+"/";
+            console.log(action);
+            console.log(param);
+            console.log(ln);
+            $.ajax({
+                url: ln,
+                success: (answer) => {
+                    console.log(answer);
+                    $.ajax({
+                        url: "ajax/view/creature/" + answer['rid'] + "/",
+                        success: (ans) => {
+                            $('.details').html(ans)
+                            $('.details').removeClass('hidden');
+                            me.rebootLinks();
+                        }
+                    });
+                },
+                error: function (answer) {
+                    console.error('Error... ' + answer);
+                },
+            })
+        })
+    }
+
+
     registerToggle() {
         let me = this;
         $('.toggle').off().on('click', function (event) {
@@ -343,6 +376,7 @@ class WawwodCollector {
             me.registerCollectorAction();
             me.registerTriggers();
             me.registerJump();
+            me.registerLineLink();
             $('#go').off();
             $('#go').on('click', function (event) {
                 event.preventDefault();
