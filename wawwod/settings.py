@@ -125,28 +125,25 @@ WSGI_APPLICATION = 'wawwod.wsgi.application'
 #     }
 # }
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'wawwod',
-#         'USER': 'dp',
-#         'PASSWORD': 'dp',
-#         'HOST': '',
-#         'PORT': '',
-#         'CONN_MAX_AGE': None,
-#         'TEST': {
-#             'NAME': 'test_wawwod',
-#         },
-#     },
-# }
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'wawwod.sqlite3', # This is where you put the name of the db file.
-                 # If one doesn't exist, it will be created at migration time.
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'wawwod',
+        'USER': 'wawwod',
+        'PASSWORD': 'wawwod',
+        'HOST': 'localhost',
+        'PORT': '5442'
+        },
     }
-}
+
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': 'wawwod.sqlite3', # This is where you put the name of the db file.
+#                  # If one doesn't exist, it will be created at migration time.
+#     }
+# }
 
 
 

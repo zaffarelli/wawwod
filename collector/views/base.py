@@ -253,12 +253,16 @@ def display_crossover_sheet(request, slug=None, option=None):
             c.need_fix = True
             c.save()
         if chronicle.acronym == 'BAV':
-            scenario = "Bayerische Nächte"
             if c.creature == 'kindred' or c.creature == 'ghoul':
                 scenario = "Munich by Night"
-            pre_title = "Munich"
-            post_title = "Camarilla"
-        elif chronicle.acronym == 'HbN':
+                pre_title = "Munich"
+                post_title = "Camarilla"
+        if chronicle.acronym == 'GMU':
+                if c.creature == 'garou' or c.creature == 'kinfolk':
+                    scenario = "Rage Across Bayern"
+                    pre_title = "Gaia Tribes"
+                    post_title = "Garou"
+        elif chronicle.acronym == 'GHH':
             scenario = "The Northeast Passage"
             pre_title = "Hamburg"
             post_title = "by Night"

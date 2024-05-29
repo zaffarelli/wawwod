@@ -6,7 +6,7 @@ logger = logging.Logger(__name__)
 
 def get_current_chronicle():
     # When migrating
-    # return None
+    #return None
     ch = None
     try:
         current_chronicle = Chronicle.objects.filter(is_current=True).first()

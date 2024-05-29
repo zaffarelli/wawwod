@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object model="collector.creature" pk="433">
+    <field name="player" type="CharField">Huitzy Kawek</field>
+    <field name="name" type="CharField">Hermann Volkstadt</field>
+    <field name="new_name" type="CharField">
+        <None/>
+    </field>
+    <field name="rid" type="CharField">_hermann_volkstadt</field>
+    <field name="nickname" type="CharField"/>
+    <field name="primogen" type="BooleanField">False</field>
+    <field name="mythic" type="BooleanField">False</field>
+    <field name="family" type="CharField">Brujah</field>
+    <field name="auspice" type="PositiveIntegerField">0</field>
+    <field name="breed" type="PositiveIntegerField">0</field>
+    <field name="domitor" type="CharField"/>
+    <field name="group" type="CharField"/>
+    <field name="groupspec" type="CharField"/>
+    <field name="concept" type="CharField">Intellectual</field>
+    <field name="age" type="PositiveIntegerField">47</field>
+    <field name="trueage" type="PositiveIntegerField">156</field>
+    <field name="embrace" type="IntegerField">1910</field>
+    <field name="faction" type="CharField">Camarilla</field>
+    <field name="lastmod" type="DateTimeField">2023-07-09T14:36:22.651984</field>
+    <field name="chronicle" type="CharField">UNY</field>
+    <field name="creature" type="CharField">kindred</field>
+    <field name="sex" type="BooleanField">True</field>
+    <field name="display_gauge" type="IntegerField">8</field>
+    <field name="display_pole" type="CharField"/>
+    <field name="residence" type="CharField"/>
+    <field name="list_pos" type="IntegerField">0</field>
+    <field name="finaldeath" type="IntegerField">0</field>
+    <field name="timeintorpor" type="PositiveIntegerField">64</field>
+    <field name="picture" type="CharField"/>
+    <field name="sire" type="CharField">_josephine_dunn</field>
+    <field name="patron" type="CharField"/>
+    <field name="rank" type="CharField"/>
+    <field name="topic" type="TextField"/>
+    <field name="status" type="CharField">UNBALANCED</field>
+    <field name="cast_figure" type="CharField"/>
+    <field name="position" type="CharField"/>
+    <field name="maj" type="PositiveIntegerField">0</field>
+    <field name="need_fix" type="BooleanField">False</field>
+    <field name="is_new" type="BooleanField">False</field>
+    <field name="freebiedif" type="IntegerField">0</field>
+    <field name="freebies" type="IntegerField">10</field>
+    <field name="expectedfreebies" type="IntegerField">0</field>
+    <field name="disciplinepoints" type="IntegerField">4</field>
+    <field name="experience" type="IntegerField">0</field>
+    <field name="exp_pool" type="IntegerField">0</field>
+    <field name="exp_spent" type="IntegerField">0</field>
+    <field name="extra" type="IntegerField">0</field>
+    <field name="hidden" type="BooleanField">False</field>
+    <field name="ghost" type="BooleanField">False</field>
+    <field name="source" type="CharField">zaffarelli</field>
+    <field name="total_physical" type="IntegerField">3</field>
+    <field name="total_social" type="IntegerField">5</field>
+    <field name="total_mental" type="IntegerField">7</field>
+    <field name="total_talents" type="IntegerField">11</field>
+    <field name="total_skills" type="IntegerField">5</field>
+    <field name="total_knowledges" type="IntegerField">16</field>
+    <field name="total_backgrounds" type="IntegerField">9</field>
+    <field name="total_traits" type="IntegerField">4</field>
+    <field name="total_passions" type="IntegerField">0</field>
+    <field name="total_fetters" type="IntegerField">0</field>
+    <field name="total_realms" type="IntegerField">0</field>
+    <field name="nature" type="CharField">Caregiver</field>
+    <field name="demeanor" type="CharField">Thrill-seeker</field>
+    <field name="condition" type="CharField">OK</field>
+    <field name="territory" type="CharField"/>
+    <field name="weakness" type="CharField">Short fuse</field>
+    <field name="district" type="CharField">d12</field>
+    <field name="notes_on_backgrounds" type="TextField">Allies§-
+Contacts§Dans le milieu de l'écriture et du journalisme politique, permettant de toucher quelques personnes dans le milieu de la politique et de la justice.
+Fame§-
+Generation§Otto (7th) -&gt; Siegfried -&gt; Kasimir -&gt; Josephine 
+Herd§Un groupe de lecture philosophique, dans lequel se trouvent quelques universitaires et chroniqueurs facinés par les interventions d'Hermann.
+Influence§-
+Mentor§Karen, co-primogène Brujah. Dernière progéniture d'Otto elle a du mal à s'affirmer dans le clan face entre autres à Kasimir (plus agé qu'elle).
+Resources§Environ 500 € qui entrent par mois. En cas de crise, la somme de 1000 € peut être réunie.
+Retainers§-
+Status§Descendant d'une lignée respectée, et malgré une présence discontinue à Munich, Herman est considéré comme une ancilla.</field>
+    <field name="notes_on_meritsflaws" type="TextField">Natural Linguist§merit§2§You have a flair with languages. Add 3 dice to any dice pool involving written or spoken languages.</field>
+    <field name="notes_on_history" type="TextField">Naissance§1863§ 
+La Transition§1910§Dans les fauxbourgs de Francfort, transformé par une jeune étudiante en droit aux visions révolutionaires et féministe avant l'heure. Ils oeuvrent ensemble à la création de l'Université Civique Goethe de Francfort en 1914.
+La Bavière &amp; Munich§1929§Josephine est requise par son sire Kasimir à Munich. Elle s'y rend de mauvaise grâce avec Hermann, où il est présenté au Prince Franz, devenant officiellement un kindred de Munich...
+La montée Nazi§1937§Lors des grands mouvements Nazi, le Sabbat en profite pour faire quelques incursions. Tombés dans un guêt appens, Hermann et Josephine sont piégés. Il est mis en torpeur dans l'effondrement d'une usine. Plus de traces de Joséphine à compter de cette date.
+Renaissance§1977§Retrouvé par des hommes de Siegfried, est transporté discrètement à Berlin où il est sorti de torpeur. Il renoue facilement avec son arrière grand sire qui est un enthousiaste raffiné.
+Retour en Bavière§1988§Désireux d'être fixé sur le sort connu par Josephine, Hermann retourne en Bavière accompagné de Siegfried. Ils sont charleureusement accueilli par Kasimir, qui est sans nouvelles de sa progéniture.
+La Nuit des Loups§1992§Funèste date dans l'histoire de la Camarilla de Munich, elle fut la scène d'affrontements épiques contre des lupins venus s'installer en Bavière. Elle s'en sort au prix de nombreuses pertes, dont Otto, primogène Brujah et Franz, Prince Régnant. Hermann échappe de peu à la mort finale au prix de la disparition et très probable destruction de Siegfried, et face au chaos régnant sur la cité décide de faire profil bas.
+Un nouveau retour§2016§Hermann est sorti de torpeur dans l'ancien repère Brujah de Francfort par Tobias, goule de Karen. Une fois de plus il a vécu un saut dans le temps, et s'en remet d'autant plus à la soeur de Siegfried. Il est présenté à Lucius, le primogène ventrue de la ville. Très vite, Hermann se lasse de trainer là où lui et Josephine ont passé tant années, et décide de retourner à Munich, où il est accueilli par Karen.</field>
+    <field name="notes_on_naturedemeanor" type="TextField">Nature: Judge§The judge perpetually seeks to improve the system. Recover a willpower point whenever you correctly deduce a mystery by assembling the clues presented.
+Demeanor: Thrill-seeker§The thrill seeker lives for the rush brought on by danger.</field>
+    <field name="notes_on_traits" type="TextField">Celerity§1§generic§Aucun jet nécessaire. En dépensant un point de sang, le vampire gagne une action supplémentaire.
+Potence§1§generic§Aucun jet nécessaire. Un succès automatique à chaque utilisation de la cractéristique Strength.
+Presence§1§Awe§Charisma + Performance (DV=7 ). Succès: 1=Une personne, 2=2 personnes, 3=6 personnes, 4=20 personnes, 5=Toute l'audience
+Presence§2§Dread Gaze§Charisma + Intimidation (DV= Wits + Courage)</field>
+    <field name="adventure" rel="ManyToOneRel" to="collector.adventure">The Choice I Never Had</field>
+    <field name="willpower" type="PositiveIntegerField">5</field>
+    <field name="equipment" type="TextField"/>
+    <field name="glamour" type="PositiveIntegerField">0</field>
+    <field name="banality" type="PositiveIntegerField">0</field>
+    <field name="nightmare" type="PositiveIntegerField">0</field>
+    <field name="realm0" type="CharField"/>
+    <field name="realm1" type="CharField"/>
+    <field name="realm2" type="CharField"/>
+    <field name="realm3" type="CharField"/>
+    <field name="realm4" type="CharField"/>
+    <field name="legacies" type="CharField"/>
+    <field name="birthright0" type="CharField"/>
+    <field name="birthright1" type="CharField"/>
+    <field name="birthright2" type="CharField"/>
+    <field name="birthright3" type="CharField"/>
+    <field name="birthright4" type="CharField"/>
+    <field name="anthithesis" type="CharField"/>
+    <field name="house" type="CharField"/>
+    <field name="motley" type="CharField"/>
+    <field name="seeming" type="CharField"/>
+    <field name="path" type="CharField">Humanity</field>
+    <field name="humanity" type="PositiveIntegerField">7</field>
+    <field name="bloodpool" type="PositiveIntegerField">12</field>
+    <field name="virtue0" type="PositiveIntegerField">4</field>
+    <field name="virtue1" type="PositiveIntegerField">3</field>
+    <field name="virtue2" type="PositiveIntegerField">3</field>
+    <field name="virtue_name0" type="CharField"/>
+    <field name="virtue_name1" type="CharField"/>
+    <field name="virtue_name2" type="CharField"/>
+    <field name="gnosis" type="PositiveIntegerField">0</field>
+    <field name="rage" type="PositiveIntegerField">0</field>
+    <field name="glory" type="PositiveIntegerField">0</field>
+    <field name="honor" type="PositiveIntegerField">0</field>
+    <field name="wisdom" type="PositiveIntegerField">0</field>
+    <field name="arete" type="PositiveIntegerField">0</field>
+    <field name="quintessence" type="PositiveIntegerField">0</field>
+    <field name="paradox" type="PositiveIntegerField">0</field>
+    <field name="dynamic" type="PositiveIntegerField">0</field>
+    <field name="entropic" type="PositiveIntegerField">0</field>
+    <field name="static" type="PositiveIntegerField">0</field>
+    <field name="corpus" type="PositiveIntegerField">0</field>
+    <field name="pathos" type="PositiveIntegerField">0</field>
+    <field name="regret" type="CharField"/>
+    <field name="passion0" type="CharField"/>
+    <field name="passion1" type="CharField"/>
+    <field name="passion2" type="CharField"/>
+    <field name="passion3" type="CharField"/>
+    <field name="passion4" type="CharField"/>
+    <field name="fetter0" type="CharField"/>
+    <field name="fetter1" type="CharField"/>
+    <field name="fetter2" type="CharField"/>
+    <field name="fetter3" type="CharField"/>
+    <field name="fetter4" type="CharField"/>
+    <field name="angst" type="PositiveIntegerField">0</field>
+    <field name="psyche_willpower" type="PositiveIntegerField">0</field>
+    <field name="psyche" type="CharField"/>
+    <field name="psyche_archetype" type="CharField"/>
+    <field name="darkpassion0" type="CharField"/>
+    <field name="darkpassion1" type="CharField"/>
+    <field name="darkpassion2" type="CharField"/>
+    <field name="darkpassion3" type="CharField"/>
+    <field name="darkpassion4" type="CharField"/>
+    <field name="thorn0" type="CharField"/>
+    <field name="thorn1" type="CharField"/>
+    <field name="thorn2" type="CharField"/>
+    <field name="thorn3" type="CharField"/>
+    <field name="thorn4" type="CharField"/>
+    <field name="summary" type="TextField">Freebies: -235</field>
+    <field name="attribute0" type="PositiveIntegerField">2</field>
+    <field name="attribute1" type="PositiveIntegerField">2</field>
+    <field name="attribute2" type="PositiveIntegerField">2</field>
+    <field name="attribute3" type="PositiveIntegerField">2</field>
+    <field name="attribute4" type="PositiveIntegerField">4</field>
+    <field name="attribute5" type="PositiveIntegerField">2</field>
+    <field name="attribute6" type="PositiveIntegerField">3</field>
+    <field name="attribute7" type="PositiveIntegerField">3</field>
+    <field name="attribute8" type="PositiveIntegerField">4</field>
+    <field name="talent0" type="PositiveIntegerField">0</field>
+    <field name="talent1" type="PositiveIntegerField">0</field>
+    <field name="talent2" type="PositiveIntegerField">3</field>
+    <field name="talent3" type="PositiveIntegerField">2</field>
+    <field name="talent4" type="PositiveIntegerField">0</field>
+    <field name="talent5" type="PositiveIntegerField">3</field>
+    <field name="talent6" type="PositiveIntegerField">2</field>
+    <field name="talent7" type="PositiveIntegerField">0</field>
+    <field name="talent8" type="PositiveIntegerField">1</field>
+    <field name="talent9" type="PositiveIntegerField">0</field>
+    <field name="skill0" type="PositiveIntegerField">0</field>
+    <field name="skill1" type="PositiveIntegerField">0</field>
+    <field name="skill2" type="PositiveIntegerField">3</field>
+    <field name="skill3" type="PositiveIntegerField">1</field>
+    <field name="skill4" type="PositiveIntegerField">0</field>
+    <field name="skill5" type="PositiveIntegerField">0</field>
+    <field name="skill6" type="PositiveIntegerField">1</field>
+    <field name="skill7" type="PositiveIntegerField">0</field>
+    <field name="skill8" type="PositiveIntegerField">0</field>
+    <field name="skill9" type="PositiveIntegerField">0</field>
+    <field name="knowledge0" type="PositiveIntegerField">3</field>
+    <field name="knowledge1" type="PositiveIntegerField">1</field>
+    <field name="knowledge2" type="PositiveIntegerField">1</field>
+    <field name="knowledge3" type="PositiveIntegerField">2</field>
+    <field name="knowledge4" type="PositiveIntegerField">3</field>
+    <field name="knowledge5" type="PositiveIntegerField">2</field>
+    <field name="knowledge6" type="PositiveIntegerField">0</field>
+    <field name="knowledge7" type="PositiveIntegerField">1</field>
+    <field name="knowledge8" type="PositiveIntegerField">2</field>
+    <field name="knowledge9" type="PositiveIntegerField">1</field>
+    <field name="background0" type="PositiveIntegerField">0</field>
+    <field name="background1" type="PositiveIntegerField">0</field>
+    <field name="background2" type="PositiveIntegerField">0</field>
+    <field name="background3" type="PositiveIntegerField">2</field>
+    <field name="background4" type="PositiveIntegerField">2</field>
+    <field name="background5" type="PositiveIntegerField">0</field>
+    <field name="background6" type="PositiveIntegerField">2</field>
+    <field name="background7" type="PositiveIntegerField">1</field>
+    <field name="background8" type="PositiveIntegerField">0</field>
+    <field name="background9" type="PositiveIntegerField">2</field>
+    <field name="background10" type="PositiveIntegerField">0</field>
+    <field name="trait0" type="CharField">Celerity (1)</field>
+    <field name="trait1" type="CharField">Potence (1)</field>
+    <field name="trait2" type="CharField">Presence (2)</field>
+    <field name="trait3" type="CharField"/>
+    <field name="trait4" type="CharField"/>
+    <field name="trait5" type="CharField"/>
+    <field name="trait6" type="CharField"/>
+    <field name="trait7" type="CharField"/>
+    <field name="trait8" type="CharField"/>
+    <field name="trait9" type="CharField"/>
+    <field name="trait10" type="CharField"/>
+    <field name="trait11" type="CharField"/>
+    <field name="trait12" type="CharField"/>
+    <field name="trait13" type="CharField"/>
+    <field name="trait14" type="CharField"/>
+    <field name="trait15" type="CharField"/>
+    <field name="merit0" type="CharField">Natural Linguist (2)</field>
+    <field name="merit1" type="CharField"/>
+    <field name="merit2" type="CharField"/>
+    <field name="merit3" type="CharField"/>
+    <field name="merit4" type="CharField"/>
+    <field name="flaw0" type="CharField"/>
+    <field name="flaw1" type="CharField"/>
+    <field name="flaw2" type="CharField"/>
+    <field name="flaw3" type="CharField"/>
+    <field name="flaw4" type="CharField"/>
+    <field name="rite0" type="CharField"/>
+    <field name="rite1" type="CharField"/>
+    <field name="rite2" type="CharField"/>
+    <field name="rite3" type="CharField"/>
+    <field name="rite4" type="CharField"/>
+    <field name="rite5" type="CharField"/>
+    <field name="rite6" type="CharField"/>
+    <field name="rite7" type="CharField"/>
+    <field name="rite8" type="CharField"/>
+    <field name="rite9" type="CharField"/>
+</object>

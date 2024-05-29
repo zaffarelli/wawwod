@@ -529,15 +529,15 @@ class Creature(models.Model):
             # if self.family == '':
             print(self.sire)
             domitor = Creature.objects.get(rid=self.sire)
-            self.family = domitor.family
-            self.faction = domitor.faction
             if domitor:
+                self.family = domitor.family
+                self.faction = domitor.faction
                 self.display_gauge = domitor.display_gauge / 3
-            self.group = "Ghoul of " + domitor.name
-            self.groupspec = domitor.groupspec
-            self.hidden = domitor.hidden
-            if self.district is None:
-                self.district = domitor.district
+                self.group = "Ghoul of " + domitor.name
+                self.groupspec = domitor.groupspec
+                self.hidden = domitor.hidden
+                if self.district is None:
+                    self.district = domitor.district
 
         self.expectedfreebies = self.freebies_per_immortal_age
         self.bloodpool = 10
@@ -1438,7 +1438,8 @@ class Creature(models.Model):
         lineage = self.toJSON()
         lineage['children'] = []
         lineage['generation'] = 13 - self.background3
-        infans = Creature.objects.filter(creature='kindred', sire=self.name)
+        #infans = Creature.objects.filter(creature='kindred', sire=self.name)
+        infans = Creature.objects.filter(creature='kindred', sire=self.rid)
         if infans:
             for childer in infans:
                 if childer.ghost or childer.mythic:

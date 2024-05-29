@@ -9343,3 +9343,55 @@ Traceback (most recent call last):
     raise IndexError('Cannot choose from an empty sequence')
 IndexError: Cannot choose from an empty sequence
 [06/08 15:41:08] "GET /api/balance/_iana_owens/ HTTP/1.1" 500 86586
+[29/05 00:58:33] "GET /static/collector/ HTTP/1.1" 404 1787
+[29/05 00:59:29] Not Found: /favicon.ico
+[29/05 00:59:39] Not Found: /favicon.ico
+[29/05 01:00:07] Not Found: /favicon.ico
+[29/05 02:20:08] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1864
+[29/05 02:22:07] "GET /static/collector/ HTTP/1.1" 404 1787
+[29/05 02:22:43] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1864
+[29/05 02:28:34] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1864
+[29/05 02:28:59] Not Found: /ajax/display/crossover_sheet/Sheet for _jonas_cheng/
+[29/05 02:28:59] "GET /ajax/display/crossover_sheet/Sheet%20for%20_jonas_cheng/ HTTP/1.1" 404 9168
+[29/05 02:29:01] Not Found: /ajax/display/crossover_sheet/Sheet for _jonas_cheng/
+[29/05 02:29:01] "GET /ajax/display/crossover_sheet/Sheet%20for%20_jonas_cheng/ HTTP/1.1" 404 9168
+[29/05 02:34:33] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1864
+[29/05 02:35:10] "GET /static/collector/tribes/s.webp HTTP/1.1" 404 1828
+[29/05 02:36:01] Internal Server Error: /ajax/display/crossover_sheet/Gaia/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 247, in display_crossover_sheet
+    c = Creature.objects.get(rid=slug)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/query.py", line 439, in get
+    raise self.model.DoesNotExist(
+collector.models.creatures.Creature.DoesNotExist: Creature matching query does not exist.
+[29/05 02:36:01] "GET /ajax/display/crossover_sheet/Gaia/ HTTP/1.1" 500 84433
+[29/05 02:36:53] Not Found: /favicon.ico
+[29/05 02:40:18] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1864
+[29/05 02:40:23] Internal Server Error: /ajax/display/crossover_sheet/1/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 247, in display_crossover_sheet
+    c = Creature.objects.get(rid=slug)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/query.py", line 439, in get
+    raise self.model.DoesNotExist(
+collector.models.creatures.Creature.DoesNotExist: Creature matching query does not exist.
+[29/05 02:40:23] "GET /ajax/display/crossover_sheet/1/ HTTP/1.1" 500 84391

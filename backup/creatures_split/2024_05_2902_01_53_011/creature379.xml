@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object model="collector.creature" pk="432">
+    <field name="player" type="CharField">Zaharielle</field>
+    <field name="name" type="CharField">Simon Krutze</field>
+    <field name="new_name" type="CharField">
+        <None/>
+    </field>
+    <field name="rid" type="CharField">_simon_krutze</field>
+    <field name="nickname" type="CharField"/>
+    <field name="primogen" type="BooleanField">False</field>
+    <field name="mythic" type="BooleanField">False</field>
+    <field name="family" type="CharField">Nosferatu</field>
+    <field name="auspice" type="PositiveIntegerField">0</field>
+    <field name="breed" type="PositiveIntegerField">0</field>
+    <field name="domitor" type="CharField"/>
+    <field name="group" type="CharField"/>
+    <field name="groupspec" type="CharField"/>
+    <field name="concept" type="CharField">Worker</field>
+    <field name="age" type="PositiveIntegerField">33</field>
+    <field name="trueage" type="PositiveIntegerField">110</field>
+    <field name="embrace" type="IntegerField">1942</field>
+    <field name="faction" type="CharField">Camarilla</field>
+    <field name="lastmod" type="DateTimeField">2023-07-09T14:36:25.123323</field>
+    <field name="chronicle" type="CharField">UNY</field>
+    <field name="creature" type="CharField">kindred</field>
+    <field name="sex" type="BooleanField">True</field>
+    <field name="display_gauge" type="IntegerField">10</field>
+    <field name="display_pole" type="CharField"/>
+    <field name="residence" type="CharField"/>
+    <field name="list_pos" type="IntegerField">0</field>
+    <field name="finaldeath" type="IntegerField">0</field>
+    <field name="timeintorpor" type="PositiveIntegerField">45</field>
+    <field name="picture" type="CharField"/>
+    <field name="sire" type="CharField">_lydia</field>
+    <field name="patron" type="CharField"/>
+    <field name="rank" type="CharField"/>
+    <field name="topic" type="TextField"/>
+    <field name="status" type="CharField">UNBALANCED</field>
+    <field name="cast_figure" type="CharField"/>
+    <field name="position" type="CharField"/>
+    <field name="maj" type="PositiveIntegerField">0</field>
+    <field name="need_fix" type="BooleanField">False</field>
+    <field name="is_new" type="BooleanField">False</field>
+    <field name="freebiedif" type="IntegerField">0</field>
+    <field name="freebies" type="IntegerField">10</field>
+    <field name="expectedfreebies" type="IntegerField">0</field>
+    <field name="disciplinepoints" type="IntegerField">5</field>
+    <field name="experience" type="IntegerField">0</field>
+    <field name="exp_pool" type="IntegerField">0</field>
+    <field name="exp_spent" type="IntegerField">0</field>
+    <field name="extra" type="IntegerField">0</field>
+    <field name="hidden" type="BooleanField">False</field>
+    <field name="ghost" type="BooleanField">False</field>
+    <field name="source" type="CharField">zaffarelli</field>
+    <field name="total_physical" type="IntegerField">5</field>
+    <field name="total_social" type="IntegerField">2</field>
+    <field name="total_mental" type="IntegerField">7</field>
+    <field name="total_talents" type="IntegerField">14</field>
+    <field name="total_skills" type="IntegerField">11</field>
+    <field name="total_knowledges" type="IntegerField">7</field>
+    <field name="total_backgrounds" type="IntegerField">11</field>
+    <field name="total_traits" type="IntegerField">5</field>
+    <field name="total_passions" type="IntegerField">0</field>
+    <field name="total_fetters" type="IntegerField">0</field>
+    <field name="total_realms" type="IntegerField">0</field>
+    <field name="nature" type="CharField">Martyr</field>
+    <field name="demeanor" type="CharField">Fanatic</field>
+    <field name="condition" type="CharField">OK</field>
+    <field name="territory" type="CharField"/>
+    <field name="weakness" type="CharField">Hideous Appearence</field>
+    <field name="district" type="CharField">d03</field>
+    <field name="notes_on_backgrounds" type="TextField">Allies§-
+Contacts§Simon possède pas mal de contact dans le Bas Monde, un réseau monté par Bismark comprenant des prostituées, des clochards, des junkies et des flics corrompus.
+Fame§-
+Generation§Bismark (7th) -&gt; Camilla -&gt; Thorsten -&gt; Lydia -&gt; Simon
+Herd§Un group de sans abris vivant non loin du repaire de Simon.
+Influence§-
+Mentor§Anastasia Bancroft du clan Ventrue. Cette ancienne damoiselle bavaroise fait partie des plus conservateurs des kindreds de Munich. Elle ne lave pas son linge sale elle même, et apprécie Simon pour son efficacité et sa discrétion dans les services qu'il lui rend. Une relation client/fournisseur extrêment solide.
+Resources§500 € d'entrées par mois, peut réunir 1000€ en cas de crise.
+Status§Simon n'a pas une position claire de simple ancilla à la cours de Munich. Les années de bon et loyaux services lui ont ouvert un peu plus de portes, presque autant qu'à un ancien.</field>
+    <field name="notes_on_meritsflaws" type="TextField">Shy§flaw§1§Social action difficulties are at DV+2. It becomes DV+3 if the player is the center of the attention.
+Vengeful§flaw§2§You have a score to settle with the one responsible for Night of the Wolves (sabbat vampires and probably inside traitors). Use one willpower point to resists you eagerness for revenge.</field>
+    <field name="notes_on_history" type="TextField">Naissance§1909§Fait des des études brillantes dans la construction des ponts et autres infrastructures.
+Camp de Concentration de Dashau§1937§Fait partie des premiers déportés. Est épargné par les Nazis en grande partie grace à ses compétences.
+Transition§1942§Dans le camp, Simon est visité par Lydia qui lui propose un marché: lui permettre de survivre à tout ça s'il l'aide à maintenir les souterrains passant sous le camp. Sans de vraie autre perspective, il accèpte. Il ne découvre la laideur des nosferatu que le jour de son changement, mais finalement, étant donné ce qu'il a déjà vu dans le camp...
+Libération§1945§Munich est sous les bombes. Le repère de Simon et de Lydia dans les sous-sols du camp est condamné et ils tentent de s'enfuir pour gagner la cité, mais se retrouvent piégé sous des décombres à moins de 800 mètres de la sortie.
+Travaux suprise§1990§La construction de l'aéroport de Flughafen libère les deux kindreds enssevelis. La presse locale ne parle que d'un accident de glissmeent de terrain condamnant 3 ouvriers, mais se charge d'avertir au plus vite le Prince Franz. Ce dernier arbitre les différents entre Otto, Saint-Cyr et Bismark pour permettre la récupération des kindreds à la place d'une chasse au sang. Avec l'appui d'Anastasia, Simon est présenté officiellement au Prince par Lydia. Il reçoit la charge officielle d'assistant du fléau, Camilla.
+La Nuit des Loups§1992§La ville est prise par surprise et attaquée par des lupins. Le prince Franz prend lui même la direction de la défense de la Camarilla. Nombreux kindreds seront tués ou blessés. Simon aura la chance de faire partie de la seconde partie, contrairement à Lydia et Camilla, tuées aux côté de Franz et de Otto. Il est envoyé par Anastasia aux trousses des assassins de Franz.
+La Traque§1992§Simon poursui les trois membres du sabbat présent lors de l'attaque de Franz mais n'arrive pas à les capturer. Il sera lui même piégé pour un temps dans la forêt où il les aura interceptés.
+La Réorganisation de la Camarilla de Munich§1993§Ursula Eidenstadt prend la direction de la Cité, avec moins de soutient qu'en avait Franz. Les activités de Fléau dans la ville sont suspendues. Anastasia se met en recherche de nouvelles de Simon.
+La Forêt Sombre§1994§Anastasia retrouve la piste de Simon dans la Forêt d'Eglhartinger. Elle n'arrive pas à le localiser précisément.
+Deus Ex Machina§2016§Simon revient à lui dans la Forêt de Ebersberger, à quelques kilomètres de là où Anastasia l'avait fait chercher. Il est le milieu de la nuit, et deux touristes, sur lesquels du sang a été prélevé son endormis près de lui. Les documents sur le couple d'italiens indiquent que c'est la fin de l'été 2016, et que sa cache sous terre a été pour plus longtemps qu'il ne l'aurait pensé. Il rentre à Munich avec le sac des membres du sabbat qu'il avait gardé près de lui. Curieux de savoir qui est intervenu...</field>
+    <field name="notes_on_naturedemeanor" type="TextField">Nature: Martyr§Regain a point of Willpower when you sacrifice yourself or you comfort for your ideals or another's immediate gain.
+Demeanor: Fanatic§The fanatic has a purpose, and that purpose consumes his existence.</field>
+    <field name="notes_on_traits" type="TextField">Animalism§1§Feral Whispers§Aucun jet nécessaire. Le personnage est capable de communiquer avec des animaux (le plus simple: mammifères, reptiles et prédateurs). Contact visuel obligatoire. Pour donner des ordres Manipulation + Animal Ken (DV 6 pour prédateurs - chien, loup chat / DV 7 pour petits prédateurs - rats hibous). VTM p147
+Animalism§2§Beckoning§Charisma + Survival (DV 6)
+Obfuscate§1§Cloak of Shadows§Aucun jet nécessaire aussi longtemps que le personnage reste silencieux et immobile, seul une créature avec un scure d'Auspex plus élevé que le niveau d'Obfuscate du personnage peut le remarquer.
+Obfuscate§2§Unseen Presence§Aucun jet nécessaire. Aucun risque d'être détecté tant qu'aucune interaction n'est faite avec l'audience. Wits + Stealth pour éviter d'être repérer quand de mineures interactions avec l'environnement sont possibles
+Potence§1§generic power§Ajouter un succès automatique à tout jet implicant Strength</field>
+    <field name="adventure" rel="ManyToOneRel" to="collector.adventure">The Choice I Never Had</field>
+    <field name="willpower" type="PositiveIntegerField">6</field>
+    <field name="equipment" type="TextField"/>
+    <field name="glamour" type="PositiveIntegerField">0</field>
+    <field name="banality" type="PositiveIntegerField">0</field>
+    <field name="nightmare" type="PositiveIntegerField">0</field>
+    <field name="realm0" type="CharField"/>
+    <field name="realm1" type="CharField"/>
+    <field name="realm2" type="CharField"/>
+    <field name="realm3" type="CharField"/>
+    <field name="realm4" type="CharField"/>
+    <field name="legacies" type="CharField"/>
+    <field name="birthright0" type="CharField"/>
+    <field name="birthright1" type="CharField"/>
+    <field name="birthright2" type="CharField"/>
+    <field name="birthright3" type="CharField"/>
+    <field name="birthright4" type="CharField"/>
+    <field name="anthithesis" type="CharField"/>
+    <field name="house" type="CharField"/>
+    <field name="motley" type="CharField"/>
+    <field name="seeming" type="CharField"/>
+    <field name="path" type="CharField">Humanity</field>
+    <field name="humanity" type="PositiveIntegerField">7</field>
+    <field name="bloodpool" type="PositiveIntegerField">12</field>
+    <field name="virtue0" type="PositiveIntegerField">3</field>
+    <field name="virtue1" type="PositiveIntegerField">4</field>
+    <field name="virtue2" type="PositiveIntegerField">3</field>
+    <field name="virtue_name0" type="CharField"/>
+    <field name="virtue_name1" type="CharField"/>
+    <field name="virtue_name2" type="CharField"/>
+    <field name="gnosis" type="PositiveIntegerField">0</field>
+    <field name="rage" type="PositiveIntegerField">0</field>
+    <field name="glory" type="PositiveIntegerField">0</field>
+    <field name="honor" type="PositiveIntegerField">0</field>
+    <field name="wisdom" type="PositiveIntegerField">0</field>
+    <field name="arete" type="PositiveIntegerField">0</field>
+    <field name="quintessence" type="PositiveIntegerField">0</field>
+    <field name="paradox" type="PositiveIntegerField">0</field>
+    <field name="dynamic" type="PositiveIntegerField">0</field>
+    <field name="entropic" type="PositiveIntegerField">0</field>
+    <field name="static" type="PositiveIntegerField">0</field>
+    <field name="corpus" type="PositiveIntegerField">0</field>
+    <field name="pathos" type="PositiveIntegerField">0</field>
+    <field name="regret" type="CharField"/>
+    <field name="passion0" type="CharField"/>
+    <field name="passion1" type="CharField"/>
+    <field name="passion2" type="CharField"/>
+    <field name="passion3" type="CharField"/>
+    <field name="passion4" type="CharField"/>
+    <field name="fetter0" type="CharField"/>
+    <field name="fetter1" type="CharField"/>
+    <field name="fetter2" type="CharField"/>
+    <field name="fetter3" type="CharField"/>
+    <field name="fetter4" type="CharField"/>
+    <field name="angst" type="PositiveIntegerField">0</field>
+    <field name="psyche_willpower" type="PositiveIntegerField">0</field>
+    <field name="psyche" type="CharField"/>
+    <field name="psyche_archetype" type="CharField"/>
+    <field name="darkpassion0" type="CharField"/>
+    <field name="darkpassion1" type="CharField"/>
+    <field name="darkpassion2" type="CharField"/>
+    <field name="darkpassion3" type="CharField"/>
+    <field name="darkpassion4" type="CharField"/>
+    <field name="thorn0" type="CharField"/>
+    <field name="thorn1" type="CharField"/>
+    <field name="thorn2" type="CharField"/>
+    <field name="thorn3" type="CharField"/>
+    <field name="thorn4" type="CharField"/>
+    <field name="summary" type="TextField">Freebies: -235</field>
+    <field name="attribute0" type="PositiveIntegerField">3</field>
+    <field name="attribute1" type="PositiveIntegerField">2</field>
+    <field name="attribute2" type="PositiveIntegerField">3</field>
+    <field name="attribute3" type="PositiveIntegerField">2</field>
+    <field name="attribute4" type="PositiveIntegerField">3</field>
+    <field name="attribute5" type="PositiveIntegerField">0</field>
+    <field name="attribute6" type="PositiveIntegerField">4</field>
+    <field name="attribute7" type="PositiveIntegerField">2</field>
+    <field name="attribute8" type="PositiveIntegerField">4</field>
+    <field name="talent0" type="PositiveIntegerField">3</field>
+    <field name="talent1" type="PositiveIntegerField">0</field>
+    <field name="talent2" type="PositiveIntegerField">1</field>
+    <field name="talent3" type="PositiveIntegerField">3</field>
+    <field name="talent4" type="PositiveIntegerField">3</field>
+    <field name="talent5" type="PositiveIntegerField">0</field>
+    <field name="talent6" type="PositiveIntegerField">1</field>
+    <field name="talent7" type="PositiveIntegerField">0</field>
+    <field name="talent8" type="PositiveIntegerField">2</field>
+    <field name="talent9" type="PositiveIntegerField">1</field>
+    <field name="skill0" type="PositiveIntegerField">3</field>
+    <field name="skill1" type="PositiveIntegerField">2</field>
+    <field name="skill2" type="PositiveIntegerField">0</field>
+    <field name="skill3" type="PositiveIntegerField">0</field>
+    <field name="skill4" type="PositiveIntegerField">0</field>
+    <field name="skill5" type="PositiveIntegerField">3</field>
+    <field name="skill6" type="PositiveIntegerField">0</field>
+    <field name="skill7" type="PositiveIntegerField">0</field>
+    <field name="skill8" type="PositiveIntegerField">3</field>
+    <field name="skill9" type="PositiveIntegerField">0</field>
+    <field name="knowledge0" type="PositiveIntegerField">0</field>
+    <field name="knowledge1" type="PositiveIntegerField">1</field>
+    <field name="knowledge2" type="PositiveIntegerField">0</field>
+    <field name="knowledge3" type="PositiveIntegerField">2</field>
+    <field name="knowledge4" type="PositiveIntegerField">0</field>
+    <field name="knowledge5" type="PositiveIntegerField">1</field>
+    <field name="knowledge6" type="PositiveIntegerField">1</field>
+    <field name="knowledge7" type="PositiveIntegerField">2</field>
+    <field name="knowledge8" type="PositiveIntegerField">0</field>
+    <field name="knowledge9" type="PositiveIntegerField">0</field>
+    <field name="background0" type="PositiveIntegerField">0</field>
+    <field name="background1" type="PositiveIntegerField">2</field>
+    <field name="background2" type="PositiveIntegerField">0</field>
+    <field name="background3" type="PositiveIntegerField">2</field>
+    <field name="background4" type="PositiveIntegerField">1</field>
+    <field name="background5" type="PositiveIntegerField">0</field>
+    <field name="background6" type="PositiveIntegerField">2</field>
+    <field name="background7" type="PositiveIntegerField">1</field>
+    <field name="background8" type="PositiveIntegerField">0</field>
+    <field name="background9" type="PositiveIntegerField">3</field>
+    <field name="background10" type="PositiveIntegerField">0</field>
+    <field name="trait0" type="CharField">Animalism (2)</field>
+    <field name="trait1" type="CharField">Obfuscate (2)</field>
+    <field name="trait2" type="CharField">Potence (1)</field>
+    <field name="trait3" type="CharField"/>
+    <field name="trait4" type="CharField"/>
+    <field name="trait5" type="CharField"/>
+    <field name="trait6" type="CharField"/>
+    <field name="trait7" type="CharField"/>
+    <field name="trait8" type="CharField"/>
+    <field name="trait9" type="CharField"/>
+    <field name="trait10" type="CharField"/>
+    <field name="trait11" type="CharField"/>
+    <field name="trait12" type="CharField"/>
+    <field name="trait13" type="CharField"/>
+    <field name="trait14" type="CharField"/>
+    <field name="trait15" type="CharField"/>
+    <field name="merit0" type="CharField"/>
+    <field name="merit1" type="CharField"/>
+    <field name="merit2" type="CharField"/>
+    <field name="merit3" type="CharField"/>
+    <field name="merit4" type="CharField"/>
+    <field name="flaw0" type="CharField">Vengeful (2)</field>
+    <field name="flaw1" type="CharField">Shy (1)</field>
+    <field name="flaw2" type="CharField"/>
+    <field name="flaw3" type="CharField"/>
+    <field name="flaw4" type="CharField"/>
+    <field name="rite0" type="CharField"/>
+    <field name="rite1" type="CharField"/>
+    <field name="rite2" type="CharField"/>
+    <field name="rite3" type="CharField"/>
+    <field name="rite4" type="CharField"/>
+    <field name="rite5" type="CharField"/>
+    <field name="rite6" type="CharField"/>
+    <field name="rite7" type="CharField"/>
+    <field name="rite8" type="CharField"/>
+    <field name="rite9" type="CharField"/>
+</object>
