@@ -4,7 +4,8 @@ from datetime import datetime
 from django.db.models.signals import pre_save, post_save
 from django.dispatch import receiver
 import json
-
+import yaml
+from yaml.loader import SafeLoader
 import logging
 
 logger = logging.Logger(__name__)
@@ -47,13 +48,15 @@ class Gift(models.Model):
     name = models.CharField(max_length=128, default='', primary_key=True)
     alternative_name = models.CharField(max_length=128, default='', blank=True)
     level = models.PositiveIntegerField(default=0)
-    declaration = models.CharField(max_length=256, default='', blank=True)
+    code = models.CharField(max_length=256, default='', blank=True)
+    breeds = models.CharField(default='...', max_length=3)
+    auspices = models.CharField(default='.....', max_length=5)
+    tribes = models.CharField(default='................', max_length=16)
+
     breed_0 = models.BooleanField(default=False, verbose_name='Homid')
     breed_1 = models.BooleanField(default=False, verbose_name='Metis')
     breed_2 = models.BooleanField(default=False, verbose_name='Lupus')
-    breeds = models.CharField(default='...', max_length=3)
-    auspices = models.CharField(default='.....', max_length=5)
-    tribes = models.CharField(default='________________', max_length=16)
+
     auspice_0 = models.BooleanField(default=False, verbose_name='Ragabash')
     auspice_1 = models.BooleanField(default=False, verbose_name='Theurge')
     auspice_2 = models.BooleanField(default=False, verbose_name='Philodox')
@@ -78,9 +81,10 @@ class Gift(models.Model):
     tribe_15 = models.BooleanField(default=False, verbose_name='White Howlers')
 
     description = models.TextField(max_length=1024, blank=True, default='')
+    system = models.TextField(max_length=1024, blank=True, default='')
 
     def fix(self):
-        self.declaration = f'{self.name.title()} ({self.level})'
+        self.code = f'{self.name.title()} ({self.level})'.upper()
         breeds = '___'
         auspices = '_____'
         tribes = '________________'
@@ -103,8 +107,17 @@ class Gift(models.Model):
         self.auspices = auspices
         self.tribes = tribes
 
+
     def __str__(self):
-        return f'{self.name.title()} ({self.level})'
+        return f'GIFT {self.name.title()} ({self.level})'
+
+    @classmethod
+    def load_from_yaml(kls,yaml_file_name):
+        with open(yaml_file_name,'r') as f:
+            data = list(yaml.load_all(f,Loader=SafeLoader))
+            print(data)
+
+
 
 
 def refix(modeladmin, request, queryset):
@@ -115,9 +128,9 @@ def refix(modeladmin, request, queryset):
 
 
 class GiftAdmin(admin.ModelAdmin):
-    list_display = ['name', 'level', 'breeds', 'auspices', 'tribes', 'alternative_name', 'description']
-    ordering = ['-breeds', '-auspices', '-tribes', 'level', 'name']
-    list_filter = ['breed_0', 'breed_1', 'breed_2', 'auspice_0', 'auspice_1', 'auspice_2', 'auspice_3', 'auspice_4',
+    list_display = ['code', 'breeds', 'auspices', 'tribes', 'alternative_name', 'description']
+    ordering = ["level","name",'-breeds', '-auspices', '-tribes']
+    list_filter = ['level','breed_0', 'breed_1', 'breed_2', 'auspice_0', 'auspice_1', 'auspice_2', 'auspice_3', 'auspice_4',
                    'tribe_0', 'tribe_1', 'tribe_2', 'tribe_3', 'tribe_4', 'tribe_5', 'tribe_6', 'tribe_7', 'tribe_8',
                    'tribe_9', 'tribe_10', 'tribe_11', 'tribe_12', 'tribe_13', 'tribe_14', 'tribe_15'
                    ]

@@ -9,7 +9,7 @@ from collector.templatetags.wod_filters import as_bullets
 from collector.utils.data_collection import build_per_primogen, build_gaia_wheel
 from collector.utils.wod_reference import get_current_chronicle
 from collector.models.chronicles import Chronicle
-from collector.utils.wod_reference import STATS_NAMES
+from collector.utils.wod_reference import STATS_NAMES, CHARACTERS_PER_PAGE
 import json
 from collector.utils.wod_reference import FONTSET
 from collector.utils.data_collection import improvise_id
@@ -29,22 +29,22 @@ def prepare_index(request):
     cities = []
     plist = Creature.objects.filter(chronicle=chronicle.acronym).exclude(player='').exclude(
         adventure_id__isnull=True).order_by('adventure')
+    print(plist)
     adv = None
     for p in plist:
         if p.adventure != adv:
             adv = p.adventure
             adventure = {'adventure': p.adventure.name, 'players': []}
-            adventure['players'].append({'name': p.name, 'rid': p.rid, 'player': p.player})
             players.append(adventure)
-        else:
-            adventure['players'].append({'name': p.name, 'rid': p.rid, 'player': p.player})
+        adventure['players'].append({'name': p.name, 'rid': p.rid, 'player': p.player, 'pre_change_access':p.pre_change_access})
 
     for c in Chronicle.objects.all():
         chronicles.append({'name': c.name, 'acronym': c.acronym, 'active': c.is_current})
     for ci in City.objects.all():
         tag = ci.name.replace(' ', '_')
         cities.append({'name': ci.name, 'tag': tag.lower()})
-    context = {'chronicles': chronicles, 'fontset': FONTSET, 'players': players, 'cities': cities}
+    misc = {"version":settings.VERSION}
+    context = {'chronicles': chronicles, 'fontset': FONTSET, 'players': players, 'cities': cities, 'miscellaneous': misc}
     return context
 
 
@@ -102,8 +102,8 @@ def get_list(request, pid=1, slug=None):
         elif 'ccs' == slug:
             creature_items = Creature.objects.filter(chronicle=chronicle.acronym, creature__in=['garou', 'kindred', 'wraith', 'changeling', 'mage']).order_by('name')
         else:
-            creature_items = Creature.objects.filter(chronicle=chronicle.acronym).order_by('name')
-        paginator = Paginator(creature_items, 25)
+            creature_items = Creature.objects.filter(chronicle=chronicle.acronym).order_by('groupspec','player','name')
+        paginator = Paginator(creature_items, CHARACTERS_PER_PAGE)
         creature_items = paginator.get_page(pid)
         list_context = {'creature_items': creature_items}
         list_template = get_template('collector/list.html')
@@ -245,32 +245,22 @@ def display_crossover_sheet(request, slug=None, option=None):
         if slug is None:
             slug = 'julius_von_blow'
         c = Creature.objects.get(rid=slug)
-        if option is not None:
+        if option:
+            alt_name = c.name + " ("+option+")"
+            all_pre_change = Creature.objects.filter(name=alt_name)
+            if len(all_pre_change):
+                for i in all_pre_change:
+                    i.delete()
             c.id = None
-            c.name = " " + c.name
+            c.name = alt_name
             c.creature = option
             c.debuff()
             c.need_fix = True
             c.save()
-        if chronicle.acronym == 'BAV':
-            if c.creature == 'kindred' or c.creature == 'ghoul':
-                scenario = "Munich by Night"
-                pre_title = "Munich"
-                post_title = "Camarilla"
-        if chronicle.acronym == 'GMU':
-                if c.creature == 'garou' or c.creature == 'kinfolk':
-                    scenario = "Rage Across Bayern"
-                    pre_title = "Gaia Tribes"
-                    post_title = "Garou"
-        elif chronicle.acronym == 'GHH':
-            scenario = "The Northeast Passage"
-            pre_title = "Hamburg"
-            post_title = "by Night"
-
-        else:
-            scenario = "NEW YORK CITY"
-            pre_title = "New York By Night"
-            post_title = "feat. Julius Von Blow"
+        if chronicle:
+            scenario = chronicle.scenario
+            pre_title = chronicle.pre_title
+            post_title = chronicle.post_title
         spe = c.get_specialities()
         shc = c.get_shortcuts()
         j = c.toJSON()
@@ -278,7 +268,9 @@ def display_crossover_sheet(request, slug=None, option=None):
         k["sire_name"] = c.sire_name
         k["background_notes"] = c.background_notes()
         k["timeline"] = c.timeline()
-        k["disciplines_notes"] = c.disciplines_notes()
+        tn = c.traits_notes()
+        print(tn)
+        k["traits_notes"] = tn
         k["nature_notes"] = c.nature_notes()
         k["meritsflaws_notes"] = c.meritsflaws_notes()
         # print("DISCPLINES NOTES ---> ", k["disciplines_notes"])

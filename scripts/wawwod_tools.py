@@ -21,6 +21,7 @@ class ToolsForWawwod:
         print('    6 - Sire as RID')
         print('    7 - Name ghouls...')
         print('    8 - Reghoul (kindreds)...')
+        print('    9 - To current chronicle')
         print('    0 - Quit')
         topic = ''
         while topic != '0':
@@ -42,7 +43,8 @@ class ToolsForWawwod:
             elif topic == '8':
                 manage_missing_ghouls()
                 domitor_from_sire()
-
+            elif topic == '9':
+                self.to_current_chronicle()
     def fmt(self, txt):
         new_txt = "\033[1;39m".join(txt.split('µ'))
         new_txt = "\033[0;m".join(new_txt.split('§'))
@@ -244,6 +246,15 @@ class ToolsForWawwod:
                 if stop_it:
                     print("(ghoul loop stopped)")
                     break
+
+    def to_current_chronicle(self):
+        all = Creature.objects.filter(group="Sept of the Five Leaves")
+        if len(all)>0:
+            for c in all:
+                print(c.name)
+                c.chronicle = chronicle.acronym
+                c.save()
+
 
 
 ToolsForWawwod()

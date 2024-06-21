@@ -6,7 +6,7 @@ logger = logging.Logger(__name__)
 
 def get_current_chronicle():
     # When migrating
-    #return None
+    # return None
     ch = None
     try:
         current_chronicle = Chronicle.objects.filter(is_current=True).first()
@@ -311,12 +311,35 @@ ARCHETYPES = [
 
 BREEDS = ['Homid', 'Metis', 'Lupus']
 
-AUSPICES = ['Ragabasch', 'Theurge', 'Philodox', 'Galliard', 'Ahroun']
+AUSPICES = ['Ragabash', 'Theurge', 'Philodox', 'Galliard', 'Ahroun']
 
 RANKS = ['Cliath', 'Fostern', 'Adren', 'Athro', 'Elder']
 
 FONTSET = ['Cinzel', 'Trade+Winds', 'Imprima', 'Roboto', 'Philosopher', 'Ruda', 'Khand', 'Allura', 'Gochi+Hand',
-           'Reggae+One', 'Syne+Mono', 'Zilla+Slab', 'Spartan', 'Marcellus+SC']
+           'Reggae+One', 'Syne+Mono', 'Zilla+Slab', 'Spartan', 'Marcellus+SC', 'Splash', 'Trirongn']
+
+CHARACTERS_PER_PAGE = 20
+
+# Garou data
+RAGE_PER_AUSPICE = [1, 2, 3, 4, 5]
+GNOSIS_PER_BREED = [1, 3, 5]
+PER_TRIBE = {
+    "Black Furies": {"willpower": 3},
+    "Black Spiral Dancers": {"willpower": 3},
+    "Bone Gnawers": {"willpower": 3},
+    "Children of Gaia": {"willpower": 4},
+    "Fiannas": {"willpower": 3},
+    "Gets of Fenris": {"willpower": 3},
+    "Glass Walkers": {"willpower": 3},
+    "Red Talons": {"willpower": 3},
+    "Shadow Lords": {"willpower": 3},
+    "Silent Striders": {"willpower": 3},
+    "Silver Fangs": {"willpower": 3},
+    "Stargazers": {"willpower": 5},
+    "Uktenas": {"willpower": 3},
+    "Wendigos": {"willpower": 4},
+
+}
 
 GM_SHORTCUTS = {
     'garou': [

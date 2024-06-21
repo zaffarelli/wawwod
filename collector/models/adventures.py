@@ -20,7 +20,7 @@ class Adventure(models.Model):
     notes = models.TextField(max_length=1024,default='', blank=True)
 
     def __str__(self):
-        return self.name
+        return f"Adventure {self.name}"
 
     def fix(self):
         if self.code == '':

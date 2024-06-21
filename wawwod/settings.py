@@ -183,4 +183,4 @@ if DEBUG:
     mimetypes.add_type("application/javascript;charset=utf-8", ".es6", True)
     mimetypes.add_type("application/javascript;charset=utf-8", ".js", True)
 
-VERSION = '0.1'
+VERSION = '1.0.0'

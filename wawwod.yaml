@@ -1,0 +1,5 @@
+generic:
+  characters_per_page: 20
+chronicles:
+  default_chronicle_acronym: SWD
+  current_chronicle_acronym: GMU

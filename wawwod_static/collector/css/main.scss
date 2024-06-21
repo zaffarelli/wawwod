@@ -1006,3 +1006,32 @@ text.kindred_name {
     color:$plate_highlight;
   }
 }
+
+fieldset{
+    border: 1px solid white;
+    border-radius: 5px;
+    & .adventure_item{
+        width:36ex;
+        height:1.2em;
+        & .label{
+            display:inline-block;
+            width:28ex;
+
+        }
+        & span.display{
+            display:inline-block;
+            width:2ex;
+            cursor:pointer;
+            text-align:center;
+
+        }
+        & span.view_creature{
+            display:inline-block;
+            width:2ex;
+            cursor:pointer;
+            text-align:center;
+
+
+        }
+    }
+}

@@ -1,6 +1,9 @@
 {% load wod_filters %}
 <div class='avatar_link {% if c.is_locked %}locked{%endif%} {{c.creature}}'>
-  <span class='toggle_name ' title="{{c.creature|title}} [{{c.groupspec}}]&#10&#13 [{{c.faction}}]">{{ c.name }} ({{c.family}} {{ c.creature }})</span>
+  <span class='toggle_name ' title="{{c.creature|title}} [{{c.groupspec}}]&#10&#13 [{{c.faction}}]">
+    {% if c.player %}[{{c.player}}][{{c.groupspec}}]{% endif %}
+    {{ c.name }} ({{c.family}} {{ c.creature }} )
+  </span>
   <div class="creature_links">
   <span class="display" action="crossover_sheet" param="Sheet for {{c.rid}}"><i class="fas fa-file"></i></span>
   <span class='view_creature' id="{{c.rid}}" title='See {{c.name|safe}}: {{c.rid}}'><i class="fas fa-eye"></i></span>

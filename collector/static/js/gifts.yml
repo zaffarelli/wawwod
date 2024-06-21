@@ -1,0 +1,39 @@
+gifts:
+  level_1:
+      - name: Blur of the Milky Eye
+        breeds:
+          - ragabash
+        auspices:
+        tribes:
+        description: | 
+          The werewolf’s form becomes a shimmering, indistinct blur, as though seen through heavy cataracts — even in the midday sun. The Ragabash is not truly invisible, however, and if spotted, this Gift’s protection fails until the observer is distracted. A chameleon- or ermine-spirit teaches this Gift.
+        system: |
+          The player rolls Manipulation + Stealth (difficulty 8). Each success increases the difficulty of all Perception rolls made to detect him by one for the rest of the scene.
+        source: Werewolf 20th Anniversary Edition, p.161
+      - name: Disguise Fetish
+        description: |
+          Werewolves covet one another's treasures as much as anyone else. 
+          The clever Ragabash can hide the true nature of his fetishes to deflect curious eyes. 
+          A raven-spirit teaches this Gift.
+        system: |
+          The player rolls Manipulation + Subterfuge (difficulty 6) to create the illusion that one fetish or talen carried or touched by the character is just a mundane object. Klaives look like ordinary steel daggers, Jarlhammers seem much smaller than they are, and any glyphs or precious stones that ornament the fetish appear as cheap decorations. Gifts and other supernatural powers that could sense the nature of the fetish must overcome the number of successes rolled by the Ragabash's player to accurately identify the object as something extraordinary. 
+          The illusion ends if the fetish is used in its intended fashion. Otherwise, the effect lasts for the scene.
+        source: W20 Changing Ways, p.152
+      - name: Hush
+        description: |
+          Though Ragabash are teachers, one thing they can't always teach is when to keep one's mouth shut. 
+          Maybe a brash Ahroun is about to say something unfortunate to a bigger Ahroun, or perhaps a talkative cub is about to reveal too much about what she knows. In such situations, this Gift acts as a temporary stopgap; it makes the target fumble for words, lose his train of thought or become momentarily distracted. Besides keeping friends from saying stupid things, the Gift can also be used against insulting rivals or the fomori calling in reinforcements. Because of the bond between packmates, it is easier to use this Gift within the pack — after all, it's for the greater good, right? 
+          A mockingbird-spirit teaches this Gift.
+        system: |
+          The player rolls Wits + Subterfuge (difficulty is the target's Wits + 4; for a packmate reduce the difficulty by one). Every success stalls the target for one turn, preventing the target from communicating verbally (although other forms of communication, such as sign language or writing, are still possible).
+        source: Book of Auspices, p.32-33)
+      - name: Infectious Laughter
+        description: |
+          Laughter is the tool with which Gaia’s tricksters promote enlightenment and the knife that slashes through the veil of Rage. When the Ragabash laughs, those around her are compelled to follow along, forgetting their grievances. 
+          A coyote- or hyena-spirit teaches this Gift.
+        system: |
+          The Ragabash must make some comment mocking the present situation in which she finds herself, then laugh at it. 
+          The player then rolls Manipulation + Expression (difficulty of the highest Rage rating of anyone listening). Success causes those who hear the Ragabash’s comment and laughter lose hold of their ire, and forget what it was that had them upset in the first place — although their temper will return if they are reminded of what the New Moon has made them forget.
+        source: Werewolf 20th Anniversary Edition, p.161
+
+

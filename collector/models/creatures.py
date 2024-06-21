@@ -2,8 +2,10 @@ from django.db import models
 from django.contrib import admin
 import json
 import logging
+
+from collector.templatetags.wod_filters import as_tribe_plural
 from collector.utils.wod_reference import get_current_chronicle, find_stat_property, STATS_NAMES, GM_SHORTCUTS, \
-    bloodpool, STATS_TEMPLATES, ARCHETYPES, CLANS_SPECIFICS
+    bloodpool, STATS_TEMPLATES, ARCHETYPES, CLANS_SPECIFICS, RAGE_PER_AUSPICE, GNOSIS_PER_BREED, PER_TRIBE
 from collector.utils.helper import json_default, toRID
 from collector.models.adventures import Adventure
 import random
@@ -43,6 +45,8 @@ class Creature(models.Model):
     display_pole = models.CharField(max_length=64, default='', blank=True)
     residence = models.CharField(max_length=64, default='', blank=True)
     list_pos = models.IntegerField(default=0, blank=True)
+
+    pre_change_access = models.BooleanField(blank=True, default=False)
 
     finaldeath = models.IntegerField(default=0)
     timeintorpor = models.PositiveIntegerField(default=0)
@@ -420,7 +424,11 @@ class Creature(models.Model):
         return entrance
 
     def __str__(self):
-        return "%s (%s %s of %s)" % (self.name, self.family, self.creature, self.faction)
+        from collector.utils.wod_reference import BREEDS, AUSPICES
+        if self.creature == "garou":
+            return f"{self.name} ({BREEDS[self.breed]} {AUSPICES[self.auspice]} of {as_tribe_plural(self.family)})"
+        else:
+            return f"{self.name} ({self.creature})"
 
     @property
     def freebies_per_age_threshold(self):
@@ -575,13 +583,7 @@ class Creature(models.Model):
     def fix_garou(self):
         self.trueage = self.age
 
-        # Tribe
-        if self.family in ["Bone Gnawer", "Children of Gaia", "Stargazer", "Wendigo"]:
-            if self.willpower < 4:
-                self.willpower = 4
-        else:
-            if self.willpower < 3:
-                self.willpower = 3
+
         # Auspice
         if self.auspice == 0:
             # Initial Renown
@@ -728,7 +730,19 @@ class Creature(models.Model):
             self.fix_kindred()
         elif 'garou' == self.creature:
             # at:7/5/3 ab:13/9/5 b:5 g:21 rgw:16 f:15
-            self.freebies = -((7 + 5 + 3 + 9) * 5 + (13 + 9 + 5) * 2 + 5 + 7 * 3 + 16 + 15)
+            self.freebies = 0
+            self.freebies -= (7 + 5 + 3 + 9) * 5  # Attributes
+            self.freebies -= (13 + 9 + 5) * 2     # Abilities
+            self.freebies -= 3 * 7                # Gifts
+            self.freebies -= 5 * 1                # Backgrounds
+            self.freebies -= RAGE_PER_AUSPICE[self.auspice] * 1 # Rage per Auspice
+            self.freebies -= GNOSIS_PER_BREED[self.breed] * 2 # Gnosis per Breed
+            if self.family:
+                self.freebies -= PER_TRIBE[as_tribe_plural(self.family)]['willpower'] * 1                # Willpower per Tribe
+            else:
+                self.freebies -= 3
+            self.freebies -= 15                   # Pure freebies
+            self.freebies
             self.fix_garou()
         elif 'mage' == self.creature:
             # at:7/5/3 ab:13/9/5 b:5 g:21 rgw:16 f:15
@@ -1506,12 +1520,6 @@ class Creature(models.Model):
             self.virtue2 = 4
         elif self.auspice == 4:  # ahroun
             self.virtue2 = 5
-        if self.family in ["Bone Gnawer", "Children of Gaia", "Stargazer", "Wendigo"]:
-            if self.virtue1 < 4:
-                self.virtue1 = 4
-        else:
-            if self.virtue1 < 3:
-                self.virtue1 = 3
         kn = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
         for i in range(10):
             kn[i] = getattr(self, f'knowledge{i}')
@@ -1531,9 +1539,10 @@ class Creature(models.Model):
         fmt_list = []
         from collector.models.backgrounds import Background
         backgrounds = ['allies', 'contacts', 'fame', 'generation', 'herd', 'influence', 'mentor', 'resources',
-                       'retainers', 'status']
+                       'retainers', 'status', 'kinfolk', 'pure breed', 'ancestors', 'rites']
         idx = 0
         for b in backgrounds:
+            print(b)
             v = self.value_of(b)
             if v > 0:
                 txt_lines = []
@@ -1549,15 +1558,15 @@ class Creature(models.Model):
                 fmt_list.append({'idx': idx, 'item': f'{b.title()} [{v}] ', 'notes': f'{x}'})
                 idx += 1
 
-        # list = self.notes_on_backgrounds.split('\r\n');
-        # fmt_list = []
-        # idx = 0;
-        # for e in list:
-        #     print(e)
-        #     if len(e) > 2:
-        #         words = e.split('§');
-        #         fmt_list.append({'idx': idx, 'item': f'{words[0]}', 'notes': f'{words[1]}'})
-        #         idx += 1
+        list = self.notes_on_backgrounds.split('\r\n');
+        fmt_list = []
+        idx = 0;
+        for e in list:
+            print(e)
+            if len(e) > 2:
+                words = e.split('§');
+                fmt_list.append({'idx': idx, 'item': f'{words[0]}', 'notes': f'{words[1]}'})
+                idx += 1
 
         return fmt_list
 
@@ -1573,7 +1582,7 @@ class Creature(models.Model):
 
         return fmt_list
 
-    def disciplines_notes(self):
+    def traits_notes(self):
         fmt_list = []
         idx = 0
         if self.creature in ["kindred", "ghoul"]:
@@ -1610,10 +1619,46 @@ class Creature(models.Model):
                     c = z.alternative_name
                     d = z.technical_notes
                     list.append(f"{a}§{b}§{c}§{d}")
+        elif self.creature in ["garou"]:
+            from collector.models.gifts import Gift
+            extended_traits = []
+            traits = self.get_traits()
+            print("traits",traits)
+            for t in traits:
+                words = t.split(' (')
+                d = words[0]
+                v = words[1]
+                v2 = v[:-1]
+                v3 = int(v2)
+                print(t, ":", d, ":", v, ":", v2, ":", v3)
+                for y in range(v3):
+                    extended_traits.append(f'{d} ({y + 1})')
+            # all = Gift.objects.filter(code__in=extended_traits).order_by('name', 'level')
+            # for z in all:
+            #     if z.is_linear:
+            #         prefix = z.name
+            #         for x in extended_traits:
+            #             if x.startswith(prefix):
+            #                 extended_traits.remove(x)
+            #         extended_traits.append(z.code)
+            # print(extended_traits)
+            list = []
+            for et in reversed(traits):
+                print("Looking for... ",et)
+                traits = Gift.objects.filter(code=et.upper())
+                if len(traits) > 0:
+                    trait = traits.first()
+                    a = trait.name
+                    b = str(trait.level)
+                    c = trait.alternative_name
+                    d = trait.description + " µ -- System -- µ "+trait.system
+                    list.append(f"{a}§{b}§{c}§{d}")
+                else:
+                    print(f"Discarded... {et}")
 
         else:
             list = self.notes_on_traits.split('\r\n');
-
+        print("List -->",list)
         for e in list:
             if len(e) > 2:
                 words = e.split('§')
@@ -1771,7 +1816,7 @@ def randomize_all(modeladmin, request, queryset):
 
 class CreatureAdmin(admin.ModelAdmin):
     list_display = [  # 'domitor',
-        'name', 'age', 'trueage', 'nature', 'chronicle', 'hidden', 'cast_figure', 'freebies', 'player',
+        'name', 'age', 'trueage', 'nature', 'chronicle', 'hidden', 'adventure', 'freebies', 'player',
         'district',
         'family', 'groupspec', 'sire', 'status', 'condition']
     ordering = ['-trueage', 'name', 'group', 'creature']
@@ -1780,6 +1825,6 @@ class CreatureAdmin(admin.ModelAdmin):
                refix, set_male, set_female, push_to_munich, push_to_newyork, push_to_hamburg]
     list_filter = ['chronicle', 'hidden', 'adventure', 'district', 'faction', 'family', 'is_new', 'condition', 'group',
                    'groupspec',
-                   'creature', 'mythic', 'ghost', 'sire']
+                   'creature', 'mythic', 'ghost']
     search_fields = ['name', 'groupspec']
-    list_editable = ['cast_figure', 'hidden', 'nature', 'district', 'player', 'condition']
+    list_editable = ['adventure', 'hidden', 'nature', 'district', 'player', 'condition', "family"]

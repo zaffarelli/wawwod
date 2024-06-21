@@ -75,16 +75,18 @@ class WawwodSheet {
         me.dot_radius = me.stepx / 8;
         me.stat_length = 150;
         me.stat_max = 5;
-        me.shadow_fill = "#B0B0B0";
-        me.shadow_stroke = "#A0A0A0";
+        me.shadow_fill = "#B0B0B07F";
+        me.shadow_stroke = "#A0A0A07F";
         me.draw_stroke = '#111';
         me.draw_fill = '#222';
         me.user_stroke = '#644';
         me.user_fill = '#422';
         me.user_font = 'Gochi Hand';
         me.mono_font = 'Syne Mono';
+        me.creature_font = 'Trade Winds';
         me.title_font = 'Khand';
-        me.logo_font = 'Trade Winds';
+        //me.title_font = 'Trade Winds';
+        me.logo_font = 'Splash';
         me.base_font = 'Philosopher';
         me.x = d3.scaleLinear().domain([0, me.width]).range([0, me.width]);
         me.y = d3.scaleLinear().domain([0, me.height]).range([0, me.height]);
@@ -1306,12 +1308,10 @@ function wrap(text, width, stacked = false, a_font_size) {
         ;
 
         while (word = words.pop()) {
-            line.push(word);
-            tspan.text(line.join(" "));
-            if (tspan.node().getComputedTextLength() > width) {
-                line.pop();
+//             console.log(word)
+            if (word == "µ"){
                 tspan.text(line.join(" "));
-                line = [word];
+                line = [];
                 tspan = tgt.append("tspan")
                     .attr("x", x)
                     .attr('y', y)
@@ -1319,6 +1319,22 @@ function wrap(text, width, stacked = false, a_font_size) {
                     .style("font-size", a_font_size + 'px')
                     .style("stroke-width", '0.05pt')
                     .text(word)
+
+            }else{
+                line.push(word);
+                tspan.text(line.join(" "));
+                if (tspan.node().getComputedTextLength() > width) {
+                    line.pop();
+                    tspan.text(line.join(" "));
+                    line = [word];
+                    tspan = tgt.append("tspan")
+                        .attr("x", x)
+                        .attr('y', y)
+                        .attr("dy", ++lineNumber * lineHeight)
+                        .style("font-size", a_font_size + 'px')
+                        .style("stroke-width", '0.05pt')
+                        .text(word)
+                }
             }
         }
     });

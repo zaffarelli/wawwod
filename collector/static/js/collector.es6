@@ -448,8 +448,7 @@ class WawwodCollector {
                 });
             });
 
-            $('.view_creature').off();
-            $('.view_creature').on('click', function (event) {
+            $('.view_creature').off().on('click', function (event) {
                 event.preventDefault();
                 event.stopPropagation();
                 let dad = $(this).parents('li');
@@ -461,7 +460,7 @@ class WawwodCollector {
                         $('.details').html(answer)
                         $('li').removeClass('selected');
                         $('.details').removeClass('hidden');
-                        $('.charlist').addClass('hidden');
+                        //$('.charlist').addClass('hidden');
                         me.rebootLinks();
                     },
                     error: function (answer) {

@@ -1,9 +1,3 @@
-'''
-           /       '_ /_/ 
-          ()(/__/)/(//)/  
-            /     _/      
-
-'''
 from django.http import JsonResponse
 
 class AjaxFromResponseMixin:

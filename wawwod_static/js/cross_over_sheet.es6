@@ -2,7 +2,7 @@ class CrossOverSheet extends WawwodSheet {
     constructor(data, parent, collector) {
         super(data, parent, collector);
         this.init();
-        this.release = "18.06";
+        this.release = "19.01";
     }
 
     init() {
@@ -29,14 +29,14 @@ class CrossOverSheet extends WawwodSheet {
             me.midline(30);
             // Title
             let txt = me.sheet_type(me.data['creature']).toUpperCase();
-            me.decorationText(12, 2.75, 0, 'middle', me.logo_font, me.fat_font_size * 2, '#FFF', '#FFF', 10, txt, me.back, 1);
-            me.decorationText(12, 1.8, 0, 'middle', me.title_font, me.fat_font_size, "#fff", "#fff", 5, me.scenario, me.back, 0.75);
+            me.decorationText(12, 2.75, 0, 'middle', me.logo_font, me.fat_font_size * 1.8, '#F0F0F07F', '#F0F0F07F', 10, txt, me.back, 1);
+            me.decorationText(12, 1.8, 0, 'middle', me.creature_font, me.fat_font_size, "#fff", "#fff", 5, txt, me.back, 0.75);
 
-            me.decorationText(12, 1.8, 0, 'middle', me.title_font, me.fat_font_size, me.draw_fill, me.shadow_stroke, 0.5, me.scenario, me.back, 0.5);
-            me.decorationText(12, 2.75, 0, 'middle', me.logo_font, me.fat_font_size * 2, me.shadow_fill, me.shadow_stroke, 1, txt, me.back, 0.75);
+            me.decorationText(12, 1.8, 0, 'middle', me.creature_font, me.fat_font_size, me.draw_fill, me.shadow_stroke, 0.5, txt, me.back, 0.5);
+            me.decorationText(12, 2.75, 0, 'middle', me.logo_font, me.fat_font_size * 1.8, me.shadow_fill, me.shadow_stroke, 1, me.scenario, me.back, 0.75);
 
-            me.decorationText(2.5, 1.75, 0, 'middle', me.title_font, me.medium_font_size, me.draw_fill, me.draw_stroke, 0.5, "What a Wonderful", me.back);
-            me.decorationText(2.5, 2.25, 0, 'middle', me.title_font, me.medium_font_size, me.draw_fill, me.draw_stroke, 0.5, "World of Darkness", me.back);
+            me.decorationText(2.5, 1.75, 0, 'middle', me.base_font, me.medium_font_size, me.draw_fill, me.draw_stroke, 0.5, "What a Wonderful", me.back);
+            me.decorationText(2.5, 2.25, 0, 'middle', me.base_font, me.medium_font_size, me.draw_fill, me.draw_stroke, 0.5, "World of Darkness", me.back);
         } else if (me.page === 1) {
             me.crossline(1, 2, 35);
             me.crossline(23, 2, 35);
@@ -65,10 +65,11 @@ class CrossOverSheet extends WawwodSheet {
                 me.decorationText(1.5, 2.25, 0, 'start', me.user_font, me.medium_font_size, me.user_fill, me.user_stroke, 0.5, me.data["name"] + " (p." + (me.page + 1) + ")", me.back);
             }
         }
-        me.decorationText(21.5, 1.75, 0, 'middle', me.title_font, me.medium_font_size, me.draw_fill, me.draw_stroke, 0.5, me.pre_title, me.back);
-        me.decorationText(21.5, 2.25, 0, 'middle', me.title_font, me.medium_font_size, me.draw_fill, me.draw_stroke, 0.5, me.post_title, me.back);
+        me.decorationText(22.5, 1.75, 0, 'end', me.base_font, me.medium_font_size, me.draw_fill, me.draw_stroke, 0.5, me.pre_title, me.back);
+        me.decorationText(22.5, 2.25, 0, 'end', me.base_font, me.medium_font_size, me.draw_fill, me.draw_stroke, 0.5, me.post_title, me.back);
         me.decorationText(1.5, 35.8, -16, 'start', me.base_font, me.small_font_size, me.draw_fill, me.draw_stroke, 0.5, me.guideline, me.back);
-        me.decorationText(22.5, 35.8, -16, 'end', me.base_font, me.small_font_size, me.draw_fill, me.draw_stroke, 0.5, "WaWWoD Cross+Over Sheet "+me.release+" ©2023, Pentex Inc.", me.back);
+        me.decorationText(22.5, 35.7, -16, 'end', me.base_font, me.small_font_size, me.draw_fill, me.draw_stroke, 0.5, "WaWWoD Cross+Over Sheet "+me.release+" ©2024, Red Fox Studios.", me.back);
+        me.decorationText(22.5, 35.9, -16, 'end', me.base_font, me.small_font_size*.5, me.draw_fill, me.draw_stroke, 0.5, "Red Fox Studio is a subsidiary of Pentex Inc.", me.back);
         if (me.blank) {
             me.decorationText(22.5, 34.8, 0, 'end', me.base_font, me.small_font_size, me.draw_fill, me.draw_stroke, 0.5, 'Challenge: you make us laugh punk!', me.back);
         } else {
@@ -216,7 +217,7 @@ class CrossOverSheet extends WawwodSheet {
                 return d['date'] + ' - ' + d['item']
             })
             .style('font-family', me.user_font)
-            .style('font-size', me.medium_font_size)
+            .style('font-size', me.small_font_size)
             .style('text-anchor', "start")
             .style("fill", me.user_fill)
             .style("stroke", me.user_stroke)
@@ -234,12 +235,12 @@ class CrossOverSheet extends WawwodSheet {
             })
             .style("text-anchor", 'start')
             .style("font-family", me.user_font)
-            .style("font-size", me.medium_font_size)
+            .style("font-size", me.small_font_size)
             .style("fill", me.user_fill)
             .style("stroke", me.user_stroke)
             .style("stroke-width", '0.05pt')
         ;
-        timeline_in_note.call(wrap, box_spacing_x * me.stepx, true, me.medium_font_size);
+        timeline_in_note.call(wrap, box_spacing_x * me.stepx, false, me.small_font_size);
     }
 
     fillDisciplinesNotes(oy, pos = '', pp = 0) {
@@ -264,7 +265,11 @@ class CrossOverSheet extends WawwodSheet {
         ;
         me.daddy = me.d_notes;
         if (pos == '') {
-            me.title('About Disciplines', 17 * me.stepx, oy - 0.5 * me.stepy, d_notes)
+            if (me.data['creature'] == "kindred"){
+                me.title('About Disciplines', 17 * me.stepx, oy - 0.5 * me.stepy, d_notes)
+            }else{
+                me.title('Gifts of Gaia', 17.5 * me.stepx, oy - 0.5 * me.stepy, d_notes)
+            }
         }
 
 
@@ -273,7 +278,7 @@ class CrossOverSheet extends WawwodSheet {
         }
 
         let d_notes_item = d_notes.selectAll('discipline_event')
-            .data(me.data['disciplines_notes'])
+            .data(me.data['traits_notes'])
         ;
         let d_notes_in = d_notes_item.enter()
             .append('g')
@@ -559,6 +564,7 @@ class CrossOverSheet extends WawwodSheet {
     perform(character_data) {
         let me = this;
         me.data = character_data;
+        console.log(me.data)
         me.guideline = me.data['guideline']
         me.drawWatermark();
         if (me.data['condition'] == "DEAD") {

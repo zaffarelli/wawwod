@@ -21,6 +21,10 @@ class Chronicle(models.Model):
     is_current = models.BooleanField(default=False, blank=True)
     is_storyteller_only = models.BooleanField(default=False, blank=True)
 
+    scenario = models.CharField(max_length=128, blank=True, default='')
+    pre_title = models.CharField(max_length=128, blank=True, default='')
+    post_title = models.CharField(max_length=128, blank=True, default='')
+
     @property
     def population(self):
         from collector.models.creatures import Creature
