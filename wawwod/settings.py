@@ -45,7 +45,6 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
 
-
         'DIRS': [os.path.join(BASE_DIR, 'collector/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -63,8 +62,6 @@ TEMPLATES = [
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend'
 ]
-
-
 
 LOGPATH = os.path.join(BASE_DIR, 'logs/')
 
@@ -92,12 +89,12 @@ LOGGING = {
     },
     'loggers': {
         'django': {
-            'handlers': ['console','logfile'],
+            'handlers': ['console', 'logfile'],
             'propagate': False,
             'level': 'WARNING',
         },
         'django.db.backends': {
-            'handlers': ['console','logfile'],
+            'handlers': ['console', 'logfile'],
             'level': 'WARNING',
             'propagate': False,
         },
@@ -125,27 +122,24 @@ WSGI_APPLICATION = 'wawwod.wsgi.application'
 #     }
 # }
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'wawwod',
-        'USER': 'wawwod',
-        'PASSWORD': 'wawwod',
-        'HOST': 'localhost',
-        'PORT': '5442'
-        },
-    }
-
-
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': 'wawwod.sqlite3', # This is where you put the name of the db file.
-#                  # If one doesn't exist, it will be created at migration time.
-#     }
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'wawwod',
+#         'USER': 'wawwod',
+#         'PASSWORD': 'wawwod',
+#         'HOST': 'localhost',
+#         'PORT': '5442'
+#     },
 # }
 
-
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'wawwod.sqlite3',  # This is where you put the name of the db file.
+        # If one doesn't exist, it will be created at migration time.
+    }
+}
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -164,7 +158,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'Europe/Paris'
-DATETIME_FORMAT="D Y/m/d H:i"
+DATETIME_FORMAT = "D Y/m/d H:i"
 USE_I18N = True
 USE_L10N = False
 USE_TZ = False
@@ -180,7 +174,8 @@ LOGOUT_REDIRECT_URL = '/'
 
 if DEBUG:
     import mimetypes
+
     mimetypes.add_type("application/javascript;charset=utf-8", ".es6", True)
     mimetypes.add_type("application/javascript;charset=utf-8", ".js", True)
 
-VERSION = '1.0.0'
+VERSION = '1.0.2'

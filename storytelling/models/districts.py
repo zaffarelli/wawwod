@@ -78,46 +78,47 @@ class District(models.Model):
         from collector.models.creatures import Creature
         from collector.utils.wod_reference import get_current_chronicle
         chronicle = get_current_chronicle()
-        camarilla = Creature.objects.filter(chronicle=chronicle.acronym, faction__in=['Camarilla','Anarchs'], creature='kindred',
-                                               hidden=False, district=self.code).order_by('-freebies')
-        independents = Creature.objects.filter(chronicle=chronicle.acronym, faction='Independents', creature='kindred',
-                                               hidden=False, district=self.code).order_by('-freebies')
-        sabbat = Creature.objects.filter(chronicle=chronicle.acronym, faction='Sabbat', creature='kindred',
-                                               hidden=False, district=self.code).order_by('-freebies')
-        self.population_details = ''
-        self.population = 0
-        cama_pop = 0
-        inde_pop = 0
-        sabb_pop = 0
-        for k in camarilla:
-            self.population_details += f'<li><span class="camarilla">{k.name}</span> ({k.freebies})</li>'
-            self.population += 1
-            cama_pop += k.freebies
-        for k in independents:
-            self.population_details += f'<li><span class="independents">{k.name}</span> ({k.freebies})</li>'
-            self.population += 1
-            inde_pop += k.freebies
-        for k in sabbat:
-            self.population_details += f'<li><span class="sabbat">{k.name}</span> ({k.freebies})</li>'
-            self.population += 1
-            inde_pop += k.freebies
-        if inde_pop == 0:
-            if cama_pop > 90:
-                self.status = 'full'
-            elif cama_pop > 45:
-                self.status = 'controlled'
-            elif cama_pop > 10:
-                self.status = 'presence'
+        if chronicle:
+            camarilla = Creature.objects.filter(chronicle=chronicle.acronym, faction__in=['Camarilla','Anarchs'], creature='kindred',
+                                                   hidden=False, district=self.code).order_by('-freebies')
+            independents = Creature.objects.filter(chronicle=chronicle.acronym, faction='Independents', creature='kindred',
+                                                   hidden=False, district=self.code).order_by('-freebies')
+            sabbat = Creature.objects.filter(chronicle=chronicle.acronym, faction='Sabbat', creature='kindred',
+                                                   hidden=False, district=self.code).order_by('-freebies')
+            self.population_details = ''
+            self.population = 0
+            cama_pop = 0
+            inde_pop = 0
+            sabb_pop = 0
+            for k in camarilla:
+                self.population_details += f'<li><span class="camarilla">{k.name}</span> ({k.freebies})</li>'
+                self.population += 1
+                cama_pop += k.freebies
+            for k in independents:
+                self.population_details += f'<li><span class="independents">{k.name}</span> ({k.freebies})</li>'
+                self.population += 1
+                inde_pop += k.freebies
+            for k in sabbat:
+                self.population_details += f'<li><span class="sabbat">{k.name}</span> ({k.freebies})</li>'
+                self.population += 1
+                inde_pop += k.freebies
+            if inde_pop == 0:
+                if cama_pop > 90:
+                    self.status = 'full'
+                elif cama_pop > 45:
+                    self.status = 'controlled'
+                elif cama_pop > 10:
+                    self.status = 'presence'
+                else:
+                    self.status = 'neutral'
             else:
-                self.status = 'neutral'
-        else:
-            if inde_pop > cama_pop:
-                self.status = 'lost'
+                if inde_pop > cama_pop:
+                    self.status = 'lost'
 
-            elif inde_pop > 90:
-                self.status = 'contested'
-            else:
-                self.status = 'incursions'
+                elif inde_pop > 90:
+                    self.status = 'contested'
+                else:
+                    self.status = 'incursions'
 
 
 # Actions

@@ -12403,3 +12403,1320 @@ IndexError: list index out of range
 [21/06 23:08:06] Not Found: /favicon.ico
 [21/06 23:09:02] Not Found: /favicon.ico
 [21/06 23:11:05] Not Found: /favicon.ico
+[22/06 11:06:54] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[22/06 11:19:16] Not Found: /ajax/display/crossover_sheet/Elizabeth Schultz/
+[22/06 11:19:16] "GET /ajax/display/crossover_sheet/Elizabeth%20Schultz/ HTTP/1.1" 404 9150
+[22/06 11:19:23] Not Found: /ajax/display/crossover_sheet/Elizabeth Schultz/
+[22/06 11:19:23] "GET /ajax/display/crossover_sheet/Elizabeth%20Schultz/ HTTP/1.1" 404 9150
+[22/06 11:19:35] Not Found: /favicon.ico
+[22/06 11:19:48] Not Found: /favicon.ico
+[22/06 11:19:57] Not Found: /favicon.ico
+[22/06 11:20:07] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[22/06 11:26:10] Not Found: /ajax/display/crossover_sheet/Durch den Regen gebracht/
+[22/06 11:26:10] "GET /ajax/display/crossover_sheet/Durch%20den%20Regen%20gebracht/ HTTP/1.1" 404 9175
+[22/06 11:26:13] Not Found: /ajax/display/crossover_sheet/Durch den Regen gebracht/
+[22/06 11:26:13] "GET /ajax/display/crossover_sheet/Durch%20den%20Regen%20gebracht/ HTTP/1.1" 404 9175
+[22/06 11:40:23] Not Found: /favicon.ico
+[22/06 11:41:32] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[22/06 11:42:12] Not Found: /favicon.ico
+[22/06 11:47:30] Not Found: /favicon.ico
+[22/06 11:47:43] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[22/06 12:27:33] Not Found: /favicon.ico
+[22/06 12:28:39] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[22/06 12:29:37] Not Found: /favicon.ico
+[22/06 12:31:33] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[22/06 13:07:30] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[22/06 13:11:23] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[22/06 13:36:07] Not Found: /favicon.ico
+[22/06 13:43:34] Not Found: /favicon.ico
+[22/06 13:48:50] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[22/06 13:50:58] Not Found: /favicon.ico
+[22/06 15:44:25] Not Found: /favicon.ico
+[22/06 15:46:54] Internal Server Error: /ajax/display/crossover_sheet/_elizabeth_schultz/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 270, in display_crossover_sheet
+    k["rite_notes"] = c.rite_notes()
+                      ^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 1580, in rite_notes
+    from collector.models.rites import rite
+ImportError: cannot import name 'rite' from 'collector.models.rites' (/home/zaffarelli/Projects/wawwod/collector/models/rites.py)
+[22/06 15:46:54] "GET /ajax/display/crossover_sheet/_elizabeth_schultz/ HTTP/1.1" 500 95318
+[22/06 15:47:21] Internal Server Error: /ajax/display/crossover_sheet/_elizabeth_schultz/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 270, in display_crossover_sheet
+    k["rite_notes"] = c.rite_notes()
+                      ^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 1589, in rite_notes
+    entries = rite.objects.filter(name=b.title(), level__lte=v).order_by('level')
+              ^^^^
+NameError: name 'rite' is not defined. Did you mean: 'Rite'?
+[22/06 15:47:21] "GET /ajax/display/crossover_sheet/_elizabeth_schultz/ HTTP/1.1" 500 96185
+[22/06 15:52:02] Not Found: /favicon.ico
+[22/06 16:06:13] Not Found: /favicon.ico
+[22/06 16:06:30] Not Found: /favicon.ico
+[22/06 16:11:14] Not Found: /favicon.ico
+[22/06 17:14:26] Internal Server Error: /ajax/display/crossover_sheet/_elizabeth_schultz/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 272, in display_crossover_sheet
+    tn = c.traits_notes()
+         ^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 1692, in traits_notes
+    d = trait.get_active_sources + " µ " + trait.description + " µ -- System -- µ "+trait.system
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Gift' object has no attribute 'get_active_sources'. Did you mean: 'gift_active_sources'?
+[22/06 17:14:26] "GET /ajax/display/crossover_sheet/_elizabeth_schultz/ HTTP/1.1" 500 98192
+[22/06 17:17:00] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[22/06 17:17:47] Not Found: /favicon.ico
+[22/06 17:18:04] Not Found: /favicon.ico
+[22/06 17:18:18] Not Found: /favicon.ico
+[22/06 17:21:53] Not Found: /favicon.ico
+[22/06 17:24:36] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[22/06 18:16:30] Not Found: /favicon.ico
+[22/06 18:23:21] Not Found: /favicon.ico
+[22/06 18:24:56] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[23/06 00:48:02] Internal Server Error: /admin/collector/creature/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/psycopg/cursor.py", line 732, in execute
+    raise ex.with_traceback(None)
+psycopg.errors.UndefinedColumn: column collector_creature.extract_priority does not exist
+LINE 1: ...creature"."new_name", "collector_creature"."rid", "collector...
+                                                             ^
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/options.py", line 714, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/sites.py", line 240, in inner
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/options.py", line 2101, in changelist_view
+    media = self.media + formset.media
+                         ^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/forms/formsets.py", line 521, in media
+    if self.forms:
+       ^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/forms/formsets.py", line 207, in forms
+    for i in range(self.total_form_count())
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/forms/formsets.py", line 182, in total_form_count
+    initial_forms = self.initial_form_count()
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/forms/models.py", line 694, in initial_form_count
+    return len(self.get_queryset())
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/query.py", line 380, in __len__
+    self._fetch_all()
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/query.py", line 1926, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/psycopg/cursor.py", line 732, in execute
+    raise ex.with_traceback(None)
+django.db.utils.ProgrammingError: column collector_creature.extract_priority does not exist
+LINE 1: ...creature"."new_name", "collector_creature"."rid", "collector...
+                                                             ^
+[23/06 00:48:02] "GET /admin/collector/creature/ HTTP/1.1" 500 265173
+[23/06 00:53:07] Not Found: /favicon.ico
+[23/06 01:10:07] Internal Server Error: /accounts/login/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 169, in render
+    with context.bind_template(self):
+  File "/usr/lib64/python3.12/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/context.py", line 254, in bind_template
+    context = processor(self.request)
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/context_processors.py", line 6, in commons
+    context = { 'chronicle': chronicle.acronym,'chronicle_name':chronicle.name,'chronicle_logo': "collector/"+chronicle.image_logo}
+                             ^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'acronym'
+[23/06 01:10:07] "GET /accounts/login/?next=/ HTTP/1.1" 500 102692
+[23/06 01:10:07] Not Found: /favicon.ico
+[23/06 01:10:07] "GET /favicon.ico HTTP/1.1" 404 9040
+[23/06 01:12:33] Not Found: /favicon.ico
+[23/06 01:13:03] Not Found: /favicon.ico
+[23/06 01:13:21] Not Found: /favicon.ico
+[23/06 01:14:13] Not Found: /favicon.ico
+[23/06 01:14:21] Not Found: /favicon.ico
+[23/06 01:14:27] Not Found: /favicon.ico
+[23/06 01:14:32] Not Found: /favicon.ico
+[23/06 01:14:36] Not Found: /favicon.ico
+[23/06 01:14:38] Not Found: /favicon.ico
+[23/06 01:14:58] Not Found: /favicon.ico
+[23/06 01:15:00] Not Found: /favicon.ico
+[23/06 01:15:25] Not Found: /favicon.ico
+[23/06 01:20:04] Internal Server Error: /admin/collector/creature/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/options.py", line 714, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/sites.py", line 240, in inner
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/options.py", line 2014, in changelist_view
+    response = self.response_action(
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/options.py", line 1648, in response_action
+    response = func(self, request, queryset)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 1769, in refix
+    creature.save()
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/base.py", line 901, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/base.py", line 1028, in _save_table
+    updated = self._do_update(
+              ^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/base.py", line 1093, in _do_update
+    return filtered._update(values) > 0
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/query.py", line 1276, in _update
+    return query.get_compiler(self.db).execute_sql(CURSOR)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1987, in execute_sql
+    cursor = super().execute_sql(result_type)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1549, in execute_sql
+    sql, params = self.as_sql()
+                  ^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1945, in as_sql
+    raise TypeError(
+TypeError: Tried to update field collector.Creature.chronicle with a model instance, <Chronicle: GMU>. Use a value compatible with CharField.
+[23/06 01:20:04] "POST /admin/collector/creature/ HTTP/1.1" 500 289260
+[23/06 01:20:43] Internal Server Error: /admin/collector/creature/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.IntegrityError: CHECK constraint failed: trueage
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/options.py", line 714, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/sites.py", line 240, in inner
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/options.py", line 2014, in changelist_view
+    response = self.response_action(
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/options.py", line 1648, in response_action
+    response = func(self, request, queryset)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 1769, in refix
+    creature.save()
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/base.py", line 901, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/base.py", line 1028, in _save_table
+    updated = self._do_update(
+              ^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/base.py", line 1093, in _do_update
+    return filtered._update(values) > 0
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/query.py", line 1276, in _update
+    return query.get_compiler(self.db).execute_sql(CURSOR)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1987, in execute_sql
+    cursor = super().execute_sql(result_type)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: CHECK constraint failed: trueage
+[23/06 01:20:43] "POST /admin/collector/creature/ HTTP/1.1" 500 408907
+[23/06 01:20:43] Not Found: /favicon.ico
+[23/06 01:21:45] Not Found: /favicon.ico
+[23/06 01:21:45] "GET /favicon.ico HTTP/1.1" 404 9040
+[23/06 01:22:21] Internal Server Error: /admin/collector/creature/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.IntegrityError: CHECK constraint failed: trueage
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/options.py", line 714, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/sites.py", line 240, in inner
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/options.py", line 2014, in changelist_view
+    response = self.response_action(
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/options.py", line 1648, in response_action
+    response = func(self, request, queryset)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 1769, in refix
+    creature.save()
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/base.py", line 901, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/base.py", line 1028, in _save_table
+    updated = self._do_update(
+              ^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/base.py", line 1093, in _do_update
+    return filtered._update(values) > 0
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/query.py", line 1276, in _update
+    return query.get_compiler(self.db).execute_sql(CURSOR)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1987, in execute_sql
+    cursor = super().execute_sql(result_type)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: CHECK constraint failed: trueage
+[23/06 01:22:21] "POST /admin/collector/creature/ HTTP/1.1" 500 408907
+[23/06 01:26:18] Not Found: /favicon.ico
+[23/06 01:26:45] Internal Server Error: /admin/collector/creature/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.IntegrityError: CHECK constraint failed: trueage
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/options.py", line 714, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/sites.py", line 240, in inner
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/options.py", line 2014, in changelist_view
+    response = self.response_action(
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/options.py", line 1648, in response_action
+    response = func(self, request, queryset)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 1769, in refix
+    creature.save()
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/base.py", line 901, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/base.py", line 1028, in _save_table
+    updated = self._do_update(
+              ^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/base.py", line 1093, in _do_update
+    return filtered._update(values) > 0
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/query.py", line 1276, in _update
+    return query.get_compiler(self.db).execute_sql(CURSOR)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1987, in execute_sql
+    cursor = super().execute_sql(result_type)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: CHECK constraint failed: trueage
+[23/06 01:26:45] "POST /admin/collector/creature/ HTTP/1.1" 500 408907
+[23/06 01:28:43] Internal Server Error: /admin/collector/creature/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.IntegrityError: CHECK constraint failed: trueage
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/options.py", line 714, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/sites.py", line 240, in inner
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/options.py", line 2014, in changelist_view
+    response = self.response_action(
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/options.py", line 1648, in response_action
+    response = func(self, request, queryset)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 1769, in refix
+    creature.save()
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/base.py", line 901, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/base.py", line 1028, in _save_table
+    updated = self._do_update(
+              ^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/base.py", line 1093, in _do_update
+    return filtered._update(values) > 0
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/query.py", line 1276, in _update
+    return query.get_compiler(self.db).execute_sql(CURSOR)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1987, in execute_sql
+    cursor = super().execute_sql(result_type)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: CHECK constraint failed: trueage
+[23/06 01:28:43] "POST /admin/collector/creature/ HTTP/1.1" 500 409172
+[23/06 01:28:43] Not Found: /favicon.ico
+[23/06 01:28:43] "GET /favicon.ico HTTP/1.1" 404 9040
+[23/06 01:31:32] Internal Server Error: /accounts/login/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 169, in render
+    with context.bind_template(self):
+  File "/usr/lib64/python3.12/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/context.py", line 254, in bind_template
+    context = processor(self.request)
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/context_processors.py", line 6, in commons
+    context = { 'chronicle': chronicle.acronym,'chronicle_name':chronicle.name,'chronicle_logo': "collector/"+chronicle.image_logo}
+                             ^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'acronym'
+[23/06 01:31:32] "GET /accounts/login/?next=/ HTTP/1.1" 500 102424
+[23/06 01:31:41] Internal Server Error: /accounts/login/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 169, in render
+    with context.bind_template(self):
+  File "/usr/lib64/python3.12/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/context.py", line 254, in bind_template
+    context = processor(self.request)
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/context_processors.py", line 6, in commons
+    context = { 'chronicle': chronicle.acronym,'chronicle_name':chronicle.name,'chronicle_logo': "collector/"+chronicle.image_logo}
+                             ^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'acronym'
+[23/06 01:31:41] "GET /accounts/login/?next=/ HTTP/1.1" 500 102281
+[23/06 01:32:27] Not Found: /favicon.ico
+[23/06 01:32:50] Not Found: /favicon.ico
+[23/06 01:33:48] Not Found: /favicon.ico
+[23/06 01:33:52] Not Found: /favicon.ico
+[23/06 01:34:01] Not Found: /favicon.ico
+[23/06 01:34:16] Not Found: /favicon.ico
+[23/06 01:34:27] Not Found: /favicon.ico
+[23/06 01:34:39] Not Found: /favicon.ico
+[23/06 01:35:06] Not Found: /favicon.ico
+[23/06 01:36:02] Not Found: /favicon.ico
+[23/06 01:38:42] Internal Server Error: /admin/collector/creature/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/options.py", line 714, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/sites.py", line 240, in inner
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/options.py", line 2014, in changelist_view
+    response = self.response_action(
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/options.py", line 1648, in response_action
+    response = func(self, request, queryset)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 1774, in refix
+    creature.save()
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/base.py", line 881, in save_base
+    pre_save.send(
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/dispatch/dispatcher.py", line 189, in send
+    response = receiver(signal=self, sender=sender, **named)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/signals/creatures.py", line 17, in update_creature
+    instance.fix()
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 798, in fix
+    chronicles_found = Chronicle.objects.filter(acronym=self.acronym)
+                                                        ^^^^^^^^^^^^
+AttributeError: 'Creature' object has no attribute 'acronym'
+[23/06 01:38:42] "POST /admin/collector/creature/ HTTP/1.1" 500 249802
+[23/06 01:39:03] Internal Server Error: /admin/collector/creature/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/options.py", line 714, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/sites.py", line 240, in inner
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/options.py", line 2014, in changelist_view
+    response = self.response_action(
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/options.py", line 1648, in response_action
+    response = func(self, request, queryset)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 1774, in refix
+    creature.save()
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/base.py", line 881, in save_base
+    pre_save.send(
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/dispatch/dispatcher.py", line 189, in send
+    response = receiver(signal=self, sender=sender, **named)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/signals/creatures.py", line 17, in update_creature
+    instance.fix()
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 746, in fix
+    self.fix_kindred()
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 514, in fix_kindred
+    self.expectedfreebies = Chronicle.objects.get(acronym=self.chronicle).players_starting_freebies
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/query.py", line 647, in get
+    raise self.model.DoesNotExist(
+collector.models.chronicles.Chronicle.DoesNotExist: Chronicle matching query does not exist.
+[23/06 01:39:03] "POST /admin/collector/creature/ HTTP/1.1" 500 263020
+[23/06 01:41:01] Not Found: /favicon.ico
+[23/06 01:41:38] Filtering by adventure__name__exact not allowed
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/options.py", line 714, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/sites.py", line 240, in inner
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/options.py", line 1981, in changelist_view
+    cl = self.get_changelist_instance(request)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/options.py", line 862, in get_changelist_instance
+    return ChangeList(
+           ^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/views/main.py", line 144, in __init__
+    self.queryset = self.get_queryset(request)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/views/main.py", line 539, in get_queryset
+    ) = self.get_filters(request)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/views/main.py", line 193, in get_filters
+    raise DisallowedModelAdminLookup(f"Filtering by {key} not allowed")
+django.contrib.admin.exceptions.DisallowedModelAdminLookup: Filtering by adventure__name__exact not allowed
+[23/06 01:41:38] Bad Request: /admin/collector/creature/
+[23/06 01:41:38] "GET /admin/collector/creature/?adventure__name__exact=The+Weeping+Tree HTTP/1.1" 400 141480
+[23/06 01:41:49] Not Found: /favicon.ico
+[23/06 01:42:25] Not Found: /favicon.ico
+[23/06 01:42:33] Not Found: /favicon.ico
+[23/06 01:43:36] Not Found: /favicon.ico
+[23/06 01:43:40] Not Found: /favicon.ico
+[23/06 01:44:01] Not Found: /favicon.ico
+[23/06 01:44:07] Filtering by adventure__name__exact not allowed
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/options.py", line 714, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/sites.py", line 240, in inner
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/options.py", line 1981, in changelist_view
+    cl = self.get_changelist_instance(request)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/options.py", line 862, in get_changelist_instance
+    return ChangeList(
+           ^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/views/main.py", line 144, in __init__
+    self.queryset = self.get_queryset(request)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/views/main.py", line 539, in get_queryset
+    ) = self.get_filters(request)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/views/main.py", line 193, in get_filters
+    raise DisallowedModelAdminLookup(f"Filtering by {key} not allowed")
+django.contrib.admin.exceptions.DisallowedModelAdminLookup: Filtering by adventure__name__exact not allowed
+[23/06 01:44:07] Bad Request: /admin/collector/creature/
+[23/06 01:44:07] "GET /admin/collector/creature/?adventure__name__exact=The+Weeping+Tree HTTP/1.1" 400 141484
+[23/06 01:51:10] Not Found: /favicon.ico
+[23/06 01:51:48] Filtering by adventure__name__exact not allowed
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/options.py", line 714, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/sites.py", line 240, in inner
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/options.py", line 1981, in changelist_view
+    cl = self.get_changelist_instance(request)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/options.py", line 862, in get_changelist_instance
+    return ChangeList(
+           ^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/views/main.py", line 144, in __init__
+    self.queryset = self.get_queryset(request)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/views/main.py", line 539, in get_queryset
+    ) = self.get_filters(request)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/views/main.py", line 193, in get_filters
+    raise DisallowedModelAdminLookup(f"Filtering by {key} not allowed")
+django.contrib.admin.exceptions.DisallowedModelAdminLookup: Filtering by adventure__name__exact not allowed
+[23/06 01:51:48] Bad Request: /admin/collector/creature/
+[23/06 01:51:48] "GET /admin/collector/creature/?adventure__name__exact=The+Weeping+Tree&chronicle=TWT HTTP/1.1" 400 142011
+[23/06 01:51:55] Not Found: /favicon.ico
+[23/06 01:52:23] Not Found: /favicon.ico
+[23/06 01:52:23] "GET /favicon.ico HTTP/1.1" 404 9040
+[23/06 01:52:32] Filtering by adventure__name__exact not allowed
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/options.py", line 714, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/sites.py", line 240, in inner
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/options.py", line 1981, in changelist_view
+    cl = self.get_changelist_instance(request)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/options.py", line 862, in get_changelist_instance
+    return ChangeList(
+           ^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/views/main.py", line 144, in __init__
+    self.queryset = self.get_queryset(request)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/views/main.py", line 539, in get_queryset
+    ) = self.get_filters(request)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/views/main.py", line 193, in get_filters
+    raise DisallowedModelAdminLookup(f"Filtering by {key} not allowed")
+django.contrib.admin.exceptions.DisallowedModelAdminLookup: Filtering by adventure__name__exact not allowed
+[23/06 01:52:32] Bad Request: /admin/collector/creature/
+[23/06 01:52:32] "GET /admin/collector/creature/?adventure__name__exact=Across+the+Universe&chronicle=TWT HTTP/1.1" 400 142083
+[23/06 01:53:27] Not Found: /favicon.ico
+[23/06 01:55:27] Forbidden (CSRF token from POST incorrect.): /admin/collector/creature/
+[23/06 01:55:27] "POST /admin/collector/creature/ HTTP/1.1" 403 2517
+[23/06 01:55:43] Forbidden (CSRF token from POST incorrect.): /admin/collector/creature/
+[23/06 01:55:43] "POST /admin/collector/creature/ HTTP/1.1" 403 2517
+[23/06 01:55:43] Not Found: /favicon.ico
+[23/06 01:55:43] "GET /favicon.ico HTTP/1.1" 404 9040
+[23/06 01:56:09] Not Found: /favicon.ico
+[23/06 01:56:09] "GET /favicon.ico HTTP/1.1" 404 9040
+[23/06 01:56:13] Not Found: /favicon.ico
+[23/06 01:56:29] Not Found: /favicon.ico
+[23/06 01:56:34] Not Found: /favicon.ico
+[23/06 01:56:46] Not Found: /favicon.ico
+[23/06 01:57:26] Not Found: /favicon.ico
+[23/06 01:57:30] Filtering by adventure__name__exact not allowed
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/options.py", line 714, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/sites.py", line 240, in inner
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/options.py", line 1981, in changelist_view
+    cl = self.get_changelist_instance(request)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/options.py", line 862, in get_changelist_instance
+    return ChangeList(
+           ^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/views/main.py", line 144, in __init__
+    self.queryset = self.get_queryset(request)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/views/main.py", line 539, in get_queryset
+    ) = self.get_filters(request)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/views/main.py", line 193, in get_filters
+    raise DisallowedModelAdminLookup(f"Filtering by {key} not allowed")
+django.contrib.admin.exceptions.DisallowedModelAdminLookup: Filtering by adventure__name__exact not allowed
+[23/06 01:57:30] Bad Request: /admin/collector/creature/
+[23/06 01:57:30] "GET /admin/collector/creature/?adventure__name__exact=The+Weeping+Tree&chronicle=GMU HTTP/1.1" 400 142027
+[23/06 01:57:54] Not Found: /favicon.ico
+[23/06 01:58:12] Not Found: /favicon.ico
+[23/06 01:58:32] Not Found: /favicon.ico
+[23/06 02:00:18] Not Found: /favicon.ico
+[23/06 02:01:15] Not Found: /favicon.ico
+[23/06 02:01:25] Not Found: /favicon.ico
+[23/06 02:02:12] Not Found: /favicon.ico
+[23/06 02:03:49] Not Found: /favicon.ico
+[23/06 02:03:59] Not Found: /favicon.ico
+[23/06 02:05:12] Not Found: /favicon.ico
+[23/06 02:07:00] Internal Server Error: /admin/collector/creature/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/psycopg/cursor.py", line 732, in execute
+    raise ex.with_traceback(None)
+psycopg.errors.CheckViolation: new row for relation "collector_creature" violates check constraint "collector_creature_trueage_check"
+DETAIL:  Failing row contains (438, , Alfred Siegman, _alfred_siegman, , f, f, Brujah, 0, 0, , Ghoul of Josephine Dunn, , , 25, Camarilla, 2024-06-23 02:07:00.828945+02, UNY, ghoul, f, 0, , -4, 2048, 0, 0, , _josephine_dunn, , , , OK+, Enforcer, 0, f, f, 0, -139, -2, 0, 0, 0, f, f, zaffarelli, 0, 0, 0, 0, 0, 0, 0, 1, Humanity, Rogue, Rebel, DEAD, , , 1, Freebies: -191, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, Potence (1), , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, , , , , , 0, 0, , , , , , 0, , 0, , , , , , 0, , , 0, , , , , , , 0, , , , , , 0, 0, 0, , , , , , , , , 0, , , 0, , , , , null, , , d09, , , 0, 0, 0, , , , f, 0).
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/options.py", line 714, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/sites.py", line 240, in inner
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/options.py", line 2014, in changelist_view
+    response = self.response_action(
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/options.py", line 1648, in response_action
+    response = func(self, request, queryset)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 1775, in refix
+    creature.save()
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/base.py", line 901, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/base.py", line 1028, in _save_table
+    updated = self._do_update(
+              ^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/base.py", line 1093, in _do_update
+    return filtered._update(values) > 0
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/query.py", line 1276, in _update
+    return query.get_compiler(self.db).execute_sql(CURSOR)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1987, in execute_sql
+    cursor = super().execute_sql(result_type)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/psycopg/cursor.py", line 732, in execute
+    raise ex.with_traceback(None)
+django.db.utils.IntegrityError: new row for relation "collector_creature" violates check constraint "collector_creature_trueage_check"
+DETAIL:  Failing row contains (438, , Alfred Siegman, _alfred_siegman, , f, f, Brujah, 0, 0, , Ghoul of Josephine Dunn, , , 25, Camarilla, 2024-06-23 02:07:00.828945+02, UNY, ghoul, f, 0, , -4, 2048, 0, 0, , _josephine_dunn, , , , OK+, Enforcer, 0, f, f, 0, -139, -2, 0, 0, 0, f, f, zaffarelli, 0, 0, 0, 0, 0, 0, 0, 1, Humanity, Rogue, Rebel, DEAD, , , 1, Freebies: -191, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, Potence (1), , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, , , , , , 0, 0, , , , , , 0, , 0, , , , , , 0, , , 0, , , , , , , 0, , , , , , 0, 0, 0, , , , , , , , , 0, , , 0, , , , , null, , , d09, , , 0, 0, 0, , , , f, 0).
+[23/06 02:07:00] "POST /admin/collector/creature/ HTTP/1.1" 500 421178
+[23/06 02:08:26] Not Found: /favicon.ico
+[23/06 02:08:33] Not Found: /favicon.ico
+[23/06 02:17:02] Not Found: /favicon.ico
+[23/06 02:17:14] Not Found: /favicon.ico
+[23/06 02:17:29] Internal Server Error: /admin/collector/creature/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.IntegrityError: CHECK constraint failed: trueage
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/options.py", line 714, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/sites.py", line 240, in inner
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/options.py", line 2014, in changelist_view
+    response = self.response_action(
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/options.py", line 1648, in response_action
+    response = func(self, request, queryset)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 1775, in refix
+    creature.save()
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/base.py", line 901, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/base.py", line 1028, in _save_table
+    updated = self._do_update(
+              ^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/base.py", line 1093, in _do_update
+    return filtered._update(values) > 0
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/query.py", line 1276, in _update
+    return query.get_compiler(self.db).execute_sql(CURSOR)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1987, in execute_sql
+    cursor = super().execute_sql(result_type)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: CHECK constraint failed: trueage
+[23/06 02:17:29] "POST /admin/collector/creature/?chronicle=GHH HTTP/1.1" 500 408583
+[23/06 02:17:30] Not Found: /favicon.ico
+[23/06 02:17:33] Not Found: /favicon.ico
+[23/06 02:17:40] Not Found: /favicon.ico
+[23/06 02:17:46] Not Found: /favicon.ico

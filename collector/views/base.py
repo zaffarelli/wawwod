@@ -267,9 +267,10 @@ def display_crossover_sheet(request, slug=None, option=None):
         k = json.loads(j)
         k["sire_name"] = c.sire_name
         k["background_notes"] = c.background_notes()
+        k["rite_notes"] = c.rite_notes()
         k["timeline"] = c.timeline()
         tn = c.traits_notes()
-        print(tn)
+        #print(tn)
         k["traits_notes"] = tn
         k["nature_notes"] = c.nature_notes()
         k["meritsflaws_notes"] = c.meritsflaws_notes()

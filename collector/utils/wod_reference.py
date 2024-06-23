@@ -6,7 +6,7 @@ logger = logging.Logger(__name__)
 
 def get_current_chronicle():
     # When migrating
-    # return None
+    #return None
     ch = None
     try:
         current_chronicle = Chronicle.objects.filter(is_current=True).first()
@@ -320,6 +320,25 @@ FONTSET = ['Cinzel', 'Trade+Winds', 'Imprima', 'Roboto', 'Philosopher', 'Ruda', 
 
 CHARACTERS_PER_PAGE = 20
 
+ALL_TRIBES = [
+    "Black Furies",
+    "Black Spiral Dancers",
+    "Bone Gnawers",
+    "Bunyips",
+    "Children of Gaia",
+    "Croatans",
+    "Fiannas",
+    "Gets of Fenris",
+    "Glass Walkers",
+    "Red Talons",
+    "Shadow Lords",
+    "Silent Striders",
+    "Silver Fangs",
+    "Stargazers",
+    "Uktenas",
+    "Wendigos"
+]
+
 # Garou data
 RAGE_PER_AUSPICE = [1, 2, 3, 4, 5]
 GNOSIS_PER_BREED = [1, 3, 5]
@@ -327,7 +346,9 @@ PER_TRIBE = {
     "Black Furies": {"willpower": 3},
     "Black Spiral Dancers": {"willpower": 3},
     "Bone Gnawers": {"willpower": 3},
+    "Bunyips": {"willpower": 3},
     "Children of Gaia": {"willpower": 4},
+    "Croatans": {"willpower": 3},
     "Fiannas": {"willpower": 3},
     "Gets of Fenris": {"willpower": 3},
     "Glass Walkers": {"willpower": 3},

@@ -545,7 +545,7 @@ class WawwodSheet {
 
         oy -= 0.5 * me.stepy;
 
-        me.statText('Name', me.data['name'], ox + me.stepx * 2, oy, 'name', 'name', me.character, true);
+        me.statText('Name', me.data['name'].toUpperCase(), ox + me.stepx * 2, oy, 'name', 'name', me.character, true);
         me.statText('Nature', me.data['nature'], ox + me.stepx * 9, oy, 'nature', 'nature', me.character);
         if (me.data["creature"] == 'kindred') {
             me.statText('Age/R(E)', me.data['age'] + "/" + me.data['trueage'] + " (" + me.data['embrace'] + "A.D)", ox + me.stepx * 16, oy, 'age', 'age', me.character);
@@ -1300,11 +1300,14 @@ function wrap(text, width, stacked = false, a_font_size) {
             lineNumber = 0,
             x = tgt.attr("x"),
             y = tgt.attr("y"),
-            lineHeight = a_font_size * 1.1
+            lineHeight = font_size * 1.1
         ;
         let tspan = tgt.text(null).append("tspan")
             .attr("x", x)
             .attr('y', y)
+            .attr("dy", 0)
+            .style("font-size", font_size + 'px')
+            .style("stroke-width", '0.05pt')
         ;
 
         while (word = words.pop()) {
@@ -1316,7 +1319,7 @@ function wrap(text, width, stacked = false, a_font_size) {
                     .attr("x", x)
                     .attr('y', y)
                     .attr("dy", ++lineNumber * lineHeight)
-                    .style("font-size", a_font_size + 'px')
+                    .style("font-size", font_size + 'px')
                     .style("stroke-width", '0.05pt')
                     .text(word)
 
@@ -1331,7 +1334,7 @@ function wrap(text, width, stacked = false, a_font_size) {
                         .attr("x", x)
                         .attr('y', y)
                         .attr("dy", ++lineNumber * lineHeight)
-                        .style("font-size", a_font_size + 'px')
+                        .style("font-size", font_size + 'px')
                         .style("stroke-width", '0.05pt')
                         .text(word)
                 }

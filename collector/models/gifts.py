@@ -70,8 +70,8 @@ class Gift(models.Model):
     tribe_4 = models.BooleanField(default=False, verbose_name='Children of Gaia')
     tribe_5 = models.BooleanField(default=False, verbose_name='Croatans')
     tribe_6 = models.BooleanField(default=False, verbose_name='Fiannas')
-    tribe_7 = models.BooleanField(default=False, verbose_name='Glass Walkers')
-    tribe_8 = models.BooleanField(default=False, verbose_name='Gets of Fenris')
+    tribe_7 = models.BooleanField(default=False, verbose_name='Gets of Fenris')
+    tribe_8 = models.BooleanField(default=False, verbose_name='Glass Walkers')
     tribe_9 = models.BooleanField(default=False, verbose_name='Red Talons')
     tribe_10 = models.BooleanField(default=False, verbose_name='Silent Striders')
     tribe_11 = models.BooleanField(default=False, verbose_name='Silver Fangs')
@@ -107,6 +107,20 @@ class Gift(models.Model):
         self.auspices = auspices
         self.tribes = tribes
 
+    @property
+    def gift_active_sources(self):
+        from collector.utils.wod_reference import ALL_TRIBES,BREEDS,AUSPICES
+        list = []
+        for n in range(3):
+            if getattr(self, f'breed_{n}') == True:
+                list.append(BREEDS[n])
+        for n in range(5):
+            if getattr(self, f'auspice_{n}') == True:
+                list.append(AUSPICES[n])
+        for n in range(16):
+            if getattr(self, f'tribe_{n}') == True:
+                list.append(ALL_TRIBES[n])
+        return "/".join(list)
 
     def __str__(self):
         return f'GIFT {self.name.title()} ({self.level})'

@@ -17,12 +17,13 @@ chronicle = get_current_chronicle()
 class Creature(models.Model):
     class Meta:
         verbose_name = 'Creature'
-        ordering = ['name']
+        ordering = ['-extract_priority','name']
 
     player = models.CharField(max_length=32, blank=True, default='')
     name = models.CharField(max_length=128, default='')
     new_name = models.CharField(max_length=128, default='', blank=True, null=True)
     rid = models.CharField(max_length=128, blank=True, default='')
+    extract_priority = models.PositiveIntegerField(default=0, blank=True)
     nickname = models.CharField(max_length=128, blank=True, default='')
     primogen = models.BooleanField(default=False)
     mythic = models.BooleanField(default=False)
@@ -38,7 +39,7 @@ class Creature(models.Model):
     embrace = models.IntegerField(default=0)
     faction = models.CharField(max_length=64, blank=True, default='')
     lastmod = models.DateTimeField(auto_now=True)
-    chronicle = models.CharField(max_length=8, default='NYC')
+    chronicle = models.CharField(max_length=8, default='WOD')
     creature = models.CharField(max_length=20, default='kindred')
     sex = models.BooleanField(default=False)
     display_gauge = models.IntegerField(default=0)
@@ -326,6 +327,15 @@ class Creature(models.Model):
         else:
             return self.family
 
+    def get_rites(self):
+        list = []
+        for x in range(10):
+            rite = getattr(self, f'rite{x}', '')
+            if rite != '':
+                list.append(rite)
+        print(list)
+        return list
+
     def get_traits(self):
         list = []
         for x in range(16):
@@ -333,6 +343,7 @@ class Creature(models.Model):
             if trait != '':
                 list.append(trait)
         return list
+
 
     def get_trait_value(self, label):
         code = ''
@@ -490,13 +501,14 @@ class Creature(models.Model):
         if condi.count == 2:
             if condi[0] == 'DEAD':
                 self.finaldeath == int(condi[1])
-        self.embrace = int(self.embrace)
-        self.age = int(self.age)
-        self.trueage = int(self.trueage)
-        if self.embrace == 0:
-            self.embrace = chronicle.era - (self.trueage - self.age)
-        if self.trueage == 0:
-            self.trueage = chronicle.era - (self.embrace - self.age)
+        if chronicle:
+            if self.embrace == 0:
+                self.embrace = chronicle.era - (self.trueage - self.age)
+            if self.trueage == 0:
+                self.trueage = chronicle.era - (self.embrace - self.age)
+        else:
+            self.trueage = 0
+            self.embrace = 0
         if self.player:
             from collector.models.chronicles import Chronicle
             self.expectedfreebies = Chronicle.objects.get(acronym=self.chronicle).players_starting_freebies
@@ -524,28 +536,32 @@ class Creature(models.Model):
         self.display_gauge = self.value_of('generation') * 2 + self.value_of('status') * 2
         self.display_pole = self.groupspec
         self.disciplinepoints = self.total_traits
+        if self.sire == "":
+            self.extract_priority = 1
         if self.player:
             if self.experience > 0:
                 self.exp_pool = self.experience - self.exp_spent
 
+
     def fix_ghoul(self):
         self.display_gauge = 2
-        if self.embrace == 0:
-            self.embrace = chronicle.era - (self.trueage - self.age)
-        self.trueage = chronicle.era - (self.embrace - self.age)
-        if self.sire:
-            # if self.family == '':
-            print(self.sire)
-            domitor = Creature.objects.get(rid=self.sire)
-            if domitor:
-                self.family = domitor.family
-                self.faction = domitor.faction
-                self.display_gauge = domitor.display_gauge / 3
-                self.group = "Ghoul of " + domitor.name
-                self.groupspec = domitor.groupspec
-                self.hidden = domitor.hidden
-                if self.district is None:
-                    self.district = domitor.district
+        if chronicle:
+            if self.embrace == 0:
+                self.embrace = chronicle.era - (self.trueage - self.age)
+            self.trueage = chronicle.era - (self.embrace - self.age)
+            if self.sire:
+                # if self.family == '':
+                print(self.sire)
+                domitor = Creature.objects.get(rid=self.sire)
+                if domitor:
+                    self.family = domitor.family
+                    self.faction = domitor.faction
+                    self.display_gauge = domitor.display_gauge / 3
+                    self.group = "Ghoul of " + domitor.name
+                    self.groupspec = domitor.groupspec
+                    self.hidden = domitor.hidden
+                    if self.district is None:
+                        self.district = domitor.district
 
         self.expectedfreebies = self.freebies_per_immortal_age
         self.bloodpool = 10
@@ -710,6 +726,14 @@ class Creature(models.Model):
         self.rid = toRID(self.name)
 
     def fix(self):
+        if self.adventure:
+            if self.chronicle != self.adventure.chronicle.acronym:
+                self.chronicle = self.adventure.chronicle.acronym
+        else:
+            from collector.models.chronicles import Chronicle
+            chronicles_found = Chronicle.objects.filter(acronym=self.chronicle)
+            if len(chronicles_found)==0:
+                self.chronicle = "WOD"
         logger.info(f'Fixing ............ [{self.name}] [{self.creature}]')
         # at:3/3/3 ab:7/5/3 b:3 w:2 f:15
         self.freebies = -((3 + 3 + 3 + 9) * 5 + (7 + 5 + 3) * 2 + 3 + 2 + 15)
@@ -773,6 +797,8 @@ class Creature(models.Model):
         self.expectedfreebies += self.extra
         self.summary = f'Freebies: {self.freebies}'
         self.calculate_freebies()
+
+
         # self.balance_ghoul()
         self.changeName()
         self.need_fix = False
@@ -1549,8 +1575,13 @@ class Creature(models.Model):
                 entries = Background.objects.filter(name=b.title(), level__lte=v).order_by('level')
                 if len(entries) > 0:
                     if entries.first().cumulate:
+                        new_line = False
                         for e in entries:
-                            txt_lines.append(e.description)
+                            if new_line:
+                                txt_lines.append("µ "+e.description)
+                            else:
+                                txt_lines.append(e.description)
+                            new_line = True
                     else:
                         txt_lines.append(entries.last().description)
                 print(b, v, txt_lines)
@@ -1558,17 +1589,53 @@ class Creature(models.Model):
                 fmt_list.append({'idx': idx, 'item': f'{b.title()} [{v}] ', 'notes': f'{x}'})
                 idx += 1
 
-        list = self.notes_on_backgrounds.split('\r\n');
-        fmt_list = []
-        idx = 0;
-        for e in list:
-            print(e)
-            if len(e) > 2:
-                words = e.split('§');
-                fmt_list.append({'idx': idx, 'item': f'{words[0]}', 'notes': f'{words[1]}'})
-                idx += 1
+        # list = self.notes_on_backgrounds.split('\r\n');
+        # fmt_list = []
+        # idx = 0;
+        # for e in list:
+        #     print(e)
+        #     if len(e) > 2:
+        #         words = e.split('§');
+        #         fmt_list.append({'idx': idx, 'item': f'{words[0]}', 'notes': f'{words[1]}'})
+        #         idx += 1
 
         return fmt_list
+
+    def rite_notes(self):
+        fmt_list = []
+        from collector.models.rites import Rite
+        extended_traits = []
+        rites = self.get_rites()
+        list = []
+        for et in reversed(rites):
+            print("Looking for... ", et)
+            rites = Rite.objects.filter(code=et)
+            if len(rites) > 0:
+                rite = rites.first()
+                a = rite.name
+                b = str(rite.level)
+                cr = rite.path.title()
+                if cr == "Minor":
+                    c = "Minor Rite"
+                else:
+                    c = "Rite of "+cr+" level "+b
+                d = rite.description + " µ -- System µ " + rite.system
+                list.append(f"{a}§§{c}§{d}")
+            else:
+                print(f"Discarded... {et}")
+        idx = 0
+        fmt_list = []
+        for e in list:
+            if len(e) > 2:
+                words = e.split('§')
+                fmt_list.append(
+                    {'idx': idx, 'item': f'{words[0]} ({words[2]})', 'title': f'{words[2]}',
+                     'notes': f'{words[3]}'})
+                idx += 1
+        print("Rites List:")
+        print(fmt_list)
+        return fmt_list
+
 
     def timeline(self):
         list = self.notes_on_history.split('\r\n')
@@ -1633,15 +1700,6 @@ class Creature(models.Model):
                 print(t, ":", d, ":", v, ":", v2, ":", v3)
                 for y in range(v3):
                     extended_traits.append(f'{d} ({y + 1})')
-            # all = Gift.objects.filter(code__in=extended_traits).order_by('name', 'level')
-            # for z in all:
-            #     if z.is_linear:
-            #         prefix = z.name
-            #         for x in extended_traits:
-            #             if x.startswith(prefix):
-            #                 extended_traits.remove(x)
-            #         extended_traits.append(z.code)
-            # print(extended_traits)
             list = []
             for et in reversed(traits):
                 print("Looking for... ",et)
@@ -1651,7 +1709,7 @@ class Creature(models.Model):
                     a = trait.name
                     b = str(trait.level)
                     c = trait.alternative_name
-                    d = trait.description + " µ -- System -- µ "+trait.system
+                    d = "-- "+trait.gift_active_sources + " gift µ " + trait.description + " µ -- System µ "+trait.system
                     list.append(f"{a}§{b}§{c}§{d}")
                 else:
                     print(f"Discarded... {et}")
@@ -1816,8 +1874,7 @@ def randomize_all(modeladmin, request, queryset):
 
 class CreatureAdmin(admin.ModelAdmin):
     list_display = [  # 'domitor',
-        'name', 'age', 'trueage', 'nature', 'chronicle', 'hidden', 'adventure', 'freebies', 'player',
-        'district',
+        'name', 'age', 'trueage', 'nature','extract_priority', 'chronicle', 'hidden', 'adventure', 'freebies', 'player',
         'family', 'groupspec', 'sire', 'status', 'condition']
     ordering = ['-trueage', 'name', 'group', 'creature']
     actions = [no_longer_new, randomize_backgrounds, randomize_all, randomize_archetypes, randomize_attributes,
@@ -1827,4 +1884,4 @@ class CreatureAdmin(admin.ModelAdmin):
                    'groupspec',
                    'creature', 'mythic', 'ghost']
     search_fields = ['name', 'groupspec']
-    list_editable = ['adventure', 'hidden', 'nature', 'district', 'player', 'condition', "family"]
+    list_editable = ['adventure', 'hidden', 'nature', 'player', 'condition', "family"]
