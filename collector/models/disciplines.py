@@ -42,10 +42,6 @@ class Discipline(models.Model):
         return f'{self.code})'
 
 
-def refix(modeladmin, request, queryset):
-    for discipline in queryset:
-        discipline.save()
-    short_description = 'Fix discipline'
 
 
 class DisciplineAdmin(admin.ModelAdmin):
@@ -54,4 +50,5 @@ class DisciplineAdmin(admin.ModelAdmin):
     list_filter = ['name', 'level', 'clan_0', 'clan_1', 'clan_2', 'clan_3', 'clan_4', 'clan_5', 'clan_6']
     search_fields = ['name', 'description']
     list_editable = ['technical_notes', 'page', 'is_linear']
+    from collector.utils.helper import refix
     actions = [refix]

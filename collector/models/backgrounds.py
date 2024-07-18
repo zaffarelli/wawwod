@@ -20,11 +20,7 @@ class Background(models.Model):
         return f'{self.code})'
 
 
-def refix(modeladmin, request, queryset):
-    for background in queryset:
-        background.fix()
-        background.save()
-    short_description = 'Fix background'
+
 
 
 class BackgroundAdmin(admin.ModelAdmin):
@@ -33,4 +29,5 @@ class BackgroundAdmin(admin.ModelAdmin):
     list_filter = ['name', 'level']
     search_fields = ['name', 'description']
     # list_editable = ['cumulate']
+    from collector.utils.helper import refix
     actions = [refix]

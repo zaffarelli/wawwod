@@ -1,0 +1,30 @@
+ {% load static %}
+
+<div class="month" style="">
+    <table>
+        <caption style="">{{weeks.month}}</caption>
+        <tr class="head">
+            <th>Monday</th>
+            <th>Tuesday</th>
+            <th>Wednesday</th>
+            <th>Thursday</th>
+            <th>Friday</th>
+            <th>Saturday</th>
+            <th>Sunday</th>
+        </tr>
+        {% for w in weeks.weeks %}
+            <tr>
+                {% for dow in w %}
+                {% if dow.blank %}
+                <td class="blank"></td>
+                {%else%}
+                <td><img src="{% get_static_prefix %}collector/auspices/Auspice{{dow.str}}.webp" height="15px" title="{{dow.str}}"><br/><span style="">{{dow.num}}</span></td>
+                {%endif%}
+                {%endfor%}
+            </tr>
+        {%endfor%}
+
+    </table>
+</div>
+
+

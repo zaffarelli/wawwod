@@ -1035,3 +1035,69 @@ fieldset{
         }
     }
 }
+
+.year{
+    display:flex;
+    flex-flow:column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    justify-items: flex-start;
+    margin:auto;
+    width:auto;
+    height:auto;
+    padding:6pt;
+    background:silver;
+    border-radius:5pt;
+    & .month{
+        order:1;
+        border-radius:5pt;
+        background:#E0E0E0;
+        padding:10pt;
+        color:black;
+        margin:40pt;
+        & table{
+            & caption{
+                font-size:12pt;
+                font-family:Philosopher;
+                text-align:left;
+                height:30pt;
+            }
+
+            & tr{
+                height:60pt;
+                border:1pt;
+                &.head{
+                    height:10pt;
+                }
+
+                & td{
+                        color:black;
+                        text-align:left;
+                        vertical-align:top;
+                        width:100pt;
+                        padding:auto;
+                        padding-left:5pt;
+                        padding-top:5pt;
+                        border-radius:5pt;
+                        border:1pt solid black;
+                        background:white;
+                        & span{
+                            font-size:10pt;
+                            font-family:Philosopher;
+                        }
+                        &.blank{
+                            border-color:transparent;
+                            color:transparent;
+                            background:transparent;
+                        }
+                    }
+                & th {
+                    font-size:11pt;
+                    font-family:Philosopher;
+                    width:90pt;
+                    }
+                }
+            margin:auto;
+        }
+    }
+}

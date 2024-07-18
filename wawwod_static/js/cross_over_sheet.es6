@@ -2,12 +2,14 @@ class CrossOverSheet extends WawwodSheet {
     constructor(data, parent, collector) {
         super(data, parent, collector);
         this.init();
-        this.release = "19.03";
+        this.release = "19.05";
+
     }
 
     init() {
         super.init();
         let me = this;
+        this.mark_overhead = true
     }
 
     drawPages() {
@@ -171,7 +173,7 @@ class CrossOverSheet extends WawwodSheet {
 
     fillRiteNotes(oy) {
         let me = this;
-        let box_spacing_y = 5.0;
+        let box_spacing_y = 10.25;
         let rite_note = me.character.append('g')
             .attr('class', 'rite_notes')
         ;
@@ -188,24 +190,24 @@ class CrossOverSheet extends WawwodSheet {
             .append('g')
             .attr('class', 'rite_note')
         ;
-        rite_note_in.append('rect')
-            .attr("x", function (d) {
-                return (1.75) * me.stepx;
-            })
-            .attr("y", function (d) {
-                return oy + d['idx'] * box_spacing_y * me.stepy;
-            })
-            .attr("rx", "8pt")
-            .attr("ry", "8pt")
-            .attr("width", function (d) {
-                return me.stepx * 9.5;
-            })
-            .attr("height", function (d) {
-                return me.stepy * (box_spacing_y - 0.35);
-            })
-            .style("stroke", "#080808")
-            .style("fill", "transparent")
-        ;
+//         rite_note_in.append('rect')
+//             .attr("x", function (d) {
+//                 return (1.75) * me.stepx;
+//             })
+//             .attr("y", function (d) {
+//                 return oy + d['idx'] * box_spacing_y * me.stepy;
+//             })
+//             .attr("rx", "8pt")
+//             .attr("ry", "8pt")
+//             .attr("width", function (d) {
+//                 return me.stepx * 9.5;
+//             })
+//             .attr("height", function (d) {
+//                 return me.stepy * (box_spacing_y - 0.35);
+//             })
+//             .style("stroke", "#080808")
+//             .style("fill", "transparent")
+//         ;
         rite_note_in.append('text')
             .attr("x", function (d) {
                 return 6.5 * me.stepx;
@@ -245,8 +247,8 @@ class CrossOverSheet extends WawwodSheet {
 
     fillTimeline(oy) {
         let me = this;
-        let box_spacing_y = 3.0;
-        let box_spacing_x = 11.0;
+        let box_spacing_y = 4.0;
+        let box_spacing_x = 12.0;
         let base_x = 10.25;
         let timeline = me.character.append('g')
             .attr('class', 'timeline')
@@ -258,27 +260,28 @@ class CrossOverSheet extends WawwodSheet {
         let timeline_item = timeline.selectAll('timeline_event')
             .data(me.data['timeline'])
         ;
+
         let timeline_in = timeline_item.enter()
             .append('g')
             .attr('class', 'timeline_event')
         ;
-        let timeline_in_rect = timeline_in.append('rect')
-            .attr("x", function (d) {
-                return (base_x) * me.stepx;
-            })
-            .attr("y", function (d) {
-                return oy + d['idx'] * box_spacing_y * me.stepy;
-            })
-            .attr("width", function (d) {
-                return me.stepx * (base_x + 2);
-            })
-            .attr("height", function (d) {
-                return me.stepy * (box_spacing_y - 0.25);
-            })
-            .attr("rx", "8pt")
-            .attr("ry", "8pt")
-            .style("fill", "white")
-            .style("stroke", "#808080")
+//         let timeline_in_rect = timeline_in.append('rect')
+//             .attr("x", function (d) {
+//                 return (base_x) * me.stepx;
+//             })
+//             .attr("y", function (d) {
+//                 return oy + d['idx'] * box_spacing_y * me.stepy;
+//             })
+//             .attr("width", function (d) {
+//                 return me.stepx * (base_x + 2);
+//             })
+//             .attr("height", function (d) {
+//                 return me.stepy * (box_spacing_y - 0.25);
+//             })
+//             .attr("rx", "8pt")
+//             .attr("ry", "8pt")
+//             .style("fill", "white")
+//             .style("stroke", "#808080")
         ;
         timeline_in.append('text')
             .attr("x", function (d) {
@@ -287,21 +290,21 @@ class CrossOverSheet extends WawwodSheet {
             .attr('y', function (d) {
                 return oy + (d['idx'] * box_spacing_y + 0.5) * me.stepy;
             })
-            .text(function (d) {
-                return d['date'] + ' - ' + d['item']
-            })
             .style('font-family', me.user_font)
             .style('font-size', current_font_size+"px")
             .style('text-anchor', "start")
             .style("fill", me.user_fill)
             .style("stroke", me.user_stroke)
             .style("stroke-width", '0.05pt')
+            .text(function (d) {
+                return d['date'] + ' - ' + d['item']
+            })
         let timeline_in_note = timeline_in.append('text')
             .attr('x', function (d) {
                 return (base_x + 0.4) * me.stepx;
             })
             .attr('y', function (d) {
-                return oy + 0.85 * me.stepy + d['idx'] * 3 * me.stepy;
+                return oy + 0.85 * me.stepy + d['idx'] *box_spacing_y * me.stepy;
             })
             .attr('dx', 0)
             .attr('dy', 0)
@@ -315,7 +318,9 @@ class CrossOverSheet extends WawwodSheet {
             .style("stroke", me.user_stroke)
             .style("stroke-width", '0.05pt')
         ;
-        timeline_in_note.call(wrap, box_spacing_x * me.stepx, true, current_font_size);
+        //timeline_in_note.call(wrap, box_spacing_x * me.stepx, true, current_font_size);
+        me.superwrap(timeline_in_note, box_spacing_x * me.stepx, true, current_font_size);
+        console.log("Timelines line number=",global_last_lines)
     }
 
     fillDisciplinesNotes(oy, pos = '', pp = 0) {
@@ -548,27 +553,27 @@ class CrossOverSheet extends WawwodSheet {
             .append('g')
             .attr('class', 'mf_note')
         ;
-        mf_note_in.append('rect')
-            .attr("x", function (d) {
-                return (1.75) * me.stepx;
-            })
-            .attr("y", function (d) {
-                return oy + d['idx'] * box_spacing_y * me.stepy;
-            })
-            .attr("rx", "8pt")
-            .attr("ry", "8pt")
-            .attr("width", function (d) {
-                return me.stepx * 7.5;
-            })
-            .attr("height", function (d) {
-                return me.stepy * (box_spacing_y - 0.35);
-            })
-            .style("stroke", "#080808")
-            .style("fill", "transparent")
-        ;
+//         mf_note_in.append('rect')
+//             .attr("x", function (d) {
+//                 return (1.75) * me.stepx;
+//             })
+//             .attr("y", function (d) {
+//                 return oy + d['idx'] * box_spacing_y * me.stepy;
+//             })
+//             .attr("rx", "8pt")
+//             .attr("ry", "8pt")
+//             .attr("width", function (d) {
+//                 return me.stepx * 9.5;
+//             })
+//             .attr("height", function (d) {
+//                 return me.stepy * (box_spacing_y - 0.35);
+//             })
+//             .style("stroke", "#080808")
+//             .style("fill", "transparent")
+//         ;
         mf_note_in.append('text')
             .attr("x", function (d) {
-                return 5.5 * me.stepx;
+                return 6.5 * me.stepx;
             })
             .attr('y', function (d) {
                 return oy + (d['idx'] * box_spacing_y + 0.30) * me.stepy;
@@ -594,12 +599,12 @@ class CrossOverSheet extends WawwodSheet {
                 return d['notes']
             })
             .style('font-family', me.user_font)
-            .style('font-size', me.small_font_size)
+            .style('font-size', me.medium_font_size)
             .style('text-anchor', "start")
             .style("fill", me.user_fill)
             .style("stroke", me.user_stroke)
             .style("stroke-width", "0.05pt");
-        mf_note_in_note.call(wrap, 7 * me.stepx)
+        mf_note_in_note.call(wrap, 8.5 * me.stepx, true, me.medium_font_size);
     }
 
     as_dots(value) {

@@ -57,11 +57,7 @@ class WawwodCollector {
                     else{
                         url = 'ajax/display/' + action + '/' + param + '/' ;
                     }
-                }
-                if (action == 'kindred_lineage') {
-                    url = 'ajax/display/' + action + '/' + param + '/';
-                }
-                if (action == 'map') {
+                }else {
                     url = 'ajax/display/' + action + '/' + param + '/';
                     console.log(param);
                 }
@@ -90,6 +86,13 @@ class WawwodCollector {
                         let d = JSON.parse(answer.data);
                         me.d3 = new KindredLineage(s, "#d3area", me);
                         me.d3.perform(d);
+                    }
+                    if (action == 'septs') {
+                        console.log(answer)
+                        let s = JSON.parse(answer.settings);
+                        let dat = JSON.parse(answer.data);
+                        me.d3 = new Sept(s, "#d3area", me);
+                        me.d3.perform(dat);
                     }
                     if (action == 'crossover_sheet') {
                         let s = JSON.parse(answer.settings);

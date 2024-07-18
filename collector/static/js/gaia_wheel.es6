@@ -14,13 +14,18 @@ class GaiaWheel {
         me.sector_size = 30;
         me.sector_data = []
         me.starts = []
+        let total = 0
         _.forEach(me.data, function (v, k) {
             if (v['value'] > 0) { // Only deal with sectors with at least 1 creature
                 me.sector_data.push(v);
                 me.starts.push(v['start']);
+                total += v.value
             }
         });
-        console.log(me.sector_data)
+        _.map(me.sector_data, function(v,k) {
+            v.total = total
+        })
+        //console.log(me.sector_data)
         me.boxWidth = 7;
         me.boxHeight = 4;
         let re = new RegExp("\d+");
@@ -163,11 +168,11 @@ class GaiaWheel {
             let center = poles[pole]['center'];
             poles[pole]['list'].forEach(function (v, k) {
                 if (v['creature'] != 'ghoul') {
-                    console.log(v['name']);
+                    //console.log(v['name']);
                     links.push({'x1': v.x, 'y1': v.y, 'x2': center.x, 'y2': center.y, 'category': 0})
                     if (v['creature'] == 'kindred') {
                         poles[pole]['list'].forEach(function (w, l) {
-                            console.log(w['sire']);
+                            //console.log(w['sire']);
                             if (w['creature'] == 'ghoul') {
                                 if (w['sire'] == v['rid']){
                                     links.push({'x1': v.x, 'y1': v.y, 'x2': w.x, 'y2': w.y, 'category': 1});
@@ -244,7 +249,8 @@ class GaiaWheel {
 
     polar_to_orthographic(idx, pow, span, total, angle, grandtotal) {
         let me = this;
-        let angular = (((idx + angle + 0.5) / total) * (total / grandtotal) * 360) - 90;
+        let angular = (((idx + angle +0.5 ) / total) * (total / grandtotal) * 360) - 90;
+        //let angular = (((idx + angle +0.5) / total) * (total / grandtotal) * 360) - 90;
         let radial = me.radiused(pow);
         let coords = []
         coords[0] = Math.cos((angular) * Math.PI / 180) * radial;
@@ -456,6 +462,7 @@ class GaiaWheel {
 
     draw_sectors() {
         let me = this;
+        //console.log(me.sector_data)
         let pie = d3.pie()
             .sort(null)
             .value(function (d) {
@@ -496,7 +503,8 @@ class GaiaWheel {
             .style("fill", "#CCC")
             .style("stroke", "#EEE")
             .text(function (d) {
-                return d.data.name.charAt(0).toUpperCase() + d.data.name.slice(1);
+                //console.log(d.data)
+                return d.data.name.charAt(0).toUpperCase() + d.data.name.slice(1)+" ["+d.data.value+"/"+d.data.total+"]";
                 //return d.data.name+":"+d.data.value+"/"+d.data.total;
             })
             .attr("opacity", function (d) {
@@ -514,9 +522,9 @@ class GaiaWheel {
     update() {
         let me = this;
         _.forEach(me.sector_data, function (v, k) {
-            // console.log(v);
-            me.display_poles(v.start, v.collection, v.name, v.collection.length, v.value, v.total);
-            me.display_branch(v.start, v.collection, v.name, v.collection.length, v.value, v.total);
+            //console.log(v);
+            me.display_poles(v.start, v.collection, v.name, v.collection.length, v.value, v.total+1);
+            me.display_branch(v.start, v.collection, v.name, v.collection.length, v.value, v.total+1);
         })
         // me.draw_stats(-me.step_x*90,me.step_y*2,'status',"#A08020");
         // me.draw_stats(-me.step_x*90,me.step_y*25,'balanced',"#A02020");
@@ -551,7 +559,7 @@ class GaiaWheel {
             data_set.push({"x":x,"y":y,"group":g,"value":v, "label":l})
             idx += 1;
         });
-        console.log(data_set);
+        //console.log(data_set);
         let bar_grp = me.static_back.append("g");
         let bars = bar_grp.append("g")
             .attr("class", 'stats')

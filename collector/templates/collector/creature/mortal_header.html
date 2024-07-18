@@ -128,3 +128,19 @@
         <th></th>
         <td></td>
     </tr>
+
+
+    <tr>
+        {% if c.creature == 'garou' %}
+        <th>Sept Position</th>
+        <td class='editable userinput' id='{{c.rid}}__community_job'>{{ c.community_job }}</td>
+        <th>Residence</th>
+        <td class='editable userinput' id='{{c.rid}}__residence'>{{ c.residence }}</td>
+        <th>Repartitions</th>
+        <td class='editable userinput' id='{{c.rid}}__reparts'>{{ c.reparts }}</td>
+        <th></th>
+        <td></td>
+        {% else %}
+        <td colspan="8"></td>
+        {% endif %}
+    </tr>

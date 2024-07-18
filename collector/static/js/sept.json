@@ -1,0 +1,87 @@
+{
+  "caern": {},
+  "moonbridges": [],
+  "positions": {},
+  "packs": [
+    {
+      "name": "Durch den Regen gebracht",
+      "members": [
+        "_hans_mueller",
+        "_elizabeth_schultz",
+        "_lorelei_becker"
+      ],
+      "totem": ""
+    },
+    {
+      "name": "Guardians of Fur",
+      "members": [
+        "_adel_the_swift",
+        "_ernest_kunder",
+        "_martina_brahms",
+        "_nathan_gensler",
+        "_william_folks",
+        "_ziege"
+      ],
+      "totem": "Weasel"
+    },
+    {
+      "name": "Pack of the Autumn Leaves",
+      "members": [
+        "_dimitri_fedorov",
+        "_gustav_genz",
+        "_sebastian_gorlisch"
+      ],
+      "totem": "Ald\u00fc, Keeper of the Wild"
+    },
+    {
+      "name": "Second Leaf",
+      "members": [
+        "_lise_oneil",
+        "_michael_evans",
+        "_orson_suerne",
+        "_paola_lettri",
+        "_patrick_mcneil"
+      ],
+      "totem": ""
+    },
+    {
+      "name": "The Lost Pups",
+      "members": [
+        "_anneke_della_corte",
+        "_grigori_zentgraf",
+        "_niklas_waldkauz",
+        "_sarah_strijd",
+        "_vidar_grimsdottir"
+      ],
+      "totem": "Brunhilde, Mother of M\u00fcnchen"
+    },
+    {
+      "name": "The streamwalkers",
+      "members": [
+        "_roter_schwanz",
+        "_sonja_sienfreig",
+        "_tik_reinardt"
+      ],
+      "totem": "Viedre, Queen of Hop"
+    },
+    {
+      "name": "Vertraute des Windes",
+      "members": [
+        "_rufus_dolan",
+        "_reinhart_wanchese",
+        "_christian_lorenz_raisani",
+        "_nicholas_gomlisch",
+        "_arn_morgen"
+      ],
+      "totem": ""
+    },
+    {
+      "name": "Woods drummers",
+      "members": [
+        "_arthur_schweizer",
+        "_lora_brukeneer"
+      ],
+      "totem": "Fritz the Woodcutter"
+    }
+  ]
+}

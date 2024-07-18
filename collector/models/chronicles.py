@@ -26,6 +26,10 @@ class Chronicle(models.Model):
     post_title = models.CharField(max_length=128, blank=True, default='')
 
     @property
+    def code(self):
+        return self.acronym
+
+    @property
     def population(self):
         from collector.models.creatures import Creature
         all = Creature.objects.filter(chronicle=self.acronym)
@@ -47,3 +51,5 @@ class ChronicleAdmin(admin.ModelAdmin):
     list_display = ['acronym', 'name', 'description', 'main_creature', 'is_current', 'population','is_storyteller_only']
     list_editable = ['is_current','is_storyteller_only']
     ordering = ['acronym']
+    from collector.utils.helper import refix
+    actions = [refix]

@@ -82,7 +82,7 @@ STATS_NAMES = {
                    'stealth', 'survival'],
         'knowledges': ['computer', 'enigmas', 'investigation', 'law', 'linguistics', 'medicine', 'occult', 'politics',
                        'rituals', 'science'],
-        'backgrounds': ['allies', 'ancestors', 'contacts', 'fetish', 'kinfolk', 'mentor', 'pure-breed', 'resources',
+        'backgrounds': ['allies', 'ancestors', 'contacts', 'fetish', 'kinfolk', 'mentor', 'pure breed', 'resources',
                         'rites', 'totem']
     },
     'ghoul': {
@@ -316,7 +316,7 @@ AUSPICES = ['Ragabash', 'Theurge', 'Philodox', 'Galliard', 'Ahroun']
 RANKS = ['Cliath', 'Fostern', 'Adren', 'Athro', 'Elder']
 
 FONTSET = ['Cinzel', 'Trade+Winds', 'Imprima', 'Roboto', 'Philosopher', 'Ruda', 'Khand', 'Allura', 'Gochi+Hand',
-           'Reggae+One', 'Syne+Mono', 'Zilla+Slab', 'Spartan', 'Marcellus+SC', 'Splash', 'Trirongn']
+           'Reggae+One', 'Syne+Mono', 'Zilla+Slab', 'Spartan', 'Marcellus+SC', 'Splash', 'Trirong']
 
 CHARACTERS_PER_PAGE = 20
 

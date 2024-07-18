@@ -134,11 +134,6 @@ class Gift(models.Model):
 
 
 
-def refix(modeladmin, request, queryset):
-    for gift in queryset:
-        gift.fix()
-        gift.save()
-    short_description = 'Fix gift'
 
 
 class GiftAdmin(admin.ModelAdmin):
@@ -149,4 +144,5 @@ class GiftAdmin(admin.ModelAdmin):
                    'tribe_9', 'tribe_10', 'tribe_11', 'tribe_12', 'tribe_13', 'tribe_14', 'tribe_15'
                    ]
     search_fields = ['name', 'description', 'alternative_name']
+    from collector.utils.helper import refix
     actions = [refix]

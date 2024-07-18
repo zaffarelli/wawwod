@@ -1,5 +1,8 @@
 from django.http import HttpResponse, Http404, JsonResponse
 from django.shortcuts import render, get_object_or_404
+
+from collector.models.adventures import Adventure
+from collector.models.seasons import Season
 from collector.models.creatures import Creature
 from storytelling.models.cities import City
 from django.core.paginator import Paginator
@@ -9,6 +12,7 @@ from collector.templatetags.wod_filters import as_bullets
 from collector.utils.data_collection import build_per_primogen, build_gaia_wheel
 from collector.utils.wod_reference import get_current_chronicle
 from collector.models.chronicles import Chronicle
+from collector.models.septs import Sept
 from collector.utils.wod_reference import STATS_NAMES, CHARACTERS_PER_PAGE
 import json
 from collector.utils.wod_reference import FONTSET
@@ -18,6 +22,8 @@ from django.conf import settings
 from collector.utils.helper import is_ajax
 import os
 import logging
+import datetime
+from astral import moon
 
 logger = logging.Logger(__name__)
 chronicle = get_current_chronicle()
@@ -27,24 +33,40 @@ def prepare_index(request):
     chronicles = []
     players = []
     cities = []
-    plist = Creature.objects.filter(chronicle=chronicle.acronym).exclude(player='').exclude(
-        adventure_id__isnull=True).order_by('adventure')
+    plist = Creature.objects.filter(chronicle=chronicle.acronym).exclude(player='').exclude(adventure="").order_by(
+        'adventure')
     print(plist)
-    adv = None
+    prev_a = None
     for p in plist:
-        if p.adventure != adv:
-            adv = p.adventure
-            adventure = {'adventure': p.adventure.name, 'players': []}
-            players.append(adventure)
-        adventure['players'].append({'name': p.name, 'rid': p.rid, 'player': p.player, 'pre_change_access':p.pre_change_access})
+        if p.adventure != prev_a:
+            adv = Adventure.objects.filter(acronym=p.adventure)
+            if len(adv) > 0:
+                a = adv.first()
+                prev_a = a.code
+                adventure = {'adventure': a.name, 'players': []}
+                players.append(adventure)
+        adventure['players'].append(
+            {'name': p.name, 'rid': p.rid, 'player': p.player, 'pre_change_access': p.pre_change_access})
 
     for c in Chronicle.objects.all():
         chronicles.append({'name': c.name, 'acronym': c.acronym, 'active': c.is_current})
-    for ci in City.objects.all():
-        tag = ci.name.replace(' ', '_')
-        cities.append({'name': ci.name, 'tag': tag.lower()})
-    misc = {"version":settings.VERSION}
-    context = {'chronicles': chronicles, 'fontset': FONTSET, 'players': players, 'cities': cities, 'miscellaneous': misc}
+    cities = []
+    adventures = []
+    seasons = []
+    septs = []
+    for sept in Sept.objects.filter(chronicle=chronicle.acronym):
+        septs.append(sept)
+    for season in Season.objects.filter(chronicle=chronicle.acronym):
+        seasons.append(season)
+    for adventure in Adventure.objects.filter(season=season.acronym):
+        adventures.append(adventure)
+    for city in City.objects.filter(chronicle=chronicle.acronym):
+        cities.append(city)
+
+    misc = {"version": settings.VERSION}
+    context = {'chronicles': chronicles, 'fontset': FONTSET, 'players': players, 'adventures': adventures, 'seasons':seasons,
+               'septs': septs, 'cities': cities, 'miscellaneous': misc, "weeks": moon_phase(None)}
+
     return context
 
 
@@ -91,18 +113,23 @@ def get_list(request, pid=1, slug=None):
         elif 'new' == slug:
             creature_items = Creature.objects.filter(chronicle=chronicle.acronym, is_new=True).order_by('name')
         elif 'bal' == slug:
-            creature_items = Creature.objects.filter(chronicle=chronicle.acronym, status__in=["UNBALANCED","OK+"],
+            creature_items = Creature.objects.filter(chronicle=chronicle.acronym, status__in=["UNBALANCED", "OK+"],
                                                      hidden=False).order_by('creature',
-                                                                                                      '-expectedfreebies')
+                                                                            '-expectedfreebies')
         elif 'pen' == slug:
             creature_items = Creature.objects.filter(chronicle=chronicle.acronym, faction='Pentex',
                                                      creature__in=['garou', 'kinfolk', 'fomori']).order_by('name')
         elif 'ccm' == slug:
-            creature_items = Creature.objects.filter(chronicle=chronicle.acronym, creature__in=['mortal', 'ghoul', 'kinfolk', 'fomori']).order_by('name')
+            creature_items = Creature.objects.filter(chronicle=chronicle.acronym,
+                                                     creature__in=['mortal', 'ghoul', 'kinfolk', 'fomori']).order_by(
+                'name')
         elif 'ccs' == slug:
-            creature_items = Creature.objects.filter(chronicle=chronicle.acronym, creature__in=['garou', 'kindred', 'wraith', 'changeling', 'mage']).order_by('name')
+            creature_items = Creature.objects.filter(chronicle=chronicle.acronym,
+                                                     creature__in=['garou', 'kindred', 'wraith', 'changeling',
+                                                                   'mage']).order_by('name')
         else:
-            creature_items = Creature.objects.filter(chronicle=chronicle.acronym).order_by('groupspec','player','name')
+            creature_items = Creature.objects.filter(chronicle=chronicle.acronym).order_by('groupspec', 'player',
+                                                                                           'name')
         paginator = Paginator(creature_items, CHARACTERS_PER_PAGE)
         creature_items = paginator.get_page(pid)
         list_context = {'creature_items': creature_items}
@@ -246,7 +273,7 @@ def display_crossover_sheet(request, slug=None, option=None):
             slug = 'julius_von_blow'
         c = Creature.objects.get(rid=slug)
         if option:
-            alt_name = c.name + " ("+option+")"
+            alt_name = c.name + " (" + option + ")"
             all_pre_change = Creature.objects.filter(name=alt_name)
             if len(all_pre_change):
                 for i in all_pre_change:
@@ -270,7 +297,7 @@ def display_crossover_sheet(request, slug=None, option=None):
         k["rite_notes"] = c.rite_notes()
         k["timeline"] = c.timeline()
         tn = c.traits_notes()
-        #print(tn)
+        # print(tn)
         k["traits_notes"] = tn
         k["nature_notes"] = c.nature_notes()
         k["meritsflaws_notes"] = c.meritsflaws_notes()
@@ -305,9 +332,22 @@ def display_lineage(request, slug=None):
             # print(slug)
             data = build_per_primogen(slug)
         settings = {'fontset': FONTSET}
-        lineage_context = {'settings': json.dumps(settings, sort_keys=True, indent=4), 'data': data};
+        lineage_context = {'settings': json.dumps(settings, sort_keys=True, indent=4), 'data': data}
         # print(lineage_context);
         return JsonResponse(lineage_context)
+
+
+def display_sept(request, slug=None):
+    if is_ajax(request):
+        from collector.models.septs import Sept
+        if slug is None:
+            return HttpResponse(status=204)
+        else:
+            data = Sept.objects.get(rid=slug).build_sept()
+            settings = {'fontset': FONTSET}
+            sept_context = {'settings': json.dumps(settings, sort_keys=True, indent=4),
+                            'data': json.dumps(data, sort_keys=True, indent=4)};
+        return JsonResponse(sept_context)
 
 
 @csrf_exempt
@@ -335,29 +375,33 @@ def svg_to_pdf(request, slug):
             f.write(svgtxt)
             f.close()
         logger.info(f'--> Created --> {svg_name}.')
+
         pdf_name = os.path.join(settings.MEDIA_ROOT, 'pdf/results/pdf/' + request.POST["pdf_name"])
         rid = request.POST["rid"]
         cairosvg.svg2pdf(url=svg_name, write_to=pdf_name, scale=1.0)
         logger.info(f'--> Created --> {pdf_name}.')
+        print(f'--> Created --> {pdf_name}.')
         response['status'] = 'ok'
         all_in_one_pdf(rid)
+        print(response)
     return JsonResponse(response)
 
 
 @csrf_exempt
 def all_in_one_pdf(rid):
+    #print(f'Starting PDFing for [{rid}].')
     logger.info(f'Starting PDFing for [{rid}].')
     res = []
     from PyPDF2 import PdfMerger
     media_results = os.path.join(settings.MEDIA_ROOT, 'pdf/results/pdf/')
-    csheet_results = os.path.join(settings.MEDIA_ROOT, 'pdf/results/csheet/')
+    csheet_results = os.path.join(settings.MEDIA_ROOT, 'pdf/results/pdf/')
     onlyfiles = [f for f in os.listdir(media_results) if os.path.isfile(os.path.join(media_results, f))]
     pdfs = onlyfiles
     merger = PdfMerger()
     pdfs.sort()
     i = 0
     for pdf in pdfs:
-        if pdf.startswith("character_sheet" + rid):
+        if pdf.startswith("character_sheet" + rid+"_p"):
             # print(pdf)
             merger.append(open(media_results + pdf, 'rb'))
             i += 1
@@ -366,4 +410,93 @@ def all_in_one_pdf(rid):
         with open(des, 'wb') as fout:
             merger.write(fout)
         logger.info(f'Successfully merged {i + 1} pages as [{des}].')
+        print(f'Successfully merged {i + 1} pages as [{des}].')
     return res
+
+
+def moon_phase(request, dt=None):
+    weeks = []
+    if dt is None:
+        dt = datetime.date.today()
+    firstday = datetime.date(dt.year, dt.month, 1)
+    year = dt.year
+    started = False
+    day = 0
+    cntw = 0
+    out = False
+    while cntw < 6:
+        dow = 0
+        aweek = []
+        while dow < 7:
+            cur_day = firstday + datetime.timedelta(days=day)
+            # print(cur_day)
+            if cur_day.month == firstday.month:
+                print("in month", cur_day, day)
+                if not started:
+                    print("not started")
+                    if firstday.weekday() == dow:
+                        started = True
+                    else:
+                        # print("before month",cur_day, dow,cur_day.weekday() )
+                        aweek.append({"str": "None", "num": "", "color": "#303030","blank":True})
+                if started:
+                    import math
+                    print("started")
+                    x = moon.phase(cur_day)
+                    icons = ["Ragabash", "Theurge", "Philodox", "Galliard", "Ahroun", "Galliard", "Philodox", "Theurge"]
+                    # if x < 3.5 * 1 - 0.01:
+                    #     str = icons[0]
+                    # if x < 3.5 * 2 - 0.01:
+                    #     str = icons[1]
+                    # elif x < 3.5 * 3 - 0.01:
+                    #     str = icons[2]
+                    # elif x < 3.5 * 4 - 0.01:
+                    #     str = icons[3]
+                    # elif x < 3.5 * 5 - 0.01:
+                    #     str = icons[4]
+                    # elif x < 3.5 * 6 - 0.01:
+                    #     str = icons[5]
+                    # elif x < 3.5 * 7 - 0.01:
+                    #     str = icons[6]
+                    # elif x < 3.5 * 8 - 0.01:
+                    #     str = icons[7]
+                    aa = int(x * 100)
+                    ab = math.floor(aa / 350)
+                    ac = ab -1
+                    str = icons[int(ac)]
+                    col = "#909090"
+                    if cur_day == datetime.date.today():
+                        col = "#F0F0F0"
+                    aweek.append({"str": f"{str}", "num": f"{cur_day.day:02}", "color": col,"blank":False})
+                    day += 1
+            else:
+                txt = "out"
+                if cur_day.weekday() == 0:
+                    out = True
+                    txt = "HERE"
+                # print("after month", cur_day)
+                aweek.append({"str": "None", "num": "", "color": "#303030", "blank":True})
+                day += 1
+            dow += 1
+        print(aweek)
+        if out:
+            cntw = 7
+        else:
+            weeks.append(aweek)
+            cntw += 1
+
+    return {"month": firstday.strftime("%B %Y"), "weeks": weeks}
+
+
+def calendar(request, year=None):
+    if year is None:
+        year = 2024
+    months = []
+    for m in range(12):
+        dt = datetime.date(year=int(year), month=m + 1, day=1)
+        x = moon_phase(request,dt)
+        months.append(x)
+
+    context = prepare_index(request)
+    context["calendar"] = months
+    return render(request, 'collector/page/calendar.html', context=context)

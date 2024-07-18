@@ -1,6 +1,6 @@
 from django.urls import path, re_path
 from collector.views.base import index, get_list, updown, userinput, add_creature, change_chronicle, \
-    display_gaia_wheel, display_dashboard, display_lineage, display_crossover_sheet, add_kindred, svg_to_pdf, save_to_svg
+    display_gaia_wheel, display_dashboard, display_lineage, display_crossover_sheet, add_kindred, svg_to_pdf, save_to_svg, display_sept, moon_phase, calendar
 from collector.views.actions import change_settings, refix_all, extract_mechanics, extract_per_group, extract_raw, \
     extract_roster, randomize, balance, refix_all
 from collector.views.creature_views import CreatureDetailView
@@ -13,6 +13,7 @@ urlpatterns = [
     re_path(r'^ajax/display/dashboard/$', display_dashboard, name='display_dashboard'),
     re_path(r'^ajax/display/kindred_lineage/(?P<slug>\w+)/$', display_lineage, name='display_lineage'),
     re_path(r'^ajax/display/kindred_lineage/$', display_lineage, name='display_lineage'),
+    re_path(r'^ajax/display/septs/(?P<slug>\w+)/$', display_sept, name='display_sept'),
     re_path(r'^ajax/display/crossover_sheet/$', display_crossover_sheet, name='display_crossover_sheet'),
     re_path(r'^ajax/display/crossover_sheet/(?P<slug>\w+)/$', display_crossover_sheet, name='display_crossover_sheet'),
     re_path(r'^ajax/display/crossover_sheet/(?P<slug>\w+)/(?P<option>\w+)/$', display_crossover_sheet, name='display_crossover_sheet'),
@@ -31,6 +32,8 @@ urlpatterns = [
     re_path(r'^ajax/character/svg2pdf/(?P<slug>[\w-]+)/$', svg_to_pdf, name='svg_to_pdf'),
     re_path(r'^ajax/character/save2svg/(?P<slug>[\w-]+)/$', save_to_svg, name='save_to_svg'),
     re_path(r'^api/balance/(?P<slug>\w+)/$', balance, name='balance'),
-    re_path(r'^api/randomize/(?P<slug>\w+)/$', randomize, name='randomize')
+    re_path(r'^api/randomize/(?P<slug>\w+)/$', randomize, name='randomize'),
+    re_path(r'^api/moon_phase/$', moon_phase, name='moon_phase'),
+    re_path(r'^api/calendar/(?P<year>\w+)/$', calendar, name='calendar')
 ]
 

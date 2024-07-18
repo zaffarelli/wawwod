@@ -11,7 +11,7 @@ class Rite(models.Model):
     path = models.CharField(max_length=128, default='', blank=True)
     level = models.PositiveIntegerField(default=0)
     creature = models.CharField(max_length=32, default='', blank=True)
-    description = models.TextField(max_length=1024, blank=True, default='')
+    description = models.TextField(max_length=2048, blank=True, default='')
     system = models.TextField(max_length=1024, blank=True, default='')
 
     def fix(self):
@@ -20,15 +20,12 @@ class Rite(models.Model):
     def __str__(self):
         return f'{self.name} ({self.level})'
 
-def refix(modeladmin, request, queryset):
-    for rite in queryset:
-        rite.fix()
-        rite.save()
-    short_description = 'Fix rite'
+
 
 class RiteAdmin(admin.ModelAdmin):
     list_display = ['name','code', 'level', 'path', 'description', "system"]
     ordering = ['path', 'level', 'name']
     list_filter = ['level','path']
     search_fields = ['name','description']
+    from collector.utils.helper import refix
     actions = [refix]

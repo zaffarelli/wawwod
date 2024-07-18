@@ -1,3 +1,6 @@
+from django.contrib import admin
+
+
 def json_default(value):
     import datetime
     if isinstance(value, datetime.datetime):
@@ -33,3 +36,10 @@ def toRID(txt):
 
 def is_ajax(request):
     return request.headers.get('x-requested-with') == 'XMLHttpRequest'
+
+
+def refix(modeladmin, request, queryset):
+    for item in queryset:
+        item.fix()
+        item.save()
+    short_description = 'Refix'

@@ -5,6 +5,7 @@ class WawwodSheet {
         me.co = collector;
         me.config = data;
         me.count = 0;
+        me.mark_overhead = false
     }
 
     decorationText(x, y, d = 0, a = 'middle', f, s, b, c, w, t, v, o = 1) {
@@ -37,7 +38,7 @@ class WawwodSheet {
                 break;
             case "changeling":
                 res = "Changeling";
-                break;
+                break;7
             case "ghoul":
                 res = "Ghoul";
                 break;
@@ -81,6 +82,7 @@ class WawwodSheet {
         me.draw_fill = '#222';
         me.user_stroke = '#644';
         me.user_fill = '#422';
+        me.overhead_fill = '#C22';
         me.user_font = 'Gochi Hand';
         me.mono_font = 'Syne Mono';
         me.creature_font = 'Trade Winds';
@@ -230,7 +232,7 @@ class WawwodSheet {
         me.drawPages();
     }
 
-    reinHagenStat(name, value, ox, oy, type, statcode, source, power = false) {
+    reinHagenStat(name, value, ox, oy, type, statcode, source, power = false, maxo=10) {
         let me = this;
         let item = source.append('g')
             .attr('class', type);
@@ -320,7 +322,13 @@ class WawwodSheet {
                 return (d >= me.stat_max ? me.dot_radius - 2 : me.dot_radius - 2);
             })
             .style('fill', function (d) {
-                return (d < value ? me.user_fill : "white");
+                let color = "white"
+                if (me.mark_overhead){
+                    color = (d < value ? (d <= maxo-1 ? me.user_fill:me.overhead_fill  ) : "white")
+                }else{
+                    color = (d < value ? me.user_fill : "white")
+                }
+                return color;
             })
             .style('stroke', function (d) {
                 return me.draw_stroke;
@@ -621,35 +629,78 @@ class WawwodSheet {
         let oy = basey;
         let stat = '';
 
+        let reparts = me.data.reparts.split("_")
+
         if (me.blank) {
             me.title('Talents (  )', ox + me.stepx * 5, oy, me.character);
             me.title('Skills (  )', ox + me.stepx * 12, oy, me.character);
             me.title('Knowledges (  )', ox + me.stepx * 19, oy, me.character);
         } else {
-            me.title('Talents (' + me.data['total_talents'] + ')', ox + me.stepx * 5, oy, me.character);
-            me.title('Skills (' + me.data['total_skills'] + ')', ox + me.stepx * 12, oy, me.character);
-            me.title('Knowledges (' + me.data['total_knowledges'] + ')', ox + me.stepx * 19, oy, me.character);
+            me.title('Talents (' + me.data['total_talents'] +'/'+reparts[3]+ ')', ox + me.stepx * 5, oy, me.character);
+            me.title('Skills (' + me.data['total_skills'] +'/'+reparts[4]+ ')', ox + me.stepx * 12, oy, me.character);
+            me.title('Knowledges (' + me.data['total_knowledges'] +'/'+reparts[5]+ ')', ox + me.stepx * 19, oy, me.character);
         }
         oy += 0.5 * me.stepy;
-
+        let overheads = []
+        let indexed = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
         stat = 'talent';
-        [0, 1, 2, 3, 4, 5, 6, 7, 8, 9].forEach(function (d) {
+        overheads = me.build_overheads(stat,indexed,parseInt(reparts[3]))
+        indexed.forEach(function (d) {
             let x = ox + me.stepx * 2;
             let y = oy + 0.5 * me.stepy * (d);
-            me.reinHagenStat(me.config['labels'][stat + 's'][d], me.data[stat + d], x, y, stat, stat + d, me.character);
+            me.reinHagenStat(me.config['labels'][stat + 's'][d], me.data[stat + d], x, y, stat, stat + d, me.character, false, overheads[d]);
         });
         stat = 'skill';
-        [0, 1, 2, 3, 4, 5, 6, 7, 8, 9].forEach(function (d) {
+        overheads = me.build_overheads(stat,indexed,parseInt(reparts[4]))
+        indexed.forEach(function (d) {
             let x = ox + me.stepx * 9;
             let y = oy + 0.5 * me.stepy * (d);
-            me.reinHagenStat(me.config['labels'][stat + 's'][d], me.data[stat + d], x, y, stat, stat + d, me.character);
+            me.reinHagenStat(me.config['labels'][stat + 's'][d], me.data[stat + d], x, y, stat, stat + d, me.character, false, overheads[d]);
         });
         stat = 'knowledge';
-        [0, 1, 2, 3, 4, 5, 6, 7, 8, 9].forEach(function (d) {
+        overheads = me.build_overheads(stat,indexed,parseInt(reparts[5]))
+        indexed.forEach(function (d) {
             let x = ox + me.stepx * 16;
             let y = oy + 0.5 * me.stepy * (d);
-            me.reinHagenStat(me.config['labels'][stat + 's'][d], me.data[stat + d], x, y, stat, stat + d, me.character);
+            me.reinHagenStat(me.config['labels'][stat + 's'][d], me.data[stat + d], x, y, stat, stat + d, me.character, false, overheads[d]);
         });
+    }
+
+
+    build_overheads(stat,indexed=[],stat_total=5){
+        let me = this
+        let arr = Array(indexed.length).fill(0)
+        let ov = Array(indexed.length).fill(0)
+        let real_total = 0;
+        let total = stat_total
+        indexed.forEach(function (z) {
+            real_total += me.data[stat + z]
+            arr[z] = me.data[stat + z]
+            ov[z] = me.data[stat + z]
+        })
+        while(real_total>0){
+            indexed.forEach(function (z) {
+                if (total>0){
+                    if (arr[z]>0){
+                        total -= 1
+                        real_total -= 1
+                        arr[z] -= 1
+                        ov[z] -= 1
+                    }
+                }else{
+                    if (arr[z]>0){
+                        real_total -= 1
+
+                    }
+                }
+            })
+        }
+         indexed.forEach(function (z) {
+            arr[z] = me.data[stat + z]-ov[z]
+         });
+        console.log("Overheads for "+stat+":",arr)
+
+        return arr
     }
 
     fillAdvantages(basey) {
@@ -683,19 +734,25 @@ class WawwodSheet {
         }
         oy += 0.5 * me.stepy;
 
-
+        // *** Backgrounds
         stat = 'background';
-        [0, 1, 2, 3, 4, 5, 6, 7, 8, 9].forEach(function (d) {
+        let overheads = []
+        let indexed = [0,1,2,3,4,5,6,7,8,9]
+
+        overheads = me.build_overheads(stat,indexed,5)
+        indexed.forEach(function (z) {
             let x = ox + me.stepx * 2;
-            let y = oy + 0.5 * me.stepy * (d);
-            me.reinHagenStat(me.config['labels'][stat + 's'][d], me.data[stat + d], x, y, stat, stat + d, me.character);
+            let y = oy + 0.5 * me.stepy * (z);
+            me.reinHagenStat(me.config['labels'][stat + 's'][z], me.data[`${stat}${z}`], x, y, stat, `${stat}${z}`, me.character, false,overheads[z]);
         });
+        // *** Backgrounds
 
         stat = 'trait';
-        [0, 1, 2, 3, 4, 5, 6, 7, 8, 9].forEach(function (d) {
+        overheads = me.build_overheads(stat,indexed,3)
+        indexed.forEach(function (d) {
             let x = ox + me.stepx * 9;
             let y = oy + 0.5 * me.stepy * (d);
-            me.powerStat(me.data[stat + d], x, y, stat, stat + d, me.character);
+            me.powerStat(me.data[stat + d], x, y, stat, stat + d, me.character, false, overheads[d]);
         });
 
         stat = 'virtue';
@@ -1280,8 +1337,72 @@ xmlns:xlink="http://www.w3.org/1999/xlink" width="' + me.width + '" height="' + 
         me.vis.call(me.zoom);
     }
 
+    superwrap(text, width, stacked = false, a_font_size) {
+        let font = "Gochi Hand",
+            user_fill = '#A8A',
+            user_stroke = '#828',
+            font_size = a_font_size,
+            base_y = 0,
+            stackedHeight = 0
+        ;
+        let total_lines = 0
+
+        text.each(function () {
+            let tgt = d3.select(this),
+                words = tgt.text().split(/\s+/).reverse(),
+                word,
+                line = [],
+                lineNumber = 0,
+                x = tgt.attr("x"),
+                y = tgt.attr("y"),
+                lineHeight = font_size * 1.1
+            ;
+            let tspan = tgt.text(null).append("tspan")
+                .attr("x", x)
+                .attr('y', y)
+                .attr("dy", 0)
+                .style("font-size", font_size + 'px')
+                .style("stroke-width", '0.05pt')
+            ;
+
+            while (word = words.pop()) {
+    //             console.log(word)
+                if (word == "µ"){
+                    tspan.text(line.join(" "));
+                    line = [];
+                    tspan = tgt.append("tspan")
+                        .attr("x", x)
+                        .attr('y', y)
+                        .attr("dy", ++lineNumber * lineHeight)
+                        .style("font-size", font_size + 'px')
+                        .style("stroke-width", '0.05pt')
+                        .text(word)
+
+                }else{
+                    line.push(word);
+                    tspan.text(line.join(" "));
+                    if (tspan.node().getComputedTextLength() > width) {
+                        line.pop();
+                        tspan.text(line.join(" "));
+                        line = [word];
+                        tspan = tgt.append("tspan")
+                            .attr("x", x)
+                            .attr('y', y)
+                            .attr("dy", ++lineNumber * lineHeight)
+                            .style("font-size", font_size + 'px')
+                            .style("stroke-width", '0.05pt')
+                            .text(word)
+                    }
+                }
+            }
+            global_last_lines = lineNumber
+        });
+    }
+
 
 }
+
+let global_last_lines = 0
 
 function wrap(text, width, stacked = false, a_font_size) {
     let font = "Gochi Hand",
@@ -1291,6 +1412,7 @@ function wrap(text, width, stacked = false, a_font_size) {
         base_y = 0,
         stackedHeight = 0
     ;
+    let total_lines = 0
 
     text.each(function () {
         let tgt = d3.select(this),
@@ -1340,5 +1462,8 @@ function wrap(text, width, stacked = false, a_font_size) {
                 }
             }
         }
+        global_last_lines = lineNumber
     });
 }
+
+
