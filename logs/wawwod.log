@@ -18244,3 +18244,102 @@ IndexError: list index out of range
 [18/07 00:10:52] Not Found: /favicon.ico
 [18/07 00:10:55] Not Found: /favicon.ico
 [18/07 00:13:48] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[18/07 22:45:26] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[18/07 22:46:37] Internal Server Error: /ajax/editable/userinput/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 184, in userinput
+    item.save()
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/base.py", line 881, in save_base
+    pre_save.send(
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/dispatch/dispatcher.py", line 189, in send
+    response = receiver(signal=self, sender=sender, **named)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/signals/creatures.py", line 17, in update_creature
+    instance.fix()
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 830, in fix
+    self.freebies -= RAGE_PER_AUSPICE[self.auspice] * 1  # Rage per Auspice
+                     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+TypeError: list indices must be integers or slices, not str
+[18/07 22:46:37] "POST /ajax/editable/userinput/ HTTP/1.1" 500 21503
+[18/07 22:46:52] Not Found: /favicon.ico
+[18/07 22:47:05] Not Found: /favicon.ico
+[18/07 22:47:10] Not Found: /favicon.ico
+[18/07 22:47:19] Not Found: /favicon.ico
+[18/07 22:47:27] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[19/07 07:20:59] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[19/07 22:20:54] Not Found: /favicon.ico
+[19/07 22:21:04] Not Found: /favicon.ico
+[19/07 22:21:09] Not Found: /favicon.ico
+[19/07 22:21:11] Not Found: /favicon.ico
+[19/07 22:22:42] Not Found: /favicon.ico
+[19/07 22:24:26] Not Found: /favicon.ico
+[19/07 22:24:33] Not Found: /favicon.ico
+[19/07 22:52:29] Internal Server Error: /ajax/display/crossover_sheet/_stanislas_klebber/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 298, in display_crossover_sheet
+    k["timeline"] = c.timeline()
+                    ^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 1751, in timeline
+    fmt_list.append({'idx': idx, 'item': f'{words[0]}', 'date': f'{words[1]}', 'notes': f'{words[2]}'})
+                                                                   ~~~~~^^^
+IndexError: list index out of range
+[19/07 22:52:29] "GET /ajax/display/crossover_sheet/_stanislas_klebber/ HTTP/1.1" 500 100602
+[19/07 22:52:34] Internal Server Error: /ajax/display/crossover_sheet/_stanislas_klebber/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 298, in display_crossover_sheet
+    k["timeline"] = c.timeline()
+                    ^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 1751, in timeline
+    fmt_list.append({'idx': idx, 'item': f'{words[0]}', 'date': f'{words[1]}', 'notes': f'{words[2]}'})
+                                                                   ~~~~~^^^
+IndexError: list index out of range
+[19/07 22:52:34] "GET /ajax/display/crossover_sheet/_stanislas_klebber/ HTTP/1.1" 500 100602
+[19/07 22:52:57] Not Found: /favicon.ico
+[19/07 23:07:35] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[19/07 23:11:45] Not Found: /favicon.ico
+[19/07 23:13:42] Not Found: /favicon.ico
+[19/07 23:24:40] Internal Server Error: /ajax/display/crossover_sheet/_stanislas_klebber/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 299, in display_crossover_sheet
+    k["others"] = c.others()
+                  ^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 1764, in others
+    fmt_list.append({'idx': idx, 'item': f'{words[0]}', 'date': f'{words[1]}', 'notes': f'{words[2]}'})
+                                                                   ~~~~~^^^
+IndexError: list index out of range
+[19/07 23:24:40] "GET /ajax/display/crossover_sheet/_stanislas_klebber/ HTTP/1.1" 500 96697
+[19/07 23:24:56] Not Found: /favicon.ico
+[19/07 23:25:24] Not Found: /favicon.ico
+[19/07 23:29:05] Not Found: /favicon.ico
+[19/07 23:29:20] Not Found: /favicon.ico
+[19/07 23:30:06] Not Found: /favicon.ico
+[19/07 23:34:39] Not Found: /favicon.ico

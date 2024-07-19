@@ -296,6 +296,7 @@ def display_crossover_sheet(request, slug=None, option=None):
         k["background_notes"] = c.background_notes()
         k["rite_notes"] = c.rite_notes()
         k["timeline"] = c.timeline()
+        k["others"] = c.others()
         tn = c.traits_notes()
         # print(tn)
         k["traits_notes"] = tn
@@ -431,9 +432,9 @@ def moon_phase(request, dt=None):
             cur_day = firstday + datetime.timedelta(days=day)
             # print(cur_day)
             if cur_day.month == firstday.month:
-                print("in month", cur_day, day)
+                # print("in month", cur_day, day)
                 if not started:
-                    print("not started")
+                    # print("not started")
                     if firstday.weekday() == dow:
                         started = True
                     else:
@@ -441,7 +442,7 @@ def moon_phase(request, dt=None):
                         aweek.append({"str": "None", "num": "", "color": "#303030","blank":True})
                 if started:
                     import math
-                    print("started")
+                    # print("started")
                     x = moon.phase(cur_day)
                     icons = ["Ragabash", "Theurge", "Philodox", "Galliard", "Ahroun", "Galliard", "Philodox", "Theurge"]
                     # if x < 3.5 * 1 - 0.01:

@@ -5,108 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c5f4ae22-1e7a-419c-ac9f-80da089b72d4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/collector/migrations/0060_sept.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collector/migrations/0061_sept_rid_alter_sept_protagonists.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collector/migrations/0062_alter_adventure_chronicle_alter_sept_chronicle.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collector/migrations/0063_alter_creature_adventure.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collector/migrations/0064_rename_protagonists_sept_garous_sept_kinfolks_and_more.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collector/migrations/0065_sept_caern_sept_caern_level_sept_caern_totem_and_more.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collector/migrations/0066_creature_reparts.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collector/migrations/0067_creature_community_job.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collector/migrations/0068_adventure_players_starting_freebies.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collector/migrations/0069_creature_edges.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collector/migrations/0070_season.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collector/migrations/0071_rename_code_adventure_acronym_and_more.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collector/migrations/0072_remove_adventure_chronicle_adventure_season.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collector/migrations/0073_alter_adventure_protagonists_alter_adventure_team.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collector/migrations/0074_alter_adventure_protagonists.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collector/migrations/0075_remove_season_players_starting_freebies.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collector/migrations/0076_season_era.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collector/migrations/0077_creature_is_player.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collector/migrations/0078_sept_season.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collector/migrations/0079_alter_creature_notes_on_history.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collector/migrations/0080_alter_rite_description.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collector/models/seasons.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collector/models/septs.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collector/signals/seasons.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collector/signals/septs.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collector/static/collector/auspices/AuspiceNone.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collector/static/collector/wawwod_isj.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collector/static/js/sept.es6" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collector/static/js/sept.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collector/templates/collector/objects/moon_phases_large.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collector/templates/collector/page/calendar.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collector/templates/collector/page/current_chronicle_details.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storytelling/migrations/0063_city_chronicle.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storytelling/migrations/0064_alter_city_chronicle.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/csheet/Hamburg/character_sheet_anita_klugzmann.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/csheet/Hamburg/character_sheet_claudius_rotzeiger.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/csheet/Hamburg/character_sheet_daniel_voelker.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/csheet/Hamburg/character_sheet_dominic_brauen.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/csheet/Hamburg/character_sheet_helmut_reichert.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/csheet/Hamburg/character_sheet_jakob_luzinski.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/csheet/Hamburg/character_sheet_kasper_bergstein.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/csheet/Hamburg/character_sheet_linda_gloss.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/csheet/Hamburg/character_sheet_martin_merkel.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/csheet/Hamburg/character_sheet_otto_liebermann.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/csheet/Kaprun/character_sheet_elizabeth_schultz.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/csheet/Kaprun/character_sheet_hans_mueller.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/csheet/Kaprun/character_sheet_lorelei_becker.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/csheet/Kaprun/character_sheet_mortal.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/csheet/Salzburg/character_sheet_christian_lorenz_raisani.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/csheet/Salzburg/character_sheet_diether_hohenwald.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_christian_lorenz_raisani.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_diether_hohenwald.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_diether_hohenwald_p0.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_diether_hohenwald_p1.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_diether_hohenwald_p2.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_diether_hohenwald_p3.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_diether_hohenwald_p0.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_diether_hohenwald_p1.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_diether_hohenwald_p2.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_diether_hohenwald_p3.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/collector/migrations/0082_creature_notes_on_others.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_stanislas_klebber.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_stanislas_klebber_p0.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_stanislas_klebber_p1.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_stanislas_klebber_p2.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_stanislas_klebber_p3.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_stanislas_klebber_p0.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_stanislas_klebber_p1.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_stanislas_klebber_p2.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_stanislas_klebber_p3.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/apps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/models/adventures.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/models/adventures.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/models/backgrounds.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/models/backgrounds.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/models/chronicles.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/models/chronicles.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/collector/models/creatures.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/models/creatures.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/models/disciplines.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/models/disciplines.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/models/gifts.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/models/gifts.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/models/rites.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/models/rites.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/static/collector/css/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/collector/css/main.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/static/js/collector.es6" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/js/collector.es6" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/collector/static/js/cross_over_sheet.es6" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/js/cross_over_sheet.es6" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/static/js/gaia_wheel.es6" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/js/gaia_wheel.es6" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/collector/static/js/wawwod_sheet.es6" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/js/wawwod_sheet.es6" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/collector/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/templates/collector/creature/mortal_header.html" beforeDir="false" afterPath="$PROJECT_DIR$/collector/templates/collector/creature/mortal_header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/utils/helper.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/utils/helper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/utils/wod_reference.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/utils/wod_reference.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/collector/views/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/views/base.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/wawwod.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/wawwod.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storytelling/models/cities.py" beforeDir="false" afterPath="$PROJECT_DIR$/storytelling/models/cities.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wawwod.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/csheet/character_sheet_anita_klugzmann.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/csheet/character_sheet_christian_lorenz_raisani.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/csheet/character_sheet_claudius_rotzeiger.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/csheet/character_sheet_daniel_voelker.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/csheet/character_sheet_dominic_brauen.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/csheet/character_sheet_elizabeth_schultz.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/csheet/character_sheet_elizabeth_schulz.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/csheet/character_sheet_hans_mueller.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/csheet/character_sheet_helmut_reichert.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/csheet/character_sheet_jakob_luzinski.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/csheet/character_sheet_kasper_bergstein.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/csheet/character_sheet_linda_gloss.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/csheet/character_sheet_lorelei_becker.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/csheet/character_sheet_martin_merkel.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/csheet/character_sheet_mortal.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/csheet/character_sheet_otto_liebermann.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_christian_lorenz_raisani.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_christian_lorenz_raisani.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_christian_lorenz_raisani_p0.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_christian_lorenz_raisani_p0.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_christian_lorenz_raisani_p1.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_christian_lorenz_raisani_p1.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_christian_lorenz_raisani_p2.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_christian_lorenz_raisani_p2.pdf" afterDir="false" />
@@ -115,10 +31,7 @@
       <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_christian_lorenz_raisani_p1.svg" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_christian_lorenz_raisani_p1.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_christian_lorenz_raisani_p2.svg" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_christian_lorenz_raisani_p2.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_christian_lorenz_raisani_p3.svg" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_christian_lorenz_raisani_p3.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod_static/collector/css/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/collector/css/main.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod_static/js/collector.es6" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/js/collector.es6" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wawwod_static/js/cross_over_sheet.es6" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/js/cross_over_sheet.es6" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod_static/js/gaia_wheel.es6" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/js/gaia_wheel.es6" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wawwod_static/js/wawwod_sheet.es6" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/js/wawwod_sheet.es6" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

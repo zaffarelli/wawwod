@@ -171,6 +171,8 @@ class CrossOverSheet extends WawwodSheet {
         background_note_in_note.call(wrap, 7 * me.stepx, false,me.medium_font_size )
     }
 
+
+
     fillRiteNotes(oy) {
         let me = this;
         let box_spacing_y = 10.25;
@@ -245,7 +247,274 @@ class CrossOverSheet extends WawwodSheet {
     }
 
 
+    badfillTimeline(oy) {
+        let me = this;
+        let box_spacing_y = 4.0;
+        let box_spacing_x = 12.0;
+        let base_x = 10.25;
+        let timeline = me.character.append('g')
+            .attr('class', 'timeline')
+        ;
+        let current_font_size = me.medium_font_size;
+        me.daddy = me.timeline;
+        me.title('Timeline', (base_x + 6) * me.stepx, oy - 0.5 * me.stepy, timeline)
+
+        console.log(me.data['timeline'])
+
+        let timeline_item = timeline.selectAll('timeline_event')
+            .data(me.data['timeline'])
+        ;
+
+        let timeline_in = timeline_item.enter()
+            .append('g')
+            .attr('class', 'timeline_event')
+            .attr('id', function(d) { return 'timeline_event_'+d['idx'] })
+
+        ;
+//         timeline_in.append('text')
+//             .attr("x", function (d) {
+//                 return (base_x + 0.05) * me.stepx;
+//             })
+//             .attr('y', function (d) {
+//                 return oy + (d['idx'] * box_spacing_y + 0.5) * me.stepy;
+//             })
+//             .style('font-family', me.user_font)
+//             .style('font-size', current_font_size+"px")
+//             .style('text-anchor', "start")
+//             .style("fill", me.user_fill)
+//             .style("stroke", me.user_stroke)
+//             .style("stroke-width", '0.05pt')
+//             .text(function (d) {
+//                 return d['date'] + ' - ' + d['item']
+//             })
+
+
+        let timeline_in_note = timeline_in.append('text')
+            .attr('class', 'timeline_in_notes')
+            .attr('id', function(d) { return 'timeline_in_notes_'+d['idx'] })
+//             .attr('idx', function(d) {return d['idx']})
+//             .attr('prev', function(d) {return 'timeline_in_notes_'+(d['idx']-1)})
+//             .attr('y', function (d) {
+// //                 if (d['idx']>0){
+// //                     d3.select('timeline_in_notes_'+(d['idx']-1)).attr("y",oy + 0.85 * me.stepy + prev.attr("lines") * me.stepy)
+// //                 }
+//                 return oy + 0.85 * me.stepy ;//+ d['idx'] *box_spacing_y * me.stepy;
+//             })
+            .attr('x', function (d) {
+                return (base_x + 0.2 )*me.stepx  ;
+            })
+//             .attr('y', function (d) {
+//                 return oy + 0.85 * me.stepy + d['idx'] *me.stepy;
+//             })
+            .attr('dx', 0)
+            .attr('dy', 0)
+            .text(function (d) {
+                return (d['idx']+1) + ") "+d['date'] + ' - ' + d['item'] +" "+ d['notes'];
+            })
+            .style("text-anchor", 'start')
+            .style("font-family", me.user_font)
+            .style("font-size", current_font_size)
+            .style("fill", me.user_fill)
+            .style("stroke", me.user_stroke)
+            .style("stroke-width", '0.05pt')
+        ;
+        me.superwrap(timeline_in_note, box_spacing_x * me.stepx, true, current_font_size);
+        let all_lines = 0;
+        d3.selectAll(".timeline_in_notes")
+             .attr('y', function (d) {
+                 let result = oy;
+                 if (d['idx']>0){
+                    let pl = d3.select('#timeline_in_notes_'+(d['idx']))
+                    if (pl){
+
+                        all_lines += parseInt(pl.attr("lines"));
+
+                        result = oy + all_lines * me.stepy *  .5
+                        console.log("previous lines",all_lines, result)
+                    }else{
+                        all_lines = 0;
+                        console.log("Not found", result)
+                    }
+                 }else{
+                     console.log("Bad ",result)
+                 }
+
+                 return result
+             })
+    }
+
+
+
     fillTimeline(oy) {
+        let me = this;
+        let box_spacing_y = 4.0;
+        let box_spacing_x = 12.75;
+        let base_x = 9.75;
+        let timeline = me.character.append('g')
+            .attr('class', 'timeline')
+        ;
+        let current_font_size = me.medium_font_size;
+        me.daddy = timeline;
+        me.title('Timeline', (base_x + 6) * me.stepx, oy - 1 * me.stepy, timeline)
+
+        let timeline_item = timeline.selectAll('timeline_event')
+            .data(me.data['timeline'])
+        ;
+
+        let timeline_in = timeline_item.enter()
+            .append('g')
+            .attr('class', 'timeline_event')
+        ;
+        timeline_in.append('text')
+//             .attr("x", function (d) {
+//                 return (base_x + 0.05) * me.stepx;
+//             })
+//              .attr('y', function (d) {
+//                  return oy + (d['idx'] * box_spacing_y + 0.5) * me.stepy;
+//              })
+            .style('font-family', me.user_font)
+            .style('font-size', current_font_size+"px")
+            .style('text-anchor', "start")
+            .style("fill", me.user_fill)
+            .style("stroke", me.user_stroke)
+            .style("stroke-width", '0.05pt')
+            .text(function (d) {
+                return d['date'] + ' - ' + d['item']
+            })
+        let timeline_in_note = timeline_in.append('text')
+//             .attr('x', function (d) {
+//                 return (base_x + 0.4) * me.stepx;
+//             })
+//             .attr('y', function (d) {
+//                 return oy + 0.85 * me.stepy + d['idx'] *box_spacing_y * me.stepy;
+//             })
+            .attr('class', 'timeline_in_notes')
+            .attr('id', function(d) { return 'timeline_in_notes_'+d['idx'] })
+            .attr('x', 0)
+            .attr('y', 0)
+            .attr('dx', 0)
+            .attr('dy', 0)
+            .text(function (d) {
+                return d.date + ' - ' + d.item + " µ " +d.notes
+            })
+            .style("text-anchor", 'start')
+            .style("font-family", me.user_font)
+            .style("font-size", current_font_size)
+            .style("fill", me.user_fill)
+            .style("stroke", me.user_stroke)
+            .style("stroke-width", '0.05pt')
+        ;
+        //timeline_in_note.call(wrap, box_spacing_x * me.stepx, true, current_font_size);
+
+        me.superwrap(timeline_in_note, box_spacing_x * me.stepx, true, current_font_size);
+        let all_lines = 0;
+        d3.selectAll(".timeline_event")
+             .attr('transform', function (d) {
+                 let result = oy;
+                 if (d['idx']>0){
+                    let previous_block = d3.select('#timeline_in_notes_'+(d['idx']-1))
+                    if (previous_block){
+                        let lines = parseInt(previous_block.attr("lines"))
+                        all_lines += lines
+                        result =  oy + all_lines*me.stepy*.4;
+                        console.log("previous lines",all_lines, result)
+                    }else{
+                        all_lines = 0;
+                        console.log("Not found", result)
+                    }
+                 }else{
+                     console.log("Bad ",result)
+                 }
+
+                 return "translate("+(base_x + 0.4) * me.stepx+","+result+")"
+             })
+
+
+
+    }
+
+    fillOthers(oy) {
+        let me = this;
+        let box_spacing_y = 4.0;
+        let box_spacing_x = 12.75;
+        let base_x = 9.75;
+        let others = me.character.append('g')
+            .attr('class', 'others')
+        ;
+        let current_font_size = me.medium_font_size;
+        me.daddy = others;
+        me.title('Others', (base_x + 6) * me.stepx, oy - 1 * me.stepy, timeline)
+
+        let others_item = timeline.selectAll('others_event')
+            .data(me.data['others'])
+        ;
+
+        let others_in = others_item.enter()
+            .append('g')
+            .attr('class', 'others_event')
+        ;
+        others_in.append('text')
+            .style('font-family', me.user_font)
+            .style('font-size', current_font_size+"px")
+            .style('text-anchor', "start")
+            .style("fill", me.user_fill)
+            .style("stroke", me.user_stroke)
+            .style("stroke-width", '0.05pt')
+            .text(function (d) {
+                return d['date'] + ' - ' + d['item']
+            })
+        let others_in_note = others_in.append('text')
+//             .attr('x', function (d) {
+//                 return (base_x + 0.4) * me.stepx;
+//             })
+//             .attr('y', function (d) {
+//                 return oy + 0.85 * me.stepy + d['idx'] *box_spacing_y * me.stepy;
+//             })
+            .attr('class', 'others_in_notes')
+            .attr('id', function(d) { return 'others_in_notes_'+d['idx'] })
+            .attr('x', 0)
+            .attr('y', 0)
+            .attr('dx', 0)
+            .attr('dy', 0)
+            .text(function (d) {
+                return d.date + ' - ' + d.item + " µ " +d.notes
+            })
+            .style("text-anchor", 'start')
+            .style("font-family", me.user_font)
+            .style("font-size", current_font_size)
+            .style("fill", me.user_fill)
+            .style("stroke", me.user_stroke)
+            .style("stroke-width", '0.05pt')
+        ;
+        //timeline_in_note.call(wrap, box_spacing_x * me.stepx, true, current_font_size);
+
+        me.superwrap(others_in_note, box_spacing_x * me.stepx, true, current_font_size);
+        let all_lines = 0;
+        d3.selectAll(".others_event")
+             .attr('transform', function (d) {
+                 let result = oy;
+                 if (d['idx']>0){
+                    let previous_block = d3.select('#others_in_notes_'+(d['idx']-1))
+                    if (previous_block){
+                        let lines = parseInt(previous_block.attr("lines"))
+                        all_lines += lines
+                        result =  oy + all_lines*me.stepy*.4;
+                        console.log("previous lines",all_lines, result)
+                    }else{
+                        all_lines = 0;
+                        console.log("Not found", result)
+                    }
+                 }else{
+                     console.log("Bad ",result)
+                 }
+
+                 return "translate("+(base_x + 0.4) * me.stepx+","+result+")"
+             })
+    }
+
+
+
+    legacy_fillTimeline(oy) {
         let me = this;
         let box_spacing_y = 4.0;
         let box_spacing_x = 12.0;
@@ -264,24 +533,6 @@ class CrossOverSheet extends WawwodSheet {
         let timeline_in = timeline_item.enter()
             .append('g')
             .attr('class', 'timeline_event')
-        ;
-//         let timeline_in_rect = timeline_in.append('rect')
-//             .attr("x", function (d) {
-//                 return (base_x) * me.stepx;
-//             })
-//             .attr("y", function (d) {
-//                 return oy + d['idx'] * box_spacing_y * me.stepy;
-//             })
-//             .attr("width", function (d) {
-//                 return me.stepx * (base_x + 2);
-//             })
-//             .attr("height", function (d) {
-//                 return me.stepy * (box_spacing_y - 0.25);
-//             })
-//             .attr("rx", "8pt")
-//             .attr("ry", "8pt")
-//             .style("fill", "white")
-//             .style("stroke", "#808080")
         ;
         timeline_in.append('text')
             .attr("x", function (d) {
@@ -320,8 +571,9 @@ class CrossOverSheet extends WawwodSheet {
         ;
         //timeline_in_note.call(wrap, box_spacing_x * me.stepx, true, current_font_size);
         me.superwrap(timeline_in_note, box_spacing_x * me.stepx, true, current_font_size);
-        console.log("Timelines line number=",global_last_lines)
+        //console.log("Timelines line number=",global_last_lines)
     }
+
 
     fillDisciplinesNotes(oy, pos = '', pp = 0) {
         let me = this;

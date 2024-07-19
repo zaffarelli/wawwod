@@ -1395,8 +1395,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" width="' + me.width + '" height="' + 
                     }
                 }
             }
-            global_last_lines = lineNumber
+            tgt.attr("lines",lineNumber+1)
         });
+
     }
 
 

@@ -102,6 +102,7 @@ class Creature(models.Model):
     notes_on_backgrounds = models.TextField(max_length=2048, default='', blank=True)
     notes_on_meritsflaws = models.TextField(max_length=1024, default='', blank=True)
     notes_on_history = models.TextField(max_length=6144, default='', blank=True)
+    notes_on_others = models.TextField(max_length=4096, default='', blank=True)
     notes_on_naturedemeanor = models.TextField(max_length=1024, default='', blank=True)
     notes_on_traits = models.TextField(max_length=2048, default='', blank=True)
     # adventure = models.ForeignKey(Adventure, on_delete=models.SET_NULL, null=True, default=None, blank=True)
@@ -1752,6 +1753,19 @@ class Creature(models.Model):
                 idx += 1
 
         return fmt_list
+
+    def others(self):
+        list = self.notes_on_others.split('\r\n')
+        fmt_list = []
+        idx = 0
+        for e in list:
+            if len(e) > 2:
+                words = e.split('§')
+                fmt_list.append({'idx': idx, 'item': f'{words[0]}', 'date': f'{words[1]}', 'notes': f'{words[2]}'})
+                idx += 1
+
+        return fmt_list
+
 
     def traits_notes(self):
         fmt_list = []
