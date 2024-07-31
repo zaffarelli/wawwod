@@ -530,13 +530,19 @@ class WawwodCollector {
                 event.stopPropagation();
                 let target = $(this).attr('id')
                 let keys = $(this).attr('id').split('__')
-                let shift = event.shiftKey;
-                let val = $('#userinput').val();
+                let ctrl = event.ctrlKey;
+                let alt = event.altKey;
+                let val = $('#text_edit').val();
+                let param = $(this).attr("param") | undefined
                 let block = $(this).parent();
-                if (shift) {
+                let myurl = 'ajax/editable/userinput/'
+                if (param){
+                    myurl += param+"/"
+                }
+                if (alt) {
                     let keys_set = {id: keys[0], field: keys[1], value: val}
                     $.ajax({
-                        url: 'ajax/editable/userinput/',
+                        url: myurl,
                         method: 'POST',
                         headers: {
                             'Accept': 'application/json',
@@ -552,6 +558,16 @@ class WawwodCollector {
                             $('td#' + target).html(answer);
                         },
                     });
+                }
+                if (ctrl) {
+                    if (param){
+                        let v = $('td#' + target).html()
+
+                    }else{
+                        let v = $('td#' + target).html()
+//                         $("#userinput").val(v)
+                        $("textarea#text_edit").val(v)
+                    }
                 }
             });
 

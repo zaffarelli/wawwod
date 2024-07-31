@@ -1,0 +1,49 @@
+chronicle: GMU
+list:
+  - name: Marik Tielmann
+    edge: _hans_mueller
+    creature: mortal
+    sex: 1
+  - name: Roman Kasparof
+    edge: _hans_mueller
+    creature: mortal
+    sex: 1
+  - name: Clarence Scarliatti
+    edge: _hans_mueller
+    creature: mortal
+    sex: 1
+  - name: Theodore Dilbert
+    edge: _elizabeth_schultz
+    creature: kinfolk
+    sex: 1
+  - name: Curtis Mayfield
+    edge: _elizabeth_schultz
+    creature: mortal
+    sex: 1
+    age: 44
+  - name: Adam Kostrakos
+    edge: _elizabeth_schultz
+    creature: kinfolk
+    sex: 1
+    age: 23
+  - name: Anastasia Gruendlisch
+    edge: _lorelei_becker
+    creature: kinfolk
+    sex: 0
+    age: 22
+  - name: Ernst Doegermann
+    edge: _lorelei_becker
+    creature: kinfolk
+    sex: 1
+    age: 28
+  - name: Karl Loomis
+    edge: _diether_hohenwald
+    creature: kinfolk
+    sex: 1
+    age: 38
+  - name: Sabrina Forster
+    concept: Cop
+    edge: _diether_hohenwald
+    creature: kinfolk
+    sex: 0
+    age: 35

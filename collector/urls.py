@@ -1,5 +1,5 @@
 from django.urls import path, re_path
-from collector.views.base import index, get_list, updown, userinput, add_creature, change_chronicle, \
+from collector.views.base import index, get_list, updown, userinputastext, userinput, add_creature, change_chronicle, \
     display_gaia_wheel, display_dashboard, display_lineage, display_crossover_sheet, add_kindred, svg_to_pdf, save_to_svg, display_sept, moon_phase, calendar
 from collector.views.actions import change_settings, refix_all, extract_mechanics, extract_per_group, extract_raw, \
     extract_roster, randomize, balance, refix_all
@@ -20,6 +20,7 @@ urlpatterns = [
     re_path(r'^ajax/view/creature/(?P<slug>\w+)/$', CreatureDetailView.as_view(), name='view_creature'),
     re_path(r'^ajax/editable/updown/$', updown, name='updown'),
     re_path(r'^ajax/editable/userinput/$', userinput, name='userinput'),
+    re_path(r'^ajax/editable/userinput/as_text/$', userinputastext, name='userinputastext'),
     re_path(r'^ajax/collector_action/add_creature/(?P<slug>\w+)/$', add_creature, name='add_creature'),
     re_path(r'^ajax/collector_action/add_kindred/(?P<slug>\w+)/$', add_kindred, name='add_kindred'),
     re_path(r'^ajax/collector_action/refix_all/$', refix_all, name='refix_all'),
@@ -34,6 +35,6 @@ urlpatterns = [
     re_path(r'^api/balance/(?P<slug>\w+)/$', balance, name='balance'),
     re_path(r'^api/randomize/(?P<slug>\w+)/$', randomize, name='randomize'),
     re_path(r'^api/moon_phase/$', moon_phase, name='moon_phase'),
-    re_path(r'^api/calendar/(?P<year>\w+)/$', calendar, name='calendar')
+    re_path(r'^calendar/(?P<year>\w+)/$', calendar, name='calendar')
 ]
 

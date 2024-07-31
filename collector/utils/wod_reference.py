@@ -336,7 +336,8 @@ ALL_TRIBES = [
     "Silver Fangs",
     "Stargazers",
     "Uktenas",
-    "Wendigos"
+    "Wendigos",
+    "White Howlers",
 ]
 
 # Garou data
@@ -359,6 +360,7 @@ PER_TRIBE = {
     "Stargazers": {"willpower": 5},
     "Uktenas": {"willpower": 3},
     "Wendigos": {"willpower": 4},
+    "White Howlers": {"willpower": 3},
 
 }
 

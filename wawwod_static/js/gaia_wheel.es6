@@ -382,7 +382,7 @@ class GaiaWheel {
             })
             .style("text-anchor", 'middle')
             .style("font-family", 'Ruda')
-            .style("font-size", '8pt')
+            .style("font-size", '12pt')
             .style("fill", '#CCC')
             .style("stroke", '#111')
             .style("stroke-width", '0.125pt')
@@ -395,7 +395,9 @@ class GaiaWheel {
                 })
                 // name += " "+d.index
                 let x = (d.condition.startsWith("DEAD") ? "(D)" : (d.condition.startsWith("MISSING") ? "(M)" : ""))
-                return name + x;//+" ("+d.order+" / "+(Math.round(d.angular*100)/100)+")";
+
+                return d.name
+                //return name + x;//+" ("+d.order+" / "+(Math.round(d.angular*100)/100)+")";
             })
         ;
         node_cross.append("circle")

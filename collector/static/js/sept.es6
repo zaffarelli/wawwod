@@ -7,9 +7,10 @@ class Sept {
         me.parent = parent;
         me.co = collector;
         me.config = data
-        me.boxWidth = 100;
+        me.boxWidth = 160;
         me.boxHeight = 80;
         me.duration = 500;
+        me.step = 200
     }
 
     saveSVG() {
@@ -99,151 +100,21 @@ xmlns:xlink="http://www.w3.org/1999/xlink"> \
         });
     }
 
-    insertNode(x) {
+    insertGarou(x) {
         let me = this;
         let r = x.enter().append("g")
             .attr("class", (d) => {
-                let str = "node ";
-                let x = d.data.condition;
-                console.log(d.data.name);
-                if (x != undefined) {
-                    if (x.startsWith("MISSING") == true) {
-                        str += "missing ";
-                    }
-                    if (x.startsWith("DEAD") == true) {
-                        str += "dead ";
-                    }
-                }
+                let str = "garou ";
+                console.log(d)
                 return str;
             })
             .attr("transform", function (d) {
-                return "translate(" + d.x + "," + d.y + ")";
-            });
-        r.append("rect")
-            .attr('class', 'band')
-            .attr('x', -me.boxWidth * 1)
-            .attr('y', -me.boxHeight * 1)
-            .attr('width', me.boxWidth * 2)
-            .attr('height', me.boxHeight * 1)
-        ;
-        r.append("rect")
-            .attr('class', 'plate')
-            .attr('x', -me.boxWidth * 1)
-            .attr('y', -me.boxHeight * 0)
-            .attr('width', me.boxWidth * 2)
-            .attr('height', me.boxHeight * 3)
-        ;
-        let ghouls = undefined;
-        r.append("rect")
-            .attr('class', 'frame')
-            .attr('x', -me.boxWidth * 1)
-            .attr('y', -me.boxHeight * 1)
-            .attr('width', me.boxWidth * 2)
-            .attr('height', me.boxHeight * 4)
-            .attr('rx', me.boxWidth * 0.05)
-            .attr('ry', me.boxWidth * 0.05)
-            .on("click", function (e, d) {
-                //console.log("Frame click " + d.id + " [" + d.data.name + "]!");
-                //me.uncollapse(d)
-                me.update(d);
-                ghouls = d.data.ghouls.split(',')
-                console.log(ghouls)
-            });
-        ;
-
-        // let ghoulish = r.append('g')
-        //     .attr('class','ghoulish_set')
-        //     .attr('id',(d) => 'ghoulish_'+d.id)
-        //     .data(d.ghoul_list)
-        //     ;
-        // let ghoulish_in = ghoulish.selectAll('ghoulish').enter();
-        // let gg = ghoulish_in.append("g")
-        //         .attr("class","ghoulish")
-        // gg.append("rect")
-        //         .attr("x",me.boxWidth*2)
-        //         .attr("y",(g,i) => me.boxHeight+me.boxHeight*0.5*i)
-        //         .attr("width",me.boxWidth*1)
-        //         .attr("height",(g,i) => me.boxHeight+me.boxHeight*0.5*i)
-        //         .style("stroke","#fc4")
-        //         .style("fill","#111")
-        // gg.append("text")
-        //     .style("stroke","#fc4")
-        //     .style("fill","#111")
-        //     .text((g,i)=> `${i} ${g}`)
-
-
-
-
-        r.selectAll("rect.band")
-            .attr('class', function (d) {
-                console.log(d.data.ghost);
-                console.log(d.data.condition);
-                return 'band ' + (d.data.ghost ? ' ghost' : '') + (d.data.condition.startsWith("DEAD") ? ' dead' : '');
-            });
-        r.selectAll("rect.frame")
-            .attr('class', function (d) {
-                return 'frame ' + (d.data.ghost ? ' ghost' : '') + (d.data.condition.startsWith("DEAD")==true ? ' dead' : '');
-            });
-        r.selectAll("rect.plate")
-            .attr('class', function (d) {
-                return 'plate ' + d.data.faction + (d.data.ghost ? ' ghost' : '') + (d.data.condition.startsWith("DEAD")==true ? ' dead' : '');
-            });
-
-
-        // IMAGE
-        r.append("image")
-            .attr("xlink:href", function (d) {
-                //console.log(d)
-                let s;
-                if (d.data.clan) {
-                    s = 'static/collector/clans/' + d.data.clan.split(" ").join("_").toLowerCase() + '.webp';
-                } else {
-                    s = 'static/collector/independant.webp';
-                }
-                return s;
+                return "translate(" + (d.x*me.step*2.25) + "," + (d.y*me.step) + ")";
             })
-            .attr('class', function (d) {
-                return (d.data.ghost ? 'creature_img ghost' : 'creature_img');
-            })
-            .attr('id', function (d) {
-                return d.id;
-            })
-            .attr("x", (-me.boxWidth * 1.15))
-            .attr("y", (-me.boxHeight * 1.25))
-            .attr("width", me.boxWidth * 0.30)
-            .attr("height", me.boxHeight * 1)
-        ;
-        // TEXT
-        r.append("text")
-            .attr('class', function (d) {
-                let c = 'kindred_name';
-                if (d.data.ghost) c += ' ghost';
-                return c;
-            })
-            .append('tspan')
-            .attr('text-anchor', 'middle')
-            .attr('x', -me.boxWidth * 0)
-            .attr('y', -me.boxHeight * 0.5)
-            .attr('dx', '0')
-            .attr('dy', '0')
-            .text(function (d) {
-                let n = d.data.name;
-                if (d.data.ghost) {
-                    if (d.data.mythic) {
-                        n = d.data.name + " " + d.id;
-                    } else {
-                        n = 'Unknown';
-                    }
-                }
-                return n;
-            })
-            .call(me.wrap, me.boxWidth * 1.8)
             .on("click", function (e, d) {
                 if (e.ctrlKey) {
-                    //console.log("Just ctrl+clicked on text for " + d.id + " [" + d.data.name + "]!");
-
                     $.ajax({
-                        url: 'ajax/view/creature/' + d.data.rid + '/',
+                        url: 'ajax/view/creature/' + d.rid + '/',
                         success: function (answer) {
                             $('.details').html(answer)
                             $('li').removeClass('selected');
@@ -252,199 +123,199 @@ xmlns:xlink="http://www.w3.org/1999/xlink"> \
                         },
                         error: function (answer) {
                             console.error('View error...' + answer);
-                            me.co.rebootLinks();
                         }
                     });
-                }else{
-                    me.saveSVG();
                 }
-            });
 
-        // Display of the properties
-        r.append('text')
-            .attr('class', 'property')
-            .attr('text-anchor', 'start')
-            .attr('x', -me.boxWidth * 0.9)
-            .attr('y', me.boxHeight * 0.2)
-            .attr('dx', '0')
-            .attr('dy', '0')
-            .text(function (d) {
-                let str = '';
-                if (d.data.ghost == false) {
-                    if (d.data.clan) {
-                        if (d.data.generation <= 3) {
-                            str += d.data.clan + " Antediluvian"
-                        } else {
-                            str = d.data.generation + 'th gen.';
-                            str += ' ' + d.data.clan;
-                        }
-                        str += " " + line_jump_code + " Born " + d.data.trueage + " years ago. ";
-                    }
-                }
-                return str
             })
-            .call(me.wrap, me.boxWidth * 1.8);
 
-        // Display of the ghouls
+
+        r.append("rect")
+            .attr('class', 'band')
+            .attr('x', -me.boxWidth * .5)
+            .attr('y', -me.boxHeight * .5)
+            .attr('rx', me.step/10)
+            .attr('ry', me.step/10)
+            .attr('width', me.boxWidth * 2.0)
+            .attr('height', me.boxHeight * 2)
+            .style('fill', "#E0E0E0")
+            .style('stroke', "#101010")
+        ;
         r.append("text")
-            // .append('tspan')
-            .attr('class', 'ghouls_list')
-            .attr('text-anchor', 'start')
-            .attr('x', -me.boxWidth * 0.95)
-            .attr('y', me.boxHeight * 0.5)
-            .attr('dx', '5px')
-            .attr('dy', '0')
-            .text(function (d) {
-                let str = '';
-                if (d.data.ghost == false) {
-                    if (d.data.condition.startsWith('MISSING')) {
-                        let wc = d.data.condition.split("=");
-                        if (wc.length == 2) {
-                            str = 'Missing since ' + wc[1];
-                        }
-                    } else if (d.data.condition.startsWith('DEAD')){
-                        let wc = d.data.condition.split("=");
-                        if (wc.length==2) {
-                            str = 'Final Death in '+wc[1];
-                        }
-                    }else {
-                        if (d.data.ghouls != '') {
-                            str = 'Retainers:';
-                            let list = d.data.ghouls.split(',')
-                            _.forEach(list, function (x) {
-                                str += " " + line_jump_code + " - " + x;
-                            })
-                        }
-                    }
-                }
-                return str
-            })
-            .style('fill', '#CCC')
-            .style('stroke', '#888')
-            .style('stroke-width', '0.5pt')
-            .call(me.wrap, me.boxWidth * 1.9)
+            .attr('class', 'plate')
+            .attr('x', -me.boxWidth*.45)
+            .attr('y', 0)
+            .style('fill', "#101010")
+            .style('stroke', "#303030")
+            .style('stroke-width', "0.15pt")
+            .style('font-family', "Trade Winds")
+            .style('font-size', "16pt")
+            .style('text-anchor', "start")
+            .text( function (d) {
+                return d.name
+                })
         ;
-        // r.append('line')
-        //     .attr("x1", 0)
-        //     .attr("y1", 0)
-        //     .attr("x2", me.boxWidth * 1)
-        //     .attr("y2", me.boxHeight * 0.5)
-        //     .style("fill", '#A00')
-        //     .style("stroke", '#A00')
-        //     .style("stroke-width","3px")
-        // ;
-
-        r.append("circle")
-            .attr("cx",90)
-            .attr("cy",-60)
-            .attr("r",3)
-            .attr("stroke", "transparent")
-            .attr("stroke-width", "2pt")
-            .attr("fill", function (d) {
-                let col = "transparent";
-                if (d.data.primogen){
-                    col = '#E08080'
-                }
-
-                return col;
-            })
+        r.append("text")
+            .attr('class', 'plate')
+            .attr('x', -me.boxWidth*.45)
+            .attr('y', 0)
+            .attr('dy', "10pt")
+            .style('fill', "#101010")
+            .style('stroke', "#303030")
+            .style('stroke-width', "0.15pt")
+            .style('font-family', "Cinzel")
+            .style('font-size', "8pt")
+            .style('text-anchor', "start")
+            .text( function (d) {
+                return d.short_desc
+                })
         ;
 
-        r.append("circle")
-            .attr("cx",75)
-            .attr("cy",-60)
-            .attr("r",function(d){
-                return 2+d.data.is_ancient;
-            })
-            .attr("stroke", "#a0a0a0")
-            .attr("stroke-width", "0.5pt")
-            .attr("fill", function (d) {
-                let col = "transparent";
-                let colors = ["transparent","#C01010","#A01010","#801010","#601010","#401010"]
-                if (d.data.is_ancient > 0){
-                    col = colors[d.data.is_ancient];
-                }
-                return col;
-            })
+        r.append("text")
+            .attr('class', 'plate')
+            .attr('x', -me.boxWidth*.45)
+            .attr('y', 0)
+            .attr('dy', "20pt")
+            .style('fill', "#101010")
+            .style('stroke', "#303030")
+            .style('stroke-width', "0.15pt")
+            .style('font-family', "Cinzel")
+            .style('font-size', "8pt")
+            .style('text-anchor', "start")
+            .text( function (d) {
+                return d.renown+" renown (rank:"+d.rank+")"
+                })
         ;
 
-        r.append("circle")
-            .attr("cx",75)
-            .attr("cy",-10)
-            .attr("r",function(d){
-                return 2+d.data.is_ancient;
-            })
-            .attr("stroke", "#a0a0a0")
-            .attr("stroke-width", "0.5pt")
-            .attr("fill", function (d) {
-                let col = "#bab151";
-                return col;
-            })
-        ;
-
-        r.append("path")
-            .attr("class", "icon_condition")
-            .attr("d", function (d) {
-                let str = ''
-                if ((d.data.condition).startsWith("MISSING")) {
-                    str = "M -80 160 l -20 0 l 0 -20 l 180 -140 20 0 0 20 -180 140 Z "
-                } else if (d.data.condition.startsWith("DEAD")){
-                    str = "M -80 160 l -20 0 l 0 -20 l 180 -140 20 0 0 20 -180 140 Z "
-
-                }
-                return str;
-            })
-            .attr("stroke", "transparent")
-            .attr("stroke-width", "2pt")
-            .attr("fill", function (d) {
-                let col = "transparent";
-                if (d.data.condition.startsWith("MISSING")){
-                    col = '#208080'
-                }
-                if (d.data.condition.startsWith("DEAD")){
-                    col = '#802020'
-                }
-                return col;
-            })
-            .attr("fill-opacity",0.75)
-        ;
 
         return r;
     }
+
+    insertPack(x) {
+        let me = this;
+        let r = x.enter().append("g")
+            .attr("class", (d) => {
+                let str = "pack ";
+                console.log(d)
+                return str;
+            })
+            .attr("transform", function (d) {
+                return "translate(" + (d.x*me.step*2.25) + "," + (d.y*me.step) + ")";
+            });
+        r.append("rect")
+            .attr('class', 'band')
+            .attr('x', -me.boxWidth * .75)
+            .attr('y', -me.boxHeight * .5)
+            .attr('rx', me.step/10)
+            .attr('ry', me.step/10)
+            .attr('width', me.boxWidth * 2.5)
+            .attr('height', (d,i) => {
+                return me.boxHeight*2.5 * (d.cnt+1)
+            })
+            .style('fill', "#A0A0A0")
+            .style('stroke', "#101010")
+        ;
+        r.append("text")
+            .attr('class', 'plate')
+            .attr('x', -me.boxWidth*.65)
+            .attr('y', 0)
+            .style('fill', "#101010")
+            .style('stroke', "#303030")
+            .style('stroke-width', "0.15pt")
+            .style('font-family', "Trade Winds")
+            .style('font-size', "12pt")
+            .style('text-anchor', "start")
+            .text( function (d) {
+                return d.name
+                })
+        ;
+        r.append("text")
+            .attr('class', 'plate')
+            .attr('x', -me.boxWidth*.65)
+            .attr('y', 0)
+            .attr('dy', "10pt")
+            .style('fill', "#101010")
+            .style('stroke', "#303030")
+            .style('stroke-width', "0.15pt")
+            .style('font-family', "Cinzel")
+            .style('font-size', "8pt")
+            .style('text-anchor', "start")
+            .text( function (d) {
+                return d.totem
+                })
+        ;
+
+//         r.append("text")
+//             .attr('class', 'plate')
+//             .attr('x', -me.boxWidth*.65)
+//             .attr('y', 0)
+//             .attr('dy', "20pt")
+//             .style('fill', "#101010")
+//             .style('stroke', "#303030")
+//             .style('stroke-width', "0.15pt")
+//             .style('font-family', "Cinzel")
+//             .style('font-size', "8pt")
+//             .style('text-anchor', "start")
+//             .text( function (d) {
+//                 return d.renown+" renown (rank:"+d.rank+")"
+//                 })
+//         ;
+
+
+        return r;
+    }
+
 
     go() {
         let me = this;
         let margin = {top: 0, right: 0, bottom: 0, left: 0},
             width = me.boxWidth * 60 - margin.left - margin.right,
             height = me.boxWidth * 20 - margin.top - margin.bottom;
-        let treemap = d3.tree()
-            .size([width, height])
-            .nodeSize([me.boxWidth * 2.5, me.boxHeight * 7.5])
+
+        let ox = 10, oy = 10
+
+        d3.select(me.parent).selectAll(".sept").remove();
+        let pwidth = d3.select(me.parent).style("width");
+        let pheight = d3.select(me.parent).style("height");
+        let pox = -(parseInt(pwidth)/2);
+        let poy = -(parseInt(pheight)/2);
+
+        me.svg = d3.select(me.parent).append("svg")
+            .attr('class', 'sept')
+            .attr("width", pwidth)
+            .attr("height", pheight);
+        me.vis = me.svg.append("g")
+            .attr("viewBox", pox+"  "+poy+ " " + pwidth + " " + pheight)
+            //.attr("transform","translate(0,0)")
+            .attr("transform", "translate(" + parseInt(pwidth) / 2 + "," + parseInt(pheight) / 2 + ")")
         ;
-//         let nodes = d3.hierarchy(me.data[0]);
-//         nodes = treemap(nodes);
-//         d3.select(me.parent).selectAll("svg").remove();
-//         let pwidth = d3.select(me.parent).style("width");
-//         let pheight = d3.select(me.parent).style("height");
-//         let pox = -(parseInt(pwidth)/2);
-//         let poy = -(parseInt(pheight)/2);
-//         //console.log(me.parent+" "+pwidth+" "+pheight+" "+pox+" "+poy)
-//         me.svg = d3.select(me.parent).append("svg")
-//             .attr('class', 'lineage')
-//             .attr("width", pwidth)
-//             .attr("height", pheight);
-//         me.g = me.svg.append("g")
-//             .attr("viewBox", pox+"  "+poy+ " " + pwidth + " " + pheight)
-//             //.attr("transform","translate(0,0)")
-//             .attr("transform", "translate(" + parseInt(pwidth) / 2 + "," + parseInt(pheight) / 2 + ")")
-//         ;
-//
-//
-//         let node = me.g.selectAll(".node")
-//             .data(nodes.descendants())
-//
-//         let node_in = me.insertNode(node);
-//
+
+        me.vis.append("rect")
+            .attr("x",-me.step)
+            .attr("y",-me.step)
+            .attr("width",me.step*30)
+            .attr("height",me.step*15)
+            .style("fill","#F0F0F0")
+            .style("stroke","#202020")
+
+        let pack = me.vis.selectAll(".pack")
+            .data(me.mapping.packs)
+
+        let pack_in = me.insertPack(pack)
+
+        let stat = me.vis.selectAll(".stats")
+            .data(me.mapping.stats)
+
+
+        let garou = me.vis.selectAll(".garou")
+            .data(me.mapping.garous)
+
+
+        let garou_in = me.insertGarou(garou)
+
+        let stat_in = me.insertStats(stat)
+
+
 //         let link = me.g.selectAll(".links")
 //             .data(nodes.descendants().slice(1))
 //             .enter()
@@ -468,20 +339,111 @@ xmlns:xlink="http://www.w3.org/1999/xlink"> \
 
     }
 
+    insertStats(x) {
+        let me = this;
+        let r = x.enter().append("g")
+            .attr("class", (d) => {
+                let str = "stat ";
+                return str;
+            })
+            .attr("id", (d) => "stat_"+d.name )
+            .attr("transform", function (d) {
+                return "translate(" + ((d.id-1)*me.step*2.25) + "," + (10*me.step) + ")";
+            });
+//         r.append("rect")
+//             .attr('x', -me.boxWidth * .75)
+//             .attr('y', -me.boxHeight * .5)
+//             .attr('rx', me.step/10)
+//             .attr('ry', me.step/10)
+//             .attr('width', me.boxWidth * 2.5)
+//             .attr('height', (d,i) => {
+//                 return me.boxHeight*2.5 * (d.cnt+1)
+//             })
+//             .style('fill', "#A0C0A0")
+//             .style('stroke', "#101010")
+//             .style('stroke-width', "1pt")
+//         ;
+        let vals = {"auspices":{},"breeds":{},"tribes":{}}
+        let ministep = me.step/10
+        r.append("text")
+            .attr('x', -me.boxWidth*.65)
+            .attr('y', 0)
+            .style('fill', "#101010")
+            .style('stroke', "#303030")
+            .style('stroke-width', "0.15pt")
+            .style('font-family', "Trade Winds")
+            .style('font-size', "12pt")
+            .style('text-anchor', "middle")
+            .text( (d) => {
+                let v = { "name":d.name,"id":d.id, "values": d.values}
+                vals[d.name] = v
+                return d.name
+            })
+        ;
+
+
+        _.forEach(vals, (v,k) => {
+            if (k=="auspices"){
+                _.forEach(v.values, (w,l) => {
+                    r.append("rect")
+                        .attr("id",v.name+" "+w.id)
+                        .attr("x",l*ministep)
+                        .attr("y",-ministep * w)
+                        .attr("width",ministep/2)
+                        .attr("height",ministep * w)
+                        .style("fill","#803030")
+                        .style("stroke","#101010")
+                });
+            }
+        });
+
+
+    }
+
     zoomActivate() {
         let me = this;
         let zoom = d3.zoom()
             .scaleExtent([0.125, 4])
             .on('zoom', function (event) {
-                me.g.attr('transform', event.transform)
+                me.vis.attr('transform', event.transform)
             });
         me.svg.call(zoom);
     }
 
     prepareTree(){
         let me = this
-        me.sept_hierarchy = {}
-
+        me.mapping = {"garous":[], "packs":[], "stats":[]}
+        let idx = 0
+        let j = 0, i = 0
+        _.forEach(me.data.packs, (v,k) => {
+            let pack = {"name":v.name,"totem":v.totem,"cnt":0}
+            pack["y"] = -1
+            pack["id"] = ++idx
+            j = 0
+            _.forEach(v.members, (w,l) => {
+                    let garou = w
+                    garou["id"] = ++idx
+                    garou["x"] = i
+                    garou["y"] = j
+                    pack["x"] = i
+                    pack["cnt"]++
+                    me.mapping.garous.push(garou)
+                    j+=1
+                }
+            );
+            me.mapping.packs.push(pack)
+            i +=1
+            }
+        );
+        idx = 0
+        _.forEach(me.data.statistics, (v,k) => {
+            let stat = {"name":"none","values":[], "id":0}
+            stat["name"] = k
+            stat["values"] = v
+            stat["id"] = ++idx
+            me.mapping.stats.push(stat)
+        });
+        console.log(me.mapping)
     }
 
     perform(data) {
@@ -493,3 +455,15 @@ xmlns:xlink="http://www.w3.org/1999/xlink"> \
     }
 
 }
+
+
+/*
+
+Path for moon
+M -2.5 -2
+a 3 3 0 1 1 0 4
+a 1 0.7 0 0 0 0 -4
+z
+
+
+ */

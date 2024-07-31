@@ -1,87 +1,351 @@
 {
   "caern": {},
   "moonbridges": [],
-  "positions": {},
+  "offices": {
+    "grand_elder": "Adel the Swift",
+    "master_of_the_rite": "Sonja Sienfreig",
+    "wyrmfoe": "Dimitri Fedorov"
+  },
+  "statistics": {
+    "auspices": [
+      6,
+      10,
+      6,
+      5,
+      4
+    ],
+    "breeds": [
+      30,
+      0,
+      1
+    ],
+    "tribes": [
+      4,
+      0,
+      2,
+      0,
+      4,
+      0,
+      5,
+      3,
+      3,
+      1,
+      1,
+      2,
+      2,
+      1,
+      1,
+      2
+    ]
+  },
   "packs": [
     {
-      "name": "Durch den Regen gebracht",
+      "name": "Pack of the Autumn Leaves",
       "members": [
-        "_hans_mueller",
-        "_elizabeth_schultz",
-        "_lorelei_becker"
+        {
+          "rid": "_dimitri_fedorov",
+          "renown": 12,
+          "name": "Dimitri Fedorov",
+          "short_desc": "Male Adren Homid Galliard of the Shadow Lords",
+          "rank": "3"
+        },
+        {
+          "rid": "_gustav_genz",
+          "renown": 19,
+          "name": "Gustav Genz",
+          "short_desc": "Male Athro Homid Philodox of the Children of Gaia",
+          "rank": "4"
+        }
       ],
-      "totem": ""
+      "totem": "Aldü, Keeper of the Wild",
+      "total_renown": 31,
+      "cnt": 2,
+      "avg_renown": 16
+    },
+    {
+      "name": "Pack3",
+      "members": [
+        {
+          "rid": "_marian_haddid",
+          "renown": 16,
+          "name": "Marian Haddid",
+          "short_desc": "Female Adren Homid Philodox of the Wendigos",
+          "rank": "3"
+        }
+      ],
+      "totem": "Fox",
+      "total_renown": 16,
+      "cnt": 1,
+      "avg_renown": 16
     },
     {
       "name": "Guardians of Fur",
       "members": [
-        "_adel_the_swift",
-        "_ernest_kunder",
-        "_martina_brahms",
-        "_nathan_gensler",
-        "_william_folks",
-        "_ziege"
+        {
+          "rid": "_adel_the_swift",
+          "renown": 17,
+          "name": "Adel the Swift",
+          "short_desc": "Female Athro Homid Theurge of the Silent Striders",
+          "rank": "4"
+        },
+        {
+          "rid": "_ernest_kunder",
+          "renown": 12,
+          "name": "Ernest Kunder",
+          "short_desc": "Male Adren Homid Galliard of the Gets of Fenris",
+          "rank": "3"
+        },
+        {
+          "rid": "_martina_brahms",
+          "renown": 11,
+          "name": "Martina Brahms",
+          "short_desc": "Female Fostern Homid Theurge of the Fiannas",
+          "rank": "2"
+        },
+        {
+          "rid": "_nathan_gensler",
+          "renown": 12,
+          "name": "Nathan Gensler",
+          "short_desc": "Male Fostern Homid Ragabash of the Glass Walkers",
+          "rank": "2"
+        },
+        {
+          "rid": "_william_folks",
+          "renown": 15,
+          "name": "William Folks",
+          "short_desc": "Male Adren Homid Theurge of the Glass Walkers",
+          "rank": "3"
+        }
       ],
-      "totem": "Weasel"
-    },
-    {
-      "name": "Pack of the Autumn Leaves",
-      "members": [
-        "_dimitri_fedorov",
-        "_gustav_genz",
-        "_sebastian_gorlisch"
-      ],
-      "totem": "Ald\u00fc, Keeper of the Wild"
+      "totem": "Weasel",
+      "total_renown": 67,
+      "cnt": 5,
+      "avg_renown": 13
     },
     {
       "name": "Second Leaf",
       "members": [
-        "_lise_oneil",
-        "_michael_evans",
-        "_orson_suerne",
-        "_paola_lettri",
-        "_patrick_mcneil"
+        {
+          "rid": "_lise_oneil",
+          "renown": 13,
+          "name": "Lise O"Neil",
+          "short_desc": "Female Fostern Homid Theurge of the Fiannas",
+          "rank": "2"
+        },
+        {
+          "rid": "_michael_evans",
+          "renown": 12,
+          "name": "Michael Evans",
+          "short_desc": "Male Fostern Homid Ragabash of the Silver Fangs",
+          "rank": "2"
+        },
+        {
+          "rid": "_orson_suerne",
+          "renown": 11,
+          "name": "Orson Sürne",
+          "short_desc": "Male Fostern Homid Ahroun of the Bone Gnawers",
+          "rank": "2"
+        },
+        {
+          "rid": "_paola_lettri",
+          "renown": 11,
+          "name": "Paola Lettri",
+          "short_desc": "Female Fostern Homid Theurge of the Black Furies",
+          "rank": "2"
+        }
       ],
-      "totem": ""
-    },
-    {
-      "name": "The Lost Pups",
-      "members": [
-        "_anneke_della_corte",
-        "_grigori_zentgraf",
-        "_niklas_waldkauz",
-        "_sarah_strijd",
-        "_vidar_grimsdottir"
-      ],
-      "totem": "Brunhilde, Mother of M\u00fcnchen"
+      "totem": "",
+      "total_renown": 47,
+      "cnt": 4,
+      "avg_renown": 12
     },
     {
       "name": "The streamwalkers",
       "members": [
-        "_roter_schwanz",
-        "_sonja_sienfreig",
-        "_tik_reinardt"
+        {
+          "rid": "_roter_schwanz",
+          "renown": 13,
+          "name": "roter Schwanz",
+          "short_desc": "Male Adren Lupus Philodox of the Red Talons",
+          "rank": "3"
+        },
+        {
+          "rid": "_sonja_sienfreig",
+          "renown": 14,
+          "name": "Sonja Sienfreig",
+          "short_desc": "Female Adren Homid Theurge of the Children of Gaia",
+          "rank": "3"
+        },
+        {
+          "rid": "_tik_reinardt",
+          "renown": 9,
+          "name": "Tik Reinardt",
+          "short_desc": "Male Fostern Homid Ragabash of the Bone Gnawers",
+          "rank": "2"
+        }
       ],
-      "totem": "Viedre, Queen of Hop"
+      "totem": "Viedre, Queen of Hop",
+      "total_renown": 36,
+      "cnt": 3,
+      "avg_renown": 12
     },
     {
-      "name": "Vertraute des Windes",
+      "name": "The Lost Pups",
       "members": [
-        "_rufus_dolan",
-        "_reinhart_wanchese",
-        "_christian_lorenz_raisani",
-        "_nicholas_gomlisch",
-        "_arn_morgen"
+        {
+          "rid": "_anneke_della_corte",
+          "renown": 11,
+          "name": "Anneke della Corte",
+          "short_desc": "Female Fostern Homid Philodox of the Fiannas",
+          "rank": "2"
+        },
+        {
+          "rid": "_grigori_zentgraf",
+          "renown": 10,
+          "name": "Grigori Zentgraf",
+          "short_desc": "Male Fostern Homid Ragabash of the Gets of Fenris",
+          "rank": "2"
+        },
+        {
+          "rid": "_niklas_waldkauz",
+          "renown": 11,
+          "name": "Niklas Waldkauz",
+          "short_desc": "Male Fostern Homid Theurge of the Silent Striders",
+          "rank": "2"
+        },
+        {
+          "rid": "_sarah_strijd",
+          "renown": 11,
+          "name": "Sarah Strijd",
+          "short_desc": "Female Fostern Homid Galliard of the Black Furies",
+          "rank": "2"
+        },
+        {
+          "rid": "_vidar_grimsdottir",
+          "renown": 11,
+          "name": "Vidar Grimsdottir",
+          "short_desc": "Male Fostern Homid Ahroun of the Silver Fangs",
+          "rank": "2"
+        }
       ],
-      "totem": ""
+      "totem": "Brunhilde, Mother of München",
+      "total_renown": 54,
+      "cnt": 5,
+      "avg_renown": 11
     },
     {
       "name": "Woods drummers",
       "members": [
-        "_arthur_schweizer",
-        "_lora_brukeneer"
+        {
+          "rid": "_arthur_schweizer",
+          "renown": 9,
+          "name": "Arthur Schweizer",
+          "short_desc": "Male Fostern Homid Ahroun of the Children of Gaia",
+          "rank": "2"
+        },
+        {
+          "rid": "_lora_brukeneer",
+          "renown": 8,
+          "name": "Lora Brukeneer",
+          "short_desc": "Female Fostern Homid Theurge of the Children of Gaia",
+          "rank": "2"
+        }
       ],
-      "totem": "Fritz the Woodcutter"
+      "totem": "Fritz the Woodcutter",
+      "total_renown": 17,
+      "cnt": 2,
+      "avg_renown": 8
+    },
+    {
+      "name": "Vertraute des Windes",
+      "members": [
+        {
+          "rid": "_rufus_dolan",
+          "renown": 3,
+          "name": "Rufus Dolan",
+          "short_desc": "Male Cliath Homid Ragabash of the Fiannas",
+          "rank": "1"
+        },
+        {
+          "rid": "_diether_hohenwald",
+          "renown": 4,
+          "name": "Diether Hohenwald",
+          "short_desc": "Male Cliath Homid Galliard of the Wendigos",
+          "rank": "1"
+        },
+        {
+          "rid": "_christian_lorenz_raisani",
+          "renown": 3,
+          "name": "Christian Lorenz Raisani",
+          "short_desc": "Male Cliath Homid Theurge of the Stargazers",
+          "rank": "1"
+        },
+        {
+          "rid": "_vendell_bergman",
+          "renown": 5,
+          "name": "Vendell Bergman",
+          "short_desc": "Male Cliath Homid Philodox of the Black Furies",
+          "rank": "1"
+        },
+        {
+          "rid": "_stanislas_klebber",
+          "renown": 4,
+          "name": "Stanislas Klebber",
+          "short_desc": "Male Cliath Homid Ahroun of the Gets of Fenris",
+          "rank": "1"
+        }
+      ],
+      "totem": "North Wind",
+      "total_renown": 19,
+      "cnt": 5,
+      "avg_renown": 4
+    },
+    {
+      "name": "",
+      "members": [
+        {
+          "rid": "_agnes_platzen",
+          "renown": 3,
+          "name": "Agnes Platzen",
+          "short_desc": "Female Cliath Homid Ragabash of the Black Furies",
+          "rank": "1"
+        }
+      ],
+      "totem": "",
+      "total_renown": 3,
+      "cnt": 1,
+      "avg_renown": 3
+    },
+    {
+      "name": "Rattenwelpen",
+      "members": [
+        {
+          "rid": "_hans_mueller",
+          "renown": 3,
+          "name": "Hans Mueller",
+          "short_desc": "Male Cliath Homid Theurge of the Uktenas",
+          "rank": "1"
+        },
+        {
+          "rid": "_elizabeth_schultz",
+          "renown": 3,
+          "name": "Elizabeth Schultz",
+          "short_desc": "Female Cliath Homid Philodox of the Glass Walkers",
+          "rank": "1"
+        },
+        {
+          "rid": "_lorelei_becker",
+          "renown": 3,
+          "name": "Lorelei Becker",
+          "short_desc": "Female Cliath Homid Galliard of the Fiannas",
+          "rank": "1"
+        }
+      ],
+      "totem": "Racoon",
+      "total_renown": 9,
+      "cnt": 3,
+      "avg_renown": 3
     }
   ]
 }
+

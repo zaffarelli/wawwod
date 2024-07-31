@@ -2,7 +2,7 @@ class CrossOverSheet extends WawwodSheet {
     constructor(data, parent, collector) {
         super(data, parent, collector);
         this.init();
-        this.release = "19.05";
+        this.release = "24.07";
 
     }
 
@@ -31,11 +31,10 @@ class CrossOverSheet extends WawwodSheet {
             me.midline(30);
             // Title
             let txt = me.sheet_type(me.data['creature']).toUpperCase();
-            me.decorationText(12, 2.75, 0, 'middle', me.logo_font, me.fat_font_size * 1.8, '#F0F0F07F', '#F0F0F07F', 10, txt, me.back, 1);
-            me.decorationText(12, 1.8, 0, 'middle', me.creature_font, me.fat_font_size, "#fff", "#fff", 5, txt, me.back, 0.75);
-
-            me.decorationText(12, 1.8, 0, 'middle', me.creature_font, me.fat_font_size, me.draw_fill, me.shadow_stroke, 0.5, txt, me.back, 0.5);
-            me.decorationText(12, 2.75, 0, 'middle', me.logo_font, me.fat_font_size * 1.8, me.shadow_fill, me.shadow_stroke, 1, me.scenario, me.back, 0.75);
+            me.decorationText(12, 2.75, 0, 'middle', me.logo_font, me.fat_font_size, "#D0D0D0", "#E0E0E0", 1, me.scenario, me.back, 0.75);
+            me.decorationText(12, 2.75, 0, 'middle', me.logo_font, me.fat_font_size, "#B0B0B0", "#C0C0C0", 0.5, me.scenario, me.back, 0.5);
+            me.decorationText(12, 1.8, 0, 'middle', me.creature_font, me.fat_font_size*1, "#fff", "#f0f0f0", 10, txt, me.back, 1);
+            me.decorationText(12, 1.8, 0, 'middle', me.creature_font, me.fat_font_size*1, me.draw_fill, me.shadow_stroke, 5, txt, me.back, 0.75);
 
             me.decorationText(2.5, 1.75, 0, 'middle', me.base_font, me.medium_font_size, me.draw_fill, me.draw_stroke, 0.5, "What a Wonderful", me.back);
             me.decorationText(2.5, 2.25, 0, 'middle', me.base_font, me.medium_font_size, me.draw_fill, me.draw_stroke, 0.5, "World of Darkness", me.back);
@@ -133,7 +132,7 @@ class CrossOverSheet extends WawwodSheet {
                 return me.stepy * (box_spacing_y - 0.35);
             })
             .style("stroke", "#080808")
-            .style("fill", "transparent")
+            .style("fill", "none")
         ;
         background_note_in.append('text')
             .attr("x", function (d) {
@@ -355,7 +354,7 @@ class CrossOverSheet extends WawwodSheet {
         ;
         let current_font_size = me.medium_font_size;
         me.daddy = timeline;
-        me.title('Timeline', (base_x + 6) * me.stepx, oy - 1 * me.stepy, timeline)
+        me.title('Timeline', (base_x + 6) * me.stepx, oy - 0.5 * me.stepy, timeline)
 
         let timeline_item = timeline.selectAll('timeline_event')
             .data(me.data['timeline'])
@@ -366,12 +365,6 @@ class CrossOverSheet extends WawwodSheet {
             .attr('class', 'timeline_event')
         ;
         timeline_in.append('text')
-//             .attr("x", function (d) {
-//                 return (base_x + 0.05) * me.stepx;
-//             })
-//              .attr('y', function (d) {
-//                  return oy + (d['idx'] * box_spacing_y + 0.5) * me.stepy;
-//              })
             .style('font-family', me.user_font)
             .style('font-size', current_font_size+"px")
             .style('text-anchor', "start")
@@ -382,18 +375,12 @@ class CrossOverSheet extends WawwodSheet {
                 return d['date'] + ' - ' + d['item']
             })
         let timeline_in_note = timeline_in.append('text')
-//             .attr('x', function (d) {
-//                 return (base_x + 0.4) * me.stepx;
-//             })
-//             .attr('y', function (d) {
-//                 return oy + 0.85 * me.stepy + d['idx'] *box_spacing_y * me.stepy;
-//             })
             .attr('class', 'timeline_in_notes')
             .attr('id', function(d) { return 'timeline_in_notes_'+d['idx'] })
-            .attr('x', 0)
-            .attr('y', 0)
-            .attr('dx', 0)
-            .attr('dy', 0)
+//             .attr('x', 0)
+//             .attr('y', 0)
+//             .attr('dx', 0)
+//             .attr('dy', 0)
             .text(function (d) {
                 return d.date + ' - ' + d.item + " µ " +d.notes
             })
@@ -416,7 +403,7 @@ class CrossOverSheet extends WawwodSheet {
                     if (previous_block){
                         let lines = parseInt(previous_block.attr("lines"))
                         all_lines += lines
-                        result =  oy + all_lines*me.stepy*.4;
+                        result =  oy + all_lines*current_font_size*1.1;
                         console.log("previous lines",all_lines, result)
                     }else{
                         all_lines = 0;
@@ -428,24 +415,21 @@ class CrossOverSheet extends WawwodSheet {
 
                  return "translate("+(base_x + 0.4) * me.stepx+","+result+")"
              })
-
-
-
     }
 
     fillOthers(oy) {
         let me = this;
         let box_spacing_y = 4.0;
-        let box_spacing_x = 12.75;
-        let base_x = 9.75;
+        let box_spacing_x = 10;
+        let base_x = 12;
         let others = me.character.append('g')
             .attr('class', 'others')
         ;
         let current_font_size = me.medium_font_size;
         me.daddy = others;
-        me.title('Others', (base_x + 6) * me.stepx, oy - 1 * me.stepy, timeline)
+        me.title('Others', (base_x + 6) * me.stepx, oy - 1 * me.stepy, others)
 
-        let others_item = timeline.selectAll('others_event')
+        let others_item = others.selectAll('others_event')
             .data(me.data['others'])
         ;
 
@@ -498,7 +482,7 @@ class CrossOverSheet extends WawwodSheet {
                     if (previous_block){
                         let lines = parseInt(previous_block.attr("lines"))
                         all_lines += lines
-                        result =  oy + all_lines*me.stepy*.4;
+                        result =  oy + all_lines*current_font_size*1.1;
                         console.log("previous lines",all_lines, result)
                     }else{
                         all_lines = 0;
@@ -887,6 +871,8 @@ class CrossOverSheet extends WawwodSheet {
             me.fillDisciplinesNotes(4 * me.stepy, '', 0);
         } else if (me.page === 3) {
             me.fillRiteNotes(4 * me.stepy);
+            me.fillOthers(4 * me.stepy);
+            me.fillExperience(22 * me.stepy);
         } else if (me.page > 3) {
 //             me.fillDisciplinesNotes(4 * me.stepy, 'left', me.page - 1);
 //             me.fillDisciplinesNotes(4 * me.stepy, 'right', me.page - 1);

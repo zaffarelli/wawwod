@@ -105,7 +105,7 @@ class WawwodSheet {
             .attr('x2', me.stepx * stopx)
             .attr('y1', me.stepy * y)
             .attr('y2', me.stepy * y)
-            .style('fill', 'transparent')
+            .style('fill', 'none')
             .style('stroke', me.draw_stroke)
             .style('stroke-width', '3pt')
             .attr('marker-end', "url(#arrowhead)")
@@ -120,7 +120,7 @@ class WawwodSheet {
             .attr('x2', me.stepx * x)
             .attr('y1', me.stepy * starty)
             .attr('y2', me.stepy * stopy)
-            .style('fill', 'transparent')
+            .style('fill', 'none')
             .style('stroke', me.draw_stroke)
             .style('stroke-width', '3pt')
             .attr('marker-end', "url(#arrowhead)")
@@ -203,7 +203,7 @@ class WawwodSheet {
                     return d * me.stepx
                 })
                 .attr('y2', 36 * me.stepy)
-                .style('fill', 'transparent')
+                .style('fill', 'none')
                 .style('stroke', '#CCC')
                 .style('stroke-width', '0.25pt');
             let horizontals = me.back.append('g')
@@ -220,7 +220,7 @@ class WawwodSheet {
                 .attr('y2', function (d) {
                     return d * me.stepy
                 })
-                .style('fill', 'transparent')
+                .style('fill', 'none')
                 .style('stroke', '#CCC')
                 .style('stroke-width', '0.25pt');
         }
@@ -242,7 +242,7 @@ class WawwodSheet {
             .attr('width', me.stat_length * 1.6)
             .attr('height', 18)
             .style('fill', '#FFF')
-            .style('stroke', 'transparent')
+            .style('stroke', 'none')
             .style('stroke-width', '0.5pt')
         ;
 
@@ -369,8 +369,8 @@ class WawwodSheet {
             .attr('y', oy)
             .attr('width', me.stat_length * 1.6)
             .attr('height', 18)
-            .style('fill', 'transparent')
-            .style('stroke', 'transparent')
+            .style('fill', 'none')
+            .style('stroke', 'none')
             .style('stroke-width', '0.5pt')
         ;
         item.append('line')
@@ -486,9 +486,10 @@ class WawwodSheet {
             });
         if (automax) {
             tempmax = (Math.round(value / 10) + 1) * 10;
-            lines = tempmax / 10;
+        }else{
+            tempmax = max;
         }
-
+        lines = tempmax / 10;
         if (me.blank) {
             value = 0;
         }
@@ -507,10 +508,10 @@ class WawwodSheet {
                 return cx;
             })
             .attr('cy', function (d) {
-                let cy = oy + 0.3 * me.stepx + me.dot_radius;
-                if (d >= 10) {
-                    cy += me.dot_radius * 2;
-                }
+                let cy = oy + 0.2 * me.stepx + me.dot_radius;
+                //if (d >= 10) {
+                    cy += me.dot_radius * (2.2 * Math.floor(d/10))
+                //}
                 return cy;
             })
             .style('fill', function (d) {
@@ -535,10 +536,10 @@ class WawwodSheet {
             .attr('width', me.dot_radius * 2)
             .attr('height', me.dot_radius * 2)
             .style('fill', function (d) {
-                return (withTemp ? 'white' : 'transparent');
+                return (withTemp ? 'white' : 'none');
             })
             .style('stroke', function (d) {
-                return (withTemp ? me.draw_stroke : 'transparent');
+                return (withTemp ? me.draw_stroke : 'none');
             })
             .style('stroke-width', '0.5pt')
         ;
@@ -604,14 +605,16 @@ class WawwodSheet {
             oy += 1.5 * me.stepy;
         }
 
+        let reparts = me.data.reparts.split("_")
+
         if (me.blank) {
             me.title('Physical (  )', ox + me.stepx * 5, oy, me.character);
             me.title('Social (  )', ox + me.stepx * 12, oy, me.character);
             me.title('Mental (  )', ox + me.stepx * 19, oy, me.character);
         } else {
-            me.title('Physical (' + me.data['total_physical'] + ')', ox + me.stepx * 5, oy, me.character);
-            me.title('Social (' + me.data['total_social'] + ')', ox + me.stepx * 12, oy, me.character);
-            me.title('Mental (' + me.data['total_mental'] + ')', ox + me.stepx * 19, oy, me.character);
+            me.title('Physical (' + me.data['total_physical'] +'/'+reparts[0]+ ')', ox + me.stepx * 5, oy, me.character);
+            me.title('Social (' + me.data['total_social'] +'/'+reparts[1]+ ')', ox + me.stepx * 12, oy, me.character);
+            me.title('Mental (' + me.data['total_mental'] +'/'+reparts[2]+ ')', ox + me.stepx * 19, oy, me.character);
         }
         oy += 0.5 * me.stepy;
         ox = 2 * me.stepx;
@@ -788,6 +791,14 @@ class WawwodSheet {
             me.statText('Tribe', me.data['family'], ox + me.stepx * 16, oy, 'tribe', 'tribe', me.character);
             oy += 0.5 * me.stepy;
             me.reinHagenStat('Rank', me.data['rank'], ox + me.stepx * 16, oy, 'rank', 'rank', me.character);
+//             if (me.data['player']) {
+//                 oy += 1 * me.stepy;
+//                 me.statText('Experience', me.data['experience'], ox + me.stepx * 16, oy, 'sire', 'sire', me.character);
+//                 oy += 0.5 * me.stepy;
+//                 me.statText('Remaining', me.data['exp_pool'], ox + me.stepx * 16, oy, 'sire', 'sire', me.character);
+//                 oy += 0.5 * me.stepy;
+//                 me.statText('Spent', me.data['exp_spent'], ox + me.stepx * 16, oy, 'sire', 'sire', me.character);
+//             }
 
         } else if (me.data['creature'] == 'kindred') {
             oy += 2 * me.stepy;
@@ -940,6 +951,34 @@ class WawwodSheet {
         me.drawHealth(oy);
     }
 
+
+    fillExperience(basey) {
+        let me = this;
+        let ox = 18 * me.stepx;
+        let oy = basey;
+        let stat = '';
+        //me.title('Experience', ox + me.stepx * 5, oy, me.character);
+
+
+        if (me.data['player']) {
+            me.gaugeStat('Experience Earned', 0, ox, oy, me.character, false, false, 30);
+            oy += 1.5 * me.stepy;
+            me.gaugeStat('Experience Spent', 0, ox, oy, me.character, false, false, 30);
+            oy += 1.5 * me.stepy;
+            me.gaugeStat('Experience Remaining', 0, ox, oy, me.character, false, false, 30);
+            oy += 1.5 * me.stepy;
+//             me.statText('Experience', "", ox, oy, '','',me.character,true);
+//             oy += 0.5 * me.stepy;
+//             me.statText('Remaining', "", ox, oy, '', '', me.character);
+//             oy += 0.5 * me.stepy;
+//             me.statText('Spent', "", ox, oy, 'sire', 'sire', me.character);
+        }
+
+
+    }
+
+
+
     fillSpecial(basey) {
         let me = this;
         let ox = 0;
@@ -1008,7 +1047,7 @@ class WawwodSheet {
             let bonuses = "";
             let ax = ox + me.stepx * 16;
             let ay = oy + 0.5 * me.stepy * (0);
-            me.statText("Attributes", " St De St Ch Ma Ap", ax, ay, 'fl', 'fl', me.character, false, true);
+            me.statText("Attributes", "Str  Dex  Sta  Cha  Man  App", ax, ay, 'fl', 'fl', me.character, false, true);
             me.config['many_forms'].forEach(function (d, idx) {
                 ax = ox + me.stepx * 16;
                 ay = oy + 0.5 * me.stepy * (idx + 1);
@@ -1016,11 +1055,16 @@ class WawwodSheet {
                 let list = d['changes'];
 
                 _.forEach(list, function (v, k) {
-                    let da = parseInt(me.data[k] + v);
-                    if (da < 0) {
-                        da = 0;
+                    //let da = parseInt(me.data[k] + v);
+                    let da = parseInt( + v);
+                    let sign = ""
+                    if (da >= 0) {
+                        sign = "+";
                     }
-                    bonuses += " " + da + ".";
+                    if (da == -10){
+                        da = ".."
+                    }
+                    bonuses += " "+sign + da + ".";
                 });
                 me.statText(d['form'], bonuses, ax, ay, d['form'], d['form'], me.character, false, true);
             });
@@ -1353,8 +1397,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" width="' + me.width + '" height="' + 
                 word,
                 line = [],
                 lineNumber = 0,
-                x = tgt.attr("x"),
-                y = tgt.attr("y"),
+                x = 0,//tgt.attr("x"),
+                y = 0,//tgt.attr("y"),
                 lineHeight = font_size * 1.1
             ;
             let tspan = tgt.text(null).append("tspan")
@@ -1366,7 +1410,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" width="' + me.width + '" height="' + 
             ;
 
             while (word = words.pop()) {
-    //             console.log(word)
                 if (word == "µ"){
                     tspan.text(line.join(" "));
                     line = [];

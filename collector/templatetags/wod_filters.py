@@ -163,6 +163,8 @@ def as_tribe_plural(value):
         plural = 'Children of Gaia'
     elif value == 'Black Fury':
         plural = 'Black Furies'
+    elif value == "Black Spiral Dancer":
+        plural = "Black Spiral Dancers"
     return plural
 
 

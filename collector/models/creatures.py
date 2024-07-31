@@ -49,7 +49,7 @@ class Creature(models.Model):
 
     edges = models.TextField(default="", blank=True, max_length=1024)
 
-    pre_change_access = models.BooleanField(blank=True, default=False)
+    pre_change_access = models.BooleanField(blank=False, default=False)
 
     finaldeath = models.IntegerField(default=0)
     timeintorpor = models.PositiveIntegerField(default=0)
@@ -452,7 +452,7 @@ class Creature(models.Model):
                 g = f' ({self.group})'
             entrance = f'{as_generation(self.background3)} generation {self.family} of the {self.faction}{g}.'
         elif self.creature == 'garou':
-            entrance = f'{as_rank(self.rank)} {as_breed(self.breed)} {as_auspice(self.auspice)} of the  {as_tribe_plural(self.family)} ({self.group}).'
+            entrance = self.short_desc
         elif self.creature == 'ghoul':
             entrance = f'Ghoul of {self.sire_name}'
         else:
@@ -461,11 +461,19 @@ class Creature(models.Model):
         return entrance
 
     def __str__(self):
-        from collector.utils.wod_reference import BREEDS, AUSPICES
         if self.creature == "garou":
-            return f"{self.name} ({BREEDS[self.breed]} {AUSPICES[self.auspice]} of {as_tribe_plural(self.family)})"
+            return f"{self.name} {self.short_desc}"
         else:
             return f"{self.name} ({self.creature})"
+
+    @property
+    def short_desc(self):
+        # from collector.utils.wod_reference import BREEDS, AUSPICES
+        # desc = f"({BREEDS[self.breed]} {AUSPICES[self.auspice]} of the {as_tribe_plural(self.family)})"
+        from collector.templatetags.wod_filters import as_sex, as_rank, as_breed, as_auspice, as_tribe_plural
+        desc = f'{as_sex(self.sex)} {as_rank(self.rank)} {as_breed(self.breed)} {as_auspice(self.auspice)} of the {as_tribe_plural(self.family)}'
+        return desc
+
 
     @property
     def freebies_per_age_threshold(self):
@@ -612,6 +620,14 @@ class Creature(models.Model):
         self.expectedfreebies = self.freebies_per_mortal_age
         self.display_pole = self.groupspec
         self.display_gauge = self.value_of('renown') + self.value_of('status') + self.value_of('pure-breed')
+
+    @property
+    def total_renown(self):
+        renown = 0
+        if self.creature in ["garou","kinfolk"]:
+            renown += self.glory + self.honor + self.wisdom
+        return renown
+
 
     def fix_fomori(self):
         # self.display_gauge = self.power2
@@ -828,8 +844,8 @@ class Creature(models.Model):
             self.freebies -= (13 + 9 + 5) * 2  # Abilities
             self.freebies -= 3 * 7  # Gifts
             self.freebies -= 5 * 1  # Backgrounds
-            self.freebies -= RAGE_PER_AUSPICE[self.auspice] * 1  # Rage per Auspice
-            self.freebies -= GNOSIS_PER_BREED[self.breed] * 2  # Gnosis per Breed
+            self.freebies -= RAGE_PER_AUSPICE[int(self.auspice)] * 1  # Rage per Auspice
+            self.freebies -= GNOSIS_PER_BREED[int(self.breed)] * 2  # Gnosis per Breed
             if self.family:
                 self.freebies -= PER_TRIBE[as_tribe_plural(self.family)]['willpower'] * 1  # Willpower per Tribe
             else:
@@ -1992,15 +2008,15 @@ def randomize_all(modeladmin, request, queryset):
 
 class CreatureAdmin(admin.ModelAdmin):
     list_display = [  # 'domitor',
-        'name', 'age', 'trueage', 'edges', 'edges_str', 'extract_priority', 'chronicle', 'hidden', 'adventure',
-        'freebies', 'player','is_player',
-        'family', 'groupspec', 'sire', 'status', 'condition']
+        'name', 'age', 'trueage', 'notes_on_history', 'notes_on_others', 'edges_str', 'chronicle', 'adventure',
+        'freebies', 'player',
+        'family', 'groupspec', 'status', 'condition']
     ordering = ['-trueage', 'name', 'group', 'creature']
 
     actions = [no_longer_new, randomize_backgrounds, randomize_all, randomize_archetypes, randomize_attributes,
                randomize_abilities,
                refix, set_male, set_female, push_to_munich, push_to_newyork, push_to_hamburg]
-    list_filter = ['chronicle', 'adventure','creature','faction', 'family', 'is_new', 'condition', 'group',
+    list_filter = ['chronicle', 'adventure','is_player','creature','faction', 'family', 'is_new', 'condition', 'group',
                    'groupspec']
     search_fields = ['name', 'groupspec']
-    list_editable = ['adventure', 'hidden', 'edges', 'player', 'condition', "family"]
+    list_editable = ['notes_on_history','groupspec',"notes_on_others"]

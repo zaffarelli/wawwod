@@ -189,6 +189,28 @@ def userinput(request):
         return JsonResponse(answer)
     return HttpResponse(status=204)
 
+@csrf_exempt
+def userinputastext(request):
+    if is_ajax(request):
+        answer = 'error'
+        if request.method == 'POST':
+            answer = {}
+            rid = request.POST.get('id')
+            field = request.POST.get('field')
+            value = request.POST.get('value')
+            item = Creature.objects.get(rid=rid)
+            if hasattr(item, field):
+                setattr(item, field, value)
+                item.need_fix = True
+                item.save()
+                answer['new_value'] = value
+                answer['freebies'] = item.freebies
+            else:
+                answer['new_value'] = '<b>ERROR!</b>'
+        return JsonResponse(answer)
+    return HttpResponse(status=204)
+
+
 
 def add_creature(request, slug=None):
     if is_ajax(request):

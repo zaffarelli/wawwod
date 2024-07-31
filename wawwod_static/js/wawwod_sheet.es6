@@ -105,7 +105,7 @@ class WawwodSheet {
             .attr('x2', me.stepx * stopx)
             .attr('y1', me.stepy * y)
             .attr('y2', me.stepy * y)
-            .style('fill', 'transparent')
+            .style('fill', 'none')
             .style('stroke', me.draw_stroke)
             .style('stroke-width', '3pt')
             .attr('marker-end', "url(#arrowhead)")
@@ -120,7 +120,7 @@ class WawwodSheet {
             .attr('x2', me.stepx * x)
             .attr('y1', me.stepy * starty)
             .attr('y2', me.stepy * stopy)
-            .style('fill', 'transparent')
+            .style('fill', 'none')
             .style('stroke', me.draw_stroke)
             .style('stroke-width', '3pt')
             .attr('marker-end', "url(#arrowhead)")
@@ -203,7 +203,7 @@ class WawwodSheet {
                     return d * me.stepx
                 })
                 .attr('y2', 36 * me.stepy)
-                .style('fill', 'transparent')
+                .style('fill', 'none')
                 .style('stroke', '#CCC')
                 .style('stroke-width', '0.25pt');
             let horizontals = me.back.append('g')
@@ -220,7 +220,7 @@ class WawwodSheet {
                 .attr('y2', function (d) {
                     return d * me.stepy
                 })
-                .style('fill', 'transparent')
+                .style('fill', 'none')
                 .style('stroke', '#CCC')
                 .style('stroke-width', '0.25pt');
         }
@@ -242,7 +242,7 @@ class WawwodSheet {
             .attr('width', me.stat_length * 1.6)
             .attr('height', 18)
             .style('fill', '#FFF')
-            .style('stroke', 'transparent')
+            .style('stroke', 'none')
             .style('stroke-width', '0.5pt')
         ;
 
@@ -369,8 +369,8 @@ class WawwodSheet {
             .attr('y', oy)
             .attr('width', me.stat_length * 1.6)
             .attr('height', 18)
-            .style('fill', 'transparent')
-            .style('stroke', 'transparent')
+            .style('fill', 'none')
+            .style('stroke', 'none')
             .style('stroke-width', '0.5pt')
         ;
         item.append('line')
@@ -535,10 +535,10 @@ class WawwodSheet {
             .attr('width', me.dot_radius * 2)
             .attr('height', me.dot_radius * 2)
             .style('fill', function (d) {
-                return (withTemp ? 'white' : 'transparent');
+                return (withTemp ? 'white' : 'none');
             })
             .style('stroke', function (d) {
-                return (withTemp ? me.draw_stroke : 'transparent');
+                return (withTemp ? me.draw_stroke : 'none');
             })
             .style('stroke-width', '0.5pt')
         ;
@@ -604,14 +604,16 @@ class WawwodSheet {
             oy += 1.5 * me.stepy;
         }
 
+        let reparts = me.data.reparts.split("_")
+
         if (me.blank) {
             me.title('Physical (  )', ox + me.stepx * 5, oy, me.character);
             me.title('Social (  )', ox + me.stepx * 12, oy, me.character);
             me.title('Mental (  )', ox + me.stepx * 19, oy, me.character);
         } else {
-            me.title('Physical (' + me.data['total_physical'] + ')', ox + me.stepx * 5, oy, me.character);
-            me.title('Social (' + me.data['total_social'] + ')', ox + me.stepx * 12, oy, me.character);
-            me.title('Mental (' + me.data['total_mental'] + ')', ox + me.stepx * 19, oy, me.character);
+            me.title('Physical (' + me.data['total_physical'] +'/'+reparts[0]+ ')', ox + me.stepx * 5, oy, me.character);
+            me.title('Social (' + me.data['total_social'] +'/'+reparts[1]+ ')', ox + me.stepx * 12, oy, me.character);
+            me.title('Mental (' + me.data['total_mental'] +'/'+reparts[2]+ ')', ox + me.stepx * 19, oy, me.character);
         }
         oy += 0.5 * me.stepy;
         ox = 2 * me.stepx;
@@ -788,7 +790,15 @@ class WawwodSheet {
             me.statText('Tribe', me.data['family'], ox + me.stepx * 16, oy, 'tribe', 'tribe', me.character);
             oy += 0.5 * me.stepy;
             me.reinHagenStat('Rank', me.data['rank'], ox + me.stepx * 16, oy, 'rank', 'rank', me.character);
-
+            if (me.data['player']) {
+                oy += 1 * me.stepy;
+                me.statText('Experience', me.data['experience'], ox + me.stepx * 16, oy, 'sire', 'sire', me.character);
+                oy += 0.5 * me.stepy;
+                me.statText('Remaining', me.data['exp_pool'], ox + me.stepx * 16, oy, 'sire', 'sire', me.character);
+                oy += 0.5 * me.stepy;
+                me.statText('Spent', me.data['exp_spent'], ox + me.stepx * 16, oy, 'sire', 'sire', me.character);
+            }
+un
         } else if (me.data['creature'] == 'kindred') {
             oy += 2 * me.stepy;
             me.statText('Generation', 13 - me.data['background3'] + 'th', ox + me.stepx * 16, oy, 'gener', 'gener', me.character);
@@ -939,6 +949,43 @@ class WawwodSheet {
         oy = basey;
         me.drawHealth(oy);
     }
+
+
+    fillExperience(basey) {
+        let me = this;
+        let ox = 12;
+        let oy = basey;
+        let stat = '';
+        //me.title('Experience', ox + me.stepx * 5, oy, me.character);
+        //oy += 0.5 * me.stepy;
+
+        let exp = me.back.append("g")
+            .attr("transform","translate("+(ox*me.step)+","+(oy*me.step)+")")
+        exp.append("rect")
+            .attr("x",0)
+            .attr("y",0)
+            .attr("width",me.step*2)
+            .attr("height",me.step*1)
+            .attr("rx",0)
+            .attr("ry",0)
+            .style("fill","white")
+            .style("stroke","black")
+            .style("stroke-width","1pt")
+        exp.append("text")
+            .attr("x",0)
+            .attr("y",0)
+            .style("fill","white")
+            .style("stroke","black")
+            .style("stroke-width","1pt")
+            .style("font-family","Philosopher")
+            .style("text-anchor","middle")
+            .style("font-size","12pt")
+            .text("Total")
+
+
+    }
+
+
 
     fillSpecial(basey) {
         let me = this;
@@ -1353,8 +1400,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" width="' + me.width + '" height="' + 
                 word,
                 line = [],
                 lineNumber = 0,
-                x = tgt.attr("x"),
-                y = tgt.attr("y"),
+                x = 0,//tgt.attr("x"),
+                y = 0,//tgt.attr("y"),
                 lineHeight = font_size * 1.1
             ;
             let tspan = tgt.text(null).append("tspan")
@@ -1366,7 +1413,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink" width="' + me.width + '" height="' + 
             ;
 
             while (word = words.pop()) {
-    //             console.log(word)
                 if (word == "µ"){
                     tspan.text(line.join(" "));
                     line = [];
