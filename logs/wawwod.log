@@ -20046,3 +20046,972 @@ IndexError: list index out of range
 [31/07 02:28:28] Not Found: /favicon.ico
 [31/07 02:31:20] Not Found: /favicon.ico
 [31/07 02:32:42] Not Found: /favicon.ico
+[31/07 20:18:29] Not Found: /septs/rosters/_sept_of_the_five_leaves/
+[31/07 20:18:29] "GET /septs/rosters/_sept_of_the_five_leaves/ HTTP/1.1" 404 10136
+[31/07 20:18:47] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[31/07 20:22:00] Not Found: /favicon.ico
+[31/07 20:22:00] "GET /favicon.ico HTTP/1.1" 404 10052
+[31/07 20:24:21] Not Found: /favicon.ico
+[31/07 20:24:21] "GET /favicon.ico HTTP/1.1" 404 10052
+[31/07 20:24:56] Not Found: /favicon.ico
+[31/07 20:24:56] "GET /favicon.ico HTTP/1.1" 404 10052
+[31/07 20:30:27] Not Found: /favicon.ico
+[31/07 20:30:27] "GET /favicon.ico HTTP/1.1" 404 10040
+[31/07 20:30:43] Not Found: /favicon.ico
+[31/07 20:30:43] "GET /favicon.ico HTTP/1.1" 404 10040
+[31/07 20:31:20] Not Found: /favicon.ico
+[31/07 20:31:20] "GET /favicon.ico HTTP/1.1" 404 10040
+[31/07 20:32:31] Not Found: /favicon.ico
+[31/07 20:32:31] "GET /favicon.ico HTTP/1.1" 404 10040
+[31/07 20:33:32] Not Found: /favicon.ico
+[31/07 20:33:32] "GET /favicon.ico HTTP/1.1" 404 10040
+[31/07 20:34:48] Internal Server Error: /sept/_sept_of_the_five_leaves/text/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 385, in display_sept_rosters
+    rid_stack.append(m.rid)
+                     ^^^^^
+AttributeError: 'dict' object has no attribute 'rid'
+[31/07 20:34:48] "GET /sept/_sept_of_the_five_leaves/text/ HTTP/1.1" 500 83221
+[31/07 20:36:53] Not Found: /favicon.ico
+[31/07 20:36:53] "GET /favicon.ico HTTP/1.1" 404 10040
+[31/07 23:58:54] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[01/08 00:06:57] Internal Server Error: /sept/_sept_of_the_five_leaves/text/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 389, in display_sept_rosters
+    c = creature.extract_raw()
+        ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 1396, in extract_raw
+    lines.append(f'{traitname}: {", ".join(glines)}.\n')
+                    ^^^^^^^^^
+NameError: name 'traitname' is not defined. Did you mean: 'traitnamme'?
+[01/08 00:06:57] "GET /sept/_sept_of_the_five_leaves/text/ HTTP/1.1" 500 93044
+[01/08 00:08:01] Not Found: /favicon.ico
+[01/08 00:08:01] "GET /favicon.ico HTTP/1.1" 404 10040
+[01/08 00:09:25] Not Found: /favicon.ico
+[01/08 00:09:25] "GET /favicon.ico HTTP/1.1" 404 10040
+[01/08 00:11:41] Not Found: /favicon.ico
+[01/08 00:11:41] "GET /favicon.ico HTTP/1.1" 404 10040
+[01/08 00:12:49] Not Found: /favicon.ico
+[01/08 00:13:37] Not Found: /favicon.ico
+[01/08 00:13:37] "GET /favicon.ico HTTP/1.1" 404 10040
+[01/08 00:37:59] Not Found: /favicon.ico
+[01/08 00:37:59] "GET /favicon.ico HTTP/1.1" 404 10040
+[01/08 00:39:13] Not Found: /favicon.ico
+[01/08 00:39:13] "GET /favicon.ico HTTP/1.1" 404 10040
+[01/08 00:42:12] Not Found: /favicon.ico
+[01/08 00:42:14] Not Found: /favicon.ico
+[01/08 00:42:18] Not Found: /favicon.ico
+[01/08 00:42:26] Not Found: /favicon.ico
+[01/08 00:42:46] Not Found: /favicon.ico
+[01/08 00:42:46] "GET /favicon.ico HTTP/1.1" 404 10040
+[01/08 00:43:18] Not Found: /favicon.ico
+[01/08 00:43:18] "GET /favicon.ico HTTP/1.1" 404 10040
+[01/08 00:52:12] Not Found: /favicon.ico
+[01/08 00:52:20] Not Found: /favicon.ico
+[01/08 21:27:25] Not Found: /favicon.ico
+[01/08 22:30:39] Not Found: /favicon.ico
+[01/08 22:37:56] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[01/08 22:46:10] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[01/08 22:47:39] "GET /static/collector/tribes/s.webp HTTP/1.1" 404 1827
+[01/08 22:47:54] Internal Server Error: /ajax/view/creature/_lukas_shredder/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 875, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+TypeError: 'Creature' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/loader_tags.py", line 56, in render
+    result = self.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/loader_tags.py", line 210, in render
+    return template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 173, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 1059, in render
+    output = self.filter_expression.resolve(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 710, in resolve
+    obj = self.var.resolve(context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 842, in resolve
+    value = self._resolve_lookup(context)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 885, in _resolve_lookup
+    current = getattr(current, bit)
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 1653, in stats_template
+    for v in STATS_TEMPLATES[self.creature]:
+             ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+KeyError: 'Keeper of the Land'
+[01/08 22:47:54] "GET /ajax/view/creature/_lukas_shredder/ HTTP/1.1" 500 170287
+[01/08 22:47:57] Internal Server Error: /ajax/view/creature/_lukas_shredder/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 875, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+TypeError: 'Creature' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/loader_tags.py", line 56, in render
+    result = self.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/loader_tags.py", line 210, in render
+    return template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 173, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 1059, in render
+    output = self.filter_expression.resolve(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 710, in resolve
+    obj = self.var.resolve(context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 842, in resolve
+    value = self._resolve_lookup(context)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 885, in _resolve_lookup
+    current = getattr(current, bit)
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 1653, in stats_template
+    for v in STATS_TEMPLATES[self.creature]:
+             ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+KeyError: 'Keeper of the Land'
+[01/08 22:47:57] "GET /ajax/view/creature/_lukas_shredder/ HTTP/1.1" 500 170287
+[01/08 22:47:58] Internal Server Error: /ajax/view/creature/_lukas_shredder/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 875, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+TypeError: 'Creature' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/loader_tags.py", line 56, in render
+    result = self.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/loader_tags.py", line 210, in render
+    return template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 173, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 1059, in render
+    output = self.filter_expression.resolve(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 710, in resolve
+    obj = self.var.resolve(context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 842, in resolve
+    value = self._resolve_lookup(context)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 885, in _resolve_lookup
+    current = getattr(current, bit)
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 1653, in stats_template
+    for v in STATS_TEMPLATES[self.creature]:
+             ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+KeyError: 'Keeper of the Land'
+[01/08 22:47:58] "GET /ajax/view/creature/_lukas_shredder/ HTTP/1.1" 500 170287
+[01/08 22:48:01] Internal Server Error: /ajax/view/creature/_lukas_shredder/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 875, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+TypeError: 'Creature' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/loader_tags.py", line 56, in render
+    result = self.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/loader_tags.py", line 210, in render
+    return template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 173, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 1059, in render
+    output = self.filter_expression.resolve(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 710, in resolve
+    obj = self.var.resolve(context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 842, in resolve
+    value = self._resolve_lookup(context)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 885, in _resolve_lookup
+    current = getattr(current, bit)
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 1653, in stats_template
+    for v in STATS_TEMPLATES[self.creature]:
+             ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+KeyError: 'Keeper of the Land'
+[01/08 22:48:01] "GET /ajax/view/creature/_lukas_shredder/ HTTP/1.1" 500 170287
+[01/08 22:49:01] "GET /static/collector/tribes/s.webp HTTP/1.1" 404 1827
+[01/08 22:49:07] "GET /static/collector/tribes/s.webp HTTP/1.1" 404 1827
+[01/08 22:49:12] "GET /static/collector/tribes/s.webp HTTP/1.1" 404 1827
+[01/08 22:49:15] Internal Server Error: /ajax/view/creature/_lukas_shredder/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 875, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+TypeError: 'Creature' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/loader_tags.py", line 56, in render
+    result = self.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/loader_tags.py", line 210, in render
+    return template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 173, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 1059, in render
+    output = self.filter_expression.resolve(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 710, in resolve
+    obj = self.var.resolve(context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 842, in resolve
+    value = self._resolve_lookup(context)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 885, in _resolve_lookup
+    current = getattr(current, bit)
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 1653, in stats_template
+    for v in STATS_TEMPLATES[self.creature]:
+             ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+KeyError: 'Keeper of the Land'
+[01/08 22:49:15] "GET /ajax/view/creature/_lukas_shredder/ HTTP/1.1" 500 170287
+[01/08 22:49:18] Internal Server Error: /ajax/view/creature/_lukas_shredder/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 875, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+TypeError: 'Creature' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/loader_tags.py", line 56, in render
+    result = self.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/loader_tags.py", line 210, in render
+    return template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 173, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 1059, in render
+    output = self.filter_expression.resolve(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 710, in resolve
+    obj = self.var.resolve(context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 842, in resolve
+    value = self._resolve_lookup(context)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 885, in _resolve_lookup
+    current = getattr(current, bit)
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 1653, in stats_template
+    for v in STATS_TEMPLATES[self.creature]:
+             ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+KeyError: 'Keeper of the Land'
+[01/08 22:49:18] "GET /ajax/view/creature/_lukas_shredder/ HTTP/1.1" 500 170287
+[01/08 22:49:23] Internal Server Error: /ajax/view/creature/_lukas_shredder/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 875, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+TypeError: 'Creature' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/loader_tags.py", line 56, in render
+    result = self.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/loader_tags.py", line 210, in render
+    return template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 173, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 1059, in render
+    output = self.filter_expression.resolve(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 710, in resolve
+    obj = self.var.resolve(context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 842, in resolve
+    value = self._resolve_lookup(context)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 885, in _resolve_lookup
+    current = getattr(current, bit)
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 1653, in stats_template
+    for v in STATS_TEMPLATES[self.creature]:
+             ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+KeyError: 'Keeper of the Land'
+[01/08 22:49:23] "GET /ajax/view/creature/_lukas_shredder/ HTTP/1.1" 500 170287
+[01/08 22:49:33] Not Found: /favicon.ico
+[01/08 22:49:54] Not Found: /favicon.ico
+[01/08 22:50:13] "GET /static/collector/tribes/s.webp HTTP/1.1" 404 1827
+[01/08 22:54:33] "GET /static/collector/tribes/s.webp HTTP/1.1" 404 1827
+[01/08 22:56:15] Not Found: /favicon.ico
+[01/08 22:56:21] Internal Server Error: /admin/collector/sept/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/options.py", line 714, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/sites.py", line 240, in inner
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/options.py", line 2014, in changelist_view
+    response = self.response_action(
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/options.py", line 1648, in response_action
+    response = func(self, request, queryset)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/septs.py", line 203, in refix
+    sept.save()
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/base.py", line 881, in save_base
+    pre_save.send(
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/dispatch/dispatcher.py", line 189, in send
+    response = receiver(signal=self, sender=sender, **named)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/signals/septs.py", line 8, in update_sept
+    instance.fix()
+  File "/home/zaffarelli/Projects/wawwod/collector/models/septs.py", line 141, in fix
+    self.build_sept()
+  File "/home/zaffarelli/Projects/wawwod/collector/models/septs.py", line 158, in build_sept
+    self.update_stats(garou)
+  File "/home/zaffarelli/Projects/wawwod/collector/models/septs.py", line 68, in update_stats
+    tidx = ALL_TRIBES.index(as_tribe_plural(garou.family))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: 's' is not in list
+[01/08 22:56:21] "POST /admin/collector/sept/ HTTP/1.1" 500 163988
+[01/08 22:56:39] Not Found: /favicon.ico
+[01/08 22:57:12] Not Found: /favicon.ico
+[01/08 22:57:47] Not Found: /favicon.ico
+[01/08 22:59:01] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[01/08 23:03:54] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[01/08 23:09:17] Not Found: /favicon.ico
+[01/08 23:09:22] Not Found: /favicon.ico
+[01/08 23:09:32] Not Found: /favicon.ico
+[01/08 23:10:15] Internal Server Error: /admin/collector/sept/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/options.py", line 714, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/sites.py", line 240, in inner
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/options.py", line 2014, in changelist_view
+    response = self.response_action(
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/options.py", line 1648, in response_action
+    response = func(self, request, queryset)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/septs.py", line 203, in refix
+    sept.save()
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/base.py", line 881, in save_base
+    pre_save.send(
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/dispatch/dispatcher.py", line 189, in send
+    response = receiver(signal=self, sender=sender, **named)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/signals/septs.py", line 8, in update_sept
+    instance.fix()
+  File "/home/zaffarelli/Projects/wawwod/collector/models/septs.py", line 141, in fix
+    self.build_sept()
+  File "/home/zaffarelli/Projects/wawwod/collector/models/septs.py", line 158, in build_sept
+    self.update_stats(garou)
+  File "/home/zaffarelli/Projects/wawwod/collector/models/septs.py", line 68, in update_stats
+    tidx = ALL_TRIBES.index(as_tribe_plural(garou.family))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: 's' is not in list
+[01/08 23:10:15] "POST /admin/collector/sept/ HTTP/1.1" 500 163884
+[01/08 23:16:10] Not Found: /favicon.ico
+[01/08 23:16:15] Internal Server Error: /admin/collector/sept/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/options.py", line 714, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/sites.py", line 240, in inner
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/options.py", line 2014, in changelist_view
+    response = self.response_action(
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/options.py", line 1648, in response_action
+    response = func(self, request, queryset)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/septs.py", line 203, in refix
+    sept.save()
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/base.py", line 881, in save_base
+    pre_save.send(
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/dispatch/dispatcher.py", line 189, in send
+    response = receiver(signal=self, sender=sender, **named)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/signals/septs.py", line 8, in update_sept
+    instance.fix()
+  File "/home/zaffarelli/Projects/wawwod/collector/models/septs.py", line 141, in fix
+    self.build_sept()
+  File "/home/zaffarelli/Projects/wawwod/collector/models/septs.py", line 158, in build_sept
+    self.update_stats(garou)
+  File "/home/zaffarelli/Projects/wawwod/collector/models/septs.py", line 68, in update_stats
+    tidx = ALL_TRIBES.index(as_tribe_plural(garou.family))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: 's' is not in list
+[01/08 23:16:15] "POST /admin/collector/sept/ HTTP/1.1" 500 163884
+[01/08 23:18:17] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[01/08 23:20:45] Internal Server Error: /admin/collector/sept/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/options.py", line 714, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/sites.py", line 240, in inner
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/options.py", line 2014, in changelist_view
+    response = self.response_action(
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/options.py", line 1648, in response_action
+    response = func(self, request, queryset)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/septs.py", line 204, in refix
+    sept.save()
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/base.py", line 881, in save_base
+    pre_save.send(
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/dispatch/dispatcher.py", line 189, in send
+    response = receiver(signal=self, sender=sender, **named)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/signals/septs.py", line 8, in update_sept
+    instance.fix()
+  File "/home/zaffarelli/Projects/wawwod/collector/models/septs.py", line 142, in fix
+    self.build_sept()
+  File "/home/zaffarelli/Projects/wawwod/collector/models/septs.py", line 159, in build_sept
+    self.update_stats(garou)
+  File "/home/zaffarelli/Projects/wawwod/collector/models/septs.py", line 69, in update_stats
+    tidx = ALL_TRIBES.index(plur)
+           ^^^^^^^^^^^^^^^^^^^^^^
+ValueError: 's' is not in list
+[01/08 23:20:45] "POST /admin/collector/sept/ HTTP/1.1" 500 163993
+[01/08 23:21:06] Not Found: /favicon.ico
+[01/08 23:21:48] Not Found: /favicon.ico
+[01/08 23:21:58] Not Found: /favicon.ico
+[01/08 23:22:44] Not Found: /favicon.ico
+[01/08 23:23:29] Not Found: /favicon.ico
+[01/08 23:23:43] Not Found: /favicon.ico
+[01/08 23:24:16] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[01/08 23:29:53] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[01/08 23:33:23] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[01/08 23:39:37] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[01/08 23:40:51] Not Found: /favicon.ico
+[01/08 23:41:02] Not Found: /favicon.ico
+[01/08 23:41:09] Not Found: /favicon.ico
+[01/08 23:41:56] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[02/08 00:00:43] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[02/08 00:06:04] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[02/08 01:38:45] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[02/08 02:45:58] Not Found: /favicon.ico
+[02/08 02:45:58] "GET /favicon.ico HTTP/1.1" 404 10040
+[03/08 14:44:02] Not Found: /favicon.ico
+[03/08 15:17:40] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[03/08 15:21:03] Not Found: /favicon.ico
+[03/08 15:21:06] Not Found: /favicon.ico
+[03/08 15:25:18] Not Found: /favicon.ico
+[03/08 15:25:56] Not Found: /favicon.ico
+[03/08 20:58:33] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[04/08 20:27:28] Not Found: /favicon.ico
+[04/08 20:27:40] Not Found: /favicon.ico
+[04/08 20:27:43] Not Found: /favicon.ico
+[04/08 20:27:51] Not Found: /favicon.ico
+[05/08 01:02:18] Not Found: /favicon.ico
+[05/08 01:45:55] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[05/08 17:44:01] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[05/08 17:53:31] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[05/08 22:04:10] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[05/08 22:04:34] Internal Server Error: /ajax/editable/userinput/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 184, in userinput
+    item.save()
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/base.py", line 881, in save_base
+    pre_save.send(
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/dispatch/dispatcher.py", line 189, in send
+    response = receiver(signal=self, sender=sender, **named)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/signals/creatures.py", line 17, in update_creature
+    instance.fix()
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 858, in fix
+    self.freebies -= PER_TRIBE[as_tribe_plural(self.family)]['willpower'] * 1  # Willpower per Tribe
+                     ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'Caitiffs'
+[05/08 22:04:34] "POST /ajax/editable/userinput/ HTTP/1.1" 500 21446
+[05/08 22:04:55] Internal Server Error: /ajax/editable/userinput/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 184, in userinput
+    item.save()
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/base.py", line 881, in save_base
+    pre_save.send(
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/dispatch/dispatcher.py", line 189, in send
+    response = receiver(signal=self, sender=sender, **named)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/signals/creatures.py", line 17, in update_creature
+    instance.fix()
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 858, in fix
+    self.freebies -= PER_TRIBE[as_tribe_plural(self.family)]['willpower'] * 1  # Willpower per Tribe
+                     ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'Caitiffs'
+[05/08 22:04:55] "POST /ajax/editable/userinput/ HTTP/1.1" 500 21446
+[05/08 22:21:28] Not Found: /favicon.ico
+[05/08 22:21:39] Not Found: /favicon.ico
+[05/08 22:48:19] Not Found: /favicon.ico
+[05/08 22:58:04] Not Found: /favicon.ico
+[05/08 23:02:26] Not Found: /favicon.ico

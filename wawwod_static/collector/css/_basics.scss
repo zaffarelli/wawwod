@@ -212,3 +212,8 @@ $independents_fill: #0c253b;
 @mixin mage_taint {
   background: repeating-linear-gradient(90deg, $mage_fill, $panel_background 50%, $panel_background 100%);
 }
+
+
+.wrapped{
+    word-wrap: word;
+}

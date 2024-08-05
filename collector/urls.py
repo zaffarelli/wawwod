@@ -1,6 +1,7 @@
 from django.urls import path, re_path
 from collector.views.base import index, get_list, updown, userinputastext, userinput, add_creature, change_chronicle, \
-    display_gaia_wheel, display_dashboard, display_lineage, display_crossover_sheet, add_kindred, svg_to_pdf, save_to_svg, display_sept, moon_phase, calendar
+    display_gaia_wheel, display_dashboard, display_lineage, display_crossover_sheet, add_kindred, svg_to_pdf, \
+    save_to_svg, display_sept, moon_phase, calendar, display_sept_rosters
 from collector.views.actions import change_settings, refix_all, extract_mechanics, extract_per_group, extract_raw, \
     extract_roster, randomize, balance, refix_all
 from collector.views.creature_views import CreatureDetailView
@@ -14,6 +15,7 @@ urlpatterns = [
     re_path(r'^ajax/display/kindred_lineage/(?P<slug>\w+)/$', display_lineage, name='display_lineage'),
     re_path(r'^ajax/display/kindred_lineage/$', display_lineage, name='display_lineage'),
     re_path(r'^ajax/display/septs/(?P<slug>\w+)/$', display_sept, name='display_sept'),
+    re_path(r'^sept/(?P<slug>\w+)/text/$', display_sept_rosters, name='display_sept_rosters'),
     re_path(r'^ajax/display/crossover_sheet/$', display_crossover_sheet, name='display_crossover_sheet'),
     re_path(r'^ajax/display/crossover_sheet/(?P<slug>\w+)/$', display_crossover_sheet, name='display_crossover_sheet'),
     re_path(r'^ajax/display/crossover_sheet/(?P<slug>\w+)/(?P<option>\w+)/$', display_crossover_sheet, name='display_crossover_sheet'),

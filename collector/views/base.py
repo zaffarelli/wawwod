@@ -372,6 +372,28 @@ def display_sept(request, slug=None):
                             'data': json.dumps(data, sort_keys=True, indent=4)};
         return JsonResponse(sept_context)
 
+def display_sept_rosters(request, slug=None):
+    #if is_ajax(request):
+    from collector.models.septs import Sept
+    if slug is None:
+        return HttpResponse(status=204)
+    else:
+        data = Sept.objects.get(rid=slug).build_sept()
+        rid_stack = []
+        for pack in data["packs"]:
+            for m in pack["members"]:
+                rid_stack.append(m['rid'])
+        print(rid_stack)
+        lines = []
+        for creature in Creature.objects.filter(rid__in=rid_stack).order_by('-rank'):
+            c = creature.extract_raw()
+            lines.append(c)
+
+        return HttpResponse("\n".join(lines), content_type='text/plain', charset="utf-8")
+
+
+
+
 
 @csrf_exempt
 def save_to_svg(request, slug):

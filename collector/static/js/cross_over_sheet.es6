@@ -321,28 +321,28 @@ class CrossOverSheet extends WawwodSheet {
             .style("stroke-width", '0.05pt')
         ;
         me.superwrap(timeline_in_note, box_spacing_x * me.stepx, true, current_font_size);
-        let all_lines = 0;
-        d3.selectAll(".timeline_in_notes")
-             .attr('y', function (d) {
-                 let result = oy;
-                 if (d['idx']>0){
-                    let pl = d3.select('#timeline_in_notes_'+(d['idx']))
-                    if (pl){
-
-                        all_lines += parseInt(pl.attr("lines"));
-
-                        result = oy + all_lines * me.stepy *  .5
-                        console.log("previous lines",all_lines, result)
-                    }else{
-                        all_lines = 0;
-                        console.log("Not found", result)
-                    }
-                 }else{
-                     console.log("Bad ",result)
-                 }
-
-                 return result
-             })
+//         let all_lines = 0;
+//         d3.selectAll(".timeline_in_notes")
+//              .attr('y', function (d) {
+//                  let result = oy;
+//                  if (d['idx']>0){
+//                     let pl = d3.select('#timeline_in_notes_'+(d['idx']))
+//                     if (pl){
+//
+//                         all_lines += parseInt(pl.attr("lines"));
+//
+//                         result = oy + all_lines * me.stepy *  .5
+//                         console.log("previous lines",all_lines, result)
+//                     }else{
+//                         all_lines = 0;
+//                         console.log("Not found", result)
+//                     }
+//                  }else{
+//                      console.log("Bad ",result)
+//                  }
+//
+//                  return result
+//              })
     }
 
 
@@ -367,16 +367,16 @@ class CrossOverSheet extends WawwodSheet {
             .append('g')
             .attr('class', 'timeline_event')
         ;
-        timeline_in.append('text')
-            .style('font-family', me.user_font)
-            .style('font-size', current_font_size+"px")
-            .style('text-anchor', "start")
-            .style("fill", me.user_fill)
-            .style("stroke", me.user_stroke)
-            .style("stroke-width", '0.05pt')
-            .text(function (d) {
-                return d['date'] + ' - ' + d['item']
-            })
+//         timeline_in.append('text')
+//             .style('font-family', me.user_font)
+//             .style('font-size', current_font_size+"px")
+//             .style('text-anchor', "start")
+//             .style("fill", me.user_fill)
+//             .style("stroke", me.user_stroke)
+//             .style("stroke-width", '0.05pt')
+//             .text(function (d) {
+//                 return d['date'] + ' - ' + d['item']
+//             })
         let timeline_in_note = timeline_in.append('text')
             .attr('class', 'timeline_in_notes')
             .attr('id', function(d) { return 'timeline_in_notes_'+d['idx'] })

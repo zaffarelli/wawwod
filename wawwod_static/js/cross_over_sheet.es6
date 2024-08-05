@@ -2,7 +2,7 @@ class CrossOverSheet extends WawwodSheet {
     constructor(data, parent, collector) {
         super(data, parent, collector);
         this.init();
-        this.release = "24.07";
+        this.release = "31.07";
 
     }
 
@@ -178,7 +178,10 @@ class CrossOverSheet extends WawwodSheet {
         let rite_note = me.character.append('g')
             .attr('class', 'rite_notes')
         ;
-        me.title('About Rites', 6.5 * me.stepx, oy - 0.5 * me.stepy, rite_note)
+
+        let ox = 6.5;
+
+        me.title('About Rites', ox * me.stepx, oy - 0.5 * me.stepy, rite_note)
 
         if (me.blank) {
             return;
@@ -211,7 +214,7 @@ class CrossOverSheet extends WawwodSheet {
 //         ;
         rite_note_in.append('text')
             .attr("x", function (d) {
-                return 6.5 * me.stepx;
+                return ox * me.stepx;
             })
             .attr('y', function (d) {
                 return oy + (d['idx'] * box_spacing_y + 0.30) * me.stepy;
@@ -228,7 +231,7 @@ class CrossOverSheet extends WawwodSheet {
         ;
         let rite_note_in_note = rite_note_in.append('text')
             .attr("x", function (d) {
-                return 2 * me.stepx;
+                return 1.5 * me.stepx;
             })
             .attr('y', function (d) {
                 return oy + (d['idx'] * box_spacing_y + 0.75) * me.stepy;
@@ -242,7 +245,7 @@ class CrossOverSheet extends WawwodSheet {
             .style("fill", me.user_fill)
             .style("stroke", me.user_stroke)
             .style("stroke-width", "0.05pt");
-        rite_note_in_note.call(wrap, 9 * me.stepx, false,me.medium_font_size )
+        rite_note_in_note.call(wrap, 10 * me.stepx, false,me.medium_font_size )
     }
 
 
@@ -318,28 +321,28 @@ class CrossOverSheet extends WawwodSheet {
             .style("stroke-width", '0.05pt')
         ;
         me.superwrap(timeline_in_note, box_spacing_x * me.stepx, true, current_font_size);
-        let all_lines = 0;
-        d3.selectAll(".timeline_in_notes")
-             .attr('y', function (d) {
-                 let result = oy;
-                 if (d['idx']>0){
-                    let pl = d3.select('#timeline_in_notes_'+(d['idx']))
-                    if (pl){
-
-                        all_lines += parseInt(pl.attr("lines"));
-
-                        result = oy + all_lines * me.stepy *  .5
-                        console.log("previous lines",all_lines, result)
-                    }else{
-                        all_lines = 0;
-                        console.log("Not found", result)
-                    }
-                 }else{
-                     console.log("Bad ",result)
-                 }
-
-                 return result
-             })
+//         let all_lines = 0;
+//         d3.selectAll(".timeline_in_notes")
+//              .attr('y', function (d) {
+//                  let result = oy;
+//                  if (d['idx']>0){
+//                     let pl = d3.select('#timeline_in_notes_'+(d['idx']))
+//                     if (pl){
+//
+//                         all_lines += parseInt(pl.attr("lines"));
+//
+//                         result = oy + all_lines * me.stepy *  .5
+//                         console.log("previous lines",all_lines, result)
+//                     }else{
+//                         all_lines = 0;
+//                         console.log("Not found", result)
+//                     }
+//                  }else{
+//                      console.log("Bad ",result)
+//                  }
+//
+//                  return result
+//              })
     }
 
 
@@ -872,7 +875,7 @@ class CrossOverSheet extends WawwodSheet {
         } else if (me.page === 3) {
             me.fillRiteNotes(4 * me.stepy);
             me.fillOthers(4 * me.stepy);
-            me.fillExperience(22 * me.stepy);
+            me.fillExperience(30.0 * me.stepy);
         } else if (me.page > 3) {
 //             me.fillDisciplinesNotes(4 * me.stepy, 'left', me.page - 1);
 //             me.fillDisciplinesNotes(4 * me.stepy, 'right', me.page - 1);

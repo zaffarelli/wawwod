@@ -16,7 +16,7 @@ class Sept {
     saveSVG() {
         let me = this;
         me.svg.selectAll('.do_not_print').attr('opacity', 0);
-        let base_svg = d3.select("#d3area svg").html();
+        let base_svg = d3.select("#d3area svg.sept").html();
         let flist = '<style>';
         for (let f of me.config['fontset']) {
             flist += '@import url("https://fonts.googleapis.com/css2?family=' + f + '");';
@@ -29,8 +29,8 @@ class Sept {
 xmlns="http://www.w3.org/2000/svg" version="1.1" \
 xmlns:xlink="http://www.w3.org/1999/xlink"> \
 ' + flist + base_svg + '</svg>';
-        let svg_name = "kindred_lineage.svg"
-        let rid = "kindred_lineage";
+        let svg_name = "sept.svg"
+        let rid = "sept";
         let sheet_data = {
             'svg_name': svg_name,
             'rid': rid,
@@ -137,8 +137,25 @@ xmlns:xlink="http://www.w3.org/1999/xlink"> \
             .attr('rx', me.step/10)
             .attr('ry', me.step/10)
             .attr('width', me.boxWidth * 2.0)
-            .attr('height', me.boxHeight * 2)
-            .style('fill', "#E0E0E0")
+            .attr('height', me.boxHeight * 2.45)
+            .style('fill', (d,i) => {
+                let color = "#F0F0F0"
+                let pos = d.position.toLowerCase()
+                let caern_offices = ["warder","master of the rite","master of challenge","keeper of the land","gatekeeper"]
+                let minor_offices = ["wyrmfoe","caller of the wyld","truthcatcher","talesinger","master of the howl"]
+                if (d.position == "Grand Elder"){
+                    color = "#F0C0C0"
+                } else if (d.position == "Elder"){
+                    color = "#F0D0D0"
+                } else if (d.position == "Guardian"){
+                    color = "#E0F0E0"
+                } else if (caern_offices.includes(pos)){
+                    color = "#E0F0E0"
+                } else if (minor_offices.includes(pos)){
+                    color = "#D0D0F0"
+                }
+                return color
+            })
             .style('stroke', "#101010")
         ;
         r.append("text")
@@ -159,12 +176,12 @@ xmlns:xlink="http://www.w3.org/1999/xlink"> \
             .attr('class', 'plate')
             .attr('x', -me.boxWidth*.45)
             .attr('y', 0)
-            .attr('dy', "10pt")
+            .attr('dy', "20pt")
             .style('fill', "#101010")
             .style('stroke', "#303030")
             .style('stroke-width', "0.15pt")
-            .style('font-family', "Cinzel")
-            .style('font-size', "8pt")
+            .style('font-family', "Khand")
+            .style('font-size', "12pt")
             .style('text-anchor', "start")
             .text( function (d) {
                 return d.short_desc
@@ -175,15 +192,51 @@ xmlns:xlink="http://www.w3.org/1999/xlink"> \
             .attr('class', 'plate')
             .attr('x', -me.boxWidth*.45)
             .attr('y', 0)
-            .attr('dy', "20pt")
+            .attr('dy', "40pt")
             .style('fill', "#101010")
             .style('stroke', "#303030")
             .style('stroke-width', "0.15pt")
-            .style('font-family', "Cinzel")
-            .style('font-size', "8pt")
+            .style('font-family', "Khand")
+            .style('font-size', "13pt")
             .style('text-anchor', "start")
             .text( function (d) {
-                return d.renown+" renown (rank:"+d.rank+")"
+                return d.renown+" renown (rank:"+d.rank+", "+d.age+"yo )"
+                })
+        ;
+
+        r.append("text")
+            .attr('class', 'plate')
+            .attr('x', -me.boxWidth*.45)
+            .attr('y', 0)
+            .attr('dy', "60pt")
+            .style('fill', "#1010107F")
+            .style('stroke', "#101010")
+            .style('stroke-width', "0.25pt")
+            .style('font-family', "Trade Winds")
+            .style('font-size', "12pt")
+            .style('text-anchor', "start")
+            .text( function (d) {
+                return d.position
+            })
+        ;
+
+        r.append("text")
+            .attr('class', 'plate')
+            .attr('x', -me.boxWidth*.45)
+            .attr('y', 0)
+            .attr('dy', "80pt")
+            .style('fill', "#501010")
+            .style('stroke', "#F03030")
+            .style('stroke-width', "0.25pt")
+            .style('font-family', "Khand")
+            .style('font-size', "13pt")
+            .style('text-anchor', "start")
+            .text( function (d) {
+                if (d.kinfolks > 0){
+                    let score_to_num = [0,2,5,10,20,50,100]
+                    return score_to_num[d.kinfolks]+" kinfolks: "+d.edges
+                }
+                return ""
                 })
         ;
 
@@ -200,7 +253,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink"> \
                 return str;
             })
             .attr("transform", function (d) {
-                return "translate(" + (d.x*me.step*2.25) + "," + (d.y*me.step) + ")";
+                return "translate(" + (d.x*me.step*2.25) + "," + (d.y*me.step/2.55) + ")";
             });
         r.append("rect")
             .attr('class', 'band')
@@ -210,9 +263,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink"> \
             .attr('ry', me.step/10)
             .attr('width', me.boxWidth * 2.5)
             .attr('height', (d,i) => {
-                return me.boxHeight*2.5 * (d.cnt+1)
+                return me.boxHeight*2.25 * (d.cnt+1)
             })
-            .style('fill', "#A0A0A0")
+            .style('fill', "#F0F0F0")
             .style('stroke', "#101010")
         ;
         r.append("text")
@@ -223,7 +276,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink"> \
             .style('stroke', "#303030")
             .style('stroke-width', "0.15pt")
             .style('font-family', "Trade Winds")
-            .style('font-size', "12pt")
+            .style('font-size', "16pt")
             .style('text-anchor', "start")
             .text( function (d) {
                 return d.name
@@ -233,12 +286,12 @@ xmlns:xlink="http://www.w3.org/1999/xlink"> \
             .attr('class', 'plate')
             .attr('x', -me.boxWidth*.65)
             .attr('y', 0)
-            .attr('dy', "10pt")
+            .attr('dy', "16pt")
             .style('fill', "#101010")
             .style('stroke', "#303030")
             .style('stroke-width', "0.15pt")
-            .style('font-family', "Cinzel")
-            .style('font-size', "8pt")
+            .style('font-family', "Khand")
+            .style('font-size', "16pt")
             .style('text-anchor', "start")
             .text( function (d) {
                 return d.totem
@@ -274,7 +327,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink"> \
 
         let ox = 10, oy = 10
 
-        d3.select(me.parent).selectAll(".sept").remove();
+        d3.select(me.parent).selectAll("svg.sept").remove();
         let pwidth = d3.select(me.parent).style("width");
         let pheight = d3.select(me.parent).style("height");
         let pox = -(parseInt(pwidth)/2);
@@ -288,15 +341,24 @@ xmlns:xlink="http://www.w3.org/1999/xlink"> \
             .attr("viewBox", pox+"  "+poy+ " " + pwidth + " " + pheight)
             //.attr("transform","translate(0,0)")
             .attr("transform", "translate(" + parseInt(pwidth) / 2 + "," + parseInt(pheight) / 2 + ")")
+            .on("click", function(e,d){
+                if (e.altKey){
+                    me.saveSVG()
+                    console.log("Saved!!")
+                }
+            });
+
         ;
 
-        me.vis.append("rect")
-            .attr("x",-me.step)
-            .attr("y",-me.step)
-            .attr("width",me.step*30)
-            .attr("height",me.step*15)
-            .style("fill","#F0F0F0")
-            .style("stroke","#202020")
+
+//         me.vis.append("rect")
+//             .attr("x",-me.step)
+//             .attr("y",-me.step)
+//             .attr("width",me.step*30)
+//             .attr("height",me.step*15)
+//             .style("fill","none")
+//             .style("stroke","none")
+
 
         let pack = me.vis.selectAll(".pack")
             .data(me.mapping.packs)
@@ -346,34 +408,37 @@ xmlns:xlink="http://www.w3.org/1999/xlink"> \
                 let str = "stat ";
                 return str;
             })
-            .attr("id", (d) => "stat_"+d.name )
+            .attr("id", (d) => d.name )
             .attr("transform", function (d) {
-                return "translate(" + ((d.id-1)*me.step*2.25) + "," + (10*me.step) + ")";
+                return "translate(" + ((d.id-1)*me.step*2.25) + "," + (-me.step*3) + ")";
             });
-//         r.append("rect")
-//             .attr('x', -me.boxWidth * .75)
-//             .attr('y', -me.boxHeight * .5)
-//             .attr('rx', me.step/10)
-//             .attr('ry', me.step/10)
-//             .attr('width', me.boxWidth * 2.5)
-//             .attr('height', (d,i) => {
-//                 return me.boxHeight*2.5 * (d.cnt+1)
-//             })
-//             .style('fill', "#A0C0A0")
-//             .style('stroke', "#101010")
-//             .style('stroke-width', "1pt")
-//         ;
         let vals = {"auspices":{},"breeds":{},"tribes":{}}
         let ministep = me.step/10
+
+        r.append("rect")
+            .attr('class', 'band')
+            .attr('x', -me.boxWidth * .75)
+            .attr('y', -me.boxHeight * .75)
+            .attr('rx', me.step/10)
+            .attr('ry', me.step/10)
+            .attr('width', me.boxWidth * 2.5)
+            .attr('height', (d,i) => {
+                return me.boxHeight*5
+            })
+            .style('fill', "#C0C0C0")
+            .style('stroke', "#101010")
+        ;
+
+
         r.append("text")
-            .attr('x', -me.boxWidth*.65)
-            .attr('y', 0)
+            .attr('x', me.boxWidth*.25)
+            .attr('y', -ministep)
             .style('fill', "#101010")
-            .style('stroke', "#303030")
+            .style('stroke', "#404040")
             .style('stroke-width', "0.15pt")
             .style('font-family', "Trade Winds")
-            .style('font-size', "12pt")
-            .style('text-anchor', "middle")
+            .style('font-size', "24pt")
+            .style('text-anchor', "start")
             .text( (d) => {
                 let v = { "name":d.name,"id":d.id, "values": d.values}
                 vals[d.name] = v
@@ -381,20 +446,51 @@ xmlns:xlink="http://www.w3.org/1999/xlink"> \
             })
         ;
 
-
+        console.log(vals)
+        let g = undefined
+        let coeff = {"breeds":4,"auspices":1,"tribes":1}
+        let color = {"breeds":"#C0F0C0","auspices":"#F0C0C0","tribes":"#C0C0Fts0"}
         _.forEach(vals, (v,k) => {
-            if (k=="auspices"){
+                g = d3.select("#"+k)
                 _.forEach(v.values, (w,l) => {
-                    r.append("rect")
+                    g.append("rect")
                         .attr("id",v.name+" "+w.id)
-                        .attr("x",l*ministep)
-                        .attr("y",-ministep * w)
-                        .attr("width",ministep/2)
-                        .attr("height",ministep * w)
-                        .style("fill","#803030")
+                        .attr("x",ministep*1.25)
+                        .attr("y",l*ministep)
+                        .attr("height",3*ministep/4)
+                        .attr("width",ministep/coeff[k] * w)
+                        .style("fill",color[k])
                         .style("stroke","#101010")
+                    g.append("text")
+                        .attr('x', ministep)
+                        .attr('y', l*ministep)
+                        .attr('dy', ministep/2)
+                        .style('fill', "#101010")
+                        .style('stroke', "#303030")
+                        .style('stroke-width', "0.15pt")
+                        .style('font-family', "Trade Winds")
+                        .style('font-size', "8pt")
+                        .style('text-anchor', "end")
+                        .text( () => {
+                            let label = ""
+                            let labels = []
+                            if (k == "auspices"){
+                                labels = ["Ragabash","Theurge","Philodox","Galliard","Ahroun"]
+                            }
+                            if (k == "breeds"){
+                                labels = ["Homid","Metis","Lupus"]
+                            }
+                            if (k == "tribes"){
+                                labels = ["Black Furies","Black Spiral Dancers","Bone Gnawers","Bunyips",
+                                    "Children of Gaia","Croatans","Fiannas","Gets of Fenris","Glass Walkers",
+                                    "Red Talons","Shadow Lords","Silent Striders","Silver Fangs","Stargazers",
+                                    "Uktenas","Wendigos","White Howlers"]
+                            }
+                            label = labels[l]+" ("+w+")"
+                            return label
+                        })
                 });
-            }
+
         });
 
 
@@ -452,6 +548,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink"> \
         me.prepareTree()
         me.go()
         me.zoomActivate()
+
     }
 
 }

@@ -486,9 +486,10 @@ class WawwodSheet {
             });
         if (automax) {
             tempmax = (Math.round(value / 10) + 1) * 10;
-            lines = tempmax / 10;
+        }else{
+            tempmax = max;
         }
-
+        lines = tempmax / 10;
         if (me.blank) {
             value = 0;
         }
@@ -507,10 +508,10 @@ class WawwodSheet {
                 return cx;
             })
             .attr('cy', function (d) {
-                let cy = oy + 0.3 * me.stepx + me.dot_radius;
-                if (d >= 10) {
-                    cy += me.dot_radius * 2;
-                }
+                let cy = oy + 0.2 * me.stepx + me.dot_radius;
+                //if (d >= 10) {
+                    cy += me.dot_radius * (2.2 * Math.floor(d/10))
+                //}
                 return cy;
             })
             .style('fill', function (d) {
@@ -790,15 +791,15 @@ class WawwodSheet {
             me.statText('Tribe', me.data['family'], ox + me.stepx * 16, oy, 'tribe', 'tribe', me.character);
             oy += 0.5 * me.stepy;
             me.reinHagenStat('Rank', me.data['rank'], ox + me.stepx * 16, oy, 'rank', 'rank', me.character);
-            if (me.data['player']) {
-                oy += 1 * me.stepy;
-                me.statText('Experience', me.data['experience'], ox + me.stepx * 16, oy, 'sire', 'sire', me.character);
-                oy += 0.5 * me.stepy;
-                me.statText('Remaining', me.data['exp_pool'], ox + me.stepx * 16, oy, 'sire', 'sire', me.character);
-                oy += 0.5 * me.stepy;
-                me.statText('Spent', me.data['exp_spent'], ox + me.stepx * 16, oy, 'sire', 'sire', me.character);
-            }
-un
+//             if (me.data['player']) {
+//                 oy += 1 * me.stepy;
+//                 me.statText('Experience', me.data['experience'], ox + me.stepx * 16, oy, 'sire', 'sire', me.character);
+//                 oy += 0.5 * me.stepy;
+//                 me.statText('Remaining', me.data['exp_pool'], ox + me.stepx * 16, oy, 'sire', 'sire', me.character);
+//                 oy += 0.5 * me.stepy;
+//                 me.statText('Spent', me.data['exp_spent'], ox + me.stepx * 16, oy, 'sire', 'sire', me.character);
+//             }
+
         } else if (me.data['creature'] == 'kindred') {
             oy += 2 * me.stepy;
             me.statText('Generation', 13 - me.data['background3'] + 'th', ox + me.stepx * 16, oy, 'gener', 'gener', me.character);
@@ -953,34 +954,25 @@ un
 
     fillExperience(basey) {
         let me = this;
-        let ox = 12;
+        let ox = 18 * me.stepx;
         let oy = basey;
         let stat = '';
         //me.title('Experience', ox + me.stepx * 5, oy, me.character);
-        //oy += 0.5 * me.stepy;
 
-        let exp = me.back.append("g")
-            .attr("transform","translate("+(ox*me.step)+","+(oy*me.step)+")")
-        exp.append("rect")
-            .attr("x",0)
-            .attr("y",0)
-            .attr("width",me.step*2)
-            .attr("height",me.step*1)
-            .attr("rx",0)
-            .attr("ry",0)
-            .style("fill","white")
-            .style("stroke","black")
-            .style("stroke-width","1pt")
-        exp.append("text")
-            .attr("x",0)
-            .attr("y",0)
-            .style("fill","white")
-            .style("stroke","black")
-            .style("stroke-width","1pt")
-            .style("font-family","Philosopher")
-            .style("text-anchor","middle")
-            .style("font-size","12pt")
-            .text("Total")
+
+        if (me.data['player']) {
+            me.gaugeStat('Experience Earned', 0, ox, oy, me.character, false, false, 30);
+            oy += 1.5 * me.stepy;
+            me.gaugeStat('Experience Spent', 0, ox, oy, me.character, false, false, 30);
+            oy += 1.5 * me.stepy;
+            me.gaugeStat('Experience Remaining', 0, ox, oy, me.character, false, false, 30);
+            oy += 1.5 * me.stepy;
+//             me.statText('Experience', "", ox, oy, '','',me.character,true);
+//             oy += 0.5 * me.stepy;
+//             me.statText('Remaining', "", ox, oy, '', '', me.character);
+//             oy += 0.5 * me.stepy;
+//             me.statText('Spent', "", ox, oy, 'sire', 'sire', me.character);
+        }
 
 
     }
@@ -1055,7 +1047,7 @@ un
             let bonuses = "";
             let ax = ox + me.stepx * 16;
             let ay = oy + 0.5 * me.stepy * (0);
-            me.statText("Attributes", " St De St Ch Ma Ap", ax, ay, 'fl', 'fl', me.character, false, true);
+            me.statText("Attributes", "Str  Dex  Sta  Cha  Man  App", ax, ay, 'fl', 'fl', me.character, false, true);
             me.config['many_forms'].forEach(function (d, idx) {
                 ax = ox + me.stepx * 16;
                 ay = oy + 0.5 * me.stepy * (idx + 1);
@@ -1063,11 +1055,16 @@ un
                 let list = d['changes'];
 
                 _.forEach(list, function (v, k) {
-                    let da = parseInt(me.data[k] + v);
-                    if (da < 0) {
-                        da = 0;
+                    //let da = parseInt(me.data[k] + v);
+                    let da = parseInt( + v);
+                    let sign = ""
+                    if (da >= 0) {
+                        sign = "+";
                     }
-                    bonuses += " " + da + ".";
+                    if (da == -10){
+                        da = ".."
+                    }
+                    bonuses += " "+sign + da + ".";
                 });
                 me.statText(d['form'], bonuses, ax, ay, d['form'], d['form'], me.character, false, true);
             });
@@ -1405,6 +1402,76 @@ xmlns:xlink="http://www.w3.org/1999/xlink" width="' + me.width + '" height="' + 
                 lineHeight = font_size * 1.1
             ;
             let tspan = tgt.text(null).append("tspan")
+                .attr("class", "wrapped")
+                .attr("x", x)
+                .attr('y', y)
+                .attr("dy", 0)
+                .style("font-size", font_size + 'px')
+                .style("fill","#801010")
+                .style("stroke","#801010")
+                .style("stroke-width", '0.05pt')
+            ;
+
+            while (word = words.pop()) {
+                if (word == "µ"){
+                    tspan.text(line.join(" "));
+                    line = [];
+                    tspan = tgt.append("tspan")
+                        .attr("class", "wrapped")
+                        .attr("x", x)
+                        .attr('y', y)
+                        .attr("dy", ++lineNumber * lineHeight)
+                        .style("font-size", font_size + 'px')
+                        .style("stroke-width", '0.05pt')
+                        .style("fill","#108010")
+                        .style("stroke","#108010")
+                        .text(word)
+
+                }else{
+                    line.push(word);
+                    tspan.text(line.join(" "));
+                    if (tspan.node().getComputedTextLength() > width) {
+                        line.pop();
+                        tspan.text(line.join(" "));
+                        line = [word];
+                        tspan = tgt.append("tspan")
+                            .attr("x", x)
+                            .attr('y', y)
+                            .attr("dy", ++lineNumber * lineHeight)
+                            .style("font-size", font_size + 'px')
+                            .style("stroke-width", '0.05pt')
+                           .style("fill","#101080")
+                            .style("stroke","#101080")
+                            .text(word)
+                    }
+                }
+            }
+            tgt.attr("lines",lineNumber+1)
+        });
+
+    }
+
+    blockwrap(text, width, stacked = false, a_font_size) {
+        let font = "Gochi Hand",
+            user_fill = '#A8A',
+            user_stroke = '#828',
+            font_size = a_font_size,
+            base_y = 0,
+            stackedHeight = 0
+        ;
+        let total_lines = 0
+
+        text.each(function () {
+            let tgt = d3.select(this),
+                words = tgt.text().split(/\s+/).reverse(),
+                word,
+                line = [],
+                lineNumber = 0,
+                x = 0,//tgt.attr("x"),
+                y = 0,//tgt.attr("y"),
+                lineHeight = font_size * 1.1
+            ;
+            let tspan = tgt.text(null).append("tspan")
                 .attr("x", x)
                 .attr('y', y)
                 .attr("dy", 0)
@@ -1445,6 +1512,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" width="' + me.width + '" height="' + 
         });
 
     }
+
 
 
 }

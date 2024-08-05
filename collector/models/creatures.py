@@ -327,9 +327,17 @@ class Creature(models.Model):
     def edges_str(self):
         list = []
         edges = self.edges.split(", ")
-        candidates = Creature.objects.filter(rid__in=edges)
-        for candidate in candidates:
-            list.append(candidate.name)
+        # candidates = Creature.objects.filter(rid__in=edges)
+        for rid in edges:
+            if len(rid)>0:
+                candidates = Creature.objects.filter(rid=rid)
+                if len(candidates)==1:
+                    candidate = candidates.first()
+                    list.append(candidate.name)
+                elif len(candidates)==0:
+                    list.append(f"Not Found: {rid}")
+                elif len(candidates)>1:
+                    list.append(f"Multiple Entries: {rid}")
         return ", ".join(list)
 
     @property
@@ -1348,21 +1356,35 @@ class Creature(models.Model):
             gen = "Male" if self.sex == 1 else "Female"
             lines.append(
                 f"{gen} {RANKS[int(self.rank) - 1]} {BREEDS[self.breed]} {AUSPICES[self.auspice]} of the {as_tribe_plural(self.family)}\n")
-        lines.append(f'Nature:{self.nature} Demeanor:{self.demeanor}\n')
-        lines.append(f'Age:{self.age}\n')
+        if len(self.community_job) > 0:
+            lines.append(f'{self.community_job} of the {self.group}\n')
+        else:
+            lines.append(f'{self.group}\n')
+        lines.append(f'(Rank {self.rank})\n')
+        if len(self.nature) > 0:
+            lines.append(f'Nature: {self.nature}\n')
+        if len(self.demeanor) > 0:
+            lines.append(f'Demeanor: {self.demeanor}\n')
         if len(self.concept) > 0:
-            lines.append(f'Concept:{self.concept}\n')
-        lines.append(f'Position:{self.community_job} Group:{self.group}\n')
-        lines.append(
-            f'Attributes: {self.total_physical}/{rep[0]}:{self.total_social}/{rep[1]}:{self.total_mental}/{rep[2]}\n')
+            lines.append(f'Concept: {self.concept}\n')
+        if len(self.groupspec)>0:
+            lines.append(f'Pack: {self.groupspec}\n')
+        if self.age > 0:
+            lines.append(f'Age: {self.age} ans\n')
+        if self.is_player:
+            lines.append(f'Attributes: {self.total_physical}/{rep[0]}:{self.total_social}/{rep[1]}:{self.total_mental}/{rep[2]}\n')
         lines.append(
             f'Strength  {self.val_as_dots(self.attribute0):2}\tCharisma     {self.val_as_dots(self.attribute3):2}\tPerception   {self.val_as_dots(self.attribute6):2}\n')
         lines.append(
             f'Dexterity {self.val_as_dots(self.attribute1):2}\tManipulation {self.val_as_dots(self.attribute4):2}\tIntelligence {self.val_as_dots(self.attribute7):2}\n')
         lines.append(
             f'Stamina   {self.val_as_dots(self.attribute2):2}\tAppearance   {self.val_as_dots(self.attribute5):2}\tWits         {self.val_as_dots(self.attribute8):2}\n')
-        lines.append(
-            f'Abilities: {self.total_talents}/{rep[3]}:{self.total_skills}/{rep[4]}:{self.total_knowledges}/{rep[5]}\n')
+        lines.append(f'Willpower....{self.willpower:2}\n')
+        lines.append(f'Gnosis.......{self.gnosis:2} Rage.........{self.rage:2}\n')
+
+        if self.is_player:
+            lines.append(
+                f'Abilities: {self.total_talents}/{rep[3]}:{self.total_skills}/{rep[4]}:{self.total_knowledges}/{rep[5]}\n')
         tlines = []
         slines = []
         klines = []
@@ -1387,14 +1409,14 @@ class Creature(models.Model):
         for n in range(16):
             if getattr(self, f"trait{n}").title():
                 glines.append(f'{getattr(self, f"trait{n}")}')
-        lines.append(f'Traits: {", ".join(glines)}.\n')
+        traitname = "Gifts"
+        lines.append(f'{traitname}: {", ".join(glines)}.\n')
         rlines = []
         for n in range(10):
             if getattr(self, f"rite{n}").title():
                 rlines.append(f'{getattr(self, f"rite{n}")}')
         if len(rlines) > 0:
             lines.append(f'Rituals: {", ".join(rlines)}.\n')
-
         return "".join(lines)
 
     def calculate_freebies(self):
@@ -2008,7 +2030,7 @@ def randomize_all(modeladmin, request, queryset):
 
 class CreatureAdmin(admin.ModelAdmin):
     list_display = [  # 'domitor',
-        'name', 'age', 'trueage', 'notes_on_history', 'notes_on_others', 'edges_str', 'chronicle', 'adventure',
+        'name', 'age','family',  'trueage', 'edges', 'notes_on_history', 'edges_str', 'chronicle', 'adventure',
         'freebies', 'player',
         'family', 'groupspec', 'status', 'condition']
     ordering = ['-trueage', 'name', 'group', 'creature']
@@ -2019,4 +2041,4 @@ class CreatureAdmin(admin.ModelAdmin):
     list_filter = ['chronicle', 'adventure','is_player','creature','faction', 'family', 'is_new', 'condition', 'group',
                    'groupspec']
     search_fields = ['name', 'groupspec']
-    list_editable = ['notes_on_history','groupspec',"notes_on_others"]
+    list_editable = ['edges','groupspec',"notes_on_history"]

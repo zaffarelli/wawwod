@@ -1401,6 +1401,78 @@ xmlns:xlink="http://www.w3.org/1999/xlink" width="' + me.width + '" height="' + 
                 y = 0,//tgt.attr("y"),
                 lineHeight = font_size * 1.1
             ;
+            tgt.text("")
+            let tspan = tgt.append("tspan")
+                .attr("class", "to_be_blanked")
+                .attr("x", x)
+                .attr('y', y)
+                .attr("dy", 0)
+                .style("font-size", font_size + 'px')
+                .style("font-family","Khand")
+                .style("fill","#101010")
+                .style("stroke","#101010")
+                .style("stroke-width", '0.50pt')
+            ;
+
+            while (word = words.pop()) {
+                if (word == "µ"){
+                    word = ""
+                    tspan.text(line.join(" "));
+                    line = [];
+                    tspan = tgt.append("tspan")
+                        .attr("x", x)
+                        .attr('y', y)
+                        .attr("dy", ++lineNumber * lineHeight)
+                        .style("font-size", font_size + 'px')
+                        .style("stroke-width", '0.05pt')
+                        .style("fill","#505050")
+                        .style("stroke","#505050")
+                        .text(word)
+
+                }else{
+                    line.push(word);
+                    tspan.text(line.join(" "));
+                    if (tspan.node().getComputedTextLength() > width) {
+                        line.pop();
+                        tspan.text(line.join(" "));
+                        line = [word];
+                        tspan = tgt.append("tspan")
+                            .attr("x", x)
+                            .attr('y', y)
+                            .attr("dy", ++lineNumber * lineHeight)
+                            .style("font-size", font_size + 'px')
+                            .style("stroke-width", '0.05pt')
+                            .style("fill","#505050")
+                            .style("stroke","#505050")
+                            .text(word)
+                    }
+                }
+            }
+            tgt.attr("lines",lineNumber+1)
+        });
+
+    }
+
+    blockwrap(text, width, stacked = false, a_font_size) {
+        let font = "Gochi Hand",
+            user_fill = '#A8A',
+            user_stroke = '#828',
+            font_size = a_font_size,
+            base_y = 0,
+            stackedHeight = 0
+        ;
+        let total_lines = 0
+
+        text.each(function () {
+            let tgt = d3.select(this),
+                words = tgt.text().split(/\s+/).reverse(),
+                word,
+                line = [],
+                lineNumber = 0,
+                x = 0,//tgt.attr("x"),
+                y = 0,//tgt.attr("y"),
+                lineHeight = font_size * 1.1
+            ;
             let tspan = tgt.text(null).append("tspan")
                 .attr("x", x)
                 .attr('y', y)
@@ -1442,6 +1514,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" width="' + me.width + '" height="' + 
         });
 
     }
+
 
 
 }

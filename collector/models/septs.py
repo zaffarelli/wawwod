@@ -65,7 +65,8 @@ class Sept(models.Model):
         tribes = [int(x) for x in self.tribes.split(" ")]
         auspices[garou.auspice] += 1
         breeds[garou.breed] += 1
-        tidx = ALL_TRIBES.index(as_tribe_plural(garou.family))
+        plur = as_tribe_plural(garou.family)
+        tidx = ALL_TRIBES.index(plur)
         if tidx>-1:
             tribes[tidx] += 1
         self.auspices = " ".join([str(x) for x in auspices])
@@ -153,13 +154,18 @@ class Sept(models.Model):
         pack_counter = 0
         self.initialize_offices()
         for garou in garous:
-            print(garou, " (", garou.groupspec, ')')
+            # print(garou, " (", garou.groupspec, ')')
             self.update_offices(garou)
             self.update_stats(garou)
             g = {
                 "rid": garou.rid,
                 "renown": garou.total_renown,
                 "name": garou.name,
+                "age": garou.age,
+                "edges": garou.edges_str,
+                "kinfolks": garou.value_of("kinfolk"),
+                "condition": garou.condition,
+                "position": garou.community_job,
                 "short_desc": garou.short_desc,
                 "rank": garou.rank
             }
@@ -191,7 +197,7 @@ class Sept(models.Model):
         data["statistics"] = self.build_statistics()
 
         self.finalize_offices()
-        print("data", data)
+        #print("data", data)
         self.treemap = json.dumps(data)
         return data
 
