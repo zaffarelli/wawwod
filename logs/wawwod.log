@@ -21015,3 +21015,9 @@ KeyError: 'Caitiffs'
 [05/08 22:48:19] Not Found: /favicon.ico
 [05/08 22:58:04] Not Found: /favicon.ico
 [05/08 23:02:26] Not Found: /favicon.ico
+[06/08 20:43:59] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[06/08 20:54:01] "GET /static/collector/traditions/.webp HTTP/1.1" 404 1836
+[06/08 20:55:14] "GET /static/collector/traditions/virtual_adept.webp HTTP/1.1" 404 1875
+[06/08 21:06:47] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[06/08 21:07:28] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[06/08 22:09:05] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863

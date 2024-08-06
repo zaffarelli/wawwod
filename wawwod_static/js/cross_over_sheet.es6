@@ -367,16 +367,16 @@ class CrossOverSheet extends WawwodSheet {
             .append('g')
             .attr('class', 'timeline_event')
         ;
-        timeline_in.append('text')
-            .style('font-family', me.user_font)
-            .style('font-size', current_font_size+"px")
-            .style('text-anchor', "start")
-            .style("fill", me.user_fill)
-            .style("stroke", me.user_stroke)
-            .style("stroke-width", '0.05pt')
-            .text(function (d) {
-                return d['date'] + ' - ' + d['item']
-            })
+//         timeline_in.append('text')
+//             .style('font-family', me.user_font)
+//             .style('font-size', current_font_size+"px")
+//             .style('text-anchor', "start")
+//             .style("fill", me.user_fill)
+//             .style("stroke", me.user_stroke)
+//             .style("stroke-width", '0.05pt')
+//             .text(function (d) {
+//                 return d['date'] + ' - ' + d['item']
+//             })
         let timeline_in_note = timeline_in.append('text')
             .attr('class', 'timeline_in_notes')
             .attr('id', function(d) { return 'timeline_in_notes_'+d['idx'] })

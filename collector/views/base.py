@@ -121,7 +121,7 @@ def get_list(request, pid=1, slug=None):
                                                      creature__in=['garou', 'kinfolk', 'fomori']).order_by('name')
         elif 'ccm' == slug:
             creature_items = Creature.objects.filter(chronicle=chronicle.acronym,
-                                                     creature__in=['mortal', 'ghoul', 'kinfolk', 'fomori']).order_by(
+                                                     creature__in=['mortal', 'ghoul', 'kinfolk', 'fomori', 'kithain']).order_by(
                 'name')
         elif 'ccs' == slug:
             creature_items = Creature.objects.filter(chronicle=chronicle.acronym,

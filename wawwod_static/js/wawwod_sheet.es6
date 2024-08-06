@@ -1401,30 +1401,32 @@ xmlns:xlink="http://www.w3.org/1999/xlink" width="' + me.width + '" height="' + 
                 y = 0,//tgt.attr("y"),
                 lineHeight = font_size * 1.1
             ;
-            let tspan = tgt.text(null).append("tspan")
-                .attr("class", "wrapped")
+            tgt.text("")
+            let tspan = tgt.append("tspan")
+                .attr("class", "to_be_blanked")
                 .attr("x", x)
                 .attr('y', y)
                 .attr("dy", 0)
                 .style("font-size", font_size + 'px')
-                .style("fill","#801010")
-                .style("stroke","#801010")
-                .style("stroke-width", '0.05pt')
+                .style("font-family","Khand")
+                .style("fill","#101010")
+                .style("stroke","#101010")
+                .style("stroke-width", '0.50pt')
             ;
 
             while (word = words.pop()) {
                 if (word == "µ"){
+                    word = ""
                     tspan.text(line.join(" "));
                     line = [];
                     tspan = tgt.append("tspan")
-                        .attr("class", "wrapped")
                         .attr("x", x)
                         .attr('y', y)
                         .attr("dy", ++lineNumber * lineHeight)
                         .style("font-size", font_size + 'px')
                         .style("stroke-width", '0.05pt')
-                        .style("fill","#108010")
-                        .style("stroke","#108010")
+                        .style("fill","#505050")
+                        .style("stroke","#505050")
                         .text(word)
 
                 }else{
@@ -1440,8 +1442,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" width="' + me.width + '" height="' + 
                             .attr("dy", ++lineNumber * lineHeight)
                             .style("font-size", font_size + 'px')
                             .style("stroke-width", '0.05pt')
-                           .style("fill","#101080")
-                            .style("stroke","#101080")
+                            .style("fill","#505050")
+                            .style("stroke","#505050")
                             .text(word)
                     }
                 }
