@@ -47,6 +47,7 @@ class Gift(models.Model):
     alternative_name = models.CharField(max_length=128, default='', blank=True)
     level = models.PositiveIntegerField(default=0)
     code = models.CharField(max_length=256, default='', blank=True)
+    pretty_str = models.CharField(max_length=256, default='', blank=True)
     breeds = models.CharField(default='...', max_length=3)
     auspices = models.CharField(default='.....', max_length=5)
     tribes = models.CharField(default='................', max_length=16)
@@ -88,6 +89,7 @@ class Gift(models.Model):
     def fix(self):
         from collector.utils.wod_reference import ALL_TRIBES, BREEDS, AUSPICES
         self.code = f'{self.name.title()} ({self.level})'.upper()
+        self.pretty_str = f'{self.name} ({self.level})'
         breeds = '___'
         auspices = '_____'
         tribes = '________________'
@@ -145,7 +147,7 @@ class Gift(models.Model):
 
 
 class GiftAdmin(admin.ModelAdmin):
-    list_display = ['code', 'references', 'alternative_name', 'description']
+    list_display = ['pretty_str', 'references', 'alternative_name', 'description']
     ordering = ["level","name",'-breeds', '-auspices', '-tribes']
     list_filter = ['level','breed_0', 'breed_1', 'breed_2', 'auspice_0', 'auspice_1', 'auspice_2', 'auspice_3', 'auspice_4',
                    'tribe_0', 'tribe_1', 'tribe_2', 'tribe_3', 'tribe_4', 'tribe_5', 'tribe_6', 'tribe_7', 'tribe_8',

@@ -9,3 +9,4 @@ class CollectorConfig(AppConfig):
         import collector.signals.adventures
         import collector.signals.seasons
         import collector.signals.septs
+        import collector.signals.gifts

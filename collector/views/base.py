@@ -26,13 +26,16 @@ import datetime
 from astral import moon
 
 logger = logging.Logger(__name__)
-chronicle = get_current_chronicle()
+
+
+
 
 
 def prepare_index(request):
     chronicles = []
     players = []
     cities = []
+    chronicle = get_current_chronicle()
     plist = Creature.objects.filter(chronicle=chronicle.acronym).exclude(player='').exclude(adventure="").order_by(
         'adventure')
     print(plist)
@@ -88,8 +91,8 @@ def change_chronicle(request, slug=None):
 
 def get_list(request, pid=1, slug=None):
     chronicle = get_current_chronicle()
-    print(slug)
-    print(chronicle.acronym)
+    # print(slug)
+    # print(chronicle.acronym)
     if is_ajax(request):
         if 'vtm' == slug:
             print('vampires')

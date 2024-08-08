@@ -129,6 +129,13 @@ $independents_fill: #0c253b;
       text-align: justify;
 
     }
+    &.button{
+        color:black;
+        background:silver;
+        &:hover{
+            background:orangered;
+            }
+    }
   }
   & .shard {
     background: $panel_smooth_background;
@@ -149,6 +156,9 @@ $independents_fill: #0c253b;
     &:hover {
       border-color: $panel_color;
     }
+  }
+  & .userinput{
+      font-width: "Syne Mono";
   }
 }
 

@@ -129,14 +129,29 @@ class WawwodCollector {
         $('.action').off().on('click', function (event) {
             let action = $(this).attr('action');
             let param = $(this).attr('param');
-            let stories = me.d3.getStories();
-            let url = 'ajax/action/' + action + '/' + param + "__" + stories + '/';
+            let url = ""
+            let stories = ""
+
+            if (action == "quaestor"){
+                param = $("#user_command").val()
+                url = 'ajax/action/' + action + '/' + param.replaceAll(":","___") +'/';
+            }else{
+                stories = me.d3.getStories();
+                url = 'ajax/action/' + action + '/' + param + "__" + stories + '/';
+                }
             $.ajax({
                 url: url,
                 success: function (answer) {
-                    let d = JSON.parse(answer["changes_on_scenes"])
-                    me.d3.changeScenes(d);
-                    me.rebootLinks();
+                    if (action == "quaestor"){
+                        //let d = JSON.parse(answer.data)
+                        console.log(answer.rationale)
+                        $("#text_edit").html(me.makeGiftsList(answer.data))
+                        $("#user_command").val("")
+                    }else{
+                        let d = JSON.parse(answer.changes_on_scenes)
+                        me.d3.changeScenes(d);
+                        me.rebootLinks();
+                    }
                 },
                 error: function (answer) {
                     console.error(answer);
@@ -144,6 +159,17 @@ class WawwodCollector {
                 },
             });
         });
+    }
+
+    makeGiftsList(arr){
+        let me = this
+        let txt = ""
+//         console.log(arr)
+        _.forEach(arr, (v) => {
+            txt += `${v.name} (${v.level}) [${v.references}]\n`
+//             console.log(txt)
+        });
+        return txt
     }
 
     registerJump() {

@@ -5,22 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c5f4ae22-1e7a-419c-ac9f-80da089b72d4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/collector/migrations/0087_gift_references.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collector/utils/quaestor.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backup/20240809/adventure.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backup/20240809/archetypes.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backup/20240809/backgrounds.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backup/20240809/chronicles.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backup/20240809/cities.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backup/20240809/creatures.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backup/20240809/disciplines.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backup/20240809/districts.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backup/20240809/gifts.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backup/20240809/hotspots.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backup/20240809/places.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backup/20240809/rites.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backup/20240809/scenes.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backup/20240809/stories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/collector/migrations/0088_gift_pretty_str.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/collector/signals/gifts.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/apps.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/collector/models/gifts.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/models/gifts.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/static/collector/css/_basics.scss" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/collector/css/_basics.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/static/collector/css/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/collector/css/main.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/static/js/collector.es6" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/js/collector.es6" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/collector/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/templates/collector/page/current_chronicle_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/collector/templates/collector/page/current_chronicle_details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/utils/helper.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/utils/helper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/signals/creatures.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/signals/creatures.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/collector/views/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/views/base.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/wawwod.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/wawwod.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wawwod.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wawwod_static/collector/css/_basics.scss" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/collector/css/_basics.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_static/collector/css/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/collector/css/main.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_static/js/collector.es6" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/js/collector.es6" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,20 +66,20 @@
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/zaffarelli/Projects/skynet/supervisor&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.tabs&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "/home/zaffarelli/Projects/wawwod/collector/signals",
+    "settings.editor.selected.configurable": "editor.preferences.tabs"
   }
-}</component>
+}]]></component>
   <component name="PyDebuggerOptionsProvider">
     <option name="mySaveCallSignatures" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/collector/templates/collector" />
       <recent name="$PROJECT_DIR$/collector/signals" />
+      <recent name="$PROJECT_DIR$/collector/templates/collector" />
       <recent name="$PROJECT_DIR$/collector/models" />
       <recent name="$PROJECT_DIR$/collector/static/collector/auspices" />
       <recent name="$PROJECT_DIR$/collector/static/js" />
