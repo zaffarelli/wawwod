@@ -1,7 +1,7 @@
 from django.urls import path, re_path
 from collector.views.base import index, get_list, updown, userinputastext, userinput, add_creature, change_chronicle, \
     display_gaia_wheel, display_dashboard, display_lineage, display_crossover_sheet, add_kindred, svg_to_pdf, \
-    save_to_svg, display_sept, moon_phase, calendar, display_sept_rosters
+    save_to_svg, display_sept, moon_phase, calendar, display_sept_rosters, quaestor
 from collector.views.actions import change_settings, refix_all, extract_mechanics, extract_per_group, extract_raw, \
     extract_roster, randomize, balance, refix_all
 from collector.views.creature_views import CreatureDetailView
@@ -37,6 +37,7 @@ urlpatterns = [
     re_path(r'^api/balance/(?P<slug>\w+)/$', balance, name='balance'),
     re_path(r'^api/randomize/(?P<slug>\w+)/$', randomize, name='randomize'),
     re_path(r'^api/moon_phase/$', moon_phase, name='moon_phase'),
-    re_path(r'^calendar/(?P<year>\w+)/$', calendar, name='calendar')
+    re_path(r'^calendar/(?P<year>\w+)/$', calendar, name='calendar'),
+    re_path(r'^ajax/action/quaestor/(?P<slug>\w+)/$', quaestor, name='quaestor')
 ]
 

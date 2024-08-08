@@ -76,7 +76,7 @@ body {
     overflow-x: hide;
     overflow-y: scroll;
 
-    & input#userinput, & #text_edit {
+    & input.userinput, & #text_edit {
       order: 2;
       border: 1px solid silver;
       border-radius: 5px;

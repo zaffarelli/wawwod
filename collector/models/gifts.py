@@ -1,47 +1,45 @@
 from django.db import models
 from django.contrib import admin
-from datetime import datetime
-from django.db.models.signals import pre_save, post_save
-from django.dispatch import receiver
-import json
 import yaml
 from yaml.loader import SafeLoader
 import logging
 
+
+
 logger = logging.Logger(__name__)
 
-BREEDS = (
-    ('0', 'Homid'),
-    ('1', 'Metis'),
-    ('2', 'Lupus')
-)
-
-AUSPICES = (
-    ('0', 'Ragabash'),
-    ('1', 'Theurge'),
-    ('2', 'Philodox'),
-    ('3', 'Galliard'),
-    ('4', 'Ahroun')
-)
-
-TRIBES = (
-    ('0', 'Black Furies'),
-    ('1', 'Black Spiral Dancers'),
-    ('2', 'Bone Gnawers'),
-    ('3', 'Bunyips'),
-    ('4', 'Children of Gaia'),
-    ('5', 'Croatans'),
-    ('6', 'Fiannas'),
-    ('7', 'Glass Walkers'),
-    ('8', 'Gets of Fenris'),
-    ('9', 'Red Talons'),
-    ('10', 'Silent Striders'),
-    ('11', 'Silver Fangs'),
-    ('12', 'Stargazers'),
-    ('13', 'Uktenas'),
-    ('14', 'Wendigos'),
-    ('15', 'White Howlers'),
-)
+# CH_BREEDS = (
+#     ('0', 'Homid'),
+#     ('1', 'Metis'),
+#     ('2', 'Lupus')
+# )
+#
+# CH_AUSPICES = (
+#     ('0', 'Ragabash'),
+#     ('1', 'Theurge'),
+#     ('2', 'Philodox'),
+#     ('3', 'Galliard'),
+#     ('4', 'Ahroun')
+# )
+#
+# CH_TRIBES = (
+#     ('0', 'Black Furies'),
+#     ('1', 'Black Spiral Dancers'),
+#     ('2', 'Bone Gnawers'),
+#     ('3', 'Bunyips'),
+#     ('4', 'Children of Gaia'),
+#     ('5', 'Croatans'),
+#     ('6', 'Fiannas'),
+#     ('7', 'Glass Walkers'),
+#     ('8', 'Gets of Fenris'),
+#     ('9', 'Red Talons'),
+#     ('10', 'Silent Striders'),
+#     ('11', 'Silver Fangs'),
+#     ('12', 'Stargazers'),
+#     ('13', 'Uktenas'),
+#     ('14', 'Wendigos'),
+#     ('15', 'White Howlers'),
+# )
 
 
 class Gift(models.Model):
@@ -84,29 +82,38 @@ class Gift(models.Model):
     description = models.TextField(max_length=1024, blank=True, default='')
     system = models.TextField(max_length=1024, blank=True, default='')
 
+    references = models.CharField(max_length=256, blank=True, default='')
+
+
     def fix(self):
+        from collector.utils.wod_reference import ALL_TRIBES, BREEDS, AUSPICES
         self.code = f'{self.name.title()} ({self.level})'.upper()
         breeds = '___'
         auspices = '_____'
         tribes = '________________'
+        references = []
         for n in range(3):
             if getattr(self, f'breed_{n}') == True:
                 breeds = breeds[0:n] + 'X' + breeds[n + 1:]
+                references.append(BREEDS[n])
             else:
                 breeds = breeds[0:n] + 'o' + breeds[n + 1:]
         for n in range(5):
             if getattr(self, f'auspice_{n}') == True:
                 auspices = auspices[0:n] + 'X' + auspices[n + 1:]
+                references.append(AUSPICES[n])
             else:
                 auspices = auspices[0:n] + 'o' + auspices[n + 1:]
         for n in range(16):
             if getattr(self, f'tribe_{n}') == True:
                 tribes = tribes[0:n] + 'X' + tribes[n + 1:]
+                references.append(ALL_TRIBES[n])
             else:
                 tribes = tribes[0:n] + 'o' + tribes[n + 1:]
         self.breeds = breeds
         self.auspices = auspices
         self.tribes = tribes
+        self.references = ", ".join(references)
 
     @property
     def gift_active_sources(self):
@@ -138,7 +145,7 @@ class Gift(models.Model):
 
 
 class GiftAdmin(admin.ModelAdmin):
-    list_display = ['code', 'breeds', 'auspices', 'tribes', 'alternative_name', 'description']
+    list_display = ['code', 'references', 'alternative_name', 'description']
     ordering = ["level","name",'-breeds', '-auspices', '-tribes']
     list_filter = ['level','breed_0', 'breed_1', 'breed_2', 'auspice_0', 'auspice_1', 'auspice_2', 'auspice_3', 'auspice_4',
                    'tribe_0', 'tribe_1', 'tribe_2', 'tribe_3', 'tribe_4', 'tribe_5', 'tribe_6', 'tribe_7', 'tribe_8',

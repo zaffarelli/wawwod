@@ -43,3 +43,4 @@ def refix(modeladmin, request, queryset):
         item.fix()
         item.save()
     short_description = 'Refix'
+

@@ -1,9 +1,9 @@
-<ul>
+<ul style="list-style-type: none;">
     {% for sept in septs %}
     <li class="display" action="septs" param="{{sept.rid}}" title="{{sept.notes}}"><i class="fa fa-users"></i> {{sept.name}}</li>
     {% endfor %}
 </ul>
-<ul>
+<ul style="list-style-type: none;">
     {% for ci in cities  %}
     <li class="display" action="map" param="{{ ci.tag }}"><i class="fa fa-map"></i> City Map: {{ ci.name}}</li>
     {% endfor %}

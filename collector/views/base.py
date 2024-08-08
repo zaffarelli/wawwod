@@ -545,3 +545,14 @@ def calendar(request, year=None):
     context = prepare_index(request)
     context["calendar"] = months
     return render(request, 'collector/page/calendar.html', context=context)
+
+def quaestor(request, slug=None):
+    response = {}
+    if is_ajax(request):
+        from collector.utils.quaestor import Quaestor
+        q = Quaestor()
+        s,r,d = q.perform(slug)
+        response["status"] = s
+        response["rationale"] = r
+        response["data"] = d
+    return JsonResponse(response)
