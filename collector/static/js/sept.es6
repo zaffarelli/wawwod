@@ -327,7 +327,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink"> \
 
         let ox = 10, oy = 10
 
-        d3.select(me.parent).selectAll("svg.sept").remove();
+        d3.select(me.parent).selectAll("svg").remove();
         let pwidth = d3.select(me.parent).style("width");
         let pheight = d3.select(me.parent).style("height");
         let pox = -(parseInt(pwidth)/2);
@@ -499,7 +499,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink"> \
     zoomActivate() {
         let me = this;
         let zoom = d3.zoom()
-            .scaleExtent([0.125, 4])
+            .scaleExtent([0.25, 4])
             .on('zoom', function (event) {
                 me.vis.attr('transform', event.transform)
             });

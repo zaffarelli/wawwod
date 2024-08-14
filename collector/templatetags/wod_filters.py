@@ -120,10 +120,10 @@ def as_editable_updown(value, options=''):
 
 @register.filter(name='as_rank')
 def as_rank(value):
-    if int(value) <= len(RANKS):
-        rank = RANKS[int(value)-1]
-    else:
-        rank = 'none'
+    rank = "none"
+    if value is not None:
+        if int(value) <= len(RANKS):
+            rank = RANKS[int(value)]
     return rank
 
 

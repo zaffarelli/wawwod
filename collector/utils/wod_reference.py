@@ -6,7 +6,7 @@ logger = logging.Logger(__name__)
 
 def get_current_chronicle():
     # When migrating
-    #return None
+    # return None
     ch = None
     try:
         current_chronicle = Chronicle.objects.filter(is_current=True).first()
@@ -120,8 +120,7 @@ STATS_NAMES = {
                    'stealth', 'survival'],
         'knowledges': ['academics', 'computer', 'enigmas', 'investigation', 'law', 'linguistics', 'medicine',
                        'occult', 'politics', 'science'],
-        'backgrounds': ['allies', 'ancestors', 'contacts', 'equipment', 'favors', 'pure-breed', 'renown', 'resources',
-                        'status', 'true faith']
+        'backgrounds': ['allies', 'contacts', 'equipment', 'favors', 'mentor', 'pure-breed', 'renown', 'resources']
     },
     'mage': {
         'attributes': ['strength', 'dexterity', 'stamina', 'charisma', 'manipulation', 'appearance', 'perception',
@@ -220,8 +219,16 @@ STATS_TEMPLATES = {
     'kinfolk': {
         'attributes': '6/4/3',
         'abilities': '11/7/5',
-        'disciplines': '1',
-        'backgrounds': '7',
+        'traits': '0',
+        'backgrounds': '5',
+        'willpower': '3',
+        'freebies': '21'
+    },
+    'kithain': {
+        'attributes': '6/4/3',
+        'abilities': '11/7/5',
+        'traits': '0',
+        'backgrounds': '5',
         'willpower': '3',
         'freebies': '21'
     },
@@ -237,8 +244,9 @@ STATS_TEMPLATES = {
     'mortal': {
         'attributes': '6/4/3',
         'abilities': '11/7/5',
-        'disciplines': '1',
-        'backgrounds': '7',
+        'traits': '0',
+        'discipline': '0',
+        'backgrounds': '5',
         'willpower': '3',
         'freebies': '21'
     },
@@ -262,6 +270,19 @@ STATS_TEMPLATES = {
     },
 
 }
+
+
+def from_stats(creature, stats):
+    result = 0
+    src = STATS_TEMPLATES[creature]
+    if stats in src:
+        data = src[stats]
+        for v in data.split('/'):
+            result += int(v)
+    else:
+        print(f"Error: {creature} has no stats template for {stats}. Returning 0.")
+    return result
+
 
 ARCHETYPES = [
     'Alpha',
@@ -313,7 +334,70 @@ BREEDS = ['Homid', 'Metis', 'Lupus']
 
 AUSPICES = ['Ragabash', 'Theurge', 'Philodox', 'Galliard', 'Ahroun']
 
-RANKS = ['Cliath', 'Fostern', 'Adren', 'Athro', 'Elder']
+GAROU_RANKING_PER_AUSPICE = [
+    [  # Ragabash
+        {'total': 0, 'glory': -1, 'honor': -1, 'wisdom': -1},
+        {'total': 3, 'glory': -1, 'honor': -1, 'wisdom': -1},
+        {'total': 7, 'glory': -1, 'honor': -1, 'wisdom': -1},
+        {'total': 12, 'glory': -1, 'honor': -1, 'wisdom': -1},
+        {'total': 17, 'glory': -1, 'honor': -1, 'wisdom': -1},
+        {'total': 24, 'glory': -1, 'honor': -1, 'wisdom': -1}
+    ],
+    [  # Theurge
+        {'total': -1, 'glory': 0, 'honor': 0, 'wisdom': 0},
+        {'total': -1, 'glory': 0, 'honor': 0, 'wisdom': 3},
+        {'total': -1, 'glory': 1, 'honor': 0, 'wisdom': 5},
+        {'total': -1, 'glory': 2, 'honor': 1, 'wisdom': 7},
+        {'total': -1, 'glory': 4, 'honor': 2, 'wisdom': 9},
+        {'total': -1, 'glory': 5, 'honor': 3, 'wisdom': 10}
+    ],
+    [  # Philodox
+        {'total': -1, 'glory': 0, 'honor': 0, 'wisdom': 0},
+        {'total': -1, 'glory': 0, 'honor': 3, 'wisdom': 0},
+        {'total': -1, 'glory': 1, 'honor': 5, 'wisdom': 1},
+        {'total': -1, 'glory': 3, 'honor': 7, 'wisdom': 4},
+        {'total': -1, 'glory': 3, 'honor': 9, 'wisdom': 7},
+        {'total': -1, 'glory': 4, 'honor': 10, 'wisdom': 9}
+    ],
+    [  # Galliard
+        {'total': -1, 'glory': 0, 'honor': 0, 'wisdom': 0},
+        {'total': -1, 'glory': 2, 'honor': 0, 'wisdom': 1},
+        {'total': -1, 'glory': 4, 'honor': 0, 'wisdom': 3},
+        {'total': -1, 'glory': 6, 'honor': 1, 'wisdom': 5},
+        {'total': -1, 'glory': 8, 'honor': 2, 'wisdom': 6},
+        {'total': -1, 'glory': 10, 'honor': 3, 'wisdom': 8}
+    ],
+    [  # Ahroun
+        {'total': -1, 'glory': 0, 'honor': 0, 'wisdom': 0},
+        {'total': -1, 'glory': 2, 'honor': 1, 'wisdom': 0},
+        {'total': -1, 'glory': 5, 'honor': 3, 'wisdom': 1},
+        {'total': -1, 'glory': 7, 'honor': 5, 'wisdom': 1},
+        {'total': -1, 'glory': 9, 'honor': 7, 'wisdom': 2},
+        {'total': -1, 'glory': 10, 'honor': 8, 'wisdom': 3}
+    ],
+]
+
+
+def garou_rank_from_renown(dataset={"auspice": 0, "glory": 0, "honor": 0, "wisdom": 0}):
+    rank = -1
+    auspice_subset = GAROU_RANKING_PER_AUSPICE[dataset["auspice"]]
+    idx = 0
+    total = dataset["glory"] + dataset["honor"] + dataset["wisdom"]
+    for line in auspice_subset:
+        if line["total"] == -1:
+            if dataset["glory"] >= line["glory"] and \
+                    dataset["honor"] >= line["honor"] and \
+                    dataset["wisdom"] >= line["wisdom"]:
+                rank = idx
+        else:
+            if total >= line["total"]:
+                rank = idx
+        idx += 1
+    print(f"Rank -->{rank:2}")
+    return rank
+
+
+RANKS = ['Pup', 'Cliath', 'Fostern', 'Adren', 'Athro', 'Elder']
 
 FONTSET = ['Cinzel', 'Trade+Winds', 'Imprima', 'Roboto', 'Philosopher', 'Ruda', 'Khand', 'Allura', 'Gochi+Hand',
            'Reggae+One', 'Syne+Mono', 'Zilla+Slab', 'Spartan', 'Marcellus+SC', 'Splash', 'Trirong']
@@ -337,7 +421,7 @@ ALL_TRIBES = [
     "Stargazers",
     "Uktenas",
     "Wendigos",
-    "White Howlers",
+    "White Howlers"
 ]
 
 # Garou data
@@ -369,8 +453,11 @@ GM_SHORTCUTS = {
         ['perception', 'alertness'],
         ['perception', 'primal-urge'],
         ['dexterity', 'brawl'],
+        ['dexterity', 'dodge'],
+        ['dexterity', 'athletics'],
         ['stamina', 'primal-urge'],
         ['wits', 'enigmas'],
+        ['intelligence', 'occult'],
         ['appearance', 'subterfuge']
     ],
     'kindred': [

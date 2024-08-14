@@ -790,7 +790,7 @@ class WawwodSheet {
             oy += 0.5 * me.stepy;
             me.statText('Tribe', me.data['family'], ox + me.stepx * 16, oy, 'tribe', 'tribe', me.character);
             oy += 0.5 * me.stepy;
-            me.reinHagenStat('Rank', me.data['rank'], ox + me.stepx * 16, oy, 'rank', 'rank', me.character);
+            me.reinHagenStat('Rank', me.data['garou_rank'], ox + me.stepx * 16, oy, 'garou_rank', 'garou_rank', me.character);
 //             if (me.data['player']) {
 //                 oy += 1 * me.stepy;
 //                 me.statText('Experience', me.data['experience'], ox + me.stepx * 16, oy, 'sire', 'sire', me.character);
@@ -1001,8 +1001,8 @@ class WawwodSheet {
         });
         stat = 'shortcuts';
         me.config['shortcuts'].forEach(function (d, idx) {
-            let x = ox + me.stepx * 9 + Math.floor(idx / 7) * me.stepx * 7;
-            let y = oy + 0.5 * me.stepy * (idx % 7);
+            let x = ox + me.stepx * 9 + Math.floor(idx / 9) * me.stepx * 9;
+            let y = oy + 0.5 * me.stepy * (idx % 9);
             let w = d.split('=');
             if (me.blank) {
             } else {

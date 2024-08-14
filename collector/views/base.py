@@ -28,9 +28,6 @@ from astral import moon
 logger = logging.Logger(__name__)
 
 
-
-
-
 def prepare_index(request):
     chronicles = []
     players = []
@@ -67,7 +64,8 @@ def prepare_index(request):
         cities.append(city)
 
     misc = {"version": settings.VERSION}
-    context = {'chronicles': chronicles, 'fontset': FONTSET, 'players': players, 'adventures': adventures, 'seasons':seasons,
+    context = {'chronicles': chronicles, 'fontset': FONTSET, 'players': players, 'adventures': adventures,
+               'seasons': seasons,
                'septs': septs, 'cities': cities, 'miscellaneous': misc, "weeks": moon_phase(None)}
 
     return context
@@ -120,11 +118,12 @@ def get_list(request, pid=1, slug=None):
                                                      hidden=False).order_by('creature',
                                                                             '-expectedfreebies')
         elif 'pen' == slug:
-            creature_items = Creature.objects.filter(chronicle=chronicle.acronym, faction='Pentex',
+            creature_items = Creature.objects.filter(chronicle=chronicle.acronym, faction__in=['Pentex','Wyrm'],
                                                      creature__in=['garou', 'kinfolk', 'fomori']).order_by('name')
         elif 'ccm' == slug:
             creature_items = Creature.objects.filter(chronicle=chronicle.acronym,
-                                                     creature__in=['mortal', 'ghoul', 'kinfolk', 'fomori', 'kithain']).order_by(
+                                                     creature__in=['mortal', 'ghoul', 'kinfolk', 'fomori',
+                                                                   'kithain']).order_by(
                 'name')
         elif 'ccs' == slug:
             creature_items = Creature.objects.filter(chronicle=chronicle.acronym,
@@ -192,6 +191,7 @@ def userinput(request):
         return JsonResponse(answer)
     return HttpResponse(status=204)
 
+
 @csrf_exempt
 def userinputastext(request):
     if is_ajax(request):
@@ -212,7 +212,6 @@ def userinputastext(request):
                 answer['new_value'] = '<b>ERROR!</b>'
         return JsonResponse(answer)
     return HttpResponse(status=204)
-
 
 
 def add_creature(request, slug=None):
@@ -369,14 +368,18 @@ def display_sept(request, slug=None):
         if slug is None:
             return HttpResponse(status=204)
         else:
+            sept = Sept.objects.get(rid=slug)
+            sept.need_fix = True
+            sept.save()
             data = Sept.objects.get(rid=slug).build_sept()
             settings = {'fontset': FONTSET}
             sept_context = {'settings': json.dumps(settings, sort_keys=True, indent=4),
                             'data': json.dumps(data, sort_keys=True, indent=4)};
         return JsonResponse(sept_context)
 
+
 def display_sept_rosters(request, slug=None):
-    #if is_ajax(request):
+    # if is_ajax(request):
     from collector.models.septs import Sept
     if slug is None:
         return HttpResponse(status=204)
@@ -393,9 +396,6 @@ def display_sept_rosters(request, slug=None):
             lines.append(c)
 
         return HttpResponse("\n".join(lines), content_type='text/plain', charset="utf-8")
-
-
-
 
 
 @csrf_exempt
@@ -437,7 +437,7 @@ def svg_to_pdf(request, slug):
 
 @csrf_exempt
 def all_in_one_pdf(rid):
-    #print(f'Starting PDFing for [{rid}].')
+    # print(f'Starting PDFing for [{rid}].')
     logger.info(f'Starting PDFing for [{rid}].')
     res = []
     from PyPDF2 import PdfMerger
@@ -449,7 +449,7 @@ def all_in_one_pdf(rid):
     pdfs.sort()
     i = 0
     for pdf in pdfs:
-        if pdf.startswith("character_sheet" + rid+"_p"):
+        if pdf.startswith("character_sheet" + rid + "_p"):
             # print(pdf)
             merger.append(open(media_results + pdf, 'rb'))
             i += 1
@@ -486,7 +486,7 @@ def moon_phase(request, dt=None):
                         started = True
                     else:
                         # print("before month",cur_day, dow,cur_day.weekday() )
-                        aweek.append({"str": "None", "num": "", "color": "#303030","blank":True})
+                        aweek.append({"str": "None", "num": "", "color": "#303030", "blank": True})
                 if started:
                     import math
                     # print("started")
@@ -510,12 +510,12 @@ def moon_phase(request, dt=None):
                     #     str = icons[7]
                     aa = int(x * 100)
                     ab = math.floor(aa / 350)
-                    ac = ab -1
+                    ac = ab - 1
                     str = icons[int(ac)]
                     col = "#909090"
                     if cur_day == datetime.date.today():
                         col = "#F0F0F0"
-                    aweek.append({"str": f"{str}", "num": f"{cur_day.day:02}", "color": col,"blank":False})
+                    aweek.append({"str": f"{str}", "num": f"{cur_day.day:02}", "color": col, "blank": False})
                     day += 1
             else:
                 txt = "out"
@@ -523,7 +523,7 @@ def moon_phase(request, dt=None):
                     out = True
                     txt = "HERE"
                 # print("after month", cur_day)
-                aweek.append({"str": "None", "num": "", "color": "#303030", "blank":True})
+                aweek.append({"str": "None", "num": "", "color": "#303030", "blank": True})
                 day += 1
             dow += 1
         print(aweek)
@@ -542,20 +542,22 @@ def calendar(request, year=None):
     months = []
     for m in range(12):
         dt = datetime.date(year=int(year), month=m + 1, day=1)
-        x = moon_phase(request,dt)
+        x = moon_phase(request, dt)
         months.append(x)
 
     context = prepare_index(request)
     context["calendar"] = months
     return render(request, 'collector/page/calendar.html', context=context)
 
+
 def quaestor(request, slug=None):
     response = {}
     if is_ajax(request):
         from collector.utils.quaestor import Quaestor
         q = Quaestor()
-        s,r,d = q.perform(slug)
+        s, r, d = q.perform(slug)
         response["status"] = s
         response["rationale"] = r
         response["data"] = d
+        print(response)
     return JsonResponse(response)

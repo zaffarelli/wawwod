@@ -4,7 +4,7 @@ import json
 class Quaestor:
     def __init__(self):
         self.request = ""
-        self.separator = "___"
+        self.separator = "_xsepx_"
 
     def interpret(self):
         result = ""
@@ -49,13 +49,13 @@ class Quaestor:
         from collector.models.gifts import Gift
         from collector.templatetags.wod_filters import as_tribe_plural
         from collector.utils.wod_reference import ALL_TRIBES
-        fb = {f"breed_{creature.breed}":True,"level__lte":int(creature.rank)}
+        fb = {f"breed_{creature.breed}":True,"level__lte":creature.garou_rank}
         datab = Gift.objects.filter(**fb).values("name","level","references")
-        fa = {f"auspice_{creature.auspice}": True,"level__lte":int(creature.rank)}
+        fa = {f"auspice_{creature.auspice}": True,"level__lte":creature.garou_rank}
         dataa = Gift.objects.filter(**fa).values("name","level","references")
         tribe = as_tribe_plural(creature.family)
         # print(tribe)
-        ft = {f"tribe_{ALL_TRIBES.index(tribe)}": True, "level__lte": int(creature.rank)}
+        ft = {f"tribe_{ALL_TRIBES.index(tribe)}": True, "level__lte": creature.garou_rank}
         datat = Gift.objects.filter(**ft).values("name", "level", "references")
         data = chain(datab,dataa,datat)
 

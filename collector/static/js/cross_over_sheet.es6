@@ -2,14 +2,14 @@ class CrossOverSheet extends WawwodSheet {
     constructor(data, parent, collector) {
         super(data, parent, collector);
         this.init();
-        this.release = "31.07";
+        this.release = "13.08";
 
     }
 
     init() {
         super.init();
         let me = this;
-        this.mark_overhead = true
+        this.mark_overhead = false
     }
 
     drawPages() {
@@ -28,7 +28,7 @@ class CrossOverSheet extends WawwodSheet {
             me.midline(9);
             me.midline(16);
             me.midline(23);
-            me.midline(30);
+            me.midline(29);
             // Title
             let txt = me.sheet_type(me.data['creature']).toUpperCase();
             me.decorationText(12, 2.75, 0, 'middle', me.logo_font, me.fat_font_size, "#D0D0D0", "#E0E0E0", 1, me.scenario, me.back, 0.75);
@@ -864,7 +864,7 @@ class CrossOverSheet extends WawwodSheet {
             me.fillAbilities(9.5 * me.stepy);
             me.fillAdvantages(16.5 * me.stepy);
             me.fillOther(23.5 * me.stepy);
-            me.fillSpecial(30.5 * me.stepy);
+            me.fillSpecial(29.5 * me.stepy);
         } else if (me.page === 1) {
             me.fillBackgroundNotes(4 * me.stepy);
             me.fillTimeline(4 * me.stepy);

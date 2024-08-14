@@ -22,7 +22,7 @@
             &nbsp;({{c.nickname}})
         {%endif%}
         {% if c.creature == 'garou' %}
-            <br/>{{c.rank|as_rank}} (Rank {{c.rank}}) {{c.breed|as_breed}} {{c.auspice|as_auspice}} of the {{ c.family|as_tribe_plural }}
+            <br/>{{c.garou_rank|as_rank}} (Rank {{c.garou_rank}}) {{c.breed|as_breed}} {{c.auspice|as_auspice}} of the {{ c.family|as_tribe_plural }}
             <br/>{{c.group}}
         {% elif c.creature == 'kindred' %}
             <br/>{{c.background3|as_generation }} generation {{ c.family }}
