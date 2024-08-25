@@ -23321,3 +23321,1598 @@ ValueError: Field 'level' expected a number but got ''.
 [15/08 01:30:35] "GET /ajax/action/quaestor// HTTP/1.1" 404 10280
 [15/08 01:33:33] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
 [15/08 01:36:37] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[15/08 10:07:08] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[24/08 23:04:03] Not Found: /weaver_code
+[24/08 23:04:03] "GET /weaver_code HTTP/1.1" 404 10448
+[24/08 23:04:03] Not Found: /favicon.ico
+[24/08 23:04:11] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[24/08 23:04:11] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[24/08 23:04:11] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[24/08 23:04:11] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[24/08 23:06:19] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[24/08 23:06:19] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[24/08 23:06:19] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[24/08 23:06:28] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[24/08 23:06:28] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[24/08 23:06:28] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[24/08 23:06:53] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[24/08 23:06:54] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[24/08 23:06:54] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[24/08 23:06:54] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[24/08 23:07:02] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[24/08 23:07:03] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[24/08 23:07:03] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[24/08 23:07:03] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[24/08 23:07:32] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[24/08 23:07:32] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[24/08 23:07:32] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[24/08 23:07:32] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[24/08 23:08:07] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[24/08 23:08:07] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[24/08 23:08:07] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[24/08 23:08:07] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[24/08 23:08:23] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[24/08 23:08:23] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[24/08 23:08:23] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[24/08 23:08:23] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[24/08 23:08:48] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[24/08 23:08:48] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[24/08 23:08:48] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[24/08 23:08:48] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[24/08 23:09:06] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[24/08 23:09:06] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[24/08 23:09:06] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[24/08 23:09:06] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[24/08 23:09:18] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[24/08 23:09:18] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[24/08 23:09:18] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[24/08 23:09:18] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[24/08 23:09:38] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[24/08 23:09:38] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[24/08 23:09:38] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[24/08 23:09:38] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[24/08 23:09:50] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[24/08 23:09:50] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[24/08 23:09:50] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[24/08 23:09:50] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[24/08 23:10:00] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[24/08 23:10:00] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[24/08 23:10:00] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[24/08 23:10:00] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[24/08 23:10:26] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[24/08 23:10:27] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[24/08 23:10:27] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[24/08 23:10:27] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[24/08 23:10:33] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[24/08 23:10:34] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[24/08 23:10:34] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[24/08 23:10:34] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[24/08 23:10:42] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[24/08 23:10:43] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[24/08 23:10:43] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[24/08 23:10:43] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[24/08 23:10:55] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[24/08 23:10:55] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[24/08 23:10:55] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[24/08 23:10:55] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[24/08 23:11:16] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[24/08 23:11:16] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[24/08 23:11:16] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[24/08 23:11:16] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[24/08 23:11:29] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[24/08 23:11:29] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[24/08 23:11:29] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[24/08 23:11:29] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[24/08 23:11:39] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[24/08 23:11:39] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[24/08 23:11:39] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[24/08 23:11:39] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[24/08 23:12:19] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[24/08 23:12:19] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[24/08 23:12:19] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[24/08 23:12:19] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[24/08 23:14:10] Internal Server Error: /weaver_code/1/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 563, in weaver_code
+    return render(request, 'collector/page/weaver_code.html', context=context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/defaulttags.py", line 241, in render
+    nodelist.append(node.render_annotated(context))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/loader_tags.py", line 199, in render
+    template = context.template.engine.select_template(template_name)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/engine.py", line 206, in select_template
+    return self.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 196, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 510, in parse
+    raise self.error(token, e)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/defaulttags.py", line 859, in do_for
+    sequence = parser.compile_filter(bits[in_index + 1])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 597, in compile_filter
+    return FilterExpression(token, self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 698, in __init__
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '(3)' from 'range(3)'
+[24/08 23:14:10] "GET /weaver_code/1/ HTTP/1.1" 500 283541
+[24/08 23:14:10] Not Found: /favicon.ico
+[24/08 23:16:04] Internal Server Error: /weaver_code/1/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 585, in weaver_code
+    return render(request, 'collector/page/weaver_code.html', context=context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/defaulttags.py", line 241, in render
+    nodelist.append(node.render_annotated(context))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/loader_tags.py", line 210, in render
+    return template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 173, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/defaulttags.py", line 196, in render
+    values = list(values)
+             ^^^^^^^^^^^^
+TypeError: 'int' object is not iterable
+[24/08 23:16:04] "GET /weaver_code/1/ HTTP/1.1" 500 269533
+[24/08 23:16:04] Not Found: /favicon.ico
+[24/08 23:16:41] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[24/08 23:16:41] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[24/08 23:16:42] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[24/08 23:17:14] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[24/08 23:17:14] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[24/08 23:17:14] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[24/08 23:17:45] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[24/08 23:17:45] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[24/08 23:17:46] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[24/08 23:19:47] Internal Server Error: /weaver_code/1/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 581, in weaver_code
+    return render(request, 'collector/page/weaver_code.html', context=context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/backends/django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 196, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 510, in parse
+    raise self.error(token, e)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/defaulttags.py", line 860, in do_for
+    nodelist_loop = parser.parse(
+                    ^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 510, in parse
+    raise self.error(token, e)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/loader_tags.py", line 335, in do_include
+    value = token_kwargs(remaining_bits, parser, support_legacy=False)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 1111, in token_kwargs
+    kwargs[key] = parser.compile_filter(value)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 597, in compile_filter
+    return FilterExpression(token, self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 698, in __init__
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: ',' from 'm,'
+[24/08 23:19:47] "GET /weaver_code/1/ HTTP/1.1" 500 220427
+[24/08 23:19:47] Not Found: /favicon.ico
+[24/08 23:19:47] "GET /favicon.ico HTTP/1.1" 404 10448
+[24/08 23:20:22] Internal Server Error: /weaver_code/1/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 581, in weaver_code
+    return render(request, 'collector/page/weaver_code.html', context=context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/backends/django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 196, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 510, in parse
+    raise self.error(token, e)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/defaulttags.py", line 860, in do_for
+    nodelist_loop = parser.parse(
+                    ^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 510, in parse
+    raise self.error(token, e)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/loader_tags.py", line 335, in do_include
+    value = token_kwargs(remaining_bits, parser, support_legacy=False)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 1111, in token_kwargs
+    kwargs[key] = parser.compile_filter(value)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 597, in compile_filter
+    return FilterExpression(token, self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 698, in __init__
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: ',' from 'm,'
+[24/08 23:20:22] "GET /weaver_code/1/ HTTP/1.1" 500 220156
+[24/08 23:20:22] Not Found: /favicon.ico
+[24/08 23:20:41] Internal Server Error: /weaver_code/1/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 581, in weaver_code
+    return render(request, 'collector/page/weaver_code.html', context=context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/backends/django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 196, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 510, in parse
+    raise self.error(token, e)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/defaulttags.py", line 860, in do_for
+    nodelist_loop = parser.parse(
+                    ^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 510, in parse
+    raise self.error(token, e)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/loader_tags.py", line 335, in do_include
+    value = token_kwargs(remaining_bits, parser, support_legacy=False)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 1111, in token_kwargs
+    kwargs[key] = parser.compile_filter(value)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 597, in compile_filter
+    return FilterExpression(token, self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 698, in __init__
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: ',' from 'm,'
+[24/08 23:20:41] "GET /weaver_code/1/ HTTP/1.1" 500 220155
+[24/08 23:20:42] Internal Server Error: /weaver_code/1/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 581, in weaver_code
+    return render(request, 'collector/page/weaver_code.html', context=context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/backends/django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 196, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 510, in parse
+    raise self.error(token, e)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/defaulttags.py", line 860, in do_for
+    nodelist_loop = parser.parse(
+                    ^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 510, in parse
+    raise self.error(token, e)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/loader_tags.py", line 335, in do_include
+    value = token_kwargs(remaining_bits, parser, support_legacy=False)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 1111, in token_kwargs
+    kwargs[key] = parser.compile_filter(value)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 597, in compile_filter
+    return FilterExpression(token, self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 698, in __init__
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: ',' from 'm,'
+[24/08 23:20:42] "GET /weaver_code/1/ HTTP/1.1" 500 220155
+[24/08 23:20:42] Not Found: /favicon.ico
+[24/08 23:21:14] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[24/08 23:21:14] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[24/08 23:21:14] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[24/08 23:21:37] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[24/08 23:21:37] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[24/08 23:21:37] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[24/08 23:21:37] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[24/08 23:22:23] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[24/08 23:22:24] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[24/08 23:22:24] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[24/08 23:22:24] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[24/08 23:22:36] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[24/08 23:22:36] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[24/08 23:22:36] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[24/08 23:22:36] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[24/08 23:39:17] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[24/08 23:39:18] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[24/08 23:39:18] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[24/08 23:39:18] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[24/08 23:40:01] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[24/08 23:40:01] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[24/08 23:40:01] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[24/08 23:40:17] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[24/08 23:40:17] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[24/08 23:40:17] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[24/08 23:40:47] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[24/08 23:40:47] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[24/08 23:40:47] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[24/08 23:41:06] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[24/08 23:41:06] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[24/08 23:41:06] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[24/08 23:51:22] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[24/08 23:51:22] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[24/08 23:51:22] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[24/08 23:52:43] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[24/08 23:52:44] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[24/08 23:52:44] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[24/08 23:52:44] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[24/08 23:53:12] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[24/08 23:53:12] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[24/08 23:53:12] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[24/08 23:54:36] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[24/08 23:54:37] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[24/08 23:54:37] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[24/08 23:54:37] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[24/08 23:56:29] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[24/08 23:56:29] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[24/08 23:56:29] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[24/08 23:56:32] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[24/08 23:56:32] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[24/08 23:56:32] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[24/08 23:56:32] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[24/08 23:57:49] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[24/08 23:57:49] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[24/08 23:57:49] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[24/08 23:57:49] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[24/08 23:57:56] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[24/08 23:59:04] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[24/08 23:59:04] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[24/08 23:59:04] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[24/08 23:59:04] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[25/08 00:00:35] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 00:00:35] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 00:00:35] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 00:02:11] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 00:02:11] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 00:02:12] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 00:02:37] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 00:02:37] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 00:02:37] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 00:03:30] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 00:03:30] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 00:04:01] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 00:04:01] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 00:04:59] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 00:04:59] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 00:05:46] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 00:05:46] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 00:05:46] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 00:11:46] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 00:11:46] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 00:11:46] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 00:11:46] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[25/08 00:12:21] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 00:12:21] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 00:12:21] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 00:13:31] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 00:13:31] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 00:13:31] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 00:14:48] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 00:14:48] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 00:14:48] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 00:20:16] Internal Server Error: /weaver_code/1/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 645, in weaver_code
+    n["letter"] = ord(v)
+                  ^^^^^^
+TypeError: ord() expected string of length 1, but int found
+[25/08 00:20:16] "GET /weaver_code/1/ HTTP/1.1" 500 94694
+[25/08 00:20:16] Not Found: /favicon.ico
+[25/08 00:20:37] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 00:20:37] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 00:20:37] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 00:21:13] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 00:21:13] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 00:21:13] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 00:21:48] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 00:21:48] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 00:21:48] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 00:22:24] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 00:22:24] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 00:22:35] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 00:22:35] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 00:23:02] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 00:23:02] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 00:24:39] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 00:24:39] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 00:27:13] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 00:27:13] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 00:32:42] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 00:32:43] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 00:32:43] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 00:32:43] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[25/08 00:33:10] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 00:33:10] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 00:33:10] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 00:38:26] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 00:38:26] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 00:38:26] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 01:16:21] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 01:16:21] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 01:16:21] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 01:16:21] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[25/08 01:18:10] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 01:18:10] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 01:18:10] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 01:19:17] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 01:19:17] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 01:19:17] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 01:19:17] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[25/08 01:19:35] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 01:19:35] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 01:19:35] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 01:20:02] Internal Server Error: /weaver_code/1/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 653, in weaver_code
+    n["letter"] = chr(v-65)
+                  ^^^^^^^^^
+ValueError: chr() arg not in range(0x110000)
+[25/08 01:20:02] "GET /weaver_code/1/ HTTP/1.1" 500 95908
+[25/08 01:20:02] Not Found: /favicon.ico
+[25/08 01:20:02] "GET /favicon.ico HTTP/1.1" 404 10448
+[25/08 01:21:16] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 01:21:17] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 01:21:17] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 01:21:17] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[25/08 01:21:34] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 01:21:34] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 01:21:34] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 01:23:35] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 01:23:35] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 01:23:35] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 01:24:43] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 01:24:43] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 01:24:43] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 01:26:18] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 01:26:18] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 01:26:18] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 01:27:09] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 01:27:09] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 01:27:09] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 01:27:10] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[25/08 01:28:06] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 01:28:06] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 01:28:06] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 01:29:19] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 01:29:19] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 01:29:19] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 01:29:26] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 01:29:26] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 01:29:26] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 01:29:26] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[25/08 01:29:41] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 01:29:41] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 01:29:41] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 01:31:16] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 01:31:16] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 01:31:16] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 01:47:46] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 01:47:46] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 01:47:46] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 01:47:46] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[25/08 01:48:41] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 01:48:41] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 01:48:41] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 01:48:41] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[25/08 01:49:18] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 01:49:18] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 01:49:18] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 01:51:17] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 01:51:17] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 01:51:17] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 01:51:30] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 01:51:30] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 01:51:30] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 01:52:56] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 01:52:56] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 01:52:56] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 01:53:41] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 01:53:41] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 01:53:53] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 01:53:53] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 01:56:03] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 01:56:03] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 01:56:03] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 02:00:27] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 02:00:28] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 02:00:28] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 02:00:28] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[25/08 02:04:10] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 02:04:10] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 02:04:10] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 02:04:10] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[25/08 02:14:33] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 02:14:33] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 02:14:33] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 02:14:33] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[25/08 02:15:05] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 02:15:05] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 02:15:05] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 02:15:05] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[25/08 02:16:54] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 02:16:54] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 02:16:54] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 02:16:54] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[25/08 02:17:41] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 02:17:41] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 02:17:41] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 02:18:12] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 02:18:12] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 02:18:12] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 02:18:12] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[25/08 02:18:54] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 02:18:54] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 02:18:54] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[25/08 02:18:54] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 02:20:41] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 02:20:41] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 02:20:41] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 03:43:16] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 03:43:16] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 03:43:16] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 03:43:16] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[25/08 03:43:29] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 03:43:29] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 03:43:29] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 03:43:29] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[25/08 03:43:38] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 03:43:38] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 03:43:38] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 03:43:39] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[25/08 03:44:06] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 03:44:06] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 03:44:06] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 03:44:06] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[25/08 03:44:11] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 03:44:11] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 03:44:11] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 03:44:11] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[25/08 03:44:17] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 03:44:17] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 03:44:17] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 03:44:17] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[25/08 03:44:28] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 03:44:29] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 03:44:29] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 03:44:29] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[25/08 03:44:34] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 03:44:35] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 03:44:35] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 03:44:35] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[25/08 03:46:59] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 03:46:59] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 03:46:59] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 03:46:59] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[25/08 03:47:51] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 03:47:51] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 03:47:51] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 03:47:51] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[25/08 03:53:39] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 03:53:39] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 03:53:39] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 03:53:39] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[25/08 03:55:25] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 03:55:25] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 03:55:26] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 04:11:10] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 04:11:10] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 04:11:10] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 04:11:10] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[25/08 04:11:29] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 04:11:29] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 04:11:29] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 04:12:10] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 04:12:11] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 04:12:11] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 04:12:11] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[25/08 04:14:05] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 04:14:05] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 04:14:05] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 04:14:21] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 04:14:21] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 04:14:21] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 04:14:32] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 04:14:32] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 04:14:32] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 04:24:14] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 04:24:14] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 04:27:15] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 04:27:15] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 04:27:15] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 04:27:16] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[25/08 04:30:54] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 04:30:54] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 04:30:54] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 04:34:57] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 04:34:57] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 04:34:57] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 04:34:57] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[25/08 04:38:15] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 04:38:15] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 04:38:15] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 04:38:15] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[25/08 04:45:15] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 04:45:15] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 04:45:15] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 04:45:15] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[25/08 04:47:27] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 04:47:27] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 04:47:27] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 04:47:28] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[25/08 04:47:59] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 04:48:00] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 04:48:00] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 04:48:00] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[25/08 04:48:52] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 04:48:52] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 04:48:52] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 04:48:52] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[25/08 16:18:35] Internal Server Error: /weaver_code/1/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 649, in weaver_code
+    x = ord(x)
+        ^^^^^^
+TypeError: ord() expected string of length 1, but int found
+[25/08 16:18:35] "GET /weaver_code/1/ HTTP/1.1" 500 93771
+[25/08 16:18:35] Not Found: /favicon.ico
+[25/08 16:18:35] "GET /favicon.ico HTTP/1.1" 404 10448
+[25/08 16:18:49] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 16:18:49] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 16:18:49] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 19:17:08] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 19:17:08] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 19:17:08] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 19:29:32] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 19:29:32] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 19:29:32] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 19:30:07] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 19:30:07] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 19:30:07] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 19:31:04] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 19:31:04] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 19:31:04] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 19:31:04] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[25/08 19:31:17] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 19:31:17] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 19:31:17] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 19:31:17] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[25/08 19:33:21] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 19:33:21] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 19:33:21] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 19:33:21] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[25/08 19:33:45] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 19:33:45] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 19:33:45] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 19:34:21] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 19:34:21] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 19:34:21] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 19:36:00] Internal Server Error: /weaver_code/1/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 666, in weaver_code
+    rune["on"] = split_cumulate(x)
+                 ^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 573, in split_cumulate
+    "x": p["x"] * defi["scaleX"]+defi["baseX"],
+         ~^^^^^
+KeyError: 'x'
+[25/08 19:36:00] "GET /weaver_code/1/ HTTP/1.1" 500 100110
+[25/08 19:36:00] Not Found: /favicon.ico
+[25/08 19:37:42] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 19:37:42] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 19:37:42] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 19:39:50] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 19:39:50] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 19:39:50] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 19:41:42] Internal Server Error: /weaver_code/1/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 602, in weaver_code
+    for d in defi.x:
+             ^^^^^^
+AttributeError: 'dict' object has no attribute 'x'
+[25/08 19:41:42] "GET /weaver_code/1/ HTTP/1.1" 500 95218
+[25/08 19:42:05] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 19:42:05] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 19:42:05] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 19:42:19] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 19:42:19] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 19:42:19] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 19:42:19] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[25/08 19:42:29] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 19:42:29] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 19:42:29] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 19:42:38] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 19:42:38] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 19:42:38] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 19:42:50] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 19:42:50] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 19:42:50] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 19:42:50] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[25/08 19:43:02] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 19:43:02] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 19:43:02] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 19:43:15] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 19:43:15] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 19:43:15] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 19:43:15] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[25/08 19:44:06] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 19:44:06] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 19:44:06] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 19:44:06] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[25/08 19:45:15] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 19:45:15] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 19:45:15] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 19:45:15] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[25/08 19:46:06] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 19:46:06] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 19:46:06] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 19:46:06] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[25/08 19:46:40] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 19:46:41] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 19:46:41] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 19:46:41] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[25/08 19:47:29] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 19:47:29] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 19:47:29] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 19:47:39] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 19:47:39] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 19:47:39] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 19:47:39] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[25/08 19:49:37] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 19:49:37] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 19:49:37] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 19:49:55] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 19:49:55] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 19:49:55] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 19:51:01] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 19:51:01] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 19:51:01] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 19:51:49] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 19:51:49] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 19:51:49] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 19:51:49] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[25/08 19:52:07] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 19:52:07] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 19:52:07] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 19:52:07] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[25/08 19:53:56] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 19:53:56] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 19:53:56] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 19:53:58] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 19:53:58] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 19:53:58] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 19:53:58] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[25/08 19:54:25] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 19:54:26] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 19:54:26] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 19:54:45] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 19:54:45] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 19:54:45] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 19:55:33] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 19:55:33] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 19:55:33] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 19:56:14] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 19:56:14] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 19:56:14] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 19:56:14] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[25/08 19:57:23] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 19:57:23] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 19:57:23] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 20:00:20] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 20:00:20] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 20:00:20] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 20:00:47] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 20:00:47] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 20:00:47] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 20:01:05] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 20:01:05] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 20:02:38] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 20:02:38] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 20:02:38] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 20:03:55] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 20:03:55] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 20:03:55] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 20:03:55] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[25/08 20:04:53] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 20:04:53] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 20:04:53] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 20:04:53] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[25/08 20:05:12] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 20:05:12] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 20:05:12] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 20:05:12] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[25/08 20:05:41] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 20:05:41] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 20:05:41] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 20:05:43] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 20:05:43] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 20:05:43] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 20:06:20] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 20:06:20] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 20:06:20] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 20:06:36] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 20:06:36] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 20:06:36] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 20:06:36] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[25/08 20:06:41] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 20:06:41] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 20:06:41] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 20:06:42] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[25/08 20:06:53] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 20:06:53] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 20:06:53] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 20:06:53] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[25/08 20:07:12] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 20:07:12] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 20:07:12] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 20:07:12] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[25/08 20:07:39] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 20:07:39] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 20:07:39] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 20:07:39] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[25/08 20:08:07] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 20:08:07] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 20:08:07] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 20:08:07] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[25/08 20:08:23] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 20:08:23] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 20:08:23] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 20:08:23] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[25/08 21:28:35] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 21:28:35] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 21:28:35] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 21:28:35] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[25/08 21:29:37] Internal Server Error: /weaver_code/1/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 701, in weaver_code
+    p['letter'] = p["value"]
+                  ~^^^^^^^^^
+KeyError: 'value'
+[25/08 21:29:37] "GET /weaver_code/1/ HTTP/1.1" 500 102236
+[25/08 21:29:38] Not Found: /favicon.ico
+[25/08 21:29:47] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 21:29:47] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 21:29:47] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 21:31:08] Internal Server Error: /weaver_code/CHRISTIAN/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 587, in weaver_code
+    dt = datetime.date(year=int(year), month=m + 1, day=1)
+                            ^^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'CHRISTIAN'
+[25/08 21:31:08] "GET /weaver_code/CHRISTIAN/ HTTP/1.1" 500 75067
+[25/08 21:31:08] Not Found: /favicon.ico
+[25/08 21:32:31] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 21:32:31] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 21:32:31] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 21:32:58] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 21:32:58] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 21:32:58] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 21:33:06] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 21:33:06] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 21:33:15] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 21:33:15] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 21:33:15] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 21:33:51] Not Found: /weaver_code//
+[25/08 21:33:51] "GET /weaver_code// HTTP/1.1" 404 10454
+[25/08 21:33:51] Not Found: /favicon.ico
+[25/08 21:33:56] Not Found: /weaver_code/
+[25/08 21:33:56] "GET /weaver_code/ HTTP/1.1" 404 10451
+[25/08 21:34:04] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 21:34:04] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 21:34:44] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 21:34:44] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 21:34:44] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 21:35:11] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 21:35:11] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 21:35:11] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 21:36:11] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 21:36:11] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 21:36:11] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 21:36:23] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 21:36:23] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 21:36:23] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 21:36:35] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 21:36:35] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 21:36:35] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 21:36:46] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 21:36:46] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 21:36:57] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 21:36:57] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 21:36:57] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 21:37:07] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 21:37:07] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 21:37:51] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 21:37:51] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 21:37:51] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 21:38:18] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 21:38:19] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 21:38:19] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 21:38:21] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 21:38:21] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 21:38:21] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 21:38:21] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[25/08 21:38:38] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 21:38:38] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 21:38:38] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 21:39:29] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 21:39:29] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 21:39:29] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 21:39:31] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 21:39:32] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 21:39:32] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[25/08 21:39:32] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 21:39:53] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 21:39:53] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 21:39:53] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 21:40:03] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 21:40:03] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 21:40:03] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 21:40:16] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 21:40:16] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 21:40:16] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 21:40:16] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[25/08 21:40:26] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 21:40:26] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 21:40:26] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 21:40:59] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 21:41:00] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 21:41:00] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 21:41:00] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[25/08 21:41:56] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 21:41:56] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 21:41:56] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 21:42:15] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 21:42:15] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 21:42:15] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 21:42:23] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 21:42:23] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 21:42:23] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 21:42:25] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 21:42:25] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 21:42:25] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 21:42:25] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[25/08 21:42:38] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 21:42:38] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 21:42:38] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 21:42:38] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[25/08 21:42:53] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 21:42:53] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 21:42:53] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 21:42:53] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[25/08 21:45:20] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 21:45:20] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 21:45:20] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 21:45:20] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[25/08 21:45:22] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 21:45:22] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 21:45:22] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 21:45:22] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[25/08 21:46:38] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 21:46:39] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 21:46:39] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 21:47:29] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 21:47:29] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 21:47:29] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 21:49:37] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 21:49:37] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 21:49:37] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 21:49:40] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 21:49:40] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 21:49:40] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 21:49:40] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[25/08 21:50:10] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 21:50:10] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 21:50:10] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 21:50:10] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[25/08 21:51:15] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 21:51:15] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 21:51:15] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 21:52:35] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 21:52:35] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 21:52:35] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 21:52:57] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 21:52:57] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 21:52:57] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 21:53:52] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 21:53:52] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 21:53:52] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 21:54:48] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 21:54:48] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 21:54:48] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 21:54:48] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[25/08 22:07:38] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 22:07:38] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 22:07:38] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 22:08:38] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 22:08:38] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 22:08:38] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 22:08:52] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 22:08:52] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 22:08:52] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 22:09:03] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 22:09:03] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 22:09:03] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 22:09:29] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 22:09:29] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 22:09:29] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 22:10:17] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 22:10:17] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 22:10:30] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 22:10:30] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 22:10:30] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 22:10:37] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 22:10:37] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 22:10:37] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 22:12:09] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 22:12:09] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 22:12:09] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 22:12:11] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 22:12:11] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 22:12:11] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 22:12:11] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[25/08 22:13:15] Internal Server Error: /weaver_code/hans_elizabeth_lorelei_selim/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 502, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'endfor'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 679, in weaver_code
+    return render(request, 'collector/page/weaver_code.html', context=context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/defaulttags.py", line 241, in render
+    nodelist.append(node.render_annotated(context))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/loader_tags.py", line 199, in render
+    template = context.template.engine.select_template(template_name)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/engine.py", line 206, in select_template
+    return self.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 196, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 510, in parse
+    raise self.error(token, e)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/defaulttags.py", line 960, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 504, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/template/base.py", line 555, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 35: 'endfor', expected 'elif', 'else' or 'endif'. Did you forget to register or load this tag?
+[25/08 22:13:15] "GET /weaver_code/hans_elizabeth_lorelei_selim/ HTTP/1.1" 500 292287
+[25/08 22:13:15] Not Found: /favicon.ico
+[25/08 22:13:23] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 22:13:23] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 22:13:23] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 22:13:40] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 22:13:40] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 22:13:40] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 22:14:35] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 22:14:35] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 22:14:35] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 22:15:34] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 22:15:34] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 22:15:50] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 22:15:50] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 22:15:51] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 22:16:05] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 22:16:05] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 22:19:49] Internal Server Error: /weaver_code/hans_elizabeth_lorelei_selim/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 677, in weaver_code
+    list.append(combos)
+TypeError: list.append() takes exactly one argument (0 given)
+[25/08 22:19:49] "GET /weaver_code/hans_elizabeth_lorelei_selim/ HTTP/1.1" 500 87480
+[25/08 22:20:12] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 22:20:12] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 22:20:12] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 22:20:47] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 22:20:47] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 22:20:47] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 22:21:11] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 22:21:11] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 22:23:34] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 22:23:34] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 22:23:34] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 22:24:29] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 22:24:29] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 22:24:29] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 22:24:38] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 22:24:38] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 22:25:11] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 22:25:11] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 22:25:11] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 22:26:04] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 22:26:04] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 22:26:04] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 22:26:17] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 22:26:17] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 22:26:17] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 22:26:25] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 22:26:25] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 22:26:25] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 22:26:35] Not Found: /weaver_code/selim!4/
+[25/08 22:26:35] "GET /weaver_code/selim!4/ HTTP/1.1" 404 10475
+[25/08 22:26:51] Not Found: /weaver_code/selim-4/
+[25/08 22:26:51] "GET /weaver_code/selim-4/ HTTP/1.1" 404 10475
+[25/08 22:26:57] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 22:26:57] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 22:26:57] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 22:27:03] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 22:27:03] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 22:27:24] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 22:27:24] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 22:27:24] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 22:27:54] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 22:27:54] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 22:27:54] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 22:28:17] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 22:28:17] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 22:28:17] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 22:29:10] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 22:29:10] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 22:29:46] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 22:29:46] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 22:30:24] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 22:30:24] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 22:30:24] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 22:30:54] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 22:30:54] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 22:33:26] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 22:33:26] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 22:43:48] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 22:43:48] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 22:43:48] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 22:45:49] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 22:45:49] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 22:45:49] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 22:46:03] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 22:46:03] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 22:47:09] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 22:47:09] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 22:47:09] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 22:47:53] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 22:47:53] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 22:47:53] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 22:50:01] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 22:50:01] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 22:51:26] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 22:51:26] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 22:51:26] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 22:51:36] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 22:51:36] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 22:54:06] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 22:54:06] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 22:54:06] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 22:55:43] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 22:55:43] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 22:55:43] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 22:56:16] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 22:56:16] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 22:56:16] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 22:56:48] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 22:56:48] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 22:56:48] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 22:57:34] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 22:57:34] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 22:57:34] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 23:00:11] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 23:00:11] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 23:00:11] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 23:00:13] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 23:00:13] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 23:00:13] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 23:00:13] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[25/08 23:02:02] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 23:02:02] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 23:02:02] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 23:02:02] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[25/08 23:02:16] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 23:02:16] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 23:02:16] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 23:03:10] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 23:03:10] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 23:03:10] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 23:05:21] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 23:05:21] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 23:05:21] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 23:05:29] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 23:05:29] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 23:05:29] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 23:05:58] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 23:05:58] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 23:06:13] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 23:06:13] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 23:06:36] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 23:06:36] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 23:06:36] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 23:06:58] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 23:06:58] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 23:06:58] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 23:07:26] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 23:07:26] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 23:07:26] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 23:07:36] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 23:07:36] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 23:07:46] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 23:07:46] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 23:07:46] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 23:07:57] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 23:07:57] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 23:08:28] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 23:08:28] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 23:08:32] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 23:08:32] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 23:08:32] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 23:09:38] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 23:09:38] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 23:09:38] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 23:09:46] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 23:09:46] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 23:10:25] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 23:10:26] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 23:10:26] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 23:11:12] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 23:12:38] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 23:12:38] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 23:12:57] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 23:12:57] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 23:12:57] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 23:13:20] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 23:13:20] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 23:13:20] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 23:13:20] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 23:13:38] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 23:13:38] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 23:13:38] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 23:13:39] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 23:15:28] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 23:15:28] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 23:15:28] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 23:15:47] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 23:15:47] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 23:15:47] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 23:16:19] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 23:16:19] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 23:16:33] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 23:16:33] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 23:16:33] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 23:18:17] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 23:18:17] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 23:18:17] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 23:18:31] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 23:18:31] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[25/08 23:19:32] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[25/08 23:19:32] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851

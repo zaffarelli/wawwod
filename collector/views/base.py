@@ -118,7 +118,7 @@ def get_list(request, pid=1, slug=None):
                                                      hidden=False).order_by('creature',
                                                                             '-expectedfreebies')
         elif 'pen' == slug:
-            creature_items = Creature.objects.filter(chronicle=chronicle.acronym, faction__in=['Pentex','Wyrm'],
+            creature_items = Creature.objects.filter(chronicle=chronicle.acronym, faction__in=['Pentex', 'Wyrm'],
                                                      creature__in=['garou', 'kinfolk', 'fomori']).order_by('name')
         elif 'ccm' == slug:
             creature_items = Creature.objects.filter(chronicle=chronicle.acronym,
@@ -561,3 +561,139 @@ def quaestor(request, slug=None):
         response["data"] = d
         print(response)
     return JsonResponse(response)
+
+
+def weaver_code(request, code=None):
+    def split_cumulate(v, show_colors=False):
+        list = []
+        stacked = []
+        for p in powers:
+            if p["power"] & v:
+                stacked.append(p)
+                print(f"stacked... {p["power"]}")
+        for s in stacked:
+            for o in s["on"]:
+                q = {
+                    "x": o["x"] * defi["scaleX"] + defi["baseX"],
+                    "y": o["y"] * defi["scaleY"] + defi["baseY"],
+                    "color": s["color"] if show_colors else "#A0A0907f",
+                }
+                list.append(q)
+        return list
+
+    if code == '_':
+        code = ""
+        for a in "0123456789":
+            code += f"{a}"
+        code += "_"
+        for a in "abcdefghijklmnopqrstuvwxyz".upper():
+            code += f"{a}"
+        code += "_"
+        for a in range(128):
+            code += f"{chr(a+128)}"
+        code += "_"
+    if code == '__':
+        code = ""
+        code += chr(205)
+        code += chr(239)
+        code += chr(227)
+        code += chr(240)
+        code += chr(230)
+    context = prepare_index(request)
+    defi = {
+        "x": [1, 2, 3],
+        "y": [1, 2, 3, 4],
+        "scaleX": 10,
+        "scaleY": 10,
+        "baseX": 5,
+        "baseY": 5,
+        "oX": [],
+        "oY": [],
+        "debug": 1
+
+    }
+    for d in defi["x"]:
+        a = d * defi["scaleX"] + defi["baseX"]
+        defi["oX"].append(a)
+    for d in defi["y"]:
+        a = d * defi["scaleY"] + defi["baseY"]
+        defi["oY"].append(a)
+    powers = [
+        {
+            "power": 1,
+            "on": [{"x": 2, "y": 2}],
+            "color": "#F08020"
+        },
+        {
+            "power": 2,
+            "on": [{"x": 1, "y": 3}, {"x": 3, "y": 2}],
+            "color": "#F0C040"
+        },
+        {
+            "power": 4,
+            "on": [{"x": 1, "y": 2}, {"x": 3, "y": 3}],
+            "color": "#FF87FF"
+        },
+        {
+            "power": 8,
+            "on": [{"x": 1, "y": 4}, {"x": 3, "y": 1}],
+            "color": "#87FFFF"
+        },
+        {
+            "power": 16,
+            "on": [{"x": 1, "y": 1}, {"x": 3, "y": 4}],
+            "color": "#FF8787"
+        },
+        {
+            "power": 32,
+            "on": [{"x": 2, "y": 1}],
+            "color": "#A02020"
+        },
+        {
+            "power": 64,
+            "on": [{"x": 2, "y": 3}],
+            "color": "#2070E0"
+        },
+        {
+            "power": 128,
+            "on": [{"x": 2, "y": 4}],
+            "color": "#709050"
+        }
+    ]
+    # numbers = []
+    # letters = []
+    combos = []
+    # for x in range(10):
+    #     numbers.append({"value": x + 32, "on": [], "letter": f"{x}"})
+    # for x in range(26):
+    #     letters.append({"value": x + 65, "on": [], "letter": ""})
+    complete_code = code
+    l = []
+    all_words = complete_code.split("_")
+    for word in all_words:
+        combos = []
+        for y in word:
+            x = ord(y)
+            if x > 127:
+                z = x
+                rune = {"value": z, "on": [], "letter": f"{chr(z)} {z}", "is_special": 1, "stroke": "#3030a0"}
+                print("Special "+chr(230))
+            elif x in [48, 49, 50, 51, 52, 53, 54, 55, 56, 57]:
+                z = x - 48
+                rune = {"value": z, "on": [], "letter": f"{z}", "is_number": 1, "stroke": "#30a030"}
+                print("Number")
+            else:
+                z = x
+                rune = {"value": z, "on": [], "letter": f"{chr(z)}", "is_letter": 1, "stroke": "#a03030"}
+                print("Letter")
+            print(f"x:{x} y:{y} z:{z}")
+            rune["on"] = split_cumulate(z, defi["debug"] > 0)
+            combos.append(rune)
+        l.append(combos)
+    for p in powers:
+        q = split_cumulate(p["power"], defi["debug"] > 0)
+        p['on'] = q
+        p['letter'] = p["power"]
+
+    context["weaver_code"] = {"defi": defi, "powers": powers, "combos": l}
+    return render(request, 'collector/page/weaver_code.html', context=context)

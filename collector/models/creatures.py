@@ -1319,32 +1319,33 @@ class Creature(models.Model):
         rep = self.reparts.split("_")
 
         lines = []
-        lines.append(f'{self.name}\n')
+        lines.append(f'# {self.name}\n')
         if "OK" in self.status:
-            lines.append("Game Ready\n")
+            lines.append("__Game Ready__\\\n")
         from collector.utils.wod_reference import BREEDS, AUSPICES
         if self.creature == "garou":
             gen = "Male" if self.sex == 1 else "Female"
             lines.append(
-                f"{gen} {RANKS[self.garou_rank]} {BREEDS[self.breed]} {AUSPICES[self.auspice]} of the {as_tribe_plural(self.family)}\n")
+                f"__{gen} {RANKS[self.garou_rank]} {BREEDS[self.breed]} {AUSPICES[self.auspice]} of the {as_tribe_plural(self.family)}__\\\n")
             if len(self.community_job) > 0:
-                lines.append(f'{self.community_job} of the {self.group}\n')
+                lines.append(f'{self.community_job} of the {self.group}')
             else:
-                lines.append(f'{self.group}\n')
-            lines.append(f'(Rank {self.garou_rank})\n')
+                lines.append(f'{self.group}')
+            lines.append(f'(Rank {self.garou_rank})\\\n')
         if len(self.nature) > 0:
-            lines.append(f'Nature: {self.nature}\n')
+            lines.append(f'**Nature**: {self.nature}\\\n')
         if len(self.demeanor) > 0:
-            lines.append(f'Demeanor: {self.demeanor}\n')
+            lines.append(f'**Demeanor**: {self.demeanor}\\\n')
         if len(self.concept) > 0:
-            lines.append(f'Concept: {self.concept}\n')
+            lines.append(f'**Concept**: {self.concept}\\\n')
         if len(self.groupspec) > 0:
-            lines.append(f'Pack: {self.groupspec}\n')
+            lines.append(f'**Pack**: {self.groupspec}\\\n')
         if self.age > 0:
-            lines.append(f'Age: {self.age} yo\n')
+            lines.append(f'**Age**: {self.age} yo\n')
         if self.is_player:
             lines.append(
                 f'Attributes: {self.total_physical}/{rep[0]}:{self.total_social}/{rep[1]}:{self.total_mental}/{rep[2]}\n')
+        lines.append("```\n")
         lines.append(
             f'Strength  {self.val_as_dots(self.attribute0):2}\tCharisma     {self.val_as_dots(self.attribute3):2}\tPerception   {self.val_as_dots(self.attribute6):2}\n')
         lines.append(
@@ -1354,10 +1355,10 @@ class Creature(models.Model):
         lines.append(f'Willpower....{self.willpower:2}\n')
         if self.creature == "garou":
             lines.append(f'Gnosis.......{self.gnosis:2} Rage.........{self.rage:2}\n')
-
+        lines.append("```\n")
         if self.is_player:
             lines.append(
-                f'Abilities: {self.total_talents}/{rep[3]}:{self.total_skills}/{rep[4]}:{self.total_knowledges}/{rep[5]}\n')
+                f'Abilities: {self.total_talents}/{rep[3]}:{self.total_skills}/{rep[4]}:{self.total_knowledges}/{rep[5]}\\\n')
         tlines = []
         slines = []
         klines = []
@@ -1368,9 +1369,9 @@ class Creature(models.Model):
                 f'{STATS_NAMES[self.creature]["skills"][n].title()} ({self.val_as_dots(getattr(self, f"skill{n}"))})')
             klines.append(
                 f'{STATS_NAMES[self.creature]["knowledges"][n].title()} ({self.val_as_dots(getattr(self, f"knowledge{n}"))})')
-        lines.append(f'Talents: {", ".join(tlines)}.\n')
-        lines.append(f'Skills: {", ".join(slines)}.\n')
-        lines.append(f'Knowledges: {", ".join(klines)}.\n')
+        lines.append(f'**Talents**: {", ".join(tlines)}.\\\n')
+        lines.append(f'**Skills**: {", ".join(slines)}.\\\n')
+        lines.append(f'**Knowledges**: {", ".join(klines)}.\\\n')
 
         blines = []
         bck_len = len(STATS_NAMES[self.creature]["backgrounds"])
@@ -1378,32 +1379,34 @@ class Creature(models.Model):
             if getattr(self, f"background{n}") > 0:
                 blines.append(
                     f'{STATS_NAMES[self.creature]["backgrounds"][n].title()} ({getattr(self, f"background{n}")})')
-        lines.append(f'Backgrounds: {", ".join(blines)}.\n')
+        lines.append(f'**Backgrounds**: {", ".join(blines)}.\n')
         if self.creature == "garou":
             glines = []
             for n in range(16):
                 if getattr(self, f"trait{n}").title():
                     glines.append(f'{getattr(self, f"trait{n}")}')
             traitname = "Gifts"
-            lines.append(f'{traitname}: {", ".join(glines)}.\n')
+            lines.append(f'**{traitname}**: {", ".join(glines)}.\n')
         if self.creature == "garou" or self.creature == "kindred":
             rlines = []
             for n in range(10):
                 if getattr(self, f"rite{n}").title():
                     rlines.append(f'{getattr(self, f"rite{n}")}')
             if len(rlines) > 0:
-                lines.append(f'Rituals: {", ".join(rlines)}.\n')
+                lines.append(f'**Rituals**: {", ".join(rlines)}.\n')
 
         if ("shortcuts" in options):
-
             scs = []
+
             shortcuts = self.get_shortcuts()
             for shortcut in shortcuts:
                 words = shortcut.split("=")
                 scs.append(f"{words[0]:25}{words[1]}")
             if len(scs) > 0:
-                lines.append(f'Shortcuts\n')
+                lines.append(f'**Shortcuts**:')
+                lines.append("\n```\n")
                 lines.append("\n".join(scs))
+                lines.append("\n```\n")
 
         if ("with_hard_edges" in options):
             edges = self.edges.split(", ")
@@ -1415,11 +1418,11 @@ class Creature(models.Model):
                         creature = creatures.first()
                         cstr += "\n" + creature.extract_raw(options=["shortcuts"])
                 if len(cstr) == 0:
-                    lines.append("\nEdges: " + self.edges + "\n")
+                    lines.append("**Edges**: " + self.edges + "\n")
                 else:
                     lines.append("\n" + cstr)
             else:
-                lines.append("\nEdges: none")
+                lines.append("**Edges**: none")
         lines.append("\n")
         return "".join(lines)
 

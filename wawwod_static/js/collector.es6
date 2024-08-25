@@ -134,7 +134,7 @@ class WawwodCollector {
 
             if (action == "quaestor"){
                 param = $("#user_command").val()
-                url = 'ajax/action/' + action + '/' + param.replaceAll(":","___") +'/';
+                url = 'ajax/action/' + action + '/' + param.replaceAll(":","_xsepx_") +'/';
             }else{
                 stories = me.d3.getStories();
                 url = 'ajax/action/' + action + '/' + param + "__" + stories + '/';
@@ -164,10 +164,10 @@ class WawwodCollector {
     makeGiftsList(arr){
         let me = this
         let txt = ""
-//         console.log(arr)
+         console.log(arr)
         _.forEach(arr, (v) => {
             txt += `${v.name} (${v.level}) [${v.references}]\n`
-//             console.log(txt)
+             console.log(txt)
         });
         return txt
     }
