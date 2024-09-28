@@ -76,14 +76,41 @@ STATS_NAMES = {
     'garou': {
         'attributes': ['strength', 'dexterity', 'stamina', 'charisma', 'manipulation', 'appearance', 'perception',
                        'intelligence', 'wits'],
-        'talents': ['alertness', 'athletics', 'brawl', 'dodge', 'empathy', 'expression', 'intimidation', 'primal-urge',
-                    'streetwise', 'subterfuge'],
-        'skills': ['animal ken', 'crafts', 'drive', 'etiquette', 'firearms', 'leadership', 'melee', 'performance',
-                   'stealth', 'survival'],
-        'knowledges': ['computer', 'enigmas', 'investigation', 'law', 'linguistics', 'medicine', 'occult', 'politics',
-                       'rituals', 'science'],
-        'backgrounds': ['allies', 'ancestors', 'contacts', 'fetish', 'kinfolk', 'mentor', 'pure breed', 'resources',
-                        'rites', 'totem']
+        'talents': ['alertness',
+                    'athletics',
+                    'brawl',
+                    'empathy',
+                    'expression',
+                    'intimidation',
+                    'leadership',
+                    'primal-urge',
+                    'streetwise',
+                    'subterfuge'
+                    ],
+        'skills': ['animal ken',
+                   'crafts',
+                   'drive',
+                   'etiquette',
+                   'firearms',
+                   'larceny',
+                   'melee',
+                   'performance',
+                   'stealth',
+                   'survival'
+                   ],
+        'knowledges': ['academics',
+                       'computer',
+                       'enigmas',
+                       'investigation',
+                       'law',
+                       'medicine',
+                       'occult',
+                       'rituals',
+                       'science',
+                       'technology',
+                       ],
+        'backgrounds': ['allies', 'ancestors', 'contacts', 'fate','fetish', 'kinfolk', 'mentor', 'pure breed', 'resources',
+                        'rites', 'spirit heritage', 'totem']
     },
     'ghoul': {
         'attributes': ['strength', 'dexterity', 'stamina', 'charisma', 'manipulation', 'appearance', 'perception',
@@ -125,12 +152,12 @@ STATS_NAMES = {
     'mage': {
         'attributes': ['strength', 'dexterity', 'stamina', 'charisma', 'manipulation', 'appearance', 'perception',
                        'intelligence', 'wits'],
-        'talents': ['alertness', 'athletics', 'awareness', 'brawl', 'dodge', 'expression', 'intimidation', 'leadership',
+        'talents': ['alertness', 'athletics', 'awareness', 'brawl', 'empathy', 'expression', 'intimidation', 'leadership',
                     'streetwise', 'subterfuge'],
-        'skills': ['crafts', 'drive', 'etiquette', 'firearms', 'meditation', 'melee', 'performance',
-                   'stealth', 'survival', 'technology'],
-        'knowledges': ['academics', 'computer', 'cosmology', 'enigmas', 'investigation', 'law', 'linguistics',
-                       'medicine', 'occult', 'science'],
+        'skills': ['crafts', 'drive', 'etiquette', 'firearms', 'larceny','meditation',  'melee', 'performance',
+                   'stealth', 'survival'],
+        'knowledges': ['academics', 'computer', 'cosmology', 'enigmas', 'investigation', 'law',
+                       'medicine', 'occult', 'science', 'technology'],
         'backgrounds': ['allies', 'arcane', 'avatar', 'contacts', 'destiny', 'dream', 'influence', 'library', 'node',
                         'resources', 'wonder']
     },
@@ -146,6 +173,19 @@ STATS_NAMES = {
         'backgrounds': ['allies', 'career', 'contacts', 'fame', 'family', 'equipment', 'influence',
                         'resources', 'status', 'true faith']
     },
+    'kithain': {
+        'attributes': ['strength', 'dexterity', 'stamina', 'charisma', 'manipulation', 'appearance', 'perception',
+                       'intelligence', 'wits'],
+        'talents': ['alertness', 'athletics', 'brawl', 'dodge', 'empathy', 'expression', 'intimidation', 'intuition',
+                    'streetwise', 'subterfuge'],
+        'skills': ['animal ken', 'crafts', 'drive', 'etiquette', 'firearms', 'leadership', 'melee', 'performance',
+                   'stealth', 'survival'],
+        'knowledges': ['academics', 'computer', 'enigmas', 'investigation', 'law', 'linguistics', 'medicine',
+                       'occult', 'politics', 'science'],
+        'backgrounds': ['allies', 'career', 'contacts', 'fame', 'family', 'equipment', 'influence',
+                        'resources', 'status', 'true faith']
+    },
+
     'spirit': {
         'attributes': ['strength', 'dexterity', 'stamina', 'charisma', 'manipulation', 'appearance', 'perception',
                        'intelligence', 'wits'],
@@ -400,9 +440,9 @@ def garou_rank_from_renown(dataset={"auspice": 0, "glory": 0, "honor": 0, "wisdo
 RANKS = ['Pup', 'Cliath', 'Fostern', 'Adren', 'Athro', 'Elder']
 
 FONTSET = ['Cinzel', 'Trade+Winds', 'Imprima', 'Roboto', 'Philosopher', 'Ruda', 'Khand', 'Allura', 'Gochi+Hand',
-           'Reggae+One', 'Syne+Mono', 'Zilla+Slab', 'Spartan', 'Marcellus+SC', 'Splash', 'Trirong']
+           'Reggae+One', 'Syne+Mono', 'Zilla+Slab', 'Spartan', 'Marcellus+SC', 'Splash', 'Trirong', 'Ubuntu+Mono', 'Inria+Sans']
 
-CHARACTERS_PER_PAGE = 20
+CHARACTERS_PER_PAGE = 8
 
 ALL_TRIBES = [
     "Black Furies",
@@ -453,12 +493,15 @@ GM_SHORTCUTS = {
         ['perception', 'alertness'],
         ['perception', 'primal-urge'],
         ['dexterity', 'brawl'],
-        ['dexterity', 'dodge'],
         ['dexterity', 'athletics'],
         ['stamina', 'primal-urge'],
         ['wits', 'enigmas'],
         ['intelligence', 'occult'],
-        ['appearance', 'subterfuge']
+        ['appearance', 'subterfuge'],
+        ['manipulation', 'subterfuge'],
+        ['strength', 'athletics'],
+        ['charisma', 'performance'],
+        ['dexterity', 'stealth'],
     ],
     'kindred': [
         ['dexterity', 'stealth'],

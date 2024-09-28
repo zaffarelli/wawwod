@@ -28,9 +28,9 @@ body {
 
 
 .toggle_name {
-  font-weight: bold;
+  font-weight: normal;
   font-style: normal;
-  font-family: "Marcellus SC";
+//   font-family: "Marcellus SC";
   width: auto;
   display: inline-block;
 }
@@ -173,17 +173,15 @@ body {
 
   & .avatar_link {
     @include panel;
-
     margin: 2px;
-
     padding: 2px;
     border-radius: 0 0 5px 0;
     border-color: darken($panel_border, 30%);
-
     & a {
       text-decoration: none;
     }
-    //color:black;
+    font-family:"Inria Sans";
+
   }
 
   & ul {
@@ -231,6 +229,7 @@ body {
 
 /* Details - Creature Block */
 .creature {
+  font-family:Titre;
   font-size: 9pt;
   border-radius: 8px;
   background: transparent;
@@ -1108,3 +1107,6 @@ fieldset{
         }
     }
 }
+
+.weaver_code{
+    }

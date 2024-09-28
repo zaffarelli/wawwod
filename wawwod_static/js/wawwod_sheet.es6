@@ -6,7 +6,36 @@ class WawwodSheet {
         me.config = data;
         me.count = 0;
         me.mark_overhead = false
+        me.disposition = "portrait"
+        me.button_ox = 1;
+        me.button_oy = 1;
+
     }
+
+  setButtonsOrigin(x, y) {
+        let me = this;
+        me.button_ox = x;
+        me.button_oy = y;
+  }
+
+ drawLine(x1 = 1, x2 = 23, y1 = 1, y2 = 35, fill = '#000000', stroke = '#888888', size = 1, dasharray = "", opacity = 1) {
+        let me = this;
+        if (!me.daddy) {
+            console.error('Daddy is undefined for drawLine !')
+        } else {
+            me.daddy.append('line')
+                .attr('x1', me.stepx * x1)
+                .attr('x2', me.stepx * x2)
+                .attr('y1', me.stepy * y1)
+                .attr('y2', me.stepy * y2)
+                .style('fill', fill)
+                .style('stroke', stroke)
+                .style('stroke-width', size + 'pt')
+                .style('stroke-dasharray', dasharray)
+                .style('stroke-linecap', 'round');
+        }
+    }
+
 
     decorationText(x, y, d = 0, a = 'middle', f, s, b, c, w, t, v, o = 1) {
         let me = this;
@@ -59,19 +88,34 @@ class WawwodSheet {
 
     init() {
         let me = this;
-        me.debug = false;
+        me.debug = true;
         me.blank = false;
         me.page = 0;
-        me.width = parseInt($(me.parent).css("width"), 10) * 0.75;
-        me.height = me.width * 1.4;
-        me.w = 1.25 * me.width;
-        me.h = 1.25 * me.height;
-        me.stepx = me.width / 24;
-        me.stepy = me.height / 36;
-        me.small_font_size = 1.3 * me.stepy / 5;
-        me.medium_font_size = 1.7 * me.stepy / 5;
-        me.big_font_size = 3 * me.stepy / 5;
-        me.fat_font_size = 8 * me.stepy / 5;
+        if (me.disposition == "portrait"){
+            me.width = parseInt($(me.parent).css("width"), 10) * 0.75;
+            me.height = me.width * 1.4;
+            me.w = 1.25 * me.width;
+            me.h = 1.25 * me.height;
+            me.stepx = me.width / 24;
+            me.stepy = me.height / 36;
+            me.small_font_size = 1.3 * me.stepy / 5;
+            me.medium_font_size = 1.7 * me.stepy / 5;
+            me.big_font_size = 2 * me.stepy / 5;
+            me.fat_font_size = 8 * me.stepy / 5;
+        }else{
+            me.height = parseInt($(me.parent).css("width"), 10) * 0.75
+            me.width = me.height * 1.4
+            me.w = 1.25 * me.width
+            me.h = 1.25 * me.height
+            me.stepx = me.width / 36
+            me.stepy = me.height / 24
+            me.small_font_size = 1.3 * me.stepy / 5;
+            me.medium_font_size = 1.7 * me.stepy / 5;
+            me.big_font_size = 1 * me.stepy / 5;
+            me.fat_font_size = 4 * me.stepy / 5;
+        }
+        me.tiny_font_size = me.small_font_size*0.75;
+
         me.margin = [0, 0, 0, 0];
         me.dot_radius = me.stepx / 8;
         me.stat_length = 150;
@@ -80,8 +124,8 @@ class WawwodSheet {
         me.shadow_stroke = "#A0A0A07F";
         me.draw_stroke = '#111';
         me.draw_fill = '#222';
-        me.user_stroke = '#644';
-        me.user_fill = '#422';
+        me.user_stroke = '#143';
+        me.user_fill = '#286';
         me.overhead_fill = '#C22';
         me.user_font = 'Gochi Hand';
         me.mono_font = 'Syne Mono';
@@ -474,7 +518,7 @@ class WawwodSheet {
         item.append('text')
             .attr("x", ox)
             .attr("y", oy)
-            .attr("dy", 10)
+            .attr("dy", 5)
             .style("text-anchor", 'middle')
             .style("font-family", me.title_font)
             .style("font-size", me.big_font_size + 'px')
@@ -527,7 +571,7 @@ class WawwodSheet {
                 return cx;
             })
             .attr('y', function (d) {
-                let cy = oy + 0.3 * me.stepx + me.dot_radius - me.dot_radius + (me.dot_radius * 2 + 2) * lines + 2;
+                let cy = oy + 0.2 * me.stepx + me.dot_radius - me.dot_radius + (me.dot_radius * 2 + 2) * lines + 2;
                 if (d >= 10) {
                     cy += me.dot_radius * 2 + 5;
                 }
@@ -608,9 +652,9 @@ class WawwodSheet {
         let reparts = me.data.reparts.split("_")
 
         if (me.blank) {
-            me.title('Physical (  )', ox + me.stepx * 5, oy, me.character);
-            me.title('Social (  )', ox + me.stepx * 12, oy, me.character);
-            me.title('Mental (  )', ox + me.stepx * 19, oy, me.character);
+            me.title('Physical (__)', ox + me.stepx * 5, oy, me.character);
+            me.title('Social (__)', ox + me.stepx * 12, oy, me.character);
+            me.title('Mental (__)', ox + me.stepx * 19, oy, me.character);
         } else {
             me.title('Physical (' + me.data['total_physical'] +'/'+reparts[0]+ ')', ox + me.stepx * 5, oy, me.character);
             me.title('Social (' + me.data['total_social'] +'/'+reparts[1]+ ')', ox + me.stepx * 12, oy, me.character);
@@ -635,9 +679,9 @@ class WawwodSheet {
         let reparts = me.data.reparts.split("_")
 
         if (me.blank) {
-            me.title('Talents (  )', ox + me.stepx * 5, oy, me.character);
-            me.title('Skills (  )', ox + me.stepx * 12, oy, me.character);
-            me.title('Knowledges (  )', ox + me.stepx * 19, oy, me.character);
+            me.title('Talents (__)', ox + me.stepx * 5, oy, me.character);
+            me.title('Skills (__)', ox + me.stepx * 12, oy, me.character);
+            me.title('Knowledges (__)', ox + me.stepx * 19, oy, me.character);
         } else {
             me.title('Talents (' + me.data['total_talents'] +'/'+reparts[3]+ ')', ox + me.stepx * 5, oy, me.character);
             me.title('Skills (' + me.data['total_skills'] +'/'+reparts[4]+ ')', ox + me.stepx * 12, oy, me.character);
@@ -713,13 +757,17 @@ class WawwodSheet {
         let stat = '';
 
         if (me.blank) {
-            me.title('Backgrounds (  )', ox + me.stepx * 5, oy, me.character);
+            me.title('Backgrounds (__)', ox + me.stepx * 5, oy, me.character);
 
         } else {
             me.title('Backgrounds (' + me.data['total_backgrounds'] + ')', ox + me.stepx * 5, oy, me.character);
         }
         if (me.data['creature'] == 'garou') {
-            me.title('Gifts (' + me.data['total_traits'] + ')', ox + me.stepx * 12, oy, me.character);
+            if (me.blank) {
+                me.title('Gifts (__)', ox + me.stepx * 12, oy, me.character);
+                }else{
+                me.title('Gifts (' + me.data['total_traits'] + ')', ox + me.stepx * 12, oy, me.character);
+            }
 
         } else if (me.data['creature'] == 'kindred') {
             if (me.blank) {
@@ -741,14 +789,16 @@ class WawwodSheet {
         stat = 'background';
         let overheads = []
         let indexed = [0,1,2,3,4,5,6,7,8,9]
+        let indexedb = [0,1,2,3,4,5,6,7,8,9,10,11]
 
-        overheads = me.build_overheads(stat,indexed,5)
-        indexed.forEach(function (z) {
+        overheads = me.build_overheads(stat,indexedb,5)
+
+        indexedb.forEach(function (z) {
             let x = ox + me.stepx * 2;
             let y = oy + 0.5 * me.stepy * (z);
             me.reinHagenStat(me.config['labels'][stat + 's'][z], me.data[`${stat}${z}`], x, y, stat, `${stat}${z}`, me.character, false,overheads[z]);
         });
-        // *** Backgrounds
+        // *** Traits
 
         stat = 'trait';
         overheads = me.build_overheads(stat,indexed,3)
@@ -780,7 +830,7 @@ class WawwodSheet {
 
 
         if (me.data['creature'] == 'garou') {
-
+            let ranks = ['Pup','Cliath', 'Fostern', 'Adren', 'Athro', 'Elder', 'Legend'];
             let breeds = ['Homid', 'Metis', 'Lupus'];
             let auspices = ['Ragabash', 'Theurge', 'Philodox', 'Galliard', 'Ahroun'];
             oy += 3.75 * me.stepy;
@@ -791,6 +841,8 @@ class WawwodSheet {
             me.statText('Tribe', me.data['family'], ox + me.stepx * 16, oy, 'tribe', 'tribe', me.character);
             oy += 0.5 * me.stepy;
             me.reinHagenStat('Rank', me.data['garou_rank'], ox + me.stepx * 16, oy, 'garou_rank', 'garou_rank', me.character);
+            oy += 0.5 * me.stepy;
+            me.statText('Rank name', ranks[me.data['garou_rank']], ox + me.stepx * 16, oy, 'rank', 'rank', me.character);
 //             if (me.data['player']) {
 //                 oy += 1 * me.stepy;
 //                 me.statText('Experience', me.data['experience'], ox + me.stepx * 16, oy, 'sire', 'sire', me.character);
@@ -1011,6 +1063,8 @@ class WawwodSheet {
         });
 
         if (me.data['creature'] == 'garou') {
+            let stored_blank = me.blank
+            me.blank = false
             me.config["many_forms"] = [
                 {
                     'form': 'homid', 'motherform': true, 'size': 1.00, 'weight': 1.00, 'changes': {
@@ -1068,6 +1122,7 @@ class WawwodSheet {
                 });
                 me.statText(d['form'], bonuses, ax, ay, d['form'], d['form'], me.character, false, true);
             });
+            me.blank = stored_blank
         }
 
 
@@ -1111,8 +1166,8 @@ class WawwodSheet {
 
     addButton(num, txt) {
         let me = this;
-        let ox = 27 * me.stepy;
-        let oy = 2 * me.stepy;
+        let ox = me.button_ox * me.stepy;
+        let oy = me.button_oy * me.stepy;
         let button = me.back.append('g')
             .attr('class', 'do_not_print')
             .on('click', function (d) {

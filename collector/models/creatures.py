@@ -242,6 +242,7 @@ class Creature(models.Model):
     background8 = models.PositiveIntegerField(default=0)
     background9 = models.PositiveIntegerField(default=0)
     background10 = models.PositiveIntegerField(default=0)
+    background11 = models.PositiveIntegerField(default=0)
     trait0 = models.CharField(max_length=64, blank=True, default='')
     trait1 = models.CharField(max_length=64, blank=True, default='')
     trait2 = models.CharField(max_length=64, blank=True, default='')
@@ -382,7 +383,7 @@ class Creature(models.Model):
             rite = getattr(self, f'rite{x}', '')
             if rite != '':
                 list.append(rite)
-        print(list)
+        # print(list)
         return list
 
     def get_traits(self):
@@ -402,7 +403,7 @@ class Creature(models.Model):
             if trait.startswith(label.lower()):
                 code = f'trait{x}'
                 value = int(trait.split(" ")[1].replace(")", ""))
-                print(trait, value, code)
+                # print(trait, value, code)
         return value, code, trait
 
     def set_trait_value(self, label, val):
@@ -416,7 +417,7 @@ class Creature(models.Model):
                 if trait.startswith(label.lower()):
                     code = f'trait{x}'
                     value = trait.split(" ")[0] + f'({val})'
-            print(trait, code, value)
+            # print(trait, code, value)
         if code != '':
             setattr(self, code, value)
         else:
@@ -611,7 +612,7 @@ class Creature(models.Model):
                 self.trueage = ch.era - (self.embrace - self.age)
             if self.sire:
                 # if self.family == '':
-                print(self.sire)
+                # print(self.sire)
                 domitor = Creature.objects.get(rid=self.sire)
                 if domitor:
                     self.family = domitor.family
@@ -647,7 +648,7 @@ class Creature(models.Model):
                 pass
             else:
                 break
-        print(f"Tribe: {self.family:30} Sex: {self.sex}")
+        # print(f"Tribe: {self.family:30} Sex: {self.sex}")
         self.expectedfreebies = self.freebies_per_mortal_age
         self.display_pole = self.groupspec
         self.display_gauge = self.value_of('renown') + self.value_of('status') + self.value_of('pure-breed')
@@ -1099,7 +1100,7 @@ class Creature(models.Model):
         random.shuffle(pools)
         pidx = 0
         set_length = int(stats_count / len(pools))
-        print("Randomize Stats (", set_length, "stats per pool)")
+        # print("Randomize Stats (", set_length, "stats per pool)")
         for p in pools:
             choices = [item for item in range(set_length)]
             weights = [pow(2, 6) for item in range(set_length)]
@@ -1211,7 +1212,7 @@ class Creature(models.Model):
     def balance_ghoul(self):
         if self.creature == "ghoul":
             discipline_points = 0
-            print(f"=> BALANCE GHOUL [{self.name}].")
+            # print(f"=> BALANCE GHOUL [{self.name}].")
             offset = self.expectedfreebies - self.freebies
             while offset > 0:
                 str = ''
@@ -1288,10 +1289,10 @@ class Creature(models.Model):
                 # potence, ref, tr = self.get_trait_value("Potence")
                 str += f'[Boost potence --> value={discipline_points}]'
                 self.set_trait_value("Potence", discipline_points)
-                print(str)
+                # print(str)
             self.need_fix = True
             self.save()
-            print(f'{self.name} has been balanced...')
+            # print(f'{self.name} has been balanced...')
 
     def increase_random_stat(self, stats_set=[]):
         res = 0
@@ -1442,7 +1443,7 @@ class Creature(models.Model):
             self.total_mental += m
         x = (self.total_physical + self.total_social + self.total_mental)
         self.freebies += x * 5
-        print(f"Freebies + Attributes ........ {self.freebies} {x}x5")
+        print(f"Freebies + Attributes ........ {self.freebies:4} {x:4}x5")
         # Abilities
         self.total_talents = 0
         self.total_skills = 0
@@ -1457,28 +1458,31 @@ class Creature(models.Model):
             self.total_knowledges += k
         x = self.total_talents + self.total_skills + self.total_knowledges
         self.freebies += (x) * 2
-        print(f"Freebies + Abilities ......... {self.freebies} {x}x2")
+        print(f"Freebies + Abilities ......... {self.freebies:4} {x:4}x2")
         # Backgrounds
         self.total_backgrounds = 0
-        for n in range(10):
+        for n in range(len(STATS_NAMES[self.creature]['backgrounds'])):
             b = getattr(self, 'background%d' % (n))
             # self.freebies += b * 1
             self.total_backgrounds += b
         self.freebies += self.total_backgrounds
-        print(f"Freebies + Backgrounds ....... {self.freebies} {self.total_backgrounds}")
+        print(f"Freebies + Backgrounds ....... {self.freebies:4} {self.total_backgrounds:4}")
         # Merits & Flaws
+        total_merits_and_flaws = 0
         for n in range(4):
             merit = getattr(self, 'merit%d' % (n))
             if merit != '':
                 s, v = self.str2pair(merit)
                 if s:
                     self.freebies += v
+                    total_merits_and_flaws += v
             flaw = getattr(self, 'flaw%d' % (n))
             if flaw != '':
                 s, v = self.str2pair(flaw)
                 if s:
                     self.freebies -= v
-        print(f"Freebies + Merits & Flaws .... {self.freebies}")
+                    total_merits_and_flaws -= v
+        print(f"Freebies + Merits & Flaws .... {self.freebies:4} {total_merits_and_flaws:4}")
         # Traits
         self.total_traits = 0
         for i in range(16):
@@ -1497,7 +1501,7 @@ class Creature(models.Model):
         for trait in traits:
             setattr(self, f'trait{i}', trait)
             i += 1
-        print(f"Freebies + Traits ............ {self.freebies}")
+        print(f"Freebies + Traits ............ {self.freebies:4} {self.total_traits:4}x7")
         # Specific
         if 'changeling' == self.creature:
             self.freebies += getattr(self, 'glamour') * 3
@@ -1538,7 +1542,9 @@ class Creature(models.Model):
             self.freebies += self.total_fetters  # 1 pts per passion pts
         else:
             self.freebies += getattr(self, 'willpower')
+
         self.freebiesdif = self.expectedfreebies - self.freebies
+        print(f"Expected Freebies / Dif / free ........... {self.freebiesdif:4} =  {self.expectedfreebies:4} - {self.freebies:4}")
         if self.freebiesdif == 0:
             self.status = 'OK'
             self.is_new = False
@@ -1582,6 +1588,7 @@ class Creature(models.Model):
             'auspice': self.auspice,
             'breed': self.breed,
             'rank': self.garou_rank,
+            'rank_name': self.rank,
             'condition': self.condition,
             'rid': self.rid,
             'position': self.position,
@@ -1737,7 +1744,7 @@ class Creature(models.Model):
         backgrounds = STATS_NAMES[self.creature]["backgrounds"]
         idx = 0
         for b in backgrounds:
-            print(b)
+            # print(b)
             v = self.value_of(b)
             if v > 0:
                 txt_lines = []
@@ -1753,7 +1760,7 @@ class Creature(models.Model):
                             new_line = True
                     else:
                         txt_lines.append(entries.last().description)
-                print(b, v, txt_lines)
+                # print(b, v, txt_lines)
                 x = "\n".join(txt_lines)
                 fmt_list.append({'idx': idx, 'item': f'{b.title()} [{v}] ', 'notes': f'{x}'})
                 idx += 1
@@ -1767,7 +1774,7 @@ class Creature(models.Model):
         #         words = e.split('§');
         #         fmt_list.append({'idx': idx, 'item': f'{words[0]}', 'notes': f'{words[1]}'})
         #         idx += 1
-        print(fmt_list)
+        # print(fmt_list)
         return fmt_list
 
     def rite_notes(self):
@@ -1777,7 +1784,7 @@ class Creature(models.Model):
         rites = self.get_rites()
         list = []
         for et in reversed(rites):
-            print("Looking for... ", et)
+            # print("Looking for... ", et)
             rites = Rite.objects.filter(code=et)
             if len(rites) > 0:
                 rite = rites.first()
@@ -1791,7 +1798,8 @@ class Creature(models.Model):
                 d = rite.description + " µ -- System µ " + rite.system
                 list.append(f"{a}§§{c}§{d}")
             else:
-                print(f"Discarded... {et}")
+                pass
+                #print(f"Discarded... {et}")
         idx = 0
         fmt_list = []
         for e in list:
@@ -1801,8 +1809,8 @@ class Creature(models.Model):
                     {'idx': idx, 'item': f'{words[0]} ({words[2]})', 'title': f'{words[2]}',
                      'notes': f'{words[3]}'})
                 idx += 1
-        print("Rites List:")
-        print(fmt_list)
+        # print("Rites List:")
+        # print(fmt_list)
         return fmt_list
 
     def timeline(self):
@@ -1842,10 +1850,10 @@ class Creature(models.Model):
                 v = words[1]
                 v2 = v[:-1]
                 v3 = int(v2)
-                print(t, ":", d, ":", v, ":", v2, ":", v3)
+                # print(t, ":", d, ":", v, ":", v2, ":", v3)
                 for y in range(v3):
                     extended_traits.append(f'{d} ({y + 1})')
-            print(extended_traits)
+            # print(extended_traits)
             all = Discipline.objects.filter(code__in=extended_traits).order_by('name', 'level')
             for z in all:
                 if z.is_linear:
@@ -1854,10 +1862,10 @@ class Creature(models.Model):
                         if x.startswith(prefix):
                             extended_traits.remove(x)
                     extended_traits.append(z.code)
-            print(extended_traits)
+            # print(extended_traits)
             list = []
             for et in reversed(extended_traits):
-                print(et)
+                # print(et)
                 zs = Discipline.objects.filter(code=et)
                 if len(zs) > 0:
                     z = zs.first()
@@ -1870,19 +1878,19 @@ class Creature(models.Model):
             from collector.models.gifts import Gift
             extended_traits = []
             traits = self.get_traits()
-            print("traits", traits)
+            # print("traits", traits)
             for t in traits:
                 words = t.split(' (')
                 d = words[0]
                 v = words[1]
                 v2 = v[:-1]
                 v3 = int(v2)
-                print(t, ":", d, ":", v, ":", v2, ":", v3)
+                # print(t, ":", d, ":", v, ":", v2, ":", v3)
                 for y in range(v3):
                     extended_traits.append(f'{d} ({y + 1})')
             list = []
             for et in reversed(traits):
-                print("Looking for... ", et)
+                # print("Looking for... ", et)
                 traits = Gift.objects.filter(code=et.upper())
                 if len(traits) > 0:
                     trait = traits.first()
@@ -1892,11 +1900,11 @@ class Creature(models.Model):
                     d = "-- " + trait.gift_active_sources + " gift µ " + trait.description + " µ -- System µ " + trait.system
                     list.append(f"{a}§{b}§{c}§{d}")
                 else:
-                    print(f"Discarded... {et}")
+                    pass#print(f"Discarded... {et}")
 
         else:
             list = self.notes_on_traits.split('\r\n');
-        print("List -->", list)
+        # print("List -->", list)
         for e in list:
             if len(e) > 2:
                 words = e.split('§')

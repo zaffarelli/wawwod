@@ -223,7 +223,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink"> \
             .style('font-size', "13pt")
             .style('text-anchor', "start")
             .text( function (d) {
-                return d.renown+" renown (rank:"+d.rank+", "+d.age+"yo )"
+                return d.renown+" renown (rank:"+d.rank+", "+d.age+"yo ) ["+d.player+"]"
                 })
         ;
 
@@ -279,12 +279,43 @@ xmlns:xlink="http://www.w3.org/1999/xlink"> \
             .attr('x', me.bit*16)
             .attr('y', me.bit)
             .attr('d', (d) => {
-                let pattern = "m -5 -4 a 6 6 0 1 1 0 8 a 2 1.4 0 0 0 0 -8 z"
+                let pattern = ""
+                switch (d.auspice){
+                    case 0:
+                        pattern = "M -8,-4 m 3,0 a 3 3 0 1 1 0 0.01 "
+                        break;
+                    case 1:
+                        pattern = "M -8,4 m 6 1 a -6 -6 1 0 1 0 -10 a -2 -2 0 0 0 0 10 z"
+                        break;
+                    case 2:
+                        pattern = "M -8,-4 a 5,5 0 1 1 0,10 z"
+                        break;
+                    case 3:
+                        pattern = "M -8,-0.5 a 5.0 5.0 0 1 1 0,.01 m 0,0 a 6 6 1 1 1 0,.01 z"
+                        break;
+                    case 4:
+                        pattern = "M -8,-4 a 6 6 0 1 1 0 0.01 z"
+                        break;
+                }
                 return pattern
                 })
-            .style('fill', "#808080")
-            .style('stroke', "#101010")
-            .style('stroke-width', "0pt")
+            .style('fill', (d) => {
+                let fill = ""
+                switch (d.auspice){
+                    case 0:
+                        fill = "#808080"
+                        break;
+                    case 1:
+                    case 2:
+                    case 3:
+                    case 4:
+                        fill = "#B0E0F0"
+                        break;
+                }
+                return fill;
+            })
+            .style('stroke', "#000000")
+            .style('stroke-width', "1pt")
 
 
 

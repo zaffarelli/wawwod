@@ -100,6 +100,13 @@ class WawwodCollector {
                         me.d3 = new CrossOverSheet(s, "#d3area", me);
                         me.d3.perform(d);
                     }
+                    if (action == 'adventure_sheet') {
+                        console.log("Here we go: adventure sheet!")
+                        let s = JSON.parse(answer.settings);
+                        let d = JSON.parse(answer.data);
+                        me.d3 = new AdventureSheet(s, "#d3area", me);
+                        me.d3.perform(d);
+                    }
                     if (action == 'storytelling') {
                         let s = JSON.parse(answer.settings);
                         let d = JSON.parse(answer.data);
@@ -525,7 +532,7 @@ class WawwodCollector {
                 let target = $(this).attr('id')
                 let keys = $(this).attr('id').split('__')
                 console.log(target);
-                let shift = event.shiftKey
+                let shift = event.altKey
                 let block = $(this).parent();
                 let os = 1;
                 if (shift) {

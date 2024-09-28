@@ -20,6 +20,7 @@ class Adventure(models.Model):
     acronym = models.CharField(max_length=32, default='', blank=True)
     notes = models.TextField(max_length=1024, default='', blank=True)
     players_starting_freebies = models.IntegerField(default=15, blank=True)
+    current = models.BooleanField(default=False, blank=True)
 
     def __str__(self):
         return f"{self.name}"
@@ -32,24 +33,27 @@ class Adventure(models.Model):
         if self.protagonists == "":
             from collector.models.creatures import Creature
             pcs = Creature.objects.filter(adventure=self.acronym)
+            list = []
             for pc in pcs:
-                self.protagonists += f"{pc.rid}, "
+                list.append(pc.rid)
+            self.protagonists = ",".join(list)
         if self.protagonists != "":
             self.team = ""
             team_list = []
-            list = self.protagonists.split(", ")
+            list = self.protagonists.split(",")
             from collector.models.creatures import Creature
-            pcs = Creature.objects.filter(rid__in=list)
+            pcs = Creature.objects.filter(rid__in=list).order_by("groupspec")
             for pc in pcs:
                 team_list.append(f"{pc.name} [{pc.player}]")
             self.team = ", ".join(team_list)
+            # print(self.team)
 
 
 
 
 class AdventureAdmin(admin.ModelAdmin):
-    list_display = ['name', 'acronym', 'season', 'players_starting_freebies', 'team', 'protagonists', 'notes']
+    list_display = ['name', 'current', 'acronym', 'season', 'players_starting_freebies', 'team', 'notes']
     ordering = ['season', 'acronym']
-    list_editable = ['acronym', 'season', 'players_starting_freebies', 'notes']
+    list_editable = ['acronym', 'current', 'season', 'players_starting_freebies']
     from collector.utils.helper import refix
     actions = [refix]

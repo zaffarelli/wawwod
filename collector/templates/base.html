@@ -35,67 +35,7 @@
     {% endcompress %}
 </head>
 <body>
-<ul class='bar hidden'>
-    <li class="pull_down">
-        <i id='toggle_list' class='fa fa-users'></i>&nbsp;Creatures
-        <ul class="drop_down">
-            <li class="list" id="all">List: All</li>
-            <li class="list" id="ccs">Chronicle: supernaturals</li>
-            <li class="list" id="ccm">Chronicle: mortals</li>
-            <HR/>
-            <li class="list" id="vtm"><i class="fas fa-users"></i> Vampire the Masquerade</li>
-            <li class="list" id="wta"><i class="fas fa-users"></i> Werewolf the Apocalypse</li>
-            <li class="list" id="mta"><i class="fas fa-users"></i> Mage the Ascension</li>
-            <li class="list" id="wto"><i class="fas fa-users"></i> Wraith the Oblivion</li>
-            <li class="list" id="ctd"><i class="fas fa-users"></i> Changeling the Dreaming</li>
-            <HR/>
-            <li class="display" action="gaia_wheel"><i class="fas fa-globe"></i> Gaia Wheel</li>
-            <li class="display" action="dashboard"><i class="fas fa-star"></i> Dashboard</li>
-            <HR/>
-            <li class="list" id="pen"><i class="fas fa-list"></i> List: Pentex Forces</li>
-            <li class="list" id="mor"><i class="fas fa-list"></i> List: Mortals</li>
-            <li class="list" id="new"><i class="fas fa-list"></i> List: New creatures</li>
-            <li class="list" id="bal"><i class="fas fa-list"></i> List: TODO</li>
-            <HR/>
-            <li class="collector_action" action="add_creature"><i class="fas fa-user-plus"></i> Add new creature</li>
-            <li class="collector_action" action="add_kindred"><i class="fas fa-user-plus"></i> Add new kindred</li>
-            <li class="collector_action" action="refix_all"><i class="fas fa-cogs"></i> Refix all</li>
-            <HR/>
-            <li class="display" action="kindred_lineage"><i class="fas fa-sitemap"></i> Kindred Lineage</li>
-            <li class="display" action="kindred_lineage" param="Camarilla"><i class="fas fa-sitemap"></i> Camarilla Lineage</li>
-            <li class="display" action="kindred_lineage" param="Sabbat"><i class="fas fa-sitemap"></i> Sabbat Lineage</li>
-            <li class="display" action="kindred_lineage" param="Independents"><i class="fas fa-sitemap"></i> Independents Lineage</li>
-
-            <HR/>
-            {% include "collector/page/players_sheets.html" with c=players %}
-        </ul>
-    </li>
-    <li class="pull_down">
-        <i id='toggle_list' class='fa fa-users'></i>&nbsp;Storytelling
-        <ul class="drop_down">
-            {% include "collector/page/chronicles.html" with c=chronicles%}
-            <HR/>
-            {% include "collector/page/current_chronicle_details.html" with c=chronicles%}
-            <HR/>
-            <li class="display" action="storytelling"><i class="fa fa-comment"></i> Storyboard</li>
-            <li class="display" action="pdf_story"><i class="fa fa-file-pdf"></i> PDF</li>
-            {% for ci in cities  %}
-            <li class="display" action="map" param="{{ ci.tag }}"><i class="fa fa-map"></i> City Map: {{ ci.name}}</li>
-            {% endfor %}
-        </ul>
-    </li>
-    <li class="pull_down">
-        <i id='toggle_chronicle' class='fa fa-cogs'></i>&nbsp;Options
-        <ul class="drop_down">
-            <li class="action" id="settings">Settings</li>
-            <li class="toggle" action="toggle" param="storyboard_handler">Show/Hide storyboard options</li>
-            <li class="toggle" action="toggle" param="details">Show/Hide details</li>
-            <HR/>
-            <li><a href="accounts/logout">log out</a></li>
-        </ul>
-    </li>
-
-</ul>
+    {% include "collector/objects/global_menu.html" %}
 
 {% block userzone %}
 {% endblock userzone %}

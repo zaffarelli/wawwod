@@ -1,14 +1,17 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<un></un><?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <svg width="50mm"  height="60mm" viewBox="25 30 50 60" version="1.2" xmlns="http://www.w3.org/2000/svg">
     <g class="rune" transform="translate(25,30)">
-        <rect class="runic_watermark" x="0" y="0" width="50" height="60" style="fill:#303030;stroke:#808080;stroke-width:0;"/>
-        <rect class="runic_container" x="10" y="10" rx="3" ry="3" width="30" height="40" style="fill:#404040;stroke:#808080;stroke-width:0.5pt;"/>
-        <rect x="5" y="15" rx="0" ry="0" width="3" height="3" style="fill:#404040;stroke:#808080;stroke-width:0.5pt;"/>
+        <rect class="runic_watermark" x="0" y="0" width="50" height="60" style="fill:transparent;stroke:#101010;stroke-width:0;"/>
+        {% if defi.debug %}
+        <rect class="runic_container" x="10" y="10" rx="3" ry="3" width="30" height="40" style="fill:#E0E0E0;stroke:#202020;stroke-width:0.5pt;"/>
+
+        <rect x="5" y="15" rx="0" ry="0" width="3" height="3" style="fill:#F0F0F0;stroke:#101010;stroke-width:0.5pt;"/>
         {% for i in defi.oX %}
             {% for j in defi.oY %}
-                <circle cx="{{i}}" cy="{{j}}" r="2" style="fill:#202020;stroke:#404040;stroke-width:0.5pt;"/>
+                <circle cx="{{i}}" cy="{{j}}" r="2" style="fill:#F0F0F0;stroke:#202020;stroke-width:0.5pt;"/>
             {% endfor %}
         {% endfor %}
+        {% endif %}
         {% for o in data.on%}
             {% if data.is_letter %}
                 <circle cx="{{o.x}}" cy="{{o.y}}" r="3" style="fill:{{o.color}};stroke:{{o.stroke}};stroke-width:1pt;"/>
@@ -21,15 +24,15 @@
             {% endif %}
         {% endfor %}
         {% if defi.debug %}
-        <text x="25" y="55" dy="0" style="fill:#F0F0F0;stroke:#8080807f;stroke-width:0.125pt;font-family:Khand;font-size:3pt;text-anchor:middle;">
+        <text x="25" y="60" dy="-2" style="fill:#101010;stroke:#8080807f;stroke-width:0.125pt;font-family:Khand;font-size:6pt;text-anchor:middle;">
             {% if data.is_letter %}
-            Letter
+
             {% endif %}
             {% if data.is_special %}
-            Special:
+
             {% endif %}
             {% if data.is_number %}
-            Number:
+            #
             {% endif %}
             {{data.letter}}
         </text>

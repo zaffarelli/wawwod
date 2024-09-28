@@ -24916,3 +24916,1338 @@ TypeError: list.append() takes exactly one argument (0 given)
 [25/08 23:18:31] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
 [25/08 23:19:32] "GET /static/js/collector.js HTTP/1.1" 404 1803
 [25/08 23:19:32] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[26/08 17:47:58] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[26/08 17:47:58] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[26/08 17:47:58] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[26/08 17:48:58] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[26/08 17:48:58] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[26/08 17:48:58] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[26/08 17:48:59] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[26/08 17:49:40] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[26/08 17:49:40] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[26/08 17:49:40] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[26/08 17:49:55] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[26/08 17:49:55] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[26/08 17:49:55] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[26/08 17:50:22] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[26/08 17:50:22] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[26/08 17:50:22] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[26/08 17:50:38] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[26/08 17:50:38] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[26/08 17:50:38] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[26/08 17:51:02] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[26/08 17:51:02] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[26/08 17:51:40] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[26/08 17:51:40] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[26/08 17:51:40] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[26/08 17:51:58] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[26/08 17:52:47] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[26/08 17:52:47] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[26/08 17:52:47] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[26/08 17:53:30] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[26/08 17:53:30] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[26/08 17:53:30] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[26/08 17:54:13] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[26/08 17:54:13] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[26/08 17:54:42] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[26/08 17:54:42] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[26/08 17:55:25] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[26/08 17:55:25] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[26/08 17:55:25] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[26/08 17:55:42] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[26/08 17:55:42] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[26/08 17:55:42] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[26/08 17:55:56] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[26/08 17:55:56] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[26/08 17:56:07] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[26/08 17:56:07] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[26/08 17:56:07] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[26/08 17:56:13] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[26/08 17:56:28] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[26/08 17:56:28] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[26/08 17:56:35] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[26/08 17:56:48] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[26/08 17:56:48] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[26/08 17:56:48] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[26/08 17:56:53] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[26/08 17:57:02] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[26/08 17:57:02] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[26/08 17:57:07] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[26/08 17:57:17] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[26/08 17:57:17] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[26/08 17:57:17] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[26/08 17:57:25] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[26/08 17:59:18] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[26/08 17:59:18] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[26/08 17:59:18] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[26/08 17:59:36] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[26/08 17:59:36] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[26/08 17:59:36] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[26/08 18:00:07] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[26/08 18:00:07] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[26/08 18:00:07] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[26/08 18:00:11] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[26/08 18:00:42] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[26/08 18:00:42] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[26/08 18:00:42] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[26/08 18:00:47] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[26/08 18:00:55] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[26/08 18:01:08] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[26/08 18:01:14] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[26/08 18:01:14] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[26/08 18:01:14] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[26/08 18:01:18] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[26/08 18:02:41] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[26/08 18:02:41] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[26/08 18:02:41] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[26/08 18:02:45] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[27/08 00:54:49] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[27/08 00:54:49] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[27/08 00:54:49] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[27/08 00:55:08] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[27/08 00:55:08] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[27/08 00:55:46] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[27/08 00:55:46] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[27/08 00:56:02] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[27/08 00:56:02] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[27/08 00:56:10] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[27/08 00:56:10] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[27/08 00:56:10] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[27/08 00:57:02] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[27/08 00:57:02] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[27/08 00:57:02] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[27/08 00:59:14] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[27/08 00:59:14] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[27/08 00:59:46] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[27/08 00:59:47] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[27/08 00:59:47] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[27/08 00:59:52] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[27/08 00:59:52] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[27/08 00:59:52] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[27/08 01:01:03] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[27/08 01:01:03] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[27/08 01:01:03] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[27/08 01:01:19] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[27/08 01:01:19] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[27/08 01:01:32] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[27/08 01:01:32] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[27/08 01:01:32] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[27/08 01:01:40] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[27/08 01:01:40] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[27/08 01:01:40] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[27/08 01:01:50] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[27/08 01:01:50] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[27/08 01:01:50] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[27/08 01:02:05] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[27/08 01:02:05] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[27/08 01:02:05] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[27/08 01:02:14] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[27/08 01:02:14] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[27/08 01:02:14] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[27/08 01:02:19] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[27/08 01:02:19] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[27/08 01:02:19] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[27/08 01:02:44] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[27/08 01:02:44] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[27/08 01:03:04] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[27/08 01:03:04] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[27/08 01:03:04] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[27/08 01:03:28] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[27/08 01:03:28] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[27/08 01:03:42] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[27/08 01:03:42] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[27/08 01:03:42] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[27/08 01:03:52] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[27/08 01:03:52] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[27/08 01:03:52] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[27/08 01:04:05] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[27/08 01:04:05] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[27/08 01:04:15] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[27/08 01:04:15] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[27/08 01:04:15] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[27/08 01:04:22] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[27/08 01:04:22] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[27/08 01:04:22] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[27/08 01:04:33] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[27/08 01:04:34] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[27/08 01:04:34] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[27/08 01:05:15] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[27/08 01:05:15] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[27/08 01:05:27] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[27/08 01:05:27] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[27/08 01:05:55] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[27/08 01:05:55] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[27/08 01:06:06] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[27/08 01:06:06] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[27/08 01:06:06] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[27/08 01:06:23] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[27/08 01:06:23] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[27/08 01:06:34] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[27/08 01:06:34] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[27/08 01:06:34] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[27/08 01:06:46] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[27/08 01:06:46] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[27/08 01:06:46] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[27/08 01:06:50] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[27/08 01:06:50] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[27/08 01:06:50] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[27/08 01:06:55] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[27/08 01:06:55] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[27/08 01:06:55] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[27/08 01:07:05] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[27/08 01:07:05] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[27/08 01:07:05] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[27/08 01:07:29] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[27/08 01:07:29] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[27/08 01:07:29] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[27/08 01:07:48] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[27/08 01:07:48] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[27/08 01:07:48] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[27/08 01:08:01] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[27/08 01:08:01] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[27/08 01:08:01] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[27/08 01:08:25] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[27/08 01:08:25] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[27/08 01:08:25] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[27/08 01:08:47] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[27/08 01:08:47] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[06/09 17:28:27] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[06/09 17:28:27] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[06/09 17:28:27] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[06/09 17:29:12] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[06/09 17:29:12] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[06/09 17:29:57] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[06/09 17:29:57] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[06/09 17:29:57] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[06/09 17:30:13] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[06/09 17:30:55] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[06/09 17:39:13] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[06/09 17:39:13] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[06/09 17:39:24] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[06/09 17:40:39] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[06/09 17:40:39] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[06/09 17:40:46] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[06/09 17:43:23] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[06/09 17:52:17] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[06/09 17:52:17] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[06/09 17:52:17] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[06/09 17:52:24] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[07/09 12:53:21] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[07/09 12:53:21] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[07/09 12:54:25] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[07/09 12:54:25] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[07/09 12:55:10] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[07/09 12:55:10] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[07/09 12:55:10] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[07/09 12:57:02] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[07/09 12:57:02] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[07/09 13:12:01] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[07/09 13:12:01] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[07/09 13:15:15] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[07/09 13:15:15] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[07/09 13:15:15] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[07/09 13:17:12] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[07/09 13:17:12] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[07/09 13:18:38] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[07/09 13:18:38] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[07/09 13:19:38] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[07/09 13:19:39] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[07/09 13:19:39] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[07/09 13:19:39] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[07/09 13:20:11] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[07/09 13:20:12] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[07/09 13:20:12] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[07/09 13:20:51] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[07/09 13:20:51] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[07/09 13:20:51] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[07/09 13:21:33] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[07/09 13:21:33] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[07/09 13:21:33] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[08/09 07:20:48] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[08/09 07:20:48] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[08/09 07:20:48] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[08/09 07:21:04] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[08/09 07:21:04] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[08/09 07:21:04] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[08/09 07:27:42] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[08/09 07:27:42] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[08/09 07:27:43] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[08/09 07:27:43] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[08/09 07:34:33] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[08/09 07:34:33] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[08/09 07:34:33] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[08/09 07:34:56] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[08/09 07:34:56] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[08/09 07:34:57] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[08/09 07:34:57] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[08/09 07:35:17] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[08/09 07:35:17] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[08/09 07:35:17] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[08/09 07:35:17] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[08/09 07:35:36] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[08/09 07:35:36] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[08/09 07:35:36] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[08/09 07:35:36] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[08/09 07:36:46] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[08/09 07:36:46] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[08/09 07:36:46] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[08/09 07:36:46] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[08/09 07:37:29] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[08/09 07:46:19] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[08/09 07:46:19] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[08/09 07:46:19] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[08/09 07:47:22] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[08/09 07:47:22] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[08/09 07:47:22] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[08/09 07:48:17] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[08/09 07:48:17] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[08/09 07:48:17] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[08/09 07:49:36] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[08/09 07:49:36] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[08/09 07:49:36] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[08/09 07:49:56] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[08/09 07:53:07] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[08/09 07:53:07] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[08/09 07:53:07] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[08/09 07:53:14] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[08/09 07:53:38] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[08/09 07:53:38] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[08/09 07:53:38] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[08/09 07:53:44] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[08/09 07:53:57] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[08/09 07:53:57] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[08/09 07:53:57] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[08/09 07:54:02] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[08/09 07:54:10] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[08/09 07:54:10] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[08/09 07:54:10] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[08/09 07:54:14] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[08/09 08:07:41] Not Found: /favicon.ico
+[08/09 08:07:41] "GET /favicon.ico HTTP/1.1" 404 10448
+[08/09 08:08:55] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[15/09 20:23:31] Not Found: /favicon.ico
+[15/09 20:23:31] "GET /favicon.ico HTTP/1.1" 404 10448
+[16/09 06:49:11] Not Found: /favicon.ico
+[16/09 06:52:01] Internal Server Error: /ajax/display/crossover_sheet/_hans_mueller/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 315, in display_crossover_sheet
+    spe = c.get_specialities()
+          ^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 441, in get_specialities
+    if self.value_of(stat) > 3:
+       ^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 432, in value_of
+    return getattr(self, found)
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Creature' object has no attribute 'knowledge10'. Did you mean: 'knowledge0'?
+[16/09 06:52:01] "GET /ajax/display/crossover_sheet/_hans_mueller/ HTTP/1.1" 500 87848
+[16/09 06:55:44] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[16/09 07:11:11] Internal Server Error: /ajax/display/crossover_sheet/_hans_mueller/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 320, in display_crossover_sheet
+    k["background_notes"] = c.background_notes()
+                            ^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 1742, in background_notes
+    v = self.value_of(b)
+        ^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 432, in value_of
+    return getattr(self, found)
+           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Creature' object has no attribute 'background11'. Did you mean: 'background1'?
+[16/09 07:11:11] "GET /ajax/display/crossover_sheet/_hans_mueller/ HTTP/1.1" 500 108153
+[16/09 10:09:53] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[16/09 14:54:11] Not Found: /favicon.ico
+[16/09 19:15:04] Not Found: /ajax/collector_action/add_creature/
+[16/09 19:15:04] "GET /ajax/collector_action/add_creature/ HTTP/1.1" 404 10520
+[16/09 19:15:08] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[16/09 19:17:07] "GET /static/collector/tribes/s.webp HTTP/1.1" 404 1827
+[16/09 19:20:58] Not Found: /favicon.ico
+[16/09 19:21:29] Not Found: /favicon.ico
+[16/09 19:21:35] Not Found: /favicon.ico
+[19/09 09:53:17] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[19/09 10:01:57] Not Found: /ajax/collector_action/add_garou/Mysti/
+[19/09 10:01:57] "GET /ajax/collector_action/add_garou/Mysti/ HTTP/1.1" 404 10526
+[19/09 10:02:05] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[19/09 10:04:07] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[19/09 10:05:22] Internal Server Error: /ajax/view/creature/_huitzy/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/views/generic/detail.py", line 108, in get
+    self.object = self.get_object()
+                  ^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/views/generic/detail.py", line 53, in get_object
+    obj = queryset.get()
+          ^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/query.py", line 650, in get
+    raise self.model.MultipleObjectsReturned(
+collector.models.creatures.Creature.MultipleObjectsReturned: get() returned more than one Creature -- it returned 3!
+[19/09 10:05:22] "GET /ajax/view/creature/_huitzy/ HTTP/1.1" 500 95006
+[19/09 10:05:24] Internal Server Error: /ajax/view/creature/_huitzy/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/views/generic/detail.py", line 108, in get
+    self.object = self.get_object()
+                  ^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/views/generic/detail.py", line 53, in get_object
+    obj = queryset.get()
+          ^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/query.py", line 650, in get
+    raise self.model.MultipleObjectsReturned(
+collector.models.creatures.Creature.MultipleObjectsReturned: get() returned more than one Creature -- it returned 3!
+[19/09 10:05:24] "GET /ajax/view/creature/_huitzy/ HTTP/1.1" 500 95006
+[19/09 10:05:25] Internal Server Error: /ajax/view/creature/_huitzy/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/views/generic/detail.py", line 108, in get
+    self.object = self.get_object()
+                  ^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/views/generic/detail.py", line 53, in get_object
+    obj = queryset.get()
+          ^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/query.py", line 650, in get
+    raise self.model.MultipleObjectsReturned(
+collector.models.creatures.Creature.MultipleObjectsReturned: get() returned more than one Creature -- it returned 3!
+[19/09 10:05:25] "GET /ajax/view/creature/_huitzy/ HTTP/1.1" 500 95006
+[19/09 10:13:54] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[19/09 10:14:58] Internal Server Error: /ajax/editable/userinput/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 186, in userinput
+    item.save()
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/base.py", line 881, in save_base
+    pre_save.send(
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/dispatch/dispatcher.py", line 189, in send
+    response = receiver(signal=self, sender=sender, **named)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/signals/creatures.py", line 19, in update_creature
+    instance.fix()
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 806, in fix
+    self.freebies -= RAGE_PER_AUSPICE[int(self.auspice)] * 1  # Rage per Auspice
+                                      ^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'Philodox'
+[19/09 10:14:58] "POST /ajax/editable/userinput/ HTTP/1.1" 500 21579
+[19/09 10:20:19] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[19/09 10:21:39] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[19/09 10:21:48] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[19/09 10:23:37] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[19/09 10:24:43] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[19/09 10:25:43] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[19/09 10:26:09] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[19/09 10:26:46] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[19/09 10:27:28] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[19/09 10:29:09] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[19/09 10:29:27] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[19/09 10:30:12] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[19/09 10:31:25] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[19/09 10:32:14] Internal Server Error: /ajax/view/creature/_belphegora/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/views/generic/detail.py", line 108, in get
+    self.object = self.get_object()
+                  ^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/views/generic/detail.py", line 53, in get_object
+    obj = queryset.get()
+          ^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/query.py", line 650, in get
+    raise self.model.MultipleObjectsReturned(
+collector.models.creatures.Creature.MultipleObjectsReturned: get() returned more than one Creature -- it returned 3!
+[19/09 10:32:14] "GET /ajax/view/creature/_belphegora/ HTTP/1.1" 500 95110
+[19/09 10:32:17] Internal Server Error: /ajax/view/creature/_belphegora/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/views/generic/detail.py", line 108, in get
+    self.object = self.get_object()
+                  ^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/views/generic/detail.py", line 53, in get_object
+    obj = queryset.get()
+          ^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/query.py", line 650, in get
+    raise self.model.MultipleObjectsReturned(
+collector.models.creatures.Creature.MultipleObjectsReturned: get() returned more than one Creature -- it returned 3!
+[19/09 10:32:17] "GET /ajax/view/creature/_belphegora/ HTTP/1.1" 500 95110
+[19/09 10:32:33] Internal Server Error: /ajax/editable/userinput/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 183, in userinput
+    item = Creature.objects.get(rid=rid)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/query.py", line 647, in get
+    raise self.model.DoesNotExist(
+collector.models.creatures.Creature.DoesNotExist: Creature matching query does not exist.
+[19/09 10:32:33] "POST /ajax/editable/userinput/ HTTP/1.1" 500 21119
+[19/09 10:32:37] Internal Server Error: /ajax/editable/userinput/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 183, in userinput
+    item = Creature.objects.get(rid=rid)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/query.py", line 647, in get
+    raise self.model.DoesNotExist(
+collector.models.creatures.Creature.DoesNotExist: Creature matching query does not exist.
+[19/09 10:32:37] "POST /ajax/editable/userinput/ HTTP/1.1" 500 21119
+[19/09 10:32:39] Internal Server Error: /ajax/editable/userinput/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 183, in userinput
+    item = Creature.objects.get(rid=rid)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/query.py", line 647, in get
+    raise self.model.DoesNotExist(
+collector.models.creatures.Creature.DoesNotExist: Creature matching query does not exist.
+[19/09 10:32:39] "POST /ajax/editable/userinput/ HTTP/1.1" 500 21119
+[19/09 10:32:48] Internal Server Error: /ajax/view/creature/_belphegora/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/views/generic/detail.py", line 108, in get
+    self.object = self.get_object()
+                  ^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/views/generic/detail.py", line 53, in get_object
+    obj = queryset.get()
+          ^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/query.py", line 650, in get
+    raise self.model.MultipleObjectsReturned(
+collector.models.creatures.Creature.MultipleObjectsReturned: get() returned more than one Creature -- it returned 3!
+[19/09 10:32:48] "GET /ajax/view/creature/_belphegora/ HTTP/1.1" 500 95110
+[19/09 10:32:49] Internal Server Error: /ajax/view/creature/_belphegora/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/views/generic/detail.py", line 108, in get
+    self.object = self.get_object()
+                  ^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/views/generic/detail.py", line 53, in get_object
+    obj = queryset.get()
+          ^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/query.py", line 650, in get
+    raise self.model.MultipleObjectsReturned(
+collector.models.creatures.Creature.MultipleObjectsReturned: get() returned more than one Creature -- it returned 3!
+[19/09 10:32:49] "GET /ajax/view/creature/_belphegora/ HTTP/1.1" 500 95110
+[19/09 10:32:59] Not Found: /favicon.ico
+[19/09 10:39:15] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[19/09 10:39:35] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[19/09 10:39:48] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[19/09 10:40:05] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[19/09 10:40:15] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[19/09 10:40:39] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[19/09 10:41:36] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[19/09 10:44:13] Not Found: /favicon.ico
+[19/09 10:44:47] Not Found: /favicon.ico
+[19/09 10:44:51] Not Found: /favicon.ico
+[19/09 10:46:34] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[19/09 10:49:41] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[19/09 10:49:58] Not Found: /favicon.ico
+[19/09 10:50:12] Not Found: /favicon.ico
+[19/09 10:52:05] Not Found: /favicon.ico
+[19/09 10:55:04] Not Found: /favicon.ico
+[19/09 12:06:42] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[19/09 13:20:38] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[19/09 13:24:20] "GET /static/collector/traditions/dreamspeaker.webp HTTP/1.1" 404 1872
+[19/09 13:34:48] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[19/09 13:38:46] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[19/09 13:40:11] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[19/09 13:43:01] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[19/09 13:44:51] Not Found: /favicon.ico
+[19/09 13:46:06] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[19/09 13:48:13] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[21/09 05:06:13] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[21/09 05:16:29] Not Found: /favicon.ico
+[21/09 05:36:18] Internal Server Error: /ajax/editable/userinput/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 183, in userinput
+    item = Creature.objects.get(rid=rid)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/query.py", line 647, in get
+    raise self.model.DoesNotExist(
+collector.models.creatures.Creature.DoesNotExist: Creature matching query does not exist.
+[21/09 05:36:18] "POST /ajax/editable/userinput/ HTTP/1.1" 500 21111
+[21/09 13:47:22] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[21/09 14:17:08] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[23/09 21:49:46] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[23/09 21:59:57] Internal Server Error: /ajax/editable/updown/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 165, in updown
+    item.save()
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/base.py", line 881, in save_base
+    pre_save.send(
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/dispatch/dispatcher.py", line 189, in send
+    response = receiver(signal=self, sender=sender, **named)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/signals/creatures.py", line 19, in update_creature
+    instance.fix()
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 845, in fix
+    self.calculate_freebies()
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 1504, in calculate_freebies
+    print(f"Freebies + Traits ............ {self.freebies:4} {total_traits:4}")
+                                                              ^^^^^^^^^^^^
+NameError: name 'total_traits' is not defined. Did you mean: 'self.total_traits'?
+[23/09 21:59:57] "POST /ajax/editable/updown/ HTTP/1.1" 500 21710
+[24/09 08:23:52] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[24/09 08:24:18] Not Found: /favicon.ico
+[24/09 08:24:22] Not Found: /favicon.ico
+[24/09 08:25:13] Internal Server Error: /ajax/editable/userinput/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 183, in userinput
+    item = Creature.objects.get(rid=rid)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/query.py", line 647, in get
+    raise self.model.DoesNotExist(
+collector.models.creatures.Creature.DoesNotExist: Creature matching query does not exist.
+[24/09 08:25:13] "POST /ajax/editable/userinput/ HTTP/1.1" 500 21122
+[26/09 03:19:16] Not Found: /favicon.ico
+[26/09 03:20:30] Not Found: /favicon.ico
+[26/09 03:21:06] Not Found: /favicon.ico
+[26/09 03:22:09] Not Found: /favicon.ico
+[26/09 03:22:17] Not Found: /favicon.ico
+[26/09 03:23:04] Not Found: /favicon.ico
+[26/09 03:23:18] Not Found: /favicon.ico
+[26/09 03:24:00] Not Found: /favicon.ico
+[26/09 03:24:12] Not Found: /favicon.ico
+[26/09 03:24:51] Not Found: /favicon.ico
+[26/09 03:24:57] Not Found: /favicon.ico
+[26/09 03:25:01] Not Found: /favicon.ico
+[26/09 03:25:12] Not Found: /favicon.ico
+[26/09 03:25:41] Internal Server Error: /admin/collector/creature/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/options.py", line 714, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/sites.py", line 240, in inner
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/options.py", line 2014, in changelist_view
+    response = self.response_action(
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/admin/options.py", line 1648, in response_action
+    response = func(self, request, queryset)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 1962, in refix
+    creature.save()
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/base.py", line 881, in save_base
+    pre_save.send(
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/dispatch/dispatcher.py", line 189, in send
+    response = receiver(signal=self, sender=sender, **named)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/signals/creatures.py", line 19, in update_creature
+    instance.fix()
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 845, in fix
+    self.calculate_freebies()
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 1464, in calculate_freebies
+    for n in range(len(STATS_NAMES[self.creature]['backgrounds'])):
+                       ~~~~~~~~~~~^^^^^^^^^^^^^^^
+KeyError: 'kithain'
+[26/09 03:25:41] "POST /admin/collector/creature/?chronicle=GMU HTTP/1.1" 500 263452
+[26/09 03:25:41] Not Found: /favicon.ico
+[26/09 03:26:47] Not Found: /favicon.ico
+[26/09 03:27:09] Not Found: /favicon.ico
+[26/09 03:29:24] Not Found: /favicon.ico
+[26/09 03:31:44] Not Found: /favicon.ico
+[26/09 03:31:57] Not Found: /favicon.ico
+[26/09 03:32:45] Not Found: /favicon.ico
+[26/09 03:33:24] Not Found: /favicon.ico
+[26/09 03:33:56] Not Found: /favicon.ico
+[26/09 03:34:55] Not Found: /favicon.ico
+[26/09 03:35:16] Not Found: /favicon.ico
+[26/09 03:43:26] Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 82, in index
+    context = prepare_index(request)
+              ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 44, in prepare_index
+    if adv.current:
+       ^^^^^^^^^^^
+AttributeError: 'QuerySet' object has no attribute 'current'
+[26/09 03:43:26] "GET / HTTP/1.1" 500 86540
+[26/09 03:43:26] Not Found: /favicon.ico
+[26/09 03:43:26] "GET /favicon.ico HTTP/1.1" 404 10442
+[26/09 03:43:56] Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 82, in index
+    context = prepare_index(request)
+              ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 50, in prepare_index
+    adventure['players'].append(
+    ^^^^^^^^^
+UnboundLocalError: cannot access local variable 'adventure' where it is not associated with a value
+[26/09 03:43:56] "GET / HTTP/1.1" 500 86668
+[26/09 03:44:34] Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 83, in index
+    context = prepare_index(request)
+              ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 50, in prepare_index
+    if adventure:
+       ^^^^^^^^^
+UnboundLocalError: cannot access local variable 'adventure' where it is not associated with a value
+[26/09 03:44:34] "GET / HTTP/1.1" 500 86659
+[26/09 03:49:37] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[26/09 03:51:51] Not Found: /calendar/
+[26/09 03:51:51] "GET /calendar/ HTTP/1.1" 404 10436
+[26/09 03:51:56] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[26/09 03:51:57] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[26/09 03:51:57] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[26/09 03:51:57] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[26/09 23:30:05] Not Found: /ajax/display/adventure_sheet/
+[26/09 23:30:05] "GET /ajax/display/adventure_sheet/ HTTP/1.1" 404 10496
+[27/09 00:16:24] Internal Server Error: /ajax/display/crossover_sheet/_sonja_bilal/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 361, in display_crossover_sheet
+    settings = {'version': 1.0, 'labels': STATS_NAMES[c.creature], 'pre_title': pre_title, 'scenario': scenario,
+                                                      ^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'creature'
+[27/09 00:16:24] "GET /ajax/display/crossover_sheet/_sonja_bilal/ HTTP/1.1" 500 85478
+[27/09 01:41:48] Internal Server Error: /ajax/display/adventure_sheet/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 388, in adventure_sheet
+    for season in current_seasons:
+                  ^^^^^^^^^^^^^^^
+TypeError: 'Season' object is not iterable
+[27/09 01:41:48] "GET /ajax/display/adventure_sheet/ HTTP/1.1" 500 75926
+[27/09 01:42:38] Internal Server Error: /ajax/display/adventure_sheet/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 392, in adventure_sheet
+    j,k = character_for(rid)
+          ^^^^^^^^^^^^^^^^^^
+TypeError: character_for() missing 1 required positional argument: 'option'
+[27/09 01:42:38] "GET /ajax/display/adventure_sheet/ HTTP/1.1" 500 76965
+[27/09 01:43:01] Internal Server Error: /ajax/display/adventure_sheet/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 392, in adventure_sheet
+    j,k = character_for(rid)
+          ^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 319, in character_for
+    c = Creature.objects.get(rid=rid)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/query.py", line 647, in get
+    raise self.model.DoesNotExist(
+collector.models.creatures.Creature.DoesNotExist: Creature matching query does not exist.
+[27/09 01:43:01] "GET /ajax/display/adventure_sheet/ HTTP/1.1" 500 113313
+[27/09 01:43:55] Internal Server Error: /ajax/display/adventure_sheet/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 392, in adventure_sheet
+    j,k = character_for(rid)
+          ^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 319, in character_for
+    c = Creature.objects.get(rid=rid)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/query.py", line 647, in get
+    raise self.model.DoesNotExist(
+collector.models.creatures.Creature.DoesNotExist: Creature matching query does not exist.
+[27/09 01:43:55] "GET /ajax/display/adventure_sheet/ HTTP/1.1" 500 113219
+[27/09 01:44:33] Internal Server Error: /ajax/display/adventure_sheet/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 393, in adventure_sheet
+    j,k = character_for(rid)
+          ^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 319, in character_for
+    c = Creature.objects.get(rid=rid)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/query.py", line 647, in get
+    raise self.model.DoesNotExist(
+collector.models.creatures.Creature.DoesNotExist: Creature matching query does not exist.
+[27/09 01:44:33] "GET /ajax/display/adventure_sheet/ HTTP/1.1" 500 113232
+[27/09 01:47:05] Internal Server Error: /ajax/display/adventure_sheet/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 393, in adventure_sheet
+    j,k = character_for(rid)
+          ^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 319, in character_for
+    c = Creature.objects.get(rid=rid)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/query.py", line 647, in get
+    raise self.model.DoesNotExist(
+collector.models.creatures.Creature.DoesNotExist: Creature matching query does not exist.
+[27/09 01:47:05] "GET /ajax/display/adventure_sheet/ HTTP/1.1" 500 113028
+[27/09 01:47:49] Internal Server Error: /ajax/display/adventure_sheet/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 394, in adventure_sheet
+    j,k = character_for(rid)
+          ^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 319, in character_for
+    c = Creature.objects.get(rid=rid)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/query.py", line 647, in get
+    raise self.model.DoesNotExist(
+collector.models.creatures.Creature.DoesNotExist: Creature matching query does not exist.
+[27/09 01:47:49] "GET /ajax/display/adventure_sheet/ HTTP/1.1" 500 113014
+[27/09 01:48:55] Internal Server Error: /ajax/display/adventure_sheet/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 394, in adventure_sheet
+    j,k = character_for(rid)
+          ^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 319, in character_for
+    c = Creature.objects.get(rid=slug)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/query.py", line 647, in get
+    raise self.model.DoesNotExist(
+collector.models.creatures.Creature.DoesNotExist: Creature matching query does not exist.
+[27/09 01:48:55] "GET /ajax/display/adventure_sheet/ HTTP/1.1" 500 113021
+[27/09 01:49:36] Internal Server Error: /ajax/display/adventure_sheet/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 396, in adventure_sheet
+    j,k = character_for(rid)
+          ^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 320, in character_for
+    c = Creature.objects.get(rid=slug)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/query.py", line 647, in get
+    raise self.model.DoesNotExist(
+collector.models.creatures.Creature.DoesNotExist: Creature matching query does not exist.
+[27/09 01:49:36] "GET /ajax/display/adventure_sheet/ HTTP/1.1" 500 113008
+[27/09 01:51:18] Internal Server Error: /ajax/display/adventure_sheet/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 394, in adventure_sheet
+    j,k = character_for(rid)
+          ^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 319, in character_for
+    c = Creature.objects.get(rid=slug)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/query.py", line 647, in get
+    raise self.model.DoesNotExist(
+collector.models.creatures.Creature.DoesNotExist: Creature matching query does not exist.
+[27/09 01:51:18] "GET /ajax/display/adventure_sheet/ HTTP/1.1" 500 113064
+[27/09 01:51:31] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[27/09 02:14:33] Internal Server Error: /ajax/display/adventure_sheet/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 395, in adventure_sheet
+    j,k = character_for(rid)
+          ^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 319, in character_for
+    c = Creature.objects.get(rid=slug)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/query.py", line 647, in get
+    raise self.model.DoesNotExist(
+collector.models.creatures.Creature.DoesNotExist: Creature matching query does not exist.
+[27/09 02:14:33] "GET /ajax/display/adventure_sheet/ HTTP/1.1" 500 113048
+[27/09 02:15:01] Internal Server Error: /ajax/display/adventure_sheet/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 395, in adventure_sheet
+    j,k = character_for(rid)
+          ^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 319, in character_for
+    c = Creature.objects.get(rid=slug)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/query.py", line 647, in get
+    raise self.model.DoesNotExist(
+collector.models.creatures.Creature.DoesNotExist: Creature matching query does not exist.
+[27/09 02:15:01] "GET /ajax/display/adventure_sheet/ HTTP/1.1" 500 113066
+[27/09 02:16:43] Internal Server Error: /ajax/display/adventure_sheet/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 396, in adventure_sheet
+    j, k = character_for(rid)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 319, in character_for
+    c = Creature.objects.get(rid=slug)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/db/models/query.py", line 647, in get
+    raise self.model.DoesNotExist(
+collector.models.creatures.Creature.DoesNotExist: Creature matching query does not exist.
+[27/09 02:16:43] "GET /ajax/display/adventure_sheet/ HTTP/1.1" 500 113076
+[27/09 02:18:13] Internal Server Error: /ajax/display/adventure_sheet/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 400, in adventure_sheet
+    j, k = character_for(rid)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 324, in character_for
+    print("good bye", c)
+                      ^
+UnboundLocalError: cannot access local variable 'c' where it is not associated with a value
+[27/09 02:18:13] "GET /ajax/display/adventure_sheet/ HTTP/1.1" 500 103632
+[27/09 02:19:02] Internal Server Error: /ajax/display/adventure_sheet/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 400, in adventure_sheet
+    j, k = character_for(rid)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 337, in character_for
+    j = c.toJSON()
+        ^
+UnboundLocalError: cannot access local variable 'c' where it is not associated with a value
+[27/09 02:19:02] "GET /ajax/display/adventure_sheet/ HTTP/1.1" 500 103535
+[27/09 02:19:35] Internal Server Error: /ajax/display/adventure_sheet/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 402, in adventure_sheet
+    j, k = character_for(rid)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 325, in character_for
+    if c:
+       ^
+UnboundLocalError: cannot access local variable 'c' where it is not associated with a value
+[27/09 02:19:35] "GET /ajax/display/adventure_sheet/ HTTP/1.1" 500 103574
+[27/09 02:19:56] Internal Server Error: /ajax/display/adventure_sheet/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 403, in adventure_sheet
+    j, k = character_for(rid)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 356, in character_for
+    return j, k
+           ^
+UnboundLocalError: cannot access local variable 'j' where it is not associated with a value
+[27/09 02:19:56] "GET /ajax/display/adventure_sheet/ HTTP/1.1" 500 103669
+[27/09 02:26:19] Not Found: /favicon.ico
+[27/09 02:27:44] Internal Server Error: /ajax/display/adventure_sheet/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 403, in adventure_sheet
+    j, k = character_for(rid)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 356, in character_for
+    return j, k
+           ^
+UnboundLocalError: cannot access local variable 'j' where it is not associated with a value
+[27/09 02:27:44] "GET /ajax/display/adventure_sheet/ HTTP/1.1" 500 103914
+[27/09 02:29:55] Internal Server Error: /ajax/display/adventure_sheet/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 403, in adventure_sheet
+    j, k = character_for(rid)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 356, in character_for
+    return j, k
+           ^
+UnboundLocalError: cannot access local variable 'j' where it is not associated with a value
+[27/09 02:29:55] "GET /ajax/display/adventure_sheet/ HTTP/1.1" 500 103801
+[27/09 02:36:25] Internal Server Error: /ajax/display/adventure_sheet/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 403, in adventure_sheet
+    j, k = character_for(rid)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 356, in character_for
+    return j, k
+           ^
+UnboundLocalError: cannot access local variable 'j' where it is not associated with a value
+[27/09 02:36:25] "GET /ajax/display/adventure_sheet/ HTTP/1.1" 500 103809
+[27/09 02:39:15] Internal Server Error: /ajax/display/adventure_sheet/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 403, in adventure_sheet
+    j, k = character_for(rid)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 356, in character_for
+    return j, k
+           ^
+UnboundLocalError: cannot access local variable 'j' where it is not associated with a value
+[27/09 02:39:15] "GET /ajax/display/adventure_sheet/ HTTP/1.1" 500 103809
+[27/09 03:42:16] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[27/09 10:53:35] Internal Server Error: /ajax/display/adventure_sheet/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 413, in adventure_sheet
+    "name": chronicle.title,
+            ^^^^^^^^^^^^^^^
+AttributeError: 'Chronicle' object has no attribute 'title'
+[27/09 10:53:35] "GET /ajax/display/adventure_sheet/ HTTP/1.1" 500 98845
+[27/09 11:12:17] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[28/09 00:19:45] Not Found: /favicon.ico
+[28/09 00:23:20] Not Found: /favicon.ico
+[28/09 15:43:03] Internal Server Error: /ajax/character/svg2pdf/undefined/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/datastructures.py", line 84, in __getitem__
+    list_ = super().__getitem__(key)
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'rid'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 508, in svg_to_pdf
+    rid = request.POST["rid"]
+          ~~~~~~~~~~~~^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.12/site-packages/django/utils/datastructures.py", line 86, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'rid'
+[28/09 15:43:03] "POST /ajax/character/svg2pdf/undefined/ HTTP/1.1" 500 171623
+[28/09 16:06:35] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863

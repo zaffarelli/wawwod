@@ -1,5 +1,6 @@
 from django.http import HttpResponse, Http404, JsonResponse
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render
+import random
 
 from collector.models.adventures import Adventure
 from collector.models.seasons import Season
@@ -35,18 +36,19 @@ def prepare_index(request):
     chronicle = get_current_chronicle()
     plist = Creature.objects.filter(chronicle=chronicle.acronym).exclude(player='').exclude(adventure="").order_by(
         'adventure')
-    print(plist)
     prev_a = None
+    adventure = None
     for p in plist:
         if p.adventure != prev_a:
-            adv = Adventure.objects.filter(acronym=p.adventure)
+            adv = Adventure.objects.filter(acronym=p.adventure, current=True)
             if len(adv) > 0:
                 a = adv.first()
                 prev_a = a.code
                 adventure = {'adventure': a.name, 'players': []}
                 players.append(adventure)
-        adventure['players'].append(
-            {'name': p.name, 'rid': p.rid, 'player': p.player, 'pre_change_access': p.pre_change_access})
+        if adventure:
+            adventure['players'].append(
+                {'name': p.name, 'rid': p.rid, 'player': p.player, 'pre_change_access': p.pre_change_access})
 
     for c in Chronicle.objects.all():
         chronicles.append({'name': c.name, 'acronym': c.acronym, 'active': c.is_current})
@@ -56,10 +58,12 @@ def prepare_index(request):
     septs = []
     for sept in Sept.objects.filter(chronicle=chronicle.acronym):
         septs.append(sept)
-    for season in Season.objects.filter(chronicle=chronicle.acronym):
+    for season in Season.objects.filter(chronicle=chronicle.acronym, current=True):
         seasons.append(season)
-    for adventure in Adventure.objects.filter(season=season.acronym):
-        adventures.append(adventure)
+        # print(season)
+        for adventure in Adventure.objects.filter(season=season.acronym, current=True):
+            adventures.append(adventure)
+            # print(adventure)
     for city in City.objects.filter(chronicle=chronicle.acronym):
         cities.append(city)
 
@@ -93,7 +97,7 @@ def get_list(request, pid=1, slug=None):
     # print(chronicle.acronym)
     if is_ajax(request):
         if 'vtm' == slug:
-            print('vampires')
+            # print('vampires')
             creature_items = Creature.objects.filter(chronicle=chronicle.acronym, creature__in=['ghoul', 'kindred']) \
                 .order_by('family', 'name')
         elif 'mta' == slug:
@@ -259,6 +263,26 @@ def add_kindred(request, slug=None):
         return HttpResponse(status=204)
 
 
+def add_garou(request, slug=None):
+    if is_ajax(request):
+        name = " ".join(slug.split("_"))
+        chronicle = get_current_chronicle()
+        item = Creature()
+        item.name = name
+        item.chronicle = chronicle.acronym
+        item.creature = 'garou'
+        item.age = 0
+        item.family = 'Child of Gaia'
+        item.faction = 'Gaia'
+        item.randomize_backgrounds()
+        item.randomize_archetypes()
+        item.randomize_attributes()
+        item.randomize_abilities()
+        item.source = 'zaffarelli'
+        item.save()
+        return HttpResponse(status=204)
+
+
 def add_ghoul(request, slug=None):
     if is_ajax(request):
         needed_ghouls = 0
@@ -290,12 +314,16 @@ def add_ghoul(request, slug=None):
         return HttpResponse(status=204)
 
 
-def display_crossover_sheet(request, slug=None, option=None):
-    if is_ajax(request):
-        chronicle = get_current_chronicle()
-        if slug is None:
-            slug = 'julius_von_blow'
-        c = Creature.objects.get(rid=slug)
+def character_for(slug, option=None, idx=-1):
+    print("hello: ", slug)
+    c = None
+    cs = Creature.objects.filter(rid=slug.strip())
+    if len(cs)>0:
+        c = cs.first()
+    else:
+        print("oops,",slug)
+    print("good bye", cs)
+    if c:
         if option:
             alt_name = c.name + " (" + option + ")"
             all_pre_change = Creature.objects.filter(name=alt_name)
@@ -308,32 +336,43 @@ def display_crossover_sheet(request, slug=None, option=None):
             c.debuff()
             c.need_fix = True
             c.save()
-        if chronicle:
-            scenario = chronicle.scenario
-            pre_title = chronicle.pre_title
-            post_title = chronicle.post_title
-        spe = c.get_specialities()
-        shc = c.get_shortcuts()
         j = c.toJSON()
         k = json.loads(j)
+        if idx>-1:
+            k["idx"] = idx
         k["sire_name"] = c.sire_name
         k["background_notes"] = c.background_notes()
         k["rite_notes"] = c.rite_notes()
         k["timeline"] = c.timeline()
         k["others"] = c.others()
+        k["spe"] = c.get_specialities()
+        k["shc"] = c.get_shortcuts()
         tn = c.traits_notes()
-        # print(tn)
         k["traits_notes"] = tn
         k["nature_notes"] = c.nature_notes()
         k["meritsflaws_notes"] = c.meritsflaws_notes()
-        # print("DISCPLINES NOTES ---> ", k["disciplines_notes"])
         j = json.dumps(k)
         if option is not None:
             c.delete()
-        settings = {'version': 1.0, 'labels': STATS_NAMES[c.creature], 'pre_title': pre_title, 'scenario': scenario,
-                    'post_title': post_title, 'fontset': FONTSET, 'specialities': spe, 'shortcuts': shc}
-        crossover_sheet_context = {'settings': json.dumps(settings, sort_keys=True, indent=4), 'data': j}
 
+    return j, k
+
+
+def display_crossover_sheet(request, slug=None, option=None):
+    if is_ajax(request):
+        chronicle = get_current_chronicle()
+        if chronicle:
+            scenario = chronicle.scenario
+            pre_title = chronicle.pre_title
+            post_title = chronicle.post_title
+        if slug is None:
+            slug = 'julius_von_blow'
+        j, k = character_for(slug, option)
+        settings = {'version': 1.0, 'labels': STATS_NAMES[k["creature"]], 'pre_title': pre_title, 'scenario': scenario,
+                    'post_title': post_title, 'fontset': FONTSET, 'blank': False, 'debug': False,
+                    'specialities': k["spe"],
+                    'shortcuts': k["shc"]}
+        crossover_sheet_context = {'settings': json.dumps(settings, sort_keys=True, indent=4), 'data': j}
         return JsonResponse(crossover_sheet_context)
 
 
@@ -347,6 +386,47 @@ def display_dashboard(request):
     if is_ajax(request):
         gaia_wheel_context = {'data': build_gaia_wheel()}
         return JsonResponse(gaia_wheel_context)
+
+
+def adventure_sheet(request):
+    if is_ajax(request):
+        adventure_sheet_context = {}
+        chronicle = get_current_chronicle()
+        data = {"players": [], "adventure":{}}
+        if chronicle:
+            idx = 0
+            from collector.models.seasons import Season
+            current_seasons = Season.objects.filter(chronicle=chronicle.acronym, current=True)
+            for season in current_seasons:
+                if len(season.protagonists) > 0:
+                    protagonists = season.protagonists.strip().split(",")
+                    print("PROTS", protagonists)
+                    for rid in protagonists:
+                        # print(rid)
+                        if len(rid)>0:
+                            j, k = character_for(rid,None,idx)
+                            idx += 1
+                            data["players"].append(k)
+            settings = {'fontset': FONTSET}
+            adv = {
+                "name": chronicle.name,
+                "acronym": chronicle.acronym,
+                "full_id":"",
+                "abstract":"",
+                "date_str": "",
+                "session_date_str":"",
+                "gamemaster":"Zaffarelli",
+                "experience": 0,
+            }
+
+            data["adventure"] = adv
+
+            adventure_sheet_context = {
+                'settings': json.dumps(settings, sort_keys=True, indent=4),
+                'data': json.dumps(data, sort_keys=True, indent=4)
+            }
+
+        return JsonResponse(adventure_sheet_context)
 
 
 def display_lineage(request, slug=None):
@@ -389,7 +469,7 @@ def display_sept_rosters(request, slug=None):
         for pack in data["packs"]:
             for m in pack["members"]:
                 rid_stack.append(m['rid'])
-        print(rid_stack)
+        # print(rid_stack)
         lines = []
         for creature in Creature.objects.filter(rid__in=rid_stack).order_by('-rank'):
             c = creature.extract_raw()
@@ -425,7 +505,10 @@ def svg_to_pdf(request, slug):
         logger.info(f'--> Created --> {svg_name}.')
 
         pdf_name = os.path.join(settings.MEDIA_ROOT, 'pdf/results/pdf/' + request.POST["pdf_name"])
-        rid = request.POST["rid"]
+        if "rid" in request.POST:
+            rid = request.POST["rid"]
+        else:
+            rid = "adventure_sheet"
         cairosvg.svg2pdf(url=svg_name, write_to=pdf_name, scale=1.0)
         logger.info(f'--> Created --> {pdf_name}.')
         print(f'--> Created --> {pdf_name}.')
@@ -526,7 +609,7 @@ def moon_phase(request, dt=None):
                 aweek.append({"str": "None", "num": "", "color": "#303030", "blank": True})
                 day += 1
             dow += 1
-        print(aweek)
+        # print(aweek)
         if out:
             cntw = 7
         else:
@@ -570,13 +653,13 @@ def weaver_code(request, code=None):
         for p in powers:
             if p["power"] & v:
                 stacked.append(p)
-                print(f"stacked... {p["power"]}")
+                # print(f"stacked... {p["power"]}")
         for s in stacked:
             for o in s["on"]:
                 q = {
                     "x": o["x"] * defi["scaleX"] + defi["baseX"],
                     "y": o["y"] * defi["scaleY"] + defi["baseY"],
-                    "color": s["color"] if show_colors else "#A0A0907f",
+                    "color": s["color"] if show_colors else "#3030407f",
                 }
                 list.append(q)
         return list
@@ -589,9 +672,60 @@ def weaver_code(request, code=None):
         for a in "abcdefghijklmnopqrstuvwxyz".upper():
             code += f"{a}"
         code += "_"
+    if code == '___':
         for a in range(128):
-            code += f"{chr(a+128)}"
+            code += f"{chr(a + 128)}"
         code += "_"
+    if code == '_PATTERN_RULES_':
+
+        t4p = "TOUCHER SUR 4 PATTES"
+        t3p = "TOUCHER SUR 3 PATTES"
+        t2p = "TOUCHER SUR 2 PATTES"
+        t1p = "TOUCHER SUR 1 PATTE"
+        t2f = "TOUCHER SUR 2 PIEDS"
+        t1f = "TOUCHER SUR 1 PIED"
+        fho = f"{chr(166)}"
+        fgl = f"{chr(167)}"
+        fcr = f"{chr(168)}"
+        fhi = f"{chr(169)}"
+        flu = f"{chr(170)}"
+        relay = "RELAI"
+
+        spots = [
+            {"num": "28", "rule": t1p + fcr},
+            {"num": "27", "rule": t2f + fgl},
+            {"num": "26", "rule": t4p + fhi},
+            {"num": "25", "rule": t3p + fcr},
+            {"num": "24", "rule": t1f + fgl},
+            {"num": "23", "rule": t2f + fgl},
+            {"num": "22", "rule": t1f + fgl},
+            {"num": "21", "rule": t3p + flu + relay},
+            {"num": "20", "rule": t2f + fgl},
+            {"num": "19", "rule": t2f + fho},
+            {"num": "18", "rule": t3p + fcr},
+            {"num": "17", "rule": t1p + fcr},
+            {"num": "16", "rule": t4p + fhi},
+            {"num": "15", "rule": t1f + fgl},
+            {"num": "14", "rule": t2f + fgl + relay},
+            {"num": "13", "rule": t1f + fho},
+            {"num": "12", "rule": t2p + fcr},
+            {"num": "11", "rule": t3p + fcr},
+            {"num": "10", "rule": t1p + fcr},
+            {"num": "9", "rule": t4p + fhi},
+            {"num": "8", "rule": t2p + fcr},
+            {"num": "7", "rule": t1f + fho + relay},
+            {"num": "6", "rule": t4p + fcr},
+            {"num": "5", "rule": t1f + fgl},
+            {"num": "4", "rule": t3p + fhi},
+            {"num": "3", "rule": t2f + fho},
+            {"num": "2", "rule": t1f + fho},
+            {"num": "1", "rule": t2f + fgl},
+        ]
+        code = "FORMES" + fho + fgl + fcr + fhi + flu
+        for s in spots:
+            code += "_"
+            code += s["num"]
+            code += s["rule"]
     if code == '__':
         code = ""
         code += chr(205)
@@ -609,9 +743,22 @@ def weaver_code(request, code=None):
         "baseY": 5,
         "oX": [],
         "oY": [],
-        "debug": 1
-
+        "debug": 0
     }
+
+    special_names = {
+        "166": "Homid",
+        "167": "Glabro",
+        "168": "Crinos",
+        "169": "Hispo",
+        "170": "Lupus",
+        "205": "GANUR LATH",
+        "239": "GABRA O-L",
+        "227": "FURIAS TDP",
+        "240": "HURLUS LASDG",
+        "230": "CORIALIS G-C",
+    }
+
     for d in defi["x"]:
         a = d * defi["scaleX"] + defi["baseX"]
         defi["oX"].append(a)
@@ -622,42 +769,42 @@ def weaver_code(request, code=None):
         {
             "power": 1,
             "on": [{"x": 2, "y": 2}],
-            "color": "#F08020"
+            "color": "red"
         },
         {
             "power": 2,
             "on": [{"x": 1, "y": 3}, {"x": 3, "y": 2}],
-            "color": "#F0C040"
+            "color": "orange"
         },
         {
             "power": 4,
             "on": [{"x": 1, "y": 2}, {"x": 3, "y": 3}],
-            "color": "#FF87FF"
+            "color": "green"
         },
         {
             "power": 8,
             "on": [{"x": 1, "y": 4}, {"x": 3, "y": 1}],
-            "color": "#87FFFF"
+            "color": "purple"
         },
         {
             "power": 16,
             "on": [{"x": 1, "y": 1}, {"x": 3, "y": 4}],
-            "color": "#FF8787"
+            "color": "blue"
         },
         {
             "power": 32,
             "on": [{"x": 2, "y": 1}],
-            "color": "#A02020"
+            "color": "brown"
         },
         {
             "power": 64,
             "on": [{"x": 2, "y": 3}],
-            "color": "#2070E0"
+            "color": "cyan"
         },
         {
             "power": 128,
             "on": [{"x": 2, "y": 4}],
-            "color": "#709050"
+            "color": "fuchsia"
         }
     ]
     # numbers = []
@@ -677,7 +824,9 @@ def weaver_code(request, code=None):
             if x > 127:
                 z = x
                 rune = {"value": z, "on": [], "letter": f"{chr(z)} {z}", "is_special": 1, "stroke": "#3030a0"}
-                print("Special "+chr(230))
+                if f"{z}" in special_names:
+                    rune["letter"] = special_names[f"{z}"]
+                print("Special " + chr(230))
             elif x in [48, 49, 50, 51, 52, 53, 54, 55, 56, 57]:
                 z = x - 48
                 rune = {"value": z, "on": [], "letter": f"{z}", "is_number": 1, "stroke": "#30a030"}

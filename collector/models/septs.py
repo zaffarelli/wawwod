@@ -165,9 +165,11 @@ class Sept(models.Model):
                 "edges": garou.edges_str,
                 "kinfolks": garou.value_of("kinfolk"),
                 "condition": garou.condition,
+                "player": garou.player,
                 "position": garou.community_job,
                 "short_desc": garou.short_desc,
-                "rank": garou.rank
+                "rank": garou.rank,
+                "auspice": garou.auspice
             }
             if garou.groupspec not in packs_summary:
                 packs_summary.append(garou.groupspec)

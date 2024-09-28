@@ -105,8 +105,8 @@ def as_stat_name(stack, x_field=''):
         value = STATS_NAMES[str(x_creature)][x_field + 's'][int(x_id)]
         return value.title()
     except:
-        print(x_creature, x_id, x_field)
-        return "ERROR"
+        print(x_creature, x_id, x_field, "NOT FOUND")
+        return ""
 
 
 @register.filter(name='as_editable_updown')
