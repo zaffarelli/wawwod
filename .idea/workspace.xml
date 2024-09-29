@@ -5,71 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c5f4ae22-1e7a-419c-ac9f-80da089b72d4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/backup/20240915/adventure.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backup/20240915/archetypes.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backup/20240915/backgrounds.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backup/20240915/chronicles.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backup/20240915/cities.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backup/20240915/creatures.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backup/20240915/disciplines.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backup/20240915/districts.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backup/20240915/gifts.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backup/20240915/hotspots.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backup/20240915/places.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backup/20240915/rites.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backup/20240915/scenes.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backup/20240915/stories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collector/migrations/0093_creature_background11_creature_background12.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collector/migrations/0094_remove_creature_background12.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collector/migrations/0095_adventure_current.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collector/migrations/0096_season_current.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collector/static/collector/wawwod_raa.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collector/static/collector/wawwod_raa.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collector/static/collector/wawwod_raa_small.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collector/templates/collector/objects/global_menu.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_emma_jones_p0.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_vidar_grimsdottir.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_vidar_grimsdottir_p0.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_vidar_grimsdottir_p1.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_vidar_grimsdottir_p2.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_vidar_grimsdottir_p3.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheetundefined_p0.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_emma_jones_p0.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_vidar_grimsdottir_p0.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_vidar_grimsdottir_p1.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_vidar_grimsdottir_p2.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_vidar_grimsdottir_p3.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheetundefined_p0.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_ss2024.sqlite3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/collector/migrations/0097_creature_challenge.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_lorelei_engelfraue_p0.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_lorelei_engelfraue_p0.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/models/adventures.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/models/adventures.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/collector/models/creatures.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/models/creatures.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/models/seasons.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/models/seasons.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/models/septs.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/models/septs.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/static/collector/css/_basics.scss" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/collector/css/_basics.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/static/collector/css/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/collector/css/main.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/collector/static/js/adventure_sheet.es6" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/js/adventure_sheet.es6" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/static/js/collector.es6" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/js/collector.es6" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/collector/static/js/cross_over_sheet.es6" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/js/cross_over_sheet.es6" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/static/js/sept.es6" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/js/sept.es6" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/collector/static/js/wawwod_sheet.es6" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/js/wawwod_sheet.es6" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/collector/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/templates/collector/creature/backgrounds_columns.html" beforeDir="false" afterPath="$PROJECT_DIR$/collector/templates/collector/creature/backgrounds_columns.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/templates/collector/page/weaver_code.html" beforeDir="false" afterPath="$PROJECT_DIR$/collector/templates/collector/page/weaver_code.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/templates/collector/svg/runic.svg" beforeDir="false" afterPath="$PROJECT_DIR$/collector/templates/collector/svg/runic.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/templatetags/wod_filters.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/templatetags/wod_filters.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/collector/utils/wod_reference.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/utils/wod_reference.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/collector/views/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/views/base.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/wawwod.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/wawwod.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wawwod.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/story_pilot adventure - halloween.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/story_pilot adventure - halloween.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheetundefined_p0.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheetundefined_p0.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheetundefined_p0.svg" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheetundefined_p0.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/sept.svg" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/sept.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod_static/collector/css/_basics.scss" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/collector/css/_basics.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod_static/collector/css/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/collector/css/main.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wawwod_static/js/adventure_sheet.es6" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/js/adventure_sheet.es6" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod_static/js/collector.es6" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/js/collector.es6" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wawwod_static/js/cross_over_sheet.es6" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/js/cross_over_sheet.es6" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wawwod_static/js/wawwod_sheet.es6" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/js/wawwod_sheet.es6" afterDir="false" />
     </list>

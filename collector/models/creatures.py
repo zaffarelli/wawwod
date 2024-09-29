@@ -48,7 +48,7 @@ class Creature(models.Model):
     display_pole = models.CharField(max_length=64, default='', blank=True)
     residence = models.CharField(max_length=64, default='', blank=True)
     list_pos = models.IntegerField(default=0, blank=True)
-
+    challenge = models.CharField(max_length=128, default='', blank=True)
     edges = models.TextField(default="", blank=True, max_length=1024)
 
     pre_change_access = models.BooleanField(blank=False, default=False)
@@ -754,6 +754,7 @@ class Creature(models.Model):
         self.rid = toRID(self.name)
 
     def fix(self):
+        self.challenge = ""
         if self.garou_rank is None:
             self.garou_rank = 0
         if self.adventure:
@@ -773,7 +774,7 @@ class Creature(models.Model):
         if 'changeling' == self.creature:
             # traits:3 realms:5 backgrounds:5 willpower:4 glamour:4, banality:3 freebies:15
             self.freebies = 0
-            self.freebies = -((7 + 5 + 3 + 9) * 5 + (13 + 9 + 5) * 2)
+            self.freebies = -((7 + 5 + 3) * 5 + (13 + 9 + 5) * 2)
             self.freebies = -(3 * 5 + 5 * 2 + 5 * 1 + 4 + 4 * 3 - 3 + 15)
             self.fix_changeling()
         # Vampire
@@ -799,7 +800,7 @@ class Creature(models.Model):
         elif 'garou' == self.creature:
             # at:7/5/3 ab:13/9/5 b:5 g:21 rgw:16 f:15
             self.freebies = 0
-            self.freebies -= (7 + 5 + 3 + 9) * 5  # Attributes
+            self.freebies -= (7 + 5 + 3) * 5  # Attributes
             self.freebies -= (13 + 9 + 5) * 2  # Abilities
             self.freebies -= 3 * 7  # Gifts
             self.freebies -= 5 * 1  # Backgrounds
@@ -810,6 +811,7 @@ class Creature(models.Model):
             else:
                 self.freebies -= 3
             self.freebies -= 15  # Pure freebies
+            #self.challenge += f"ba:{self.freebies:3}"
             # self.freebies
             self.fix_garou()
         elif 'kinfolk' == self.creature:
@@ -841,6 +843,7 @@ class Creature(models.Model):
             self.fix_mortal()
 
         self.expectedfreebies += self.extra
+        # self.challenge += f"/ef:{self.expectedfreebies:3}"
         self.summary = f'Freebies: {self.freebies}'
         self.calculate_freebies()
         print(f"FreebiesDif .......... {self.freebiesdif:4}")
@@ -1442,6 +1445,7 @@ class Creature(models.Model):
             self.total_social += s
             self.total_mental += m
         x = (self.total_physical + self.total_social + self.total_mental)
+        self.challenge += f" at:{x*5}/{5*(7+5+3)}"
         self.freebies += x * 5
         print(f"Freebies + Attributes ........ {self.freebies:4} {x:4}x5")
         # Abilities
@@ -1457,6 +1461,7 @@ class Creature(models.Model):
             self.total_skills += s
             self.total_knowledges += k
         x = self.total_talents + self.total_skills + self.total_knowledges
+        self.challenge += f" ab:{x*2}/{2*(13+9+5)}"
         self.freebies += (x) * 2
         print(f"Freebies + Abilities ......... {self.freebies:4} {x:4}x2")
         # Backgrounds
@@ -1466,6 +1471,7 @@ class Creature(models.Model):
             # self.freebies += b * 1
             self.total_backgrounds += b
         self.freebies += self.total_backgrounds
+        self.challenge += f" bk:{self.total_backgrounds}/{5}"
         print(f"Freebies + Backgrounds ....... {self.freebies:4} {self.total_backgrounds:4}")
         # Merits & Flaws
         total_merits_and_flaws = 0
@@ -1501,7 +1507,6 @@ class Creature(models.Model):
         for trait in traits:
             setattr(self, f'trait{i}', trait)
             i += 1
-        print(f"Freebies + Traits ............ {self.freebies:4} {self.total_traits:4}x7")
         # Specific
         if 'changeling' == self.creature:
             self.freebies += getattr(self, 'glamour') * 3
@@ -1509,10 +1514,25 @@ class Creature(models.Model):
             self.freebies += self.total_traits * 5  # 5 pts per art pts
             self.freebies += self.total_realms * 2  # 2 pts per realm pts
         elif 'garou' == self.creature:
-            self.freebies += getattr(self, 'rage')
-            self.freebies += getattr(self, 'gnosis') * 2
-            self.freebies += getattr(self, 'willpower')
+            # self.freebies += getattr(self, 'rage')
+            # self.freebies += getattr(self, 'gnosis') * 2
+            # self.freebies += getattr(self, 'willpower')
             self.freebies += self.total_traits * 7  # 7 pts per gift level
+            print(f"Freebies + Traits ............ {self.freebies:4} {self.total_traits:4}x7")
+            self.challenge += f" tr:{self.total_traits * 7}/{21}"
+            x = getattr(self, 'willpower') * 1
+            y = getattr(self, 'gnosis') * 2
+            z = getattr(self, 'rage') * 1
+            ra = RAGE_PER_AUSPICE[int(self.auspice)] * 1  # Rage per Auspice
+            gn = GNOSIS_PER_BREED[int(self.breed)] * 2  # Gnosis per Breed
+            wp = 0
+            if self.family:
+                wp = PER_TRIBE[as_tribe_plural(self.family)]['willpower'] * 1  # Willpower per Tribe
+            self.freebies += x+y+z
+            self.challenge += f" ot:{x+y+z}/{ra+gn+wp}"
+            print(f"Freebies + other ............ {self.freebies:4} {x+y+z:4}")
+
+
         elif 'kinfolk' == self.creature:
             self.freebies += getattr(self, 'rage')
             self.freebies += getattr(self, 'gnosis') * 2
@@ -1543,7 +1563,8 @@ class Creature(models.Model):
         else:
             self.freebies += getattr(self, 'willpower')
 
-        self.freebiesdif = self.expectedfreebies - self.freebies
+        #self.freebies += + self.expectedfreebies
+        self.freebiesdif = self.freebies + self.expectedfreebies
         print(f"Expected Freebies / Dif / free ........... {self.freebiesdif:4} =  {self.expectedfreebies:4} - {self.freebies:4}")
         if self.freebiesdif == 0:
             self.status = 'OK'

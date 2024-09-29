@@ -2,7 +2,7 @@ class CrossOverSheet extends WawwodSheet {
     constructor(data, parent, collector) {
         super(data, parent, collector);
         this.init();
-        this.release = "WW20-15.09";
+        this.release = "WW20-29.09";
 
     }
 
@@ -10,7 +10,7 @@ class CrossOverSheet extends WawwodSheet {
         super.init();
         let me = this;
         me.mark_overhead = false
-        me.setButtonsOrigin(-1, 0)
+        me.setButtonsOrigin(28, 0)
     }
 
     drawPages() {
@@ -75,7 +75,6 @@ class CrossOverSheet extends WawwodSheet {
         if (me.blank) {
             me.decorationText(22.5, 34.8, 0, 'end', me.base_font, me.small_font_size, me.draw_fill, me.draw_stroke, 0.5, 'Challenge: you make us laugh punk!', me.back);
         } else {
-
             me.decorationText(22.5, 34.8, 0, 'end', me.base_font, me.small_font_size, me.draw_fill, me.draw_stroke, 0.5, 'Challenge:' + me.data['freebies'], me.back);
         }
     }

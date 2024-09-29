@@ -2,14 +2,15 @@ class CrossOverSheet extends WawwodSheet {
     constructor(data, parent, collector) {
         super(data, parent, collector);
         this.init();
-        this.release = "WW20-15.09";
+        this.release = "WW20-29.09";
 
     }
 
     init() {
         super.init();
         let me = this;
-        this.mark_overhead = false
+        me.mark_overhead = false
+        me.setButtonsOrigin(-1, 0)
     }
 
     drawPages() {

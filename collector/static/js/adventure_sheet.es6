@@ -22,9 +22,9 @@ class AdventureSheet extends WawwodSheet {
     init() {
         super.init();
         let me = this;
-        me.figure_width = 5;
+        me.figure_width = 6;
         me.figure_height = 10;
-        me.setButtonsOrigin(-1, 0)
+        me.setButtonsOrigin(25, 0)
         me.stokedebris = "2 1"
         me.line_stroke = "#202020"
         me.base_font = "Khand"
@@ -43,17 +43,17 @@ class AdventureSheet extends WawwodSheet {
         let me = this;
         super.drawPages(page);
         // Sheet content
-        let ox = 8
+        let ox = 2
         let oy = 2
         me.lines = me.back.append('g');
         me.daddy = me.lines;
         let title_text = me.data.adventure.name.toUpperCase();
-        me.decorationText(ox/2, 1.0, 0, 'middle', me.title_font, me.fat_font_size, me.draw_fill, me.draw_stroke, 1, title_text, me.back, 1);
-        me.decorationText(ox/2, 1.45, 0, 'middle', me.base_font, me.medium_font_size, me.draw_fill, me.draw_stroke, 0.5, "What A Wonderful World Of Darkness - Adventure Sheet", me.back);
+        me.decorationText(6, 1.0, 0, 'middle', me.title_font, me.fat_font_size, me.draw_fill, me.draw_stroke, 1, title_text, me.back, 1);
+        me.decorationText(6, 1.45, 0, 'middle', me.base_font, me.medium_font_size, me.draw_fill, me.draw_stroke, 0.5, "What A Wonderful World Of Darkness - Adventure Sheet", me.back);
         let day = new Date().toString()
-        me.decorationText(ox/2, 1.75, 0, 'middle', me.base_font, me.small_font_size, me.draw_fill, me.draw_stroke, 0.15, day, me.back, 1.0);
+        me.decorationText(6, 1.75, 0, 'middle', me.base_font, me.small_font_size, me.draw_fill, me.draw_stroke, 0.15, day, me.back, 1.0);
         me.decorationText(35.5, 23.25, 0, 'end', me.base_font, me.small_font_size, me.draw_fill, me.draw_stroke, 0.5, "Adventure Sheet v." + me.version + " - (c)2024 Red Fox Inc. Generated with WaWWoD", me.back)
-        me.decorationText(35.5, 23.5, 0, 'end', me.base_font, me.small_font_size*0.5, me.draw_fill, me.draw_stroke, 0.15, "Red Fox Inc. is a subsidiary of Consolidex Worldwide. Tame the dogs. Subscribe Now!", me.back)
+        me.decorationText(35.5, 23.5, 0, 'end', me.base_font, me.small_font_size*0.5, me.draw_fill, me.draw_stroke, 0.15, "Red Fox Inc. is a subsidiary of Consolidex Worldwide. Don't think. Vote Trump.", me.back)
 
         me.characters = me.back.append('g')
             .attr('class', 'session_sheets')
@@ -74,9 +74,8 @@ class AdventureSheet extends WawwodSheet {
                 return d.rid
                 })
             .attr('transform', (d) => {
-                let x = ((d.idx+6) % 5) * (me.figure_width+0.5)  * me.stepx
+                let x = ((d.idx) % 5) * (me.figure_width+0.5)  * me.stepx
                 let y = Math.floor(d.idx / 5.0) * (me.figure_height+0.5) * me.stepy
-                console.log(d.idx,x,y)
                 let transform = `translate(${x},${y})`
                 return transform
             })
@@ -118,12 +117,18 @@ class AdventureSheet extends WawwodSheet {
         let lh = 0.3
         let ly = lh
         me.sheetEntry(xfunc, ly, ox, oy, "", "name", me.small_font_size)
-        ly += lh
+        ly += lh*2
         me.sheetEntry(xfunc, ly, ox, oy, "Player", "player")
         ly += lh
         me.sheetEntry(xfunc, ly, ox, oy, "Tribe", "family")
         ly += lh
-        me.sheetEntry(xfunc, ly, ox, oy, "Auspice", "auspice")
+        me.sheetEntry(xfunc, ly, ox, oy, "Auspice", "auspice_name")
+        ly += lh
+        me.sheetEntry(xfunc, ly, ox, oy, "Breed", "breed_name")
+        ly += lh
+        me.sheetEntry(xfunc, ly, ox, oy, "", "challenge")
+//         ly += lh
+//         me.sheetEntry(xfunc, ly, ox, oy, "Challenge", "freebies")
 
         ly += lh*2
         me.shortSheetEntry(xfunc, ly, ox, oy, "STR", "attribute0")
@@ -162,12 +167,18 @@ class AdventureSheet extends WawwodSheet {
             me.daddy = d3.selectAll("#shortcuts"+k)
             _.forEach(v, (w,l) => {
                 ly += lh
+                if (l % 3 == 0){
+                    ly += lh/2.0
+                }
                 let words = w.split("=")
                 console.log(words)
-                me.baseSheetEntry(xfunc,ly, ox,oy,words[0],words[1],0,"direct","",0,4.5,false)
+                me.baseSheetEntry(xfunc,ly, ox,oy,words[0],words[1],0,"direct","",0,5.5,false)
             })
             ly = oldly
         })
+
+
+
     }
 
     baseSheetEntry(xfunc, y, ox = 0, oy = 0, proplabel, prop = '', font_size = 0, direct_prop = '', direct_value = '', offsetx = 0, offsetx2 = 5, with_dots = false) {
@@ -192,6 +203,26 @@ class AdventureSheet extends WawwodSheet {
                 return proplabel;
             })
         ;
+        me.daddy.append('line')
+            .attr('x1', function (d) {
+                return xfunc(d['idx']) + offsetx * me.stepx;
+            })
+            .attr('y1', function (d) {
+                return (oy + y) * me.stepy;
+            })
+            .attr('x2', function (d) {
+                return xfunc(d['idx']) + offsetx2 * me.stepx;
+            })
+            .attr('y2', function (d) {
+                return (oy + y) * me.stepy;
+            })
+
+            .style('fill', "none")
+            .style('stroke', me.shadow_stroke)
+            .style('stroke-width', "0.5pt")
+            .style('stroke-dasharray', "2 6")
+
+
         if (with_dots){
             me.daddy.append('path')
                 .attr("transform", (d)=> {
@@ -200,8 +231,8 @@ class AdventureSheet extends WawwodSheet {
                     return "translate("+a+","+b+")"
                 })
 
-                .style('fill', me.user_fill)
-                .style('stroke', me.user_stroke)
+                .style('fill', me.user_stroke)
+                .style('stroke', me.user_fill)
 
                 .attr("d",function (d) {
                     let result = d[prop]
@@ -220,7 +251,7 @@ class AdventureSheet extends WawwodSheet {
                         path += `M ${s*(diam*2+offsetd)} -${diam} m ${diam},0 a ${diam}   ${diam} 0 1 0 0.01 0`
                         path += `M ${s*(diam*2+offsetd)} -${diam} m ${diam},${diam*2} a ${diam-1} ${diam} 1 1 1 0.01 0`
                         if (result>s){
-                            path += `M ${s*(diam*2+offsetd)} -${diam-4} m ${diam},0 a ${diam-4}   ${diam-4} 0 1 0 0.01 0`
+                            path += `M ${s*(diam*2+offsetd)} -${diam-5} m ${diam},0 a ${diam-5}   ${diam-5} 0 1 0 0.01 0`
                         }
                     }
                     return path
@@ -269,17 +300,17 @@ class AdventureSheet extends WawwodSheet {
 
     sheetEntryRight(xfunc, y, ox = 0, oy = 0, proplabel, prop = '', font_size = 0, direct_prop = '', direct_value = '') {
         let me = this
-        me.baseSheetEntry(xfunc, y, ox, oy, proplabel, prop, font_size, direct_prop, direct_value, 2.75 - 0.125, 4.5)
+        me.baseSheetEntry(xfunc, y, ox, oy, proplabel, prop, font_size, direct_prop, direct_value, 2.75 - 0.125, 5.5)
     }
 
     sheetEntry(xfunc, y, ox = 0, oy = 0, proplabel, prop = '', font_size = 0, direct_prop = '', direct_value = '') {
         let me = this
-        me.baseSheetEntry(xfunc, y, ox, oy, proplabel, prop, font_size, direct_prop, direct_value, -0.125, 4.5)
+        me.baseSheetEntry(xfunc, y, ox, oy, proplabel, prop, font_size, direct_prop, direct_value, -0.125, 5.5)
     }
 
     dottedSheetEntry(xfunc, y, ox = 0, oy = 0, proplabel, prop = '', font_size = 0, direct_prop = '', direct_value = '') {
         let me = this
-        me.baseSheetEntry(xfunc, y, ox, oy, proplabel, prop, font_size, direct_prop, direct_value, -0.125, 4.5,true)
+        me.baseSheetEntry(xfunc, y, ox, oy, proplabel, prop, font_size, direct_prop, direct_value, -0.125, 5.5,true)
     }
 
     shortSheetEntry(xfunc, y, ox = 0, oy = 0, proplabel, prop = '', font_size = 0, direct_prop = '', direct_value = '') {

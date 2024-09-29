@@ -3,6 +3,9 @@ import logging
 
 logger = logging.Logger(__name__)
 
+FONTSET = ['Cinzel', 'Trade+Winds', 'Imprima', 'Roboto', 'Philosopher', 'Ruda', 'Khand', 'Allura', 'Gochi+Hand',
+           'Reggae+One', 'Whisper', 'Licorice', 'Damion','Allison',  'Syne+Mono', 'Zilla+Slab', 'Spartan', 'Marcellus+SC', 'Splash', 'Trirong', 'Ubuntu+Mono', 'Inria+Sans']
+
 
 def get_current_chronicle():
     # When migrating
@@ -439,9 +442,6 @@ def garou_rank_from_renown(dataset={"auspice": 0, "glory": 0, "honor": 0, "wisdo
 
 RANKS = ['Pup', 'Cliath', 'Fostern', 'Adren', 'Athro', 'Elder']
 
-FONTSET = ['Cinzel', 'Trade+Winds', 'Imprima', 'Roboto', 'Philosopher', 'Ruda', 'Khand', 'Allura', 'Gochi+Hand',
-           'Reggae+One', 'Syne+Mono', 'Zilla+Slab', 'Spartan', 'Marcellus+SC', 'Splash', 'Trirong', 'Ubuntu+Mono', 'Inria+Sans']
-
 CHARACTERS_PER_PAGE = 8
 
 ALL_TRIBES = [
@@ -481,7 +481,7 @@ PER_TRIBE = {
     "Shadow Lords": {"willpower": 3},
     "Silent Striders": {"willpower": 3},
     "Silver Fangs": {"willpower": 3},
-    "Stargazers": {"willpower": 5},
+    "Stargazers": {"willpower": 4},
     "Uktenas": {"willpower": 3},
     "Wendigos": {"willpower": 4},
     "White Howlers": {"willpower": 3},

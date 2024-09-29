@@ -341,6 +341,9 @@ def character_for(slug, option=None, idx=-1):
         if idx>-1:
             k["idx"] = idx
         k["sire_name"] = c.sire_name
+        from collector.utils.wod_reference import AUSPICES, BREEDS
+        k["auspice_name"] = AUSPICES[c.auspice]
+        k["breed_name"] = BREEDS[c.breed]
         k["background_notes"] = c.background_notes()
         k["rite_notes"] = c.rite_notes()
         k["timeline"] = c.timeline()
@@ -349,6 +352,11 @@ def character_for(slug, option=None, idx=-1):
         k["shc"] = c.get_shortcuts()
         tn = c.traits_notes()
         k["traits_notes"] = tn
+        chronicle = get_current_chronicle()
+        if chronicle:
+            k["chronicle_name"] = chronicle.name
+        else:
+            k["chronicle_name"] = "WaWWoD"
         k["nature_notes"] = c.nature_notes()
         k["meritsflaws_notes"] = c.meritsflaws_notes()
         j = json.dumps(k)

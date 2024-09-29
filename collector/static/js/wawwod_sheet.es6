@@ -88,16 +88,19 @@ class WawwodSheet {
 
     init() {
         let me = this;
-        me.debug = true;
+        me.debug = false;
         me.blank = false;
         me.page = 0;
         if (me.disposition == "portrait"){
             me.width = parseInt($(me.parent).css("width"), 10) * 0.75;
             me.height = me.width * 1.4;
+            me.width_span = 24
+            me.height_span = 36
             me.w = 1.25 * me.width;
             me.h = 1.25 * me.height;
             me.stepx = me.width / 24;
             me.stepy = me.height / 36;
+
             me.small_font_size = 1.3 * me.stepy / 5;
             me.medium_font_size = 1.7 * me.stepy / 5;
             me.big_font_size = 2 * me.stepy / 5;
@@ -105,6 +108,8 @@ class WawwodSheet {
         }else{
             me.height = parseInt($(me.parent).css("width"), 10) * 0.75
             me.width = me.height * 1.4
+            me.width_span = 36
+            me.height_span = 24
             me.w = 1.25 * me.width
             me.h = 1.25 * me.height
             me.stepx = me.width / 36
@@ -116,21 +121,22 @@ class WawwodSheet {
         }
         me.tiny_font_size = me.small_font_size*0.75;
 
-        me.margin = [0, 0, 0, 0];
-        me.dot_radius = me.stepx / 8;
-        me.stat_length = 150;
-        me.stat_max = 5;
-        me.shadow_fill = "#B0B0B07F";
-        me.shadow_stroke = "#A0A0A07F";
-        me.draw_stroke = '#111';
-        me.draw_fill = '#222';
-        me.user_stroke = '#143';
-        me.user_fill = '#286';
-        me.overhead_fill = '#C22';
-        me.user_font = 'Gochi Hand';
-        me.mono_font = 'Syne Mono';
-        me.creature_font = 'Trade Winds';
-        me.title_font = 'Khand';
+        me.margin = [0, 0, 0, 0]
+        me.dot_radius = me.stepx / 8
+        me.stat_length = 150
+        me.stat_max = 5
+        me.shadow_fill = "#B0B0B07F"
+        me.shadow_stroke = "#A0A0A07F"
+        me.draw_stroke = '#111'
+        me.draw_fill = '#222'
+        me.user_stroke = '#286'
+        me.user_fill = '#143'
+        me.overhead_fill = '#C22'
+        //me.user_font = 'Gochi Hand'
+        me.user_font = 'Damion'
+        me.mono_font = 'Syne Mono'
+        me.creature_font = 'Trade Winds'
+        me.title_font = 'Khand'
         //me.title_font = 'Trade Winds';
         me.logo_font = 'Splash';
         me.base_font = 'Philosopher';
@@ -236,7 +242,7 @@ class WawwodSheet {
             let verticals = me.back.append('g')
                 .attr('class', 'verticals')
                 .selectAll("g")
-                .data(d3.range(0, 24, 1));
+                .data(d3.range(0, me.width_span, 1));
             verticals.enter()
                 .append('line')
                 .attr('x1', function (d) {
@@ -246,18 +252,18 @@ class WawwodSheet {
                 .attr('x2', function (d) {
                     return d * me.stepx
                 })
-                .attr('y2', 36 * me.stepy)
+                .attr('y2', me.height_span * me.stepy)
                 .style('fill', 'none')
                 .style('stroke', '#CCC')
                 .style('stroke-width', '0.25pt');
             let horizontals = me.back.append('g')
                 .attr('class', 'horizontals')
                 .selectAll("g")
-                .data(d3.range(0, 36, 1));
+                .data(d3.range(0, me.height_span, 1));
             horizontals.enter()
                 .append('line')
                 .attr('x1', 0)
-                .attr('x2', 24 * me.stepx)
+                .attr('x2', me.width_span * me.stepx)
                 .attr('y1', function (d) {
                     return d * me.stepy
                 })
@@ -598,7 +604,7 @@ class WawwodSheet {
 
         oy -= 0.5 * me.stepy;
 
-        me.statText('Name', me.data['name'].toUpperCase(), ox + me.stepx * 2, oy, 'name', 'name', me.character, true);
+        me.statText('Name', me.data['name'], ox + me.stepx * 2, oy, 'name', 'name', me.character, true);
         me.statText('Nature', me.data['nature'], ox + me.stepx * 9, oy, 'nature', 'nature', me.character);
         if (me.data["creature"] == 'kindred') {
             me.statText('Age/R(E)', me.data['age'] + "/" + me.data['trueage'] + " (" + me.data['embrace'] + "A.D)", ox + me.stepx * 16, oy, 'age', 'age', me.character);
@@ -615,7 +621,7 @@ class WawwodSheet {
         me.statText('Sex', (me.data['sex'] ? 'male' : 'female'), ox + me.stepx * 16, oy, 'sex', 'sex', me.character);
 
         oy += 0.5 * me.stepy;
-        me.statText('Chronicle', me.data['chronicle'], ox + me.stepx * 2, oy, 'chronicle', 'chronicle', me.character);
+        me.statText('Chronicle', me.data['chronicle_name'], ox + me.stepx * 2, oy, 'chronicle', 'chronicle', me.character);
         if (me.data["creature"] == 'kindred') {
             me.statText('Position', me.data['position'], ox + me.stepx * 9, oy, 'group', 'group', me.character);
         } else {
@@ -1053,8 +1059,8 @@ class WawwodSheet {
         });
         stat = 'shortcuts';
         me.config['shortcuts'].forEach(function (d, idx) {
-            let x = ox + me.stepx * 9 + Math.floor(idx / 9) * me.stepx * 9;
-            let y = oy + 0.5 * me.stepy * (idx % 9);
+            let x = ox + me.stepx * 9 + Math.floor(idx / 12) * me.stepx * 9;
+            let y = oy + 0.4 * me.stepy * (idx % 12);
             let w = d.split('=');
             if (me.blank) {
             } else {
