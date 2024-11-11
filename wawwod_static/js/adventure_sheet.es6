@@ -22,20 +22,20 @@ class AdventureSheet extends WawwodSheet {
     init() {
         super.init();
         let me = this;
-        me.figure_width = 5;
+        me.figure_width = 6;
         me.figure_height = 10;
-        me.setButtonsOrigin(-1, 0)
+        me.setButtonsOrigin(1, 0)
         me.stokedebris = "2 1"
         me.line_stroke = "#202020"
         me.base_font = "Khand"
-        me.version = "0.5"
+        me.version = "0.6"
     }
 
     drawButtons() {
         let me = this;
         me.addButton(2, 'Save PDF');
         me.addButton(4, 'Recto');
-        me.addButton(5, 'Verso');
+//         me.addButton(5, 'Verso');
         // me.addButton(3, 'Close');
     }
 
@@ -43,17 +43,17 @@ class AdventureSheet extends WawwodSheet {
         let me = this;
         super.drawPages(page);
         // Sheet content
-        let ox = 8
+        let ox = 2
         let oy = 2
         me.lines = me.back.append('g');
         me.daddy = me.lines;
         let title_text = me.data.adventure.name.toUpperCase();
-        me.decorationText(ox/2, 1.0, 0, 'middle', me.title_font, me.fat_font_size, me.draw_fill, me.draw_stroke, 1, title_text, me.back, 1);
-        me.decorationText(ox/2, 1.45, 0, 'middle', me.base_font, me.medium_font_size, me.draw_fill, me.draw_stroke, 0.5, "What A Wonderful World Of Darkness - Adventure Sheet", me.back);
+        me.decorationText(2, 1.75, 0, 'start', me.title_font, me.fat_font_size, me.draw_fill, me.draw_stroke, 1, title_text, me.back, 1);
+        me.decorationText(34, 1.45, 0, 'end', me.base_font, me.medium_font_size, me.draw_fill, me.draw_stroke, 0.5, "What A Wonderful World Of Darkness - Adventure Sheet", me.back);
         let day = new Date().toString()
-        me.decorationText(ox/2, 1.75, 0, 'middle', me.base_font, me.small_font_size, me.draw_fill, me.draw_stroke, 0.15, day, me.back, 1.0);
-        me.decorationText(35.5, 23.25, 0, 'end', me.base_font, me.small_font_size, me.draw_fill, me.draw_stroke, 0.5, "Adventure Sheet v." + me.version + " - (c)2024 Red Fox Inc. Generated with WaWWoD", me.back)
-        me.decorationText(35.5, 23.5, 0, 'end', me.base_font, me.small_font_size*0.5, me.draw_fill, me.draw_stroke, 0.15, "Red Fox Inc. is a subsidiary of Consolidex Worldwide. Don't think. Vote Trump.", me.back)
+        me.decorationText(34, 1.75, 0, 'end', me.base_font, me.small_font_size, me.draw_fill, me.draw_stroke, 0.15, day, me.back, 1.0);
+        me.decorationText(34, 23.0, 0, 'end', me.base_font, me.small_font_size, me.draw_fill, me.draw_stroke, 0.5, "Adventure Sheet v." + me.version + " - (c)2024 Red Fox Inc. Generated with WaWWoD", me.back)
+        me.decorationText(34, 23.15, 0, 'end', me.base_font, me.small_font_size*0.5, me.draw_fill, me.draw_stroke, 0.15, "Red Fox Inc. is a subsidiary of Consolidex Worldwide. Don't think. Vote Trump.", me.back)
 
         me.characters = me.back.append('g')
             .attr('class', 'session_sheets')
@@ -74,9 +74,8 @@ class AdventureSheet extends WawwodSheet {
                 return d.rid
                 })
             .attr('transform', (d) => {
-                let x = ((d.idx+6) % 5) * (me.figure_width+0.5)  * me.stepx
+                let x = ((d.idx) % 5) * (me.figure_width+0.5)  * me.stepx
                 let y = Math.floor(d.idx / 5.0) * (me.figure_height+0.5) * me.stepy
-                console.log(d.idx,x,y)
                 let transform = `translate(${x},${y})`
                 return transform
             })
@@ -91,7 +90,7 @@ class AdventureSheet extends WawwodSheet {
                 return me.stepx * me.figure_width
             })
             .attr('height', function (d) {
-                return me.stepy * me.figure_height
+                return me.stepy * me.figure_height*2
             })
             .style('fill', "none")
             .style('stroke', me.line_stroke)
@@ -116,18 +115,38 @@ class AdventureSheet extends WawwodSheet {
         oy = 0
 
         let lh = 0.3
-        let ly = lh
+        let ly = lh+0.1
         me.sheetEntry(xfunc, ly, ox, oy, "", "name", me.small_font_size)
         ly += lh*2
         me.sheetEntry(xfunc, ly, ox, oy, "Player", "player")
         ly += lh
-        me.sheetEntry(xfunc, ly, ox, oy, "Tribe", "family")
+        me.daddy.append('text')
+            .attr('x', function (d) {
+                return (ox+me.figure_width-0.25)*me.stepx;
+            })
+            .attr('y', function (d) {
+                return (ly) * me.stepy;
+            })
+            .style('fill', me.user_fill)
+            .style('stroke', me.user_stroke)
+            .style('stroke-width', "0.25pt")
+            .style('font-family', me.user_font)
+            .style('text-anchor', "end")
+            .style('font-size', me.tiny_font_size+'pt')
+            .text(function (d) {
+                let str = (d.sex ? "Male" : "Female" )  + " "+ d.breed_name + " " + d.auspice_name + " " + d.family
+                return str
+            })
+        ;
+//         me.sheetEntry(xfunc, ly, ox, oy, "", "family")
+//         me.sheetEntry(xfunc, ly, ox, oy, "", "auspice_name")
+//         me.sheetEntry(xfunc, ly, ox, oy, "", "breed_name")
         ly += lh
-        me.sheetEntry(xfunc, ly, ox, oy, "Auspice", "auspice_name")
-        ly += lh
-        me.sheetEntry(xfunc, ly, ox, oy, "Breed", "breed_name")
-        ly += lh
-        me.sheetEntry(xfunc, ly, ox, oy, "Challenge", "challenge")
+//         ly += lh
+//         ly += lh
+        me.sheetEntry(xfunc, ly, ox, oy, "", "challenge")
+//         ly += lh
+//         me.sheetEntry(xfunc, ly, ox, oy, "Challenge", "freebies")
 
         ly += lh*2
         me.shortSheetEntry(xfunc, ly, ox, oy, "STR", "attribute0")
@@ -171,7 +190,7 @@ class AdventureSheet extends WawwodSheet {
                 }
                 let words = w.split("=")
                 console.log(words)
-                me.baseSheetEntry(xfunc,ly, ox,oy,words[0],words[1],0,"direct","",0,4.5,false)
+                me.baseSheetEntry(xfunc,ly, ox,oy,words[0],words[1],0,"direct","",0,5.5,false)
             })
             ly = oldly
         })
@@ -292,6 +311,14 @@ class AdventureSheet extends WawwodSheet {
 
     }
 
+
+    sheetStackedEntry(xfunc, y, ox = 0, oy = 0, proplabel, prop = '', font_size = 0, direct_prop = '', direct_value = '') {
+        let me = this
+        me.baseSheetEntry(xfunc, y, ox, oy, proplabel, prop, font_size, direct_prop, direct_value, -0.125, 5.5)
+    }
+
+
+
     sheetEntryLeft(xfunc, y, ox = 0, oy = 0, proplabel, prop = '', font_size = 0, direct_prop = '', direct_value = '') {
         let me = this
         me.baseSheetEntry(xfunc, y, ox, oy, proplabel, prop, font_size, direct_prop, direct_value, -0.125, 2.25)
@@ -299,17 +326,17 @@ class AdventureSheet extends WawwodSheet {
 
     sheetEntryRight(xfunc, y, ox = 0, oy = 0, proplabel, prop = '', font_size = 0, direct_prop = '', direct_value = '') {
         let me = this
-        me.baseSheetEntry(xfunc, y, ox, oy, proplabel, prop, font_size, direct_prop, direct_value, 2.75 - 0.125, 4.5)
+        me.baseSheetEntry(xfunc, y, ox, oy, proplabel, prop, font_size, direct_prop, direct_value, 2.75 - 0.125, 5.5)
     }
 
     sheetEntry(xfunc, y, ox = 0, oy = 0, proplabel, prop = '', font_size = 0, direct_prop = '', direct_value = '') {
         let me = this
-        me.baseSheetEntry(xfunc, y, ox, oy, proplabel, prop, font_size, direct_prop, direct_value, -0.125, 4.5)
+        me.baseSheetEntry(xfunc, y, ox, oy, proplabel, prop, font_size, direct_prop, direct_value, -0.125, 5.5)
     }
 
     dottedSheetEntry(xfunc, y, ox = 0, oy = 0, proplabel, prop = '', font_size = 0, direct_prop = '', direct_value = '') {
         let me = this
-        me.baseSheetEntry(xfunc, y, ox, oy, proplabel, prop, font_size, direct_prop, direct_value, -0.125, 4.5,true)
+        me.baseSheetEntry(xfunc, y, ox, oy, proplabel, prop, font_size, direct_prop, direct_value, -0.125, 5.5,true)
     }
 
     shortSheetEntry(xfunc, y, ox = 0, oy = 0, proplabel, prop = '', font_size = 0, direct_prop = '', direct_value = '') {

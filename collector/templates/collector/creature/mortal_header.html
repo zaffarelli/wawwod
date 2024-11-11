@@ -131,7 +131,7 @@
 
 
     <tr>
-        {% if c.creature == 'garou' %}
+        {% if c.creature == 'garou' or c.creature == "kinfolk" %}
         <th>Sept Position</th>
         <td class='editable userinput' id='{{c.rid}}__community_job'>{{ c.community_job }}</td>
         <th>Residence</th>

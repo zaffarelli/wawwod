@@ -98,6 +98,7 @@ class Creature(models.Model):
     condition = models.CharField(max_length=32, blank=True, default='OK')
     territory = models.CharField(max_length=128, blank=True, default='')
     weakness = models.CharField(max_length=128, blank=True, default='')
+    specialities_rationale = models.TextField(max_length=512, blank=True, default='')
 
     district = models.CharField(max_length=8, blank=True, default='d01')
     community_job = models.CharField(max_length=32, blank=True, default='')
@@ -114,6 +115,7 @@ class Creature(models.Model):
     # All
     willpower = models.PositiveIntegerField(default=1)
     equipment = models.TextField(max_length=2048, default='', blank=True)
+    notes = models.TextField(max_length=1024, default='', blank=True)
 
     # CTD
     glamour = models.PositiveIntegerField(default=0)
@@ -449,6 +451,7 @@ class Creature(models.Model):
         for s in base:
             sc = f'{s[0].title()}+{s[1].title()}={self.value_of(s[0]) + self.value_of(s[1])}'
             shortcuts.append(sc)
+        print(base, shortcuts)
         return shortcuts
 
     @property
@@ -641,13 +644,15 @@ class Creature(models.Model):
     def fix_kinfolk(self):
         from collector.utils.wod_reference import ALL_TRIBES
         self.trueage = self.age
-        self.sex = random.randrange(0, 2)
-        while True:
-            self.family = random.choice(ALL_TRIBES)
-            if (self.family in ["Croatans", "Bunyips", "White Howlers"]):
-                pass
-            else:
-                break
+        if len(self.family) == 0:
+            while True:
+                self.family = random.choice(ALL_TRIBES)
+                if (self.family in ["Croatans", "Bunyips", "White Howlers"]):
+                    pass
+                else:
+                    break
+            self.reparts = "6_4_3_11_7_4"
+            self.sex = random.randrange(0, 2)
         # print(f"Tribe: {self.family:30} Sex: {self.sex}")
         self.expectedfreebies = self.freebies_per_mortal_age
         self.display_pole = self.groupspec
@@ -742,7 +747,7 @@ class Creature(models.Model):
     @property
     def freebies_per_mortal_age(self):
         age = int(self.age)
-        fb = math.floor((age - 25) / 10) * 5
+        fb = math.floor((age - 20) / 10) * 5
         # print(f"{self.name:20}: freebies per mortal age: {fb:2} (age: {self.age:2})")
         return fb
 

@@ -45,7 +45,9 @@ class CrossOverSheet extends WawwodSheet {
             me.midline(2.5, 1, 23);
             me.midline(35, 1, 23);
 
-            me.crossline(9.75, 4, 34);
+            me.crossline(9.75, 4, 27);
+
+            me.midline(28.5, 1, 23);
 
         } else if (me.page === 2) {
             me.crossline(1, 2, 35);
@@ -870,6 +872,7 @@ class CrossOverSheet extends WawwodSheet {
         } else if (me.page === 1) {
             me.fillBackgroundNotes(4 * me.stepy);
             me.fillTimeline(4 * me.stepy);
+            me.fillNewManyForms(28 * me.stepy)
         } else if (me.page === 2) {
             me.fillNatureNotes(4 * me.stepy);
             me.fillMeritsFlawsNotes(12 * me.stepy);

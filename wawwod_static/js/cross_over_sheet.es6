@@ -10,7 +10,7 @@ class CrossOverSheet extends WawwodSheet {
         super.init();
         let me = this;
         me.mark_overhead = false
-        me.setButtonsOrigin(-1, 0)
+        me.setButtonsOrigin(28, 0)
     }
 
     drawPages() {
@@ -45,7 +45,9 @@ class CrossOverSheet extends WawwodSheet {
             me.midline(2.5, 1, 23);
             me.midline(35, 1, 23);
 
-            me.crossline(9.75, 4, 34);
+            me.crossline(9.75, 4, 27);
+
+            me.midline(28.5, 1, 23);
 
         } else if (me.page === 2) {
             me.crossline(1, 2, 35);
@@ -75,7 +77,6 @@ class CrossOverSheet extends WawwodSheet {
         if (me.blank) {
             me.decorationText(22.5, 34.8, 0, 'end', me.base_font, me.small_font_size, me.draw_fill, me.draw_stroke, 0.5, 'Challenge: you make us laugh punk!', me.back);
         } else {
-
             me.decorationText(22.5, 34.8, 0, 'end', me.base_font, me.small_font_size, me.draw_fill, me.draw_stroke, 0.5, 'Challenge:' + me.data['freebies'], me.back);
         }
     }
@@ -871,6 +872,7 @@ class CrossOverSheet extends WawwodSheet {
         } else if (me.page === 1) {
             me.fillBackgroundNotes(4 * me.stepy);
             me.fillTimeline(4 * me.stepy);
+            me.fillNewManyForms(28 * me.stepy)
         } else if (me.page === 2) {
             me.fillNatureNotes(4 * me.stepy);
             me.fillMeritsFlawsNotes(12 * me.stepy);

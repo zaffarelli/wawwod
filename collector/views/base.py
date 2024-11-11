@@ -282,6 +282,26 @@ def add_garou(request, slug=None):
         item.save()
         return HttpResponse(status=204)
 
+def add_kinfolk(request, slug=None):
+    if is_ajax(request):
+        name = " ".join(slug.split("_"))
+        chronicle = get_current_chronicle()
+        item = Creature()
+        item.name = name
+        item.chronicle = chronicle.acronym
+        item.creature = 'kinfolk'
+        item.age = 0
+        item.family = 'Child of Gaia'
+        item.faction = 'Gaia'
+        item.adventure = 'TWT'
+        item.randomize_backgrounds()
+        item.randomize_archetypes()
+        item.randomize_attributes()
+        item.randomize_abilities()
+        item.source = 'zaffarelli'
+        item.save()
+        return HttpResponse(status=204)
+
 
 def add_ghoul(request, slug=None):
     if is_ajax(request):
@@ -350,6 +370,10 @@ def character_for(slug, option=None, idx=-1):
         k["others"] = c.others()
         k["spe"] = c.get_specialities()
         k["shc"] = c.get_shortcuts()
+        if c.creature == "kinfolk":
+            k["edge_for"] = c.edge_for
+        if len(c.specialities_rationale)>0:
+            k["srs"] = c.specialities_rationale
         tn = c.traits_notes()
         k["traits_notes"] = tn
         chronicle = get_current_chronicle()
@@ -384,16 +408,39 @@ def display_crossover_sheet(request, slug=None, option=None):
         return JsonResponse(crossover_sheet_context)
 
 
-def display_gaia_wheel(request):
+def display_chronicle_map(request):
     if is_ajax(request):
-        gaia_wheel_context = {'data': build_gaia_wheel()}
-        return JsonResponse(gaia_wheel_context)
+        chronicle = get_current_chronicle()
+        creatures = Creature.objects.filter(chronicle=chronicle.acronym) \
+            .exclude(mythic=True) \
+            .exclude(condition__startswith="DEAD=19") \
+            .exclude(condition__startswith="MISSING=19") \
+            .exclude(ghost=True) \
+            .exclude(hidden=True) \
+            .exclude(creature="garou") \
+            .order_by('adventure','creature',"name")
+        all_creatures = []
+        for creature in creatures:
+            c = creature.toJSON()
+            k = json.loads(c)
+            k["edge_for"] = creature.edge_for
+            # print(k["name"])
+            all_creatures.append(k)
+
+        context = {'data': json.dumps(all_creatures,indent=4,sort_keys=True)}
+        return JsonResponse(context)
 
 
 def display_dashboard(request):
     if is_ajax(request):
         gaia_wheel_context = {'data': build_gaia_wheel()}
         return JsonResponse(gaia_wheel_context)
+
+def display_gaia_wheel(request):
+    if is_ajax(request):
+        gaia_wheel_context = {'data': build_gaia_wheel()}
+        return JsonResponse(gaia_wheel_context)
+
 
 
 def adventure_sheet(request):
@@ -406,15 +453,17 @@ def adventure_sheet(request):
             from collector.models.seasons import Season
             current_seasons = Season.objects.filter(chronicle=chronicle.acronym, current=True)
             for season in current_seasons:
-                if len(season.protagonists) > 0:
-                    protagonists = season.protagonists.strip().split(",")
-                    print("PROTS", protagonists)
-                    for rid in protagonists:
-                        # print(rid)
-                        if len(rid)>0:
-                            j, k = character_for(rid,None,idx)
-                            idx += 1
-                            data["players"].append(k)
+                current_adventures = Adventure.objects.filter(season=season.acronym, current=True)
+                for adventure in current_adventures:
+                    if len(adventure.protagonists) > 0:
+                        protagonists = adventure.protagonists.strip().split(",")
+                        print("PROTS", protagonists)
+                        for rid in protagonists:
+                            # print(rid)
+                            if len(rid)>0:
+                                j, k = character_for(rid,None,idx)
+                                idx += 1
+                                data["players"].append(k)
             settings = {'fontset': FONTSET}
             adv = {
                 "name": chronicle.name,

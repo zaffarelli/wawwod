@@ -88,8 +88,8 @@ class WawwodSheet {
 
     init() {
         let me = this;
-        me.debug = false;
-        me.blank = false;
+        me.debug = false
+        me.blank = false
         me.page = 0;
         if (me.disposition == "portrait"){
             me.width = parseInt($(me.parent).css("width"), 10) * 0.75;
@@ -127,13 +127,13 @@ class WawwodSheet {
         me.stat_max = 5
         me.shadow_fill = "#B0B0B07F"
         me.shadow_stroke = "#A0A0A07F"
-        me.draw_stroke = '#111'
+        me.draw_stroke = '#888'
         me.draw_fill = '#222'
         me.user_stroke = '#286'
         me.user_fill = '#143'
         me.overhead_fill = '#C22'
-        //me.user_font = 'Gochi Hand'
-        me.user_font = 'Damion'
+        me.user_font = 'Gochi Hand'
+        //me.user_font = 'Whisper'
         me.mono_font = 'Syne Mono'
         me.creature_font = 'Trade Winds'
         me.title_font = 'Khand'
@@ -495,6 +495,31 @@ class WawwodSheet {
         }
     }
 
+    smallText(data,ox, oy, source){
+        let me = this;
+        let item = source.append('g')
+            .attr("transform",`translate(${ox},${oy})`)
+        let lines = data.split("\n")
+        let txt = item.append('text')
+            .attr("x", 0)
+            .attr("y", 0)
+            .attr("dy", me.small_font_size + 'pt')
+            .style("text-anchor", 'start')
+            .style("font-family", me.user_font)
+            .style("font-size", me.small_font_size + 'pt')
+            .style("fill", me.user_fill)
+            .style("stroke", me.user_stroke)
+            .style("stroke-width", '0.5pt')
+        _.forEach(lines, (v,k) => {
+            txt.append("tspan")
+                .attr("x",0)
+                .attr("y",0)
+                .attr("dy",10*k+"pt")
+                .text(v)
+            })
+
+    }
+
     title(name, ox, oy, source) {
         let me = this;
         let item = source.append('g');
@@ -604,7 +629,7 @@ class WawwodSheet {
 
         oy -= 0.5 * me.stepy;
 
-        me.statText('Name', me.data['name'].toUpperCase(), ox + me.stepx * 2, oy, 'name', 'name', me.character, true);
+        me.statText('Name', me.data['name'], ox + me.stepx * 2, oy, 'name', 'name', me.character, true);
         me.statText('Nature', me.data['nature'], ox + me.stepx * 9, oy, 'nature', 'nature', me.character);
         if (me.data["creature"] == 'kindred') {
             me.statText('Age/R(E)', me.data['age'] + "/" + me.data['trueage'] + " (" + me.data['embrace'] + "A.D)", ox + me.stepx * 16, oy, 'age', 'age', me.character);
@@ -621,7 +646,7 @@ class WawwodSheet {
         me.statText('Sex', (me.data['sex'] ? 'male' : 'female'), ox + me.stepx * 16, oy, 'sex', 'sex', me.character);
 
         oy += 0.5 * me.stepy;
-        me.statText('Chronicle', me.data['chronicle'], ox + me.stepx * 2, oy, 'chronicle', 'chronicle', me.character);
+        me.statText('Chronicle', me.data['chronicle_name'], ox + me.stepx * 2, oy, 'chronicle', 'chronicle', me.character);
         if (me.data["creature"] == 'kindred') {
             me.statText('Position', me.data['position'], ox + me.stepx * 9, oy, 'group', 'group', me.character);
         } else {
@@ -642,6 +667,8 @@ class WawwodSheet {
         } else if (me.data["creature"] == 'garou') {
             me.statText('Pack', me.data['groupspec'], ox + me.stepx * 9, oy, 'group', 'group', me.character);
             me.statText('Totem', me.data['sire'], ox + me.stepx * 16, oy, 'concept', 'concept', me.character);
+        } else if (me.data["creature"] == 'kinfolk') {
+            me.statText('Garou', me.data['edge_for'], ox + me.stepx * 9, oy, 'Garou', 'edge_for', me.character);
         }
 
         if (me.data["creature"] == 'kindred') {
@@ -782,7 +809,9 @@ class WawwodSheet {
                 me.title('Disciplines (' + me.data['total_traits'] + ')', ox + me.stepx * 12, oy, me.character);
             }
             me.title('Virtues', ox + me.stepx * 19, oy, me.character);
-
+        } else if (me.data['creature'] == 'kinfolk') {
+            me.title('Notes', ox + me.stepx * 12, oy, me.character);
+            me.title('Equipment', ox + me.stepx * 19, oy, me.character);
         } else {
             me.title('Other Traits', ox + me.stepx * 12, oy, me.character);
             if ((me.data['creature'] == 'mortal')) {
@@ -799,6 +828,10 @@ class WawwodSheet {
 
         overheads = me.build_overheads(stat,indexedb,5)
 
+        if (me.data["creature"] == "kinfolk"){
+            indexedb = [0,1,2,3,4,5]
+        }
+
         indexedb.forEach(function (z) {
             let x = ox + me.stepx * 2;
             let y = oy + 0.5 * me.stepy * (z);
@@ -806,14 +839,20 @@ class WawwodSheet {
         });
         // *** Traits
 
-        stat = 'trait';
-        overheads = me.build_overheads(stat,indexed,3)
-        indexed.forEach(function (d) {
-            let x = ox + me.stepx * 9;
-            let y = oy + 0.5 * me.stepy * (d);
-            me.powerStat(me.data[stat + d], x, y, stat, stat + d, me.character, false, overheads[d]);
-        });
-
+        if (me.data["creature"] == "kinfolk"){
+            console.log("Here we go")
+            let x = ox + me.stepx * 9
+            let y = oy + 0.5 * me.stepy
+            me.smallText(me.data["notes"],x,y,me.character)
+        }else{
+            stat = 'trait';
+            overheads = me.build_overheads(stat,indexed,3)
+            indexed.forEach(function (d) {
+                let x = ox + me.stepx * 9;
+                let y = oy + 0.5 * me.stepy * (d);
+                me.powerStat(me.data[stat + d], x, y, stat, stat + d, me.character, false, overheads[d]);
+            });
+        }
         stat = 'virtue';
         let levels = [];
         if (me.data['creature'] == 'garou') {
@@ -824,7 +863,12 @@ class WawwodSheet {
                 let y = oy + 1.20 * me.stepy * (d);
                 me.gaugeStat(levels[d], me.data[levels[d].toLowerCase()], x, y, me.character, true, false);
             });
+        } else if (me.data['creature'] == 'kinfolk') {
+            let x = ox + me.stepx * 16
+            let y = oy + 0.5 * me.stepy
+            me.smallText(me.data["equipment"],x,y,me.character)
         } else {
+
             levels = ['Conscience', 'Self-Control', 'Courage'];
             [0, 1, 2].forEach(function (d) {
                 let x = ox + me.stepx * 16;
@@ -833,6 +877,7 @@ class WawwodSheet {
             });
 
         }
+
 
 
         if (me.data['creature'] == 'garou') {
@@ -1036,6 +1081,124 @@ class WawwodSheet {
     }
 
 
+    fillNewManyForms(basey) {
+        let me = this
+        let ox = 1;
+        let oy = basey;
+        let attr = ["STR","DEX","STA","CHA","MAN","APP"]
+        let FORMS = {
+            "homid":{
+                "attributes_mods":[0,0,0,0,0,0],
+                "note":"",
+                "diff":"6",
+                },
+            "glabro":{
+                "attributes_mods":[2,0,2,0,-1,-1],
+                "diff":"7",
+                } ,
+            "crinos":{
+                "attributes_mods":[4,1,3,0,-3,-10],
+                "note":"DELIRIUM",
+                "diff":"6",
+                } ,
+            "hispo":{
+                "attributes_mods":[3,2,3,0,-3,0],
+                "diff":"7",
+                } ,
+            "lupus":{
+                "attributes_mods":[1,2,2,0,-3,0],
+                "diff":"6",
+                } ,
+            }
+        if (me.data['creature'] == 'garou') {
+            let idx = 0
+            let form_width = 4
+            let form_height = 5
+//             me.title('Many Forms', 12*me.stepx , oy, me.character);
+                me.character.append("svg:image")
+                    .attr("xlink:href", "static/collector/breed/manyforms.svg")
+                    .attr("width", "65%")
+                    .style("fill", "#8080807f")
+                    .attr("x", (ox+2)*me.stepx)
+                    .attr("y",basey-4*me.stepy);
+
+
+            _.forEach(FORMS,(v,k)=> {
+                let ox =  (1.5+idx*(form_width+0.25))
+                let oy = (basey)+me.stepy
+                let form_group = me.character.append("g")
+                    .attr("transform",`translate(${ox*me.stepx},${oy})`)
+
+//                 form_group.append("svg:image")
+//                     .attr("xlink:href", "static/collector/breed/"+k+".svg")
+//                     .attr("width", "10%")
+//                     .attr("height", "10%")
+//                     .style("fill", "#C0C0C07f")
+//                     .attr("x", 0)
+//                     .attr("y",0);
+//
+
+
+
+
+                form_group.append("rect")
+                    .attr('x',0)
+                    .attr('y',0)
+                    .attr('rx',"5pt")
+                    .attr('ry',"5pt")
+                    .attr('width',form_width*me.stepx)
+                    .attr('height',form_height*me.stepx)
+                    .style("fill","none")
+                    .style("stroke","#101010")
+                    .style("stroke-width","1pt")
+                me.title(k, 2*me.stepx , -0.25*me.stepy, form_group);
+                _.forEach(v.attributes_mods, (w,l) => {
+                    let val = parseInt(w) + parseInt(me.data["attribute"+l])
+                    if (val < 0){
+                        val = 0
+                    }
+                    let label = attr[l]
+                    form_group.append("text")
+                        .attr('x',"10pt")
+                        .attr('y',me.stepy*2.5+l*me.small_font_size+"pt")
+                        .style("fill",me.draw_fill)
+                        .style("stroke",me.shadow_stroke)
+                        .style("stroke-width","0.5pt")
+                        .style("font-family",me.mono_font)
+                        .style("text-anchor","start")
+                        .style("font-size",me.small_font_size+"pt")
+                        .text((d)=> {
+                            return label+" "+val
+                            })
+                });
+
+                form_group.append("text")
+                    .attr('x',me.stepy*4.0)
+                    .attr('y',me.stepy*3.75+"pt")
+                    .style("fill",me.draw_fill)
+                    .style("stroke",me.shadow_stroke)
+                    .style("stroke-width","0.5pt")
+                    .style("font-family",me.user_font)
+                    .style("text-anchor","end")
+                    .style("font-size",me.small_font_size+"pt")
+                    .text("Diff.:"+v.diff)
+
+                form_group.append("text")
+                    .attr('x',me.stepy*1.0)
+                    .attr('y',me.stepy*0.5+"pt")
+                    .style("fill",me.draw_fill)
+                    .style("stroke",me.shadow_stroke)
+                    .style("stroke-width","1.0pt")
+                    .style("font-family",me.user_font)
+                    .style("text-anchor","center")
+                    .style("font-size",me.small_font_size+"pt")
+                    .text(v.note)
+                idx += 1
+            })
+        }
+
+    }
+
 
     fillSpecial(basey) {
         let me = this;
@@ -1044,23 +1207,45 @@ class WawwodSheet {
         let stat = '';
         me.title('Specialities', ox + me.stepx * 5, oy, me.character);
         me.title('Action Shortcuts', ox + me.stepx * 12, oy, me.character);
-        if (me.data['creature'] == 'garou') {
-            me.title('Many Forms', ox + me.stepx * 19, oy, me.character);
-        }
+//         if (me.data['creature'] == 'garou') {
+//             me.title('Many Forms', ox + me.stepx * 19, oy, me.character);
+//         }
         oy += 0.5 * me.stepy;
         stat = 'speciality';
+        let srs = []
+        let srs_list = {}
+        if ("srs" in me.data){
+            console.log(me.data.srs)
+            srs_list = {}
+            srs = me.data.srs.split(", ")
+            _.forEach(srs,(v,k)=>{
+                let sr = v.split(":")
+                srs_list[sr[0]] = sr[1]
+            })
+        }else{
+                console.warn("NO SRS")
+        }
         me.config['specialities'].forEach(function (d, idx) {
             let x = ox + me.stepx * 2;
             let y = oy + 0.5 * me.stepy * (idx);
             if (me.blank) {
             } else {
-                me.statText(d, '', x, y, stat, stat + idx, me.character);
+                console.log(d)
+                console.log(me.config["specialities"])
+                let ss = d.split(" ")
+                let txt = ""
+                if (ss[0] in srs_list){
+                    console.log(srs_list[ss[0]])
+                    console.log(ss[1])
+                    txt = srs_list[ss[0]]
+                }
+                me.statText(d, txt, x, y, stat, stat + idx, me.character);
             }
         });
         stat = 'shortcuts';
         me.config['shortcuts'].forEach(function (d, idx) {
-            let x = ox + me.stepx * 9 + Math.floor(idx / 9) * me.stepx * 9;
-            let y = oy + 0.5 * me.stepy * (idx % 9);
+            let x = ox + me.stepx * 9 + Math.floor(idx / 12) * me.stepx * 7;
+            let y = oy + 0.4 * me.stepy * (idx % 12);
             let w = d.split('=');
             if (me.blank) {
             } else {
@@ -1068,68 +1253,68 @@ class WawwodSheet {
             }
         });
 
-        if (me.data['creature'] == 'garou') {
-            let stored_blank = me.blank
-            me.blank = false
-            me.config["many_forms"] = [
-                {
-                    'form': 'homid', 'motherform': true, 'size': 1.00, 'weight': 1.00, 'changes': {
-                        'attribute0': 0, 'attribute1': 0, 'attribute2': 0,
-                        'attribute3': 0, 'attribute4': 0, 'attribute5': 0,
-                    }
-                },
-                {
-                    'form': 'glabro', 'motherform': false, 'size': 1.25, 'weight': 1.50, 'changes': {
-                        'attribute0': 2, 'attribute1': 0, 'attribute2': 2,
-                        'attribute3': 0, 'attribute4': -1, 'attribute5': -1
-                    }
-                },
-                {
-                    'form': 'crinos', 'motherform': false, 'size': 1.50, 'weight': 2.00, 'changes': {
-                        'attribute0': 4, 'attribute1': 1, 'attribute2': 3,
-                        'attribute3': 0, 'attribute4': -3, 'attribute5': -10
-                    }
-                },
-                {
-                    'form': 'hispo', 'motherform': false, 'size': 1.25, 'weight': 2.00, 'changes': {
-                        'attribute0': 3, 'attribute1': 2, 'attribute2': 3,
-                        'attribute3': 0, 'attribute4': -3, 'attribute5': 0
-                    }
-                },
-
-                {
-                    'form': 'lupus', 'motherform': false, 'size': 0.5, 'weight': 0.5, 'changes': {
-                        'attribute0': 1, 'attribute1': 2, 'attribute2': 2,
-                        'attribute3': 0, 'attribute4': -3, 'attribute5': 0
-                    }
-                },
-            ]
-            let bonuses = "";
-            let ax = ox + me.stepx * 16;
-            let ay = oy + 0.5 * me.stepy * (0);
-            me.statText("Attributes", "Str  Dex  Sta  Cha  Man  App", ax, ay, 'fl', 'fl', me.character, false, true);
-            me.config['many_forms'].forEach(function (d, idx) {
-                ax = ox + me.stepx * 16;
-                ay = oy + 0.5 * me.stepy * (idx + 1);
-                bonuses = "";
-                let list = d['changes'];
-
-                _.forEach(list, function (v, k) {
-                    //let da = parseInt(me.data[k] + v);
-                    let da = parseInt( + v);
-                    let sign = ""
-                    if (da >= 0) {
-                        sign = "+";
-                    }
-                    if (da == -10){
-                        da = ".."
-                    }
-                    bonuses += " "+sign + da + ".";
-                });
-                me.statText(d['form'], bonuses, ax, ay, d['form'], d['form'], me.character, false, true);
-            });
-            me.blank = stored_blank
-        }
+//         if (me.data['creature'] == 'garou') {
+//             let stored_blank = me.blank
+//             me.blank = false
+//             me.config["many_forms"] = [
+//                 {
+//                     'form': 'homid', 'motherform': true, 'size': 1.00, 'weight': 1.00, 'changes': {
+//                         'attribute0': 0, 'attribute1': 0, 'attribute2': 0,
+//                         'attribute3': 0, 'attribute4': 0, 'attribute5': 0,
+//                     }
+//                 },
+//                 {
+//                     'form': 'glabro', 'motherform': false, 'size': 1.25, 'weight': 1.50, 'changes': {
+//                         'attribute0': 2, 'attribute1': 0, 'attribute2': 2,
+//                         'attribute3': 0, 'attribute4': -1, 'attribute5': -1
+//                     }
+//                 },
+//                 {
+//                     'form': 'crinos', 'motherform': false, 'size': 1.50, 'weight': 2.00, 'changes': {
+//                         'attribute0': 4, 'attribute1': 1, 'attribute2': 3,
+//                         'attribute3': 0, 'attribute4': -3, 'attribute5': -10
+//                     }
+//                 },
+//                 {
+//                     'form': 'hispo', 'motherform': false, 'size': 1.25, 'weight': 2.00, 'changes': {
+//                         'attribute0': 3, 'attribute1': 2, 'attribute2': 3,
+//                         'attribute3': 0, 'attribute4': -3, 'attribute5': 0
+//                     }
+//                 },
+//
+//                 {
+//                     'form': 'lupus', 'motherform': false, 'size': 0.5, 'weight': 0.5, 'changes': {
+//                         'attribute0': 1, 'attribute1': 2, 'attribute2': 2,
+//                         'attribute3': 0, 'attribute4': -3, 'attribute5': 0
+//                     }
+//                 },
+//             ]
+//             let bonuses = "";
+//             let ax = ox + me.stepx * 16;
+//             let ay = oy + 0.5 * me.stepy * (0);
+//             me.statText("Attributes", "Str  Dex  Sta  Cha  Man  App", ax, ay, 'fl', 'fl', me.character, false, true);
+//             me.config['many_forms'].forEach(function (d, idx) {
+//                 ax = ox + me.stepx * 16;
+//                 ay = oy + 0.5 * me.stepy * (idx + 1);
+//                 bonuses = "";
+//                 let list = d['changes'];
+//
+//                 _.forEach(list, function (v, k) {
+//                     //let da = parseInt(me.data[k] + v);
+//                     let da = parseInt( + v);
+//                     let sign = ""
+//                     if (da >= 0) {
+//                         sign = "+";
+//                     }
+//                     if (da == -10){
+//                         da = ".."
+//                     }
+//                     bonuses += " "+sign + da + ".";
+//                 });
+//                 me.statText(d['form'], bonuses, ax, ay, d['form'], d['form'], me.character, false, true);
+//             });
+//             me.blank = stored_blank
+        //}
 
 
     }
