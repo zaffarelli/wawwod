@@ -62,7 +62,8 @@ STATS_NAMES = {
                        'politics',
                        'science'],
         'backgrounds': ['chimera', 'contacts', 'dreamers', 'gremayre', 'holdings', 'mentor', 'resources', 'retinue',
-                        'title', 'treasures']
+                        'title', 'treasures'],
+        'sheet':{'pages':1}
     },
     'fomori': {
         'attributes': ['strength', 'dexterity', 'stamina', 'charisma', 'manipulation', 'appearance', 'perception',
@@ -74,7 +75,8 @@ STATS_NAMES = {
         'knowledges': ['bureaucracy', 'computer', 'enigmas', 'investigation', 'law', 'linguistics', 'medicine',
                        'occult', 'politics', 'science'],
         'backgrounds': ['allies', 'career', 'contacts', 'fame', 'family', 'equipment', 'influence',
-                        'resources', 'status', 'true faith']
+                        'resources', 'status', 'true faith'],
+        'sheet':{'pages':1}
     },
 
     'garou': {
@@ -114,7 +116,8 @@ STATS_NAMES = {
                        'technology',
                        ],
         'backgrounds': ['allies', 'ancestors', 'contacts', 'fate','fetish', 'kinfolk', 'mentor', 'pure breed', 'resources',
-                        'rites', 'spirit heritage', 'totem']
+                        'rites', 'spirit heritage', 'totem'],
+        'sheet':{'pages':4}
     },
     'ghoul': {
         'attributes': ['strength', 'dexterity', 'stamina', 'charisma', 'manipulation', 'appearance', 'perception',
@@ -153,21 +156,50 @@ STATS_NAMES = {
                        'technology',
                        ],
         'backgrounds': ['allies', 'bond', 'contacts', 'fame', 'equipment', 'influence', 'innovation',
-                        'resources', 'status', 'trust']
+                        'resources', 'status', 'trust'],
+        'sheet':{'pages':1}
     },
     'kindred': {
         'attributes': ['strength', 'dexterity', 'stamina', 'charisma', 'manipulation', 'appearance', 'perception',
                        'intelligence', 'wits'],
-        'talents': ['alertness', 'athletics', 'brawl', 'dodge', 'empathy', 'expression', 'intimidation', 'leadership',
-                    'streetwise', 'subterfuge'],
-        'skills': ['animal ken', 'crafts', 'drive', 'etiquette', 'firearms', 'melee', 'performance', 'security',
-                   'stealth', 'survival'],
-        'knowledges': ['academics', 'technology', 'finance', 'investigation', 'law', 'linguistics', 'medicine',
+        'talents': ['alertness',
+                    'athletics',
+                    'awarenes',
+                    'brawl',
+                    'empathy',
+                    'expression',
+                    'intimidation',
+                    'leadership',
+                    'streetwise',
+                    'subterfuge'
+                    ],
+        'skills': ['animal ken',
+                   'crafts',
+                   'drive',
+                   'etiquette',
+                   'firearms',
+                   'larceny',
+                   'melee',
+                   'performance',
+                   'stealth',
+                   'survival'
+                   ],
+        'knowledges': ['academics',
+                       'computer',
+                       'finance',
+                       'investigation',
+                       'law',
+                       'medicine',
                        'occult',
-                       'politics',
-                       'science'],
+                       'rituals',
+                       'science',
+                       'technology',
+                       ],
+
+
         'backgrounds': ['allies', 'contacts', 'fame', 'generation', 'herd', 'influence', 'mentor',
-                        'resources', 'retainers', 'status']
+                        'resources', 'retainers', 'status'],
+        'sheet':{'pages':4}
     },
     'kinfolk': {
         'attributes': ['strength', 'dexterity', 'stamina', 'charisma', 'manipulation', 'appearance', 'perception',
@@ -205,7 +237,8 @@ STATS_NAMES = {
                        'science',
                        'technology',
                        ],
-        'backgrounds': ['allies', 'contacts', 'equipment', 'mentor', 'pure-breed', 'resources']
+        'backgrounds': ['allies', 'contacts', 'equipment', 'mentor', 'pure-breed', 'resources'],
+        'sheet':{'pages':1}
     },
     'mage': {
         'attributes': ['strength', 'dexterity', 'stamina', 'charisma', 'manipulation', 'appearance', 'perception',
@@ -217,7 +250,8 @@ STATS_NAMES = {
         'knowledges': ['academics', 'computer', 'cosmology', 'enigmas', 'investigation', 'law',
                        'medicine', 'occult', 'science', 'technology'],
         'backgrounds': ['allies', 'arcane', 'avatar', 'contacts', 'destiny', 'dream', 'influence', 'library', 'node',
-                        'resources', 'wonder']
+                        'resources', 'wonder'],
+        'sheet':{'pages':4}
     },
     'mortal': {
         'attributes': ['strength', 'dexterity', 'stamina', 'charisma', 'manipulation', 'appearance', 'perception',
@@ -256,7 +290,8 @@ STATS_NAMES = {
                        'technology',
                        ],
         'backgrounds': ['allies', 'career', 'contacts', 'fame', 'family', 'equipment', 'influence',
-                        'resources', 'status', 'true faith']
+                        'resources', 'status', 'true faith'],
+        'sheet':{'pages':1}
     },
     'kithain': {
         'attributes': ['strength', 'dexterity', 'stamina', 'charisma', 'manipulation', 'appearance', 'perception',
@@ -268,7 +303,8 @@ STATS_NAMES = {
         'knowledges': ['academics', 'computer', 'enigmas', 'investigation', 'law', 'linguistics', 'medicine',
                        'occult', 'politics', 'science'],
         'backgrounds': ['allies', 'career', 'contacts', 'fame', 'family', 'equipment', 'influence',
-                        'resources', 'status', 'true faith']
+                        'resources', 'status', 'true faith'],
+        'sheet':{'pages':1}
     },
 
     'spirit': {
@@ -281,7 +317,8 @@ STATS_NAMES = {
         'knowledges': ['academics', 'computer', 'cosmology', 'enigmas', 'investigation', 'law', 'linguistics',
                        'medicine', 'occult', 'science'],
         'backgrounds': ['allies', 'arcane', 'avatar', 'contacts', 'destiny', 'dream', 'influence', 'library', 'node',
-                        'resources', 'wonder']
+                        'resources', 'wonder'],
+        'sheet':{'pages':1}
     },
     'wraith': {
         'attributes': ['strength', 'dexterity', 'stamina', 'charisma', 'manipulation', 'appearance', 'perception',
@@ -294,7 +331,8 @@ STATS_NAMES = {
                        'occult',
                        'politics', 'science'],
         'backgrounds': ['allies', 'artifact', 'contacts', 'eidolon', 'haunt', 'mentor', 'memoriam', 'notoriety',
-                        'status', 'wealth']
+                        'status', 'wealth'],
+        'sheet':{'pages':4}
     },
 }
 
@@ -572,38 +610,51 @@ PER_TRIBE = {
 
 GM_SHORTCUTS = {
     'garou': [
-        ['perception', 'alertness'],
-        ['perception', 'primal-urge'],
-        ['dexterity', 'brawl'],
-        ['dexterity', 'athletics'],
-        ['stamina', 'primal-urge'],
-        ['wits', 'enigmas'],
-        ['intelligence', 'occult'],
         ['appearance', 'subterfuge'],
-        ['manipulation', 'subterfuge'],
-        ['strength', 'athletics'],
         ['charisma', 'performance'],
-        ['dexterity', 'stealth'],
+        ['charisma', 'subterfuge'],
+        ['dexterity', 'athletics'],
+        ['dexterity', 'brawl'],
+        ['dexterity', 'drive'],
+        ['dexterity', 'firearms'],
         ['dexterity', 'larceny'],
-        ['perception', 'empathy'],
+        ['dexterity', 'melee'],
+        ['dexterity', 'stealth'],
         ['intelligence', 'academics'],
+        ['intelligence', 'medicine'],
+        ['intelligence', 'rituals'],
+        ['manipulation', 'empathy'],
+        ['manipulation', 'subterfuge'],
+        ['perception', 'alertness'],
+        ['perception', 'empathy'],
+        ['perception', 'primal-urge'],
+        ['stamina', 'primal-urge'],
+        ['strength', 'athletics'],
+        ['strength', 'brawl'],
+        ['wits', 'empathy'],
+        ['wits', 'enigmas'],
+        ['wits', 'drive'],
     ],
     'kinfolk': [
         ['perception', 'alertness'],
-        ['perception', 'primal-urge'],
+        ['perception', 'empathy'],
+        ['intelligence', 'medicine'],
+        ['intelligence', 'academics'],
         ['dexterity', 'brawl'],
+        ['dexterity', 'firearms'],
         ['dexterity', 'athletics'],
-        ['stamina', 'primal-urge'],
+        ['dexterity', 'larceny'],
+        ['dexterity', 'drive'],
+        ['dexterity', 'stealth'],
+        ['strength', 'athletics'],
+        ['strength', 'brawl'],
+        ['wits', 'empathy'],
         ['wits', 'enigmas'],
-        ['intelligence', 'occult'],
+        ['wits', 'drive'],
+        ['charisma', 'performance'],
+        ['charisma', 'subterfuge'],
         ['appearance', 'subterfuge'],
         ['manipulation', 'subterfuge'],
-        ['strength', 'athletics'],
-        ['charisma', 'performance'],
-        ['dexterity', 'stealth'],
-        ['dexterity', 'larceny'],
-        ['perception', 'empathy'],
-        ['intelligence', 'academics'],
     ],
     'kindred': [
         ['dexterity', 'stealth'],
@@ -621,11 +672,11 @@ GM_SHORTCUTS = {
         ['wits', 'etiquette'],
     ],
     'mortal': [],
-    'kinfolk': [],
     'ghoul': [],
     'fomori': [],
     'mage': [],
     'changeling': [],
+    'kithain': [],
     'wraith': [],
 }
 

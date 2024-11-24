@@ -1,24 +1,26 @@
 class WawwodSheet {
-    constructor(data, parent, collector) {
-        let me = this;
-        me.parent = parent;
-        me.co = collector;
-        me.config = data;
-        me.count = 0;
-        me.mark_overhead = false
-        me.disposition = "portrait"
-        me.button_ox = 1;
-        me.button_oy = 1;
-
+    constructor(settings, parent) {
+        this.parent = parent;
+        this.config = settings;
+        this.count = 0;
+        this.mark_overhead = false
+        this.disposition = "portrait"
+        this.button_ox = 1;
+        this.button_oy = 1;
     }
 
-  setButtonsOrigin(x, y) {
-        let me = this;
-        me.button_ox = x;
-        me.button_oy = y;
-  }
+    setCollector(collector){
+        let me = this
+        me.co = collector
+    }
 
- drawLine(x1 = 1, x2 = 23, y1 = 1, y2 = 35, fill = '#000000', stroke = '#888888', size = 1, dasharray = "", opacity = 1) {
+    setButtonsOrigin(x, y) {
+            let me = this;
+            me.button_ox = x;
+            me.button_oy = y;
+    }
+
+    drawLine(x1 = 1, x2 = 23, y1 = 1, y2 = 35, fill = '#000000', stroke = '#888888', size = 1, dasharray = "", opacity = 1) {
         let me = this;
         if (!me.daddy) {
             console.error('Daddy is undefined for drawLine !')
@@ -88,7 +90,7 @@ class WawwodSheet {
 
     init() {
         let me = this;
-        me.debug = false
+        me.debug = true
         me.blank = false
         me.page = 0;
         if (me.disposition == "portrait"){
@@ -129,7 +131,7 @@ class WawwodSheet {
         me.shadow_stroke = "#A0A0A07F"
         me.draw_stroke = '#888'
         me.draw_fill = '#222'
-        me.user_stroke = '#286'
+        me.user_stroke = '#4C8'
         me.user_fill = '#143'
         me.overhead_fill = '#C22'
         me.user_font = 'Gochi Hand'
@@ -140,6 +142,7 @@ class WawwodSheet {
         //me.title_font = 'Trade Winds';
         me.logo_font = 'Splash';
         me.base_font = 'Philosopher';
+        me.base_font = 'Khand'
         me.x = d3.scaleLinear().domain([0, me.width]).range([0, me.width]);
         me.y = d3.scaleLinear().domain([0, me.height]).range([0, me.height]);
         me.pre_title = me.config['pre_title'];
@@ -156,7 +159,7 @@ class WawwodSheet {
             .attr('y1', me.stepy * y)
             .attr('y2', me.stepy * y)
             .style('fill', 'none')
-            .style('stroke', me.draw_stroke)
+            .style('stroke', me.draw_fill)
             .style('stroke-width', '3pt')
             .attr('marker-end', "url(#arrowhead)")
             .attr('marker-start', "url(#arrowhead)")
@@ -171,7 +174,7 @@ class WawwodSheet {
             .attr('y1', me.stepy * starty)
             .attr('y2', me.stepy * stopy)
             .style('fill', 'none')
-            .style('stroke', me.draw_stroke)
+            .style('stroke', me.draw_fill)
             .style('stroke-width', '3pt')
             .attr('marker-end', "url(#arrowhead)")
             .attr('marker-start', "url(#arrowhead)")
@@ -445,34 +448,36 @@ class WawwodSheet {
         if (me.blank) {
             value = "";
         }
-
-        item.append('text')
-            .attr("x", ox)
-            .attr("y", oy)
-            .attr("dy", 10)
-            .style("text-anchor", 'start')
-            .style("font-family", me.base_font)
-            .style("font-size", me.medium_font_size + 'px')
-            .style("fill", me.draw_fill)
-            .style("stroke", me.draw_stroke)
-            .style("stroke-width", '0.5pt')
-            .text(function () {
-                return name.charAt(0).toUpperCase() + name.slice(1);
-            });
-
-        if (fat) {
+        if (!fat){
             item.append('text')
-                .attr("x", ox + me.stepx * 6)
+                .attr("x", ox)
                 .attr("y", oy)
                 .attr("dy", 10)
-                .style("text-anchor", 'end')
-                .style("font-family", function (d) {
-                    return (mono == true ? me.mono_font : me.user_font);
-                })
-                .style("font-size", (me.medium_font_size * 1.25) + 'px')
-                .style("fill", me.user_fill)
-                .style("stroke", me.user_stroke)
+                .style("text-anchor", 'start')
+                .style("font-family", me.base_font)
+                .style("font-size", me.medium_font_size + 'px')
+                .style("fill", me.draw_fill)
+                .style("stroke", me.draw_stroke)
                 .style("stroke-width", '0.5pt')
+                .text(function () {
+                    return name.charAt(0).toUpperCase() + name.slice(1);
+                });
+        }
+        if (fat) {
+            item.append('text')
+                .attr("x", ox )
+                .attr("y", oy)
+                .attr("dy", 10)
+                .style("text-anchor", 'start')
+                .style("font-family", function (d) {
+                    return me.base_font;
+                })
+                .style("font-size", (me.medium_font_size )*1.5 + 'px')
+                 .style("fill", me.user_fill)
+                 .style("stroke", me.user_stroke)
+//                 .style("fill", "#A03020")
+//                 .style("stroke", "#A03020")
+                .style("stroke-width", '1pt')
                 .text(function () {
                     return value;
                 });
@@ -502,8 +507,8 @@ class WawwodSheet {
         let lines = data.split("\n")
         let txt = item.append('text')
             .attr("x", 0)
-            .attr("y", 0)
-            .attr("dy", me.small_font_size + 'pt')
+            .attr("y", me.small_font_size+'pt')
+            //.attr("dy", me.small_font_size+'pt')
             .style("text-anchor", 'start')
             .style("font-family", me.user_font)
             .style("font-size", me.small_font_size + 'pt')
@@ -513,8 +518,8 @@ class WawwodSheet {
         _.forEach(lines, (v,k) => {
             txt.append("tspan")
                 .attr("x",0)
-                .attr("y",0)
-                .attr("dy",10*k+"pt")
+                .attr("y",me.small_font_size*k+"pt")
+                //.attr("dy",me.small_font_size*k+"pt")
                 .text(v)
             })
 
@@ -602,7 +607,7 @@ class WawwodSheet {
                 return cx;
             })
             .attr('y', function (d) {
-                let cy = oy + 0.2 * me.stepx + me.dot_radius - me.dot_radius + (me.dot_radius * 2 + 2) * lines + 2;
+                let cy = oy + 0.3 * me.stepx + me.dot_radius - me.dot_radius + (me.dot_radius * 2 + 2) * lines + 2;
                 if (d >= 10) {
                     cy += me.dot_radius * 2 + 5;
                 }
@@ -629,7 +634,7 @@ class WawwodSheet {
 
         oy -= 0.5 * me.stepy;
 
-        me.statText('Name', me.data['name'], ox + me.stepx * 2, oy, 'name', 'name', me.character, true);
+        me.statText('',me.data['name'] , ox + me.stepx * 2, oy, 'name', 'name', me.character, true);
         me.statText('Nature', me.data['nature'], ox + me.stepx * 9, oy, 'nature', 'nature', me.character);
         if (me.data["creature"] == 'kindred') {
             me.statText('Age/R(E)', me.data['age'] + "/" + me.data['trueage'] + " (" + me.data['embrace'] + "A.D)", ox + me.stepx * 16, oy, 'age', 'age', me.character);
@@ -823,7 +828,7 @@ class WawwodSheet {
         // *** Backgrounds
         stat = 'background';
         let overheads = []
-        let indexed = [0,1,2,3,4,5,6,7,8,9]
+        let indexed = [0,1,2,3,4,5,6,7,8,9,10,11]
         let indexedb = [0,1,2,3,4,5,6,7,8,9,10,11]
 
         overheads = me.build_overheads(stat,indexedb,5)
@@ -839,10 +844,12 @@ class WawwodSheet {
         });
         // *** Traits
 
+
+
         if (me.data["creature"] == "kinfolk"){
-            console.log("Here we go")
+            //oy = 0.5 * me.stepy;
             let x = ox + me.stepx * 9
-            let y = oy + 0.5 * me.stepy
+            let y = oy
             me.smallText(me.data["notes"],x,y,me.character)
         }else{
             stat = 'trait';
@@ -864,8 +871,9 @@ class WawwodSheet {
                 me.gaugeStat(levels[d], me.data[levels[d].toLowerCase()], x, y, me.character, true, false);
             });
         } else if (me.data['creature'] == 'kinfolk') {
+            //oy -= 0.5 * me.stepy;
             let x = ox + me.stepx * 16
-            let y = oy + 0.5 * me.stepy
+            let y = oy
             me.smallText(me.data["equipment"],x,y,me.character)
         } else {
 
@@ -1060,24 +1068,15 @@ class WawwodSheet {
         let ox = 18 * me.stepx;
         let oy = basey;
         let stat = '';
-        //me.title('Experience', ox + me.stepx * 5, oy, me.character);
-
 
         if (me.data['player']) {
-            me.gaugeStat('Experience Earned', 0, ox, oy, me.character, false, false, 30);
+            me.gaugeStat('Experience Earned', me.data.experience, ox, oy, me.character, false, false, 30);
             oy += 1.5 * me.stepy;
-            me.gaugeStat('Experience Spent', 0, ox, oy, me.character, false, false, 30);
+            me.gaugeStat('Experience Spent', me.data.exp_spent, ox, oy, me.character, false, false, 30);
             oy += 1.5 * me.stepy;
-            me.gaugeStat('Experience Remaining', 0, ox, oy, me.character, false, false, 30);
+            me.gaugeStat('Experience Remaining', me.data.exp_pool, ox, oy, me.character, false, false, 30);
             oy += 1.5 * me.stepy;
-//             me.statText('Experience', "", ox, oy, '','',me.character,true);
-//             oy += 0.5 * me.stepy;
-//             me.statText('Remaining', "", ox, oy, '', '', me.character);
-//             oy += 0.5 * me.stepy;
-//             me.statText('Spent', "", ox, oy, 'sire', 'sire', me.character);
         }
-
-
     }
 
 
@@ -1243,9 +1242,16 @@ class WawwodSheet {
             }
         });
         stat = 'shortcuts';
+        let shortcuts = []
         me.config['shortcuts'].forEach(function (d, idx) {
-            let x = ox + me.stepx * 9 + Math.floor(idx / 12) * me.stepx * 7;
-            let y = oy + 0.4 * me.stepy * (idx % 12);
+            shortcuts.push(d)
+            if ((idx%5 == 4) && (idx % 15 != 14)){
+                shortcuts.push(" ")
+            }
+        })
+        shortcuts.forEach(function (d, idx) {
+            let x = ox + me.stepx * 9 + Math.floor(idx / 17) * me.stepx * 7;
+            let y = oy + 0.4 * me.stepy * (idx % 17);
             let w = d.split('=');
             if (me.blank) {
             } else {
@@ -1356,33 +1362,68 @@ class WawwodSheet {
 
 
     addButton(num, txt) {
-        let me = this;
-        let ox = me.button_ox * me.stepy;
-        let oy = me.button_oy * me.stepy;
+        let me = this
+        let ox = me.button_ox * me.stepy
+        let oy = me.button_oy * me.stepy
         let button = me.back.append('g')
-            .attr('class', 'do_not_print')
-            .on('click', function (d) {
-                if (num == 0) {
-                    me.saveSVG();
-                } else if (num == 1) {
-                    me.savePNG();
-                } else if (num == 2) {
-                    me.createPDF();
-                } else if (num == 3) {
-                    me.editCreature();
-                } else if (num == 4) {
-                    me.page = 0;
-                    me.perform(me.data)
-                } else if (num == 5) {
-                    me.page = 1;
-                    me.perform(me.data)
-                } else if (num == 6) {
-                    me.page = 2;
-                    me.perform(me.data)
-                } else if (num >= 7) {
-                    me.page = num - 4;
-                    me.perform(me.data)
+            .attr('class', 'do_not_print '+(num==1?"display":""))
+            .attr('action', (num==1?"chronicle_map":""))
+            .on('click', function (e,d) {
+                e.stopPropagation()
+                e.preventDefault()
+                switch (num){
+                    case 1:
+//                         let x = document.createElement("span")
+//                         x.id = "toto"
+//                         x.class = "display"
+//                         x.action = "chronicle_map"
+//                         me.co.rebootLinks()
+//                         x.click()
+//                         console.log(me.parent,x)
+//                         let $nuke = $("span",{"id":"npc_launcher","class":"display","action":"chronicle_map"})
+//                         $nuke.appendTo(me.parent)
+//
+//                         $nuke.trigger("click")
+
+//                         let x = document.createElement("div")
+//                         x.id = "gershwin"
+//                         x.class = "display"
+//                         x.action = "chronicle_map"
+
+//                         $("#gershiwin").trigger("click")
+//                         console.log("NPC")
+                        break
+                    case 2:
+                        me.createPDF();
+                        break
+                    default:
+                        me.page = num - 2;
+                        me.perform(me.data)
+                        break;
                 }
+//                 if (num == 10) {
+//                     me.saveSVG();
+//                 } else if (num == 11) {
+//                     me.savePNG();
+//                 } else if (num == 2) {
+//                     me.createPDF();
+//                 } else if (num == 30) {
+//                     me.editCreature();
+//                 } else if (num == 3) {
+//                     me.page = 0;
+//                     me.perform(me.data)
+//                 } else if (num == 4) {sc
+//                     me.page = 1;
+//                     me.perform(me.data)
+//                 } else if (num == 5) {
+//                     me.page = 2;
+//                     me.perform(me.data)
+//                 } else if (num == 6) {
+//                     me.page = 3;
+//                     me.perform(me.data)
+//                 } else if (num == 1) {
+//
+//                 }
             })
         button.append('rect')
             .attr('id', "button" + num)
@@ -1532,7 +1573,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" width="' + me.width + '" height="' + 
             'pdf_name': pdf_name,
             'svg_name': svg_name,
             'rid': rid,
-            'svg': exportable_svg
+            'svg': exportable_svg,
+            'creature': me.data.creature,
         }
         me.svg.selectAll('.do_not_print').attr('opacity', 1);
         $.ajax({

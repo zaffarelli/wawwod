@@ -270,6 +270,7 @@ def add_garou(request, slug=None):
         item = Creature()
         item.name = name
         item.chronicle = chronicle.acronym
+        item.adventure = "TWT"
         item.creature = 'garou'
         item.age = 0
         item.family = 'Child of Gaia'
@@ -281,6 +282,7 @@ def add_garou(request, slug=None):
         item.source = 'zaffarelli'
         item.save()
         return HttpResponse(status=204)
+
 
 def add_kinfolk(request, slug=None):
     if is_ajax(request):
@@ -301,6 +303,26 @@ def add_kinfolk(request, slug=None):
         item.source = 'zaffarelli'
         item.save()
         return HttpResponse(status=204)
+
+
+def add_mortal(request, slug=None):
+    if is_ajax(request):
+        name = " ".join(slug.split("_"))
+        chronicle = get_current_chronicle()
+        item = Creature()
+        item.name = name
+        item.chronicle = chronicle.acronym
+        item.creature = 'mortal'
+        item.age = 0
+        item.adventure = 'TWT'
+        item.randomize_backgrounds()
+        item.randomize_archetypes()
+        item.randomize_attributes()
+        item.randomize_abilities()
+        item.source = 'zaffarelli'
+        item.save()
+        return HttpResponse(status=204)
+
 
 
 def add_ghoul(request, slug=None):
@@ -338,10 +360,10 @@ def character_for(slug, option=None, idx=-1):
     print("hello: ", slug)
     c = None
     cs = Creature.objects.filter(rid=slug.strip())
-    if len(cs)>0:
+    if len(cs) > 0:
         c = cs.first()
     else:
-        print("oops,",slug)
+        print("oops,", slug)
     print("good bye", cs)
     if c:
         if option:
@@ -358,7 +380,7 @@ def character_for(slug, option=None, idx=-1):
             c.save()
         j = c.toJSON()
         k = json.loads(j)
-        if idx>-1:
+        if idx > -1:
             k["idx"] = idx
         k["sire_name"] = c.sire_name
         from collector.utils.wod_reference import AUSPICES, BREEDS
@@ -372,7 +394,7 @@ def character_for(slug, option=None, idx=-1):
         k["shc"] = c.get_shortcuts()
         if c.creature == "kinfolk":
             k["edge_for"] = c.edge_for
-        if len(c.specialities_rationale)>0:
+        if len(c.specialities_rationale) > 0:
             k["srs"] = c.specialities_rationale
         tn = c.traits_notes()
         k["traits_notes"] = tn
@@ -404,31 +426,35 @@ def display_crossover_sheet(request, slug=None, option=None):
                     'post_title': post_title, 'fontset': FONTSET, 'blank': False, 'debug': False,
                     'specialities': k["spe"],
                     'shortcuts': k["shc"]}
+        print(settings['labels']['sheet'])
         crossover_sheet_context = {'settings': json.dumps(settings, sort_keys=True, indent=4), 'data': j}
         return JsonResponse(crossover_sheet_context)
 
 
 def display_chronicle_map(request):
-    if is_ajax(request):
-        chronicle = get_current_chronicle()
-        creatures = Creature.objects.filter(chronicle=chronicle.acronym) \
-            .exclude(mythic=True) \
-            .exclude(condition__startswith="DEAD=19") \
-            .exclude(condition__startswith="MISSING=19") \
-            .exclude(ghost=True) \
-            .exclude(hidden=True) \
-            .exclude(creature="garou") \
-            .order_by('adventure','creature',"name")
-        all_creatures = []
-        for creature in creatures:
-            c = creature.toJSON()
-            k = json.loads(c)
-            k["edge_for"] = creature.edge_for
-            # print(k["name"])
-            all_creatures.append(k)
+    # if is_ajax(request):
+    chronicle = get_current_chronicle()
+    creatures = Creature.objects.filter(chronicle=chronicle.acronym) \
+        .exclude(mythic=True) \
+        .exclude(condition__startswith="DEAD=19") \
+        .exclude(condition__startswith="MISSING=19") \
+        .exclude(ghost=True) \
+        .exclude(hidden=True) \
+        .filter(adventure="TWT") \
+        .order_by('-is_player', 'group', 'sire', 'adventure', 'creature', "name")
+    all_creatures = []
+    for creature in creatures:
+        c = creature.toJSON()
+        k = json.loads(c)
+        k["edge_for"] = creature.edge_for
+        k["sire"] = creature.sire
+        k["is_player"] = creature.is_player
+        k["entrance"] = creature.entrance
+        # print(k["name"])
+        all_creatures.append(k)
 
-        context = {'data': json.dumps(all_creatures,indent=4,sort_keys=True)}
-        return JsonResponse(context)
+    context = {'data': json.dumps(all_creatures, indent=4, sort_keys=True)}
+    return JsonResponse(context)
 
 
 def display_dashboard(request):
@@ -436,18 +462,18 @@ def display_dashboard(request):
         gaia_wheel_context = {'data': build_gaia_wheel()}
         return JsonResponse(gaia_wheel_context)
 
+
 def display_gaia_wheel(request):
     if is_ajax(request):
         gaia_wheel_context = {'data': build_gaia_wheel()}
         return JsonResponse(gaia_wheel_context)
 
 
-
 def adventure_sheet(request):
     if is_ajax(request):
         adventure_sheet_context = {}
         chronicle = get_current_chronicle()
-        data = {"players": [], "adventure":{}}
+        data = {"players": [], "adventure": {}}
         if chronicle:
             idx = 0
             from collector.models.seasons import Season
@@ -460,19 +486,19 @@ def adventure_sheet(request):
                         print("PROTS", protagonists)
                         for rid in protagonists:
                             # print(rid)
-                            if len(rid)>0:
-                                j, k = character_for(rid,None,idx)
+                            if len(rid) > 0:
+                                j, k = character_for(rid, None, idx)
                                 idx += 1
                                 data["players"].append(k)
             settings = {'fontset': FONTSET}
             adv = {
                 "name": chronicle.name,
                 "acronym": chronicle.acronym,
-                "full_id":"",
-                "abstract":"",
+                "full_id": "",
+                "abstract": "",
                 "date_str": "",
-                "session_date_str":"",
-                "gamemaster":"Zaffarelli",
+                "session_date_str": "",
+                "gamemaster": "Zaffarelli",
                 "experience": 0,
             }
 
@@ -556,6 +582,7 @@ def svg_to_pdf(request, slug):
         import cairosvg
         svg_name = os.path.join(settings.MEDIA_ROOT, 'pdf/results/svg/' + request.POST["svg_name"])
         svgtxt = request.POST["svg"]
+        creature = request.POST["creature"]
         with open(svg_name, "w") as f:
             f.write(svgtxt)
             f.close()
@@ -570,13 +597,13 @@ def svg_to_pdf(request, slug):
         logger.info(f'--> Created --> {pdf_name}.')
         print(f'--> Created --> {pdf_name}.')
         response['status'] = 'ok'
-        all_in_one_pdf(rid)
+        all_in_one_pdf(rid, creature)
         print(response)
     return JsonResponse(response)
 
 
 @csrf_exempt
-def all_in_one_pdf(rid):
+def all_in_one_pdf(rid, creature="mortal"):
     # print(f'Starting PDFing for [{rid}].')
     logger.info(f'Starting PDFing for [{rid}].')
     res = []
@@ -593,12 +620,12 @@ def all_in_one_pdf(rid):
             # print(pdf)
             merger.append(open(media_results + pdf, 'rb'))
             i += 1
-    if i > 3:
+    if i >= STATS_NAMES[creature]["sheet"]["pages"] - 1:
         des = f'{csheet_results}character_sheet{rid}.pdf'
         with open(des, 'wb') as fout:
             merger.write(fout)
-        logger.info(f'Successfully merged {i + 1} pages as [{des}].')
-        print(f'Successfully merged {i + 1} pages as [{des}].')
+        logger.info(f'Successfully merged {i} page(s) as [{des}].')
+        print(f'Successfully merged {i} page(s) as [{des}].')
     return res
 
 

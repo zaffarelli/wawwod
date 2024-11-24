@@ -6,7 +6,13 @@ class WawwodCollector {
 
     init() {
         let me = this;
+
         me.prepare_ajax();
+    }
+
+    sayHi(){
+        let me = this
+        console.log("Hi, I'm WaWWoD Collector")
     }
 
     prepare_ajax() {
@@ -46,6 +52,7 @@ class WawwodCollector {
         $('.display').off().on('click', function (event) {
             let action = $(this).attr('action');
             let param = $(this).attr('param');
+            let id = $(this).attr('id');
             let option = $(this).attr('option');
             let key = $('#userinput').val();
             let url = 'ajax/display/' + action + '/';
@@ -78,11 +85,14 @@ class WawwodCollector {
                     if (action == 'dashboard') {
                         let d = JSON.parse(answer.data);
                         me.d3 = new Dashboard(d, "#d3area", me);
+                        me.d3.setCollector(me)
                         me.d3.perform();
                     }
                     if (action == 'chronicle_map') {
+                        console.log("TOTO: Here we go...")
                         let d = JSON.parse(answer.data);
-                        me.d3 = new ChronicleMap(d, "#d3area", me);
+                        me.d3 = new ChronicleMap(d, "#d3area");
+                        me.d3.setCollector(me)
                         me.d3.perform();
                     }
                     if (action == 'kindred_lineage') {
@@ -100,17 +110,20 @@ class WawwodCollector {
                         me.d3.perform(dat);
                     }
                     if (action == 'crossover_sheet') {
+                        console.log("Character Sheet!")
                         let s = JSON.parse(answer.settings);
                         let d = JSON.parse(answer.data);
-                        me.d3 = new CrossOverSheet(s, "#d3area", me);
-                        me.d3.perform(d);
+                        me.d3 = new CrossOverSheet(s, "#d3area")
+                        me.d3.setCollector(me)
+                        me.d3.perform(d)
                     }
                     if (action == 'adventure_sheet') {
                         console.log("Here we go: adventure sheet!")
-                        let s = JSON.parse(answer.settings);
-                        let d = JSON.parse(answer.data);
-                        me.d3 = new AdventureSheet(s, "#d3area", me);
-                        me.d3.perform(d);
+                        let s = JSON.parse(answer.settings)
+                        let d = JSON.parse(answer.data)
+                        me.d3 = new AdventureSheet(s, "#d3area")
+                        me.d3.setCollector(me)
+                        me.d3.perform(d)
                     }
                     if (action == 'storytelling') {
                         let s = JSON.parse(answer.settings);

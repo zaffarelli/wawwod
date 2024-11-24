@@ -1,7 +1,7 @@
 from django.urls import path, re_path
 from collector.views.base import index, get_list, updown, userinputastext, userinput, add_garou, change_chronicle, \
     display_gaia_wheel, display_dashboard, display_lineage, display_crossover_sheet, add_kindred, svg_to_pdf, \
-    save_to_svg, display_sept, moon_phase, calendar, weaver_code, display_sept_rosters, quaestor, adventure_sheet, display_chronicle_map, add_kinfolk
+    save_to_svg, display_sept, moon_phase, calendar, weaver_code, display_sept_rosters, quaestor, adventure_sheet, display_chronicle_map, add_kinfolk, add_mortal
 from collector.views.actions import change_settings, refix_all, extract_mechanics, extract_per_group, extract_raw, \
     extract_roster, randomize, balance, refix_all
 from collector.views.creature_views import CreatureDetailView
@@ -28,6 +28,7 @@ urlpatterns = [
     re_path(r'^ajax/collector_action/add_garou/(?P<slug>\w+)/$', add_garou, name='add_garou'),
     re_path(r'^ajax/collector_action/add_kinfolk/(?P<slug>\w+)/$', add_kinfolk, name='add_kinfolk'),
     re_path(r'^ajax/collector_action/add_kindred/(?P<slug>\w+)/$', add_kindred, name='add_kindred'),
+    re_path(r'^ajax/collector_action/add_mortal/(?P<slug>\w+)/$', add_mortal, name='add_mortal'),
     re_path(r'^ajax/collector_action/refix_all/$', refix_all, name='refix_all'),
     re_path(r'^ajax/action/settings/$', change_settings, name='change_settings'),
     re_path(r'^ajax/collector_action/refix_all/$', refix_all, name='refix_all'),

@@ -449,9 +449,16 @@ class Creature(models.Model):
         shortcuts = []
         base = GM_SHORTCUTS[self.creature]
         for s in base:
-            sc = f'{s[0].title()}+{s[1].title()}={self.value_of(s[0]) + self.value_of(s[1])}'
+            val_attribute = self.value_of(s[0])
+            val_ability = self.value_of(s[1])
+            score = f'{self.value_of(s[0]) + self.value_of(s[1])}'
+            if val_ability == 0:
+                if s[1] in STATS_NAMES[self.creature]["skills"]:
+                    score = f'{self.value_of(s[0]) + self.value_of(s[1])} (d+1)'
+                elif s[1] in STATS_NAMES[self.creature]["knowledges"]:
+                    score = f'(cannot roll)'
+            sc = f'{s[0].title()}+{s[1].title()}={score}'
             shortcuts.append(sc)
-        print(base, shortcuts)
         return shortcuts
 
     @property
@@ -464,6 +471,8 @@ class Creature(models.Model):
             entrance = f'{as_rank(self.garou_rank)} {as_breed(self.breed)} {as_auspice(self.auspice)} of the  {as_tribe_plural(self.family)} ({self.group})'
         elif self.creature == 'ghoul':
             entrance = f'Ghoul of {self.sire_name}'
+        elif self.creature == 'mage':
+            entrance = f'{self.family} tradition mage'
         else:
             entrance = f'{self.concept} ({self.group})'
         return entrance
@@ -481,6 +490,8 @@ class Creature(models.Model):
             entrance = self.short_desc
         elif self.creature == 'ghoul':
             entrance = f'Ghoul of {self.sire_name}'
+        elif self.creature == 'mage':
+            entrance = f'{self.family} mage'
         else:
             entrance = f'{self.concept} ({self.group}).'
 
@@ -2033,6 +2044,7 @@ def push_to_newyork(modeladmin, request, queryset):
 def push_to_munich(modeladmin, request, queryset):
     for creature in queryset:
         creature.chronicle = 'GMU'
+        creature.adventure = 'TWT'
         creature.need_fix = True
         creature.save()
     short_description = 'Push to Munich'
@@ -2087,7 +2099,7 @@ def randomize_all(modeladmin, request, queryset):
 
 class CreatureAdmin(admin.ModelAdmin):
     list_display = [  # 'domitor',
-        'name', 'age', 'edge_for', 'family', 'trueage', 'edges', 'notes_on_history', 'edges_str', 'chronicle', 'adventure',
+        'name', 'age', "equipment",'edge_for', 'family', 'trueage', 'specialities_rationale', 'notes', 'edges_str', 'chronicle', 'adventure',
         'freebies', 'player',
         'family', 'groupspec', 'status', 'condition']
     ordering = ['-trueage', 'name', 'group', 'creature']
@@ -2099,4 +2111,4 @@ class CreatureAdmin(admin.ModelAdmin):
                    'group',
                    'groupspec']
     search_fields = ['name', 'groupspec']
-    list_editable = ['edges', 'groupspec', "notes_on_history"]
+    list_editable = ['specialities_rationale', 'groupspec', "notes","equipment"]

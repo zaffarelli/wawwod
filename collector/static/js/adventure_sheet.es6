@@ -1,6 +1,6 @@
 class AdventureSheet extends WawwodSheet {
-    constructor(data, parent, collector) {
-        super(data, parent, collector)
+    constructor(data, parent) {
+        super(data, parent)
         this.disposition = "paysage"
         this.init();
 //         this.adventure_data = [

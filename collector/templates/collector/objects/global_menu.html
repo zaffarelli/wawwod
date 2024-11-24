@@ -23,6 +23,7 @@
             <li class="list" id="new"><i class="fas fa-list"></i> List: New creatures</li>
             <li class="list" id="bal"><i class="fas fa-list"></i> List: TODO</li>
             <HR/>
+            <li class="collector_action" action="add_mortal"><i class="fas fa-user-plus"></i> Add new mortal</li>
             <li class="collector_action" action="add_garou"><i class="fas fa-user-plus"></i> Add new garou</li>
             <li class="collector_action" action="add_kindred"><i class="fas fa-user-plus"></i> Add new kindred</li>
             <li class="collector_action" action="add_kinfolk"><i class="fas fa-user-plus"></i> Add new kinfolk</li>
@@ -48,7 +49,7 @@
             {% for ci in cities  %}
             <li class="display" action="map" param="{{ ci.tag }}"><i class="fa fa-map"></i> City Map: {{ ci.name}}</li>
             {% endfor %}
-            <li class="display" action="chronicle_map"><i class="fas fa-star"></i> Chronicle Map</li>
+            <li class="display" action="chronicle_map"><i class="fas fa-users"></i> Chronicle Map</li>
             <HR/>
             {% include "collector/page/players_sheets.html" with c=players %}
         </ul>

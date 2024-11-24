@@ -1,9 +1,8 @@
 class CrossOverSheet extends WawwodSheet {
-    constructor(data, parent, collector) {
-        super(data, parent, collector);
+    constructor(settings, parent) {
+        super(settings, parent);
         this.init();
-        this.release = "WW20-29.09";
-
+        this.release = "WW20-2024.11.23";
     }
 
     init() {
@@ -18,27 +17,33 @@ class CrossOverSheet extends WawwodSheet {
         let me = this
         let lines = me.back.append('g');
         if (me.page === 0) {
+            // Vertical lines, left and right
             me.crossline(1, 2, 35);
             me.crossline(23, 2, 35);
-            // Mid lines
-            me.midline(1.5, 5, 19);
+
+            // Horizontal lines, top and bottom
             me.midline(2.5, 1, 23);
             me.midline(35, 1, 23);
 
+            // Other lines, from top to bottom (shorter lines)
             me.midline(6);
-            me.midline(9);
-            me.midline(16);
-            me.midline(23);
-            me.midline(29);
+            me.midline(8.5);
+            me.midline(14.5);
+            me.midline(21.5);
+            me.midline(27);
+
             // Title
             let txt = me.sheet_type(me.data['creature']).toUpperCase();
-            me.decorationText(12, 2.75, 0, 'middle', me.logo_font, me.fat_font_size, "#D0D0D0", "#E0E0E0", 1, me.scenario, me.back, 0.75);
-            me.decorationText(12, 2.75, 0, 'middle', me.logo_font, me.fat_font_size, "#B0B0B0", "#C0C0C0", 0.5, me.scenario, me.back, 0.5);
-            me.decorationText(12, 1.8, 0, 'middle', me.creature_font, me.fat_font_size*1, "#fff", "#f0f0f0", 10, txt, me.back, 1);
-            me.decorationText(12, 1.8, 0, 'middle', me.creature_font, me.fat_font_size*1, me.draw_fill, me.shadow_stroke, 5, txt, me.back, 0.75);
+            me.scenario = me.data['chronicle_name']
+            // Creature
+            me.decorationText(12, 2.75, 0, 'middle', me.logo_font, me.fat_font_size, "#FFFFFF", "#FFFFFF", 10, me.scenario, me.back, 0.75);
+            me.decorationText(12, 2.75, 0, 'middle', me.logo_font, me.fat_font_size, "#9090907f", "#3030301f",1, me.scenario, me.back,1);
+            // Chronicle
+            me.decorationText(12, 1.8, 0, 'middle', me.creature_font, me.fat_font_size*1, "#FFFFFF", "#FFFFFF", 10, txt, me.back, 0.75);
+            me.decorationText(12, 1.8, 0, 'middle', me.creature_font, me.fat_font_size*1, "#606060", "#C0C0C01f", 1, txt, me.back, 1);
 
-            me.decorationText(2.5, 1.75, 0, 'middle', me.base_font, me.medium_font_size, me.draw_fill, me.draw_stroke, 0.5, "What a Wonderful", me.back);
-            me.decorationText(2.5, 2.25, 0, 'middle', me.base_font, me.medium_font_size, me.draw_fill, me.draw_stroke, 0.5, "World of Darkness", me.back);
+            me.decorationText(3.25, 2.25, 0, 'middle', me.title_font, me.medium_font_size, me.draw_fill, me.draw_stroke, 0.5, "What a Wonderful World of Darkness", me.back);
+            //me.decorationText(2.5, 2.25, 0, 'middle', me.base_font, me.medium_font_size, me.draw_fill, me.draw_stroke, 0.5, "World of Darkness", me.back);
         } else if (me.page === 1) {
             me.crossline(1, 2, 35);
             me.crossline(23, 2, 35);
@@ -69,8 +74,8 @@ class CrossOverSheet extends WawwodSheet {
                 me.decorationText(1.5, 2.25, 0, 'start', me.user_font, me.medium_font_size, me.user_fill, me.user_stroke, 0.5, me.data["name"] + " (p." + (me.page + 1) + ")", me.back);
             }
         }
-        me.decorationText(22.5, 1.75, 0, 'end', me.base_font, me.medium_font_size, me.draw_fill, me.draw_stroke, 0.5, me.pre_title, me.back);
-        me.decorationText(22.5, 2.25, 0, 'end', me.base_font, me.medium_font_size, me.draw_fill, me.draw_stroke, 0.5, me.post_title, me.back);
+        //me.decorationText(22.5, 1.75, 0, 'end', me.base_font, me.medium_font_size, me.draw_fill, me.draw_stroke, 0.5, me.pre_title, me.back);
+        me.decorationText(22.5, 2.25, 0, 'end', me.base_font, me.medium_font_size, me.draw_fill, me.draw_stroke, 0.5, me.post_title+" ("+me.pre_title+")", me.back);
         me.decorationText(1.5, 35.8, -16, 'start', me.base_font, me.small_font_size, me.draw_fill, me.draw_stroke, 0.5, me.guideline, me.back);
         me.decorationText(22.5, 35.7, -16, 'end', me.base_font, me.small_font_size, me.draw_fill, me.draw_stroke, 0.5, "WaWWoD Cross+Over Sheet "+me.release+" ©2024, Red Fox Studios.", me.back);
         me.decorationText(22.5, 35.9, -16, 'end', me.base_font, me.small_font_size*.5, me.draw_fill, me.draw_stroke, 0.5, "Red Fox Studios are a subsidiary of Pentex Inc.", me.back);
@@ -83,17 +88,13 @@ class CrossOverSheet extends WawwodSheet {
 
     drawButtons() {
         let me = this;
-        // me.addButton(0, 'Save SVG');
-        // me.addButton(1, 'Save PNG');
+        me.addButton(1, 'NPCs');
         me.addButton(2, 'Save PDF');
-        // me.addButton(3, 'Edit');
-        me.addButton(4, 'Page 1');
-        me.addButton(5, 'Page 2');
-        me.addButton(6, 'Page 3');
-        me.addButton(7, 'Page 4');
-        // me.addButton(8, 'Page 5');
-        // me.addButton(9, 'Page 6');
-        // me.addButton(10, 'Page 7');
+        let page_button = 0
+        while(page_button < me.config.labels.sheet.pages){
+            me.addButton(3+page_button, `Page ${1+page_button}`);
+            page_button += 1
+        }
     }
 
     fillBackgroundNotes(oy) {
@@ -863,11 +864,10 @@ class CrossOverSheet extends WawwodSheet {
         let me = this;
         if (me.page === 0) {
             me.fillAttributes(4 * me.stepy);
-            me.fillAbilities(9.5 * me.stepy);
-            me.fillAdvantages(16.5 * me.stepy);
-            me.fillOther(23.5 * me.stepy);
-
-            me.fillSpecial(29.5 * me.stepy);
+            me.fillAbilities(9.0 * me.stepy);
+            me.fillAdvantages(15.0 * me.stepy);
+            me.fillOther(22 * me.stepy);
+            me.fillSpecial(27.5 * me.stepy);
 
         } else if (me.page === 1) {
             me.fillBackgroundNotes(4 * me.stepy);
@@ -880,18 +880,16 @@ class CrossOverSheet extends WawwodSheet {
         } else if (me.page === 3) {
             me.fillRiteNotes(4 * me.stepy);
             me.fillOthers(4 * me.stepy);
-            me.fillExperience(30.0 * me.stepy);
         } else if (me.page > 3) {
 //             me.fillDisciplinesNotes(4 * me.stepy, 'left', me.page - 1);
 //             me.fillDisciplinesNotes(4 * me.stepy, 'right', me.page - 1);
-
+            me.fillExperience(30.0 * me.stepy);
         }
     }
 
     perform(character_data) {
         let me = this;
-        me.data = character_data;
-        console.log(me.data)
+        me.data = character_data
         me.guideline = me.data['guideline']
         me.drawWatermark();
         if (me.data['condition'] == "DEAD") {
