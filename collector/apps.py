@@ -10,3 +10,4 @@ class CollectorConfig(AppConfig):
         import collector.signals.seasons
         import collector.signals.septs
         import collector.signals.gifts
+        import collector.signals.totems
