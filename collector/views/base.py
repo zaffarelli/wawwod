@@ -441,8 +441,9 @@ def display_chronicle_map(request):
         .exclude(ghost=True) \
         .exclude(hidden=True) \
         .filter(adventure="TWT") \
-        .order_by('-is_player', 'group', 'sire', 'adventure', 'creature', "name")
+        .order_by('-is_player', 'faction','group', 'sire', 'adventure', 'creature', "name")
     all_creatures = []
+    lines = []
     for creature in creatures:
         c = creature.toJSON()
         k = json.loads(c)
@@ -452,6 +453,13 @@ def display_chronicle_map(request):
         k["entrance"] = creature.entrance
         # print(k["name"])
         all_creatures.append(k)
+        lines.append(creature.extract_raw())
+
+    txt_name = os.path.join(settings.MEDIA_ROOT, 'md/' + chronicle.acronym+"_cast.md")
+
+    with open(txt_name, "w") as f:
+        f.writelines(lines)
+        f.close()
 
     context = {'data': json.dumps(all_creatures, indent=4, sort_keys=True)}
     return JsonResponse(context)
@@ -593,7 +601,7 @@ def svg_to_pdf(request, slug):
             rid = request.POST["rid"]
         else:
             rid = "adventure_sheet"
-        cairosvg.svg2pdf(url=svg_name, write_to=pdf_name, scale=1.0)
+        cairosvg.svg2pdf(url=svg_name, write_to=pdf_name, scale=1.0, unsafe=True)
         logger.info(f'--> Created --> {pdf_name}.')
         print(f'--> Created --> {pdf_name}.')
         response['status'] = 'ok'

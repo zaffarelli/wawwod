@@ -49,6 +49,29 @@ def find_stat_property(creature, statistic):
         property = "willpower"
     return property
 
+def find_stat_category(creature, statistic):
+    # You give 'garou' / 'athletics', it returns 'talents'
+    lists = ['attributes', 'talents', 'skills', 'knowledges', 'backgrounds']
+    result = 'n/a'
+    if statistic.lower() == "willpower":
+        result = "low_rate"
+    if statistic.lower() == "rage":
+        result = "low_rate"
+    if statistic.lower() == "gnosis":
+        result = "high_rate"
+    if statistic.lower() == "gift_in":
+        result = "gift_in"
+    if statistic.lower() == "gift_out":
+        result = "gift_out"
+    if statistic.lower() == "loss":
+        result = "loss"
+    if result == "n/a":
+        for l in lists:
+            if statistic.lower() in STATS_NAMES[creature][l]:
+                result = l
+                break
+    return result
+
 
 STATS_NAMES = {
     'changeling': {

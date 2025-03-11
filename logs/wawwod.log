@@ -27803,3 +27803,903 @@ AttributeError: 'NoneType' object has no attribute 'hexdigest'
 [28/11 07:07:03] Not Found: /favicon.ico
 [28/11 07:07:42] Not Found: /favicon.ico
 [28/11 07:12:36] Not Found: /favicon.ico
+[16/01 17:30:10] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[17/01 01:19:19] Not Found: /ajax/collector_action/add_mortal/
+[17/01 01:19:19] "GET /ajax/collector_action/add_mortal/ HTTP/1.1" 404 11360
+[17/01 01:25:21] Internal Server Error: /ajax/editable/userinput/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 190, in userinput
+    item.save()
+    ~~~~~~~~~^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/base.py", line 901, in save_base
+    updated = self._save_table(
+        raw,
+    ...<4 lines>...
+        update_fields,
+    )
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/base.py", line 1028, in _save_table
+    updated = self._do_update(
+        base_qs, using, pk_val, values, update_fields, forced_update
+    )
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/base.py", line 1093, in _do_update
+    return filtered._update(values) > 0
+           ~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/query.py", line 1276, in _update
+    return query.get_compiler(self.db).execute_sql(CURSOR)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 1987, in execute_sql
+    cursor = super().execute_sql(result_type)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 1549, in execute_sql
+    sql, params = self.as_sql()
+                  ~~~~~~~~~~~^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 1950, in as_sql
+    val = field.get_db_prep_save(val, connection=self.connection)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/fields/__init__.py", line 1019, in get_db_prep_save
+    return self.get_db_prep_value(value, connection=connection, prepared=False)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/fields/__init__.py", line 1012, in get_db_prep_value
+    value = self.get_prep_value(value)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/fields/__init__.py", line 1178, in get_prep_value
+    return self.to_python(value)
+           ~~~~~~~~~~~~~~^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/fields/__init__.py", line 1168, in to_python
+    raise exceptions.ValidationError(
+    ...<3 lines>...
+    )
+django.core.exceptions.ValidationError: ['“Female” value must be either True or False.']
+[17/01 01:25:21] "POST /ajax/editable/userinput/ HTTP/1.1" 500 23376
+[01/02 02:00:08] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[01/02 02:00:13] Not Found: /favicon.ico
+[01/02 02:00:13] "GET /favicon.ico HTTP/1.1" 404 11294
+[01/02 02:42:24] Not Found: /favicon.ico
+[01/02 02:42:24] "GET /favicon.ico HTTP/1.1" 404 11294
+[01/02 02:49:58] Not Found: /favicon.ico
+[01/02 02:49:58] "GET /favicon.ico HTTP/1.1" 404 11294
+[01/02 02:57:12] Not Found: /favicon.ico
+[01/02 02:57:12] "GET /favicon.ico HTTP/1.1" 404 11294
+[01/02 02:57:24] Not Found: /favicon.ico
+[01/02 03:03:50] Not Found: /favicon.ico
+[01/02 03:06:55] Not Found: /favicon.ico
+[01/02 03:06:55] "GET /favicon.ico HTTP/1.1" 404 11294
+[01/02 10:01:43] Internal Server Error: /ajax/display/chronicle_map/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 456, in display_chronicle_map
+    lines.append(c.extract_raw())
+                 ^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'extract_raw'
+[01/02 10:01:43] "GET /ajax/display/chronicle_map/ HTTP/1.1" 500 100568
+[01/02 10:02:00] Internal Server Error: /ajax/display/chronicle_map/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 461, in display_chronicle_map
+    f.writeLines(lines)
+    ^^^^^^^^^^^^
+AttributeError: '_io.TextIOWrapper' object has no attribute 'writeLines'. Did you mean: 'writelines'?
+[01/02 10:02:00] "GET /ajax/display/chronicle_map/ HTTP/1.1" 500 106001
+[01/02 10:11:38] Not Found: /ajax/display/map//
+[01/02 10:11:38] "GET /ajax/display/map// HTTP/1.1" 404 11315
+[01/02 10:12:32] Not Found: /ajax/display/map//
+[01/02 10:12:32] "GET /ajax/display/map// HTTP/1.1" 404 11315
+[01/02 10:15:50] Not Found: /ajax/display/map//
+[01/02 10:15:50] "GET /ajax/display/map// HTTP/1.1" 404 11315
+[01/02 10:23:13] Not Found: /medias/
+[01/02 10:23:13] "GET /medias/ HTTP/1.1" 404 11282
+[01/02 10:23:22] Not Found: /media/results/md/
+[01/02 10:23:22] "GET /media/results/md/ HTTP/1.1" 404 11312
+[01/02 10:23:41] Not Found: /ajax/display/map//
+[01/02 10:23:41] "GET /ajax/display/map// HTTP/1.1" 404 11315
+[01/02 10:47:25] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[01/02 22:03:06] Not Found: /favicon.ico
+[01/02 22:10:11] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[01/02 22:17:36] Internal Server Error: /ajax/editable/updown/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.IntegrityError: CHECK constraint failed: background11
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 168, in updown
+    item.save()
+    ~~~~~~~~~^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/base.py", line 901, in save_base
+    updated = self._save_table(
+        raw,
+    ...<4 lines>...
+        update_fields,
+    )
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/base.py", line 1028, in _save_table
+    updated = self._do_update(
+        base_qs, using, pk_val, values, update_fields, forced_update
+    )
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/base.py", line 1093, in _do_update
+    return filtered._update(values) > 0
+           ~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/query.py", line 1276, in _update
+    return query.get_compiler(self.db).execute_sql(CURSOR)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 1987, in execute_sql
+    cursor = super().execute_sql(result_type)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: CHECK constraint failed: background11
+[01/02 22:17:36] "POST /ajax/editable/updown/ HTTP/1.1" 500 24178
+[02/02 01:34:28] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[02/02 01:44:11] Not Found: /favicon.ico
+[13/02 01:02:10] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[13/02 01:02:15] Not Found: /favicon.ico
+[13/02 01:02:15] "GET /favicon.ico HTTP/1.1" 404 11294
+[13/02 12:35:25] Not Found: /ajax/display/map//
+[13/02 12:35:25] "GET /ajax/display/map// HTTP/1.1" 404 11315
+[13/02 12:35:32] Not Found: /ajax/display/map//
+[13/02 12:35:32] "GET /ajax/display/map// HTTP/1.1" 404 11315
+[13/02 12:35:39] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[13/02 12:40:09] Not Found: /favicon.ico
+[13/02 12:40:09] "GET /favicon.ico HTTP/1.1" 404 11294
+[13/02 20:00:49] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[05/03 03:52:44] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[05/03 03:52:48] Internal Server Error: /ajax/editable/updown/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 168, in updown
+    item.save()
+    ~~~~~~~~~^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/base.py", line 881, in save_base
+    pre_save.send(
+    ~~~~~~~~~~~~~^
+        sender=origin,
+        ^^^^^^^^^^^^^^
+    ...<3 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/dispatch/dispatcher.py", line 189, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/zaffarelli/Projects/wawwod/collector/signals/creatures.py", line 19, in update_creature
+    instance.fix()
+    ~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 795, in fix
+    self.body_limit = min(self.attributes0, self.attributes8)
+                          ^^^^^^^^^^^^^^^^
+AttributeError: 'Creature' object has no attribute 'attributes0'. Did you mean: 'attribute0'?
+[05/03 03:52:48] "POST /ajax/editable/updown/ HTTP/1.1" 500 21724
+[05/03 03:52:50] Internal Server Error: /ajax/editable/updown/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 168, in updown
+    item.save()
+    ~~~~~~~~~^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/base.py", line 881, in save_base
+    pre_save.send(
+    ~~~~~~~~~~~~~^
+        sender=origin,
+        ^^^^^^^^^^^^^^
+    ...<3 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/dispatch/dispatcher.py", line 189, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/zaffarelli/Projects/wawwod/collector/signals/creatures.py", line 19, in update_creature
+    instance.fix()
+    ~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 795, in fix
+    self.body_limit = min(self.attributes0, self.attributes8)
+                          ^^^^^^^^^^^^^^^^
+AttributeError: 'Creature' object has no attribute 'attributes0'. Did you mean: 'attribute0'?
+[05/03 03:52:50] "POST /ajax/editable/updown/ HTTP/1.1" 500 21724
+[05/03 03:52:53] Internal Server Error: /ajax/editable/updown/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 168, in updown
+    item.save()
+    ~~~~~~~~~^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/base.py", line 881, in save_base
+    pre_save.send(
+    ~~~~~~~~~~~~~^
+        sender=origin,
+        ^^^^^^^^^^^^^^
+    ...<3 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/dispatch/dispatcher.py", line 189, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/zaffarelli/Projects/wawwod/collector/signals/creatures.py", line 19, in update_creature
+    instance.fix()
+    ~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 795, in fix
+    self.body_limit = min(self.attributes0, self.attributes8)
+                          ^^^^^^^^^^^^^^^^
+AttributeError: 'Creature' object has no attribute 'attributes0'. Did you mean: 'attribute0'?
+[05/03 03:52:53] "POST /ajax/editable/updown/ HTTP/1.1" 500 21724
+[05/03 03:52:54] Internal Server Error: /ajax/editable/updown/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 168, in updown
+    item.save()
+    ~~~~~~~~~^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/base.py", line 881, in save_base
+    pre_save.send(
+    ~~~~~~~~~~~~~^
+        sender=origin,
+        ^^^^^^^^^^^^^^
+    ...<3 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/dispatch/dispatcher.py", line 189, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/zaffarelli/Projects/wawwod/collector/signals/creatures.py", line 19, in update_creature
+    instance.fix()
+    ~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 795, in fix
+    self.body_limit = min(self.attributes0, self.attributes8)
+                          ^^^^^^^^^^^^^^^^
+AttributeError: 'Creature' object has no attribute 'attributes0'. Did you mean: 'attribute0'?
+[05/03 03:52:54] "POST /ajax/editable/updown/ HTTP/1.1" 500 21725
+[05/03 03:53:26] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[05/03 04:04:03] Not Found: /favicon.ico
+[05/03 04:04:03] "GET /favicon.ico HTTP/1.1" 404 11294
+[05/03 04:46:53] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[05/03 05:08:07] Internal Server Error: /ajax/character/svg2pdf/_sonja_bilal/
+Traceback (most recent call last):
+  File "/usr/lib64/python3.13/urllib/request.py", line 1481, in open_local_file
+    stats = os.stat(localfile)
+FileNotFoundError: [Errno 2] No such file or directory: '/home/zaffarelli/Projects/wawwod/wawwod_media/pdf/results/svg/static/collector/breed/manyforms.svg'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 604, in svg_to_pdf
+    cairosvg.svg2pdf(url=svg_name, write_to=pdf_name, scale=1.0, unsafe=True)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/cairosvg/__init__.py", line 67, in svg2pdf
+    return surface.PDFSurface.convert(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        bytestring=bytestring, file_obj=file_obj, url=url, dpi=dpi,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        invert_images=invert_images, unsafe=unsafe, write_to=write_to,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        output_width=output_width, output_height=output_height)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/cairosvg/surface.py", line 133, in convert
+    instance = cls(
+        tree, output, dpi, None, parent_width, parent_height, scale,
+        output_width, output_height, background_color,
+        map_rgba=negate_color if negate_colors else None,
+        map_image=invert_image if invert_images else None)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/cairosvg/surface.py", line 225, in __init__
+    self.draw(tree)
+    ~~~~~~~~~^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/cairosvg/surface.py", line 472, in draw
+    self.draw(child)
+    ~~~~~~~~~^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/cairosvg/surface.py", line 472, in draw
+    self.draw(child)
+    ~~~~~~~~~^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/cairosvg/surface.py", line 472, in draw
+    self.draw(child)
+    ~~~~~~~~~^^^^^^^
+  [Previous line repeated 1 more time]
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/cairosvg/surface.py", line 404, in draw
+    TAGS[node.tag](self, node)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/cairosvg/image.py", line 28, in image
+    image_bytes = node.fetch_url(url, 'image/*')
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/cairosvg/parser.py", line 243, in fetch_url
+    return read_url(url, self.url_fetcher, resource_type)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/cairosvg/url.py", line 154, in read_url
+    return url_fetcher(url, resource_type)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/cairosvg/url.py", line 84, in fetch
+    return urlopen(Request(url, headers=HTTP_HEADERS)).read()
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.13/urllib/request.py", line 189, in urlopen
+    return opener.open(url, data, timeout)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.13/urllib/request.py", line 489, in open
+    response = self._open(req, data)
+  File "/usr/lib64/python3.13/urllib/request.py", line 506, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+                              '_open', req)
+  File "/usr/lib64/python3.13/urllib/request.py", line 466, in _call_chain
+    result = func(*args)
+  File "/usr/lib64/python3.13/urllib/request.py", line 1459, in file_open
+    return self.open_local_file(req)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/usr/lib64/python3.13/urllib/request.py", line 1498, in open_local_file
+    raise URLError(exp)
+urllib.error.URLError: <urlopen error [Errno 2] No such file or directory: '/home/zaffarelli/Projects/wawwod/wawwod_media/pdf/results/svg/static/collector/breed/manyforms.svg'>
+[05/03 05:08:07] "POST /ajax/character/svg2pdf/_sonja_bilal/ HTTP/1.1" 500 46879
+[05/03 05:08:56] Internal Server Error: /ajax/character/svg2pdf/_sonja_bilal/
+Traceback (most recent call last):
+  File "/usr/lib64/python3.13/urllib/request.py", line 1481, in open_local_file
+    stats = os.stat(localfile)
+FileNotFoundError: [Errno 2] No such file or directory: '/home/zaffarelli/Projects/wawwod/wawwod_media/pdf/results/svg/static/collector/breed/manyforms.svg'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 604, in svg_to_pdf
+    cairosvg.svg2pdf(url=svg_name, write_to=pdf_name, scale=1.0, unsafe=True)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/cairosvg/__init__.py", line 67, in svg2pdf
+    return surface.PDFSurface.convert(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        bytestring=bytestring, file_obj=file_obj, url=url, dpi=dpi,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        invert_images=invert_images, unsafe=unsafe, write_to=write_to,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        output_width=output_width, output_height=output_height)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/cairosvg/surface.py", line 133, in convert
+    instance = cls(
+        tree, output, dpi, None, parent_width, parent_height, scale,
+        output_width, output_height, background_color,
+        map_rgba=negate_color if negate_colors else None,
+        map_image=invert_image if invert_images else None)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/cairosvg/surface.py", line 225, in __init__
+    self.draw(tree)
+    ~~~~~~~~~^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/cairosvg/surface.py", line 472, in draw
+    self.draw(child)
+    ~~~~~~~~~^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/cairosvg/surface.py", line 472, in draw
+    self.draw(child)
+    ~~~~~~~~~^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/cairosvg/surface.py", line 472, in draw
+    self.draw(child)
+    ~~~~~~~~~^^^^^^^
+  [Previous line repeated 1 more time]
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/cairosvg/surface.py", line 404, in draw
+    TAGS[node.tag](self, node)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/cairosvg/image.py", line 28, in image
+    image_bytes = node.fetch_url(url, 'image/*')
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/cairosvg/parser.py", line 243, in fetch_url
+    return read_url(url, self.url_fetcher, resource_type)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/cairosvg/url.py", line 154, in read_url
+    return url_fetcher(url, resource_type)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/cairosvg/url.py", line 84, in fetch
+    return urlopen(Request(url, headers=HTTP_HEADERS)).read()
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.13/urllib/request.py", line 189, in urlopen
+    return opener.open(url, data, timeout)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.13/urllib/request.py", line 489, in open
+    response = self._open(req, data)
+  File "/usr/lib64/python3.13/urllib/request.py", line 506, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+                              '_open', req)
+  File "/usr/lib64/python3.13/urllib/request.py", line 466, in _call_chain
+    result = func(*args)
+  File "/usr/lib64/python3.13/urllib/request.py", line 1459, in file_open
+    return self.open_local_file(req)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/usr/lib64/python3.13/urllib/request.py", line 1498, in open_local_file
+    raise URLError(exp)
+urllib.error.URLError: <urlopen error [Errno 2] No such file or directory: '/home/zaffarelli/Projects/wawwod/wawwod_media/pdf/results/svg/static/collector/breed/manyforms.svg'>
+[05/03 05:08:56] "POST /ajax/character/svg2pdf/_sonja_bilal/ HTTP/1.1" 500 46879
+[05/03 18:50:36] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[09/03 08:49:57] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[09/03 09:07:00] Not Found: /favicon.ico
+[09/03 09:15:52] Internal Server Error: /admin/collector/creature/967/change/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/contrib/admin/options.py", line 714, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/contrib/admin/sites.py", line 240, in inner
+    return view(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/contrib/admin/options.py", line 1944, in change_view
+    return self.changeform_view(request, object_id, form_url, extra_context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/contrib/admin/options.py", line 1802, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/contrib/admin/options.py", line 1853, in _changeform_view
+    self.save_model(request, new_object, form, not add)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/contrib/admin/options.py", line 1257, in save_model
+    obj.save()
+    ~~~~~~~~^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/base.py", line 881, in save_base
+    pre_save.send(
+    ~~~~~~~~~~~~~^
+        sender=origin,
+        ^^^^^^^^^^^^^^
+    ...<3 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/dispatch/dispatcher.py", line 189, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/zaffarelli/Projects/wawwod/collector/signals/creatures.py", line 19, in update_creature
+    instance.fix()
+    ~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 853, in fix
+    self.fix_garou()
+    ~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 732, in fix_garou
+    self.check_experience()
+    ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Creature' object has no attribute 'check_experience'. Did you mean: 'check_expenditure'?
+[09/03 09:15:52] "POST /admin/collector/creature/967/change/?_changelist_filters=adventure%3DTWT%26is_player__exact%3D1 HTTP/1.1" 500 204814
+[09/03 09:17:01] Internal Server Error: /admin/collector/creature/967/change/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/contrib/admin/options.py", line 714, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/contrib/admin/sites.py", line 240, in inner
+    return view(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/contrib/admin/options.py", line 1944, in change_view
+    return self.changeform_view(request, object_id, form_url, extra_context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/contrib/admin/options.py", line 1802, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/contrib/admin/options.py", line 1853, in _changeform_view
+    self.save_model(request, new_object, form, not add)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/contrib/admin/options.py", line 1257, in save_model
+    obj.save()
+    ~~~~~~~~^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/base.py", line 881, in save_base
+    pre_save.send(
+    ~~~~~~~~~~~~~^
+        sender=origin,
+        ^^^^^^^^^^^^^^
+    ...<3 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/dispatch/dispatcher.py", line 189, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/zaffarelli/Projects/wawwod/collector/signals/creatures.py", line 19, in update_creature
+    instance.fix()
+    ~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 854, in fix
+    self.fix_garou()
+    ~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 732, in fix_garou
+    self.check_expenditure()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 744, in check_expenditure
+    print(f"Statistic: {stat:-20} Progress: {progress:10} XP:{exp:5}")
+                       ^^^^^^^^^^
+ValueError: Sign not allowed in string format specifier
+[09/03 09:17:01] "POST /admin/collector/creature/967/change/?_changelist_filters=adventure%3DTWT%26is_player__exact%3D1 HTTP/1.1" 500 209767
+[09/03 09:40:53] Internal Server Error: /admin/collector/creature/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/contrib/admin/options.py", line 714, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/contrib/admin/sites.py", line 240, in inner
+    return view(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/contrib/admin/options.py", line 2014, in changelist_view
+    response = self.response_action(
+        request, queryset=cl.get_queryset(request)
+    )
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/contrib/admin/options.py", line 1648, in response_action
+    response = func(self, request, queryset)
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 2053, in refix
+    creature.save()
+    ~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/base.py", line 881, in save_base
+    pre_save.send(
+    ~~~~~~~~~~~~~^
+        sender=origin,
+        ^^^^^^^^^^^^^^
+    ...<3 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/dispatch/dispatcher.py", line 189, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/zaffarelli/Projects/wawwod/collector/signals/creatures.py", line 19, in update_creature
+    instance.fix()
+    ~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 878, in fix
+    self.fix_garou()
+    ~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 733, in fix_garou
+    self.check_expenditure()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 765, in check_expenditure
+    print(f"Statistic: {stat:20} Progress: {progress:10} XP:{exp:5} (calc:{realexp:5}) ({category:20}) ")
+                                                                                        ^^^^^^^^^^^^^
+TypeError: unsupported format string passed to type.__format__
+[09/03 09:40:53] "POST /admin/collector/creature/?adventure=TWT&is_player__exact=1 HTTP/1.1" 500 173680
+[09/03 09:41:58] Internal Server Error: /admin/collector/creature/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/contrib/admin/options.py", line 714, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/contrib/admin/sites.py", line 240, in inner
+    return view(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/contrib/admin/options.py", line 2014, in changelist_view
+    response = self.response_action(
+        request, queryset=cl.get_queryset(request)
+    )
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/contrib/admin/options.py", line 1648, in response_action
+    response = func(self, request, queryset)
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 2053, in refix
+    creature.save()
+    ~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/base.py", line 881, in save_base
+    pre_save.send(
+    ~~~~~~~~~~~~~^
+        sender=origin,
+        ^^^^^^^^^^^^^^
+    ...<3 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/dispatch/dispatcher.py", line 189, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/zaffarelli/Projects/wawwod/collector/signals/creatures.py", line 19, in update_creature
+    instance.fix()
+    ~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 878, in fix
+    self.fix_garou()
+    ~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 733, in fix_garou
+    self.check_expenditure()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 765, in check_expenditure
+    print(f"{stat:20} Progress: {progress:10} XP:{exp:5} (calc:{realexp:5}) ({category:20})")
+                                                                             ^^^^^^^^^^^^^
+TypeError: unsupported format string passed to type.__format__
+[09/03 09:41:58] "POST /admin/collector/creature/?adventure=TWT&is_player__exact=1 HTTP/1.1" 500 173630
+[09/03 10:17:34] Internal Server Error: /admin/collector/creature/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/contrib/admin/options.py", line 714, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/contrib/admin/sites.py", line 240, in inner
+    return view(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/contrib/admin/options.py", line 2014, in changelist_view
+    response = self.response_action(
+        request, queryset=cl.get_queryset(request)
+    )
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/contrib/admin/options.py", line 1648, in response_action
+    response = func(self, request, queryset)
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 2072, in refix
+    creature.save()
+    ~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/base.py", line 881, in save_base
+    pre_save.send(
+    ~~~~~~~~~~~~~^
+        sender=origin,
+        ^^^^^^^^^^^^^^
+    ...<3 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/dispatch/dispatcher.py", line 189, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/zaffarelli/Projects/wawwod/collector/signals/creatures.py", line 19, in update_creature
+    instance.fix()
+    ~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 897, in fix
+    self.fix_garou()
+    ~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 734, in fix_garou
+    self.check_expenditure()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 783, in check_expenditure
+    xp_spent += realxp
+                ^^^^^^
+NameError: name 'realxp' is not defined. Did you mean: 'realexp'?
+[09/03 10:17:34] "POST /admin/collector/creature/?adventure=TWT&is_player__exact=1 HTTP/1.1" 500 174934
+[09/03 10:49:31] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[09/03 10:49:32] Not Found: /ajax/display/crossover_sheet/Jeremy Bauer/
+[09/03 10:49:32] "GET /ajax/display/crossover_sheet/Jeremy%20Bauer/ HTTP/1.1" 404 11389
+[09/03 14:33:41] Not Found: /ajax/display/crossover_sheet/Jeremy Bauer/
+[09/03 14:33:41] "GET /ajax/display/crossover_sheet/Jeremy%20Bauer/ HTTP/1.1" 404 11389
+[09/03 14:33:45] Not Found: /ajax/display/crossover_sheet/Jeremy Bauer/
+[09/03 14:33:45] "GET /ajax/display/crossover_sheet/Jeremy%20Bauer/ HTTP/1.1" 404 11389
+[11/03 07:20:14] Not Found: /favicon.ico
+[11/03 08:30:16] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[11/03 08:30:34] Not Found: /favicon.ico
+[11/03 08:36:08] Internal Server Error: /ajax/display/crossover_sheet/_sonja_bilal/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 424, in display_crossover_sheet
+    j, k = character_for(slug, option)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 389, in character_for
+    k["background_notes"] = c.background_notes()
+                            ~~~~~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 1884, in background_notes
+    txt_lines.append(entries.last().description + "("+terms+")")
+                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+TypeError: can only concatenate str (not "list") to str
+[11/03 08:36:08] "GET /ajax/display/crossover_sheet/_sonja_bilal/ HTTP/1.1" 500 110632
+[11/03 08:55:28] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[11/03 08:56:57] Not Found: /favicon.ico
+[11/03 09:33:06] Not Found: /favicon.ico
+[11/03 09:33:28] Not Found: /favicon.ico

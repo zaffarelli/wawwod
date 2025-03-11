@@ -2,7 +2,7 @@ class CrossOverSheet extends WawwodSheet {
     constructor(settings, parent) {
         super(settings, parent);
         this.init();
-        this.release = "WW20-2024.11.23";
+        this.release = "WW20-2025.03.06";
     }
 
     init() {
@@ -66,6 +66,7 @@ class CrossOverSheet extends WawwodSheet {
             me.midline(2.5, 1, 23);
             me.midline(35, 1, 23);
             me.crossline(12, 4, 34);
+            me.midline(23.5, 12.5, 22.5);
         }
         if (me.page > 0) {
             if (me.blank) {
@@ -77,7 +78,7 @@ class CrossOverSheet extends WawwodSheet {
         //me.decorationText(22.5, 1.75, 0, 'end', me.base_font, me.medium_font_size, me.draw_fill, me.draw_stroke, 0.5, me.pre_title, me.back);
         me.decorationText(22.5, 2.25, 0, 'end', me.base_font, me.medium_font_size, me.draw_fill, me.draw_stroke, 0.5, me.post_title+" ("+me.pre_title+")", me.back);
         me.decorationText(1.5, 35.8, -16, 'start', me.base_font, me.small_font_size, me.draw_fill, me.draw_stroke, 0.5, me.guideline, me.back);
-        me.decorationText(22.5, 35.7, -16, 'end', me.base_font, me.small_font_size, me.draw_fill, me.draw_stroke, 0.5, "WaWWoD Cross+Over Sheet "+me.release+" ©2024, Red Fox Studios.", me.back);
+        me.decorationText(22.5, 35.7, -16, 'end', me.base_font, me.small_font_size, me.draw_fill, me.draw_stroke, 0.5, "WaWWoD Cross+Over Sheet "+me.release+" ©2025, Red Fox Studios.", me.back);
         me.decorationText(22.5, 35.9, -16, 'end', me.base_font, me.small_font_size*.5, me.draw_fill, me.draw_stroke, 0.5, "Red Fox Studios are a subsidiary of Pentex Inc.", me.back);
         if (me.blank) {
             me.decorationText(22.5, 34.8, 0, 'end', me.base_font, me.small_font_size, me.draw_fill, me.draw_stroke, 0.5, 'Challenge: you make us laugh punk!', me.back);
@@ -661,7 +662,7 @@ class CrossOverSheet extends WawwodSheet {
             .attr('dx', 0)
             .attr('dy', 0)
             .text(function (d) {
-                return d['notes'];
+                return d['notes']
             })
             .style("text-anchor", 'start')
             .style("font-family", me.user_font)
@@ -676,6 +677,7 @@ class CrossOverSheet extends WawwodSheet {
                 return 0;
             })
         ;
+        //me.superwrap(d_notes_in_note, box_spacing_x * me.stepx, true, me.medium_font_size);
         d_notes_in_note.call(wrap, 9 * me.stepx, true, me.medium_font_size);
     }
 
@@ -878,12 +880,13 @@ class CrossOverSheet extends WawwodSheet {
             me.fillMeritsFlawsNotes(12 * me.stepy);
             me.fillDisciplinesNotes(4 * me.stepy, '', 0);
         } else if (me.page === 3) {
-            me.fillRiteNotes(4 * me.stepy);
-            me.fillOthers(4 * me.stepy);
+            me.fillRiteNotes(4 * me.stepy)
+            me.fillOthers(4 * me.stepy)
+            me.fillExperience(24.0 * me.stepy)
         } else if (me.page > 3) {
 //             me.fillDisciplinesNotes(4 * me.stepy, 'left', me.page - 1);
 //             me.fillDisciplinesNotes(4 * me.stepy, 'right', me.page - 1);
-            me.fillExperience(30.0 * me.stepy);
+
         }
     }
 

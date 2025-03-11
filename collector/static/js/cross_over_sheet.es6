@@ -2,7 +2,7 @@ class CrossOverSheet extends WawwodSheet {
     constructor(settings, parent) {
         super(settings, parent);
         this.init();
-        this.release = "WW20-2024.11.23";
+        this.release = "WW20-2025.03.06";
     }
 
     init() {
@@ -66,6 +66,7 @@ class CrossOverSheet extends WawwodSheet {
             me.midline(2.5, 1, 23);
             me.midline(35, 1, 23);
             me.crossline(12, 4, 34);
+            me.midline(23.5, 12.5, 22.5);
         }
         if (me.page > 0) {
             if (me.blank) {
@@ -77,7 +78,7 @@ class CrossOverSheet extends WawwodSheet {
         //me.decorationText(22.5, 1.75, 0, 'end', me.base_font, me.medium_font_size, me.draw_fill, me.draw_stroke, 0.5, me.pre_title, me.back);
         me.decorationText(22.5, 2.25, 0, 'end', me.base_font, me.medium_font_size, me.draw_fill, me.draw_stroke, 0.5, me.post_title+" ("+me.pre_title+")", me.back);
         me.decorationText(1.5, 35.8, -16, 'start', me.base_font, me.small_font_size, me.draw_fill, me.draw_stroke, 0.5, me.guideline, me.back);
-        me.decorationText(22.5, 35.7, -16, 'end', me.base_font, me.small_font_size, me.draw_fill, me.draw_stroke, 0.5, "WaWWoD Cross+Over Sheet "+me.release+" ©2024, Red Fox Studios.", me.back);
+        me.decorationText(22.5, 35.7, -16, 'end', me.base_font, me.small_font_size, me.draw_fill, me.draw_stroke, 0.5, "WaWWoD Cross+Over Sheet "+me.release+" ©2025, Red Fox Studios.", me.back);
         me.decorationText(22.5, 35.9, -16, 'end', me.base_font, me.small_font_size*.5, me.draw_fill, me.draw_stroke, 0.5, "Red Fox Studios are a subsidiary of Pentex Inc.", me.back);
         if (me.blank) {
             me.decorationText(22.5, 34.8, 0, 'end', me.base_font, me.small_font_size, me.draw_fill, me.draw_stroke, 0.5, 'Challenge: you make us laugh punk!', me.back);
@@ -106,8 +107,8 @@ class CrossOverSheet extends WawwodSheet {
 
 
 
-        me.title('About Backgrounds', 5.5 * me.stepx, oy - 0.5 * me.stepy, background_note)
-
+        me.title('About Backgrounds', 5.5 * me.stepx, oy, background_note)
+        oy += 0.5*me.stepy
         if (me.blank) {
             return;
         }
@@ -139,17 +140,21 @@ class CrossOverSheet extends WawwodSheet {
         ;
         background_note_in.append('text')
             .attr("x", function (d) {
-                return 5.5 * me.stepx;
+                return 2 * me.stepx;
             })
             .attr('y', function (d) {
                 return oy + (d['idx'] * box_spacing_y + 0.30) * me.stepy;
             })
             .text(function (d) {
-                return d['item']
+                let parts= d['item'].split("[")
+                let title = parts[0]
+                let value = me.as_dots(parseInt(parts[1].replaceAll("]","")))
+
+                return value+" - "+title
             })
             .style('font-family', me.title_font)
             .style('font-size', me.medium_font_size + "px")
-            .style('text-anchor', "middle")
+            .style('text-anchor', "start")
             .style("fill", me.draw_fill)
             .style("stroke", me.draw_stroke)
             .style("stroke-width", "0.05pt")
@@ -182,10 +187,10 @@ class CrossOverSheet extends WawwodSheet {
             .attr('class', 'rite_notes')
         ;
 
-        let ox = 6.5;
+        let ox = 1.0;
 
-        me.title('About Rites', ox * me.stepx, oy - 0.5 * me.stepy, rite_note)
-
+        me.title('About Rites', (ox+5.5) * me.stepx  , oy, rite_note)
+        oy += 0.5*me.stepy
         if (me.blank) {
             return;
         }
@@ -215,40 +220,66 @@ class CrossOverSheet extends WawwodSheet {
 //             .style("stroke", "#080808")
 //             .style("fill", "transparent")
 //         ;
-        rite_note_in.append('text')
-            .attr("x", function (d) {
-                return ox * me.stepx;
+//         rite_note_in.append('text')
+//             .attr("x", function (d) {
+//                 return ox * me.stepx;
+//             })
+//             .attr('y', function (d) {
+//                 return oy + (d['idx'] * box_spacing_y + 0.30) * me.stepy;
+//             })
+//             .text(function (d) {
+//                 return d['item']
+//             })
+//             .style('font-family', me.title_font)
+//             .style('font-size', me.medium_font_size + "px")
+//             .style('text-anchor', "middle")
+//             .style("fill", me.draw_fill)
+//             .style("stroke", me.draw_stroke)
+//             .style("stroke-width", "0.05pt")
+//         ;
+//         let rite_note_in_note = rite_note_in.append('text')
+//             .attr("x", function (d) {
+//                 return 1.5 * me.stepx;
+//             })
+//             .attr('y', function (d) {
+//                 return oy + (d['idx'] * box_spacing_y + 0.75) * me.stepy;
+//             })
+//             .text(function (d) {
+//                 return d['notes']
+//             })
+//
+//             .style('font-family', me.user_font)
+//             .style('font-size', me.medium_font_size + "px")
+//             .style('text-anchor', "start")
+//             .style("fill", me.user_fill)
+//             .style("stroke", me.user_stroke)
+//             .style("stroke-width", "0.05pt");
+
+        //rite_note_in_note.call(wrap, 10 * me.stepx, false,me.medium_font_size )
+
+        rite_note_in.append("g")
+            .attr('id',(d) => 'rite_note_'+d['idx'] )
+            .attr('fake',function (d) {
+                console.log(d)
+                let atx = (ox + 0.4) * me.stepx
+                let spacing_y = 1
+                if (d['idx']>0){
+                    spacing_y = parseInt(d3.select('#rite_note_'+(d['idx']-1)).attr("fake"))+1
+                }
+                oy += (spacing_y) * me.medium_font_size*1.25
+                let aty = oy
+                me.daddy = rite_note_in
+                console.log(d)
+                let txt = d['notes'].split("µ")
+                let details = ""//txt.shift().replace("--","")
+                let atitle = me.as_dots(d['lvl'])+" "+d['item'].toUpperCase()
+                let lines = me.appendText(atitle,txt,atx,aty,10 * me.stepx)
+                return lines+1
+
             })
-            .attr('y', function (d) {
-                return oy + (d['idx'] * box_spacing_y + 0.30) * me.stepy;
-            })
-            .text(function (d) {
-                return d['item']
-            })
-            .style('font-family', me.title_font)
-            .style('font-size', me.medium_font_size + "px")
-            .style('text-anchor', "middle")
-            .style("fill", me.draw_fill)
-            .style("stroke", me.draw_stroke)
-            .style("stroke-width", "0.05pt")
-        ;
-        let rite_note_in_note = rite_note_in.append('text')
-            .attr("x", function (d) {
-                return 1.5 * me.stepx;
-            })
-            .attr('y', function (d) {
-                return oy + (d['idx'] * box_spacing_y + 0.75) * me.stepy;
-            })
-            .text(function (d) {
-                return d['notes']
-            })
-            .style('font-family', me.user_font)
-            .style('font-size', me.medium_font_size + "px")
-            .style('text-anchor', "start")
-            .style("fill", me.user_fill)
-            .style("stroke", me.user_stroke)
-            .style("stroke-width", "0.05pt");
-        rite_note_in_note.call(wrap, 10 * me.stepx, false,me.medium_font_size )
+
+
+
     }
 
 
@@ -262,7 +293,8 @@ class CrossOverSheet extends WawwodSheet {
         ;
         let current_font_size = me.medium_font_size;
         me.daddy = me.timeline;
-        me.title('Timeline', (base_x + 6) * me.stepx, oy - 0.5 * me.stepy, timeline)
+        me.title('Timeline', (base_x + 6) * me.stepx, oy, timeline)
+        oy += 0.5*me.stepy
 
         console.log(me.data['timeline'])
 
@@ -360,8 +392,8 @@ class CrossOverSheet extends WawwodSheet {
         ;
         let current_font_size = me.medium_font_size;
         me.daddy = timeline;
-        me.title('Timeline', (base_x + 6) * me.stepx, oy - 0.5 * me.stepy, timeline)
-
+        me.title('Timeline', (base_x + 6) * me.stepx, oy, timeline)
+        oy += 0.5*me.stepy
         let timeline_item = timeline.selectAll('timeline_event')
             .data(me.data['timeline'])
         ;
@@ -433,7 +465,7 @@ class CrossOverSheet extends WawwodSheet {
         ;
         let current_font_size = me.medium_font_size;
         me.daddy = others;
-        me.title('Others', (base_x + 6) * me.stepx, oy - 1 * me.stepy, others)
+        me.title('Others', (base_x + 6) * me.stepx, oy, others)
 
         let others_item = others.selectAll('others_event')
             .data(me.data['others'])
@@ -569,7 +601,7 @@ class CrossOverSheet extends WawwodSheet {
         let me = this;
         let box_spacing_y = 8.0;
         let box_spacing_x = 10.0;
-        let base_x = 12.5;
+        let base_x = 12.25;
         let min = 0 + pp*10;
         let max = 4 + pp*10;
         let right_offset = 0;
@@ -588,12 +620,12 @@ class CrossOverSheet extends WawwodSheet {
         me.daddy = me.d_notes;
         if (pos == '') {
             if (me.data['creature'] == "kindred"){
-                me.title('About Disciplines', 17 * me.stepx, oy - 0.5 * me.stepy, d_notes)
+                me.title('About Disciplines', 17 * me.stepx, oy , d_notes)
             }else{
-                me.title('Gifts of Gaia', 17.5 * me.stepx, oy - 0.5 * me.stepy, d_notes)
+                me.title('Gifts of Gaia', 17.5 * me.stepx, oy , d_notes)
             }
         }
-
+        oy += 0.5*me.stepy
 
         if (me.blank) {
             return;
@@ -601,82 +633,54 @@ class CrossOverSheet extends WawwodSheet {
 
         let d_notes_item = d_notes.selectAll('discipline_event')
             .data(me.data['traits_notes'])
-        ;
         let d_notes_in = d_notes_item.enter()
             .append('g')
-            .attr('class', 'discipline_event')
-        ;
-        let d_notes_in_rect = d_notes_in.append('rect')
-            .attr("x", function (d) {
-                return (base_x) * me.stepx;
-            })
-            .attr("y", function (d) {
-                return oy + (d['idx']-pp*10-right_offset) * box_spacing_y * me.stepy;
-            })
-            .attr("width", function (d) {
-                return me.stepx * box_spacing_x;
-            })
-            .attr("height", function (d) {
-                return me.stepy * (box_spacing_y - 0.25);
-            })
-            .attr("rx", "8pt")
-            .attr("ry", "8pt")
-            .style("fill", "white")
-            .style("stroke", "#808080")
-            .attr("opacity", function (d) {
-                if (((min ) <= d.idx) && ((max ) >= d.idx)) {
-                    return 1;
+            .attr('class', 'trait_notes')
+//         d_notes_in.append('text')
+//             .attr("x", function (d) {
+//                 return (base_x + 0.05) * me.stepx;
+//             })
+//             .attr('y', function (d) {
+//                 return oy + ((d['idx']-pp*10-right_offset) * box_spacing_y + 0.5) * me.stepy;
+//             })
+//             .text(function (d) {
+//                 return me.as_dots(d['score']) + ' - ' + d['item'] + ' - ' + d['title']
+//             })
+//             .style('font-family', me.user_font)
+//             .style('font-size', me.medium_font_size + "px")
+//             .style('text-anchor', "start")
+//             .style("fill", me.user_fill)
+//             .style("stroke", me.user_stroke)
+//             .attr("opacity", function (d) {
+//                 if (((min ) <= d.idx) && ((max ) >= d.idx)) {
+//                     return 1;
+//                 }
+//                 return 0;
+//             })
+
+
+        let d_notes_in_note = d_notes_in.append('g')
+            .attr('id',(d) => 'gift_note_'+d['idx'] )
+            .attr('fake',function (d) {
+                console.log(d)
+                let atx = (base_x + 0.4) * me.stepx
+                let spacing_y = 1
+                if (d['idx']>0){
+                    spacing_y = parseInt(d3.select('#gift_note_'+(d['idx']-1)).attr("fake"))+1
                 }
-                return 0;
-            })
-        ;
-        d_notes_in.append('text')
-            .attr("x", function (d) {
-                return (base_x + 0.05) * me.stepx;
-            })
-            .attr('y', function (d) {
-                return oy + ((d['idx']-pp*10-right_offset) * box_spacing_y + 0.5) * me.stepy;
-            })
-            .text(function (d) {
-                return me.as_dots(d['score']) + ' - ' + d['item'] + ' - ' + d['title']
-            })
-            .style('font-family', me.user_font)
-            .style('font-size', me.medium_font_size + "px")
-            .style('text-anchor', "start")
-            .style("fill", me.user_fill)
-            .style("stroke", me.user_stroke)
-            .attr("opacity", function (d) {
-                if (((min ) <= d.idx) && ((max ) >= d.idx)) {
-                    return 1;
-                }
-                return 0;
-            })
-        let d_notes_in_note = d_notes_in.append('text')
-            .attr('x', function (d) {
-                return (base_x + 0.4) * me.stepx;
-            })
-            .attr('y', function (d) {
-                return oy + 0.85 * me.stepy + (d['idx']-pp*10-right_offset) * box_spacing_y * me.stepy;
-            })
-            .attr('dx', 0)
-            .attr('dy', 0)
-            .text(function (d) {
-                return d['notes'];
-            })
-            .style("text-anchor", 'start')
-            .style("font-family", me.user_font)
-            .style("font-size", me.medium_font_size + "px")
-            .style("fill", me.user_fill)
-            .style("stroke", me.user_stroke)
-            .style("stroke-width", '0.05pt')
-            .attr("opacity", function (d) {
-                if (((min ) <= d.idx) && ((max ) >= d.idx)) {
-                    return 1;
-                }
-                return 0;
+                oy += (spacing_y) * me.medium_font_size*1.25
+                let aty = oy
+                me.daddy = d_notes_in
+                let txt = d['notes'].split("µ")
+                let details = txt.shift().replace("--","")
+                let atitle = me.as_dots(d['score']) + ' - ' + d['item'] + ' - ' + d['title'] + details
+                let lines = me.appendText(atitle,txt,atx,aty,10 * me.stepx)
+                return lines
+
             })
         ;
-        d_notes_in_note.call(wrap, 9 * me.stepx, true, me.medium_font_size);
+
+
     }
 
     fillNatureNotes(oy) {
@@ -685,8 +689,9 @@ class CrossOverSheet extends WawwodSheet {
             .attr('class', 'note_on_nature')
         ;
         me.daddy = me.n_notes;
-        me.title('About Nature & Demeanor', 6.5 * me.stepx, oy - 0.5 * me.stepy, n_notes)
+        me.title('About Nature & Demeanor', 6.5 * me.stepx, oy, n_notes)
 
+        oy += 0.5*me.stepy
         if (me.blank) {
             return;
         }
@@ -870,20 +875,21 @@ class CrossOverSheet extends WawwodSheet {
             me.fillSpecial(27.5 * me.stepy);
 
         } else if (me.page === 1) {
-            me.fillBackgroundNotes(4 * me.stepy);
-            me.fillTimeline(4 * me.stepy);
+            me.fillBackgroundNotes(3 * me.stepy);
+            me.fillTimeline(3 * me.stepy);
             me.fillNewManyForms(28 * me.stepy)
         } else if (me.page === 2) {
-            me.fillNatureNotes(4 * me.stepy);
+            me.fillNatureNotes(3 * me.stepy);
             me.fillMeritsFlawsNotes(12 * me.stepy);
-            me.fillDisciplinesNotes(4 * me.stepy, '', 0);
+            me.fillDisciplinesNotes(3 * me.stepy, '', 0);
         } else if (me.page === 3) {
-            me.fillRiteNotes(4 * me.stepy);
-            me.fillOthers(4 * me.stepy);
+            me.fillRiteNotes(3 * me.stepy)
+            me.fillOthers(3 * me.stepy)
+            me.fillExperience(24.0 * me.stepy)
         } else if (me.page > 3) {
 //             me.fillDisciplinesNotes(4 * me.stepy, 'left', me.page - 1);
 //             me.fillDisciplinesNotes(4 * me.stepy, 'right', me.page - 1);
-            me.fillExperience(30.0 * me.stepy);
+
         }
     }
 
