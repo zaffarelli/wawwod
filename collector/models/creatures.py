@@ -459,13 +459,16 @@ class Creature(models.Model):
         for s in base:
             val_attribute = self.value_of(s[0])
             val_ability = self.value_of(s[1])
-            score = f'{self.value_of(s[0]) + self.value_of(s[1])}'
+            score = f'{val_attribute + val_ability}'
             if val_ability == 0:
                 if s[1] in STATS_NAMES[self.creature]["skills"]:
-                    score = f'{self.value_of(s[0]) + self.value_of(s[1])} (d+1)'
+                    score = f'{val_attribute + val_ability} (D+1)'
                 elif s[1] in STATS_NAMES[self.creature]["knowledges"]:
-                    score = f'(cannot roll)'
-            sc = f'{s[0].title()}+{s[1].title()}={score}'
+                    score = f'(N/A)'
+            if len(s)==3:
+                sc = f'{s[0].title()}+{s[1].title()}={score}={s[2]}'
+            else:
+                sc = f'{s[0].title()}+{s[1].title()}={score}'
             shortcuts.append(sc)
         return shortcuts
 

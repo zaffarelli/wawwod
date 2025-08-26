@@ -28703,3 +28703,503 @@ TypeError: can only concatenate str (not "list") to str
 [11/03 08:56:57] Not Found: /favicon.ico
 [11/03 09:33:06] Not Found: /favicon.ico
 [11/03 09:33:28] Not Found: /favicon.ico
+[02/04 02:37:46] Internal Server Error: /ajax/character/svg2pdf/undefined/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/utils/datastructures.py", line 84, in __getitem__
+    list_ = super().__getitem__(key)
+KeyError: 'creature'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 593, in svg_to_pdf
+    creature = request.POST["creature"]
+               ~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/utils/datastructures.py", line 86, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'creature'
+[02/04 02:37:46] "POST /ajax/character/svg2pdf/undefined/ HTTP/1.1" 500 159985
+[03/04 02:08:03] Internal Server Error: /ajax/character/svg2pdf/undefined/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/utils/datastructures.py", line 84, in __getitem__
+    list_ = super().__getitem__(key)
+KeyError: 'creature'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 593, in svg_to_pdf
+    creature = request.POST["creature"]
+               ~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/utils/datastructures.py", line 86, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'creature'
+[03/04 02:08:03] "POST /ajax/character/svg2pdf/undefined/ HTTP/1.1" 500 159492
+[03/04 02:09:18] Internal Server Error: /ajax/character/svg2pdf/undefined/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/utils/datastructures.py", line 84, in __getitem__
+    list_ = super().__getitem__(key)
+KeyError: 'creature'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 594, in svg_to_pdf
+    creature = request.POST["creature"]
+               ~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/utils/datastructures.py", line 86, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'creature'
+[03/04 02:09:18] "POST /ajax/character/svg2pdf/undefined/ HTTP/1.1" 500 159491
+[03/04 02:15:16] Internal Server Error: /ajax/character/svg2pdf/undefined/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/utils/datastructures.py", line 84, in __getitem__
+    list_ = super().__getitem__(key)
+KeyError: 'creature'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 595, in svg_to_pdf
+    creature = request.POST["creature"]
+               ~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/utils/datastructures.py", line 86, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'creature'
+[03/04 02:15:16] "POST /ajax/character/svg2pdf/undefined/ HTTP/1.1" 500 159492
+[03/04 02:16:42] Internal Server Error: /ajax/character/svg2pdf/undefined/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/utils/datastructures.py", line 84, in __getitem__
+    list_ = super().__getitem__(key)
+KeyError: 'creature'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 596, in svg_to_pdf
+    creature = request.POST["creature"]
+               ~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/utils/datastructures.py", line 86, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'creature'
+[03/04 02:16:42] "POST /ajax/character/svg2pdf/undefined/ HTTP/1.1" 500 159492
+[03/04 02:22:08] Internal Server Error: /ajax/character/svg2pdf/ADV_RID/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 611, in svg_to_pdf
+    all_in_one_pdf(rid, creature)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 634, in all_in_one_pdf
+    if i >= STATS_NAMES[creature]["sheet"]["pages"] - 1:
+            ~~~~~~~~~~~^^^^^^^^^^
+KeyError: 'ADV_CREATURE'
+[03/04 02:22:08] "POST /ajax/character/svg2pdf/ADV_RID/ HTTP/1.1" 500 159415
+[03/04 02:24:19] Internal Server Error: /ajax/character/svg2pdf/ADV_RID/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 605, in svg_to_pdf
+    pages = STATS_NAMES[creature]["sheet"]["pages"]
+            ~~~~~~~~~~~^^^^^^^^^^
+KeyError: 'ADV_CREATURE'
+[03/04 02:24:19] "POST /ajax/character/svg2pdf/ADV_RID/ HTTP/1.1" 500 159022
+[03/04 02:25:32] Internal Server Error: /ajax/character/svg2pdf/ADV_RID/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 608, in svg_to_pdf
+    pages = STATS_NAMES[creature]["sheet"]["pages"]
+            ~~~~~~~~~~~^^^^^^^^^^
+KeyError: 'ADV_CREATURE'
+[03/04 02:25:32] "POST /ajax/character/svg2pdf/ADV_RID/ HTTP/1.1" 500 159021
+[03/04 02:26:22] Internal Server Error: /ajax/character/svg2pdf/ADV_RID/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 596, in svg_to_pdf
+    pages = STATS_NAMES[creature]["sheet"]["pages"]
+            ~~~~~~~~~~~^^^^^^^^^^
+KeyError: 'ADV_CREATURE'
+[03/04 02:26:22] "POST /ajax/character/svg2pdf/ADV_RID/ HTTP/1.1" 500 159023
+[03/04 04:15:33] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[31/07 21:24:11] Not Found: /ajax/display/map//
+[31/07 21:24:11] "GET /ajax/display/map// HTTP/1.1" 404 11315
+[31/07 21:24:17] Not Found: /ajax/display/map//
+[31/07 21:24:17] "GET /ajax/display/map// HTTP/1.1" 404 11315
+[31/07 21:24:27] Not Found: /ajax/display/map//
+[31/07 21:24:27] "GET /ajax/display/map// HTTP/1.1" 404 11315
+[31/07 21:24:57] Internal Server Error: /ajax/display/septs/_rosewood_sept/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 542, in display_sept
+    sept = Sept.objects.get(rid=slug)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/query.py", line 650, in get
+    raise self.model.MultipleObjectsReturned(
+    ...<5 lines>...
+    )
+collector.models.septs.Sept.MultipleObjectsReturned: get() returned more than one Sept -- it returned 2!
+[31/07 21:24:57] "GET /ajax/display/septs/_rosewood_sept/ HTTP/1.1" 500 85399
+[22/08 05:05:32] Not Found: /favicon.ico
+[22/08 05:05:32] "GET /favicon.ico HTTP/1.1" 404 11294
+[22/08 05:05:49] Internal Server Error: /accounts/password_reset/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/contrib/auth/views.py", line 227, in dispatch
+    return super().dispatch(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/views/generic/edit.py", line 151, in post
+    return self.form_valid(form)
+           ~~~~~~~~~~~~~~~^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/contrib/auth/views.py", line 240, in form_valid
+    form.save(**opts)
+    ~~~~~~~~~^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/contrib/auth/forms.py", line 376, in save
+    self.send_mail(
+    ~~~~~~~~~~~~~~^
+        subject_template_name,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+        html_email_template_name=html_email_template_name,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/contrib/auth/forms.py", line 317, in send_mail
+    email_message.send()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/mail/message.py", line 300, in send
+    return self.get_connection(fail_silently).send_messages([self])
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/mail/backends/smtp.py", line 127, in send_messages
+    new_conn_created = self.open()
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/mail/backends/smtp.py", line 85, in open
+    self.connection = self.connection_class(
+                      ~~~~~~~~~~~~~~~~~~~~~^
+        self.host, self.port, **connection_params
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/lib64/python3.13/smtplib.py", line 255, in __init__
+    (code, msg) = self.connect(host, port)
+                  ~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/usr/lib64/python3.13/smtplib.py", line 341, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+                ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.13/smtplib.py", line 312, in _get_socket
+    return socket.create_connection((host, port), timeout,
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+                                    self.source_address)
+                                    ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.13/socket.py", line 864, in create_connection
+    raise exceptions[0]
+  File "/usr/lib64/python3.13/socket.py", line 849, in create_connection
+    sock.connect(sa)
+    ~~~~~~~~~~~~^^^^
+ConnectionRefusedError: [Errno 111] Connection refused
+[22/08 05:05:49] "POST /accounts/password_reset/ HTTP/1.1" 500 163651
+[22/08 05:07:12] Not Found: /ajax/display/map//
+[22/08 05:07:12] "GET /ajax/display/map// HTTP/1.1" 404 11315
+[22/08 05:07:16] Not Found: /ajax/display/map//
+[22/08 05:07:16] "GET /ajax/display/map// HTTP/1.1" 404 11315
+[22/08 05:07:28] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[22/08 05:07:38] Not Found: /ajax/display/map//
+[22/08 05:07:38] "GET /ajax/display/map// HTTP/1.1" 404 11315
+[22/08 05:07:48] Not Found: /ajax/display/map//
+[22/08 05:07:48] "GET /ajax/display/map// HTTP/1.1" 404 11315
+[22/08 05:20:27] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[22/08 05:27:54] Not Found: /ajax/display/map//
+[22/08 05:27:54] "GET /ajax/display/map// HTTP/1.1" 404 11315
+[22/08 05:29:19] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[22/08 05:40:56] Not Found: /favicon.ico
+[22/08 05:42:56] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[22/08 05:46:15] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[22/08 05:47:47] Not Found: /ajax/view/creature/_hieldorf/
+[22/08 05:47:47] "GET /ajax/view/creature/_hieldorf/ HTTP/1.1" 404 5505
+[22/08 05:47:56] Internal Server Error: /ajax/editable/userinput/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 186, in userinput
+    item = Creature.objects.get(rid=rid)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/query.py", line 647, in get
+    raise self.model.DoesNotExist(
+        "%s matching query does not exist." % self.model._meta.object_name
+    )
+collector.models.creatures.Creature.DoesNotExist: Creature matching query does not exist.
+[22/08 05:47:56] "POST /ajax/editable/userinput/ HTTP/1.1" 500 21379
+[22/08 05:47:58] Internal Server Error: /ajax/editable/userinput/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 186, in userinput
+    item = Creature.objects.get(rid=rid)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/query.py", line 647, in get
+    raise self.model.DoesNotExist(
+        "%s matching query does not exist." % self.model._meta.object_name
+    )
+collector.models.creatures.Creature.DoesNotExist: Creature matching query does not exist.
+[22/08 05:47:58] "POST /ajax/editable/userinput/ HTTP/1.1" 500 21379
+[22/08 05:48:01] Internal Server Error: /ajax/editable/userinput/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 186, in userinput
+    item = Creature.objects.get(rid=rid)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/query.py", line 647, in get
+    raise self.model.DoesNotExist(
+        "%s matching query does not exist." % self.model._meta.object_name
+    )
+collector.models.creatures.Creature.DoesNotExist: Creature matching query does not exist.
+[22/08 05:48:01] "POST /ajax/editable/userinput/ HTTP/1.1" 500 21379
+[22/08 05:48:09] Internal Server Error: /ajax/editable/userinput/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 186, in userinput
+    item = Creature.objects.get(rid=rid)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/query.py", line 647, in get
+    raise self.model.DoesNotExist(
+        "%s matching query does not exist." % self.model._meta.object_name
+    )
+collector.models.creatures.Creature.DoesNotExist: Creature matching query does not exist.
+[22/08 05:48:09] "POST /ajax/editable/userinput/ HTTP/1.1" 500 21380
+[22/08 05:48:16] Not Found: /ajax/view/creature/_hieldorf/
+[22/08 05:48:16] "GET /ajax/view/creature/_hieldorf/ HTTP/1.1" 404 5505
+[22/08 05:48:19] Not Found: /ajax/view/creature/_chemko/
+[22/08 05:48:19] "GET /ajax/view/creature/_chemko/ HTTP/1.1" 404 5499
+[22/08 05:48:20] Not Found: /ajax/view/creature/_hieldorf/
+[22/08 05:48:20] "GET /ajax/view/creature/_hieldorf/ HTTP/1.1" 404 5505
+[22/08 05:48:28] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[22/08 05:51:58] Internal Server Error: /ajax/editable/updown/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.IntegrityError: CHECK constraint failed: background2
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 168, in updown
+    item.save()
+    ~~~~~~~~~^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/base.py", line 901, in save_base
+    updated = self._save_table(
+        raw,
+    ...<4 lines>...
+        update_fields,
+    )
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/base.py", line 1028, in _save_table
+    updated = self._do_update(
+        base_qs, using, pk_val, values, update_fields, forced_update
+    )
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/base.py", line 1093, in _do_update
+    return filtered._update(values) > 0
+           ~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/query.py", line 1276, in _update
+    return query.get_compiler(self.db).execute_sql(CURSOR)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 1987, in execute_sql
+    cursor = super().execute_sql(result_type)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: CHECK constraint failed: background2
+[22/08 05:51:58] "POST /ajax/editable/updown/ HTTP/1.1" 500 24243
+[22/08 05:59:36] Internal Server Error: /ajax/editable/userinput/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 190, in userinput
+    item.save()
+    ~~~~~~~~~^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/base.py", line 881, in save_base
+    pre_save.send(
+    ~~~~~~~~~~~~~^
+        sender=origin,
+        ^^^^^^^^^^^^^^
+    ...<3 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/dispatch/dispatcher.py", line 189, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/zaffarelli/Projects/wawwod/collector/signals/creatures.py", line 19, in update_creature
+    instance.fix()
+    ~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 876, in fix
+    self.fix_kindred()
+    ~~~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 592, in fix_kindred
+    self.trueage = ch.era - (self.embrace - self.age)
+                             ~~~~~~~~~~~~~^~~~~~~~~~
+TypeError: unsupported operand type(s) for -: 'int' and 'str'
+[22/08 05:59:36] "POST /ajax/editable/userinput/ HTTP/1.1" 500 21952
+[22/08 06:01:12] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[22/08 06:02:36] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[22/08 06:06:51] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[22/08 06:35:30] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[22/08 06:36:00] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[22/08 06:41:19] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[22/08 06:42:27] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[22/08 08:14:17] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[22/08 18:18:55] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[22/08 18:24:28] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[22/08 18:29:04] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[22/08 18:34:21] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[23/08 10:30:02] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[23/08 10:39:15] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[23/08 10:46:27] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863

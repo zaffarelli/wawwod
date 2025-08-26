@@ -187,7 +187,7 @@ STATS_NAMES = {
                        'intelligence', 'wits'],
         'talents': ['alertness',
                     'athletics',
-                    'awarenes',
+                    'awareness',
                     'brawl',
                     'empathy',
                     'expression',
@@ -585,7 +585,7 @@ def garou_rank_from_renown(dataset={"auspice": 0, "glory": 0, "honor": 0, "wisdo
 
 RANKS = ['Pup', 'Cliath', 'Fostern', 'Adren', 'Athro', 'Elder']
 
-CHARACTERS_PER_PAGE = 8
+CHARACTERS_PER_PAGE = 16
 
 ALL_TRIBES = [
     "Black Furies",
@@ -635,7 +635,7 @@ GM_SHORTCUTS = {
     'garou': [
         ['appearance', 'subterfuge'],
         ['charisma', 'performance'],
-        ['charisma', 'subterfuge'],
+
         ['dexterity', 'athletics'],
         ['dexterity', 'brawl'],
         ['dexterity', 'drive'],
@@ -648,7 +648,6 @@ GM_SHORTCUTS = {
         ['intelligence', 'rituals'],
         ['manipulation', 'empathy'],
         ['manipulation', 'subterfuge'],
-        ['perception', 'alertness'],
         ['perception', 'empathy'],
         ['perception', 'primal-urge'],
         ['stamina', 'primal-urge'],
@@ -657,6 +656,14 @@ GM_SHORTCUTS = {
         ['wits', 'empathy'],
         ['wits', 'enigmas'],
         ['wits', 'drive'],
+        ['wits', 'survival'],
+        ['wits', 'larceny'],
+        ['charisma', 'subterfuge', "R:Business"],
+        ['appearance', 'empathy', "R:Friendship"],
+        ['intelligence', 'subterfuge', "R:Persuasion"],
+        ['perception', 'alertness', "R:Sneaking"],
+        ['wits', 'streetwise', 'R:Fast-talk'],
+
     ],
     'kinfolk': [
         ['perception', 'alertness'],
@@ -681,18 +688,20 @@ GM_SHORTCUTS = {
     ],
     'kindred': [
         ['dexterity', 'stealth'],
-        ['dexterity', 'dodge'],
+        ['dexterity', 'athletics'],
         ['charisma', 'performance'],
         ['charisma', 'intimidation'],
         ['manipulation', 'subterfuge'],
         ['appearance', 'subterfuge'],
         ['perception', 'alertness'],
         ['perception', 'empathy'],
-        ['perception', 'dodge'],
+        ['perception', 'athletics'],
         ['wits', 'streetwise'],
         ['strength', 'athletics'],
         ['intelligence', 'academics'],
         ['wits', 'etiquette'],
+        ['wits', 'awareness'],
+        ['wits', 'dexterity'],
     ],
     'mortal': [],
     'ghoul': [],

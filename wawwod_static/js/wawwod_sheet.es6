@@ -285,7 +285,7 @@ class WawwodSheet {
         me.drawPages();
     }
 
-    reinHagenStat(name, value, ox, oy, type, statcode, source, power = false, maxo=10) {
+    reinHagenStat(name="xxx", value, ox, oy, type, statcode, source, power = false, maxo=10) {
         let me = this;
         let item = source.append('g')
             .attr('class', type);
@@ -337,7 +337,10 @@ class WawwodSheet {
             })
             .style("stroke-width", '0.5pt')
             .text(function () {
-                return name.charAt(0).toUpperCase() + name.slice(1);
+                if (name === "xxx"){
+                    return ""
+                }
+                return name.charAt(0).toUpperCase() + name.slice(1)
             })
         if (me.blank) {
             value = 0;
@@ -534,7 +537,7 @@ class WawwodSheet {
             .attr("dy", 10)
             .style("text-anchor", 'middle')
             .style("font-family", me.title_font)
-            .style("font-size", me.big_font_size + 'px')
+            .style("font-size", me.big_font_size + 'pt')
             .style("fill", '#111')
             .style("stroke", '#888')
             .style("stroke-width", '0.5pt')
@@ -1002,6 +1005,89 @@ class WawwodSheet {
 
     }
 
+    drawHealthCompact(basex,basey) {
+        let me = this
+        let ox = (basex+0.25)*me.stepx
+        let oy = (basey*me.stepy)
+        me.title('Health', ox+me.stepx*3, oy-me.stepy*0.5, me.daddy);
+
+        let h = me.daddy.append('g')
+            .selectAll('g')
+            .data(me.health_levels)
+        ;
+        let x = h.enter();
+        x.append('line')
+            .attr('x1', function (d, i) {
+                return ox
+            })
+            .attr('y1', function (d, i) {
+                return oy + i * me.stepy * 0.3;
+            })
+            .attr('x2', function (d, i) {
+                return ox + me.stepx * 5;
+            })
+            .attr('y2', function (d, i) {
+                return oy + i * me.stepy * 0.3;
+            })
+            .style("fill", me.draw_fill)
+            .style("stroke", me.shadow_stroke)
+            .style("stroke-width", '0.5pt')
+            .style("stroke-dasharray", '2 7')
+        ;
+        x.append('text')
+            .attr('x', function (d, i) {
+                return ox ;
+            })
+            .attr('y', function (d, i) {
+                return oy + i * me.stepy * 0.3;
+            })
+            .style("text-anchor", 'start')
+            .style("font-family", me.base_font)
+            .style("font-size", me.tiny_font_size + 'pt')
+            .style("fill", me.draw_fill)
+            .style("stroke", me.draw_stroke)
+            .style("stroke-width", '0.5pt')
+            .text(function (d) {
+                let words = d.split('/');
+                return words[0];
+            });
+        x.append('text')
+            .attr('x', function (d, i) {
+                return ox + me.stepx * 5;
+            })
+            .attr('y', function (d, i) {
+                return oy + i * me.stepy * 0.3;
+            })
+            .style("text-anchor", 'middle')
+            .style("font-family", "Khand")
+            .style("font-size", me.tiny_font_size + 'pt')
+            .style("fill", me.draw_fill)
+            .style("stroke", me.draw_stroke)
+            .style("stroke-width", '0.5pt')
+            .text(function (d) {
+                let words = d.split('/');
+                if (words[1] == 'X') {
+                    return '';
+                }
+                return words[1];
+            });
+        x.append('rect')
+            .attr('x', function (d, i) {
+                return ox + me.stepx * 5.5 - me.dot_radius * 2;
+            })
+            .attr('y', function (d, i) {
+                return oy + i * me.stepy * 0.3 - me.dot_radius * 2;
+            })
+            .attr('width', me.dot_radius * 2)
+            .attr('height', me.dot_radius * 2)
+            .style("fill", "white")
+            .style("stroke", me.draw_stroke)
+            .style("stroke-width", '0.5pt')
+        ;
+
+    }
+
+
 
     fillOther(basey) {
         let me = this;
@@ -1100,16 +1186,24 @@ class WawwodSheet {
             })
             ox = me.stepx * 12.5
             oy += 1 * me.stepy
-            let line_count = me.appendText("Transactions:",all_histo_exp,ox,oy)
+            let line_count = me.appendText("Transactions:",all_histo_exp,ox,oy,me.stepx*10)
             console.log("Line count",line_count)
         }
     }
 
-    appendText(title,txt,ox,oy){
+    appendText(title,txt,ox,oy,width){
         let me = this
         let lines_written = 0
+        let aline = me.daddy.append('line')
+            .attr('x1',ox)
+            .attr('y1',oy-me.medium_font_size)
+            .attr('x2',ox+width)
+            .attr('y2',oy-me.medium_font_size)
+            .style("stroke", me.user_stroke)
+            .style("stroke-width", '3pt')
+            .attr("opacity",0)
         let text = me.daddy.append('text')
-            .attr('x',ox)
+            .attr('x',ox-me.medium_font_size)
             .attr('y',oy)
             .attr('dx', 0)
             .attr('dy', 0)
@@ -1119,26 +1213,31 @@ class WawwodSheet {
             .style("font-size", me.medium_font_size + "px")
             .style("fill", me.user_fill)
             .style("stroke", me.user_stroke)
-            .style("stroke-width", '0.05pt')
+            .style("stroke-width", '0.5pt')
             .attr("opacity",1)
             .text(title)
-        lines_written += 1
+        if (title.length>0) {
+            lines_written += 1
+            }
         let txt_index = 0
         while (txt.length>0){
-            let line = txt.pop()
-            text.append("tspan")
+            let line = txt.shift()
+            let tspan = text.append("tspan")
                 .attr('x', ox)
                 .attr("dy",me.medium_font_size+"pt")
                 .text(line)
             let next_line = []
-            while (text.node().getComputedTextLength() > width) {
-                let word = line.split(" ").pop()
-                next_line.push(word)
+            lines_written += 1
+            while (tspan.node().getComputedTextLength() > width) {
+                let parts = line.split(" ")
+                let word = parts.pop()
+                line = parts.join(" ")
+                tspan.text(line)
+                next_line.splice(0,0,word)
             }
             if (next_line.length>0){
-                txt.insert(txt_index,next_line.join(" "))
+                txt.splice(0,0,next_line.join(" "))
             }
-            lines_written += 1
         }
         return lines_written
     }
@@ -1642,6 +1741,10 @@ xmlns="http://www.w3.org/2000/svg" version="1.1" \
 xmlns:xlink="http://www.w3.org/1999/xlink" width="' + me.width + '" height="' + me.height + '"> \
 ' + flist + base_svg + '</svg>';
         lpage = "_p" + (me.page);
+        if (me.data.creature == undefined){
+            me.data['rid']  = "ADV_RID"
+            me.data.creature = "ADV_CREATURE"
+        }
         let svg_name = "character_sheet" + me.data['rid'] + lpage + ".svg"
         let pdf_name = "character_sheet" + me.data['rid'] + lpage + ".pdf"
         let rid = me.data['rid'];

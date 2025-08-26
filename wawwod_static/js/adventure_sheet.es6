@@ -24,17 +24,18 @@ class AdventureSheet extends WawwodSheet {
         let me = this;
         me.figure_width = 6;
         me.figure_height = 10;
+        //me.setButtonsOrigin(1, 0)
         me.setButtonsOrigin(1, 0)
         me.stokedebris = "2 1"
         me.line_stroke = "#202020"
         me.base_font = "Khand"
-        me.version = "0.6"
+        me.version = "0.7"
     }
 
     drawButtons() {
         let me = this;
         me.addButton(2, 'Save PDF');
-        me.addButton(4, 'Recto');
+        //me.addButton(4, 'Recto');
 //         me.addButton(5, 'Verso');
         // me.addButton(3, 'Close');
     }
@@ -67,6 +68,7 @@ class AdventureSheet extends WawwodSheet {
         me.players = me.characters.selectAll('.sheet')
             .append('g')
             .data(me.data.players)
+        console.debug(me.data.players)
         me.player = me.players.enter()
         me.player_in = me.player.append('g')
             .attr('class', 'sheet')
@@ -135,7 +137,7 @@ class AdventureSheet extends WawwodSheet {
             .style('font-size', me.tiny_font_size+'pt')
             .text(function (d) {
                 let str = (d.sex ? "Male" : "Female" )  + " "+ d.breed_name + " " + d.auspice_name + " " + d.family
-                return str
+                return d.entrance
             })
         ;
 //         me.sheetEntry(xfunc, ly, ox, oy, "", "family")
@@ -163,10 +165,14 @@ class AdventureSheet extends WawwodSheet {
         me.shortSheetEntry(xfunc1, ly, ox, oy, "APP", "attribute5")
         me.shortSheetEntry(xfunc2, ly, ox, oy, "WIT", "attribute8")
 
+
         ly += lh*2
-        me.dottedSheetEntry(xfunc, ly, ox, oy, "Rage", "rage")
+        this.dottedSheetEntryO({"xfunc": xfunc, "y":ly, "ox":ox, "oy":oy, "proplabel":"Rage", "prop":"rage", "condition":"creature,garou,=="})
+        this.dottedSheetEntryO({"xfunc": xfunc, "y":ly, "ox":ox, "oy":oy, "proplabel":"Bloodpool", "prop":"bloodpool", "condition":"creature,kindred,==","max":20})
         ly += lh
-        me.dottedSheetEntry(xfunc, ly, ox, oy, "Gnosis", "gnosis")
+        this.dottedSheetEntryO({"xfunc": xfunc, "y":ly, "ox":ox, "oy":oy, "proplabel":"Gnosis", "prop":"gnosis", "condition":"creature,garou,=="})
+        this.dottedSheetEntryO({"xfunc": xfunc, "y":ly, "ox":ox, "oy":oy, "proplabel":"Humanity", "prop":"humanity", "condition":"creature,kindred,==","max":10})
+
         ly += lh
         me.dottedSheetEntry(xfunc, ly, ox, oy, "Willpower", "willpower")
         ly += lh
@@ -175,7 +181,7 @@ class AdventureSheet extends WawwodSheet {
             .attr("class","shortcuts")
             .attr("id",(d) => "shortcuts"+d.rid)
             .attr("custom", (d) => {
-                console.log(d.shc)
+                console.log("CUSTOM",d.shc)
                 shc[d.rid] = d.shc
                 return d.shc
              })
@@ -185,22 +191,62 @@ class AdventureSheet extends WawwodSheet {
             me.daddy = d3.selectAll("#shortcuts"+k)
             _.forEach(v, (w,l) => {
                 ly += lh
-                if (l % 3 == 0){
+                if (l % 4 == 0){
                     ly += lh/2.0
                 }
                 let words = w.split("=")
-                console.log(words)
-                me.baseSheetEntry(xfunc,ly, ox,oy,words[0],words[1],0,"direct","",0,5.5,false)
+                console.log("SHORTCUTS",words)
+                let label = ""
+                if (words.length == 3){
+                    label = words[2]+ " ("+words[0]+")"
+                }else{
+                    label = words[0]
+                }
+
+                me.baseSheetEntry(xfunc,ly, ox,oy,label,words[1],0,"direct","",0,5.5,false)
             })
             ly = oldly
         })
 
+        me.daddy = me.player_ins
+        me.drawHealthCompact(0,18)
 
 
     }
 
-    baseSheetEntry(xfunc, y, ox = 0, oy = 0, proplabel, prop = '', font_size = 0, direct_prop = '', direct_value = '', offsetx = 0, offsetx2 = 5, with_dots = false) {
-        let me = this;
+    baseSheetEntry(xfunc, y, ox = 0, oy = 0, proplabel, prop = '', font_size = 0, direct_prop = '', direct_value = '', offsetx = 0, offsetx2 = 5, with_dots = false, condition="") {
+
+        let me = this
+        if (condition.length > 0){
+            let words = condition.split(",")
+            let param = words[0]
+            let value = words[1]
+            let test = words[2]
+            let stop = true
+            me.daddy.append("g")
+                .attr("condition", (d) => {
+                    if (d.hasOwnProperty(param)){
+                        switch (test){
+                            case "==":
+                                if (d[param]==value){
+                                    stop = false
+                                }
+                                break
+                            case "!=":
+                                if (d[param]!=value){
+                                    stop = false
+                                }
+                                break
+                            default:
+                                stop = true
+                                break
+                        }
+                    }
+                })
+            if (stop){
+                return
+            }
+        }
         if (font_size == 0) {
             font_size = me.tiny_font_size;
         }
@@ -269,7 +315,7 @@ class AdventureSheet extends WawwodSheet {
                         path += `M ${s*(diam*2+offsetd)} -${diam} m ${diam},0 a ${diam}   ${diam} 0 1 0 0.01 0`
                         path += `M ${s*(diam*2+offsetd)} -${diam} m ${diam},${diam*2} a ${diam-1} ${diam} 1 1 1 0.01 0`
                         if (result>s){
-                            path += `M ${s*(diam*2+offsetd)} -${diam-5} m ${diam},0 a ${diam-5}   ${diam-5} 0 1 0 0.01 0`
+                            path += `M ${s*(diam*2+offsetd)} -${diam-3} m ${diam},0 a ${diam-3}   ${diam-3} 0 1 0 0.01 0`
                         }
                     }
                     return path
@@ -312,36 +358,236 @@ class AdventureSheet extends WawwodSheet {
     }
 
 
-    sheetStackedEntry(xfunc, y, ox = 0, oy = 0, proplabel, prop = '', font_size = 0, direct_prop = '', direct_value = '') {
+    baseSheetEntryO(options={}) {
+        let p = {
+            xfunc : undefined,
+            y : undefined,
+            ox : 0,
+            oy : 0,
+            proplabel : undefined,
+            prop : '',
+            font_size : 0,
+            direct_prop : '',
+            direct_value : '',
+            offsetx : 0,
+            offsetx2 : 5,
+            with_dots : false,
+            condition : "",
+            max: 0
+        }
+        for (const key of Object.keys(options)) {
+            const val = options[key]
+            p[key] = val
+        }
+
+
         let me = this
-        me.baseSheetEntry(xfunc, y, ox, oy, proplabel, prop, font_size, direct_prop, direct_value, -0.125, 5.5)
+        if (p.condition.length > 0){
+            let words = p.condition.split(",")
+            let param = words[0]
+            let value = words[1]
+            let test = words[2]
+            let stop = true
+            me.daddy.append("g")
+                .attr("condition", (d) => {
+                    if (d.hasOwnProperty(param)){
+                        switch (test){
+                            case "==":
+                                if (d[param]==value){
+                                    stop = false
+                                }
+                                break
+                            case "!=":
+                                if (d[param]!=value){
+                                    stop = false
+                                }
+                                break
+                            default:
+                                stop = true
+                                break
+                        }
+                    }
+                })
+            if (stop){
+                return
+            }
+        }
+        if (p.font_size == 0) {
+            p.font_size = me.tiny_font_size;
+        }
+        console.log(p.font_size);
+        me.daddy.append('text')
+            .attr('x', function (d) {
+                return p.xfunc(d['idx']) + p.offsetx * me.stepx;
+            })
+            .attr('y', function (d) {
+                return (p.oy + p.y) * me.stepy;
+            })
+            .style('fill', me.draw_fill)
+            .style('stroke', me.draw_stroke)
+            .style('stroke-width', "0.25pt")
+            .style('font-family', me.base_font)
+            .style('font-size', p.font_size+'pt')
+            .text(function (d) {
+                return p.proplabel;
+            })
+        ;
+        me.daddy.append('line')
+            .attr('x1', function (d) {
+                return p.xfunc(d['idx']) + p.offsetx * me.stepx;
+            })
+            .attr('y1', function (d) {
+                return (p.oy + p.y) * me.stepy;
+            })
+            .attr('x2', function (d) {
+                return p.xfunc(d['idx']) + p.offsetx2 * me.stepx;
+            })
+            .attr('y2', function (d) {
+                return (p.oy + p.y) * me.stepy;
+            })
+
+            .style('fill', "none")
+            .style('stroke', me.shadow_stroke)
+            .style('stroke-width', "0.5pt")
+            .style('stroke-dasharray', "2 6")
+
+
+        if (p.with_dots){
+            me.daddy.append('path')
+                .attr("transform", (d)=> {
+                    let a = p.xfunc(d['idx']) + (p.offsetx2-3) * me.stepx;
+                    let b = (p.oy + p.y-0.1 ) * me.stepy;
+                    return "translate("+a+","+b+")"
+                })
+
+                .style('fill', me.user_stroke)
+                .style('stroke', me.user_fill)
+
+                .attr("d",function (d) {
+                    let result = d[p.prop]
+                    if (p.direct_value != '') {
+                        _.forEach(d[p.prop], function (e) {
+                            if (e[p.direct_prop] == p.direct_value) {
+                                result = e['value'];
+                                return false;
+                            }
+                        })
+                    }
+                    let path = ""
+                    let diam = 6
+                    let offsetd = 3
+                    let max = 10
+                    if (p.hasOwnProperty("max")){
+                        if (p.max == 0){
+                            max = 20
+                        }else{
+                            max = p.max
+                        }
+                    }
+                    let hh = 5
+                    for(let s=0; s<max; s++){
+                        let l = s%10
+                        let k = Math.round(l / 10.0)
+                        path += `M ${l*(diam*2+offsetd)} -${diam+(hh*k)} m ${diam},0 a ${diam}   ${diam} 0 1 0 0.01 0`
+//                         path += `M ${l*(diam*2+offsetd)} -${diam+(hh*k)} m ${diam},${diam*2} a ${diam-1} ${diam} 1 1 1 0.01 0`
+//                         if (result>s){
+//                             path += `M ${l*(diam*2+offsetd)} -${diam-3+(hh*k)} m ${diam},0 a ${diam-3}   ${diam-3} 0 1 0 0.01 0`
+//                         }
+                    }
+                    return path
+                })
+
+        }
+        me.daddy.append('text')
+            .attr('x', function (d) {
+                return p.xfunc(d['idx']) + p.offsetx2 * me.stepx;
+            })
+            .attr('y', function (d) {
+                return (p.oy + p.y) * me.stepy;
+            })
+            .style('fill', me.user_fill)
+            .style('stroke', me.user_stroke)
+            .style('stroke-width', "0.25pt")
+            .style('text-anchor', 'end')
+            .style('font-family', me.user_font)
+            .style('font-size', p.font_size+'pt')
+            .text(function (d) {
+                let result = d[p.prop]
+                if (p.direct_value != '') {
+                    _.forEach(d[p.prop], function (e) {
+                        if (e[p.direct_prop] == p.direct_value) {
+                            result = e['value'];
+                            return false;
+                        }
+                    })
+                }else{
+                    if (p.direct_prop == "direct"){
+                        return p.prop
+                    }
+                }
+                return result
+            })
+
+
+
+
     }
 
 
 
-    sheetEntryLeft(xfunc, y, ox = 0, oy = 0, proplabel, prop = '', font_size = 0, direct_prop = '', direct_value = '') {
+    sheetStackedEntry(xfunc, y, ox = 0, oy = 0, proplabel, prop = '', font_size = 0, direct_prop = '', direct_value = '', condition = "") {
+        let me = this
+        me.baseSheetEntry(xfunc, y, ox, oy, proplabel, prop, font_size, direct_prop, direct_value, -0.125, 5.5,condition)
+    }
+
+
+
+    sheetEntryLeft(xfunc, y, ox = 0, oy = 0, proplabel, prop = '', font_size = 0, direct_prop = '', direct_value = '', condition = "") {
         let me = this
         me.baseSheetEntry(xfunc, y, ox, oy, proplabel, prop, font_size, direct_prop, direct_value, -0.125, 2.25)
     }
 
-    sheetEntryRight(xfunc, y, ox = 0, oy = 0, proplabel, prop = '', font_size = 0, direct_prop = '', direct_value = '') {
+    sheetEntryRight(xfunc, y, ox = 0, oy = 0, proplabel, prop = '', font_size = 0, direct_prop = '', direct_value = '', condition = "") {
         let me = this
-        me.baseSheetEntry(xfunc, y, ox, oy, proplabel, prop, font_size, direct_prop, direct_value, 2.75 - 0.125, 5.5)
+        me.baseSheetEntry(xfunc, y, ox, oy, proplabel, prop, font_size, direct_prop, direct_value, 2.75 - 0.125, 5.5, condition)
     }
 
-    sheetEntry(xfunc, y, ox = 0, oy = 0, proplabel, prop = '', font_size = 0, direct_prop = '', direct_value = '') {
+    sheetEntry(xfunc, y, ox = 0, oy = 0, proplabel, prop = '', font_size = 0, direct_prop = '', direct_value = '', condition = "") {
         let me = this
-        me.baseSheetEntry(xfunc, y, ox, oy, proplabel, prop, font_size, direct_prop, direct_value, -0.125, 5.5)
+        me.baseSheetEntry(xfunc, y, ox, oy, proplabel, prop, font_size, direct_prop, direct_value, -0.125, 5.5, condition)
     }
 
-    dottedSheetEntry(xfunc, y, ox = 0, oy = 0, proplabel, prop = '', font_size = 0, direct_prop = '', direct_value = '') {
+    dottedSheetEntry(xfunc, y, ox = 0, oy = 0, proplabel, prop = '', font_size = 0, direct_prop = '', direct_value = '', condition = "") {
         let me = this
-        me.baseSheetEntry(xfunc, y, ox, oy, proplabel, prop, font_size, direct_prop, direct_value, -0.125, 5.5,true)
+        me.baseSheetEntry(xfunc, y, ox, oy, proplabel, prop, font_size, direct_prop, direct_value, -0.125, 5.5,true, condition)
     }
 
-    shortSheetEntry(xfunc, y, ox = 0, oy = 0, proplabel, prop = '', font_size = 0, direct_prop = '', direct_value = '') {
+    dottedSheetEntryO(options={}) {
+        let p = {
+            xfunc : undefined,
+            y : undefined,
+            ox : 0,
+            oy : 0,
+            proplabel : undefined,
+            prop : '',
+            font_size : 0,
+            direct_prop : '',
+            direct_value : '',
+            offsetx : -.125,
+            offsetx2 : 5.5,
+            with_dots : true,
+            condition : ""
+        }
+        for (const key of Object.keys(options)) {
+            const val = options[key]
+            p[key] = val
+        }
+        this.baseSheetEntryO(p)
+    }
+
+    shortSheetEntry(xfunc, y, ox = 0, oy = 0, proplabel, prop = '', font_size = 0, direct_prop = '', direct_value = '', condition = "") {
         let me = this
-        me.baseSheetEntry(xfunc, y, ox, oy, proplabel, prop, font_size, direct_prop, direct_value, 0, 1.0)
+        me.baseSheetEntry(xfunc, y, ox, oy, proplabel, prop, font_size, direct_prop, direct_value, 0, 1.0, condition)
     }
 
     drawGeneric(ox = 0, oy = 0) {

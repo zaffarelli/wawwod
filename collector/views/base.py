@@ -384,6 +384,7 @@ def character_for(slug, option=None, idx=-1):
             k["idx"] = idx
         k["sire_name"] = c.sire_name
         from collector.utils.wod_reference import AUSPICES, BREEDS
+        k["entrance"] = c.entrance
         k["auspice_name"] = AUSPICES[c.auspice]
         k["breed_name"] = BREEDS[c.breed]
         k["background_notes"] = c.background_notes()
@@ -426,7 +427,7 @@ def display_crossover_sheet(request, slug=None, option=None):
                     'post_title': post_title, 'fontset': FONTSET, 'blank': False, 'debug': False,
                     'specialities': k["spe"],
                     'shortcuts': k["shc"]}
-        print(settings['labels']['sheet'])
+        # print(settings['labels']['sheet'])
         crossover_sheet_context = {'settings': json.dumps(settings, sort_keys=True, indent=4), 'data': j}
         return JsonResponse(crossover_sheet_context)
 
@@ -491,14 +492,14 @@ def adventure_sheet(request):
                 for adventure in current_adventures:
                     if len(adventure.protagonists) > 0:
                         protagonists = adventure.protagonists.strip().split(",")
-                        print("PROTS", protagonists)
+                        # print("PROTS", protagonists)
                         for rid in protagonists:
                             # print(rid)
                             if len(rid) > 0:
                                 j, k = character_for(rid, None, idx)
                                 idx += 1
                                 data["players"].append(k)
-            settings = {'fontset': FONTSET}
+            settings = {'fontset': FONTSET, 'labels':{'sheet':{"pages":1}}}
             adv = {
                 "name": chronicle.name,
                 "acronym": chronicle.acronym,
@@ -507,7 +508,7 @@ def adventure_sheet(request):
                 "date_str": "",
                 "session_date_str": "",
                 "gamemaster": "Zaffarelli",
-                "experience": 0,
+                "experience": 0
             }
 
             data["adventure"] = adv
@@ -586,11 +587,17 @@ def save_to_svg(request, slug):
 def svg_to_pdf(request, slug):
     response = {'status': 'error'}
     logger.info(f'Saving to PDF.')
+    print('SAVE TO PDF')
     if is_ajax(request):
         import cairosvg
         svg_name = os.path.join(settings.MEDIA_ROOT, 'pdf/results/svg/' + request.POST["svg_name"])
         svgtxt = request.POST["svg"]
         creature = request.POST["creature"]
+        if creature != "ADV_CREATURE":
+            pages = STATS_NAMES[creature]["sheet"]["pages"]
+        else:
+            creature = "ADV_CREATURE"
+            pages = 1
         with open(svg_name, "w") as f:
             f.write(svgtxt)
             f.close()
@@ -605,13 +612,13 @@ def svg_to_pdf(request, slug):
         logger.info(f'--> Created --> {pdf_name}.')
         print(f'--> Created --> {pdf_name}.')
         response['status'] = 'ok'
-        all_in_one_pdf(rid, creature)
+        all_in_one_pdf(rid,pages,creature)
         print(response)
     return JsonResponse(response)
 
 
 @csrf_exempt
-def all_in_one_pdf(rid, creature="mortal"):
+def all_in_one_pdf(rid,pages, creature="mortal"):
     # print(f'Starting PDFing for [{rid}].')
     logger.info(f'Starting PDFing for [{rid}].')
     res = []
@@ -628,7 +635,7 @@ def all_in_one_pdf(rid, creature="mortal"):
             # print(pdf)
             merger.append(open(media_results + pdf, 'rb'))
             i += 1
-    if i >= STATS_NAMES[creature]["sheet"]["pages"] - 1:
+    if i >= pages - 1:
         des = f'{csheet_results}character_sheet{rid}.pdf'
         with open(des, 'wb') as fout:
             merger.write(fout)
