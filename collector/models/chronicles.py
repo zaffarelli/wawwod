@@ -47,6 +47,8 @@ class Chronicle(models.Model):
         return self.acronym
 
 
+
+
 class ChronicleAdmin(admin.ModelAdmin):
     list_display = ['acronym', 'name', 'description', 'main_creature', 'is_current', 'population','is_storyteller_only']
     list_editable = ['is_current','is_storyteller_only']

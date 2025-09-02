@@ -5,7 +5,7 @@ logger = logging.Logger(__name__)
 
 FONTSET = ['Cinzel', 'Trade+Winds', 'Imprima', 'Roboto', 'Philosopher', 'Ruda', 'Khand', 'Allura', 'Gochi+Hand',
            'Reggae+One', 'Whisper', 'Licorice', 'Damion','Allison',  'Syne+Mono', 'Zilla+Slab', 'Spartan', 'Marcellus+SC',
-           'Atma','Splash', 'Trirong', 'Ubuntu+Mono', 'Inria+Sans']
+           'Atma','Splash', 'Trirong', 'Ubuntu+Mono', 'Inria+Sans', "Spectral+SC"]
 
 
 def get_current_chronicle():

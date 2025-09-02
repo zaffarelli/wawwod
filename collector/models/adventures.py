@@ -21,6 +21,7 @@ class Adventure(models.Model):
     notes = models.TextField(max_length=1024, default='', blank=True)
     players_starting_freebies = models.IntegerField(default=15, blank=True)
     current = models.BooleanField(default=False, blank=True)
+    adventure_teaser = models.CharField(max_length=128, default='', blank=True)
 
     def __str__(self):
         return f"{self.name}"
@@ -48,7 +49,13 @@ class Adventure(models.Model):
             self.team = ", ".join(team_list)
             # print(self.team)
 
-
+    @classmethod
+    def current_adventure(cls, se):
+        adventure = None
+        all = cls.objects.filter(season=se, current=True)
+        if len(all) > 0:
+            adventure = all.first()
+        return adventure
 
 
 class AdventureAdmin(admin.ModelAdmin):

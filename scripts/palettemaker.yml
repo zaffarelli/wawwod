@@ -1,0 +1,8 @@
+variants: 10
+categories:
+  blood:
+    start: "#701010"
+    stop: "#101010"
+  wood:
+    start: "#935d39"
+    stop: "#101010"

@@ -138,6 +138,7 @@ class WawwodSheet {
         //me.user_font = 'Whisper'
         me.mono_font = 'Syne Mono'
         me.creature_font = 'Trade Winds'
+        me.creature_font = 'Spectral SC'
         me.title_font = 'Khand'
         //me.title_font = 'Trade Winds';
         me.logo_font = 'Splash';
@@ -1389,31 +1390,39 @@ class WawwodSheet {
         let srs = []
         let srs_list = {}
         if ("srs" in me.data){
-            console.log(me.data.srs)
+            console.log("My srs",me.data.srs)
             srs_list = {}
             srs = me.data.srs.split(", ")
             _.forEach(srs,(v,k)=>{
                 let sr = v.split(":")
+                console.log(v,k)
                 srs_list[sr[0]] = sr[1]
             })
         }else{
                 console.warn("NO SRS")
         }
+        console.debug(srs_list)
         me.config['specialities'].forEach(function (d, idx) {
             let x = ox + me.stepx * 2;
             let y = oy + 0.5 * me.stepy * (idx);
+            console.log(">>>>>>>",me.config["specialities"])
             if (me.blank) {
             } else {
-                console.log(d)
-                console.log(me.config["specialities"])
-                let ss = d.split(" ")
                 let txt = ""
-                if (ss[0] in srs_list){
-                    console.log(srs_list[ss[0]])
-                    console.log(ss[1])
-                    txt = srs_list[ss[0]]
+                if (srs_list.hasOwnProperty(d)){
+                    txt = srs_list[d]
+                    me.statText(d, txt, x, y, stat, stat + idx, me.character);
                 }
-                me.statText(d, txt, x, y, stat, stat + idx, me.character);
+
+//                 let ss = d.split(" ")
+//                 let txt = ""
+//                 if (ss[0] in srs_list){
+//                     console.log(srs_list[ss[0]])
+//                     console.log("ss0",ss[0])
+//                     console.log("ss1",ss[1])
+//                     txt = srs_list[ss[0]]+" > "
+//                 }
+
             }
         });
         stat = 'shortcuts';

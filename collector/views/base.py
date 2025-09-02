@@ -415,11 +415,21 @@ def character_for(slug, option=None, idx=-1):
 
 def display_crossover_sheet(request, slug=None, option=None):
     if is_ajax(request):
+        from collector.models.adventures import Adventure
+        from collector.models.seasons import Season
         chronicle = get_current_chronicle()
         if chronicle:
             scenario = chronicle.scenario
             pre_title = chronicle.pre_title
             post_title = chronicle.post_title
+            season = Season.current_season(chronicle.acronym)
+            if season:
+                print(season)
+                adventure = Adventure.current_adventure(season.acronym)
+                if adventure:
+                    print(adventure)
+                    post_title = adventure.adventure_teaser
+
         if slug is None:
             slug = 'julius_von_blow'
         j, k = character_for(slug, option)

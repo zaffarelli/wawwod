@@ -39,8 +39,8 @@ class CrossOverSheet extends WawwodSheet {
             me.decorationText(12, 2.75, 0, 'middle', me.logo_font, me.fat_font_size, "#FFFFFF", "#FFFFFF", 10, me.scenario, me.back, 0.75);
             me.decorationText(12, 2.75, 0, 'middle', me.logo_font, me.fat_font_size, "#9090907f", "#3030301f",1, me.scenario, me.back,1);
             // Chronicle
-            me.decorationText(12, 1.8, 0, 'middle', me.creature_font, me.fat_font_size*1, "#FFFFFF", "#FFFFFF", 10, txt, me.back, 0.75);
-            me.decorationText(12, 1.8, 0, 'middle', me.creature_font, me.fat_font_size*1, "#606060", "#C0C0C01f", 1, txt, me.back, 1);
+            me.decorationText(12, 1.8, 0, 'middle', me.creature_font, me.fat_font_size*1.25, "#FFFFFF", "#FFFFFF", 10, txt, me.back, 0.75);
+            me.decorationText(12, 1.8, 0, 'middle', me.creature_font, me.fat_font_size*1.25, "#606060", "#C0C0C01f", 1, txt, me.back, 1);
 
             me.decorationText(3.25, 2.25, 0, 'middle', me.title_font, me.medium_font_size, me.draw_fill, me.draw_stroke, 0.5, "What a Wonderful World of Darkness", me.back);
             //me.decorationText(2.5, 2.25, 0, 'middle', me.base_font, me.medium_font_size, me.draw_fill, me.draw_stroke, 0.5, "World of Darkness", me.back);

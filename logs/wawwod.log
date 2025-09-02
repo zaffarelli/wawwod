@@ -29203,3 +29203,751 @@ TypeError: unsupported operand type(s) for -: 'int' and 'str'
 [23/08 10:30:02] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
 [23/08 10:39:15] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
 [23/08 10:46:27] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[26/08 06:06:12] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[26/08 07:10:31] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[26/08 07:10:45] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[26/08 07:12:00] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[26/08 07:28:58] Internal Server Error: /ajax/display/adventure_sheet/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 499, in adventure_sheet
+    j, k = character_for(rid, None, idx)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 413, in character_for
+    return j, k
+           ^
+UnboundLocalError: cannot access local variable 'j' where it is not associated with a value
+[26/08 07:28:58] "GET /ajax/display/adventure_sheet/ HTTP/1.1" 500 103538
+[26/08 07:29:04] Internal Server Error: /ajax/display/adventure_sheet/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 499, in adventure_sheet
+    j, k = character_for(rid, None, idx)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 413, in character_for
+    return j, k
+           ^
+UnboundLocalError: cannot access local variable 'j' where it is not associated with a value
+[26/08 07:29:04] "GET /ajax/display/adventure_sheet/ HTTP/1.1" 500 103538
+[26/08 07:29:17] Internal Server Error: /ajax/display/adventure_sheet/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 499, in adventure_sheet
+    j, k = character_for(rid, None, idx)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 413, in character_for
+    return j, k
+           ^
+UnboundLocalError: cannot access local variable 'j' where it is not associated with a value
+[26/08 07:29:17] "GET /ajax/display/adventure_sheet/ HTTP/1.1" 500 103538
+[26/08 07:30:40] Internal Server Error: /admin/collector/chronicle/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/contrib/admin/options.py", line 714, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/contrib/admin/sites.py", line 240, in inner
+    return view(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/contrib/admin/options.py", line 2014, in changelist_view
+    response = self.response_action(
+        request, queryset=cl.get_queryset(request)
+    )
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/contrib/admin/options.py", line 1648, in response_action
+    response = func(self, request, queryset)
+  File "/home/zaffarelli/Projects/wawwod/collector/utils/helper.py", line 43, in refix
+    item.fix()
+    ^^^^^^^^
+AttributeError: 'Chronicle' object has no attribute 'fix'
+[26/08 07:30:40] "POST /admin/collector/chronicle/ HTTP/1.1" 500 131504
+[26/08 07:30:54] Internal Server Error: /ajax/display/adventure_sheet/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 499, in adventure_sheet
+    j, k = character_for(rid, None, idx)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 413, in character_for
+    return j, k
+           ^
+UnboundLocalError: cannot access local variable 'j' where it is not associated with a value
+[26/08 07:30:54] "GET /ajax/display/adventure_sheet/ HTTP/1.1" 500 103538
+[26/08 07:31:55] Internal Server Error: /ajax/display/adventure_sheet/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 499, in adventure_sheet
+    j, k = character_for(rid, None, idx)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 413, in character_for
+    return j, k
+           ^
+UnboundLocalError: cannot access local variable 'j' where it is not associated with a value
+[26/08 07:31:55] "GET /ajax/display/adventure_sheet/ HTTP/1.1" 500 103538
+[26/08 07:33:48] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[26/08 07:34:32] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[26/08 07:38:32] Internal Server Error: /ajax/editable/userinput/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 190, in userinput
+    item.save()
+    ~~~~~~~~~^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/base.py", line 881, in save_base
+    pre_save.send(
+    ~~~~~~~~~~~~~^
+        sender=origin,
+        ^^^^^^^^^^^^^^
+    ...<3 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/dispatch/dispatcher.py", line 189, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/zaffarelli/Projects/wawwod/collector/signals/creatures.py", line 19, in update_creature
+    instance.fix()
+    ~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 876, in fix
+    self.fix_kindred()
+    ~~~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 592, in fix_kindred
+    self.trueage = ch.era - (self.embrace - self.age)
+                             ~~~~~~~~~~~~~^~~~~~~~~~
+TypeError: unsupported operand type(s) for -: 'str' and 'int'
+[26/08 07:38:32] "POST /ajax/editable/userinput/ HTTP/1.1" 500 21957
+[26/08 07:38:44] Internal Server Error: /ajax/editable/userinput/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 190, in userinput
+    item.save()
+    ~~~~~~~~~^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/base.py", line 881, in save_base
+    pre_save.send(
+    ~~~~~~~~~~~~~^
+        sender=origin,
+        ^^^^^^^^^^^^^^
+    ...<3 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/dispatch/dispatcher.py", line 189, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/zaffarelli/Projects/wawwod/collector/signals/creatures.py", line 19, in update_creature
+    instance.fix()
+    ~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 876, in fix
+    self.fix_kindred()
+    ~~~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 592, in fix_kindred
+    self.trueage = ch.era - (self.embrace - self.age)
+                             ~~~~~~~~~~~~~^~~~~~~~~~
+TypeError: unsupported operand type(s) for -: 'int' and 'str'
+[26/08 07:38:44] "POST /ajax/editable/userinput/ HTTP/1.1" 500 21951
+[26/08 07:39:56] Internal Server Error: /ajax/editable/userinput/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 190, in userinput
+    item.save()
+    ~~~~~~~~~^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/base.py", line 881, in save_base
+    pre_save.send(
+    ~~~~~~~~~~~~~^
+        sender=origin,
+        ^^^^^^^^^^^^^^
+    ...<3 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/dispatch/dispatcher.py", line 189, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/zaffarelli/Projects/wawwod/collector/signals/creatures.py", line 19, in update_creature
+    instance.fix()
+    ~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 876, in fix
+    self.fix_kindred()
+    ~~~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 592, in fix_kindred
+    self.trueage = ch.era - (self.embrace - self.age)
+                             ~~~~~~~~~~~~~^~~~~~~~~~
+TypeError: unsupported operand type(s) for -: 'str' and 'int'
+[26/08 07:39:56] "POST /ajax/editable/userinput/ HTTP/1.1" 500 21956
+[26/08 07:45:52] Not Found: /favicon.ico
+[26/08 08:16:33] Internal Server Error: /ajax/display/crossover_sheet/_anatoli_chemko/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 428, in display_crossover_sheet
+    post_title = adventure.adventure_teaser
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'adventure_teaser'
+[26/08 08:16:33] "GET /ajax/display/crossover_sheet/_anatoli_chemko/ HTTP/1.1" 500 78072
+[26/08 08:18:48] Internal Server Error: /ajax/display/crossover_sheet/_anatoli_chemko/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 425, in display_crossover_sheet
+    season = Season.current_season(chronicle.acronym)
+  File "/home/zaffarelli/Projects/wawwod/collector/models/seasons.py", line 46, in current_season
+    all = cls.objects.filter(chronicle__acronym=acronym, current=True)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/query.py", line 1476, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/query.py", line 1494, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/query.py", line 1501, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/sql/query.py", line 1600, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/sql/query.py", line 1632, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ~~~~~~~~~~~~~~~~~^
+        child,
+        ^^^^^^
+    ...<7 lines>...
+        update_join_types=update_join_types,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/sql/query.py", line 1546, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/sql/query.py", line 1370, in build_lookup
+    lhs = self.try_transform(lhs, lookup_name)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/sql/query.py", line 1414, in try_transform
+    raise FieldError(
+    ...<2 lines>...
+    )
+django.core.exceptions.FieldError: Unsupported lookup 'acronym' for CharField or join on the field not permitted.
+[26/08 08:18:48] "GET /ajax/display/crossover_sheet/_anatoli_chemko/ HTTP/1.1" 500 129368
+[26/08 08:19:58] Internal Server Error: /ajax/display/crossover_sheet/_anatoli_chemko/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 425, in display_crossover_sheet
+    season = Season.current_season(chronicle.acronym)
+  File "/home/zaffarelli/Projects/wawwod/collector/models/seasons.py", line 46, in current_season
+    all = cls.objects.filter(chronicle__acronym=acronym, current=True)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/query.py", line 1476, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/query.py", line 1494, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/query.py", line 1501, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/sql/query.py", line 1600, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/sql/query.py", line 1632, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ~~~~~~~~~~~~~~~~~^
+        child,
+        ^^^^^^
+    ...<7 lines>...
+        update_join_types=update_join_types,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/sql/query.py", line 1546, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/sql/query.py", line 1370, in build_lookup
+    lhs = self.try_transform(lhs, lookup_name)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/sql/query.py", line 1414, in try_transform
+    raise FieldError(
+    ...<2 lines>...
+    )
+django.core.exceptions.FieldError: Unsupported lookup 'acronym' for CharField or join on the field not permitted.
+[26/08 08:19:58] "GET /ajax/display/crossover_sheet/_anatoli_chemko/ HTTP/1.1" 500 129368
+[26/08 08:32:35] Internal Server Error: /ajax/display/crossover_sheet/_anatoli_chemko/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 426, in display_crossover_sheet
+    season = Season.current_season(acro)
+  File "/home/zaffarelli/Projects/wawwod/collector/models/seasons.py", line 46, in current_season
+    all = cls.objects.filter(chronicle__acronym=acronym, current=True)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/query.py", line 1476, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/query.py", line 1494, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/query.py", line 1501, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/sql/query.py", line 1600, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/sql/query.py", line 1632, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ~~~~~~~~~~~~~~~~~^
+        child,
+        ^^^^^^
+    ...<7 lines>...
+        update_join_types=update_join_types,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/sql/query.py", line 1546, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/sql/query.py", line 1370, in build_lookup
+    lhs = self.try_transform(lhs, lookup_name)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/sql/query.py", line 1414, in try_transform
+    raise FieldError(
+    ...<2 lines>...
+    )
+django.core.exceptions.FieldError: Unsupported lookup 'acronym' for CharField or join on the field not permitted.
+[26/08 08:32:35] "GET /ajax/display/crossover_sheet/_anatoli_chemko/ HTTP/1.1" 500 129462
+[26/08 08:33:27] Internal Server Error: /ajax/display/crossover_sheet/_anatoli_chemko/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 425, in display_crossover_sheet
+    season = Season.current_season(chronicle.acronym)
+  File "/home/zaffarelli/Projects/wawwod/collector/models/seasons.py", line 46, in current_season
+    all = cls.objects.filter(chronicle__acronym=acronym, current=True)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/query.py", line 1476, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/query.py", line 1494, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/query.py", line 1501, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/sql/query.py", line 1600, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/sql/query.py", line 1632, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ~~~~~~~~~~~~~~~~~^
+        child,
+        ^^^^^^
+    ...<7 lines>...
+        update_join_types=update_join_types,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/sql/query.py", line 1546, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/sql/query.py", line 1370, in build_lookup
+    lhs = self.try_transform(lhs, lookup_name)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/sql/query.py", line 1414, in try_transform
+    raise FieldError(
+    ...<2 lines>...
+    )
+django.core.exceptions.FieldError: Unsupported lookup 'acronym' for CharField or join on the field not permitted.
+[26/08 08:33:27] "GET /ajax/display/crossover_sheet/_anatoli_chemko/ HTTP/1.1" 500 129365
+[26/08 08:35:11] Not Found: /favicon.ico
+[26/08 08:43:09] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[27/08 12:58:37] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[27/08 13:02:10] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[27/08 13:12:02] Not Found: /ajax/display/crossover_sheet/Valbusa Lorsky/
+[27/08 13:12:02] "GET /ajax/display/crossover_sheet/Valbusa%20Lorsky/ HTTP/1.1" 404 11395
+[27/08 13:12:04] Not Found: /ajax/display/crossover_sheet/Valbusa Lorsky/
+[27/08 13:12:04] "GET /ajax/display/crossover_sheet/Valbusa%20Lorsky/ HTTP/1.1" 404 11395
+[27/08 13:12:16] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[27/08 13:12:20] Not Found: /ajax/display/crossover_sheet/Valbusa Lorsky/
+[27/08 13:12:20] "GET /ajax/display/crossover_sheet/Valbusa%20Lorsky/ HTTP/1.1" 404 11395
+[27/08 13:12:22] Not Found: /ajax/display/crossover_sheet/Valbusa Lorsky/
+[27/08 13:12:22] "GET /ajax/display/crossover_sheet/Valbusa%20Lorsky/ HTTP/1.1" 404 11395
+[27/08 13:12:26] Not Found: /ajax/display/crossover_sheet/Valbusa Lorsky/
+[27/08 13:12:26] "GET /ajax/display/crossover_sheet/Valbusa%20Lorsky/ HTTP/1.1" 404 11395
+[27/08 13:14:54] Not Found: /ajax/display/crossover_sheet/Valbusa Lorsky/
+[27/08 13:14:54] "GET /ajax/display/crossover_sheet/Valbusa%20Lorsky/ HTTP/1.1" 404 11395
+[27/08 19:52:40] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[27/08 21:34:59] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[28/08 12:25:54] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[28/08 13:01:59] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[29/08 23:34:32] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[29/08 23:51:57] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[29/08 23:52:22] Internal Server Error: /ajax/editable/updown/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.IntegrityError: CHECK constraint failed: talent0
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 168, in updown
+    item.save()
+    ~~~~~~~~~^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/base.py", line 901, in save_base
+    updated = self._save_table(
+        raw,
+    ...<4 lines>...
+        update_fields,
+    )
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/base.py", line 1028, in _save_table
+    updated = self._do_update(
+        base_qs, using, pk_val, values, update_fields, forced_update
+    )
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/base.py", line 1093, in _do_update
+    return filtered._update(values) > 0
+           ~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/query.py", line 1276, in _update
+    return query.get_compiler(self.db).execute_sql(CURSOR)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 1987, in execute_sql
+    cursor = super().execute_sql(result_type)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: CHECK constraint failed: talent0
+[29/08 23:52:22] "POST /ajax/editable/updown/ HTTP/1.1" 500 24233
+[30/08 03:10:37] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[31/08 10:49:17] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[31/08 12:40:31] Not Found: /ajax/display/map//
+[31/08 12:40:31] "GET /ajax/display/map// HTTP/1.1" 404 11315
+[02/09 01:20:11] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[02/09 01:26:13] Internal Server Error: /ajax/editable/updown/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 168, in updown
+    item.save()
+    ~~~~~~~~~^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/base.py", line 881, in save_base
+    pre_save.send(
+    ~~~~~~~~~~~~~^
+        sender=origin,
+        ^^^^^^^^^^^^^^
+    ...<3 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/dispatch/dispatcher.py", line 189, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/zaffarelli/Projects/wawwod/collector/signals/creatures.py", line 19, in update_creature
+    instance.fix()
+    ~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 887, in fix
+    self.fix_kindred()
+    ~~~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 711, in fix_kindred
+    login.info(f'{self.name} expected freebies is {self.expectedfreebies} (Player)')
+    ^^^^^
+NameError: name 'login' is not defined. Did you mean: 'logging'?
+[02/09 01:26:13] "POST /ajax/editable/updown/ HTTP/1.1" 500 21888
+[02/09 01:26:15] Internal Server Error: /ajax/editable/updown/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 168, in updown
+    item.save()
+    ~~~~~~~~~^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/base.py", line 881, in save_base
+    pre_save.send(
+    ~~~~~~~~~~~~~^
+        sender=origin,
+        ^^^^^^^^^^^^^^
+    ...<3 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/dispatch/dispatcher.py", line 189, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/zaffarelli/Projects/wawwod/collector/signals/creatures.py", line 19, in update_creature
+    instance.fix()
+    ~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 887, in fix
+    self.fix_kindred()
+    ~~~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 711, in fix_kindred
+    login.info(f'{self.name} expected freebies is {self.expectedfreebies} (Player)')
+    ^^^^^
+NameError: name 'login' is not defined. Did you mean: 'logging'?
+[02/09 01:26:15] "POST /ajax/editable/updown/ HTTP/1.1" 500 21888
+[02/09 01:26:17] Internal Server Error: /ajax/editable/updown/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 168, in updown
+    item.save()
+    ~~~~~~~~~^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/db/models/base.py", line 881, in save_base
+    pre_save.send(
+    ~~~~~~~~~~~~~^
+        sender=origin,
+        ^^^^^^^^^^^^^^
+    ...<3 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/dispatch/dispatcher.py", line 189, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/zaffarelli/Projects/wawwod/collector/signals/creatures.py", line 19, in update_creature
+    instance.fix()
+    ~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 887, in fix
+    self.fix_kindred()
+    ~~~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 711, in fix_kindred
+    login.info(f'{self.name} expected freebies is {self.expectedfreebies} (Player)')
+    ^^^^^
+NameError: name 'login' is not defined. Did you mean: 'logging'?
+[02/09 01:26:17] "POST /ajax/editable/updown/ HTTP/1.1" 500 21888
+[02/09 02:05:28] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[02/09 02:15:00] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[02/09 02:20:20] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[02/09 02:21:29] Not Found: /ajax/display/crossover_sheet/Potence (2)/
+[02/09 02:21:29] "GET /ajax/display/crossover_sheet/Potence%20(2)/ HTTP/1.1" 404 11386
+[02/09 02:21:42] Internal Server Error: /ajax/display/adventure_sheet/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 509, in adventure_sheet
+    j, k = character_for(rid, None, idx)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 413, in character_for
+    return j, k
+           ^
+UnboundLocalError: cannot access local variable 'j' where it is not associated with a value
+[02/09 02:21:42] "GET /ajax/display/adventure_sheet/ HTTP/1.1" 500 82474
+[02/09 02:21:43] Internal Server Error: /ajax/display/adventure_sheet/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 509, in adventure_sheet
+    j, k = character_for(rid, None, idx)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 413, in character_for
+    return j, k
+           ^
+UnboundLocalError: cannot access local variable 'j' where it is not associated with a value
+[02/09 02:21:43] "GET /ajax/display/adventure_sheet/ HTTP/1.1" 500 82474
+[02/09 02:22:05] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[02/09 02:26:42] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[02/09 02:38:55] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[02/09 02:40:13] Not Found: /favicon.ico
+[02/09 02:42:28] Not Found: /favicon.ico
+[02/09 02:42:30] Not Found: /favicon.ico
+[02/09 02:51:11] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[02/09 02:55:40] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[02/09 03:27:37] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[02/09 03:28:09] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[02/09 03:35:02] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[02/09 03:48:19] Internal Server Error: /ajax/display/crossover_sheet/_tatiana_chemko/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 435, in display_crossover_sheet
+    j, k = character_for(slug, option)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 400, in character_for
+    tn = c.traits_notes()
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 2028, in traits_notes
+    prefix = z.name+" ("+z.level+")"
+             ~~~~~~~~~~~^~~~~~~~
+TypeError: can only concatenate str (not "int") to str
+[02/09 03:48:19] "GET /ajax/display/crossover_sheet/_tatiana_chemko/ HTTP/1.1" 500 104850
+[02/09 03:49:28] Internal Server Error: /ajax/display/crossover_sheet/_tatiana_chemko/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 435, in display_crossover_sheet
+    j, k = character_for(slug, option)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 400, in character_for
+    tn = c.traits_notes()
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 2028, in traits_notes
+    prefix = z.name+" ("+z.level+")"
+             ~~~~~~~~~~~^~~~~~~~
+TypeError: can only concatenate str (not "int") to str
+[02/09 03:49:28] "GET /ajax/display/crossover_sheet/_tatiana_chemko/ HTTP/1.1" 500 104834
