@@ -121,8 +121,14 @@
         <th></th>
         <td></td>
         {% endif %}
+        {% if c.creature == 'kindred' %}
+        <th>District</th>
+        <td class='editable userinput' id='{{c.rid}}__district'>{{ c.district }}</td>
+        {% else %}
         <th></th>
         <td></td>
+        {% endif %}
+
         <th></th>
         <td></td>
         <th></th>

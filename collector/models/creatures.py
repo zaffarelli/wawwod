@@ -492,11 +492,12 @@ class Creature(models.Model):
     def entrance(self):
         from collector.templatetags.wod_filters import as_generation, as_rank, as_breed, as_auspice, as_tribe_plural
         entrance = ''
+        sx = "male" if self.sex else "female"
         if self.creature == 'kindred':
             g = ""
             if self.group:
                 g = f' ({self.group})'
-            entrance = f'{as_generation(self.background3)} generation {self.family} of the {self.faction}{g}.'
+            entrance = f'{as_generation(self.background3)} gen. {sx } {self.family} of the {self.faction}.'
         elif self.creature == 'garou':
             entrance = self.short_desc
         elif self.creature == 'ghoul':
@@ -696,14 +697,17 @@ class Creature(models.Model):
             if condi[0] == 'DEAD':
                 self.finaldeath == int(condi[1])
         ch = self.mychronicle
-        if ch:
-            if self.embrace == 0:
-                self.embrace = ch.era - (self.trueage - self.age)
-            if self.trueage == 0:
-                self.trueage = ch.era - (self.embrace - self.age)
-        else:
-            self.trueage = 0
-            self.embrace = 0
+        if not self.player:
+            if ch:
+                if self.trueage != 0:
+                    self.embrace = ch.era - (int(self.trueage) - int(self.age))
+
+                # if self.embrace != 0:
+                #     self.embrace = ch.era - (self.trueage - self.age)
+
+            else:
+                self.trueage = 0
+                self.embrace = 0
         if self.player:
             print(self.player)
             ch = self.mychronicle
@@ -1695,14 +1699,20 @@ class Creature(models.Model):
         # self.freebies += + self.expectedfreebies
         self.freebiesdif = self.freebies + self.expectedfreebies
         print(f"Expected Freebies / Dif / free ........... {self.freebiesdif:4} =  {self.expectedfreebies:4} - {self.freebies:4}")
-        if self.freebiesdif == 0:
-            self.status = 'OK'
+
+        if self.freebies == self.expectedfreebies:
+            self.status = 'READY'
             self.is_new = False
-        elif self.freebiesdif < 0:
-            self.status = 'UNBALANCED'
-        else:
+        elif self.freebies > self.expectedfreebies:
             self.status = 'OK+'
             self.is_new = False
+        elif self.freebiesdif == 0:
+            self.status = 'OK'
+            self.is_new = False
+        else:
+            self.status = 'UNBALANCED'
+            self.is_new = False
+        print(f"{self.name} > {self.freebies} {self.expectedfreebies} > {self.status}")
 
     def str2pair(self, str):
         w = str.split(' (')
@@ -2236,7 +2246,7 @@ class CreatureAdmin(admin.ModelAdmin):
     actions = [no_longer_new, randomize_backgrounds, randomize_all, randomize_archetypes, randomize_attributes,
                randomize_abilities,
                refix, set_male, set_female, push_to_munich, push_to_newyork, push_to_hamburg]
-    list_filter = ['chronicle', 'adventure', 'is_player', 'creature', 'faction', 'family', 'is_new', 'condition',
+    list_filter = ['chronicle',"notes_on_backgrounds", 'adventure', 'is_player', 'creature', 'faction', 'family', 'is_new', 'condition',
                    'group',
                    'groupspec']
     search_fields = ['name', 'groupspec']

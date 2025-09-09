@@ -83,13 +83,13 @@
 <!-- </a>-->
 <!--</div>-->
 
-<div class="moonphase" style="float:right;margin:15px; border-radius:5px; background:#401010;color:white;">
+<div class="moonphase" >
     <table>
-        <caption style="font-size:16pt;font-family:Philosopher;">Moon Phases: {{weeks.month}}</caption>
+        <caption>Moon Phases: {{weeks.month}}</caption>
         {% for w in weeks.weeks %}
-            <tr style="height:40px;border:5px;">
+            <tr style="">
                 {% for dow in w %}
-                <td style="width:40px; background:{{dow.color}}; color:black; text-align:center; vertical-align:middle;"><img src="{% get_static_prefix %}collector/auspices/Auspice{{dow.str}}.webp" height="15px" title="{{dow.str}}"><br/><span style="font-size:12pt;font-family:Philosopher">{{dow.num}}</span></td>
+                <td style="background:{{dow.color}};"><img src="{% get_static_prefix %}collector/auspices/Auspice{{dow.str}}.webp" height="15px" title="{{dow.str}}"><br/><span style="font-size:12pt;font-family:Philosopher">{{dow.num}}</span></td>
                 {%endfor%}
             </tr>
         {%endfor%}

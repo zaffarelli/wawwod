@@ -1411,9 +1411,8 @@ class WawwodSheet {
                 let txt = ""
                 if (srs_list.hasOwnProperty(d)){
                     txt = srs_list[d]
-                    me.statText(d, txt, x, y, stat, stat + idx, me.character);
                 }
-
+                me.statText(d, txt, x, y, stat, stat + idx, me.character);
 //                 let ss = d.split(" ")
 //                 let txt = ""
 //                 if (ss[0] in srs_list){

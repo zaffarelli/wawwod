@@ -600,8 +600,8 @@ def get_districts(cityname):
                     'hyperlink': hs.hyperlink,
                     'episode': hs.episode
                 }
-            });
-        # print(context)
+            })
+    print(context)
 
     x = json.dumps(context, indent=4, sort_keys=True)
     return x

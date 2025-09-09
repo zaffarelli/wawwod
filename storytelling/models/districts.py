@@ -25,18 +25,28 @@ CLAN_COLORS = {
     'ventrue': '#731919'
 }
 
-ALL_STATUS = (
-    ('full', 'Full'),
-    ('controlled', 'Controlled'),
-    ('presence', 'Presence'),
-    ('neutral', 'Neutral'),
-    ('incursions', 'Incursions'),
-    ('contested', 'Contested'),
-    ('lost', 'Lost')
-)
+# ALL_STATUS = (
+#     ('full', 'Full'),
+#     ('controlled', 'Controlled'),
+#     ('presence', 'Presence'),
+#     ('neutral', 'Neutral'),
+#     ('incursions', 'Incursions'),
+#     ('contested', 'Contested'),
+#     ('lost', 'Lost')
+# )
 
 
 class District(models.Model):
+    class Situation(models.TextChoices):
+        FULL = 'full', 'Full'
+        CONTROLLED = 'controlled', 'Controlled'
+        PRESENCE = 'presence', 'Presence'
+        NEUTRAL = 'neutral', 'Neutral'
+        INCURSIONS = 'incursions', 'Incursions'
+        CONTESTED = 'contested', 'Contested'
+        LOST = 'lost', 'Lost'
+
+
     code = models.CharField(max_length=64, default='', unique=True)
 
     name = models.CharField(max_length=96, default='')
@@ -49,7 +59,7 @@ class District(models.Model):
     color = ColorField(default='#808080')
     proeminent = models.CharField(max_length=64, default='', blank=True, null=True)
     title = models.CharField(max_length=256, default='', blank=True, null=True)
-    status = models.CharField(max_length=64, default='neutral', choices=ALL_STATUS, blank=True, null=True)
+    status = models.CharField(max_length=64, default=Situation.NEUTRAL, choices=Situation.choices, blank=True, null=True)
     population = models.PositiveIntegerField(default=0, blank=True, null=True)
     population_details = models.CharField(max_length=512, default='', blank=True, null=True)
     camarilla_resources = models.PositiveIntegerField(default=0, blank=True, null=True)
@@ -91,7 +101,7 @@ class District(models.Model):
             inde_pop = 0
             sabb_pop = 0
             for k in camarilla:
-                self.population_details += f'<li><span class="camarilla">{k.name}</span> ({k.freebies})</li>'
+                self.population_details += f'<li><span class="camarilla">{k.name}</span> ({k.family} {k.freebies})</li>'
                 self.population += 1
                 cama_pop += k.freebies
             for k in independents:
@@ -103,9 +113,9 @@ class District(models.Model):
                 self.population += 1
                 inde_pop += k.freebies
             if inde_pop == 0:
-                if cama_pop > 90:
+                if cama_pop > 150:
                     self.status = 'full'
-                elif cama_pop > 45:
+                elif cama_pop > 100:
                     self.status = 'controlled'
                 elif cama_pop > 10:
                     self.status = 'presence'
@@ -115,7 +125,7 @@ class District(models.Model):
                 if inde_pop > cama_pop:
                     self.status = 'lost'
 
-                elif inde_pop > 90:
+                elif inde_pop > 50:
                     self.status = 'contested'
                 else:
                     self.status = 'incursions'
@@ -123,53 +133,52 @@ class District(models.Model):
 
 # Actions
 
-def status_camarilla_contested_giovanni(modeladmin, request, queryset):
+def status_full(modeladmin, request, queryset):
     for district in queryset:
-        district.status = 'camarilla-contested-giovanni'
+        district.status = District.Situation.FULL
         district.save()
-    short_description = 'Status: Camarilla Contested Giovanni'
+    short_description = 'Status: Full Camarilla Control'
 
 
-def status_neutral(modeladmin, request, queryset):
+def status_controlled(modeladmin, request, queryset):
     for district in queryset:
-        district.status = "neutral"
-        district.save()
-    short_description = 'Status: Neutral'
-
-
-def status_gangrel_territory(modeladmin, request, queryset):
-    for district in queryset:
-        district.status = 'gangrel-territory'
-        district.save()
-    short_description = 'Status: Gangrel Territory'
-
-
-def status_sparse_incursions(modeladmin, request, queryset):
-    for district in queryset:
-        district.status = "sparse-incursions"
-        district.save()
-    short_description = 'Status: Sparse Incursions'
-
-
-def status_camarilla_presence(modeladmin, request, queryset):
-    for district in queryset:
-        district.status = 'camarilla-presence'
-        district.save()
-    short_description = 'Status: Camarilla Presence'
-
-
-def status_camarilla_controlled(modeladmin, request, queryset):
-    for district in queryset:
-        district.status = 'camarilla-controlled'
+        district.status = District.Situation.CONTROLLED
         district.save()
     short_description = 'Status: Camarilla Controlled'
 
 
-def status_camarilla(modeladmin, request, queryset):
+def status_presence(modeladmin, request, queryset):
     for district in queryset:
-        district.status = 'camarilla'
+        district.status = District.Situation.PRESENCE
         district.save()
-    short_description = 'Status: Camarilla'
+    short_description = 'Status: Camarilla Presence'
+
+
+def status_neutral(modeladmin, request, queryset):
+    for district in queryset:
+        district.status = District.Situation.NEUTRAL
+        district.save()
+    short_description = 'Status: Neutral'
+
+
+def status_incursions(modeladmin, request, queryset):
+    for district in queryset:
+        district.status = District.Situation.INCURSIONS
+        district.save()
+    short_description = 'Status: Non Camarilla Incursions'
+
+
+def status_contested(modeladmin, request, queryset):
+    for district in queryset:
+        district.status = District.Situation.CONTESTED
+        district.save()
+    short_description = 'Status: Contested'
+
+def status_lost(modeladmin, request, queryset):
+    for district in queryset:
+        district.status = District.Situation.LOST
+        district.save()
+    short_description = 'Status: Lost'
 
 
 def repopulate(modeladmin, request, queryset):
@@ -185,11 +194,11 @@ class DistrictAdmin(admin.ModelAdmin):
     list_editable = ['status', 'sector_name', 'district_name']
     list_filter = ['city', 'd_num', 'proeminent', 'color']
     actions = [repopulate,
+               status_full,
+               status_controlled,
+               status_presence,
                status_neutral,
-               status_camarilla,
-               status_camarilla_controlled,
-               status_camarilla_presence,
-               status_gangrel_territory,
-               status_camarilla_contested_giovanni,
-               status_sparse_incursions
+               status_incursions,
+               status_contested,
+               status_lost
                ]

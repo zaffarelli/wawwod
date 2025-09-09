@@ -1,0 +1,24 @@
+{
+	"type": "FeatureCollection",
+	"name": "hamburg_city_districts",
+	"features": [{
+			"type": "Feature",
+			"properties": {"name": "Allermohe"},
+			"geometry": {
+			    "type": "MultiPolygon",
+			    "coordinates": [
+			        [
+			            [
+							[10.125787023, 53.494745766],
+							[10.125787023, 54.494745766],
+							[11.125787023, 54.494745766],
+							[11.125787023, 53.494745766],
+							[10.125787023, 53.494745766]
+
+						]
+					]
+				]
+			}
+		}
+	]
+}

@@ -40,14 +40,14 @@
     <li class="pull_down">
         <i id='toggle_list' class='fa fa-users'></i>&nbsp;Storytelling
         <ul class="drop_down">
-            {% include "collector/page/chronicles.html" with c=chronicles%}
+            {% include "collector/page/chronicles.html" with c=chronicles %}
             <HR/>
-            {% include "collector/page/current_chronicle_details.html" with c=chronicles%}
+            {% include "collector/page/current_chronicle_details.html" with c=chronicles %}
             <HR/>
             <li class="display" action="storytelling"><i class="fa fa-comment"></i> Storyboard</li>
             <li class="display" action="pdf_story"><i class="fa fa-file-pdf"></i> PDF</li>
             {% for ci in cities  %}
-            <li class="display" action="map" param="{{ ci.tag }}"><i class="fa fa-map"></i> City Map: {{ ci.name}}</li>
+                <li class="display" action="map" param="{{ ci.code }}"><i class="fa fa-map"></i> City Map: {{ ci.name}}</li>
             {% endfor %}
             <li class="display" action="chronicle_map"><i class="fas fa-users"></i> Chronicle Map</li>
             <HR/>
@@ -58,10 +58,11 @@
         <i id='toggle_chronicle' class='fa fa-cogs'></i>&nbsp;Options
         <ul class="drop_down">
             <li class="action" id="settings">Settings</li>
-            <li class="toggle" action="toggle" param="storyboard_handler">Show/Hide storyboard options</li>
-            <li class="toggle" action="toggle" param="details">Show/Hide details</li>
+            <li class="toggle" action="toggle" param="storyboard_handler">Show/Hide Options</li>
+            <li class="toggle" action="toggle" param="details">Show/Hide Details</li>
+            <li class="toggle" action="toggle" param="moonphase">Show/Hide Moon Phases</li>
             <HR/>
-            <li><a href="accounts/logout">log out</a></li>
+            <li><a href="accounts/logout">Disconnect</a></li>
         </ul>
     </li>
 

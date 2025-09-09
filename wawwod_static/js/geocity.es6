@@ -3,7 +3,7 @@ class GeoCity {
         this.cityName = cityName;
         if (this.cityName == "munich") {
             this.cityCode = "MU";
-        } else if (this.cityName == "hamburg") {
+        } else if (this.cityName == "HH") {
             this.cityCode = "HH";
         } else {
             this.cityCode = "XX";
@@ -314,32 +314,24 @@ class GeoCity {
         let district_out = districts.exit();
         district_out.remove();
         let item = district_in.append("g")
-            .attr('class', 'district_item');
-        item.append("path")
-            .attr("id", function (e) {
-                return "path_" + e.id;
-            })
-            .attr("class", "district_path")
-            .attr("d", me.geoPath)
-            .style("fill", function (e) {
-                return "url(#" + e.status + ")"
-            })
-            .style("stroke", "#ccc")
-            .style("stroke-width", 0.125)
-            .style("fill-opacity", 0.5)
-            .style("stroke-opacity", 0.5)
+            .attr('class', 'district_item')
+            .on('mouseover', function(e, d){
+                d3.selectAll(".district_path").style("stroke-width", 0.125)
+                d3.select("#path_" + e.id).style("stroke-width", 1)
+             })
             .on('click', function (e, d) {
                 let coords = me.geoPath.centroid(d);
+                $(".tooltip").addClass("hidden");
                 let str = '';
                 str += "<p>";
-                str += "<strong>" + d.code + " :: " + d.sector_name + "</strong>";
-                str += "<br/><b>District:</b> " + d.district_name;
+                str += "<strong>" + d.properties.stadtteil_name + " (" + d.properties.bezirk_name + ")</strong>";
+                str += "<br/><b>Code:</b> " + d.code;
                 str += "<br/><b>Population:</b> " + d.population;
                 str += "<br/><b>Details:</b> <ul>" + d.population_details + "</ul>";
                 str += "</p>";
 
                 me.focusedDistrict = d;
-                console.log("FOUND DISTRICT: " + me.focusedDistrict.name)
+                //console.log("FOUND DISTRICT: " + me.focusedDistrict.name)
                 let pos_visible = 0;
                 me.poi_legend_data = []
                 _.each(me.wawwod_poi,function (v) {
@@ -359,12 +351,26 @@ class GeoCity {
                 me.centerNode(coords[0], coords[1]);
                 me.updateHotSpots();
                 me.updatePoiLegend();
-                $(".tooltip").toggleClass("hidden");
+                $(".tooltip").removeClass("hidden");
                 me.tooltip.transition()
                     .duration(100)
                     .style("opacity", 1.0);
                 me.tooltip.html(str);
             });
+
+        item.append("path")
+            .attr("id", function (e) {
+                return "path_" + e.id;
+            })
+            .attr("class", "district_path")
+            .attr("d", me.geoPath)
+            .style("fill", function (e) {
+                return "url(#" + e.status + ")"
+            })
+            .style("stroke", "#ccc")
+            .style("stroke-width", 0.125)
+            .style("fill-opacity", 0.5)
+            .style("stroke-opacity", 0.5)
 
         ;
 
@@ -373,30 +379,46 @@ class GeoCity {
             .attr('id', function (d) {
                 return 'district_text_' + d.code;
             })
-            .attr("x", function (e, i) {
-                return me.geoPath.centroid(e)[0];
-            })
-            .attr("y", function (e, i) {
-                return me.geoPath.centroid(e)[1];
-            })
+            .attr("x", (e,i) => me.geoPath.centroid(e)[0])
+            .attr("y", (e,i) => me.geoPath.centroid(e)[1])
             .attr('dx', 0)
-            .attr('dy', -6)
+            .attr('dy', -5)
             .style("font-family", "Ruda")
             .style("text-anchor", "middle")
-            .style("font-size", '2pt')
+            .style("font-size", '3pt')
             .style("font-weight", "bold")
             .style("stroke", "#999999")
             .style("stroke-width", "0.15pt")
             .style("fill", "#CCCCCC")
-            .text(function (e, i) {
-                if (e.sector_name != e.properties["stadtteil_name"]) {
-                    return e.code + ":" + e.properties["stadtteil_name"];
-                }
-                return e.sector_name;
-
-
-            })
             .attr("opacity", 1.0)
+            .text((e,i) => e.properties.bezirk_name)
+            .append("tspan")
+                .attr("x", (e,i) => me.geoPath.centroid(e)[0])
+                .attr("y", (e,i) => me.geoPath.centroid(e)[1])
+                .attr('dx', 0)
+                .attr('dy', 0)
+                .style("font-family", "Ruda")
+                .style("text-anchor", "middle")
+                .style("font-size", '4pt')
+                .style("font-weight", "bold")
+                .style("stroke", "#AAAAAA")
+                .style("stroke-width", "0.15pt")
+                .style("fill", "#DDDDDD")
+                .text((e,i) => e.properties.stadtteil_name)
+            .append("tspan")
+                .attr("x", (e,i) => me.geoPath.centroid(e)[0])
+                .attr("y", (e,i) => me.geoPath.centroid(e)[1])
+                .attr('dx', 0)
+                .attr('dy', 4)
+                .style("font-family", "Ruda")
+                .style("text-anchor", "middle")
+                .style("font-size", '3pt')
+                .style("font-weight", "bold")
+                .style("stroke", "#AAAAAA")
+                .style("stroke-width", "0.15pt")
+                .style("fill", "#DDDDDD")
+                .text((e,i) => e.code)
+
         ;
     }
 
@@ -538,7 +560,8 @@ class GeoCity {
     zoomActivate() {
         let me = this;
         me.zoom = d3.zoom()
-            .scaleExtent([1, 128])
+            //.scaleExtent([1, 128])
+            .scaleExtent([1, 16])
             .on('zoom', function (event) {
                 me.g.attr('transform', event.transform);
             });
@@ -555,10 +578,12 @@ class GeoCity {
                 e.population = 0;
                 e.status = "neutral";
                 let key = me.cityCode + String(i + 1).padStart(3, '0');
+                console.log(key)
                 if (me.wawwod_data[key]) {
                     let entry = me.wawwod_data[key];
                     e.population = entry.population;
                     e.status = entry.status;
+                    console.debug("STATUS",e.status,entry.status)
                     e.code = key
                     e.name = e.properties["stadtteil_name"];
                     e.sector_name = entry.sector_name;
@@ -569,6 +594,8 @@ class GeoCity {
                         e.name = e.properties["stadtteil_name"] + " (" + e.properties['Stadtteil'] + ")";
                         delete e.properties['Stadtteil'];
                     }
+                    console.log(me.wawwod_data[key])
+                    console.log(e)
                 }
             });
             let poi_idx = 0;

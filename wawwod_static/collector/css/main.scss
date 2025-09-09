@@ -597,7 +597,8 @@ table {
 
 svg.lineage{
   margin: 0;
-  border: 3px ridge #CCC;
+  border: 3px ridge #C0C0C07f;
+  background:#2020207f;
 }
 
 svg{
@@ -611,9 +612,9 @@ svg.lineage {
     & .property {
       font-family: "Roboto";
       font-size: 9pt;
-      stroke: #888;
+      stroke: #606060;
       fill: #fff;
-      stroke-width: 0.6px;
+      stroke-width: 0.6pt;
     }
 
     & rect {
@@ -659,7 +660,7 @@ svg.lineage {
     &.dead {
       & rect {
         &.frame {
-          stroke: $dead_background;
+//           stroke: $dead_background;
           stroke-width: 3pt;
           stroke-linecap: butt;
           //stroke-opacity: 0.25;
@@ -708,8 +709,8 @@ svg.lineage {
   & .link {
     fill: transparent;
     fill-opacity: 0;
-    stroke: #c44e4e;
-    stroke-width: 3pt;
+    stroke: #C090904f;
+    stroke-width: 8pt;
 
     &.ghost {
       opacity: $ghost_opacity;

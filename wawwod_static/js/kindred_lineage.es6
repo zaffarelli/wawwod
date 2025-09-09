@@ -351,6 +351,28 @@ xmlns:xlink="http://www.w3.org/1999/xlink"> \
         ;
 
         r.append("circle")
+            .attr("cx",100)
+            .attr("cy",-60)
+            .attr("r",17)
+            .attr("stroke", "none")
+            .attr("stroke-width", "2pt")
+            .attr("fill", function (d) {
+                let col = "none";
+                if (!d.data.ghost){
+                    if (["OK"].includes(d.data.status)){
+                        col = '#C0F0C0'
+                        console.log("d.data.status >> ",d.data.status)
+                    }else{
+                        console.log("d.data.status !! ",d.data.status)
+                        col = '#1010107f'
+                    }
+                }
+                return col;
+            })
+        ;
+
+
+        r.append("circle")
             .attr("cx",75)
             .attr("cy",-60)
             .attr("r",function(d){
@@ -368,28 +390,28 @@ xmlns:xlink="http://www.w3.org/1999/xlink"> \
             })
         ;
 
-        r.append("circle")
-            .attr("cx",75)
-            .attr("cy",-10)
-            .attr("r",function(d){
-                return 2+d.data.is_ancient;
-            })
-            .attr("stroke", "#a0a0a0")
-            .attr("stroke-width", "0.5pt")
-            .attr("fill", function (d) {
-                let col = "#bab151";
-                return col;
-            })
-        ;
+//         r.append("circle")
+//             .attr("cx",75)
+//             .attr("cy",-10)
+//             .attr("r",function(d){
+//                 return 2+d.data.is_ancient;
+//             })
+//             .attr("stroke", "#a0a0a0")
+//             .attr("stroke-width", "0.5pt")
+//             .attr("fill", function (d) {
+//                 let col = "#bab151";
+//                 return col;
+//             })
+//         ;
 
         r.append("path")
             .attr("class", "icon_condition")
             .attr("d", function (d) {
                 let str = ''
                 if ((d.data.condition).startsWith("MISSING")) {
-                    str = "M -80 160 l -20 0 l 0 -20 l 180 -140 20 0 0 20 -180 140 Z "
+                    str = "M -80 240 l -20 0 l 0 -20 l 180 -220 20 0 0 20 -180 220 Z "
                 } else if (d.data.condition.startsWith("DEAD")){
-                    str = "M -80 160 l -20 0 l 0 -20 l 180 -140 20 0 0 20 -180 140 Z "
+                    str = "M -80 240 l -20 0 l 0 -20 l 180 -220 20 0 0 20 -180 220 Z "
 
                 }
                 return str;
@@ -399,10 +421,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink"> \
             .attr("fill", function (d) {
                 let col = "transparent";
                 if (d.data.condition.startsWith("MISSING")){
-                    col = '#208080'
+                    col = '#2080807f'
                 }
                 if (d.data.condition.startsWith("DEAD")){
-                    col = '#802020'
+                    col = '#8020207f'
                 }
                 return col;
             })
@@ -460,8 +482,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink"> \
             .attr("d", (d) => {
                 return "M" + d.x + "," + (d.y - me.boxHeight * 1)
                     + "C" + d.x + "," + (d.y + d.parent.y) / 2
-                    + " " + d.parent.x + "," + (d.y + d.parent.y + me.boxHeight * 2) / 2
-                    + " " + d.parent.x + "," + (d.parent.y + me.boxHeight * 2);
+                    + " " + d.parent.x + "," + (d.y + d.parent.y + me.boxHeight * 3) / 2
+                    + " " + d.parent.x + "," + (d.parent.y + me.boxHeight * 3);
 
             })
         ;

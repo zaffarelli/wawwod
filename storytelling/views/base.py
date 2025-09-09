@@ -128,9 +128,12 @@ def update_scene(request, id: None, field: None):
 def display_map(request, slug=None):
     from collector.utils.data_collection import get_districts
     response = {'html': '', 'data': {}}
+    print("Display map:",slug)
     if is_ajax(request):
         if not slug:
             slug = 'munich'
+        if slug == "HH":
+            slug = "Hamburg"
         x = slug.replace('_', ' ')
         context = get_districts(x)
         response['data'] = context

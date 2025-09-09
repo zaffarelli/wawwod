@@ -66,7 +66,7 @@ class WawwodCollector {
                     }
                 }else {
                     url = 'ajax/display/' + action + '/' + param + '/';
-                    console.log(param);
+                    console.debug("Non Xover",param)
                 }
             }
             if (key != '') {
@@ -85,7 +85,7 @@ class WawwodCollector {
                     if (action == 'dashboard') {
                         let d = JSON.parse(answer.data);
                         me.d3 = new Dashboard(d, "#d3area", me);
-                        me.d3.setCollector(me)
+                        //me.d3.setCollector(me)
                         me.d3.perform();
                     }
                     if (action == 'chronicle_map') {
@@ -413,6 +413,7 @@ class WawwodCollector {
             event.preventDefault();
             event.stopPropagation();
             let tgt = $(this).attr('param');
+            console.debug("Toggling "+tgt)
             $('.' + tgt).toggleClass('hidden');
             me.rebootLinks();
         });

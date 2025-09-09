@@ -119,7 +119,8 @@ class AdventureSheet extends WawwodSheet {
             .style('text-anchor', "end")
             .style('font-size', me.tiny_font_size+'pt')
             .text(function (d) {
-                let str = (d.sex ? "Male" : "Female" )  + " "+ d.breed_name + " " + d.auspice_name + " " + d.family
+                //let str = (d.sex ? "Male" : "Female" )  + " "+ d.breed_name + " " + d.auspice_name + " " + d.family
+                let str = (d.sex ? "Male" : "Female" ) + d.generation + " gen. " + d.family + " of the "+d.faction
                 return d.entrance
             })
         ly += lh
@@ -171,7 +172,7 @@ class AdventureSheet extends WawwodSheet {
         me.shortSheetEntryO(options)
         ly += lh*2
         me.dottedSheetEntryO({"xfunc": xfunc, "y":ly, "ox":ox, "oy":oy, "proplabel":"Rage", "prop":"rage", "condition":"creature,garou,=="})
-        me.dottedSheetEntryO({"xfunc": xfunc, "y":ly, "ox":ox, "oy":oy, "proplabel":"Bloodpool", "prop":"bloodpool", "condition":"creature,kindred,==","max":20})
+        me.dottedSheetEntryO({"xfunc": xfunc, "y":ly, "ox":ox, "oy":oy, "proplabel":"Bloodpool", "prop":"bloodpool", "condition":"creature,kindred,==","max":20,"is_temp":true})
         ly += lh
         me.dottedSheetEntryO({"xfunc": xfunc, "y":ly, "ox":ox, "oy":oy, "proplabel":"Gnosis", "prop":"gnosis", "condition":"creature,garou,=="})
         me.dottedSheetEntryO({"xfunc": xfunc, "y":ly, "ox":ox, "oy":oy, "proplabel":"Humanity", "prop":"humanity", "condition":"creature,kindred,==","max":10})
@@ -213,6 +214,41 @@ class AdventureSheet extends WawwodSheet {
         })
 
         ly = max_ly+lh
+
+        let traits = {}
+
+        max_ly = 0
+        let tr = me.player_in.append('g')
+            .attr("class","traits")
+            .attr("id",(d) => "traits"+d.rid)
+            .attr("custom", (d) => {
+                //backgrounds[d.rid] = d.background_notes
+                traits[d.rid] = []
+                for(let ti=0; ti<16; ti++ ){
+                    if (d["trait"+ti] != ""){
+                        traits[d.rid].push(d["trait"+ti].toUpperCase())
+                    }
+                }
+                return "done"
+             })
+        console.debug(traits)
+        _.forEach(traits, (v,k) => {
+            me.daddy = d3.select("#traits"+k)
+            let oldly = ly
+            _.forEach(v, (w,l) => {
+                ly += lh
+                let words = w.split(" ")
+                let val = words[1].replace("(","").replace(")","")
+                me.dottedSheetEntryO({"xfunc":xfunc,"y":ly,"ox":ox,"oy":oy,"proplabel":words[0],"prop":parseInt(val),"font_size":0,"direct_value":"direct","direct_prop":"direct", "max":5})
+            })
+            if (ly >= max_ly){
+                max_ly = ly
+            }
+            ly = oldly
+        })
+
+        ly = max_ly+lh
+
 
         let shc = {}
         let shorts = me.player_in.append('g')
@@ -331,7 +367,7 @@ class AdventureSheet extends WawwodSheet {
                     let b = (p.oy + p.y-0.1 ) * me.stepy;
                     return "translate("+a+","+b+")"
                 })
-                .style('fill', this.user_stroke)
+                .style('fill', (d) => p.is_temp ? "#FFFFFF" : this.user_fill)
                 .style('stroke', this.user_fill)
                 .attr("d",function (d) {
                     let result = d[p.prop]
@@ -346,7 +382,7 @@ class AdventureSheet extends WawwodSheet {
                             result = parseInt(`${p.prop}`)
                         }
                     }
-                    console.debug(result)
+
                     let path = ""
                     let diam = 6
                     let offx = 3
@@ -357,10 +393,17 @@ class AdventureSheet extends WawwodSheet {
                         let k = Math.floor(s / 10.0)
                         let gx = l*(diam*2+offx)+k*3
                         let gy = k*(diam*0.5+offy)
-                        path += `M ${gx} ${gy} m ${diam},0 a ${diam} ${diam} 0 1 0 0.01 0`
-                        path += `M ${gx} ${gy} m ${diam},${diam*2} a ${diam-1} ${diam} 1 1 1 0.01 0`
-                        if (result>s){
-                             path += `M ${gx} ${gy+3} m ${diam},0 a ${diam-3}   ${diam-3} 0 1 0 0.01 0`
+                        if (!p.is_temp){
+                            path += `M ${gx} ${gy} m ${diam},0 a ${diam} ${diam} 0 1 0 0.01 0`
+                            path += `M ${gx} ${gy} m ${diam},${diam*2} a ${diam-1} ${diam} 1 1 1 0.01 0`
+                            if (result>s){
+                                 path += `M ${gx} ${gy+3} m ${diam},0 a ${diam-3}   ${diam-3} 0 1 0 0.01 0`
+                            }
+                        }else{
+                            if (result>s){
+                                path += `M ${gx} ${gy} m ${diam},0 a ${diam} ${diam} 0 1 0 0.01 0 z`
+                                path += `M ${gx} ${gy} m ${diam},${diam*2} a ${diam-1} ${diam} 1 1 1 0.01 0 z`
+                            }
                         }
                     }
                     return path
@@ -425,7 +468,8 @@ class AdventureSheet extends WawwodSheet {
             offsetx2 : 5.5,
             with_dots : false,
             condition : "", 
-            max : 0
+            max : 0,
+            is_temp: false
         }
         for (const key of Object.keys(options)) {
             const val = options[key]
