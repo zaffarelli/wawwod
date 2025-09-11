@@ -84,6 +84,7 @@ class Dashboard {
 
         let idx = 0;
         let delta_x = 20, delta_y=30;
+        let cnt = 0
         _.forEach(local_data,function (d){
             let x = ox ;
             let y = oy - (me.height-40) / 2 + ((idx)*(delta_x+10));
@@ -91,7 +92,8 @@ class Dashboard {
             let v = d.value;
             let l = d.label;
             data_set.push({"x":x,"y":y,"group":g,"value":v, "label":l})
-            idx += 1;
+            idx += 1
+            cnt += 1
         });
 
         let bar_grp = me.static_back.append("g");
@@ -132,17 +134,40 @@ class Dashboard {
             .style("fill", '#CCC')
             .style("stroke", '#888')
             .style("stroke-width", '0.125pt')
+
         bar_grp.append('text')
             .attr("x",ox)
-            .attr("y",oy- (me.height) / 2)
+            .attr("y",oy - (me.height) / 2)
             .attr("dy",-10)
-            .text(src.charAt(0).toUpperCase()+src.slice(1))
+            .text("> "+src.charAt(0).toUpperCase()+src.slice(1))
             .style("text-anchor", 'left')
             .style("font-family", 'Ruda')
             .style("font-size", '24pt')
             .style("fill", '#CCC')
             .style("stroke", '#111')
             .style("stroke-width", '0.125pt')
+
+        _.forEach([0,10,20,30,40,50,60,70,80,90,100,110,120,130,140,150],function (item){
+            bar_grp.append('line')
+                .attr("x1",ox + (item * delta_x/3) + delta_x)
+                .attr("x2",ox + (item * delta_x/3)+ delta_x)
+                .attr("y1",oy - (me.height) / 2 )
+                .attr("y2",oy - (me.height) / 2 + (cnt)*delta_y)
+                .style("fill", 'none')
+                .style("stroke", '#999')
+                .style("stroke-width", '0.5pt')
+
+            bar_grp.append('text')
+                .attr("x",ox + (item * delta_x/3) + delta_x)
+                .attr("y",oy - (me.height) / 2 + (1+cnt)*delta_y)
+                .text(item)
+                .style("text-anchor", 'middle')
+                .style("font-family", 'Ruda')
+                .style("font-size", '16pt')
+                .style("fill", '#CCC')
+                .style("stroke", '#111')
+                .style("stroke-width", '0.125pt')
+        })
         let bar_out = bars.exit()
         bar_out.remove()
     }

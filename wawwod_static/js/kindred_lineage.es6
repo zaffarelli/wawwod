@@ -351,20 +351,22 @@ xmlns:xlink="http://www.w3.org/1999/xlink"> \
         ;
 
         r.append("circle")
-            .attr("cx",100)
-            .attr("cy",-60)
-            .attr("r",17)
-            .attr("stroke", "none")
-            .attr("stroke-width", "2pt")
+            .attr("cx",-100)
+            .attr("cy",-30)
+            .attr("r",7)
+            .attr("stroke", (d) => d.data.ghost ? "none":"#C0C0C0")
+            .attr("stroke-width", "1pt")
             .attr("fill", function (d) {
                 let col = "none";
                 if (!d.data.ghost){
-                    if (["OK"].includes(d.data.status)){
-                        col = '#C0F0C0'
-                        console.log("d.data.status >> ",d.data.status)
+                    if (d.data.status == "READY"){
+                        col = '#20df99'
+                    }else if (d.data.status == "OK+"){
+                        col = '#8920df'
+                    }else if (d.data.status == "OK"){
+                        col = '#2081df'
                     }else{
-                        console.log("d.data.status !! ",d.data.status)
-                        col = '#1010107f'
+                        col = '#101010'
                     }
                 }
                 return col;

@@ -456,42 +456,23 @@ class CrossOverSheet extends WawwodSheet {
     }
 
     fillOthers(oy) {
-        let me = this;
-        let box_spacing_y = 4.0;
-        let box_spacing_x = 10;
-        let base_x = 12;
+        let me = this
+        let box_spacing_y = 4.0
+        let box_spacing_x = 10
+        let base_x = 12
         let others = me.character.append('g')
             .attr('class', 'others')
         ;
         let current_font_size = me.medium_font_size;
         me.daddy = others;
         me.title('Others', (base_x + 6) * me.stepx, oy, others)
-
+        let nexty = (oy + 1*me.stepy)
         let others_item = others.selectAll('others_event')
             .data(me.data['others'])
-        ;
-
         let others_in = others_item.enter()
             .append('g')
             .attr('class', 'others_event')
-        ;
-        others_in.append('text')
-            .style('font-family', me.user_font)
-            .style('font-size', current_font_size+"px")
-            .style('text-anchor', "start")
-            .style("fill", me.user_fill)
-            .style("stroke", me.user_stroke)
-            .style("stroke-width", '0.05pt')
-            .text(function (d) {
-                return d['date'] + ' - ' + d['item']
-            })
         let others_in_note = others_in.append('text')
-//             .attr('x', function (d) {
-//                 return (base_x + 0.4) * me.stepx;
-//             })
-//             .attr('y', function (d) {
-//                 return oy + 0.85 * me.stepy + d['idx'] *box_spacing_y * me.stepy;
-//             })
             .attr('class', 'others_in_notes')
             .attr('id', function(d) { return 'others_in_notes_'+d['idx'] })
             .attr('x', 0)
@@ -514,23 +495,21 @@ class CrossOverSheet extends WawwodSheet {
         let all_lines = 0;
         d3.selectAll(".others_event")
              .attr('transform', function (d) {
-                 let result = oy;
                  if (d['idx']>0){
                     let previous_block = d3.select('#others_in_notes_'+(d['idx']-1))
                     if (previous_block){
                         let lines = parseInt(previous_block.attr("lines"))
                         all_lines += lines
-                        result =  oy + all_lines*current_font_size*1.1;
-                        console.log("previous lines",all_lines, result)
+                        nexty =  all_lines*current_font_size*1.1;
+//                         console.log("previous lines",all_lines, oy)
                     }else{
                         all_lines = 0;
-                        console.log("Not found", result)
+//                         console.log("Not found", result)
                     }
                  }else{
-                     console.log("Bad ",result)
+//                      console.log("Bad ",oy)
                  }
-
-                 return "translate("+(base_x + 0.4) * me.stepx+","+result+")"
+                 return "translate("+(base_x + 0.4) * me.stepx+","+nexty +")"
              })
     }
 

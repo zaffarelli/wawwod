@@ -2246,7 +2246,7 @@ class CreatureAdmin(admin.ModelAdmin):
     actions = [no_longer_new, randomize_backgrounds, randomize_all, randomize_archetypes, randomize_attributes,
                randomize_abilities,
                refix, set_male, set_female, push_to_munich, push_to_newyork, push_to_hamburg]
-    list_filter = ['chronicle',"notes_on_backgrounds", 'adventure', 'is_player', 'creature', 'faction', 'family', 'is_new', 'condition',
+    list_filter = ['chronicle', 'adventure', 'is_player', 'creature', 'faction', 'family', 'is_new', 'condition',
                    'group',
                    'groupspec']
     search_fields = ['name', 'groupspec']

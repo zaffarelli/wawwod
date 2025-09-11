@@ -413,6 +413,7 @@ class WawwodCollector {
             event.preventDefault();
             event.stopPropagation();
             let tgt = $(this).attr('param');
+            console.debug("Toggling "+tgt)
             $('.' + tgt).toggleClass('hidden');
             me.rebootLinks();
         });

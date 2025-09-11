@@ -30764,3 +30764,26 @@ collector.models.creatures.Creature.MultipleObjectsReturned: get() returned more
 [08/09 08:34:15] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
 [08/09 08:43:03] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
 [08/09 08:46:46] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[09/09 22:29:20] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[09/09 22:29:57] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[09/09 22:30:30] Not Found: /favicon.ico
+[10/09 00:01:24] Internal Server Error: /ajax/display/crossover_sheet/_anatoli_chemko/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 436, in display_crossover_sheet
+    j, k = character_for(slug, option)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 394, in character_for
+    k["others"] = c.others()
+                  ~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 2011, in others
+    fmt_list.append({'idx': idx, 'item': f'{words[0]}', 'date': f'{words[1]}', 'notes': f'{words[2]}'})
+                                                                                           ~~~~~^^^
+IndexError: list index out of range
+[10/09 00:01:24] "GET /ajax/display/crossover_sheet/_anatoli_chemko/ HTTP/1.1" 500 102864
+[10/09 21:00:38] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[11/09 01:51:53] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[11/09 02:11:07] Not Found: /favicon.ico
