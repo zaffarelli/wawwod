@@ -106,10 +106,10 @@ class Creature(models.Model):
 
     # Player specific
     notes_on_backgrounds = models.TextField(max_length=2048, default='', blank=True)
-    notes_on_meritsflaws = models.TextField(max_length=1024, default='', blank=True)
+    notes_on_meritsflaws = models.TextField(max_length=2048, default='', blank=True)
     notes_on_history = models.TextField(max_length=6144, default='', blank=True)
     notes_on_others = models.TextField(max_length=4096, default='', blank=True)
-    notes_on_naturedemeanor = models.TextField(max_length=1024, default='', blank=True)
+    notes_on_naturedemeanor = models.TextField(max_length=2048, default='', blank=True)
     notes_on_traits = models.TextField(max_length=2048, default='', blank=True)
     # adventure = models.ForeignKey(Adventure, on_delete=models.SET_NULL, null=True, default=None, blank=True)
     adventure = models.CharField(max_length=8, default='', blank=True)
@@ -1440,44 +1440,41 @@ class Creature(models.Model):
 
         lines = []
         lines.append(f'\n')
-        lines.append(f'_{self.name}_')
+        lines.append(f'{self.name}')
         # if self.status.startswith("OK"):
-        lines.append(f" ({self.status})")
-        lines.append("\\\n")
+        #lines.append(f" ({self.status})")
+        lines.append("\n")
         from collector.utils.wod_reference import BREEDS, AUSPICES
+        gender = "Male" if self.sex == 1 else "Female"
         if self.creature == "garou":
-            gen = "Male" if self.sex == 1 else "Female"
+
 
             lines.append(
-                f"__{gen} {BREEDS[self.breed]} {RANKS[self.garou_rank]} {AUSPICES[self.auspice]} of the {as_tribe_plural(self.family)}__\\\n")
+                f"__{gender} {BREEDS[self.breed]} {RANKS[self.garou_rank]} {AUSPICES[self.auspice]} of the {as_tribe_plural(self.family)}__\\\n")
             if len(self.community_job) > 0:
                 lines.append(f'{self.community_job} of the {self.group}\\\n')
             else:
                 lines.append(f'{self.group}\\\n')
             lines.append(f'(Rank {self.garou_rank})\\\n')
-        if len(self.nature) > 0:
-            lines.append(f'**Nature**: {self.nature}\\\n')
-        if len(self.demeanor) > 0:
-            lines.append(f'**Demeanor**: {self.demeanor}\\\n')
+        elif self.creature == "kindred":
+            txt = f'{gender} Kindred, {self.generation}th {self.family}, {self.age}/{self.trueage} yo [embrace: {self.embrace}]\n'
+            lines.append(txt)
+        elif self.creature == "ghoul":
+            lines.append("Ghoul")
+        if len(self.nature) > 0 and len(self.demeanor) > 0:
+            lines.append(f'Nature/Demeanor: {self.nature}/{self.demeanor}\n')
         if len(self.concept) > 0:
             lines.append(f'**Concept**: {self.concept}\\\n')
         if len(self.groupspec) > 0:
             lines.append(f'**Pack**: {self.groupspec}\\\n')
-        if self.age > 0:
-            lines.append(f'**Age**: {self.age} yo\\\n')
+
         if self.is_player:
             lines.append(
                 f'**Attributes**: {self.total_physical}/{rep[0]}:{self.total_social}/{rep[1]}:{self.total_mental}/{rep[2]}\\\n')
         # lines.append("```\n")
-        lines.append(
-            f'`{"Str":.<6}{self.val_as_dots(self.attribute0)}` `{"Cha":.<6}{self.val_as_dots(self.attribute3)}` `{"Per":.<6}{self.val_as_dots(self.attribute6)}`\\\n')
-        lines.append(
-            f'`{"Dex":.<6}{self.val_as_dots(self.attribute1)}` `{"Man":.<6}{self.val_as_dots(self.attribute4)}` `{"Int":.<6}{self.val_as_dots(self.attribute7)}`\\\n')
-        lines.append(
-            f'`{"Sta":.<6}{self.val_as_dots(self.attribute2)}` `{"App":.<6}{self.val_as_dots(self.attribute5)}` `{"Wit":.<6}{self.val_as_dots(self.attribute8)}`\\\n')
-        lines.append(f'**Willpower**:{self.willpower:2}')
-        if self.creature == "garou":
-            lines.append(f', **Gnosis**:{self.gnosis:2}, **Rage**:{self.rage:2}')
+        lines.append(f'STR {self.attribute0:2} CHA {self.attribute3:2} PER {self.attribute6:2}  WIL {self.willpower:2}\n')
+        lines.append(f'DEX {self.attribute1:2} MAN {self.attribute4:2} INT {self.attribute7:2}  HUM {self.humanity:2}\n')
+        lines.append(f'STA {self.attribute2:2} APP {self.attribute5:2} WIT {self.attribute8:2}  BLP {self.bloodpool:2}\n')
         lines.append("\n")
         if self.is_player:
             lines.append(
@@ -1486,23 +1483,22 @@ class Creature(models.Model):
         slines = []
         klines = []
         for n in range(10):
-            tlines.append(
-                f'{STATS_NAMES[self.creature]["talents"][n].title()} ({self.val_as_dots(getattr(self, f"talent{n}"))})')
-            slines.append(
-                f'{STATS_NAMES[self.creature]["skills"][n].title()} ({self.val_as_dots(getattr(self, f"skill{n}"))})')
-            klines.append(
-                f'{STATS_NAMES[self.creature]["knowledges"][n].title()} ({self.val_as_dots(getattr(self, f"knowledge{n}"))})')
-        lines.append(f'**Talents**: {", ".join(tlines)}.\\\n')
-        lines.append(f'**Skills**: {", ".join(slines)}.\\\n')
-        lines.append(f'**Knowledges**: {", ".join(klines)}.\\\n')
+            if getattr(self, f"talent{n}")>0:
+                tlines.append(f'{STATS_NAMES[self.creature]["talents"][n].title()} {self.val_as_dots(getattr(self, f"talent{n}"))}')
+            if getattr(self, f"skill{n}") > 0:
+                slines.append(f'{STATS_NAMES[self.creature]["skills"][n].title()} {self.val_as_dots(getattr(self, f"skill{n}"))}')
+            if getattr(self, f"knowledge{n}") > 0:
+                klines.append(f'{STATS_NAMES[self.creature]["knowledges"][n].title()} {self.val_as_dots(getattr(self, f"knowledge{n}"))}')
+        lines.append(f'Talents: {", ".join(tlines)}.\n')
+        lines.append(f'Skills: {", ".join(slines)}.\n')
+        lines.append(f'Knowledges: {", ".join(klines)}.\n')
 
         blines = []
         bck_len = len(STATS_NAMES[self.creature]["backgrounds"])
         for n in range(bck_len):
             if getattr(self, f"background{n}") > 0:
-                blines.append(
-                    f'{STATS_NAMES[self.creature]["backgrounds"][n].title()} ({getattr(self, f"background{n}")})')
-        lines.append(f'**Backgrounds**: {", ".join(blines)}.')
+                blines.append(f'{STATS_NAMES[self.creature]["backgrounds"][n].title()} {getattr(self, f"background{n}")}')
+        lines.append(f'Backgrounds: {", ".join(blines)}.')
         if self.creature == "garou":
             glines = []
             for n in range(16):
@@ -1510,6 +1506,13 @@ class Creature(models.Model):
                     glines.append(f'{getattr(self, f"trait{n}")}')
             traitname = "Gifts"
             lines.append(f'**{traitname}**: {", ".join(glines)}.')
+        if self.creature == "kindred":
+            glines = []
+            for n in range(16):
+                if getattr(self, f"trait{n}").title():
+                    glines.append(f'{getattr(self, f"trait{n}")}')
+            traitname = ""
+            lines.append(f'Disciplines: {", ".join(glines)}.')
         if self.creature == "garou" or self.creature == "kindred":
             rlines = []
             for n in range(10):
@@ -1518,19 +1521,19 @@ class Creature(models.Model):
             if len(rlines) > 0:
                 lines.append(f'**Rituals**: {", ".join(rlines)}.')
 
-        if ("shortcuts" in options):
-            lines.append('\\\n')
-            scs = []
-
-            shortcuts = self.get_shortcuts()
-            for shortcut in shortcuts:
-                words = shortcut.split("=")
-                scs.append(f"`{words[0]:.<26}{words[1]:.>16}`")
-            if len(scs) > 0:
-                lines.append(f'**Shortcuts**:\\\n')
-                # lines.append("\n```\n")
-                lines.append("\\\n".join(scs))
-                # lines.append("\n```\n")
+        # if ("shortcuts" in options):
+        #     lines.append('\\\n')
+        #     scs = []
+        #
+        #     shortcuts = self.get_shortcuts()
+        #     for shortcut in shortcuts:
+        #         words = shortcut.split("=")
+        #         scs.append(f"`{words[0]:.<26}{words[1]:.>16}`")
+        #     if len(scs) > 0:
+        #         lines.append(f'**Shortcuts**:\\\n')
+        #         # lines.append("\n```\n")
+        #         lines.append("\\\n".join(scs))
+        #         # lines.append("\n```\n")
 
         if ("with_hard_edges" in options):
             lines.append('\\\n')
@@ -1705,13 +1708,13 @@ class Creature(models.Model):
             self.is_new = False
         elif self.freebies > self.expectedfreebies:
             self.status = 'OK+'
-            self.is_new = False
+            self.is_new = True
         elif self.freebiesdif == 0:
             self.status = 'OK'
             self.is_new = False
         else:
             self.status = 'UNBALANCED'
-            self.is_new = False
+            self.is_new = True
         print(f"{self.name} > {self.freebies} {self.expectedfreebies} > {self.status}")
 
     def str2pair(self, str):

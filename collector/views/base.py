@@ -66,7 +66,7 @@ def prepare_index(request):
             # print(adventure)
     for city in City.objects.filter(chronicle=chronicle.acronym):
         cities.append(city)
-#        //print("New city: ",city)
+    #        //print("New city: ",city)
 
     misc = {"version": settings.VERSION}
     context = {'chronicles': chronicles, 'fontset': FONTSET, 'players': players, 'adventures': adventures,
@@ -99,44 +99,57 @@ def get_list(request, pid=1, slug=None):
     if is_ajax(request):
         if 'vtm' == slug:
             # print('vampires')
-            creature_items = Creature.objects.filter(chronicle=chronicle.acronym, creature__in=['ghoul', 'kindred']) \
-                .order_by('family', 'name')
+            creature_items = Creature.objects \
+                .filter(chronicle=chronicle.acronym, creature__in=['ghoul', 'kindred']) \
+                .order_by('-is_new', 'is_player', 'name')
         elif 'mta' == slug:
-            creature_items = Creature.objects.filter(chronicle=chronicle.acronym, creature__in=['mage']) \
-                .order_by('name')
+            creature_items = Creature.objects \
+                .filter(chronicle=chronicle.acronym, creature__in=['mage']) \
+                .order_by('-is_new', 'is_player', 'name')
         elif 'wta' == slug:
-            creature_items = Creature.objects.filter(chronicle=chronicle.acronym, creature__in=['garou', 'kinfolk']) \
-                .order_by('name')
+            creature_items = Creature.objects \
+                .filter(chronicle=chronicle.acronym, creature__in=['garou', 'kinfolk']) \
+                .order_by('-is_new', 'creature', 'name')
         elif 'ctd' == slug:
-            creature_items = Creature.objects.filter(chronicle=chronicle.acronym, creature__in=['changeling']) \
-                .order_by('name')
+            creature_items = Creature.objects \
+                .filter(chronicle=chronicle.acronym, creature__in=['changeling']) \
+                .order_by('-is_new', 'is_player', 'name')
         elif 'wto' == slug:
-            creature_items = Creature.objects.filter(chronicle=chronicle.acronym, creature__in=['wraith']) \
-                .order_by('name')
+            creature_items = Creature.objects \
+                .filter(chronicle=chronicle.acronym, creature__in=['wraith']) \
+                .order_by(
+                '-is_new', 'is_player', 'name')
         elif 'mor' == slug:
-            creature_items = Creature.objects.filter(chronicle=chronicle.acronym, creature__in=['mortal']) \
-                .order_by('name')
+            creature_items = Creature.objects \
+                .filter(chronicle=chronicle.acronym, creature__in=['mortal']) \
+                .order_by('-is_new', 'is_player', 'name')
         elif 'new' == slug:
-            creature_items = Creature.objects.filter(chronicle=chronicle.acronym, is_new=True).order_by('name')
+            creature_items = Creature.objects \
+                .filter(chronicle=chronicle.acronym, is_new=True) \
+                .order_by('-is_new', 'is_player', 'name')
         elif 'bal' == slug:
-            creature_items = Creature.objects.filter(chronicle=chronicle.acronym, status__in=["UNBALANCED", "OK+"],
-                                                     hidden=False).order_by('creature',
-                                                                            '-expectedfreebies')
+            creature_items = Creature.objects \
+                .filter(chronicle=chronicle.acronym, status__in=["UNBALANCED", "OK+"], hidden=False) \
+                .order_by('-is_new', 'is_player', 'name')
         elif 'pen' == slug:
-            creature_items = Creature.objects.filter(chronicle=chronicle.acronym, faction__in=['Pentex', 'Wyrm'],
-                                                     creature__in=['garou', 'kinfolk', 'fomori']).order_by('name')
+            creature_items = Creature.objects \
+                .filter(chronicle=chronicle.acronym, faction__in=['Pentex', 'Wyrm'],
+                        creature__in=['garou', 'kinfolk', 'fomori']) \
+                .order_by('-is_new', 'is_player', 'name')
         elif 'ccm' == slug:
-            creature_items = Creature.objects.filter(chronicle=chronicle.acronym,
-                                                     creature__in=['mortal', 'ghoul', 'kinfolk', 'fomori',
-                                                                   'kithain']).order_by(
-                'name')
+            servants = ['mortal', 'ghoul', 'kinfolk', 'fomori', 'kithain']
+            creature_items = Creature.objects \
+                .filter(chronicle=chronicle.acronym, creature__in=servants) \
+                .order_by('name')
         elif 'ccs' == slug:
-            creature_items = Creature.objects.filter(chronicle=chronicle.acronym,
-                                                     creature__in=['garou', 'kindred', 'wraith', 'changeling',
-                                                                   'mage']).order_by('name')
+            masters = ['garou', 'kindred', 'wraith', 'changeling', 'mage']
+            creature_items = Creature.objects \
+                .filter(chronicle=chronicle.acronym, creature__in=masters) \
+                .order_by('name')
         else:
-            creature_items = Creature.objects.filter(chronicle=chronicle.acronym).order_by('groupspec', 'player',
-                                                                                           'name')
+            creature_items = Creature.objects \
+                .filter(chronicle=chronicle.acronym) \
+                .order_by('is_player','family','is_new','name')
         paginator = Paginator(creature_items, CHARACTERS_PER_PAGE)
         creature_items = paginator.get_page(pid)
         list_context = {'creature_items': creature_items}
@@ -145,7 +158,6 @@ def get_list(request, pid=1, slug=None):
         answer = {
             'list': list_html,
         }
-        # print(answer)
         return JsonResponse(answer)
     else:
         return HttpResponse(status=204)
@@ -244,89 +256,79 @@ def add_creature(request, slug=None):
         return HttpResponse(status=204)
 
 
-def add_kindred(request, slug=None):
-    if is_ajax(request):
-        name = " ".join(slug.split("_"))
-        chronicle = get_current_chronicle()
-        item = Creature()
-        item.name = name
-        item.chronicle = chronicle.acronym
-        item.creature = 'kindred'
-        item.age = 0
-        item.family = 'Caitiff'
-        item.faction = 'Camarilla'
+def pre_wawwod_creature(slug):
+    name = " ".join(slug.split("_"))
+    chronicle = get_current_chronicle()
+    item = Creature()
+    item.name = name
+    item.chronicle = chronicle.acronym
+    adventure = chronicle.adventure
+    if adventure:
+        item.adventure = adventure.acronym
+    item.age = 25
+    item.is_new = True
+    return item
+
+
+def post_wawwod_creature(item):
+    if item:
         item.randomize_backgrounds()
         item.randomize_archetypes()
         item.randomize_attributes()
         item.randomize_abilities()
         item.source = 'zaffarelli'
         item.save()
+
+
+def add_kindred(request, slug=None):
+    if is_ajax(request):
+        item = pre_wawwod_creature(slug)
+        item.creature = 'kindred'
+        item.family = 'Caitiff'
+        item.faction = 'Camarilla'
+        post_wawwod_creature(item)
+        return HttpResponse(status=204)
+
+
+def add_ghoul(request, slug=None):
+    if is_ajax(request):
+        item = pre_wawwod_creature(slug)
+        item.creature = 'ghoul'
+        item.family = 'Caitiff'
+        item.faction = 'Camarilla'
+        post_wawwod_creature(item)
         return HttpResponse(status=204)
 
 
 def add_garou(request, slug=None):
     if is_ajax(request):
-        name = " ".join(slug.split("_"))
-        chronicle = get_current_chronicle()
-        item = Creature()
-        item.name = name
-        item.chronicle = chronicle.acronym
-        item.adventure = "TWT"
+        item = pre_wawwod_creature(slug)
         item.creature = 'garou'
-        item.age = 0
         item.family = 'Child of Gaia'
         item.faction = 'Gaia'
-        item.randomize_backgrounds()
-        item.randomize_archetypes()
-        item.randomize_attributes()
-        item.randomize_abilities()
-        item.source = 'zaffarelli'
-        item.save()
+        post_wawwod_creature(item)
         return HttpResponse(status=204)
 
 
 def add_kinfolk(request, slug=None):
     if is_ajax(request):
-        name = " ".join(slug.split("_"))
-        chronicle = get_current_chronicle()
-        item = Creature()
-        item.name = name
-        item.chronicle = chronicle.acronym
+        item = pre_wawwod_creature(slug)
         item.creature = 'kinfolk'
-        item.age = 0
         item.family = 'Child of Gaia'
         item.faction = 'Gaia'
-        item.adventure = 'TWT'
-        item.randomize_backgrounds()
-        item.randomize_archetypes()
-        item.randomize_attributes()
-        item.randomize_abilities()
-        item.source = 'zaffarelli'
-        item.save()
+        post_wawwod_creature(item)
         return HttpResponse(status=204)
 
 
 def add_mortal(request, slug=None):
     if is_ajax(request):
-        name = " ".join(slug.split("_"))
-        chronicle = get_current_chronicle()
-        item = Creature()
-        item.name = name
-        item.chronicle = chronicle.acronym
+        item = pre_wawwod_creature(slug)
         item.creature = 'mortal'
-        item.age = 0
-        item.adventure = 'TWT'
-        item.randomize_backgrounds()
-        item.randomize_archetypes()
-        item.randomize_attributes()
-        item.randomize_abilities()
-        item.source = 'zaffarelli'
-        item.save()
+        post_wawwod_creature(item)
         return HttpResponse(status=204)
 
 
-
-def add_ghoul(request, slug=None):
+def add_new_ghoul(request, slug=None):
     if is_ajax(request):
         needed_ghouls = 0
         domitor_rid = toRID(slug)
@@ -453,7 +455,7 @@ def display_chronicle_map(request):
         .exclude(ghost=True) \
         .exclude(hidden=True) \
         .filter(adventure="TWT") \
-        .order_by('-is_player', 'faction','group', 'sire', 'adventure', 'creature', "name")
+        .order_by('-is_player', 'faction', 'group', 'sire', 'adventure', 'creature', "name")
     all_creatures = []
     lines = []
     for creature in creatures:
@@ -467,7 +469,7 @@ def display_chronicle_map(request):
         all_creatures.append(k)
         lines.append(creature.extract_raw())
 
-    txt_name = os.path.join(settings.MEDIA_ROOT, 'md/' + chronicle.acronym+"_cast.md")
+    txt_name = os.path.join(settings.MEDIA_ROOT, 'md/' + chronicle.acronym + "_cast.md")
 
     with open(txt_name, "w") as f:
         f.writelines(lines)
@@ -510,7 +512,7 @@ def adventure_sheet(request):
                                 j, k = character_for(rid, None, idx)
                                 idx += 1
                                 data["players"].append(k)
-            settings = {'fontset': FONTSET, 'labels':{'sheet':{"pages":1}}}
+            settings = {'fontset': FONTSET, 'labels': {'sheet': {"pages": 1}}}
             adv = {
                 "name": chronicle.name,
                 "acronym": chronicle.acronym,
@@ -623,13 +625,13 @@ def svg_to_pdf(request, slug):
         logger.info(f'--> Created --> {pdf_name}.')
         print(f'--> Created --> {pdf_name}.')
         response['status'] = 'ok'
-        all_in_one_pdf(rid,pages,creature)
+        all_in_one_pdf(rid, pages, creature)
         print(response)
     return JsonResponse(response)
 
 
 @csrf_exempt
-def all_in_one_pdf(rid,pages, creature="mortal"):
+def all_in_one_pdf(rid, pages, creature="mortal"):
     # print(f'Starting PDFing for [{rid}].')
     logger.info(f'Starting PDFing for [{rid}].')
     res = []

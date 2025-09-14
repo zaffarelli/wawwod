@@ -46,6 +46,18 @@ class Chronicle(models.Model):
     def __str__(self):
         return self.acronym
 
+    @property
+    def season(self):
+        from collector.models.seasons import Season
+        return Season.current_season(self.acronym)
+
+    @property
+    def adventure(self):
+        from collector.models.adventures import Adventure
+        s = self.season
+        if s:
+            return Adventure.current_adventure(s.acronym)
+        return None
 
 
 

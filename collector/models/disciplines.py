@@ -45,10 +45,10 @@ class Discipline(models.Model):
 
 
 class DisciplineAdmin(admin.ModelAdmin):
-    list_display = ['code', 'alternative_name', 'page', 'is_linear', 'technical_notes', ]
+    list_display = ['code', 'alternative_name', 'page', 'is_linear','description', 'technical_notes', ]
     ordering = ['code']
     list_filter = ['name', 'level', 'clan_0', 'clan_1', 'clan_2', 'clan_3', 'clan_4', 'clan_5', 'clan_6']
     search_fields = ['name', 'description']
-    list_editable = ['technical_notes', 'page', 'is_linear']
+    list_editable = ['description','technical_notes', 'page', 'is_linear']
     from collector.utils.helper import refix
     actions = [refix]

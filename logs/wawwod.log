@@ -30787,3 +30787,437 @@ IndexError: list index out of range
 [10/09 21:00:38] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
 [11/09 01:51:53] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
 [11/09 02:11:07] Not Found: /favicon.ico
+[12/09 02:20:02] Not Found: /ajax/collector_action/add_kindred/
+[12/09 02:20:02] "GET /ajax/collector_action/add_kindred/ HTTP/1.1" 404 11165
+[12/09 02:22:21] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1864
+[12/09 02:25:36] Not Found: /favicon.ico
+[12/09 02:25:36] "GET /favicon.ico HTTP/1.1" 404 11096
+[12/09 02:25:57] Not Found: /favicon.ico
+[12/09 02:27:10] Not Found: /ajax/collector_action/refix_all/Ian_Gallard/
+[12/09 02:27:10] "GET /ajax/collector_action/refix_all/Ian_Gallard/ HTTP/1.1" 404 11195
+[12/09 02:30:23] Not Found: /ajax/collector_action/refix_all/Ian_Gallard/
+[12/09 02:30:23] "GET /ajax/collector_action/refix_all/Ian_Gallard/ HTTP/1.1" 404 11195
+[12/09 02:41:09] Not Found: /favicon.ico
+[12/09 02:44:43] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1864
+[12/09 03:13:48] Internal Server Error: /api/text/_ian_gallard/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/actions.py", line 11, in extract_raw
+    lines = found.first().extract_raw()
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 1460, in extract_raw
+    txt = f'{gender} Kindred, {self.generation}th {self.family}, {self.age}/{self.true_age} yo [embrace: {self.embrace}]'
+                                                                             ^^^^^^^^^^^^^
+AttributeError: 'Creature' object has no attribute 'true_age'. Did you mean: 'trueage'?
+[12/09 03:13:48] "GET /api/text/_ian_gallard/ HTTP/1.1" 500 81865
+[12/09 03:21:18] Not Found: /favicon.ico
+[12/09 03:21:18] "GET /favicon.ico HTTP/1.1" 404 11096
+[12/09 03:21:53] Not Found: /favicon.ico
+[12/09 03:21:53] "GET /favicon.ico HTTP/1.1" 404 11096
+[12/09 03:30:42] Not Found: /favicon.ico
+[12/09 03:30:42] "GET /favicon.ico HTTP/1.1" 404 11096
+[12/09 03:32:08] Not Found: /favicon.ico
+[12/09 03:32:08] "GET /favicon.ico HTTP/1.1" 404 11096
+[12/09 03:37:26] Internal Server Error: /api/text/_ian_gallard/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/actions.py", line 11, in extract_raw
+    lines = found.first().extract_raw()
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 1490, in extract_raw
+    if getattr(self, f"knowledges{n}") > 0:
+       ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Creature' object has no attribute 'knowledges0'. Did you mean: 'knowledge0'?
+[12/09 03:37:26] "GET /api/text/_ian_gallard/ HTTP/1.1" 500 83211
+[12/09 03:37:26] Not Found: /favicon.ico
+[12/09 03:37:26] "GET /favicon.ico HTTP/1.1" 404 11096
+[12/09 03:40:30] Not Found: /favicon.ico
+[12/09 03:40:30] "GET /favicon.ico HTTP/1.1" 404 11096
+[12/09 03:41:01] Not Found: /favicon.ico
+[12/09 03:41:01] "GET /favicon.ico HTTP/1.1" 404 11096
+[12/09 03:43:16] Not Found: /favicon.ico
+[12/09 03:43:16] "GET /favicon.ico HTTP/1.1" 404 11096
+[12/09 03:57:46] Not Found: /favicon.ico
+[12/09 03:57:46] "GET /favicon.ico HTTP/1.1" 404 11096
+[12/09 03:59:17] Not Found: /favicon.ico
+[12/09 03:59:17] "GET /favicon.ico HTTP/1.1" 404 11096
+[12/09 04:03:49] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1864
+[12/09 11:24:41] Not Found: /ajax/collector_action/add_ghoul/Johanna_Kemp/
+[12/09 11:24:41] "GET /ajax/collector_action/add_ghoul/Johanna_Kemp/ HTTP/1.1" 404 11198
+[12/09 11:24:52] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1864
+[12/09 11:26:21] Not Found: /ajax/collector_action/refix_all/Johanna_Kemp/
+[12/09 11:26:21] "GET /ajax/collector_action/refix_all/Johanna_Kemp/ HTTP/1.1" 404 11198
+[12/09 11:26:50] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1864
+[12/09 14:36:31] Not Found: /ajax/collector_action/add_ghoul/Lukas_Zigor/
+[12/09 14:36:31] "GET /ajax/collector_action/add_ghoul/Lukas_Zigor/ HTTP/1.1" 404 11195
+[12/09 14:36:46] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1864
+[12/09 14:37:12] Not Found: /ajax/collector_action/refix_all/Lukas_Zigor/
+[12/09 14:37:12] "GET /ajax/collector_action/refix_all/Lukas_Zigor/ HTTP/1.1" 404 11195
+[12/09 14:37:56] Not Found: /favicon.ico
+[12/09 14:39:00] Not Found: /ajax/display/crossover_sheet/Lukas Zigor/
+[12/09 14:39:00] "GET /ajax/display/crossover_sheet/Lukas%20Zigor/ HTTP/1.1" 404 11188
+[12/09 17:14:28] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1864
+[12/09 17:17:05] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1864
+[12/09 17:18:11] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1864
+[12/09 17:30:17] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1864
+[12/09 17:30:48] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1864
+[13/09 01:01:07] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1864
+[13/09 01:02:52] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1864
+[13/09 01:04:04] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1864
+[13/09 01:07:12] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1864
+[13/09 01:07:42] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1864
+[13/09 01:08:34] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1864
+[13/09 01:10:37] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1864
+[13/09 01:12:49] Internal Server Error: /ajax/list/creatures/1/all/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 157, in get_list
+    list_html = list_template.render(list_context)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/template/defaulttags.py", line 325, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/template/defaulttags.py", line 241, in render
+    nodelist.append(node.render_annotated(context))
+                    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/template/loader_tags.py", line 199, in render
+    template = context.template.engine.select_template(template_name)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/template/engine.py", line 206, in select_template
+    return self.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/template/engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/template/base.py", line 196, in compile_nodelist
+    return parser.parse()
+           ~~~~~~~~~~~~^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/template/base.py", line 481, in parse
+    raise self.error(token, e)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/template/base.py", line 479, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/template/base.py", line 597, in compile_filter
+    return FilterExpression(token, self)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/template/base.py", line 698, in __init__
+    raise TemplateSyntaxError(
+    ...<2 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: ':upper' from 'c.creature:upper'
+[13/09 01:12:49] "GET /ajax/list/creatures/1/all/ HTTP/1.1" 500 199462
+[13/09 01:12:50] Internal Server Error: /ajax/list/creatures/1/all/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 157, in get_list
+    list_html = list_template.render(list_context)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/template/defaulttags.py", line 325, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/template/defaulttags.py", line 241, in render
+    nodelist.append(node.render_annotated(context))
+                    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/template/loader_tags.py", line 199, in render
+    template = context.template.engine.select_template(template_name)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/template/engine.py", line 206, in select_template
+    return self.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/template/engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/template/base.py", line 196, in compile_nodelist
+    return parser.parse()
+           ~~~~~~~~~~~~^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/template/base.py", line 481, in parse
+    raise self.error(token, e)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/template/base.py", line 479, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/template/base.py", line 597, in compile_filter
+    return FilterExpression(token, self)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/template/base.py", line 698, in __init__
+    raise TemplateSyntaxError(
+    ...<2 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: ':upper' from 'c.creature:upper'
+[13/09 01:12:50] "GET /ajax/list/creatures/1/all/ HTTP/1.1" 500 199462
+[13/09 01:13:24] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1864
+[13/09 01:16:46] Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 84, in index
+    return render(request, 'collector/index.html', context=context)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/compressor/templatetags/compress.py", line 160, in render
+    return self.render_compressed(
+           ~~~~~~~~~~~~~~~~~~~~~~^
+        context, self.kind, self.mode, forced=forced, log=log, verbosity=verbosity
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/compressor/templatetags/compress.py", line 131, in render_compressed
+    rendered_output = compressor.output(mode, forced=forced, basename=file_basename)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/compressor/css.py", line 55, in output
+    ret.append(subnode.output(*args, **kwargs))
+               ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/compressor/css.py", line 57, in output
+    return super().output(*args, **kwargs)
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/compressor/base.py", line 367, in output
+    output = "\n".join(self.filter_input(forced))
+                       ~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/compressor/base.py", line 294, in filter_input
+    for hunk in self.hunks(forced):
+                ~~~~~~~~~~^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/compressor/base.py", line 269, in hunks
+    precompiled, value = self.precompile(value, **options)
+                         ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/compressor/base.py", line 347, in precompile
+    return True, filter.input(**kwargs)
+                 ~~~~~~~~~~~~^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django_libsass.py", line 148, in input
+    return compile(filename=self.filename,
+                   output_style=OUTPUT_STYLE,
+                   source_comments=SOURCE_COMMENTS)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django_libsass.py", line 135, in compile
+    output = sass.compile(**kwargs)
+  File "/home/zaffarelli/.virtualenvs/ww/lib64/python3.13/site-packages/sass.py", line 725, in compile
+    raise CompileError(v)
+sass.CompileError: Error: Invalid CSS after "            flex": expected "}", was ": 0 1 40ex;"
+        on line 1161:13 of collector/static/collector/css/main.scss
+>>             flex: 0 1 40ex;
+
+   ------------^
+
+[13/09 01:16:46] "GET / HTTP/1.1" 500 305540
+[13/09 01:16:46] Not Found: /favicon.ico
+[13/09 01:16:46] "GET /favicon.ico HTTP/1.1" 404 11096
+[13/09 01:16:59] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1864
+[13/09 01:17:32] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1864
+[13/09 01:19:38] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1864
+[13/09 01:20:03] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1864
+[13/09 01:22:38] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1864
+[13/09 01:24:32] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1864
+[13/09 01:25:06] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1864
+[13/09 01:25:40] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1864
+[13/09 01:26:27] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1864
+[13/09 01:26:58] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1864
+[13/09 01:28:58] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1864
+[13/09 01:30:04] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1864
+[13/09 01:30:38] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1864
+[13/09 01:31:03] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1864
+[13/09 01:31:14] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1864
+[13/09 01:31:36] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1864
+[13/09 01:52:05] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1864
+[13/09 01:56:31] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1864
+[13/09 01:58:21] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1864
+[13/09 01:59:04] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1864
+[13/09 01:59:22] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1864
+[13/09 01:59:45] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1864
+[13/09 02:01:39] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1864
+[13/09 02:05:00] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1864
+[13/09 02:05:29] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1864
+[13/09 02:06:03] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1864
+[13/09 02:06:12] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1864
+[13/09 02:06:31] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1864
+[13/09 02:06:43] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1864
+[13/09 02:07:06] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1864
+[13/09 02:07:58] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1864
+[13/09 02:08:13] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1864
+[13/09 02:08:52] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1864
+[13/09 02:09:18] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1864
+[13/09 02:09:48] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1864
+[13/09 02:10:07] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1864
+[13/09 02:10:22] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1864
+[13/09 02:10:36] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1864
+[13/09 02:10:56] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1864
+[13/09 02:11:07] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1864
+[13/09 02:11:26] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1864
+[13/09 02:12:09] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1864
+[13/09 02:13:06] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1864
+[13/09 02:15:03] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1864
+[13/09 02:15:21] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1864
+[13/09 02:15:48] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1864
+[13/09 02:16:35] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1864
+[13/09 02:17:09] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1864
+[13/09 02:17:36] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1864
+[13/09 02:19:12] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1864
+[13/09 02:21:43] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1864
+[13/09 02:21:56] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1864
+[13/09 02:22:09] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1864
+[13/09 02:22:22] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1864
+[13/09 02:23:24] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1864
+[13/09 02:24:07] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1864
+[13/09 02:35:19] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1864
+[13/09 02:37:32] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1864
+[13/09 02:37:51] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1864
+[13/09 02:38:18] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1864
+[13/09 02:38:28] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1864
+[13/09 02:40:55] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1864
+[14/09 11:22:23] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1864
+[14/09 11:24:25] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1864
+[14/09 11:28:16] Internal Server Error: /ajax/display/adventure_sheet/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 512, in adventure_sheet
+    j, k = character_for(rid, None, idx)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 416, in character_for
+    return j, k
+           ^
+UnboundLocalError: cannot access local variable 'j' where it is not associated with a value
+[14/09 11:28:16] "GET /ajax/display/adventure_sheet/ HTTP/1.1" 500 103558
+[14/09 11:28:22] Internal Server Error: /ajax/display/adventure_sheet/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 512, in adventure_sheet
+    j, k = character_for(rid, None, idx)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 416, in character_for
+    return j, k
+           ^
+UnboundLocalError: cannot access local variable 'j' where it is not associated with a value
+[14/09 11:28:22] "GET /ajax/display/adventure_sheet/ HTTP/1.1" 500 103558
+[14/09 13:52:04] Not Found: /favicon.ico
+[14/09 13:52:29] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1864
+[14/09 16:05:10] Not Found: /favicon.ico
+[14/09 16:07:58] Internal Server Error: /ajax/display/crossover_sheet/_anatoli_chemko/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 438, in display_crossover_sheet
+    j, k = character_for(slug, option)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 396, in character_for
+    k["others"] = c.others()
+                  ~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 2014, in others
+    fmt_list.append({'idx': idx, 'item': f'{words[0]}', 'date': f'{words[1]}', 'notes': f'{words[2]}'})
+                                                                                           ~~~~~^^^
+IndexError: list index out of range
+[14/09 16:07:58] "GET /ajax/display/crossover_sheet/_anatoli_chemko/ HTTP/1.1" 500 103542
+[14/09 16:40:21] Not Found: /favicon.ico
+[14/09 16:40:21] "GET /favicon.ico HTTP/1.1" 404 11095

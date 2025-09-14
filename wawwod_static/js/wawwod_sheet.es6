@@ -1173,18 +1173,25 @@ class WawwodSheet {
 
             let histories = me.data["experience_expenditure"].split(";")
             let all_histo_exp = []
+
             _.forEach(histories, (history) => {
-                let terms = history.split("=")
-                let txt = ""
-                if (terms[0] == "loss"){
-                    let vals = terms[1].split(">")
-                    txt = `- Special penalty: ${terms[2]} loses ${vals[0]} point(s).`
-                 }else{
-                    let vals = terms[1].split(">")
-                    txt = `- ${terms[2]} xp(s) to bring ${terms[0]} from ${vals[0]} to ${vals[1]} point(s).`
+                if (history.length > 0){
+                    let terms = history.split("=")
+                    let txt = ""
+                    if (terms[0] == "loss"){
+                        let vals = terms[1].split(">")
+                        txt = `- Special penalty: ${terms[2]} loses ${vals[0]} point(s).`
+                     }else{
+                        let vals = terms[1].split(">")
+                        txt = `- ${terms[2]} xp(s) to bring ${terms[0]} from ${vals[0]} to ${vals[1]} point(s).`
+                    }
+                    all_histo_exp.push(txt)
+                }else{
+                    all_histo_exp.push(`No experience expenditure right now.`)
                 }
-                all_histo_exp.push(txt)
+
             })
+
             ox = me.stepx * 12.5
             oy += 1 * me.stepy
             let line_count = me.appendText("Transactions:",all_histo_exp,ox,oy,me.stepx*10)

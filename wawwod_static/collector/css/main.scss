@@ -1140,3 +1140,39 @@ fieldset{
         display:none;
     }
 }
+
+.line_block{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+    align-items: flex-start;
+    gap:2px;
+    & .line_bit{
+        padding:3pt;
+        border:3pt solid #1010107f;
+        border-radius:3pt;
+        &.name{
+            flex: 0 0 20ex;
+            order:1;
+            color:#f07f4f;
+        }
+        &.family{
+            order:3;
+            flex: 0 0 20ex;
+            text-align:center;
+        }
+        &.creature_type{
+            order:2;
+            flex: 0 0 10ex;
+            text-align:center;
+        }
+        &.options{
+            order:4;
+            flex: 1 0 auto;
+        }
+        &.tail{
+             order:5;
+        }
+    }
+}

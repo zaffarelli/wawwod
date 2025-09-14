@@ -1,11 +1,13 @@
 {% load wod_filters %}
-<div class='avatar_link {% if c.is_locked %}locked{%endif%} {{c.creature}}'>
-  <span class='toggle_name ' title="{{c.creature|title}} [{{c.groupspec}}]&#10&#13 [{{c.faction}}]">
-    {% if c.player %}[{{c.player}}][{{c.groupspec}}]{% endif %}
-    {{ c.name }} ({{c.family}} {{ c.creature }} )
-  </span>
-  <div class="creature_links">
+<div class='avatar_link {{c.creature}}'>
+  <span class='toggle_name line_block' title="{{c.creature|title}}&#10{{c.group}}&#10{{c.groupspec}}&#10Faction:{{c.faction}}">
+    <span class="line_bit name">{{c.name}}</span>
+    <span class="line_bit options">{% if c.player %}{{c.player}}{%else%}&nbsp;{% endif %}</span>
+    <span class="line_bit family">{{c.family}}&nbsp;</span>
+    <span class="line_bit creature_type">{{c.creature|title}}</span>
+  <div class="creature_links line_bit tail">
   <span class="display" action="crossover_sheet" param="Sheet for {{c.rid}}"><i class="fas fa-file"></i></span>
   <span class='view_creature' id="{{c.rid}}" title='See {{c.name|safe}}: {{c.rid}}'><i class="fas fa-eye"></i></span>
   </div>
+  </span>
 </div>
