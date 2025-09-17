@@ -2051,7 +2051,8 @@ class Creature(models.Model):
                     a = z.name.upper()
                     b = str(z.level)
                     c = z.alternative_name
-                    d = "-- µ " + z.technical_notes
+                    #d = z.description + "µ-- System: " + z.technical_notes
+                    d = "System: " + z.technical_notes
                     list.append(f"{a}§{b}§{c}§{d}")
         elif self.creature in ["garou"]:
             from collector.models.gifts import Gift
@@ -2096,16 +2097,14 @@ class Creature(models.Model):
     def nature_notes(self):
         fmt_list = []
         from collector.models.archetypes import Archetype
-        archetypes = Archetype.objects.filter(name=self.nature.lower())
+        archetypes = Archetype.objects.filter(name=self.nature)
         if len(archetypes) == 1:
             archetype = archetypes.first()
-            fmt_list.append({'idx': 0, 'item': f'{archetype.name.upper()}', 'notes': f'{archetype.system}',
-                             'description': f'{archetype.description}'})
-        archetypes = Archetype.objects.filter(name=self.demeanor.lower())
+            fmt_list.append({'idx': 0, 'item': f'{archetype.name.upper()} [nature: what you are]', 'notes': f'{archetype.description}µSystem:{archetype.system}'})
+        archetypes = Archetype.objects.filter(name=self.demeanor)
         if len(archetypes) == 1:
             archetype = archetypes.first()
-            fmt_list.append({'idx': 1, 'item': f'{archetype.name.upper()} (demeanor)', 'notes': f'',
-                             'description': f'{archetype.description}'})
+            fmt_list.append({'idx': 1, 'item': f'{archetype.name.upper()} [demeanor: how you behave]', 'notes': f'{archetype.description}'})
 
         # else:
         #     list = self.notes_on_naturedemeanor.split('\r\n');
@@ -2119,15 +2118,18 @@ class Creature(models.Model):
 
     def meritsflaws_notes(self):
         list = self.notes_on_meritsflaws.split('\r\n');
+        print("meritsflaws:",len(list))
         fmt_list = []
         idx = 0
         for e in list:
             if len(e) > 2:
                 words = e.split('§')
-                fmt_list.append(
-                    {'idx': idx, 'item': f'{words[0].upper()}', 'type': f'{words[1]}', 'value': f'{words[2]}',
-                     'notes': f'{words[3]}'})
-                idx += 1
+                print("words:", len(words))
+                if len(words)>=4:
+                    fmt_list.append(
+                        {'idx': idx, 'item': f'{words[0].upper()}', 'type': f'{words[1]}', 'value': f'{words[2]}',
+                         'notes': f'{words[3]}'})
+                    idx += 1
         return fmt_list
 
     def discipline_helpers(self):

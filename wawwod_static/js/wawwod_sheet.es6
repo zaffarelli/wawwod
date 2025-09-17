@@ -530,15 +530,13 @@ class WawwodSheet {
     }
 
     title(name, ox, oy, source) {
-        let me = this;
-        let item = source.append('g');
-        item.append('text')
+        let item = source.append('text')
             .attr("x", ox)
             .attr("y", oy)
             .attr("dy", 10)
             .style("text-anchor", 'middle')
-            .style("font-family", me.title_font)
-            .style("font-size", me.big_font_size + 'pt')
+            .style("font-family", this.title_font)
+            .style("font-size", this.big_font_size + 'pt')
             .style("fill", '#111')
             .style("stroke", '#888')
             .style("stroke-width", '0.5pt')
@@ -1199,18 +1197,22 @@ class WawwodSheet {
         }
     }
 
-    appendText(title,txt,ox,oy,width){
+    appendText(title,base_txt="",ox,oy,width,source=undefined){
         let me = this
         let lines_written = 0
-        let aline = me.daddy.append('line')
-            .attr('x1',ox)
-            .attr('y1',oy-me.medium_font_size)
-            .attr('x2',ox+width)
-            .attr('y2',oy-me.medium_font_size)
-            .style("stroke", me.user_stroke)
-            .style("stroke-width", '3pt')
-            .attr("opacity",0)
-        let text = me.daddy.append('text')
+        if (!source){
+            source = me.daddy
+        }
+
+//         let aline = source.append('line')
+//             .attr('x1',ox)
+//             .attr('y1',oy-me.medium_font_size)
+//             .attr('x2',ox+width)
+//             .attr('y2',oy-me.medium_font_size)
+//             .style("stroke", me.user_stroke)
+//             .style("stroke-width", '3pt')
+//             .attr("opacity",0)
+        let text = source.append('text')
             .attr('x',ox-me.medium_font_size)
             .attr('y',oy)
             .attr('dx', 0)
@@ -1228,6 +1230,7 @@ class WawwodSheet {
             lines_written += 1
             }
         let txt_index = 0
+        let txt = base_txt.split("µ")
         while (txt.length>0){
             let line = txt.shift()
             let tspan = text.append("tspan")

@@ -402,6 +402,7 @@ def character_for(slug, option=None, idx=-1):
             k["srs"] = c.specialities_rationale
         tn = c.traits_notes()
         k["traits_notes"] = tn
+        print(tn)
         chronicle = get_current_chronicle()
         if chronicle:
             k["chronicle_name"] = chronicle.name

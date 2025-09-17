@@ -31221,3 +31221,130 @@ IndexError: list index out of range
 [14/09 16:07:58] "GET /ajax/display/crossover_sheet/_anatoli_chemko/ HTTP/1.1" 500 103542
 [14/09 16:40:21] Not Found: /favicon.ico
 [14/09 16:40:21] "GET /favicon.ico HTTP/1.1" 404 11095
+[15/09 20:37:27] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[16/09 00:25:47] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[17/09 02:23:21] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[17/09 02:27:09] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[17/09 03:51:29] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[17/09 03:52:19] Not Found: /favicon.ico
+[17/09 03:54:59] Not Found: /favicon.ico
+[17/09 03:56:34] Internal Server Error: /ajax/display/crossover_sheet/_anatoli_chemko/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 439, in display_crossover_sheet
+    j, k = character_for(slug, option)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 412, in character_for
+    k["meritsflaws_notes"] = c.meritsflaws_notes()
+                             ~~~~~~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 2127, in meritsflaws_notes
+    {'idx': idx, 'item': f'{words[0].upper()}', 'type': f'{words[1]}', 'value': f'{words[2]}',
+                                                           ~~~~~^^^
+IndexError: list index out of range
+[17/09 03:56:34] "GET /ajax/display/crossover_sheet/_anatoli_chemko/ HTTP/1.1" 500 107443
+[17/09 03:56:45] Internal Server Error: /ajax/display/crossover_sheet/_anatoli_chemko/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 439, in display_crossover_sheet
+    j, k = character_for(slug, option)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 412, in character_for
+    k["meritsflaws_notes"] = c.meritsflaws_notes()
+                             ~~~~~~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 2127, in meritsflaws_notes
+    {'idx': idx, 'item': f'{words[0].upper()}', 'type': f'{words[1]}', 'value': f'{words[2]}',
+                                                           ~~~~~^^^
+IndexError: list index out of range
+[17/09 03:56:45] "GET /ajax/display/crossover_sheet/_anatoli_chemko/ HTTP/1.1" 500 107443
+[17/09 03:57:45] Internal Server Error: /ajax/display/crossover_sheet/_anatoli_chemko/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 439, in display_crossover_sheet
+    j, k = character_for(slug, option)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 412, in character_for
+    k["meritsflaws_notes"] = c.meritsflaws_notes()
+                             ~~~~~~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 2127, in meritsflaws_notes
+    {'idx': idx, 'item': f'{words[0].upper()}', 'type': f'{words[1]}', 'value': f'{words[2]}',
+                                                           ~~~~~^^^
+IndexError: list index out of range
+[17/09 03:57:45] "GET /ajax/display/crossover_sheet/_anatoli_chemko/ HTTP/1.1" 500 107443
+[17/09 03:59:59] Internal Server Error: /ajax/display/crossover_sheet/_anatoli_chemko/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 439, in display_crossover_sheet
+    j, k = character_for(slug, option)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 412, in character_for
+    k["meritsflaws_notes"] = c.meritsflaws_notes()
+                             ~~~~~~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 2121, in meritsflaws_notes
+    print("meritsflaws:"+len(list))
+          ~~~~~~~~~~~~~~^~~~~~~~~~
+TypeError: can only concatenate str (not "int") to str
+[17/09 03:59:59] "GET /ajax/display/crossover_sheet/_anatoli_chemko/ HTTP/1.1" 500 105445
+[17/09 04:00:16] Internal Server Error: /ajax/display/crossover_sheet/_anatoli_chemko/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 439, in display_crossover_sheet
+    j, k = character_for(slug, option)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 412, in character_for
+    k["meritsflaws_notes"] = c.meritsflaws_notes()
+                             ~~~~~~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 2128, in meritsflaws_notes
+    {'idx': idx, 'item': f'{words[0].upper()}', 'type': f'{words[1]}', 'value': f'{words[2]}',
+                                                           ~~~~~^^^
+IndexError: list index out of range
+[17/09 04:00:16] "GET /ajax/display/crossover_sheet/_anatoli_chemko/ HTTP/1.1" 500 107427
+[17/09 04:01:10] Internal Server Error: /ajax/display/crossover_sheet/_anatoli_chemko/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 439, in display_crossover_sheet
+    j, k = character_for(slug, option)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 412, in character_for
+    k["meritsflaws_notes"] = c.meritsflaws_notes()
+                             ~~~~~~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 2128, in meritsflaws_notes
+    {'idx': idx, 'item': f'{words[0].upper()}', 'type': f'{words[1]}', 'value': f'{words[2]}',
+                                                           ~~~~~^^^
+IndexError: list index out of range
+[17/09 04:01:10] "GET /ajax/display/crossover_sheet/_anatoli_chemko/ HTTP/1.1" 500 107428
+[17/09 04:01:38] Internal Server Error: /ajax/display/crossover_sheet/_anatoli_chemko/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/ww/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 439, in display_crossover_sheet
+    j, k = character_for(slug, option)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 412, in character_for
+    k["meritsflaws_notes"] = c.meritsflaws_notes()
+                             ~~~~~~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 2129, in meritsflaws_notes
+    {'idx': idx, 'item': f'{words[0].upper()}', 'type': f'{words[1]}', 'value': f'{words[2]}',
+                                                           ~~~~~^^^
+IndexError: list index out of range
+[17/09 04:01:38] "GET /ajax/display/crossover_sheet/_anatoli_chemko/ HTTP/1.1" 500 107432
+[17/09 04:11:28] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
