@@ -178,6 +178,7 @@ class CrossOverSheet extends WawwodSheet {
 
     fillRiteNotes(oy) {
         let me = this;
+        return
         let box_spacing_y = 10.25;
         let rite_note = me.character.append('g')
             .attr('class', 'rite_notes')
@@ -356,23 +357,25 @@ class CrossOverSheet extends WawwodSheet {
         if (me.blank) {
             return
         }
-        let entries = sub.data(me.data['traits_notes'])
-        console.debug(me.data['traits_notes'])
-        let entry = entries.enter()
-        entry.append("g")
+        let entry = sub.selectAll(".trait_entry")
+            .data(me.data['traits_notes'])
+        let entry_in = entry.enter()
+            .append("g")
             .attr('class','trait_entry')
             .attr('id',(d) => 'trait_entry_'+d.idx )
         d3.selectAll(`.trait_entry`).attr('fake', (d) => {
                 let txt_width = (base_x + 0.4) * me.stepx
                 let spacing_y = 1
                 let current = d3.select(`#trait_entry_${d.idx}`)
-                if (d.idx>1){
+                if (d.idx>0){
                     let nb = d3.select(`#trait_entry_${d.idx-1}`).attr("fake")
                     spacing_y = parseInt(nb)+1
                 }
-//                 console.log(d.notes)
                 oy += (spacing_y) * me.medium_font_size*1.25
-                let txt = d.notes.replace('-- µ','')
+                let txt = d.notes
+                if (txt.startsWith("µ")){
+                    txt = txt.replace("µ","").trim()
+                }
                 let title = d.item + ": " + me.as_dots(d.score) + ' - ' + d.title
                 let lines = me.appendText(title,txt,txt_width,oy,10 * me.stepx,current)
                 return lines
@@ -385,31 +388,38 @@ class CrossOverSheet extends WawwodSheet {
         let base_x = 12.25
         let topic = me.character.append('g')
             .attr('class', 'notes_on_others')
-        me.title('Others', 17.5 * me.stepx, oy , me.daddy)
+        let sub = topic.append("g")
+                .attr('id', 'others_entries')
+        me.title('Others', 17.5 * me.stepx, oy , topic)
         oy += 0.5 * me.stepy
         if (me.blank) return
-        let entries = topic.data(me.data['others'])
-        console.log(me.data['others'])
-        let entry = entries.enter()
-            .append('g')
-            .attr('class', 'others_notes')
-        entry.append('g')
-            .attr('id',(d) => 'other_entry_'+d['idx'] )
-            .attr('fake',function (d) {
-                let atx = (base_x + 0.4) * me.stepx
+        let entry = sub.selectAll(".others_entry")
+            .data(me.data['others'])
+        let entry_in = entry.enter()
+            .append("g")
+            .attr('class','others_entry')
+            .attr('id',(d) => 'others_entry_'+d.idx )
+        let max = me.data['others'].length
+        console.log("max",max)
+        d3.selectAll(`.others_entry`).attr('fake', (d) => {
+                let txt_width = (base_x + 0.4) * me.stepx
                 let spacing_y = 1
-                if (d.idx > 0){
-                    spacing_y = parseInt(d3.select('#other_entry_'+(d.idx-1)).attr("fake"))+1
+                let current = d3.select(`#others_entry_${d.idx}`)
+                console.log(`#others_entry_${d.idx}`)
+                if (d.idx>0){
+                    let nb = d3.select(`#others_entry_${d.idx-1}`).attr("fake")
+                    spacing_y = parseInt(nb)+1
                 }
-                oy += spacing_y * me.medium_font_size*1.25
-                //let aty = oy
-                let txt = d.notes.split("µ")
-                let details = txt.shift().replace("--","")
-                //let atitle = me.as_dots(d.score) + ' - ' + d.item + ' - ' + d.title + details
-                let atitle = d.date.toUpperCase() + ': ' + d.item + ' - ' + details
-                let lines = me.appendText(atitle,txt,atx,oy,10 * me.stepx,entry)
+                oy += (spacing_y) * me.medium_font_size*1.25
+                let txt = d.notes.trim()
+                if (txt.startsWith("µ")){
+                    txt = txt.replace("µ","")
+                }
+                let title = d.date.toUpperCase() + ": " + d.item
+                let lines = me.appendText(title,txt,txt_width,oy,10 * me.stepx,current)
                 return lines
             })
+
     }
 
     ffffillOthers(oy, pos = '', pp = 0) {
@@ -453,198 +463,79 @@ class CrossOverSheet extends WawwodSheet {
             })
     }
 
-    fillNatureNotes(oy, pos = '', pp = 0) {
-        let box_spacing_y = 8.0
-        let box_spacing_x = 10.0
-        let base_x = 12.25
-        let min = 0 + pp*10
-        let max = 4 + pp*10
-        let right_offset = 0
-        if (pos == 'left') {
-            base_x = 1.5
-        }
-        if (pos == 'right'){
-            min += 5
-            max += 5
-            right_offset = 5
-        }
-        let group = this.character.append('g')
-            .attr('class', 'notes_on_nature_demeanor')
-        this.daddy = group
-        //this.title('Archetypes', 6.5 * this.stepx, oy , group)
-        if (pos == ''){
-            this.title('Archetypes', 6.5 * this.stepx, oy , group)
-            oy += 0.5*this.stepy
-        }
-        if (this.blank) {
-            return
-        }
+    fillNatureNotes(oy) {
         let me = this
-        console.log(me.data.nature_notes)
-        let item = group.selectAll('.nature_demeanor')
-            .data(me.data.nature_notes)
-            .enter()
-
-        let item_in = item.append('g')
-            .attr('class', 'nd_notes')
-        item_in.append('g')
-            .attr('id',(d) => 'nd_notes_'+d.idx )
-            .attr('fake', (d) => {
-                console.debug("HERE:",d)
-                let atx = (base_x + 0.4) * me.stepx
+        let base_x = 1.25
+        let topic = me.character.append('g')
+            .attr('class', 'notes_on_archetypes')
+        let sub = topic.append("g")
+                .attr('id', 'archetypes_entries')
+        me.title('Archetypes', 6.5 * me.stepx, oy , topic)
+        oy += 0.5 * me.stepy
+        if (me.blank) return
+        let entry = sub.selectAll(".archetypes_entry")
+            .data(me.data['nature_notes'])
+        let entry_in = entry.enter()
+            .append("g")
+            .attr('class','archetypes_entry')
+            .attr('id',(d) => 'archetypes_entry_'+d.idx )
+        d3.selectAll(`.archetypes_entry`).attr('fake', (d) => {
+                let txt_width = (base_x + 0.4) * me.stepx
                 let spacing_y = 1
+                let current = d3.select(`#archetypes_entry_${d.idx}`)
                 if (d.idx>0){
-                    spacing_y = parseInt(d3.select('#nature_demeanor_'+(d.idx-1)).attr("fake"))+1
+                    let nb = d3.select(`#archetypes_entry_${d.idx-1}`).attr("fake")
+                    spacing_y = parseInt(nb)+1
                 }
                 oy += (spacing_y) * me.medium_font_size*1.25
-                let aty = oy
-                me.daddy = item_in
-                let txt = d.notes.split("µ")
-                let details = txt.shift().replace("--","System --- ")
-                let atitle = d.idx + ': ' + d.item + ' - ' + details + " µ " + d.description
-                let lines = me.appendText(atitle,txt,atx,aty,10 * me.stepx)
+                let txt = d.notes.trim()
+                if (txt.startsWith("µ")){
+                    txt = txt.replace("µ","")
+                }
+                let title = d.item
+                let lines = me.appendText(title,txt,txt_width,oy,10 * me.stepx,current)
                 return lines
             })
+
     }
 
 
 
-    oldfillNatureNotes(oy) {
-        let n_notes = this.character.append('g')
-            .attr('class', 'note_on_nature')
-        this.daddy = this.n_notes;
-        this.title('About Nature & Demeanor', 6.5 * this.stepx, oy, n_notes)
-        oy += 0.5*this.stepy
-        if (this.blank) {
-            return
-        }
-        let n_notes_item = n_notes.selectAll('nature_event')
-            .data(this.data['nature_notes'])
-        let n_notes_in = n_notes_item.enter()
-            .append('g')
-            .attr('class', 'nature_event')
-        let n_notes_in_rect = n_notes_in.append('rect')
-            .attr("x", function (d) {
-                return (1.5) * this.stepx;
-            })
-            .attr("y", function (d) {
-                return oy + d.idx * 3.5 * this.stepy;
-            })
-            .attr("rx", "8pt")
-            .attr("ry", "8pt")
-            .attr("width", function (d) {
-                return this.stepx * 9;
-            })
-            .attr("height", function (d) {
-                return this.stepy * 3.25;
-            })
-            .style("fill", "white")
-            .style("stroke", "#808080")
-        ;
-        n_notes_in.append('text')
-            .attr("x", function (d) {
-                return 1.75 * this.stepx;
-            })
-            .attr('y', function (d) {
-                return oy + (d.idx * 3.5 + 0.5) * this.stepy;
-            })
-            .text(function (d) {
-                return d.item
-            })
-            .style('font-family', this.user_font)
-            .style('font-size', this.small_font_size + "px")
-            .style('text-anchor', "start")
-            .style("fill", this.user_fill)
-            .style("stroke", this.user_stroke)
-        let n_notes_in_desc = n_notes_in.append('text')
-            .attr('x', function (d) {
-                return 1.9 * this.stepx;
-            })
-            .attr('y', function (d) {
-                return oy + 0.85 * this.stepy + d.idx * 3.5 * this.stepy;
-            })
-            .attr('dx', 0)
-            .attr('dy', 0)
-            .text(function (d) {
-                return "Description --- "+d.description;
-            })
-            .style("text-anchor", 'start')
-            .style("font-family", this.user_font)
-            .style("font-size", this.small_font_size + "px")
-            .style("fill", this.user_fill)
-            .style("stroke", this.user_stroke)
-            .style("stroke-width", '0.05pt')
-        n_notes_in_desc.call(wrap, 8.5 * this.stepx, true, this.small_font_size);
-        let zy = oy+ 2.0 * this.stepy;
-        let n_notes_in_note = n_notes_in.append('text')
-            .attr('x', function (d) {
-                return 1.9 * this.stepx;
-            })
-            .attr('y', function (d) {
-                return zy + 0.85 * this.stepy + d.idx * 3.5 * this.stepy;
-            })
-            .attr('dx', 0)
-            .attr('dy', 0)
-            .text(function (d) {
-                if (d['notes']) {
-                    return "System --- " + d.notes
-                }
-                return ""
-            })
-            .style("text-anchor", 'start')
-            .style("font-family", this.user_font)
-            .style("font-size", this.small_font_size + "px")
-            .style("fill", this.user_fill)
-            .style("stroke", this.user_stroke)
-            .style("stroke-width", '0.05pt')
-        n_notes_in_note.call(wrap, 8.5 * this.stepx, true, this.small_font_size)
-    }
 
     fillMeritsFlawsNotes(oy) {
-        let me = this;
-        let box_spacing_y = 3.0;
-        let mf_note = me.character.append('g')
-            .attr('class', 'mf_notes')
-        me.title('About Merits & Flaws', 6.5 * me.stepx, oy - 0.5 * me.stepy, mf_note)
-        let mf_note_item = mf_note.selectAll('background_note')
+        let me = this
+        let base_x = 1.25
+        let topic = me.character.append('g')
+            .attr('class', 'notes_on_meritsflaws')
+        let sub = topic.append("g")
+                .attr('id', 'meritsflaws_entries')
+        me.title('Merits & Flaws', 6.5 * me.stepx, oy , topic)
+        oy += 0.5 * me.stepy
+        if (me.blank) return
+        let entry = sub.selectAll(".meritsflaws_entry")
             .data(me.data['meritsflaws_notes'])
-        let mf_note_in = mf_note_item.enter()
-            .append('g')
-            .attr('class', 'mf_note')
-        mf_note_in.append('text')
-            .attr("x", function (d) {
-                return 6.5 * me.stepx;
+        let entry_in = entry.enter()
+            .append("g")
+            .attr('class','meritsflaws_entry')
+            .attr('id',(d) => 'meritsflaws_entry_'+d.idx )
+        d3.selectAll(`.meritsflaws_entry`).attr('fake', (d) => {
+                let txt_width = (base_x + 0.4) * me.stepx
+                let spacing_y = 1
+                let current = d3.select(`#meritsflaws_entry_${d.idx}`)
+                if (d.idx>0){
+                    let nb = d3.select(`#meritsflaws_entry_${d.idx-1}`).attr("fake")
+                    spacing_y = parseInt(nb)+1
+                }
+                oy += (spacing_y) * me.medium_font_size*1.25
+                let txt = d.notes.trim()
+                if (txt.startsWith("µ")){
+                    txt = txt.replace("µ","")
+                }
+                let title = d.item + " ("+d.type+" "+ me.as_dots(d.value)+")"
+                let lines = me.appendText(title,txt,txt_width,oy,10 * me.stepx,current)
+                return lines
             })
-            .attr('y', function (d) {
-                return oy + (d['idx'] * box_spacing_y + 0.30) * me.stepy;
-            })
-            .text(function (d) {
-                return d['item'] + " (" + d['type'] + ": " + me.as_dots(d['value']) + ")"
-            })
-            .style('font-family', me.title_font)
-            .style('font-size', me.medium_font_size)
-            .style('text-anchor', "middle")
-            .style("fill", me.draw_fill)
-            .style("stroke", me.draw_stroke)
-            .style("stroke-width", "0.05pt")
-        ;
-        let mf_note_in_note = mf_note_in.append('text')
-            .attr("x", function (d) {
-                return 2 * me.stepx;
-            })
-            .attr('y', function (d) {
-                return oy + (d['idx'] * box_spacing_y + 0.75) * me.stepy;
-            })
-            .text(function (d) {
-                return d['notes']
-            })
-            .style('font-family', me.user_font)
-            .style('font-size', me.medium_font_size)
-            .style('text-anchor', "start")
-            .style("fill", me.user_fill)
-            .style("stroke", me.user_stroke)
-            .style("stroke-width", "0.05pt");
-        mf_note_in_note.call(wrap, 8.5 * me.stepx, true, me.medium_font_size);
+
     }
 
     as_dots(value) {
@@ -672,7 +563,7 @@ class CrossOverSheet extends WawwodSheet {
             me.fillNewManyForms(28 * me.stepy)
         } else if (me.page === 2) {
             me.fillNatureNotes(3 * me.stepy)
-            me.fillMeritsFlawsNotes(12 * me.stepy)
+            me.fillMeritsFlawsNotes(16 * me.stepy)
             me.fillDisciplinesNotes(3 * me.stepy)
         } else if (me.page === 3) {
             me.fillRiteNotes(3 * me.stepy)

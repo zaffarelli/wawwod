@@ -1200,8 +1200,11 @@ class WawwodSheet {
     appendText(title,base_txt="",ox,oy,width,source=undefined){
         let me = this
         let lines_written = 0
+        console.log("source:",source)
         if (!source){
             source = me.daddy
+            console.log("daddy")
+            console.log("source:",source)
         }
 
 //         let aline = source.append('line')
@@ -1231,6 +1234,7 @@ class WawwodSheet {
             }
         let txt_index = 0
         let txt = base_txt.split("µ")
+        console.log("txt length:",txt.length)
         while (txt.length>0){
             let line = txt.shift()
             let tspan = text.append("tspan")
