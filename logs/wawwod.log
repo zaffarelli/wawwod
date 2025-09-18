@@ -31348,3 +31348,10 @@ Traceback (most recent call last):
 IndexError: list index out of range
 [17/09 04:01:38] "GET /ajax/display/crossover_sheet/_anatoli_chemko/ HTTP/1.1" 500 107432
 [17/09 04:11:28] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1863
+[17/09 04:47:41] Not Found: /favicon.ico
+[17/09 19:22:47] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1918
+[17/09 19:32:33] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1918
+[17/09 19:33:14] Not Found: /ajax/display/crossover_sheet/Sheet for _heinrich/
+[17/09 19:33:14] "GET /ajax/display/crossover_sheet/Sheet%20for%20_heinrich/ HTTP/1.1" 404 15052
+[17/09 19:34:16] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1918
+[17/09 23:43:04] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1918

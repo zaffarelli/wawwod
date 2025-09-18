@@ -79,7 +79,7 @@ class CrossOverSheet extends WawwodSheet {
         me.decorationText(22.5, 2.25, 0, 'end', me.base_font, me.medium_font_size, me.draw_fill, me.draw_stroke, 0.5, me.post_title+" ("+me.pre_title+")", me.back);
         me.decorationText(1.5, 35.8, -16, 'start', me.base_font, me.small_font_size, me.draw_fill, me.draw_stroke, 0.5, me.guideline, me.back);
         me.decorationText(22.5, 35.7, -16, 'end', me.base_font, me.small_font_size, me.draw_fill, me.draw_stroke, 0.5, "WaWWoD Cross+Over Sheet "+me.release+" ©2025, Red Fox Studios.", me.back);
-        me.decorationText(22.5, 35.9, -16, 'end', me.base_font, me.small_font_size*.5, me.draw_fill, me.draw_stroke, 0.5, "Red Fox Studios are a subsidiary of Pentex Inc.", me.back);
+        me.decorationText(22.5, 35.9, -16, 'end', me.base_font, me.small_font_size*.5, me.draw_fill, me.draw_stroke, 0.5, "Red Fox Studios are a subsidiary of Pentex Inc. zaffarelli@gmail.com", me.back);
         if (me.blank) {
             me.decorationText(22.5, 34.8, 0, 'end', me.base_font, me.small_font_size, me.draw_fill, me.draw_stroke, 0.5, 'Challenge: you make us laugh punk!', me.back);
         } else {
@@ -148,7 +148,7 @@ class CrossOverSheet extends WawwodSheet {
 
                 return value+" - "+title
             })
-            .style('font-family', me.title_font)
+            .style('font-family', me.user_font)
             .style('font-size', me.medium_font_size + "px")
             .style('text-anchor', "start")
             .style("fill", me.draw_fill)
@@ -399,13 +399,15 @@ class CrossOverSheet extends WawwodSheet {
             .append("g")
             .attr('class','others_entry')
             .attr('id',(d) => 'others_entry_'+d.idx )
-        let max = me.data['others'].length
-        console.log("max",max)
-        d3.selectAll(`.others_entry`).attr('fake', (d) => {
+//             .attr('fake',"0")
+//         let max = me.data['others'].length
+//         console.log("max",max)
+//         d3.selectAll(`.others_entry`)
+            .attr('fake', (d) => {
+                console.debug(`#others_entry_${d.idx}`)
                 let txt_width = (base_x + 0.4) * me.stepx
                 let spacing_y = 1
                 let current = d3.select(`#others_entry_${d.idx}`)
-                console.log(`#others_entry_${d.idx}`)
                 if (d.idx>0){
                     let nb = d3.select(`#others_entry_${d.idx-1}`).attr("fake")
                     spacing_y = parseInt(nb)+1
@@ -415,7 +417,8 @@ class CrossOverSheet extends WawwodSheet {
                 if (txt.startsWith("µ")){
                     txt = txt.replace("µ","")
                 }
-                let title = d.date.toUpperCase() + ": " + d.item
+                let title = "▼ "+ d.date.toUpperCase() + ": " + d.item
+
                 let lines = me.appendText(title,txt,txt_width,oy,10 * me.stepx,current)
                 return lines
             })

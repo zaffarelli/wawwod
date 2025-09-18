@@ -133,8 +133,10 @@ class WawwodSheet {
         me.draw_fill = '#222'
         me.user_stroke = '#4C8'
         me.user_fill = '#143'
+        me.user_fill = '#143'
         me.overhead_fill = '#C22'
-        me.user_font = 'Gochi Hand'
+        //me.user_font = 'Gochi Hand'
+        me.user_font = 'Slackside One'
         //me.user_font = 'Whisper'
         me.mono_font = 'Syne Mono'
         me.creature_font = 'Trade Winds'
@@ -1197,7 +1199,7 @@ class WawwodSheet {
         }
     }
 
-    appendText(title,base_txt="",ox,oy,width,source=undefined){
+    appendText(title,base_txt="",ox,oy,width,source){
         let me = this
         let lines_written = 0
         console.log("source:",source)
@@ -1206,7 +1208,9 @@ class WawwodSheet {
             console.log("daddy")
             console.log("source:",source)
         }
-
+        if (!source){
+            return 0
+        }
 //         let aline = source.append('line')
 //             .attr('x1',ox)
 //             .attr('y1',oy-me.medium_font_size)
