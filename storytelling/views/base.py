@@ -3,6 +3,8 @@ from django.template.loader import get_template
 from django.shortcuts import render
 from xhtml2pdf import pisa
 from io import BytesIO
+
+from collector.utils.wod_reference import FONTSET
 from storytelling.models.stories import Story
 from storytelling.models.scenes import Scene
 from collector.utils.helper import json_default, is_ajax

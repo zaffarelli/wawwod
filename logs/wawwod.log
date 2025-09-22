@@ -31429,3 +31429,38 @@ Traceback (most recent call last):
 TypeError: 'Season' object is not callable
 [20/09 11:31:43] "GET / HTTP/1.1" 500 151738
 [20/09 12:53:32] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1918
+[22/09 06:25:50] Internal Server Error: /ajax/display/map/HH/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/storytelling/views/base.py", line 141, in display_map
+    context['fontset'] = FONTSET
+    ~~~~~~~^^^^^^^^^^^
+TypeError: 'str' object does not support item assignment
+[22/09 06:25:50] "GET /ajax/display/map/HH/ HTTP/1.1" 500 83615
+[22/09 06:37:45] Internal Server Error: /ajax/display/map/HH/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/storytelling/views/base.py", line 142, in display_map
+    response['data']['fontset'] = FONTSET
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^
+TypeError: 'str' object does not support item assignment
+[22/09 06:37:45] "GET /ajax/display/map/HH/ HTTP/1.1" 500 90015
+[22/09 06:46:09] Internal Server Error: /ajax/character/svg2pdf/HH/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 612, in svg_to_pdf
+    pages = STATS_NAMES[creature]["sheet"]["pages"]
+            ~~~~~~~~~~~^^^^^^^^^^
+KeyError: 'Hamburg'
+[22/09 06:46:09] "POST /ajax/character/svg2pdf/HH/ HTTP/1.1" 500 1081326

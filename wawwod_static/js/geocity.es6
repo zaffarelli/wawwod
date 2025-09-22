@@ -15,6 +15,8 @@ class GeoCity {
         this.wawwod_poi = wdata['hotspots'];
 
         this.wawwod_settings = wdata['settings'];
+        this.wawwod_fonts = wdata['fontset'];
+
 
         if (options.includes("storyteller")){
             this.player_safe = false;
@@ -47,6 +49,62 @@ class GeoCity {
         me.strokeColor = '#404040'
         me.fillColor = '#000000'
     }
+
+    createPDF() {
+        let me = this
+        me.svg.selectAll('.do_not_print').attr('opacity', 0)
+        let base_svg = d3.select("#d3area svg").html()
+        let flist = '<style>'
+        console.log(me.wawwod_fonts)
+        for (let f of me.wawwod_fonts) {
+
+            flist += '@import url("https://fonts.googleapis.com/css2?family=' + f + '");';
+        }
+        flist += '</style>';
+        let lpage = "";
+        let exportable_svg = '<?xml version="1.0" encoding="UTF-8" ?> \
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"> \
+<svg class="geocities" \
+xmlns="http://www.w3.org/2000/svg" version="1.1" \
+xmlns:xlink="http://www.w3.org/1999/xlink" width="' + me.width + '" height="' + me.height + '"> \
+' + flist + base_svg + '</svg>';
+        lpage = "_p" + (me.page);
+        if (me.data.creature == undefined){
+            me.data['rid']  = me.cityCode
+            me.data.creature = me.cityName
+        }
+        let svg_name = "city_" + me.data['rid'] + lpage + ".svg"
+        let pdf_name = "city_" + me.data['rid'] + lpage + ".pdf"
+        let rid = me.data['rid'];
+        let sheet_data = {
+            'pdf_name': pdf_name,
+            'svg_name': svg_name,
+            'rid': rid,
+            'svg': exportable_svg,
+            'creature': me.data.creature,
+        }
+        me.svg.selectAll('.do_not_print').attr('opacity', 1);
+        $.ajax({
+            url: 'ajax/character/svg2pdf/' + me.data['rid'] + '/',
+            type: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            data: sheet_data,
+            dataType: 'json',
+            success: function (answer) {
+                console.log("PDF generated for [" + rid + "]...")
+                console.error(answer);
+            },
+            error: function (answer) {
+                console.error('Error generating the PDF...');
+                console.error(answer);
+            }
+        });
+    }
+
+
 
     buildPatterns() {
         let me = this;
@@ -359,7 +417,6 @@ class GeoCity {
                 str += "</p>";
 
                 me.focusedDistrict = d;
-                //console.log("FOUND DISTRICT: " + me.focusedDistrict.name)
                 let pos_visible = 0;
                 me.poi_legend_data = []
                 _.each(me.wawwod_poi,function (v) {
@@ -370,10 +427,8 @@ class GeoCity {
                         let x = _.cloneDeep(v);
                         me.poi_legend_data.push(x);
                     }else{
-//                         console.log("---: "+v.properties.name)
                         v.properties.pos_visible = 500;
                     }
-                    // return v
                 })
                 me.poi_legend_size = pos_visible;
                 me.centerNode(coords[0], coords[1]);
@@ -554,7 +609,9 @@ class GeoCity {
                 }
                 return "World of Darkness - " + me.cityName + moretxt
             })
-        ;
+            .on("click", (e) => {
+                me.createPDF()
+            })
     }
 
     centerNode(x, y) {
@@ -571,7 +628,7 @@ class GeoCity {
     }
 
     hotspotvisible(d) {
-        let this = this
+        let me = this
         let o = this.player_safe ? 0 : 1
         if (d.properties.is_public) o = 1
         return o

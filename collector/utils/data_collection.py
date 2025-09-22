@@ -2,7 +2,7 @@ from collector.models.creatures import Creature
 import json
 import logging
 from django.conf import settings
-from collector.utils.wod_reference import get_current_chronicle
+from collector.utils.wod_reference import get_current_chronicle, FONTSET
 from collector.utils.helper import toRID
 from collector.utils.kindred_stuff import resort
 
@@ -561,7 +561,7 @@ def get_districts(cityname):
 
     cities = City.objects.filter(name=cityname.title())
     settings = {"player_safe": not chronicle.is_storyteller_only}
-    context = {'districts': {}, 'hotspots': [], 'settings': settings}
+    context = {'districts': {}, 'hotspots': [], 'settings': settings, 'fontset':[]}
     if len(cities) == 1:
         city = cities.first()
         districts = District.objects.filter(city=city)
@@ -602,6 +602,6 @@ def get_districts(cityname):
                 }
             })
     # print(context)
-
+    context['fontset'] = FONTSET
     x = json.dumps(context, indent=4, sort_keys=True)
     return x
