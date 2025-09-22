@@ -1,19 +1,26 @@
 class GeoCity {
-    constructor(cityName, wdata, parent, collector) {
+    constructor(cityName, options='', wdata, parent, collector) {
         this.cityName = cityName;
-        if (this.cityName == "munich") {
-            this.cityCode = "MU";
+        if (this.cityName == "MU") {
+            this.cityName = "MU"
+            this.cityCode = "Munich"
         } else if (this.cityName == "HH") {
-            this.cityCode = "HH";
+            this.cityName = "Hamburg"
+            this.cityCode = "HH"
         } else {
-            this.cityCode = "XX";
+            this.cityCode = "XX"
         }
         this.parent = parent;
         this.wawwod_data = wdata['districts'];
         this.wawwod_poi = wdata['hotspots'];
 
         this.wawwod_settings = wdata['settings'];
-        this.player_safe = this.wawwod_settings['player_safe'];
+
+        if (options.includes("storyteller")){
+            this.player_safe = false;
+        }else{
+            this.player_safe = true;
+        }
         this.co = collector;
         this.init()
     }
@@ -33,17 +40,29 @@ class GeoCity {
         me.tooltip = d3.select("body").append("div")
             .attr("class", "tooltip hidden")
         ;
-        me.dataUrl = "/static/storytelling/geojson/" + me.cityName + ".geojson";
+        me.dataUrl = "/static/storytelling/geojson/" + me.cityCode+ ".geojson";
         me.poi_legend_data = []
         me.poi_legend_size = 0;
+        me.lineColor = '#101010'
+        me.strokeColor = '#404040'
+        me.fillColor = '#000000'
     }
 
     buildPatterns() {
         let me = this;
-        let defs = me.svg.append('defs');
-        let neutral_color = "#615349";
-        let sabbat_color = "#034370";
-        let camarilla_color = "#430370";
+        let defs = me.svg.append('defs')
+        let neutral_color = "#A0A0A0" //"#615349"
+        let sabbat_color = "#60A060"
+        let camarilla_color = "#A060A0"
+
+        if (!me.player_safe) {
+            neutral_color = "#615349" //"#615349"
+            sabbat_color = "#d5816f"
+            camarilla_color = "#8b1aff"
+            me.lineColor = '#D0D0D0'
+            me.strokeColor = '#C0C0C0'
+            me.fillColor = '#F0F0F0'
+        }
 
         let p1 = defs.append("pattern")
             .attr('id', "neutral")
@@ -150,12 +169,14 @@ class GeoCity {
         me.map_legend.append("rect")
             .attr("x", 0.25 + me.width / 64)
             .attr("y", 0)
+            .attr("rx", 10)
+            .attr("ry", 10)
             .attr('height', 220)
             .attr('width', 250)
-            .style('fill', "#101010")
-            .style('stroke', '#ccc')
+            .style('fill', "#404040")
+            .style('stroke', "#101010")
             .style('stroke-width', '0.5pt')
-            .attr("opacity", 0.5)
+            .attr("opacity", 0.75)
         ;
         me.map_legend_in = me.map_legend.selectAll(".map_legend_item")
             .data(legend_data)
@@ -178,7 +199,7 @@ class GeoCity {
             .style('fill', function (d, i) {
                 return 'url(#' + d.pattern + ')'
             })
-            .style('stroke', '#ccc')
+            .style('stroke', me.lineColor)
             .style('stroke-width', '0.5pt')
         ;
         me.map_legend_in.append("text")
@@ -187,8 +208,8 @@ class GeoCity {
                 return i * 30 + 10;
             })
             .attr("dy", 15)
-            .style('fill', '#fff')
-            .style('stroke', '#888')
+            .style('fill', me.fillColor)
+            .style('stroke', me.strokeColor)
             .style('stroke-width', '0.5pt')
             .style('font-family', 'Ruda')
             .text(function (d, i) {
@@ -206,8 +227,8 @@ class GeoCity {
             .attr("y",  me.height - me.height/64 * (me.poi_legend_size+1))
             .attr('height', me.height / 64 * me.poi_legend_size)
             .attr('width', 250)
-            .style('fill', "#101010")
-            .style('stroke', '#ccc')
+            .style('fill', me.fillColor)
+            .style('stroke', me.strokeColor)
             .style('stroke-width', '0.5pt')
             .style("opacity",0.5)
         ;
@@ -216,8 +237,8 @@ class GeoCity {
 
     setupTextBasics(x){
         x.attr("dy", 15)
-            .style('fill', '#000')
-            .style('stroke', '#111')
+            .style('fill', this.fillColor)
+            .style('stroke', this.strokeColor)
             .style('stroke-width', '0.5pt')
             .style('font-family', 'Ruda')
             .style('font-size', '9pt')
@@ -262,7 +283,7 @@ class GeoCity {
             .style('fill', function (d) {
                 return d.properties.color;
             })
-            .style('stroke', '#ccc')
+            .style('stroke', me.lineColor)
             .style('stroke-width', '0.5pt')
         ;
         me.legend_in.append("rect")
@@ -304,15 +325,22 @@ class GeoCity {
     }
 
     drawDistricts(data) {
-        let me = this;
+        let me = this
         let districts = me.g.append("g")
             .attr('class', 'districts')
             .selectAll("path")
             .data(data.features)
-        ;
-        let district_in = districts.enter();
-        let district_out = districts.exit();
-        district_out.remove();
+        let titles = me.g.append("g")
+            .attr('class', 'titles')
+            .selectAll("title")
+            .data(data.features)
+        let title_in = titles.enter()
+        let title_out = titles.exit()
+        title_out.remove()
+        let district_in = districts.enter()
+        let district_out = districts.exit()
+        district_out.remove()
+
         let item = district_in.append("g")
             .attr('class', 'district_item')
             .on('mouseover', function(e, d){
@@ -342,7 +370,7 @@ class GeoCity {
                         let x = _.cloneDeep(v);
                         me.poi_legend_data.push(x);
                     }else{
-                        console.log("---: "+v.properties.name)
+//                         console.log("---: "+v.properties.name)
                         v.properties.pos_visible = 500;
                     }
                     // return v
@@ -367,14 +395,15 @@ class GeoCity {
             .style("fill", function (e) {
                 return "url(#" + e.status + ")"
             })
-            .style("stroke", "#ccc")
-            .style("stroke-width", 0.125)
-            .style("fill-opacity", 0.5)
-            .style("stroke-opacity", 0.5)
+            .style("stroke", me.lineColor)
+            .style("stroke-width", 0.25)
+            .style("fill-opacity", 0.95)
+            .style("stroke-opacity", 0.95)
 
         ;
 
-        item.append('text')
+        let itemt = title_in.append("g")
+        itemt.append('text')
             .attr('class', 'district_text')
             .attr('id', function (d) {
                 return 'district_text_' + d.code;
@@ -387,9 +416,9 @@ class GeoCity {
             .style("text-anchor", "middle")
             .style("font-size", '3pt')
             .style("font-weight", "bold")
-            .style("stroke", "#999999")
+            .style("stroke", me.strokeColor)
             .style("stroke-width", "0.15pt")
-            .style("fill", "#CCCCCC")
+            .style("fill", me.fillColor)
             .attr("opacity", 1.0)
             .text((e,i) => e.properties.bezirk_name)
             .append("tspan")
@@ -401,9 +430,9 @@ class GeoCity {
                 .style("text-anchor", "middle")
                 .style("font-size", '4pt')
                 .style("font-weight", "bold")
-                .style("stroke", "#AAAAAA")
+                .style("stroke", me.strokeColor)
                 .style("stroke-width", "0.15pt")
-                .style("fill", "#DDDDDD")
+                .style("fill", me.fillColor)
                 .text((e,i) => e.properties.stadtteil_name)
             .append("tspan")
                 .attr("x", (e,i) => me.geoPath.centroid(e)[0])
@@ -414,9 +443,9 @@ class GeoCity {
                 .style("text-anchor", "middle")
                 .style("font-size", '3pt')
                 .style("font-weight", "bold")
-                .style("stroke", "#AAAAAA")
+                .style("stroke", me.strokeColor)
                 .style("stroke-width", "0.15pt")
-                .style("fill", "#DDDDDD")
+                .style("fill", me.fillColor)
                 .text((e,i) => e.code)
 
         ;
@@ -505,25 +534,25 @@ class GeoCity {
         let mastertext = me.svg.append('text')
             .attr("id", "mastertext")
             .attr("x", function (e, i) {
-                return me.width / 9;
+                return 1 * me.width / 20;
             })
             .attr("y", function (e, i) {
-                return 49 * me.height / 50 - 4;
+                return 49 * me.height / 50 ;
             })
             // .attr("dy", -72)
 
             .style("font-family", "Ruda")
-            .style("text-anchor", "middle")
+            .style("text-anchor", "start")
             .style("font-size", "20pt")
-            .style("stroke", "#888")
+            .style("stroke", "#303030")
             .style("stroke-width", "0.25")
-            .style("fill", "#fff")
+            .style("fill", "#C0C0C0")
             .text(function (e, i) {
-                let moretxt = " :: Storyteller Map";
+                let moretxt = " [Storyteller Map]";
                 if (me.player_safe){
-                    moretxt = " :: Players Map";
+                    moretxt = " [Players Map]";
                 }
-                return "World of Darkness :: " + me.cityName.charAt(0).toUpperCase() + me.cityName.slice(1) + moretxt;
+                return "World of Darkness - " + me.cityName + moretxt
             })
         ;
     }
@@ -542,19 +571,10 @@ class GeoCity {
     }
 
     hotspotvisible(d) {
-        let me = this;
-        //if (d.properties.visible) {
-            if (d.properties.is_public) {
-                return 1;
-            }else{
-                if (me.player_safe){
-                    return 0;
-                }else{
-                    return 1;
-                }
-            }
-        //}
-        return 0;
+        let this = this
+        let o = this.player_safe ? 0 : 1
+        if (d.properties.is_public) o = 1
+        return o
     }
 
     zoomActivate() {
@@ -578,12 +598,12 @@ class GeoCity {
                 e.population = 0;
                 e.status = "neutral";
                 let key = me.cityCode + String(i + 1).padStart(3, '0');
-                console.log(key)
+//                 console.log(key)
                 if (me.wawwod_data[key]) {
                     let entry = me.wawwod_data[key];
                     e.population = entry.population;
                     e.status = entry.status;
-                    console.debug("STATUS",e.status,entry.status)
+//                     console.debug("STATUS",e.status,entry.status)
                     e.code = key
                     e.name = e.properties["stadtteil_name"];
                     e.sector_name = entry.sector_name;
@@ -594,8 +614,8 @@ class GeoCity {
                         e.name = e.properties["stadtteil_name"] + " (" + e.properties['Stadtteil'] + ")";
                         delete e.properties['Stadtteil'];
                     }
-                    console.log(me.wawwod_data[key])
-                    console.log(e)
+//                     console.log(me.wawwod_data[key])
+//                     console.log(e)
                 }
             });
             let poi_idx = 0;

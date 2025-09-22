@@ -16,7 +16,9 @@ class City(models.Model):
     name = models.CharField(max_length=128, default='')
     chronicle = models.CharField(max_length=8, default='WOD')
     code = models.CharField(max_length=2, default='')
-    description = models.TextField(max_length=1024, default='')
+    options = models.CharField(max_length=128, default='', blank=True)
+    description = models.TextField(max_length=1024, default='', blank=True)
+
 
     def __str__(self):
         return f'{self.name}'
@@ -29,6 +31,7 @@ class City(models.Model):
 
 
 class CityAdmin(admin.ModelAdmin):
-    list_display = ['name', 'code', 'description']
+    list_display = ['name', "chronicle", 'code', 'options','description']
+    list_editable = ["options", "chronicle"]
     ordering = ['name']
     search_fields = ['name', 'code', 'description']

@@ -72,4 +72,4 @@ class HotSpotAdmin(admin.ModelAdmin):
     ordering = ['-type', 'name']
     search_fields = ['name', 'description', 'type']
     list_editable = [ 'type', 'is_public', 'description', 'episode']
-    list_filter = ['type', 'is_public', 'city']
+    list_filter = ['type', 'is_public', 'city', "episode"]

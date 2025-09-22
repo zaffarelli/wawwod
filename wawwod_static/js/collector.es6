@@ -53,6 +53,7 @@ class WawwodCollector {
             let action = $(this).attr('action');
             let param = $(this).attr('param');
             let id = $(this).attr('id');
+            let options = $(this).attr('options');
             let option = $(this).attr('option');
             let key = $('#userinput').val();
             let url = 'ajax/display/' + action + '/';
@@ -136,7 +137,7 @@ class WawwodCollector {
                     }
                     if (action == 'map') {
                         let d = JSON.parse(answer.data);
-                        me.d3 = new GeoCity(param,d, "#d3area", me);
+                        me.d3 = new GeoCity(param,options,d, "#d3area", me);
                         me.d3.perform();
                     }
                     me.rebootLinks();

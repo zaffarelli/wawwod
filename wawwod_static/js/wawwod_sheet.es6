@@ -104,7 +104,7 @@ class WawwodSheet {
             me.stepy = me.height / 36;
 
             me.small_font_size = 1.3 * me.stepy / 5;
-            me.medium_font_size = 1.7 * me.stepy / 5;
+            me.medium_font_size = 1.9 * me.stepy / 5;
             me.big_font_size = 2 * me.stepy / 5;
             me.fat_font_size = 8 * me.stepy / 5;
         }else{
@@ -135,8 +135,9 @@ class WawwodSheet {
         me.user_fill = '#143'
         me.user_fill = '#143'
         me.overhead_fill = '#C22'
-        //me.user_font = 'Gochi Hand'
+        me.user_font = 'Gochi Hand'
         me.user_font = 'Slackside One'
+        //me.user_font = "Tac One"
         //me.user_font = 'Whisper'
         me.mono_font = 'Syne Mono'
         me.creature_font = 'Trade Winds'
@@ -1194,7 +1195,7 @@ class WawwodSheet {
 
             ox = me.stepx * 12.5
             oy += 1 * me.stepy
-            let line_count = me.appendText("Transactions:",all_histo_exp,ox,oy,me.stepx*10)
+            let line_count = 0 //me.appendText("Transactions:",all_histo_exp,ox,oy,me.stepx*10)
             console.log("Line count",line_count)
         }
     }

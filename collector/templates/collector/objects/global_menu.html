@@ -45,13 +45,6 @@
             <HR/>
             {% include "collector/page/current_chronicle_details.html" with c=chronicles %}
             <HR/>
-            <li class="display" action="storytelling"><i class="fa fa-comment"></i> Storyboard</li>
-            <li class="display" action="pdf_story"><i class="fa fa-file-pdf"></i> PDF</li>
-            {% for ci in cities  %}
-                <li class="display" action="map" param="{{ ci.code }}"><i class="fa fa-map"></i> City Map: {{ ci.name}}</li>
-            {% endfor %}
-            <li class="display" action="chronicle_map"><i class="fas fa-users"></i> Chronicle Map</li>
-            <HR/>
             {% include "collector/page/players_sheets.html" with c=players %}
         </ul>
     </li>

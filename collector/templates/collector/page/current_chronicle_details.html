@@ -5,6 +5,10 @@
 </ul>
 <ul style="list-style-type: none;">
     {% for ci in cities  %}
-    <li class="display" action="map" param="{{ ci.code }}_city_districts"><i class="fa fa-map"></i> City Map: {{ ci.name}}</li>
+        <li class="display" action="map" param="{{ ci.code }}" options="{{ci.options}}"><i class="fa fa-map"></i> City Map: {{ ci.name }}</li>
     {% endfor %}
 </ul>
+<HR/>
+<li class="display" action="storytelling"><i class="fa fa-comment"></i> Storyboard ({{c.season}}:{{c.adventure}})</li>
+<li class="display" action="pdf_story"><i class="fa fa-file-pdf"></i> PDF ({{c.season}}:{{c.adventure}})</li>
+<li class="display" action="chronicle_map"><i class="fas fa-users"></i> {{c.season}}:{{c.adventure}} Map</li>

@@ -135,8 +135,9 @@ class WawwodSheet {
         me.user_fill = '#143'
         me.user_fill = '#143'
         me.overhead_fill = '#C22'
-        //me.user_font = 'Gochi Hand'
+        me.user_font = 'Gochi Hand'
         me.user_font = 'Slackside One'
+        //me.user_font = "Tac One"
         //me.user_font = 'Whisper'
         me.mono_font = 'Syne Mono'
         me.creature_font = 'Trade Winds'

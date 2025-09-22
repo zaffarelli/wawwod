@@ -66,7 +66,8 @@ def prepare_index(request):
             # print(adventure)
     for city in City.objects.filter(chronicle=chronicle.acronym):
         cities.append(city)
-    #        //print("New city: ",city)
+        print(cities)
+
 
     misc = {"version": settings.VERSION}
     context = {'chronicles': chronicles, 'fontset': FONTSET, 'players': players, 'adventures': adventures,
