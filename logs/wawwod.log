@@ -31464,3 +31464,13 @@ Traceback (most recent call last):
             ~~~~~~~~~~~^^^^^^^^^^
 KeyError: 'Hamburg'
 [22/09 06:46:09] "POST /ajax/character/svg2pdf/HH/ HTTP/1.1" 500 1081326
+[23/09 06:31:02] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1918
+[23/09 06:34:41] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1918
+[23/09 06:35:15] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1918
+[23/09 06:36:17] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1918
+[23/09 06:38:05] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1918
+[23/09 06:38:27] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1918
+[23/09 06:40:32] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1918
+[23/09 06:41:12] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1918
+[23/09 06:41:45] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1918
+[23/09 06:42:42] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1918

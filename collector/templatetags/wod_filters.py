@@ -191,3 +191,9 @@ def to_tradition_logo(val):
     logo_str = '_'.join(val.lower().split(' '))
     res = f'<img src="/static/collector/traditions/{logo_str}.webp"> '
     return res
+
+@register.filter(name='snake_case')
+def snake_case(val):
+    v = val.split(" ")
+    return "_".join(v).lower()
+

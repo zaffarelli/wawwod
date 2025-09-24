@@ -3,7 +3,7 @@
   <span class='toggle_name line_block' title="{{c.creature|title}}&#10{{c.group}}&#10{{c.groupspec}}&#10Faction:{{c.faction}}">
     <span class="line_bit name">{{c.name}}</span>
     <span class="line_bit options">{% if c.player %}{{c.player}}{%else%}&nbsp;{% endif %}</span>
-    <span class="line_bit family">{{c.family}}&nbsp;</span>
+    <span class="line_bit family {{c.family|snake_case}}">{{c.family}}&nbsp;</span>
     <span class="line_bit creature_type">{{c.creature|title}}</span>
   <div class="creature_links line_bit tail">
   <span class="display" action="crossover_sheet" param="Sheet for {{c.rid}}"><i class="fas fa-file"></i></span>

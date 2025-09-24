@@ -11,12 +11,13 @@ class GeoCity {
             this.cityCode = "XX"
         }
         this.parent = parent;
-        this.wawwod_data = wdata['districts'];
-        this.wawwod_poi = wdata['hotspots'];
+        this.wawwod_data = wdata['districts']
+        this.wawwod_poi = wdata['hotspots']
 
-        this.wawwod_settings = wdata['settings'];
-        this.wawwod_fonts = wdata['fontset'];
+        this.wawwod_settings = wdata['settings']
+        this.wawwod_fonts = wdata['fontset']
 
+        console.log(wdata['fontset'])
 
         if (options.includes("storyteller")){
             this.player_safe = false;
@@ -55,7 +56,6 @@ class GeoCity {
         me.svg.selectAll('.do_not_print').attr('opacity', 0)
         let base_svg = d3.select("#d3area svg").html()
         let flist = '<style>'
-        console.log(me.wawwod_fonts)
         for (let f of me.wawwod_fonts) {
 
             flist += '@import url("https://fonts.googleapis.com/css2?family=' + f + '");';
@@ -69,23 +69,19 @@ xmlns="http://www.w3.org/2000/svg" version="1.1" \
 xmlns:xlink="http://www.w3.org/1999/xlink" width="' + me.width + '" height="' + me.height + '"> \
 ' + flist + base_svg + '</svg>';
         lpage = "_p" + (me.page);
-        if (me.data.creature == undefined){
-            me.data['rid']  = me.cityCode
-            me.data.creature = me.cityName
-        }
-        let svg_name = "city_" + me.data['rid'] + lpage + ".svg"
-        let pdf_name = "city_" + me.data['rid'] + lpage + ".pdf"
-        let rid = me.data['rid'];
+        let svg_name = "city_" + me.cityCode + lpage + ".svg"
+        let pdf_name = "city_" + me.cityCode + lpage + ".pdf"
+        let rid = me.cityCode
         let sheet_data = {
             'pdf_name': pdf_name,
             'svg_name': svg_name,
             'rid': rid,
             'svg': exportable_svg,
-            'creature': me.data.creature,
+            'creature': "ADV_CREATURE",
         }
         me.svg.selectAll('.do_not_print').attr('opacity', 1);
         $.ajax({
-            url: 'ajax/character/svg2pdf/' + me.data['rid'] + '/',
+            url: 'ajax/character/svg2pdf/' + me.cityCode + '/',
             type: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -109,9 +105,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" width="' + me.width + '" height="' + 
     buildPatterns() {
         let me = this;
         let defs = me.svg.append('defs')
-        let neutral_color = "#A0A0A0" //"#615349"
-        let sabbat_color = "#60A060"
-        let camarilla_color = "#A060A0"
+        let neutral_color = "#808080" //"#615349"
+        let sabbat_color = "#806060"
+        let camarilla_color = "#606080"
 
         if (!me.player_safe) {
             neutral_color = "#615349" //"#615349"
@@ -466,10 +462,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" width="' + me.width + '" height="' + 
             .attr("x", (e,i) => me.geoPath.centroid(e)[0])
             .attr("y", (e,i) => me.geoPath.centroid(e)[1])
             .attr('dx', 0)
-            .attr('dy', -5)
+            .attr('dy', -3)
             .style("font-family", "Ruda")
             .style("text-anchor", "middle")
-            .style("font-size", '3pt')
+            .style("font-size", '2pt')
             .style("font-weight", "bold")
             .style("stroke", me.strokeColor)
             .style("stroke-width", "0.15pt")
@@ -483,7 +479,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" width="' + me.width + '" height="' + 
                 .attr('dy', 0)
                 .style("font-family", "Ruda")
                 .style("text-anchor", "middle")
-                .style("font-size", '4pt')
+                .style("font-size", '3pt')
                 .style("font-weight", "bold")
                 .style("stroke", me.strokeColor)
                 .style("stroke-width", "0.15pt")
@@ -493,10 +489,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" width="' + me.width + '" height="' + 
                 .attr("x", (e,i) => me.geoPath.centroid(e)[0])
                 .attr("y", (e,i) => me.geoPath.centroid(e)[1])
                 .attr('dx', 0)
-                .attr('dy', 4)
+                .attr('dy', 3)
                 .style("font-family", "Ruda")
                 .style("text-anchor", "middle")
-                .style("font-size", '3pt')
+                .style("font-size", '2pt')
                 .style("font-weight", "bold")
                 .style("stroke", me.strokeColor)
                 .style("stroke-width", "0.15pt")
@@ -569,7 +565,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" width="' + me.width + '" height="' + 
                 return "poi_text_mark_" + d.properties.code;
             })
             .attr('dx', 0)
-            .attr('dy', 0.5)
+            .attr('dy', 1)
             .style("font-family", "Ruda")
             .style("text-anchor", "middle")
             .style("font-size", "1pt")
@@ -630,7 +626,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" width="' + me.width + '" height="' + 
     hotspotvisible(d) {
         let me = this
         let o = this.player_safe ? 0 : 1
-        if (d.properties.is_public) o = 1
+        //if (d.properties.is_public) o = 1
         return o
     }
 

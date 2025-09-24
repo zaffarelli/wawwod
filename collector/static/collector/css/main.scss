@@ -1161,6 +1161,13 @@ fieldset{
             order:3;
             flex: 0 0 20ex;
             text-align:center;
+            color: #C05050;
+            &.giovanni, &.assamite, &.ravnos, &.setite{
+                color: #5070C0;
+            }
+            &.ventrue, &.toreador, &.tremere, &.malkavian, &.nosferatu, &.gangrel, &.brujah {
+                color: #709070;
+            }
         }
         &.creature_type{
             order:2;
