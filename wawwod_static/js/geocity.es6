@@ -105,9 +105,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" width="' + me.width + '" height="' + 
     buildPatterns() {
         let me = this;
         let defs = me.svg.append('defs')
-        let neutral_color = "#808080" //"#615349"
-        let sabbat_color = "#806060"
-        let camarilla_color = "#606080"
+        let neutral_color = "#F0F0F0" //"#615349"
+        let sabbat_color = "#F0B0B0"
+        let camarilla_color = "#D0D0F0"
 
         if (!me.player_safe) {
             neutral_color = "#615349" //"#615349"
@@ -227,8 +227,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" width="' + me.width + '" height="' + 
             .attr("ry", 10)
             .attr('height', 220)
             .attr('width', 250)
-            .style('fill', "#404040")
-            .style('stroke', "#101010")
+            .style('fill', "#E0E0E0")
+            .style('stroke', "#808080")
             .style('stroke-width', '0.5pt')
             .attr("opacity", 0.75)
         ;
@@ -462,7 +462,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" width="' + me.width + '" height="' + 
             .attr("x", (e,i) => me.geoPath.centroid(e)[0])
             .attr("y", (e,i) => me.geoPath.centroid(e)[1])
             .attr('dx', 0)
-            .attr('dy', -3)
+            .attr('dy', -5)
             .style("font-family", "Ruda")
             .style("text-anchor", "middle")
             .style("font-size", '2pt')
@@ -479,7 +479,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" width="' + me.width + '" height="' + 
                 .attr('dy', 0)
                 .style("font-family", "Ruda")
                 .style("text-anchor", "middle")
-                .style("font-size", '3pt')
+                .style("font-size", '4pt')
                 .style("font-weight", "bold")
                 .style("stroke", me.strokeColor)
                 .style("stroke-width", "0.15pt")
@@ -489,7 +489,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" width="' + me.width + '" height="' + 
                 .attr("x", (e,i) => me.geoPath.centroid(e)[0])
                 .attr("y", (e,i) => me.geoPath.centroid(e)[1])
                 .attr('dx', 0)
-                .attr('dy', 3)
+                .attr('dy', 4)
                 .style("font-family", "Ruda")
                 .style("text-anchor", "middle")
                 .style("font-size", '2pt')

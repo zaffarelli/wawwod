@@ -407,16 +407,45 @@ class WawwodCollector {
         })
     }
 
-
     registerToggle() {
         let me = this;
         $('.toggle').off().on('click', function (event) {
-            event.preventDefault();
-            event.stopPropagation();
-            let tgt = $(this).attr('param');
-            console.debug("Toggling "+tgt)
-            $('.' + tgt).toggleClass('hidden');
+            event.preventDefault()
+            event.stopPropagation()
+            let tgt = $(this).attr('param')
+            $('.' + tgt).toggleClass('hidden')
             me.rebootLinks();
+        });
+    }
+    registerSingler() {
+        let me = this;
+        $('.singler').off().on('click', function (event) {
+            event.preventDefault()
+            event.stopPropagation()
+            let action = $(this).attr('action')
+            let param = $(this).attr('param')
+            if (action == "bulk"){
+                $.ajax({
+                    url: 'ajax/bulk/',
+                    method: 'POST',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    },
+                    data: {
+                        txt: $('#text_edit').val()
+                    },
+                    dataType: 'json',
+                    success: function (answer) {
+                        $('#'+param).html(answer.report)
+                        me.rebootLinks()
+                    },
+                    error: function (answer) {
+                        console.error('Error... ' + answer)
+                    },
+                });
+            }
+            //me.rebootLinks();
         });
     }
 
@@ -428,6 +457,7 @@ class WawwodCollector {
             me.registerNav();
             me.registerDisplay();
             me.registerAction();
+            me.registerSingler();
             me.registerToggle();
             me.registerCollectorAction();
             me.registerTriggers();

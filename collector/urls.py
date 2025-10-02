@@ -1,7 +1,7 @@
 from django.urls import path, re_path
 from collector.views.base import index, get_list, updown, userinputastext, userinput, add_garou, change_chronicle, \
     display_gaia_wheel, display_dashboard, display_lineage, display_crossover_sheet, add_kindred, svg_to_pdf, \
-    save_to_svg, display_sept, moon_phase, calendar, weaver_code, display_sept_rosters, quaestor, adventure_sheet, display_chronicle_map, add_kinfolk, add_mortal
+    save_to_svg, display_sept, moon_phase, calendar, weaver_code, display_sept_rosters, quaestor, adventure_sheet, display_chronicle_map, add_kinfolk, add_mortal, bulk_add
 from collector.views.actions import change_settings, refix_all, extract_mechanics, extract_per_group, extract_raw, \
     extract_roster, randomize, balance, refix_all
 from collector.views.creature_views import CreatureDetailView
@@ -23,6 +23,7 @@ urlpatterns = [
     re_path(r'^ajax/display/crossover_sheet/(?P<slug>\w+)/(?P<option>\w+)/$', display_crossover_sheet, name='display_crossover_sheet'),
     re_path(r'^ajax/view/creature/(?P<slug>\w+)/$', CreatureDetailView.as_view(), name='view_creature'),
     re_path(r'^ajax/editable/updown/$', updown, name='updown'),
+    re_path(r'^ajax/bulk/$', bulk_add, name='bulk_add'),
     re_path(r'^ajax/editable/userinput/$', userinput, name='userinput'),
     re_path(r'^ajax/editable/userinput/as_text/$', userinputastext, name='userinputastext'),
     re_path(r'^ajax/collector_action/add_garou/(?P<slug>\w+)/$', add_garou, name='add_garou'),

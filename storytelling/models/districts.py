@@ -5,35 +5,9 @@ from collector.utils.helper import json_default
 import json
 import logging
 from colorfield.fields import ColorField
+from collector.utils.wod_reference import CLAN_COLORS
 
 logger = logging.Logger(__name__)
-
-CLAN_COLORS = {
-    'none': '#B1CBC6',
-    'assamites': '#2E36C5',
-    'brujah': '#B3D537',
-    'gangrel': '#738436',
-    'giovanni': '#2F1984',
-    'malkavian': '#847619',
-    'nosferatu': '#843661',
-    'lasombra': '#60D2BA',
-    'ravnos': '#5F42D0',
-    'setite': '#8C78D9',
-    'toreador': '#D5B237',
-    'tremere': '#D58337',
-    'tzimisce': '#127B65',
-    'ventrue': '#731919'
-}
-
-# ALL_STATUS = (
-#     ('full', 'Full'),
-#     ('controlled', 'Controlled'),
-#     ('presence', 'Presence'),
-#     ('neutral', 'Neutral'),
-#     ('incursions', 'Incursions'),
-#     ('contested', 'Contested'),
-#     ('lost', 'Lost')
-# )
 
 
 class District(models.Model):
@@ -45,7 +19,6 @@ class District(models.Model):
         INCURSIONS = 'incursions', 'Incursions'
         CONTESTED = 'contested', 'Contested'
         LOST = 'lost', 'Lost'
-
 
     code = models.CharField(max_length=64, default='', unique=True)
 
@@ -59,7 +32,8 @@ class District(models.Model):
     color = ColorField(default='#808080')
     proeminent = models.CharField(max_length=64, default='', blank=True, null=True)
     title = models.CharField(max_length=256, default='', blank=True, null=True)
-    status = models.CharField(max_length=64, default=Situation.NEUTRAL, choices=Situation.choices, blank=True, null=True)
+    status = models.CharField(max_length=64, default=Situation.NEUTRAL, choices=Situation.choices, blank=True,
+                              null=True)
     population = models.PositiveIntegerField(default=0, blank=True, null=True)
     population_details = models.CharField(max_length=512, default='', blank=True, null=True)
     camarilla_resources = models.PositiveIntegerField(default=0, blank=True, null=True)
@@ -70,9 +44,9 @@ class District(models.Model):
     def __str__(self):
         return f'{self.name} [{self.code}]'
 
-    def set_proeminent(self, value):
-        self.proeminent = value
-        self.color = CLAN_COLORS[value]
+    # def set_proeminent(self, value):
+    #     self.proeminent = value
+    #     self.color = CLAN_COLORS[value]
 
     def toJSON(self):
         jstr = json.dumps(self, default=json_default, sort_keys=True, indent=4)
@@ -87,23 +61,33 @@ class District(models.Model):
     def populate(self):
         from collector.models.creatures import Creature
         from collector.utils.wod_reference import get_current_chronicle
+        palette = self.buildPalette(len(CLAN_COLORS)+1)
+        per_clan = {}
         chronicle = get_current_chronicle()
         if chronicle:
-            camarilla = Creature.objects.filter(chronicle=chronicle.acronym, faction__in=['Camarilla','Anarchs'], creature='kindred',
-                                                   hidden=False, district=self.code).order_by('-freebies')
-            independents = Creature.objects.filter(chronicle=chronicle.acronym, faction='Independents', creature='kindred',
+            camarilla = Creature.objects.filter(chronicle=chronicle.acronym, faction__in=['Camarilla', 'Anarchs'],
+                                                creature='kindred',
+                                                hidden=False, district=self.code).order_by('-freebies')
+            independents = Creature.objects.filter(chronicle=chronicle.acronym, faction='Independents',
+                                                   creature='kindred',
                                                    hidden=False, district=self.code).order_by('-freebies')
             sabbat = Creature.objects.filter(chronicle=chronicle.acronym, faction='Sabbat', creature='kindred',
-                                                   hidden=False, district=self.code).order_by('-freebies')
+                                             hidden=False, district=self.code).order_by('-freebies')
             self.population_details = ''
             self.population = 0
             cama_pop = 0
             inde_pop = 0
             sabb_pop = 0
             for k in camarilla:
+                col = CLAN_COLORS[k.family.lower().split(" ")[0]]
+                print(col)
                 self.population_details += f'<li><span class="camarilla">{k.name}</span> ({k.family} {k.freebies})</li>'
                 self.population += 1
                 cama_pop += k.freebies
+                if k.family in per_clan:
+                    per_clan[k.family] += k.freebies
+                else:
+                    per_clan[k.family] = k.freebies
             for k in independents:
                 self.population_details += f'<li><span class="independents">{k.name}</span> ({k.freebies})</li>'
                 self.population += 1
@@ -129,6 +113,30 @@ class District(models.Model):
                     self.status = 'contested'
                 else:
                     self.status = 'incursions'
+            percents = []
+            total = 0
+            for pc,v in per_clan.items():
+                total += v
+            for pc,v in per_clan.items():
+                print(pc,v)
+                percents.append({"cnt":round(v["cnt"]/total),"color":v["idx"],"title":pc})
+
+            pop_bar = ""
+            idx = 0
+            for w in percents:
+                for x in range(w["cnt"]):
+                    pop_bar += f'<span style="color:{palette[w["color"]]};" title="{w["title"]}">█</span>'
+            self.population_details += f'<div>{pop_bar}</div>'
+
+    def buildPalette(self,size=16):
+        import colorsys
+        palette = []
+        for x in range(size):
+            color = colorsys.hsv_to_rgb(1.0/(size+1)*x, 0.5, 0.5)
+            palette.append(f"#{round(color[0]*255):02x}{round(color[1]*255):02x}{round(color[2]*255):02x}")
+        return palette
+
+
 
 
 # Actions
@@ -173,6 +181,7 @@ def status_contested(modeladmin, request, queryset):
         district.status = District.Situation.CONTESTED
         district.save()
     short_description = 'Status: Contested'
+
 
 def status_lost(modeladmin, request, queryset):
     for district in queryset:

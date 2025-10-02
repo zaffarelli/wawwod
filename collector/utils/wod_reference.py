@@ -952,3 +952,160 @@ ENLIGHTENMENT = {
         'clans': ['Setite']
     },
 }
+
+CLAN_COLORS = {
+    'none': {
+        "faction": "independents",
+        "color": '#9d9d9d',
+        "idx":0,
+    },
+
+    'ventrue': {
+        "faction": "camarilla",
+        "color": '#347446',
+        "idx":1,
+    },
+    'tremere': {
+        "faction": "camarilla",
+        "color": '#a4af58',
+        "idx":2,
+    },
+
+    'toreador': {
+        "faction": "camarilla",
+        "color": '#D5B237',
+        "idx":3,
+    },
+
+    'malkavian': {
+        "faction": "camarilla",
+        "color": '#847619',
+        "idx":4,
+    },
+    'nosferatu': {
+        "faction": "camarilla",
+        "color": '#843661',
+        "idx":5,
+
+    },
+
+    'gangrel': {
+        "faction": "camarilla",
+        "color": '#738436',
+        "idx":6,
+    },
+
+    'brujah': {
+        "faction": "camarilla",
+        "color": '#B3D537',
+        "idx":7,
+    },
+
+    'caitiff': {
+        "faction": "camarilla",
+        "color": '#B3D537',
+        "idx":8,
+    },
+    'assamites': {
+        "faction": "independents",
+        "color": '#2E36C5',
+        "idx":9,
+    },
+    'assamites antitribu': {
+        "faction": "sabbat",
+        "color": '#2E36C5',
+        "idx":10,
+    },
+    'brujah antitribu': {
+        "faction": "sabbat",
+        "color": '#B3D537',
+        "idx":11,
+    },
+
+    'giovanni': {
+        "faction": "independents",
+        "color": '#2F1984',
+        "idx":12,
+    },
+    'ravnos': {
+        "faction": "independents",
+        "color": '#5F42D0',
+        "idx":13,
+    },
+    'setite': {
+        "faction": "independents",
+        "color": '#8C78D9',
+        "idx":14,
+    },
+    'tzimisce antitribu': {
+        "faction": "independents",
+        "color": '#127B65',
+        "idx":15,
+    },
+    'gangrel antitribu': {
+        "faction": "sabbat",
+        "color": '#738436',
+        "idx":16,
+    },
+    'giovanni antitribu': {
+        "faction": "sabbat",
+        "color": '#2F1984',
+        "idx":17,
+    },
+    'malkavian antitribu': {
+        "faction": "sabbat",
+        "color": '#847619',
+        "idx":18,
+    },
+    'nosferatu antitribu': {
+        "faction": "sabbat",
+        "color": '#843661',
+        "idx":19,
+    },
+    'lasombra': {
+        "faction": "sabbat",
+        "color": '#60D2BA',
+        "idx":20,
+    },
+    'lasombra antitribu': {
+        "faction": "camarilla",
+        "color": '#60D2BA',
+        "idx":21,
+    },
+    'setite antitribu': {
+        "faction": "sabbat",
+        "color": '#8C78D9',
+        "idx":22,
+    },
+    'toreador antitribu': {
+        "faction": "sabbat",
+        "color": '#D5B237',
+        "idx":23,
+    },
+    'tremere antitribu': {
+        "faction": "sabbat",
+        "color": '#D58337',
+        "idx":24,
+    },
+    'ravnos antitribu': {
+        "faction": "sabbat",
+        "color": '#5F42D0',
+        "idx":25,
+
+    },
+    'pander': {
+        "faction": "sabbat",
+        "color": '#B3D537',
+        "idx":26,
+    },
+    'tzimisce': {
+        "faction": "sabbat",
+        "color": '#127B65',
+        "idx":27,
+    },
+    'ventrue antitribu': {
+        "faction": "sabbat",
+        "color": '#731919',
+        "idx":28,
+    }
+}

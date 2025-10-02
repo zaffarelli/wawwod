@@ -333,17 +333,20 @@ def build_gaia_wheel():
             {'label': '7', 'value': 0},
             {'label': '6', 'value': 0},
             {'label': '5', 'value': 0},
-            {'label': '4', 'value': 0},
-            {'label': '3', 'value': 0},
         ],
         'sect': [
             {'label': 'camarilla', 'value': 0}, {'label': 'independents', 'value': 0}, {'label': 'sabbat', 'value': 0}
         ],
         'balanced': [
-            {'label': 'OK', 'value': 0}, {'label': 'OK+', 'value': 0}, {'label': 'UNB', 'value': 0}
+            {'label': 'OK', 'value': 0},
+            {'label': 'OK+', 'value': 0},
+            {'label': 'UNB', 'value': 0}
         ],
         'creatures': [
-            {'label': 'kindred', 'value': 0}, {'label': 'ghoul', 'value': 0}
+            {'label': 'Camarilla kindreds', 'value': 0},
+            {'label': 'Sabbat kindreds', 'value': 0},
+            {'label': 'Lupines', 'value': 0},
+            {'label': 'Camarilla Ghouls', 'value': 0}
         ],
         'clans': [],
         'disciplines': [
@@ -385,19 +388,20 @@ def build_gaia_wheel():
             if (c.creature == 'mortal'):
                 weaver_list.append(creature_dict)
         total += 1
-        if c.creature == "kindred":
+        if c.creature == "kindred" and c.faction == 'Camarilla':
             stats['status'][c.background9]['value'] += 1
             stats['generation'][c.background3]['value'] += 1
 
-        if c.status == "OK":
+        if c.status == "OK" or c.status == "READY":
             stats['balanced'][0]['value'] += 1
         elif c.status == "OK+":
             stats['balanced'][1]['value'] += 1
         else:
             stats['balanced'][2]['value'] += 1
         if c.creature == "ghoul" and c.faction == 'Camarilla':
-            stats['creatures'][1]['value'] += 1
-
+            stats['creatures'][3]['value'] += 1
+        elif c.creature == "garou":
+            stats['creatures'][2]['value'] += 1
         elif c.creature == "kindred" and c.faction.lower() == 'camarilla':
             stats['sect'][0]['value'] += 1
             stats['creatures'][0]['value'] += 1
@@ -425,6 +429,7 @@ def build_gaia_wheel():
             stats['sect'][1]['value'] += 1
         elif c.creature == "kindred" and c.faction.lower() == 'sabbat':
             stats['sect'][2]['value'] += 1
+            stats['creatures'][1]['value'] += 1
 
     for list in [weaver_list, inde_list, underworld_list, traditions_list, pentex_list, sabbat_list, wyrm_list,
                  underworld_list,

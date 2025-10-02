@@ -63,6 +63,7 @@
             <div class="plank action small" id="time_slip_m1h" action="time_slip" param="m0d_m1h"><i class='fa fa-hourglass-end'></i> -1H</div>
             <div class="plank action small" id="time_slip_p1h" action="time_slip" param="m0d_p1h"><i class='fa fa-hourglass-start'></i> +1H</div>
             <div class="plank action small" id="time_slip_p1d" action="time_slip" param="p1d_p0h"><i class='fa fa-calendar'></i>+ 1D</div>
+            <div class="plank tag singler small" action="bulk" param="text_edit" title="Bulk add!"><i class='fa fa-circle'></i></div>
             <div class="plank action" id="create_link" action="create_link"><i class='fa fa-link'></i> Create Link</div>
             <div class="plank action" id="create_link" action="create_link"><i class='fa fa-bolt'></i> Clear Selection</div>
             <div class="plank tag action" id="resend"><i class="fa fa-arrow-right"></i></div>
@@ -97,20 +98,10 @@
     </table>
 </div>
 
-
-
-
-
 {% block javascript %}
 {% endblock javascript %}
 
 <div id="custom_js">
-{#<script>#}
-{#    _.defer(function () {#}
-{#        let co = new WawwodCollector()#}
-{#        co.perform();#}
-{#    });#}
-{#</script>#}
 </div>
 </body>
 </html>

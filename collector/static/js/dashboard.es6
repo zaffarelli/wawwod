@@ -41,41 +41,25 @@ class Dashboard {
         d3.select(me.parent).selectAll("svg").remove();
         let pwidth = d3.select(me.parent).style("width");
         let pheight = d3.select(me.parent).style("height");
-        me.svg = d3.select(me.parent).append("svg")
+        me.vis = d3.select(me.parent).append("svg")
             .attr("viewBox", (-me.width / 2) + "  " + (-me.height / 2) + " " + me.width + " " + me.height)
             .attr("class", "dashboard")
             .attr("width", pwidth)
             .attr("height", pheight)
-        me.static_back = me.svg.append("g");
-        me.back = me.svg.append("g")
-            .attr("transform", "rotate(" + (me.global_rotation) + ")")
+        me.svg = me.vis.append("g")
+            .attr("width", me.step_x*100)
+            .attr("height", me.step_y*100)
+            .attr("class", "all")
+            .attr("transform", "translate(0,0)")
+            //.attr("transform", "translate(0,0)")
         me.tooltip = d3.select("body").append("div")
             .attr("class", "tooltip hidden")
     }
 
 
 
-    update() {
-        let me = this;
-        me.draw_stats(-me.step_x*90,me.step_y*2,'status',"#A08020");
-        me.draw_stats(-me.step_x*90,me.step_y*25,'balanced',"#A02020");
-        me.draw_stats(-me.step_x*90,me.step_y*35,'creatures',"#208020");
-        me.draw_stats(-me.step_x*90,me.step_y*45,'clans',"#808020");
-        me.draw_stats(-me.step_x*90,me.step_y*60,'disciplines',"#802080");
 
-        me.draw_stats(-me.step_x*40,me.step_y*2,'generation',"#80A020");
-        me.draw_stats(-me.step_x*40,me.step_y*25,'sect',"#202080");
-    }
 
-    zoomActivate() {
-        let me = this;
-        let zoom = d3.zoom()
-            .scaleExtent([0.125, 8])
-            .on('zoom', function (event) {
-                me.back.attr('transform', event.transform);
-            });
-        me.back.call(zoom);
-    }
 
     draw_stats(ox,oy,src='status', color="#202020") {
         let me = this;
@@ -86,8 +70,8 @@ class Dashboard {
         let delta_x = 20, delta_y=30;
         let cnt = 0
         _.forEach(local_data,function (d){
-            let x = ox ;
-            let y = oy - (me.height-40) / 2 + ((idx)*(delta_x+10));
+            let x = 0
+            let y = 0+ ((idx)*(delta_x+10))
             let g = "group"+idx;
             let v = d.value;
             let l = d.label;
@@ -96,30 +80,54 @@ class Dashboard {
             cnt += 1
         });
 
-        let bar_grp = me.static_back.append("g");
+        let bar_grp = me.svg.append("g")
+            .attr("id",src)
+            .attr("transform",`translate(${ox},${-oy})`)
+        bar_grp.append("circle")
+                .attr("cx",0)
+                .attr("cy",0)
+                .attr("r",me.step_x/4)
+                .style("fill",color)
+                .style("stroke","white")
+                .style("stroke-width","1pt")
+        bar_grp.append("rect")
+                .attr("x",-me.step_x*10)
+                .attr("y",-me.step_y*2)
+                .attr("rx",me.step_x/4)
+                .attr("ry",me.step_x/4)
+                .attr("width",50*me.step_y+me.step_x*10)
+                .attr("height",10*me.step_y+2*me.step_y)
+                .style("fill","none")
+                .style("stroke","silver")
+                .style("stroke-width","5pt")
+
         let bars = bar_grp.append("g")
             .attr("class", 'stats')
             .selectAll(".stats")
             .data(data_set)
+
+
+
+
         let bars_enter = bars.enter();
         bars_enter.append('rect')
             .attr("x",function(d){
                return d.x+delta_x;
             })
             .attr("y",function(d){
-               return   d.y-(delta_y/3);
+               return   d.y-(delta_y/6);
             })
             .attr("width",function(d){
                return delta_x*(d.value/3);
             })
             .attr("height",function(d){
-               return 2*delta_y / 3;
+               return delta_y / 3;
             })
             .style("fill", color)
             .style("stroke", "#7f7f7f")
         bars_enter.append('text')
             .attr("x",function(d){
-                return d.x ;
+                return d.x-delta_x ;
             })
             .attr("y",function(d){
                 return   d.y+(delta_y/2);
@@ -136,40 +144,70 @@ class Dashboard {
             .style("stroke-width", '0.125pt')
 
         bar_grp.append('text')
-            .attr("x",ox)
-            .attr("y",oy - (me.height) / 2)
-            .attr("dy",-10)
-            .text("> "+src.charAt(0).toUpperCase()+src.slice(1))
+            .attr("x",0)
+            .attr("y",0 )
+            .attr("dy",-80)
             .style("text-anchor", 'left')
             .style("font-family", 'Ruda')
             .style("font-size", '24pt')
             .style("fill", '#CCC')
             .style("stroke", '#111')
             .style("stroke-width", '0.125pt')
+            .text(src.charAt(0).toUpperCase()+src.slice(1))
 
-        _.forEach([0,10,20,30,40,50,60,70,80,90,100,110,120,130,140,150],function (item){
+        _.forEach([0,10,20,30,40,50,60,70,80,90,100,110,120,130,140,150,160,170,180,190,200],function (item){
             bar_grp.append('line')
-                .attr("x1",ox + (item * delta_x/3) + delta_x)
-                .attr("x2",ox + (item * delta_x/3)+ delta_x)
-                .attr("y1",oy - (me.height) / 2 )
-                .attr("y2",oy - (me.height) / 2 + (cnt)*delta_y)
+                .attr("x1", + (item * delta_x/3) + delta_x)
+                .attr("x2", + (item * delta_x/3)+ delta_x)
+                .attr("y1", 0 )
+                .attr("y2",  (cnt)*delta_y)
                 .style("fill", 'none')
                 .style("stroke", '#999')
                 .style("stroke-width", '0.5pt')
 
             bar_grp.append('text')
-                .attr("x",ox + (item * delta_x/3) + delta_x)
-                .attr("y",oy - (me.height) / 2 + (1+cnt)*delta_y)
-                .text(item)
+                .attr("x", (item * delta_x/3) + delta_x)
+                .attr("y",  (1+cnt)*delta_y)
                 .style("text-anchor", 'middle')
                 .style("font-family", 'Ruda')
                 .style("font-size", '16pt')
                 .style("fill", '#CCC')
                 .style("stroke", '#111')
                 .style("stroke-width", '0.125pt')
+                .text(item)
         })
         let bar_out = bars.exit()
         bar_out.remove()
+    }
+
+    update() {
+        let me = this;
+        me.svg.append("circle")
+            .attr("cx",0)
+            .attr("cy",0)
+            .attr("r",5)
+            .style("fill","red")
+            .style("stroke","white")
+            .style("stroke-width","1pt")
+//         me.draw_stats(-me.step_x*90,me.step_y*2,'status',"#A08020");
+        me.draw_stats(-me.step_x*55,me.step_y*0,'balanced',"#A02020");
+        me.draw_stats(-me.step_x*55,me.step_y*15,'creatures',"#208020");
+        me.draw_stats(-me.step_x*55,me.step_y*30,'clans',"#808020");
+//         me.draw_stats(-me.step_x*90,me.step_y*60,'disciplines',"#802080");
+
+        me.draw_stats(me.step_x*15,me.step_y*0,'generation',"#80A0F0");
+        me.draw_stats(me.step_x*15,me.step_y*15,'sect',"#802080");
+    }
+
+
+    zoomActivate() {
+        let me = this;
+        let zoom = d3.zoom()
+            .scaleExtent([1, 4])
+            .on('zoom', function (event) {
+                me.svg.attr('transform', event.transform);
+            });
+        me.vis.call(zoom);
     }
 
     perform() {

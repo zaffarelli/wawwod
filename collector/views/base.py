@@ -107,6 +107,23 @@ def get_list(request, pid=1, slug=None):
             creature_items = Creature.objects \
                 .filter(chronicle=chronicle.acronym, creature__in=['mage']) \
                 .order_by('-is_new', 'is_player', 'name')
+        # Chronicle: Camarilla Kindreds
+        elif 'cck' == slug:
+            creature_items = Creature.objects \
+                .filter(chronicle=chronicle.acronym, creature__in=['kindred'], faction="Camarilla", condition="OK") \
+                .order_by('family', 'garou_rank', 'name')
+        # Chronicle: Camarilla Ghouls
+        elif 'ccg' == slug:
+            creature_items = Creature.objects \
+                .filter(chronicle=chronicle.acronym, creature__in=['ghoul'], faction="Camarilla", condition="OK") \
+                .order_by('-is_new', 'is_player', 'name')
+        # Chronicle: Sabbat Kindreds
+        elif 'csk' == slug:
+            creature_items = Creature.objects \
+                .filter(chronicle=chronicle.acronym, creature__in=['kindred'], faction="Sabbat", condition="OK") \
+                .order_by('-is_new', 'is_player', 'name')
+
+
         elif 'wta' == slug:
             creature_items = Creature.objects \
                 .filter(chronicle=chronicle.acronym, creature__in=['garou', 'kinfolk']) \
@@ -960,3 +977,12 @@ def weaver_code(request, code=None):
 
     context["weaver_code"] = {"defi": defi, "powers": powers, "combos": l}
     return render(request, 'collector/page/weaver_code.html', context=context)
+
+@csrf_exempt
+def bulk_add(request):
+    from collector.models.creatures import Creature
+    answer = {"txt":"Yo"}
+    if is_ajax(request):
+        txt = request.POST["txt"]
+        answer["txt"] = Creature.bulk_load(txt)
+    return JsonResponse(answer)

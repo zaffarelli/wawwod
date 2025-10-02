@@ -31474,3 +31474,1280 @@ KeyError: 'Hamburg'
 [23/09 06:41:12] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1918
 [23/09 06:41:45] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1918
 [23/09 06:42:42] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1918
+[27/09 11:18:20] Not Found: /favicon.ico
+[27/09 11:18:20] "GET /favicon.ico HTTP/1.1" 404 14935
+[27/09 11:18:32] Internal Server Error: /ajax/collector_action/refix_all/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/actions.py", line 151, in refix_all
+    d.save()
+    ~~~~~~^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/db/models/base.py", line 892, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/db/models/base.py", line 978, in save_base
+    pre_save.send(
+    ~~~~~~~~~~~~~^
+        sender=origin,
+        ^^^^^^^^^^^^^^
+    ...<3 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/dispatch/dispatcher.py", line 189, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/zaffarelli/Projects/wawwod/storytelling/signals/districts.py", line 9, in update_district
+    instance.fix()
+    ~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/storytelling/models/districts.py", line 83, in fix
+    self.populate()
+    ~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/storytelling/models/districts.py", line 105, in populate
+    col = CLAN_COLORS[k.family.split(" ")[0]]
+          ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'Ventrue'
+[27/09 11:18:32] "GET /ajax/collector_action/refix_all/ HTTP/1.1" 500 108498
+[27/09 11:18:58] Internal Server Error: /ajax/collector_action/refix_all/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/actions.py", line 151, in refix_all
+    d.save()
+    ~~~~~~^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/db/models/base.py", line 892, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/db/models/base.py", line 978, in save_base
+    pre_save.send(
+    ~~~~~~~~~~~~~^
+        sender=origin,
+        ^^^^^^^^^^^^^^
+    ...<3 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/dispatch/dispatcher.py", line 189, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/zaffarelli/Projects/wawwod/storytelling/signals/districts.py", line 9, in update_district
+    instance.fix()
+    ~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/storytelling/models/districts.py", line 83, in fix
+    self.populate()
+    ~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/storytelling/models/districts.py", line 110, in populate
+    per_clan[k.family] += k.freebies
+    ~~~~~~~~^^^^^^^^^^
+KeyError: 'Ventrue'
+[27/09 11:18:58] "GET /ajax/collector_action/refix_all/ HTTP/1.1" 500 108777
+[29/09 04:57:10] Internal Server Error: /ajax/collector_action/refix_all/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/actions.py", line 151, in refix_all
+    d.save()
+    ~~~~~~^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/db/models/base.py", line 892, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/db/models/base.py", line 978, in save_base
+    pre_save.send(
+    ~~~~~~~~~~~~~^
+        sender=origin,
+        ^^^^^^^^^^^^^^
+    ...<3 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/dispatch/dispatcher.py", line 189, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/zaffarelli/Projects/wawwod/storytelling/signals/districts.py", line 9, in update_district
+    instance.fix()
+    ~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/storytelling/models/districts.py", line 57, in fix
+    self.populate()
+    ~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/storytelling/models/districts.py", line 64, in populate
+    palette = self.buildPalette(len(CLAN_COLORS))
+  File "/home/zaffarelli/Projects/wawwod/storytelling/models/districts.py", line 124, in buildPalette
+    palette.append(f"#{r:x02}{g:x02}{b:x02}")
+                      ^^^^^^^
+ValueError: Invalid format specifier 'x02' for object of type 'int'
+[29/09 04:57:10] "GET /ajax/collector_action/refix_all/ HTTP/1.1" 500 110962
+[29/09 05:42:10] Internal Server Error: /ajax/collector_action/refix_all/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/actions.py", line 151, in refix_all
+    d.save()
+    ~~~~~~^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/db/models/base.py", line 892, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/db/models/base.py", line 978, in save_base
+    pre_save.send(
+    ~~~~~~~~~~~~~^
+        sender=origin,
+        ^^^^^^^^^^^^^^
+    ...<3 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/dispatch/dispatcher.py", line 189, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/zaffarelli/Projects/wawwod/storytelling/signals/districts.py", line 9, in update_district
+    instance.fix()
+    ~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/storytelling/models/districts.py", line 57, in fix
+    self.populate()
+    ~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/storytelling/models/districts.py", line 64, in populate
+    palette = self.buildPalette(len(CLAN_COLORS)+1)
+  File "/home/zaffarelli/Projects/wawwod/storytelling/models/districts.py", line 126, in buildPalette
+    palette.append(f"#{color[0]:02x}{color[1]:02x}{color[2]:02x}")
+                      ^^^^^^^^^^^^^^
+ValueError: Unknown format code 'x' for object of type 'float'
+[29/09 05:42:10] "GET /ajax/collector_action/refix_all/ HTTP/1.1" 500 110802
+[29/09 06:16:20] Internal Server Error: /ajax/collector_action/refix_all/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/actions.py", line 151, in refix_all
+    d.save()
+    ~~~~~~^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/db/models/base.py", line 892, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/db/models/base.py", line 978, in save_base
+    pre_save.send(
+    ~~~~~~~~~~~~~^
+        sender=origin,
+        ^^^^^^^^^^^^^^
+    ...<3 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/dispatch/dispatcher.py", line 189, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/zaffarelli/Projects/wawwod/storytelling/signals/districts.py", line 9, in update_district
+    instance.fix()
+    ~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/storytelling/models/districts.py", line 57, in fix
+    self.populate()
+    ~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/storytelling/models/districts.py", line 119, in populate
+    total += pc
+TypeError: unsupported operand type(s) for +=: 'int' and 'str'
+[29/09 06:16:20] "GET /ajax/collector_action/refix_all/ HTTP/1.1" 500 108981
+[29/09 06:17:15] Internal Server Error: /ajax/collector_action/refix_all/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/actions.py", line 151, in refix_all
+    d.save()
+    ~~~~~~^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/db/models/base.py", line 892, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/db/models/base.py", line 978, in save_base
+    pre_save.send(
+    ~~~~~~~~~~~~~^
+        sender=origin,
+        ^^^^^^^^^^^^^^
+    ...<3 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/dispatch/dispatcher.py", line 189, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/zaffarelli/Projects/wawwod/storytelling/signals/districts.py", line 9, in update_district
+    instance.fix()
+    ~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/storytelling/models/districts.py", line 57, in fix
+    self.populate()
+    ~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/storytelling/models/districts.py", line 121, in populate
+    percents.append(round(pc/total))
+                          ~~^~~~~~
+TypeError: unsupported operand type(s) for /: 'str' and 'int'
+[29/09 06:17:15] "GET /ajax/collector_action/refix_all/ HTTP/1.1" 500 109252
+[29/09 06:18:00] Internal Server Error: /ajax/collector_action/refix_all/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/actions.py", line 151, in refix_all
+    d.save()
+    ~~~~~~^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/db/models/base.py", line 892, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/db/models/base.py", line 978, in save_base
+    pre_save.send(
+    ~~~~~~~~~~~~~^
+        sender=origin,
+        ^^^^^^^^^^^^^^
+    ...<3 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/dispatch/dispatcher.py", line 189, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/zaffarelli/Projects/wawwod/storytelling/signals/districts.py", line 9, in update_district
+    instance.fix()
+    ~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/storytelling/models/districts.py", line 57, in fix
+    self.populate()
+    ~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/storytelling/models/districts.py", line 122, in populate
+    percents.append(round(int(pc)/total))
+                          ~~~^^^^
+ValueError: invalid literal for int() with base 10: 'Ventrue'
+[29/09 06:18:00] "GET /ajax/collector_action/refix_all/ HTTP/1.1" 500 109226
+[29/09 06:18:40] Internal Server Error: /ajax/collector_action/refix_all/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/actions.py", line 151, in refix_all
+    d.save()
+    ~~~~~~^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/db/models/base.py", line 892, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/db/models/base.py", line 978, in save_base
+    pre_save.send(
+    ~~~~~~~~~~~~~^
+        sender=origin,
+        ^^^^^^^^^^^^^^
+    ...<3 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/dispatch/dispatcher.py", line 189, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/zaffarelli/Projects/wawwod/storytelling/signals/districts.py", line 9, in update_district
+    instance.fix()
+    ~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/storytelling/models/districts.py", line 57, in fix
+    self.populate()
+    ~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/storytelling/models/districts.py", line 120, in populate
+    for pc,v in per_clan:
+        ^^^^
+ValueError: too many values to unpack (expected 2)
+[29/09 06:18:40] "GET /ajax/collector_action/refix_all/ HTTP/1.1" 500 109008
+[29/09 06:25:10] Internal Server Error: /ajax/collector_action/refix_all/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/actions.py", line 151, in refix_all
+    d.save()
+    ~~~~~~^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/db/models/base.py", line 892, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/db/models/base.py", line 978, in save_base
+    pre_save.send(
+    ~~~~~~~~~~~~~^
+        sender=origin,
+        ^^^^^^^^^^^^^^
+    ...<3 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/dispatch/dispatcher.py", line 189, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/zaffarelli/Projects/wawwod/storytelling/signals/districts.py", line 9, in update_district
+    instance.fix()
+    ~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/storytelling/models/districts.py", line 57, in fix
+    self.populate()
+    ~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/storytelling/models/districts.py", line 126, in populate
+    for p,w in percents.items():
+               ^^^^^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'items'
+[29/09 06:25:10] "GET /ajax/collector_action/refix_all/ HTTP/1.1" 500 108790
+[29/09 06:26:31] Internal Server Error: /ajax/collector_action/refix_all/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/actions.py", line 151, in refix_all
+    d.save()
+    ~~~~~~^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/db/models/base.py", line 892, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/db/models/base.py", line 978, in save_base
+    pre_save.send(
+    ~~~~~~~~~~~~~^
+        sender=origin,
+        ^^^^^^^^^^^^^^
+    ...<3 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/dispatch/dispatcher.py", line 189, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/zaffarelli/Projects/wawwod/storytelling/signals/districts.py", line 9, in update_district
+    instance.fix()
+    ~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/storytelling/models/districts.py", line 57, in fix
+    self.populate()
+    ~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/storytelling/models/districts.py", line 126, in populate
+    for w in percents():
+             ~~~~~~~~^^
+TypeError: 'list' object is not callable
+[29/09 06:26:31] "GET /ajax/collector_action/refix_all/ HTTP/1.1" 500 108701
+[29/09 06:26:51] Internal Server Error: /ajax/collector_action/refix_all/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/actions.py", line 151, in refix_all
+    d.save()
+    ~~~~~~^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/db/models/base.py", line 892, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/db/models/base.py", line 978, in save_base
+    pre_save.send(
+    ~~~~~~~~~~~~~^
+        sender=origin,
+        ^^^^^^^^^^^^^^
+    ...<3 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/dispatch/dispatcher.py", line 189, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/zaffarelli/Projects/wawwod/storytelling/signals/districts.py", line 9, in update_district
+    instance.fix()
+    ~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/storytelling/models/districts.py", line 57, in fix
+    self.populate()
+    ~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/storytelling/models/districts.py", line 122, in populate
+    percents.append({"cnt":round(v["cnt"]/total),"color":v["idx"],"title":pc})
+                                 ~^^^^^^^
+TypeError: 'int' object is not subscriptable
+[29/09 06:26:51] "GET /ajax/collector_action/refix_all/ HTTP/1.1" 500 109453
+[30/09 19:59:19] Not Found: /ajax/bulk/
+[30/09 19:59:19] "POST /ajax/bulk/ HTTP/1.1" 404 14932
+[30/09 19:59:23] Not Found: /ajax/bulk/
+[30/09 19:59:23] "POST /ajax/bulk/ HTTP/1.1" 404 14932
+[30/09 20:01:43] Forbidden (CSRF token from the 'X-Csrftoken' HTTP header has incorrect length.): /ajax/bulk/
+[30/09 20:01:43] "POST /ajax/bulk/ HTTP/1.1" 403 2549
+[30/09 20:01:55] Forbidden (CSRF token from the 'X-Csrftoken' HTTP header has incorrect length.): /ajax/bulk/
+[30/09 20:01:55] "POST /ajax/bulk/ HTTP/1.1" 403 2549
+[01/10 06:11:18] Forbidden (CSRF token from the 'X-Csrftoken' HTTP header has incorrect length.): /ajax/bulk/
+[01/10 06:11:18] "POST /ajax/bulk/ HTTP/1.1" 403 2549
+[01/10 06:16:42] Internal Server Error: /ajax/bulk/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 971, in bulk_add
+    answer["txt"] = Creature.bulk_load(txt)
+                    ~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 2182, in bulk_load
+    setattr(c,property["key"],property["value"])
+              ~~~~~~~~^^^^^^^
+KeyError: 'key'
+[01/10 06:16:42] "POST /ajax/bulk/ HTTP/1.1" 500 21391
+[01/10 06:17:10] Internal Server Error: /ajax/bulk/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 971, in bulk_add
+    answer["txt"] = Creature.bulk_load(txt)
+                    ~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 2182, in bulk_load
+    setattr(c,property[key],property[value])
+              ~~~~~~~~^^^^^
+KeyError: 'trueage'
+[01/10 06:17:10] "POST /ajax/bulk/ HTTP/1.1" 500 21393
+[01/10 06:18:26] Internal Server Error: /ajax/bulk/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 971, in bulk_add
+    answer["txt"] = Creature.bulk_load(txt)
+                    ~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 2183, in bulk_load
+    setattr(c,property[key],property[value])
+              ~~~~~~~~^^^^^
+KeyError: 'trueage'
+[01/10 06:18:26] "POST /ajax/bulk/ HTTP/1.1" 500 21393
+[01/10 06:20:26] Internal Server Error: /ajax/bulk/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 971, in bulk_add
+    answer["txt"] = Creature.bulk_load(txt)
+                    ~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 2175, in bulk_load
+    (key, value) = item.split("=")
+    ^^^^^^^^^^^^
+ValueError: not enough values to unpack (expected 2, got 1)
+[01/10 06:20:26] "POST /ajax/bulk/ HTTP/1.1" 500 21452
+[01/10 06:20:47] Internal Server Error: /ajax/bulk/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 971, in bulk_add
+    answer["txt"] = Creature.bulk_load(txt)
+                    ~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 2176, in bulk_load
+    (key, value) = item.split("=")
+    ^^^^^^^^^^^^
+ValueError: not enough values to unpack (expected 2, got 1)
+[01/10 06:20:47] "POST /ajax/bulk/ HTTP/1.1" 500 21452
+[01/10 06:22:22] Internal Server Error: /ajax/bulk/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 971, in bulk_add
+    answer["txt"] = Creature.bulk_load(txt)
+                    ~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 2188, in bulk_load
+    setattr(c, property[key], property[value])
+               ~~~~~~~~^^^^^
+KeyError: 'trueage'
+[01/10 06:22:22] "POST /ajax/bulk/ HTTP/1.1" 500 21396
+[01/10 06:23:47] Internal Server Error: /ajax/bulk/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 971, in bulk_add
+    answer["txt"] = Creature.bulk_load(txt)
+                    ~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 2189, in bulk_load
+    setattr(c, property[key], property[value])
+               ~~~~~~~~^^^^^
+KeyError: 'trueage'
+[01/10 06:23:47] "POST /ajax/bulk/ HTTP/1.1" 500 21396
+[01/10 06:31:22] Internal Server Error: /ajax/bulk/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 971, in bulk_add
+    answer["txt"] = Creature.bulk_load(txt)
+                    ~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 2189, in bulk_load
+    val = property[value]
+          ~~~~~~~~^^^^^^^
+KeyError: '47'
+[01/10 06:31:22] "POST /ajax/bulk/ HTTP/1.1" 500 21362
+[01/10 06:32:09] Internal Server Error: /ajax/bulk/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 971, in bulk_add
+    answer["txt"] = Creature.bulk_load(txt)
+                    ~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 2189, in bulk_load
+    val = property[value]
+          ~~~~~~~~^^^^^^^
+KeyError: '47'
+[01/10 06:32:09] "POST /ajax/bulk/ HTTP/1.1" 500 21362
+[01/10 06:32:57] Internal Server Error: /ajax/bulk/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 971, in bulk_add
+    answer["txt"] = Creature.bulk_load(txt)
+                    ~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 2189, in bulk_load
+    x = property[value]
+        ~~~~~~~~^^^^^^^
+KeyError: '47'
+[01/10 06:32:57] "POST /ajax/bulk/ HTTP/1.1" 500 21358
+[01/10 06:33:37] Internal Server Error: /ajax/bulk/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 971, in bulk_add
+    answer["txt"] = Creature.bulk_load(txt)
+                    ~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 2189, in bulk_load
+    print(">>"+property)
+          ~~~~^~~~~~~~~
+TypeError: can only concatenate str (not "dict") to str
+[01/10 06:33:37] "POST /ajax/bulk/ HTTP/1.1" 500 21441
+[01/10 06:34:52] Internal Server Error: /ajax/bulk/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 971, in bulk_add
+    answer["txt"] = Creature.bulk_load(txt)
+                    ~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 2188, in bulk_load
+    for k, v in properties.items():
+                ^^^^^^^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'items'
+[01/10 06:34:52] "POST /ajax/bulk/ HTTP/1.1" 500 21459
+[01/10 06:35:32] Internal Server Error: /ajax/bulk/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 971, in bulk_add
+    answer["txt"] = Creature.bulk_load(txt)
+                    ~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 2195, in bulk_load
+    c.save()
+    ~~~~~~^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/db/models/base.py", line 892, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/db/models/base.py", line 978, in save_base
+    pre_save.send(
+    ~~~~~~~~~~~~~^
+        sender=origin,
+        ^^^^^^^^^^^^^^
+    ...<3 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/dispatch/dispatcher.py", line 189, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/zaffarelli/Projects/wawwod/collector/signals/creatures.py", line 19, in update_creature
+    instance.fix()
+    ~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 908, in fix
+    self.fix_ghoul()
+    ~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 590, in fix_ghoul
+    domitor = Creature.objects.get(rid=self.sire)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/db/models/query.py", line 649, in get
+    raise self.model.DoesNotExist(
+        "%s matching query does not exist." % self.model._meta.object_name
+    )
+collector.models.creatures.Creature.DoesNotExist: Creature matching query does not exist.
+[01/10 06:35:32] "POST /ajax/bulk/ HTTP/1.1" 500 22839
+[01/10 06:36:29] Internal Server Error: /ajax/bulk/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 971, in bulk_add
+    answer["txt"] = Creature.bulk_load(txt)
+                    ~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 2173, in bulk_load
+    report.append = f"Character {c.name} already exists!"
+    ^^^^^^^^^^^^^
+AttributeError: 'list' object attribute 'append' is read-only
+[01/10 06:36:29] "POST /ajax/bulk/ HTTP/1.1" 500 21480
+[01/10 06:36:47] Internal Server Error: /ajax/bulk/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 971, in bulk_add
+    answer["txt"] = Creature.bulk_load(txt)
+                    ~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 2175, in bulk_load
+    c.save()
+    ~~~~~~^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/db/models/base.py", line 892, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/db/models/base.py", line 978, in save_base
+    pre_save.send(
+    ~~~~~~~~~~~~~^
+        sender=origin,
+        ^^^^^^^^^^^^^^
+    ...<3 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/dispatch/dispatcher.py", line 189, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/zaffarelli/Projects/wawwod/collector/signals/creatures.py", line 19, in update_creature
+    instance.fix()
+    ~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 899, in fix
+    self.fix_kindred()
+    ~~~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 738, in fix_kindred
+    self.weakness = CLANS_SPECIFICS[self.family]['clan_weakness']
+                    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: ''
+[01/10 06:36:47] "POST /ajax/bulk/ HTTP/1.1" 500 22361
+[01/10 06:37:33] Internal Server Error: /ajax/bulk/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 971, in bulk_add
+    answer["txt"] = Creature.bulk_load(txt)
+                    ~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 2175, in bulk_load
+    print(items)
+    ^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/db/models/base.py", line 892, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/db/models/base.py", line 978, in save_base
+    pre_save.send(
+    ~~~~~~~~~~~~~^
+        sender=origin,
+        ^^^^^^^^^^^^^^
+    ...<3 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/dispatch/dispatcher.py", line 189, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/zaffarelli/Projects/wawwod/collector/signals/creatures.py", line 19, in update_creature
+    instance.fix()
+    ~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 899, in fix
+    self.fix_kindred()
+    ~~~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 738, in fix_kindred
+    self.weakness = CLANS_SPECIFICS[self.family]['clan_weakness']
+                    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: ''
+[01/10 06:37:33] "POST /ajax/bulk/ HTTP/1.1" 500 22365
+[01/10 06:41:12] Internal Server Error: /ajax/bulk/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 971, in bulk_add
+    answer["txt"] = Creature.bulk_load(txt)
+                    ~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 2197, in bulk_load
+    c.save()
+    ~~~~~~^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/db/models/base.py", line 892, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/db/models/base.py", line 978, in save_base
+    pre_save.send(
+    ~~~~~~~~~~~~~^
+        sender=origin,
+        ^^^^^^^^^^^^^^
+    ...<3 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/dispatch/dispatcher.py", line 189, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/zaffarelli/Projects/wawwod/collector/signals/creatures.py", line 19, in update_creature
+    instance.fix()
+    ~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 908, in fix
+    self.fix_ghoul()
+    ~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 590, in fix_ghoul
+    domitor = Creature.objects.get(rid=self.sire)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/db/models/query.py", line 649, in get
+    raise self.model.DoesNotExist(
+        "%s matching query does not exist." % self.model._meta.object_name
+    )
+collector.models.creatures.Creature.DoesNotExist: Creature matching query does not exist.
+[01/10 06:41:12] "POST /ajax/bulk/ HTTP/1.1" 500 22815
+[01/10 06:42:26] Internal Server Error: /ajax/bulk/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 971, in bulk_add
+    answer["txt"] = Creature.bulk_load(txt)
+                    ~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 2193, in bulk_load
+    print(">>" + k, v)
+          ~~~~~^~~
+TypeError: can only concatenate str (not "builtin_function_or_method") to str
+[01/10 06:42:26] "POST /ajax/bulk/ HTTP/1.1" 500 21454
+[01/10 06:43:30] Internal Server Error: /ajax/bulk/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 971, in bulk_add
+    answer["txt"] = Creature.bulk_load(txt)
+                    ~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 2199, in bulk_load
+    c.save()
+    ~~~~~~^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/db/models/base.py", line 892, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/db/models/base.py", line 978, in save_base
+    pre_save.send(
+    ~~~~~~~~~~~~~^
+        sender=origin,
+        ^^^^^^^^^^^^^^
+    ...<3 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/dispatch/dispatcher.py", line 189, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/zaffarelli/Projects/wawwod/collector/signals/creatures.py", line 19, in update_creature
+    instance.fix()
+    ~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 908, in fix
+    self.fix_ghoul()
+    ~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 590, in fix_ghoul
+    domitor = Creature.objects.get(rid=self.sire)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/db/models/query.py", line 649, in get
+    raise self.model.DoesNotExist(
+        "%s matching query does not exist." % self.model._meta.object_name
+    )
+collector.models.creatures.Creature.DoesNotExist: Creature matching query does not exist.
+[01/10 06:43:30] "POST /ajax/bulk/ HTTP/1.1" 500 22815
+[01/10 06:59:02] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1918
+[02/10 03:43:54] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1918
+[02/10 04:00:55] Not Found: /favicon.ico
+[02/10 04:04:08] Internal Server Error: /ajax/bulk/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 970, in bulk_add
+    answer["txt"] = Creature.bulk_load(txt)
+                    ~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 2204, in bulk_load
+    c.save()
+    ~~~~~~^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/db/models/base.py", line 892, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/db/models/base.py", line 978, in save_base
+    pre_save.send(
+    ~~~~~~~~~~~~~^
+        sender=origin,
+        ^^^^^^^^^^^^^^
+    ...<3 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/dispatch/dispatcher.py", line 189, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/zaffarelli/Projects/wawwod/collector/signals/creatures.py", line 19, in update_creature
+    instance.fix()
+    ~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 920, in fix
+    self.freebies -= PER_TRIBE[as_tribe_plural(self.family)]['willpower'] * 1  # Willpower per Tribe
+                     ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'Glasswalkers'
+[02/10 04:04:08] "POST /ajax/bulk/ HTTP/1.1" 500 21951
+[02/10 04:15:50] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1918
+[02/10 04:22:36] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1918
+[02/10 04:24:30] Internal Server Error: /ajax/list/creatures/1/cck/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 114, in get_list
+    .order_by('family', 'generation', 'name')
+     ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/db/models/query.py", line 1701, in order_by
+    obj.query.add_ordering(*field_names)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/db/models/sql/query.py", line 2250, in add_ordering
+    self.names_to_path(item.split(LOOKUP_SEP), self.model._meta)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/db/models/sql/query.py", line 1769, in names_to_path
+    raise FieldError(
+    ...<2 lines>...
+    )
+django.core.exceptions.FieldError: Cannot resolve keyword 'generation' into field. Choices are: adventure, age, angst, antithesis, arete, attribute0, attribute1, attribute2, attribute3, attribute4, attribute5, attribute6, attribute7, attribute8, auspice, background0, background1, background10, background11, background2, background3, background4, background5, background6, background7, background8, background9, banality, birthright0, birthright1, birthright2, birthright3, birthright4, bloodpool, body_limit, breed, cast_figure, challenge, chronicle, community_job, concept, condition, corpus, creature, darkpassion0, darkpassion1, darkpassion2, darkpassion3, darkpassion4, demeanor, disciplinepoints, display_gauge, display_pole, district, domitor, dynamic, edges, embrace, entropic, equipment, exp_pool, exp_spent, expectedfreebies, experience, experience_expenditure, extra, extra_freebies, extract_priority, faction, family, fetter0, fetter1, fetter2, fetter3, fetter4, finaldeath, flaw0, flaw1, flaw2, flaw3, flaw4, freebiedif, freebies, freebies_exp_offset, fury_limit, garou_rank, ghost, glamour, glory, gnosis, group, groupspec, hidden, honor, house, humanity, id, is_new, is_player, knowledge0, knowledge1, knowledge2, knowledge3, knowledge4, knowledge5, knowledge6, knowledge7, knowledge8, knowledge9, lastmod, legacies, list_pos, maj, merit0, merit1, merit2, merit3, merit4, motley, mythic, name, nature, need_fix, new_name, nickname, nightmare, notes, notes_on_backgrounds, notes_on_history, notes_on_meritsflaws, notes_on_naturedemeanor, notes_on_others, notes_on_traits, paradox, passion0, passion1, passion2, passion3, passion4, path, pathos, patron, picture, player, position, pre_change_access, primogen, psyche, psyche_archetype, psyche_willpower, quintessence, rage, rank, realm0, realm1, realm2, realm3, realm4, regret, reparts, residence, rid, rite0, rite1, rite2, rite3, rite4, rite5, rite6, rite7, rite8, rite9, seeming, sex, sire, skill0, skill1, skill2, skill3, skill4, skill5, skill6, skill7, skill8, skill9, source, specialities_rationale, static, status, summary, talent0, talent1, talent2, talent3, talent4, talent5, talent6, talent7, talent8, talent9, territory, thorn0, thorn1, thorn2, thorn3, thorn4, timeintorpor, topic, total_backgrounds, total_fetters, total_knowledges, total_mental, total_passions, total_physical, total_realms, total_skills, total_social, total_talents, total_traits, trait0, trait1, trait10, trait11, trait12, trait13, trait14, trait15, trait2, trait3, trait4, trait5, trait6, trait7, trait8, trait9, trueage, virtue0, virtue1, virtue2, virtue_name0, virtue_name1, virtue_name2, weakness, willpower, wisdom
+[02/10 04:24:30] "GET /ajax/list/creatures/1/cck/ HTTP/1.1" 500 109815
+[02/10 04:28:53] Internal Server Error: /ajax/collector_action/refix_all/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/actions.py", line 147, in refix_all
+    c.save()
+    ~~~~~~^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/db/models/base.py", line 892, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/db/models/base.py", line 978, in save_base
+    pre_save.send(
+    ~~~~~~~~~~~~~^
+        sender=origin,
+        ^^^^^^^^^^^^^^
+    ...<3 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/dispatch/dispatcher.py", line 189, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/zaffarelli/Projects/wawwod/collector/signals/creatures.py", line 19, in update_creature
+    instance.fix()
+    ~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 900, in fix
+    self.fix_kindred()
+    ~~~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 755, in fix_kindred
+    self.rank = self.as_generation(self.background3)
+                ^^^^^^^^^^^^^^^^^^
+AttributeError: 'Creature' object has no attribute 'as_generation'. Did you mean: 'generation'?
+[02/10 04:28:53] "GET /ajax/collector_action/refix_all/ HTTP/1.1" 500 107406
+[02/10 04:29:38] Internal Server Error: /ajax/collector_action/refix_all/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/actions.py", line 151, in refix_all
+    d.save()
+    ~~~~~~^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/db/models/base.py", line 892, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/db/models/base.py", line 978, in save_base
+    pre_save.send(
+    ~~~~~~~~~~~~~^
+        sender=origin,
+        ^^^^^^^^^^^^^^
+    ...<3 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/dispatch/dispatcher.py", line 189, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/zaffarelli/Projects/wawwod/storytelling/signals/districts.py", line 9, in update_district
+    instance.fix()
+    ~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/storytelling/models/districts.py", line 57, in fix
+    self.populate()
+    ~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/storytelling/models/districts.py", line 122, in populate
+    percents.append({"cnt":round(v["cnt"]/total),"color":v["idx"],"title":pc})
+                                 ~^^^^^^^
+TypeError: 'int' object is not subscriptable
+[02/10 04:29:38] "GET /ajax/collector_action/refix_all/ HTTP/1.1" 500 109450
+[02/10 04:30:02] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1918
+[02/10 04:30:31] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1918
+[02/10 04:31:34] Internal Server Error: /ajax/collector_action/refix_all/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/actions.py", line 151, in refix_all
+    d.save()
+    ~~~~~~^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/db/models/base.py", line 892, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/db/models/base.py", line 978, in save_base
+    pre_save.send(
+    ~~~~~~~~~~~~~^
+        sender=origin,
+        ^^^^^^^^^^^^^^
+    ...<3 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/dispatch/dispatcher.py", line 189, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/zaffarelli/Projects/wawwod/storytelling/signals/districts.py", line 9, in update_district
+    instance.fix()
+    ~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/storytelling/models/districts.py", line 57, in fix
+    self.populate()
+    ~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/storytelling/models/districts.py", line 122, in populate
+    percents.append({"cnt":round(v["cnt"]/total),"color":v["idx"],"title":pc})
+                                 ~^^^^^^^
+TypeError: 'int' object is not subscriptable
+[02/10 04:31:34] "GET /ajax/collector_action/refix_all/ HTTP/1.1" 500 109450
+[02/10 04:33:01] Internal Server Error: /ajax/collector_action/refix_all/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/actions.py", line 151, in refix_all
+    d.save()
+    ~~~~~~^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/db/models/base.py", line 892, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/db/models/base.py", line 978, in save_base
+    pre_save.send(
+    ~~~~~~~~~~~~~^
+        sender=origin,
+        ^^^^^^^^^^^^^^
+    ...<3 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/dispatch/dispatcher.py", line 189, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/zaffarelli/Projects/wawwod/storytelling/signals/districts.py", line 9, in update_district
+    instance.fix()
+    ~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/storytelling/models/districts.py", line 57, in fix
+    self.populate()
+    ~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/storytelling/models/districts.py", line 122, in populate
+    percents.append({"cnt":round(v["cnt"]/total),"color":v["idx"],"title":pc})
+                                 ~^^^^^^^
+TypeError: 'int' object is not subscriptable
+[02/10 04:33:01] "GET /ajax/collector_action/refix_all/ HTTP/1.1" 500 109450
+[02/10 04:33:05] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1918
+[02/10 04:41:34] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1918
+[02/10 04:43:58] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1918
+[02/10 04:47:37] Internal Server Error: /ajax/editable/updown/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/db/backends/sqlite3/base.py", line 354, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.IntegrityError: CHECK constraint failed: background5
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 199, in updown
+    item.save()
+    ~~~~~~~~~^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/db/models/base.py", line 892, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/db/models/base.py", line 998, in save_base
+    updated = self._save_table(
+        raw,
+    ...<4 lines>...
+        update_fields,
+    )
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/db/models/base.py", line 1130, in _save_table
+    updated = self._do_update(
+        base_qs, using, pk_val, values, update_fields, forced_update
+    )
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/db/models/base.py", line 1195, in _do_update
+    return filtered._update(values) > 0
+           ~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/db/models/query.py", line 1278, in _update
+    return query.get_compiler(self.db).execute_sql(CURSOR)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 2003, in execute_sql
+    cursor = super().execute_sql(result_type)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 1574, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/db/backends/sqlite3/base.py", line 354, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: CHECK constraint failed: background5
+[02/10 04:47:37] "POST /ajax/editable/updown/ HTTP/1.1" 500 24309
+[02/10 06:22:20] Not Found: /favicon.ico
+[02/10 06:22:20] "GET /favicon.ico HTTP/1.1" 404 15197
