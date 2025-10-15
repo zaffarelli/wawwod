@@ -4,7 +4,7 @@ from django.shortcuts import render
 from xhtml2pdf import pisa
 from io import BytesIO
 
-from collector.utils.wod_reference import FONTSET
+from collector.utils.wod_reference import FONTSET, get_current_chronicle
 from storytelling.models.stories import Story
 from storytelling.models.scenes import Scene
 from collector.utils.helper import json_default, is_ajax
@@ -145,3 +145,57 @@ def display_map(request, slug=None):
 # def show_munich(request):
 #     context = {}
 #     return render(request, 'storytelling/geojson.html')
+
+
+def chronicle_book(request):
+    from collector.models.creatures import Creature
+    settings = {}
+    chronicle = get_current_chronicle()
+    factions = {
+        "camarilla":{
+            "name":"camarilla",
+            "description":"",
+            "groups":[]
+        },
+        "sabbat":{
+            "name": "sabbat",
+            "description":"",
+            "groups": []
+        },
+        "independents":{
+            "name": "independents",
+            "description": "",
+            "groups": []
+        },
+        "anarchs": {
+            "name": "anarchs",
+            "description": "",
+            "groups": []
+        },
+
+    }
+    groups = {}
+    for c in (Creature.objects.filter(chronicle=chronicle.acronym, condition="OK").filter(creature="kindred",status="READY").order_by("groupspec")):
+        g = "_".join(c.groupspec.lower().split(" "))
+        if g not in groups:
+            groups[g] = {"code": g, "faction": c.faction, "name": f"{c.groupspec} ({c.faction})", "kindreds": []}
+        kindred_entry = {"data":c,"ghouls":[]}
+        ghouls = c.retainers_vals
+        for h in ghouls:
+            kindred_entry["ghouls"].append(h)
+        groups[g]["kindreds"].append(kindred_entry)
+    for group,content in groups.items():
+        factions[content["faction"].lower()]["groups"].append(content)
+    context = {'data': factions, 'settings': settings, 'filename': chronicle.acronym, "chronicle":chronicle}
+    template = get_template("storytelling/pdf/factions.html")
+    html = template.render(context)
+    filename = f'chrconicle_book_{context['filename']}.pdf'
+    fname = os.path.join('wawwod_media/', 'pdf/results/' + filename)
+    es_pdf = open(fname, 'wb')
+    pdf = pisa.pisaDocument(BytesIO(html.encode('utf-8')), es_pdf)
+    answer= {"status":"Ok"}
+    if not pdf.err:
+        es_pdf.close()
+        answer = {"status": pdf.err}
+        return HttpResponse(status=204)
+    return JsonResponse(answer)

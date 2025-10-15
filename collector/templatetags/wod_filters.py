@@ -8,17 +8,17 @@ register = template.Library()
 
 @register.filter(name='as_generation')
 def as_generation(value):
-    return "%dth"%(13-value)
+    return "%dth" % (13 - value)
 
 
 @register.filter(name='prev')
 def prev(value):
-    return value-1
+    return value - 1
 
 
 @register.filter(name='next')
 def next(value):
-    return value+1
+    return value + 1
 
 
 @register.filter(name='modulo')
@@ -29,7 +29,7 @@ def modulo(num, val):
 @register.filter(name='to_logo')
 def modulo(val):
     logo_str = '_'.join(val.lower().split(' '))
-    res = '<img src="/static/collector/clans/%s.webp"> '%(logo_str)
+    res = '<img src="/static/collector/clans/%s.webp"> ' % (logo_str)
     return res
 
 
@@ -42,8 +42,8 @@ def as_bullets(value, options=''):
     else:
         tokens = options.split(',')
         max = int(tokens[0])
-    one = '<i class="fas fa-circle fa-xs" title="%d"></i>'%(value)
-    blank = '<i class="fas fa-circle fa-xs blank" title="%d"></i>'%(value)
+    one = '<i class="fas fa-circle fa-xs" title="%d"></i>' % (value)
+    blank = '<i class="fas fa-circle fa-xs blank" title="%d"></i>' % (value)
     x = 0
     res = ''
     while x < max:
@@ -51,9 +51,9 @@ def as_bullets(value, options=''):
             res += one
         else:
             res += blank
-        if (x+1) % 10 == 0:
+        if (x + 1) % 10 == 0:
             res += '<br/>'
-        elif (x+1) % 5 == 0:
+        elif (x + 1) % 5 == 0:
             res += '&nbsp;'
         x += 1
     return res
@@ -90,11 +90,11 @@ def as_discipline2(stack, x_field=''):
     if len(tokens) > 0:
         text = tokens[0]
         if len(tokens) > 1:
-            val = int(tokens[1].replace('(','').replace(')',''))
+            val = int(tokens[1].replace('(', '').replace(')', ''))
     if x_field != "":
         res = "<th>%s</th><td class='editable userinput' id='%s__%s'>%s</td>" % (text, x_id, x_field, as_bullets(val))
     else:
-        res = "<th>%s</th><td>%s</td>"%(text,as_bullets(val))
+        res = "<th>%s</th><td>%s</td>" % (text, as_bullets(val))
     return res
 
 
@@ -114,7 +114,7 @@ def as_editable_updown(value, options=''):
     keys = options.split(',')
     aid = int(keys[0])
     afield = keys[1]
-    res = "<td class='editable updown' id='%d_%s'>"%(aid,afield)
+    res = "<td class='editable updown' id='%d_%s'>" % (aid, afield)
     return res
 
 
@@ -171,13 +171,12 @@ def as_tribe_plural(value):
 @register.filter(name='from_rid')
 def from_rid(value):
     from collector.models.creatures import Creature
-    name =  f'Not found: ({value})'
+    name = f'Not found: ({value})'
     if value != '':
         sire = Creature.objects.filter(rid=value)
         if len(sire) == 1:
             name = sire.first().name
     return name
-
 
 
 @register.filter(name='to_tribe_logo')
@@ -186,14 +185,71 @@ def to_tribe_logo(val):
     res = f'<img src="/static/collector/tribes/{logo_str}.webp"> '
     return res
 
+
 @register.filter(name='to_tradition_logo')
 def to_tradition_logo(val):
     logo_str = '_'.join(val.lower().split(' '))
     res = f'<img src="/static/collector/traditions/{logo_str}.webp"> '
     return res
 
+
 @register.filter(name='snake_case')
 def snake_case(val):
     v = val.split(" ")
     return "_".join(v).lower()
 
+
+@register.filter(name='family_color')
+def family_color(val):
+    from collector.utils.wod_reference import CLAN_COLORS
+    v = val.lower()
+    color = "#000000"
+    if v in CLAN_COLORS:
+        color = CLAN_COLORS[v]["color"]
+    return color
+
+@register.filter(name='creature_code')
+def creature_code(val):
+    code = "xx"
+    if val == "kindred":
+        code = "VAMPIRE"
+    elif val == "ghoul":
+        code = "GHOUL"
+    elif val == "mortal":
+        code = "HUMAN"
+    elif val == "garou":
+        code = "LUPINE"
+    return code
+
+
+@register.filter(name='faction_color')
+def faction_color(val):
+    # from collector.utils.wod_reference import CLAN_COLORS
+    v = val.lower()
+    color = "#000000"
+    FACTION_COLORS = {"camarilla": "#226fbd", "independents": "#ac22bd", "sabbat": "#bd2322", "anarchs": "#bda522"}
+    if v in FACTION_COLORS:
+        color = FACTION_COLORS[v]
+    return color
+
+
+@register.filter(name='status_color')
+def status_color(val):
+    code = "#808080"
+    if val == "OK+":
+        code = "#20F020"
+    elif val == "READY":
+        code = "#2020E0"
+    elif val == "UNBALANCED":
+        code = "#F01060"
+    return code
+
+@register.filter(name='creatures_total')
+def creatures_total(items):
+    return len(items)
+
+@register.filter(name='html_safe_status')
+def html_safe_status(val):
+    v = val.lower()
+    v = v.replace("+","plus")
+    return v

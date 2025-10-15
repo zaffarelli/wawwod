@@ -1,7 +1,7 @@
 let line_jump_code = "NR";
 
 /* The kindred tree display class */
-class KindredLineage {
+class Packs {
     constructor(data, parent, collector) {
         let me = this;
         me.parent = parent;
@@ -10,7 +10,6 @@ class KindredLineage {
         me.boxWidth = 100;
         me.boxHeight = 80;
         me.duration = 500;
-        me.lineage_opacity = 0.25
     }
 
     saveSVG() {
@@ -119,14 +118,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink"> \
             })
             .attr("transform", function (d) {
                 return "translate(" + d.x + "," + d.y + ")";
-            })
-            .attr("opacity", function (d) {
-                let o = 1
-                if (d.data.condition.startsWith("MISSING") || d.data.condition.startsWith("DEAD")){
-                    o = me.lineage_opacity
-                }
-                return o
-            })
+            });
         r.append("rect")
             .attr('class', 'band')
             .attr('x', -me.boxWidth * 1)
@@ -331,23 +323,16 @@ xmlns:xlink="http://www.w3.org/1999/xlink"> \
             .style('stroke', '#888')
             .style('stroke-width', '0.5pt')
             .call(me.wrap, me.boxWidth * 1.9)
-
-        r.append('text')
-            .attr('text-anchor', 'end')
-            .style('fill', '#CCC')
-            .style('stroke', '#888')
-            .style('stroke-width', '0.5pt')
-            .style('font-family', me.font)
-            .style('font-size', "8pt")
-            .attr('x', me.boxWidth * 0.9)
-            .attr('y', me.boxHeight * 2.9)
-            .text((d) => {
-                let str = ''
-                if (d.data.player) {
-                    str += "@"+d.data.player
-                }
-                return str
-            })
+        ;
+        // r.append('line')
+        //     .attr("x1", 0)
+        //     .attr("y1", 0)
+        //     .attr("x2", me.boxWidth * 1)
+        //     .attr("y2", me.boxHeight * 0.5)
+        //     .style("fill", '#A00')
+        //     .style("stroke", '#A00')
+        //     .style("stroke-width","3px")
+        // ;
 
         r.append("circle")
             .attr("cx",90)
@@ -495,15 +480,6 @@ xmlns:xlink="http://www.w3.org/1999/xlink"> \
                 }
                 return res;
             })
-            .attr("opacity", (d)=>{
-                let o = 1
-                if (d.data.condition.startsWith("MISSING") || d.parent.data.condition.startsWith("MISSING") ||
-                d.data.condition.startsWith("DEAD") || d.parent.data.condition.startsWith("DEAD")){
-                   o = me.lineage_opacity
-                }
-                //console.debug("LINK:"+d.data.name+"-->"+d.parent.data.name)
-                return o
-                })
             .append("path")
             .attr("d", (d) => {
                 return "M" + d.x + "," + (d.y - me.boxHeight * 1)

@@ -66,14 +66,45 @@ def prepare_index(request):
             # print(adventure)
     for city in City.objects.filter(chronicle=chronicle.acronym):
         cities.append(city)
-        print(cities)
+        # print(cities)
+    groups = {}
+    for c in Creature.objects.filter(chronicle=chronicle.acronym, condition="OK").exclude(
+            creature__in=["ghoul", "kinfolk", "mortal"]).order_by("groupspec"):
+        g = "_".join(c.groupspec.lower().split(" "))
+        if g in groups:
+            groups[g]["characters"].append(c)
+            groups[g]["count"] += 1
+            ghouls = c.retainers_vals
+            for h in ghouls:
+                groups[g]["characters"].append(h)
+                groups[g]["countg"] += 1
+        else:
+            groups[g] = {"code": g, "faction": c.faction, "name": f"{c.groupspec} ({c.faction})","count":1,"countg":0, "characters": [c]}
+            ghouls = c.retainers_vals
+            for h in ghouls:
+                groups[g]["characters"].append(h)
+                groups[g]["countg"] += 1
 
+    grp = {"camarilla": [], "sabbat": [], "others": []}
+    for k, v in groups.items():
+        if v["faction"].lower() in ["camarilla", "sabbat"]:
+            grp[v["faction"].lower()].append(v)
+        else:
+            grp["others"].append(v)
 
     misc = {"version": settings.VERSION}
-    context = {'chronicles': chronicles, 'fontset': FONTSET, 'players': players, 'adventures': adventures,
-               'seasons': seasons,
-               'septs': septs, 'cities': cities, 'miscellaneous': misc, "weeks": moon_phase(None)}
-
+    context = {
+        "chronicles": chronicles,
+        "fontset": FONTSET,
+        "players": players,
+        "adventures": adventures,
+        "seasons": seasons,
+        "groups": grp,
+        "septs": septs,
+        "cities": cities,
+        "miscellaneous": misc,
+        "weeks": moon_phase(None)
+    }
     return context
 
 
@@ -91,6 +122,23 @@ def change_chronicle(request, slug=None):
         set_chronicle(slug)
         context = prepare_index(request)
         return render(request, 'collector/index.html', context=context)
+
+
+def display_groups(request, slug=None):
+    if slug:
+        if is_ajax(request):
+            context = prepare_index(request)
+            context["faction"] = context["groups"][slug.lower()]
+            template = get_template('collector/page/factions.html')
+            html = template.render(context)
+            answer = {
+                'html': html
+            }
+            return JsonResponse(answer)
+        else:
+            return HttpResponse(status=204)
+    else:
+        return HttpResponse(status=204)
 
 
 def get_list(request, pid=1, slug=None):
@@ -167,7 +215,7 @@ def get_list(request, pid=1, slug=None):
         else:
             creature_items = Creature.objects \
                 .filter(chronicle=chronicle.acronym) \
-                .order_by('is_player','family','is_new','name')
+                .order_by('is_player', 'family', 'is_new', 'name')
         paginator = Paginator(creature_items, CHARACTERS_PER_PAGE)
         creature_items = paginator.get_page(pid)
         list_context = {'creature_items': creature_items}
@@ -978,10 +1026,11 @@ def weaver_code(request, code=None):
     context["weaver_code"] = {"defi": defi, "powers": powers, "combos": l}
     return render(request, 'collector/page/weaver_code.html', context=context)
 
+
 @csrf_exempt
 def bulk_add(request):
     from collector.models.creatures import Creature
-    answer = {"txt":"Yo"}
+    answer = {"txt": "Yo"}
     if is_ajax(request):
         txt = request.POST["txt"]
         answer["txt"] = Creature.bulk_load(txt)

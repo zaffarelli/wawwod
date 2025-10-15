@@ -56,16 +56,10 @@ class Dashboard {
             .attr("class", "tooltip hidden")
     }
 
-
-
-
-
-
     draw_stats(ox,oy,src='status', color="#202020") {
         let me = this;
         let data_set = []
         let local_data = me.stats[src];
-
         let idx = 0;
         let delta_x = 20, delta_y=30;
         let cnt = 0
@@ -79,7 +73,6 @@ class Dashboard {
             idx += 1
             cnt += 1
         });
-
         let bar_grp = me.svg.append("g")
             .attr("id",src)
             .attr("transform",`translate(${ox},${-oy})`)
@@ -100,15 +93,10 @@ class Dashboard {
                 .style("fill","none")
                 .style("stroke","silver")
                 .style("stroke-width","5pt")
-
         let bars = bar_grp.append("g")
             .attr("class", 'stats')
             .selectAll(".stats")
             .data(data_set)
-
-
-
-
         let bars_enter = bars.enter();
         bars_enter.append('rect')
             .attr("x",function(d){
@@ -142,10 +130,9 @@ class Dashboard {
             .style("fill", '#CCC')
             .style("stroke", '#888')
             .style("stroke-width", '0.125pt')
-
         bar_grp.append('text')
-            .attr("x",0)
-            .attr("y",0 )
+            .attr("x",-me.step_y * 10 )
+            .attr("y",0)
             .attr("dy",-80)
             .style("text-anchor", 'left')
             .style("font-family", 'Ruda')
@@ -154,7 +141,6 @@ class Dashboard {
             .style("stroke", '#111')
             .style("stroke-width", '0.125pt')
             .text(src.charAt(0).toUpperCase()+src.slice(1))
-
         _.forEach([0,10,20,30,40,50,60,70,80,90,100,110,120,130,140,150,160,170,180,190,200],function (item){
             bar_grp.append('line')
                 .attr("x1", + (item * delta_x/3) + delta_x)
@@ -164,7 +150,6 @@ class Dashboard {
                 .style("fill", 'none')
                 .style("stroke", '#999')
                 .style("stroke-width", '0.5pt')
-
             bar_grp.append('text')
                 .attr("x", (item * delta_x/3) + delta_x)
                 .attr("y",  (1+cnt)*delta_y)

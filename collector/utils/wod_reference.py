@@ -962,12 +962,12 @@ CLAN_COLORS = {
 
     'ventrue': {
         "faction": "camarilla",
-        "color": '#347446',
+        "color": '#1d6e1f',
         "idx":1,
     },
     'tremere': {
         "faction": "camarilla",
-        "color": '#a4af58',
+        "color": '#ffa636',
         "idx":2,
     },
 
@@ -979,12 +979,12 @@ CLAN_COLORS = {
 
     'malkavian': {
         "faction": "camarilla",
-        "color": '#847619',
+        "color": '#db66d0',
         "idx":4,
     },
     'nosferatu': {
         "faction": "camarilla",
-        "color": '#843661',
+        "color": '#a18a60',
         "idx":5,
 
     },
@@ -997,7 +997,7 @@ CLAN_COLORS = {
 
     'brujah': {
         "faction": "camarilla",
-        "color": '#B3D537',
+        "color": '#25a3e6',
         "idx":7,
     },
 
@@ -1006,19 +1006,19 @@ CLAN_COLORS = {
         "color": '#B3D537',
         "idx":8,
     },
-    'assamites': {
+    'assamite': {
         "faction": "independents",
         "color": '#2E36C5',
         "idx":9,
     },
-    'assamites antitribu': {
+    'assamite antitribu': {
         "faction": "sabbat",
         "color": '#2E36C5',
         "idx":10,
     },
     'brujah antitribu': {
         "faction": "sabbat",
-        "color": '#B3D537',
+        "color": '#25a3e6',
         "idx":11,
     },
 
@@ -1054,22 +1054,22 @@ CLAN_COLORS = {
     },
     'malkavian antitribu': {
         "faction": "sabbat",
-        "color": '#847619',
+        "color": '#db66d0',
         "idx":18,
     },
     'nosferatu antitribu': {
         "faction": "sabbat",
-        "color": '#843661',
+        "color": '#a18a60',
         "idx":19,
     },
     'lasombra': {
         "faction": "sabbat",
-        "color": '#60D2BA',
+        "color": '#F0F0F0',
         "idx":20,
     },
     'lasombra antitribu': {
         "faction": "camarilla",
-        "color": '#60D2BA',
+        "color": '#F0F0F0',
         "idx":21,
     },
     'setite antitribu': {
@@ -1084,7 +1084,7 @@ CLAN_COLORS = {
     },
     'tremere antitribu': {
         "faction": "sabbat",
-        "color": '#D58337',
+        "color": '#ffa636',
         "idx":24,
     },
     'ravnos antitribu': {
@@ -1095,7 +1095,7 @@ CLAN_COLORS = {
     },
     'pander': {
         "faction": "sabbat",
-        "color": '#B3D537',
+        "color": '#808080',
         "idx":26,
     },
     'tzimisce': {
@@ -1105,7 +1105,12 @@ CLAN_COLORS = {
     },
     'ventrue antitribu': {
         "faction": "sabbat",
-        "color": '#731919',
+        "color": '#1d6e1f',
         "idx":28,
-    }
+    },
+    'blood brother': {
+        "faction": "sabbat",
+        "color": '#8f6265',
+        "idx": 29,
+    },
 }

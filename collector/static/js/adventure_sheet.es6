@@ -275,7 +275,7 @@ class AdventureSheet extends WawwodSheet {
                     label = words[0]
                 }
 
-                me.baseSheetEntryO({"xfunc":xfunc,"y":ly,"ox":ox,"oy":oy,"proplabel":label,"prop":words[1],"font_size":0,"direct_prop":"direct"})
+                me.baseSheetEntryO({"xfunc":xfunc,"y":ly,"ox":ox,"oy":oy,"proplabel":label,"prop":words[1],"font_size":0,"easyRead":true,"direct_prop":"direct"})
             })
             ly = oldly
         })
@@ -422,7 +422,7 @@ class AdventureSheet extends WawwodSheet {
             .style('stroke-width', "0.25pt")
             .style('text-anchor', 'end')
             .style('font-family', font)
-            .style('font-size', p.font_size+'pt')
+            .style('font-size', p.easyRead ? p.font_size*1.5+'pt' : p.font_size+'pt')
             .text(function (d) {
                 let result = d[p.prop]
                 if (p.direct_value != '') {

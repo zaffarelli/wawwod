@@ -3,23 +3,22 @@
 body {
   font-family: Texte;
   @include body_background;
-  color: $body_color;
   min-height: 98%;
+  color: $body_color;
 }
 
-
 .subsection {
-  font-weight: bold;
   color: #DBCA86;
   text-decoration: underline;
+  font-weight: bold;
 }
 
 .pdflink {
-  color: #E5DECA;
-  text-decoration: none;
-  background: #1d1d1d;
   display: inline-block;
   padding: 3px;
+  background: #1d1d1d;
+  color: #E5DECA;
+  text-decoration: none;
 }
 
 .ping {
@@ -28,11 +27,11 @@ body {
 
 
 .toggle_name {
-  font-weight: normal;
-  font-style: normal;
+  display: inline-block;
 //   font-family: "Marcellus SC";
   width: auto;
-  display: inline-block;
+  font-style: normal;
+  font-weight: normal;
 }
 
 
@@ -46,8 +45,8 @@ body {
 }
 
 .blank {
-  color: #C0C0C0;
   opacity: 0.5;
+  color: #C0C0C0;
 }
 
 .embedded_link {
@@ -71,23 +70,23 @@ body {
 /* Normal --------------------------------------------------------------------*/
 @media all and (min-width: 1024px) {
   body {
-    margin: 0;
     padding: 0;
+    margin: 0;
     overflow-x: hide;
     overflow-y: scroll;
 
     & input.userinput, & #text_edit {
-      order: 2;
-      border: 1px solid silver;
-      border-radius: 5px;
-      box-shadow: 0 0 5px black;
       display: inline-block;
-      font-size: 12px;
+      order: 2;
+      height: 18px;
       padding: 3px;
       margin: 1px 3px 1px 3px;
-      height: 18px;
+      box-shadow: 0 0 5px black;
       background: #C0C0C0;
+      border: 1px solid silver;
+      border-radius: 5px;
       color: black;
+      font-size: 12px;
 
     }
 
@@ -97,53 +96,42 @@ body {
     }
 
     & .wrapper {
-      background: transparent url() 98% 98% no-repeat fixed;
+
+      position:fixed;
+      top:0;
+      right:0;
+      bottom:10px;
+      left:0;
       z-index: 60;
       width: auto;
       height: auto;
       padding: 0;
       margin: 0;
-
-      position:fixed;
-      top:0;
-      left:0;
-      bottom:10px;
-      right:0;
+      background: transparent url() 98% 98% no-repeat fixed;
 
       &.hidden {
         display: none;
       }
-
-      //& .caine_roots {
-      //  background: transparent;
-      //  width: 100%;
-      //  display: block;
-      //  z-index: 60;
-      //  padding: 0;
-      //  margin: 0;
-      //}
-
-
     }
   }
 }
 
 .details {
-  background: transparent;
-  width: auto;
-  right: 10px;
-  left: auto;
-  top: auto;
-  bottom: 0px;
-  display: block;
   position: fixed;
+  top: auto;
+  right: 10px;
+  bottom: 0px;
+  left: auto;
+  display: block;
   z-index: 510;
-  transition: all 0.3s ease;
+  width: auto;
   box-shadow: -5px -5px 10px $dark_plate;
+  background: transparent;
+  transition: all 0.3s ease;
 
   &.hidden {
-    transition: all 0.3s ease;
     transform: translateX(1000px);
+    transition: all 0.3s ease;
   }
 }
 
@@ -151,32 +139,32 @@ body {
   @include panel;
 
   & .pagination {
-    text-align: center;
-    margin-top: 1em;
     width: $list_width;
+    margin-top: 1em;
+    text-align: center;
 
     & a, & strong, & span.nav {
       @include panel;
-      margin: 0 0.2em;
       display: inline-block;
-      color: $plate_highlight;
-      font-size: 0.7em;
-      font-family: TexteLibre;
+      width: 2ex;
       padding: 0.3em 0.4em;
-      text-decoration: none;
-      cursor: pointer;
+      margin: 0 0.2em;
       background: $very_dark_plate;
       border-radius: 5px;
-      width: 2ex;
+      cursor: pointer;
+      color: $plate_highlight;
+      text-decoration: none;
+      font-family: TexteLibre;
+      font-size: 0.7em;
     }
   }
 
   & .avatar_link {
     @include panel;
-    margin: 2px;
     padding: 2px;
-    border-radius: 0 0 5px 0;
+    margin: 2px;
     border-color: darken($panel_border, 30%);
+    border-radius: 0 0 5px 0;
     & a {
       text-decoration: none;
     }
@@ -186,10 +174,10 @@ body {
 
   & ul {
     width: $list_width;
-    text-indent: 0;
-    list-style-type: none;
     padding: 0;
     margin: 0;
+    text-indent: 0;
+    list-style-type: none;
 
     & li {
       padding: 0;
@@ -202,19 +190,19 @@ body {
 
   @include panel;
   //background: $plate;
-  border-radius: 5px;
+  position: fixed;
+  top: 0;
+  right: 5px;
+  bottom: auto;
+  left: auto;
+  display: block;
+  z-index: 70;
 
   width: $list_width;
-  display: block;
-  position: fixed;
-  z-index: 70;
   padding-top: 0px;
   margin: auto;
-  top: 0;
-  bottom: auto;
-  right: 5px;
-  left: auto;
   box-shadow: 0 0 5px $very_dark_plate;
+  border-radius: 5px;
   transition: all 0.3s ease;
 
 
@@ -223,16 +211,17 @@ body {
     transition: all 0.3s ease;
   }
 
+  margin-top:3em;
   border-color: $panel_border;
 }
 
 
 /* Details - Creature Block */
 .creature {
+  background: transparent;
+  border-radius: 8px;
   font-family:Titre;
   font-size: 9pt;
-  border-radius: 8px;
-  background: transparent;
 
   //&.navigator {
   //  background: #101010;
@@ -250,19 +239,19 @@ body {
 
   & strong {
     font-family: Titre;
-    font-weight: normal;
     font-size: 2em;
+    font-weight: normal;
     line-height: 1.4em;
   }
 
   & table {
-    font-family: Texte;
-    color: black;
+    margin: auto;
+    box-shadow: -2px -2px 8px $panel_shadow;
     background: #303030;
     border: 1px solid transparent;
     border-radius: 10px 0 0 0;
-    box-shadow: -2px -2px 8px $panel_shadow;
-    margin: auto;
+    color: black;
+    font-family: Texte;
 
     & tr {
       padding: 0;
@@ -271,18 +260,18 @@ body {
         padding: 5px;
 
         &[colspan='5'] {
-          background: $very_dark_plate;
           height: 90px;
           padding: 0;
           padding-left: 3ex;
+          background: $very_dark_plate;
           text-align: left;
         }
 
         &.clan_logo {
+          height: 50px;
+          padding: 0;
           background: $very_dark_plate;
           overflow: hidden;
-          padding: 0;
-          height: 50px;
           overflow-y: hidden;
 
           & img {
@@ -296,19 +285,19 @@ body {
         }
 
         //@include panel;
-        background: $panel_background;
-        color: $panel_color;
-        font-size: 8pt;
-        font-family: TexteLibre;
-        font-weight: normal;
-        margin: 0;
-        border: none;
         width: 110px;
-        border: 1px solid $very_dark_plate;
-        padding: 1px;
 
         height: auto;
+        padding: 1px;
         padding: 0;
+        margin: 0;
+        background: $panel_background;
+        border: none;
+        border: 1px solid $very_dark_plate;
+        color: $panel_color;
+        font-family: TexteLibre;
+        font-size: 8pt;
+        font-weight: normal;
 
         &.tainted {
           border-color: transparent;
@@ -325,20 +314,20 @@ body {
       }
 
       & td {
-        font-size: 8pt;
-        font-family: TexteLibre;
-        text-align: left;
-        margin: 0;
-        padding: 1px;
         width: 110px;
+        padding: 1px;
+        margin: 0;
         background: transparent;
         border: 1px solid transparent;
         color: $panel_color;
+        text-align: left;
         text-align: center;
+        font-family: TexteLibre;
+        font-size: 8pt;
 
         &[colspan='2'], &[colspan='8'] {
-          border-radius: 5px;
           background: $panel_shadow;
+          border-radius: 5px;
           color: $panel_color;
           text-align: center;
           font-family: "Marcellus SC";
@@ -346,20 +335,20 @@ body {
         }
 
         &.topic {
-          background: transparent;
-          font-size: 8pt;
-          font-family: TexteLibre;
-          text-align: left;
-          margin: 0;
           padding: 1px;
+          margin: 0;
+          background: transparent;
+          text-align: left;
+          font-family: TexteLibre;
+          font-size: 8pt;
         }
 
         &.editable {
             &.packed{
-                overflow:hidden;
                 max-width:110px;
                 text-overflow: ellipsis;
                 white-space: nowrap;
+                overflow:hidden;
             }
             &.userinput.focus {
                 border-color: $focus_color;
@@ -380,8 +369,8 @@ body {
 table {
   & tr.tainted {
     & th.tainted {
-      border: none;
       background: transparent;
+      border: none;
     }
   }
 }
@@ -489,9 +478,9 @@ table {
 .list .goodies {
   width: auto;
   height: auto;
+  padding: 5px;
   margin: 5px;
   text-align: center;
-  padding: 5px;
 
   & span {
     cursor: pointer;
@@ -502,30 +491,30 @@ table {
 
 .bar {
   position: fixed;
+  top: 0;
   display: flex;
-  flex-flow: row nowrap;
+  z-index: 100;
   justify-content: flex-start;
   align-items: flex-start;
   align-content: flex-start;
   width: 100%;
-  top: 0;
-  padding: 3px;
   height: auto;
-  background: transparent;
+  padding: 3px;
   margin: 0;
+  background: transparent;
   color: white;
-  z-index: 100;
+  flex-flow: row nowrap;
 
   & .pull_down {
-    order: 1;
     display: inline-block;
-
-    font-family: "Ruda";
-    font-size: 12px;
+    order: 1;
+    width: 300px;
     height: 24px;
 
     margin: 0 3px 0 3px;
-    width: 300px;
+
+    font-family: "Ruda";
+    font-size: 12px;
 
 
     @include panel;
@@ -534,24 +523,24 @@ table {
 
 
     &.chronicle {
+      text-align: center;
       font-family: Titre;
       font-size: 16px;
-      text-align: center;
     }
 
     & ul.drop_down {
       display: none;
+      padding-left: 2ex;
+      margin-left: 0;
+      text-indent: 0;
 
       list-style-type: none;
-      text-indent: 0;
-      margin-left: 0;
-      padding-left: 2ex;
 
       & li {
-        color: $plate_color;
         padding: 5px;
         margin: 2px;
         border-radius: 5px;
+        color: $plate_color;
       }
     }
 
@@ -569,9 +558,9 @@ table {
 
 
         & li:hover {
-          color: $plate_highlight;
           background: #2d052d; //complement($panel_background);
           cursor: pointer;
+          color: $plate_highlight;
           & li{
             background:#300542;
             &:hover{
@@ -597,8 +586,8 @@ table {
 
 svg.lineage{
   margin: 0;
-  border: 3px ridge #C0C0C07f;
   background:#2020207f;
+  border: 3px ridge #C0C0C07f;
 }
 
 svg{
@@ -709,7 +698,7 @@ svg.lineage {
   & .link {
     fill: transparent;
     fill-opacity: 0;
-    stroke: #C090904f;
+    stroke: #E040407f;
     stroke-width: 8pt;
 
     &.ghost {
@@ -721,26 +710,26 @@ svg.lineage {
 
 .tooltip {
   position: absolute;
-  opacity: 0;
-  text-align: center;
-  color: black;
-  border: 1px solid black;
-  border-radius: 5px;
-
-  padding: 2px;
+  top:2vh;
+  right:1vw;
+  z-index: 400;
   width: 15vw;
   height: 30vh;
-  pointer-events: none;
+
+  padding: 2px;
+  padding-right: 15px;
+  padding-left: 15px;
+  box-shadow: 0 0 5px #111;
+  background: #C0C0C0;
+  border: 1px solid black;
+  border-radius: 5px;
+  opacity: 0;
+  color: black;
+  color:black;
+  text-align: center;
   font-family: "Ruda";
   font-size: 11pt;
-  color:black;
-  background: #C0C0C0;
-  padding-left: 15px;
-  padding-right: 15px;
-  box-shadow: 0 0 5px #111;
-  z-index: 400;
-  right:1vw;
-  top:2vh;
+  pointer-events: none;
 
 
   & p{
@@ -749,15 +738,15 @@ svg.lineage {
 
 
   & strong {
-    font-variant: small-caps;
-    font-weight: bold;
     font-size: 1.6em;
+    font-weight: bold;
+    font-variant: small-caps;
   }
 
   & ol, ul   {
-    margin: 0;
     padding: 0;
     padding-left: 10px;
+    margin: 0;
     text-align: left;
 
     & li {
@@ -821,17 +810,17 @@ svg .node_circle {
 }
 
 .footnote {
-  text-align: center;
   width: 100%;
+  padding: 5px;
   background: transparent;
   color: white;
-  padding: 5px;
+  text-align: center;
   font-family: TexteLibre;
   font-size: 11px;
 
   & span.display {
-    color: $focus_color;
     cursor: pointer;
+    color: $focus_color;
   }
 
   & a {
@@ -857,7 +846,16 @@ td.editable.updown {
   height: 88vh;
   //border:1px solid saddlebrown;
   //background:lightgoldenrodyellow;
+  &.hidden{
+      z-index:0;
+  }
+}
 
+#htmlarea{
+   z-index:500;
+   &.hidden{
+      z-index:0;
+  }
 }
 
 div.creature_links {
@@ -907,8 +905,8 @@ div.creature_links {
 
 
 .creature_img {
-  filter: invert(90%);
   box-shadow: 2px 2px 5px #111;
+  filter: invert(90%);
 }
 
 
@@ -949,31 +947,31 @@ text.kindred_name {
 #user_wrapper {
   position: absolute;
   display: flex;
-  flex-flow: row no-wrap;
+  z-index: 10000;
   justify-content: space-evenly;
   align-items: center;
   align-content: space-evenly;
   width: 100%;
   height: 100%;
   background: #10101060;
-  z-index: 10000;
+  flex-flow: row no-wrap;
 
 
   & #user_panel {
-    flex-order: 1;
-    flex-grow: 1;
-    z-index: 10001;
     position: absolute;
-    padding: 5px;
-    margin: auto;
+    z-index: 10001;
+    flex-grow: 1;
+    flex-order: 1;
     width: 400px;
     height: 200px;
+    padding: 5px;
+    margin: auto;
+    box-shadow: 0 0 10px #000000;
+    background: $panel_background;
     border: 3px solid $panel_border;
     border-radius: 20px;
-    background: $panel_background;
-    color: $panel_color;
     opacity: 1.0;
-    box-shadow: 0 0 10px #000000;
+    color: $panel_color;
     text-align: center;
 
     & table {
@@ -986,10 +984,10 @@ text.kindred_name {
     }
 
     & input {
-      background: #000;
-      color: #FFF;
       padding: 5px;
+      background: #000;
       border: 2px groove $panel_border;
+      color: #FFF;
 
       &[type='submit'] {
         border: 2px ridge $panel_border;
@@ -1007,8 +1005,8 @@ text.kindred_name {
 
 
 .line_link{
-  color:$focus_color;
   cursor:pointer;
+  color:$focus_color;
   &:hover{
     color:$plate_highlight;
   }
@@ -1045,29 +1043,29 @@ fieldset{
 
 .year{
     display:flex;
-    flex-flow:column nowrap;
     justify-content: flex-start;
     align-items: flex-start;
-    justify-items: flex-start;
-    margin:auto;
     width:auto;
     height:auto;
     padding:6pt;
+    margin:auto;
     background:silver;
     border-radius:5pt;
+    flex-flow:column nowrap;
+    justify-items: flex-start;
     & .month{
         order:1;
-        border-radius:5pt;
-        background:#E0E0E0;
         padding:10pt;
-        color:black;
         margin:40pt;
+        background:#E0E0E0;
+        border-radius:5pt;
+        color:black;
         & table{
             & caption{
-                font-size:12pt;
-                font-family:Philosopher;
-                text-align:left;
                 height:30pt;
+                text-align:left;
+                font-family:Philosopher;
+                font-size:12pt;
             }
 
             & tr{
@@ -1078,30 +1076,30 @@ fieldset{
                 }
 
                 & td{
-                        color:black;
-                        text-align:left;
                         vertical-align:top;
                         width:100pt;
                         padding:auto;
-                        padding-left:5pt;
                         padding-top:5pt;
-                        border-radius:5pt;
-                        border:1pt solid black;
+                        padding-left:5pt;
                         background:white;
+                        border:1pt solid black;
+                        border-radius:5pt;
+                        color:black;
+                        text-align:left;
                         & span{
-                            font-size:10pt;
                             font-family:Philosopher;
+                            font-size:10pt;
                         }
                         &.blank{
+                            background:transparent;
                             border-color:transparent;
                             color:transparent;
-                            background:transparent;
                         }
                     }
                 & th {
-                    font-size:11pt;
-                    font-family:Philosopher;
                     width:90pt;
+                    font-family:Philosopher;
+                    font-size:11pt;
                     }
                 }
             margin:auto;
@@ -1113,27 +1111,26 @@ fieldset{
     }
 
 .moonphase{
+    z-index:1500;
     float:right;
     margin:15px;
-    border-radius:5px;
     background:#401010;
+    border-radius:5px;
     color:white;
-    z-index:1500;
     & table{
         & caption{
             font-size:16pt;font-family:Philosopher;
         }
-
     }
     & tr{
         height:40px;border:5px;
 
         & td{
+            vertical-align:middle;
             width:40px;
 
             color:black;
             text-align:center;
-            vertical-align:middle;
         }
     }
     &.hidden{
@@ -1143,10 +1140,10 @@ fieldset{
 
 .line_block{
     display: flex;
-    flex-flow: row nowrap;
     justify-content: flex-start;
-    align-content: flex-start;
     align-items: flex-start;
+    align-content: flex-start;
+    flex-flow: row nowrap;
     gap:2px;
     & .line_bit{
         padding:3pt;
@@ -1158,10 +1155,10 @@ fieldset{
             color:#f07f4f;
         }
         &.family{
-            order:3;
             flex: 0 0 20ex;
-            text-align:center;
+            order:3;
             color: #C05050;
+            text-align:center;
             &.giovanni, &.assamite, &.ravnos, &.setite{
                 color: #5070C0;
             }
@@ -1170,16 +1167,65 @@ fieldset{
             }
         }
         &.creature_type{
-            order:2;
             flex: 0 0 10ex;
+            order:2;
             text-align:center;
         }
         &.options{
-            order:4;
             flex: 1 0 auto;
+            order:4;
         }
         &.tail{
              order:5;
         }
     }
+}
+
+#htmlarea{
+    .factions{
+        display:flex;
+        justify-content:flex-start;
+        align-items:flex-start;
+        align-content:flex-center;
+        flex-flow:row wrap;
+        gap:5px;
+        & fieldset{
+            width:90ex;
+            background:#101010;
+            & legend{
+                color:white;
+                font-family: TexteLibre;
+            }
+        }
+        & .creature_sticker{
+          & .back{
+              fill:#202020;
+              stroke:#A0A0A0;
+              stroke-width:0.2pt;
+          }
+          &.unbalanced{
+            & .back{
+                fill:#606060;
+            }
+          }
+          &.okplus{
+            & .back{
+                fill:#603030;
+            }
+          }
+          &.kindred{
+            & .back{
+              stroke:#E0E0E0;
+            }
+          }
+          &.ghoul{
+            & .back{
+              stroke:#303030;
+            }
+          }
+        }
+    }
+    max-height:calc(88% - 40px);
+    margin-top:40px;
+    overflow:scroll;
 }

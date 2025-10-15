@@ -139,6 +139,7 @@ def change_settings(request):
 
 def refix_all(request):
     chronicle = get_current_chronicle()
+    import json
     all = Creature.objects.filter(concept='death_row')
     for c in all:
         c.delete()
@@ -153,6 +154,9 @@ def refix_all(request):
     allhp = HotSpot.objects.all()
     for h in allhp:
         h.save()
+    data = Creature.extract_ghouls(chronicle.acronym)
+    with open("kindred_ghouls.json", "w") as f:
+        f.write(json.dumps(data, sort_keys=True, indent=4))
     return HttpResponse(status=204)
 
 

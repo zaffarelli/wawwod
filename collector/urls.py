@@ -1,7 +1,7 @@
 from django.urls import path, re_path
 from collector.views.base import index, get_list, updown, userinputastext, userinput, add_garou, change_chronicle, \
     display_gaia_wheel, display_dashboard, display_lineage, display_crossover_sheet, add_kindred, svg_to_pdf, \
-    save_to_svg, display_sept, moon_phase, calendar, weaver_code, display_sept_rosters, quaestor, adventure_sheet, display_chronicle_map, add_kinfolk, add_mortal, bulk_add
+    save_to_svg, display_sept, moon_phase, calendar, weaver_code, display_sept_rosters, quaestor, adventure_sheet, display_chronicle_map, add_kinfolk, add_mortal, bulk_add, display_groups
 from collector.views.actions import change_settings, refix_all, extract_mechanics, extract_per_group, extract_raw, \
     extract_roster, randomize, balance, refix_all
 from collector.views.creature_views import CreatureDetailView
@@ -13,6 +13,7 @@ urlpatterns = [
     re_path(r'^ajax/display/gaia_wheel/$', display_gaia_wheel, name='display_gaia_wheel'),
     re_path(r'^ajax/display/dashboard/$', display_dashboard, name='display_dashboard'),
     re_path(r'^ajax/display/chronicle_map/$', display_chronicle_map, name='display_chronicle_map'),
+    re_path(r'^ajax/display/groups/(?P<slug>\w+)/$', display_groups, name='display_groups'),
     re_path(r'^ajax/display/adventure_sheet/$', adventure_sheet, name='adventure_sheet'),
     re_path(r'^ajax/display/kindred_lineage/(?P<slug>\w+)/$', display_lineage, name='display_lineage'),
     re_path(r'^ajax/display/kindred_lineage/$', display_lineage, name='display_lineage'),
@@ -44,6 +45,7 @@ urlpatterns = [
     re_path(r'^api/moon_phase/$', moon_phase, name='moon_phase'),
     re_path(r'^calendar/(?P<year>\w+)/$', calendar, name='calendar'),
     re_path(r'^weaver_code/(?P<code>\w+)/$', weaver_code, name='weaver_code'),
-    re_path(r'^ajax/action/quaestor/(?P<slug>\w+)/$', quaestor, name='quaestor')
+    re_path(r'^ajax/action/quaestor/(?P<slug>\w+)/$', quaestor, name='quaestor'),
+
 ]
 

@@ -1,0 +1,1051 @@
+{
+    "_albrecht": {
+        "_edmund_glammer": {
+            "age": 29,
+            "name": "Edmund Glammer",
+            "position": "Valet",
+            "rid": "_edmund_glammer",
+            "trueage": 70
+        },
+        "_emma_drosern": {
+            "age": 37,
+            "name": "Emma Drosern",
+            "position": "Valet",
+            "rid": "_emma_drosern",
+            "trueage": 48
+        }
+    },
+    "_alfred": {
+        "_anita_wolfram": {
+            "age": 30,
+            "name": "Anita Wolfram",
+            "position": "Enforcer",
+            "rid": "_anita_wolfram",
+            "trueage": 140
+        },
+        "_fedor_dvorin": {
+            "age": 24,
+            "name": "Fedor Dvorin",
+            "position": "Valet",
+            "rid": "_fedor_dvorin",
+            "trueage": 270
+        },
+        "_hortense_helgbert": {
+            "age": 32,
+            "name": "Hortense Helgbert",
+            "position": "Enforcer",
+            "rid": "_hortense_helgbert",
+            "trueage": 213
+        },
+        "_ingrid_karpov": {
+            "age": 36,
+            "name": "Ingrid Karpov",
+            "position": "Leisure",
+            "rid": "_ingrid_karpov",
+            "trueage": 307
+        },
+        "_juergen_drexler": {
+            "age": 37,
+            "name": "J\u00fcrgen Drexler",
+            "position": "Valet",
+            "rid": "_juergen_drexler",
+            "trueage": 323
+        }
+    },
+    "_anatoli_chemko": {
+        "_female_ghoul_1_of_anatoli_chemko": {
+            "age": 29,
+            "name": "Female ghoul 1 of Anatoli Chemko",
+            "position": "",
+            "rid": "_female_ghoul_1_of_anatoli_chemko",
+            "trueage": 0
+        }
+    },
+    "_anna_the_elder": {
+        "_jonah_klemsen": {
+            "age": 43,
+            "name": "Jonah Klemsen",
+            "position": "Valet",
+            "rid": "_jonah_klemsen",
+            "trueage": 487
+        },
+        "_natalia_uderhoff": {
+            "age": 16,
+            "name": "Natalia Uderhoff",
+            "position": "Enforcer",
+            "rid": "_natalia_uderhoff",
+            "trueage": 268
+        },
+        "_raul_zuecker": {
+            "age": 24,
+            "name": "Raul Z\u00fccker",
+            "position": "Valet",
+            "rid": "_raul_zuecker",
+            "trueage": 532
+        }
+    },
+    "_antiope": {
+        "_female_ghoul_1_of_antiope": {
+            "age": 15,
+            "name": "Female ghoul 1 of Antiope",
+            "position": "",
+            "rid": "_female_ghoul_1_of_antiope",
+            "trueage": 266
+        }
+    },
+    "_balmain": {
+        "_male_ghoul_1_of_balmain": {
+            "age": 35,
+            "name": "Male ghoul 1 of Balmain",
+            "position": "",
+            "rid": "_male_ghoul_1_of_balmain",
+            "trueage": 0
+        }
+    },
+    "_bregmaar": {
+        "_erianna": {
+            "age": 31,
+            "name": "Erianna",
+            "position": "Valet",
+            "rid": "_erianna",
+            "trueage": 110
+        }
+    },
+    "_cem": {
+        "_anatoli_ashur": {
+            "age": 15,
+            "name": "Anatoli Ashur",
+            "position": "Intelligence",
+            "rid": "_anatoli_ashur",
+            "trueage": 2
+        }
+    },
+    "_christian": {
+        "_roxanne_beauville": {
+            "age": 28,
+            "name": "Roxanne Beauville",
+            "position": "Enforcer",
+            "rid": "_roxanne_beauville",
+            "trueage": 54
+        }
+    },
+    "_david_leimann": {
+        "_female_ghoul_1_of_david_leimann": {
+            "age": 44,
+            "name": "Female ghoul 1 of David Leimann",
+            "position": "",
+            "rid": "_female_ghoul_1_of_david_leimann",
+            "trueage": 0
+        }
+    },
+    "_elisabeth": {
+        "_female_ghoul_1_of_elisabeth": {
+            "age": 40,
+            "name": "Female ghoul 1 of Elisabeth",
+            "position": "",
+            "rid": "_female_ghoul_1_of_elisabeth",
+            "trueage": 182
+        },
+        "_female_ghoul_2_of_elisabeth": {
+            "age": 30,
+            "name": "Female ghoul 2 of Elisabeth",
+            "position": "",
+            "rid": "_female_ghoul_2_of_elisabeth",
+            "trueage": 137
+        }
+    },
+    "_ella": {
+        "_aimee_pfeiser": {
+            "age": 20,
+            "name": "Aim\u00e9e Pfeiser",
+            "position": "Intelligence",
+            "rid": "_aimee_pfeiser",
+            "trueage": 258
+        },
+        "_hans_ruben": {
+            "age": 36,
+            "name": "Hans Ruben",
+            "position": "Enforcer",
+            "rid": "_hans_ruben",
+            "trueage": 194
+        },
+        "_nadia_kirshen": {
+            "age": 32,
+            "name": "Nadia Kirshen",
+            "position": "Valet",
+            "rid": "_nadia_kirshen",
+            "trueage": 187
+        }
+    },
+    "_erika_karpinski": {
+        "_female_ghoul_1_of_erika_karpinski": {
+            "age": 41,
+            "name": "Female ghoul 1 of Erika Karpinski",
+            "position": "",
+            "rid": "_female_ghoul_1_of_erika_karpinski",
+            "trueage": 68
+        }
+    },
+    "_ernest": {
+        "_mirianna": {
+            "age": 20,
+            "name": "Mirianna",
+            "position": "Valet",
+            "rid": "_mirianna",
+            "trueage": 187
+        }
+    },
+    "_ernst": {
+        "_kristoph_helge": {
+            "age": 26,
+            "name": "Kristoph Helge",
+            "position": "Valet",
+            "rid": "_kristoph_helge",
+            "trueage": 82
+        }
+    },
+    "_ethan": {
+        "_arius_klepper": {
+            "age": 28,
+            "name": "Arius Klepper",
+            "position": "Operative",
+            "rid": "_arius_klepper",
+            "trueage": 51
+        },
+        "_rafica_azund": {
+            "age": 44,
+            "name": "Rafica Azund",
+            "position": "Enforcer",
+            "rid": "_rafica_azund",
+            "trueage": 48
+        }
+    },
+    "_fiona": {
+        "_dmitri_zarmov": {
+            "age": 25,
+            "name": "Dmitri Zarmov",
+            "position": "Enforcer",
+            "rid": "_dmitri_zarmov",
+            "trueage": 333
+        },
+        "_jorge_pazzola": {
+            "age": 15,
+            "name": "Jorge Pazzola",
+            "position": "Enforcer",
+            "rid": "_jorge_pazzola",
+            "trueage": 201
+        },
+        "_ruppert_genz": {
+            "age": 39,
+            "name": "Ruppert Genz",
+            "position": "Enforcer",
+            "rid": "_ruppert_genz",
+            "trueage": 52
+        }
+    },
+    "_frederike": {
+        "_alicia_hardwick": {
+            "age": 30,
+            "name": "Alicia Hardwick",
+            "position": "Enforcer",
+            "rid": "_alicia_hardwick",
+            "trueage": 20
+        },
+        "_gerald_huis": {
+            "age": 38,
+            "name": "Gerald Huis",
+            "position": "Valet",
+            "rid": "_gerald_huis",
+            "trueage": 119
+        },
+        "_greg_morten": {
+            "age": 35,
+            "name": "Greg Morten",
+            "position": "",
+            "rid": "_greg_morten",
+            "trueage": 42
+        }
+    },
+    "_gaston": {
+        "_aldru": {
+            "age": 21,
+            "name": "Aldru",
+            "position": "Valet",
+            "rid": "_aldru",
+            "trueage": 360
+        }
+    },
+    "_georg": {
+        "_iana_owens": {
+            "age": 31,
+            "name": "Iana Owens",
+            "position": "Intelligence",
+            "rid": "_iana_owens",
+            "trueage": 301
+        },
+        "_jane_mueller": {
+            "age": 40,
+            "name": "Jane M\u00fcller",
+            "position": "Valet",
+            "rid": "_jane_mueller",
+            "trueage": 174
+        },
+        "_lars_vinden": {
+            "age": 42,
+            "name": "Lars Vinden",
+            "position": "Enforcer",
+            "rid": "_lars_vinden",
+            "trueage": 23
+        },
+        "_rufus_stemler": {
+            "age": 25,
+            "name": "Rufus Stemler",
+            "position": "Valet",
+            "rid": "_rufus_stemler",
+            "trueage": 312
+        }
+    },
+    "_gertrud": {
+        "_franz_edelmann": {
+            "age": 37,
+            "name": "Franz Edelmann",
+            "position": "Valet",
+            "rid": "_franz_edelmann",
+            "trueage": 30
+        },
+        "_sebastian_gorlisch": {
+            "age": 29,
+            "name": "Sebastian Gorlisch",
+            "position": "Intelligence",
+            "rid": "_sebastian_gorlisch",
+            "trueage": 66
+        }
+    },
+    "_gulcan": {
+        "_amir_razla": {
+            "age": 18,
+            "name": "Amir Razla",
+            "position": "Enforcer",
+            "rid": "_amir_razla",
+            "trueage": 122
+        },
+        "_izia_kundaar": {
+            "age": 20,
+            "name": "Izia Kundaar",
+            "position": "Operative",
+            "rid": "_izia_kundaar",
+            "trueage": 55
+        }
+    },
+    "_hans_kleimann": {
+        "_remi_kauler": {
+            "age": 29,
+            "name": "Remi Kauler",
+            "position": "Enforcer",
+            "rid": "_remi_kauler",
+            "trueage": 52
+        },
+        "_velma_de_ziegler": {
+            "age": 25,
+            "name": "Velma De Ziegler",
+            "position": "Enforcer",
+            "rid": "_velma_de_ziegler",
+            "trueage": 42
+        }
+    },
+    "_heike": {
+        "_eloise_fairbanks": {
+            "age": 20,
+            "name": "Eloise Fairbanks",
+            "position": "Valet",
+            "rid": "_eloise_fairbanks",
+            "trueage": 27
+        },
+        "_logan_klemp": {
+            "age": 37,
+            "name": "Logan Klemp",
+            "position": "Enforcer",
+            "rid": "_logan_klemp",
+            "trueage": 67
+        },
+        "_reinhradt_brandt": {
+            "age": 39,
+            "name": "Reinhradt Brandt",
+            "position": "Valet",
+            "rid": "_reinhradt_brandt",
+            "trueage": 25
+        }
+    },
+    "_helga": {
+        "_tiko_renfield": {
+            "age": 22,
+            "name": "Tiko Renfield",
+            "position": "Valet",
+            "rid": "_tiko_renfield",
+            "trueage": 62
+        }
+    },
+    "_hermann": {
+        "_martha_schlinke": {
+            "age": 36,
+            "name": "Martha Schlinke",
+            "position": "Intelligence",
+            "rid": "_martha_schlinke",
+            "trueage": 82
+        }
+    },
+    "_ian_gallard": {
+        "_female_ghoul_1_of_ian_gallard": {
+            "age": 35,
+            "name": "Female ghoul 1 of Ian Gallard",
+            "position": "",
+            "rid": "_female_ghoul_1_of_ian_gallard",
+            "trueage": 22
+        },
+        "_male_ghoul_2_of_ian_gallard": {
+            "age": 40,
+            "name": "Male ghoul 2 of Ian Gallard",
+            "position": "",
+            "rid": "_male_ghoul_2_of_ian_gallard",
+            "trueage": 57
+        }
+    },
+    "_ibrahim": {
+        "_eristos_maazic": {
+            "age": 22,
+            "name": "Eristos Maazic",
+            "position": "Enforcer",
+            "rid": "_eristos_maazic",
+            "trueage": 187
+        }
+    },
+    "_igor": {
+        "_antonin_zlatin": {
+            "age": 25,
+            "name": "Antonin Zlatin",
+            "position": "Enforcer",
+            "rid": "_antonin_zlatin",
+            "trueage": 2
+        },
+        "_karen_mueller": {
+            "age": 28,
+            "name": "Karen M\u00fcller",
+            "position": "Enforcer",
+            "rid": "_karen_mueller",
+            "trueage": 2
+        }
+    },
+    "_jasmin": {
+        "_willy_brauen": {
+            "age": 33,
+            "name": "Willy Bra\u00fcn",
+            "position": "Valet",
+            "rid": "_willy_brauen",
+            "trueage": 35
+        }
+    },
+    "_jens": {
+        "_lucy_morgenstern": {
+            "age": 33,
+            "name": "Lucy Morgenstern",
+            "position": "Intelligence",
+            "rid": "_lucy_morgenstern",
+            "trueage": 55
+        }
+    },
+    "_juergen": {
+        "_klaus_faro": {
+            "age": 17,
+            "name": "Klaus Faro",
+            "position": "Intelligence",
+            "rid": "_klaus_faro",
+            "trueage": 43
+        }
+    },
+    "_kai": {
+        "_michaela_brook": {
+            "age": 18,
+            "name": "Michaela Brook",
+            "position": "Enforcer",
+            "rid": "_michaela_brook",
+            "trueage": 54
+        },
+        "_suzana_hauer": {
+            "age": 24,
+            "name": "Suzana Hau\u00ebr",
+            "position": "Valet",
+            "rid": "_suzana_hauer",
+            "trueage": 40
+        }
+    },
+    "_katharina": {
+        "_klaus_oberkampf": {
+            "age": 36,
+            "name": "Klaus Oberkampf",
+            "position": "Enforcer",
+            "rid": "_klaus_oberkampf",
+            "trueage": 249
+        },
+        "_leslie_washington": {
+            "age": 21,
+            "name": "Leslie Washington",
+            "position": "Enforcer",
+            "rid": "_leslie_washington",
+            "trueage": 25
+        },
+        "_lucille_durrieux": {
+            "age": 43,
+            "name": "Lucille Durrieux",
+            "position": "Enforcer",
+            "rid": "_lucille_durrieux",
+            "trueage": 52
+        },
+        "_natasha_hemler": {
+            "age": 36,
+            "name": "Natasha Hemler",
+            "position": "Valet",
+            "rid": "_natasha_hemler",
+            "trueage": 108
+        }
+    },
+    "_kevin": {
+        "_jennifer_moses": {
+            "age": 18,
+            "name": "Jennifer Moses",
+            "position": "Operative",
+            "rid": "_jennifer_moses",
+            "trueage": 2
+        }
+    },
+    "_klara": {
+        "_lori_beckman": {
+            "age": 37,
+            "name": "Lori Beckman",
+            "position": "Valet",
+            "rid": "_lori_beckman",
+            "trueage": 41
+        },
+        "_octavius_drekker": {
+            "age": 17,
+            "name": "Octavius Drekker",
+            "position": "Enforcer",
+            "rid": "_octavius_drekker",
+            "trueage": 2
+        }
+    },
+    "_konrad_of_hamburg": {
+        "_esther_denig": {
+            "age": 19,
+            "name": "Esther Denig",
+            "position": "Enforcer",
+            "rid": "_esther_denig",
+            "trueage": 217
+        },
+        "_oskar_the_giant": {
+            "age": 42,
+            "name": "Oskar the Giant",
+            "position": "Enforcer",
+            "rid": "_oskar_the_giant",
+            "trueage": 279
+        }
+    },
+    "_kurt_hagrin": {
+        "_richard_cornell": {
+            "age": 41,
+            "name": "Richard Cornell",
+            "position": "Valet",
+            "rid": "_richard_cornell",
+            "trueage": 151
+        },
+        "_salingo_zaraf": {
+            "age": 19,
+            "name": "Salingo Zaraf",
+            "position": "Valet",
+            "rid": "_salingo_zaraf",
+            "trueage": 47
+        }
+    },
+    "_lisa_asil": {
+        "_male_ghoul_1_of_lisa_asil": {
+            "age": 18,
+            "name": "Male ghoul 1 of Lisa Asil",
+            "position": "",
+            "rid": "_male_ghoul_1_of_lisa_asil",
+            "trueage": 33
+        }
+    },
+    "_louise": {
+        "_clara_striekmann": {
+            "age": 31,
+            "name": "Clara Striekmann",
+            "position": "Enforcer",
+            "rid": "_clara_striekmann",
+            "trueage": 138
+        },
+        "_giaccomo_ponti": {
+            "age": 30,
+            "name": "Giaccomo Ponti",
+            "position": "Valet",
+            "rid": "_giaccomo_ponti",
+            "trueage": 182
+        },
+        "_trevor_mcbollan": {
+            "age": 17,
+            "name": "Trevor McBollan",
+            "position": "Leisure",
+            "rid": "_trevor_mcbollan",
+            "trueage": 103
+        },
+        "_xavier_soriano": {
+            "age": 34,
+            "name": "Xavier Soriano",
+            "position": "Valet",
+            "rid": "_xavier_soriano",
+            "trueage": 155
+        }
+    },
+    "_lukas": {
+        "_jenny_orson": {
+            "age": 41,
+            "name": "Jenny Orson",
+            "position": "Leisure",
+            "rid": "_jenny_orson",
+            "trueage": 259
+        },
+        "_sins": {
+            "age": 19,
+            "name": "Sins",
+            "position": "Enforcer",
+            "rid": "_sins",
+            "trueage": 358
+        }
+    },
+    "_matthias": {
+        "_josef_krambe": {
+            "age": 24,
+            "name": "Josef Krambe",
+            "position": "Valet",
+            "rid": "_josef_krambe",
+            "trueage": 30
+        },
+        "_stilgar_varn": {
+            "age": 31,
+            "name": "Stilgar Varn",
+            "position": "Enforcer",
+            "rid": "_stilgar_varn",
+            "trueage": 103
+        }
+    },
+    "_maximilian_gurlische": {
+        "_male_ghoul_1_of_maximilian_gurlische": {
+            "age": 30,
+            "name": "Male ghoul 1 of Maximilian Gurlische",
+            "position": "",
+            "rid": "_male_ghoul_1_of_maximilian_gurlische",
+            "trueage": 0
+        }
+    },
+    "_michaela": {
+        "_capucine_lintreux": {
+            "age": 31,
+            "name": "Capucine Lintreux",
+            "position": "Enforcer",
+            "rid": "_capucine_lintreux",
+            "trueage": 102
+        },
+        "_leslie_grey": {
+            "age": 29,
+            "name": "Leslie Grey",
+            "position": "Enforcer",
+            "rid": "_leslie_grey",
+            "trueage": 133
+        }
+    },
+    "_murad": {
+        "_starlo_mernakul": {
+            "age": 43,
+            "name": "Starlo Mernakul",
+            "position": "Enforcer",
+            "rid": "_starlo_mernakul",
+            "trueage": 19
+        }
+    },
+    "_mustafa": {
+        "_halia_hadif": {
+            "age": 32,
+            "name": "Halia Hadif",
+            "position": "Valet",
+            "rid": "_halia_hadif",
+            "trueage": 57
+        }
+    },
+    "_nicolas_brent": {
+        "_male_ghoul_1_of_nicolas_brent": {
+            "age": 27,
+            "name": "Male ghoul 1 of Nicolas Brent",
+            "position": "",
+            "rid": "_male_ghoul_1_of_nicolas_brent",
+            "trueage": 25
+        }
+    },
+    "_olga": {
+        "_dimitri_zelov": {
+            "age": 26,
+            "name": "Dimitri Zelov",
+            "position": "Valet",
+            "rid": "_dimitri_zelov",
+            "trueage": 363
+        }
+    },
+    "_otis": {
+        "_iren_falco": {
+            "age": 19,
+            "name": "Iren Falco",
+            "position": "Enforcer",
+            "rid": "_iren_falco",
+            "trueage": 79
+        },
+        "_jeremiah_posdam": {
+            "age": 33,
+            "name": "Jeremiah Posdam",
+            "position": "Enforcer",
+            "rid": "_jeremiah_posdam",
+            "trueage": 44
+        },
+        "_olivia_weishaupt": {
+            "age": 33,
+            "name": "Olivia Weishaupt",
+            "position": "Valet",
+            "rid": "_olivia_weishaupt",
+            "trueage": 104
+        },
+        "_samantha_klumberg": {
+            "age": 21,
+            "name": "Samantha Klumberg",
+            "position": "Intelligence",
+            "rid": "_samantha_klumberg",
+            "trueage": 52
+        },
+        "_sigfried_oldren": {
+            "age": 21,
+            "name": "Sigfried Oldren",
+            "position": "Enforcer",
+            "rid": "_sigfried_oldren",
+            "trueage": 37
+        }
+    },
+    "_paula": {
+        "_eden_luinni": {
+            "age": 40,
+            "name": "Eden Luinni",
+            "position": "Enforcer",
+            "rid": "_eden_luinni",
+            "trueage": 2
+        },
+        "_jim_peterson": {
+            "age": 34,
+            "name": "Jim Peterson",
+            "position": "Enforcer",
+            "rid": "_jim_peterson",
+            "trueage": 101
+        }
+    },
+    "_pavel": {
+        "_stan_gurfus": {
+            "age": 41,
+            "name": "Stan Gurfus",
+            "position": "Intelligence",
+            "rid": "_stan_gurfus",
+            "trueage": 57
+        }
+    },
+    "_penelope_di_grazziano": {
+        "_cristoforo_malfi": {
+            "age": 42,
+            "name": "Cristoforo Malfi",
+            "position": "Enforcer",
+            "rid": "_cristoforo_malfi",
+            "trueage": 18
+        },
+        "_leo_pracca": {
+            "age": 33,
+            "name": "Leo Pracca",
+            "position": "Enforcer",
+            "rid": "_leo_pracca",
+            "trueage": 93
+        },
+        "_lukas_harnberg": {
+            "age": 29,
+            "name": "Lukas Harnberg",
+            "position": "Leisure",
+            "rid": "_lukas_harnberg",
+            "trueage": 125
+        }
+    },
+    "_rebecca_rhodes": {
+        "_female_ghoul_2_of_rebecca_rhodes": {
+            "age": 38,
+            "name": "Female ghoul 2 of Rebecca Rhodes",
+            "position": "",
+            "rid": "_female_ghoul_2_of_rebecca_rhodes",
+            "trueage": 158
+        },
+        "_female_ghoul_3_of_rebecca_rhodes": {
+            "age": 20,
+            "name": "Female ghoul 3 of Rebecca Rhodes",
+            "position": "",
+            "rid": "_female_ghoul_3_of_rebecca_rhodes",
+            "trueage": 105
+        },
+        "_male_ghoul_1_of_rebecca_rhodes": {
+            "age": 42,
+            "name": "Male ghoul 1 of Rebecca Rhodes",
+            "position": "",
+            "rid": "_male_ghoul_1_of_rebecca_rhodes",
+            "trueage": 119
+        }
+    },
+    "_rita_kanelski": {
+        "_klaus_freiman": {
+            "age": 42,
+            "name": "Klaus Freiman",
+            "position": "Valet",
+            "rid": "_klaus_freiman",
+            "trueage": 43
+        },
+        "_nikki_barlo": {
+            "age": 32,
+            "name": "Nikki Barlo",
+            "position": "Intelligence",
+            "rid": "_nikki_barlo",
+            "trueage": 64
+        }
+    },
+    "_romane": {
+        "_female_ghoul_1_of_romane": {
+            "age": 24,
+            "name": "Female ghoul 1 of Romane",
+            "position": "",
+            "rid": "_female_ghoul_1_of_romane",
+            "trueage": 0
+        }
+    },
+    "_rufus": {
+        "_suzanna_rolm": {
+            "age": 44,
+            "name": "Suzanna Rolm",
+            "position": "Intelligence",
+            "rid": "_suzanna_rolm",
+            "trueage": 845
+        }
+    },
+    "_selim": {
+        "_akim_mohammad": {
+            "age": 15,
+            "name": "Akim Mohammad",
+            "position": "Intelligence",
+            "rid": "_akim_mohammad",
+            "trueage": 273
+        },
+        "_grigori_alpo": {
+            "age": 35,
+            "name": "Grigori Alpo",
+            "position": "Intelligence",
+            "rid": "_grigori_alpo",
+            "trueage": 290
+        },
+        "_martha_danierof": {
+            "age": 40,
+            "name": "Martha Danierof",
+            "position": "Leisure",
+            "rid": "_martha_danierof",
+            "trueage": 101
+        },
+        "_saladin_kalikce": {
+            "age": 25,
+            "name": "Saladin Kalik\u00e7e",
+            "position": "Enforcer",
+            "rid": "_saladin_kalikce",
+            "trueage": 83
+        }
+    },
+    "_sigmund": {
+        "_clara_davigo": {
+            "age": 39,
+            "name": "Clara Davigo",
+            "position": "Enforcer",
+            "rid": "_clara_davigo",
+            "trueage": 165
+        },
+        "_max_barento": {
+            "age": 39,
+            "name": "Max Barento",
+            "position": "Valet",
+            "rid": "_max_barento",
+            "trueage": 173
+        },
+        "_olga_visiuvi": {
+            "age": 18,
+            "name": "Olga Visiuvi",
+            "position": "Intelligence",
+            "rid": "_olga_visiuvi",
+            "trueage": 163
+        }
+    },
+    "_silke": {
+        "_betsi_kleigmann": {
+            "age": 26,
+            "name": "Betsi Kleigmann",
+            "position": "Intelligence",
+            "rid": "_betsi_kleigmann",
+            "trueage": 29
+        },
+        "_jo_weis": {
+            "age": 19,
+            "name": "Jo Weis",
+            "position": "Valet",
+            "rid": "_jo_weis",
+            "trueage": 2
+        }
+    },
+    "_sophie": {
+        "_francoise_rouvraix": {
+            "age": 28,
+            "name": "Fran\u00e7oise Rouvraix",
+            "position": "Operative",
+            "rid": "_francoise_rouvraix",
+            "trueage": 115
+        }
+    },
+    "_theodor": {
+        "_ana_tillmann": {
+            "age": 19,
+            "name": "Ana Tillmann",
+            "position": "Valet",
+            "rid": "_ana_tillmann",
+            "trueage": 66
+        },
+        "_fred_goebert": {
+            "age": 17,
+            "name": "Fred G\u00f6bert",
+            "position": "Valet",
+            "rid": "_fred_goebert",
+            "trueage": 191
+        },
+        "_hermeline_henke": {
+            "age": 36,
+            "name": "Hermeline Henke",
+            "position": "Enforcer",
+            "rid": "_hermeline_henke",
+            "trueage": 157
+        },
+        "_johann_von_driesler": {
+            "age": 43,
+            "name": "Johann von Driesler",
+            "position": "Valet",
+            "rid": "_johann_von_driesler",
+            "trueage": 132
+        }
+    },
+    "_thomas": {
+        "_dorian_wazel": {
+            "age": 22,
+            "name": "Dorian Wazel",
+            "position": "Valet",
+            "rid": "_dorian_wazel",
+            "trueage": 159
+        },
+        "_emily_darnaue": {
+            "age": 28,
+            "name": "Emily Darna\u00fc",
+            "position": "Leisure",
+            "rid": "_emily_darnaue",
+            "trueage": 310
+        },
+        "_gherardt_umlo": {
+            "age": 36,
+            "name": "Gherardt Umlo",
+            "position": "Enforcer",
+            "rid": "_gherardt_umlo",
+            "trueage": 128
+        },
+        "_lucius_altona": {
+            "age": 34,
+            "name": "Lucius Altona",
+            "position": "Operative",
+            "rid": "_lucius_altona",
+            "trueage": 434
+        }
+    },
+    "_thorsten_haulhem": {
+        "_fiodor_grama": {
+            "age": 26,
+            "name": "Fiodor Grama",
+            "position": "Valet",
+            "rid": "_fiodor_grama",
+            "trueage": 186
+        },
+        "_hans_aldersen": {
+            "age": 34,
+            "name": "Hans Aldersen",
+            "position": "Leisure",
+            "rid": "_hans_aldersen",
+            "trueage": 195
+        }
+    },
+    "_vallentin": {
+        "_eveline": {
+            "age": 17,
+            "name": "Eveline",
+            "position": "Valet",
+            "rid": "_eveline",
+            "trueage": 149
+        },
+        "_ludmilla_dortwood": {
+            "age": 23,
+            "name": "Ludmilla Dortwood",
+            "position": "Operative",
+            "rid": "_ludmilla_dortwood",
+            "trueage": 280
+        },
+        "_luedre": {
+            "age": 30,
+            "name": "L\u00fcdre",
+            "position": "Intelligence",
+            "rid": "_luedre",
+            "trueage": 542
+        }
+    },
+    "_wilhelm": {
+        "_elin_brag": {
+            "age": 21,
+            "name": "Elin Brag",
+            "position": "Valet",
+            "rid": "_elin_brag",
+            "trueage": 95
+        },
+        "_ygor_stern": {
+            "age": 22,
+            "name": "Ygor Stern",
+            "position": "Operative",
+            "rid": "_ygor_stern",
+            "trueage": 155
+        }
+    },
+    "_wolfgang_demler": {
+        "_female_ghoul_1_of_wolfgang_demler": {
+            "age": 26,
+            "name": "Female ghoul 1 of Wolfgang Demler",
+            "position": "",
+            "rid": "_female_ghoul_1_of_wolfgang_demler",
+            "trueage": 102
+        },
+        "_male_ghoul_2_of_wolfgang_demler": {
+            "age": 21,
+            "name": "Male ghoul 2 of Wolfgang Demler",
+            "position": "",
+            "rid": "_male_ghoul_2_of_wolfgang_demler",
+            "trueage": 99
+        }
+    }
+}

@@ -56,6 +56,7 @@ class WawwodCollector {
             let options = $(this).attr('options');
             let option = $(this).attr('option');
             let key = $('#userinput').val();
+            $(".tooltip").addClass("hidden");
             let url = 'ajax/display/' + action + '/';
             if (param != undefined) {
                 if (action == 'crossover_sheet') {
@@ -67,7 +68,7 @@ class WawwodCollector {
                     }
                 }else {
                     url = 'ajax/display/' + action + '/' + param + '/';
-                    console.debug("Non Xover",param)
+                    console.debug("Non Xover",param,url)
                 }
             }
             if (key != '') {
@@ -78,6 +79,7 @@ class WawwodCollector {
             $.ajax({
                 url: url,
                 success: function (answer) {
+                    $("#htmlarea").html("")
                     if (action == 'gaia_wheel') {
                         let d = JSON.parse(answer.data);
                         me.d3 = new GaiaWheel(d, "#d3area", me);
@@ -88,6 +90,11 @@ class WawwodCollector {
                         me.d3 = new Dashboard(d, "#d3area", me);
                         //me.d3.setCollector(me)
                         me.d3.perform();
+                    }
+                    if (action == 'groups') {
+                        console.log("done:::")
+                        $("#d3area svg").remove()
+                        $("#htmlarea").html(answer.html)
                     }
                     if (action == 'chronicle_map') {
                         console.log("TOTO: Here we go...")
@@ -133,6 +140,9 @@ class WawwodCollector {
                         me.d3.perform(d);
                     }
                     if (action == 'pdf_story') {
+                        console.log(answer);
+                    }
+                    if (action == 'chronicle_book') {
                         console.log(answer);
                     }
                     if (action == 'map') {
@@ -504,10 +514,9 @@ class WawwodCollector {
             });
 
 
-            $('.toggle_list').off();
-            $('.toggle_list').on('click', function (event) {
-                console.log('click');
-                $('.charlist').toggleClass('hidden');
+            $('.toggle_list').off().on('click', function (event) {
+                console.log('click')
+                $('.charlist').toggleClass('hidden')
                 me.rebootLinks();
             });
 
@@ -546,7 +555,7 @@ class WawwodCollector {
                         $('.details').html(answer)
                         $('li').removeClass('selected');
                         $('.details').removeClass('hidden');
-                        //$('.charlist').addClass('hidden');
+                        $('.charlist').addClass('hidden');
                         me.rebootLinks();
                     },
                     error: function (answer) {

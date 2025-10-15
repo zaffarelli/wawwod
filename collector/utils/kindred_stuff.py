@@ -48,10 +48,11 @@ def manage_missing_ghouls():
                     g.position = "Enforcer"
                 else:  # 1-3
                     g.position = "Valet"
-            if k.condition == "MISSING":
-                g.condition = "DEAD"
-            elif k.condition == "DEAD":
-                g.condition = "DEAD"
+            if k.condition.startswith("MISSING"):
+                words = k.condition.split("=")
+                g.condition = "DEAD="+words[1]
+            elif k.condition.startswith("DEAD"):
+                g.condition = k.condition
             g.need_fix = True
             g.save()
 
@@ -69,14 +70,14 @@ def manage_missing_ghouls():
                     retainer.trueage = k.trueage - randrange(15, k.trueage - 15)
                 retainer.faction = k.faction
                 retainer.family = k.family
-                retainer.group = k.group
+                retainer.group = f"Ghouls of {k.name}"
                 retainer.groupspec = k.groupspec
                 retainer.randomize_backgrounds()
                 retainer.randomize_archetypes()
                 retainer.randomize_attributes()
                 retainer.randomize_abilities()
                 retainer.source = 'zaffarelli'
-                retainer.name = f"{'Male' if retainer.sex else 'Female'} ghoul {x + 1} {k.name}"
+                retainer.name = f"{'Male' if retainer.sex else 'Female'} ghoul {x + 1} of {k.name}"
                 retainer.save()
                 print("    -+", retainer.name, f'(domitor={retainer.sire})')
 

@@ -79,7 +79,7 @@ class ToolsForWawwod:
             ss = Creature.objects.filter(name=sire_name)
             if len(ss) == 1:
                 s = ss.first()
-                if k.embrace < s.embrace:
+                if k.embrace < s.embrace + 20:
                     errors.append(self.fmt(f'[{k.chronicle}]> Error for µ{k.name}§: sire {s.name} embraced in {s.embrace} AD ({k.name} embraced in {k.embrace} AD).'))
         print(self.fmt(f'(µ{len(errors)}§ error(s) found.)'))
         report = "\n".join(errors)

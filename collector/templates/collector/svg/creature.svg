@@ -1,0 +1,19 @@
+{% load static %}
+{% load wod_filters %}
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<svg width="60mm" height="12mm" viewBox="0 0 60 12" version="1.1" xmlns="http://www.w3.org/2000/svg" class="creature_sticker {{c.creature}} {{c.status|html_safe_status}}">
+    <g transform="translate(0,0)">
+        <rect class="back" x="1" y="1" rx="2" ry="2" width="58" height="10"></rect>
+        <rect x="2" y="2" rx="1" ry="1" width="2" height="8" style="fill:{{c.faction|faction_color}};stroke:none;"></rect>
+        <rect x="5" y="2" rx="1" ry="1" width="2" height="8" style="fill:{{c.family|family_color}};stroke:none;"></rect>
+
+<!--        <text x="10" y="8.5" dy="1pt" style="fill:#F0F0F0;stroke:#A0A0A0;stroke-width:0.15pt;font-family:sans-serif;text-anchor:start;font-size:1.5pt;">{{c.creature|creature_code}}</text>-->
+        <text x="10" y="8.5" dy="1pt" style="fill:#F0F0F0;stroke:#A0A0A0;stroke-width:0.15pt;font-family:sans-serif;text-anchor:start;font-size:1.5pt;">{{c.group}}</text>
+
+        <text x="10" y="8.5" dy="-3.4pt" style="fill:#FFF;stroke:#A0A0A0;stroke-width:0.15pt;font-family:sans-serif;text-anchor:start;font-size:2pt;">{{c.name}}</text>
+        <text x="55" y="8.5" dy="-3.4pt" style="fill:#FFF;stroke:#A0A0A0;stroke-width:0.15pt;font-family:sans-serif;text-anchor:end;font-size:2pt;">{{c.position}}</text>
+        <text x="10" y="8.5" dy="-1pt" style="fill:#FFF;stroke:#A0A0A0;stroke-width:0.15pt;font-family:sans-serif;text-anchor:start;font-size:2pt;">{{c.family}}</text>
+        <text x="55" y="8.5" dy="-1pt" style="fill:#FFF;stroke:#A0A0A0;stroke-width:0.15pt;font-family:sans-serif;text-anchor:end;font-size:2pt;">{{c.freebies}}</text>
+        <text x="55" y="8.5" dy="1pt" style="fill:{{c.status|status_color}};stroke:#303030;stroke-width:0.15pt;font-family:sans-serif;text-anchor:end;font-size:2pt;">{{c.status}}</text>
+    </g>
+</svg>

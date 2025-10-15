@@ -119,7 +119,7 @@ class District(models.Model):
                 total += v
             for pc,v in per_clan.items():
                 print(pc,v)
-                percents.append({"cnt":round(v["cnt"]/total),"color":v["idx"],"title":pc})
+                #percents.append({"cnt":round(v["cnt"]/total),"color":v["idx"],"title":pc})
 
             pop_bar = ""
             idx = 0

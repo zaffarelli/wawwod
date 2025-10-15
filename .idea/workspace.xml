@@ -5,24 +5,61 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c5f4ae22-1e7a-419c-ac9f-80da089b72d4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/collector/migrations/0108_rename_anthithesis_creature_antithesis.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/collector/static/collector/fonts/Dosis-VariableFont_wght.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/collector/static/collector/fonts/RobotoMono-Italic-VariableFont_wght.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/collector/static/collector/fonts/RobotoMono-VariableFont_wght.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/collector/static/collector/fonts/UbuntuMono-Bold.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/collector/static/collector/fonts/UbuntuMono-BoldItalic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/collector/static/collector/fonts/UbuntuMono-Italic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/collector/static/collector/fonts/UbuntuMono-Regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/collector/static/js/packs.es6" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/collector/templates/collector/page/factions.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/collector/templates/collector/svg/creature.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ref_kindred_ghouls.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storytelling/templates/storytelling/pdf/factions.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_ghouls.sqlite3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/chrconicle_book_GHH.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_isaac_hieldorf_p3.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_isaac_hieldorf_p3.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/=4.5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/=5.1.13" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/=5.2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/context_processors.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/context_processors.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/collector/models/creatures.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/models/creatures.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/static/collector/css/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/collector/css/main.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/static/js/adventure_sheet.es6" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/js/adventure_sheet.es6" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/collector/static/js/collector.es6" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/js/collector.es6" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/collector/static/js/dashboard.es6" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/js/dashboard.es6" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/static/js/kindred_lineage.es6" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/js/kindred_lineage.es6" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/collector/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/collector/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/templates/collector/creature_link.html" beforeDir="false" afterPath="$PROJECT_DIR$/collector/templates/collector/creature_link.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/templates/collector/objects/global_menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/collector/templates/collector/objects/global_menu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/templates/collector/page/current_chronicle_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/collector/templates/collector/page/current_chronicle_details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/templatetags/wod_filters.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/templatetags/wod_filters.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/collector/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/utils/data_collection.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/utils/data_collection.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/utils/kindred_stuff.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/utils/kindred_stuff.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/collector/utils/wod_reference.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/utils/wod_reference.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/views/actions.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/views/actions.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/collector/views/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/views/base.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/wawwod.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/wawwod.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/wawwod_tools.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/wawwod_tools.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storytelling/models/districts.py" beforeDir="false" afterPath="$PROJECT_DIR$/storytelling/models/districts.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storytelling/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/storytelling/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storytelling/views/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/storytelling/views/base.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wawwod.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wawwod/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheetADV_RID.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheetADV_RID.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheetADV_RID_p0.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheetADV_RID_p0.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_isaac_hieldorf.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_isaac_hieldorf.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/city_HH_pundefined.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/city_HH_pundefined.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/story_pilot adventure - halloween.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/story_pilot adventure - halloween.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheetADV_RID_p0.svg" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheetADV_RID_p0.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/city_HH_pundefined.svg" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/city_HH_pundefined.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/kindred_lineage.svg" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/kindred_lineage.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_static/collector/css/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/collector/css/main.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_static/js/adventure_sheet.es6" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/js/adventure_sheet.es6" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wawwod_static/js/collector.es6" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/js/collector.es6" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod_static/js/geocity.es6" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/js/geocity.es6" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_static/js/dashboard.es6" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/js/dashboard.es6" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_static/js/kindred_lineage.es6" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/js/kindred_lineage.es6" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,23 +95,23 @@
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/zaffarelli/.virtualenvs/ww/bin&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "/home/zaffarelli/Projects/wawwod/storytelling/templates/storytelling/pdf",
+    "settings.editor.selected.configurable": "preferences.editor"
   }
-}</component>
+}]]></component>
   <component name="PyDebuggerOptionsProvider">
     <option name="mySaveCallSignatures" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/storytelling/templates/storytelling/pdf" />
+      <recent name="$PROJECT_DIR$/collector/static/js" />
       <recent name="$PROJECT_DIR$/storytelling/static/storytelling/geojson" />
       <recent name="$PROJECT_DIR$/wawwod_media/pdf/results/svg/static/collector/breed" />
       <recent name="$PROJECT_DIR$/collector/signals" />
-      <recent name="$PROJECT_DIR$/collector/static/js" />
-      <recent name="$PROJECT_DIR$/collector/templates/collector/page" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/collector/templates/collector/page" />

@@ -1,14 +1,25 @@
+<li class="display"><i class="fa fa-arrow-right"></i> Septs</li>
 <ul style="list-style-type: none;">
     {% for sept in septs %}
-    <li class="display" action="septs" param="{{sept.rid}}" title="{{sept.notes}}"><i class="fa fa-users"></i> {{sept.name}}</li>
+        <li class="display" action="septs" param="{{sept.rid}}" title="{{sept.notes}}"><i class="fa fa-users"></i> Sept: {{sept.name}}</li>
     {% endfor %}
 </ul>
+<li class="display"><i class="fa fa-arrow-right"></i> Cities</li>
 <ul style="list-style-type: none;">
     {% for ci in cities  %}
         <li class="display" action="map" param="{{ ci.code }}" options="{{ci.options}}"><i class="fa fa-map"></i> City Map: {{ ci.name }}</li>
     {% endfor %}
 </ul>
+<li class="display"><i class="fa fa-arrow-right"></i> Groups</li>
+<ul style="list-style-type: none;">
+    {% for faction in groups  %}
+        <li class="display" action="groups" param="{{ faction|lower }}" options=""><i class="fa fa-users"></i> Groups: {{faction|title}}</li>
+    {% endfor %}
+</ul>
+<li class="display"><i class="fa fa-arrow-right"></i> More...</li>
+<ul>
+<li class="display" action="storytelling"><i class="fa fa-comment"></i> Storyboard ({{season}}:{{adventure}})</li>
+<li class="display" action="pdf_story"><i class="fa fa-file-pdf"></i> Story Book ({{season}}:{{adventure}})</li>
+<li class="display" action="chronicle_book"><i class="fa fa-file-pdf"></i> Chronicle Book ({{chronicle}})</li>
+</ul>
 <HR/>
-<li class="display" action="storytelling"><i class="fa fa-comment"></i> Storyboard ({{c.season}}:{{c.adventure}})</li>
-<li class="display" action="pdf_story"><i class="fa fa-file-pdf"></i> PDF ({{c.season}}:{{c.adventure}})</li>
-<li class="display" action="chronicle_map"><i class="fas fa-users"></i> {{c.season}}:{{c.adventure}} Map</li>

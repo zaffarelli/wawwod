@@ -1,0 +1,13 @@
+{% load static %}
+<div class="factions">
+{% for g in faction %}
+    <fieldset>
+    <legend>{{g.name}} [{{g.count}} + {{g.countg}}g]</legend>
+    {% for c in g.characters %}
+        <span class='view_creature' id="{{c.rid}}" title='See {{c.name|safe}}: {{c.rid}}'>
+        {% include "collector/svg/creature.svg" %}
+        </span>
+    {% endfor %}
+    </fieldset>
+{% endfor %}
+</div>

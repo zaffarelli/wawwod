@@ -587,21 +587,24 @@ class Creature(models.Model):
             if self.sire:
                 # if self.family == '':
                 # print(self.sire)
-                domitor = Creature.objects.get(rid=self.sire)
-                if domitor:
-                    self.family = domitor.family
-                    self.faction = domitor.faction
-                    self.display_gauge = domitor.display_gauge / 3
-                    self.group = "Ghoul of " + domitor.name
-                    self.groupspec = domitor.groupspec
-                    self.hidden = domitor.hidden
-                    if self.district is None:
-                        self.district = domitor.district
+                domitors = Creature.objects.filter(rid=self.sire)
+                if len(domitors)>0:
+                    domitor = domitors.first()
+                    if domitor:
+                        self.family = domitor.family
+                        self.faction = domitor.faction
+                        self.display_gauge = domitor.display_gauge / 3
+                        self.group = "Ghoul of " + domitor.name
+                        self.groupspec = domitor.groupspec
+                        self.hidden = domitor.hidden
+                        if self.district is None:
+                            self.district = domitor.district
 
         self.expectedfreebies = self.freebies_per_immortal_age
         self.bloodpool = 10
         self.display_gauge = int(self.trueage / 50)
         self.display_pole = self.groupspec
+        self.reghoul()
 
     def fix_mortal(self):
         self.trueage = self.age
@@ -752,7 +755,8 @@ class Creature(models.Model):
         #     if ad:
         #         self.expectedfreebies = ad.players_starting_freebies
         self.check_expenditure()
-        self.garou_rank = 13-self.background3
+        self.garou_rank = 13 - self.background3
+        self.reghoul()
 
     def check_expenditure(self):
         if len(self.experience_expenditure) > 0:
@@ -971,16 +975,18 @@ class Creature(models.Model):
     @property
     def roster_base(self):
         lines = []
-        if (self.position):
-            lines.append(f'<b>{self.position.title()}</b>')
-        if (self.entrance):
-            lines.append(f'<i>{self.entrance}</i>')
-        if self.creature != 'ghoul':
+        if self.creature == 'ghoul':
+            lines.append(f'<b><i>{self.group}</i> ({self.position.title()})</b>')
+        else:
+            if (self.position):
+                lines.append(f'<b>{self.position.title()}</b>')
+            if (self.entrance):
+                lines.append(f'<i>{self.entrance}</i>')
             if (self.group):
                 lines.append(f'<i>{self.group}</i>')
-        if (self.groupspec):
-            lines.append(f'<i>{self.groupspec}</i>')
-        if (self.concept):
+            if (self.groupspec):
+                lines.append(f'<i>{self.groupspec}</i>')
+        if self.concept:
             lines.append(f'<b>Concept:</b> {self.concept}')
 
         # lines.append(f'<b>Creature Type:</b> {self.creature.title()}')
@@ -1091,15 +1097,15 @@ class Creature(models.Model):
             for x in range(value):
                 if x % 5 == 0:
                     str += "-"
-                str += "❍"
+                str += "o"
 
         else:
             for x in range(value):
-                str += "●"
+                str += "x"
                 if x % 5 == 4:
                     str += " "
             for x in range(max - value):
-                str += "❍"
+                str += "o"
                 if x % 5 == 4:
                     str += " "
         return str
@@ -1120,9 +1126,9 @@ class Creature(models.Model):
         res = ''
         for x in range(5):
             if x < val:
-                res += '●'
+                res += 'x'
             else:
-                res += '○'
+                res += 'o'
         res = val
         return res
 
@@ -1714,7 +1720,7 @@ class Creature(models.Model):
             self.status = 'READY'
             self.is_new = False
         elif self.freebies > self.expectedfreebies:
-            self.status = 'OK+'
+            self.status = 'OKPLUS'
             self.is_new = True
         elif self.freebiesdif == 0:
             self.status = 'OK'
@@ -1778,11 +1784,15 @@ class Creature(models.Model):
             sire = self.domitor
         else:
             sire = self.sire
+        player = None
+        if self.player:
+            player = self.player
         d = {
             'name': self.name,
             'clan': self.family,
             'family': self.root_family(),
             'condition': self.condition,
+            'player': player,
             'status': self.status,
             'sire': sire,
             'generation': (13 - self.background3),
@@ -1838,11 +1848,112 @@ class Creature(models.Model):
             ghouls = Creature.objects.filter(sire=self.rid, creature='ghoul').order_by('-trueage', 'position')
             cnt = self.value_of('retainers')
             for g in ghouls:
+                # g.group = f"Ghouls of {self.name}"
+                # g.groupspec = self.groupspec
+                # g.save()
                 list.append(f'{g.name} ({g.position}/{g.trueage})')
+
             if len(ghouls) < cnt:
                 for x in range(cnt - len(ghouls)):
                     list.append(f'Unknown {x}')
         return list
+
+    @property
+    def retainers_vals(self):
+        list = []
+        if self.creature == 'kindred':
+            ghouls = Creature.objects.filter(sire=self.rid, creature='ghoul').order_by('-trueage', 'position')
+            cnt = self.value_of('retainers')
+            for g in ghouls:
+                # g.group = f"Ghouls of {self.name}"
+                # g.groupspec = self.groupspec
+                # g.save()
+                list.append(g)
+
+            # if len(ghouls) < cnt:
+            #     for x in range(cnt - len(ghouls)):
+            #         list.append(f'Unknown {x}')
+        return list
+
+    def reghoul(self):
+        # from collector.models.creatures import Creature
+        from random import random, randrange
+        if self.creature == "kindred":
+            if self.condition.startswith("MISSING"):
+                words = self.condition.split("=")
+            elif self.condition.startswith("MISSING"):
+                words = self.condition.split("=")
+            else:
+                words = ["OK", 0]
+            background_retainers = self.value_of("retainers")
+            if background_retainers > 0:
+                print(f"{self.name} is supposed to have {background_retainers} ghoul(s).")
+                # Get obvious retainers
+                ghouls = Creature.objects.filter(sire=self.rid, creature='ghoul')
+                if len(ghouls):
+                    print("    ", "Current ghouls:")
+                for g in ghouls:
+                    print(f" - {g.name} {g.group} {g.position}")
+                    if g.position == '':
+                        x = randrange(0, 10) + 1
+                        if x > 9:  # 10
+                            g.position = "Leisure"
+                        elif x > 8:  # 9
+                            g.position = "Operative"
+                        elif x > 6:  # 7-8
+                            g.position = "Intelligence"
+                        elif x > 3:  # 4-6
+                            g.position = "Enforcer"
+                        else:  # 1-3
+                            g.position = "Valet"
+                    # Ghouls of a missing kindred are dead
+                    if words[0] == "MISSING":
+                        g.condition = "DEAD=" + words[1]
+                    # Ghouls of a dead kindred are dead
+                    elif words[0] == "DEAD":
+                        g.condition = self.condition
+                    g.need_fix = True
+                    g.save()
+                # If we are missing more ghouls
+                missed_count = background_retainers - len(ghouls)
+                if missed_count:
+                    print("    ", f"{missed_count} ghouls to be created...")
+                    for x in range(missed_count):
+                        retainer = Creature()
+                        retainer.sire = self.rid
+                        retainer.creature = "ghoul"
+                        retainer.sex = random() < 0.5
+                        retainer.chronicle = self.chronicle
+                        retainer.age = randrange(15, 45)
+                        if self.trueage > 50:
+                            retainer.trueage = self.trueage - randrange(15, self.trueage - 15)
+                        retainer.faction = self.faction
+                        retainer.family = self.family
+                        retainer.group = f"Ghouls of {self.name}"
+                        retainer.groupspec = self.groupspec
+                        retainer.randomize_backgrounds()
+                        retainer.randomize_archetypes()
+                        retainer.randomize_attributes()
+                        retainer.randomize_abilities()
+                        retainer.source = 'zaffarelli'
+                        retainer.name = f"{'Male' if retainer.sex else 'Female'} ghoul {x + 1} of {self.name}"
+                        retainer.save()
+                        print("    -+", retainer.name, f'(domitor={retainer.sire})')
+            else:
+                print(f"{self.name} is not supposed to have ghouls.")
+                ghouls = Creature.objects.filter(sire=self.rid, creature='ghoul')
+                for g in ghouls:
+                    print(f" - {g.name} {g.group} {g.position} {g.condition}")
+
+        elif self.creature == "ghoul":
+            domitors = Creature.objects.filter(rid=self.sire, creature='kindred')
+            if len(domitors) == 0:
+                print(f"Domitor not found for {self.name} ({self.sire}).")
+            elif len(domitors) > 0:
+                print(f"ERROR: {self.name} domitor has multiple occurences... {self.sire}")
+
+        else:
+            print("self.reghoul(): This is neither kindred nor ghoul, nothing to do to check.")
 
     @property
     def generation(self):
@@ -2159,7 +2270,7 @@ class Creature(models.Model):
         report = []
         chronicle = get_current_chronicle()
         adventure = chronicle.adventure
-        valid_keys = ["creature", "name", "age", "generation", "trueage", "sire", "family","aka"]
+        valid_keys = ["creature", "name", "age", "generation", "trueage", "sire", "family", "aka"]
         entries = txt.splitlines()
         for entry in entries:
             properties = {}
@@ -2204,6 +2315,23 @@ class Creature(models.Model):
                             c.adventure = adventure.acronym
                         c.save()
         return "\n\r".join(report)
+
+    @classmethod
+    def extract_ghouls(cls, chr):
+        data = {}
+        ghouls = cls.objects.filter(creature="ghoul", chronicle=chr)
+        for ghoul in ghouls:
+            ghoul_entry = {"rid": ghoul.rid, "name": ghoul.name, "position": ghoul.position, "age": ghoul.age,
+                           "trueage": ghoul.trueage}
+            domitors = cls.objects.filter(creature="kindred", rid=ghoul.sire)
+            if len(domitors) == 1:
+                domitor = domitors.first()
+                if domitor.rid in data:
+                    data[domitor.rid][ghoul.rid] = ghoul_entry
+                else:
+                    data[domitor.rid] = {}
+                    data[domitor.rid][ghoul.rid] = ghoul_entry
+        return data
 
 
 def refix(modeladmin, request, queryset):
