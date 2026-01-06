@@ -7,6 +7,12 @@
         <rect x="2" y="2" rx="1" ry="1" width="2" height="8" style="fill:{{c.faction|faction_color}};stroke:none;"></rect>
         <rect x="5" y="2" rx="1" ry="1" width="2" height="8" style="fill:{{c.family|family_color}};stroke:none;"></rect>
 
+        {% if c.sex %}
+        <rect x="3.5" y="4" rx="0" ry="0" width="2" height="2" style="fill:#00f;stroke:black;stroke-width:0.2pt;"></rect>
+        {%else%}
+        <rect x="3.5" y="4" rx="0" ry="0" width="2" height="2" style="fill:#f0f;stroke:black;stroke-width:0.2pt;"></rect>
+        {% endif %}
+
 <!--        <text x="10" y="8.5" dy="1pt" style="fill:#F0F0F0;stroke:#A0A0A0;stroke-width:0.15pt;font-family:sans-serif;text-anchor:start;font-size:1.5pt;">{{c.creature|creature_code}}</text>-->
         <text x="10" y="8.5" dy="1pt" style="fill:#F0F0F0;stroke:#A0A0A0;stroke-width:0.15pt;font-family:sans-serif;text-anchor:start;font-size:1.5pt;">{{c.group}}</text>
 

@@ -42,7 +42,7 @@
 {% endblock userzone %}
 
 <div class='wrapper hidden' style="background-image: url('{% static chronicle_logo %}')">
-    <div class='charlist'>
+    <div class='charlist righter'>
         {% block list %}
         {% endblock list %}
     </div>
@@ -50,13 +50,13 @@
     <div id='htmlarea'>
     </div>
     </div>
-    <div class='details'>
+    <div class='details righter'>
         {% block creature %}
         {% endblock creature %}
     </div>
-    <div class='handler'>
-        <div class="storyboard_handler hidden">
-            <div class="plank tag toggle small" action="toggle" param="storyboard_handler"><i class='fa fa-times'></i></div>
+    <div class='handler lefter hidden'>
+        <div class="storyboard_handler">
+            <div class="plank tag toggle small" action="toggle" param="handler"><i class='fa fa-times'></i></div>
             <div class="plank tag toggle small" action="toggle" param="storyboard_handler"><i class='fa fa-arrow-circle-left'></i></div>
             <div class="plank tag toggle small" action="toggle" param="storyboard_handler"><i class='fa fa-arrow-circle-right'></i></div>
             <div class="plank tag toggle small" action="toggle" param="storyboard_handler"><i class='fa fa-arrow-circle-up'></i></div>
@@ -86,7 +86,7 @@
 <!-- </a>-->
 <!--</div>-->
 
-<div class="moonphase hidden" >
+<div class="moonphase righter hidden" >
     <table>
         <caption>Moon Phases: {{weeks.month}}</caption>
         {% for w in weeks.weeks %}

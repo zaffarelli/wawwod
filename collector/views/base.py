@@ -72,18 +72,23 @@ def prepare_index(request):
             creature__in=["ghoul", "kinfolk", "mortal"]).order_by("groupspec"):
         g = "_".join(c.groupspec.lower().split(" "))
         if g in groups:
-            groups[g]["characters"].append(c)
             groups[g]["count"] += 1
             ghouls = c.retainers_vals
+            c.retainers_list = []
             for h in ghouls:
-                groups[g]["characters"].append(h)
+                #groups[g]["characters"].append(h)
+                c.retainers_list.append(h)
                 groups[g]["countg"] += 1
+            groups[g]["characters"].append(c)
         else:
-            groups[g] = {"code": g, "faction": c.faction, "name": f"{c.groupspec} ({c.faction})","count":1,"countg":0, "characters": [c]}
+            groups[g] = {"code": g, "faction": c.faction, "name": f"{c.groupspec} ({c.faction})","count":1,"countg":0, "characters": []}
             ghouls = c.retainers_vals
+            c.retainers_list = []
             for h in ghouls:
-                groups[g]["characters"].append(h)
+                #groups[g]["characters"].append(h)
+                c.retainers_list.append(h)
                 groups[g]["countg"] += 1
+            groups[g]["characters"].append(c)
 
     grp = {"camarilla": [], "sabbat": [], "others": []}
     for k, v in groups.items():

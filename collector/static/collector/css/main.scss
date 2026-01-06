@@ -109,9 +109,12 @@ body {
       margin: 0;
       background: transparent url() 98% 98% no-repeat fixed;
 
-      &.hidden {
-        display: none;
-      }
+//       &.hidden {
+//         display: none;
+//         z-index:1;
+//         width:0;
+//         height:0;
+//       }
     }
   }
 }
@@ -129,11 +132,12 @@ body {
   background: transparent;
   transition: all 0.3s ease;
 
-  &.hidden {
-    transform: translateX(1000px);
-    transition: all 0.3s ease;
-  }
+//   &.hidden {
+//     transform: translateX(1000px);
+//     transition: all 0.3s ease;
+//   }
 }
+
 
 .charlist {
   @include panel;
@@ -214,6 +218,8 @@ body {
   margin-top:3em;
   border-color: $panel_border;
 }
+
+
 
 
 /* Details - Creature Block */
@@ -573,9 +579,9 @@ table {
     }
   }
 
-  &.hidden {
-    display: none;
-  }
+//   &.hidden {
+//     display: none;
+//   }
 }
 
 
@@ -752,9 +758,9 @@ svg.lineage {
     & li {
     }
   }
-  &.hidden{
-    display:none;
-  }
+//   &.hidden{
+//     display:none;
+//   }
 
 }
 
@@ -846,16 +852,16 @@ td.editable.updown {
   height: 88vh;
   //border:1px solid saddlebrown;
   //background:lightgoldenrodyellow;
-  &.hidden{
-      z-index:0;
-  }
+//   &.hidden{
+//       z-index:0;
+//   }
 }
 
 #htmlarea{
    z-index:500;
-   &.hidden{
-      z-index:0;
-  }
+//    &.hidden{
+//       z-index:0;
+//   }
 }
 
 div.creature_links {
@@ -1133,9 +1139,9 @@ fieldset{
             text-align:center;
         }
     }
-    &.hidden{
-        display:none;
-    }
+//     &.hidden{
+//         display:none;
+//     }
 }
 
 .line_block{
@@ -1196,6 +1202,10 @@ fieldset{
                 color:white;
                 font-family: TexteLibre;
             }
+            & fieldset{
+                margin:1px;
+                border:1px dotted #606060;
+            }
         }
         & .creature_sticker{
           & .back{
@@ -1205,7 +1215,7 @@ fieldset{
           }
           &.unbalanced{
             & .back{
-                fill:#606060;
+                fill:#403030;
             }
           }
           &.okplus{
@@ -1215,12 +1225,12 @@ fieldset{
           }
           &.kindred{
             & .back{
-              stroke:#E0E0E0;
+              stroke:#A07070;
             }
           }
           &.ghoul{
             & .back{
-              stroke:#303030;
+              stroke:#102010;
             }
           }
         }
@@ -1228,4 +1238,16 @@ fieldset{
     max-height:calc(88% - 40px);
     margin-top:40px;
     overflow:scroll;
+}
+
+*.hidden {
+    &.righter{
+        transform: translateX(1000px);
+        transition: all 0.3s ease;
+    }
+    &.lefter{
+        transform: translateX(-1000px);
+        transition: all 0.3s ease;
+    }
+//    display: none;
 }

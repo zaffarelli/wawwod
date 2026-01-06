@@ -11,7 +11,7 @@
     {% if c.creature == 'garou' %}
     <th>Glory</th>
     <td class='editable updown' id='{{c.rid}}__glory'>{{ c.glory|as_bullets|safe }}</td>
-    {% elif c.creature == 'kindred' %}
+    {% elif c.creature == 'kindred' or c.creature == 'ghoul' %}
     <th>{{ c.virtue_name0|safe }}</th>
     <td class='editable updown' id='{{c.rid}}__virtue0'>{{ c.virtue0|as_bullets|safe }}</td>
     {% elif c.creature == 'wraith' %}
@@ -39,7 +39,7 @@
     {% if c.creature == 'garou' %}
     <th>Honor</th>
     <td class='editable updown' id='{{c.rid}}__honor'>{{ c.honor|as_bullets|safe }}</td>
-    {% elif c.creature == 'kindred' %}
+    {% elif c.creature == 'kindred' or c.creature == 'ghoul' %}
     <th>{{ c.virtue_name1|safe }}</th>
     <td class='editable updown' id='{{c.rid}}__virtue1'>{{ c.virtue1|as_bullets|safe }}</td>
     {% elif c.creature == 'wraith' %}
@@ -67,7 +67,7 @@
     {% if c.creature == 'garou' %}
     <th>Wisdom</th>
     <td class='editable updown' id='{{c.rid}}__wisdom'>{{ c.wisdom|as_bullets|safe }}</td>
-    {% elif c.creature == 'kindred' %}
+    {% elif c.creature == 'kindred' or c.creature == 'ghoul' %}
     <th>{{ c.virtue_name2|safe }}</th>
     <td class='editable updown' id='{{c.rid}}__virtue2'>{{ c.virtue2|as_bullets|safe }}</td>
     {% elif c.creature == 'wraith' %}
@@ -147,7 +147,7 @@
     {% if c.creature == 'mage' %}
     <th>Paradox</th>
     <td class='editable updown' id='{{c.rid}}__paradox'>{{ c.paradox|as_bullets|safe }}</td>
-    {% elif c.creature == 'kindred' %}
+    {% elif c.creature == 'kindred' or c.creature == 'ghoul' %}
     <th>Enlightenment</th>
     <td class='editable userinput' id='{{c.rid}}__path'>{{c.path}}</td>
     {% else %}
@@ -175,7 +175,7 @@
     {% elif c.creature == 'wraith' %}
     <th>Pathos</th>
     <td class='editable updown' id='{{c.rid}}__pathos'>{{ c.pathos|as_bullets|safe }}</td>
-    {% elif c.creature == 'kindred' %}
+    {% elif c.creature == 'kindred' or c.creature == 'ghoul' %}
     <th>Blood Pool</th>
     <td>{{ c.bloodpool }}</td>
     {% elif c.creature == 'changeling' %}
@@ -200,7 +200,7 @@
     {% if c.creature == 'garou' or c.creature == 'kinfolk' %}
     <th>Rage</th>
     <td class='editable updown' id='{{c.rid}}__rage'>{{ c.rage|as_bullets|safe }}</td>
-    {% elif c.creature == 'kindred' %}
+    {% elif c.creature == 'kindred' or c.creature == 'ghoul' %}
     <th>Path of {{c.path}}</th>
     <td class='editable updown' id='{{c.rid}}__humanity'>{{ c.humanity|as_bullets|safe }}</td>
     {% elif c.creature == 'wraith' %}

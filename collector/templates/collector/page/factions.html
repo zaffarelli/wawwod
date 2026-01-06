@@ -4,9 +4,16 @@
     <fieldset>
     <legend>{{g.name}} [{{g.count}} + {{g.countg}}g]</legend>
     {% for c in g.characters %}
+        <fieldset>
         <span class='view_creature' id="{{c.rid}}" title='See {{c.name|safe}}: {{c.rid}}'>
         {% include "collector/svg/creature.svg" %}
         </span>
+        {% for d in c.retainers_list %}
+            <span class='view_creature' id="{{d.rid}}" title='See {{d.name|safe}}: {{d.rid}}'>
+            {% include "collector/svg/creature.svg" with c=d %}
+            </span>
+        {% endfor %}
+        </fieldset>
     {% endfor %}
     </fieldset>
 {% endfor %}

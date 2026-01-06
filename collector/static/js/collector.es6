@@ -273,10 +273,11 @@ class WawwodCollector {
         $('.edit_trigger').off().on('click', function (event) {
             let id = $(this).attr('id');
             let fields = id.split("__");
+            let param = $(this).attr('param');
             let tgt_id = fields[0].replace('trigger_', '');
             let hr_field = $(this).attr('field');
             let bz_field = fields[1];
-            $(".storyboard_handler").removeClass('hidden');
+            $("."+param).removeClass('hidden');
             let field_id = "field_" + tgt_id + "__" + bz_field;
             console.log(field_id)
             let grabbed_data = $("#" + field_id).html();

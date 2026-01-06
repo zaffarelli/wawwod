@@ -35411,3 +35411,808 @@ KeyError: 'anarchs'
 [15/10 00:48:26] "GET /ajax/display/chronicle_book/ HTTP/1.1" 500 89476
 [15/10 01:27:20] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1918
 [15/10 12:06:44] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1918
+[15/10 12:10:53] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1918
+[15/10 12:15:44] "GET /static/storytelling/fonts/Lato-Regular.ttf HTTP/1.1" 404 1918
+[15/10 12:21:48] Internal Server Error: /ajax/editable/userinput/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 269, in userinput
+    item.save()
+    ~~~~~~~~~^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/db/models/base.py", line 892, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/db/models/base.py", line 978, in save_base
+    pre_save.send(
+    ~~~~~~~~~~~~~^
+        sender=origin,
+        ^^^^^^^^^^^^^^
+    ...<3 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/dispatch/dispatcher.py", line 189, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/zaffarelli/Projects/wawwod/collector/signals/creatures.py", line 19, in update_creature
+    instance.fix()
+    ~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 913, in fix
+    self.fix_ghoul()
+    ~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 586, in fix_ghoul
+    self.trueage = ch.era - (self.embrace - self.age)
+                             ~~~~~~~~~~~~~^~~~~~~~~~
+TypeError: unsupported operand type(s) for -: 'int' and 'str'
+[15/10 12:21:48] "POST /ajax/editable/userinput/ HTTP/1.1" 500 21954
+[15/10 12:22:01] Internal Server Error: /ajax/editable/userinput/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 269, in userinput
+    item.save()
+    ~~~~~~~~~^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/db/models/base.py", line 892, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/db/models/base.py", line 978, in save_base
+    pre_save.send(
+    ~~~~~~~~~~~~~^
+        sender=origin,
+        ^^^^^^^^^^^^^^
+    ...<3 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/dispatch/dispatcher.py", line 189, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/zaffarelli/Projects/wawwod/collector/signals/creatures.py", line 19, in update_creature
+    instance.fix()
+    ~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 913, in fix
+    self.fix_ghoul()
+    ~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 586, in fix_ghoul
+    self.trueage = ch.era - (self.embrace - self.age)
+                             ~~~~~~~~~~~~~^~~~~~~~~~
+TypeError: unsupported operand type(s) for -: 'int' and 'str'
+[15/10 12:22:01] "POST /ajax/editable/userinput/ HTTP/1.1" 500 21954
+[15/10 12:22:06] Internal Server Error: /ajax/editable/userinput/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 269, in userinput
+    item.save()
+    ~~~~~~~~~^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/db/models/base.py", line 892, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/db/models/base.py", line 978, in save_base
+    pre_save.send(
+    ~~~~~~~~~~~~~^
+        sender=origin,
+        ^^^^^^^^^^^^^^
+    ...<3 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/dispatch/dispatcher.py", line 189, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/zaffarelli/Projects/wawwod/collector/signals/creatures.py", line 19, in update_creature
+    instance.fix()
+    ~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 913, in fix
+    self.fix_ghoul()
+    ~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 586, in fix_ghoul
+    self.trueage = ch.era - (self.embrace - self.age)
+                             ~~~~~~~~~~~~~^~~~~~~~~~
+TypeError: unsupported operand type(s) for -: 'str' and 'int'
+[15/10 12:22:06] "POST /ajax/editable/userinput/ HTTP/1.1" 500 21957
+[15/10 12:24:55] Internal Server Error: /ajax/editable/userinput/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 269, in userinput
+    item.save()
+    ~~~~~~~~~^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/db/models/base.py", line 892, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/db/models/base.py", line 978, in save_base
+    pre_save.send(
+    ~~~~~~~~~~~~~^
+        sender=origin,
+        ^^^^^^^^^^^^^^
+    ...<3 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/dispatch/dispatcher.py", line 189, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/zaffarelli/Projects/wawwod/collector/signals/creatures.py", line 19, in update_creature
+    instance.fix()
+    ~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 913, in fix
+    self.fix_ghoul()
+    ~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 586, in fix_ghoul
+    self.trueage = ch.era - (self.embrace - self.age)
+                             ~~~~~~~~~~~~~^~~~~~~~~~
+TypeError: unsupported operand type(s) for -: 'str' and 'int'
+[15/10 12:24:55] "POST /ajax/editable/userinput/ HTTP/1.1" 500 21957
+[15/10 12:29:59] Internal Server Error: /ajax/editable/userinput/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 269, in userinput
+    item.save()
+    ~~~~~~~~~^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/db/models/base.py", line 892, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/db/models/base.py", line 978, in save_base
+    pre_save.send(
+    ~~~~~~~~~~~~~^
+        sender=origin,
+        ^^^^^^^^^^^^^^
+    ...<3 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/dispatch/dispatcher.py", line 189, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/zaffarelli/Projects/wawwod/collector/signals/creatures.py", line 19, in update_creature
+    instance.fix()
+    ~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 914, in fix
+    self.fix_ghoul()
+    ~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 585, in fix_ghoul
+    self.embrace = ch.era - (self.trueage - self.age)
+                             ~~~~~~~~~~~~~^~~~~~~~~~
+TypeError: unsupported operand type(s) for -: 'str' and 'int'
+[15/10 12:29:59] "POST /ajax/editable/userinput/ HTTP/1.1" 500 21959
+[15/10 12:30:43] Internal Server Error: /ajax/editable/userinput/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 269, in userinput
+    item.save()
+    ~~~~~~~~~^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/db/models/base.py", line 892, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/db/models/base.py", line 978, in save_base
+    pre_save.send(
+    ~~~~~~~~~~~~~^
+        sender=origin,
+        ^^^^^^^^^^^^^^
+    ...<3 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/dispatch/dispatcher.py", line 189, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/zaffarelli/Projects/wawwod/collector/signals/creatures.py", line 19, in update_creature
+    instance.fix()
+    ~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 914, in fix
+    self.fix_ghoul()
+    ~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 606, in fix_ghoul
+    self.display_gauge = int(self.trueage / 50)
+                             ~~~~~~~~~~~~~^~~~
+TypeError: unsupported operand type(s) for /: 'str' and 'int'
+[15/10 12:30:43] "POST /ajax/editable/userinput/ HTTP/1.1" 500 21947
+[15/10 12:31:08] Internal Server Error: /ajax/editable/userinput/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 269, in userinput
+    item.save()
+    ~~~~~~~~~^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/db/models/base.py", line 892, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/db/models/base.py", line 978, in save_base
+    pre_save.send(
+    ~~~~~~~~~~~~~^
+        sender=origin,
+        ^^^^^^^^^^^^^^
+    ...<3 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/dispatch/dispatcher.py", line 189, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/zaffarelli/Projects/wawwod/collector/signals/creatures.py", line 19, in update_creature
+    instance.fix()
+    ~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 914, in fix
+    self.fix_ghoul()
+    ~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 606, in fix_ghoul
+    self.display_gauge = int(self.trueage / 50)
+                             ~~~~~~~~~~~~~^~~~
+TypeError: unsupported operand type(s) for /: 'str' and 'int'
+[15/10 12:31:08] "POST /ajax/editable/userinput/ HTTP/1.1" 500 21947
+[15/10 12:59:05] Internal Server Error: /ajax/view/creature/_eveline/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/template/smartif.py", line 180, in translate_token
+    op = OPERATORS[token]
+         ~~~~~~~~~^^^^^^^
+KeyError: "c.creature=='ghoul'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/template/loader_tags.py", line 56, in render
+    result = self.nodelist.render(context)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/template/defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/template/loader_tags.py", line 210, in render
+    return template.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/template/base.py", line 173, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/template/loader_tags.py", line 199, in render
+    template = context.template.engine.select_template(template_name)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/template/engine.py", line 208, in select_template
+    return self.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/template/engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/template/base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/template/defaulttags.py", line 969, in do_if
+    condition = TemplateIfParser(parser, bits).parse()
+                ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/template/defaulttags.py", line 894, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/template/smartif.py", line 171, in __init__
+    mapped_tokens.append(self.translate_token(token))
+                         ~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/template/smartif.py", line 182, in translate_token
+    return self.create_var(token)
+           ~~~~~~~~~~~~~~~^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/template/defaulttags.py", line 897, in create_var
+    return TemplateLiteral(self.template_parser.compile_filter(value), value)
+                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/template/base.py", line 605, in compile_filter
+    return FilterExpression(token, self)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/template/base.py", line 706, in __init__
+    raise TemplateSyntaxError(
+    ...<2 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '=='ghoul'' from 'c.creature=='ghoul''
+[15/10 12:59:05] "GET /ajax/view/creature/_eveline/ HTTP/1.1" 500 318017
+[16/10 08:05:07] Internal Server Error: /ajax/editable/userinput/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 265, in userinput
+    item = Creature.objects.get(rid=rid)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/db/models/query.py", line 649, in get
+    raise self.model.DoesNotExist(
+        "%s matching query does not exist." % self.model._meta.object_name
+    )
+collector.models.creatures.Creature.DoesNotExist: Creature matching query does not exist.
+[16/10 08:05:07] "POST /ajax/editable/userinput/ HTTP/1.1" 500 21429
+[16/10 08:05:16] Not Found: /ajax/view/creature/_j=/
+[16/10 08:05:16] "GET /ajax/view/creature/_j=/ HTTP/1.1" 404 15818
+[16/10 08:05:23] Not Found: /ajax/view/creature/_j=/
+[16/10 08:05:23] "GET /ajax/view/creature/_j=/ HTTP/1.1" 404 15818
+[16/10 08:05:28] Not Found: /ajax/view/creature/_j=/
+[16/10 08:05:28] "GET /ajax/view/creature/_j=/ HTTP/1.1" 404 15818
+[16/10 08:26:24] Not Found: /ajax/collector_action/refix_all/Jonah_Klemsen/
+[16/10 08:26:24] "GET /ajax/collector_action/refix_all/Jonah_Klemsen/ HTTP/1.1" 404 15885
+[20/10 15:11:04] Internal Server Error: /api/randomize/_edmund_glammer/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/actions.py", line 187, in randomize
+    x.randomize_all()
+    ~~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 1356, in randomize_all
+    due_willpower = int(STATS_TEMPLATES[self.creature]['willpower'])
+                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'willpower'
+[20/10 15:11:04] "GET /api/randomize/_edmund_glammer/ HTTP/1.1" 500 80054
+[20/10 15:24:21] Internal Server Error: /api/randomize/_edmund_glammer/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/actions.py", line 187, in randomize
+    x.randomize_all()
+    ~~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 1367, in randomize_all
+    if self.domitor.family in ["Gangrel","Ventrue"]:
+       ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'family'
+[20/10 15:24:21] "GET /api/randomize/_edmund_glammer/ HTTP/1.1" 500 81127
+[21/10 14:26:37] Internal Server Error: /ajax/display/chronicle_book/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/storytelling/views/base.py", line 195, in chronicle_book
+    pdf = pisa.pisaDocument(BytesIO(html.encode('utf-8')), es_pdf)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/xhtml2pdf/document.py", line 139, in pisaDocument
+    context = pisaStory(
+        src,
+    ...<7 lines>...
+        xml_output=xml_output,
+    )
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/xhtml2pdf/document.py", line 75, in pisaStory
+    pisaParser(src, context, default_css, xhtml, encoding, xml_output)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/xhtml2pdf/parser.py", line 823, in pisaParser
+    context.parseCSS()
+    ~~~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/xhtml2pdf/context.py", line 684, in parseCSS
+    self.css = self.cssParser.parse(self.cssText)
+               ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/xhtml2pdf/w3c/cssParser.py", line 458, in parse
+    src, stylesheet = self._parseStylesheet(src)
+                      ~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/xhtml2pdf/w3c/cssParser.py", line 561, in _parseStylesheet
+    src, atResults = self._parseAtKeyword(src)
+                     ~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/xhtml2pdf/w3c/cssParser.py", line 683, in _parseAtKeyword
+    src, result = self._parseAtPage(src)
+                  ~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/xhtml2pdf/w3c/cssParser.py", line 791, in _parseAtPage
+    src, atResults = self._parseAtKeyword(src)
+                     ~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/xhtml2pdf/w3c/cssParser.py", line 690, in _parseAtKeyword
+    src, result = self._parseAtFrame(src)
+                  ~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/xhtml2pdf/w3c/cssParser.py", line 859, in _parseAtFrame
+    src, properties = self._parseDeclarationGroup(src.lstrip())
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/xhtml2pdf/w3c/cssParser.py", line 1120, in _parseDeclarationGroup
+    raise self.ParseError(msg, src, ctxsrc)
+xhtml2pdf.w3c.cssParser.CSSParseError: Declaration group closing '}' not found:: ('{\n                -pdf-frame-content:footer_content;\n                right: 0.5cm;\n                left: 0.5cm;\n                top: 28.0cm;\n                height: 1cm;\n                padding: 0.25cm;\n                text-align:center;\n                /', '/border-top:1px soli')
+[21/10 14:26:37] "GET /ajax/display/chronicle_book/ HTTP/1.1" 500 229003
+[21/10 14:26:50] Internal Server Error: /ajax/display/chronicle_book/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/storytelling/views/base.py", line 195, in chronicle_book
+    pdf = pisa.pisaDocument(BytesIO(html.encode('utf-8')), es_pdf)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/xhtml2pdf/document.py", line 139, in pisaDocument
+    context = pisaStory(
+        src,
+    ...<7 lines>...
+        xml_output=xml_output,
+    )
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/xhtml2pdf/document.py", line 75, in pisaStory
+    pisaParser(src, context, default_css, xhtml, encoding, xml_output)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/xhtml2pdf/parser.py", line 823, in pisaParser
+    context.parseCSS()
+    ~~~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/xhtml2pdf/context.py", line 684, in parseCSS
+    self.css = self.cssParser.parse(self.cssText)
+               ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/xhtml2pdf/w3c/cssParser.py", line 458, in parse
+    src, stylesheet = self._parseStylesheet(src)
+                      ~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/xhtml2pdf/w3c/cssParser.py", line 561, in _parseStylesheet
+    src, atResults = self._parseAtKeyword(src)
+                     ~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/xhtml2pdf/w3c/cssParser.py", line 683, in _parseAtKeyword
+    src, result = self._parseAtPage(src)
+                  ~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/xhtml2pdf/w3c/cssParser.py", line 791, in _parseAtPage
+    src, atResults = self._parseAtKeyword(src)
+                     ~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/xhtml2pdf/w3c/cssParser.py", line 690, in _parseAtKeyword
+    src, result = self._parseAtFrame(src)
+                  ~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/xhtml2pdf/w3c/cssParser.py", line 859, in _parseAtFrame
+    src, properties = self._parseDeclarationGroup(src.lstrip())
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/xhtml2pdf/w3c/cssParser.py", line 1120, in _parseDeclarationGroup
+    raise self.ParseError(msg, src, ctxsrc)
+xhtml2pdf.w3c.cssParser.CSSParseError: Declaration group closing '}' not found:: ('{\n                -pdf-frame-content:footer_content;\n                right: 0.5cm;\n                left: 0.5cm;\n                top: 28.0cm;\n                height: 1cm;\n                padding: 0.25cm;\n                text-align:center;\n                /', '/border-top:1px soli')
+[21/10 14:26:50] "GET /ajax/display/chronicle_book/ HTTP/1.1" 500 229003
+[21/10 14:56:45] Internal Server Error: /ajax/display/chronicle_book/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/storytelling/views/base.py", line 191, in chronicle_book
+    html = template.render(context)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/template/defaulttags.py", line 243, in render
+    nodelist.append(node.render_annotated(context))
+                    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/template/defaulttags.py", line 243, in render
+    nodelist.append(node.render_annotated(context))
+                    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/template/defaulttags.py", line 243, in render
+    nodelist.append(node.render_annotated(context))
+                    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/template/loader_tags.py", line 199, in render
+    template = context.template.engine.select_template(template_name)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/template/engine.py", line 208, in select_template
+    return self.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/template/engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/template/base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/template/defaulttags.py", line 962, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/template/base.py", line 523, in parse
+    self.unclosed_block_tag(parse_until)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/template/base.py", line 586, in unclosed_block_tag
+    raise self.error(token, msg)
+django.template.exceptions.TemplateSyntaxError: Unclosed tag on line 6: 'if'. Looking for one of: elif, else, endif.
+[21/10 14:56:45] "GET /ajax/display/chronicle_book/ HTTP/1.1" 500 325484
+[26/10 12:04:34] Internal Server Error: /ajax/view/creature/_betsi_kleigmann/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/views/generic/base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/views/generic/detail.py", line 108, in get
+    self.object = self.get_object()
+                  ~~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/views/generic/detail.py", line 53, in get_object
+    obj = queryset.get()
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/db/models/query.py", line 652, in get
+    raise self.model.MultipleObjectsReturned(
+    ...<5 lines>...
+    )
+collector.models.creatures.Creature.MultipleObjectsReturned: get() returned more than one Creature -- it returned 2!
+[26/10 12:04:34] "GET /ajax/view/creature/_betsi_kleigmann/ HTTP/1.1" 500 95985
+[26/10 12:04:37] Internal Server Error: /ajax/view/creature/_betsi_kleigmann/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/views/generic/base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/views/generic/detail.py", line 108, in get
+    self.object = self.get_object()
+                  ~~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/views/generic/detail.py", line 53, in get_object
+    obj = queryset.get()
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/db/models/query.py", line 652, in get
+    raise self.model.MultipleObjectsReturned(
+    ...<5 lines>...
+    )
+collector.models.creatures.Creature.MultipleObjectsReturned: get() returned more than one Creature -- it returned 2!
+[26/10 12:04:37] "GET /ajax/view/creature/_betsi_kleigmann/ HTTP/1.1" 500 95985
+[26/10 12:04:42] Internal Server Error: /ajax/view/creature/_betsi_kleigmann/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/views/generic/base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/views/generic/detail.py", line 108, in get
+    self.object = self.get_object()
+                  ~~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/views/generic/detail.py", line 53, in get_object
+    obj = queryset.get()
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/db/models/query.py", line 652, in get
+    raise self.model.MultipleObjectsReturned(
+    ...<5 lines>...
+    )
+collector.models.creatures.Creature.MultipleObjectsReturned: get() returned more than one Creature -- it returned 2!
+[26/10 12:04:42] "GET /ajax/view/creature/_betsi_kleigmann/ HTTP/1.1" 500 95985
+[26/10 12:04:43] Internal Server Error: /ajax/view/creature/_betsi_kleigmann/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/views/generic/base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/views/generic/detail.py", line 108, in get
+    self.object = self.get_object()
+                  ~~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/views/generic/detail.py", line 53, in get_object
+    obj = queryset.get()
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/db/models/query.py", line 652, in get
+    raise self.model.MultipleObjectsReturned(
+    ...<5 lines>...
+    )
+collector.models.creatures.Creature.MultipleObjectsReturned: get() returned more than one Creature -- it returned 2!
+[26/10 12:04:43] "GET /ajax/view/creature/_betsi_kleigmann/ HTTP/1.1" 500 95985
+[26/10 12:04:46] Internal Server Error: /ajax/view/creature/_betsi_kleigmann/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/views/generic/base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/views/generic/detail.py", line 108, in get
+    self.object = self.get_object()
+                  ~~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/views/generic/detail.py", line 53, in get_object
+    obj = queryset.get()
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/db/models/query.py", line 652, in get
+    raise self.model.MultipleObjectsReturned(
+    ...<5 lines>...
+    )
+collector.models.creatures.Creature.MultipleObjectsReturned: get() returned more than one Creature -- it returned 2!
+[26/10 12:04:46] "GET /ajax/view/creature/_betsi_kleigmann/ HTTP/1.1" 500 95985
+[26/10 12:04:50] Internal Server Error: /ajax/view/creature/_betsi_kleigmann/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/views/generic/base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/views/generic/detail.py", line 108, in get
+    self.object = self.get_object()
+                  ~~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/views/generic/detail.py", line 53, in get_object
+    obj = queryset.get()
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/db/models/query.py", line 652, in get
+    raise self.model.MultipleObjectsReturned(
+    ...<5 lines>...
+    )
+collector.models.creatures.Creature.MultipleObjectsReturned: get() returned more than one Creature -- it returned 2!
+[26/10 12:04:50] "GET /ajax/view/creature/_betsi_kleigmann/ HTTP/1.1" 500 95985
+[26/10 12:04:54] Internal Server Error: /ajax/view/creature/_betsi_kleigmann/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/views/generic/base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/views/generic/detail.py", line 108, in get
+    self.object = self.get_object()
+                  ~~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/views/generic/detail.py", line 53, in get_object
+    obj = queryset.get()
+  File "/home/zaffarelli/.virtualenvs/wawwod/lib/python3.13/site-packages/django/db/models/query.py", line 652, in get
+    raise self.model.MultipleObjectsReturned(
+    ...<5 lines>...
+    )
+collector.models.creatures.Creature.MultipleObjectsReturned: get() returned more than one Creature -- it returned 2!
+[26/10 12:04:54] "GET /ajax/view/creature/_betsi_kleigmann/ HTTP/1.1" 500 95985
+[26/10 12:06:32] Not Found: /ajax/view/creature/_1761476271.132753/
+[26/10 12:06:32] "GET /ajax/view/creature/_1761476271.132753/ HTTP/1.1" 404 15861

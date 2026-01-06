@@ -4,8 +4,9 @@ import logging
 logger = logging.Logger(__name__)
 
 FONTSET = ['Cinzel', 'Trade+Winds', 'Imprima', 'Roboto', 'Philosopher', 'Ruda', 'Khand', 'Allura', 'Gochi+Hand',
-           'Reggae+One', 'Whisper', 'Licorice', 'Damion','Allison',  'Syne+Mono', 'Zilla+Slab', 'Spartan', 'Marcellus+SC',
-           'Atma','Splash', 'Trirong', 'Ubuntu+Mono', 'Inria+Sans', "Spectral+SC", "Hi+Melody", "East+Sea+Dokdo", "Slackside+One","Do+Hyeon","Tac+One"]
+           'Reggae+One', 'Whisper', 'Licorice', 'Damion', 'Allison', 'Syne+Mono', 'Zilla+Slab', 'Spartan',
+           'Marcellus+SC', 'Lato', 'Atma', 'Splash', 'Trirong', 'Ubuntu+Mono', 'Inria+Sans', "Spectral+SC", "Hi+Melody",
+           "East+Sea+Dokdo", "Slackside+One", "Do+Hyeon", "Tac+One"]
 
 
 def get_current_chronicle():
@@ -49,6 +50,7 @@ def find_stat_property(creature, statistic):
         property = "willpower"
     return property
 
+
 def find_stat_category(creature, statistic):
     # You give 'garou' / 'athletics', it returns 'talents'
     lists = ['attributes', 'talents', 'skills', 'knowledges', 'backgrounds']
@@ -86,7 +88,7 @@ STATS_NAMES = {
                        'science'],
         'backgrounds': ['chimera', 'contacts', 'dreamers', 'gremayre', 'holdings', 'mentor', 'resources', 'retinue',
                         'title', 'treasures'],
-        'sheet':{'pages':1}
+        'sheet': {'pages': 1}
     },
     'fomori': {
         'attributes': ['strength', 'dexterity', 'stamina', 'charisma', 'manipulation', 'appearance', 'perception',
@@ -99,7 +101,7 @@ STATS_NAMES = {
                        'occult', 'politics', 'science'],
         'backgrounds': ['allies', 'career', 'contacts', 'fame', 'family', 'equipment', 'influence',
                         'resources', 'status', 'true faith'],
-        'sheet':{'pages':1}
+        'sheet': {'pages': 1}
     },
 
     'garou': {
@@ -138,21 +140,23 @@ STATS_NAMES = {
                        'science',
                        'technology',
                        ],
-        'backgrounds': ['allies', 'ancestors', 'contacts', 'fate','fetish', 'kinfolk', 'mentor', 'pure breed', 'resources',
+        'backgrounds': ['allies', 'ancestors', 'contacts', 'fate', 'fetish', 'kinfolk', 'mentor', 'pure breed',
+                        'resources',
                         'rites', 'spirit heritage', 'totem'],
-        'sheet':{'pages':4}
+        'sheet': {'pages': 4}
     },
     'ghoul': {
         'attributes': ['strength', 'dexterity', 'stamina', 'charisma', 'manipulation', 'appearance', 'perception',
                        'intelligence', 'wits'],
+
         'talents': ['alertness',
                     'athletics',
+                    'awareness',
                     'brawl',
                     'empathy',
                     'expression',
                     'intimidation',
                     'leadership',
-                    'primal-urge',
                     'streetwise',
                     'subterfuge'
                     ],
@@ -169,18 +173,28 @@ STATS_NAMES = {
                    ],
         'knowledges': ['academics',
                        'computer',
-                       'enigmas',
+                       'finance',
                        'investigation',
                        'law',
                        'medicine',
                        'occult',
-                       'rituals',
+                       'politics',
                        'science',
                        'technology',
                        ],
-        'backgrounds': ['allies', 'bond', 'contacts', 'fame', 'equipment', 'influence', 'innovation',
-                        'resources', 'status', 'trust'],
-        'sheet':{'pages':1}
+
+        'backgrounds': ['allies', 'bond', 'contacts', 'equipement', 'fame', 'family', 'influence', 'mentor',
+                        'resources', 'trust'],
+        'sheet': {'pages': 1},
+        'freebies_per_dot': {
+            "attribute": 5,
+            "ability": 2,
+            "trait": 10,
+            "background": 1,
+            "humanity": 1,
+            "virtue": 2,
+            "willpower": 1,
+        }
     },
     'kindred': {
         'attributes': ['strength', 'dexterity', 'stamina', 'charisma', 'manipulation', 'appearance', 'perception',
@@ -219,10 +233,18 @@ STATS_NAMES = {
                        'technology',
                        ],
 
-
         'backgrounds': ['allies', 'contacts', 'fame', 'generation', 'herd', 'influence', 'mentor',
                         'resources', 'retainers', 'status'],
-        'sheet':{'pages':4}
+        'sheet': {'pages': 4},
+        'freebies_per_dot': {
+            "attribute": 5,
+            "ability": 2,
+            "trait": 7,
+            "background": 1,
+            "humanity": 2,
+            "virtue": 2,
+            "willpower": 1,
+        }
     },
     'kinfolk': {
         'attributes': ['strength', 'dexterity', 'stamina', 'charisma', 'manipulation', 'appearance', 'perception',
@@ -261,20 +283,21 @@ STATS_NAMES = {
                        'technology',
                        ],
         'backgrounds': ['allies', 'contacts', 'equipment', 'mentor', 'pure-breed', 'resources'],
-        'sheet':{'pages':1}
+        'sheet': {'pages': 1}
     },
     'mage': {
         'attributes': ['strength', 'dexterity', 'stamina', 'charisma', 'manipulation', 'appearance', 'perception',
                        'intelligence', 'wits'],
-        'talents': ['alertness', 'athletics', 'awareness', 'brawl', 'empathy', 'expression', 'intimidation', 'leadership',
+        'talents': ['alertness', 'athletics', 'awareness', 'brawl', 'empathy', 'expression', 'intimidation',
+                    'leadership',
                     'streetwise', 'subterfuge'],
-        'skills': ['crafts', 'drive', 'etiquette', 'firearms', 'larceny','meditation',  'melee', 'performance',
+        'skills': ['crafts', 'drive', 'etiquette', 'firearms', 'larceny', 'meditation', 'melee', 'performance',
                    'stealth', 'survival'],
         'knowledges': ['academics', 'computer', 'cosmology', 'enigmas', 'investigation', 'law',
                        'medicine', 'occult', 'science', 'technology'],
         'backgrounds': ['allies', 'arcane', 'avatar', 'contacts', 'destiny', 'dream', 'influence', 'library', 'node',
                         'resources', 'wonder'],
-        'sheet':{'pages':4}
+        'sheet': {'pages': 4}
     },
     'mortal': {
         'attributes': ['strength', 'dexterity', 'stamina', 'charisma', 'manipulation', 'appearance', 'perception',
@@ -314,7 +337,7 @@ STATS_NAMES = {
                        ],
         'backgrounds': ['allies', 'career', 'contacts', 'fame', 'family', 'equipment', 'influence',
                         'resources', 'status', 'true faith'],
-        'sheet':{'pages':1}
+        'sheet': {'pages': 1}
     },
     'kithain': {
         'attributes': ['strength', 'dexterity', 'stamina', 'charisma', 'manipulation', 'appearance', 'perception',
@@ -327,7 +350,7 @@ STATS_NAMES = {
                        'occult', 'politics', 'science'],
         'backgrounds': ['allies', 'career', 'contacts', 'fame', 'family', 'equipment', 'influence',
                         'resources', 'status', 'true faith'],
-        'sheet':{'pages':1}
+        'sheet': {'pages': 1}
     },
 
     'spirit': {
@@ -341,7 +364,7 @@ STATS_NAMES = {
                        'medicine', 'occult', 'science'],
         'backgrounds': ['allies', 'arcane', 'avatar', 'contacts', 'destiny', 'dream', 'influence', 'library', 'node',
                         'resources', 'wonder'],
-        'sheet':{'pages':1}
+        'sheet': {'pages': 1}
     },
     'wraith': {
         'attributes': ['strength', 'dexterity', 'stamina', 'charisma', 'manipulation', 'appearance', 'perception',
@@ -355,7 +378,7 @@ STATS_NAMES = {
                        'politics', 'science'],
         'backgrounds': ['allies', 'artifact', 'contacts', 'eidolon', 'haunt', 'mentor', 'memoriam', 'notoriety',
                         'status', 'wealth'],
-        'sheet':{'pages':4}
+        'sheet': {'pages': 4}
     },
 }
 
@@ -388,11 +411,11 @@ STATS_TEMPLATES = {
     },
     'ghoul': {
         'attributes': '6/4/3',
-        'abilities': '11/7/5',
-        'disciplines': '1',
-        'backgrounds': '7',
-        'willpower': '3',
-        'freebies': '21'
+        'abilities': '11/7/4',
+        'disciplines': '2',
+        'backgrounds': '5',
+        'virtues': '10',
+        'virtues': '10',
     },
     'kindred': {
         'attributes': '7/5/3',
@@ -957,156 +980,156 @@ CLAN_COLORS = {
     'none': {
         "faction": "independents",
         "color": '#9d9d9d',
-        "idx":0,
+        "idx": 0,
     },
 
     'ventrue': {
         "faction": "camarilla",
         "color": '#1d6e1f',
-        "idx":1,
+        "idx": 1,
     },
     'tremere': {
         "faction": "camarilla",
         "color": '#ffa636',
-        "idx":2,
+        "idx": 2,
     },
 
     'toreador': {
         "faction": "camarilla",
         "color": '#D5B237',
-        "idx":3,
+        "idx": 3,
     },
 
     'malkavian': {
         "faction": "camarilla",
         "color": '#db66d0',
-        "idx":4,
+        "idx": 4,
     },
     'nosferatu': {
         "faction": "camarilla",
         "color": '#a18a60',
-        "idx":5,
+        "idx": 5,
 
     },
 
     'gangrel': {
         "faction": "camarilla",
         "color": '#738436',
-        "idx":6,
+        "idx": 6,
     },
 
     'brujah': {
         "faction": "camarilla",
         "color": '#25a3e6',
-        "idx":7,
+        "idx": 7,
     },
 
     'caitiff': {
         "faction": "camarilla",
         "color": '#B3D537',
-        "idx":8,
+        "idx": 8,
     },
     'assamite': {
         "faction": "independents",
         "color": '#2E36C5',
-        "idx":9,
+        "idx": 9,
     },
     'assamite antitribu': {
         "faction": "sabbat",
         "color": '#2E36C5',
-        "idx":10,
+        "idx": 10,
     },
     'brujah antitribu': {
         "faction": "sabbat",
         "color": '#25a3e6',
-        "idx":11,
+        "idx": 11,
     },
 
     'giovanni': {
         "faction": "independents",
         "color": '#2F1984',
-        "idx":12,
+        "idx": 12,
     },
     'ravnos': {
         "faction": "independents",
         "color": '#5F42D0',
-        "idx":13,
+        "idx": 13,
     },
     'setite': {
         "faction": "independents",
         "color": '#8C78D9',
-        "idx":14,
+        "idx": 14,
     },
     'tzimisce antitribu': {
         "faction": "independents",
         "color": '#127B65',
-        "idx":15,
+        "idx": 15,
     },
     'gangrel antitribu': {
         "faction": "sabbat",
         "color": '#738436',
-        "idx":16,
+        "idx": 16,
     },
     'giovanni antitribu': {
         "faction": "sabbat",
         "color": '#2F1984',
-        "idx":17,
+        "idx": 17,
     },
     'malkavian antitribu': {
         "faction": "sabbat",
         "color": '#db66d0',
-        "idx":18,
+        "idx": 18,
     },
     'nosferatu antitribu': {
         "faction": "sabbat",
         "color": '#a18a60',
-        "idx":19,
+        "idx": 19,
     },
     'lasombra': {
         "faction": "sabbat",
         "color": '#F0F0F0',
-        "idx":20,
+        "idx": 20,
     },
     'lasombra antitribu': {
         "faction": "camarilla",
         "color": '#F0F0F0',
-        "idx":21,
+        "idx": 21,
     },
     'setite antitribu': {
         "faction": "sabbat",
         "color": '#8C78D9',
-        "idx":22,
+        "idx": 22,
     },
     'toreador antitribu': {
         "faction": "sabbat",
         "color": '#D5B237',
-        "idx":23,
+        "idx": 23,
     },
     'tremere antitribu': {
         "faction": "sabbat",
         "color": '#ffa636',
-        "idx":24,
+        "idx": 24,
     },
     'ravnos antitribu': {
         "faction": "sabbat",
         "color": '#5F42D0',
-        "idx":25,
+        "idx": 25,
 
     },
     'pander': {
         "faction": "sabbat",
         "color": '#808080',
-        "idx":26,
+        "idx": 26,
     },
     'tzimisce': {
         "faction": "sabbat",
         "color": '#127B65',
-        "idx":27,
+        "idx": 27,
     },
     'ventrue antitribu': {
         "faction": "sabbat",
         "color": '#1d6e1f',
-        "idx":28,
+        "idx": 28,
     },
     'blood brother': {
         "faction": "sabbat",

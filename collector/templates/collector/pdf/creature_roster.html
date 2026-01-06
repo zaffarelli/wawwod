@@ -1,8 +1,9 @@
 {% load static %}
 {% load storytelling_filters %}
-<a id="{{c.rid}}"><h3>{{c.name|safe}}</h3></a>
-<div class="roster">
+<a id="{{c.rid}}"><h6>{{c.name|safe}}</h6></a>
+<div class="roster {{c.creature}}">
 {{c.roster_base|safe}}
+{% if c.status == "READY" %}
 <!--table>
     <tr>
         <th style="width:2cm;">Strength</th><td style="width:1.25cm; text-align:center;">{{c.attribute0|pdf_stat|safe}}</td>
@@ -25,8 +26,9 @@
 {{c.roster_skills|safe}}
 {{c.roster_knowledges|safe}}
 {{c.roster_end|safe}}
-{% if c.equipment %}
-    {{c.equipment|safe}}
+    {% if c.equipment %}
+        {{c.equipment|safe}}
+    {% endif  %}
+<!--{{c.roster_shortcuts|safe}}-->
 {% endif  %}
-{#{{c.roster_shortcuts|safe}}#}
 </div>

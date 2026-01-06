@@ -1,0 +1,1164 @@
+{
+    "_albrecht": {
+        "_edmund_glammer": {
+            "age": 29,
+            "name": "Edmund Glammer",
+            "position": "Valet",
+            "rid": "_edmund_glammer",
+            "trueage": 70
+        },
+        "_emma_drosern": {
+            "age": 37,
+            "name": "Emma Drosern",
+            "position": "Valet",
+            "rid": "_emma_drosern",
+            "trueage": 48
+        }
+    },
+    "_alfred": {
+        "_anita_wolfram": {
+            "age": 42,
+            "name": "Anita Wolfram",
+            "position": "Valet",
+            "rid": "_anita_wolfram",
+            "trueage": 87
+        },
+        "_fedor_dvorin": {
+            "age": 29,
+            "name": "Fedor Dvorin",
+            "position": "Leisure",
+            "rid": "_fedor_dvorin",
+            "trueage": 114
+        },
+        "_ingrid_karpov": {
+            "age": 30,
+            "name": "Ingrid Karpov",
+            "position": "Enforcer",
+            "rid": "_ingrid_karpov",
+            "trueage": 223
+        },
+        "_otis_hegbert": {
+            "age": 28,
+            "name": "Otis Hegbert",
+            "position": "Enforcer",
+            "rid": "_otis_hegbert",
+            "trueage": 187
+        },
+        "_til_brooster": {
+            "age": 44,
+            "name": "Til Brooster",
+            "position": "Leisure",
+            "rid": "_til_brooster",
+            "trueage": 139
+        }
+    },
+    "_amanda": {
+        "_kristof_kellog": {
+            "age": 22,
+            "name": "Kristof Kellog",
+            "position": "Leisure",
+            "rid": "_kristof_kellog",
+            "trueage": 90
+        },
+        "_kurt_haggen": {
+            "age": 17,
+            "name": "Kurt Haggen",
+            "position": "Operative",
+            "rid": "_kurt_haggen",
+            "trueage": 216
+        },
+        "_nikita_braun": {
+            "age": 31,
+            "name": "Nikita Braun",
+            "position": "Operative",
+            "rid": "_nikita_braun",
+            "trueage": 176
+        }
+    },
+    "_anatoli_chemko": {
+        "_1761441292.503568": {
+            "age": 5,
+            "name": "1761441292.503568",
+            "position": "Enforcer",
+            "rid": "_1761441292.503568",
+            "trueage": 16
+        }
+    },
+    "_anna_the_elder": {
+        "_1761473877.766044": {
+            "age": 16,
+            "name": "1761473877.766044",
+            "position": "Enforcer",
+            "rid": "_1761473877.766044",
+            "trueage": 268
+        },
+        "_jonah_klemsen": {
+            "age": 43,
+            "name": "Jonah Klemsen",
+            "position": "Operative",
+            "rid": "_jonah_klemsen",
+            "trueage": 487
+        },
+        "_raul_zuecker": {
+            "age": 24,
+            "name": "Raul Zuecker",
+            "position": "Valet",
+            "rid": "_raul_zuecker",
+            "trueage": 532
+        }
+    },
+    "_antiope": {
+        "_calista_lacleios": {
+            "age": 24,
+            "name": "Calista Lacleios",
+            "position": "Intelligence",
+            "rid": "_calista_lacleios",
+            "trueage": 1481
+        }
+    },
+    "_balmain": {
+        "_raul_dolghi": {
+            "age": 37,
+            "name": "Raul Dolghi",
+            "position": "Valet",
+            "rid": "_raul_dolghi",
+            "trueage": 0
+        }
+    },
+    "_bregmaar": {
+        "_erianna": {
+            "age": 34,
+            "name": "Erianna",
+            "position": "Operative",
+            "rid": "_erianna",
+            "trueage": 101
+        }
+    },
+    "_cem": {
+        "_anatoli_ashur": {
+            "age": 39,
+            "name": "Anatoli Ashur",
+            "position": "Intelligence",
+            "rid": "_anatoli_ashur",
+            "trueage": 79
+        }
+    },
+    "_christian": {
+        "_roxanne_beauville": {
+            "age": 27,
+            "name": "Roxanne Beauville",
+            "position": "Intelligence",
+            "rid": "_roxanne_beauville",
+            "trueage": 44
+        }
+    },
+    "_david_leimann": {
+        "_olivia_marsh": {
+            "age": 16,
+            "name": "Olivia Marsh",
+            "position": "Enforcer",
+            "rid": "_olivia_marsh",
+            "trueage": 0
+        }
+    },
+    "_elisabeth": {
+        "_eva_darnezzer": {
+            "age": 37,
+            "name": "Eva Darnezzer",
+            "position": "Valet",
+            "rid": "_eva_darnezzer",
+            "trueage": 146
+        },
+        "_lucia_harvor": {
+            "age": 30,
+            "name": "Lucia Harvor",
+            "position": "Leisure",
+            "rid": "_lucia_harvor",
+            "trueage": 173
+        }
+    },
+    "_ella": {
+        "_aimee_pfeiffer": {
+            "age": 40,
+            "name": "Aim\u00e9e Pfeiffer",
+            "position": "Enforcer",
+            "rid": "_aimee_pfeiffer",
+            "trueage": 241
+        },
+        "_hans_ruben": {
+            "age": 39,
+            "name": "Hans Ruben",
+            "position": "Valet",
+            "rid": "_hans_ruben",
+            "trueage": 141
+        },
+        "_nadia_kirshen": {
+            "age": 29,
+            "name": "Nadia Kirshen",
+            "position": "Intelligence",
+            "rid": "_nadia_kirshen",
+            "trueage": 159
+        }
+    },
+    "_enrico_falba": {
+        "_elena_malfi": {
+            "age": 16,
+            "name": "Elena Malfi",
+            "position": "Leisure",
+            "rid": "_elena_malfi",
+            "trueage": 0
+        }
+    },
+    "_enrique": {
+        "_hans_kunning": {
+            "age": 15,
+            "name": "Hans Kunning",
+            "position": "Operative",
+            "rid": "_hans_kunning",
+            "trueage": 0
+        }
+    },
+    "_erika_karpinski": {
+        "_otto_dent": {
+            "age": 38,
+            "name": "Otto Dent",
+            "position": "Valet",
+            "rid": "_otto_dent",
+            "trueage": 42
+        }
+    },
+    "_ernest": {
+        "_mirianna": {
+            "age": 18,
+            "name": "Mirianna",
+            "position": "Valet",
+            "rid": "_mirianna",
+            "trueage": 20
+        }
+    },
+    "_ernst": {
+        "_klara_helge": {
+            "age": 20,
+            "name": "Klara Helge",
+            "position": "Valet",
+            "rid": "_klara_helge",
+            "trueage": 0
+        }
+    },
+    "_esther_glucksmann": {
+        "_leon_rottmann": {
+            "age": 21,
+            "name": "Leon Rottmann",
+            "position": "Operative",
+            "rid": "_leon_rottmann",
+            "trueage": 0
+        },
+        "_ludwig_droole": {
+            "age": 21,
+            "name": "Ludwig Droole",
+            "position": "Leisure",
+            "rid": "_ludwig_droole",
+            "trueage": 0
+        }
+    },
+    "_ethan": {
+        "_rafica_azund": {
+            "age": 19,
+            "name": "Rafica Azund",
+            "position": "Intelligence",
+            "rid": "_rafica_azund",
+            "trueage": 0
+        }
+    },
+    "_fiona": {
+        "_demetra_krangsten": {
+            "age": 41,
+            "name": "Demetra Krangsten",
+            "position": "Leisure",
+            "rid": "_demetra_krangsten",
+            "trueage": 362
+        },
+        "_dmitri_zarmov": {
+            "age": 30,
+            "name": "Dmitri Zarmov",
+            "position": "Intelligence",
+            "rid": "_dmitri_zarmov",
+            "trueage": 228
+        },
+        "_jorge_pazzola": {
+            "age": 16,
+            "name": "Jorge Pazzola",
+            "position": "Valet",
+            "rid": "_jorge_pazzola",
+            "trueage": 36
+        }
+    },
+    "_frederike": {
+        "_gerald_huis": {
+            "age": 15,
+            "name": "Gerald Huis",
+            "position": "Enforcer",
+            "rid": "_gerald_huis",
+            "trueage": 104
+        },
+        "_greg_morten": {
+            "age": 35,
+            "name": "Greg Morten",
+            "position": "Enforcer",
+            "rid": "_greg_morten",
+            "trueage": 51
+        }
+    },
+    "_gaston": {
+        "_julia_harvis": {
+            "age": 24,
+            "name": "Julia Harvis",
+            "position": "Valet",
+            "rid": "_julia_harvis",
+            "trueage": 427
+        }
+    },
+    "_georg": {
+        "_iana_owens": {
+            "age": 15,
+            "name": "Iana Owens",
+            "position": "Enforcer",
+            "rid": "_iana_owens",
+            "trueage": 159
+        },
+        "_lars_vinden": {
+            "age": 23,
+            "name": "Lars Vinden",
+            "position": "Enforcer",
+            "rid": "_lars_vinden",
+            "trueage": 217
+        },
+        "_piotr_danolevski": {
+            "age": 38,
+            "name": "Piotr Danolevski",
+            "position": "Enforcer",
+            "rid": "_piotr_danolevski",
+            "trueage": 226
+        },
+        "_rufus_stemler": {
+            "age": 41,
+            "name": "Rufus Stemler",
+            "position": "Valet",
+            "rid": "_rufus_stemler",
+            "trueage": 53
+        }
+    },
+    "_gertrud": {
+        "_francesca_edelmann": {
+            "age": 19,
+            "name": "Francesca Edelmann",
+            "position": "Enforcer",
+            "rid": "_francesca_edelmann",
+            "trueage": 35
+        },
+        "_sebastian_gorlisch": {
+            "age": 25,
+            "name": "Sebastian Gorlisch",
+            "position": "Valet",
+            "rid": "_sebastian_gorlisch",
+            "trueage": 36
+        }
+    },
+    "_gulcan": {
+        "_amir_razla": {
+            "age": 37,
+            "name": "Amir Razla",
+            "position": "Intelligence",
+            "rid": "_amir_razla",
+            "trueage": 47
+        },
+        "_izia_kundaar": {
+            "age": 23,
+            "name": "Izia Kundaar",
+            "position": "Enforcer",
+            "rid": "_izia_kundaar",
+            "trueage": 125
+        }
+    },
+    "_hans_kleimann": {
+        "_remi_kauler": {
+            "age": 27,
+            "name": "Remi Kauler",
+            "position": "Operative",
+            "rid": "_remi_kauler",
+            "trueage": 0
+        },
+        "_velma_de_ziegler": {
+            "age": 40,
+            "name": "Velma de Ziegler",
+            "position": "Enforcer",
+            "rid": "_velma_de_ziegler",
+            "trueage": 0
+        }
+    },
+    "_hansel": {
+        "_korgindel": {
+            "age": 43,
+            "name": "Korgindel",
+            "position": "Enforcer",
+            "rid": "_korgindel",
+            "trueage": 0
+        }
+    },
+    "_heike": {
+        "_eloise_fairbanks": {
+            "age": 21,
+            "name": "Eloise Fairbanks",
+            "position": "Intelligence",
+            "rid": "_eloise_fairbanks",
+            "trueage": 98
+        },
+        "_logan_klemp": {
+            "age": 42,
+            "name": "Logan Klemp",
+            "position": "Valet",
+            "rid": "_logan_klemp",
+            "trueage": 86
+        }
+    },
+    "_helga": {
+        "_leida_renfield": {
+            "age": 33,
+            "name": "Leida Renfield",
+            "position": "Valet",
+            "rid": "_leida_renfield",
+            "trueage": 23
+        }
+    },
+    "_hermann": {
+        "_adolf_schlinke": {
+            "age": 17,
+            "name": "Adolf Schlinke",
+            "position": "Valet",
+            "rid": "_adolf_schlinke",
+            "trueage": 19
+        }
+    },
+    "_ian_gallard": {
+        "_igor_glrnch": {
+            "age": 39,
+            "name": "Igor Glrnch",
+            "position": "Valet",
+            "rid": "_igor_glrnch",
+            "trueage": 36
+        },
+        "_vito_caristan": {
+            "age": 37,
+            "name": "Vito Caristan",
+            "position": "Valet",
+            "rid": "_vito_caristan",
+            "trueage": 65
+        }
+    },
+    "_ibrahim": {
+        "_erista_maazic": {
+            "age": 22,
+            "name": "Erista Maazic",
+            "position": "Operative",
+            "rid": "_erista_maazic",
+            "trueage": 121
+        }
+    },
+    "_igor": {
+        "_antonia_zlatin": {
+            "age": 27,
+            "name": "Antonia Zlatin",
+            "position": "Valet",
+            "rid": "_antonia_zlatin",
+            "trueage": 115
+        },
+        "_sergei_demuik": {
+            "age": 26,
+            "name": "Sergei Demuik",
+            "position": "Enforcer",
+            "rid": "_sergei_demuik",
+            "trueage": 42
+        }
+    },
+    "_jasmin": {
+        "_willy_brauen": {
+            "age": 19,
+            "name": "Willy Brauen",
+            "position": "Enforcer",
+            "rid": "_willy_brauen",
+            "trueage": 0
+        }
+    },
+    "_jens": {
+        "_lucas_morgenstern": {
+            "age": 19,
+            "name": "Lucas Morgenstern",
+            "position": "Intelligence",
+            "rid": "_lucas_morgenstern",
+            "trueage": 32
+        }
+    },
+    "_juergen": {
+        "_klaus_faro": {
+            "age": 19,
+            "name": "Klaus Faro",
+            "position": "Operative",
+            "rid": "_klaus_faro",
+            "trueage": 0
+        }
+    },
+    "_kai": {
+        "_michael_broke": {
+            "age": 30,
+            "name": "Michael Broke",
+            "position": "Enforcer",
+            "rid": "_michael_broke",
+            "trueage": 0
+        },
+        "_simon_horf": {
+            "age": 34,
+            "name": "Simon Horf",
+            "position": "Intelligence",
+            "rid": "_simon_horf",
+            "trueage": 0
+        }
+    },
+    "_kapiros": {
+        "_nolan_asterlid": {
+            "age": 25,
+            "name": "Nolan Asterlid",
+            "position": "Leisure",
+            "rid": "_nolan_asterlid",
+            "trueage": 0
+        },
+        "_zimios_podarski": {
+            "age": 44,
+            "name": "Zimios Podarski",
+            "position": "Enforcer",
+            "rid": "_zimios_podarski",
+            "trueage": 0
+        }
+    },
+    "_katharina": {
+        "_klaus_oberkampf": {
+            "age": 41,
+            "name": "Klaus Oberkampf",
+            "position": "Enforcer",
+            "rid": "_klaus_oberkampf",
+            "trueage": 280
+        },
+        "_leslie_washington": {
+            "age": 42,
+            "name": "Leslie Washington",
+            "position": "Operative",
+            "rid": "_leslie_washington",
+            "trueage": 83
+        },
+        "_lucille_durrieux": {
+            "age": 41,
+            "name": "Lucille Durrieux",
+            "position": "Leisure",
+            "rid": "_lucille_durrieux",
+            "trueage": 478
+        },
+        "_natasha_hemler": {
+            "age": 41,
+            "name": "Natasha Hemler",
+            "position": "Valet",
+            "rid": "_natasha_hemler",
+            "trueage": 454
+        }
+    },
+    "_katja": {
+        "_nina_oridos": {
+            "age": 40,
+            "name": "Nina Oridos",
+            "position": "Valet",
+            "rid": "_nina_oridos",
+            "trueage": 24
+        }
+    },
+    "_kevin": {
+        "_demler_costa": {
+            "age": 35,
+            "name": "Demler Costa",
+            "position": "Operative",
+            "rid": "_demler_costa",
+            "trueage": 0
+        }
+    },
+    "_klara": {
+        "_octavius_drekker": {
+            "age": 21,
+            "name": "Octavius Drekker",
+            "position": "Valet",
+            "rid": "_octavius_drekker",
+            "trueage": 0
+        }
+    },
+    "_konrad_of_hamburg": {
+        "_esther_denig": {
+            "age": 40,
+            "name": "Esther Denig",
+            "position": "Valet",
+            "rid": "_esther_denig",
+            "trueage": 61
+        },
+        "_oksar_the_giant": {
+            "age": 25,
+            "name": "Oksar the Giant",
+            "position": "Valet",
+            "rid": "_oksar_the_giant",
+            "trueage": 185
+        }
+    },
+    "_kurt_hagrin": {
+        "_ernest_schwanzin": {
+            "age": 30,
+            "name": "Ernest Schwanzin",
+            "position": "Leisure",
+            "rid": "_ernest_schwanzin",
+            "trueage": 42
+        },
+        "_lori_beckman": {
+            "age": 34,
+            "name": "Lori Beckman",
+            "position": "Enforcer",
+            "rid": "_lori_beckman",
+            "trueage": 87
+        }
+    },
+    "_lisa_asil": {
+        "_gustav_kranz": {
+            "age": 28,
+            "name": "Gustav Kranz",
+            "position": "Enforcer",
+            "rid": "_gustav_kranz",
+            "trueage": 44
+        }
+    },
+    "_louise": {
+        "_giaccomo_ponti": {
+            "age": 26,
+            "name": "Giaccomo Ponti",
+            "position": "Valet",
+            "rid": "_giaccomo_ponti",
+            "trueage": 0
+        },
+        "_lisius_gomport": {
+            "age": 15,
+            "name": "Lisius Gomport",
+            "position": "Valet",
+            "rid": "_lisius_gomport",
+            "trueage": 0
+        },
+        "_tevor_mcbollan": {
+            "age": 42,
+            "name": "Tevor McBollan",
+            "position": "Valet",
+            "rid": "_tevor_mcbollan",
+            "trueage": 0
+        },
+        "_xavier_soriano": {
+            "age": 38,
+            "name": "Xavier Soriano",
+            "position": "Enforcer",
+            "rid": "_xavier_soriano",
+            "trueage": 0
+        }
+    },
+    "_lukas": {
+        "_jenny_orson": {
+            "age": 27,
+            "name": "Jenny Orson",
+            "position": "Enforcer",
+            "rid": "_jenny_orson",
+            "trueage": 331
+        },
+        "_sins": {
+            "age": 31,
+            "name": "Sins",
+            "position": "Intelligence",
+            "rid": "_sins",
+            "trueage": 163
+        }
+    },
+    "_matthias": {
+        "_henrik_tromsten": {
+            "age": 32,
+            "name": "Henrik Tromsten",
+            "position": "Intelligence",
+            "rid": "_henrik_tromsten",
+            "trueage": 142
+        },
+        "_johan_van_haars": {
+            "age": 35,
+            "name": "Johan Van Haars",
+            "position": "Operative",
+            "rid": "_johan_van_haars",
+            "trueage": 100
+        }
+    },
+    "_maximilian_gurlische": {
+        "_nigel_haag": {
+            "age": 23,
+            "name": "Nigel Haag",
+            "position": "Valet",
+            "rid": "_nigel_haag",
+            "trueage": 0
+        }
+    },
+    "_michaela": {
+        "_dieter_soros": {
+            "age": 44,
+            "name": "Dieter Soros",
+            "position": "Enforcer",
+            "rid": "_dieter_soros",
+            "trueage": 0
+        },
+        "_wil_sheppard": {
+            "age": 27,
+            "name": "Wil Sheppard",
+            "position": "Intelligence",
+            "rid": "_wil_sheppard",
+            "trueage": 0
+        }
+    },
+    "_murad": {
+        "_mohammad_chali": {
+            "age": 19,
+            "name": "Mohammad Chali",
+            "position": "Valet",
+            "rid": "_mohammad_chali",
+            "trueage": 0
+        }
+    },
+    "_mustafa": {
+        "_fatia_lieno": {
+            "age": 39,
+            "name": "Fatia Lieno",
+            "position": "Operative",
+            "rid": "_fatia_lieno",
+            "trueage": 95
+        }
+    },
+    "_nicolas_brent": {
+        "_tiko_vermler": {
+            "age": 26,
+            "name": "Tiko Vermler",
+            "position": "Enforcer",
+            "rid": "_tiko_vermler",
+            "trueage": 36
+        }
+    },
+    "_olga": {
+        "_erik_mooser": {
+            "age": 44,
+            "name": "Erik Mooser",
+            "position": "Valet",
+            "rid": "_erik_mooser",
+            "trueage": 338
+        }
+    },
+    "_otis": {
+        "_bergit_ulster": {
+            "age": 41,
+            "name": "Bergit Ulster",
+            "position": "Enforcer",
+            "rid": "_bergit_ulster",
+            "trueage": 63
+        },
+        "_jeremiah_posdam": {
+            "age": 15,
+            "name": "Jeremiah Posdam",
+            "position": "Valet",
+            "rid": "_jeremiah_posdam",
+            "trueage": 72
+        },
+        "_lena_schaal": {
+            "age": 31,
+            "name": "Lena Schaal",
+            "position": "Intelligence",
+            "rid": "_lena_schaal",
+            "trueage": 109
+        }
+    },
+    "_paula": {
+        "_edwin_schmidt": {
+            "age": 20,
+            "name": "Edwin Schmidt",
+            "position": "Intelligence",
+            "rid": "_edwin_schmidt",
+            "trueage": 78
+        },
+        "_jim_patterson": {
+            "age": 23,
+            "name": "Jim Patterson",
+            "position": "Valet",
+            "rid": "_jim_patterson",
+            "trueage": 17
+        }
+    },
+    "_pavel": {
+        "_stan_gurfis": {
+            "age": 44,
+            "name": "Stan Gurfis",
+            "position": "Valet",
+            "rid": "_stan_gurfis",
+            "trueage": 0
+        }
+    },
+    "_penelope_di_grazziano": {
+        "_cristoforo_maltese": {
+            "age": 26,
+            "name": "Cristoforo Maltese",
+            "position": "Valet",
+            "rid": "_cristoforo_maltese",
+            "trueage": 0
+        },
+        "_lea_pracca": {
+            "age": 42,
+            "name": "Lea Pracca",
+            "position": "Valet",
+            "rid": "_lea_pracca",
+            "trueage": 0
+        },
+        "_lukas_harnberg": {
+            "age": 27,
+            "name": "Lukas Harnberg",
+            "position": "Intelligence",
+            "rid": "_lukas_harnberg",
+            "trueage": 0
+        }
+    },
+    "_rebecca_rhodes": {
+        "_elias_klemp": {
+            "age": 16,
+            "name": "Elias Klemp",
+            "position": "Operative",
+            "rid": "_elias_klemp",
+            "trueage": 189
+        },
+        "_gina_cerdan": {
+            "age": 24,
+            "name": "Gina Cerdan",
+            "position": "Leisure",
+            "rid": "_gina_cerdan",
+            "trueage": 186
+        },
+        "_philip_da_roma": {
+            "age": 32,
+            "name": "Philip da Roma",
+            "position": "Intelligence",
+            "rid": "_philip_da_roma",
+            "trueage": 162
+        }
+    },
+    "_rita_kanelski": {
+        "_klaus_freiman": {
+            "age": 23,
+            "name": "Klaus Freiman",
+            "position": "Intelligence",
+            "rid": "_klaus_freiman",
+            "trueage": 94
+        },
+        "_nikki_barlo": {
+            "age": 33,
+            "name": "Nikki Barlo",
+            "position": "Intelligence",
+            "rid": "_nikki_barlo",
+            "trueage": 142
+        }
+    },
+    "_romane": {
+        "_fiodor_garlo": {
+            "age": 37,
+            "name": "Fiodor Garlo",
+            "position": "Leisure",
+            "rid": "_fiodor_garlo",
+            "trueage": 0
+        },
+        "_ornella_rumler": {
+            "age": 38,
+            "name": "Ornella Rumler",
+            "position": "Operative",
+            "rid": "_ornella_rumler",
+            "trueage": 0
+        }
+    },
+    "_rufus": {
+        "_suzanna_rolm": {
+            "age": 25,
+            "name": "Suzanna Rolm",
+            "position": "Operative",
+            "rid": "_suzanna_rolm",
+            "trueage": 379
+        },
+        "_xxx": {
+            "age": 32,
+            "name": "xxx",
+            "position": "Enforcer",
+            "rid": "_xxx",
+            "trueage": 244
+        },
+        "_yyy": {
+            "age": 24,
+            "name": "yyy",
+            "position": "Enforcer",
+            "rid": "_yyy",
+            "trueage": 148
+        },
+        "_zzz": {
+            "age": 22,
+            "name": "zzz",
+            "position": "Valet",
+            "rid": "_zzz",
+            "trueage": 217
+        }
+    },
+    "_selim": {
+        "_georgia_wimler": {
+            "age": 42,
+            "name": "Georgia Wimler",
+            "position": "Valet",
+            "rid": "_georgia_wimler",
+            "trueage": 219
+        },
+        "_martha_danierof": {
+            "age": 17,
+            "name": "Martha Danierof",
+            "position": "Operative",
+            "rid": "_martha_danierof",
+            "trueage": 288
+        }
+    },
+    "_sigmund": {
+        "_clara_davigo": {
+            "age": 23,
+            "name": "Clara Davigo",
+            "position": "Valet",
+            "rid": "_clara_davigo",
+            "trueage": 57
+        },
+        "_maria_barento": {
+            "age": 24,
+            "name": "Maria Barento",
+            "position": "Valet",
+            "rid": "_maria_barento",
+            "trueage": 41
+        },
+        "_olga_visiuvi": {
+            "age": 44,
+            "name": "Olga Visiuvi",
+            "position": "Enforcer",
+            "rid": "_olga_visiuvi",
+            "trueage": 115
+        }
+    },
+    "_silke": {
+        "_ingrid_slako": {
+            "age": 27,
+            "name": "Ingrid Slako",
+            "position": "Intelligence",
+            "rid": "_ingrid_slako",
+            "trueage": 0
+        },
+        "_jo_weis": {
+            "age": 15,
+            "name": "Jo Weis",
+            "position": "Enforcer",
+            "rid": "_jo_weis",
+            "trueage": 0
+        }
+    },
+    "_sophie": {
+        "_francoise_rouvrais": {
+            "age": 19,
+            "name": "Fran\u00e7oise Rouvrais",
+            "position": "Intelligence",
+            "rid": "_francoise_rouvrais",
+            "trueage": 85
+        }
+    },
+    "_sveltana": {
+        "_betsi_kleigmann": {
+            "age": 15,
+            "name": "Betsi Kleigmann",
+            "position": "Intelligence",
+            "rid": "_betsi_kleigmann",
+            "trueage": 65
+        }
+    },
+    "_theodor": {
+        "_ana_tillmann": {
+            "age": 28,
+            "name": "Ana Tillmann",
+            "position": "Valet",
+            "rid": "_ana_tillmann",
+            "trueage": 38
+        },
+        "_fred_goebert": {
+            "age": 41,
+            "name": "Fred Goebert",
+            "position": "Valet",
+            "rid": "_fred_goebert",
+            "trueage": 63
+        },
+        "_hermeline_henke": {
+            "age": 33,
+            "name": "Hermeline Henke",
+            "position": "Valet",
+            "rid": "_hermeline_henke",
+            "trueage": 70
+        },
+        "_johann_von_driesler": {
+            "age": 27,
+            "name": "Johann Von Driesler",
+            "position": "Operative",
+            "rid": "_johann_von_driesler",
+            "trueage": 69
+        }
+    },
+    "_thomas": {
+        "_dorian_wazel": {
+            "age": 21,
+            "name": "Dorian Wazel",
+            "position": "Operative",
+            "rid": "_dorian_wazel",
+            "trueage": 171
+        },
+        "_emily_damraue": {
+            "age": 23,
+            "name": "Emily Damra\u00fc",
+            "position": "Operative",
+            "rid": "_emily_damraue",
+            "trueage": 206
+        },
+        "_gerardt_umlo": {
+            "age": 35,
+            "name": "Gerardt Umlo",
+            "position": "Enforcer",
+            "rid": "_gerardt_umlo",
+            "trueage": 216
+        },
+        "_lucius_altona": {
+            "age": 26,
+            "name": "Lucius Altona",
+            "position": "Valet",
+            "rid": "_lucius_altona",
+            "trueage": 270
+        }
+    },
+    "_thorsten_haulhem": {
+        "_fiodor_grama": {
+            "age": 26,
+            "name": "Fiodor Grama",
+            "position": "Enforcer",
+            "rid": "_fiodor_grama",
+            "trueage": 39
+        },
+        "_hans_aldersen": {
+            "age": 34,
+            "name": "Hans Aldersen",
+            "position": "Enforcer",
+            "rid": "_hans_aldersen",
+            "trueage": 57
+        }
+    },
+    "_vallentin": {
+        "_eveline": {
+            "age": 18,
+            "name": "Eveline",
+            "position": "Intelligence",
+            "rid": "_eveline",
+            "trueage": 217
+        },
+        "_ludmilla_dortwood": {
+            "age": 17,
+            "name": "Ludmilla Dortwood",
+            "position": "Valet",
+            "rid": "_ludmilla_dortwood",
+            "trueage": 149
+        },
+        "_luedre": {
+            "age": 38,
+            "name": "Luedre",
+            "position": "Valet",
+            "rid": "_luedre",
+            "trueage": 18
+        }
+    },
+    "_varusco": {
+        "_allen_wolker": {
+            "age": 29,
+            "name": "Allen Wolker",
+            "position": "Enforcer",
+            "rid": "_allen_wolker",
+            "trueage": 28
+        },
+        "_renard_brandt": {
+            "age": 27,
+            "name": "Renard Brandt",
+            "position": "Leisure",
+            "rid": "_renard_brandt",
+            "trueage": 37
+        }
+    },
+    "_wassilia": {
+        "_tom_leida": {
+            "age": 37,
+            "name": "Tom Leida",
+            "position": "Intelligence",
+            "rid": "_tom_leida",
+            "trueage": 0
+        }
+    },
+    "_wilhelm": {
+        "_1761473604.90147": {
+            "age": 34,
+            "name": "1761473604.90147",
+            "position": "Enforcer",
+            "rid": "_1761473604.90147",
+            "trueage": 0
+        },
+        "_gregor_stern": {
+            "age": 44,
+            "name": "Gregor Stern",
+            "position": "Valet",
+            "rid": "_gregor_stern",
+            "trueage": 0
+        }
+    },
+    "_wolfgang_demler": {
+        "_richard_blunt": {
+            "age": 41,
+            "name": "Richard Blunt",
+            "position": "Operative",
+            "rid": "_richard_blunt",
+            "trueage": 72
+        },
+        "_rowen_olsen": {
+            "age": 26,
+            "name": "Rowen Olsen",
+            "position": "Intelligence",
+            "rid": "_rowen_olsen",
+            "trueage": 59
+        }
+    },
+    "_zolov": {
+        "_hermann_trenton": {
+            "age": 44,
+            "name": "Hermann Trenton",
+            "position": "Intelligence",
+            "rid": "_hermann_trenton",
+            "trueage": 47
+        },
+        "_lawrence_breight": {
+            "age": 17,
+            "name": "Lawrence Breight",
+            "position": "Leisure",
+            "rid": "_lawrence_breight",
+            "trueage": 21
+        }
+    }
+}
