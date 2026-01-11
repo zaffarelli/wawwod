@@ -1193,9 +1193,17 @@ class WawwodSheet {
 
             })
 
-            ox = me.stepx * 12.5
+            ox = me.stepx * 13
             oy += 1 * me.stepy
+
+            let atxt = all_histo_exp.join("µ")
+            me.appendText("Experience Details",atxt,ox,oy,8 * me.stepx,me.character)
+
+
+
             let line_count = 0 //me.appendText("Transactions:",all_histo_exp,ox,oy,me.stepx*10)
+            //line_count = me.appendText("Transactions:",all_histo_exp,ox,oy,me.stepx*10)
+            console.log(all_histo_exp)
             console.log("Line count",line_count)
         }
     }

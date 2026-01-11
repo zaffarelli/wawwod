@@ -503,7 +503,7 @@ def display_crossover_sheet(request, slug=None, option=None):
                 adventure = Adventure.current_adventure(season.acronym)
                 if adventure:
                     print(adventure)
-                    post_title = adventure.adventure_teaser
+                    scenario = adventure.adventure_teaser
 
         if slug is None:
             slug = 'julius_von_blow'

@@ -798,6 +798,7 @@ class Creature(models.Model):
                         cr = 0
                     exp = terms[2]
                     category = find_stat_category(self.creature, stat)
+
                     realexp = 0
                     if category == "attributes":
                         realexp = cr * 4
@@ -816,9 +817,21 @@ class Creature(models.Model):
                     elif category == "gift_in":
                         realexp = cr * 3
                         freebies_exp_offset += 7
-                    elif category == "gift_out":
+                    elif category in ["gift_out", "disc_in" ]:
                         realexp = cr * 5
+                        if cr==0:
+                            realexp = 10
                         freebies_exp_offset += 7
+                    elif category in ["disc_ext" ]:
+                        realexp = cr * 6
+                        freebies_exp_offset += 7
+                        if cr==0:
+                            realexp = 10
+                    elif category in ["disc_out" ]:
+                        realexp = cr * 7
+                        freebies_exp_offset += 7
+                        if cr==0:
+                            realexp = 10
                     elif category == "loss":
                         realexp = 0
                         freebies_exp_offset -= cr
@@ -826,7 +839,7 @@ class Creature(models.Model):
                         realexp = 0
                         freebies_exp_offset -= cr
                     elif category == "backgrounds":
-                        realexp = cr * 2
+                        realexp = 0
                         freebies_exp_offset += cr
 
                     print(f"{stat:20} Progress: {progress:10} XP:{exp:5} (calc:{realexp:5}) ({category:20})")
@@ -1013,7 +1026,7 @@ class Creature(models.Model):
                 lines.append(f'<i>{self.groupspec}</i>')
         if self.concept:
             lines.append(f'<b>Concept:</b> {self.concept}')
-        if self.creature in ['kindred','ghoul']:
+        if self.creature in ['kindred', 'ghoul']:
             lines.append(f'<b>Age:</b> {self.age} (Real: {self.trueage}, Embrace: {self.embrace})')
         else:
             lines.append(f'<b>Age:</b> {self.age}')
@@ -1021,7 +1034,8 @@ class Creature(models.Model):
         if self.freebies == self.expectedfreebies:
             lines.append(f'<b>Freebies:</b> {self.freebies} [{self.condition}]')
         else:
-            lines.append(f'<b>Freebies:</b> {self.freebies} ({self.expectedfreebies} / {self.freebiedif}) [{self.status}]')
+            lines.append(
+                f'<b>Freebies:</b> {self.freebies} ({self.expectedfreebies} / {self.freebiedif}) [{self.status}]')
         return "<br/>".join(lines)
 
     @property
@@ -1101,7 +1115,7 @@ class Creature(models.Model):
                 lines.append(f'<br/><b>Disciplines</b>: {", ".join(gifts_list)}')
             else:
                 lines.append(f'<br/><b>Gifts</b>: {", ".join(gifts_list)}')
-        #lines.append(f'<br/><b>Willpower</b>: {self.as_dot(self.willpower, max=20, to_spend=True)}')
+        # lines.append(f'<br/><b>Willpower</b>: {self.as_dot(self.willpower, max=20, to_spend=True)}')
         if self.creature == 'kindred' or self.creature == 'ghoul':
             # lines.append(f'<br/><b>Blood Pool</b>: {self.as_dot(self.bloodpool, max=20, to_spend=True)}')
             str = f"<table><tr>"
@@ -1141,7 +1155,7 @@ class Creature(models.Model):
                 str += "O"
                 if x % 5 == 4:
                     str += " "
-        return "<tt>"+str+"</tt>"
+        return "<tt>" + str + "</tt>"
 
     def changeName(self):
         if self.new_name:
@@ -2104,9 +2118,10 @@ class Creature(models.Model):
                 y = x.split("=")
                 if y[0].title() == b.title():
                     terms = y[1].split(",")
+                print(terms)
 
-            # print(b)
             v = self.value_of(b)
+            print("--------------------- ",b, v)
             if v > 0:
                 txt_lines = []
                 entries = Background.objects.filter(name=b.title(), level__lte=v).order_by('level')
@@ -2114,6 +2129,7 @@ class Creature(models.Model):
                 if len(entries) > 0:
                     if entries.first().cumulate:
                         new_line = False
+                        print("Cumulate")
                         for e in entries:
                             atext = e.description
                             if len(terms) > 0:
@@ -2124,12 +2140,13 @@ class Creature(models.Model):
                             txt_lines.append(atext)
                             new_line = True
                     else:
+                        print("No Cumulate")
                         at = entries.last().description
                         if len(terms) > 0:
                             at += " (" + ", ".join(terms) + ")"
                         txt_lines.append(at)
 
-                # print(b, v, txt_lines)
+                print(b, v, txt_lines)
                 x = "\n".join(txt_lines)
                 fmt_list.append({'idx': idx, 'item': f'{b.title()} [{v}] ', 'notes': f'{x}'})
                 idx += 1
@@ -2143,7 +2160,8 @@ class Creature(models.Model):
         #         words = e.split('§');
         #         fmt_list.append({'idx': idx, 'item': f'{words[0]}', 'notes': f'{words[1]}'})
         #         idx += 1
-        # print(fmt_list)
+        print("********************************")
+        print(fmt_list)
         return fmt_list
 
     def rite_notes(self):
@@ -2201,7 +2219,10 @@ class Creature(models.Model):
         for e in list:
             if len(e) > 2:
                 words = e.split('§')
-                fmt_list.append({'idx': idx, 'item': f'{words[0]}', 'date': f'{words[1]}', 'notes': f'{words[2]}'})
+                datum = {'idx': idx, 'item': f'{words[0]}', 'date': f'{words[1]}', 'notes': f'{words[2]} '}
+                if len(words) > 3:
+                    datum["dmg"] = words[3]
+                fmt_list.append(datum)
                 idx += 1
 
         return fmt_list

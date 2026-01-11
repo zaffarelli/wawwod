@@ -36216,3 +36216,867 @@ collector.models.creatures.Creature.MultipleObjectsReturned: get() returned more
 [26/10 12:04:54] "GET /ajax/view/creature/_betsi_kleigmann/ HTTP/1.1" 500 95985
 [26/10 12:06:32] Not Found: /ajax/view/creature/_1761476271.132753/
 [26/10 12:06:32] "GET /ajax/view/creature/_1761476271.132753/ HTTP/1.1" 404 15861
+[06/01 19:22:49] Not Found: /favicon.ico
+[06/01 19:22:49] "GET /favicon.ico HTTP/1.1" 404 11683
+[06/01 19:23:26] Internal Server Error: /admin/collector/creature/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/contrib/admin/templatetags/base.py", line 45, in render
+    return super().render(context)
+           ~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/library.py", line 271, in render
+    new_context = context.new(_dict)
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/context.py", line 273, in new
+    new_context = super().new(values)
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/context.py", line 110, in new
+    new_context = copy(self)
+  File "/usr/lib64/python3.14/copy.py", line 82, in copy
+    return copier(x)
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/context.py", line 158, in __copy__
+    duplicate = super().__copy__()
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/context.py", line 39, in __copy__
+    duplicate.dicts = self.dicts[:]
+    ^^^^^^^^^^^^^^^
+AttributeError: 'super' object has no attribute 'dicts' and no __dict__ for setting new attributes
+[06/01 19:23:27] "GET /admin/collector/creature/ HTTP/1.1" 500 473292
+[06/01 19:23:53] Not Found: /favicon.ico
+[06/01 19:23:53] "GET /favicon.ico HTTP/1.1" 404 11683
+[06/01 19:24:01] Internal Server Error: /admin/collector/chronicle/Hamburg By Night/change/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/defaulttags.py", line 325, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/contrib/admin/templatetags/base.py", line 45, in render
+    return super().render(context)
+           ~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/library.py", line 271, in render
+    new_context = context.new(_dict)
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/context.py", line 273, in new
+    new_context = super().new(values)
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/context.py", line 110, in new
+    new_context = copy(self)
+  File "/usr/lib64/python3.14/copy.py", line 82, in copy
+    return copier(x)
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/context.py", line 158, in __copy__
+    duplicate = super().__copy__()
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/context.py", line 39, in __copy__
+    duplicate.dicts = self.dicts[:]
+    ^^^^^^^^^^^^^^^
+AttributeError: 'super' object has no attribute 'dicts' and no __dict__ for setting new attributes
+[06/01 19:24:01] "GET /admin/collector/chronicle/Hamburg%20By%20Night/change/ HTTP/1.1" 500 505888
+[06/01 19:45:59] Not Found: /ajax/display/crossover_sheet/Sheet for _rebecca_rhodes/
+[06/01 19:45:59] "GET /ajax/display/crossover_sheet/Sheet%20for%20_rebecca_rhodes/ HTTP/1.1" 404 11819
+[06/01 19:46:02] Not Found: /ajax/display/crossover_sheet/Sheet for _rafael/
+[06/01 19:46:02] "GET /ajax/display/crossover_sheet/Sheet%20for%20_rafael/ HTTP/1.1" 404 11795
+[06/01 19:48:05] Not Found: /favicon.ico
+[06/01 19:48:05] "GET /favicon.ico HTTP/1.1" 404 11683
+[06/01 19:48:12] Internal Server Error: /admin/collector/adventure/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/contrib/admin/templatetags/base.py", line 45, in render
+    return super().render(context)
+           ~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/library.py", line 271, in render
+    new_context = context.new(_dict)
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/context.py", line 273, in new
+    new_context = super().new(values)
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/context.py", line 110, in new
+    new_context = copy(self)
+  File "/usr/lib64/python3.14/copy.py", line 82, in copy
+    return copier(x)
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/context.py", line 158, in __copy__
+    duplicate = super().__copy__()
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/context.py", line 39, in __copy__
+    duplicate.dicts = self.dicts[:]
+    ^^^^^^^^^^^^^^^
+AttributeError: 'super' object has no attribute 'dicts' and no __dict__ for setting new attributes
+[06/01 19:48:12] "GET /admin/collector/adventure/ HTTP/1.1" 500 473353
+[06/01 19:52:44] Not Found: /favicon.ico
+[06/01 20:15:26] Not Found: /ajax/view/creature/_1761441292.503568/
+[06/01 20:15:26] "GET /ajax/view/creature/_1761441292.503568/ HTTP/1.1" 404 11764
+[06/01 20:15:28] Not Found: /ajax/view/creature/_1761441292.503568/
+[06/01 20:15:28] "GET /ajax/view/creature/_1761441292.503568/ HTTP/1.1" 404 11764
+[06/01 20:15:29] Not Found: /ajax/view/creature/_1761473604.90147/
+[06/01 20:15:29] "GET /ajax/view/creature/_1761473604.90147/ HTTP/1.1" 404 11761
+[06/01 20:15:30] Internal Server Error: /ajax/display/crossover_sheet/Julien/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 510, in display_crossover_sheet
+    j, k = character_for(slug, option)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 488, in character_for
+    return j, k
+           ^
+UnboundLocalError: cannot access local variable 'j' where it is not associated with a value
+[06/01 20:15:30] "GET /ajax/display/crossover_sheet/Julien/ HTTP/1.1" 500 82218
+[06/01 21:38:07] Internal Server Error: /admin/collector/creature/add/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/admin/options.py", line 714, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/admin/sites.py", line 240, in inner
+    return view(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/admin/options.py", line 1941, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/admin/options.py", line 1802, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/admin/options.py", line 1853, in _changeform_view
+    self.save_model(request, new_object, form, not add)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/admin/options.py", line 1257, in save_model
+    obj.save()
+    ~~~~~~~~^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/db/models/base.py", line 881, in save_base
+    pre_save.send(
+    ~~~~~~~~~~~~~^
+        sender=origin,
+        ^^^^^^^^^^^^^^
+    ...<3 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/dispatch/dispatcher.py", line 189, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/zaffarelli/Projects/wawwod/collector/signals/creatures.py", line 19, in update_creature
+    instance.fix()
+    ~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 928, in fix
+    self.fix_kindred()
+    ~~~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 764, in fix_kindred
+    self.weakness = CLANS_SPECIFICS[self.family]['clan_weakness']
+                    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: ''
+[06/01 21:38:07] "POST /admin/collector/creature/add/?_changelist_filters=chronicle%3DGHH%26is_new__exact%3D1 HTTP/1.1" 500 205851
+[06/01 22:31:21] Internal Server Error: /ajax/editable/userinput/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 270, in userinput
+    item = Creature.objects.get(rid=rid)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/db/models/query.py", line 647, in get
+    raise self.model.DoesNotExist(
+        "%s matching query does not exist." % self.model._meta.object_name
+    )
+collector.models.creatures.Creature.DoesNotExist: Creature matching query does not exist.
+[06/01 22:31:21] "POST /ajax/editable/userinput/ HTTP/1.1" 500 21352
+[08/01 08:03:50] Not Found: /favicon.ico
+[08/01 08:03:50] "GET /favicon.ico HTTP/1.1" 404 11683
+[08/01 18:38:30] Internal Server Error: /ajax/display/crossover_sheet/_anatoli_chemko/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 510, in display_crossover_sheet
+    j, k = character_for(slug, option)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 467, in character_for
+    k["others"] = c.others()
+                  ~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 2204, in others
+    fmt_list.append({'idx': idx, 'item': f'{words[0]}', 'date': f'{words[1]}', 'notes': f'{words[2]} {" / " +words[3] if len(e)>3 else ""}'})
+                                                                                                             ~~~~~^^^
+IndexError: list index out of range
+[08/01 18:38:30] "GET /ajax/display/crossover_sheet/_anatoli_chemko/ HTTP/1.1" 500 103441
+[08/01 18:38:37] Internal Server Error: /ajax/display/crossover_sheet/_anatoli_chemko/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 510, in display_crossover_sheet
+    j, k = character_for(slug, option)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 467, in character_for
+    k["others"] = c.others()
+                  ~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 2204, in others
+    fmt_list.append({'idx': idx, 'item': f'{words[0]}', 'date': f'{words[1]}', 'notes': f'{words[2]} {" / " +words[3] if len(e)>3 else ""}'})
+                                                                                                             ~~~~~^^^
+IndexError: list index out of range
+[08/01 18:38:37] "GET /ajax/display/crossover_sheet/_anatoli_chemko/ HTTP/1.1" 500 103441
+[08/01 18:38:41] Internal Server Error: /ajax/display/crossover_sheet/_anatoli_chemko/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 510, in display_crossover_sheet
+    j, k = character_for(slug, option)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 467, in character_for
+    k["others"] = c.others()
+                  ~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 2204, in others
+    fmt_list.append({'idx': idx, 'item': f'{words[0]}', 'date': f'{words[1]}', 'notes': f'{words[2]} {" / " +words[3] if len(e)>3 else ""}'})
+                                                                                                             ~~~~~^^^
+IndexError: list index out of range
+[08/01 18:38:41] "GET /ajax/display/crossover_sheet/_anatoli_chemko/ HTTP/1.1" 500 103441
+[08/01 18:38:42] Internal Server Error: /ajax/display/crossover_sheet/_anatoli_chemko/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 510, in display_crossover_sheet
+    j, k = character_for(slug, option)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 467, in character_for
+    k["others"] = c.others()
+                  ~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 2204, in others
+    fmt_list.append({'idx': idx, 'item': f'{words[0]}', 'date': f'{words[1]}', 'notes': f'{words[2]} {" / " +words[3] if len(e)>3 else ""}'})
+                                                                                                             ~~~~~^^^
+IndexError: list index out of range
+[08/01 18:38:42] "GET /ajax/display/crossover_sheet/_anatoli_chemko/ HTTP/1.1" 500 103441
+[08/01 22:22:48] Not Found: /favicon.ico
+[09/01 02:50:44] Not Found: /favicon.ico
+[10/01 12:09:54] Not Found: /favicon.ico
+[10/01 12:10:11] Internal Server Error: /admin/collector/creature/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/contrib/admin/templatetags/base.py", line 45, in render
+    return super().render(context)
+           ~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/library.py", line 271, in render
+    new_context = context.new(_dict)
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/context.py", line 273, in new
+    new_context = super().new(values)
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/context.py", line 110, in new
+    new_context = copy(self)
+  File "/usr/lib64/python3.14/copy.py", line 82, in copy
+    return copier(x)
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/context.py", line 158, in __copy__
+    duplicate = super().__copy__()
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/context.py", line 39, in __copy__
+    duplicate.dicts = self.dicts[:]
+    ^^^^^^^^^^^^^^^
+AttributeError: 'super' object has no attribute 'dicts' and no __dict__ for setting new attributes
+[10/01 12:10:11] "GET /admin/collector/creature/ HTTP/1.1" 500 473337
+[10/01 12:10:47] Internal Server Error: /admin/collector/collectornybnkindreds/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: collector_nybn_kindreds
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/contrib/admin/options.py", line 714, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/contrib/admin/sites.py", line 240, in inner
+    return view(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/contrib/admin/options.py", line 1981, in changelist_view
+    cl = self.get_changelist_instance(request)
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/contrib/admin/options.py", line 862, in get_changelist_instance
+    return ChangeList(
+        request,
+    ...<12 lines>...
+        self.search_help_text,
+    )
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/contrib/admin/views/main.py", line 145, in __init__
+    self.get_results(request)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/contrib/admin/views/main.py", line 312, in get_results
+    result_count = paginator.count
+                   ^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/core/paginator.py", line 110, in count
+    return c()
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/db/models/query.py", line 618, in count
+    return self.query.get_count(using=self.db)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/db/models/sql/query.py", line 616, in get_count
+    return obj.get_aggregation(using, {"__count": Count("*")})["__count"]
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/db/models/sql/query.py", line 602, in get_aggregation
+    result = compiler.execute_sql(SINGLE)
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: collector_nybn_kindreds
+[10/01 12:10:47] "GET /admin/collector/collectornybnkindreds/ HTTP/1.1" 500 206405
+[10/01 12:11:07] Internal Server Error: /admin/collector/creature/1213/change/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/defaulttags.py", line 325, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/contrib/admin/templatetags/base.py", line 45, in render
+    return super().render(context)
+           ~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/library.py", line 271, in render
+    new_context = context.new(_dict)
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/context.py", line 273, in new
+    new_context = super().new(values)
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/context.py", line 110, in new
+    new_context = copy(self)
+  File "/usr/lib64/python3.14/copy.py", line 82, in copy
+    return copier(x)
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/context.py", line 158, in __copy__
+    duplicate = super().__copy__()
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/context.py", line 39, in __copy__
+    duplicate.dicts = self.dicts[:]
+    ^^^^^^^^^^^^^^^
+AttributeError: 'super' object has no attribute 'dicts' and no __dict__ for setting new attributes
+[10/01 12:11:07] "GET /admin/collector/creature/1213/change/ HTTP/1.1" 500 507363
+[10/01 12:13:02] Internal Server Error: /admin/collector/creature/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/contrib/admin/templatetags/base.py", line 45, in render
+    return super().render(context)
+           ~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/library.py", line 271, in render
+    new_context = context.new(_dict)
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/context.py", line 273, in new
+    new_context = super().new(values)
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/context.py", line 110, in new
+    new_context = copy(self)
+  File "/usr/lib64/python3.14/copy.py", line 82, in copy
+    return copier(x)
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/context.py", line 158, in __copy__
+    duplicate = super().__copy__()
+  File "/home/zaffarelli/.virtualenvs/wawwod2026/lib/python3.14/site-packages/django/template/context.py", line 39, in __copy__
+    duplicate.dicts = self.dicts[:]
+    ^^^^^^^^^^^^^^^
+AttributeError: 'super' object has no attribute 'dicts' and no __dict__ for setting new attributes
+[10/01 12:13:02] "GET /admin/collector/creature/ HTTP/1.1" 500 473337
+[11/01 18:44:36] Not Found: /ajax/display/crossover_sheet/ /
+[11/01 18:44:36] "GET /ajax/display/crossover_sheet/%20/ HTTP/1.1" 404 11745
+[11/01 18:44:38] Not Found: /ajax/display/crossover_sheet/ /
+[11/01 18:44:38] "GET /ajax/display/crossover_sheet/%20/ HTTP/1.1" 404 11745
+[11/01 18:44:40] Not Found: /ajax/display/crossover_sheet/ /
+[11/01 18:44:40] "GET /ajax/display/crossover_sheet/%20/ HTTP/1.1" 404 11745
+[11/01 18:44:42] Not Found: /ajax/display/crossover_sheet/ /
+[11/01 18:44:42] "GET /ajax/display/crossover_sheet/%20/ HTTP/1.1" 404 11745

@@ -132,8 +132,10 @@
         <th>Player</th>
         <td class='editable userinput' id='{{c.rid}}__player'>{{ c.player }}</td>
 
-        <th></th>
-        <td></td>
+
+        <th>Repartitions</th>
+        <td class='editable userinput' id='{{c.rid}}__reparts'>{{ c.reparts }}</td>
+
     </tr>
 
 
@@ -143,11 +145,18 @@
         <td class='editable userinput' id='{{c.rid}}__community_job'>{{ c.community_job }}</td>
         <th>Residence</th>
         <td class='editable userinput' id='{{c.rid}}__residence'>{{ c.residence }}</td>
-        <th>Repartitions</th>
-        <td class='editable userinput' id='{{c.rid}}__reparts'>{{ c.reparts }}</td>
+        <th></th>
+        <td></td>
         <th>Timeline</th>
         <td class='editable userinput packed' param="as_text" id='{{c.rid}}__notes_on_history' >{{c.notes_on_history}}</td>
         {% else %}
-        <td colspan="8"></td>
+        <th>Backgrounds</th>
+        <td class='editable userinput packed' param="as_text" id='{{c.rid}}__notes_on_backgrounds' >{{c.notes_on_backgrounds}}</td>
+        <th>Others</th>
+        <td class='editable userinput packed' param="as_text" id='{{c.rid}}__notes_on_others' >{{c.notes_on_others}}</td>
+        <th>Timeline</th>
+        <td class='editable userinput packed' param="as_text" id='{{c.rid}}__notes_on_history' >{{c.notes_on_history}}</td>
+        <th>Specialities</th>
+        <td class='editable userinput packed' param="as_text" id='{{c.rid}}__specialities_rationale' >{{c.specialities_rationale}}</td>
         {% endif %}
     </tr>

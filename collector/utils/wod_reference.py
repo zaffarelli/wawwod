@@ -55,17 +55,21 @@ def find_stat_category(creature, statistic):
     # You give 'garou' / 'athletics', it returns 'talents'
     lists = ['attributes', 'talents', 'skills', 'knowledges', 'backgrounds']
     result = 'n/a'
-    if statistic.lower() == "willpower":
+    if statistic.lower() in ["rage", "willpower"]:
         result = "low_rate"
-    if statistic.lower() == "rage":
-        result = "low_rate"
-    if statistic.lower() == "gnosis":
+    elif statistic.lower() in ["gnosis", "virtues", "humanity"]:
         result = "high_rate"
-    if statistic.lower() == "gift_in":
+    elif statistic.lower() == "gift_in":
         result = "gift_in"
-    if statistic.lower() == "gift_out":
+    elif statistic.lower() == "disc_in":
+        result = "disc_in"
+    elif statistic.lower() == "disc_ext":
+        result = "disc_ext"
+    elif statistic.lower() == "disc_out":
+        result = "disc_out"
+    elif statistic.lower() == "gift_out":
         result = "gift_out"
-    if statistic.lower() == "loss":
+    elif statistic.lower() == "loss":
         result = "loss"
     if result == "n/a":
         for l in lists:

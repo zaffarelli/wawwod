@@ -2,7 +2,7 @@ class CrossOverSheet extends WawwodSheet {
     constructor(settings, parent) {
         super(settings, parent);
         this.init();
-        this.release = "VTM20-2025.09.14";
+        this.release = "VTM20-2026.01.08";
     }
 
     init() {
@@ -34,10 +34,10 @@ class CrossOverSheet extends WawwodSheet {
 
             // Title
             let txt = me.sheet_type(me.data['creature']).toUpperCase();
-            me.scenario = me.data['chronicle_name']
+            //me.scenario = me.data['chronicle_name']
             // Creature
-            me.decorationText(12, 2.75, 0, 'middle', me.logo_font, me.fat_font_size, "#FFFFFF", "#FFFFFF", 10, me.scenario, me.back, 0.75);
-            me.decorationText(12, 2.75, 0, 'middle', me.logo_font, me.fat_font_size, "#9090907f", "#3030301f",1, me.scenario, me.back,1);
+            me.decorationText(12, 2.75, 0, 'middle', me.logo_font, me.fat_font_size, "#FFFFFF", "#FFFFFF", 10, me.pre_title, me.back, 0.75);
+            me.decorationText(12, 2.75, 0, 'middle', me.logo_font, me.fat_font_size, "#9090907f", "#3030301f",1, me.pre_title, me.back,1);
             // Chronicle
             me.decorationText(12, 1.8, 0, 'middle', me.creature_font, me.fat_font_size*1.25, "#FFFFFF", "#FFFFFF", 10, txt, me.back, 0.75);
             me.decorationText(12, 1.8, 0, 'middle', me.creature_font, me.fat_font_size*1.25, "#606060", "#C0C0C01f", 1, txt, me.back, 1);
@@ -76,9 +76,10 @@ class CrossOverSheet extends WawwodSheet {
             }
         }
         //me.decorationText(22.5, 1.75, 0, 'end', me.base_font, me.medium_font_size, me.draw_fill, me.draw_stroke, 0.5, me.pre_title, me.back);
-        me.decorationText(22.5, 2.25, 0, 'end', me.base_font, me.medium_font_size, me.draw_fill, me.draw_stroke, 0.5, me.post_title+" ("+me.pre_title+")", me.back);
+        me.decorationText(22.5, 2.25, 0, 'end', me.base_font, me.medium_font_size, me.draw_fill, me.draw_stroke, 0.5, me.scenario+" ("+me.post_title+")", me.back);
+        //me.decorationText(22.5, 2.25, 0, 'end', me.base_font, me.medium_font_size, me.draw_fill, me.draw_stroke, 0.5, "pre_title", me.back);
         me.decorationText(1.5, 35.8, -16, 'start', me.base_font, me.small_font_size, me.draw_fill, me.draw_stroke, 0.5, me.guideline, me.back);
-        me.decorationText(22.5, 35.7, -16, 'end', me.base_font, me.small_font_size, me.draw_fill, me.draw_stroke, 0.5, "WaWWoD Cross+Over Sheet "+me.release+" ©2025, Red Fox Studios.", me.back);
+        me.decorationText(22.5, 35.7, -16, 'end', me.base_font, me.small_font_size, me.draw_fill, me.draw_stroke, 0.5, "WaWWoD Cross+Over Sheet "+me.release+" ©2026, Red Fox Studios.", me.back);
         me.decorationText(22.5, 35.9, -16, 'end', me.base_font, me.small_font_size*.5, me.draw_fill, me.draw_stroke, 0.5, "Red Fox Studios are a subsidiary of Pentex Inc. zaffarelli@gmail.com", me.back);
         if (me.blank) {
             me.decorationText(22.5, 34.8, 0, 'end', me.base_font, me.small_font_size, me.draw_fill, me.draw_stroke, 0.5, 'Challenge: you make us laugh punk!', me.back);
@@ -215,10 +216,42 @@ class CrossOverSheet extends WawwodSheet {
     }
 
 
+    fillTimeline(oy){
+        let me = this
+        let base_x = 10.5*me.stepx
+        let width_x = 12*me.stepx
+        let timeline = me.character.append('g')
+            .attr('class', 'timeline')
+        me.title('Timeline', base_x + 5.5*me.stepx  , oy, timeline)
+        oy += 0.5*me.stepy
+        let entry = timeline.selectAll(".timeline_entry")
+            .data(me.data['timeline'])
+        let entry_in = entry.enter()
+            .append("g")
+            .attr('class','timeline_entry')
+            .attr('id',(d) => 'timeline_entry_'+d.idx )
+        d3.selectAll(`.timeline_entry`).attr('fake', (d) => {
+//                 let txt_width = (12) * me.stepx
+                let spacing_y = 1
+                let current = d3.select(`#timeline_entry_${d.idx}`)
+                if (d.idx>0){
+                    let nb = d3.select(`#timeline_entry_${d.idx-1}`).attr("fake")
+                    spacing_y = parseInt(nb)+1
+                }
+                oy += (spacing_y) * me.medium_font_size*1.25
+                let txt = d.notes
+                if (txt.startsWith("µ")){
+                    txt = txt.replace("µ","").trim()
+                }
+                let title = d.date + " - " + d.item
+                let lines = me.appendText(title,txt,base_x,oy,width_x,current)
+                return lines
+            })
+
+    }
 
 
-
-    fillTimeline(oy) {
+    ccfillTimeline(oy) {
         let me = this;
         let box_spacing_y = 4.0;
         let box_spacing_x = 12.75;
@@ -254,27 +287,31 @@ class CrossOverSheet extends WawwodSheet {
         //timeline_in_note.call(wrap, box_spacing_x * me.stepx, true, current_font_size);
 
         me.superwrap(timeline_in_note, box_spacing_x * me.stepx, true, current_font_size);
-        let all_lines = 0;
-        d3.selectAll(".timeline_event")
-             .attr('transform', function (d) {
-                 let result = oy;
-                 if (d['idx']>0){
-                    let previous_block = d3.select('#timeline_in_notes_'+(d['idx']-1))
-                    if (previous_block){
-                        let lines = parseInt(previous_block.attr("lines"))
-                        all_lines += lines
-                        result =  oy + all_lines*current_font_size*1.1;
-                        console.log("previous lines",all_lines, result)
-                    }else{
-                        all_lines = 0;
-                        console.log("Not found", result)
-                    }
-                 }else{
-                     console.log("Bad ",result)
-                 }
+        //console.log(me.data['timeline'])
 
-                 return "translate("+(base_x + 0.4) * me.stepx+","+result+")"
-             })
+        //let lines = me.appendText(me.data['timeline'],box_spacing_x * me.stepx,oy,10 * me.stepx,me.character)
+
+        //let all_lines = 0;
+//         d3.selectAll(".timeline_event")
+//              .attr('transform', function (d) {
+//                  let result = oy;
+//                  if (d['idx']>0){
+//                     let previous_block = d3.select('#timeline_in_notes_'+(d['idx']-1))
+//                     if (previous_block){
+//                         let lines = parseInt(previous_block.attr("lines"))
+//                         all_lines += lines
+//                         result =  oy + all_lines*current_font_size*1.1;
+//                         console.log("previous lines",all_lines, result)
+//                     }else{
+//                         all_lines = 0;
+//                         console.log("Not found", result)
+//                     }
+//                  }else{
+//                      console.log("Bad ",result)
+//                  }
+//
+//                  return "translate("+(base_x + 0.4) * me.stepx+","+result+")"
+//              })
     }
 
 
@@ -418,6 +455,10 @@ class CrossOverSheet extends WawwodSheet {
                     txt = txt.replace("µ","")
                 }
                 let title = "▼ "+ d.date.toUpperCase() + ": " + d.item
+                if (d.hasOwnProperty("dmg")){
+                    title += " : "+d.dmg
+                }
+
 
                 let lines = me.appendText(title,txt,txt_width,oy,10 * me.stepx,current)
                 return lines
