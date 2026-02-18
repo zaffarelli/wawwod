@@ -50,9 +50,15 @@ class CrossOverSheet extends WawwodSheet {
             me.midline(2.5, 1, 23);
             me.midline(35, 1, 23);
 
-            me.crossline(9.75, 4, 27);
+            if (me.data['creature']=="garou"){
+                me.crossline(9.75, 4, 27);
+                me.midline(28.5, 1, 23);
+            }else{
+                me.crossline(9.75, 4, 35);
+            }
 
-            me.midline(28.5, 1, 23);
+
+
 
         } else if (me.page === 2) {
             me.crossline(1, 2, 35);

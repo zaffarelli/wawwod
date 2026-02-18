@@ -2532,7 +2532,7 @@ def randomize_all(modeladmin, request, queryset):
 
 class CreatureAdmin(admin.ModelAdmin):
     list_display = [  # 'domitor',
-        'name', 'age', "equipment", 'edge_for', 'cast_figure', 'family',
+        'name', 'age', 'adventure', "equipment", 'edge_for', 'cast_figure', 'family',
         'freebies', 'player', 'experience_expenditure', "experience", "exp_pool", "exp_spent",
         'family', 'groupspec', 'status', 'condition', "freebies_exp_offset"]
     ordering = ['-trueage', 'name', 'group', 'creature']
@@ -2544,7 +2544,7 @@ class CreatureAdmin(admin.ModelAdmin):
                    'group',
                    'groupspec']
     search_fields = ['name', 'groupspec', 'sire']
-    list_editable = ['groupspec', 'cast_figure', "player", "experience", "exp_pool", "exp_spent",
+    list_editable = ['groupspec', 'adventure','cast_figure', "player", "experience", "exp_pool", "exp_spent",
                      "experience_expenditure"]
 
     list_per_page = 20

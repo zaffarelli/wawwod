@@ -139,7 +139,7 @@ class WawwodCollector {
                         me.d3 = new Storytelling(s, "#d3area", me);
                         me.d3.perform(d);
                     }
-                    if (action == 'pdf_story') {
+                    if (action == 'story_book') {
                         console.log(answer);
                     }
                     if (action == 'chronicle_book') {

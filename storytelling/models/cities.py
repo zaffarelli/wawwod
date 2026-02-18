@@ -18,6 +18,11 @@ class City(models.Model):
     code = models.CharField(max_length=2, default='')
     options = models.CharField(max_length=128, default='', blank=True)
     description = models.TextField(max_length=1024, default='', blank=True)
+    geojson_file = models.CharField(max_length=128, default='')
+    sector_property = models.CharField(max_length=128, default='')
+    name_property = models.CharField(max_length=128, default='')
+    code_property = models.CharField(max_length=128, default='')
+
 
 
     def __str__(self):

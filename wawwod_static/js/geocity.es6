@@ -2,11 +2,21 @@ class GeoCity {
     constructor(cityName, options='', wdata, parent, collector) {
         this.cityName = cityName;
         if (this.cityName == "MU") {
-            this.cityName = "MU"
-            this.cityCode = "Munich"
+            this.cityName = "Munich"
+            this.cityCode = "munich"
+            this.cityGeojson = "munich"
         } else if (this.cityName == "HH") {
             this.cityName = "Hamburg"
             this.cityCode = "HH"
+            this.cityGeojson = "hamburg"
+        }else if (this.cityName == "MN") {
+            this.cityName = "Minneapolis"
+            this.cityCode = "minneapolis"
+            this.cityGeojson = "minneapolis"
+        }else if (this.cityName == "NYC") {
+            this.cityName = "New York City"
+            this.cityCode = "NYC"
+            this.cityGeojson = "nyc_city_districts"
         } else {
             this.cityCode = "XX"
         }
@@ -406,7 +416,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" width="' + me.width + '" height="' + 
                 $(".tooltip").addClass("hidden");
                 let str = '';
                 str += "<p>";
-                str += "<strong>" + d.properties.stadtteil_name + " (" + d.properties.bezirk_name + ")</strong>";
+                str += "<strong>" + d.properties.stadtteil_name + d.properties.name + d.properties.Precinct + " (" + d.properties.bezirk_name + ")</strong>";
                 str += "<br/><b>Code:</b> " + d.code;
                 str += "<br/><b>Population:</b> " + d.population;
                 str += "<br/><b>Details:</b> <ul>" + d.population_details + "</ul>";
@@ -471,7 +481,16 @@ xmlns:xlink="http://www.w3.org/1999/xlink" width="' + me.width + '" height="' + 
             .style("stroke-width", "0.15pt")
             .style("fill", me.fillColor)
             .attr("opacity", 1.0)
-            .text((e,i) => e.properties.bezirk_name)
+            .text((e,i) => {
+                if (e.properties.hasOwnProperty("bezirk_name")){
+                        return e.properties.bezirk_name
+                    }else if (e.properties.hasOwnProperty("County")){
+                        return e.properties.County
+                    }
+                return e.properties.name
+                //e.properties.hasOwnProperty("bezirk_name") ? e.properties.bezirk_name : e.properties.name
+
+             })
             .append("tspan")
                 .attr("x", (e,i) => me.geoPath.centroid(e)[0])
                 .attr("y", (e,i) => me.geoPath.centroid(e)[1])
@@ -484,7 +503,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink" width="' + me.width + '" height="' + 
                 .style("stroke", me.strokeColor)
                 .style("stroke-width", "0.15pt")
                 .style("fill", me.fillColor)
-                .text((e,i) => e.properties.stadtteil_name)
+                .text((e,i) => {
+                    if (e.properties.hasOwnProperty("stadtteil_name")){
+                        return e.properties.stadtteil_name
+                    }else if (e.properties.hasOwnProperty("Precinct")){
+                        return e.properties.Precinct
+                    }
+                    return e.properties.name
+                })
             .append("tspan")
                 .attr("x", (e,i) => me.geoPath.centroid(e)[0])
                 .attr("y", (e,i) => me.geoPath.centroid(e)[1])
@@ -497,7 +523,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" width="' + me.width + '" height="' + 
                 .style("stroke", me.strokeColor)
                 .style("stroke-width", "0.15pt")
                 .style("fill", me.fillColor)
-                .text((e,i) => e.code)
+                .text((e,i) => e.code )
 
         ;
     }

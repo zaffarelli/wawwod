@@ -1,0 +1,404 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+{% load static %}
+{% load storytelling_filters %}
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <style>
+        @font-face {
+            font-family: 'TextFont';
+            src: url('collector/static/collector/fonts/Lato-Regular.ttf');
+        }
+
+        @font-face {
+            font-family: 'TitleFont';
+            src: url('collector/static/collector/fonts/MarcellusSC-Regular.ttf');
+        }
+
+        @font-face {
+            font-family: 'TechnicalFont';
+            src: url('collector/static/collector/fonts/Lato-Regular.ttf');
+        }
+
+        @font-face {
+            font-family: 'TechnicalFont';
+            font-weight: bold;
+            src: url('collector/static/collector/fonts/Lato-Bold.ttf');
+
+        }
+
+
+        @page {
+            size: a4 portrait;
+            @frame col_left {
+                left: 0.8cm;
+                width: 9.5cm;
+                top: 2cm;
+                height: 26cm;
+                padding: 0.125cm;
+            }
+            @frame col_right {
+                right: 0.8cm;
+                width: 9.5cm;
+                top: 2cm;
+                height: 26cm;
+                padding: 0.125cm;
+            }
+            @frame footer_frame {
+                -pdf-frame-content:footer_content;
+                text-align:center;
+                font-size:7pt;
+                right: 0.5cm;
+                left: 0.5cm;
+                top: 28.0cm;
+                height: 1cm;
+                padding: 0.25cm;
+                border-top: 3px solid silver;
+            }
+        }
+
+
+        p, ul, li{
+            font-family: 'TextFont';
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            margin: 0;
+            padding: 0;
+            font-family: 'TitleFont';
+        }
+
+        h1 {
+            font-size: 24pt;
+            font-weight: 800;
+            margin-bottom: 0.5em;
+            line-height: 0.8em;
+            -pdf-outline: true;
+            -pdf-level:0;
+            -pdf-open:true;
+        }
+
+        h2 {
+            font-size: 16pt;
+            line-height: 0.83em;
+            margin-top:0.5em;
+            -pdf-keep-with-next: true;
+            -pdf-outline: true;
+            -pdf-level:1;
+            -pdf-open:true;
+        }
+
+        h3 {
+            font-size: 12pt;
+            line-height: 0.8em;
+            color: #606060;
+            {#background: #4CF;#}
+            line-height: 0.83em;
+            margin-top:0.5em;
+            -pdf-keep-with-next: true;
+            -pdf-outline: true;
+            -pdf-level:2;
+            -pdf-open:true;
+        }
+
+        h4 {
+            font-size: 11pt;
+            color: #707070;
+            line-height: 0.83em;
+            text-decoration:underline;
+            -pdf-outline: false;
+            -pdf-level:3;
+            -pdf-open:false;
+            margin-left:0.4cm;
+        }
+
+        h5 {
+            font-size: 10pt;
+            line-height: 0.83em;
+            color: #707070;
+            font-style:italic;
+            -pdf-outline: false;
+            -pdf-level:4;
+            -pdf-open:false;
+            margin-left:0.5cm;
+        }
+
+        h6{
+
+            font-size: 9pt;
+            line-height: 0.83em;
+            -pdf-outline: false;
+            -pdf-level:5;
+            -pdf-open:false;
+            font-weight:bold;
+            color:#902020;
+            -pdf-keep-with-next: true;
+        }
+
+        li{
+            margin-left:0.25cm;
+            /*list-style-type: square;*/
+        }
+
+        ol, ul{
+            margin-left:0.5cm;
+            text-indent:-0.25cm;
+        }
+
+        ul.boxed{
+            /*list-style-type: square;*/
+            vertical-align: middle;
+            font-height:0.75em;
+            padding-top:0.1cm;
+            padding-bottom:0.1cm;
+        }
+
+        ul.boxed.from{
+            border-color:#ccc;
+
+        }
+
+        ul.boxed.to{
+            border-color:#444;
+        }
+
+
+
+        ul.boxed li{
+            list-style-type: none;
+
+        }
+
+        ul.boxed li a {
+            text-decoration:none;
+            color:purple;
+        }
+
+        p {
+
+            font-size: 8pt;
+            text-align: justify;
+            line-height: 0.97em;
+            margin: 0;
+            padding-left: 2ex;
+            -pdf-keep-with-next: false;
+        }
+
+        b, strong{
+            color: #411616;
+            font-weight:bold;
+        }
+
+        i, em{
+            color: #2f1e21;
+            font-style:italic;
+        }
+
+        a{
+            color:#A05050;
+            text-decoration:none;
+            border-radius:1px;
+            padding:2px;
+            display:inline-block;
+            font-weight:bold;
+        }
+
+
+        tt{
+            display:inline-block;
+            color:#232;
+            font-weight:bold;
+            font-style:normal;
+            border:6px solid #2A2;
+            margin:2px;
+            padding:2px;
+            width:2cm;
+            -pdf-keep-with-next: true;
+        }
+
+        table.calendar th{
+            font-family:'teko';
+            font-size:12pt;
+            border:1px solid transparent;
+            padding:1mm;
+        }
+        table.calendar td{
+            border:1px solid silver;
+            padding:1mm;
+            font-size:9px;
+        }
+
+        .blue{
+            color:#148;
+            border-color:#148;
+        }
+
+        .red{
+            color:#A22;
+            border-color:#A22;
+            border:1px solid black;
+        }
+
+        .purple{
+            color:#A2A;
+            border-color:#A2A;
+        }
+
+        .boxed{
+            margin-left:3ex;
+            border-left:5px double #CCC;
+            padding-left:1ex;
+            text-align: left;
+        }
+
+        .boxed.timeline1{
+            border-color:#A22;
+        }
+
+        .boxed.timeline2{
+            border-color:#2A2;
+        }
+
+        .boxed.timeline3{
+            border-color:#22A;
+        }
+
+        .boxed.timeline4{
+            border-color: #5422aa;
+        }
+
+        .boxed.timeline5{
+            border-color: #aa2293;
+        }
+
+        .boxed.timeline6{
+            border-color: #22aa81;
+        }
+
+        .boxed.timeline7{
+            border-color: #aa5f22;
+        }
+
+        .boxed.timeline8{
+            border-color: #8daa22;
+        }
+
+        .boxed.timeline9{
+            border-color: #3d622b;
+        }
+
+        .boxed.timeline0{
+            border-color: #934d4d;
+        }
+
+        .boxed b{
+            color:#A22;
+        }
+
+        pdftoc{
+            color:#666;
+            padding:0.5cm;
+            border:1px solid silver;
+        }
+        pdftoc.pdftoclevel0 {
+            font-weight: bold;
+            margin-top: 0.5em;
+            font-height:1.25em;
+            color:#A22;
+        }
+        pdftoc.pdftoclevel1 {
+            margin-left: 1em;
+            font-height:1.15em;
+            color:#A22;
+        }
+        pdftoc.pdftoclevel2 {
+            margin-left: 2em;
+            font-style: italic;
+        }
+        pdftoc.pdftoclevel3 {
+            margin-left: 3em;
+            font-style: italic;
+        }
+        pdftoc.pdftoclevel4 {
+            margin-left: 4em;
+            font-style: italic;
+        }
+
+        .tag{
+            border-left-color:#606;
+            border-left-width:2mm;
+            border-left-style:solid;
+            display:inline-block;
+            color:purple;
+            font-weight:bold;
+            font-size:8px;
+        }
+
+        .roster{
+            border-left: 2mm solid silver;
+            padding:0;
+            margin-left:3mm;
+            margin:0;
+            font-family: 'TechnicalFont';
+            font-size: 7pt;
+            line-height:9pt;
+        }
+
+        .roster.kindred{
+            border-left: 2mm solid #C08080;
+        }
+
+
+        .roster.ghoul{
+            border-left: 2mm solid #F0F0F0;
+        }
+
+        .roster table tr{
+            border-left:0mm solid #101010;
+            padding-left:2mm;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<div id="footer_content">
+    {{chronicle.acronym}} Story Book, page <pdf:pagenumber/>/<pdf:pagecount/>
+</div>
+
+
+<H1>{{chronicle.name}}</H1>
+<p>The Story Book</p>
+<p>Notes: {{chronicle.description}}
+    <br/>Acronym:    {{chronicle.acronym}}
+    <br/>Era:    {{chronicle.era}}
+    <br/>Creature: {{chronicle.main_creature}}
+</p>
+
+<hr/>
+<div>
+   <pdf:toc />
+</div>
+
+<pdf:nextpage/>
+{% for faction,fcontent in data.items %}
+    <h2>Characters: {{fcontent.name|title}}</h2>
+    {% for group in fcontent.groups %}
+        <h3>Group: {{group.name}}</h3>
+        {% if group.notes %}
+        <p>Notes: {{group.notes|safe}}</p>
+        {% endif %}
+        {% for item in group.characters %}
+            <hr/>
+            {% include "collector/pdf/creature_roster.html" with c=item.data %}
+        {% endfor %}
+        <pdf:nextpage/>
+    {% endfor %}
+{% endfor %}
+
+
+
+
+</body>
+</html>

@@ -559,10 +559,22 @@ def get_districts(cityname):
     from storytelling.models.districts import District
     from storytelling.models.hotspots import HotSpot
     from collector.utils.wod_reference import get_current_chronicle
+    from collector.models.adventures import Adventure
+    from collector.models.seasons import Season
     import json
     # print(cityname.title())
-
+    advacro = ""
     chronicle = get_current_chronicle()
+    print(f"Chronicle:[{chronicle.name}]")
+    season = Season.current_season(chronicle.acronym)
+    if season:
+        print(f"Season:[{season.name}]")
+        adventure = Adventure.current_adventure(season.acronym)
+        if adventure:
+            print(f"Adventure:[{adventure.acronym}:{adventure.name}]")
+            advacro = adventure.acronym
+        else:
+            advacro = ""
 
     cities = City.objects.filter(name=cityname.title())
     settings = {"player_safe": not chronicle.is_storyteller_only}
@@ -585,7 +597,7 @@ def get_districts(cityname):
                 'camarilla_intelligence': d.camarilla_intelligence,
                 'camarilla_leisure': d.camarilla_leisure
             }
-        hotspots = HotSpot.objects.filter(city=city)
+        hotspots = HotSpot.objects.filter(city=city,episode__contains=advacro)
         for hs in hotspots:
             context['hotspots'].append({
                 'type': 'feature',

@@ -76,8 +76,9 @@ def display_pdf_story(request):
             all_stories.append(s.toJSON())
             selected_story = s
     full_cast = []
-    casted = Creature.objects.filter(rid__in=selected_story.all_cast).order_by('faction', '-freebies', 'family', '-background3','name')
-    #casted = Creature.objects.filter(chronicle="HbN", player="", status__in=["OK"],hidden=False, creature__in=["kindred","ghoul","mortal"]).order_by('faction','-freebies', 'family', 'groupspec', 'group')
+    casted = Creature.objects.filter(rid__in=selected_story.all_cast).order_by('faction', '-freebies', 'family',
+                                                                               '-background3', 'name')
+    # casted = Creature.objects.filter(chronicle="HbN", player="", status__in=["OK"],hidden=False, creature__in=["kindred","ghoul","mortal"]).order_by('faction','-freebies', 'family', 'groupspec', 'group')
     for c in casted:
         full_cast.append(c)
     # print(full_cast)
@@ -130,12 +131,16 @@ def update_scene(request, id: None, field: None):
 def display_map(request, slug=None):
     from collector.utils.data_collection import get_districts
     response = {'html': '', 'data': {}}
-    print("Display map:",slug)
+    print("Display map:", slug)
     if is_ajax(request):
         if not slug:
             slug = 'munich'
-        if slug == "HH":
+        elif slug == "MU":
+            slug = "Munich"
+        elif slug == "HH":
             slug = "Hamburg"
+        elif slug == "MN":
+            slug = "Minneapolis"
         x = slug.replace('_', ' ')
         context = get_districts(x)
         response['data'] = context
@@ -152,17 +157,17 @@ def chronicle_book(request):
     settings = {}
     chronicle = get_current_chronicle()
     factions = {
-        "camarilla":{
-            "name":"camarilla",
-            "description":"",
-            "groups":[]
-        },
-        "sabbat":{
-            "name": "sabbat",
-            "description":"",
+        "camarilla": {
+            "name": "camarilla",
+            "description": "",
             "groups": []
         },
-        "independents":{
+        "sabbat": {
+            "name": "sabbat",
+            "description": "",
+            "groups": []
+        },
+        "independents": {
             "name": "independents",
             "description": "",
             "groups": []
@@ -175,25 +180,93 @@ def chronicle_book(request):
 
     }
     groups = {}
-    for c in (Creature.objects.filter(chronicle=chronicle.acronym, condition="OK").filter(creature="kindred",status="READY").order_by("groupspec")):
+    for c in (Creature.objects.filter(chronicle=chronicle.acronym, condition="OK").filter(creature="kindred",
+                                                                                          status="READY").order_by(
+            "groupspec")):
         g = "_".join(c.groupspec.lower().split(" "))
         if g not in groups:
             groups[g] = {"code": g, "faction": c.faction, "name": f"{c.groupspec} ({c.faction})", "kindreds": []}
-        kindred_entry = {"data":c,"ghouls":[]}
+        kindred_entry = {"data": c, "ghouls": []}
         ghouls = c.retainers_vals
         for h in ghouls:
             kindred_entry["ghouls"].append(h)
         groups[g]["kindreds"].append(kindred_entry)
-    for group,content in groups.items():
+    for group, content in groups.items():
         factions[content["faction"].lower()]["groups"].append(content)
-    context = {'data': factions, 'settings': settings, 'filename': chronicle.acronym, "chronicle":chronicle}
+    context = {'data': factions, 'settings': settings, 'filename': chronicle.acronym, "chronicle": chronicle}
     template = get_template("storytelling/pdf/factions.html")
     html = template.render(context)
-    filename = f'chrconicle_book_{context['filename']}.pdf'
+    filename = f'chronicle_book_{context['filename']}.pdf'
     fname = os.path.join('wawwod_media/', 'pdf/results/' + filename)
     es_pdf = open(fname, 'wb')
     pdf = pisa.pisaDocument(BytesIO(html.encode('utf-8')), es_pdf)
-    answer= {"status":"Ok"}
+    answer = {"status": "Ok"}
+    if not pdf.err:
+        es_pdf.close()
+        answer = {"status": pdf.err}
+        return HttpResponse(status=204)
+    return JsonResponse(answer)
+
+
+def story_book(request):
+    from collector.models.creatures import Creature
+    from collector.models.seasons import Season
+    from collector.models.adventures import Adventure
+    settings = {}
+    chronicle = get_current_chronicle()
+    season = Season.current_season(chronicle.acronym)
+    adventure = Adventure.current_adventure(season.acronym)
+    factions = {
+        # "camarilla": {
+        #     "name": "camarilla",
+        #     "description": "",
+        #     "groups": []
+        # },
+        # "sabbat": {
+        #     "name": "sabbat",
+        #     "description": "",
+        #     "groups": []
+        # },
+        # "independents": {
+        #     "name": "independents",
+        #     "description": "",
+        #     "groups": []
+        # },
+        # "anarchs": {
+        #     "name": "anarchs",
+        #     "description": "",
+        #     "groups": []
+        # },
+        "others": {
+            "name": "Miscellaneous",
+            "description": "All other characters",
+            "groups": []
+        },
+
+    }
+    groups = {}
+    g = "others"
+    groups[g] = {"code": g, "faction": "None", "name": f"All", "characters": []}
+    all_characters = Creature.objects.filter(chronicle=chronicle.acronym).filter(adventure__contains=adventure.acronym,player="")
+    for c in all_characters:
+        print(c.name,c.adventure)
+        # g = "_".join(c.groupspec.lower().split(" "))
+        # if g not in groups:
+        #     groups[g] = {"code": g, "faction": c.faction, "name": f"{c.groupspec} ({c.faction})", "kindreds": []}
+        entry = {"data": c, "ghouls": []}
+        # ghouls = c.retainers_vals
+        # for h in ghouls:
+        #     entry["ghouls"].append(h)
+        groups[g]["characters"].append(entry)
+    factions[g]["groups"].append(groups[g])
+    context = {'data': factions, 'settings': settings, 'filename': adventure.acronym, "chronicle": adventure}
+    template = get_template("storytelling/pdf/new_story.html")
+    html = template.render(context)
+    filename = f'story_book_{context['filename']}.pdf'
+    fname = os.path.join('wawwod_media/', 'pdf/results/' + filename)
+    es_pdf = open(fname, 'wb')
+    pdf = pisa.pisaDocument(BytesIO(html.encode('utf-8')), es_pdf)
+    answer = {"status": "Ok"}
     if not pdf.err:
         es_pdf.close()
         answer = {"status": pdf.err}
