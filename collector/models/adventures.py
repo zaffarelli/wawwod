@@ -20,7 +20,7 @@ class Adventure(models.Model):
     acronym = models.CharField(max_length=32, default='', blank=True)
     notes = models.TextField(max_length=1024, default='', blank=True)
     players_starting_freebies = models.IntegerField(default=15, blank=True)
-    current = models.BooleanField(default=False, blank=True)
+    is_current = models.BooleanField(default=False, blank=True)
     adventure_teaser = models.CharField(max_length=128, default='', blank=True)
 
     def __str__(self):
@@ -52,15 +52,15 @@ class Adventure(models.Model):
     @classmethod
     def current_adventure(cls, se):
         adventure = None
-        all = cls.objects.filter(season=se, current=True)
+        all = cls.objects.filter(season=se, is_current=True)
         if len(all) > 0:
             adventure = all.first()
         return adventure
 
 
 class AdventureAdmin(admin.ModelAdmin):
-    list_display = ['name', 'current', 'acronym', 'season', 'players_starting_freebies', 'team', 'notes']
+    list_display = ['name', 'is_current', 'acronym', 'season', 'players_starting_freebies', 'team', 'notes']
     ordering = ['season', 'acronym']
-    list_editable = ['acronym', 'current', 'season', 'players_starting_freebies']
+    list_editable = ['acronym', 'is_current', 'season', 'players_starting_freebies']
     from collector.utils.helper import refix
     actions = [refix]

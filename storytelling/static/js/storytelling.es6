@@ -5,6 +5,7 @@ class Storytelling {
         me.co = collector;
         me.config = data;
         me.pre_init()
+        me.night_focus = true
     }
 
     pre_init() {

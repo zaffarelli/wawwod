@@ -40,7 +40,7 @@ def prepare_index(request):
     adventure = None
     for p in plist:
         if p.adventure != prev_a:
-            adv = Adventure.objects.filter(acronym=p.adventure, current=True)
+            adv = Adventure.objects.filter(acronym=p.adventure, is_current=True)
             if len(adv) > 0:
                 a = adv.first()
                 prev_a = a.code
@@ -51,21 +51,22 @@ def prepare_index(request):
                 {'name': p.name, 'rid': p.rid, 'player': p.player, 'pre_change_access': p.pre_change_access})
 
     for c in Chronicle.objects.all():
-        chronicles.append({'name': c.name, 'acronym': c.acronym, 'active': c.is_current})
+        chronicles.append(c.to_json)
     cities = []
     adventures = []
     seasons = []
     septs = []
     for sept in Sept.objects.filter(chronicle=chronicle.acronym):
         septs.append(sept)
-    for season in Season.objects.filter(chronicle=chronicle.acronym, current=True):
+    for season in Season.objects.filter(chronicle=chronicle.acronym, is_current=True):
         seasons.append(season)
         # print(season)
-        for adventure in Adventure.objects.filter(season=season.acronym, current=True):
+        for adventure in Adventure.objects.filter(season=season.acronym, is_current=True):
             adventures.append(adventure)
             # print(adventure)
-    for city in City.objects.filter(chronicle=chronicle.acronym):
-        cities.append(city)
+    for city in City.objects.all():
+        if city.in_chronicle(chronicle.acronym):
+            cities.append(city)
         # print(cities)
     groups = {}
     for c in Creature.objects.filter(chronicle=chronicle.acronym, condition="OK").exclude(
@@ -552,6 +553,7 @@ def display_chronicle_map(request):
 
 
 def display_dashboard(request):
+    # state_build()
     if is_ajax(request):
         gaia_wheel_context = {'data': build_gaia_wheel()}
         return JsonResponse(gaia_wheel_context)
@@ -562,6 +564,16 @@ def display_gaia_wheel(request):
         gaia_wheel_context = {'data': build_gaia_wheel()}
         return JsonResponse(gaia_wheel_context)
 
+def state_build():
+    from storytelling.models.cities import City
+    City.usa_extract_states(numberStates=[
+        {"number": "27", "name": "Minnesota"},
+        {"number": "38", "name": "North Dakota"},
+        {"number": "46", "name": "South Dakota"},
+        {"number": "19", "name": "Iowa"},
+        {"number": "55", "name": "Wisconsin"}
+    ])
+
 
 def adventure_sheet(request):
     if is_ajax(request):
@@ -571,9 +583,9 @@ def adventure_sheet(request):
         if chronicle:
             idx = 0
             from collector.models.seasons import Season
-            current_seasons = Season.objects.filter(chronicle=chronicle.acronym, current=True)
+            current_seasons = Season.objects.filter(chronicle=chronicle.acronym, is_current=True)
             for season in current_seasons:
-                current_adventures = Adventure.objects.filter(season=season.acronym, current=True)
+                current_adventures = Adventure.objects.filter(season=season.acronym, is_current=True)
                 for adventure in current_adventures:
                     if len(adventure.protagonists) > 0:
                         protagonists = adventure.protagonists.strip().split(",")

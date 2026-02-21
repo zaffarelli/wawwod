@@ -68,7 +68,7 @@ class WawwodCollector {
                     }
                 }else {
                     url = 'ajax/display/' + action + '/' + param + '/';
-                    console.debug("Non Xover",param,url)
+                    //console.debug("Non Xover",param,url)
                 }
             }
             if (key != '') {

@@ -37546,3 +37546,477 @@ Traceback (most recent call last):
 UnboundLocalError: cannot access local variable 'advacro' where it is not associated with a value
 [18/02 05:47:05] "GET /ajax/display/map/HH/ HTTP/1.1" 500 89944
 [18/02 07:26:13] "GET /static/storytelling/geojson/NY.geojson HTTP/1.1" 404 1851
+[19/02 23:04:26] Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 120, in index
+    context = prepare_index(request)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 54, in prepare_index
+    chronicles.append(c.toJSON)
+                      ^^^^^^^^
+AttributeError: 'Chronicle' object has no attribute 'toJSON'
+[19/02 23:04:26] "GET / HTTP/1.1" 500 86100
+[19/02 23:04:26] Not Found: /favicon.ico
+[19/02 23:04:26] "GET /favicon.ico HTTP/1.1" 404 11677
+[19/02 23:11:35] Not Found: /ajax/switch/adventure/RAA01/
+[19/02 23:11:35] "GET /ajax/switch/adventure/RAA01/ HTTP/1.1" 404 11728
+[19/02 23:11:54] Not Found: /ajax/switch/adventure/SPI/
+[19/02 23:11:54] "GET /ajax/switch/adventure/SPI/ HTTP/1.1" 404 11722
+[19/02 23:12:11] Not Found: /ajax/switch/season/WI21/
+[19/02 23:12:11] "GET /ajax/switch/season/WI21/ HTTP/1.1" 404 11716
+[19/02 23:12:23] Not Found: /ajax/switch/adventure/REB/
+[19/02 23:12:23] "GET /ajax/switch/adventure/REB/ HTTP/1.1" 404 11722
+[19/02 23:17:29] Not Found: /ajax/display/undefined/
+[19/02 23:17:29] "GET /ajax/display/undefined/ HTTP/1.1" 404 11713
+[19/02 23:57:37] Not Found: /ajax/switch/season/WD/
+[19/02 23:57:37] "GET /ajax/switch/season/WD/ HTTP/1.1" 404 11710
+[19/02 23:58:15] Not Found: /ajax/switch/season/WD/
+[19/02 23:58:15] "GET /ajax/switch/season/WD/ HTTP/1.1" 404 11710
+[19/02 23:58:17] Not Found: /ajax/switch/adventure/REB/
+[19/02 23:58:17] "GET /ajax/switch/adventure/REB/ HTTP/1.1" 404 11722
+[20/02 00:00:29] Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 120, in index
+    context = prepare_index(request)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 61, in prepare_index
+    for season in Season.objects.filter(chronicle=chronicle.acronym, current=True):
+                  ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/db/models/query.py", line 1476, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/db/models/query.py", line 1494, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/db/models/query.py", line 1501, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/db/models/sql/query.py", line 1600, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/db/models/sql/query.py", line 1632, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ~~~~~~~~~~~~~~~~~^
+        child,
+        ^^^^^^
+    ...<7 lines>...
+        update_join_types=update_join_types,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/db/models/sql/query.py", line 1482, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg, summarize)
+                                        ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/db/models/sql/query.py", line 1294, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+                                ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/db/models/sql/query.py", line 1759, in names_to_path
+    raise FieldError(
+    ...<2 lines>...
+    )
+django.core.exceptions.FieldError: Cannot resolve keyword 'current' into field. Choices are: acronym, chronicle, era, is_current, name, notes, protagonists, team
+[20/02 00:00:29] "GET / HTTP/1.1" 500 134979
+[20/02 00:00:29] Not Found: /favicon.ico
+[20/02 00:00:29] "GET /favicon.ico HTTP/1.1" 404 11677
+[20/02 00:01:30] Not Found: /ajax/switch/adventure/REB/
+[20/02 00:01:30] "GET /ajax/switch/adventure/REB/ HTTP/1.1" 404 11722
+[20/02 00:02:22] Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 120, in index
+    context = prepare_index(request)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 43, in prepare_index
+    adv = Adventure.objects.filter(acronym=p.adventure, current=True)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/db/models/query.py", line 1476, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/db/models/query.py", line 1494, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/db/models/query.py", line 1501, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/db/models/sql/query.py", line 1600, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/db/models/sql/query.py", line 1632, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ~~~~~~~~~~~~~~~~~^
+        child,
+        ^^^^^^
+    ...<7 lines>...
+        update_join_types=update_join_types,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/db/models/sql/query.py", line 1482, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg, summarize)
+                                        ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/db/models/sql/query.py", line 1294, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+                                ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/db/models/sql/query.py", line 1759, in names_to_path
+    raise FieldError(
+    ...<2 lines>...
+    )
+django.core.exceptions.FieldError: Cannot resolve keyword 'current' into field. Choices are: acronym, adventure_teaser, is_current, name, notes, players_starting_freebies, protagonists, season, team
+[20/02 00:02:22] "GET / HTTP/1.1" 500 133322
+[20/02 00:02:22] Not Found: /favicon.ico
+[20/02 00:02:22] "GET /favicon.ico HTTP/1.1" 404 11677
+[20/02 15:42:22] Internal Server Error: /admin/storytelling/city/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/admin/options.py", line 714, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/admin/sites.py", line 240, in inner
+    return view(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/admin/options.py", line 2014, in changelist_view
+    response = self.response_action(
+        request, queryset=cl.get_queryset(request)
+    )
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/admin/options.py", line 1648, in response_action
+    response = func(self, request, queryset)
+  File "/home/zaffarelli/Projects/wawwod/collector/utils/helper.py", line 43, in refix
+    item.fix()
+    ~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/storytelling/models/cities.py", line 42, in fix
+    self.sunrise_url()
+    ~~~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/storytelling/models/cities.py", line 32, in sunrise_url
+    if self.latitude == 0:
+       ^^^^^^^^^^^^^
+AttributeError: 'City' object has no attribute 'latitude'. Did you mean: 'lattitude'?
+[20/02 15:42:22] "POST /admin/storytelling/city/ HTTP/1.1" 500 139909
+[20/02 15:42:41] Internal Server Error: /admin/storytelling/city/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/admin/options.py", line 714, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/admin/sites.py", line 240, in inner
+    return view(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/admin/options.py", line 2014, in changelist_view
+    response = self.response_action(
+        request, queryset=cl.get_queryset(request)
+    )
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/admin/options.py", line 1648, in response_action
+    response = func(self, request, queryset)
+  File "/home/zaffarelli/Projects/wawwod/collector/utils/helper.py", line 43, in refix
+    item.fix()
+    ~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/storytelling/models/cities.py", line 42, in fix
+    self.sunrise_url()
+    ~~~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/storytelling/models/cities.py", line 38, in sunrise_url
+    json_data = json.loads(answer)
+  File "/usr/lib64/python3.13/json/__init__.py", line 345, in loads
+    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
+                    f'not {s.__class__.__name__}')
+TypeError: the JSON object must be str, bytes or bytearray, not Response
+[20/02 15:42:41] "POST /admin/storytelling/city/ HTTP/1.1" 500 145209
+[20/02 15:43:37] Internal Server Error: /admin/storytelling/city/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/admin/options.py", line 714, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/admin/sites.py", line 240, in inner
+    return view(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/admin/options.py", line 2014, in changelist_view
+    response = self.response_action(
+        request, queryset=cl.get_queryset(request)
+    )
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/admin/options.py", line 1648, in response_action
+    response = func(self, request, queryset)
+  File "/home/zaffarelli/Projects/wawwod/collector/utils/helper.py", line 43, in refix
+    item.fix()
+    ~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/storytelling/models/cities.py", line 42, in fix
+    self.sunrise_url()
+    ~~~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/storytelling/models/cities.py", line 39, in sunrise_url
+    print(answer['json'])
+          ~~~~~~^^^^^^^^
+TypeError: 'Response' object is not subscriptable
+[20/02 15:43:37] "POST /admin/storytelling/city/ HTTP/1.1" 500 140157
+[20/02 15:44:46] Internal Server Error: /admin/storytelling/city/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/admin/options.py", line 714, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/admin/sites.py", line 240, in inner
+    return view(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/admin/options.py", line 2014, in changelist_view
+    response = self.response_action(
+        request, queryset=cl.get_queryset(request)
+    )
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/admin/options.py", line 1648, in response_action
+    response = func(self, request, queryset)
+  File "/home/zaffarelli/Projects/wawwod/collector/utils/helper.py", line 43, in refix
+    item.fix()
+    ~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/storytelling/models/cities.py", line 42, in fix
+    self.sunrise_url()
+    ~~~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/storytelling/models/cities.py", line 38, in sunrise_url
+    json_data = json.loads(answer)
+  File "/usr/lib64/python3.13/json/__init__.py", line 345, in loads
+    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
+                    f'not {s.__class__.__name__}')
+TypeError: the JSON object must be str, bytes or bytearray, not Response
+[20/02 15:44:46] "POST /admin/storytelling/city/ HTTP/1.1" 500 145209
+[21/02 12:18:14] "GET /static/storytelling/geojson/undefined.geojson HTTP/1.1" 404 1872
+[21/02 12:20:34] "GET /static/storytelling/geojson/minnesota_test.geojson.geojson HTTP/1.1" 404 1911
+[21/02 12:20:54] "GET /static/storytelling/geojson/minnesota_test.geojson HTTP/1.1" 404 1887
+[21/02 16:02:19] "GET /static/storytelling/geojson/undefined.geojson HTTP/1.1" 404 1872
+[21/02 16:02:23] "GET /static/storytelling/geojson/undefined.geojson HTTP/1.1" 404 1872
+[21/02 16:12:55] Not Found: /favicon.ico
+[21/02 16:12:55] "GET /favicon.ico HTTP/1.1" 404 11677
+[21/02 16:16:54] "GET /static/storytelling/geojson/undefined.geojson HTTP/1.1" 404 1872
+[21/02 16:17:21] "GET /static/storytelling/geojson/undefined.geojson HTTP/1.1" 404 1872
+[21/02 18:22:12] Internal Server Error: /admin/storytelling/city/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/admin/options.py", line 714, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/admin/sites.py", line 240, in inner
+    return view(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/admin/options.py", line 2014, in changelist_view
+    response = self.response_action(
+        request, queryset=cl.get_queryset(request)
+    )
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/admin/options.py", line 1648, in response_action
+    response = func(self, request, queryset)
+  File "/home/zaffarelli/Projects/wawwod/collector/utils/helper.py", line 43, in refix
+    item.fix()
+    ~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/storytelling/models/cities.py", line 42, in fix
+    with open("/home/zaffarelli/Projects/wawwod1/storytelling/static/storytelling/geojson/minnesota.geojson") as f:
+         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/home/zaffarelli/Projects/wawwod1/storytelling/static/storytelling/geojson/minnesota.geojson'
+[21/02 18:22:12] "POST /admin/storytelling/city/ HTTP/1.1" 500 139557
+[21/02 18:22:45] Not Found: /favicon.ico
+[21/02 18:22:45] "GET /favicon.ico HTTP/1.1" 404 11677
+[21/02 18:50:46] Internal Server Error: /admin/storytelling/hotspot/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/admin/options.py", line 714, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/admin/sites.py", line 240, in inner
+    return view(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/admin/options.py", line 2074, in changelist_view
+    self.save_model(request, obj, form, change=True)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/admin/options.py", line 1257, in save_model
+    obj.save()
+    ~~~~~~~~^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/db/models/base.py", line 881, in save_base
+    pre_save.send(
+    ~~~~~~~~~~~~~^
+        sender=origin,
+        ^^^^^^^^^^^^^^
+    ...<3 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/dispatch/dispatcher.py", line 189, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/zaffarelli/Projects/wawwod/storytelling/signals/districts.py", line 14, in update_hotspot
+    instance.fix()
+    ~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/storytelling/models/hotspots.py", line 62, in fix
+    self.color = POI_COLORS[self.type]
+                 ~~~~~~~~~~^^^^^^^^^^^
+KeyError: 'gac'
+[21/02 18:50:46] "POST /admin/storytelling/hotspot/?city__id__exact=8 HTTP/1.1" 500 148609
+[21/02 18:50:55] Internal Server Error: /admin/storytelling/hotspot/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/admin/options.py", line 714, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/admin/sites.py", line 240, in inner
+    return view(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/admin/options.py", line 2074, in changelist_view
+    self.save_model(request, obj, form, change=True)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/admin/options.py", line 1257, in save_model
+    obj.save()
+    ~~~~~~~~^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/db/models/base.py", line 881, in save_base
+    pre_save.send(
+    ~~~~~~~~~~~~~^
+        sender=origin,
+        ^^^^^^^^^^^^^^
+    ...<3 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/dispatch/dispatcher.py", line 189, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/zaffarelli/Projects/wawwod/storytelling/signals/districts.py", line 14, in update_hotspot
+    instance.fix()
+    ~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/storytelling/models/hotspots.py", line 62, in fix
+    self.color = POI_COLORS[self.type]
+                 ~~~~~~~~~~^^^^^^^^^^^
+KeyError: 'gac'
+[21/02 18:50:55] "POST /admin/storytelling/hotspot/?city__id__exact=8 HTTP/1.1" 500 148874
+[21/02 18:50:55] Not Found: /favicon.ico
+[21/02 18:50:55] "GET /favicon.ico HTTP/1.1" 404 11677
+[21/02 18:51:00] Not Found: /favicon.ico
+[21/02 18:51:00] "GET /favicon.ico HTTP/1.1" 404 11677
+[22/02 00:13:28] Not Found: /favicon.ico
+[22/02 00:13:28] "GET /favicon.ico HTTP/1.1" 404 11677

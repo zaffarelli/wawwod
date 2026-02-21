@@ -7,4 +7,6 @@ class StorytellingConfig(AppConfig):
 
     def ready(self):
         import storytelling.signals.districts
+        import storytelling.signals.cities
+        import storytelling.signals.hotspots
         #pass

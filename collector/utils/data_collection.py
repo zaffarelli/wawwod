@@ -562,7 +562,7 @@ def get_districts(cityname):
     from collector.models.adventures import Adventure
     from collector.models.seasons import Season
     import json
-    # print(cityname.title())
+    print(cityname.title())
     advacro = ""
     chronicle = get_current_chronicle()
     print(f"Chronicle:[{chronicle.name}]")
@@ -576,9 +576,10 @@ def get_districts(cityname):
         else:
             advacro = ""
 
-    cities = City.objects.filter(name=cityname.title())
+    cities = City.objects.filter(code=cityname)
     settings = {"player_safe": not chronicle.is_storyteller_only}
     context = {'districts': {}, 'hotspots': [], 'settings': settings, 'fontset':[]}
+    print(f"----- {len(cities)}")
     if len(cities) == 1:
         city = cities.first()
         districts = District.objects.filter(city=city)
@@ -597,7 +598,8 @@ def get_districts(cityname):
                 'camarilla_intelligence': d.camarilla_intelligence,
                 'camarilla_leisure': d.camarilla_leisure
             }
-        hotspots = HotSpot.objects.filter(city=city,episode__contains=advacro)
+        hotspots = HotSpot.objects.filter(city=city)
+        print(f"***** {city.name} {len(hotspots)}")
         for hs in hotspots:
             context['hotspots'].append({
                 'type': 'feature',
@@ -612,13 +614,13 @@ def get_districts(cityname):
                     'type': hs.type,
                     'code': hs.id,
                     'is_public': hs.is_public,
-                    'visible': False,
+                    'visible': True,
                     'pos_visible': 500,
                     'hyperlink': hs.hyperlink,
                     'episode': hs.episode
                 }
             })
-    # print(context)
+    print(context["hotspots"])
     context['fontset'] = FONTSET
     x = json.dumps(context, indent=4, sort_keys=True)
     return x

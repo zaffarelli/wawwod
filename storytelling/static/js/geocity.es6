@@ -1,34 +1,14 @@
 class GeoCity {
-    constructor(cityName, options='', wdata, parent, collector) {
-        this.cityName = cityName;
-        if (this.cityName == "MU") {
-            this.cityName = "Munich"
-            this.cityCode = "munich"
-            this.cityGeojson = "munich"
-        } else if (this.cityName == "HH") {
-            this.cityName = "Hamburg"
-            this.cityCode = "HH"
-            this.cityGeojson = "hamburg"
-        }else if (this.cityName == "MN") {
-            this.cityName = "Minneapolis"
-            this.cityCode = "minneapolis"
-            this.cityGeojson = "minneapolis"
-        }else if (this.cityName == "NY") {
-            this.cityName = "New York City"
-            this.cityCode = "NY"
-            this.cityGeojson = "nyc_city_districts"
-        } else {
-            this.cityCode = "XX"
-        }
+    constructor(cityName, options='{}', wdata, parent, collector) {
+        this.options = JSON.parse(options)
+        this.cityName = this.options.name
+        this.cityCode = this.options.code
+        this.cityGeojson = this.options.geojson_file
         this.parent = parent;
         this.wawwod_data = wdata['districts']
         this.wawwod_poi = wdata['hotspots']
-
         this.wawwod_settings = wdata['settings']
         this.wawwod_fonts = wdata['fontset']
-
-        console.log(wdata['fontset'])
-
         if (options.includes("storyteller")){
             this.player_safe = false;
         }else{
@@ -53,7 +33,7 @@ class GeoCity {
         me.tooltip = d3.select("body").append("div")
             .attr("class", "tooltip hidden")
         ;
-        me.dataUrl = "/static/storytelling/geojson/" + me.cityGeojson+ ".geojson";
+        me.dataUrl = "/static/storytelling/geojson/" + me.cityGeojson+".geojson";
         me.poi_legend_data = []
         me.poi_legend_size = 0;
         me.lineColor = '#101010'
@@ -416,8 +396,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink" width="' + me.width + '" height="' + 
                 $(".tooltip").addClass("hidden");
                 let str = '';
                 str += "<p>";
-                str += "<strong>" + d.properties.stadtteil_name + d.properties.name + d.properties.Precinct + " (" + d.properties.bezirk_name + ")</strong>";
-                str += "<br/><b>Code:</b> " + d.code;
+                str += "<strong>" + d.properties[me.options["sector_property"]] +" "+ d.properties[me.options["name_property"]] +"</strong>";
+                str += "<br/><b>Code:</b> " + d.properties[me.options["code_property"]]
                 str += "<br/><b>Population:</b> " + d.population;
                 str += "<br/><b>Details:</b> <ul>" + d.population_details + "</ul>";
                 str += "</p>";
@@ -454,7 +434,26 @@ xmlns:xlink="http://www.w3.org/1999/xlink" width="' + me.width + '" height="' + 
             .attr("class", "district_path")
             .attr("d", me.geoPath)
             .style("fill", function (e) {
-                return "url(#" + e.status + ")"
+
+                if (e.properties.hasOwnProperty("STATEFP")){
+                    let x = e.properties["STATEFP"]
+                    if (x == "27"){// Minnesota
+                        return "#c0c0c07f"
+                    }else if (x == "38"){// North Dakota
+                        return "#b3c7db"
+                    }else if (x == "55"){// Wisconsin
+                        return "#dbb3d8"
+                    }else if (x == "19"){// Iowa
+                        return "#dbb6b3"
+                    }else if (x == "46"){// South Dakota
+                        return "#d2dbb3"
+                    }else{
+                        return "#606060"
+                    }
+                }else{
+                    return "url(#" + e.status + ")"
+                }
+
             })
             .style("stroke", me.lineColor)
             .style("stroke-width", 0.25)
@@ -462,7 +461,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" width="' + me.width + '" height="' + 
             .style("stroke-opacity", 0.95)
 
         ;
-
+        let scaled_size = 2*me.options.font_scale;
         let itemt = title_in.append("g")
         itemt.append('text')
             .attr('class', 'district_text')
@@ -472,25 +471,16 @@ xmlns:xlink="http://www.w3.org/1999/xlink" width="' + me.width + '" height="' + 
             .attr("x", (e,i) => me.geoPath.centroid(e)[0])
             .attr("y", (e,i) => me.geoPath.centroid(e)[1])
             .attr('dx', 0)
-            .attr('dy', -5)
+            .attr('dy', -2.5*scaled_size)
             .style("font-family", "Ruda")
             .style("text-anchor", "middle")
-            .style("font-size", '2pt')
+            .style("font-size", scaled_size+'pt')
             .style("font-weight", "bold")
             .style("stroke", me.strokeColor)
-            .style("stroke-width", "0.15pt")
+            .style("stroke-width", (scaled_size/2*0.15)+"pt")
             .style("fill", me.fillColor)
             .attr("opacity", 1.0)
-            .text((e,i) => {
-                if (e.properties.hasOwnProperty("bezirk_name")){
-                        return e.properties.bezirk_name
-                    }else if (e.properties.hasOwnProperty("County")){
-                        return e.properties.County
-                    }
-                return e.properties.name
-                //e.properties.hasOwnProperty("bezirk_name") ? e.properties.bezirk_name : e.properties.name
-
-             })
+            .text((e,i) =>  e.properties[me.options["sector_property"]])
             .append("tspan")
                 .attr("x", (e,i) => me.geoPath.centroid(e)[0])
                 .attr("y", (e,i) => me.geoPath.centroid(e)[1])
@@ -498,32 +488,25 @@ xmlns:xlink="http://www.w3.org/1999/xlink" width="' + me.width + '" height="' + 
                 .attr('dy', 0)
                 .style("font-family", "Ruda")
                 .style("text-anchor", "middle")
-                .style("font-size", '4pt')
+                .style("font-size", (2*scaled_size)+'pt')
                 .style("font-weight", "bold")
                 .style("stroke", me.strokeColor)
-                .style("stroke-width", "0.15pt")
+//                 .style("stroke-width", "0.15pt")
                 .style("fill", me.fillColor)
-                .text((e,i) => {
-                    if (e.properties.hasOwnProperty("stadtteil_name")){
-                        return e.properties.stadtteil_name
-                    }else if (e.properties.hasOwnProperty("Precinct")){
-                        return e.properties.Precinct
-                    }
-                    return e.properties.name
-                })
+                .text((e,i) => e.properties[me.options["name_property"]])
             .append("tspan")
                 .attr("x", (e,i) => me.geoPath.centroid(e)[0])
                 .attr("y", (e,i) => me.geoPath.centroid(e)[1])
                 .attr('dx', 0)
-                .attr('dy', 4)
+                .attr('dy', 2*scaled_size)
                 .style("font-family", "Ruda")
                 .style("text-anchor", "middle")
-                .style("font-size", '2pt')
+                .style("font-size", scaled_size+'pt')
                 .style("font-weight", "bold")
                 .style("stroke", me.strokeColor)
-                .style("stroke-width", "0.15pt")
+//                 .style("stroke-width", "0.15pt")
                 .style("fill", me.fillColor)
-                .text((e,i) => e.code )
+                .text((e,i) => e.properties[me.options["code_property"]]   )
 
         ;
     }
@@ -549,7 +532,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" width="' + me.width + '" height="' + 
                 return "translate(" + me.projection(d.geometry.coordinates) + ")";
             })
             .attr("opacity", function (d) {
-                return me.hotspotvisible(d);
+                return 1; //me.hotspotvisible(d);
             })
         ;
         me.poi_in.append('path')
@@ -567,14 +550,19 @@ xmlns:xlink="http://www.w3.org/1999/xlink" width="' + me.width + '" height="' + 
                     str = "M -2,-2 L-2,2 2,2 2,-2 -2,-2 z";
                 }else if (d.properties.type == "ely"){
                     str = "M -2,-1 L0,3 2,-1 z";
+                }else if (d.properties.type == "gac"){
+                    str = "M -1,-2 -2,-1 -1,0 -2,1 -1,2 0,1 1,2 2,1 1,0 2,-1 1,-2 0,-1 z"
+                }else if (d.properties.type == "gdc"){
+                    str = "M -2,-2 -1,2 1,2 2,-2 0,-1 z";
                 }
                 return str;
             })
             .style("stroke", "#606060")
-            .style("stroke-width", "0.25pt")
+            .style("stroke-width", "0.15pt")
             .style("fill", function (d) {
                 return d.properties.color;
             })
+            .attr("transform", "scale(2)")
             .on('click', function (e, d) {
                 let coords = me.projection(d.geometry.coordinates);
                 if (e.ctrlKey) {
@@ -591,15 +579,15 @@ xmlns:xlink="http://www.w3.org/1999/xlink" width="' + me.width + '" height="' + 
                 return "poi_text_mark_" + d.properties.code;
             })
             .attr('dx', 0)
-            .attr('dy', 1)
+            .attr('dy', 8)
             .style("font-family", "Ruda")
             .style("text-anchor", "middle")
-            .style("font-size", "1pt")
+            .style("font-size", "2pt")
             .style("stroke", "#111")
-            .style("stroke-width", "0.1pt")
+            .style("stroke-width", "0.15pt")
             .style("fill", "#000")
             .text(function (d) {
-                return d.properties.code;
+                return d.properties.name;
             })
         ;
         me.poi_out = me.hotspots.exit();
@@ -672,38 +660,36 @@ xmlns:xlink="http://www.w3.org/1999/xlink" width="' + me.width + '" height="' + 
         me.buildPatterns();
         me.drawLegend();
         d3.json(me.dataUrl).then(function (data) {
-            _.each(data.features, function (e, i) {
+             _.each(data.features, function (e, i) {
                 e.id = i + 1;
                 e.population = 0;
                 e.status = "neutral";
                 let key = me.cityCode + String(i + 1).padStart(3, '0');
-//                 console.log(key)
-                if (me.wawwod_data[key]) {
-                    let entry = me.wawwod_data[key];
-                    e.population = entry.population;
-                    e.status = entry.status;
-//                     console.debug("STATUS",e.status,entry.status)
-                    e.code = key
-                    e.name = e.properties["stadtteil_name"];
-                    e.sector_name = entry.sector_name;
-                    e.district_name = entry.district_name;
-                    e.population_details = entry.population_details;
-                    e.category = "DISTRICT"
-                    if (e.properties['Stadtteil']) {
-                        e.name = e.properties["stadtteil_name"] + " (" + e.properties['Stadtteil'] + ")";
-                        delete e.properties['Stadtteil'];
-                    }
-//                     console.log(me.wawwod_data[key])
-//                     console.log(e)
-                }
+//                 if (me.wawwod_data[key]) {
+//                     let entry = me.wawwod_data[key];
+//                     e.population = entry.population;
+//                     e.status = entry.status;
+//                     e.code = key
+//                     e.name = e.properties[me.options["sector_property"]];
+//                     e.sector_name = entry.sector_name;
+//                     e.district_name = entry.district_name;
+//                     e.population_details = entry.population_details;
+//                     e.category = "DISTRICT"
+//                     if (e.properties['Stadtteil']) {
+//                         e.name = e.properties[me.options["sector_property"]] + " (" + e.properties['Stadtteil'] + ")";
+//                         delete e.properties['Stadtteil'];
+//                     }
+//                 }
             });
             let poi_idx = 0;
             _.each(me.wawwod_poi, function (poi) {
                 poi['properties']['idx'] = poi_idx
                 poi_idx += 1;
+                console.log(poi)
             });
             me.projection = d3.geoMercator()
-                .rotate([0, 0])
+                .rotate([120, 0])
+                //.center([0, 20])
                 .fitSize([me.width, me.height], data)
             ;
             me.geoPath = d3.geoPath(me.projection)

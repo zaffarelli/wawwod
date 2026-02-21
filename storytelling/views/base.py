@@ -135,12 +135,12 @@ def display_map(request, slug=None):
     if is_ajax(request):
         if not slug:
             slug = 'munich'
-        elif slug == "MU":
-            slug = "Munich"
-        elif slug == "HH":
-            slug = "Hamburg"
-        elif slug == "MN":
-            slug = "Minneapolis"
+        # elif slug == "MU":
+        #     slug = "Munich"
+        # elif slug == "HH":
+        #     slug = "Hamburg"
+        # elif slug == "MN":
+        #     slug = "Minneapolis"
         x = slug.replace('_', ' ')
         context = get_districts(x)
         response['data'] = context

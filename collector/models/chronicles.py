@@ -52,6 +52,13 @@ class Chronicle(models.Model):
         return Season.current_season(self.acronym)
 
     @property
+    def seasons(self):
+        from collector.models.seasons import Season
+        return Season.objects.filter(chronicle=self.acronym)
+
+
+
+    @property
     def adventure(self):
         from collector.models.adventures import Adventure
         s = self.season
@@ -59,6 +66,14 @@ class Chronicle(models.Model):
             return Adventure.current_adventure(s.acronym)
         return None
 
+    @property
+    def to_json(self):
+        data = {}
+        data["name"] = self.name
+        data["acronym"] = self.acronym
+        data["seasons"] = self.seasons
+        data["is_current"] = self.is_current
+        return data
 
 
 class ChronicleAdmin(admin.ModelAdmin):
