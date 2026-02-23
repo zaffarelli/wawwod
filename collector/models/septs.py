@@ -26,8 +26,9 @@ class Sept(models.Model):
 
     caern = models.CharField(default="", max_length=4096, blank=True)
     caern_level = models.PositiveIntegerField(default=1, blank=True)
-    caern_totem = models.CharField(default="", max_length=4096, blank=True)
-    treemap = models.TextField(max_length=8192, default='{}', blank=True)
+    caern_type = models.CharField(default="", max_length=256, blank=True)
+    caern_totem = models.CharField(default="", max_length=256, blank=True)
+    treemap = models.TextField(max_length=8192*2, default='{}', blank=True)
 
     warder = models.CharField(default="", max_length=128, blank=True)
     grand_elder = models.CharField(default="", max_length=128, blank=True)
@@ -143,10 +144,11 @@ class Sept(models.Model):
 
     def build_sept(self):
         from collector.models.creatures import Creature
+        from collector.templatetags.wod_filters import as_tribe_plural, to_tribe_logo_single
         self.tribes = "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"
         self.breeds = "0 0 0"
         self.auspices = "0 0 0 0 0"
-        data = {"caern": {}, "moonbridges": [], "offices": {},"statistics": {}, "packs": []}
+        data = {"name":self.name,"caern": {"name":self.caern, "type": self.caern_type, "level": self.caern_level, "totem": self.caern_totem}, "moonbridges": [], "offices": {},"statistics": {}, "packs": []}
         garous_rids = self.garous.split(", ")
         garous = Creature.objects.filter(creature="garou").filter(rid__in=garous_rids).order_by("groupspec")
         packs_summary = []
@@ -161,6 +163,7 @@ class Sept(models.Model):
                 "rid": garou.rid,
                 "renown": garou.total_renown,
                 "name": garou.name,
+                "aka": garou.nickname,
                 "age": garou.age,
                 "edges": garou.edges_str,
                 "kinfolks": garou.value_of("kinfolk"),
@@ -169,7 +172,8 @@ class Sept(models.Model):
                 "position": garou.community_job,
                 "short_desc": garou.short_desc,
                 "rank": garou.rank,
-                "auspice": garou.auspice
+                "auspice": garou.auspice,
+                "logo": to_tribe_logo_single(as_tribe_plural(garou.family))
             }
             if garou.groupspec not in packs_summary:
                 packs_summary.append(garou.groupspec)

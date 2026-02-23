@@ -14,7 +14,7 @@ class City(models.Model):
 
     name = models.CharField(max_length=128, default='')
     chronicle = models.CharField(max_length=50, default='WOD')
-    code = models.CharField(max_length=5, default='')
+    code = models.CharField(max_length=50, default='')
     description = models.TextField(max_length=1024, default='', blank=True)
     geojson_file = models.CharField(max_length=128, default='', blank=True)
     sector_property = models.CharField(max_length=128, default='sector', blank=True)

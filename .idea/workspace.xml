@@ -5,48 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c5f4ae22-1e7a-419c-ac9f-80da089b72d4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/collector/migrations/0110_rename_current_adventure_is_current_and_more.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collector/static/collector/wawwod_mibn.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collector/static/collector/wawwod_rami.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storytelling/migrations/0068_city_lattitude_city_longitude.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storytelling/migrations/0069_rename_lattitude_city_latitude.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storytelling/migrations/0070_city_utc.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storytelling/migrations/0071_alter_city_code_property_alter_city_geojson_file_and_more.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storytelling/migrations/0072_alter_city_code_property_alter_city_name_property_and_more.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storytelling/migrations/0073_alter_city_code.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storytelling/migrations/0074_alter_city_chronicle.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storytelling/migrations/0075_remove_city_options.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storytelling/migrations/0076_city_font_scale.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storytelling/migrations/0077_hotspot_city_code.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storytelling/signals/cities.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storytelling/signals/hotspots.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storytelling/static/storytelling/geojson/minnesota.geojson" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storytelling/static/storytelling/geojson/minnesota_north dakota_south dakota_iowa_wisconsin.geojson" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storytelling/static/storytelling/geojson/montana.geojson" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storytelling/static/storytelling/geojson/usa.geojson" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/collector/migrations/0111_alter_sept_treemap.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/collector/migrations/0112_sept_caern_type_alter_sept_caern_totem.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storytelling/migrations/0078_alter_hotspot_type.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storytelling/migrations/0079_alter_city_code.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storytelling/static/storytelling/geojson/City_Council_Wards.geojson" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storytelling/static/storytelling/geojson/Hennepin_County_Boundary.geojson" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storytelling/static/storytelling/geojson/minneapolis-cities.geojson" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/chronicle_book_RAMI.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/models/adventures.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/models/adventures.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/models/chronicles.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/models/chronicles.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/models/seasons.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/models/seasons.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/static/collector/css/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/collector/css/main.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/static/collector/wawwod_rab.svg" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/collector/wawwod_rab.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/static/js/collector.es6" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/js/collector.es6" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/templates/collector/page/chronicles.html" beforeDir="false" afterPath="$PROJECT_DIR$/collector/templates/collector/page/chronicles.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/utils/data_collection.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/utils/data_collection.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/views/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/views/base.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/models/septs.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/models/septs.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/static/js/sept.es6" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/js/sept.es6" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/templatetags/wod_filters.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/templatetags/wod_filters.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/wawwod.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/wawwod.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storytelling/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/storytelling/apps.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storytelling/models/cities.py" beforeDir="false" afterPath="$PROJECT_DIR$/storytelling/models/cities.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storytelling/models/hotspots.py" beforeDir="false" afterPath="$PROJECT_DIR$/storytelling/models/hotspots.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storytelling/static/js/geocity.es6" beforeDir="false" afterPath="$PROJECT_DIR$/storytelling/static/js/geocity.es6" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storytelling/static/js/storytelling.es6" beforeDir="false" afterPath="$PROJECT_DIR$/storytelling/static/js/storytelling.es6" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storytelling/static/storytelling/css/storytelling.scss" beforeDir="false" afterPath="$PROJECT_DIR$/storytelling/static/storytelling/css/storytelling.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storytelling/views/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/storytelling/views/base.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wawwod.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod_static/collector/css/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/collector/css/main.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod_static/collector/wawwod_rab.svg" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/collector/wawwod_rab.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/sept.svg" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/sept.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_static/js/collector.es6" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/js/collector.es6" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wawwod_static/js/geocity.es6" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/js/geocity.es6" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod_static/js/storytelling.es6" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/js/storytelling.es6" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_static/storytelling/css/storytelling.scss" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/storytelling/css/storytelling.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,13 +64,13 @@
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "/home/zaffarelli/report.txt",
-    "settings.editor.selected.configurable": "preferences.editor"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/zaffarelli/report.txt&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.editor&quot;
   }
-}]]></component>
+}</component>
   <component name="PyDebuggerOptionsProvider">
     <option name="mySaveCallSignatures" value="true" />
   </component>

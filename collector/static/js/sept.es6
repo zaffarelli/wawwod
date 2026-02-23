@@ -12,7 +12,7 @@ class Sept {
         me.duration = 500;
         me.step = 200
         me.bit = 20
-        me.max_line = 5
+        me.max_line = 7
     }
 
     saveSVG() {
@@ -104,16 +104,22 @@ xmlns:xlink="http://www.w3.org/1999/xlink"> \
 
     insertGarou(x) {
         let me = this;
-        //let pack = d3.select("#"+btoa(x))
+        let pack = d3.select("#"+btoa(x.pack_code))
+        console.log(x)
         let r = x.enter().append("g")
+        //pack.select("#"+x.garou_code).remove()
+        //let r = pack.append("g")
             .attr("class", (d) => {
                 let str = "garou ";
                 console.log(d)
                 return str;
             })
+            .attr("id", (d) => d.garou_code)
             .attr("transform", function (d) {
-                let x = Math.floor((d.order-1) % me.max_line) * me.bit*22
-                let y = Math.floor((d.order-1) / me.max_line) * me.bit*9*6 + me.bit*9*d.packorder  + me.bit*3
+                let x = Math.floor((d.order-1) % me.max_line) * me.bit*22 + me.bit*4
+                let y = Math.floor((d.order-1) / me.max_line) * me.bit*9*6 + me.bit*9*d.packorder  + me.bit*10
+                //let x = me.bit
+                //let y = Math.floor((d.order-1) / me.max_line) * me.bit*9*6
                 return "translate(" + x + "," + y + ")";
                 //return "translate(" + (d.x*me.bit*22) + "," + (d.y*me.bit*9 + me.bit) + ")";
             })
@@ -152,11 +158,11 @@ xmlns:xlink="http://www.w3.org/1999/xlink"> \
                 } else if (d.position == "Elder"){
                     color = "#F0D0D0"
                 } else if (d.position == "Guardian"){
-                    color = "#E0F0E0"
+                    color = "#4dd8a9"
                 } else if (caern_offices.includes(pos)){
-                    color = "#E0F0E0"
+                    color = "#9ed84d"
                 } else if (minor_offices.includes(pos)){
-                    color = "#D0D0F0"
+                    color = "#c9d84d"
                 }
                 return color
             })
@@ -223,15 +229,34 @@ xmlns:xlink="http://www.w3.org/1999/xlink"> \
             .style('font-size', "13pt")
             .style('text-anchor', "start")
             .text( function (d) {
-                return d.renown+" renown (rank:"+d.rank+", "+d.age+"yo ) ["+d.player+"]"
+                let str = d.renown+" renown ("+d.age+"yo )"
+                if (d.player.length){
+                    str += " ["+d.player+"]"
+                }
+                return str
                 })
         ;
+
+        r.append("text")
+            .attr('class', 'garou_rank')
+            .attr('x', me.bit)
+            .attr('y', me.bit)
+            .attr('dy', (me.bit*3)+"pt")
+            .style('fill', "#101010")
+            .style('stroke', "#303030")
+            .style('stroke-width', "0.15pt")
+            .style('font-family', "Khand")
+            .style('font-size', "13pt")
+            .style('text-anchor', "start")
+            .text( (d) => d.aka.length ? 'AKA: "'+d.aka+'"' : "")
+
+
 
         r.append("text")
             .attr('class', 'garou_position')
             .attr('x', me.bit)
             .attr('y', me.bit)
-            .attr('dy', (me.bit*3)+"pt")
+            .attr('dy', (me.bit*4)+"pt")
             .style('fill', "#1010107F")
             .style('stroke', "#101010")
             .style('stroke-width', "0.25pt")
@@ -247,7 +272,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink"> \
             .attr('class', 'garou_edges')
             .attr('x', me.bit)
             .attr('y', me.bit)
-            .attr('dy', (me.bit*4)+"pt")
+            .attr('dy', (me.bit*5)+"pt")
             .style('fill', "#501010")
             .style('stroke', "#F03030")
             .style('stroke-width', "0.25pt")
@@ -262,22 +287,18 @@ xmlns:xlink="http://www.w3.org/1999/xlink"> \
                 return ""
                 })
         ;
-//         r.append("rect")
-//             .attr('class', 'band')
-//             .attr('x', 0)
-//             .attr('y', 0)
-//             .attr('rx', "50%")
-//             .attr('ry', "50%")
-//             .attr('width', me.bit)
-//             .attr('height', me.bit)
-//             .style('fill', "none")
-//             .style('stroke', "#F080C0")
-//             .style('stroke-width', "5pt")
+        r.append("image")
+            .attr('class', 'band')
+            .attr('x', me.bit*12)
+            .attr('y', me.bit*4)
+            .attr('width', me.bit*5)
+            .attr('height', me.bit*5)
+            .attr("xlink:href",(d) => d.logo)
 
         r.append("path")
             .attr('class', 'band')
             .attr('x', me.bit*16)
-            .attr('y', me.bit)
+            .attr('y', me.bit*2)
             .attr('d', (d) => {
                 let pattern = ""
                 switch (d.auspice){
@@ -309,13 +330,14 @@ xmlns:xlink="http://www.w3.org/1999/xlink"> \
                     case 2:
                     case 3:
                     case 4:
-                        fill = "#B0E0F0"
+                        fill = "#F0E0D0"
                         break;
                 }
                 return fill;
             })
             .style('stroke', "#000000")
             .style('stroke-width', "1pt")
+            .attr('transform', "scale(2)")
 
 
 
@@ -326,7 +348,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink"> \
         let me = this;
         let r = x.enter().append("g")
             .attr("class", (d) => {
-                let str = "pack ";
+                let str = "pack";
                 return str;
             })
             .attr("id", (d) => {
@@ -334,8 +356,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink"> \
                 return str;
             })
             .attr("transform", function (d) {
-                let x = Math.floor(d.order % me.max_line) * me.bit*22
-                let y = Math.floor(d.order / me.max_line) * me.bit*9*6 + me.bit
+                let x = Math.floor(d.order % me.max_line) * me.bit*22 + me.bit*4
+                let y = Math.floor(d.order / me.max_line) * me.bit*9*6 + me.bit*8
                 console.log(d.order, x, y)
                 return "translate(" + x + "," + y + ")";
                 //return "translate(" + (d.x*me.bit*22) + "," + (d.y*me.bit) + ")";
@@ -363,10 +385,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink"> \
             .style('font-family', "Trade Winds")
             .style('font-size', "16pt")
             .style('text-anchor', "start")
-            .text( function (d) {
-                return d.name + " " +d.order
-                })
-        ;
+            .text( (d) => d.name.length ? d.name + " (pack #" +d.order+") " : "")
+
         r.append("text")
             .attr('class', 'plate')
             .attr('x', me.bit)
@@ -378,11 +398,12 @@ xmlns:xlink="http://www.w3.org/1999/xlink"> \
             .style('font-family', "Khand")
             .style('font-size', "12pt")
             .style('text-anchor', "start")
-            .text( function (d) {
-                return d.totem
-                })
-        ;
-        return r;
+            .text( (d) => d.totem.length ? "Totem Spirit: "+d.totem : "")
+
+
+
+
+        return r
     }
 
     insertStats(x) {
@@ -394,26 +415,30 @@ xmlns:xlink="http://www.w3.org/1999/xlink"> \
             })
             .attr("id", (d) => d.name )
             .attr("transform", function (d) {
-                return "translate(" + ((d.id-1)*me.step*2.25) + "," + (-me.step*3) + ")";
+                let x = Math.floor((d.id-1) % me.max_line) * me.bit*22
+                let y = Math.floor((d.id-1) / me.max_line) * me.bit*9*6 + me.bit
+                //return "translate(" + x + "," + y + ")";
+                return "translate(" + ((d.id-1)*(me.boxWidth * 3.0)+me.bit*3) + "," + (me.bit*74) + ")";
             });
         let vals = {"auspices":{},"breeds":{},"tribes":{}}
         let ministep = me.step/10
         r.append("rect")
             .attr('class', 'band')
-            .attr('x', -me.boxWidth * .75)
-            .attr('y', -me.boxHeight * .75)
-            .attr('rx', me.step/10)
-            .attr('ry', me.step/10)
+            .attr('x', me.bit)
+            .attr('y', 0)
+            .attr('rx', me.bit)
+            .attr('ry', me.bit)
             .attr('width', me.boxWidth * 2.5)
             .attr('height', (d,i) => {
                 return me.boxHeight*5
             })
-            .style('fill', "#C0C0C0")
+            .style('fill', "#F0F0F0")
             .style('stroke', "#101010")
+            .style('stroke-width', "1pt")
         ;
         r.append("text")
-            .attr('x', me.boxWidth*.25)
-            .attr('y', -ministep)
+            .attr('x', me.bit*2)
+            .attr('y', me.bit*2)
             .style('fill', "#101010")
             .style('stroke', "#404040")
             .style('stroke-width', "0.15pt")
@@ -427,22 +452,22 @@ xmlns:xlink="http://www.w3.org/1999/xlink"> \
             })
         ;
         let g = undefined
-        let coeff = {"breeds":4,"auspices":1,"tribes":1}
+        let coeff = {"breeds":4,"auspices":1,"tribes":2}
         let color = {"breeds":"#C0F0C0","auspices":"#F0C0C0","tribes":"#C0C0Fts0"}
         _.forEach(vals, (v,k) => {
                 g = d3.select("#"+k)
                 _.forEach(v.values, (w,l) => {
                     g.append("rect")
                         .attr("id",v.name+" "+w.id)
-                        .attr("x",ministep*1.25)
-                        .attr("y",l*ministep)
+                        .attr("x",me.bit*11)
+                        .attr("y",l*me.bit+me.bit*3)
                         .attr("height",3*ministep/4)
                         .attr("width",ministep/coeff[k] * w)
                         .style("fill",color[k])
                         .style("stroke","#101010")
                     g.append("text")
-                        .attr('x', ministep)
-                        .attr('y', l*ministep)
+                        .attr("x",me.bit*10)
+                        .attr("y",l*me.bit+me.bit*3)
                         .attr('dy', ministep/2)
                         .style('fill', "#101010")
                         .style('stroke', "#303030")
@@ -490,10 +515,13 @@ xmlns:xlink="http://www.w3.org/1999/xlink"> \
         let order = 0
         let packorder = 0
         _.forEach(me.data.packs, (v,k) => {
+            console.log("Pack")
+            console.log(v)
             let pack = {"name":v.name,"totem":v.totem,"cnt":0}
             pack["y"] = -1
             pack["id"] = idx++
             pack["order"] = order++
+            pack["pack_code"] = btoa(v.name)
             j = 0
             packorder = 0
             _.forEach(v.members, (w,l) => {
@@ -504,6 +532,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink"> \
                     garou["order"] = order
                     garou["packorder"] = packorder++
                     garou["packname"] = v.name
+                    garou["pack_code"] = btoa(v.name)
+                    garou["garou_code"] = btoa(w.name)
+                    garou["logo"] = w.logo
                     pack["x"] = i
                     pack["cnt"]++
                     me.mapping.garous.push(garou)
@@ -550,6 +581,73 @@ xmlns:xlink="http://www.w3.org/1999/xlink"> \
                     console.log("Saved!!")
                 }
             })
+
+        let full_width = 180
+        let full_height = 100
+        let cw = 25
+        let base_rect = me.vis.append("rect")
+            .attr('x', 0)
+            .attr('y', 0)
+            .attr('rx', me.bit)
+            .attr('ry', me.bit)
+            .attr('width', me.bit*full_width)
+            .attr('height', me.bit*full_height)
+            .style('fill', "#C0C0C0")
+            .style('stroke', "#303030")
+            .style('stroke-width', "0.15pt")
+
+
+        let caern_rect = me.vis.append("rect")
+            .attr('x', me.bit*(full_width-(cw+1)))
+            .attr('y', me.bit*(full_height-(cw/2+2)))
+            .attr('rx', me.bit)
+            .attr('ry', me.bit)
+            .attr('width', me.bit*cw)
+            .attr('height', me.bit*cw/2)
+            .style('fill', "#E0E0E0")
+            .style('stroke', "#101010")
+            .style('stroke-width', "0.5pt")
+
+        me.vis.append("text")
+            .attr('x', me.bit*(full_width-((cw+1)/2)))
+            .attr('y', me.bit*(full_height-(cw/2)))
+            .style('fill', "#101010")
+            .style('stroke', "#303030")
+            .style('stroke-width', "0.15pt")
+            .style('text-anchor', "middle")
+            .style('font-family', "Trade Winds")
+            .style('font-size', (me.bit*1)+"pt")
+            .text( me.data.caern.name )
+            .append("tspan")
+                .text( me.data.caern.level )
+                .style('font-size', (me.bit*3)+"pt")
+                .attr('x', me.bit*(full_width-((cw+1)/2)))
+                .attr('dy',me.bit*4)
+            .append("tspan")
+                .text( "Type: "+me.data.caern.type )
+                .style('font-size', (me.bit*.8)+"pt")
+                .attr('x', me.bit*(full_width-((cw+1)/2)))
+                .attr('dy',(me.bit)+"pt")
+            .append("tspan")
+                .text( "Totem: "+me.data.caern.totem )
+                .style('font-size', (me.bit*.8)+"pt")
+                .attr('x', me.bit*(full_width-((cw+1)/2)))
+                .attr('dy',(me.bit)+"pt")
+
+
+        let title = me.vis.append("text")
+            .attr('x', me.bit*2)
+            .attr('y', me.bit*5)
+            .style('fill', "#101010")
+            .style('stroke', "#303030")
+            .style('stroke-width', "0.15pt")
+            .style('font-family', "Trade Winds")
+            .style('font-size', (me.bit*3)+"pt")
+            .style('text-anchor', "start")
+            .text( me.data.name )
+
+
+
         let pack = me.vis.selectAll(".pack")
             .data(me.mapping.packs)
         let pack_in = me.insertPack(pack)

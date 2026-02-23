@@ -73,8 +73,8 @@ class HotSpot(models.Model):
 
 
 class HotSpotAdmin(admin.ModelAdmin):
-    list_display = ['name', 'type', 'is_public', 'episode', 'description', 'city_code']
+    list_display = ['id','name', 'type', 'gps_coords','is_public', 'episode', 'description', 'city_code']
     ordering = ['-type', 'name']
     search_fields = ['name', 'description', 'type']
-    list_editable = [ 'type', 'is_public', 'description', 'episode', 'city_code']
+    list_editable = ['name', 'type', 'is_public', 'gps_coords', 'description', 'episode', 'city_code']
     list_filter = ['type', 'is_public', 'city', "episode"]

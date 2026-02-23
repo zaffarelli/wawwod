@@ -215,7 +215,7 @@ def story_book(request):
     settings = {}
     chronicle = get_current_chronicle()
     season = Season.current_season(chronicle.acronym)
-    adventure = Adventure.current_adventure(season.acronym)
+    adventure = Adventure.current_adventure(season)
     factions = {
         # "camarilla": {
         #     "name": "camarilla",
@@ -247,7 +247,7 @@ def story_book(request):
     groups = {}
     g = "others"
     groups[g] = {"code": g, "faction": "None", "name": f"All", "characters": []}
-    all_characters = Creature.objects.filter(chronicle=chronicle.acronym).filter(adventure__contains=adventure.acronym,player="")
+    all_characters = Creature.objects.filter(chronicle=chronicle.acronym).filter(adventure__contains=adventure,player="")
     for c in all_characters:
         print(c.name,c.adventure)
         # g = "_".join(c.groupspec.lower().split(" "))
@@ -259,7 +259,7 @@ def story_book(request):
         #     entry["ghouls"].append(h)
         groups[g]["characters"].append(entry)
     factions[g]["groups"].append(groups[g])
-    context = {'data': factions, 'settings': settings, 'filename': adventure.acronym, "chronicle": adventure}
+    context = {'data': factions, 'settings': settings, 'filename': adventure, "chronicle": adventure}
     template = get_template("storytelling/pdf/new_story.html")
     html = template.render(context)
     filename = f'story_book_{context['filename']}.pdf'

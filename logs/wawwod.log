@@ -38020,3 +38020,363 @@ KeyError: 'gac'
 [21/02 18:51:00] "GET /favicon.ico HTTP/1.1" 404 11677
 [22/02 00:13:28] Not Found: /favicon.ico
 [22/02 00:13:28] "GET /favicon.ico HTTP/1.1" 404 11677
+[22/02 10:48:11] Internal Server Error: /ajax/display/story_book/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/storytelling/views/base.py", line 218, in story_book
+    adventure = Adventure.current_adventure(season.acronym)
+                                            ^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'acronym'
+[22/02 10:48:11] "GET /ajax/display/story_book/ HTTP/1.1" 500 76685
+[22/02 10:48:26] Internal Server Error: /ajax/display/story_book/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/storytelling/views/base.py", line 218, in story_book
+    adventure = Adventure.current_adventure(season.acronym)
+                                            ^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'acronym'
+[22/02 10:48:26] "GET /ajax/display/story_book/ HTTP/1.1" 500 76685
+[22/02 10:49:12] Internal Server Error: /ajax/display/story_book/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/storytelling/views/base.py", line 250, in story_book
+    all_characters = Creature.objects.filter(chronicle=chronicle.acronym).filter(adventure__contains=adventure.acronym,player="")
+                                                                                                     ^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'acronym'
+[22/02 10:49:12] "GET /ajax/display/story_book/ HTTP/1.1" 500 78107
+[22/02 10:49:30] Internal Server Error: /ajax/display/story_book/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/storytelling/views/base.py", line 250, in story_book
+    all_characters = Creature.objects.filter(chronicle=chronicle.acronym).filter(adventure__contains=adventure,player="")
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/db/models/query.py", line 1476, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/db/models/query.py", line 1494, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/db/models/query.py", line 1501, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/db/models/sql/query.py", line 1600, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/db/models/sql/query.py", line 1632, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ~~~~~~~~~~~~~~~~~^
+        child,
+        ^^^^^^
+    ...<7 lines>...
+        update_join_types=update_join_types,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/db/models/sql/query.py", line 1546, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/db/models/sql/query.py", line 1381, in build_lookup
+    raise ValueError("Cannot use None as a query value")
+ValueError: Cannot use None as a query value
+[22/02 10:49:30] "GET /ajax/display/story_book/ HTTP/1.1" 500 116840
+[22/02 11:31:01] Internal Server Error: /ajax/editable/updown/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.IntegrityError: CHECK constraint failed: rage
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 253, in updown
+    item.save()
+    ~~~~~~~~~^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/db/models/base.py", line 901, in save_base
+    updated = self._save_table(
+        raw,
+    ...<4 lines>...
+        update_fields,
+    )
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/db/models/base.py", line 1028, in _save_table
+    updated = self._do_update(
+        base_qs, using, pk_val, values, update_fields, forced_update
+    )
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/db/models/base.py", line 1093, in _do_update
+    return filtered._update(values) > 0
+           ~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/db/models/query.py", line 1276, in _update
+    return query.get_compiler(self.db).execute_sql(CURSOR)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 1987, in execute_sql
+    cursor = super().execute_sql(result_type)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: CHECK constraint failed: rage
+[22/02 11:31:01] "POST /ajax/editable/updown/ HTTP/1.1" 500 24260
+[22/02 11:31:04] Internal Server Error: /ajax/editable/updown/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.IntegrityError: CHECK constraint failed: willpower
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 253, in updown
+    item.save()
+    ~~~~~~~~~^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/db/models/base.py", line 901, in save_base
+    updated = self._save_table(
+        raw,
+    ...<4 lines>...
+        update_fields,
+    )
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/db/models/base.py", line 1028, in _save_table
+    updated = self._do_update(
+        base_qs, using, pk_val, values, update_fields, forced_update
+    )
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/db/models/base.py", line 1093, in _do_update
+    return filtered._update(values) > 0
+           ~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/db/models/query.py", line 1276, in _update
+    return query.get_compiler(self.db).execute_sql(CURSOR)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 1987, in execute_sql
+    cursor = super().execute_sql(result_type)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: CHECK constraint failed: willpower
+[22/02 11:31:04] "POST /ajax/editable/updown/ HTTP/1.1" 500 24280
+[22/02 17:12:10] Not Found: /ajax/collector_action/add_garou/Johnny_Hawk-Eyed_Sheppard/
+[22/02 17:12:10] "GET /ajax/collector_action/add_garou/Johnny_Hawk-Eyed_Sheppard/ HTTP/1.1" 404 11818
+[22/02 17:31:17] Internal Server Error: /ajax/editable/userinput/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 275, in userinput
+    item.save()
+    ~~~~~~~~~^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/db/models/base.py", line 881, in save_base
+    pre_save.send(
+    ~~~~~~~~~~~~~^
+        sender=origin,
+        ^^^^^^^^^^^^^^
+    ...<3 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/dispatch/dispatcher.py", line 189, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/zaffarelli/Projects/wawwod/collector/signals/creatures.py", line 19, in update_creature
+    instance.fix()
+    ~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 963, in fix
+    self.freebies -= PER_TRIBE[as_tribe_plural(self.family)]['willpower'] * 1  # Willpower per Tribe
+                     ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'Wendigoss'
+[22/02 17:31:17] "POST /ajax/editable/userinput/ HTTP/1.1" 500 21777
+[22/02 18:26:06] Not Found: /favicon.ico
+[22/02 18:26:06] "GET /favicon.ico HTTP/1.1" 404 11677
+[23/02 04:03:29] Not Found: /ajax/collector_action/add_garou/Tania_O'Raily/
+[23/02 04:03:29] "GET /ajax/collector_action/add_garou/Tania_O'Raily/ HTTP/1.1" 404 11797
+[23/02 04:18:26] Internal Server Error: /ajax/editable/userinput/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 275, in userinput
+    item.save()
+    ~~~~~~~~~^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/db/models/base.py", line 881, in save_base
+    pre_save.send(
+    ~~~~~~~~~~~~~^
+        sender=origin,
+        ^^^^^^^^^^^^^^
+    ...<3 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/dispatch/dispatcher.py", line 189, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/zaffarelli/Projects/wawwod/collector/signals/creatures.py", line 19, in update_creature
+    instance.fix()
+    ~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 963, in fix
+    self.freebies -= PER_TRIBE[as_tribe_plural(self.family)]['willpower'] * 1  # Willpower per Tribe
+                     ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'Uktenass'
+[23/02 04:18:26] "POST /ajax/editable/userinput/ HTTP/1.1" 500 21774
+[23/02 05:38:09] Not Found: /uktenas.webp
+[23/02 05:38:09] Not Found: /wendigos.webp
+[23/02 05:38:09] Not Found: /children_of_gaia.webp
+[23/02 05:38:09] "GET /wendigos.webp HTTP/1.1" 404 11683
+[23/02 05:38:09] "GET /uktenas.webp HTTP/1.1" 404 11680
+[23/02 05:38:09] "GET /children_of_gaia.webp HTTP/1.1" 404 11707
+[23/02 05:42:11] Internal Server Error: /ajax/editable/userinput/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 275, in userinput
+    item.save()
+    ~~~~~~~~~^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/db/models/base.py", line 881, in save_base
+    pre_save.send(
+    ~~~~~~~~~~~~~^
+        sender=origin,
+        ^^^^^^^^^^^^^^
+    ...<3 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/dispatch/dispatcher.py", line 189, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/zaffarelli/Projects/wawwod/collector/signals/creatures.py", line 19, in update_creature
+    instance.fix()
+    ~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 963, in fix
+    self.freebies -= PER_TRIBE[as_tribe_plural(self.family)]['willpower'] * 1  # Willpower per Tribe
+                     ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'Red Talonss'
+[23/02 05:42:11] "POST /ajax/editable/userinput/ HTTP/1.1" 500 21788

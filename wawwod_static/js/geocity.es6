@@ -210,6 +210,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" width="' + me.width + '" height="' + 
             {'pattern': 'lost', 'text': "Lost"}
         ]
         me.map_legend = me.svg.append("g")
+            .attr("transform",`translate(${0.5*me.width/80},${me.height/80})`)
         me.map_legend.append("rect")
             .attr("x", 0.25 + me.width / 64)
             .attr("y", 0)
@@ -267,7 +268,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" width="' + me.width + '" height="' + 
         me.poi_legend_base = me.svg.append("g")
         me.poi_basey = me.height / 64 * 5
         me.legend_back = me.poi_legend_base.append("rect")
-            .attr("x", 0.25 + me.width / 64)
+            .attr("x", 1 * me.width / 80)
             .attr("y",  me.height - me.height/64 * (me.poi_legend_size+1))
             .attr('height', me.height / 64 * me.poi_legend_size)
             .attr('width', 250)
@@ -438,7 +439,17 @@ xmlns:xlink="http://www.w3.org/1999/xlink" width="' + me.width + '" height="' + 
                 if (e.properties.hasOwnProperty("STATEFP")){
                     let x = e.properties["STATEFP"]
                     if (x == "27"){// Minnesota
-                        return "#909090"
+                        return "#c0c0c07f"
+                    }else if (x == "38"){// North Dakota
+                        return "#b3c7db"
+                    }else if (x == "55"){// Wisconsin
+                        return "#dbb3d8"
+                    }else if (x == "19"){// Iowa
+                        return "#dbb6b3"
+                    }else if (x == "46"){// South Dakota
+                        return "#d2dbb3"
+                    }else{
+                        return "#606060"
                     }
                 }else{
                     return "url(#" + e.status + ")"
@@ -461,7 +472,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" width="' + me.width + '" height="' + 
             .attr("x", (e,i) => me.geoPath.centroid(e)[0])
             .attr("y", (e,i) => me.geoPath.centroid(e)[1])
             .attr('dx', 0)
-            .attr('dy', -5)
+            .attr('dy', -2.5*scaled_size)
             .style("font-family", "Ruda")
             .style("text-anchor", "middle")
             .style("font-size", scaled_size+'pt')
@@ -488,7 +499,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" width="' + me.width + '" height="' + 
                 .attr("x", (e,i) => me.geoPath.centroid(e)[0])
                 .attr("y", (e,i) => me.geoPath.centroid(e)[1])
                 .attr('dx', 0)
-                .attr('dy', 4*scaled_size)
+                .attr('dy', 2*scaled_size)
                 .style("font-family", "Ruda")
                 .style("text-anchor", "middle")
                 .style("font-size", scaled_size+'pt')
@@ -522,7 +533,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" width="' + me.width + '" height="' + 
                 return "translate(" + me.projection(d.geometry.coordinates) + ")";
             })
             .attr("opacity", function (d) {
-                return me.hotspotvisible(d);
+                return 1; //me.hotspotvisible(d);
             })
         ;
         me.poi_in.append('path')
@@ -540,14 +551,19 @@ xmlns:xlink="http://www.w3.org/1999/xlink" width="' + me.width + '" height="' + 
                     str = "M -2,-2 L-2,2 2,2 2,-2 -2,-2 z";
                 }else if (d.properties.type == "ely"){
                     str = "M -2,-1 L0,3 2,-1 z";
+                }else if (d.properties.type == "gac"){
+                    str = "M -1,-2 -2,-1 -1,0 -2,1 -1,2 0,1 1,2 2,1 1,0 2,-1 1,-2 0,-1 z"
+                }else if (d.properties.type == "gdc"){
+                    str = "M -2,-2 -1,2 1,2 2,-2 0,-1 z";
                 }
                 return str;
             })
             .style("stroke", "#606060")
-            .style("stroke-width", "0.25pt")
+            .style("stroke-width", "0.15pt")
             .style("fill", function (d) {
                 return d.properties.color;
             })
+            .attr("transform", "scale(2)")
             .on('click', function (e, d) {
                 let coords = me.projection(d.geometry.coordinates);
                 if (e.ctrlKey) {
@@ -564,15 +580,15 @@ xmlns:xlink="http://www.w3.org/1999/xlink" width="' + me.width + '" height="' + 
                 return "poi_text_mark_" + d.properties.code;
             })
             .attr('dx', 0)
-            .attr('dy', 1)
+            .attr('dy', 8)
             .style("font-family", "Ruda")
             .style("text-anchor", "middle")
-            .style("font-size", "1pt")
+            .style("font-size", "2pt")
             .style("stroke", "#111")
-            .style("stroke-width", "0.1pt")
+            .style("stroke-width", "0.15pt")
             .style("fill", "#000")
             .text(function (d) {
-                return d.properties.code;
+                return d.properties.name;
             })
         ;
         me.poi_out = me.hotspots.exit();
@@ -584,10 +600,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" width="' + me.width + '" height="' + 
         let mastertext = me.svg.append('text')
             .attr("id", "mastertext")
             .attr("x", function (e, i) {
-                return 1 * me.width / 20;
+                return 1 * me.width / 80;
             })
             .attr("y", function (e, i) {
-                return 49 * me.height / 50 ;
+                return 59 * me.height / 60 ;
             })
             // .attr("dy", -72)
 
@@ -596,7 +612,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" width="' + me.width + '" height="' + 
             .style("font-size", "20pt")
             .style("stroke", "#303030")
             .style("stroke-width", "0.25")
-            .style("fill", "#C0C0C0")
+            .style("fill", "#101010")
             .text(function (e, i) {
                 let moretxt = " [Storyteller Map]";
                 if (me.player_safe){
@@ -670,6 +686,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" width="' + me.width + '" height="' + 
             _.each(me.wawwod_poi, function (poi) {
                 poi['properties']['idx'] = poi_idx
                 poi_idx += 1;
+                console.log(poi)
             });
             me.projection = d3.geoMercator()
                 .rotate([120, 0])

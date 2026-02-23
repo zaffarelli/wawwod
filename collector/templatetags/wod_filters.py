@@ -185,6 +185,11 @@ def to_tribe_logo(val):
     res = f'<img src="/static/collector/tribes/{logo_str}.webp"> '
     return res
 
+@register.filter(name='to_tribe_logo_single')
+def to_tribe_logo_single(val):
+    logo_str = '_'.join(val.lower().split(' '))
+    return '/static/collector/tribes/'+logo_str+".webp"
+
 
 @register.filter(name='to_tradition_logo')
 def to_tradition_logo(val):
@@ -207,6 +212,7 @@ def family_color(val):
     if v in CLAN_COLORS:
         color = CLAN_COLORS[v]["color"]
     return color
+
 
 @register.filter(name='creature_code')
 def creature_code(val):
@@ -244,12 +250,14 @@ def status_color(val):
         code = "#F01060"
     return code
 
+
 @register.filter(name='creatures_total')
 def creatures_total(items):
     return len(items)
 
+
 @register.filter(name='html_safe_status')
 def html_safe_status(val):
     v = val.lower()
-    v = v.replace("+","plus")
+    v = v.replace("+", "plus")
     return v

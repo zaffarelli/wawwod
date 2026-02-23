@@ -210,6 +210,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" width="' + me.width + '" height="' + 
             {'pattern': 'lost', 'text': "Lost"}
         ]
         me.map_legend = me.svg.append("g")
+            .attr("transform",`translate(${0.5*me.width/80},${me.height/80})`)
         me.map_legend.append("rect")
             .attr("x", 0.25 + me.width / 64)
             .attr("y", 0)
@@ -267,7 +268,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" width="' + me.width + '" height="' + 
         me.poi_legend_base = me.svg.append("g")
         me.poi_basey = me.height / 64 * 5
         me.legend_back = me.poi_legend_base.append("rect")
-            .attr("x", 0.25 + me.width / 64)
+            .attr("x", 1 * me.width / 80)
             .attr("y",  me.height - me.height/64 * (me.poi_legend_size+1))
             .attr('height', me.height / 64 * me.poi_legend_size)
             .attr('width', 250)
@@ -599,10 +600,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" width="' + me.width + '" height="' + 
         let mastertext = me.svg.append('text')
             .attr("id", "mastertext")
             .attr("x", function (e, i) {
-                return 1 * me.width / 20;
+                return 1 * me.width / 80;
             })
             .attr("y", function (e, i) {
-                return 49 * me.height / 50 ;
+                return 59 * me.height / 60 ;
             })
             // .attr("dy", -72)
 
@@ -611,7 +612,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" width="' + me.width + '" height="' + 
             .style("font-size", "20pt")
             .style("stroke", "#303030")
             .style("stroke-width", "0.25")
-            .style("fill", "#C0C0C0")
+            .style("fill", "#101010")
             .text(function (e, i) {
                 let moretxt = " [Storyteller Map]";
                 if (me.player_safe){
