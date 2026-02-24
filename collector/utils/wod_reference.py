@@ -676,7 +676,7 @@ GM_SHORTCUTS = {
         ['manipulation', 'empathy'],
         ['manipulation', 'subterfuge'],
         ['perception', 'empathy'],
-        ['perception', 'primal-urge'],
+        ['perception', 'primal-urge','R:Instinct'],
         ['stamina', 'primal-urge'],
         ['strength', 'athletics'],
         ['strength', 'brawl'],

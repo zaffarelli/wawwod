@@ -185,10 +185,28 @@ def to_tribe_logo(val):
     res = f'<img src="/static/collector/tribes/{logo_str}.webp"> '
     return res
 
+
 @register.filter(name='to_tribe_logo_single')
 def to_tribe_logo_single(val):
     logo_str = '_'.join(val.lower().split(' '))
-    return '/static/collector/tribes/'+logo_str+".webp"
+    return '/static/collector/tribes/' + logo_str + ".webp"
+
+
+@register.filter(name='to_auspice_logo_single')
+def to_auspice_logo_single(val):
+    if val == 0:
+        logo_str = "AuspiceRagabash"
+    elif val == 1:
+        logo_str = "AuspiceTheurge"
+    elif val == 2:
+        logo_str = "AuspicePhilodox"
+    elif val == 3:
+        logo_str = "AuspiceGalliard"
+    elif val == 4:
+        logo_str = "AuspiceAhroun"
+    else:
+        logo_str = "AuspiceNone"
+    return '/static/collector/auspices/' + logo_str + ".webp"
 
 
 @register.filter(name='to_tradition_logo')

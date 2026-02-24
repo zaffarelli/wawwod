@@ -8,7 +8,7 @@ import json
 
 import logging
 
-from collector.templatetags.wod_filters import as_tribe_plural
+from collector.templatetags.wod_filters import as_tribe_plural, to_auspice_logo_single
 from collector.utils.helper import toRID
 from collector.utils.wod_reference import ALL_TRIBES
 
@@ -173,7 +173,8 @@ class Sept(models.Model):
                 "short_desc": garou.short_desc,
                 "rank": garou.rank,
                 "auspice": garou.auspice,
-                "logo": to_tribe_logo_single(as_tribe_plural(garou.family))
+                "logo": to_tribe_logo_single(as_tribe_plural(garou.family)),
+                "auspice_logo": to_auspice_logo_single(garou.auspice),
             }
             if garou.groupspec not in packs_summary:
                 packs_summary.append(garou.groupspec)

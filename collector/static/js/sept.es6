@@ -149,7 +149,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink"> \
             .attr('width', me.bit * 18)
             .attr('height', me.bit * 8)
             .style('fill', (d,i) => {
-                let color = "#F0F0F0"
+                let color = "#c0c0c0"
                 let pos = d.position.toLowerCase()
                 let caern_offices = ["warder","master of the rite","master of challenge","keeper of the land","gatekeeper"]
                 let minor_offices = ["wyrmfoe","caller of the wyld","truthcatcher","talesinger","master of the howl"]
@@ -166,7 +166,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink"> \
                 }
                 return color
             })
-            .style('stroke', "#101010")
+            .style('stroke', "#808080")
             .style('stroke-width', "2pt")
             .style('stroke-dasharray', (d,i) => {
                 let color = "#F0F0F0"
@@ -182,7 +182,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink"> \
                 } else if (caern_offices.includes(pos)){
                     color = "2 4"
                 } else if (minor_offices.includes(pos)){
-                    color = "4 8"
+                    color = "2 6"
                 }
                 return color
             })
@@ -289,55 +289,63 @@ xmlns:xlink="http://www.w3.org/1999/xlink"> \
         ;
         r.append("image")
             .attr('class', 'band')
-            .attr('x', me.bit*12)
-            .attr('y', me.bit*4)
-            .attr('width', me.bit*5)
-            .attr('height', me.bit*5)
+            .attr('x', me.bit*16.5)
+            .attr('y', me.bit*0.5)
+            .attr('width', me.bit*1)
+            .attr('height', me.bit*1)
+            .attr("xlink:href",(d) => d.auspice_logo)
+
+        r.append("image")
+            .attr('class', 'band')
+            .attr('x', me.bit*15)
+            .attr('y', me.bit*5)
+            .attr('width', me.bit*3)
+            .attr('height', me.bit*3)
             .attr("xlink:href",(d) => d.logo)
 
-        r.append("path")
-            .attr('class', 'band')
-            .attr('x', me.bit*16)
-            .attr('y', me.bit*2)
-            .attr('d', (d) => {
-                let pattern = ""
-                switch (d.auspice){
-                    case 0:
-                        pattern = "M -8,-4 m 3,0 a 3 3 0 1 1 0 0.01 "
-                        break;
-                    case 1:
-                        pattern = "M -8,4 m 6 1 a -6 -6 1 0 1 0 -10 a -2 -2 0 0 0 0 10 z"
-                        break;
-                    case 2:
-                        pattern = "M -8,-4 a 5,5 0 1 1 0,10 z"
-                        break;
-                    case 3:
-                        pattern = "M -8,-0.5 a 5.0 5.0 0 1 1 0,.01 m 0,0 a 6 6 1 1 1 0,.01 z"
-                        break;
-                    case 4:
-                        pattern = "M -8,-4 a 6 6 0 1 1 0 0.01 z"
-                        break;
-                }
-                return pattern
-                })
-            .style('fill', (d) => {
-                let fill = ""
-                switch (d.auspice){
-                    case 0:
-                        fill = "#808080"
-                        break;
-                    case 1:
-                    case 2:
-                    case 3:
-                    case 4:
-                        fill = "#F0E0D0"
-                        break;
-                }
-                return fill;
-            })
-            .style('stroke', "#000000")
-            .style('stroke-width', "1pt")
-            .attr('transform', "scale(2)")
+//         r.append("path")
+//             .attr('class', 'band')
+//             .attr('x', me.bit*16)
+//             .attr('y', me.bit*2)
+//             .attr('d', (d) => {
+//                 let pattern = ""
+//                 switch (d.auspice){
+//                     case 0:
+//                         pattern = "M -8,-4 m 3,0 a 3 3 0 1 1 0 0.01 "
+//                         break;
+//                     case 1:
+//                         pattern = "M -8,4 m 6 1 a -6 -6 1 0 1 0 -10 a -2 -2 0 0 0 0 10 z"
+//                         break;
+//                     case 2:
+//                         pattern = "M -8,-4 a 5,5 0 1 1 0,10 z"
+//                         break;
+//                     case 3:
+//                         pattern = "M -8,-0.5 a 5.0 5.0 0 1 1 0,.01 m 0,0 a 6 6 1 1 1 0,.01 z"
+//                         break;
+//                     case 4:
+//                         pattern = "M -8,-4 a 6 6 0 1 1 0 0.01 z"
+//                         break;
+//                 }
+//                 return pattern
+//                 })
+//             .style('fill', (d) => {
+//                 let fill = ""
+//                 switch (d.auspice){
+//                     case 0:
+//                         fill = "#808080"
+//                         break;
+//                     case 1:
+//                     case 2:
+//                     case 3:
+//                     case 4:
+//                         fill = "#F0E0D0"
+//                         break;
+//                 }
+//                 return fill;
+//             })
+//             .style('stroke', "#000000")
+//             .style('stroke-width', "1pt")
+//             .attr('transform', "scale(2)")
 
 
 
@@ -372,8 +380,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink"> \
             .attr('height', (d,i) => {
                 return me.bit*3 + (me.bit*9) * (d.cnt)
             })
-            .style('fill', "#F0F0F0")
+            .style('fill', "#D0D0D0")
             .style('stroke', "#101010")
+            .style('stroke-width', "0pt")
         ;
         r.append("text")
             .attr('class', 'plate')
@@ -422,6 +431,12 @@ xmlns:xlink="http://www.w3.org/1999/xlink"> \
             });
         let vals = {"auspices":{},"breeds":{},"tribes":{}}
         let ministep = me.step/10
+        r.append("g")
+            .attr("class", (d) => {
+                let v = { "name":d.name,"id":d.id, "values": d.values, "height":0}
+                vals[d.name] = v
+                return v.name
+            })
         r.append("rect")
             .attr('class', 'band')
             .attr('x', me.bit)
@@ -430,11 +445,12 @@ xmlns:xlink="http://www.w3.org/1999/xlink"> \
             .attr('ry', me.bit)
             .attr('width', me.boxWidth * 2.5)
             .attr('height', (d,i) => {
-                return me.boxHeight*5
+                return d.values.length*me.bit+4*me.bit
+                //return me.boxHeight*5
             })
             .style('fill', "#F0F0F0")
             .style('stroke', "#101010")
-            .style('stroke-width', "1pt")
+            .style('stroke-width', "2pt")
         ;
         r.append("text")
             .attr('x', me.bit*2)
@@ -446,8 +462,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink"> \
             .style('font-size', "24pt")
             .style('text-anchor', "start")
             .text( (d) => {
-                let v = { "name":d.name,"id":d.id, "values": d.values}
-                vals[d.name] = v
+//                 let v = { "name":d.name,"id":d.id, "values": d.values}
+//                 vals[d.name] = v
                 return d.name
             })
         ;
@@ -573,8 +589,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink"> \
             .attr("height", pheight);
         me.vis = me.svg.append("g")
             .attr("viewBox", pox+"  "+poy+ " " + pwidth + " " + pheight)
-            //.attr("transform","translate(0,0)")
-            .attr("transform", "translate(" + parseInt(pwidth) / 2 + "," + parseInt(pheight) / 2 + ")")
+            .attr("transform","translate(0,0)")
+            //.attr("transform", "translate(" + parseInt(pwidth) / 2 + "," + parseInt(pheight) / 2 + ")")
             .on("click", function(e,d){
                 if (e.altKey){
                     me.saveSVG()
@@ -592,7 +608,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink"> \
             .attr('ry', me.bit)
             .attr('width', me.bit*full_width)
             .attr('height', me.bit*full_height)
-            .style('fill', "#C0C0C0")
+            .style('fill', "#F0F0F0")
             .style('stroke', "#303030")
             .style('stroke-width', "0.15pt")
 
@@ -619,7 +635,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink"> \
             .style('font-size', (me.bit*1)+"pt")
             .text( me.data.caern.name )
             .append("tspan")
-                .text( me.data.caern.level )
+                .text( "Level: "+me.data.caern.level )
                 .style('font-size', (me.bit*3)+"pt")
                 .attr('x', me.bit*(full_width-((cw+1)/2)))
                 .attr('dy',me.bit*4)

@@ -696,6 +696,24 @@ class Creature(models.Model):
         elif self.breed == 2:  # Lupus
             if self.gnosis < 5:
                 self.gnosis = 5
+
+        # Auspice
+        if self.auspice == 0:  # Ragabash
+            if self.rage < 1:
+                self.rage = 1
+        elif self.auspice == 1:  # Theurge
+            if self.rage < 2:
+                self.rage = 2
+        elif self.auspice == 2:  # Philodox
+            if self.rage < 3:
+                self.rage = 3
+        elif self.auspice == 3:  # Galliard
+            if self.rage < 4:
+                self.rage = 4
+        elif self.auspice == 4:  # Ahroun
+            if self.rage < 5:
+                self.rage = 5
+
         self.display_gauge = self.glory + self.honor + self.wisdom
         if self.breed == 1:
             self.display_gauge -= 1
@@ -817,20 +835,20 @@ class Creature(models.Model):
                     elif category == "gift_in":
                         realexp = cr * 3
                         freebies_exp_offset += 7
-                    elif category in ["gift_out", "disc_in" ]:
+                    elif category in ["gift_out", "disc_in"]:
                         realexp = cr * 5
-                        if cr==0:
+                        if cr == 0:
                             realexp = 10
                         freebies_exp_offset += 7
-                    elif category in ["disc_ext" ]:
+                    elif category in ["disc_ext"]:
                         realexp = cr * 6
                         freebies_exp_offset += 7
-                        if cr==0:
+                        if cr == 0:
                             realexp = 10
-                    elif category in ["disc_out" ]:
+                    elif category in ["disc_out"]:
                         realexp = cr * 7
                         freebies_exp_offset += 7
-                        if cr==0:
+                        if cr == 0:
                             realexp = 10
                     elif category == "loss":
                         realexp = 0
@@ -1994,7 +2012,8 @@ class Creature(models.Model):
                             g.position = "Valet"
                     # Ghouls of a missing kindred are dead
                     if words[0] == "MISSING":
-                        g.condition = "DEAD=" + words[1]
+                        if len(words) > 1:
+                            g.condition = "DEAD=" + words[1]
                     # Ghouls of a dead kindred are dead
                     elif words[0] == "DEAD":
                         g.condition = self.condition
@@ -2121,7 +2140,7 @@ class Creature(models.Model):
                 print(terms)
 
             v = self.value_of(b)
-            print("--------------------- ",b, v)
+            print("--------------------- ", b, v)
             if v > 0:
                 txt_lines = []
                 entries = Background.objects.filter(name=b.title(), level__lte=v).order_by('level')
@@ -2544,7 +2563,7 @@ class CreatureAdmin(admin.ModelAdmin):
                    'group',
                    'groupspec']
     search_fields = ['name', 'groupspec', 'sire']
-    list_editable = ['groupspec', 'adventure','cast_figure', "player", "experience", "exp_pool", "exp_spent",
+    list_editable = ['groupspec', 'adventure', 'cast_figure', "player", "experience", "exp_pool", "exp_spent",
                      "experience_expenditure"]
 
     list_per_page = 20

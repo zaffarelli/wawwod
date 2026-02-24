@@ -262,11 +262,13 @@ class AdventureSheet extends WawwodSheet {
             let oldly = ly
             me.daddy = d3.select("#shortcuts"+k)
             _.forEach(v, (w,l) => {
+                let words = w.split("=")
+                if (words.length == 3){
                 ly += lh
                 if (l % 4 == 0){
                     ly += lh/2.0
                 }
-                let words = w.split("=")
+
 //                 console.log("SHORTCUTS",words)
                 let label = ""
                 if (words.length == 3){
@@ -276,6 +278,7 @@ class AdventureSheet extends WawwodSheet {
                 }
 
                 me.baseSheetEntryO({"xfunc":xfunc,"y":ly,"ox":ox,"oy":oy,"proplabel":label,"prop":words[1],"font_size":0,"easyRead":true,"direct_prop":"direct"})
+                }
             })
             ly = oldly
         })
