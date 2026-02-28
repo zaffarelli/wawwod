@@ -1,3 +1,4 @@
+from collector.models.chronicles import Chronicle
 from collector.models.creatures import Creature
 import json
 import logging
@@ -564,17 +565,18 @@ def get_districts(cityname):
     import json
     print(cityname.title())
     advacro = ""
-    chronicle = get_current_chronicle()
+    chronicle = Chronicle.current()
     print(f"Chronicle:[{chronicle.name}]")
-    season = Season.current_season(chronicle.acronym)
-    if season:
-        print(f"Season:[{season.name}]")
-        adventure = Adventure.current_adventure(season.acronym)
-        if adventure:
-            print(f"Adventure:[{adventure.acronym}:{adventure.name}]")
-            advacro = adventure.acronym
-        else:
-            advacro = ""
+    #season = Season.current_season(chronicle.acronym)
+    adventure = Adventure.current()
+    # if season:
+    #     print(f"Season:[{season.name}]")
+    #     adventure = Adventure.current_adventure(season.acronym)
+    #     if adventure:
+    #         print(f"Adventure:[{adventure.acronym}:{adventure.name}]")
+    #         advacro = adventure.acronym
+    #     else:
+    #         advacro = ""
 
     cities = City.objects.filter(code=cityname)
     settings = {"player_safe": not chronicle.is_storyteller_only}
@@ -583,6 +585,7 @@ def get_districts(cityname):
     if len(cities) == 1:
         city = cities.first()
         districts = District.objects.filter(city=city)
+        print(f"***** {city.name} {len(districts)}")
         for d in districts:
             context['districts'][d.code] = {
                 'code': d.code,

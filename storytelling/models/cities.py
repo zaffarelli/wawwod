@@ -39,9 +39,35 @@ class City(models.Model):
 
     def fix(self):
         self.sunrise_url()
+        # if self.code == "MN":
+        #     self.grab_districts()
+
+    def grab_districts(self):
+        file = f"/home/zaffarelli/Projects/wawwod/storytelling/static/storytelling/geojson/{self.geojson_file}.geojson"
+        with open(file, "r") as f:
+            j = json.load(f)
+        from storytelling.models.districts import District
+        for item in j["features"]:
+            name = item["properties"]["name"]
+            id = item["properties"]["cartodb_id"]
+            code = f"{self.code}{id:03}"
+            print(f"{name:>20} ({id:03}) => {code}")
+            districts = District.objects.filter(code=code)
+            district = None
+            if len(districts) == 0:
+                district = District()
+            else:
+                district = districts.first()
+            if district:
+                district.d_num = id
+                district.name = name
+                district.city = self
+                district.district_name = name
+                district.sector_name = ""
+                district.save()
 
     @classmethod
-    def usa_extract_states(cls, numberStates = []):
+    def usa_extract_states(cls, numberStates=[]):
         """
         This function exctracts states from the geojson countis map
         :param numberStates: Array of json associations per State.
@@ -54,7 +80,7 @@ class City(models.Model):
         final_file_name = []
         acro = ""
         for state in numberStates:
-            final_file_name.append(state["name"].replace("_",""))
+            final_file_name.append(state["name"].replace("_", ""))
             acro += state["name"][:2].upper()
             print(acro)
         the_name = "_".join(final_file_name)
@@ -70,7 +96,7 @@ class City(models.Model):
                     new_lines.append(line)
             else:
                 new_lines.append(line)
-        with open(full_name,"w+") as f:
+        with open(full_name, "w+") as f:
             f.writelines(new_lines)
         city = cls()
         city.name = the_name
@@ -82,7 +108,6 @@ class City(models.Model):
         city.chronicle = "VMI RAMI"
         city.font_scale = 0.8
         city.save()
-
 
     @property
     def options_json(self):
@@ -117,7 +142,7 @@ class City(models.Model):
 
 class CityAdmin(admin.ModelAdmin):
     list_display = ['name', "chronicle", 'code', 'geojson_file', 'options', 'description']
-    list_editable = ["chronicle",'code','geojson_file']
+    list_editable = ["chronicle", 'code', 'geojson_file']
     ordering = ['name']
     search_fields = ['name', 'code', 'description']
     from collector.utils.helper import refix

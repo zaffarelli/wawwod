@@ -178,4 +178,4 @@ if DEBUG:
     mimetypes.add_type("application/javascript;charset=utf-8", ".es6", True)
     mimetypes.add_type("application/javascript;charset=utf-8", ".js", True)
 
-VERSION = '1.5.2'
+VERSION = '1.5.3'

@@ -33,9 +33,11 @@ def prepare_index(request):
     chronicles = []
     players = []
     cities = []
-    chronicle = get_current_chronicle()
+    # Adventure.set_current("SPI")
+    chronicle = Chronicle.current() #get_current_chronicle()
     plist = Creature.objects.filter(chronicle=chronicle.acronym).exclude(player='').exclude(adventure="").order_by(
         'adventure')
+    # plist = Creature.objects.all().exclude(player='').exclude(adventure="").order_by('adventure')
     prev_a = None
     adventure = None
     for p in plist:
@@ -58,12 +60,14 @@ def prepare_index(request):
     septs = []
     for sept in Sept.objects.filter(chronicle=chronicle.acronym):
         septs.append(sept)
-    for season in Season.objects.filter(chronicle=chronicle.acronym, is_current=True):
-        seasons.append(season)
-        # print(season)
-        for adventure in Adventure.objects.filter(season=season.acronym, is_current=True):
-            adventures.append(adventure)
-            # print(adventure)
+
+    # for season in Season.objects.filter(is_current=True):
+    #     seasons.append(season)
+    # print(season)
+    for adventure in chronicle.adventures:
+        adventures.append(adventure)
+
+        # print(adventure)
     for city in City.objects.all():
         if city.in_chronicle(chronicle.acronym):
             cities.append(city)
@@ -77,16 +81,17 @@ def prepare_index(request):
             ghouls = c.retainers_vals
             c.retainers_list = []
             for h in ghouls:
-                #groups[g]["characters"].append(h)
+                # groups[g]["characters"].append(h)
                 c.retainers_list.append(h)
                 groups[g]["countg"] += 1
             groups[g]["characters"].append(c)
         else:
-            groups[g] = {"code": g, "faction": c.faction, "name": f"{c.groupspec} ({c.faction})","count":1,"countg":0, "characters": []}
+            groups[g] = {"code": g, "faction": c.faction, "name": f"{c.groupspec} ({c.faction})", "count": 1,
+                         "countg": 0, "characters": []}
             ghouls = c.retainers_vals
             c.retainers_list = []
             for h in ghouls:
-                #groups[g]["characters"].append(h)
+                # groups[g]["characters"].append(h)
                 c.retainers_list.append(h)
                 groups[g]["countg"] += 1
             groups[g]["characters"].append(c)
@@ -124,8 +129,16 @@ def index(request):
 
 def change_chronicle(request, slug=None):
     if is_ajax(request):
-        from collector.utils.wod_reference import set_chronicle
-        set_chronicle(slug)
+        print(slug)
+        Chronicle.set_current(slug)
+        context = prepare_index(request)
+        return render(request, 'collector/index.html', context=context)
+
+
+def change_adventure(request, slug=None):
+    if is_ajax(request):
+        print(slug)
+        Adventure.set_current(slug)
         context = prepare_index(request)
         return render(request, 'collector/index.html', context=context)
 
@@ -431,7 +444,7 @@ def add_new_ghoul(request, slug=None):
         return HttpResponse(status=204)
 
 
-def character_for(slug, option=None, idx=-1):
+def character_for(slug, option="", idx=-1):
     print("hello: ", slug)
     c = None
     cs = Creature.objects.filter(rid=slug.strip())
@@ -483,16 +496,18 @@ def character_for(slug, option=None, idx=-1):
         k["nature_notes"] = c.nature_notes()
         k["meritsflaws_notes"] = c.meritsflaws_notes()
         j = json.dumps(k)
-        if option is not None:
+        if len(option) > 0:
             c.delete()
 
     return j, k
 
 
-def display_crossover_sheet(request, slug=None, option=None):
+def display_crossover_sheet(request, slug=None, option=""):
     if is_ajax(request):
         from collector.models.adventures import Adventure
         from collector.models.seasons import Season
+        blank = "blank" in option
+        print(f"Blank:{blank}")
         chronicle = get_current_chronicle()
         if chronicle:
             scenario = chronicle.scenario
@@ -507,10 +522,10 @@ def display_crossover_sheet(request, slug=None, option=None):
                     scenario = adventure.adventure_teaser
 
         if slug is None:
-            slug = 'julius_von_blow'
-        j, k = character_for(slug, option)
+            slug = '_julius_von_blow'
+        j, k = character_for(slug, "")
         settings = {'version': 1.0, 'labels': STATS_NAMES[k["creature"]], 'pre_title': pre_title, 'scenario': scenario,
-                    'post_title': post_title, 'fontset': FONTSET, 'blank': False, 'debug': False,
+                    'post_title': post_title, 'fontset': FONTSET, 'blank': blank, 'debug': False,
                     'specialities': k["spe"],
                     'shortcuts': k["shc"]}
         # print(settings['labels']['sheet'])
@@ -564,6 +579,7 @@ def display_gaia_wheel(request):
         gaia_wheel_context = {'data': build_gaia_wheel()}
         return JsonResponse(gaia_wheel_context)
 
+
 def state_build():
     from storytelling.models.cities import City
     City.usa_extract_states(numberStates=[
@@ -593,7 +609,7 @@ def adventure_sheet(request):
                         for rid in protagonists:
                             # print(rid)
                             if len(rid) > 0:
-                                j, k = character_for(rid, None, idx)
+                                j, k = character_for(rid, "", idx)
                                 idx += 1
                                 data["players"].append(k)
             settings = {'fontset': FONTSET, 'labels': {'sheet': {"pages": 1}}}

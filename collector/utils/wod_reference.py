@@ -1,5 +1,8 @@
+from collector.models.adventures import Adventure
 from collector.models.chronicles import Chronicle
 import logging
+
+from collector.models.seasons import Season
 
 logger = logging.Logger(__name__)
 
@@ -13,28 +16,44 @@ def get_current_chronicle():
     # When migrating
     # return None
     ch = None
-    try:
-        current_chronicle = Chronicle.objects.filter(is_current=True).first()
-        ch = current_chronicle
-    except:
-        first_chronicle = Chronicle.objects.first()
-        first_chronicle.is_current = True
-        first_chronicle.is_storyteller_only = True
-        first_chronicle.save()
-        ch = first_chronicle
-        print(f"Error with get_chronicle {ch}")
-    return ch
+    # try:
+    #     current_chronicle = Chronicle.objects.filter(is_current=True).first()
+    #     ch = current_chronicle
+    # except:
+    #     first_chronicle = Chronicle.objects.first()
+    #     first_chronicle.is_current = True
+    #     first_chronicle.is_storyteller_only = True
+    #     first_chronicle.save()
+    #     ch = first_chronicle
+    #     print(f"Error with get_chronicle {ch}")
+    # return ch
+    return Chronicle.current()
 
 
 def set_chronicle(acro):
+    for a in Adventure.objects.all():
+        if a.acronym == acro:
+            a.is_current = True
+            print(f'Current Adventure set to {a.acronym}.')
+        else:
+            a.is_current = False
+        a.save()
+    for s in Season.objects.all():
+        if s.acronym == acro:
+            s.is_current = True
+            print(f'Current Season set to {s.acronym}.')
+        else:
+            s.is_current = False
+        s.save()
     for c in Chronicle.objects.all():
         if c.acronym == acro:
             c.is_current = True
+            print(f'Current Chronicle set to {c.acronym}.')
         else:
             c.is_current = False
         c.save()
     c = get_current_chronicle()
-    print(f'Current Chronicle set to is {c.acronym}.')
+    #print(f'Current Chronicle set to is {c.acronym}.')
 
 
 def find_stat_property(creature, statistic):

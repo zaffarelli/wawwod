@@ -435,7 +435,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" width="' + me.width + '" height="' + 
             .attr("class", "district_path")
             .attr("d", me.geoPath)
             .style("fill", function (e) {
-
+                return "url(#" + e.status + ")"
                 if (e.properties.hasOwnProperty("STATEFP")){
                     let x = e.properties["STATEFP"]
                     if (x == "27"){// Minnesota
@@ -666,21 +666,22 @@ xmlns:xlink="http://www.w3.org/1999/xlink" width="' + me.width + '" height="' + 
                 e.population = 0;
                 e.status = "neutral";
                 let key = me.cityCode + String(i + 1).padStart(3, '0');
-//                 if (me.wawwod_data[key]) {
-//                     let entry = me.wawwod_data[key];
-//                     e.population = entry.population;
-//                     e.status = entry.status;
-//                     e.code = key
-//                     e.name = e.properties[me.options["sector_property"]];
-//                     e.sector_name = entry.sector_name;
-//                     e.district_name = entry.district_name;
-//                     e.population_details = entry.population_details;
-//                     e.category = "DISTRICT"
-//                     if (e.properties['Stadtteil']) {
-//                         e.name = e.properties[me.options["sector_property"]] + " (" + e.properties['Stadtteil'] + ")";
-//                         delete e.properties['Stadtteil'];
-//                     }
-//                 }
+                if (me.wawwod_data[key]) {
+                    let entry = me.wawwod_data[key];
+                    e.population = entry.population;
+                    e.status = entry.status;
+                    console.log(key,e.status)
+                    e.code = key
+                    e.name = e.properties[me.options["sector_property"]];
+                    e.sector_name = entry.sector_name;
+                    e.district_name = entry.district_name;
+                    e.population_details = entry.population_details;
+                    e.category = "DISTRICT"
+                    if (e.properties['Stadtteil']) {
+                        e.name = e.properties[me.options["sector_property"]] + " (" + e.properties['Stadtteil'] + ")";
+                        delete e.properties['Stadtteil'];
+                    }
+                }
             });
             let poi_idx = 0;
             _.each(me.wawwod_poi, function (poi) {

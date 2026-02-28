@@ -46,39 +46,70 @@ class Chronicle(models.Model):
     def __str__(self):
         return self.acronym
 
-    @property
-    def season(self):
-        from collector.models.seasons import Season
-        return Season.current_season(self.acronym)
+    # @property
+    # def season(self):
+    #     from collector.models.seasons import Season
+    #     return Season.current_season(self.acronym)
+
+    # @property
+    # def seasons(self):
+    #     from collector.models.seasons import Season
+    #     return Season.objects.filter(chronicle=self.acronym)
 
     @property
-    def seasons(self):
-        from collector.models.seasons import Season
-        return Season.objects.filter(chronicle=self.acronym)
-
-
-
-    @property
-    def adventure(self):
+    def adventures(self):
         from collector.models.adventures import Adventure
-        s = self.season
-        if s:
-            return Adventure.current_adventure(s.acronym)
+        return Adventure.objects.filter(chronicle=self.acronym)
+
+    @classmethod
+    def set_current(cls, ch=""):
+        print(f"ch={ch}")
+        if Chronicle.current().acronym != ch:
+            all = cls.objects.all()
+            for c in all:
+                c.is_current = False
+                c.save()
+            if ch == "":
+                ch = "WOD"
+            currents = cls.objects.filter(acronym=ch)
+            if len(currents) == 1:
+                c = currents.first()
+                c.is_current = True
+                c.save()
+                from collector.models.adventures import Adventure
+                adventures = Adventure.objects.filter(chronicle=c.acronym)
+                adventure = adventures.first()
+                if Adventure.current != adventure:
+                    Adventure.set_current(adventure.acronym)
+
+    @classmethod
+    def current(cls):
+        all = cls.objects.filter(is_current=True)
+        if len(all) == 1:
+            return all.first()
         return None
+
+    # @property
+    # def adventure(self):
+    #     from collector.models.adventures import Adventure
+    #     s = self.season
+    #     if s:
+    #         return Adventure.current_adventure(s.acronym)
+    #     return None
 
     @property
     def to_json(self):
         data = {}
         data["name"] = self.name
         data["acronym"] = self.acronym
-        data["seasons"] = self.seasons
         data["is_current"] = self.is_current
         return data
 
 
 class ChronicleAdmin(admin.ModelAdmin):
-    list_display = ['acronym', 'name', 'description', 'main_creature', 'is_current', 'population','is_storyteller_only']
-    list_editable = ['is_current','is_storyteller_only']
+    list_display = ['acronym', 'is_current', 'name', 'description', 'main_creature', 'population',
+                    'is_storyteller_only']
+    list_editable = ['is_current', 'is_storyteller_only']
     ordering = ['acronym']
     from collector.utils.helper import refix
     actions = [refix]

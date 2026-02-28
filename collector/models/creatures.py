@@ -714,6 +714,13 @@ class Creature(models.Model):
             if self.rage < 5:
                 self.rage = 5
 
+        # Tribe
+        if self.family:
+            minimum_willpower = PER_TRIBE[as_tribe_plural(self.family)]['willpower']
+            if self.willpower < minimum_willpower:
+                self.willpower = minimum_willpower
+
+
         self.display_gauge = self.glory + self.honor + self.wisdom
         if self.breed == 1:
             self.display_gauge -= 1

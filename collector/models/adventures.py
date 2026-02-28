@@ -13,7 +13,7 @@ logger = logging.Logger(__name__)
 
 class Adventure(models.Model):
     name = models.CharField(max_length=128, primary_key=True)
-    # chronicle = models.CharField(max_length=8, default='WOD')
+    chronicle = models.CharField(max_length=8, default='WOD', blank=True)
     season = models.CharField(max_length=8, default='DEF')
     protagonists = models.TextField(default="", max_length=4096, blank=True)
     team = models.TextField(default="", max_length=1024, blank=True)
@@ -52,15 +52,43 @@ class Adventure(models.Model):
     @classmethod
     def current_adventure(cls, se):
         adventure = None
-        all = cls.objects.filter(season=se, is_current=True)
+        all = cls.objects.filter(is_current=True)
         if len(all) > 0:
             adventure = all.first()
         return adventure
 
+    @classmethod
+    def set_current(cls, ad=""):
+        from collector.models.chronicles import Chronicle
+        print(f"ad={ad}")
+        all = cls.objects.filter()
+        for adventure in all:
+            adventure.is_current = False
+            adventure.save()
+        if len(ad) == 0:
+            ad = "DEF90"
+        currents = cls.objects.filter(acronym=ad)
+        if len(currents) == 1:
+            current = currents.first()
+            current.is_current = True
+            current.save()
+            if Chronicle.current != current.chronicle:
+                Chronicle.set_current(current.chronicle)
+            if Season.current != current.season:
+                Season.set_current(current.season)
+
+    @classmethod
+    def current(cls):
+        all = cls.objects.filter(is_current=True)
+        if len(all) == 1:
+            return all.first()
+        return None
+
 
 class AdventureAdmin(admin.ModelAdmin):
-    list_display = ['name', 'is_current', 'acronym', 'season', 'players_starting_freebies', 'team', 'notes']
+    list_display = ['name', 'is_current', 'acronym', 'season', 'chronicle', 'players_starting_freebies', 'team',
+                    'notes']
     ordering = ['season', 'acronym']
-    list_editable = ['acronym', 'is_current', 'season', 'players_starting_freebies']
+    list_editable = ['acronym', 'is_current', 'chronicle', 'players_starting_freebies']
     from collector.utils.helper import refix
     actions = [refix]

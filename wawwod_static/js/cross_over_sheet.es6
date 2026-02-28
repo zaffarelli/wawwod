@@ -2,7 +2,7 @@ class CrossOverSheet extends WawwodSheet {
     constructor(settings, parent) {
         super(settings, parent);
         this.init();
-        this.release = "VTM20-2026.01.08";
+        this.release = "VTM20-2026.02.24";
     }
 
     init() {
@@ -37,7 +37,7 @@ class CrossOverSheet extends WawwodSheet {
             //me.scenario = me.data['chronicle_name']
             // Creature
             me.decorationText(12, 2.75, 0, 'middle', me.logo_font, me.fat_font_size, "#FFFFFF", "#FFFFFF", 10, me.pre_title, me.back, 0.75);
-            me.decorationText(12, 2.75, 0, 'middle', me.logo_font, me.fat_font_size, "#9090907f", "#3030301f",1, me.pre_title, me.back,1);
+            me.decorationText(12, 2.75, 0, 'middle', me.logo_font, me.fat_font_size, "#303030", "#6060601f",1, me.pre_title, me.back,1);
             // Chronicle
             me.decorationText(12, 1.8, 0, 'middle', me.creature_font, me.fat_font_size*1.25, "#FFFFFF", "#FFFFFF", 10, txt, me.back, 0.75);
             me.decorationText(12, 1.8, 0, 'middle', me.creature_font, me.fat_font_size*1.25, "#606060", "#C0C0C01f", 1, txt, me.back, 1);
@@ -52,7 +52,7 @@ class CrossOverSheet extends WawwodSheet {
 
             if (me.data['creature']=="garou"){
                 me.crossline(9.75, 4, 27);
-                me.midline(28.5, 1, 23);
+                me.midline(28.0, 1, 23);
             }else{
                 me.crossline(9.75, 4, 35);
             }

@@ -2,31 +2,18 @@
     <li class="switch {% if ch.is_current %}wod{%endif%}" action='chronicle' param="{{ch.acronym}}">
         {% if ch.is_current %}
             <i class="fa fa-check-circle"></i>&nbsp;{{ch.name}}
-        <ul>
-            {% for season in ch.seasons %}
-            <li class="switch {% if season.is_current %}wod{%endif%}" action='season' param="{{season.acronym}}">
-                {% if season.is_current %}
-                <i class="fa fa-check-circle"></i>
-                    {%else%}
-                <i class="fa fa-circle"></i>
-                {% endif %}
-                {{season.name}}
-            </li>
             <ul>
-                {% for adventure in season.adventures %}
-                    <li class="switch {% if adventure.is_current %}wod{%endif%}" action='adventure' param="{{adventure.acronym}}">
+                {% for adventure in adventures %}
+                    <li class="switch {% if adventure.is_current %}wod{%endif%}" action='adventure' param="{{adventure.acronym}}>
                         {% if adventure.is_current %}
                         <i class="fa fa-check-circle"></i>
                         {%else%}
                         <i class="fa fa-circle"></i>
                         {% endif %}
-                        {{adventure.name}}
+                        {{adventure.name}} ({{adventure.season}})
                     </li>
                 {% endfor %}
             </ul>
-            {% endfor %}
-        </ul>
-
         {%else%}
             <i class="fa fa-circle"></i>&nbsp;{{ch.name}}
         {% endif %}
