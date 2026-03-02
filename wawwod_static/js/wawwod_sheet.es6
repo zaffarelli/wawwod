@@ -147,6 +147,8 @@ class WawwodSheet {
         me.logo_font = 'Splash';
         me.base_font = 'Philosopher';
         me.base_font = 'Khand'
+
+
         me.x = d3.scaleLinear().domain([0, me.width]).range([0, me.width]);
         me.y = d3.scaleLinear().domain([0, me.height]).range([0, me.height]);
         me.pre_title = me.config['pre_title'];

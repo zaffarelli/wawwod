@@ -130,6 +130,7 @@ def index(request):
 def change_chronicle(request, slug=None):
     if is_ajax(request):
         print(slug)
+        print("Change Chronicle")
         Chronicle.set_current(slug)
         context = prepare_index(request)
         return render(request, 'collector/index.html', context=context)
@@ -138,6 +139,7 @@ def change_chronicle(request, slug=None):
 def change_adventure(request, slug=None):
     if is_ajax(request):
         print(slug)
+        print("Change Adventure")
         Adventure.set_current(slug)
         context = prepare_index(request)
         return render(request, 'collector/index.html', context=context)

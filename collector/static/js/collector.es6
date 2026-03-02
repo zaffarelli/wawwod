@@ -329,6 +329,8 @@ class WawwodCollector {
     registerSwitch() {
         let me = this;
         $('.switch').off().on('click', function (event) {
+            event.stopPropagation()
+            event.preventDefault()
             let action = $(this).attr('action');
             let param = $(this).attr('param');
             $.ajax({

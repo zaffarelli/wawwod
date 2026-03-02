@@ -1,14 +1,14 @@
 {% for ch in c %}
-    <li class="switch {% if ch.is_current %}wod{%endif%}" action='chronicle' param="{{ch.acronym}}">
+    <li class="switch change_chronicle" action='chronicle' param="{{ch.acronym}}">
         {% if ch.is_current %}
             <i class="fa fa-check-circle"></i>&nbsp;{{ch.name}}
             <ul>
                 {% for adventure in adventures %}
-                    <li class="switch {% if adventure.is_current %}wod{%endif%}" action='adventure' param="{{adventure.acronym}}>
+                    <li class="switch change_adventure" action='adventure' param="{{adventure.acronym}}"}>
                         {% if adventure.is_current %}
-                        <i class="fa fa-check-circle"></i>
+                            <i class="fa fa-check-circle"></i>
                         {%else%}
-                        <i class="fa fa-circle"></i>
+                            <i class="fa fa-circle"></i>
                         {% endif %}
                         {{adventure.name}} ({{adventure.season}})
                     </li>

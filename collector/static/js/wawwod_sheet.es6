@@ -147,6 +147,8 @@ class WawwodSheet {
         me.logo_font = 'Splash';
         me.base_font = 'Philosopher';
         me.base_font = 'Khand'
+
+
         me.x = d3.scaleLinear().domain([0, me.width]).range([0, me.width]);
         me.y = d3.scaleLinear().domain([0, me.height]).range([0, me.height]);
         me.pre_title = me.config['pre_title'];
@@ -1211,6 +1213,7 @@ class WawwodSheet {
     appendText(title,base_txt="",ox,oy,width,source){
         let me = this
         let lines_written = 0
+        let max_lines = 30
         console.log("source:",source)
         if (!source){
             source = me.daddy
@@ -1220,14 +1223,14 @@ class WawwodSheet {
         if (!source){
             return 0
         }
-//         let aline = source.append('line')
-//             .attr('x1',ox)
-//             .attr('y1',oy-me.medium_font_size)
-//             .attr('x2',ox+width)
-//             .attr('y2',oy-me.medium_font_size)
-//             .style("stroke", me.user_stroke)
-//             .style("stroke-width", '3pt')
-//             .attr("opacity",0)
+        let aline = source.append('line')
+            .attr('x1',ox)
+            .attr('y1',oy-me.medium_font_size)
+            .attr('x2',ox+width)
+            .attr('y2',oy-me.medium_font_size)
+            .style("stroke", "#f02090")
+            .style("stroke-width", '3pt')
+            .attr("opacity",1)
         let text = source.append('text')
             .attr('x',ox-me.medium_font_size)
             .attr('y',oy)

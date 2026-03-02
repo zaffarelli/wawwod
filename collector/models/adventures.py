@@ -72,9 +72,10 @@ class Adventure(models.Model):
             current = currents.first()
             current.is_current = True
             current.save()
-            if Chronicle.current != current.chronicle:
+            if Chronicle.current() != current.chronicle:
+                print("Updating chronicle")
                 Chronicle.set_current(current.chronicle)
-            if Season.current != current.season:
+            if Season.current() != current.season:
                 Season.set_current(current.season)
 
     @classmethod

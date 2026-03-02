@@ -927,14 +927,16 @@ class Creature(models.Model):
         if self.garou_rank is None:
             self.garou_rank = 0
         if self.adventure:
-            se = self.myseason
-            if se:
-                if self.chronicle != se.chronicle:
-                    self.chronicle = se.chronicle
-        else:
-            ch = self.mychronicle
-            if ch is None:
-                self.chronicle = "WOD"
+            from collector.models.adventures import Adventure
+            a = Adventure.objects.filter(acronym=self.adventure).first()
+            if a:
+                self.chronicle = a.chronicle
+        #     if self.chronicle != self.adventure.chronicle.acronym:
+        #         self.chronicle = self.adventure.chronicle.acronym
+        # else:
+        #     ch = self.mychronicle
+        #     if ch is None:
+        #         self.chronicle = "WOD"
         self.is_player = len(self.player) > 0
         logger.info(f'Fixing ............ [{self.name}] [{self.creature}]')
         # at:3/3/3 ab:7/5/3 b:3 w:2 f:15
@@ -943,83 +945,104 @@ class Creature(models.Model):
 
         self.body_limit = min(self.attribute0, self.attribute8)
 
+        self.freebies = 0
+        self.freebies -= from_stats(self.creature, 'attributes') * 5
+        self.freebies -= from_stats(self.creature, 'abilities') * 2
+        self.freebies -= from_stats(self.creature, 'backgrounds')
+        self.freebies -= from_stats(self.creature, 'freebies')
+
         if 'changeling' == self.creature:
             # traits:3 realms:5 backgrounds:5 willpower:4 glamour:4, banality:3 freebies:15
-            self.freebies = 0
-            self.freebies = -((7 + 5 + 3) * 5 + (13 + 9 + 5) * 2)
-            self.freebies = -(3 * 5 + 5 * 2 + 5 * 1 + 4 + 4 * 3 - 3 + 15)
+            # self.freebies = 0
+            # self.freebies = -((7 + 5 + 3) * 5 + (13 + 9 + 5) * 2)
+            # self.freebies = -(3 * 5 + 5 * 2 + 5 * 1 + 4 + 4 * 3 - 3 + 15)
+            self.freebies -= from_stats(self.creature, 'traits') * 5
+            self.freebies -= from_stats(self.creature, 'realms') * 2
+            self.freebies -= from_stats(self.creature, 'willpower') * 1
+            self.freebies -= from_stats(self.creature, 'glamour') * 1
+            self.freebies -= from_stats(self.creature, 'banality') * 1
             self.fix_changeling()
         # Vampire
         logger.info(f"Creature: {self.creature}")
         if 'kindred' == self.creature:
             # at:7/5/3 ab:13/9/5 b:5 d:21 v:7 wh:10 f:15
-            self.freebies = 0
-            self.freebies -= (7 + 5 + 3) * 5  # Attributes
+            # self.freebies = 0
+            # self.freebies -= (7 + 5 + 3) * 5  # Attributes
             if "Nosferatu" == self.family:
                 self.freebies += 5
                 logger.info("Nosferatu attribute special treatment")
-            self.freebies -= (13 + 9 + 5) * 2  # Abilities
-            self.freebies -= 3 * 7  # Disciplines
-            self.freebies -= (7 + 3) * 2  # Virtues
-            self.freebies -= 5 * 1  # Backgrounds
-            self.freebies -= 15  # Pure freebies
+            # self.freebies -= (13 + 9 + 5) * 2  # Abilities
+            self.freebies -= from_stats(self.creature, 'traits') * 7
+            # self.freebies -= 3 * 7  # Disciplines
+            # self.freebies -= (7 + 3) * 2  # Virtues
+            self.freebies -= from_stats(self.creature, 'virtues') * 2
+            # self.freebies -= 5 * 1  # Backgrounds
+            # self.freebies -= 15  # Pure freebies
             self.fix_kindred()
             logger.info(f"Freebies: {self.freebies}")
         elif 'ghoul' == self.creature:
-            self.freebies = 0
-            self.freebies -= (6 + 4 + 3) * 5  # Attributes
-            self.freebies -= (11 + 7 + 4) * 2  # Abilities
-            self.freebies -= 2 * 10  # Disciplines
-            self.freebies -= (7 + 3) * 2  # Virtues
-            self.freebies -= 5 * 1  # Backgrounds
-            self.freebies -= 21  # Pure freebies
+            # self.freebies = 0
+            # self.freebies -= (6 + 4 + 3) * 5  # Attributes
+            # self.freebies -= (11 + 7 + 4) * 2  # Abilities
+            # self.freebies -= 2 * 10  # Disciplines
+            # self.freebies -= (7 + 3) * 2  # Virtues
+            # self.freebies -= 5 * 1  # Backgrounds
+            # self.freebies -= 21  # Pure freebies
+            self.freebies -= from_stats(self.creature, 'traits') * 10
+            self.freebies -= from_stats(self.creature, 'virtues') * 2
             self.fix_ghoul()
         # Werewolf
         elif 'garou' == self.creature:
             # at:7/5/3 ab:13/9/5 b:5 g:21 rgw:16 f:15
-            self.freebies = 0
-            self.freebies -= (7 + 5 + 3) * 5  # Attributes
-            self.freebies -= (13 + 9 + 5) * 2  # Abilities
-            self.freebies -= 3 * 7  # Gifts
-            self.freebies -= 5 * 1  # Backgrounds
+            # self.freebies = 0
+            # self.freebies -= (7 + 5 + 3) * 5  # Attributes
+            # self.freebies -= (13 + 9 + 5) * 2  # Abilities
+            # self.freebies -= 3 * 7  # Gifts
+            # self.freebies -= 5 * 1  # Backgrounds
+            self.freebies -= from_stats(self.creature, 'traits') * 7
             self.freebies -= RAGE_PER_AUSPICE[int(self.auspice)] * 1  # Rage per Auspice
             self.freebies -= GNOSIS_PER_BREED[int(self.breed)] * 2  # Gnosis per Breed
             if self.family:
                 self.freebies -= PER_TRIBE[as_tribe_plural(self.family)]['willpower'] * 1  # Willpower per Tribe
             else:
                 self.freebies -= 3
-            self.freebies -= 15  # Pure freebies
+            # self.freebies -= 15  # Pure freebies
             # self.challenge += f"ba:{self.freebies:3}"
             # self.freebies
             self.fix_garou()
             self.fury_limit = math.ceil(self.rage / 2)
             self.freebies -= self.freebies_exp_offset
         elif 'kinfolk' == self.creature:
-            self.freebies = 0
-            self.freebies -= from_stats(self.creature, 'attributes') * 5
-            self.freebies -= from_stats(self.creature, 'abilities') * 2
-            self.freebies -= from_stats(self.creature, 'backgrounds')
             self.freebies -= from_stats(self.creature, 'willpower')
-            self.freebies -= from_stats(self.creature, 'freebies')
             self.fix_kinfolk()
 
         elif 'fomori' == self.creature:
-            self.freebies = -((6 + 4 + 3 + 9) * 5 + (11 + 7 + 4) * 2 + 5 + 3 + 21)
+            # self.freebies = -((6 + 4 + 3 + 9) * 5 + (11 + 7 + 4) * 2 + 5 + 3 + 21)
+            self.freebies -= from_stats(self.creature, 'willpower')
             self.fix_fomori()
         # Mage
         elif 'mage' == self.creature:
             # at:7/5/3 ab:13/9/5 b:5 g:21 rgw:16 f:15
-            self.freebies = -((7 + 5 + 3 + 9) * 5 + (13 + 9 + 5) * 2 + 5 + 7 * 3 + 16 + 15)
+            # self.freebies = -((7 + 5 + 3 + 9) * 5 + (13 + 9 + 5) * 2 + 5 + 7 * 3 + 16 + 15)
+            self.freebies -= from_stats(self.creature, 'willpower')
+            self.freebies -= from_stats(self.creature, 'arete')
+            self.freebies -= from_stats(self.creature, 'spheres')
             self.fix_mage()
         # Wraith
         elif self.creature == 'wraith':
-            self.freebies = -((7 + 5 + 3 + 9) * 5 + (13 + 9 + 5) * 2 + 5 * 5 + 7 + 10 + 10 + 5 * 2)
+            #self.freebies = -((7 + 5 + 3 + 9) * 5 + (13 + 9 + 5) * 2 + 5 * 5 + 7 + 10 + 10 + 5 * 2)
+            self.freebies -= from_stats(self.creature, 'willpower')
+            self.freebies -= from_stats(self.creature, 'arcanos')
+            self.freebies -= from_stats(self.creature, 'passions')
+            self.freebies -= from_stats(self.creature, 'fetters')
+            self.freebies -= from_stats(self.creature, 'pathos')
             self.fix_wraith()
         # Mortal
         else:
             # self.creature = 'mortal'
             # at:3/3/3 ab:7/5/3 b:3 w:2 f:15
-            self.freebies = -((3 + 3 + 3 + 9) * 5 + (7 + 5 + 3) * 2 + 3 + 2 + 15)
+            # self.freebies = -((3 + 3 + 3 + 9) * 5 + (7 + 5 + 3) * 2 + 3 + 2 + 15)
+            self.freebies -= from_stats(self.creature, 'willpower')
             self.fix_mortal()
 
         self.expectedfreebies += self.extra
@@ -1783,7 +1806,6 @@ class Creature(models.Model):
             print(f"Freebies + Traits ............ {self.freebies:4} {self.total_traits:4}x7 {self.total_traits * 7:4}")
             self.challenge += f" tr:{self.total_traits * 7}/21"
             self.challenge += f" h+w:{h + w}"
-
         elif 'kinfolk' == self.creature:
             self.freebies += getattr(self, 'rage')
             self.freebies += getattr(self, 'gnosis') * 2
@@ -1804,9 +1826,6 @@ class Creature(models.Model):
             h = (getattr(self, 'humanity') - self.virtue0 - self.virtue1) * hdot
             w = (getattr(self, 'willpower') - self.virtue2) * wdot
             self.freebies += h + w
-
-
-
         elif 'mage' == self.creature:
             self.freebies += getattr(self, 'arete')
             self.freebies += getattr(self, 'quintessence')
@@ -1823,7 +1842,7 @@ class Creature(models.Model):
             self.freebies += getattr(self, 'willpower')
 
         # self.freebies += + self.expectedfreebies
-        self.freebiesdif = self.freebies + self.expectedfreebies
+        self.freebiesdif = self.freebies - self.expectedfreebies
         print(
             f"Expected Freebies / Dif / free ........... {self.freebiesdif:4} =  {self.expectedfreebies:4} - {self.freebies:4}")
 
@@ -2558,7 +2577,7 @@ def randomize_all(modeladmin, request, queryset):
 
 class CreatureAdmin(admin.ModelAdmin):
     list_display = [  # 'domitor',
-        'name', 'age', 'adventure', "equipment", 'edge_for', 'cast_figure', 'family',
+        'name', 'age', 'adventure', 'chronicle', "equipment", 'edge_for', 'cast_figure', 'family',
         'freebies', 'player', 'experience_expenditure', "experience", "exp_pool", "exp_spent",
         'family', 'groupspec', 'status', 'condition', "freebies_exp_offset"]
     ordering = ['-trueage', 'name', 'group', 'creature']
@@ -2570,7 +2589,7 @@ class CreatureAdmin(admin.ModelAdmin):
                    'group',
                    'groupspec']
     search_fields = ['name', 'groupspec', 'sire']
-    list_editable = ['groupspec', 'adventure', 'cast_figure', "player", "experience", "exp_pool", "exp_spent",
+    list_editable = ['groupspec', 'adventure', 'chronicle', 'cast_figure', "player", "experience", "exp_pool", "exp_spent",
                      "experience_expenditure"]
 
     list_per_page = 20

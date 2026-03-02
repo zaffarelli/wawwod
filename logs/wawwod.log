@@ -41258,3 +41258,960 @@ Traceback (most recent call last):
            ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
 django.db.utils.IntegrityError: UNIQUE constraint failed: storytelling_district.code
 [28/02 11:40:49] "POST /admin/storytelling/city/ HTTP/1.1" 500 246568
+[01/03 16:54:38] Not Found: /ajax/switch/adventure/REB>                                                <i class=/
+[01/03 16:54:38] "GET /ajax/switch/adventure/REB%3E%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Ci%20class=/ HTTP/1.1" 404 12441
+[01/03 16:54:43] Not Found: /ajax/switch/adventure/REB>                                                <i class=/
+[01/03 16:54:43] "GET /ajax/switch/adventure/REB%3E%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Ci%20class=/ HTTP/1.1" 404 12441
+[01/03 16:58:12] Not Found: /ajax/switch/adventure/{{adventure.acronym}/
+[01/03 16:58:12] "GET /ajax/switch/adventure/%7B%7Badventure.acronym%7D/ HTTP/1.1" 404 12208
+[01/03 16:58:16] Not Found: /ajax/switch/adventure/{{adventure.acronym}/
+[01/03 16:58:16] "GET /ajax/switch/adventure/%7B%7Badventure.acronym%7D/ HTTP/1.1" 404 12208
+[01/03 16:58:36] Not Found: /ajax/switch/adventure/{{adventure.acronym}/
+[01/03 16:58:36] "GET /ajax/switch/adventure/%7B%7Badventure.acronym%7D/ HTTP/1.1" 404 12208
+[01/03 16:59:57] Not Found: /ajax/switch/adventure/{{adventure.acronym}/
+[01/03 16:59:57] "GET /ajax/switch/adventure/%7B%7Badventure.acronym%7D/ HTTP/1.1" 404 12208
+[01/03 17:00:01] Not Found: /ajax/switch/adventure/{{adventure.acronym}/
+[01/03 17:00:01] "GET /ajax/switch/adventure/%7B%7Badventure.acronym%7D/ HTTP/1.1" 404 12208
+[01/03 17:00:32] Not Found: /ajax/switch/adventure/{{adventure.acronym}/
+[01/03 17:00:32] "GET /ajax/switch/adventure/%7B%7Badventure.acronym%7D/ HTTP/1.1" 404 12208
+[01/03 17:02:12] Not Found: /ajax/switch/adventure/{{adventure.acronym}/
+[01/03 17:02:12] "GET /ajax/switch/adventure/%7B%7Badventure.acronym%7D/ HTTP/1.1" 404 12208
+[01/03 17:04:18] Not Found: /ajax/switch/adventure/{{adventure.acronym}/
+[01/03 17:04:18] "GET /ajax/switch/adventure/%7B%7Badventure.acronym%7D/ HTTP/1.1" 404 12208
+[01/03 17:04:34] Not Found: /ajax/switch/adventure/{{adventure.acronym}/
+[01/03 17:04:34] "GET /ajax/switch/adventure/%7B%7Badventure.acronym%7D/ HTTP/1.1" 404 12208
+[01/03 17:05:10] Internal Server Error: /ajax/switch/chronicle/UNY/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 134, in change_chronicle
+    Chronicle.set_current(slug)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/chronicles.py", line 83, in set_current
+    Adventure.set_current(adventure.acronym)
+                          ^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'acronym'
+[01/03 17:05:10] "GET /ajax/switch/chronicle/UNY/ HTTP/1.1" 500 80774
+[01/03 21:45:25] Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 127, in index
+    return render(request, 'collector/index.html', context=context)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/loader_tags.py", line 134, in render
+    compiled_parent = self.get_parent(context)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/loader_tags.py", line 131, in get_parent
+    return self.find_template(parent, context)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/loader_tags.py", line 109, in find_template
+    template, origin = context.template.engine.find_template(
+                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        template_name,
+        ^^^^^^^^^^^^^^
+        skip=history,
+        ^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/base.py", line 196, in compile_nodelist
+    return parser.parse()
+           ~~~~~~~~~~~~^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/base.py", line 510, in parse
+    raise self.error(token, e)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/loader_tags.py", line 343, in do_include
+    raise TemplateSyntaxError(
+        "Unknown argument for %r tag: %r." % (bits[0], option)
+    )
+django.template.exceptions.TemplateSyntaxError: Unknown argument for 'include' tag: 'title=adventure.name'.
+[01/03 21:45:25] "GET / HTTP/1.1" 500 260445
+[01/03 21:45:25] Not Found: /favicon.ico
+[01/03 21:45:25] "GET /favicon.ico HTTP/1.1" 404 12106
+[01/03 21:45:45] Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 127, in index
+    return render(request, 'collector/index.html', context=context)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/loader_tags.py", line 134, in render
+    compiled_parent = self.get_parent(context)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/loader_tags.py", line 131, in get_parent
+    return self.find_template(parent, context)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/loader_tags.py", line 109, in find_template
+    template, origin = context.template.engine.find_template(
+                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        template_name,
+        ^^^^^^^^^^^^^^
+        skip=history,
+        ^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/base.py", line 196, in compile_nodelist
+    return parser.parse()
+           ~~~~~~~~~~~~^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/base.py", line 510, in parse
+    raise self.error(token, e)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/loader_tags.py", line 343, in do_include
+    raise TemplateSyntaxError(
+        "Unknown argument for %r tag: %r." % (bits[0], option)
+    )
+django.template.exceptions.TemplateSyntaxError: Unknown argument for 'include' tag: 'title=adventure.name'.
+[01/03 21:45:45] "GET / HTTP/1.1" 500 260079
+[01/03 21:45:46] Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 127, in index
+    return render(request, 'collector/index.html', context=context)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/loader_tags.py", line 134, in render
+    compiled_parent = self.get_parent(context)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/loader_tags.py", line 131, in get_parent
+    return self.find_template(parent, context)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/loader_tags.py", line 109, in find_template
+    template, origin = context.template.engine.find_template(
+                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        template_name,
+        ^^^^^^^^^^^^^^
+        skip=history,
+        ^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/base.py", line 196, in compile_nodelist
+    return parser.parse()
+           ~~~~~~~~~~~~^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/base.py", line 510, in parse
+    raise self.error(token, e)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/loader_tags.py", line 343, in do_include
+    raise TemplateSyntaxError(
+        "Unknown argument for %r tag: %r." % (bits[0], option)
+    )
+django.template.exceptions.TemplateSyntaxError: Unknown argument for 'include' tag: 'title=adventure.name'.
+[01/03 21:45:46] "GET / HTTP/1.1" 500 260344
+[01/03 21:45:46] Not Found: /favicon.ico
+[01/03 21:45:46] "GET /favicon.ico HTTP/1.1" 404 12106
+[01/03 21:47:31] Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 127, in index
+    return render(request, 'collector/index.html', context=context)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/loader_tags.py", line 134, in render
+    compiled_parent = self.get_parent(context)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/loader_tags.py", line 131, in get_parent
+    return self.find_template(parent, context)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/loader_tags.py", line 109, in find_template
+    template, origin = context.template.engine.find_template(
+                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        template_name,
+        ^^^^^^^^^^^^^^
+        skip=history,
+        ^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/base.py", line 196, in compile_nodelist
+    return parser.parse()
+           ~~~~~~~~~~~~^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/base.py", line 510, in parse
+    raise self.error(token, e)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/loader_tags.py", line 343, in do_include
+    raise TemplateSyntaxError(
+        "Unknown argument for %r tag: %r." % (bits[0], option)
+    )
+django.template.exceptions.TemplateSyntaxError: Unknown argument for 'include' tag: 'title=adventure.name'.
+[01/03 21:47:31] "GET / HTTP/1.1" 500 260344
+[01/03 21:47:32] Not Found: /favicon.ico
+[01/03 21:47:32] "GET /favicon.ico HTTP/1.1" 404 12106
+[01/03 21:49:34] Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/loader_tags.py", line 199, in render
+    template = context.template.engine.select_template(template_name)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/engine.py", line 212, in select_template
+    raise TemplateDoesNotExist(", ".join(not_found))
+django.template.exceptions.TemplateDoesNotExist: collector/svg/wawwod_rab.svg.svg
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 127, in index
+    return render(request, 'collector/index.html', context=context)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/backends/django.py", line 63, in render
+    reraise(exc, self.backend)
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/backends/django.py", line 84, in reraise
+    raise new from exc
+django.template.exceptions.TemplateDoesNotExist: collector/svg/wawwod_rab.svg.svg
+[01/03 21:49:34] "GET / HTTP/1.1" 500 232128
+[01/03 21:49:35] Not Found: /favicon.ico
+[01/03 21:49:35] "GET /favicon.ico HTTP/1.1" 404 12106
+[01/03 21:50:40] Not Found: /<
+[01/03 21:50:40] "GET /%3C?xml%20version= HTTP/1.1" 404 12099
+[01/03 21:50:40] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 21:52:24] Not Found: /<
+[01/03 21:52:24] "GET /%3C?xml%20version= HTTP/1.1" 404 12099
+[01/03 21:52:24] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 21:52:27] Not Found: /<
+[01/03 21:52:27] "GET /%3C?xml%20version= HTTP/1.1" 404 12099
+[01/03 21:52:27] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 21:53:14] Not Found: /<
+[01/03 21:53:14] "GET /%3C?xml%20version= HTTP/1.1" 404 12099
+[01/03 21:53:14] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 22:31:40] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 22:32:15] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 22:32:22] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 22:33:03] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 22:33:07] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 22:34:16] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 22:35:50] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 22:35:59] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 22:37:31] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 22:48:04] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 22:48:43] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 22:49:37] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 22:49:57] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 22:50:22] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 22:51:18] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 22:51:50] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 22:52:03] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 22:52:29] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 22:52:34] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 22:52:39] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 22:52:47] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 22:52:55] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 22:53:06] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 22:53:15] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 22:53:21] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 22:53:28] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 22:57:42] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 22:58:17] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 22:58:31] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 22:58:47] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:00:36] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:00:44] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:00:51] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:01:46] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:04:01] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:04:06] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:04:38] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:09:04] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:09:33] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:09:38] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:09:45] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:09:51] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:10:02] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:11:18] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:11:25] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:12:16] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:12:30] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:12:44] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:12:56] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:13:20] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:13:39] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:13:43] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:14:07] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:14:15] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:16:01] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:17:24] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:18:05] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:18:32] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:18:43] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:18:50] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:18:56] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:19:01] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:19:05] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:19:12] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:19:43] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:20:22] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:20:36] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:20:48] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:20:59] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:21:21] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:21:42] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:21:47] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:21:53] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:21:59] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:22:38] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:22:50] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:22:58] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:23:42] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:24:06] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:25:23] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:26:36] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:26:44] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:26:57] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:27:11] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:27:23] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:27:42] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:28:27] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:31:54] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:32:02] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:32:06] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:32:10] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:32:13] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:32:23] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:36:57] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:39:13] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:39:44] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:39:54] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:40:16] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:40:35] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:40:48] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:41:13] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:41:22] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:41:32] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:41:37] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:42:18] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:42:30] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:42:56] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:43:04] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:43:15] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:43:25] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:43:40] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:43:53] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:44:05] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:44:14] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:44:26] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:44:31] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:44:36] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:44:46] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:45:23] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:46:24] Internal Server Error: /admin/collector/adventure/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/base.py", line 169, in render
+    with context.bind_template(self):
+         ~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/usr/lib64/python3.13/contextlib.py", line 141, in __enter__
+    return next(self.gen)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/context.py", line 254, in bind_template
+    context = processor(self.request)
+  File "/home/zaffarelli/Projects/wawwod/collector/context_processors.py", line 13, in commons
+    print("** Context Processor:", chronicle.name, season.name, adventure.name)
+                                                                ^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'name'
+[01/03 23:46:24] "GET /admin/collector/adventure/ HTTP/1.1" 500 128599
+[01/03 23:46:42] Internal Server Error: /admin/collector/adventure/Reborn/change/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/base.py", line 169, in render
+    with context.bind_template(self):
+         ~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/usr/lib64/python3.13/contextlib.py", line 141, in __enter__
+    return next(self.gen)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/context.py", line 254, in bind_template
+    context = processor(self.request)
+  File "/home/zaffarelli/Projects/wawwod/collector/context_processors.py", line 13, in commons
+    print("** Context Processor:", chronicle.name, season.name, adventure.name)
+                                                                ^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'name'
+[01/03 23:46:42] "GET /admin/collector/adventure/Reborn/change/ HTTP/1.1" 500 128890
+[01/03 23:46:49] Internal Server Error: /admin/collector/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/base.py", line 169, in render
+    with context.bind_template(self):
+         ~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/usr/lib64/python3.13/contextlib.py", line 141, in __enter__
+    return next(self.gen)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/context.py", line 254, in bind_template
+    context = processor(self.request)
+  File "/home/zaffarelli/Projects/wawwod/collector/context_processors.py", line 13, in commons
+    print("** Context Processor:", chronicle.name, season.name, adventure.name)
+                                                                ^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'name'
+[01/03 23:46:49] "GET /admin/collector/ HTTP/1.1" 500 128560
+[01/03 23:46:54] Internal Server Error: /admin/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/base.py", line 169, in render
+    with context.bind_template(self):
+         ~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/usr/lib64/python3.13/contextlib.py", line 141, in __enter__
+    return next(self.gen)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/context.py", line 254, in bind_template
+    context = processor(self.request)
+  File "/home/zaffarelli/Projects/wawwod/collector/context_processors.py", line 13, in commons
+    print("** Context Processor:", chronicle.name, season.name, adventure.name)
+                                                                ^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'name'
+[01/03 23:46:54] "GET /admin/ HTTP/1.1" 500 128200
+[01/03 23:47:34] Internal Server Error: /admin/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/base.py", line 169, in render
+    with context.bind_template(self):
+         ~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/usr/lib64/python3.13/contextlib.py", line 141, in __enter__
+    return next(self.gen)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/context.py", line 254, in bind_template
+    context = processor(self.request)
+  File "/home/zaffarelli/Projects/wawwod/collector/context_processors.py", line 13, in commons
+    print("** Context Processor:", chronicle.name, season.name, adventure.name)
+                                                                ^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'name'
+[01/03 23:47:34] "GET /admin/ HTTP/1.1" 500 128096
+[01/03 23:47:54] Internal Server Error: /admin/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/base.py", line 169, in render
+    with context.bind_template(self):
+         ~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/usr/lib64/python3.13/contextlib.py", line 141, in __enter__
+    return next(self.gen)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/context.py", line 254, in bind_template
+    context = processor(self.request)
+  File "/home/zaffarelli/Projects/wawwod/collector/context_processors.py", line 19, in commons
+    "adventure": adventure.acronym, "adventure_name": an}
+                 ^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'acronym'
+[01/03 23:47:54] "GET /admin/ HTTP/1.1" 500 128237
+[01/03 23:47:54] Not Found: /favicon.ico
+[01/03 23:47:54] "GET /favicon.ico HTTP/1.1" 404 12106
+[01/03 23:48:29] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:48:36] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:48:39] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:48:42] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:48:49] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:48:52] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:48:57] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:49:01] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:49:31] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[01/03 23:49:35] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[02/03 00:00:06] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[02/03 00:02:10] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[02/03 00:02:54] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[02/03 00:04:02] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[02/03 00:05:02] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[02/03 00:05:31] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[02/03 00:05:54] "GET /static/collector/css?016bd1f52d04 HTTP/1.1" 404 1805
+[02/03 00:06:51] "GET /static/collector/css?d388b0165fbf HTTP/1.1" 404 1805
+[02/03 00:07:09] "GET /static/collector/css?d388b0165fbf HTTP/1.1" 404 1805
+[02/03 00:07:31] "GET /static/collector/css?d388b0165fbf HTTP/1.1" 404 1805
+[02/03 00:08:54] "GET /static/collector/css?d388b0165fbf HTTP/1.1" 404 1805
+[02/03 00:09:12] "GET /static/collector/css?d388b0165fbf HTTP/1.1" 404 1805
+[02/03 00:10:07] "GET /static/collector/css?d388b0165fbf HTTP/1.1" 404 1805
+[02/03 00:11:00] "GET /static/collector/css?d388b0165fbf HTTP/1.1" 404 1805
+[02/03 00:12:26] "GET /static/collector/css?d388b0165fbf HTTP/1.1" 404 1805
+[02/03 00:12:54] "GET /static/collector/css?d388b0165fbf HTTP/1.1" 404 1805
+[02/03 00:13:14] "GET /static/collector/css?d388b0165fbf HTTP/1.1" 404 1805
+[02/03 00:13:40] "GET /static/collector/css?d388b0165fbf HTTP/1.1" 404 1805
+[02/03 00:16:44] Internal Server Error: /admin/collector/creature/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/admin/options.py", line 714, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/admin/sites.py", line 240, in inner
+    return view(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/admin/options.py", line 2074, in changelist_view
+    self.save_model(request, obj, form, change=True)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/admin/options.py", line 1257, in save_model
+    obj.save()
+    ~~~~~~~~^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/db/models/base.py", line 881, in save_base
+    pre_save.send(
+    ~~~~~~~~~~~~~^
+        sender=origin,
+        ^^^^^^^^^^^^^^
+    ...<3 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/dispatch/dispatcher.py", line 189, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/zaffarelli/Projects/wawwod/collector/signals/creatures.py", line 19, in update_creature
+    instance.fix()
+    ~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 932, in fix
+    if self.chronicle != se.chronicle:
+                         ^^^^^^^^^^^^
+AttributeError: 'Season' object has no attribute 'chronicle'
+[02/03 00:16:44] "POST /admin/collector/creature/?adventure=REB HTTP/1.1" 500 156346
+[02/03 00:18:02] Internal Server Error: /admin/collector/creature/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/admin/options.py", line 714, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/admin/sites.py", line 240, in inner
+    return view(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/admin/options.py", line 2074, in changelist_view
+    self.save_model(request, obj, form, change=True)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/admin/options.py", line 1257, in save_model
+    obj.save()
+    ~~~~~~~~^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/db/models/base.py", line 881, in save_base
+    pre_save.send(
+    ~~~~~~~~~~~~~^
+        sender=origin,
+        ^^^^^^^^^^^^^^
+    ...<3 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/dispatch/dispatcher.py", line 189, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/zaffarelli/Projects/wawwod/collector/signals/creatures.py", line 19, in update_creature
+    instance.fix()
+    ~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 930, in fix
+    if self.chronicle != self.adventure.chronicle:
+                         ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'chronicle'
+[02/03 00:18:02] "POST /admin/collector/creature/?adventure=REB HTTP/1.1" 500 156435
+[02/03 00:18:02] Not Found: /favicon.ico
+[02/03 00:18:02] "GET /favicon.ico HTTP/1.1" 404 12106
+[02/03 00:18:48] Internal Server Error: /admin/collector/creature/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/admin/options.py", line 714, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/admin/sites.py", line 240, in inner
+    return view(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/admin/options.py", line 2074, in changelist_view
+    self.save_model(request, obj, form, change=True)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/admin/options.py", line 1257, in save_model
+    obj.save()
+    ~~~~~~~~^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/db/models/base.py", line 881, in save_base
+    pre_save.send(
+    ~~~~~~~~~~~~~^
+        sender=origin,
+        ^^^^^^^^^^^^^^
+    ...<3 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/dispatch/dispatcher.py", line 189, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/zaffarelli/Projects/wawwod/collector/signals/creatures.py", line 19, in update_creature
+    instance.fix()
+    ~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 930, in fix
+    if self.chronicle != self.adventure.chronicle.acronym:
+                         ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'chronicle'
+[02/03 00:18:48] "POST /admin/collector/creature/?adventure=REB HTTP/1.1" 500 156459
+[02/03 00:18:48] Not Found: /favicon.ico
+[02/03 00:18:48] "GET /favicon.ico HTTP/1.1" 404 12106
+[02/03 00:19:10] Not Found: /favicon.ico
+[02/03 00:19:10] "GET /favicon.ico HTTP/1.1" 404 12106
+[02/03 00:22:20] Not Found: /favicon.ico
+[02/03 00:22:20] "GET /favicon.ico HTTP/1.1" 404 12106
+[02/03 00:22:29] "GET /static/collector/css?d388b0165fbf HTTP/1.1" 404 1805
+[02/03 00:22:37] "GET /static/collector/css?d388b0165fbf HTTP/1.1" 404 1805
+[02/03 06:27:10] Internal Server Error: /ajax/editable/updown/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 268, in updown
+    item.save()
+    ~~~~~~~~~^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/db/models/base.py", line 881, in save_base
+    pre_save.send(
+    ~~~~~~~~~~~~~^
+        sender=origin,
+        ^^^^^^^^^^^^^^
+    ...<3 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/dispatch/dispatcher.py", line 189, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/zaffarelli/Projects/wawwod/collector/signals/creatures.py", line 19, in update_creature
+    instance.fix()
+    ~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 933, in fix
+    self.chronicle = a.chronicle.acronym
+                     ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'acronym'
+[02/03 06:27:10] "POST /ajax/editable/updown/ HTTP/1.1" 500 21741
+[02/03 06:42:40] "GET /static/collector/css?d388b0165fbf HTTP/1.1" 404 1805
+[02/03 06:43:03] "GET /static/collector/css?d388b0165fbf HTTP/1.1" 404 1805
+[02/03 06:43:22] "GET /static/collector/css?d388b0165fbf HTTP/1.1" 404 1805
+[02/03 06:44:18] "GET /static/collector/css?d388b0165fbf HTTP/1.1" 404 1805
+[02/03 06:48:16] "GET /static/collector/css?d388b0165fbf HTTP/1.1" 404 1805
+[02/03 06:48:57] "GET /static/collector/css?d388b0165fbf HTTP/1.1" 404 1805
+[02/03 06:49:28] "GET /static/collector/css?d388b0165fbf HTTP/1.1" 404 1805
+[02/03 06:49:47] "GET /static/collector/css?d388b0165fbf HTTP/1.1" 404 1805
+[02/03 06:53:17] "GET /static/collector/css?d388b0165fbf HTTP/1.1" 404 1805
+[02/03 06:53:50] "GET /static/collector/css?d388b0165fbf HTTP/1.1" 404 1805
+[02/03 06:54:54] "GET /static/collector/css?d388b0165fbf HTTP/1.1" 404 1805
+[02/03 07:18:17] "GET /static/collector/css?d388b0165fbf HTTP/1.1" 404 1805
+[02/03 07:20:03] "GET /static/collector/css?d388b0165fbf HTTP/1.1" 404 1805
+[02/03 07:20:20] "GET /static/collector/css?d388b0165fbf HTTP/1.1" 404 1805
+[02/03 07:21:31] "GET /static/collector/css?d388b0165fbf HTTP/1.1" 404 1805
+[02/03 07:22:11] "GET /static/collector/css?d388b0165fbf HTTP/1.1" 404 1805
+[02/03 07:22:32] "GET /static/collector/css?d388b0165fbf HTTP/1.1" 404 1805
+[02/03 07:22:46] "GET /static/collector/css?d388b0165fbf HTTP/1.1" 404 1805
+[02/03 07:22:52] "GET /static/collector/css?d388b0165fbf HTTP/1.1" 404 1805
+[02/03 07:23:29] "GET /static/collector/css?d388b0165fbf HTTP/1.1" 404 1805
+[02/03 07:24:03] "GET /static/collector/css?d388b0165fbf HTTP/1.1" 404 1805
+[02/03 07:24:37] "GET /static/collector/css?d388b0165fbf HTTP/1.1" 404 1805
+[02/03 07:24:56] "GET /static/collector/css?d388b0165fbf HTTP/1.1" 404 1805
+[02/03 07:25:54] "GET /static/collector/css?d388b0165fbf HTTP/1.1" 404 1805

@@ -512,7 +512,7 @@ def from_stats(creature, stats):
         for v in data.split('/'):
             result += int(v)
     else:
-        print(f"Error: {creature} has no stats template for {stats}. Returning 0.")
+        print(f"Warning: {creature} has no stats template for {stats}. Returning 0.")
     return result
 
 

@@ -10,6 +10,8 @@ class CrossOverSheet extends WawwodSheet {
         let me = this;
         me.mark_overhead = false
         me.setButtonsOrigin(28, 0)
+
+
     }
 
     drawPages() {
@@ -626,6 +628,11 @@ class CrossOverSheet extends WawwodSheet {
         let me = this;
         me.data = character_data
         me.guideline = me.data['guideline']
+        console.log(me.data)
+        if (me.data['creature'] == 'kindred'){
+            me.creature_font = "Girassol"
+            me.title_font = "Angel wish"
+        }
         me.drawWatermark();
         if (me.data['condition'] == "DEAD") {
             me.decorationText(12, 16, 0, 'middle', me.logo_font, me.fat_font_size * 3, me.shadow_fill, me.shadow_stroke, 0.5, "DEAD", me.back, 0.25);

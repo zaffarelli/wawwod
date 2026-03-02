@@ -41,7 +41,9 @@
 {% block userzone %}
 {% endblock userzone %}
 
-<div class='wrapper hidden' style="background-image: url('{% static chronicle_logo %}')">
+<!-- div class='wrapper hidden' style="background-image: url('{% static chronicle_logo %}')" -->
+<div class='wrapper hidden'>
+    {% include chronicle_logo with title=adventure_name %}
     <div class='charlist righter'>
         {% block list %}
         {% endblock list %}

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   class="adventure_logo"
+   width="130mm"
+   height="20mm"
+   viewBox="0 0 130 20"
+   version="1.1"
+   xmlns="http://www.w3.org/2000/svg"
+   >
+<!--   <rect width="130" height="20" rx="5" ry="5" style="stroke:#202020;fill:#606060;"></rect>-->
+   <text x="5" y="6" style="font-size:4pt;font-family:Khand;font-variant:normal;font-weight:bold;fill:#909090;stroke:#e0e0e0;stroke-width:0.05;opacity:.9;">{{adventure_name}}</text>
+   <text x="65" y="15" style="font-size:10pt;font-family:'Apocalypse Grunge';font-weight:bold;fill:#D02000;stroke:#404040;stroke-width:0.1;opacity:0.5;text-anchor:middle;">{{chronicle_name}}</text>
+   <text x="125" y="6" style="font-size:3pt;font-family:Khand;font-variant:normal;font-weight:bold;fill:#F08020;stroke:#e0e0e0;stroke-width:0.05;opacity:.9;text-anchor:end;">Werewolf the Apocalypse</text>
+</svg>

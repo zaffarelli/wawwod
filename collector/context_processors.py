@@ -10,9 +10,15 @@ def commons(request):
     adventure = Adventure.current()
     chronicle = Chronicle.current()
     season = Season.current()
-    print("** Context Processor:", chronicle.name, season.name, adventure.name)
+    an = ""
+    ac = ''
+    if adventure:
+        an = adventure.name
+        ac = adventure.acronym
+    print("** Context Processor:", chronicle.name, season.name, an)
     context = {'chronicle': chronicle.acronym, 'chronicle_name': chronicle.name,
-               'chronicle_logo': "collector/" + chronicle.image_logo, "season": season.acronym, "adventure": adventure.acronym}
+               'chronicle_logo': f'collector/svg/{chronicle.image_logo}', "season": season.acronym,
+               "adventure": ac, "adventure_name": an}
     # context = {'chronicle': '', 'chronicle_name': '',
     #            'chronicle_logo': "collector/" , "season": '',
     #            "adventure": ""}

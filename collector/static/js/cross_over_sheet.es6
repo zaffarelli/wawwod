@@ -10,6 +10,8 @@ class CrossOverSheet extends WawwodSheet {
         let me = this;
         me.mark_overhead = false
         me.setButtonsOrigin(28, 0)
+
+
     }
 
     drawPages() {
@@ -35,12 +37,14 @@ class CrossOverSheet extends WawwodSheet {
             // Title
             let txt = me.sheet_type(me.data['creature']).toUpperCase();
             //me.scenario = me.data['chronicle_name']
+
             // Creature
-            me.decorationText(12, 2.75, 0, 'middle', me.logo_font, me.fat_font_size, "#FFFFFF", "#FFFFFF", 10, me.pre_title, me.back, 0.75);
-            me.decorationText(12, 2.75, 0, 'middle', me.logo_font, me.fat_font_size, "#303030", "#6060601f",1, me.pre_title, me.back,1);
+            me.decorationText(12, 1.8, 0, 'middle', me.creature_font, me.fat_font_size*0.75, "#FFFFFF7f", "#FFFFFF7f", 10, txt, me.back, 0.75);
+            me.decorationText(12, 1.8, 0, 'middle', me.creature_font, me.fat_font_size*0.75, "#6060607f", "#C0C0C07f", 1, txt, me.back, 1);
+
             // Chronicle
-            me.decorationText(12, 1.8, 0, 'middle', me.creature_font, me.fat_font_size*1.25, "#FFFFFF", "#FFFFFF", 10, txt, me.back, 0.75);
-            me.decorationText(12, 1.8, 0, 'middle', me.creature_font, me.fat_font_size*1.25, "#606060", "#C0C0C01f", 1, txt, me.back, 1);
+            me.decorationText(12, 2.75, 0, 'middle', me.logo_font, me.fat_font_size, "#FFFFFF7f", "#FFFFFF", 10, me.pre_title, me.back, 0.75);
+            me.decorationText(12, 2.75, 0, 'middle', me.logo_font, me.fat_font_size, "#303030", "#6060607f",1, me.pre_title, me.back,1);
 
             me.decorationText(3.5, 2.25, 0, 'middle', me.title_font, me.medium_font_size, me.draw_fill, me.draw_stroke, 0.5, "What a Wonderful World of Darkness", me.back);
             //me.decorationText(2.5, 2.25, 0, 'middle', me.base_font, me.medium_font_size, me.draw_fill, me.draw_stroke, 0.5, "World of Darkness", me.back);
@@ -387,6 +391,7 @@ class CrossOverSheet extends WawwodSheet {
     fillDisciplinesNotes(oy) {
         let me = this
         let base_x = 12.25
+        let stored_oy = oy
         let topic = me.character.append('g')
             .attr('class', 'notes_on_traits')
         let sub = topic.append("g")
@@ -406,6 +411,8 @@ class CrossOverSheet extends WawwodSheet {
             .append("g")
             .attr('class','trait_entry')
             .attr('id',(d) => 'trait_entry_'+d.idx )
+        let total_lines = 0
+        let max_lines = 50
         d3.selectAll(`.trait_entry`).attr('fake', (d) => {
                 let txt_width = (base_x + 0.4) * me.stepx
                 let spacing_y = 1
@@ -421,8 +428,17 @@ class CrossOverSheet extends WawwodSheet {
                 }
                 let title = d.item + ": " + me.as_dots(d.score) + ' - ' + d.title
                 let lines = me.appendText(title,txt,txt_width,oy,10 * me.stepx,current)
+                total_lines += lines
+                if (total_lines > max_lines){
+                    base_x += 12
+                    total_lines = 0
+                    oy = stored_oy
+                    lines = 0
+
+                }
                 return lines
             })
+        console.log(total_lines)
     }
 
 
@@ -626,6 +642,11 @@ class CrossOverSheet extends WawwodSheet {
         let me = this;
         me.data = character_data
         me.guideline = me.data['guideline']
+        console.log(me.data)
+        if (me.data['creature'] == 'kindred'){
+            me.creature_font = "Girassol"
+            me.logo_font = "Angel wish"
+        }
         me.drawWatermark();
         if (me.data['condition'] == "DEAD") {
             me.decorationText(12, 16, 0, 'middle', me.logo_font, me.fat_font_size * 3, me.shadow_fill, me.shadow_stroke, 0.5, "DEAD", me.back, 0.25);
