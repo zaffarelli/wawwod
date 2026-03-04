@@ -157,6 +157,8 @@ class Creature(models.Model):
     virtue_name1 = models.CharField(max_length=32, blank=True, default='')
     virtue_name2 = models.CharField(max_length=32, blank=True, default='')
 
+    ritual_pathes = models.CharField(max_length=128, default='', blank=True)
+
     # WTA
     gnosis = models.PositiveIntegerField(default=0)
     rage = models.PositiveIntegerField(default=0)
@@ -394,7 +396,7 @@ class Creature(models.Model):
             rite = getattr(self, f'rite{x}', '')
             if rite != '':
                 list.append(rite)
-        # print(list)
+        print(list)
         return list
 
     def get_traits(self):
@@ -2216,7 +2218,7 @@ class Creature(models.Model):
         rites = self.get_rites()
         list = []
         for et in reversed(rites):
-            # print("Looking for... ", et)
+            print("Looking for... ", et)
             rites = Rite.objects.filter(code=et)
             if len(rites) > 0:
                 rite = rites.first()
@@ -2238,10 +2240,10 @@ class Creature(models.Model):
             if len(e) > 2:
                 words = e.split('§')
                 fmt_list.append(
-                    {'idx': idx, 'item': f'{words[0]} ({words[2]})', 'title': f'{words[2]}',
+                    {'idx': idx, 'item': f'{words[0]}', 'title': f'{words[2]}',
                      'notes': f'{words[3]}', 'lvl': f'{words[1]}'})
                 idx += 1
-        # print("Rites List:")
+        print("Rites List:")
         # print(fmt_list)
         return fmt_list
 

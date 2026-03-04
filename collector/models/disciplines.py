@@ -9,6 +9,7 @@ logger = logging.Logger(__name__)
 class Discipline(models.Model):
     code = models.CharField(max_length=128, default='?', primary_key=True)
     name = models.CharField(max_length=128, default='')
+    path = models.CharField(max_length=128, default='', blank=True)
     alternative_name = models.CharField(max_length=128, default='', blank=True)
     page = models.CharField(max_length=20, default='VtM3:pp', blank=True)
     level = models.PositiveIntegerField(default=1, blank=True)
@@ -35,20 +36,21 @@ class Discipline(models.Model):
     technical_notes = models.TextField(max_length=4096, blank=True, default='')
 
     def fix(self):
-        self.code = f'{self.name.title()} ({self.level})'
+        if self.path:
+            self.code = f'{self.name.title()} ({self.level}) [{self.path}]'
+        else:
+            self.code = f'{self.name.title()} ({self.level})'
         self.alternative_name = self.alternative_name.title()
 
     def __str__(self):
         return f'{self.code})'
 
 
-
-
 class DisciplineAdmin(admin.ModelAdmin):
-    list_display = ['code', 'alternative_name', 'page', 'is_linear','description', 'technical_notes', ]
+    list_display = ['code', 'path', 'alternative_name', 'page', 'is_linear', 'description', 'technical_notes', ]
     ordering = ['code']
-    list_filter = ['name', 'level', 'clan_0', 'clan_1', 'clan_2', 'clan_3', 'clan_4', 'clan_5', 'clan_6']
+    list_filter = ['name', 'is_linear', 'path', 'level', 'clan_0', 'clan_1', 'clan_2', 'clan_3', 'clan_4', 'clan_5', 'clan_6']
     search_fields = ['name', 'description']
-    list_editable = ['description','technical_notes', 'page', 'is_linear']
+    list_editable = ['description', 'path', 'technical_notes', 'page', 'is_linear']
     from collector.utils.helper import refix
     actions = [refix]

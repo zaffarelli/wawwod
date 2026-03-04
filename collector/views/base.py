@@ -349,7 +349,7 @@ def pre_wawwod_creature(slug):
     item = Creature()
     item.name = name
     item.chronicle = chronicle.acronym
-    adventure = chronicle.adventure
+    adventure = Adventure.current()
     if adventure:
         item.adventure = adventure.acronym
     item.age = 25
@@ -479,6 +479,8 @@ def character_for(slug, option="", idx=-1):
         k["breed_name"] = BREEDS[c.breed]
         k["background_notes"] = c.background_notes()
         k["rite_notes"] = c.rite_notes()
+        print("Rites Notes")
+        print(k["rite_notes"])
         k["timeline"] = c.timeline()
         k["others"] = c.others()
         k["spe"] = c.get_specialities()
@@ -527,7 +529,7 @@ def display_crossover_sheet(request, slug=None, option=""):
             slug = '_julius_von_blow'
         j, k = character_for(slug, "")
         settings = {'version': 1.0, 'labels': STATS_NAMES[k["creature"]], 'pre_title': pre_title, 'scenario': scenario,
-                    'post_title': post_title, 'fontset': FONTSET, 'blank': blank, 'debug': False,
+                    'post_title': post_title, 'fontset': FONTSET, 'blank': blank, 'debug': True,
                     'specialities': k["spe"],
                     'shortcuts': k["shc"]}
         # print(settings['labels']['sheet'])

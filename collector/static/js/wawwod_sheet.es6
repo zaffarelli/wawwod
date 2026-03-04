@@ -5,8 +5,9 @@ class WawwodSheet {
         this.count = 0;
         this.mark_overhead = false
         this.disposition = "portrait"
-        this.button_ox = 1;
-        this.button_oy = 1;
+        this.button_ox = 1
+        this.button_oy = 1
+        this.max_pages = 6
     }
 
     setCollector(collector){
@@ -1167,11 +1168,11 @@ class WawwodSheet {
             //oy += 1 * me.stepy;
             me.title('Experience', ox+5*me.stepx , oy, me.character);
             oy += 0.5 * me.stepy;
-            me.statText('Earned', me.data['experience'], ox , oy, 'sire', 'sire', me.character);
+            me.statText('Earned', me.data['experience'], ox+2*me.stepx , oy, 'sire', 'sire', me.character);
             oy += 0.5 * me.stepy;
-            me.statText('Remaining', me.data['exp_pool'], ox , oy, 'sire', 'sire', me.character);
+            me.statText('Remaining', me.data['exp_pool'], ox+2*me.stepx , oy, 'sire', 'sire', me.character);
             oy += 0.5 * me.stepy;
-            me.statText('Spent', me.data['exp_spent'], ox , oy, 'sire', 'sire', me.character);
+            me.statText('Spent', me.data['exp_spent'], ox+2*me.stepx , oy, 'sire', 'sire', me.character);
 
 
             let histories = me.data["experience_expenditure"].split(";")
@@ -1210,11 +1211,11 @@ class WawwodSheet {
         }
     }
 
-    appendText(title,base_txt="",ox,oy,width,source){
+    appendText(title,base_txt="",ox,oy,width,source, opacity=1.0){
         let me = this
         let lines_written = 0
         let max_lines = 30
-        console.log("source:",source)
+//         console.log("source:",source)
         if (!source){
             source = me.daddy
             console.log("daddy")
@@ -1230,7 +1231,7 @@ class WawwodSheet {
             .attr('y2',oy-me.medium_font_size)
             .style("stroke", "#f02090")
             .style("stroke-width", '3pt')
-            .attr("opacity",1)
+            .attr("opacity",0)
         let text = source.append('text')
             .attr('x',ox-me.medium_font_size)
             .attr('y',oy)
@@ -1243,20 +1244,21 @@ class WawwodSheet {
             .style("fill", me.user_fill)
             .style("stroke", me.user_stroke)
             .style("stroke-width", '0.5pt')
-            .attr("opacity",1)
+            .attr("opacity",opacity)
             .text(title)
         if (title.length>0) {
             lines_written += 1
             }
         let txt_index = 0
         let txt = base_txt.split("µ")
-        console.log("txt length:",txt.length)
+//         console.log("txt length:",txt.length)
         while (txt.length>0){
             let line = txt.shift()
             let tspan = text.append("tspan")
                 .attr('x', ox)
                 .attr("dy",me.medium_font_size+"pt")
                 .text(line)
+                .attr("opacity",opacity)
             let next_line = []
             lines_written += 1
             while (tspan.node().getComputedTextLength() > width) {

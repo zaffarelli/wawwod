@@ -39,11 +39,11 @@ class CrossOverSheet extends WawwodSheet {
             //me.scenario = me.data['chronicle_name']
 
             // Creature
-            me.decorationText(12, 1.8, 0, 'middle', me.creature_font, me.fat_font_size*0.75, "#FFFFFF7f", "#FFFFFF7f", 10, txt, me.back, 0.75);
-            me.decorationText(12, 1.8, 0, 'middle', me.creature_font, me.fat_font_size*0.75, "#6060607f", "#C0C0C07f", 1, txt, me.back, 1);
+            me.decorationText(12, 3.2, 0, 'middle', me.creature_font, me.fat_font_size*2.0, "#FFFFFF7f", "#FFFFFF7f", 10, txt, me.back, 0.75);
+            me.decorationText(12, 3.2, 0, 'middle', me.creature_font, me.fat_font_size*2.0, "#DDDDDD7f", "#EEEEEE7f", 1, txt, me.back, 1);
 
             // Chronicle
-            me.decorationText(12, 2.75, 0, 'middle', me.logo_font, me.fat_font_size, "#FFFFFF7f", "#FFFFFF", 10, me.pre_title, me.back, 0.75);
+            me.decorationText(12, 2.75, 0, 'middle', me.logo_font, me.fat_font_size, "#FFFFFFcf", "#FFFFFFcf", 10, me.pre_title, me.back, 0.75);
             me.decorationText(12, 2.75, 0, 'middle', me.logo_font, me.fat_font_size, "#303030", "#6060607f",1, me.pre_title, me.back,1);
 
             me.decorationText(3.5, 2.25, 0, 'middle', me.title_font, me.medium_font_size, me.draw_fill, me.draw_stroke, 0.5, "What a Wonderful World of Darkness", me.back);
@@ -76,7 +76,7 @@ class CrossOverSheet extends WawwodSheet {
             me.midline(2.5, 1, 23);
             me.midline(35, 1, 23);
             me.crossline(12, 4, 34);
-            me.midline(23.5, 12.5, 22.5);
+//             me.midline(23.5, 12.5, 22.5);
         }
         if (me.page > 0) {
             if (me.blank) {
@@ -103,7 +103,8 @@ class CrossOverSheet extends WawwodSheet {
         me.addButton(1, 'NPCs');
         me.addButton(2, 'Save PDF');
         let page_button = 0
-        while(page_button < me.config.labels.sheet.pages){
+        //while(page_button < me.config.labels.sheet.pages){
+        while(page_button < me.max_pages){
             me.addButton(3+page_button, `Page ${1+page_button}`);
             page_button += 1
         }
@@ -185,44 +186,156 @@ class CrossOverSheet extends WawwodSheet {
         background_note_in_note.call(wrap, 7 * me.stepx, false,me.medium_font_size )
     }
 
+    fillDisciplinesNotes(oy,page_index=0) {
+        let me = this
+        let base_x = 1.25
+        let column_offset = 0
+        let stored_oy = oy
+        let topic = me.character.append('g')
+            .attr('class', 'notes_on_traits')
+        let sub = topic.append("g")
+                .attr('id', 'traits_entries')
+        if (page_index == 0){
+            if (me.data['creature'] == "kindred"){
+                me.title('About Disciplines', 6.5 * me.stepx, oy , topic)
+            }else{
+                me.title('Gifts of Gaia', 6.5 * me.stepx, oy , topic)
+            }
+            oy += 0.5 * me.stepy
+        }
+        if (me.blank) {
+            return
+        }
+        let entry = sub.selectAll(".trait_entry")
+            .data(me.data['traits_notes'])
+        let entry_in = entry.enter()
+            .append("g")
+            .attr('class','trait_entry')
+            .attr('id',(d) => 'trait_entry_'+d.idx )
+        let total_lines = 0
+        let max_lines = 50
+        d3.selectAll(`.trait_entry`).attr('fake', (d) => {
+                let txt_width = (base_x + 0.4) * me.stepx
+                let spacing_y = 1
+                let current = d3.select(`#trait_entry_${d.idx}`)
+                if (d.idx>0){
+                    let nb = d3.select(`#trait_entry_${d.idx-1}`).attr("fake")
+                    spacing_y = parseInt(nb)+1
+                }
+                oy += (spacing_y) * me.medium_font_size*1.25
+                let txt = d.notes
+                if (txt.startsWith("µ")){
+                    txt = txt.replace("µ","").trim()
+                }
+                let title = d.item + ": " + me.as_dots(d.score) + ' - ' + d.title
+                let opacity = (Math.floor(column_offset / 2) == page_index ? 1 : 0)
+                console.log(opacity)
+                let lines = me.appendText(title,txt,txt_width,oy,10 * me.stepx,current,opacity)
+                total_lines += lines
+                if (total_lines > max_lines){
+                    base_x += 11
+                    total_lines = 0
+                    oy = stored_oy
+                    lines = 0
+                    column_offset += 1
+                    if ((column_offset % 2) ==0){
+                        base_x = 1.25
+                    }
+
+                }
+                return lines
+            })
+        console.log(total_lines)
+    }
 
 
-    fillRiteNotes(oy) {
+    fillRiteNotes(oy, page_index=0) {
         let me = this;
-        return
         let box_spacing_y = 10.25;
-        let rite_note = me.character.append('g')
+        let base_x = 1.25
+        let column_offset = 0
+        let stored_oy = oy
+        console.log("Rites")
+        let topic = me.character.append('g')
             .attr('class', 'rite_notes')
-        let ox = 1.0
-        me.title('About Rites', (ox+5.5) * me.stepx  , oy, rite_note)
+        let sub = topic.append("g")
+                .attr('id', 'rite_entries')
+        let ox = 1.25
+        me.title('About Rites', (ox+5.25) * me.stepx  , oy, topic)
         oy += 0.5*me.stepy
         if (me.blank) {
             return
         }
-        let rite_note_item = rite_note.selectAll('rite_note')
+
+        let entry = sub.selectAll(".rite_entry")
             .data(me.data['rite_notes'])
-        let rite_note_in = rite_note_item.enter()
-            .append('g')
-            .attr('class', 'rite_note')
-        rite_note_in.append("g")
-            .attr('id',(d) => 'rite_note_'+d['idx'] )
-            .attr('fake',function (d) {
-                console.log(d)
-                let atx = (ox + 0.4) * me.stepx
+        let entry_in = entry.enter()
+            .append("g")
+            .attr('class','rite_entry')
+            .attr('id',(d) => 'rite_entry_'+d.idx )
+        let total_lines = 0
+        let max_lines = 50
+        d3.selectAll(`.rite_entry`).attr('fake', (d) => {
+                let txt_width = (base_x + 0.4) * me.stepx
                 let spacing_y = 1
-                if (d['idx']>0){
-                    spacing_y = parseInt(d3.select('#rite_note_'+(d['idx']-1)).attr("fake"))+1
+                let current = d3.select(`#rite_entry_${d.idx}`)
+                if (d.idx>0){
+                    let nb = d3.select(`#rite_entry_${d.idx-1}`).attr("fake")
+                    spacing_y = parseInt(nb)+1
                 }
                 oy += (spacing_y) * me.medium_font_size*1.25
-                let aty = oy
-                me.daddy = rite_note_in
-                console.log(d)
-                let txt = d['notes'].split("µ")
-                let details = ""//txt.shift().replace("--","")
-                let atitle = me.as_dots(d['lvl'])+" "+d['item'].toUpperCase()
-                let lines = me.appendText(atitle,txt,atx,aty,10 * me.stepx)
-                return lines+1
+                let txt = d.notes
+                if (txt.startsWith("µ")){
+                    txt = txt.replace("µ","").trim()
+                }
+                let title = d.item + " - " + me.as_dots(d.lvl) + ' - ' + d.title
+                let opacity = (Math.floor(column_offset / 2) == page_index ? 1 : 0)
+                console.log(opacity)
+                let lines = me.appendText(title,txt,txt_width,oy,10 * me.stepx,current,opacity)
+                total_lines += lines
+                if (total_lines > max_lines){
+                    base_x += 11
+                    total_lines = 0
+                    oy = stored_oy
+                    lines = 0
+                    column_offset += 1
+                    if ((column_offset % 2) ==0){
+                        base_x = 1.25
+                    }
+
+                }
+                return lines
             })
+
+
+
+
+
+
+//         let rite_note_item = rite_note.selectAll('rite_note')
+//             .data(me.data['rite_notes'])
+//         let rite_note_in = rite_note_item.enter()
+//             .append('g')
+//             .attr('class', 'rite_note')
+//         rite_note_in.append("g")
+//             .attr('id',(d) => 'rite_note_'+d['idx'] )
+//             .attr('fake',function (d) {
+//                 console.log(d)
+//                 let atx = (ox + 0.4) * me.stepx
+//                 let spacing_y = 1
+//                 if (d['idx']>0){
+//                     spacing_y = parseInt(d3.select('#rite_note_'+(d['idx']-1)).attr("fake"))+1
+//                 }
+//                 oy += (spacing_y) * me.medium_font_size*1.25
+//                 let aty = oy
+//                 me.daddy = rite_note_in
+//                 console.log(d)
+//                 let txt = d['notes'].split("µ")
+//                 let details = ""//txt.shift().replace("--","")
+//                 let atitle = me.as_dots(d['lvl'])+" "+d['item'].toUpperCase()
+//                 let lines = me.appendText(atitle,txt,atx,aty,10 * me.stepx)
+//                 return lines+1
+//             })
     }
 
 
@@ -260,186 +373,134 @@ class CrossOverSheet extends WawwodSheet {
 
     }
 
-
-    ccfillTimeline(oy) {
-        let me = this;
-        let box_spacing_y = 4.0;
-        let box_spacing_x = 12.75;
-        let base_x = 9.75;
-        let timeline = me.character.append('g')
-            .attr('class', 'timeline')
-        ;
-        let current_font_size = me.medium_font_size;
-        me.daddy = timeline;
-        me.title('Timeline', (base_x + 6) * me.stepx, oy, timeline)
-        oy += 0.5*me.stepy
-        let timeline_item = timeline.selectAll('timeline_event')
-            .data(me.data['timeline'])
-        ;
-
-        let timeline_in = timeline_item.enter()
-            .append('g')
-            .attr('class', 'timeline_event')
-        ;
-        let timeline_in_note = timeline_in.append('text')
-            .attr('class', 'timeline_in_notes')
-            .attr('id', function(d) { return 'timeline_in_notes_'+d['idx'] })
-            .text(function (d) {
-                return d.date + ' - ' + d.item + " µ " +d.notes
-            })
-            .style("text-anchor", 'start')
-            .style("font-family", me.user_font)
-            .style("font-size", current_font_size)
-            .style("fill", me.user_fill)
-            .style("stroke", me.user_stroke)
-            .style("stroke-width", '0.05pt')
-        ;
-        //timeline_in_note.call(wrap, box_spacing_x * me.stepx, true, current_font_size);
-
-        me.superwrap(timeline_in_note, box_spacing_x * me.stepx, true, current_font_size);
-        //console.log(me.data['timeline'])
-
-        //let lines = me.appendText(me.data['timeline'],box_spacing_x * me.stepx,oy,10 * me.stepx,me.character)
-
-        //let all_lines = 0;
-//         d3.selectAll(".timeline_event")
-//              .attr('transform', function (d) {
-//                  let result = oy;
-//                  if (d['idx']>0){
-//                     let previous_block = d3.select('#timeline_in_notes_'+(d['idx']-1))
-//                     if (previous_block){
-//                         let lines = parseInt(previous_block.attr("lines"))
-//                         all_lines += lines
-//                         result =  oy + all_lines*current_font_size*1.1;
-//                         console.log("previous lines",all_lines, result)
-//                     }else{
-//                         all_lines = 0;
-//                         console.log("Not found", result)
-//                     }
-//                  }else{
-//                      console.log("Bad ",result)
-//                  }
 //
-//                  return "translate("+(base_x + 0.4) * me.stepx+","+result+")"
-//              })
-    }
+//     ccfillTimeline(oy) {
+//         let me = this;
+//         let box_spacing_y = 4.0;
+//         let box_spacing_x = 12.75;
+//         let base_x = 9.75;
+//         let timeline = me.character.append('g')
+//             .attr('class', 'timeline')
+//         ;
+//         let current_font_size = me.medium_font_size;
+//         me.daddy = timeline;
+//         me.title('Timeline', (base_x + 6) * me.stepx, oy, timeline)
+//         oy += 0.5*me.stepy
+//         let timeline_item = timeline.selectAll('timeline_event')
+//             .data(me.data['timeline'])
+//         ;
+//
+//         let timeline_in = timeline_item.enter()
+//             .append('g')
+//             .attr('class', 'timeline_event')
+//         ;
+//         let timeline_in_note = timeline_in.append('text')
+//             .attr('class', 'timeline_in_notes')
+//             .attr('id', function(d) { return 'timeline_in_notes_'+d['idx'] })
+//             .text(function (d) {
+//                 return d.date + ' - ' + d.item + " µ " +d.notes
+//             })
+//             .style("text-anchor", 'start')
+//             .style("font-family", me.user_font)
+//             .style("font-size", current_font_size)
+//             .style("fill", me.user_fill)
+//             .style("stroke", me.user_stroke)
+//             .style("stroke-width", '0.05pt')
+//         ;
+//         //timeline_in_note.call(wrap, box_spacing_x * me.stepx, true, current_font_size);
+//
+//         me.superwrap(timeline_in_note, box_spacing_x * me.stepx, true, current_font_size);
+//         //console.log(me.data['timeline'])
+//
+//         //let lines = me.appendText(me.data['timeline'],box_spacing_x * me.stepx,oy,10 * me.stepx,me.character)
+//
+//         //let all_lines = 0;
+// //         d3.selectAll(".timeline_event")
+// //              .attr('transform', function (d) {
+// //                  let result = oy;
+// //                  if (d['idx']>0){
+// //                     let previous_block = d3.select('#timeline_in_notes_'+(d['idx']-1))
+// //                     if (previous_block){
+// //                         let lines = parseInt(previous_block.attr("lines"))
+// //                         all_lines += lines
+// //                         result =  oy + all_lines*current_font_size*1.1;
+// //                         console.log("previous lines",all_lines, result)
+// //                     }else{
+// //                         all_lines = 0;
+// //                         console.log("Not found", result)
+// //                     }
+// //                  }else{
+// //                      console.log("Bad ",result)
+// //                  }
+// //
+// //                  return "translate("+(base_x + 0.4) * me.stepx+","+result+")"
+// //              })
+//     }
 
 
 
+//
+//     legacy_fillTimeline(oy) {
+//         let me = this;
+//         let box_spacing_y = 4.0;
+//         let box_spacing_x = 12.0;
+//         let base_x = 10.25;
+//         let timeline = me.character.append('g')
+//             .attr('class', 'timeline')
+//         ;
+//         let current_font_size = me.medium_font_size;
+//         me.daddy = me.timeline;
+//         me.title('Timeline', (base_x + 6) * me.stepx, oy - 0.5 * me.stepy, timeline)
+//
+//         let timeline_item = timeline.selectAll('timeline_event')
+//             .data(me.data['timeline'])
+//         ;
+//
+//         let timeline_in = timeline_item.enter()
+//             .append('g')
+//             .attr('class', 'timeline_event')
+//         ;
+//         timeline_in.append('text')
+//             .attr("x", function (d) {
+//                 return (base_x + 0.05) * me.stepx;
+//             })
+//             .attr('y', function (d) {
+//                 return oy + (d['idx'] * box_spacing_y + 0.5) * me.stepy;
+//             })
+//             .style('font-family', me.user_font)
+//             .style('font-size', current_font_size+"px")
+//             .style('text-anchor', "start")
+//             .style("fill", me.user_fill)
+//             .style("stroke", me.user_stroke)
+//             .style("stroke-width", '0.05pt')
+//             .text(function (d) {
+//                 return d['date'] + ' - ' + d['item']
+//             })
+//         let timeline_in_note = timeline_in.append('text')
+//             .attr('x', function (d) {
+//                 return (base_x + 0.4) * me.stepx;
+//             })
+//             .attr('y', function (d) {
+//                 return oy + 0.85 * me.stepy + d['idx'] *box_spacing_y * me.stepy;
+//             })
+//             .attr('dx', 0)
+//             .attr('dy', 0)
+//             .text(function (d) {
+//                 return d['notes'];
+//             })
+//             .style("text-anchor", 'start')
+//             .style("font-family", me.user_font)
+//             .style("font-size", current_font_size)
+//             .style("fill", me.user_fill)
+//             .style("stroke", me.user_stroke)
+//             .style("stroke-width", '0.05pt')
+//         ;
+//         //timeline_in_note.call(wrap, box_spacing_x * me.stepx, true, current_font_size);
+//         me.superwrap(timeline_in_note, box_spacing_x * me.stepx, true, current_font_size);
+//         //console.log("Timelines line number=",global_last_lines)
+//     }
 
-    legacy_fillTimeline(oy) {
-        let me = this;
-        let box_spacing_y = 4.0;
-        let box_spacing_x = 12.0;
-        let base_x = 10.25;
-        let timeline = me.character.append('g')
-            .attr('class', 'timeline')
-        ;
-        let current_font_size = me.medium_font_size;
-        me.daddy = me.timeline;
-        me.title('Timeline', (base_x + 6) * me.stepx, oy - 0.5 * me.stepy, timeline)
 
-        let timeline_item = timeline.selectAll('timeline_event')
-            .data(me.data['timeline'])
-        ;
-
-        let timeline_in = timeline_item.enter()
-            .append('g')
-            .attr('class', 'timeline_event')
-        ;
-        timeline_in.append('text')
-            .attr("x", function (d) {
-                return (base_x + 0.05) * me.stepx;
-            })
-            .attr('y', function (d) {
-                return oy + (d['idx'] * box_spacing_y + 0.5) * me.stepy;
-            })
-            .style('font-family', me.user_font)
-            .style('font-size', current_font_size+"px")
-            .style('text-anchor', "start")
-            .style("fill", me.user_fill)
-            .style("stroke", me.user_stroke)
-            .style("stroke-width", '0.05pt')
-            .text(function (d) {
-                return d['date'] + ' - ' + d['item']
-            })
-        let timeline_in_note = timeline_in.append('text')
-            .attr('x', function (d) {
-                return (base_x + 0.4) * me.stepx;
-            })
-            .attr('y', function (d) {
-                return oy + 0.85 * me.stepy + d['idx'] *box_spacing_y * me.stepy;
-            })
-            .attr('dx', 0)
-            .attr('dy', 0)
-            .text(function (d) {
-                return d['notes'];
-            })
-            .style("text-anchor", 'start')
-            .style("font-family", me.user_font)
-            .style("font-size", current_font_size)
-            .style("fill", me.user_fill)
-            .style("stroke", me.user_stroke)
-            .style("stroke-width", '0.05pt')
-        ;
-        //timeline_in_note.call(wrap, box_spacing_x * me.stepx, true, current_font_size);
-        me.superwrap(timeline_in_note, box_spacing_x * me.stepx, true, current_font_size);
-        //console.log("Timelines line number=",global_last_lines)
-    }
-
-
-    fillDisciplinesNotes(oy) {
-        let me = this
-        let base_x = 12.25
-        let stored_oy = oy
-        let topic = me.character.append('g')
-            .attr('class', 'notes_on_traits')
-        let sub = topic.append("g")
-                .attr('id', 'traits_entries')
-        if (me.data['creature'] == "kindred"){
-            me.title('About Disciplines', 17.5 * me.stepx, oy , topic)
-        }else{
-            me.title('Gifts of Gaia', 17.5 * me.stepx, oy , topic)
-        }
-        oy += 0.5 * me.stepy
-        if (me.blank) {
-            return
-        }
-        let entry = sub.selectAll(".trait_entry")
-            .data(me.data['traits_notes'])
-        let entry_in = entry.enter()
-            .append("g")
-            .attr('class','trait_entry')
-            .attr('id',(d) => 'trait_entry_'+d.idx )
-        let total_lines = 0
-        let max_lines = 50
-        d3.selectAll(`.trait_entry`).attr('fake', (d) => {
-                let txt_width = (base_x + 0.4) * me.stepx
-                let spacing_y = 1
-                let current = d3.select(`#trait_entry_${d.idx}`)
-                if (d.idx>0){
-                    let nb = d3.select(`#trait_entry_${d.idx-1}`).attr("fake")
-                    spacing_y = parseInt(nb)+1
-                }
-                oy += (spacing_y) * me.medium_font_size*1.25
-                let txt = d.notes
-                if (txt.startsWith("µ")){
-                    txt = txt.replace("µ","").trim()
-                }
-                let title = d.item + ": " + me.as_dots(d.score) + ' - ' + d.title
-                let lines = me.appendText(title,txt,txt_width,oy,10 * me.stepx,current)
-                total_lines += lines
-                if (total_lines > max_lines){
-                    base_x += 12
-                    total_lines = 0
-                    oy = stored_oy
-                    lines = 0
-
-                }
-                return lines
-            })
-        console.log(total_lines)
-    }
 
 
     fillOthers(oy){
@@ -488,55 +549,55 @@ class CrossOverSheet extends WawwodSheet {
 
     }
 
-    ffffillOthers(oy, pos = '', pp = 0) {
-        let me = this
-        let box_spacing_y = 8.0
-        let box_spacing_x = 10.0
-        let base_x = 12.25
-        let min = 0 + pp*10
-        let max = 4 + pp*10
-        let right_offset = 0
-
-        let d_notes = this.character.append('g')
-            .attr('class', 'notes_on_others')
-            .attr('id', 'notes_on_others')
-            .data(this.data['others'])
-        if (pos == '') {
-            this.title('Others', 17 * this.stepx, oy , d_notes)
-        }
-        oy += 0.5*this.stepy
-        if (this.blank) {
-            return
-        }
-        let d_notes_in = d_notes.enter()
-            .append('g')
-            .attr('class', 'others_notes')
-            .attr('id',(d) => 'others_note_'+d['idx'] )
-            .attr('fake',function (d) {
-                let atx = (base_x + 0.4) * me.stepx
-                let spacing_y = 1
-                if (d.idx>0){
-                    spacing_y = parseInt(d3.select('#others_note_'+(d.idx-1)).attr("fake"))+1
-                }
-                oy += (spacing_y) * me.medium_font_size*1.25
-                let aty = oy
-                me.daddy = d3.select("#notes_on_others")
-                let txt = d.notes.split("µ")
-                let details = txt.shift().replace("--","System --- ")
-                let atitle = d.date.toUpperCase() + ': ' + d.item + ' - ' + details
-                let lines = me.appendText(atitle,txt,atx,aty,10 * me.stepx)
-                return lines
-            })
-    }
+//     ffffillOthers(oy, pos = '', pp = 0) {
+//         let me = this
+//         let box_spacing_y = 8.0
+//         let box_spacing_x = 10.0
+//         let base_x = 12.25
+//         let min = 0 + pp*10
+//         let max = 4 + pp*10
+//         let right_offset = 0
+//
+//         let d_notes = this.character.append('g')
+//             .attr('class', 'notes_on_others')
+//             .attr('id', 'notes_on_others')
+//             .data(this.data['others'])
+//         if (pos == '') {
+//             this.title('Others', 17 * this.stepx, oy , d_notes)
+//         }
+//         oy += 0.5*this.stepy
+//         if (this.blank) {
+//             return
+//         }
+//         let d_notes_in = d_notes.enter()
+//             .append('g')
+//             .attr('class', 'others_notes')
+//             .attr('id',(d) => 'others_note_'+d['idx'] )
+//             .attr('fake',function (d) {
+//                 let atx = (base_x + 0.4) * me.stepx
+//                 let spacing_y = 1
+//                 if (d.idx>0){
+//                     spacing_y = parseInt(d3.select('#others_note_'+(d.idx-1)).attr("fake"))+1
+//                 }
+//                 oy += (spacing_y) * me.medium_font_size*1.25
+//                 let aty = oy
+//                 me.daddy = d3.select("#notes_on_others")
+//                 let txt = d.notes.split("µ")
+//                 let details = txt.shift().replace("--","System --- ")
+//                 let atitle = d.date.toUpperCase() + ': ' + d.item + ' - ' + details
+//                 let lines = me.appendText(atitle,txt,atx,aty,10 * me.stepx)
+//                 return lines
+//             })
+//     }
 
     fillNatureNotes(oy) {
         let me = this
-        let base_x = 1.25
+        let base_x = 12.25
         let topic = me.character.append('g')
             .attr('class', 'notes_on_archetypes')
         let sub = topic.append("g")
                 .attr('id', 'archetypes_entries')
-        me.title('Archetypes', 6.5 * me.stepx, oy , topic)
+        me.title('Archetypes', 17.5 * me.stepx, oy , topic)
         oy += 0.5 * me.stepy
         if (me.blank) return
         let entry = sub.selectAll(".archetypes_entry")
@@ -575,7 +636,7 @@ class CrossOverSheet extends WawwodSheet {
             .attr('class', 'notes_on_meritsflaws')
         let sub = topic.append("g")
                 .attr('id', 'meritsflaws_entries')
-        me.title('Merits & Flaws', 6.5 * me.stepx, oy , topic)
+        me.title('Merits & Flaws', 6.25 * me.stepx, oy , topic)
         oy += 0.5 * me.stepy
         if (me.blank) return
         let entry = sub.selectAll(".meritsflaws_entry")
@@ -629,12 +690,15 @@ class CrossOverSheet extends WawwodSheet {
             me.fillNewManyForms(28 * me.stepy)
         } else if (me.page === 2) {
             me.fillNatureNotes(3 * me.stepy)
-            me.fillMeritsFlawsNotes(16 * me.stepy)
-            me.fillDisciplinesNotes(3 * me.stepy)
+            me.fillMeritsFlawsNotes(3 * me.stepy)
+            me.fillExperience(24.0 * me.stepy)
         } else if (me.page === 3) {
             me.fillRiteNotes(3 * me.stepy)
             me.fillOthers(3 * me.stepy)
-            me.fillExperience(24.0 * me.stepy)
+        } else if (me.page === 4) {
+            me.fillDisciplinesNotes(3 * me.stepy,0)
+        } else if (me.page === 5) {
+            me.fillDisciplinesNotes(3 * me.stepy,1)
         }
     }
 
