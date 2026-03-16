@@ -64,6 +64,7 @@ class Deed(models.Model):
         html = []
         html.append("<div class='html_block'>")
         html.append("<table class='renown'>")
+        html.append(f"<tr><th colspan='5'>Adventure: {adventure.name}</th></tr>")
         col1 = "#e0e0e0"
         col2 = "#f0e0e0"
         x = col1
@@ -86,6 +87,29 @@ class Deed(models.Model):
         html.append("</div>")
         return "".join(html)
 
+    @classmethod
+    def players_to_html(cls,adventure=None):
+        adventure_deeds = adventure.deeds_map_str
+        deeds = cls.objects.all().order_by('category', 'notes', 'description')
+        cat = ''
+        html = []
+        html.append("<div class='html_block'>")
+        html.append("<table class='renown'>")
+        html.append(f"<tr><th colspan='5'>Adventure Records: {adventure.name}</th></tr>")
+        col1 = "#e0e0e0"
+        col2 = "#f0e0e0"
+        x = col1
+        html.append(f'<tr><th>{"Description"}</th><th>{"Glory"}</th><th>{"Honor"}</th><th>{"Wisdom"}</th></tr>')
+        for deed in deeds:
+            if deed.code in adventure_deeds:
+                html.append(f'<tr><td class="text" style="background:{x};"><tt>[{deed.code}]</tt> {deed.description}</td><td rowspan=2  style="background:{x};">{deed.glory}</td><td rowspan=2  style="background:{x};">{deed.honor}</td><td rowspan=2  style="background:{x};">{deed.wisdom}</td></tr><tr  style="background:{x};"><td class="notes"  style="background:{x};">{deed.notes}</td></tr>')
+            if x == col1:
+                x = col2
+            else:
+                x = col1
+        html.append("</table>")
+        html.append("</div>")
+        return "".join(html)
 
 
 class DeedAdmin(admin.ModelAdmin):

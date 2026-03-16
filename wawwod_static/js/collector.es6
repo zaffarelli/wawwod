@@ -433,6 +433,7 @@ class WawwodCollector {
             me.rebootLinks();
         });
     }
+
     registerSingler() {
         let me = this;
         $('.singler').off().on('click', function (event) {
@@ -465,6 +466,50 @@ class WawwodCollector {
         });
     }
 
+    registerSelects() {
+        let me = this;
+        $('.deed_select').off().on('click', function (event) {
+            event.preventDefault()
+            event.stopPropagation()
+            let params = $(this).attr('params')
+            $.ajax({
+                url: 'ajax/deed_select/',
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                data: {
+                    params: params
+                },
+                dataType: 'json',
+                success: function (answer) {
+                    //$('#'+param).html(answer.report)
+                    console.log(answer)
+                    let words = answer['deed'].split("___")
+                    let target = '#'+words[0]
+                    if (words[1] == "on"){
+                        $(target).html('<i class="fas fa-check"></i>')
+                        $(target).removeClass("no")
+                        $(target).addClass("yes")
+                    }else{
+                        $(target).html('<i class="fas fa-times"></i>')
+                        $(target).removeClass("yes")
+                        $(target).addClass("no")
+                    }
+                    me.rebootLinks()
+                },
+                error: function (answer) {
+                    console.error('Error... ' + answer)
+                    me.rebootLinks();
+                },
+            });
+
+            //me.rebootLinks();
+        });
+    }
+
+
     rebootLinks() {
         let me = this;
         _.defer(function () {
@@ -479,6 +524,7 @@ class WawwodCollector {
             me.registerTriggers();
             me.registerJump();
             me.registerLineLink();
+            me.registerSelects();
             $('#go').off();
             $('#go').on('click', function (event) {
                 event.preventDefault();
@@ -687,11 +733,11 @@ class WawwodCollector {
                     success: function (answer) {
                         $('.details').html(answer)
                         $('#userinput').val("");
-                        rebootLinks();
+                        me.rebootLinks();
                     },
                     error: function (answer) {
                         $('.details').html('oops, broken')
-                        rebootLinks();
+                        me.rebootLinks();
                     },
 
                 });

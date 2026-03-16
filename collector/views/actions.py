@@ -146,11 +146,11 @@ def deed_select(request):
     if is_ajax(request):
         params = request.POST.get("params")
         words = params.split("__")
+        deed_code = words[1]
+        adventure = words[0]
         if len(words) == 2:
             from collector.models.adventures import Adventure
-            deed_code = words[1]
-            adventure = words[0]
-            print(deed_code, adventure)
+            print("deed",deed_code,"adventure", adventure)
             adventure = Adventure.objects.filter(acronym=adventure).first()
             if adventure:
                 result = adventure.update_deeds(deed_code)

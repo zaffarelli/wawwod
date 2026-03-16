@@ -113,7 +113,8 @@ class Creature(models.Model):
     notes_on_naturedemeanor = models.TextField(max_length=2048, default='', blank=True)
     notes_on_traits = models.TextField(max_length=2048, default='', blank=True)
     # adventure = models.ForeignKey(Adventure, on_delete=models.SET_NULL, null=True, default=None, blank=True)
-    adventure = models.CharField(max_length=8, default='', blank=True)
+    adventure = models.CharField(max_length=32, default='', blank=True)
+    season = models.CharField(max_length=32, default='', blank=True)
 
     experience_expenditure = models.TextField(max_length=1024, default='', blank=True)
     freebies_exp_offset = models.IntegerField(default=0)
@@ -934,6 +935,10 @@ class Creature(models.Model):
             a = Adventure.objects.filter(acronym=self.adventure).first()
             if a:
                 self.chronicle = a.chronicle
+                if a.season not in self.season:
+                    words = self.season.split(" ")
+                    words.append(a.season)
+                    self.season = " ".join(words)
         #     if self.chronicle != self.adventure.chronicle.acronym:
         #         self.chronicle = self.adventure.chronicle.acronym
         # else:
@@ -2622,7 +2627,7 @@ def randomize_all(modeladmin, request, queryset):
 
 class CreatureAdmin(admin.ModelAdmin):
     list_display = [  # 'domitor',
-        'name', 'age', 'adventure', 'chronicle', "equipment", 'edge_for', 'cast_figure', 'family',
+        'name', 'age', 'season', 'adventure', 'chronicle', "equipment", 'edge_for', 'cast_figure', 'family',
         'freebies', 'player', 'experience_expenditure', "experience", "exp_pool", "exp_spent",
         'family', 'groupspec', 'status', 'condition', "freebies_exp_offset"]
     ordering = ['-trueage', 'name', 'group', 'creature']
@@ -2634,7 +2639,7 @@ class CreatureAdmin(admin.ModelAdmin):
                    'group',
                    'groupspec']
     search_fields = ['name', 'groupspec', 'sire']
-    list_editable = ['groupspec', 'adventure', 'chronicle', 'cast_figure', "player", "experience", "exp_pool", "exp_spent",
+    list_editable = ['groupspec', 'adventure', 'cast_figure', "player", "experience", "exp_pool", "exp_spent",
                      "experience_expenditure"]
 
     list_per_page = 20

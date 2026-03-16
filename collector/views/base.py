@@ -132,6 +132,17 @@ def renown(request):
     return JsonResponse(answer)
 
 
+def renown_records(request):
+    from collector.models.adventures import Adventure
+    print("Renown Records")
+    adventure = Adventure.current()
+    from collector.models.deeds import Deed
+    html = Deed.players_to_html(adventure)
+    answer = {'html': html}
+
+    return JsonResponse(answer)
+
+
 @login_required
 def index(request):
     if not request.user.is_authenticated:

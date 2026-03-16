@@ -123,7 +123,7 @@ body {
   position: fixed;
   top: auto;
   right: 10px;
-  bottom: 0px;
+  bottom: 1em;
   left: auto;
   display: block;
   z-index: 510;
@@ -827,6 +827,7 @@ svg .node_circle {
   text-align: center;
   font-family: TexteLibre;
   font-size: 11px;
+  background:black;
 
   & span.display {
     cursor: pointer;
@@ -1306,4 +1307,21 @@ fieldset{
         }
     }
 }
+
+
+.deed_select{
+    display:inline-block;
+    padding:3pt;
+    border-radius:3pt;
+    width:2ex;
+    text-align:center;
+    &.yes{
+        background:aqua;
+        }
+    &.no{
+        background:silver;
+        }
+    }
+
 }
+

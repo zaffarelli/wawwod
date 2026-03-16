@@ -7,19 +7,18 @@ def commons(request):
     from collector.models.adventures import Adventure
     from collector.models.seasons import Season
     # Adventure.set_current("REB")
-    adventure = Adventure.current()
-    chronicle = Chronicle.current()
-    season = Season.current()
-    an = ""
-    ac = ''
+    adventure, chronicle, season = Adventure.current_full()
     if adventure:
-        an = adventure.name
-        ac = adventure.acronym
-    repair_mode = False
-    if not repair_mode:
-        print("** Context Processor:", chronicle.name, season.name, an)
-        context = {'chronicle': chronicle.acronym, 'chronicle_name': chronicle.name, 'chronicle_logo': f'collector/svg/{chronicle.image_logo}', "season": season.acronym, "adventure": ac, "adventure_name": an}
+        repair_mode = False
     else:
-        context = {'chronicle': '', 'chronicle_name': '', 'chronicle_logo': "collector/" , "season": '',"adventure": ""}
+        repair_mode = True
+    if not repair_mode:
+        print("** Context Processor:", chronicle.name, season.name, adventure.name)
+        context = {'chronicle': chronicle.acronym, 'chronicle_name': chronicle.name,
+                   'chronicle_logo': f'collector/svg/{chronicle.image_logo}', "season": season.acronym, "adventure": adventure.code,
+                   "adventure_name": adventure.name}
+    else:
+        print("** Context Processor: Adventure not found!")
+        context = {'chronicle': '', 'chronicle_name': '', 'chronicle_logo': "collector/", "season": '', "adventure": ""}
 
     return context

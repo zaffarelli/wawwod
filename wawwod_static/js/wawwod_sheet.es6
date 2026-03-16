@@ -7,7 +7,7 @@ class WawwodSheet {
         this.disposition = "portrait"
         this.button_ox = 1
         this.button_oy = 1
-        this.max_pages = 6
+        this.max_pages = 8
     }
 
     setCollector(collector){

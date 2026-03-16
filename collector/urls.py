@@ -3,7 +3,7 @@ from collector.views.base import index, get_list, updown, userinputastext, useri
     change_adventure, \
     display_gaia_wheel, display_dashboard, display_lineage, display_crossover_sheet, add_kindred, svg_to_pdf, \
     save_to_svg, display_sept, moon_phase, calendar, weaver_code, display_sept_rosters, quaestor, adventure_sheet, \
-    display_chronicle_map, add_kinfolk, add_mortal, bulk_add, display_groups, renown
+    display_chronicle_map, add_kinfolk, add_mortal, bulk_add, display_groups, renown, renown_records
 from collector.views.actions import change_settings, extract_mechanics, extract_per_group, extract_raw, \
     extract_roster, randomize, balance, refix_all, experiment, deed_select
 from collector.views.creature_views import CreatureDetailView
@@ -39,6 +39,7 @@ urlpatterns = [
     re_path(r'^ajax/collector_action/refix_all/$', refix_all, name='refix_all'),
     re_path(r'^ajax/collector_action/experiment/$', experiment, name='experiment'),
     re_path(r'^ajax/collector_action/renown/$', renown, name='renown'),
+    re_path(r'^ajax/collector_action/renown_records/$', renown_records, name='renown_records'),
     re_path(r'^ajax/action/settings/$', change_settings, name='change_settings'),
     # re_path(r'^ajax/collector_action/refix_all/$', refix_all, name='refix_all'),
     re_path(r'^api/text/(?P<slug>\w+)/$', extract_raw, name='extract_raw'),

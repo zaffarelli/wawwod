@@ -342,8 +342,8 @@ class CrossOverSheet extends WawwodSheet {
 
     fillTimeline(oy){
         let me = this
-        let base_x = 10.5*me.stepx
-        let width_x = 12*me.stepx
+        let base_x = 12.5*me.stepx
+        let width_x = 10*me.stepx
         let timeline = me.character.append('g')
             .attr('class', 'timeline')
         me.title('Timeline', base_x + 5.5*me.stepx  , oy, timeline)
@@ -695,12 +695,15 @@ class CrossOverSheet extends WawwodSheet {
             me.fillMeritsFlawsNotes(3 * me.stepy)
         } else if (me.page === 2) {
             me.fillRiteNotes(3 * me.stepy)
-            me.fillOthers(3 * me.stepy)
         } else if (me.page === 3) {
             me.fillDisciplinesNotes(3 * me.stepy,0)
         } else if (me.page === 4) {
             me.fillDisciplinesNotes(3 * me.stepy,1)
+        } else if (me.page === 5) {
+            me.fillDisciplinesNotes(3 * me.stepy,1)
+            me.fillOthers(3 * me.stepy)
         }
+
     }
 
     perform(character_data) {

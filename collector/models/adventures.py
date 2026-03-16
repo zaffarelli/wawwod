@@ -12,12 +12,13 @@ logger = logging.Logger(__name__)
 
 
 class Adventure(models.Model):
-    name = models.CharField(max_length=128, primary_key=True)
+    name = models.CharField(max_length=128, default="")
     chronicle = models.CharField(max_length=8, default='WOD', blank=True)
     season = models.CharField(max_length=8, default='DEF')
+    season_order = models.IntegerField(default=0, blank=True)
     protagonists = models.TextField(default="", max_length=4096, blank=True)
     team = models.TextField(default="", max_length=1024, blank=True)
-    acronym = models.CharField(max_length=32, default='', blank=True)
+    acronym = models.CharField(max_length=32, default='', primary_key=True)
     notes = models.TextField(max_length=1024, default='', blank=True)
     players_starting_freebies = models.IntegerField(default=15, blank=True)
     is_current = models.BooleanField(default=False, blank=True)
@@ -39,16 +40,16 @@ class Adventure(models.Model):
         deeds_map = []
         items = self.deeds_map_str.split(self.DEED_SEP)
         for item in items:
-            datum = item.strip()
-            deeds_map.append(datum)
+            deeds_map.append(item.strip())
+        print("deeds map",deeds_map)
         return deeds_map
 
     def deeds_to_string(self, json_data_list):
         self.deeds_map_str = ""
         data = []
         for item in json_data_list:
-            datum = item
-            data.append(item)
+            if len(item) > 0:
+                data.append(item)
         self.deeds_map_str = self.DEED_SEP.join(data)
 
     def push_deed(self, json_deed):
@@ -67,7 +68,7 @@ class Adventure(models.Model):
                     break
         return found
 
-    def update_deeds(self,code):
+    def update_deeds(self, code):
         result = ""
         if code in self.deeds_map_str:
             updated_deeds = []
@@ -81,9 +82,13 @@ class Adventure(models.Model):
             self.deeds_to_string(updated_deeds)
         else:
             deeds = self.string_to_deeds()
+            print(deeds)
+            print(code)
             deeds.append(code)
+            print(deeds)
             self.deeds_to_string(deeds)
             result = f"{self.acronym}__{code}___on"
+        self.save()
         return result
 
     def fix(self):
@@ -141,11 +146,23 @@ class Adventure(models.Model):
             return all.first()
         return None
 
+    @classmethod
+    def current_full(cls):
+        all = cls.objects.filter(is_current=True)
+        if len(all) == 1:
+            from collector.models.chronicles import Chronicle
+            adventure = all.first()
+            chronicle = Chronicle.objects.filter(acronym=adventure.chronicle).first()
+            season = Season.objects.filter(acronym=adventure.season).first()
+            return adventure, chronicle, season
+        return None, None, None
+
 
 class AdventureAdmin(admin.ModelAdmin):
-    list_display = ['name', 'is_current', 'acronym', 'season', 'chronicle', 'players_starting_freebies', 'team',
+    list_display = ['acronym', 'name', 'season_order', 'is_current', 'season', 'chronicle', 'players_starting_freebies',
+                    'team',
                     'notes']
     ordering = ['season', 'acronym']
-    list_editable = ['acronym', 'is_current', 'chronicle', 'players_starting_freebies']
+    list_editable = ['name', 'is_current', 'chronicle', 'season_order', 'players_starting_freebies']
     from collector.utils.helper import refix
     actions = [refix]
