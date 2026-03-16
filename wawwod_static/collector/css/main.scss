@@ -1265,3 +1265,45 @@ fieldset{
     top: auto;
     width:60ex;
 }
+
+.html_block{
+    width:auto;
+    margin:0 30vw;
+    height:90vh;
+    overflow-y:auto;
+    & table.renown{
+
+    font-family:"Roboto";
+    font-size:12pt;
+    border-radius:10pt;
+    padding:10pt;
+    background: white;
+    border:1pt solid black;
+    & tr{
+//         minimum-height:3em;
+        padding:2pt;
+
+        & td{
+            border-radius:5pt;
+            padding:3pt;
+            background:#e0e0e0;
+            text-align:center;
+            width: 10ex;
+            &.text{
+                width: 70ex;
+                text-align:justify;
+            }
+            &.notes{
+                text-align:right;
+                font-style:italic;
+            }
+        }
+        & th{
+            border-radius:5pt;
+            background:#C0C0C0;
+            padding:3pt;
+
+        }
+    }
+}
+}

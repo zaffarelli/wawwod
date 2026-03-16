@@ -45,6 +45,13 @@ class Discipline(models.Model):
     def __str__(self):
         return f'{self.code})'
 
+    @property
+    def is_ritualistic(self):
+        result = False
+        if self.path != "":
+            result = True
+        return result
+
 
 class DisciplineAdmin(admin.ModelAdmin):
     list_display = ['code', 'path', 'alternative_name', 'page', 'is_linear', 'description', 'technical_notes', ]

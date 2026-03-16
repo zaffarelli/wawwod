@@ -129,20 +129,16 @@ def update_scene(request, id: None, field: None):
 
 
 def display_map(request, slug=None):
-    from collector.utils.data_collection import get_districts
+    # from collector.utils.data_collection import get_districts
+    from storytelling.models.cities import City
     response = {'html': '', 'data': {}}
     print("Display map:", slug)
     if is_ajax(request):
         if not slug:
             slug = 'munich'
-        # elif slug == "MU":
-        #     slug = "Munich"
-        # elif slug == "HH":
-        #     slug = "Hamburg"
-        # elif slug == "MN":
-        #     slug = "Minneapolis"
         x = slug.replace('_', ' ')
-        context = get_districts(x)
+        city = City.objects.get(code=x)
+        context = city.get_districts()
         response['data'] = context
     return JsonResponse(response)
 

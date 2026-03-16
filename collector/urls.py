@@ -1,9 +1,11 @@
 from django.urls import path, re_path
-from collector.views.base import index, get_list, updown, userinputastext, userinput, add_garou, change_chronicle, change_adventure,\
+from collector.views.base import index, get_list, updown, userinputastext, userinput, add_garou, change_chronicle, \
+    change_adventure, \
     display_gaia_wheel, display_dashboard, display_lineage, display_crossover_sheet, add_kindred, svg_to_pdf, \
-    save_to_svg, display_sept, moon_phase, calendar, weaver_code, display_sept_rosters, quaestor, adventure_sheet, display_chronicle_map, add_kinfolk, add_mortal, bulk_add, display_groups
-from collector.views.actions import change_settings, refix_all, extract_mechanics, extract_per_group, extract_raw, \
-    extract_roster, randomize, balance, refix_all
+    save_to_svg, display_sept, moon_phase, calendar, weaver_code, display_sept_rosters, quaestor, adventure_sheet, \
+    display_chronicle_map, add_kinfolk, add_mortal, bulk_add, display_groups, renown
+from collector.views.actions import change_settings, extract_mechanics, extract_per_group, extract_raw, \
+    extract_roster, randomize, balance, refix_all, experiment, deed_select
 from collector.views.creature_views import CreatureDetailView
 
 urlpatterns = [
@@ -23,7 +25,8 @@ urlpatterns = [
     re_path(r'^sept/(?P<slug>\w+)/text/$', display_sept_rosters, name='display_sept_rosters'),
     re_path(r'^ajax/display/crossover_sheet/$', display_crossover_sheet, name='display_crossover_sheet'),
     re_path(r'^ajax/display/crossover_sheet/(?P<slug>\w+)/$', display_crossover_sheet, name='display_crossover_sheet'),
-    re_path(r'^ajax/display/crossover_sheet/(?P<slug>\w+)/(?P<option>\w+)/$', display_crossover_sheet, name='display_crossover_sheet'),
+    re_path(r'^ajax/display/crossover_sheet/(?P<slug>\w+)/(?P<option>\w+)/$', display_crossover_sheet,
+            name='display_crossover_sheet'),
     re_path(r'^ajax/view/creature/(?P<slug>\w+)/$', CreatureDetailView.as_view(), name='view_creature'),
     re_path(r'^ajax/editable/updown/$', updown, name='updown'),
     re_path(r'^ajax/bulk/$', bulk_add, name='bulk_add'),
@@ -34,6 +37,8 @@ urlpatterns = [
     re_path(r'^ajax/collector_action/add_kindred/(?P<slug>\w+)/$', add_kindred, name='add_kindred'),
     re_path(r'^ajax/collector_action/add_mortal/(?P<slug>\w+)/$', add_mortal, name='add_mortal'),
     re_path(r'^ajax/collector_action/refix_all/$', refix_all, name='refix_all'),
+    re_path(r'^ajax/collector_action/experiment/$', experiment, name='experiment'),
+    re_path(r'^ajax/collector_action/renown/$', renown, name='renown'),
     re_path(r'^ajax/action/settings/$', change_settings, name='change_settings'),
     # re_path(r'^ajax/collector_action/refix_all/$', refix_all, name='refix_all'),
     re_path(r'^api/text/(?P<slug>\w+)/$', extract_raw, name='extract_raw'),
@@ -48,6 +53,6 @@ urlpatterns = [
     re_path(r'^calendar/(?P<year>\w+)/$', calendar, name='calendar'),
     re_path(r'^weaver_code/(?P<code>\w+)/$', weaver_code, name='weaver_code'),
     re_path(r'^ajax/action/quaestor/(?P<slug>\w+)/$', quaestor, name='quaestor'),
+    re_path(r'^ajax/deed_select/$', deed_select, name='deed_select'),
 
 ]
-

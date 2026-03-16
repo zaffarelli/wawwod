@@ -579,6 +579,7 @@ def get_districts(cityname):
     #         advacro = ""
 
     cities = City.objects.filter(code=cityname)
+    print(f"Searching city... {cityname}")
     settings = {"player_safe": not chronicle.is_storyteller_only}
     context = {'districts': {}, 'hotspots': [], 'settings': settings, 'fontset':[]}
     print(f"----- {len(cities)}")

@@ -2,7 +2,7 @@ class CrossOverSheet extends WawwodSheet {
     constructor(settings, parent) {
         super(settings, parent);
         this.init();
-        this.release = "VTM20-2026.02.24";
+        this.release = "VTM20-2026.03.09";
     }
 
     init() {
@@ -40,14 +40,14 @@ class CrossOverSheet extends WawwodSheet {
 
             // Creature
             me.decorationText(12, 3.2, 0, 'middle', me.creature_font, me.fat_font_size*2.0, "#FFFFFF7f", "#FFFFFF7f", 10, txt, me.back, 0.75);
-            me.decorationText(12, 3.2, 0, 'middle', me.creature_font, me.fat_font_size*2.0, "#DDDDDD7f", "#EEEEEE7f", 1, txt, me.back, 1);
+            me.decorationText(12, 3.2, 0, 'middle', me.creature_font, me.fat_font_size*2.0, "#909090af", "#EEEEEE7f", 1, txt, me.back, 1);
 
             // Chronicle
             me.decorationText(12, 2.75, 0, 'middle', me.logo_font, me.fat_font_size, "#FFFFFFcf", "#FFFFFFcf", 10, me.pre_title, me.back, 0.75);
             me.decorationText(12, 2.75, 0, 'middle', me.logo_font, me.fat_font_size, "#303030", "#6060607f",1, me.pre_title, me.back,1);
 
-            me.decorationText(3.5, 2.25, 0, 'middle', me.title_font, me.medium_font_size, me.draw_fill, me.draw_stroke, 0.5, "What a Wonderful World of Darkness", me.back);
-            //me.decorationText(2.5, 2.25, 0, 'middle', me.base_font, me.medium_font_size, me.draw_fill, me.draw_stroke, 0.5, "World of Darkness", me.back);
+            me.decorationText(3.0, 2.0, 0, 'middle', me.title_font, me.medium_font_size, me.draw_fill, me.draw_stroke, 0.5, "What a Wonderful", me.back);
+            me.decorationText(3.0, 2.3, 0, 'middle', me.base_font, me.medium_font_size, me.draw_fill, me.draw_stroke, 0.5, "World of Darkness", me.back);
         } else if (me.page === 1) {
             me.crossline(1, 2, 35);
             me.crossline(23, 2, 35);
@@ -55,7 +55,7 @@ class CrossOverSheet extends WawwodSheet {
             me.midline(35, 1, 23);
 
             if (me.data['creature']=="garou"){
-                me.crossline(9.75, 4, 27);
+                me.crossline(12, 4, 27);
                 me.midline(28.0, 1, 23);
             }else{
                 me.crossline(9.75, 4, 35);
@@ -86,11 +86,11 @@ class CrossOverSheet extends WawwodSheet {
             }
         }
         //me.decorationText(22.5, 1.75, 0, 'end', me.base_font, me.medium_font_size, me.draw_fill, me.draw_stroke, 0.5, me.pre_title, me.back);
-        me.decorationText(22.5, 2.25, 0, 'end', me.base_font, me.medium_font_size, me.draw_fill, me.draw_stroke, 0.5, me.scenario+" ("+me.post_title+")", me.back);
+        me.decorationText(22.5, 2.25, 0, 'end', me.base_font, me.medium_font_size, me.draw_fill, me.draw_stroke, 0.5, me.scenario+" "+me.post_title, me.back);
         //me.decorationText(22.5, 2.25, 0, 'end', me.base_font, me.medium_font_size, me.draw_fill, me.draw_stroke, 0.5, "pre_title", me.back);
-        me.decorationText(1.5, 35.8, -16, 'start', me.base_font, me.small_font_size, me.draw_fill, me.draw_stroke, 0.5, me.guideline, me.back);
-        me.decorationText(22.5, 35.7, -16, 'end', me.base_font, me.small_font_size, me.draw_fill, me.draw_stroke, 0.5, "WaWWoD Cross+Over Sheet "+me.release+" ©2026, Red Fox Studios.", me.back);
-        me.decorationText(22.5, 35.9, -16, 'end', me.base_font, me.small_font_size*.5, me.draw_fill, me.draw_stroke, 0.5, "Red Fox Studios are a subsidiary of Pentex Inc. zaffarelli@gmail.com", me.back);
+        me.decorationText(1.5, 35.5, -16, 'start', me.base_font, me.small_font_size, me.draw_fill, me.draw_stroke, 0.5, me.guideline, me.back);
+        me.decorationText(22.5, 35.5, -16, 'end', me.base_font, me.small_font_size, me.draw_fill, me.draw_stroke, 0.5, "WaWWoD Cross+Over Sheet "+me.release+" ©2026, Red Fox Studios.", me.back);
+        me.decorationText(22.5, 35.7, -16, 'end', me.base_font, me.small_font_size*.75, me.draw_fill, me.draw_stroke, 0.5, "Red Fox Studios are a subsidiary of Pentex Inc. zaffarelli@gmail.com", me.back);
         if (me.blank) {
             me.decorationText(22.5, 34.8, 0, 'end', me.base_font, me.small_font_size, me.draw_fill, me.draw_stroke, 0.5, 'Challenge: you make us laugh punk!', me.back);
         } else {
@@ -115,7 +115,7 @@ class CrossOverSheet extends WawwodSheet {
         let box_spacing_y = 3.0;
         let background_note = me.character.append('g')
             .attr('class', 'background_notes')
-        me.title('About Backgrounds', 5.5 * me.stepx, oy, background_note)
+        me.title('About Backgrounds', 6.5 * me.stepx, oy, background_note)
         oy += 0.5*me.stepy
         if (me.blank) {
             return;
@@ -138,7 +138,7 @@ class CrossOverSheet extends WawwodSheet {
             .attr("rx", "8pt")
             .attr("ry", "8pt")
             .attr("width", function (d) {
-                return me.stepx * 7.5;
+                return me.stepx * 9.5;
             })
             .attr("height", function (d) {
                 return me.stepy * (box_spacing_y - 0.35);
@@ -256,6 +256,7 @@ class CrossOverSheet extends WawwodSheet {
         let column_offset = 0
         let stored_oy = oy
         console.log("Rites")
+        console.log(me.data.ritualistic_discipline)
         let topic = me.character.append('g')
             .attr('class', 'rite_notes')
         let sub = topic.append("g")
@@ -686,18 +687,18 @@ class CrossOverSheet extends WawwodSheet {
             me.fillSpecial(27.5 * me.stepy)
         } else if (me.page === 1) {
             me.fillBackgroundNotes(3 * me.stepy)
-            me.fillTimeline(3 * me.stepy)
-            me.fillNewManyForms(28 * me.stepy)
-        } else if (me.page === 2) {
             me.fillNatureNotes(3 * me.stepy)
+            me.fillNewManyForms(28 * me.stepy)
+            me.fillExperience(21.0 * me.stepy)
+        } else if (me.page === 5) {
+            me.fillTimeline(3 * me.stepy)
             me.fillMeritsFlawsNotes(3 * me.stepy)
-            me.fillExperience(24.0 * me.stepy)
-        } else if (me.page === 3) {
+        } else if (me.page === 2) {
             me.fillRiteNotes(3 * me.stepy)
             me.fillOthers(3 * me.stepy)
-        } else if (me.page === 4) {
+        } else if (me.page === 3) {
             me.fillDisciplinesNotes(3 * me.stepy,0)
-        } else if (me.page === 5) {
+        } else if (me.page === 4) {
             me.fillDisciplinesNotes(3 * me.stepy,1)
         }
     }
@@ -710,6 +711,9 @@ class CrossOverSheet extends WawwodSheet {
         if (me.data['creature'] == 'kindred'){
             me.creature_font = "Girassol"
             me.logo_font = "Angel wish"
+        }else if (me.data['creature'] == 'garou'){
+            me.creature_font = "Girassol"
+            me.logo_font = "Apocalypse Grunge"
         }
         me.drawWatermark();
         if (me.data['condition'] == "DEAD") {

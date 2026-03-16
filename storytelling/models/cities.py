@@ -5,6 +5,8 @@ import requests
 import json
 import logging
 
+from collector.utils.wod_reference import FONTSET
+
 logger = logging.Logger(__name__)
 
 
@@ -138,6 +140,85 @@ class City(models.Model):
     def toJSON(self):
         jstr = json.dumps(self, default=json_default, sort_keys=True, indent=4)
         return jstr
+
+    def get_districts(self):
+        from collector.models.chronicles import Chronicle
+        from storytelling.models.districts import District
+        from storytelling.models.hotspots import HotSpot
+        from collector.models.adventures import Adventure
+        import json
+        chronicle = Chronicle.current()
+        adventure = Adventure.current()
+        settings = {"player_safe": not chronicle.is_storyteller_only}
+        context = {'districts': {}, 'hotspots': [], 'settings': settings, 'fontset': []}
+        self.create_districts()
+        districts = District.objects.filter(city=self)
+        for d in districts:
+            context['districts'][d.code] = {
+                'code': d.code,
+                'fill': d.color,
+                'title': d.title,
+                'status': d.status,
+                'district_name': d.district_name,
+                'adventures': d.adventures,
+                'sector_name': d.sector_name,
+                'population': d.population,
+                'population_details': d.population_details,
+                'camarilla_resources': d.camarilla_resources,
+                'camarilla_power': d.camarilla_power,
+                'camarilla_intelligence': d.camarilla_intelligence,
+                'camarilla_leisure': d.camarilla_leisure
+            }
+        hotspots = HotSpot.objects.filter(city=self)
+        # print(f"***** {self.name} {len(hotspots)}")
+        for hs in hotspots:
+            context['hotspots'].append({
+                'type': 'feature',
+                'geometry': {
+                    'type': "Point",
+                    "coordinates": [hs.latitude, hs.longitude]
+                },
+                'properties': {
+                    'name': hs.name,
+                    'color': hs.color,
+                    'type': hs.type,
+                    'code': hs.id,
+                    'is_public': hs.is_public,
+                    'visible': True,
+                    'pos_visible': 500,
+                    'hyperlink': hs.hyperlink,
+                    'episode': hs.episode
+                }
+            })
+        # print(context["hotspots"])
+        context['fontset'] = FONTSET
+        x = json.dumps(context, indent=4, sort_keys=True)
+        return x
+
+    def create_districts(self):
+        from storytelling.models.districts import District
+        all = District.objects.filter(city=self)
+        if len(all)>0:
+            return
+        with open(
+                f"/home/zaffarelli/Projects/wawwod/storytelling/static/storytelling/geojson/{self.geojson_file}.geojson") as f:
+            lines = f.readlines()
+        for line in lines:
+            if line.startswith('{ "type": "Feature",'):
+                sanitized_line = line.strip()
+                if sanitized_line.endswith(','):
+                    sanitized_line = line[:-2]
+                datum = json.loads(sanitized_line)
+                district_code = f"{self.code}_{datum['properties']['GEOID']}"
+                print(district_code)
+                ds = District.objects.filter(code=district_code)
+                if len(ds) == 0:
+                    d = District()
+                    d.code = district_code
+                    d.city = self
+                    d.district_name = datum['properties']['NAME']
+                    d.sector_name = datum['properties']['STATEFP']
+                    d.save()
 
 
 class CityAdmin(admin.ModelAdmin):

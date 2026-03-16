@@ -1,6 +1,9 @@
 from django.http import HttpResponse, JsonResponse
 from django.shortcuts import redirect
+from django.views.decorators.csrf import csrf_exempt
+
 from collector.models.creatures import Creature
+from collector.utils.helper import is_ajax
 from collector.utils.wod_reference import get_current_chronicle
 import random
 
@@ -135,6 +138,89 @@ def extract_mechanics(request):
 
 def change_settings(request):
     pass
+
+
+@csrf_exempt
+def deed_select(request):
+    answer = {}
+    if is_ajax(request):
+        params = request.POST.get("params")
+        words = params.split("__")
+        if len(words) == 2:
+            from collector.models.adventures import Adventure
+            deed_code = words[1]
+            adventure = words[0]
+            print(deed_code, adventure)
+            adventure = Adventure.objects.filter(acronym=adventure).first()
+            if adventure:
+                result = adventure.update_deeds(deed_code)
+                answer["deed"] = result
+            else:
+                print(f"Adventure {adventure} not found!")
+
+    return JsonResponse(answer)
+
+
+def experiment(request):
+    print("Experimental")
+
+    # from collector.models.deeds import Deed
+    # html = Deed.all_to_html()
+
+    def roll_hand(dice=4, diff=6):
+        from collector.utils.helper import roll
+        success = 0
+        nominal_success = 0
+        cancel = 0
+        pool = []
+        for die in range(dice):
+            pool.append(roll())
+        for die in pool:
+            if die > diff:
+                success += 1
+            elif die == diff:
+                nominal_success += 1
+            elif die == 1:
+                cancel += 1
+        if nominal_success >= cancel:
+            nominal_success -= cancel
+        else:
+            nominal_success = 0
+            cancel -= nominal_success
+        if success > 0:
+            success += nominal_success
+        else:
+            if nominal_success < cancel:
+                success = -1
+            else:
+                success = nominal_success
+        return success, pool
+
+    html = []
+    html.append("<div class='html_block'>")
+    html.append("<table class='renown'>")
+    much = 100000
+    total = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    for x in range(much):
+        dice = 12
+        diff = 6
+        s, det = roll_hand(dice=dice, diff=diff)
+        total[s + 1] += 1
+        # html.append(f"<tr><th>{dice} dice vs diff {diff}</th><td>{s}</td><td class='text'>{det}</td></tr>")
+    html.append(f"<tr><th>TOTAL</th><td colspan=2 class='text'>{total}</td></tr>")
+    botch = total[0]
+    failure = total[1]
+    success = 0
+    for k, v in enumerate(total):
+        if k > 1:
+            success += v
+    html.append(
+        f"<tr><th>Ratio</th><td colspan=2>{(botch / much) * 100:.2f}% botch -- {(failure / much) * 100.0:.2f}% failure -- {(success / much) * 100:.2f}% success</td></tr>")
+    html.append("</table>")
+    html.append("</div>")
+
+    answer = {'html': "".join(html)}
+    return JsonResponse(answer)
 
 
 def refix_all(request):

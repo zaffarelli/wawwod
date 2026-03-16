@@ -315,6 +315,9 @@ class WawwodCollector {
             $.ajax({
                 url: url,
                 success: function (answer) {
+                    if (answer.hasOwnProperty("html")){
+                        $("#d3area").html(answer.html)
+                    }
                     me.rebootLinks();
                 },
                 error: function (answer) {

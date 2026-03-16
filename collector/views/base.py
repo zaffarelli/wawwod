@@ -34,23 +34,25 @@ def prepare_index(request):
     players = []
     cities = []
     # Adventure.set_current("SPI")
-    chronicle = Chronicle.current() #get_current_chronicle()
+    chronicle = Chronicle.current()  # get_current_chronicle()
     plist = Creature.objects.filter(chronicle=chronicle.acronym).exclude(player='').exclude(adventure="").order_by(
         'adventure')
-    # plist = Creature.objects.all().exclude(player='').exclude(adventure="").order_by('adventure')
     prev_a = None
-    adventure = None
+    adventure = {'acronym': ""}
     for p in plist:
-        if p.adventure != prev_a:
-            adv = Adventure.objects.filter(acronym=p.adventure, is_current=True)
-            if len(adv) > 0:
-                a = adv.first()
-                prev_a = a.code
-                adventure = {'adventure': a.name, 'players': []}
-                players.append(adventure)
-        if adventure:
-            adventure['players'].append(
-                {'name': p.name, 'rid': p.rid, 'player': p.player, 'pre_change_access': p.pre_change_access})
+        print(p, p.adventure, prev_a)
+        if p.is_player:
+            if p.adventure != prev_a:
+                adv = Adventure.objects.filter(acronym=p.adventure, is_current=True)
+                if len(adv) > 0:
+                    a = adv.first()
+                    prev_a = a.acronym
+                    print("Previous:", prev_a)
+                    adventure = {'adventure': a.name, 'acronym': a.acronym, 'players': []}
+                    players.append(adventure)
+            if adventure['acronym'] == p.adventure:
+                adventure['players'].append(
+                    {'name': p.name, 'rid': p.rid, 'player': p.player, 'pre_change_access': p.pre_change_access})
 
     for c in Chronicle.objects.all():
         chronicles.append(c.to_json)
@@ -119,6 +121,17 @@ def prepare_index(request):
     return context
 
 
+def renown(request):
+    from collector.models.adventures import Adventure
+    print("Renown")
+    adventure = Adventure.current()
+    from collector.models.deeds import Deed
+    html = Deed.adventure_to_html(adventure)
+    answer = {'html': html}
+
+    return JsonResponse(answer)
+
+
 @login_required
 def index(request):
     if not request.user.is_authenticated:
@@ -163,7 +176,9 @@ def display_groups(request, slug=None):
 
 
 def get_list(request, pid=1, slug=None):
-    chronicle = get_current_chronicle()
+    # chronicle = get_current_chronicle()
+    chronicle = Chronicle.current()
+    adventure = Adventure.current()
     # print(slug)
     # print(chronicle.acronym)
     if is_ajax(request):
@@ -232,6 +247,10 @@ def get_list(request, pid=1, slug=None):
             masters = ['garou', 'kindred', 'wraith', 'changeling', 'mage']
             creature_items = Creature.objects \
                 .filter(chronicle=chronicle.acronym, creature__in=masters) \
+                .order_by('name')
+        elif 'cca' == slug:
+            creature_items = Creature.objects \
+                .filter(adventure=adventure.acronym) \
                 .order_by('name')
         else:
             creature_items = Creature.objects \
@@ -479,6 +498,7 @@ def character_for(slug, option="", idx=-1):
         k["breed_name"] = BREEDS[c.breed]
         k["background_notes"] = c.background_notes()
         k["rite_notes"] = c.rite_notes()
+        k["ritualistic_discipline"] = c.ritualistic_discipline
         print("Rites Notes")
         print(k["rite_notes"])
         k["timeline"] = c.timeline()
@@ -529,7 +549,7 @@ def display_crossover_sheet(request, slug=None, option=""):
             slug = '_julius_von_blow'
         j, k = character_for(slug, "")
         settings = {'version': 1.0, 'labels': STATS_NAMES[k["creature"]], 'pre_title': pre_title, 'scenario': scenario,
-                    'post_title': post_title, 'fontset': FONTSET, 'blank': blank, 'debug': True,
+                    'post_title': post_title, 'fontset': FONTSET, 'blank': blank, 'debug': False,
                     'specialities': k["spe"],
                     'shortcuts': k["shc"]}
         # print(settings['labels']['sheet'])
@@ -602,23 +622,25 @@ def adventure_sheet(request):
         data = {"players": [], "adventure": {}}
         if chronicle:
             idx = 0
-            from collector.models.seasons import Season
-            current_seasons = Season.objects.filter(chronicle=chronicle.acronym, is_current=True)
-            for season in current_seasons:
-                current_adventures = Adventure.objects.filter(season=season.acronym, is_current=True)
-                for adventure in current_adventures:
-                    if len(adventure.protagonists) > 0:
-                        protagonists = adventure.protagonists.strip().split(",")
-                        # print("PROTS", protagonists)
-                        for rid in protagonists:
-                            # print(rid)
-                            if len(rid) > 0:
-                                j, k = character_for(rid, "", idx)
-                                idx += 1
-                                data["players"].append(k)
+            # from collector.models.seasons import Season
+            # current_seasons = Season.objects.filter(chronicle=chronicle.acronym, is_current=True)
+            # for season in current_seasons:
+            #     current_adventures = Adventure.objects.filter(season=season.acronym, is_current=True)
+            #     for adventure in current_adventures:
+            adventure = Adventure.current()
+            if len(adventure.protagonists) > 0:
+                protagonists = adventure.protagonists.strip().split(",")
+                # print("PROTS", protagonists)
+                for rid in protagonists:
+                    # print(rid)
+                    if len(rid) > 0:
+                        j, k = character_for(rid, "", idx)
+                        idx += 1
+                        data["players"].append(k)
             settings = {'fontset': FONTSET, 'labels': {'sheet': {"pages": 1}}}
             adv = {
                 "name": chronicle.name,
+                "adv_name": adventure.name,
                 "acronym": chronicle.acronym,
                 "full_id": "",
                 "abstract": "",

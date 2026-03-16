@@ -24,6 +24,7 @@ class District(models.Model):
 
     name = models.CharField(max_length=96, default='')
     district_name = models.CharField(max_length=96, default='', blank=True, null=True)
+    adventures = models.CharField(max_length=256, default='', blank=True)
     sector_name = models.CharField(max_length=96, default='', blank=True, null=True)
     d_num = models.PositiveIntegerField(default=1)
     # s_num = models.PositiveIntegerField(default=1)
@@ -53,8 +54,9 @@ class District(models.Model):
         return jstr
 
     def fix(self):
-        self.code = f'{self.city.code}{self.d_num:03}'
-        self.populate()
+        if self.code == '':
+            self.code = f'{self.city.code}{self.d_num:03}'
+        #self.populate()
         if (self.district_name != '') and (self.sector_name != ''):
             self.name = f'{self.district_name} :: {self.sector_name}'
 
@@ -197,11 +199,11 @@ def repopulate(modeladmin, request, queryset):
 
 
 class DistrictAdmin(admin.ModelAdmin):
-    list_display = ['code', 'name', 'district_name', 'sector_name', 'status', 'proeminent', 'population', 'city']
+    list_display = ['code', 'name', 'adventures', 'status', 'district_name', 'sector_name', 'proeminent', 'population', 'city']
     ordering = ['code']
     search_fields = ['name', 'description', 'proeminent']
-    list_editable = ['status', 'sector_name', 'district_name']
-    list_filter = ['city', 'd_num', 'proeminent', 'color']
+    list_editable = ['status', 'adventures', 'sector_name', 'district_name']
+    list_filter = ['city', 'status', 'proeminent', 'color']
     actions = [repopulate,
                status_full,
                status_controlled,

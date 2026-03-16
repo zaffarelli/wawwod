@@ -22,6 +22,10 @@ class Adventure(models.Model):
     players_starting_freebies = models.IntegerField(default=15, blank=True)
     is_current = models.BooleanField(default=False, blank=True)
     adventure_teaser = models.CharField(max_length=128, default='', blank=True)
+    deeds_map_str = models.TextField(max_length=2048, default="", blank=True)
+
+    DEED_SEP = "|"
+    WORD_SEP = ";"
 
     def __str__(self):
         return f"{self.name}"
@@ -29,6 +33,58 @@ class Adventure(models.Model):
     @property
     def code(self):
         return self.acronym
+
+    def string_to_deeds(self):
+        import json
+        deeds_map = []
+        items = self.deeds_map_str.split(self.DEED_SEP)
+        for item in items:
+            datum = item.strip()
+            deeds_map.append(datum)
+        return deeds_map
+
+    def deeds_to_string(self, json_data_list):
+        self.deeds_map_str = ""
+        data = []
+        for item in json_data_list:
+            datum = item
+            data.append(item)
+        self.deeds_map_str = self.DEED_SEP.join(data)
+
+    def push_deed(self, json_deed):
+        if json_deed.code not in self.deeds_map_str:
+            former = self.string_to_deeds()
+            former.append(json_deed)
+            self.deeds_to_string(former)
+
+    def pull_deed(self, code):
+        found = None
+        if code in self.deeds_map_str:
+            deeds = self.string_to_deeds()
+            for deed in deeds:
+                if deed["code"] == code:
+                    found = deed
+                    break
+        return found
+
+    def update_deeds(self,code):
+        result = ""
+        if code in self.deeds_map_str:
+            updated_deeds = []
+            deeds = self.string_to_deeds()
+            for deed in deeds:
+                words = deed.split(self.WORD_SEP)
+                if code != words[0]:
+                    updated_deeds.append(deed)
+                else:
+                    result = f"{self.acronym}__{code}___off"
+            self.deeds_to_string(updated_deeds)
+        else:
+            deeds = self.string_to_deeds()
+            deeds.append(code)
+            self.deeds_to_string(deeds)
+            result = f"{self.acronym}__{code}___on"
+        return result
 
     def fix(self):
         if self.protagonists == "":

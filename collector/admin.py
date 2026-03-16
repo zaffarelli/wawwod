@@ -11,6 +11,7 @@ from collector.models.archetypes import Archetype, ArchetypeAdmin
 from collector.models.backgrounds import Background, BackgroundAdmin
 from collector.models.septs import Sept, SeptAdmin
 from collector.models.totems import Totem, TotemAdmin
+from collector.models.deeds import Deed, DeedAdmin
 
 from collector.models.legacy import CollectorNybnKindreds, CollectorNybnKindredsAdmin
 
@@ -25,5 +26,6 @@ admin.site.register(Archetype, ArchetypeAdmin)
 admin.site.register(Background, BackgroundAdmin)
 admin.site.register(Sept, SeptAdmin)
 admin.site.register(Totem, TotemAdmin)
+admin.site.register(Deed, DeedAdmin)
 
 admin.site.register(CollectorNybnKindreds, CollectorNybnKindredsAdmin)

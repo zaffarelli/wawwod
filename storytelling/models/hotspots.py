@@ -36,8 +36,8 @@ POI_COLORS = {
     'foe': '#F0c080',
     'upo': '#4c4c4c',
     'mys': '#FF22EE',
-    'gac': '#6adc50',
-    'gdc': '#a2b17d'
+    'gac': '#244f70',
+    'gdc': '#244f70'
 }
 
 

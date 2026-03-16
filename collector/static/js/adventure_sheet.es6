@@ -29,7 +29,7 @@ class AdventureSheet extends WawwodSheet {
         let oy = 2
         this.lines = this.back.append('g');
         this.daddy = this.lines;
-        let title_text = this.data.adventure.name.toUpperCase();
+        let title_text = this.data.adventure.name.toUpperCase()+" - "+this.data.adventure.adv_name
         this.decorationText(2, 1.75, 0, 'start', this.title_font, this.fat_font_size, this.draw_fill, this.draw_stroke, 1, title_text, this.back, 1);
         this.decorationText(34, 1.45, 0, 'end', this.base_font, this.medium_font_size, this.draw_fill, this.draw_stroke, 0.5, "What A Wonderful World Of Darkness - Adventure Sheet", this.back);
         let day = new Date().toString()
@@ -96,11 +96,13 @@ class AdventureSheet extends WawwodSheet {
         let options = {"xfunc": xfunc, "y":ly, "ox":ox, "oy":oy}
         options.proplabel = ""
         options.prop = "name"
+        options.uppercase = true
         options.y = ly
         options.font_size = me.small_font_size
         this.sheetEntryO(options)
         ly += lh*2
         options.proplabel = "Player"
+        options.uppercase = false
         options.prop = "player"
         options.y = ly
         me.sheetEntryO(options)
@@ -131,6 +133,7 @@ class AdventureSheet extends WawwodSheet {
         me.sheetEntryO(options)
         ly += lh*2
         options.y = ly
+        options.xfunc = xfunc
         options.proplabel = "STR"
         options.prop = "attribute0"
         me.shortSheetEntryO(options)
@@ -171,20 +174,24 @@ class AdventureSheet extends WawwodSheet {
         options.prop = "attribute8"
         me.shortSheetEntryO(options)
         ly += lh*2
-        me.dottedSheetEntryO({"xfunc": xfunc, "y":ly, "ox":ox, "oy":oy, "proplabel":"Rage", "prop":"rage", "condition":"creature,garou,=="})
+        me.dottedSheetEntryO({"xfunc": xfunc, "y":ly, "ox":ox, "oy":oy, "proplabel":"Rage", "max":10, "prop":"rage", "condition":"creature,garou,=="})
         me.dottedSheetEntryO({"xfunc": xfunc, "y":ly, "ox":ox, "oy":oy, "proplabel":"Bloodpool", "prop":"bloodpool", "condition":"creature,kindred,==","max":20,"is_temp":true})
         ly += lh
-        me.dottedSheetEntryO({"xfunc": xfunc, "y":ly, "ox":ox, "oy":oy, "proplabel":"Gnosis", "prop":"gnosis", "condition":"creature,garou,=="})
+        me.dottedSheetEntryO({"xfunc": xfunc, "y":ly, "ox":ox, "oy":oy, "proplabel":"Gnosis", "max":10, "prop":"gnosis", "condition":"creature,garou,=="})
         me.dottedSheetEntryO({"xfunc": xfunc, "y":ly, "ox":ox, "oy":oy, "proplabel":"Humanity", "prop":"humanity", "condition":"creature,kindred,==","max":10})
         ly += lh
         me.dottedSheetEntryO({"xfunc": xfunc, "y":ly, "ox":ox, "oy":oy, "proplabel":"Willpower", "prop":"willpower", "max":10})
         ly += lh*2
-        me.dottedSheetEntryO({"xfunc": xfunc, "y":ly, "ox":ox, "oy":oy, "proplabel":"Conscience", "prop":"virtue0", "condition":"creature,kindred,==","max":5})
-        ly += lh
-        me.dottedSheetEntryO({"xfunc": xfunc, "y":ly, "ox":ox, "oy":oy, "proplabel":"Self-Control", "prop":"virtue1", "condition":"creature,kindred,==","max":5})
-        ly += lh
-        me.dottedSheetEntryO({"xfunc": xfunc, "y":ly, "ox":ox, "oy":oy, "proplabel":"Courage", "prop":"virtue2", "condition":"creature,kindred,==","max":5})
-        ly += lh
+
+        if (me.dottedSheetEntryO({"xfunc": xfunc, "y":ly, "ox":ox, "oy":oy, "proplabel":"Conscience", "prop":"virtue0", "condition":"creature,kindred,==","max":5})){
+            ly += lh
+        }
+        if (me.dottedSheetEntryO({"xfunc": xfunc, "y":ly, "ox":ox, "oy":oy, "proplabel":"Self-Control", "prop":"virtue1", "condition":"creature,kindred,==","max":5})){
+            ly += lh
+        }
+        if (me.dottedSheetEntryO({"xfunc": xfunc, "y":ly, "ox":ox, "oy":oy, "proplabel":"Courage", "prop":"virtue2", "condition":"creature,kindred,==","max":5})){
+            ly += lh
+        }
 
         let backgrounds = {}
         let max_ly = 0
@@ -201,11 +208,13 @@ class AdventureSheet extends WawwodSheet {
             let oldly = ly
             _.forEach(v, (w,l) => {
                 ly += lh
-                let words = w.item.split(" ")
+                let words = w.item.trim().split(" ")
+                console.debug("@@@@@")
                 console.debug(words)
-                let val = words[1].replace("[","").replace("]","")
-                console.debug(val)
-                me.dottedSheetEntryO({"xfunc":xfunc,"y":ly,"ox":ox,"oy":oy,"proplabel":words[0],"prop":parseInt(val),"font_size":0,"direct_value":"direct","direct_prop":"direct", "max":5})
+                let val = words[words.length-1].replace("[","").replace("]","")
+                let lab = w.item.split(" [")
+                console.debug(lab[0],val)
+                me.dottedSheetEntryO({"xfunc":xfunc,"y":ly,"ox":ox,"oy":oy,"proplabel":lab[0],"prop":parseInt(val),"font_size":0,"direct_value":"direct","direct_prop":"direct", "max":5})
             })
             if (ly >= max_ly){
                 max_ly = ly
@@ -237,9 +246,10 @@ class AdventureSheet extends WawwodSheet {
             let oldly = ly
             _.forEach(v, (w,l) => {
                 ly += lh
-                let words = w.split(" ")
-                let val = words[1].replace("(","").replace(")","")
-                me.dottedSheetEntryO({"xfunc":xfunc,"y":ly,"ox":ox,"oy":oy,"proplabel":words[0],"prop":parseInt(val),"font_size":0,"direct_value":"direct","direct_prop":"direct", "max":5})
+                let words = w.trim().split(" ")
+                let lab = w.trim().split(" (")
+                let val = words[words.length-1].replace("(","").replace(")","")
+                me.dottedSheetEntryO({"xfunc":xfunc,"y":ly,"ox":ox,"oy":oy,"proplabel":lab[0],"prop":parseInt(val),"font_size":0,"direct_value":"direct","direct_prop":"direct", "max":5})
             })
             if (ly >= max_ly){
                 max_ly = ly
@@ -317,12 +327,12 @@ class AdventureSheet extends WawwodSheet {
                     }
                 })
             if (stop){
-                return
+                return false
             }
         }
         let font = this.user_font
         if (p.font_size == 0) {
-            p.font_size = this.tiny_font_size
+            p.font_size = this.tiny_font_size*0.9
         }else if (p.font_size == 1){
             font = this.mono_font
             p.font_size = this.tiny_font_size*.90
@@ -351,7 +361,7 @@ class AdventureSheet extends WawwodSheet {
                 return (p.oy + p.y) * me.stepy;
             })
             .attr('x2', function (d) {
-                return p.xfunc(d['idx']) + p.offsetx2 * me.stepx;
+                return p.xfunc(d['idx']) + p.offsetx3 * me.stepx;
             })
             .attr('y2', function (d) {
                 return (p.oy + p.y) * me.stepy;
@@ -366,8 +376,8 @@ class AdventureSheet extends WawwodSheet {
         if (p.with_dots){
             this.daddy.append('path')
                 .attr("transform", (d)=> {
-                    let a = p.xfunc(d['idx']) + (p.offsetx2-3) * this.stepx;
-                    let b = (p.oy + p.y-0.1 ) * me.stepy;
+                    let a = p.xfunc(d['idx']) + (p.offsetx2) * this.stepx;
+                    let b = (p.oy + p.y-0.15 ) * me.stepy;
                     return "translate("+a+","+b+")"
                 })
                 .style('fill', (d) => p.is_temp ? "#FFFFFF" : this.user_fill)
@@ -415,7 +425,7 @@ class AdventureSheet extends WawwodSheet {
         }
         this.daddy.append('text')
             .attr('x', function (d) {
-                return p.xfunc(d['idx']) + p.offsetx2 * me.stepx;
+                return p.xfunc(d['idx']) + p.offsetx3 * me.stepx;
             })
             .attr('y', function (d) {
                 return (p.oy + p.y) * me.stepy;
@@ -425,7 +435,7 @@ class AdventureSheet extends WawwodSheet {
             .style('stroke-width', "0.25pt")
             .style('text-anchor', 'end')
             .style('font-family', font)
-            .style('font-size', p.easyRead ? p.font_size*1.5+'pt' : p.font_size+'pt')
+            .style('font-size', p.easyRead ? p.font_size*1+'pt' : p.font_size+'pt')
             .text(function (d) {
                 let result = d[p.prop]
                 if (p.direct_value != '') {
@@ -440,18 +450,20 @@ class AdventureSheet extends WawwodSheet {
                     }
                 }else{
                     if (p.direct_prop == "direct"){
-                        return p.prop
+                        result = p.prop
                     }
+                }
+                if (p.uppercase){
+                    result = result.toUpperCase()
                 }
                 return result
             })
+        return true
     }
 
     // OPTION functions
     sheetEntryO(options={}) {
         let p = this.defaulting(options)
-        p.offsetx = -0.125
-        p.offsetx2 = 5.5
         this.baseSheetEntryO(p)
     }
 
@@ -468,7 +480,9 @@ class AdventureSheet extends WawwodSheet {
             direct_prop : '',
             direct_value : '',
             offsetx : -0.125,
-            offsetx2 : 5.5,
+            offsetx2 : 4.25,
+            offsetx3 : 5.5,
+            uppercase : false,
             with_dots : false,
             condition : "", 
             max : 0,
@@ -478,13 +492,18 @@ class AdventureSheet extends WawwodSheet {
             const val = options[key]
             p[key] = val
         }    
+        if (p.max !=5){
+            p.offsetx2 = 3.0
+        }
         return p
     }
 
     dottedSheetEntryO(options={}) {
         let p = this.defaulting(options)
         p.offsetx = -.125
-        p.offsetx2 = 5.5
+        if (p.max != 5){
+            p.offsetx2 = 5
+        }
         p.with_dots = true
         this.baseSheetEntryO(p)
     }
@@ -492,21 +511,21 @@ class AdventureSheet extends WawwodSheet {
     sheetStackedEntryO(options={}) {
         let p = this.defaulting(options)
         p.offsetx = -.125
-        p.offsetx2 = 5.5
+        p.offsetx3 = 5.5
         this.baseSheetEntryO(p)
     }
 
     sheetEntryLeftO(options={}) {
         let p = this.defaulting(options)
         p.offsetx = -.125
-        p.offsetx2 = 2.25
+        p.offsetx3 = 2.25
         this.baseSheetEntryO(p)
     }
 
     sheetEntryRightO(options={}) {
         let p = this.defaulting(options)
         p.offsetx = 2.75-.125
-        p.offsetx2 = 5.5
+        p.offsetx3 = 5.5
         this.baseSheetEntryO(p)
     }
 
@@ -514,6 +533,7 @@ class AdventureSheet extends WawwodSheet {
         let p = this.defaulting(options)
         p.offsetx = 0.125
         p.offsetx2 = 1
+        p.offsetx3 = 1
         this.baseSheetEntryO(p)
     }
 
