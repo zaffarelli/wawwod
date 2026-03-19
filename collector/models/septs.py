@@ -30,6 +30,8 @@ class Sept(models.Model):
     caern_totem = models.CharField(default="", max_length=256, blank=True)
     treemap = models.TextField(max_length=8192*2, default='{}', blank=True)
 
+    faction = models.CharField(default="Gaia", max_length=32, blank=True)
+
     warder = models.CharField(default="", max_length=128, blank=True)
     grand_elder = models.CharField(default="", max_length=128, blank=True)
     elders = models.TextField(default="", max_length=1024, blank=True)
@@ -216,6 +218,7 @@ def refix(modeladmin, request, queryset):
 
 
 class SeptAdmin(admin.ModelAdmin):
-    list_display = ['name', 'rid', 'chronicle', 'garous', "kinfolks", 'notes']
+    list_display = ['name', 'rid', 'faction', 'chronicle', 'garous', "kinfolks", 'notes']
     ordering = ['chronicle', 'name']
+    list_filter = ['faction', 'caern_level']
     actions = [refix]

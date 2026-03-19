@@ -16,8 +16,8 @@ class Deed(models.Model):
             if self.category and self.description:
                 import hashlib
                 h = hashlib.blake2b(digest_size=3)
-                h.update(bytes(self.description+self.notes,'utf-8'))
-                self.code = (self.category[:3]+"_"+h.hexdigest()).upper()
+                h.update(bytes(self.description + self.notes, 'utf-8'))
+                self.code = (self.category[:3] + "_" + h.hexdigest()).upper()
         pass
 
     @classmethod
@@ -47,7 +47,8 @@ class Deed(models.Model):
                 html.append(f"<tr><th colspan='5'>{cat}</th></tr>")
                 html.append(
                     f'<tr><th>{"Description"}</th><th>{"Glory"}</th><th>{"Honor"}</th><th>{"Wisdom"}</th></tr>')
-            html.append(f'<tr><td class="text"  style="background:{x};"><tt>[{deed.code}]</tt> {deed.description}</td><td rowspan=2  style="background:{x};">{deed.glory}</td><td rowspan=2  style="background:{x};">{deed.honor}</td><td rowspan=2  style="background:{x};">{deed.wisdom}</td></tr><tr  style="background:{x};"><td class="notes"  style="background:{x};">{deed.notes}</td></tr>')
+            html.append(
+                f'<tr><td class="text"  style="background:{x};"><tt>[{deed.code}]</tt> {deed.description}</td><td rowspan=2  style="background:{x};">{deed.glory}</td><td rowspan=2  style="background:{x};">{deed.honor}</td><td rowspan=2  style="background:{x};">{deed.wisdom}</td></tr><tr  style="background:{x};"><td class="notes"  style="background:{x};">{deed.notes}</td></tr>')
             if x == col1:
                 x = col2
             else:
@@ -57,7 +58,7 @@ class Deed(models.Model):
         return "".join(html)
 
     @classmethod
-    def adventure_to_html(cls,adventure=None):
+    def adventure_to_html(cls, adventure=None):
         adventure_deeds = adventure.deeds_map_str
         deeds = cls.objects.all().order_by('category', 'notes', 'description')
         cat = ''
@@ -78,7 +79,8 @@ class Deed(models.Model):
                 selector = f'<span class="deed_select yes" id="{adventure.acronym}__{deed.code}" params="{adventure.acronym}__{deed.code}"><i class="fas fa-check"></i></span>&nbsp;'
             else:
                 selector = f'<span class="deed_select no" id="{adventure.acronym}__{deed.code}" params="{adventure.acronym}__{deed.code}"><i class="fas fa-times"></i></span>&nbsp;'
-            html.append(f'<tr><td class="text" style="background:{x};">{selector} <tt>[{deed.code}]</tt> {deed.description}</td><td rowspan=2  style="background:{x};">{deed.glory}</td><td rowspan=2  style="background:{x};">{deed.honor}</td><td rowspan=2  style="background:{x};">{deed.wisdom}</td></tr><tr  style="background:{x};"><td class="notes"  style="background:{x};">{deed.notes}</td></tr>')
+            html.append(
+                f'<tr><td class="text" style="background:{x};">{selector} <tt>[{deed.code}]</tt> {deed.description}</td><td rowspan=2  style="background:{x};">{deed.glory}</td><td rowspan=2  style="background:{x};">{deed.honor}</td><td rowspan=2  style="background:{x};">{deed.wisdom}</td></tr><tr  style="background:{x};"><td class="notes"  style="background:{x};">{deed.notes}</td></tr>')
             if x == col1:
                 x = col2
             else:
@@ -88,21 +90,38 @@ class Deed(models.Model):
         return "".join(html)
 
     @classmethod
-    def players_to_html(cls,adventure=None):
+    def players_to_html(cls, adventure=None):
+        from collector.models.creatures import Creature
         adventure_deeds = adventure.deeds_map_str
         deeds = cls.objects.all().order_by('category', 'notes', 'description')
         cat = ''
+        pack = []
+        print(adventure.protagonists)
+        protlist = adventure.protagonists.split(",")
+        for protagonist in protlist:
+            x = Creature.objects.filter(rid=protagonist).first()
+            pack.append({'code':x.rid,'name':x.name})
+
         html = []
         html.append("<div class='html_block'>")
         html.append("<table class='renown'>")
-        html.append(f"<tr><th colspan='5'>Adventure Records: {adventure.name}</th></tr>")
+        html.append(f"<tr><th colspan='{5+len(pack)}'>Adventure Records: {adventure.name}</th></tr>")
         col1 = "#e0e0e0"
         col2 = "#f0e0e0"
         x = col1
-        html.append(f'<tr><th>{"Description"}</th><th>{"Glory"}</th><th>{"Honor"}</th><th>{"Wisdom"}</th></tr>')
+        y = "#309030"
+        nlist = ""
+
+        for packmate in pack:
+            nlist += f'<th>{packmate["name"]}</th>'
+        html.append(f'<tr><th>{"Description"}</th><th>{"Glory"}</th><th>{"Honor"}</th><th>{"Wisdom"}</th>{nlist}</tr>')
         for deed in deeds:
+            plist = ''
+            for packmate in pack:
+                plist += f'<td rowspan=2 style="background:{x}; color:#309030;"><span class="adventure_record"  params="{deed.code}__{packmate["code"]}"><i class="fa fa-times"></i></span></td>'
             if deed.code in adventure_deeds:
-                html.append(f'<tr><td class="text" style="background:{x};"><tt>[{deed.code}]</tt> {deed.description}</td><td rowspan=2  style="background:{x};">{deed.glory}</td><td rowspan=2  style="background:{x};">{deed.honor}</td><td rowspan=2  style="background:{x};">{deed.wisdom}</td></tr><tr  style="background:{x};"><td class="notes"  style="background:{x};">{deed.notes}</td></tr>')
+                h = f'<tr><td class="text" style="background:{x};"><tt>[{deed.code}]</tt> {deed.description}</td><td rowspan=2  style="background:{x};">{deed.glory}</td><td rowspan=2  style="background:{x};">{deed.honor}</td><td rowspan=2  style="background:{x};">{deed.wisdom}</td>{plist}</tr><tr  style="background:{x};"><td class="notes"  style="background:{x};">{deed.notes}</td></tr>'
+                html.append(h)
             if x == col1:
                 x = col2
             else:
@@ -113,7 +132,7 @@ class Deed(models.Model):
 
 
 class DeedAdmin(admin.ModelAdmin):
-    list_display = ['category','code', 'description', 'notes', 'glory', 'honor', 'wisdom']
+    list_display = ['category', 'code', 'description', 'notes', 'glory', 'honor', 'wisdom']
     ordering = ['category', 'description', 'glory', 'honor', 'wisdom']
     list_filter = ['category', 'glory', 'honor', 'wisdom']
     search_fields = ['description', 'notes', 'category']

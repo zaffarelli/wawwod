@@ -1,32 +1,53 @@
-<li class="display"><i class="fa fa-arrow-right"></i> Septs</li>
-<ul style="list-style-type: none;">
+{% if septs %}
+<li class="display"><i class="fa fa-arrow-right"></i> Gaian Septs
+<ul class="pull_right">
     {% for sept in septs %}
+        {% if sept.faction == "Gaia" %}
         <li class="display" action="septs" param="{{sept.rid}}" title="{{sept.notes}}"><i class="fa fa-users"></i> Sept: {{sept.name}}</li>
+        {% endif %}
     {% endfor %}
 </ul>
-<li class="display"><i class="fa fa-arrow-right"></i> Cities</li>
-<ul style="list-style-type: none;">
+</li>
+<li class="display"><i class="fa fa-arrow-right"></i> Wyrm Septs
+<ul class="pull_right">
+    {% for sept in septs %}
+        {% if sept.faction == "Wyrm" %}
+        <li class="display" action="septs" param="{{sept.rid}}" title="{{sept.notes}}"><i class="fa fa-users"></i> Sept: {{sept.name}}</li>
+        {% endif %}
+    {% endfor %}
+</ul>
+    </li>
+{% endif %}
+<li class="display"><i class="fa fa-arrow-right"></i> Cities
+<ul class="pull_right">
     {% for ci in cities  %}
         <li class="display" action="map" param="{{ ci.code }}" options="{{ci.options}}"><i class="fa fa-map"></i> City Map: {{ ci.name }}</li>
     {% endfor %}
 </ul>
-<li class="display"><i class="fa fa-arrow-right"></i> Groups</li>
-<ul style="list-style-type: none;">
+    </li>
+{% if groups %}
+<li class="display"><i class="fa fa-arrow-right"></i> Groups
+<ul class="pull_right">
     {% for faction in groups  %}
         <li class="display" action="groups" param="{{ faction|lower }}" options=""><i class="fa fa-users"></i> Groups: {{faction|title}}</li>
     {% endfor %}
 </ul>
-<li class="display"><i class="fa fa-arrow-right"></i> More...</li>
-<ul>
+    </li>
+{% endif %}
+<li class="display"><i class="fa fa-arrow-right"></i> More...
+<ul class="pull_right">
 <li class="display" action="storytelling"><i class="fa fa-comment"></i> Storyboard ({{season}}:{{adventure}})</li>
 <li class="display" action="story_book"><i class="fa fa-file-pdf"></i> Story Book ({{season}}:{{adventure}})</li>
 <li class="display" action="chronicle_book"><i class="fa fa-file-pdf"></i> Chronicle Book ({{chronicle}})</li>
 </ul>
-<HR/>
-    <li class="display"><i class="fa fa-arrow-right"></i> {{adventure}} </li>
-    <ul>
-        <li class="list" id="cca"><i class="fa fa-users"></i>&nbsp;Adventure Characters</li>
-        <li class="collector_action" action="renown"><i class="fa fa-crown"></i>&nbsp;Renown Map</li>
-        <li class="collector_action" action="renown_records"><i class="fa fa-crown"></i>&nbsp;Renown Collected</li>
-    </ul>
-<HR/>
+</li>
+
+<li class="display"><i class="fa fa-arrow-right"></i> {{adventure_name}} ({{adventure}})
+<ul class="pull_right">
+    <li class="list" id="cca"><i class="fa fa-users"></i>&nbsp;Adventure Characters</li>
+    <li class="display" action="adventure_sheet"><i class="fas fa-file"></i> Storyteller Team Sheet</li>
+    <li class="collector_action" action="renown"><i class="fa fa-crown"></i>&nbsp;Renown Map</li>
+    <li class="collector_action" action="renown_records"><i class="fa fa-check"></i>&nbsp;Renown Collected</li>
+</ul>
+</li>
+

@@ -32,78 +32,69 @@ logger = logging.Logger(__name__)
 def prepare_index(request):
     chronicles = []
     players = []
-    cities = []
     # Adventure.set_current("SPI")
     chronicle = Chronicle.current()  # get_current_chronicle()
-    plist = Creature.objects.filter(chronicle=chronicle.acronym).exclude(player='').exclude(adventure="").order_by(
-        'adventure')
-    prev_a = None
-    adventure = {'acronym': ""}
-    for p in plist:
-        print(p, p.adventure, prev_a)
-        if p.is_player:
-            if p.adventure != prev_a:
-                adv = Adventure.objects.filter(acronym=p.adventure, is_current=True)
-                if len(adv) > 0:
-                    a = adv.first()
-                    prev_a = a.acronym
-                    print("Previous:", prev_a)
-                    adventure = {'adventure': a.name, 'acronym': a.acronym, 'players': []}
+    plist = Creature.objects.filter(chronicle=chronicle.acronym).exclude(is_player=False).exclude(adventure="").order_by('adventure')
+    prev_a = ""
+    for ad in chronicle.adventures:
+        for p in plist:
+            adventures = p.adventure.split(" ")
+            print(p, adventures, prev_a)
+            if ad.acronym != prev_a:
+                if prev_a != "":
                     players.append(adventure)
-            if adventure['acronym'] == p.adventure:
-                adventure['players'].append(
-                    {'name': p.name, 'rid': p.rid, 'player': p.player, 'pre_change_access': p.pre_change_access})
-
+                prev_a = ad.acronym
+                adventure = {'adventure': ad.name, 'acronym': ad.acronym, 'players': []}
+            if ad.acronym in p.adventure:
+                adventure['players'].append({'name': p.name, 'rid': p.rid, 'player': p.player, 'pre_change_access': p.pre_change_access})
+        #players.append(adventure)
     for c in Chronicle.objects.all():
         chronicles.append(c.to_json)
     cities = []
     adventures = []
     seasons = []
     septs = []
-    for sept in Sept.objects.filter(chronicle=chronicle.acronym):
-        septs.append(sept)
+    if chronicle.main_creature == "garou":
+        for sept in Sept.objects.filter(chronicle=chronicle.acronym):
+            septs.append(sept)
 
-    # for season in Season.objects.filter(is_current=True):
-    #     seasons.append(season)
-    # print(season)
-    for adventure in chronicle.adventures:
-        adventures.append(adventure)
-
-        # print(adventure)
-    for city in City.objects.all():
-        if city.in_chronicle(chronicle.acronym):
-            cities.append(city)
-        # print(cities)
+    for item in chronicle.adventures:
+        adventures.append(item)
+    for item in City.objects.all():
+        if item.in_chronicle(chronicle.acronym):
+            cities.append(item)
     groups = {}
-    for c in Creature.objects.filter(chronicle=chronicle.acronym, condition="OK").exclude(
-            creature__in=["ghoul", "kinfolk", "mortal"]).order_by("groupspec"):
-        g = "_".join(c.groupspec.lower().split(" "))
-        if g in groups:
-            groups[g]["count"] += 1
-            ghouls = c.retainers_vals
-            c.retainers_list = []
-            for h in ghouls:
-                # groups[g]["characters"].append(h)
-                c.retainers_list.append(h)
-                groups[g]["countg"] += 1
-            groups[g]["characters"].append(c)
-        else:
-            groups[g] = {"code": g, "faction": c.faction, "name": f"{c.groupspec} ({c.faction})", "count": 1,
-                         "countg": 0, "characters": []}
-            ghouls = c.retainers_vals
-            c.retainers_list = []
-            for h in ghouls:
-                # groups[g]["characters"].append(h)
-                c.retainers_list.append(h)
-                groups[g]["countg"] += 1
-            groups[g]["characters"].append(c)
+    grp = {}
+    if chronicle.main_creature == "kindred":
+        for c in Creature.objects.filter(chronicle=chronicle.acronym, condition="OK").exclude(
+                creature__in=["ghoul", "kinfolk", "mortal"]).order_by("groupspec"):
+            g = "_".join(c.groupspec.lower().split(" "))
+            if g in groups:
+                groups[g]["count"] += 1
+                ghouls = c.retainers_vals
+                c.retainers_list = []
+                for h in ghouls:
+                    # groups[g]["characters"].append(h)
+                    c.retainers_list.append(h)
+                    groups[g]["countg"] += 1
+                groups[g]["characters"].append(c)
+            else:
+                groups[g] = {"code": g, "faction": c.faction, "name": f"{c.groupspec} ({c.faction})", "count": 1,
+                             "countg": 0, "characters": []}
+                ghouls = c.retainers_vals
+                c.retainers_list = []
+                for h in ghouls:
+                    # groups[g]["characters"].append(h)
+                    c.retainers_list.append(h)
+                    groups[g]["countg"] += 1
+                groups[g]["characters"].append(c)
 
-    grp = {"camarilla": [], "sabbat": [], "others": []}
-    for k, v in groups.items():
-        if v["faction"].lower() in ["camarilla", "sabbat"]:
-            grp[v["faction"].lower()].append(v)
-        else:
-            grp["others"].append(v)
+        grp = {"camarilla": [], "sabbat": [], "others": []}
+        for k, v in groups.items():
+            if v["faction"].lower() in ["camarilla", "sabbat"]:
+                grp[v["faction"].lower()].append(v)
+            else:
+                grp["others"].append(v)
 
     misc = {"version": settings.VERSION}
     context = {

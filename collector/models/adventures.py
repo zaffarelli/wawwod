@@ -94,7 +94,7 @@ class Adventure(models.Model):
     def fix(self):
         if self.protagonists == "":
             from collector.models.creatures import Creature
-            pcs = Creature.objects.filter(adventure=self.acronym)
+            pcs = Creature.objects.filter(adventure__contains=self.acronym, is_player=True)
             list = []
             for pc in pcs:
                 list.append(pc.rid)

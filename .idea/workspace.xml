@@ -5,24 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c5f4ae22-1e7a-419c-ac9f-80da089b72d4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/collector/migrations/0121_alter_adventure_acronym_alter_adventure_name.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collector/migrations/0122_adventure_season_order.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collector/migrations/0123_creature_season_alter_creature_adventure.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collector/migrations/0124_alter_creature_season.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/collector/migrations/0125_sept_faction.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/collector/context_processors.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/context_processors.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/collector/models/adventures.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/models/adventures.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/models/creatures.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/models/creatures.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/collector/models/deeds.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/models/deeds.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/views/actions.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/views/actions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/models/septs.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/models/septs.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/static/collector/css/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/collector/css/main.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/templates/collector/objects/global_menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/collector/templates/collector/objects/global_menu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/templates/collector/page/current_chronicle_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/collector/templates/collector/page/current_chronicle_details.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/collector/views/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/views/base.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/wawwod.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/wawwod.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wawwod.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod_static/collector/css/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/collector/css/main.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod_static/js/collector.es6" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/js/collector.es6" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod_static/js/cross_over_sheet.es6" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/js/cross_over_sheet.es6" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod_static/js/wawwod_sheet.es6" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/js/wawwod_sheet.es6" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,19 +52,19 @@
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "/home/zaffarelli/Projects/wawwod/wawwod_media/pdf/results/svg/static/collector/auspices",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/zaffarelli/Projects/wawwod/wawwod_media/pdf/results/svg/static/collector/auspices&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   },
-  "keyToStringList": {
-    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
-      "Markdown",
-      "PLAIN_TEXT"
+  &quot;keyToStringList&quot;: {
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;Markdown&quot;,
+      &quot;PLAIN_TEXT&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="PyDebuggerOptionsProvider">
     <option name="mySaveCallSignatures" value="true" />
   </component>

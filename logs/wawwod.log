@@ -46079,3 +46079,469 @@ AttributeError: 'str' object has no attribute 'acronym'
 [16/03 07:14:37] "POST /admin/collector/creature/ HTTP/1.1" 500 191843
 [16/03 07:19:15] "GET /static/collector/css?c9cba5a4bb07 HTTP/1.1" 404 1805
 [16/03 07:22:57] "GET /static/collector/css?c9cba5a4bb07 HTTP/1.1" 404 1805
+[16/03 19:06:58] "GET /static/collector/css?c9cba5a4bb07 HTTP/1.1" 404 1805
+[16/03 19:09:00] "GET /static/collector/css?c9cba5a4bb07 HTTP/1.1" 404 1805
+[16/03 19:12:03] "GET /static/collector/css?c9cba5a4bb07 HTTP/1.1" 404 1805
+[17/03 13:35:15] "GET /static/collector/css?c9cba5a4bb07 HTTP/1.1" 404 1805
+[17/03 13:38:39] "GET /static/collector/css?c9cba5a4bb07 HTTP/1.1" 404 1805
+[17/03 13:38:42] "GET /static/collector/css?c9cba5a4bb07 HTTP/1.1" 404 1805
+[17/03 20:09:33] Not Found: /ajax/display/crossover_sheet/Jeremiah Talitos/
+[17/03 20:09:33] "GET /ajax/display/crossover_sheet/Jeremiah%20Talitos/ HTTP/1.1" 404 13002
+[17/03 20:09:36] Not Found: /ajax/display/crossover_sheet/Jeremiah Talitos/
+[17/03 20:09:36] "GET /ajax/display/crossover_sheet/Jeremiah%20Talitos/ HTTP/1.1" 404 13002
+[17/03 20:09:38] "GET /static/collector/css?c9cba5a4bb07 HTTP/1.1" 404 1805
+[17/03 20:09:57] Not Found: /ajax/display/crossover_sheet/Sheet for _isaac_solers/
+[17/03 20:09:57] "GET /ajax/display/crossover_sheet/Sheet%20for%20_isaac_solers/ HTTP/1.1" 404 13025
+[18/03 16:28:57] Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 150, in index
+    context = prepare_index(request)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 45, in prepare_index
+    if prev_a in p.adventure:
+       ^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'in <string>' requires string as left operand, not NoneType
+[18/03 16:28:57] "GET / HTTP/1.1" 500 85657
+[18/03 16:30:36] "GET /static/collector/css?c9cba5a4bb07 HTTP/1.1" 404 1805
+[18/03 16:31:13] Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 151, in index
+    context = prepare_index(request)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 46, in prepare_index
+    prev_a = a.acronym
+             ^
+UnboundLocalError: cannot access local variable 'a' where it is not associated with a value
+[18/03 16:31:13] "GET / HTTP/1.1" 500 85618
+[18/03 16:31:51] Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 151, in index
+    context = prepare_index(request)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 55, in prepare_index
+    adventure['players'].append(
+    ~~~~~~~~~^^^^^^^^^^^
+KeyError: 'players'
+[18/03 16:31:51] "GET / HTTP/1.1" 500 85584
+[18/03 16:38:50] Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 144, in index
+    context = prepare_index(request)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 41, in prepare_index
+    for ad in all_adventures:
+              ^^^^^^^^^^^^^^
+TypeError: 'property' object is not iterable
+[18/03 16:38:50] "GET / HTTP/1.1" 500 85302
+[18/03 16:39:29] Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 144, in index
+    context = prepare_index(request)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 40, in prepare_index
+    all_adventures = Chronicle.adventures()
+TypeError: Chronicle.adventures() missing 1 required positional argument: 'self'
+[18/03 16:39:29] "GET / HTTP/1.1" 500 85190
+[18/03 16:40:05] Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 143, in index
+    context = prepare_index(request)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 44, in prepare_index
+    if adventure.acronym != prev_a:
+       ^^^^^^^^^
+UnboundLocalError: cannot access local variable 'adventure' where it is not associated with a value
+[18/03 16:40:05] "GET / HTTP/1.1" 500 86133
+[18/03 16:41:28] Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 145, in index
+    context = prepare_index(request)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 44, in prepare_index
+    if adventure.acronym != prev_a:
+       ^^^^^^^^^
+UnboundLocalError: cannot access local variable 'adventure' where it is not associated with a value
+[18/03 16:41:28] "GET / HTTP/1.1" 500 86145
+[18/03 16:41:51] "GET /static/collector/css?c9cba5a4bb07 HTTP/1.1" 404 1805
+[18/03 16:42:26] "GET /static/collector/css?c9cba5a4bb07 HTTP/1.1" 404 1805
+[18/03 16:42:28] "GET /static/collector/css?c9cba5a4bb07 HTTP/1.1" 404 1805
+[18/03 16:42:48] "GET /static/collector/css?c9cba5a4bb07 HTTP/1.1" 404 1805
+[18/03 16:44:23] "GET /static/collector/css?c9cba5a4bb07 HTTP/1.1" 404 1805
+[18/03 16:57:16] "GET /static/collector/css?c9cba5a4bb07 HTTP/1.1" 404 1805
+[18/03 16:58:41] "GET /static/collector/css?c9cba5a4bb07 HTTP/1.1" 404 1805
+[18/03 17:03:57] "GET /static/collector/css?c9cba5a4bb07 HTTP/1.1" 404 1805
+[18/03 18:00:36] "GET /static/collector/css?c9cba5a4bb07 HTTP/1.1" 404 1805
+[18/03 18:00:48] "GET /static/collector/css?c9cba5a4bb07 HTTP/1.1" 404 1805
+[18/03 18:01:15] "GET /static/collector/css?c9cba5a4bb07 HTTP/1.1" 404 1805
+[18/03 18:01:47] "GET /static/collector/css?c9cba5a4bb07 HTTP/1.1" 404 1805
+[18/03 18:02:49] "GET /static/collector/css?c9cba5a4bb07 HTTP/1.1" 404 1805
+[18/03 18:03:56] "GET /static/collector/css?c9cba5a4bb07 HTTP/1.1" 404 1805
+[18/03 18:05:22] "GET /static/collector/css?c9cba5a4bb07 HTTP/1.1" 404 1805
+[18/03 18:05:22] "GET /static/collector/css?c9cba5a4bb07 HTTP/1.1" 404 1805
+[18/03 18:05:51] "GET /static/collector/css?c9cba5a4bb07 HTTP/1.1" 404 1805
+[18/03 18:06:36] "GET /static/collector/css?c9cba5a4bb07 HTTP/1.1" 404 1805
+[18/03 18:07:55] Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 138, in index
+    context = prepare_index(request)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 103, in prepare_index
+    "groups": grp,
+              ^^^
+UnboundLocalError: cannot access local variable 'grp' where it is not associated with a value
+[18/03 18:07:55] "GET / HTTP/1.1" 500 90646
+[18/03 18:07:55] Not Found: /favicon.ico
+[18/03 18:07:55] "GET /favicon.ico HTTP/1.1" 404 12895
+[18/03 18:08:26] "GET /static/collector/css?c9cba5a4bb07 HTTP/1.1" 404 1805
+[18/03 18:09:06] "GET /static/collector/css?c9cba5a4bb07 HTTP/1.1" 404 1805
+[18/03 18:09:11] "GET /static/collector/css?c9cba5a4bb07 HTTP/1.1" 404 1805
+[18/03 18:10:01] "GET /static/collector/css?c9cba5a4bb07 HTTP/1.1" 404 1805
+[18/03 18:10:10] "GET /static/collector/css?c9cba5a4bb07 HTTP/1.1" 404 1805
+[18/03 18:10:19] "GET /static/collector/css?c9cba5a4bb07 HTTP/1.1" 404 1805
+[18/03 18:12:01] "GET /static/collector/css?c9cba5a4bb07 HTTP/1.1" 404 1805
+[18/03 18:12:07] "GET /static/collector/css?c9cba5a4bb07 HTTP/1.1" 404 1805
+[18/03 18:12:11] "GET /static/collector/css?c9cba5a4bb07 HTTP/1.1" 404 1805
+[18/03 18:14:31] "GET /static/collector/css?c9cba5a4bb07 HTTP/1.1" 404 1805
+[18/03 18:15:50] "GET /static/collector/css?c9cba5a4bb07 HTTP/1.1" 404 1805
+[18/03 18:15:53] "GET /static/collector/css?c9cba5a4bb07 HTTP/1.1" 404 1805
+[18/03 18:16:43] "GET /static/collector/css?c9cba5a4bb07 HTTP/1.1" 404 1805
+[18/03 18:19:35] "GET /static/collector/css?c9cba5a4bb07 HTTP/1.1" 404 1805
+[18/03 18:21:36] "GET /static/collector/css?c9cba5a4bb07 HTTP/1.1" 404 1805
+[18/03 18:21:51] "GET /static/collector/css?c9cba5a4bb07 HTTP/1.1" 404 1805
+[18/03 18:22:30] "GET /static/collector/css?c9cba5a4bb07 HTTP/1.1" 404 1805
+[18/03 18:22:58] "GET /static/collector/css?c9cba5a4bb07 HTTP/1.1" 404 1805
+[18/03 18:23:29] Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 142, in index
+    return render(request, 'collector/index.html', context=context)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/compressor/templatetags/compress.py", line 160, in render
+    return self.render_compressed(
+           ~~~~~~~~~~~~~~~~~~~~~~^
+        context, self.kind, self.mode, forced=forced, log=log, verbosity=verbosity
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/compressor/templatetags/compress.py", line 131, in render_compressed
+    rendered_output = compressor.output(mode, forced=forced, basename=file_basename)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/compressor/css.py", line 55, in output
+    ret.append(subnode.output(*args, **kwargs))
+               ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/compressor/css.py", line 57, in output
+    return super().output(*args, **kwargs)
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/compressor/base.py", line 367, in output
+    output = "\n".join(self.filter_input(forced))
+                       ~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/compressor/base.py", line 294, in filter_input
+    for hunk in self.hunks(forced):
+                ~~~~~~~~~~^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/compressor/base.py", line 269, in hunks
+    precompiled, value = self.precompile(value, **options)
+                         ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/compressor/base.py", line 347, in precompile
+    return True, filter.input(**kwargs)
+                 ~~~~~~~~~~~~^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django_libsass.py", line 148, in input
+    return compile(filename=self.filename,
+                   output_style=OUTPUT_STYLE,
+                   source_comments=SOURCE_COMMENTS)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django_libsass.py", line 135, in compile
+    output = sass.compile(**kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib64/python3.13/site-packages/sass.py", line 725, in compile
+    raise CompileError(v)
+sass.CompileError: Error: Invalid CSS after "...   & li:hover {": expected "}", was "#background: comple"
+        on line 565:21 of collector/static/collector/css/main.scss
+>>         & li:hover {
+
+   --------------------^
+
+[18/03 18:23:29] "GET / HTTP/1.1" 500 306340
+[18/03 18:23:30] Not Found: /favicon.ico
+[18/03 18:23:30] "GET /favicon.ico HTTP/1.1" 404 12895
+[18/03 18:23:37] "GET /static/collector/css?c9cba5a4bb07 HTTP/1.1" 404 1805
+[18/03 18:23:51] "GET /static/collector/css?c9cba5a4bb07 HTTP/1.1" 404 1805
+[18/03 18:24:11] "GET /static/collector/css?c9cba5a4bb07 HTTP/1.1" 404 1805
+[18/03 18:24:30] "GET /static/collector/css?c9cba5a4bb07 HTTP/1.1" 404 1805
+[18/03 18:25:32] "GET /static/collector/css?c9cba5a4bb07 HTTP/1.1" 404 1805
+[18/03 18:25:41] "GET /static/collector/css?c9cba5a4bb07 HTTP/1.1" 404 1805
+[18/03 18:25:55] "GET /static/collector/css?c9cba5a4bb07 HTTP/1.1" 404 1805
+[18/03 18:26:15] "GET /static/collector/css?c9cba5a4bb07 HTTP/1.1" 404 1805
+[18/03 18:26:49] "GET /static/collector/css?c9cba5a4bb07 HTTP/1.1" 404 1805
+[18/03 18:27:23] "GET /static/collector/css?c9cba5a4bb07 HTTP/1.1" 404 1805
+[18/03 18:28:07] "GET /static/collector/css?c9cba5a4bb07 HTTP/1.1" 404 1805
+[18/03 18:29:01] "GET /static/collector/css?c9cba5a4bb07 HTTP/1.1" 404 1805
+[18/03 18:29:51] "GET /static/collector/css?c9cba5a4bb07 HTTP/1.1" 404 1805
+[18/03 18:30:34] "GET /static/collector/css?c9cba5a4bb07 HTTP/1.1" 404 1805
+[18/03 18:30:55] "GET /static/collector/css?c9cba5a4bb07 HTTP/1.1" 404 1805
+[18/03 18:31:07] "GET /static/collector/css?c9cba5a4bb07 HTTP/1.1" 404 1805
+[18/03 18:31:36] "GET /static/collector/css?c9cba5a4bb07 HTTP/1.1" 404 1805
+[18/03 18:32:27] "GET /static/collector/css?c9cba5a4bb07 HTTP/1.1" 404 1805
+[18/03 18:32:56] "GET /static/collector/css?c9cba5a4bb07 HTTP/1.1" 404 1805
+[18/03 18:33:27] Not Found: /ajax/display/undefined/
+[18/03 18:33:27] "GET /ajax/display/undefined/ HTTP/1.1" 404 12931
+[18/03 18:33:30] Not Found: /ajax/display/undefined/
+[18/03 18:33:30] "GET /ajax/display/undefined/ HTTP/1.1" 404 12931
+[18/03 18:33:32] Not Found: /ajax/display/undefined/
+[18/03 18:33:32] "GET /ajax/display/undefined/ HTTP/1.1" 404 12931
+[18/03 18:33:32] Internal Server Error: /ajax/collector_action/renown_records/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 131, in renown_records
+    html = Deed.players_to_html(adventure)
+  File "/home/zaffarelli/Projects/wawwod/collector/models/deeds.py", line 100, in players_to_html
+    pack.append(Creature.object.filters(rid=protagonist).first())
+                ^^^^^^^^^^^^^^^
+AttributeError: type object 'Creature' has no attribute 'object'. Did you mean: 'objects'?
+[18/03 18:33:32] "GET /ajax/collector_action/renown_records/ HTTP/1.1" 500 82202
+[18/03 18:33:34] Not Found: /ajax/display/undefined/
+[18/03 18:33:34] "GET /ajax/display/undefined/ HTTP/1.1" 404 12931
+[18/03 18:33:36] Not Found: /ajax/display/undefined/
+[18/03 18:33:36] "GET /ajax/display/undefined/ HTTP/1.1" 404 12931
+[18/03 18:34:21] "GET /static/collector/css?c9cba5a4bb07 HTTP/1.1" 404 1805
+[18/03 18:34:38] "GET /static/collector/css?c9cba5a4bb07 HTTP/1.1" 404 1805
+[18/03 23:23:38] "GET /static/collector/css?c9cba5a4bb07 HTTP/1.1" 404 1805
+[18/03 23:24:15] "GET /static/collector/css?c9cba5a4bb07 HTTP/1.1" 404 1805
+[18/03 23:24:34] "GET /static/collector/css?c9cba5a4bb07 HTTP/1.1" 404 1805
+[18/03 23:25:01] "GET /static/collector/css?c9cba5a4bb07 HTTP/1.1" 404 1805
+[18/03 23:27:04] "GET /static/collector/css?c9cba5a4bb07 HTTP/1.1" 404 1805
+[18/03 23:27:25] "GET /static/collector/css?c9cba5a4bb07 HTTP/1.1" 404 1805
+[18/03 23:27:34] Not Found: /ajax/display/undefined/
+[18/03 23:27:34] "GET /ajax/display/undefined/ HTTP/1.1" 404 12931
+[18/03 23:27:59] "GET /static/collector/css?c9cba5a4bb07 HTTP/1.1" 404 1805
+[18/03 23:28:24] "GET /static/collector/css?c9cba5a4bb07 HTTP/1.1" 404 1805
+[18/03 23:28:30] Not Found: /ajax/display/undefined/
+[18/03 23:28:30] "GET /ajax/display/undefined/ HTTP/1.1" 404 12931
+[18/03 23:28:36] Not Found: /ajax/display/undefined/
+[18/03 23:28:36] "GET /ajax/display/undefined/ HTTP/1.1" 404 12931
+[18/03 23:28:36] Internal Server Error: /ajax/collector_action/renown_records/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 131, in renown_records
+    html = Deed.players_to_html(adventure)
+  File "/home/zaffarelli/Projects/wawwod/collector/models/deeds.py", line 100, in players_to_html
+    pack.append(Creature.object.filters(rid=protagonist).first())
+                ^^^^^^^^^^^^^^^
+AttributeError: type object 'Creature' has no attribute 'object'. Did you mean: 'objects'?
+[18/03 23:28:36] "GET /ajax/collector_action/renown_records/ HTTP/1.1" 500 82202
+[18/03 23:29:23] "GET /static/collector/css?c9cba5a4bb07 HTTP/1.1" 404 1805
+[18/03 23:29:29] Not Found: /ajax/display/undefined/
+[18/03 23:29:29] "GET /ajax/display/undefined/ HTTP/1.1" 404 12931
+[18/03 23:29:29] Internal Server Error: /ajax/collector_action/renown_records/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 131, in renown_records
+    html = Deed.players_to_html(adventure)
+  File "/home/zaffarelli/Projects/wawwod/collector/models/deeds.py", line 101, in players_to_html
+    pack.append(Creature.object.filters(rid=protagonist).first())
+                ^^^^^^^^^^^^^^^
+AttributeError: type object 'Creature' has no attribute 'object'. Did you mean: 'objects'?
+[18/03 23:29:29] "GET /ajax/collector_action/renown_records/ HTTP/1.1" 500 82194
+[18/03 23:29:39] "GET /static/collector/css?c9cba5a4bb07 HTTP/1.1" 404 1805
+[18/03 23:29:47] Not Found: /ajax/display/undefined/
+[18/03 23:29:47] "GET /ajax/display/undefined/ HTTP/1.1" 404 12931
+[18/03 23:29:47] Internal Server Error: /ajax/collector_action/renown_records/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 131, in renown_records
+    html = Deed.players_to_html(adventure)
+  File "/home/zaffarelli/Projects/wawwod/collector/models/deeds.py", line 101, in players_to_html
+    pack.append(Creature.objects.filters(rid=protagonist).first())
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Manager' object has no attribute 'filters'. Did you mean: 'filter'?
+[18/03 23:29:47] "GET /ajax/collector_action/renown_records/ HTTP/1.1" 500 82194
+[18/03 23:29:56] "GET /static/collector/css?c9cba5a4bb07 HTTP/1.1" 404 1805
+[18/03 23:30:00] Not Found: /ajax/display/undefined/
+[18/03 23:30:00] "GET /ajax/display/undefined/ HTTP/1.1" 404 12931
+[18/03 23:30:00] Internal Server Error: /ajax/collector_action/renown_records/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 131, in renown_records
+    html = Deed.players_to_html(adventure)
+  File "/home/zaffarelli/Projects/wawwod/collector/models/deeds.py", line 113, in players_to_html
+    x = f'<tr><td class="text" style="background:{x};"><tt>[{deed.code}]</tt> {deed.description}</td><td rowspan=2  style="background:{x};">{deed.glory}</td><td rowspan=2  style="background:{x};">{deed.honor}</td><td rowspan=2  style="background:{x};">{deed.wisdom}</td></tr><tr  style="background:{x};"><td class="notes"  style="background:{x};">{deed.notes}</td>{plist}</tr>'
+                                                                                                                                                                                                                                                                                                                                                                             ^^^^^
+NameError: name 'plist' is not defined. Did you mean: 'list'?
+[18/03 23:30:00] "GET /ajax/collector_action/renown_records/ HTTP/1.1" 500 85402
+[18/03 23:32:01] "GET /static/collector/css?c9cba5a4bb07 HTTP/1.1" 404 1805
+[18/03 23:32:06] Not Found: /ajax/display/undefined/
+[18/03 23:32:06] "GET /ajax/display/undefined/ HTTP/1.1" 404 12931
+[18/03 23:32:06] Internal Server Error: /ajax/collector_action/renown_records/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 131, in renown_records
+    html = Deed.players_to_html(adventure)
+  File "/home/zaffarelli/Projects/wawwod/collector/models/deeds.py", line 113, in players_to_html
+    nlist += f'<th>{packmate.name}</th>'
+                    ^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'name'
+[18/03 23:32:06] "GET /ajax/collector_action/renown_records/ HTTP/1.1" 500 84534
+[18/03 23:33:15] "GET /static/collector/css?c9cba5a4bb07 HTTP/1.1" 404 1805
+[18/03 23:33:21] Not Found: /ajax/display/undefined/
+[18/03 23:33:21] "GET /ajax/display/undefined/ HTTP/1.1" 404 12931
+[18/03 23:33:21] Internal Server Error: /ajax/collector_action/renown_records/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 131, in renown_records
+    html = Deed.players_to_html(adventure)
+  File "/home/zaffarelli/Projects/wawwod/collector/models/deeds.py", line 102, in players_to_html
+    pack.append({'code':x.rid,'name':x.name})
+                        ^^^^^
+AttributeError: 'NoneType' object has no attribute 'rid'
+[18/03 23:33:21] "GET /ajax/collector_action/renown_records/ HTTP/1.1" 500 82320
+[18/03 23:33:59] "GET /static/collector/css?c9cba5a4bb07 HTTP/1.1" 404 1805
+[18/03 23:34:06] Not Found: /ajax/display/undefined/
+[18/03 23:34:06] "GET /ajax/display/undefined/ HTTP/1.1" 404 12931
+[18/03 23:34:37] "GET /static/collector/css?c9cba5a4bb07 HTTP/1.1" 404 1805
+[18/03 23:34:46] Not Found: /ajax/display/undefined/
+[18/03 23:34:46] "GET /ajax/display/undefined/ HTTP/1.1" 404 12931
+[18/03 23:37:34] "GET /static/collector/css?c9cba5a4bb07 HTTP/1.1" 404 1805
+[18/03 23:37:39] Not Found: /ajax/display/undefined/
+[18/03 23:37:39] "GET /ajax/display/undefined/ HTTP/1.1" 404 12931
+[18/03 23:38:01] "GET /static/collector/css?c9cba5a4bb07 HTTP/1.1" 404 1805
+[18/03 23:38:07] Not Found: /ajax/display/undefined/
+[18/03 23:38:07] "GET /ajax/display/undefined/ HTTP/1.1" 404 12931
+[18/03 23:38:55] "GET /static/collector/css?c9cba5a4bb07 HTTP/1.1" 404 1805
+[18/03 23:39:00] Not Found: /ajax/display/undefined/
+[18/03 23:39:00] "GET /ajax/display/undefined/ HTTP/1.1" 404 12931
+[18/03 23:39:45] "GET /static/collector/css?c9cba5a4bb07 HTTP/1.1" 404 1805
+[18/03 23:39:51] Not Found: /ajax/display/undefined/
+[18/03 23:39:51] "GET /ajax/display/undefined/ HTTP/1.1" 404 12931
+[18/03 23:45:29] "GET /static/collector/css?c9cba5a4bb07 HTTP/1.1" 404 1805
+[18/03 23:45:34] Not Found: /ajax/display/undefined/
+[18/03 23:45:34] "GET /ajax/display/undefined/ HTTP/1.1" 404 12931
+[18/03 23:47:50] "GET /static/collector/css?c9cba5a4bb07 HTTP/1.1" 404 1805
+[18/03 23:47:57] Not Found: /ajax/display/undefined/
+[18/03 23:47:57] "GET /ajax/display/undefined/ HTTP/1.1" 404 12931
+[18/03 23:47:57] Internal Server Error: /ajax/collector_action/renown_records/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 131, in renown_records
+    html = Deed.players_to_html(adventure)
+  File "/home/zaffarelli/Projects/wawwod/collector/models/deeds.py", line 121, in players_to_html
+    plist += f'<td rowspan=2 style="background:{x}; border-color:{y};"><span class="adventure_record"  params="{deed.code}__{packmate["code"]}"><i class="fa fa-times"></i></span></td>'
+                                                                  ^
+NameError: name 'y' is not defined
+[18/03 23:47:57] "GET /ajax/collector_action/renown_records/ HTTP/1.1" 500 85829
+[18/03 23:47:59] Not Found: /ajax/display/undefined/
+[18/03 23:47:59] "GET /ajax/display/undefined/ HTTP/1.1" 404 12931
+[18/03 23:47:59] Internal Server Error: /ajax/collector_action/renown_records/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 131, in renown_records
+    html = Deed.players_to_html(adventure)
+  File "/home/zaffarelli/Projects/wawwod/collector/models/deeds.py", line 121, in players_to_html
+    plist += f'<td rowspan=2 style="background:{x}; border-color:{y};"><span class="adventure_record"  params="{deed.code}__{packmate["code"]}"><i class="fa fa-times"></i></span></td>'
+                                                                  ^
+NameError: name 'y' is not defined
+[18/03 23:47:59] "GET /ajax/collector_action/renown_records/ HTTP/1.1" 500 85829
+[18/03 23:48:16] "GET /static/collector/css?c9cba5a4bb07 HTTP/1.1" 404 1805
+[18/03 23:48:22] Not Found: /ajax/display/undefined/
+[18/03 23:48:22] "GET /ajax/display/undefined/ HTTP/1.1" 404 12931
+[18/03 23:48:42] "GET /static/collector/css?c9cba5a4bb07 HTTP/1.1" 404 1805
+[18/03 23:48:46] Not Found: /ajax/display/undefined/
+[18/03 23:48:46] "GET /ajax/display/undefined/ HTTP/1.1" 404 12931
