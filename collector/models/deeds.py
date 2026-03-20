@@ -94,9 +94,13 @@ class Deed(models.Model):
         from collector.models.creatures import Creature
         adventure_deeds = adventure.deeds_map_str
         deeds = cls.objects.all().order_by('category', 'notes', 'description')
-        cat = ''
+        print("§§§§§§")
+        adventure_deeds_map = adventure.deeds_player_map()
+
+
+
+
         pack = []
-        print(adventure.protagonists)
         protlist = adventure.protagonists.split(",")
         for protagonist in protlist:
             x = Creature.objects.filter(rid=protagonist).first()
@@ -109,7 +113,6 @@ class Deed(models.Model):
         col1 = "#e0e0e0"
         col2 = "#f0e0e0"
         x = col1
-        y = "#309030"
         nlist = ""
 
         for packmate in pack:
@@ -118,7 +121,7 @@ class Deed(models.Model):
         for deed in deeds:
             plist = ''
             for packmate in pack:
-                plist += f'<td rowspan=2 style="background:{x}; color:#309030;"><span class="adventure_record"  params="{deed.code}__{packmate["code"]}"><i class="fa fa-times"></i></span></td>'
+                plist += f'<td rowspan=2 style="background:{x}; color:#808080;"><span class="adventure_record"  params="{deed.code}__{packmate["code"]}"><i class="fa fa-times"></i></span></td>'
             if deed.code in adventure_deeds:
                 h = f'<tr><td class="text" style="background:{x};"><tt>[{deed.code}]</tt> {deed.description}</td><td rowspan=2  style="background:{x};">{deed.glory}</td><td rowspan=2  style="background:{x};">{deed.honor}</td><td rowspan=2  style="background:{x};">{deed.wisdom}</td>{plist}</tr><tr  style="background:{x};"><td class="notes"  style="background:{x};">{deed.notes}</td></tr>'
                 html.append(h)

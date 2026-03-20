@@ -531,22 +531,13 @@ def character_for(slug, option="", idx=-1):
 def display_crossover_sheet(request, slug=None, option=""):
     if is_ajax(request):
         from collector.models.adventures import Adventure
-        from collector.models.seasons import Season
         blank = "blank" in option
         print(f"Blank:{blank}")
-        chronicle = get_current_chronicle()
+        adventure, chronicle, season = Adventure.current_full()
         if chronicle:
-            scenario = chronicle.scenario
             pre_title = chronicle.pre_title
             post_title = chronicle.post_title
-            season = Season.current_season(chronicle.acronym)
-            if season:
-                print(season)
-                adventure = Adventure.current_adventure(season.acronym)
-                if adventure:
-                    print(adventure)
-                    scenario = adventure.adventure_teaser
-
+            scenario = adventure.adventure_teaser
         if slug is None:
             slug = '_julius_von_blow'
         j, k = character_for(slug, "")
@@ -554,7 +545,6 @@ def display_crossover_sheet(request, slug=None, option=""):
                     'post_title': post_title, 'fontset': FONTSET, 'blank': blank, 'debug': False,
                     'specialities': k["spe"],
                     'shortcuts': k["shc"]}
-        # print(settings['labels']['sheet'])
         crossover_sheet_context = {'settings': json.dumps(settings, sort_keys=True, indent=4), 'data': j}
         return JsonResponse(crossover_sheet_context)
 
@@ -728,7 +718,6 @@ def save_to_svg(request, slug):
 def svg_to_pdf(request, slug):
     response = {'status': 'error'}
     logger.info(f'Saving to PDF.')
-    print('SAVE TO PDF')
     if is_ajax(request):
         import cairosvg
         svg_name = os.path.join(settings.MEDIA_ROOT, 'pdf/results/svg/' + request.POST["svg_name"])
@@ -751,10 +740,8 @@ def svg_to_pdf(request, slug):
             rid = "adventure_sheet"
         cairosvg.svg2pdf(url=svg_name, write_to=pdf_name, scale=1.0, unsafe=True)
         logger.info(f'--> Created --> {pdf_name}.')
-        print(f'--> Created --> {pdf_name}.')
         response['status'] = 'ok'
         all_in_one_pdf(rid, pages, creature)
-        print(response)
     return JsonResponse(response)
 
 

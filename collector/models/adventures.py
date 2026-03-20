@@ -27,6 +27,8 @@ class Adventure(models.Model):
 
     DEED_SEP = "|"
     WORD_SEP = ";"
+    ITEM_SEP = "§"
+
 
     def __str__(self):
         return f"{self.name}"
@@ -41,7 +43,7 @@ class Adventure(models.Model):
         items = self.deeds_map_str.split(self.DEED_SEP)
         for item in items:
             deeds_map.append(item.strip())
-        print("deeds map",deeds_map)
+        print("deeds map", deeds_map)
         return deeds_map
 
     def deeds_to_string(self, json_data_list):
@@ -90,6 +92,20 @@ class Adventure(models.Model):
             result = f"{self.acronym}__{code}___on"
         self.save()
         return result
+
+
+
+    def deeds_player_map(self):
+        ds = self.string_to_deeds()
+        pmap = {}
+        for d in ds:
+            items = d.split(self.ITEM_SEP)
+            pmap[items[0]] = []
+            for k, item in enumerate(items):
+                if k > 0:
+                    pmap[items[0]].append(item)
+        print(pmap)
+        return pmap
 
     def fix(self):
         if self.protagonists == "":
@@ -148,6 +164,9 @@ class Adventure(models.Model):
 
     @classmethod
     def current_full(cls):
+        """
+            :returns: adventure, chronicle and season
+        """
         all = cls.objects.filter(is_current=True)
         if len(all) == 1:
             from collector.models.chronicles import Chronicle

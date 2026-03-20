@@ -46545,3 +46545,465 @@ NameError: name 'y' is not defined
 [18/03 23:48:42] "GET /static/collector/css?c9cba5a4bb07 HTTP/1.1" 404 1805
 [18/03 23:48:46] Not Found: /ajax/display/undefined/
 [18/03 23:48:46] "GET /ajax/display/undefined/ HTTP/1.1" 404 12931
+[19/03 08:51:50] "GET /static/collector/css?208f17806147 HTTP/1.1" 404 1805
+[19/03 08:51:56] Not Found: /ajax/display/undefined/
+[19/03 08:51:56] "GET /ajax/display/undefined/ HTTP/1.1" 404 12931
+[19/03 08:52:18] "GET /static/collector/css?208f17806147 HTTP/1.1" 404 1805
+[19/03 08:52:27] Not Found: /ajax/display/undefined/
+[19/03 08:52:27] "GET /ajax/display/undefined/ HTTP/1.1" 404 12931
+[19/03 09:02:45] "GET /static/collector/css?208f17806147 HTTP/1.1" 404 1805
+[19/03 09:02:55] Not Found: /ajax/display/undefined/
+[19/03 09:02:55] "GET /ajax/display/undefined/ HTTP/1.1" 404 12931
+[19/03 09:02:55] Internal Server Error: /ajax/collector_action/renown_records/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 131, in renown_records
+    html = Deed.players_to_html(adventure)
+  File "/home/zaffarelli/Projects/wawwod/collector/models/deeds.py", line 98, in players_to_html
+    adventure_deeds_map = adventure.deeds_players_map()
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Adventure' object has no attribute 'deeds_players_map'. Did you mean: 'deeds_player_map'?
+[19/03 09:02:55] "GET /ajax/collector_action/renown_records/ HTTP/1.1" 500 81464
+[19/03 09:03:39] "GET /static/collector/css?208f17806147 HTTP/1.1" 404 1805
+[19/03 09:03:48] Not Found: /ajax/display/undefined/
+[19/03 09:03:48] "GET /ajax/display/undefined/ HTTP/1.1" 404 12931
+[19/03 20:04:33] "GET /static/collector/css?208f17806147 HTTP/1.1" 404 1805
+[19/03 20:08:45] "GET /static/collector/css?208f17806147 HTTP/1.1" 404 1805
+[19/03 20:09:04] Not Found: /many_forms_male.svg
+[19/03 20:09:04] "GET /many_forms_male.svg HTTP/1.1" 404 12919
+[19/03 20:09:05] Internal Server Error: /ajax/character/svg2pdf/_nathan_oconnell/
+Traceback (most recent call last):
+  File "/usr/lib64/python3.13/urllib/request.py", line 1481, in open_local_file
+    stats = os.stat(localfile)
+FileNotFoundError: [Errno 2] No such file or directory: '/home/zaffarelli/Projects/wawwod/wawwod_media/pdf/results/svg/many_forms_male.svg'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 752, in svg_to_pdf
+    cairosvg.svg2pdf(url=svg_name, write_to=pdf_name, scale=1.0, unsafe=True)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/__init__.py", line 67, in svg2pdf
+    return surface.PDFSurface.convert(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        bytestring=bytestring, file_obj=file_obj, url=url, dpi=dpi,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        invert_images=invert_images, unsafe=unsafe, write_to=write_to,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        output_width=output_width, output_height=output_height)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/surface.py", line 133, in convert
+    instance = cls(
+        tree, output, dpi, None, parent_width, parent_height, scale,
+        output_width, output_height, background_color,
+        map_rgba=negate_color if negate_colors else None,
+        map_image=invert_image if invert_images else None)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/surface.py", line 225, in __init__
+    self.draw(tree)
+    ~~~~~~~~~^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/surface.py", line 472, in draw
+    self.draw(child)
+    ~~~~~~~~~^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/surface.py", line 472, in draw
+    self.draw(child)
+    ~~~~~~~~~^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/surface.py", line 472, in draw
+    self.draw(child)
+    ~~~~~~~~~^^^^^^^
+  [Previous line repeated 1 more time]
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/surface.py", line 404, in draw
+    TAGS[node.tag](self, node)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/image.py", line 28, in image
+    image_bytes = node.fetch_url(url, 'image/*')
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/parser.py", line 243, in fetch_url
+    return read_url(url, self.url_fetcher, resource_type)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/url.py", line 154, in read_url
+    return url_fetcher(url, resource_type)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/url.py", line 84, in fetch
+    return urlopen(Request(url, headers=HTTP_HEADERS)).read()
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.13/urllib/request.py", line 189, in urlopen
+    return opener.open(url, data, timeout)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.13/urllib/request.py", line 489, in open
+    response = self._open(req, data)
+  File "/usr/lib64/python3.13/urllib/request.py", line 506, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+                              '_open', req)
+  File "/usr/lib64/python3.13/urllib/request.py", line 466, in _call_chain
+    result = func(*args)
+  File "/usr/lib64/python3.13/urllib/request.py", line 1459, in file_open
+    return self.open_local_file(req)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/usr/lib64/python3.13/urllib/request.py", line 1498, in open_local_file
+    raise URLError(exp)
+urllib.error.URLError: <urlopen error [Errno 2] No such file or directory: '/home/zaffarelli/Projects/wawwod/wawwod_media/pdf/results/svg/many_forms_male.svg'>
+[19/03 20:09:05] "POST /ajax/character/svg2pdf/_nathan_oconnell/ HTTP/1.1" 500 54027
+[19/03 23:02:31] "GET /static/collector/css?208f17806147 HTTP/1.1" 404 1805
+[19/03 23:10:12] "GET /static/collector/css?208f17806147 HTTP/1.1" 404 1805
+[20/03 00:16:49] "GET /static/collector/css?208f17806147 HTTP/1.1" 404 1805
+[20/03 01:28:16] "GET /static/collector/css?208f17806147 HTTP/1.1" 404 1805
+[20/03 01:34:53] "GET /static/collector/css?208f17806147 HTTP/1.1" 404 1805
+[20/03 01:42:58] "GET /static/collector/css?208f17806147 HTTP/1.1" 404 1805
+[20/03 01:43:18] Internal Server Error: /ajax/character/svg2pdf/_scarlet_sterling/
+Traceback (most recent call last):
+  File "/usr/lib64/python3.13/urllib/request.py", line 1481, in open_local_file
+    stats = os.stat(localfile)
+FileNotFoundError: [Errno 2] No such file or directory: '/home/zaffarelli/Projects/wawwod/wawwod_media/pdf/results/svg/static/collector/forms/many_forms_female.png'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 741, in svg_to_pdf
+    cairosvg.svg2pdf(url=svg_name, write_to=pdf_name, scale=1.0, unsafe=True)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/__init__.py", line 67, in svg2pdf
+    return surface.PDFSurface.convert(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        bytestring=bytestring, file_obj=file_obj, url=url, dpi=dpi,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        invert_images=invert_images, unsafe=unsafe, write_to=write_to,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        output_width=output_width, output_height=output_height)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/surface.py", line 133, in convert
+    instance = cls(
+        tree, output, dpi, None, parent_width, parent_height, scale,
+        output_width, output_height, background_color,
+        map_rgba=negate_color if negate_colors else None,
+        map_image=invert_image if invert_images else None)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/surface.py", line 225, in __init__
+    self.draw(tree)
+    ~~~~~~~~~^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/surface.py", line 472, in draw
+    self.draw(child)
+    ~~~~~~~~~^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/surface.py", line 472, in draw
+    self.draw(child)
+    ~~~~~~~~~^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/surface.py", line 472, in draw
+    self.draw(child)
+    ~~~~~~~~~^^^^^^^
+  [Previous line repeated 1 more time]
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/surface.py", line 404, in draw
+    TAGS[node.tag](self, node)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/image.py", line 28, in image
+    image_bytes = node.fetch_url(url, 'image/*')
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/parser.py", line 243, in fetch_url
+    return read_url(url, self.url_fetcher, resource_type)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/url.py", line 154, in read_url
+    return url_fetcher(url, resource_type)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/url.py", line 84, in fetch
+    return urlopen(Request(url, headers=HTTP_HEADERS)).read()
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.13/urllib/request.py", line 189, in urlopen
+    return opener.open(url, data, timeout)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.13/urllib/request.py", line 489, in open
+    response = self._open(req, data)
+  File "/usr/lib64/python3.13/urllib/request.py", line 506, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+                              '_open', req)
+  File "/usr/lib64/python3.13/urllib/request.py", line 466, in _call_chain
+    result = func(*args)
+  File "/usr/lib64/python3.13/urllib/request.py", line 1459, in file_open
+    return self.open_local_file(req)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/usr/lib64/python3.13/urllib/request.py", line 1498, in open_local_file
+    raise URLError(exp)
+urllib.error.URLError: <urlopen error [Errno 2] No such file or directory: '/home/zaffarelli/Projects/wawwod/wawwod_media/pdf/results/svg/static/collector/forms/many_forms_female.png'>
+[20/03 01:43:18] "POST /ajax/character/svg2pdf/_scarlet_sterling/ HTTP/1.1" 500 53863
+[20/03 01:43:22] Internal Server Error: /ajax/character/svg2pdf/_scarlet_sterling/
+Traceback (most recent call last):
+  File "/usr/lib64/python3.13/urllib/request.py", line 1481, in open_local_file
+    stats = os.stat(localfile)
+FileNotFoundError: [Errno 2] No such file or directory: '/home/zaffarelli/Projects/wawwod/wawwod_media/pdf/results/svg/static/collector/forms/many_forms_female.png'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 741, in svg_to_pdf
+    cairosvg.svg2pdf(url=svg_name, write_to=pdf_name, scale=1.0, unsafe=True)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/__init__.py", line 67, in svg2pdf
+    return surface.PDFSurface.convert(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        bytestring=bytestring, file_obj=file_obj, url=url, dpi=dpi,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        invert_images=invert_images, unsafe=unsafe, write_to=write_to,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        output_width=output_width, output_height=output_height)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/surface.py", line 133, in convert
+    instance = cls(
+        tree, output, dpi, None, parent_width, parent_height, scale,
+        output_width, output_height, background_color,
+        map_rgba=negate_color if negate_colors else None,
+        map_image=invert_image if invert_images else None)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/surface.py", line 225, in __init__
+    self.draw(tree)
+    ~~~~~~~~~^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/surface.py", line 472, in draw
+    self.draw(child)
+    ~~~~~~~~~^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/surface.py", line 472, in draw
+    self.draw(child)
+    ~~~~~~~~~^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/surface.py", line 472, in draw
+    self.draw(child)
+    ~~~~~~~~~^^^^^^^
+  [Previous line repeated 1 more time]
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/surface.py", line 404, in draw
+    TAGS[node.tag](self, node)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/image.py", line 28, in image
+    image_bytes = node.fetch_url(url, 'image/*')
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/parser.py", line 243, in fetch_url
+    return read_url(url, self.url_fetcher, resource_type)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/url.py", line 154, in read_url
+    return url_fetcher(url, resource_type)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/url.py", line 84, in fetch
+    return urlopen(Request(url, headers=HTTP_HEADERS)).read()
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.13/urllib/request.py", line 189, in urlopen
+    return opener.open(url, data, timeout)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.13/urllib/request.py", line 489, in open
+    response = self._open(req, data)
+  File "/usr/lib64/python3.13/urllib/request.py", line 506, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+                              '_open', req)
+  File "/usr/lib64/python3.13/urllib/request.py", line 466, in _call_chain
+    result = func(*args)
+  File "/usr/lib64/python3.13/urllib/request.py", line 1459, in file_open
+    return self.open_local_file(req)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/usr/lib64/python3.13/urllib/request.py", line 1498, in open_local_file
+    raise URLError(exp)
+urllib.error.URLError: <urlopen error [Errno 2] No such file or directory: '/home/zaffarelli/Projects/wawwod/wawwod_media/pdf/results/svg/static/collector/forms/many_forms_female.png'>
+[20/03 01:43:22] "POST /ajax/character/svg2pdf/_scarlet_sterling/ HTTP/1.1" 500 53805
+[20/03 01:48:05] Internal Server Error: /ajax/character/svg2pdf/_nathan_oconnell/
+Traceback (most recent call last):
+  File "/usr/lib64/python3.13/urllib/request.py", line 1481, in open_local_file
+    stats = os.stat(localfile)
+FileNotFoundError: [Errno 2] No such file or directory: '/home/zaffarelli/Projects/wawwod/wawwod_media/pdf/results/svg/static/collector/forms/many_forms_male.png'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 741, in svg_to_pdf
+    cairosvg.svg2pdf(url=svg_name, write_to=pdf_name, scale=1.0, unsafe=True)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/__init__.py", line 67, in svg2pdf
+    return surface.PDFSurface.convert(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        bytestring=bytestring, file_obj=file_obj, url=url, dpi=dpi,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        invert_images=invert_images, unsafe=unsafe, write_to=write_to,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        output_width=output_width, output_height=output_height)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/surface.py", line 133, in convert
+    instance = cls(
+        tree, output, dpi, None, parent_width, parent_height, scale,
+        output_width, output_height, background_color,
+        map_rgba=negate_color if negate_colors else None,
+        map_image=invert_image if invert_images else None)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/surface.py", line 225, in __init__
+    self.draw(tree)
+    ~~~~~~~~~^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/surface.py", line 472, in draw
+    self.draw(child)
+    ~~~~~~~~~^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/surface.py", line 472, in draw
+    self.draw(child)
+    ~~~~~~~~~^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/surface.py", line 472, in draw
+    self.draw(child)
+    ~~~~~~~~~^^^^^^^
+  [Previous line repeated 1 more time]
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/surface.py", line 404, in draw
+    TAGS[node.tag](self, node)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/image.py", line 28, in image
+    image_bytes = node.fetch_url(url, 'image/*')
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/parser.py", line 243, in fetch_url
+    return read_url(url, self.url_fetcher, resource_type)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/url.py", line 154, in read_url
+    return url_fetcher(url, resource_type)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/url.py", line 84, in fetch
+    return urlopen(Request(url, headers=HTTP_HEADERS)).read()
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.13/urllib/request.py", line 189, in urlopen
+    return opener.open(url, data, timeout)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.13/urllib/request.py", line 489, in open
+    response = self._open(req, data)
+  File "/usr/lib64/python3.13/urllib/request.py", line 506, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+                              '_open', req)
+  File "/usr/lib64/python3.13/urllib/request.py", line 466, in _call_chain
+    result = func(*args)
+  File "/usr/lib64/python3.13/urllib/request.py", line 1459, in file_open
+    return self.open_local_file(req)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/usr/lib64/python3.13/urllib/request.py", line 1498, in open_local_file
+    raise URLError(exp)
+urllib.error.URLError: <urlopen error [Errno 2] No such file or directory: '/home/zaffarelli/Projects/wawwod/wawwod_media/pdf/results/svg/static/collector/forms/many_forms_male.png'>
+[20/03 01:48:06] "POST /ajax/character/svg2pdf/_nathan_oconnell/ HTTP/1.1" 500 54119
+[20/03 01:49:03] "GET /static/collector/css?208f17806147 HTTP/1.1" 404 1805
+[20/03 01:49:31] "GET /static/collector/css?208f17806147 HTTP/1.1" 404 1805
+[20/03 01:51:47] "GET /static/collector/css?208f17806147 HTTP/1.1" 404 1805
+[20/03 01:53:10] "GET /static/collector/css?208f17806147 HTTP/1.1" 404 1805
+[20/03 01:53:23] Internal Server Error: /ajax/character/svg2pdf/_nayati_akichita/
+Traceback (most recent call last):
+  File "/usr/lib64/python3.13/urllib/request.py", line 1481, in open_local_file
+    stats = os.stat(localfile)
+FileNotFoundError: [Errno 2] No such file or directory: '/home/zaffarelli/Projects/wawwod/wawwod_media/pdf/results/svg/static/collector/forms/many_forms_male.png'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 741, in svg_to_pdf
+    cairosvg.svg2pdf(url=svg_name, write_to=pdf_name, scale=1.0, unsafe=True)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/__init__.py", line 67, in svg2pdf
+    return surface.PDFSurface.convert(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        bytestring=bytestring, file_obj=file_obj, url=url, dpi=dpi,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        invert_images=invert_images, unsafe=unsafe, write_to=write_to,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        output_width=output_width, output_height=output_height)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/surface.py", line 133, in convert
+    instance = cls(
+        tree, output, dpi, None, parent_width, parent_height, scale,
+        output_width, output_height, background_color,
+        map_rgba=negate_color if negate_colors else None,
+        map_image=invert_image if invert_images else None)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/surface.py", line 225, in __init__
+    self.draw(tree)
+    ~~~~~~~~~^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/surface.py", line 472, in draw
+    self.draw(child)
+    ~~~~~~~~~^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/surface.py", line 472, in draw
+    self.draw(child)
+    ~~~~~~~~~^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/surface.py", line 472, in draw
+    self.draw(child)
+    ~~~~~~~~~^^^^^^^
+  [Previous line repeated 1 more time]
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/surface.py", line 404, in draw
+    TAGS[node.tag](self, node)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/image.py", line 28, in image
+    image_bytes = node.fetch_url(url, 'image/*')
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/parser.py", line 243, in fetch_url
+    return read_url(url, self.url_fetcher, resource_type)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/url.py", line 154, in read_url
+    return url_fetcher(url, resource_type)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/url.py", line 84, in fetch
+    return urlopen(Request(url, headers=HTTP_HEADERS)).read()
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.13/urllib/request.py", line 189, in urlopen
+    return opener.open(url, data, timeout)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.13/urllib/request.py", line 489, in open
+    response = self._open(req, data)
+  File "/usr/lib64/python3.13/urllib/request.py", line 506, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+                              '_open', req)
+  File "/usr/lib64/python3.13/urllib/request.py", line 466, in _call_chain
+    result = func(*args)
+  File "/usr/lib64/python3.13/urllib/request.py", line 1459, in file_open
+    return self.open_local_file(req)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/usr/lib64/python3.13/urllib/request.py", line 1498, in open_local_file
+    raise URLError(exp)
+urllib.error.URLError: <urlopen error [Errno 2] No such file or directory: '/home/zaffarelli/Projects/wawwod/wawwod_media/pdf/results/svg/static/collector/forms/many_forms_male.png'>
+[20/03 01:53:23] "POST /ajax/character/svg2pdf/_nayati_akichita/ HTTP/1.1" 500 53825
+[20/03 01:55:33] "GET /static/collector/css?208f17806147 HTTP/1.1" 404 1805
+[20/03 01:57:55] "GET /static/collector/css?208f17806147 HTTP/1.1" 404 1805
+[20/03 12:11:10] "GET /static/collector/css?208f17806147 HTTP/1.1" 404 1805
+[20/03 12:12:02] "GET /static/collector/css?208f17806147 HTTP/1.1" 404 1805
+[20/03 12:23:22] "GET /static/collector/css?208f17806147 HTTP/1.1" 404 1805
+[20/03 12:23:41] "GET /static/collector/css?208f17806147 HTTP/1.1" 404 1805
+[20/03 12:25:06] "GET /static/collector/css?208f17806147 HTTP/1.1" 404 1805
+[20/03 12:26:04] "GET /static/collector/css?208f17806147 HTTP/1.1" 404 1805
+[20/03 12:26:23] "GET /static/collector/css?208f17806147 HTTP/1.1" 404 1805
+[20/03 12:26:59] "GET /static/collector/css?208f17806147 HTTP/1.1" 404 1805
+[20/03 12:27:22] "GET /static/collector/css?208f17806147 HTTP/1.1" 404 1805
+[20/03 12:37:07] "GET /static/collector/css?208f17806147 HTTP/1.1" 404 1805
+[20/03 12:39:15] "GET /static/collector/css?208f17806147 HTTP/1.1" 404 1805
+[20/03 12:41:06] "GET /static/collector/css?208f17806147 HTTP/1.1" 404 1805
+[20/03 12:42:16] "GET /static/collector/css?208f17806147 HTTP/1.1" 404 1805
+[20/03 12:43:42] "GET /static/collector/css?208f17806147 HTTP/1.1" 404 1805
+[20/03 12:44:01] "GET /static/collector/css?208f17806147 HTTP/1.1" 404 1805
+[20/03 12:44:37] "GET /static/collector/css?208f17806147 HTTP/1.1" 404 1805
+[20/03 12:47:06] "GET /static/collector/css?208f17806147 HTTP/1.1" 404 1805
+[20/03 12:48:26] "GET /static/collector/css?208f17806147 HTTP/1.1" 404 1805
+[20/03 12:49:44] "GET /static/collector/css?208f17806147 HTTP/1.1" 404 1805
+[20/03 12:50:53] "GET /static/collector/css?208f17806147 HTTP/1.1" 404 1805
+[20/03 12:51:14] "GET /static/collector/css?208f17806147 HTTP/1.1" 404 1805
+[20/03 12:51:30] "GET /static/collector/css?208f17806147 HTTP/1.1" 404 1805
+[20/03 12:51:48] "GET /static/collector/css?208f17806147 HTTP/1.1" 404 1805
+[20/03 12:52:04] "GET /static/collector/css?208f17806147 HTTP/1.1" 404 1805
+[20/03 13:01:45] "GET /static/collector/css?208f17806147 HTTP/1.1" 404 1805
+[20/03 13:03:17] "GET /static/collector/css?208f17806147 HTTP/1.1" 404 1805
+[20/03 13:03:42] "GET /static/collector/css?208f17806147 HTTP/1.1" 404 1805
+[20/03 13:04:05] "GET /static/collector/css?208f17806147 HTTP/1.1" 404 1805
+[20/03 13:04:56] "GET /static/collector/css?208f17806147 HTTP/1.1" 404 1805
+[20/03 13:05:48] "GET /static/collector/css?208f17806147 HTTP/1.1" 404 1805
+[20/03 13:06:01] "GET /static/collector/css?208f17806147 HTTP/1.1" 404 1805
+[20/03 13:06:14] "GET /static/collector/css?208f17806147 HTTP/1.1" 404 1805
+[20/03 13:06:28] "GET /static/collector/css?208f17806147 HTTP/1.1" 404 1805
+[20/03 13:06:58] "GET /static/collector/css?208f17806147 HTTP/1.1" 404 1805
+[20/03 13:10:47] "GET /static/collector/css?208f17806147 HTTP/1.1" 404 1805
+[20/03 13:27:32] "GET /static/collector/css?208f17806147 HTTP/1.1" 404 1805
+[20/03 13:28:12] Not Found: /ajax/display/undefined/
+[20/03 13:28:12] "GET /ajax/display/undefined/ HTTP/1.1" 404 12931
+[20/03 13:33:43] "GET /static/collector/css?208f17806147 HTTP/1.1" 404 1805
+[20/03 13:37:00] "GET /static/collector/css?208f17806147 HTTP/1.1" 404 1805
+[20/03 13:37:48] "GET /static/collector/css?208f17806147 HTTP/1.1" 404 1805

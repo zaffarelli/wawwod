@@ -1303,28 +1303,28 @@ class WawwodSheet {
         let me = this
         let ox = 1;
         let oy = basey;
-        let attr = ["STR","DEX","STA","CHA","MAN","APP"]
+        let attr = ["STR","DEX","STA","MAN","APP"]
         let FORMS = {
             "homid":{
-                "attributes_mods":[0,0,0,0,0,0],
+                "attributes_mods":[0,0,0,0,0],
                 "note":"",
                 "diff":"6"
                 },
             "glabro":{
-                "attributes_mods":[2,0,2,0,-1,-1],
+                "attributes_mods":[2,0,2,-1,-1],
                 "diff":"7"
                 } ,
             "crinos":{
-                "attributes_mods":[4,1,3,0,-3,-10],
+                "attributes_mods":[4,1,3,-3,-10],
                 "note":"INCITE DELIRIUM IN HUMANS",
                 "diff":"6"
                 } ,
             "hispo":{
-                "attributes_mods":[3,2,3,0,-3,0],
+                "attributes_mods":[3,2,3,-3,0],
                 "diff":"7"
                 } ,
             "lupus":{
-                "attributes_mods":[1,2,2,0,-3,0],
+                "attributes_mods":[1,2,2,-3,0],
                 "diff":"6"
                 } ,
             }
@@ -1333,12 +1333,15 @@ class WawwodSheet {
             let idx = 0
             let form_width = 4
             let form_height = 5
-            me.character.append("image")
-                 .attr("xlink:href", me.data['sex'] ? "static/collector/auspices/many_forms_male.svg" : "static/collector/auspices/many_forms_female.svg")
-                 .attr("x",me.stepx*3)
-                 .attr("y",me.stepy*29)
-                 .attr("width",me.stepx*19)
-                 .attr("fill","#D0D0D0")
+
+
+
+             me.character.append("image")
+                  .attr("xlink:href", me.data['sex'] ? "static/collector/forms/many_forms_male.svg" : "static/collector/forms/many_forms_female.svg")
+                  .attr("x",me.stepx*3)
+                  .attr("y",me.stepy*29)
+                  .attr("width",me.stepx*19)
+                  .attr("fill","#D0D0D0")
             _.forEach(FORMS,(v,k)=> {
                 let ox =  (1.5+idx*(form_width+0.25))*me.stepx
                 let oy = (basey)+me.stepy
