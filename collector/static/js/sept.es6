@@ -31,7 +31,7 @@ class Sept {
 xmlns="http://www.w3.org/2000/svg" version="1.1" \
 xmlns:xlink="http://www.w3.org/1999/xlink"> \
 ' + flist + base_svg + '</svg>';
-        let svg_name = "sept.svg"
+        let svg_name = "sept"+me.data.name+".svg"
         let rid = "sept";
         let sheet_data = {
             'svg_name': svg_name,

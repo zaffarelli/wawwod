@@ -84,6 +84,7 @@ class Gift(models.Model):
     system = models.TextField(max_length=1024, blank=True, default='')
 
     references = models.CharField(max_length=256, blank=True, default='')
+    source_page = models.CharField(max_length=8, blank=True, default='')
 
 
     def fix(self):

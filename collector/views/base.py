@@ -1,3 +1,6 @@
+import zoneinfo
+from time import strptime
+
 from django.http import HttpResponse, Http404, JsonResponse
 from django.shortcuts import render
 import random
@@ -34,7 +37,8 @@ def prepare_index(request):
     players = []
     # Adventure.set_current("SPI")
     chronicle = Chronicle.current()  # get_current_chronicle()
-    plist = Creature.objects.filter(chronicle=chronicle.acronym).exclude(is_player=False).exclude(adventure="").order_by('adventure')
+    plist = Creature.objects.filter(chronicle=chronicle.acronym).exclude(is_player=False).exclude(
+        adventure="").order_by('adventure')
     prev_a = ""
     for ad in chronicle.adventures:
         for p in plist:
@@ -46,8 +50,9 @@ def prepare_index(request):
                 prev_a = ad.acronym
                 adventure = {'adventure': ad.name, 'acronym': ad.acronym, 'players': []}
             if ad.acronym in p.adventure:
-                adventure['players'].append({'name': p.name, 'rid': p.rid, 'player': p.player, 'pre_change_access': p.pre_change_access})
-        #players.append(adventure)
+                adventure['players'].append(
+                    {'name': p.name, 'rid': p.rid, 'player': p.player, 'pre_change_access': p.pre_change_access})
+        # players.append(adventure)
     for c in Chronicle.objects.all():
         chronicles.append(c.to_json)
     cities = []
@@ -178,11 +183,7 @@ def display_groups(request, slug=None):
 
 
 def get_list(request, pid=1, slug=None):
-    # chronicle = get_current_chronicle()
-    chronicle = Chronicle.current()
-    adventure = Adventure.current()
-    # print(slug)
-    # print(chronicle.acronym)
+    adventure, chronicle, season = Adventure.current_full()
     if is_ajax(request):
         if 'vtm' == slug:
             # print('vampires')
@@ -540,10 +541,17 @@ def display_crossover_sheet(request, slug=None, option=""):
             scenario = adventure.adventure_teaser
         if slug is None:
             slug = '_julius_von_blow'
+        all_glyphs = []
+        glyphs = os.listdir("collector/static/collector/miscellaneous_garou_glyphs/")
+        for glyph in glyphs:
+            if glyph.endswith(".webp"):
+                txt = glyph.replace("Glyph", "").replace(".webp", "")
+                all_glyphs.append({"image": glyph, "text": txt})
+        all_glyphs = sorted(all_glyphs, key=lambda g: g["text"])
         j, k = character_for(slug, "")
         settings = {'version': 1.0, 'labels': STATS_NAMES[k["creature"]], 'pre_title': pre_title, 'scenario': scenario,
                     'post_title': post_title, 'fontset': FONTSET, 'blank': blank, 'debug': False,
-                    'specialities': k["spe"],
+                    'specialities': k["spe"], 'glyphs': all_glyphs,
                     'shortcuts': k["shc"]}
         crossover_sheet_context = {'settings': json.dumps(settings, sort_keys=True, indent=4), 'data': j}
         return JsonResponse(crossover_sheet_context)
@@ -773,11 +781,26 @@ def all_in_one_pdf(rid, pages, creature="mortal"):
 
 
 def moon_phase(request, dt=None):
+    from astral import LocationInfo
+
+    city = LocationInfo("Minneapolis", "Minnesota", "America/Chicago", 44.97, -93.27)
+    timezone = zoneinfo.ZoneInfo("America/Chicago")
+    print((
+        f"Information for {city.name}/{city.region}\n"
+        f"Timezone: {city.timezone}\n"
+        f"Latitude: {city.latitude:.02f}; Longitude: {city.longitude:.02f}\n"
+    ))
+    from astral.sun import sun
+
+
     weeks = []
     if dt is None:
         dt = datetime.date.today()
     firstday = datetime.date(dt.year, dt.month, 1)
     year = dt.year
+
+
+
     started = False
     day = 0
     cntw = 0
@@ -801,6 +824,15 @@ def moon_phase(request, dt=None):
                     import math
                     # print("started")
                     x = moon.phase(cur_day)
+                    s = sun(city.observer, date=cur_day,tzinfo=timezone)
+                    # print((
+                    #     f'Dawn:    {s["dawn"]}\n'
+                    #     f'Sunrise: {s["sunrise"]}\n'
+                    #     f'Noon:    {s["noon"]}\n'
+                    #     f'Sunset:  {s["sunset"]}\n'
+                    #     f'Dusk:    {s["dusk"]}\n'
+                    # ))
+
                     icons = ["Ragabash", "Theurge", "Philodox", "Galliard", "Ahroun", "Galliard", "Philodox", "Theurge"]
                     # if x < 3.5 * 1 - 0.01:
                     #     str = icons[0]
@@ -825,7 +857,10 @@ def moon_phase(request, dt=None):
                     col = "#909090"
                     if cur_day == datetime.date.today():
                         col = "#F0F0F0"
-                    aweek.append({"str": f"{str}", "num": f"{cur_day.day:02}", "color": col, "blank": False})
+
+                    sr = s["sunrise"].strftime("%H:%M")
+                    ss = s["sunset"].strftime("%H:%M")
+                    aweek.append({"str": f"{str}", "num": f"{cur_day.day:02}", "color": col, "blank": False, "sunrise":sr, "sunset":ss})
                     day += 1
             else:
                 txt = "out"
@@ -848,7 +883,7 @@ def moon_phase(request, dt=None):
 
 def calendar(request, year=None):
     if year is None:
-        year = 2024
+        year = 1900
     months = []
     for m in range(12):
         dt = datetime.date(year=int(year), month=m + 1, day=1)

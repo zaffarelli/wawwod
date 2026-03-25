@@ -54,6 +54,17 @@ class HotSpot(models.Model):
     hyperlink = models.CharField(default="", max_length=1024, blank=True)
     episode = models.CharField(max_length=128, default='', blank=True)
     city_code = models.CharField(max_length=128, default='UNY', blank=True)
+    is_city = models.BooleanField(default=False, blank=True)
+
+    def localize_me(self):
+        if self.gps_coords == "0,0":
+            from geopy import geocoders
+            gn = geocoders.GeoNames(username="zaffarelli")
+            x = gn.geocode(self.name+", MN")
+            print(x)
+            self.gps_coords = f"{x[1][0]},{x[1][1]}"
+
+    # https://citylatitudelongitude.com/MN/?state=MN&city=Duluth
 
     def fix(self):
         if self.gps_coords != DEFAULT_GPS:
@@ -63,6 +74,8 @@ class HotSpot(models.Model):
                 self.latitude = float(words[1])
         self.color = POI_COLORS[self.type]
         self.hyperlink = f'https://www.google.com/maps/search/?api=1&query={self.longitude}%2C{self.latitude}'
+        if self.is_city:
+            self.localize_me()
 
     def __str__(self):
         return f'{self.name}'

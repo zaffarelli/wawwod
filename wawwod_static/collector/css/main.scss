@@ -525,8 +525,8 @@ table {
           margin-left: 0;
           text-indent: 0;
           list-style-type: none;
-          display:none;
-
+          display:block;
+          border-color:red;
           & li {
             padding: 5px;
             margin: 2px;
@@ -863,6 +863,9 @@ div.creature_links {
 
   &.garou {
     background: $garou_fill;
+    &.Pentex, &.Wyrm{
+        border-color: "#302030";
+    }
   }
 
   &.mage {
@@ -1142,16 +1145,18 @@ fieldset {
       }
     }
     &.creature_type {
-      flex: 0 0 10ex;
+      flex: 0 1 10ex;
       order: 2;
       text-align: center;
     }
     &.options {
-      flex: 1 0 auto;
+      flex: 1 1 auto;
       order: 4;
+      overflow-x: hidden;
     }
     &.tail {
       order: 5;
+      flex: 0 0 auto;
     }
   }
 }
@@ -1282,4 +1287,16 @@ fieldset {
       background: silver;
     }
   }
+}
+
+
+.sun{
+    float:right;
+    font-size:8pt;
+    color:red;
+    font-family:TexteLibre;
+    background:#F0F0F0;
+    border-radius:3pt;
+    padding:3pt;
+    text-align:right;
 }

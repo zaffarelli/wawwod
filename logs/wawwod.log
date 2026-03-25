@@ -47007,3 +47007,2483 @@ urllib.error.URLError: <urlopen error [Errno 2] No such file or directory: '/hom
 [20/03 13:33:43] "GET /static/collector/css?208f17806147 HTTP/1.1" 404 1805
 [20/03 13:37:00] "GET /static/collector/css?208f17806147 HTTP/1.1" 404 1805
 [20/03 13:37:48] "GET /static/collector/css?208f17806147 HTTP/1.1" 404 1805
+[21/03 11:57:09] "GET /static/collector/css?7f97c1f2f468 HTTP/1.1" 404 1805
+[21/03 11:57:25] Not Found: /ajax/display/undefined/
+[21/03 11:57:25] "GET /ajax/display/undefined/ HTTP/1.1" 404 12931
+[21/03 11:57:30] Not Found: /ajax/display/crossover_sheet/Sheet for _jeremiah_talitos/
+[21/03 11:57:30] "GET /ajax/display/crossover_sheet/Sheet%20for%20_jeremiah_talitos/ HTTP/1.1" 404 13037
+[21/03 11:59:31] Not Found: /ajax/display/undefined/
+[21/03 11:59:31] "GET /ajax/display/undefined/ HTTP/1.1" 404 12931
+[21/03 12:00:06] Not Found: /ajax/display/undefined/
+[21/03 12:00:06] "GET /ajax/display/undefined/ HTTP/1.1" 404 12931
+[22/03 01:09:28] "GET /static/collector/css?7f97c1f2f468 HTTP/1.1" 404 1805
+[22/03 01:10:26] "GET /static/collector/css?7f97c1f2f468 HTTP/1.1" 404 1805
+[22/03 01:14:41] "GET /static/collector/css?7f97c1f2f468 HTTP/1.1" 404 1805
+[22/03 01:16:13] "GET /static/collector/css?7f97c1f2f468 HTTP/1.1" 404 1805
+[22/03 01:19:05] "GET /static/collector/css?7f97c1f2f468 HTTP/1.1" 404 1805
+[22/03 01:19:10] Internal Server Error: /ajax/display/crossover_sheet/_nathan_oconnell/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 543, in display_crossover_sheet
+    glyphs = os.listdir("static/collector/miscellaneous_garou_glyphs/")
+FileNotFoundError: [Errno 2] No such file or directory: 'static/collector/miscellaneous_garou_glyphs/'
+[22/03 01:19:10] "GET /ajax/display/crossover_sheet/_nathan_oconnell/ HTTP/1.1" 500 78131
+[22/03 01:20:01] Internal Server Error: /ajax/display/crossover_sheet/_nathan_oconnell/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 543, in display_crossover_sheet
+    glyphs = os.listdir("collector/miscellaneous_garou_glyphs/")
+FileNotFoundError: [Errno 2] No such file or directory: 'collector/miscellaneous_garou_glyphs/'
+[22/03 01:20:01] "GET /ajax/display/crossover_sheet/_nathan_oconnell/ HTTP/1.1" 500 78082
+[22/03 01:20:08] "GET /static/collector/css?7f97c1f2f468 HTTP/1.1" 404 1805
+[22/03 01:20:13] Internal Server Error: /ajax/display/crossover_sheet/_nathan_oconnell/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 543, in display_crossover_sheet
+    glyphs = os.listdir("collector/miscellaneous_garou_glyphs/")
+FileNotFoundError: [Errno 2] No such file or directory: 'collector/miscellaneous_garou_glyphs/'
+[22/03 01:20:13] "GET /ajax/display/crossover_sheet/_nathan_oconnell/ HTTP/1.1" 500 78082
+[22/03 01:22:00] "GET /static/collector/css?7f97c1f2f468 HTTP/1.1" 404 1805
+[22/03 01:25:08] "GET /static/collector/css?7f97c1f2f468 HTTP/1.1" 404 1805
+[22/03 01:26:09] "GET /static/collector/css?7f97c1f2f468 HTTP/1.1" 404 1805
+[22/03 01:26:26] "GET /static/collector/css?7f97c1f2f468 HTTP/1.1" 404 1805
+[22/03 01:27:00] "GET /static/collector/css?7f97c1f2f468 HTTP/1.1" 404 1805
+[22/03 01:29:54] "GET /static/collector/css?7f97c1f2f468 HTTP/1.1" 404 1805
+[22/03 01:29:59] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphGarou.webp
+[22/03 01:29:59] "GET /collector/static/miscellaneous_garou_glyphs/GlyphGarou.webp HTTP/1.1" 404 13039
+[22/03 01:30:14] "GET /static/collector/css?7f97c1f2f468 HTTP/1.1" 404 1805
+[22/03 01:30:17] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphGarou.webp
+[22/03 01:30:17] "GET /collector/static/miscellaneous_garou_glyphs/GlyphGarou.webp HTTP/1.1" 404 13039
+[22/03 01:30:17] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphCaern.webp
+[22/03 01:30:17] "GET /collector/static/miscellaneous_garou_glyphs/GlyphCaern.webp HTTP/1.1" 404 13039
+[22/03 01:30:17] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphMoot.webp
+[22/03 01:30:17] "GET /collector/static/miscellaneous_garou_glyphs/GlyphMoot.webp HTTP/1.1" 404 13036
+[22/03 01:30:17] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphLitany.webp
+[22/03 01:30:17] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphPack.webp
+[22/03 01:30:17] "GET /collector/static/miscellaneous_garou_glyphs/GlyphLitany.webp HTTP/1.1" 404 13042
+[22/03 01:30:17] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphGarouNation.webp
+[22/03 01:30:17] "GET /collector/static/miscellaneous_garou_glyphs/GlyphPack.webp HTTP/1.1" 404 13036
+[22/03 01:30:17] "GET /collector/static/miscellaneous_garou_glyphs/GlyphGarouNation.webp HTTP/1.1" 404 13057
+[22/03 01:30:17] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphRage.webp
+[22/03 01:30:17] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphHonor.webp
+[22/03 01:30:17] "GET /collector/static/miscellaneous_garou_glyphs/GlyphHonor.webp HTTP/1.1" 404 13039
+[22/03 01:30:17] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphGlory.webp
+[22/03 01:30:17] "GET /collector/static/miscellaneous_garou_glyphs/GlyphRage.webp HTTP/1.1" 404 13036
+[22/03 01:30:17] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphGnosis.webp
+[22/03 01:30:17] "GET /collector/static/miscellaneous_garou_glyphs/GlyphGlory.webp HTTP/1.1" 404 13039
+[22/03 01:30:17] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphAlpha.webp
+[22/03 01:30:17] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphKinfolk.webp
+[22/03 01:30:17] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphSilverPack.webp
+[22/03 01:30:17] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphWisdom.webp
+[22/03 01:30:17] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphLostCub.webp
+[22/03 01:30:17] "GET /collector/static/miscellaneous_garou_glyphs/GlyphGnosis.webp HTTP/1.1" 404 13042
+[22/03 01:30:17] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphRonin.webp
+[22/03 01:30:17] "GET /collector/static/miscellaneous_garou_glyphs/GlyphKinfolk.webp HTTP/1.1" 404 13045
+[22/03 01:30:17] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphSilverRecord.webp
+[22/03 01:30:17] "GET /collector/static/miscellaneous_garou_glyphs/GlyphAlpha.webp HTTP/1.1" 404 13039
+[22/03 01:30:17] "GET /collector/static/miscellaneous_garou_glyphs/GlyphWisdom.webp HTTP/1.1" 404 13042
+[22/03 01:30:17] "GET /collector/static/miscellaneous_garou_glyphs/GlyphSilverPack.webp HTTP/1.1" 404 13054
+[22/03 01:30:17] "GET /collector/static/miscellaneous_garou_glyphs/GlyphLostCub.webp HTTP/1.1" 404 13045
+[22/03 01:30:17] "GET /collector/static/miscellaneous_garou_glyphs/GlyphRonin.webp HTTP/1.1" 404 13039
+[22/03 01:30:17] "GET /collector/static/miscellaneous_garou_glyphs/GlyphSilverRecord.webp HTTP/1.1" 404 13060
+[22/03 01:30:17] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphKlaive.webp
+[22/03 01:30:17] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphImpergium.webp
+[22/03 01:30:17] "GET /collector/static/miscellaneous_garou_glyphs/GlyphKlaive.webp HTTP/1.1" 404 13042
+[22/03 01:30:17] "GET /collector/static/miscellaneous_garou_glyphs/GlyphImpergium.webp HTTP/1.1" 404 13051
+[22/03 01:30:17] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphFish.webp
+[22/03 01:30:17] "GET /collector/static/miscellaneous_garou_glyphs/GlyphFish.webp HTTP/1.1" 404 13036
+[22/03 01:30:17] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphWilderness.webp
+[22/03 01:30:17] "GET /collector/static/miscellaneous_garou_glyphs/GlyphWilderness.webp HTTP/1.1" 404 13054
+[22/03 01:30:17] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphWarofRage.webp
+[22/03 01:30:17] "GET /collector/static/miscellaneous_garou_glyphs/GlyphWarofRage.webp HTTP/1.1" 404 13051
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphGaia.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphGaia.webp HTTP/1.1" 404 13036
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphWar.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphWar.webp HTTP/1.1" 404 13033
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphJump.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphJump.webp HTTP/1.1" 404 13036
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphElder.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphElder.webp HTTP/1.1" 404 13039
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphArcadiaGateway.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphArcadiaGateway.webp HTTP/1.1" 404 13066
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphPangaea.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphPangaea.webp HTTP/1.1" 404 13045
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphLuna.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphLuna.webp HTTP/1.1" 404 13036
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphPark.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphPark.webp HTTP/1.1" 404 13036
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphHelios.webp
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/Special
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphHelios.webp HTTP/1.1" 404 13042
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/Special HTTP/1.1" 404 13015
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphStar.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphStar.webp HTTP/1.1" 404 13036
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphAnima.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphAnima.webp HTTP/1.1" 404 13039
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphHorse.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphHorse.webp HTTP/1.1" 404 13039
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphClaw.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphClaw.webp HTTP/1.1" 404 13036
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphFactory.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphFactory.webp HTTP/1.1" 404 13045
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphLegend.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphLegend.webp HTTP/1.1" 404 13042
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphTooth.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphTooth.webp HTTP/1.1" 404 13039
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphBone.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphBone.webp HTTP/1.1" 404 13036
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphForest.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphForest.webp HTTP/1.1" 404 13042
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphMountain.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphMountain.webp HTTP/1.1" 404 13048
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphToxicWaste.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphToxicWaste.webp HTTP/1.1" 404 13054
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphGate.webp
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphDesert.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphGate.webp HTTP/1.1" 404 13036
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphDesert.webp HTTP/1.1" 404 13042
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphAir.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphAir.webp HTTP/1.1" 404 13033
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphFire.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphFire.webp HTTP/1.1" 404 13036
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphWater.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphWater.webp HTTP/1.1" 404 13039
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphMetal.webp
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphLandfill.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphMetal.webp HTTP/1.1" 404 13039
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphBuilding.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphLandfill.webp HTTP/1.1" 404 13048
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphBuilding.webp HTTP/1.1" 404 13048
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphDark.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphDark.webp HTTP/1.1" 404 13036
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphStone.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphStone.webp HTTP/1.1" 404 13039
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphTree.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphTree.webp HTTP/1.1" 404 13036
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphSnow.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphSnow.webp HTTP/1.1" 404 13036
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphCity.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphCity.webp HTTP/1.1" 404 13036
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphWeaver.webp
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphHive.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphWeaver.webp HTTP/1.1" 404 13042
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphHive.webp HTTP/1.1" 404 13036
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphRain.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphRain.webp HTTP/1.1" 404 13036
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphLightning.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphLightning.webp HTTP/1.1" 404 13051
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphLightning2.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphLightning2.webp HTTP/1.1" 404 13054
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphStorm.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphStorm.webp HTTP/1.1" 404 13039
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphFlood.webp
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphAnthelios.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphFlood.webp HTTP/1.1" 404 13039
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphAnthelios.webp HTTP/1.1" 404 13051
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphMeros.webp
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphWinter.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphMeros.webp HTTP/1.1" 404 13039
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphAbomination.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphWinter.webp HTTP/1.1" 404 13042
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphAbomination.webp HTTP/1.1" 404 13057
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphSpring.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphSpring.webp HTTP/1.1" 404 13042
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphSummer.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphSummer.webp HTTP/1.1" 404 13042
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphAutumn.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphAutumn.webp HTTP/1.1" 404 13042
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphVampire.webp
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphNorth.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphVampire.webp HTTP/1.1" 404 13045
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphNorth.webp HTTP/1.1" 404 13039
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphMonster.webp
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphShantar.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphMonster.webp HTTP/1.1" 404 13045
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphShantar.webp HTTP/1.1" 404 13045
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphSouth.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphSouth.webp HTTP/1.1" 404 13039
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphEast.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphEast.webp HTTP/1.1" 404 13036
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphWest.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphWest.webp HTTP/1.1" 404 13036
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphWyld.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphWyld.webp HTTP/1.1" 404 13036
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphUrgeWyrm.webp
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphLife.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphUrgeWyrm.webp HTTP/1.1" 404 13048
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphLife.webp HTTP/1.1" 404 13036
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphBane.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphBane.webp HTTP/1.1" 404 13036
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphDeath.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphDeath.webp HTTP/1.1" 404 13039
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphBirth.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphBirth.webp HTTP/1.1" 404 13039
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphPeace.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphPeace.webp HTTP/1.1" 404 13039
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphFomori.webp
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphSacrifice.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphFomori.webp HTTP/1.1" 404 13042
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphSacrifice.webp HTTP/1.1" 404 13051
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphApocalypse.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphApocalypse.webp HTTP/1.1" 404 13054
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphSex.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphSex.webp HTTP/1.1" 404 13033
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphLove.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphLove.webp HTTP/1.1" 404 13036
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphDance.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphDance.webp HTTP/1.1" 404 13039
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphStory.webp
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphEaterofSouls.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphStory.webp HTTP/1.1" 404 13039
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphEaterofSouls.webp HTTP/1.1" 404 13060
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphBeastofWar.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphBeastofWar.webp HTTP/1.1" 404 13054
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphHowl.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphHowl.webp HTTP/1.1" 404 13036
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphHide.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphHide.webp HTTP/1.1" 404 13036
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphSafety.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphSafety.webp HTTP/1.1" 404 13042
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphDanger.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphDanger.webp HTTP/1.1" 404 13042
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphRuatma.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphRuatma.webp HTTP/1.1" 404 13042
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphLuBat.webp
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphDefilerWyrm.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphLuBat.webp HTTP/1.1" 404 13039
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphDefilerWyrm.webp HTTP/1.1" 404 13057
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphQuest.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphQuest.webp HTTP/1.1" 404 13039
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphCreate.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphCreate.webp HTTP/1.1" 404 13042
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphRepair.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphRepair.webp HTTP/1.1" 404 13042
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphPutTogether.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphPutTogether.webp HTTP/1.1" 404 13057
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphWyrm.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphWyrm.webp HTTP/1.1" 404 13036
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphSuffering.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphSuffering.webp HTTP/1.1" 404 13051
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphZarok.webp
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphGun.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphZarok.webp HTTP/1.1" 404 13039
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphGun.webp HTTP/1.1" 404 13033
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphDefiance.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphDefiance.webp HTTP/1.1" 404 13048
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphConvalescence.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphConvalescence.webp HTTP/1.1" 404 13063
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphTherapy.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphTherapy.webp HTTP/1.1" 404 13045
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphTime.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphTime.webp HTTP/1.1" 404 13036
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphTravel.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphTravel.webp HTTP/1.1" 404 13042
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphCycle.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphCycle.webp HTTP/1.1" 404 13039
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphBranded.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphBranded.webp HTTP/1.1" 404 13045
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphAncient.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphAncient.webp HTTP/1.1" 404 13045
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphCoward.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphCoward.webp HTTP/1.1" 404 13042
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphPregnant.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphPregnant.webp HTTP/1.1" 404 13048
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphRival.webp
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphFriend.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphRival.webp HTTP/1.1" 404 13039
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphFriend.webp HTTP/1.1" 404 13042
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphDescructive.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphDescructive.webp HTTP/1.1" 404 13057
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphObservant.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphObservant.webp HTTP/1.1" 404 13051
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphQuick.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphQuick.webp HTTP/1.1" 404 13039
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphResilient.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphResilient.webp HTTP/1.1" 404 13051
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphHungry.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphHungry.webp HTTP/1.1" 404 13042
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphRorg.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphRorg.webp HTTP/1.1" 404 13036
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphCold.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphCold.webp HTTP/1.1" 404 13036
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphNerigal.webp
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphWounded.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphNerigal.webp HTTP/1.1" 404 13045
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphWounded.webp HTTP/1.1" 404 13045
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphHelp.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphHelp.webp HTTP/1.1" 404 13036
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphInMemory.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphInMemory.webp HTTP/1.1" 404 13048
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphSolarEclipse.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphSolarEclipse.webp HTTP/1.1" 404 13060
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphLunarEclipse.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphLunarEclipse.webp HTTP/1.1" 404 13060
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphSokhta.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphSokhta.webp HTTP/1.1" 404 13042
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphMate.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphMate.webp HTTP/1.1" 404 13036
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphUmbra.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphUmbra.webp HTTP/1.1" 404 13039
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphRite.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphRite.webp HTTP/1.1" 404 13036
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphRealm.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphRealm.webp HTTP/1.1" 404 13039
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphRiteofPassage.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphRiteofPassage.webp HTTP/1.1" 404 13063
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphEshtarra.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphEshtarra.webp HTTP/1.1" 404 13048
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphRiteofBinding.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphRiteofBinding.webp HTTP/1.1" 404 13063
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphRiteoftheFetish.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphRiteoftheFetish.webp HTTP/1.1" 404 13069
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphFetish.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphFetish.webp HTTP/1.1" 404 13042
+[22/03 01:30:18] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphCelestine.webp
+[22/03 01:30:18] "GET /collector/static/miscellaneous_garou_glyphs/GlyphCelestine.webp HTTP/1.1" 404 13051
+[22/03 01:30:19] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphIncarna.webp
+[22/03 01:30:19] "GET /collector/static/miscellaneous_garou_glyphs/GlyphIncarna.webp HTTP/1.1" 404 13045
+[22/03 01:30:19] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphTambiyah.webp
+[22/03 01:30:19] "GET /collector/static/miscellaneous_garou_glyphs/GlyphTambiyah.webp HTTP/1.1" 404 13048
+[22/03 01:30:19] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphSpirit.webp
+[22/03 01:30:19] "GET /collector/static/miscellaneous_garou_glyphs/GlyphSpirit.webp HTTP/1.1" 404 13042
+[22/03 01:30:19] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphHakahe.webp
+[22/03 01:30:19] "GET /collector/static/miscellaneous_garou_glyphs/GlyphHakahe.webp HTTP/1.1" 404 13042
+[22/03 01:30:19] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphTotem.webp
+[22/03 01:30:19] "GET /collector/static/miscellaneous_garou_glyphs/GlyphTotem.webp HTTP/1.1" 404 13039
+[22/03 01:30:19] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphDeepUmbra.webp
+[22/03 01:30:19] "GET /collector/static/miscellaneous_garou_glyphs/GlyphDeepUmbra.webp HTTP/1.1" 404 13051
+[22/03 01:30:19] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphDarkUmbra.webp
+[22/03 01:30:19] "GET /collector/static/miscellaneous_garou_glyphs/GlyphDarkUmbra.webp HTTP/1.1" 404 13051
+[22/03 01:30:19] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphMitanu.webp
+[22/03 01:30:19] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphMiddleUmbra.webp
+[22/03 01:30:19] "GET /collector/static/miscellaneous_garou_glyphs/GlyphMitanu.webp HTTP/1.1" 404 13042
+[22/03 01:30:19] "GET /collector/static/miscellaneous_garou_glyphs/GlyphMiddleUmbra.webp HTTP/1.1" 404 13057
+[22/03 01:30:19] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphKatankaSonnak.webp
+[22/03 01:30:19] "GET /collector/static/miscellaneous_garou_glyphs/GlyphKatankaSonnak.webp HTTP/1.1" 404 13063
+[22/03 01:30:19] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphMoonBridge.webp
+[22/03 01:30:19] "GET /collector/static/miscellaneous_garou_glyphs/GlyphMoonBridge.webp HTTP/1.1" 404 13054
+[22/03 01:30:19] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphAbyss.webp
+[22/03 01:30:19] "GET /collector/static/miscellaneous_garou_glyphs/GlyphAbyss.webp HTTP/1.1" 404 13039
+[22/03 01:30:19] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphAetherialRealm.webp
+[22/03 01:30:19] "GET /collector/static/miscellaneous_garou_glyphs/GlyphAetherialRealm.webp HTTP/1.1" 404 13066
+[22/03 01:30:19] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphAtrocityRealm.webp
+[22/03 01:30:19] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphTotemWendigo.webp
+[22/03 01:30:19] "GET /collector/static/miscellaneous_garou_glyphs/GlyphAtrocityRealm.webp HTTP/1.1" 404 13063
+[22/03 01:30:19] "GET /collector/static/miscellaneous_garou_glyphs/GlyphTotemWendigo.webp HTTP/1.1" 404 13060
+[22/03 01:30:19] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphTotemUnicorn.webp
+[22/03 01:30:19] "GET /collector/static/miscellaneous_garou_glyphs/GlyphTotemUnicorn.webp HTTP/1.1" 404 13060
+[22/03 01:30:19] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphBattleground.webp
+[22/03 01:30:19] "GET /collector/static/miscellaneous_garou_glyphs/GlyphBattleground.webp HTTP/1.1" 404 13060
+[22/03 01:30:19] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphCyberrealm.webp
+[22/03 01:30:19] "GET /collector/static/miscellaneous_garou_glyphs/GlyphCyberrealm.webp HTTP/1.1" 404 13054
+[22/03 01:30:19] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphErebus.webp
+[22/03 01:30:19] "GET /collector/static/miscellaneous_garou_glyphs/GlyphErebus.webp HTTP/1.1" 404 13042
+[22/03 01:30:19] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphTotemUktena.webp
+[22/03 01:30:19] "GET /collector/static/miscellaneous_garou_glyphs/GlyphTotemUktena.webp HTTP/1.1" 404 13057
+[22/03 01:30:19] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphFlux.webp
+[22/03 01:30:19] "GET /collector/static/miscellaneous_garou_glyphs/GlyphFlux.webp HTTP/1.1" 404 13036
+[22/03 01:30:19] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphTotemStag.webp
+[22/03 01:30:19] "GET /collector/static/miscellaneous_garou_glyphs/GlyphTotemStag.webp HTTP/1.1" 404 13051
+[22/03 01:30:19] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphLegendaryRealm.webp
+[22/03 01:30:19] "GET /collector/static/miscellaneous_garou_glyphs/GlyphLegendaryRealm.webp HTTP/1.1" 404 13066
+[22/03 01:30:19] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphTheScar.webp
+[22/03 01:30:19] "GET /collector/static/miscellaneous_garou_glyphs/GlyphTheScar.webp HTTP/1.1" 404 13045
+[22/03 01:30:19] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphSummerCountry.webp
+[22/03 01:30:19] "GET /collector/static/miscellaneous_garou_glyphs/GlyphSummerCountry.webp HTTP/1.1" 404 13063
+[22/03 01:30:19] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphTotemRat.webp
+[22/03 01:30:19] "GET /collector/static/miscellaneous_garou_glyphs/GlyphTotemRat.webp HTTP/1.1" 404 13048
+[22/03 01:30:19] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphWolfhome.webp
+[22/03 01:30:19] "GET /collector/static/miscellaneous_garou_glyphs/GlyphWolfhome.webp HTTP/1.1" 404 13048
+[22/03 01:30:19] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphTotemPegasus.webp
+[22/03 01:30:19] "GET /collector/static/miscellaneous_garou_glyphs/GlyphTotemPegasus.webp HTTP/1.1" 404 13060
+[22/03 01:30:19] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphMalfeas.webp
+[22/03 01:30:19] "GET /collector/static/miscellaneous_garou_glyphs/GlyphMalfeas.webp HTTP/1.1" 404 13045
+[22/03 01:30:19] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphTotemChimera.webp
+[22/03 01:30:19] "GET /collector/static/miscellaneous_garou_glyphs/GlyphTotemChimera.webp HTTP/1.1" 404 13060
+[22/03 01:30:19] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphTotemCockroach.webp
+[22/03 01:30:19] "GET /collector/static/miscellaneous_garou_glyphs/GlyphTotemCockroach.webp HTTP/1.1" 404 13066
+[22/03 01:30:19] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphTotemOwl.webp
+[22/03 01:30:19] "GET /collector/static/miscellaneous_garou_glyphs/GlyphTotemOwl.webp HTTP/1.1" 404 13048
+[22/03 01:30:19] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphTotemFalcon.webp
+[22/03 01:30:19] "GET /collector/static/miscellaneous_garou_glyphs/GlyphTotemFalcon.webp HTTP/1.1" 404 13057
+[22/03 01:30:19] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphTotemGrandT.webp
+[22/03 01:30:19] "GET /collector/static/miscellaneous_garou_glyphs/GlyphTotemGrandT.webp HTTP/1.1" 404 13057
+[22/03 01:30:19] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphTotemFenris.webp
+[22/03 01:30:19] "GET /collector/static/miscellaneous_garou_glyphs/GlyphTotemFenris.webp HTTP/1.1" 404 13057
+[22/03 01:30:19] Not Found: /collector/static/miscellaneous_garou_glyphs/GlyphTotemGriffon.webp
+[22/03 01:30:19] "GET /collector/static/miscellaneous_garou_glyphs/GlyphTotemGriffon.webp HTTP/1.1" 404 13060
+[22/03 01:30:35] "GET /static/collector/css?7f97c1f2f468 HTTP/1.1" 404 1805
+[22/03 01:30:39] "GET /static/miscellaneous_garou_glyphs/GlyphGarou.webp HTTP/1.1" 404 1884
+[22/03 01:30:39] "GET /static/miscellaneous_garou_glyphs/GlyphCaern.webp HTTP/1.1" 404 1884
+[22/03 01:30:39] "GET /static/miscellaneous_garou_glyphs/GlyphMoot.webp HTTP/1.1" 404 1881
+[22/03 01:30:39] "GET /static/miscellaneous_garou_glyphs/GlyphPack.webp HTTP/1.1" 404 1881
+[22/03 01:30:39] "GET /static/miscellaneous_garou_glyphs/GlyphLitany.webp HTTP/1.1" 404 1887
+[22/03 01:30:39] "GET /static/miscellaneous_garou_glyphs/GlyphGarouNation.webp HTTP/1.1" 404 1902
+[22/03 01:30:39] "GET /static/miscellaneous_garou_glyphs/GlyphRage.webp HTTP/1.1" 404 1881
+[22/03 01:30:39] "GET /static/miscellaneous_garou_glyphs/GlyphGnosis.webp HTTP/1.1" 404 1887
+[22/03 01:30:39] "GET /static/miscellaneous_garou_glyphs/GlyphWisdom.webp HTTP/1.1" 404 1887
+[22/03 01:30:39] "GET /static/miscellaneous_garou_glyphs/GlyphGlory.webp HTTP/1.1" 404 1884
+[22/03 01:30:39] "GET /static/miscellaneous_garou_glyphs/GlyphHonor.webp HTTP/1.1" 404 1884
+[22/03 01:30:39] "GET /static/miscellaneous_garou_glyphs/GlyphKinfolk.webp HTTP/1.1" 404 1890
+[22/03 01:30:39] "GET /static/miscellaneous_garou_glyphs/GlyphLostCub.webp HTTP/1.1" 404 1890
+[22/03 01:30:39] "GET /static/miscellaneous_garou_glyphs/GlyphSilverPack.webp HTTP/1.1" 404 1899
+[22/03 01:30:39] "GET /static/miscellaneous_garou_glyphs/GlyphAlpha.webp HTTP/1.1" 404 1884
+[22/03 01:30:39] "GET /static/miscellaneous_garou_glyphs/GlyphKlaive.webp HTTP/1.1" 404 1887
+[22/03 01:30:39] "GET /static/miscellaneous_garou_glyphs/GlyphImpergium.webp HTTP/1.1" 404 1896
+[22/03 01:30:39] "GET /static/miscellaneous_garou_glyphs/GlyphSilverRecord.webp HTTP/1.1" 404 1905
+[22/03 01:30:39] "GET /static/miscellaneous_garou_glyphs/GlyphRonin.webp HTTP/1.1" 404 1884
+[22/03 01:30:39] "GET /static/miscellaneous_garou_glyphs/GlyphGaia.webp HTTP/1.1" 404 1881
+[22/03 01:30:39] "GET /static/miscellaneous_garou_glyphs/GlyphWarofRage.webp HTTP/1.1" 404 1896
+[22/03 01:30:39] "GET /static/miscellaneous_garou_glyphs/GlyphLuna.webp HTTP/1.1" 404 1881
+[22/03 01:30:39] "GET /static/miscellaneous_garou_glyphs/GlyphHelios.webp HTTP/1.1" 404 1887
+[22/03 01:30:39] "GET /static/miscellaneous_garou_glyphs/GlyphStar.webp HTTP/1.1" 404 1881
+[22/03 01:30:39] "GET /static/miscellaneous_garou_glyphs/GlyphAnima.webp HTTP/1.1" 404 1884
+[22/03 01:30:39] "GET /static/miscellaneous_garou_glyphs/GlyphHorse.webp HTTP/1.1" 404 1884
+[22/03 01:30:39] "GET /static/miscellaneous_garou_glyphs/GlyphFish.webp HTTP/1.1" 404 1881
+[22/03 01:30:39] "GET /static/miscellaneous_garou_glyphs/GlyphClaw.webp HTTP/1.1" 404 1881
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphDesert.webp HTTP/1.1" 404 1887
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphForest.webp HTTP/1.1" 404 1887
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphWilderness.webp HTTP/1.1" 404 1899
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphMountain.webp HTTP/1.1" 404 1893
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphTooth.webp HTTP/1.1" 404 1884
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphAir.webp HTTP/1.1" 404 1878
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphBone.webp HTTP/1.1" 404 1881
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphSafety.webp HTTP/1.1" 404 1887
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphMiddleUmbra.webp HTTP/1.1" 404 1902
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphFire.webp HTTP/1.1" 404 1881
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphDark.webp HTTP/1.1" 404 1881
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphWater.webp HTTP/1.1" 404 1884
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphMetal.webp HTTP/1.1" 404 1884
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphStone.webp HTTP/1.1" 404 1884
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphTree.webp HTTP/1.1" 404 1881
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphRorg.webp HTTP/1.1" 404 1881
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphSnow.webp HTTP/1.1" 404 1881
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphRain.webp HTTP/1.1" 404 1881
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphTravel.webp HTTP/1.1" 404 1887
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphStorm.webp HTTP/1.1" 404 1884
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphLightning2.webp HTTP/1.1" 404 1899
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphLightning.webp HTTP/1.1" 404 1896
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphFlood.webp HTTP/1.1" 404 1884
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphSpring.webp HTTP/1.1" 404 1887
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphWinter.webp HTTP/1.1" 404 1887
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphNorth.webp HTTP/1.1" 404 1884
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphAutumn.webp HTTP/1.1" 404 1887
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphSouth.webp HTTP/1.1" 404 1884
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphSummer.webp HTTP/1.1" 404 1887
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphEast.webp HTTP/1.1" 404 1881
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphWyld.webp HTTP/1.1" 404 1881
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphWest.webp HTTP/1.1" 404 1881
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphLife.webp HTTP/1.1" 404 1881
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphBirth.webp HTTP/1.1" 404 1884
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphDeath.webp HTTP/1.1" 404 1884
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphWar.webp HTTP/1.1" 404 1878
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphPeace.webp HTTP/1.1" 404 1884
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphSacrifice.webp HTTP/1.1" 404 1896
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphDance.webp HTTP/1.1" 404 1884
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphStory.webp HTTP/1.1" 404 1884
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphLove.webp HTTP/1.1" 404 1881
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphSex.webp HTTP/1.1" 404 1878
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphHowl.webp HTTP/1.1" 404 1881
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphHide.webp HTTP/1.1" 404 1881
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphQuest.webp HTTP/1.1" 404 1884
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphDanger.webp HTTP/1.1" 404 1887
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphJump.webp HTTP/1.1" 404 1881
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphRepair.webp HTTP/1.1" 404 1887
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphSuffering.webp HTTP/1.1" 404 1896
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphCreate.webp HTTP/1.1" 404 1887
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphPutTogether.webp HTTP/1.1" 404 1902
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphDefiance.webp HTTP/1.1" 404 1893
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphConvalescence.webp HTTP/1.1" 404 1908
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphTherapy.webp HTTP/1.1" 404 1890
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphTime.webp HTTP/1.1" 404 1881
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphCycle.webp HTTP/1.1" 404 1884
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphCoward.webp HTTP/1.1" 404 1887
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphPregnant.webp HTTP/1.1" 404 1893
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphRival.webp HTTP/1.1" 404 1884
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphAncient.webp HTTP/1.1" 404 1890
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphFriend.webp HTTP/1.1" 404 1887
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphBranded.webp HTTP/1.1" 404 1890
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphDescructive.webp HTTP/1.1" 404 1902
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphHungry.webp HTTP/1.1" 404 1887
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphQuick.webp HTTP/1.1" 404 1884
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphResilient.webp HTTP/1.1" 404 1896
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphObservant.webp HTTP/1.1" 404 1896
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphCold.webp HTTP/1.1" 404 1881
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphWounded.webp HTTP/1.1" 404 1890
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphElder.webp HTTP/1.1" 404 1884
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphHelp.webp HTTP/1.1" 404 1881
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphSolarEclipse.webp HTTP/1.1" 404 1905
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphInMemory.webp HTTP/1.1" 404 1893
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphMate.webp HTTP/1.1" 404 1881
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphRite.webp HTTP/1.1" 404 1881
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphLunarEclipse.webp HTTP/1.1" 404 1905
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphUmbra.webp HTTP/1.1" 404 1884
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphRealm.webp HTTP/1.1" 404 1884
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphRiteofPassage.webp HTTP/1.1" 404 1908
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphRiteofBinding.webp HTTP/1.1" 404 1908
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphRiteoftheFetish.webp HTTP/1.1" 404 1914
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphIncarna.webp HTTP/1.1" 404 1890
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphSpirit.webp HTTP/1.1" 404 1887
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphCelestine.webp HTTP/1.1" 404 1896
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphFetish.webp HTTP/1.1" 404 1887
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphDarkUmbra.webp HTTP/1.1" 404 1896
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphTotem.webp HTTP/1.1" 404 1884
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphDeepUmbra.webp HTTP/1.1" 404 1896
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphMoonBridge.webp HTTP/1.1" 404 1899
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphBattleground.webp HTTP/1.1" 404 1905
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphAetherialRealm.webp HTTP/1.1" 404 1911
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphArcadiaGateway.webp HTTP/1.1" 404 1911
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphAbyss.webp HTTP/1.1" 404 1884
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphAtrocityRealm.webp HTTP/1.1" 404 1908
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphErebus.webp HTTP/1.1" 404 1887
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphCyberrealm.webp HTTP/1.1" 404 1899
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphFlux.webp HTTP/1.1" 404 1881
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphLegendaryRealm.webp HTTP/1.1" 404 1911
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphTheScar.webp HTTP/1.1" 404 1890
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphPangaea.webp HTTP/1.1" 404 1890
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphWolfhome.webp HTTP/1.1" 404 1893
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphSummerCountry.webp HTTP/1.1" 404 1908
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphMalfeas.webp HTTP/1.1" 404 1890
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphTotemChimera.webp HTTP/1.1" 404 1905
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphTotemCockroach.webp HTTP/1.1" 404 1911
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphTotemFenris.webp HTTP/1.1" 404 1902
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphTotemGrandT.webp HTTP/1.1" 404 1902
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphTotemFalcon.webp HTTP/1.1" 404 1902
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphTotemGriffon.webp HTTP/1.1" 404 1905
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphTotemOwl.webp HTTP/1.1" 404 1893
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphTotemPegasus.webp HTTP/1.1" 404 1905
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphTotemUktena.webp HTTP/1.1" 404 1902
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphTotemStag.webp HTTP/1.1" 404 1896
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphTotemRat.webp HTTP/1.1" 404 1893
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphTotemUnicorn.webp HTTP/1.1" 404 1905
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphTotemWendigo.webp HTTP/1.1" 404 1905
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphMitanu.webp HTTP/1.1" 404 1887
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphKatankaSonnak.webp HTTP/1.1" 404 1908
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphTambiyah.webp HTTP/1.1" 404 1893
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphHakahe.webp HTTP/1.1" 404 1887
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphEshtarra.webp HTTP/1.1" 404 1893
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphSokhta.webp HTTP/1.1" 404 1887
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphNerigal.webp HTTP/1.1" 404 1890
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphLuBat.webp HTTP/1.1" 404 1884
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphShantar.webp HTTP/1.1" 404 1890
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphZarok.webp HTTP/1.1" 404 1884
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphRuatma.webp HTTP/1.1" 404 1887
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphMeros.webp HTTP/1.1" 404 1884
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphWeaver.webp HTTP/1.1" 404 1887
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphAnthelios.webp HTTP/1.1" 404 1896
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphBuilding.webp HTTP/1.1" 404 1893
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphGate.webp HTTP/1.1" 404 1881
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphCity.webp HTTP/1.1" 404 1881
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphGun.webp HTTP/1.1" 404 1878
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphPark.webp HTTP/1.1" 404 1881
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphDefilerWyrm.webp HTTP/1.1" 404 1902
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphBeastofWar.webp HTTP/1.1" 404 1899
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphWyrm.webp HTTP/1.1" 404 1881
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphFomori.webp HTTP/1.1" 404 1887
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphApocalypse.webp HTTP/1.1" 404 1899
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphEaterofSouls.webp HTTP/1.1" 404 1905
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphBane.webp HTTP/1.1" 404 1881
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphUrgeWyrm.webp HTTP/1.1" 404 1893
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphLandfill.webp HTTP/1.1" 404 1893
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphAbomination.webp HTTP/1.1" 404 1902
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphVampire.webp HTTP/1.1" 404 1890
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphHive.webp HTTP/1.1" 404 1881
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphMonster.webp HTTP/1.1" 404 1890
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphToxicWaste.webp HTTP/1.1" 404 1899
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphLegend.webp HTTP/1.1" 404 1887
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/GlyphFactory.webp HTTP/1.1" 404 1890
+[22/03 01:30:40] "GET /static/miscellaneous_garou_glyphs/Special HTTP/1.1" 404 1860
+[22/03 01:31:59] "GET /static/collector/css?7f97c1f2f468 HTTP/1.1" 404 1805
+[22/03 01:32:03] "GET /static/collector/miscellaneous_garou_glyphs/Special HTTP/1.1" 404 1854
+[22/03 01:32:38] "GET /static/collector/css?7f97c1f2f468 HTTP/1.1" 404 1805
+[22/03 01:32:43] "GET /static/collector/miscellaneous_garou_glyphs/Special HTTP/1.1" 404 1854
+[22/03 01:33:25] "GET /static/collector/css?7f97c1f2f468 HTTP/1.1" 404 1805
+[22/03 01:33:45] "GET /static/collector/css?7f97c1f2f468 HTTP/1.1" 404 1805
+[22/03 01:34:00] "GET /static/collector/css?7f97c1f2f468 HTTP/1.1" 404 1805
+[22/03 01:34:01] "GET /static/collector/css?7f97c1f2f468 HTTP/1.1" 404 1805
+[22/03 01:34:06] "GET /static/collector/miscellaneous_garou_glyphs/Special HTTP/1.1" 404 1854
+[22/03 01:34:46] "GET /static/collector/css?7f97c1f2f468 HTTP/1.1" 404 1805
+[22/03 01:34:50] Internal Server Error: /ajax/display/crossover_sheet/_nathan_oconnell/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 546, in display_crossover_sheet
+    if glyph.isFile():
+       ^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'isFile'. Did you mean: 'istitle'?
+[22/03 01:34:50] "GET /ajax/display/crossover_sheet/_nathan_oconnell/ HTTP/1.1" 500 84172
+[22/03 01:35:18] "GET /static/collector/css?7f97c1f2f468 HTTP/1.1" 404 1805
+[22/03 01:35:21] Internal Server Error: /ajax/display/crossover_sheet/_nathan_oconnell/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 546, in display_crossover_sheet
+    if glyph.is_file():
+       ^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'is_file'
+[22/03 01:35:21] "GET /ajax/display/crossover_sheet/_nathan_oconnell/ HTTP/1.1" 500 84180
+[22/03 01:36:06] "GET /static/collector/css?7f97c1f2f468 HTTP/1.1" 404 1805
+[22/03 01:36:49] "GET /static/collector/css?7f97c1f2f468 HTTP/1.1" 404 1805
+[22/03 01:37:33] "GET /static/collector/css?7f97c1f2f468 HTTP/1.1" 404 1805
+[22/03 01:37:49] "GET /static/collector/css?7f97c1f2f468 HTTP/1.1" 404 1805
+[22/03 01:38:26] "GET /static/collector/css?7f97c1f2f468 HTTP/1.1" 404 1805
+[22/03 01:38:36] "GET /static/collector/css?7f97c1f2f468 HTTP/1.1" 404 1805
+[22/03 01:39:10] "GET /static/collector/css?7f97c1f2f468 HTTP/1.1" 404 1805
+[22/03 01:39:30] "GET /static/collector/css?7f97c1f2f468 HTTP/1.1" 404 1805
+[22/03 01:39:40] "GET /static/collector/css?7f97c1f2f468 HTTP/1.1" 404 1805
+[22/03 01:40:06] "GET /static/collector/css?7f97c1f2f468 HTTP/1.1" 404 1805
+[22/03 01:41:00] "GET /static/collector/css?7f97c1f2f468 HTTP/1.1" 404 1805
+[22/03 01:41:23] "GET /static/collector/css?7f97c1f2f468 HTTP/1.1" 404 1805
+[22/03 01:43:25] "GET /static/collector/css?7f97c1f2f468 HTTP/1.1" 404 1805
+[22/03 01:43:56] "GET /static/collector/css?7f97c1f2f468 HTTP/1.1" 404 1805
+[22/03 01:46:08] "GET /static/collector/css?7f97c1f2f468 HTTP/1.1" 404 1805
+[22/03 01:46:26] "GET /static/collector/css?7f97c1f2f468 HTTP/1.1" 404 1805
+[22/03 01:46:56] "GET /static/collector/css?7f97c1f2f468 HTTP/1.1" 404 1805
+[22/03 01:47:17] "GET /static/collector/css?7f97c1f2f468 HTTP/1.1" 404 1805
+[22/03 01:47:39] "GET /static/collector/css?7f97c1f2f468 HTTP/1.1" 404 1805
+[22/03 01:47:59] "GET /static/collector/css?7f97c1f2f468 HTTP/1.1" 404 1805
+[22/03 01:49:44] Internal Server Error: /ajax/character/svg2pdf/_nathan_oconnell/
+Traceback (most recent call last):
+  File "/usr/lib64/python3.13/urllib/request.py", line 1481, in open_local_file
+    stats = os.stat(localfile)
+FileNotFoundError: [Errno 2] No such file or directory: '/home/zaffarelli/Projects/wawwod/wawwod_media/pdf/results/svg/static/collector/miscellaneous_garou_glyphs/GlyphLegend.webp'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 747, in svg_to_pdf
+    cairosvg.svg2pdf(url=svg_name, write_to=pdf_name, scale=1.0, unsafe=True)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/__init__.py", line 67, in svg2pdf
+    return surface.PDFSurface.convert(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        bytestring=bytestring, file_obj=file_obj, url=url, dpi=dpi,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        invert_images=invert_images, unsafe=unsafe, write_to=write_to,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        output_width=output_width, output_height=output_height)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/surface.py", line 133, in convert
+    instance = cls(
+        tree, output, dpi, None, parent_width, parent_height, scale,
+        output_width, output_height, background_color,
+        map_rgba=negate_color if negate_colors else None,
+        map_image=invert_image if invert_images else None)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/surface.py", line 225, in __init__
+    self.draw(tree)
+    ~~~~~~~~~^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/surface.py", line 472, in draw
+    self.draw(child)
+    ~~~~~~~~~^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/surface.py", line 472, in draw
+    self.draw(child)
+    ~~~~~~~~~^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/surface.py", line 472, in draw
+    self.draw(child)
+    ~~~~~~~~~^^^^^^^
+  [Previous line repeated 2 more times]
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/surface.py", line 404, in draw
+    TAGS[node.tag](self, node)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/image.py", line 28, in image
+    image_bytes = node.fetch_url(url, 'image/*')
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/parser.py", line 243, in fetch_url
+    return read_url(url, self.url_fetcher, resource_type)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/url.py", line 154, in read_url
+    return url_fetcher(url, resource_type)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/url.py", line 84, in fetch
+    return urlopen(Request(url, headers=HTTP_HEADERS)).read()
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.13/urllib/request.py", line 189, in urlopen
+    return opener.open(url, data, timeout)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.13/urllib/request.py", line 489, in open
+    response = self._open(req, data)
+  File "/usr/lib64/python3.13/urllib/request.py", line 506, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+                              '_open', req)
+  File "/usr/lib64/python3.13/urllib/request.py", line 466, in _call_chain
+    result = func(*args)
+  File "/usr/lib64/python3.13/urllib/request.py", line 1459, in file_open
+    return self.open_local_file(req)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/usr/lib64/python3.13/urllib/request.py", line 1498, in open_local_file
+    raise URLError(exp)
+urllib.error.URLError: <urlopen error [Errno 2] No such file or directory: '/home/zaffarelli/Projects/wawwod/wawwod_media/pdf/results/svg/static/collector/miscellaneous_garou_glyphs/GlyphLegend.webp'>
+[22/03 01:49:45] "POST /ajax/character/svg2pdf/_nathan_oconnell/ HTTP/1.1" 500 86060
+[22/03 12:46:28] "GET /static/collector/css?7f97c1f2f468 HTTP/1.1" 404 1805
+[22/03 12:46:39] Not Found: /ajax/display/undefined/
+[22/03 12:46:39] "GET /ajax/display/undefined/ HTTP/1.1" 404 12931
+[22/03 12:46:51] Internal Server Error: /api/text/_jean_francois_loisier/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/actions.py", line 14, in extract_raw
+    lines = found.first().extract_raw()
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 1696, in extract_raw
+    lines.add("Health: ◻ B-1◻ I-1◻ W-2◻ M-2◻ C-5◻ I◻")
+    ^^^^^^^^^
+AttributeError: 'list' object has no attribute 'add'
+[22/03 12:46:51] "GET /api/text/_jean_francois_loisier/ HTTP/1.1" 500 83476
+[22/03 12:50:25] Not Found: /ajax/display/undefined/
+[22/03 12:50:25] "GET /ajax/display/undefined/ HTTP/1.1" 404 12931
+[22/03 13:12:10] "GET /static/collector/css?7f97c1f2f468 HTTP/1.1" 404 1805
+[22/03 13:13:21] "GET /static/collector/css?7f97c1f2f468 HTTP/1.1" 404 1805
+[22/03 13:15:06] "GET /static/collector/css?7f97c1f2f468 HTTP/1.1" 404 1805
+[22/03 13:15:18] "GET /static/collector/css?7f97c1f2f468 HTTP/1.1" 404 1805
+[22/03 13:15:35] "GET /static/collector/css?7f97c1f2f468 HTTP/1.1" 404 1805
+[22/03 13:16:18] "GET /static/collector/css?7f97c1f2f468 HTTP/1.1" 404 1805
+[22/03 13:17:20] "GET /static/collector/css?7f97c1f2f468 HTTP/1.1" 404 1805
+[22/03 13:17:23] Internal Server Error: /ajax/display/crossover_sheet/_catalina_ottame/blank/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 549, in display_crossover_sheet
+    all_glyphs.sort("text")
+    ~~~~~~~~~~~~~~~^^^^^^^^
+TypeError: sort() takes no positional arguments
+[22/03 13:17:23] "GET /ajax/display/crossover_sheet/_catalina_ottame/blank/ HTTP/1.1" 500 91631
+[22/03 13:17:32] Internal Server Error: /ajax/display/crossover_sheet/_catalina_ottame/blank/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 549, in display_crossover_sheet
+    all_glyphs.sort("text")
+    ~~~~~~~~~~~~~~~^^^^^^^^
+TypeError: sort() takes no positional arguments
+[22/03 13:17:32] "GET /ajax/display/crossover_sheet/_catalina_ottame/blank/ HTTP/1.1" 500 91631
+[22/03 13:17:41] "GET /static/collector/css?7f97c1f2f468 HTTP/1.1" 404 1805
+[22/03 13:17:45] Internal Server Error: /ajax/display/crossover_sheet/_catalina_ottame/blank/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 549, in display_crossover_sheet
+    all_glyphs = all_glyphs.sort("text")
+TypeError: sort() takes no positional arguments
+[22/03 13:17:45] "GET /ajax/display/crossover_sheet/_catalina_ottame/blank/ HTTP/1.1" 500 91683
+[22/03 13:19:26] "GET /static/collector/css?7f97c1f2f468 HTTP/1.1" 404 1805
+[22/03 13:19:46] Internal Server Error: /ajax/character/svg2pdf/blank/
+Traceback (most recent call last):
+  File "/usr/lib64/python3.13/urllib/request.py", line 1481, in open_local_file
+    stats = os.stat(localfile)
+FileNotFoundError: [Errno 2] No such file or directory: '/home/zaffarelli/Projects/wawwod/wawwod_media/pdf/results/svg/static/collector/miscellaneous_garou_glyphs/GlyphLegend.webp'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 748, in svg_to_pdf
+    cairosvg.svg2pdf(url=svg_name, write_to=pdf_name, scale=1.0, unsafe=True)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/__init__.py", line 67, in svg2pdf
+    return surface.PDFSurface.convert(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        bytestring=bytestring, file_obj=file_obj, url=url, dpi=dpi,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        invert_images=invert_images, unsafe=unsafe, write_to=write_to,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        output_width=output_width, output_height=output_height)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/surface.py", line 133, in convert
+    instance = cls(
+        tree, output, dpi, None, parent_width, parent_height, scale,
+        output_width, output_height, background_color,
+        map_rgba=negate_color if negate_colors else None,
+        map_image=invert_image if invert_images else None)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/surface.py", line 225, in __init__
+    self.draw(tree)
+    ~~~~~~~~~^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/surface.py", line 472, in draw
+    self.draw(child)
+    ~~~~~~~~~^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/surface.py", line 472, in draw
+    self.draw(child)
+    ~~~~~~~~~^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/surface.py", line 472, in draw
+    self.draw(child)
+    ~~~~~~~~~^^^^^^^
+  [Previous line repeated 2 more times]
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/surface.py", line 404, in draw
+    TAGS[node.tag](self, node)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/image.py", line 28, in image
+    image_bytes = node.fetch_url(url, 'image/*')
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/parser.py", line 243, in fetch_url
+    return read_url(url, self.url_fetcher, resource_type)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/url.py", line 154, in read_url
+    return url_fetcher(url, resource_type)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/url.py", line 84, in fetch
+    return urlopen(Request(url, headers=HTTP_HEADERS)).read()
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.13/urllib/request.py", line 189, in urlopen
+    return opener.open(url, data, timeout)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.13/urllib/request.py", line 489, in open
+    response = self._open(req, data)
+  File "/usr/lib64/python3.13/urllib/request.py", line 506, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+                              '_open', req)
+  File "/usr/lib64/python3.13/urllib/request.py", line 466, in _call_chain
+    result = func(*args)
+  File "/usr/lib64/python3.13/urllib/request.py", line 1459, in file_open
+    return self.open_local_file(req)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/usr/lib64/python3.13/urllib/request.py", line 1498, in open_local_file
+    raise URLError(exp)
+urllib.error.URLError: <urlopen error [Errno 2] No such file or directory: '/home/zaffarelli/Projects/wawwod/wawwod_media/pdf/results/svg/static/collector/miscellaneous_garou_glyphs/GlyphLegend.webp'>
+[22/03 13:19:46] "POST /ajax/character/svg2pdf/blank/ HTTP/1.1" 500 80851
+[22/03 13:20:54] Internal Server Error: /ajax/character/svg2pdf/blank/
+Traceback (most recent call last):
+  File "/usr/lib64/python3.13/urllib/request.py", line 1481, in open_local_file
+    stats = os.stat(localfile)
+FileNotFoundError: [Errno 2] No such file or directory: '/home/zaffarelli/Projects/wawwod/wawwod_media/pdf/results/svg/static/collector/miscellaneous_garou_glyphs/GlyphLegend.webp'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 750, in svg_to_pdf
+    cairosvg.svg2pdf(url=svg_name, write_to=pdf_name, scale=1.0, unsafe=True)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/__init__.py", line 67, in svg2pdf
+    return surface.PDFSurface.convert(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        bytestring=bytestring, file_obj=file_obj, url=url, dpi=dpi,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        invert_images=invert_images, unsafe=unsafe, write_to=write_to,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        output_width=output_width, output_height=output_height)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/surface.py", line 133, in convert
+    instance = cls(
+        tree, output, dpi, None, parent_width, parent_height, scale,
+        output_width, output_height, background_color,
+        map_rgba=negate_color if negate_colors else None,
+        map_image=invert_image if invert_images else None)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/surface.py", line 225, in __init__
+    self.draw(tree)
+    ~~~~~~~~~^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/surface.py", line 472, in draw
+    self.draw(child)
+    ~~~~~~~~~^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/surface.py", line 472, in draw
+    self.draw(child)
+    ~~~~~~~~~^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/surface.py", line 472, in draw
+    self.draw(child)
+    ~~~~~~~~~^^^^^^^
+  [Previous line repeated 2 more times]
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/surface.py", line 404, in draw
+    TAGS[node.tag](self, node)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/image.py", line 28, in image
+    image_bytes = node.fetch_url(url, 'image/*')
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/parser.py", line 243, in fetch_url
+    return read_url(url, self.url_fetcher, resource_type)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/url.py", line 154, in read_url
+    return url_fetcher(url, resource_type)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/url.py", line 84, in fetch
+    return urlopen(Request(url, headers=HTTP_HEADERS)).read()
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.13/urllib/request.py", line 189, in urlopen
+    return opener.open(url, data, timeout)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.13/urllib/request.py", line 489, in open
+    response = self._open(req, data)
+  File "/usr/lib64/python3.13/urllib/request.py", line 506, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+                              '_open', req)
+  File "/usr/lib64/python3.13/urllib/request.py", line 466, in _call_chain
+    result = func(*args)
+  File "/usr/lib64/python3.13/urllib/request.py", line 1459, in file_open
+    return self.open_local_file(req)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/usr/lib64/python3.13/urllib/request.py", line 1498, in open_local_file
+    raise URLError(exp)
+urllib.error.URLError: <urlopen error [Errno 2] No such file or directory: '/home/zaffarelli/Projects/wawwod/wawwod_media/pdf/results/svg/static/collector/miscellaneous_garou_glyphs/GlyphLegend.webp'>
+[22/03 13:20:54] "POST /ajax/character/svg2pdf/blank/ HTTP/1.1" 500 80910
+[22/03 13:20:59] Internal Server Error: /ajax/character/svg2pdf/blank/
+Traceback (most recent call last):
+  File "/usr/lib64/python3.13/urllib/request.py", line 1481, in open_local_file
+    stats = os.stat(localfile)
+FileNotFoundError: [Errno 2] No such file or directory: '/home/zaffarelli/Projects/wawwod/wawwod_media/pdf/results/svg/static/collector/miscellaneous_garou_glyphs/GlyphLegend.webp'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 750, in svg_to_pdf
+    cairosvg.svg2pdf(url=svg_name, write_to=pdf_name, scale=1.0, unsafe=True)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/__init__.py", line 67, in svg2pdf
+    return surface.PDFSurface.convert(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        bytestring=bytestring, file_obj=file_obj, url=url, dpi=dpi,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        invert_images=invert_images, unsafe=unsafe, write_to=write_to,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        output_width=output_width, output_height=output_height)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/surface.py", line 133, in convert
+    instance = cls(
+        tree, output, dpi, None, parent_width, parent_height, scale,
+        output_width, output_height, background_color,
+        map_rgba=negate_color if negate_colors else None,
+        map_image=invert_image if invert_images else None)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/surface.py", line 225, in __init__
+    self.draw(tree)
+    ~~~~~~~~~^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/surface.py", line 472, in draw
+    self.draw(child)
+    ~~~~~~~~~^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/surface.py", line 472, in draw
+    self.draw(child)
+    ~~~~~~~~~^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/surface.py", line 472, in draw
+    self.draw(child)
+    ~~~~~~~~~^^^^^^^
+  [Previous line repeated 2 more times]
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/surface.py", line 404, in draw
+    TAGS[node.tag](self, node)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/image.py", line 28, in image
+    image_bytes = node.fetch_url(url, 'image/*')
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/parser.py", line 243, in fetch_url
+    return read_url(url, self.url_fetcher, resource_type)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/url.py", line 154, in read_url
+    return url_fetcher(url, resource_type)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/cairosvg/url.py", line 84, in fetch
+    return urlopen(Request(url, headers=HTTP_HEADERS)).read()
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.13/urllib/request.py", line 189, in urlopen
+    return opener.open(url, data, timeout)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.13/urllib/request.py", line 489, in open
+    response = self._open(req, data)
+  File "/usr/lib64/python3.13/urllib/request.py", line 506, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+                              '_open', req)
+  File "/usr/lib64/python3.13/urllib/request.py", line 466, in _call_chain
+    result = func(*args)
+  File "/usr/lib64/python3.13/urllib/request.py", line 1459, in file_open
+    return self.open_local_file(req)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/usr/lib64/python3.13/urllib/request.py", line 1498, in open_local_file
+    raise URLError(exp)
+urllib.error.URLError: <urlopen error [Errno 2] No such file or directory: '/home/zaffarelli/Projects/wawwod/wawwod_media/pdf/results/svg/static/collector/miscellaneous_garou_glyphs/GlyphLegend.webp'>
+[22/03 13:20:59] "POST /ajax/character/svg2pdf/blank/ HTTP/1.1" 500 80851
+[22/03 13:22:38] "GET /static/collector/css?7f97c1f2f468 HTTP/1.1" 404 1805
+[22/03 15:42:05] Not Found: /ajax/display/undefined/
+[22/03 15:42:05] "GET /ajax/display/undefined/ HTTP/1.1" 404 12931
+[22/03 15:43:23] Internal Server Error: /ajax/display/crossover_sheet/_nathan_oconnell/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 552, in display_crossover_sheet
+    j, k = character_for(slug, "")
+           ~~~~~~~~~~~~~^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 509, in character_for
+    k["others"] = c.others()
+                  ~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 2299, in others
+    datum = {'idx': idx, 'item': f'{words[0]}', 'date': f'{words[1]}', 'notes': f'{words[2]} '}
+                                                           ~~~~~^^^
+IndexError: list index out of range
+[22/03 15:43:23] "GET /ajax/display/crossover_sheet/_nathan_oconnell/ HTTP/1.1" 500 116355
+[22/03 15:44:42] Internal Server Error: /ajax/display/crossover_sheet/_nathan_oconnell/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 552, in display_crossover_sheet
+    j, k = character_for(slug, "")
+           ~~~~~~~~~~~~~^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 509, in character_for
+    k["others"] = c.others()
+                  ~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 2299, in others
+    datum = {'idx': idx, 'item': f'{words[0]}', 'date': f'{words[1]}', 'notes': f'{words[2]} '}
+                                                           ~~~~~^^^
+IndexError: list index out of range
+[22/03 15:44:42] "GET /ajax/display/crossover_sheet/_nathan_oconnell/ HTTP/1.1" 500 116669
+[22/03 15:45:37] Internal Server Error: /ajax/display/crossover_sheet/_nathan_oconnell/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 552, in display_crossover_sheet
+    j, k = character_for(slug, "")
+           ~~~~~~~~~~~~~^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 509, in character_for
+    k["others"] = c.others()
+                  ~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 2299, in others
+    datum = {'idx': idx, 'item': f'{words[0]}', 'date': f'{words[1]}', 'notes': f'{words[2]} '}
+                                                           ~~~~~^^^
+IndexError: list index out of range
+[22/03 15:45:37] "GET /ajax/display/crossover_sheet/_nathan_oconnell/ HTTP/1.1" 500 116678
+[22/03 15:45:54] Internal Server Error: /ajax/display/crossover_sheet/_nathan_oconnell/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 552, in display_crossover_sheet
+    j, k = character_for(slug, "")
+           ~~~~~~~~~~~~~^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 509, in character_for
+    k["others"] = c.others()
+                  ~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 2300, in others
+    datum = {'idx': idx, 'item': f'{words[0]}', 'date': f'{words[1]}', 'notes': f'{words[2]} '}
+                                                           ~~~~~^^^
+IndexError: list index out of range
+[22/03 15:45:54] "GET /ajax/display/crossover_sheet/_nathan_oconnell/ HTTP/1.1" 500 116676
+[22/03 15:47:11] Internal Server Error: /ajax/display/crossover_sheet/_nathan_oconnell/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 552, in display_crossover_sheet
+    j, k = character_for(slug, "")
+           ~~~~~~~~~~~~~^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 509, in character_for
+    k["others"] = c.others()
+                  ~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 2301, in others
+    datum = {'idx': idx, 'item': f'{words[0]}', 'date': f'{words[1]}', 'notes': f'{words[2]} '}
+                                                           ~~~~~^^^
+IndexError: list index out of range
+[22/03 15:47:11] "GET /ajax/display/crossover_sheet/_nathan_oconnell/ HTTP/1.1" 500 116618
+[22/03 15:48:03] Internal Server Error: /ajax/display/crossover_sheet/_nathan_oconnell/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 552, in display_crossover_sheet
+    j, k = character_for(slug, "")
+           ~~~~~~~~~~~~~^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 509, in character_for
+    k["others"] = c.others()
+                  ~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 2303, in others
+    datum = {'idx': idx, 'item': f'{words[0]}', 'date': f'{words[1]}', 'notes': f'{words[2]} '}
+                                                           ~~~~~^^^
+IndexError: list index out of range
+[22/03 15:48:03] "GET /ajax/display/crossover_sheet/_nathan_oconnell/ HTTP/1.1" 500 116614
+[22/03 15:49:58] "GET /static/collector/css?7f97c1f2f468 HTTP/1.1" 404 1805
+[22/03 15:50:19] "GET /static/collector/css?7f97c1f2f468 HTTP/1.1" 404 1805
+[22/03 15:53:15] Internal Server Error: /ajax/display/crossover_sheet/_nathan_oconnell/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 552, in display_crossover_sheet
+    j, k = character_for(slug, "")
+           ~~~~~~~~~~~~~^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 509, in character_for
+    k["others"] = c.others()
+                  ~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 2303, in others
+    datum = {'idx': idx, 'item': f'{words[0]}', 'date': f'{words[1]}', 'notes': f'{words[2]} '}
+                                                           ~~~~~^^^
+IndexError: list index out of range
+[22/03 15:53:15] "GET /ajax/display/crossover_sheet/_nathan_oconnell/ HTTP/1.1" 500 117781
+[22/03 15:53:24] "GET /static/collector/css?7f97c1f2f468 HTTP/1.1" 404 1805
+[22/03 15:53:27] Internal Server Error: /ajax/display/crossover_sheet/_nathan_oconnell/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 552, in display_crossover_sheet
+    j, k = character_for(slug, "")
+           ~~~~~~~~~~~~~^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 509, in character_for
+    k["others"] = c.others()
+                  ~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 2303, in others
+    datum = {'idx': idx, 'item': f'{words[0]}', 'date': f'{words[1]}', 'notes': f'{words[2]} '}
+                                                           ~~~~~^^^
+IndexError: list index out of range
+[22/03 15:53:27] "GET /ajax/display/crossover_sheet/_nathan_oconnell/ HTTP/1.1" 500 117781
+[22/03 15:54:15] Internal Server Error: /ajax/display/crossover_sheet/_nathan_oconnell/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 552, in display_crossover_sheet
+    j, k = character_for(slug, "")
+           ~~~~~~~~~~~~~^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 509, in character_for
+    k["others"] = c.others()
+                  ~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 2303, in others
+    datum = {'idx': idx, 'item': f'{words[0]}', 'date': f'{words[1]}', 'notes': f'{words[2]} '}
+                                                           ~~~~~^^^
+IndexError: list index out of range
+[22/03 15:54:15] "GET /ajax/display/crossover_sheet/_nathan_oconnell/ HTTP/1.1" 500 118373
+[22/03 15:54:20] Internal Server Error: /ajax/display/crossover_sheet/_nathan_oconnell/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 552, in display_crossover_sheet
+    j, k = character_for(slug, "")
+           ~~~~~~~~~~~~~^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 509, in character_for
+    k["others"] = c.others()
+                  ~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 2303, in others
+    datum = {'idx': idx, 'item': f'{words[0]}', 'date': f'{words[1]}', 'notes': f'{words[2]} '}
+                                                           ~~~~~^^^
+IndexError: list index out of range
+[22/03 15:54:20] "GET /ajax/display/crossover_sheet/_nathan_oconnell/ HTTP/1.1" 500 118373
+[22/03 15:54:29] "GET /static/collector/css?7f97c1f2f468 HTTP/1.1" 404 1805
+[22/03 15:55:13] "GET /static/collector/css?7f97c1f2f468 HTTP/1.1" 404 1805
+[22/03 15:58:14] "GET /static/collector/css?7f97c1f2f468 HTTP/1.1" 404 1805
+[22/03 16:01:07] "GET /static/collector/css?7f97c1f2f468 HTTP/1.1" 404 1805
+[22/03 16:07:23] "GET /static/collector/css?7f97c1f2f468 HTTP/1.1" 404 1805
+[22/03 16:08:31] "GET /static/collector/css?7f97c1f2f468 HTTP/1.1" 404 1805
+[22/03 16:08:54] "GET /static/collector/css?7f97c1f2f468 HTTP/1.1" 404 1805
+[22/03 16:09:43] "GET /static/collector/css?7f97c1f2f468 HTTP/1.1" 404 1805
+[22/03 16:10:44] "GET /static/collector/css?7f97c1f2f468 HTTP/1.1" 404 1805
+[22/03 16:51:45] Not Found: /ajax/display/undefined/
+[22/03 16:51:45] "GET /ajax/display/undefined/ HTTP/1.1" 404 12931
+[22/03 17:17:54] Not Found: /ajax/display/undefined/
+[22/03 17:17:54] "GET /ajax/display/undefined/ HTTP/1.1" 404 12931
+[22/03 19:46:37] Not Found: /ajax/display/undefined/
+[22/03 19:46:37] "GET /ajax/display/undefined/ HTTP/1.1" 404 12931
+[22/03 19:51:27] Not Found: /ajax/display/undefined/
+[22/03 19:51:27] "GET /ajax/display/undefined/ HTTP/1.1" 404 12931
+[22/03 19:53:39] Not Found: /ajax/display/undefined/
+[22/03 19:53:39] "GET /ajax/display/undefined/ HTTP/1.1" 404 12931
+[22/03 19:54:17] Not Found: /ajax/display/undefined/
+[22/03 19:54:17] "GET /ajax/display/undefined/ HTTP/1.1" 404 12931
+[22/03 19:54:29] Not Found: /ajax/display/undefined/
+[22/03 19:54:29] "GET /ajax/display/undefined/ HTTP/1.1" 404 12931
+[22/03 19:54:44] Not Found: /ajax/display/undefined/
+[22/03 19:54:44] "GET /ajax/display/undefined/ HTTP/1.1" 404 12931
+[22/03 19:55:41] Not Found: /ajax/display/undefined/
+[22/03 19:55:41] "GET /ajax/display/undefined/ HTTP/1.1" 404 12931
+[22/03 19:56:24] Not Found: /ajax/display/undefined/
+[22/03 19:56:24] "GET /ajax/display/undefined/ HTTP/1.1" 404 12931
+[22/03 19:58:53] Not Found: /ajax/display/undefined/
+[22/03 19:58:53] "GET /ajax/display/undefined/ HTTP/1.1" 404 12931
+[22/03 19:59:20] Not Found: /ajax/display/undefined/
+[22/03 19:59:20] "GET /ajax/display/undefined/ HTTP/1.1" 404 12931
+[22/03 19:59:47] Not Found: /ajax/display/undefined/
+[22/03 19:59:47] "GET /ajax/display/undefined/ HTTP/1.1" 404 12931
+[22/03 20:00:01] Not Found: /ajax/display/undefined/
+[22/03 20:00:01] "GET /ajax/display/undefined/ HTTP/1.1" 404 12931
+[22/03 20:00:37] Not Found: /ajax/display/undefined/
+[22/03 20:00:37] "GET /ajax/display/undefined/ HTTP/1.1" 404 12931
+[22/03 20:08:02] Not Found: /ajax/display/undefined/
+[22/03 20:08:02] "GET /ajax/display/undefined/ HTTP/1.1" 404 12931
+[22/03 20:10:08] Not Found: /ajax/display/undefined/
+[22/03 20:10:08] "GET /ajax/display/undefined/ HTTP/1.1" 404 12931
+[22/03 20:10:46] Not Found: /ajax/display/undefined/
+[22/03 20:10:46] "GET /ajax/display/undefined/ HTTP/1.1" 404 12931
+[22/03 20:11:00] Not Found: /ajax/display/undefined/
+[22/03 20:11:00] "GET /ajax/display/undefined/ HTTP/1.1" 404 12931
+[22/03 20:11:40] Not Found: /ajax/display/undefined/
+[22/03 20:11:40] "GET /ajax/display/undefined/ HTTP/1.1" 404 12931
+[22/03 20:12:29] Not Found: /ajax/display/undefined/
+[22/03 20:12:29] "GET /ajax/display/undefined/ HTTP/1.1" 404 12931
+[22/03 20:12:45] Not Found: /ajax/display/undefined/
+[22/03 20:12:45] "GET /ajax/display/undefined/ HTTP/1.1" 404 12931
+[22/03 20:12:47] Not Found: /ajax/display/undefined/
+[22/03 20:12:47] "GET /ajax/display/undefined/ HTTP/1.1" 404 12931
+[22/03 20:13:12] Not Found: /ajax/display/undefined/
+[22/03 20:13:12] "GET /ajax/display/undefined/ HTTP/1.1" 404 12931
+[22/03 20:15:49] Not Found: /ajax/display/undefined/
+[22/03 20:15:49] "GET /ajax/display/undefined/ HTTP/1.1" 404 12931
+[22/03 20:17:14] Not Found: /ajax/display/undefined/
+[22/03 20:17:14] "GET /ajax/display/undefined/ HTTP/1.1" 404 12931
+[22/03 20:20:50] Not Found: /ajax/display/undefined/
+[22/03 20:20:50] "GET /ajax/display/undefined/ HTTP/1.1" 404 12931
+[22/03 20:22:17] Not Found: /ajax/display/undefined/
+[22/03 20:22:17] "GET /ajax/display/undefined/ HTTP/1.1" 404 12931
+[22/03 20:22:40] Not Found: /ajax/display/undefined/
+[22/03 20:22:40] "GET /ajax/display/undefined/ HTTP/1.1" 404 12931
+[22/03 20:24:30] Not Found: /ajax/display/undefined/
+[22/03 20:24:30] "GET /ajax/display/undefined/ HTTP/1.1" 404 12931
+[22/03 20:25:46] Not Found: /ajax/display/undefined/
+[22/03 20:25:46] "GET /ajax/display/undefined/ HTTP/1.1" 404 12931
+[22/03 20:26:11] Not Found: /ajax/display/undefined/
+[22/03 20:26:11] "GET /ajax/display/undefined/ HTTP/1.1" 404 12931
+[22/03 20:26:36] Not Found: /ajax/display/undefined/
+[22/03 20:26:36] "GET /ajax/display/undefined/ HTTP/1.1" 404 12931
+[22/03 20:34:28] Not Found: /ajax/display/undefined/
+[22/03 20:34:28] "GET /ajax/display/undefined/ HTTP/1.1" 404 12931
+[22/03 20:39:18] "GET /static/collector/css?7f97c1f2f468 HTTP/1.1" 404 1805
+[22/03 20:39:20] Not Found: /ajax/display/undefined/
+[22/03 20:39:20] "GET /ajax/display/undefined/ HTTP/1.1" 404 12931
+[22/03 20:39:24] Not Found: /ajax/display/undefined/
+[22/03 20:39:24] "GET /ajax/display/undefined/ HTTP/1.1" 404 12931
+[22/03 20:39:28] Not Found: /ajax/display/undefined/
+[22/03 20:39:28] "GET /ajax/display/undefined/ HTTP/1.1" 404 12931
+[22/03 21:21:51] "GET /static/collector/css?7f97c1f2f468 HTTP/1.1" 404 1805
+[22/03 21:22:01] Not Found: /ajax/display/undefined/
+[22/03 21:22:01] "GET /ajax/display/undefined/ HTTP/1.1" 404 12931
+[22/03 23:53:34] "GET /static/collector/css?7f97c1f2f468 HTTP/1.1" 404 1805
+[22/03 23:53:49] Not Found: /ajax/display/undefined/
+[22/03 23:53:49] "GET /ajax/display/undefined/ HTTP/1.1" 404 12931
+[22/03 23:58:03] "GET /static/collector/css?7f97c1f2f468 HTTP/1.1" 404 1805
+[22/03 23:58:06] Not Found: /ajax/display/undefined/
+[22/03 23:58:06] "GET /ajax/display/undefined/ HTTP/1.1" 404 12931
+[22/03 23:58:44] "GET /static/collector/css?7f97c1f2f468 HTTP/1.1" 404 1805
+[22/03 23:58:47] Not Found: /ajax/display/undefined/
+[22/03 23:58:47] "GET /ajax/display/undefined/ HTTP/1.1" 404 12931
+[22/03 23:59:46] "GET /static/collector/css?7f97c1f2f468 HTTP/1.1" 404 1805
+[22/03 23:59:51] Not Found: /ajax/display/undefined/
+[22/03 23:59:51] "GET /ajax/display/undefined/ HTTP/1.1" 404 12931
+[23/03 00:01:30] "GET /static/collector/css?7f97c1f2f468 HTTP/1.1" 404 1805
+[23/03 00:01:33] Not Found: /ajax/display/undefined/
+[23/03 00:01:33] "GET /ajax/display/undefined/ HTTP/1.1" 404 12931
+[23/03 00:01:50] "GET /static/collector/css?7f97c1f2f468 HTTP/1.1" 404 1805
+[23/03 00:01:55] Not Found: /ajax/display/undefined/
+[23/03 00:01:55] "GET /ajax/display/undefined/ HTTP/1.1" 404 12931
+[23/03 00:02:31] "GET /static/collector/css?7f97c1f2f468 HTTP/1.1" 404 1805
+[23/03 00:02:37] "GET /static/collector/css?7f97c1f2f468 HTTP/1.1" 404 1805
+[23/03 00:02:40] Not Found: /ajax/display/undefined/
+[23/03 00:02:40] "GET /ajax/display/undefined/ HTTP/1.1" 404 12931
+[23/03 00:03:18] "GET /static/collector/css?7f97c1f2f468 HTTP/1.1" 404 1805
+[23/03 00:03:23] Not Found: /ajax/display/undefined/
+[23/03 00:03:23] "GET /ajax/display/undefined/ HTTP/1.1" 404 12931
+[23/03 00:03:42] "GET /static/collector/css?7f97c1f2f468 HTTP/1.1" 404 1805
+[23/03 00:03:46] Not Found: /ajax/display/undefined/
+[23/03 00:03:46] "GET /ajax/display/undefined/ HTTP/1.1" 404 12931
+[23/03 00:03:57] "GET /static/collector/css?7f97c1f2f468 HTTP/1.1" 404 1805
+[23/03 00:04:04] Not Found: /ajax/display/undefined/
+[23/03 00:04:04] "GET /ajax/display/undefined/ HTTP/1.1" 404 12931
+[23/03 00:04:30] "GET /static/collector/css?7f97c1f2f468 HTTP/1.1" 404 1805
+[23/03 00:04:33] Not Found: /ajax/display/undefined/
+[23/03 00:04:33] "GET /ajax/display/undefined/ HTTP/1.1" 404 12931
+[23/03 00:05:42] Not Found: /moonphases
+[23/03 00:05:42] "GET /moonphases HTTP/1.1" 404 12892
+[23/03 00:05:49] Not Found: /moonphase
+[23/03 00:05:49] "GET /moonphase HTTP/1.1" 404 12889
+[23/03 00:06:19] Not Found: /moon_phase
+[23/03 00:06:19] "GET /moon_phase HTTP/1.1" 404 12892
+[23/03 00:06:38] Internal Server Error: /api/moon_phase/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/utils/deprecation.py", line 136, in __call__
+    response = self.process_response(request, response)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/middleware/clickjacking.py", line 34, in process_response
+    response.headers["X-Frame-Options"] = self.get_xframe_options_value(
+    ^^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'headers'
+[23/03 00:06:38] "GET /api/moon_phase/ HTTP/1.1" 500 88335
+[23/03 00:07:31] Internal Server Error: /api/moon_phase/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/utils/deprecation.py", line 136, in __call__
+    response = self.process_response(request, response)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/middleware/clickjacking.py", line 34, in process_response
+    response.headers["X-Frame-Options"] = self.get_xframe_options_value(
+    ^^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'headers'
+[23/03 00:07:31] "GET /api/moon_phase/?dt=2025-01-24 HTTP/1.1" 500 88711
+[23/03 00:07:42] Internal Server Error: /api/moon_phase/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/utils/deprecation.py", line 136, in __call__
+    response = self.process_response(request, response)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/middleware/clickjacking.py", line 34, in process_response
+    response.headers["X-Frame-Options"] = self.get_xframe_options_value(
+    ^^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'headers'
+[23/03 00:07:42] "GET /api/moon_phase/?dt=2025-01-24 HTTP/1.1" 500 88711
+[23/03 00:08:29] Internal Server Error: /api/moon_phase/2025-01-24
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 784, in moon_phase
+    firstday = datetime.date(dt.year, dt.month, 1)
+                             ^^^^^^^
+AttributeError: 'str' object has no attribute 'year'
+[23/03 00:08:29] "GET /api/moon_phase/2025-01-24 HTTP/1.1" 500 75297
+[23/03 00:09:02] Internal Server Error: /api/moon_phase/2025-01-24
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 786, in moon_phase
+    firstday = datetime.date(dt.year, dt.month, 1)
+                             ^^^^^^^
+AttributeError: 'str' object has no attribute 'year'
+[23/03 00:09:02] "GET /api/moon_phase/2025-01-24 HTTP/1.1" 500 75296
+[23/03 00:10:35] Internal Server Error: /api/moon_phase/2025-01-24
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 787, in moon_phase
+    firstday = datetime.date(dt[0], dt.month[1], 1)
+                                    ^^^^^^^^
+AttributeError: 'list' object has no attribute 'month'
+[23/03 00:10:35] "GET /api/moon_phase/2025-01-24 HTTP/1.1" 500 75493
+[23/03 00:13:10] Internal Server Error: /api/moon_phase/2025-01-24
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 787, in moon_phase
+    dt = datetime.date(year=words[0],month=words[1],day=words[2])
+TypeError: 'str' object cannot be interpreted as an integer
+[23/03 00:13:10] "GET /api/moon_phase/2025-01-24 HTTP/1.1" 500 75650
+[23/03 00:13:32] Internal Server Error: /api/moon_phase/2025-01-24
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 788, in moon_phase
+    firstday = datetime.date(dt[0], dt.month[1], 1)
+                             ~~^^^
+TypeError: 'datetime.date' object is not subscriptable
+[23/03 00:13:32] "GET /api/moon_phase/2025-01-24 HTTP/1.1" 500 75558
+[23/03 00:13:57] Internal Server Error: /api/moon_phase/2025-01-24
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/utils/deprecation.py", line 136, in __call__
+    response = self.process_response(request, response)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/middleware/clickjacking.py", line 34, in process_response
+    response.headers["X-Frame-Options"] = self.get_xframe_options_value(
+    ^^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'headers'
+[23/03 00:13:57] "GET /api/moon_phase/2025-01-24 HTTP/1.1" 500 86615
+[23/03 00:15:58] Internal Server Error: /calendar/2025/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 863, in calendar
+    x = moon_phase(request, dt)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 785, in moon_phase
+    words = dt.split("-")
+            ^^^^^^^^
+AttributeError: 'datetime.date' object has no attribute 'split'
+[23/03 00:15:58] "GET /calendar/2025/ HTTP/1.1" 500 79489
+[23/03 00:16:37] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[23/03 00:16:37] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[23/03 00:16:37] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[23/03 00:16:37] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[23/03 00:18:37] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[23/03 00:18:37] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[23/03 00:18:37] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[23/03 00:18:47] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[23/03 00:18:47] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[23/03 00:18:47] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[23/03 00:18:54] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[23/03 00:18:54] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[23/03 00:18:54] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[23/03 00:27:55] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[23/03 00:27:55] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[23/03 00:27:55] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[23/03 00:28:14] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[23/03 00:28:14] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[23/03 00:28:14] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[23/03 00:29:59] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[23/03 00:29:59] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[23/03 00:35:19] Internal Server Error: /calendar/2025/
+Traceback (most recent call last):
+  File "/usr/lib64/python3.13/zoneinfo/_common.py", line 12, in load_tzdata
+    path = resources.files(package_name).joinpath(resource_name)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.13/importlib/resources/_common.py", line 46, in wrapper
+    return func(anchor)
+  File "/usr/lib64/python3.13/importlib/resources/_common.py", line 56, in files
+    return from_package(resolve(anchor))
+                        ~~~~~~~^^^^^^^^
+  File "/usr/lib64/python3.13/functools.py", line 934, in wrapper
+    return dispatch(args[0].__class__)(*args, **kw)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/usr/lib64/python3.13/importlib/resources/_common.py", line 82, in _
+    return importlib.import_module(cand)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/usr/lib64/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1310, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'tzdata'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 886, in calendar
+    x = moon_phase(request, dt)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 786, in moon_phase
+    timezone = zoneinfo.ZoneInfo("CDT")
+  File "/usr/lib64/python3.13/zoneinfo/_common.py", line 29, in load_tzdata
+    raise ZoneInfoNotFoundError(f"No time zone found with key {key}")
+zoneinfo._common.ZoneInfoNotFoundError: 'No time zone found with key CDT'
+[23/03 00:35:19] "GET /calendar/2025/ HTTP/1.1" 500 121931
+[23/03 00:35:32] Internal Server Error: /calendar/2025/
+Traceback (most recent call last):
+  File "/usr/lib64/python3.13/zoneinfo/_common.py", line 12, in load_tzdata
+    path = resources.files(package_name).joinpath(resource_name)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.13/importlib/resources/_common.py", line 46, in wrapper
+    return func(anchor)
+  File "/usr/lib64/python3.13/importlib/resources/_common.py", line 56, in files
+    return from_package(resolve(anchor))
+                        ~~~~~~~^^^^^^^^
+  File "/usr/lib64/python3.13/functools.py", line 934, in wrapper
+    return dispatch(args[0].__class__)(*args, **kw)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/usr/lib64/python3.13/importlib/resources/_common.py", line 82, in _
+    return importlib.import_module(cand)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/usr/lib64/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1310, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1310, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'tzdata'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 886, in calendar
+    x = moon_phase(request, dt)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 786, in moon_phase
+    timezone = zoneinfo.ZoneInfo("US/MN")
+  File "/usr/lib64/python3.13/zoneinfo/_common.py", line 29, in load_tzdata
+    raise ZoneInfoNotFoundError(f"No time zone found with key {key}")
+zoneinfo._common.ZoneInfoNotFoundError: 'No time zone found with key US/MN'
+[23/03 00:35:32] "GET /calendar/2025/ HTTP/1.1" 500 129359
+[23/03 00:35:40] Internal Server Error: /calendar/2025/
+Traceback (most recent call last):
+  File "/usr/lib64/python3.13/zoneinfo/_common.py", line 12, in load_tzdata
+    path = resources.files(package_name).joinpath(resource_name)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.13/importlib/resources/_common.py", line 46, in wrapper
+    return func(anchor)
+  File "/usr/lib64/python3.13/importlib/resources/_common.py", line 56, in files
+    return from_package(resolve(anchor))
+                        ~~~~~~~^^^^^^^^
+  File "/usr/lib64/python3.13/functools.py", line 934, in wrapper
+    return dispatch(args[0].__class__)(*args, **kw)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/usr/lib64/python3.13/importlib/resources/_common.py", line 82, in _
+    return importlib.import_module(cand)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/usr/lib64/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1310, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1310, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'tzdata'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 886, in calendar
+    x = moon_phase(request, dt)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 786, in moon_phase
+    timezone = zoneinfo.ZoneInfo("US/CDT")
+  File "/usr/lib64/python3.13/zoneinfo/_common.py", line 29, in load_tzdata
+    raise ZoneInfoNotFoundError(f"No time zone found with key {key}")
+zoneinfo._common.ZoneInfoNotFoundError: 'No time zone found with key US/CDT'
+[23/03 00:35:40] "GET /calendar/2025/ HTTP/1.1" 500 129373
+[23/03 00:35:45] Internal Server Error: /calendar/2025/
+Traceback (most recent call last):
+  File "/usr/lib64/python3.13/zoneinfo/_common.py", line 12, in load_tzdata
+    path = resources.files(package_name).joinpath(resource_name)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.13/importlib/resources/_common.py", line 46, in wrapper
+    return func(anchor)
+  File "/usr/lib64/python3.13/importlib/resources/_common.py", line 56, in files
+    return from_package(resolve(anchor))
+                        ~~~~~~~^^^^^^^^
+  File "/usr/lib64/python3.13/functools.py", line 934, in wrapper
+    return dispatch(args[0].__class__)(*args, **kw)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/usr/lib64/python3.13/importlib/resources/_common.py", line 82, in _
+    return importlib.import_module(cand)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/usr/lib64/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1310, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1310, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'tzdata'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 886, in calendar
+    x = moon_phase(request, dt)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 786, in moon_phase
+    timezone = zoneinfo.ZoneInfo("USA/CDT")
+  File "/usr/lib64/python3.13/zoneinfo/_common.py", line 29, in load_tzdata
+    raise ZoneInfoNotFoundError(f"No time zone found with key {key}")
+zoneinfo._common.ZoneInfoNotFoundError: 'No time zone found with key USA/CDT'
+[23/03 00:35:45] "GET /calendar/2025/ HTTP/1.1" 500 129395
+[23/03 00:36:25] Internal Server Error: /calendar/2025/
+Traceback (most recent call last):
+  File "/usr/lib64/python3.13/zoneinfo/_common.py", line 12, in load_tzdata
+    path = resources.files(package_name).joinpath(resource_name)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.13/importlib/resources/_common.py", line 46, in wrapper
+    return func(anchor)
+  File "/usr/lib64/python3.13/importlib/resources/_common.py", line 56, in files
+    return from_package(resolve(anchor))
+                        ~~~~~~~^^^^^^^^
+  File "/usr/lib64/python3.13/functools.py", line 934, in wrapper
+    return dispatch(args[0].__class__)(*args, **kw)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/usr/lib64/python3.13/importlib/resources/_common.py", line 82, in _
+    return importlib.import_module(cand)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/usr/lib64/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1310, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'tzdata'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 886, in calendar
+    x = moon_phase(request, dt)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 786, in moon_phase
+    timezone = zoneinfo.ZoneInfo("CDT")
+  File "/usr/lib64/python3.13/zoneinfo/_common.py", line 29, in load_tzdata
+    raise ZoneInfoNotFoundError(f"No time zone found with key {key}")
+zoneinfo._common.ZoneInfoNotFoundError: 'No time zone found with key CDT'
+[23/03 00:36:25] "GET /calendar/2025/ HTTP/1.1" 500 121931
+[23/03 00:37:00] Internal Server Error: /calendar/2025/
+Traceback (most recent call last):
+  File "/usr/lib64/python3.13/zoneinfo/_common.py", line 12, in load_tzdata
+    path = resources.files(package_name).joinpath(resource_name)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.13/importlib/resources/_common.py", line 46, in wrapper
+    return func(anchor)
+  File "/usr/lib64/python3.13/importlib/resources/_common.py", line 56, in files
+    return from_package(resolve(anchor))
+                        ~~~~~~~^^^^^^^^
+  File "/usr/lib64/python3.13/functools.py", line 934, in wrapper
+    return dispatch(args[0].__class__)(*args, **kw)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/usr/lib64/python3.13/importlib/resources/_common.py", line 82, in _
+    return importlib.import_module(cand)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/usr/lib64/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1310, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1310, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'tzdata'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 886, in calendar
+    x = moon_phase(request, dt)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 786, in moon_phase
+    timezone = zoneinfo.ZoneInfo("US/CDT")
+  File "/usr/lib64/python3.13/zoneinfo/_common.py", line 29, in load_tzdata
+    raise ZoneInfoNotFoundError(f"No time zone found with key {key}")
+zoneinfo._common.ZoneInfoNotFoundError: 'No time zone found with key US/CDT'
+[23/03 00:37:00] "GET /calendar/2025/ HTTP/1.1" 500 129379
+[23/03 00:38:39] Internal Server Error: /calendar/2025/
+Traceback (most recent call last):
+  File "/usr/lib64/python3.13/zoneinfo/_common.py", line 12, in load_tzdata
+    path = resources.files(package_name).joinpath(resource_name)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.13/importlib/resources/_common.py", line 46, in wrapper
+    return func(anchor)
+  File "/usr/lib64/python3.13/importlib/resources/_common.py", line 56, in files
+    return from_package(resolve(anchor))
+                        ~~~~~~~^^^^^^^^
+  File "/usr/lib64/python3.13/functools.py", line 934, in wrapper
+    return dispatch(args[0].__class__)(*args, **kw)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/usr/lib64/python3.13/importlib/resources/_common.py", line 82, in _
+    return importlib.import_module(cand)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/usr/lib64/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1310, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'tzdata'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 886, in calendar
+    x = moon_phase(request, dt)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 786, in moon_phase
+    timezone = zoneinfo.ZoneInfo("UTC-6")
+  File "/usr/lib64/python3.13/zoneinfo/_common.py", line 29, in load_tzdata
+    raise ZoneInfoNotFoundError(f"No time zone found with key {key}")
+zoneinfo._common.ZoneInfoNotFoundError: 'No time zone found with key UTC-6'
+[23/03 00:38:39] "GET /calendar/2025/ HTTP/1.1" 500 122228
+[23/03 00:38:39] Not Found: /favicon.ico
+[23/03 00:38:39] "GET /favicon.ico HTTP/1.1" 404 12915
+[23/03 00:39:49] Internal Server Error: /calendar/2025/
+Traceback (most recent call last):
+  File "/usr/lib64/python3.13/zoneinfo/_common.py", line 12, in load_tzdata
+    path = resources.files(package_name).joinpath(resource_name)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.13/importlib/resources/_common.py", line 46, in wrapper
+    return func(anchor)
+  File "/usr/lib64/python3.13/importlib/resources/_common.py", line 56, in files
+    return from_package(resolve(anchor))
+                        ~~~~~~~^^^^^^^^
+  File "/usr/lib64/python3.13/functools.py", line 934, in wrapper
+    return dispatch(args[0].__class__)(*args, **kw)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/usr/lib64/python3.13/importlib/resources/_common.py", line 82, in _
+    return importlib.import_module(cand)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/usr/lib64/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1310, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1310, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'tzdata'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 886, in calendar
+    x = moon_phase(request, dt)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 786, in moon_phase
+    timezone = zoneinfo.ZoneInfo("America/Minnesota")
+  File "/usr/lib64/python3.13/zoneinfo/_common.py", line 29, in load_tzdata
+    raise ZoneInfoNotFoundError(f"No time zone found with key {key}")
+zoneinfo._common.ZoneInfoNotFoundError: 'No time zone found with key America/Minnesota'
+[23/03 00:39:49] "GET /calendar/2025/ HTTP/1.1" 500 129595
+[23/03 00:40:48] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[23/03 00:40:48] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[23/03 00:41:54] Internal Server Error: /calendar/2025/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 888, in calendar
+    x = moon_phase(request, dt)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 859, in moon_phase
+    sr = s["sunrise"].split(", ")[-1]
+         ^^^^^^^^^^^^^^^^^^
+AttributeError: 'datetime.datetime' object has no attribute 'split'
+[23/03 00:41:54] "GET /calendar/2025/ HTTP/1.1" 500 85011
+[23/03 00:43:01] Internal Server Error: /calendar/2025/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 888, in calendar
+    x = moon_phase(request, dt)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 859, in moon_phase
+    sr = s["sunrise"].strptime("%H:%M")
+TypeError: strptime() takes exactly 2 arguments (1 given)
+[23/03 00:43:01] "GET /calendar/2025/ HTTP/1.1" 500 84911
+[23/03 00:43:14] Internal Server Error: /calendar/2025/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 888, in calendar
+    x = moon_phase(request, dt)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 859, in moon_phase
+    sr = s["sunrise"].strstime("%H:%M")
+         ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'datetime.datetime' object has no attribute 'strstime'. Did you mean: 'strftime'?
+[23/03 00:43:14] "GET /calendar/2025/ HTTP/1.1" 500 85035
+[23/03 00:44:00] Internal Server Error: /calendar/2025/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 890, in calendar
+    x = moon_phase(request, dt)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 861, in moon_phase
+    sr = strptime(s["sunrise"],"%H:%M")
+  File "/usr/lib64/python3.13/_strptime.py", line 783, in _strptime_time
+    tt = _strptime(data_string, format)[0]
+         ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.13/_strptime.py", line 524, in _strptime
+    raise TypeError(msg.format(index, type(arg)))
+TypeError: strptime() argument 0 must be str, not <class 'datetime.datetime'>
+[23/03 00:44:00] "GET /calendar/2025/ HTTP/1.1" 500 93740
+[23/03 00:44:45] "GET /static/collector/css?7f97c1f2f468 HTTP/1.1" 404 1805
+[23/03 00:44:49] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[23/03 00:44:49] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[23/03 00:47:18] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[23/03 00:47:18] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[23/03 00:47:18] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[23/03 00:47:19] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[23/03 00:47:20] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[23/03 00:47:20] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[23/03 00:47:20] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[23/03 00:47:47] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[23/03 00:47:47] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[23/03 00:47:47] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[23/03 00:47:47] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[23/03 00:47:59] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[23/03 00:48:00] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[23/03 00:48:00] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[23/03 00:48:00] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[23/03 00:48:14] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[23/03 00:48:14] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[23/03 00:48:14] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[23/03 00:48:15] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[23/03 00:48:15] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[23/03 00:48:16] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[23/03 00:48:16] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[23/03 00:48:27] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[23/03 00:48:27] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[23/03 00:48:27] "GET /static/collector/Balthazar-Regular.ttf HTTP/1.1" 404 1851
+[23/03 00:48:27] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[23/03 00:49:16] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[23/03 00:49:16] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[23/03 00:49:43] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[23/03 00:49:43] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[23/03 00:49:43] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[23/03 00:49:57] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[23/03 00:49:57] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[23/03 00:49:57] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[23/03 00:50:05] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[23/03 00:50:05] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[23/03 00:50:05] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[23/03 00:50:22] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[23/03 00:50:22] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[23/03 00:50:22] "GET /static/collector/favicon.ico HTTP/1.1" 404 1821
+[23/03 00:51:17] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[23/03 00:51:17] "GET /static/js/collector.js HTTP/1.1" 404 1803
+[23/03 01:21:40] Not Found: /ajax/display/undefined/
+[23/03 01:21:40] "GET /ajax/display/undefined/ HTTP/1.1" 404 12951
+[23/03 01:22:49] Not Found: /ajax/display/undefined/
+[23/03 01:22:49] "GET /ajax/display/undefined/ HTTP/1.1" 404 12951
+[23/03 01:38:20] Not Found: /ajax/display/undefined/
+[23/03 01:38:20] "GET /ajax/display/undefined/ HTTP/1.1" 404 12951
+[23/03 18:52:05] Internal Server Error: /admin/storytelling/hotspot/62/change/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/admin/options.py", line 714, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/admin/sites.py", line 240, in inner
+    return view(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/admin/options.py", line 1944, in change_view
+    return self.changeform_view(request, object_id, form_url, extra_context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/admin/options.py", line 1802, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/admin/options.py", line 1853, in _changeform_view
+    self.save_model(request, new_object, form, not add)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/admin/options.py", line 1257, in save_model
+    obj.save()
+    ~~~~~~~~^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/db/models/base.py", line 881, in save_base
+    pre_save.send(
+    ~~~~~~~~~~~~~^
+        sender=origin,
+        ^^^^^^^^^^^^^^
+    ...<3 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/dispatch/dispatcher.py", line 189, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/zaffarelli/Projects/wawwod/storytelling/signals/districts.py", line 14, in update_hotspot
+    instance.fix()
+    ~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/storytelling/models/hotspots.py", line 77, in fix
+    self.localize_me()
+    ~~~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/storytelling/models/hotspots.py", line 62, in localize_me
+    x = gn.geocode()
+TypeError: GeoNames.geocode() missing 1 required positional argument: 'query'
+[23/03 18:52:05] "POST /admin/storytelling/hotspot/62/change/?_changelist_filters=city__id__exact%3D8 HTTP/1.1" 500 163901
+[23/03 18:53:04] Internal Server Error: /admin/storytelling/hotspot/62/change/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/admin/options.py", line 714, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/admin/sites.py", line 240, in inner
+    return view(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/admin/options.py", line 1944, in change_view
+    return self.changeform_view(request, object_id, form_url, extra_context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/admin/options.py", line 1802, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/admin/options.py", line 1853, in _changeform_view
+    self.save_model(request, new_object, form, not add)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/admin/options.py", line 1257, in save_model
+    obj.save()
+    ~~~~~~~~^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/db/models/base.py", line 881, in save_base
+    pre_save.send(
+    ~~~~~~~~~~~~~^
+        sender=origin,
+        ^^^^^^^^^^^^^^
+    ...<3 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/dispatch/dispatcher.py", line 189, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/zaffarelli/Projects/wawwod/storytelling/signals/districts.py", line 14, in update_hotspot
+    instance.fix()
+    ~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/storytelling/models/hotspots.py", line 77, in fix
+    self.localize_me()
+    ~~~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/storytelling/models/hotspots.py", line 61, in localize_me
+    gn = geocoders.GeoNames()
+TypeError: GeoNames.__init__() missing 1 required positional argument: 'username'
+[23/03 18:53:04] "POST /admin/storytelling/hotspot/62/change/?_changelist_filters=city__id__exact%3D8 HTTP/1.1" 500 163793
+[23/03 18:55:19] Internal Server Error: /admin/storytelling/hotspot/62/change/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/geopy/geocoders/base.py", line 368, in _call_geocoder
+    result = self.adapter.get_json(url, timeout=timeout, headers=req_headers)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/geopy/adapters.py", line 472, in get_json
+    resp = self._request(url, timeout=timeout, headers=headers)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/geopy/adapters.py", line 500, in _request
+    raise AdapterHTTPError(
+    ...<4 lines>...
+    )
+geopy.adapters.AdapterHTTPError: Non-successful status code 401
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/admin/options.py", line 714, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/admin/sites.py", line 240, in inner
+    return view(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/admin/options.py", line 1944, in change_view
+    return self.changeform_view(request, object_id, form_url, extra_context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/admin/options.py", line 1802, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/admin/options.py", line 1853, in _changeform_view
+    self.save_model(request, new_object, form, not add)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/admin/options.py", line 1257, in save_model
+    obj.save()
+    ~~~~~~~~^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/db/models/base.py", line 881, in save_base
+    pre_save.send(
+    ~~~~~~~~~~~~~^
+        sender=origin,
+        ^^^^^^^^^^^^^^
+    ...<3 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/dispatch/dispatcher.py", line 189, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/zaffarelli/Projects/wawwod/storytelling/signals/districts.py", line 14, in update_hotspot
+    instance.fix()
+    ~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/storytelling/models/hotspots.py", line 77, in fix
+    self.localize_me()
+    ~~~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/storytelling/models/hotspots.py", line 62, in localize_me
+    x = gn.geocode(self.name+", MN")
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/geopy/geocoders/geonames.py", line 161, in geocode
+    return self._call_geocoder(url, callback, timeout=timeout)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/geopy/geocoders/base.py", line 388, in _call_geocoder
+    res = self._adapter_error_handler(error)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/geopy/geocoders/base.py", line 411, in _adapter_error_handler
+    raise exc_cls(str(error)) from error
+geopy.exc.GeocoderAuthenticationFailure: Non-successful status code 401
+[23/03 18:55:19] "POST /admin/storytelling/hotspot/62/change/?_changelist_filters=city__id__exact%3D8 HTTP/1.1" 500 193390
+[23/03 19:20:33] Internal Server Error: /admin/storytelling/hotspot/62/change/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/admin/options.py", line 714, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/admin/sites.py", line 240, in inner
+    return view(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/admin/options.py", line 1944, in change_view
+    return self.changeform_view(request, object_id, form_url, extra_context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/admin/options.py", line 1802, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/admin/options.py", line 1853, in _changeform_view
+    self.save_model(request, new_object, form, not add)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/admin/options.py", line 1257, in save_model
+    obj.save()
+    ~~~~~~~~^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/db/models/base.py", line 881, in save_base
+    pre_save.send(
+    ~~~~~~~~~~~~~^
+        sender=origin,
+        ^^^^^^^^^^^^^^
+    ...<3 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/dispatch/dispatcher.py", line 189, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/zaffarelli/Projects/wawwod/storytelling/signals/hotspots.py", line 8, in update_cities
+    instance.fix()
+    ~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/storytelling/models/hotspots.py", line 70, in fix
+    words = self.gps_coords.split(',')
+            ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'tuple' object has no attribute 'split'
+[23/03 19:20:33] "POST /admin/storytelling/hotspot/62/change/?_changelist_filters=city__id__exact%3D8 HTTP/1.1" 500 160288
+[23/03 19:21:19] Internal Server Error: /admin/storytelling/hotspot/62/change/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/admin/options.py", line 714, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/admin/sites.py", line 240, in inner
+    return view(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/admin/options.py", line 1944, in change_view
+    return self.changeform_view(request, object_id, form_url, extra_context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/admin/options.py", line 1802, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/admin/options.py", line 1853, in _changeform_view
+    self.save_model(request, new_object, form, not add)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/admin/options.py", line 1257, in save_model
+    obj.save()
+    ~~~~~~~~^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/db/models/base.py", line 881, in save_base
+    pre_save.send(
+    ~~~~~~~~~~~~~^
+        sender=origin,
+        ^^^^^^^^^^^^^^
+    ...<3 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/dispatch/dispatcher.py", line 189, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/zaffarelli/Projects/wawwod/storytelling/signals/districts.py", line 14, in update_hotspot
+    instance.fix()
+    ~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/storytelling/models/hotspots.py", line 77, in fix
+    self.localize_me()
+    ~~~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/storytelling/models/hotspots.py", line 64, in localize_me
+    self.gps_coords = x[1][0]+","+x[1][1]
+                      ~~~~~~~^~~~
+TypeError: unsupported operand type(s) for +: 'float' and 'str'
+[23/03 19:21:19] "POST /admin/storytelling/hotspot/62/change/?_changelist_filters=city__id__exact%3D8 HTTP/1.1" 500 164150
+[23/03 19:21:56] Not Found: /ajax/display/undefined/
+[23/03 19:21:56] "GET /ajax/display/undefined/ HTTP/1.1" 404 12951
+[23/03 19:22:11] "GET /static/collector/css?72bc76983e6e HTTP/1.1" 404 1805
+[23/03 19:22:21] Not Found: /ajax/display/undefined/
+[23/03 19:22:21] "GET /ajax/display/undefined/ HTTP/1.1" 404 12951
+[23/03 19:23:35] Not Found: /ajax/display/undefined/
+[23/03 19:23:35] "GET /ajax/display/undefined/ HTTP/1.1" 404 12951
+[23/03 19:33:46] Not Found: /ajax/display/undefined/
+[23/03 19:33:46] "GET /ajax/display/undefined/ HTTP/1.1" 404 12951
+[23/03 19:38:09] Internal Server Error: /admin/storytelling/hotspot/add/
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/urllib3/connectionpool.py", line 537, in _make_request
+    response = conn.getresponse()
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/urllib3/connection.py", line 466, in getresponse
+    httplib_response = super().getresponse()
+  File "/usr/lib64/python3.13/http/client.py", line 1450, in getresponse
+    response.begin()
+    ~~~~~~~~~~~~~~^^
+  File "/usr/lib64/python3.13/http/client.py", line 336, in begin
+    version, status, reason = self._read_status()
+                              ~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib64/python3.13/http/client.py", line 297, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+               ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.13/socket.py", line 719, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+TimeoutError: timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/urllib3/connectionpool.py", line 793, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/urllib3/connectionpool.py", line 539, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/urllib3/connectionpool.py", line 370, in _raise_timeout
+    raise ReadTimeoutError(
+        self, url, f"Read timed out. (read timeout={timeout_value})"
+    ) from err
+urllib3.exceptions.ReadTimeoutError: HTTPConnectionPool(host='api.geonames.org', port=80): Read timed out. (read timeout=1)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/requests/adapters.py", line 589, in send
+    resp = conn.urlopen(
+        method=request.method,
+    ...<9 lines>...
+        chunked=chunked,
+    )
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/urllib3/connectionpool.py", line 877, in urlopen
+    return self.urlopen(
+           ~~~~~~~~~~~~^
+        method,
+        ^^^^^^^
+    ...<13 lines>...
+        **response_kw,
+        ^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/urllib3/connectionpool.py", line 877, in urlopen
+    return self.urlopen(
+           ~~~~~~~~~~~~^
+        method,
+        ^^^^^^^
+    ...<13 lines>...
+        **response_kw,
+        ^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/urllib3/connectionpool.py", line 847, in urlopen
+    retries = retries.increment(
+        method, url, error=new_e, _pool=self, _stacktrace=sys.exc_info()[2]
+    )
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/urllib3/util/retry.py", line 515, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='api.geonames.org', port=80): Max retries exceeded with url: /searchJSON?q=St.+Louis+Park%2C+MN&username=zaffarelli&maxRows=1 (Caused by ReadTimeoutError("HTTPConnectionPool(host='api.geonames.org', port=80): Read timed out. (read timeout=1)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/geopy/adapters.py", line 482, in _request
+    resp = self.session.get(url, timeout=timeout, headers=headers)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/requests/sessions.py", line 602, in get
+    return self.request("GET", url, **kwargs)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/requests/adapters.py", line 622, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='api.geonames.org', port=80): Max retries exceeded with url: /searchJSON?q=St.+Louis+Park%2C+MN&username=zaffarelli&maxRows=1 (Caused by ReadTimeoutError("HTTPConnectionPool(host='api.geonames.org', port=80): Read timed out. (read timeout=1)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/admin/options.py", line 714, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/admin/sites.py", line 240, in inner
+    return view(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/admin/options.py", line 1941, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/admin/options.py", line 1802, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/admin/options.py", line 1853, in _changeform_view
+    self.save_model(request, new_object, form, not add)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/contrib/admin/options.py", line 1257, in save_model
+    obj.save()
+    ~~~~~~~~^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/db/models/base.py", line 881, in save_base
+    pre_save.send(
+    ~~~~~~~~~~~~~^
+        sender=origin,
+        ^^^^^^^^^^^^^^
+    ...<3 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/django/dispatch/dispatcher.py", line 189, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/zaffarelli/Projects/wawwod/storytelling/signals/districts.py", line 14, in update_hotspot
+    instance.fix()
+    ~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/storytelling/models/hotspots.py", line 77, in fix
+    self.localize_me()
+    ~~~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/storytelling/models/hotspots.py", line 62, in localize_me
+    x = gn.geocode(self.name+", MN")
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/geopy/geocoders/geonames.py", line 161, in geocode
+    return self._call_geocoder(url, callback, timeout=timeout)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/geopy/geocoders/base.py", line 368, in _call_geocoder
+    result = self.adapter.get_json(url, timeout=timeout, headers=req_headers)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/geopy/adapters.py", line 472, in get_json
+    resp = self._request(url, timeout=timeout, headers=headers)
+  File "/home/zaffarelli/.virtualenvs/wawwodx/lib/python3.13/site-packages/geopy/adapters.py", line 494, in _request
+    raise GeocoderUnavailable(message)
+geopy.exc.GeocoderUnavailable: HTTPConnectionPool(host='api.geonames.org', port=80): Max retries exceeded with url: /searchJSON?q=St.+Louis+Park%2C+MN&username=zaffarelli&maxRows=1 (Caused by ReadTimeoutError("HTTPConnectionPool(host='api.geonames.org', port=80): Read timed out. (read timeout=1)"))
+[23/03 19:38:09] "POST /admin/storytelling/hotspot/add/?_changelist_filters=city__id__exact%3D8 HTTP/1.1" 500 299666
+[23/03 19:39:47] Not Found: /ajax/display/undefined/
+[23/03 19:39:47] "GET /ajax/display/undefined/ HTTP/1.1" 404 12951
+[23/03 19:41:38] Not Found: /ajax/display/undefined/
+[23/03 19:41:38] "GET /ajax/display/undefined/ HTTP/1.1" 404 12951
+[23/03 19:43:38] "GET /static/collector/css?72bc76983e6e HTTP/1.1" 404 1805
+[23/03 19:43:43] Not Found: /ajax/display/undefined/
+[23/03 19:43:43] "GET /ajax/display/undefined/ HTTP/1.1" 404 12951
+[23/03 19:45:20] Not Found: /ajax/display/undefined/
+[23/03 19:45:20] "GET /ajax/display/undefined/ HTTP/1.1" 404 12951
+[23/03 19:46:50] Not Found: /ajax/display/undefined/
+[23/03 19:46:50] "GET /ajax/display/undefined/ HTTP/1.1" 404 12951
+[23/03 19:47:10] Not Found: /ajax/display/undefined/
+[23/03 19:47:10] "GET /ajax/display/undefined/ HTTP/1.1" 404 12951
+[23/03 19:48:56] Not Found: /ajax/display/undefined/
+[23/03 19:48:56] "GET /ajax/display/undefined/ HTTP/1.1" 404 12951
+[23/03 19:51:05] "GET /static/collector/css?72bc76983e6e HTTP/1.1" 404 1805
+[23/03 19:51:09] Not Found: /ajax/display/undefined/
+[23/03 19:51:09] "GET /ajax/display/undefined/ HTTP/1.1" 404 12951
+[25/03 01:14:48] "GET /static/collector/css?72bc76983e6e HTTP/1.1" 404 1805
+[25/03 01:19:47] "GET /static/collector/css?72bc76983e6e HTTP/1.1" 404 1805
+[25/03 01:32:48] "GET /static/collector/css?72bc76983e6e HTTP/1.1" 404 1805
+[25/03 01:33:35] "GET /static/collector/css?72bc76983e6e HTTP/1.1" 404 1805
+[25/03 01:35:04] "GET /static/collector/css?72bc76983e6e HTTP/1.1" 404 1805
+[25/03 01:36:56] "GET /static/collector/css?72bc76983e6e HTTP/1.1" 404 1805
+[25/03 01:39:16] "GET /static/collector/css?72bc76983e6e HTTP/1.1" 404 1805
+[25/03 13:53:04] "GET /static/collector/css?72bc76983e6e HTTP/1.1" 404 1805
+[25/03 23:26:50] "GET /static/collector/css?72bc76983e6e HTTP/1.1" 404 1805
+[25/03 23:34:45] "GET /static/collector/css?72bc76983e6e HTTP/1.1" 404 1805

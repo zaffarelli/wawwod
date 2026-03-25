@@ -160,7 +160,6 @@ class Creature(models.Model):
 
     ritual_pathes = models.CharField(max_length=128, default='', blank=True)
 
-
     # WTA
     gnosis = models.PositiveIntegerField(default=0)
     rage = models.PositiveIntegerField(default=0)
@@ -724,7 +723,6 @@ class Creature(models.Model):
             if self.willpower < minimum_willpower:
                 self.willpower = minimum_willpower
 
-
         self.display_gauge = self.glory + self.honor + self.wisdom
         if self.breed == 1:
             self.display_gauge -= 1
@@ -1038,7 +1036,7 @@ class Creature(models.Model):
             self.fix_mage()
         # Wraith
         elif self.creature == 'wraith':
-            #self.freebies = -((7 + 5 + 3 + 9) * 5 + (13 + 9 + 5) * 2 + 5 * 5 + 7 + 10 + 10 + 5 * 2)
+            # self.freebies = -((7 + 5 + 3 + 9) * 5 + (13 + 9 + 5) * 2 + 5 * 5 + 7 + 10 + 10 + 5 * 2)
             self.freebies -= from_stats(self.creature, 'willpower')
             self.freebies -= from_stats(self.creature, 'arcanos')
             self.freebies -= from_stats(self.creature, 'passions')
@@ -1573,49 +1571,49 @@ class Creature(models.Model):
 
     # def extract_raw(self, options=["shortcuts", "with_hard_edges"]):
     def extract_raw(self, options=["shortcuts"]):
-        def squared(a,b):
+        def squared(a, b):
             str = ""
             for x in range(b):
-                if x<a:
-                    str += "○"
+                if x < a:
+                    str += "⬡"
                 else:
-                    str += "●"
+                    str += "⬢"
             return str
-
 
         # filename = f'./raw/{self.rid}.txt'
         rep = self.reparts.split("_")
 
         lines = []
         lines.append(f'\n')
-        lines.append(f'### {self.name}\n')
+        lines.append(f'{self.name}\n')
         # if self.status.startswith("OK"):
         # lines.append(f" ({self.status})")
         from collector.utils.wod_reference import BREEDS, AUSPICES
         gender = "Male" if self.sex == 1 else "Female"
         if self.creature == "garou":
             lines.append(
-                f"__{gender} {BREEDS[self.breed]} {RANKS[self.garou_rank]} {AUSPICES[self.auspice]} of the {as_tribe_plural(self.family)}__\\\n")
+                f"{self.trueage}yo {gender} {BREEDS[self.breed]} {RANKS[self.garou_rank]} {AUSPICES[self.auspice]} of the {as_tribe_plural(self.family)}\n")
             if len(self.community_job) > 0:
                 lines.append(f'{self.community_job} of the {self.group} ')
             else:
                 lines.append(f'{self.group} ')
-            lines.append(f'(Rank {self.garou_rank})\\\n')
+            lines.append(f'(Rank {self.garou_rank})\n')
         elif self.creature == "kindred":
             txt = f'{gender} Kindred, {self.generation}th {self.family}, {self.age}/{self.trueage} yo [embrace: {self.embrace}]\n'
             lines.append(txt)
         elif self.creature == "ghoul":
             lines.append("Ghoul")
+        lines.append(f'{self.challenge}\n')
         if len(self.nature) > 0 and len(self.demeanor) > 0:
-            lines.append(f'Nature/Demeanor: {self.nature}/{self.demeanor}\\\n')
+            lines.append(f'Nature/Demeanor: {self.nature}/{self.demeanor}\n')
         if len(self.concept) > 0:
-            lines.append(f'**Concept**: {self.concept}\\\n')
+            lines.append(f'Concept: {self.concept}\n')
         if len(self.groupspec) > 0:
-            lines.append(f'**Pack**: {self.groupspec}\\\n')
+            lines.append(f'Pack: {self.groupspec}\n')
 
         if self.is_player:
             lines.append(
-                f'**Attributes**: {self.total_physical}/{rep[0]}:{self.total_social}/{rep[1]}:{self.total_mental}/{rep[2]}\\\n')
+                f'Attributes: {self.total_physical}/{rep[0]}:{self.total_social}/{rep[1]}:{self.total_mental}/{rep[2]}\n')
         # lines.append("```\n")
 
         lines.append(
@@ -1625,13 +1623,13 @@ class Creature(models.Model):
         lines.append(
             f'STA {self.attribute2:2} APP {self.attribute5:2} WIT {self.attribute8:2}\n')
         # lines.append("\n")
-        lines.append(f"{squared(self.willpower,10)} **Willpower**:   {self.willpower:2}\n")
+        lines.append(f"Willpower {self.willpower:2}  {squared(self.willpower, 10)}\n")
         if self.creature == "garou":
-            lines.append(f"{squared(self.rage,10)} **Rage**:        {self.rage:2}\n")
-            lines.append(f"{squared(self.gnosis,10)} **Gnosis**:      {self.gnosis:2}\n")
+            lines.append(f"Rage      {self.rage:2}  {squared(self.rage, 10)}\n")
+            lines.append(f"Gnosis    {self.gnosis:2}  {squared(self.gnosis, 10)}\n")
         elif self.creature == "kindred":
-            lines.append(f"  **Humanity**:  {self.humanity:2}  {squared(self.humanity,10)}")
-            lines.append(f"  **Bloodpool**: {self.bloodpool:2}\n")
+            lines.append(f"Humanity  {self.humanity:2}  {squared(self.humanity, 10)}")
+            lines.append(f"Bloodpool {self.bloodpool:2}\n")
         else:
             lines.append("\n")
         if self.is_player:
@@ -1650,9 +1648,9 @@ class Creature(models.Model):
             if getattr(self, f"knowledge{n}") > 0:
                 klines.append(
                     f'{STATS_NAMES[self.creature]["knowledges"][n].title()} {self.val_as_dots(getattr(self, f"knowledge{n}"))}')
-        lines.append(f'**Talents**: {", ".join(tlines)}.\n')
-        lines.append(f'**Skills**: {", ".join(slines)}.\n')
-        lines.append(f'**Knowledges**: {", ".join(klines)}.\n')
+        lines.append(f'Talents: {", ".join(tlines)}.\n')
+        lines.append(f'Skills: {", ".join(slines)}.\n')
+        lines.append(f'Knowledges: {", ".join(klines)}.\n')
 
         blines = []
         bck_len = len(STATS_NAMES[self.creature]["backgrounds"])
@@ -1660,14 +1658,14 @@ class Creature(models.Model):
             if getattr(self, f"background{n}") > 0:
                 blines.append(
                     f'{STATS_NAMES[self.creature]["backgrounds"][n].title()} {getattr(self, f"background{n}")}')
-        lines.append(f'**Backgrounds**: {", ".join(blines)}.\n')
+        lines.append(f'Backgrounds: {", ".join(blines)}.\n')
         if self.creature == "garou":
             glines = []
             for n in range(16):
                 if getattr(self, f"trait{n}").title():
                     glines.append(f'{getattr(self, f"trait{n}")}')
             traitname = "Gifts"
-            lines.append(f'**{traitname}**: {", ".join(glines)}.')
+            lines.append(f'{traitname}: {", ".join(glines)}.\n')
         if self.creature == "kindred":
             glines = []
             for n in range(16):
@@ -1696,7 +1694,7 @@ class Creature(models.Model):
         #         # lines.append("\n```\n")
         #         lines.append("\\\n".join(scs))
         #         # lines.append("\n```\n")
-
+        lines.append("Health: ◻ B-1◻ I-1◻ W-2◻ M-2◻ C-5◻ I◻")
         if ("with_hard_edges" in options):
             lines.append('\\\n')
             edges = self.edges.split(", ")
@@ -2295,9 +2293,13 @@ class Creature(models.Model):
         list = self.notes_on_others.split('\r\n')
         fmt_list = []
         idx = 0
+
         for e in list:
+
             if len(e) > 2:
+                print(e)
                 words = e.split('§')
+                print(words)
                 datum = {'idx': idx, 'item': f'{words[0]}', 'date': f'{words[1]}', 'notes': f'{words[2]} '}
                 if len(words) > 3:
                     datum["dmg"] = words[3]
@@ -2428,6 +2430,7 @@ class Creature(models.Model):
         if self.creature in ["kindred", "ghoul"]:
             from collector.models.disciplines import Discipline
             pass
+
     @property
     def ritualistic_discipline(self):
         """
@@ -2442,7 +2445,7 @@ class Creature(models.Model):
                 if discipline != "":
                     d = Discipline.objects.filter(code=discipline).first()
                     if d.is_ritualistic:
-                        result = d.name+";"+d.path
+                        result = d.name + ";" + d.path
         return result
 
     """

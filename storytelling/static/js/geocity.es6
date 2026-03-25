@@ -563,7 +563,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" width="' + me.width + '" height="' + 
                 //return "#244f70"
                 return d.properties.color;
             })
-            .attr("transform", "scale(2)")
+            .attr("transform", "scale(1)")
             .on('click', function (e, d) {
                 let coords = me.projection(d.geometry.coordinates);
                 if (e.ctrlKey) {
@@ -580,7 +580,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" width="' + me.width + '" height="' + 
                 return "poi_text_mark_" + d.properties.code;
             })
             .attr('dx', 0)
-            .attr('dy', 12)
+            .attr('dy', 8)
             .style("font-family", "Ruda")
             .style("text-anchor", "middle")
             .style("font-size", "3pt")

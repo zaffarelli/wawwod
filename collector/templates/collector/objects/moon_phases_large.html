@@ -18,8 +18,14 @@
                 {% if dow.blank %}
                 <td class="blank"></td>
                 {%else%}
-                <td><img src="{% get_static_prefix %}collector/auspices/Auspice{{dow.str}}.webp" height="15px" title="{{dow.str}}"><br/><span style="">{{dow.num}}</span></td>
+                <td><img src="{% get_static_prefix %}collector/auspices/Auspice{{dow.str}}.webp" height="15px" title="{{dow.str}}"><br/><span style="">{{dow.num}}</span>
+                    <div class="sun">
+                    Sunrise: {{dow.sunrise}}
+                    <br/>Sunset: {{dow.sunset}}
+                    </div>
+                </td>
                 {%endif%}
+
                 {%endfor%}
             </tr>
         {%endfor%}

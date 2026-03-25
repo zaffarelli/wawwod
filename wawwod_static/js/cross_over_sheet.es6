@@ -70,7 +70,14 @@ class CrossOverSheet extends WawwodSheet {
             me.midline(2.5, 1, 23);
             me.midline(35, 1, 23);
             me.crossline(12, 4, 34);
-        } else {
+        } else if (me.page==7) {
+            me.crossline(1, 2, 35);
+            me.crossline(23, 2, 35);
+            me.midline(2.5, 1, 23);
+            me.midline(35, 1, 23);
+//             me.crossline(12, 4, 34);
+//             me.midline(23.5, 12.5, 22.5);
+        }else {
             me.crossline(1, 2, 35);
             me.crossline(23, 2, 35);
             me.midline(2.5, 1, 23);
@@ -85,16 +92,18 @@ class CrossOverSheet extends WawwodSheet {
                 me.decorationText(1.5, 2.25, 0, 'start', me.user_font, me.medium_font_size, me.user_fill, me.user_stroke, 0.5, me.data["name"] + " (p." + (me.page + 1) + ")", me.back);
             }
         }
-        //me.decorationText(22.5, 1.75, 0, 'end', me.base_font, me.medium_font_size, me.draw_fill, me.draw_stroke, 0.5, me.pre_title, me.back);
-        me.decorationText(22.5, 2.25, 0, 'end', me.base_font, me.medium_font_size, me.draw_fill, me.draw_stroke, 0.5, me.scenario+" "+me.post_title, me.back);
-        //me.decorationText(22.5, 2.25, 0, 'end', me.base_font, me.medium_font_size, me.draw_fill, me.draw_stroke, 0.5, "pre_title", me.back);
-        me.decorationText(1.5, 35.5, -16, 'start', me.base_font, me.small_font_size, me.draw_fill, me.draw_stroke, 0.5, me.guideline, me.back);
-        me.decorationText(22.5, 35.5, -16, 'end', me.base_font, me.small_font_size, me.draw_fill, me.draw_stroke, 0.5, "WaWWoD Cross+Over Sheet "+me.release+" ©2026, Red Fox Studios.", me.back);
-        me.decorationText(22.5, 35.7, -16, 'end', me.base_font, me.small_font_size*.75, me.draw_fill, me.draw_stroke, 0.5, "Red Fox Studios are a subsidiary of Pentex Inc. zaffarelli@gmail.com", me.back);
-        if (me.blank) {
-            me.decorationText(22.5, 34.8, 0, 'end', me.base_font, me.small_font_size, me.draw_fill, me.draw_stroke, 0.5, 'Challenge: you make us laugh punk!', me.back);
-        } else {
-            me.decorationText(22.5, 34.8, 0, 'end', me.base_font, me.small_font_size, me.draw_fill, me.draw_stroke, 0.5, 'Challenge:' + me.data['freebies'], me.back);
+        if (me.page != 7){
+            //me.decorationText(22.5, 1.75, 0, 'end', me.base_font, me.medium_font_size, me.draw_fill, me.draw_stroke, 0.5, me.pre_title, me.back);
+            me.decorationText(22.5, 2.25, 0, 'end', me.base_font, me.medium_font_size, me.draw_fill, me.draw_stroke, 0.5, me.scenario+" "+me.post_title, me.back);
+            //me.decorationText(22.5, 2.25, 0, 'end', me.base_font, me.medium_font_size, me.draw_fill, me.draw_stroke, 0.5, "pre_title", me.back);
+            me.decorationText(1.5, 35.5, -16, 'start', me.base_font, me.small_font_size, me.draw_fill, me.draw_stroke, 0.5, me.guideline, me.back);
+            me.decorationText(22.5, 35.5, -16, 'end', me.base_font, me.small_font_size, me.draw_fill, me.draw_stroke, 0.5, "WaWWoD Cross+Over Sheet "+me.release+" ©2026, Red Fox Studios.", me.back);
+            me.decorationText(22.5, 35.7, -16, 'end', me.base_font, me.small_font_size*.75, me.draw_fill, me.draw_stroke, 0.5, "Red Fox Studios are a subsidiary of Pentex Inc. zaffarelli@gmail.com", me.back);
+            if (me.blank) {
+                me.decorationText(22.5, 34.8, 0, 'end', me.base_font, me.small_font_size, me.draw_fill, me.draw_stroke, 0.5, 'Challenge: you make us laugh punk!', me.back);
+            } else {
+                me.decorationText(22.5, 34.8, 0, 'end', me.base_font, me.small_font_size, me.draw_fill, me.draw_stroke, 0.5, 'Challenge:' + me.data['freebies'], me.back);
+            }
         }
     }
 
@@ -690,21 +699,50 @@ class CrossOverSheet extends WawwodSheet {
             me.fillNatureNotes(3 * me.stepy)
             me.fillNewManyForms(28 * me.stepy)
             me.fillExperience(21.0 * me.stepy)
-        } else if (me.page === 5) {
-            me.fillTimeline(3 * me.stepy)
-            me.fillMeritsFlawsNotes(3 * me.stepy)
         } else if (me.page === 2) {
-            me.fillRiteNotes(3 * me.stepy)
+
+            me.fillMeritsFlawsNotes(3 * me.stepy)
+            me.fillOthers(3 * me.stepy)
         } else if (me.page === 3) {
-            me.fillDisciplinesNotes(3 * me.stepy,0)
+            me.fillRiteNotes(3 * me.stepy)
         } else if (me.page === 4) {
-            me.fillDisciplinesNotes(3 * me.stepy,1)
+            me.fillDisciplinesNotes(3 * me.stepy,0)
         } else if (me.page === 5) {
             me.fillDisciplinesNotes(3 * me.stepy,1)
-            me.fillOthers(3 * me.stepy)
+        } else if (me.page === 6) {
+            me.fillTimeline(3 * me.stepy)
+        } else if (me.page === 7) {
+            if (me.blank){
+                me.drawGlyphs(1.5)
+            }
         }
 
     }
+
+    drawGlyphs(oy=0){
+        let me = this
+        let ox = 0.75
+        let glyphs = me.character.append('g')
+            .attr('class', 'glyphs')
+//         me.title('Garou Glyphs', 6.5 * me.stepx, oy, glyphs)
+        _.forEach(me.config["glyphs"], (v,i)=>{
+                console.log(v,i)
+                glyphs.append("image")
+                    .attr("xlink:href","static/collector/miscellaneous_garou_glyphs/"+v["image"])
+                    .attr("x",(ox+(i%11))*me.stepx*2)
+                    .attr("y", (oy+Math.floor(i/11))*me.stepy*2)
+                    .attr("height", me.stepy)
+                    .attr("width", me.stepx)
+                glyphs.append("text")
+                    .text(v["text"])
+                    .attr("x",(ox+(i%11))*me.stepx*2)
+                    .attr("y", (oy+Math.floor(i/11))*me.stepy*2)
+                    .attr("dy",me.stepy*1.5)
+                    .style("fill","#101010")
+            }
+        )
+    }
+
 
     perform(character_data) {
         let me = this;
@@ -728,4 +766,5 @@ class CrossOverSheet extends WawwodSheet {
     }
 
 }
+
 

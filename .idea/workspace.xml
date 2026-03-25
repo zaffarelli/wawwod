@@ -5,75 +5,138 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c5f4ae22-1e7a-419c-ac9f-80da089b72d4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/collector/static/collector/forms/female_glabro_form.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collector/static/collector/forms/female_homid_form.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collector/static/collector/forms/hispo_form.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collector/static/collector/forms/lupus_form.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collector/static/collector/forms/male_crinos_form.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collector/static/collector/forms/male_glabro_form.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collector/static/collector/forms/male_homid_form.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collector/static/collector/forms/many_forms_female.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collector/static/collector/forms/many_forms_male.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_nathan_oconnell_p4.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_scarlet_sterling_p4.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_scarlet_sterling_p5.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_scarlet_sterling_p6.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_scarlet_sterling_p7.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/svg/many_forms_female.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/svg/many_forms_female.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/svg/many_forms_male.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/svg/many_forms_male.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_nathan_oconnell_p4.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_scarlet_sterling_p4.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_scarlet_sterling_p5.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_scarlet_sterling_p6.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_scarlet_sterling_p7.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/static" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/svg/many_forms_female.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/svg/many_forms_male.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/all_wta20_gifts.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/collector/migrations/0126_gift_source_page.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/collector/static/collector/miscellaneous_garou_glyphs/Special/FeraGrondr.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/collector/static/collector/miscellaneous_garou_glyphs/Special/FeraGurahl.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/collector/static/collector/miscellaneous_garou_glyphs/Special/FeraKitsune.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/collector/static/collector/miscellaneous_garou_glyphs/Special/FeraMokole.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/collector/static/collector/miscellaneous_garou_glyphs/Special/FeraNagah.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/collector/static/collector/miscellaneous_garou_glyphs/Special/FeraNuwisha.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/collector/static/collector/miscellaneous_garou_glyphs/Special/FeraRatkin.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/collector/static/collector/miscellaneous_garou_glyphs/Special/FeraRokea.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/collector/static/js/glyph_dictionary.es6" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storytelling/migrations/0081_hotspot_is_city.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheetMN.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_jayden_jones_p4.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_jayden_jones_p5.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_jayden_jones_p6.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_jayden_jones_p7.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_nathan_oconnell_p5.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_nathan_oconnell_p6.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_nathan_oconnell_p7.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_nayati_akichita_p4.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_nayati_akichita_p5.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_nayati_akichita_p6.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_nayati_akichita_p7.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheetblank_p6.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/city_MN_pundefined.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_jayden_jones_p4.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_jayden_jones_p5.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_jayden_jones_p6.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_jayden_jones_p7.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_nathan_oconnell_p5.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_nathan_oconnell_p6.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_nathan_oconnell_p7.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_nayati_akichita_p4.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_nayati_akichita_p5.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_nayati_akichita_p6.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_nayati_akichita_p7.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheetblank_p6.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/city_MN_pundefined.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/models/adventures.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/models/adventures.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/models/deeds.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/models/deeds.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/static/collector/auspices/many_forms_female.svg" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/collector/forms/many_forms_female.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/static/collector/auspices/many_forms_male.svg" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/collector/forms/many_forms_male.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/models/creatures.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/models/creatures.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/models/gifts.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/models/gifts.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/collector/static/collector/css/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/collector/css/main.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/static/collector/miscellaneous_garou_glyphs/FeraGrondr.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/static/collector/miscellaneous_garou_glyphs/FeraGurahl.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/static/collector/miscellaneous_garou_glyphs/FeraKitsune.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/static/collector/miscellaneous_garou_glyphs/FeraMokole.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/static/collector/miscellaneous_garou_glyphs/FeraNagah.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/static/collector/miscellaneous_garou_glyphs/FeraNuwisha.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/static/collector/miscellaneous_garou_glyphs/FeraRatkin.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/static/collector/miscellaneous_garou_glyphs/FeraRokea.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/static/collector/miscellaneous_garou_glyphs/GlphyLegend.webp" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/collector/miscellaneous_garou_glyphs/GlyphLegend.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/static/collector/miscellaneous_garou_glyphs/GlyphEshtarra.webp" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/collector/miscellaneous_garou_glyphs/Special/GlyphEshtarra.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/static/collector/miscellaneous_garou_glyphs/GlyphKatankaSonnak.webp" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/collector/miscellaneous_garou_glyphs/Special/GlyphKatankaSonnak.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/static/collector/miscellaneous_garou_glyphs/GlyphLightning2.webp" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/collector/miscellaneous_garou_glyphs/Special/GlyphLightning2.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/static/collector/miscellaneous_garou_glyphs/GlyphLuBat.webp" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/collector/miscellaneous_garou_glyphs/Special/GlyphLuBat.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/static/collector/miscellaneous_garou_glyphs/GlyphMeros.webp" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/collector/miscellaneous_garou_glyphs/Special/GlyphMeros.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/static/collector/miscellaneous_garou_glyphs/GlyphMitanu.webp" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/collector/miscellaneous_garou_glyphs/Special/GlyphMitanu.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/static/collector/miscellaneous_garou_glyphs/GlyphNerigal.webp" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/collector/miscellaneous_garou_glyphs/Special/GlyphNerigal.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/static/collector/miscellaneous_garou_glyphs/GlyphRorg.webp" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/collector/miscellaneous_garou_glyphs/Special/GlyphRorg.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/static/collector/miscellaneous_garou_glyphs/GlyphRuatma.webp" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/collector/miscellaneous_garou_glyphs/Special/GlyphRuatma.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/static/collector/miscellaneous_garou_glyphs/GlyphShantar.webp" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/collector/miscellaneous_garou_glyphs/Special/GlyphShantar.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/static/collector/miscellaneous_garou_glyphs/GlyphTambiyah.webp" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/collector/miscellaneous_garou_glyphs/Special/GlyphTambiyah.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/static/collector/miscellaneous_garou_glyphs/GlyphZarok.webp" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/collector/miscellaneous_garou_glyphs/Special/GlyphZarok.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/static/js/cross_over_sheet.es6" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/js/cross_over_sheet.es6" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/static/js/sept.es6" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/js/sept.es6" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/collector/static/js/wawwod_sheet.es6" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/js/wawwod_sheet.es6" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/templates/collector/creature_link.html" beforeDir="false" afterPath="$PROJECT_DIR$/collector/templates/collector/creature_link.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/templates/collector/objects/moon_phases_large.html" beforeDir="false" afterPath="$PROJECT_DIR$/collector/templates/collector/objects/moon_phases_large.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/templates/collector/page/calendar.html" beforeDir="false" afterPath="$PROJECT_DIR$/collector/templates/collector/page/calendar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/utils/wod_reference.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/utils/wod_reference.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/views/actions.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/views/actions.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/collector/views/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/views/base.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/wawwod.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/wawwod.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storytelling/models/hotspots.py" beforeDir="false" afterPath="$PROJECT_DIR$/storytelling/models/hotspots.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storytelling/static/js/geocity.es6" beforeDir="false" afterPath="$PROJECT_DIR$/storytelling/static/js/geocity.es6" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wawwod.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheetADV_RID.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheetADV_RID.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheetADV_RID_p0.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheetADV_RID_p0.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_jayden_jones.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_jayden_jones.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_jayden_jones_p0.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_jayden_jones_p0.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_jayden_jones_p1.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_jayden_jones_p1.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_jayden_jones_p2.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_jayden_jones_p2.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_jayden_jones_p3.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_jayden_jones_p3.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_nathan_oconnell.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_nathan_oconnell.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_nathan_oconnell_p0.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_nathan_oconnell_p0.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_nathan_oconnell_p1.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_nathan_oconnell_p1.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_nathan_oconnell_p2.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_nathan_oconnell_p2.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_nathan_oconnell_p3.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_nathan_oconnell_p3.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_nathan_oconnell_p4.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_nathan_oconnell_p4.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_nayati_akichita.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_nayati_akichita.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_nayati_akichita_p0.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_nayati_akichita_p0.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_nayati_akichita_p1.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_nayati_akichita_p1.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_nayati_akichita_p2.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_nayati_akichita_p2.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_nayati_akichita_p3.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_nayati_akichita_p3.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_scarlet_sterling.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_scarlet_sterling.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_scarlet_sterling_p0.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_scarlet_sterling_p0.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_scarlet_sterling_p1.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_scarlet_sterling_p1.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_scarlet_sterling_p2.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_scarlet_sterling_p2.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_scarlet_sterling_p3.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_scarlet_sterling_p3.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_jayden_jones_p0.svg" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_jayden_jones_p0.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_scarlet_sterling_p4.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_scarlet_sterling_p4.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_scarlet_sterling_p5.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_scarlet_sterling_p5.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_scarlet_sterling_p6.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_scarlet_sterling_p6.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_scarlet_sterling_p7.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_scarlet_sterling_p7.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/city_MNS_pundefined.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/city_MNS_pundefined.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheetADV_RID_p0.svg" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheetADV_RID_p0.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_jayden_jones_p1.svg" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_jayden_jones_p1.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_jayden_jones_p2.svg" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_jayden_jones_p2.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_jayden_jones_p3.svg" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_jayden_jones_p3.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_nathan_oconnell_p0.svg" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_nathan_oconnell_p0.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_nathan_oconnell_p1.svg" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_nathan_oconnell_p1.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_nathan_oconnell_p2.svg" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_nathan_oconnell_p2.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_nathan_oconnell_p3.svg" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_nathan_oconnell_p3.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_nathan_oconnell_p4.svg" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_nathan_oconnell_p4.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_nayati_akichita_p0.svg" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_nayati_akichita_p0.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_nayati_akichita_p1.svg" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_nayati_akichita_p1.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_nayati_akichita_p2.svg" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_nayati_akichita_p2.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_nayati_akichita_p3.svg" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_nayati_akichita_p3.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_scarlet_sterling_p0.svg" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_scarlet_sterling_p0.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_scarlet_sterling_p1.svg" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_scarlet_sterling_p1.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_scarlet_sterling_p2.svg" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_scarlet_sterling_p2.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_scarlet_sterling_p3.svg" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_scarlet_sterling_p3.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/static/collector/auspices/many_forms_female.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/static/collector/auspices/many_forms_male.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/static/collector/breed/manyforms.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_scarlet_sterling_p4.svg" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_scarlet_sterling_p4.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_scarlet_sterling_p5.svg" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_scarlet_sterling_p5.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_scarlet_sterling_p6.svg" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_scarlet_sterling_p6.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_scarlet_sterling_p7.svg" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_scarlet_sterling_p7.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/city_MNS_pundefined.svg" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/city_MNS_pundefined.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/sept.svg" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/sept.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wawwod_static/collector/css/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/collector/css/main.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_static/js/cross_over_sheet.es6" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/js/cross_over_sheet.es6" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_static/js/geocity.es6" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/js/geocity.es6" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wawwod_static/js/wawwod_sheet.es6" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/js/wawwod_sheet.es6" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -110,31 +173,33 @@
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "/home/zaffarelli/Projects/wawwod/wawwod_media/pdf/svg",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/zaffarelli/Projects/wawwod/wawwod_media/pdf/results/svg/static/collector&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   },
-  "keyToStringList": {
-    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
-      "Markdown",
-      "PLAIN_TEXT"
+  &quot;keyToStringList&quot;: {
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;Markdown&quot;,
+      &quot;PLAIN_TEXT&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="PyDebuggerOptionsProvider">
     <option name="mySaveCallSignatures" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/wawwod_media/pdf/results/svg/static/collector" />
       <recent name="$PROJECT_DIR$/wawwod_media/pdf/svg" />
       <recent name="$PROJECT_DIR$/wawwod_media/pdf/results/pdf" />
       <recent name="$PROJECT_DIR$/wawwod_media/pdf/results/svg/static/collector/forms" />
       <recent name="$PROJECT_DIR$/wawwod_media/pdf/results/svg/static/collector/auspices" />
-      <recent name="$PROJECT_DIR$/collector/static/collector/auspices" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/collector/static/collector/miscellaneous_garou_glyphs/Special" />
       <recent name="$PROJECT_DIR$/collector/static/collector/forms" />
       <recent name="$PROJECT_DIR$/collector/templates/collector/page" />
       <recent name="$PROJECT_DIR$/storytelling/static/js" />

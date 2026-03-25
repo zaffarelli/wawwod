@@ -150,7 +150,7 @@ def deed_select(request):
         adventure = words[0]
         if len(words) == 2:
             from collector.models.adventures import Adventure
-            print("deed",deed_code,"adventure", adventure)
+            print("deed", deed_code, "adventure", adventure)
             adventure = Adventure.objects.filter(acronym=adventure).first()
             if adventure:
                 result = adventure.update_deeds(deed_code)
@@ -162,6 +162,33 @@ def deed_select(request):
 
 
 def experiment(request):
+    from collector.models.gifts import Gift
+    with open("all_wta20_gifts.txt", "r") as f:
+        lines = f.readlines()
+    for line in lines:
+        sanitized_line = line.strip()
+        parts = sanitized_line.split(" ")
+        page = parts[-1]
+        title = sanitized_line.replace(" " + page, "")
+        print(title)
+        print(page)
+        found = Gift.objects.filter(name=title)
+        if len(found) == 0:
+            g = Gift()
+            g.name = title
+            g.level = 1
+            g.source_page = page
+            g.save()
+        else:
+            g = found.first()
+            if g.source_page == "":
+                g.source_page = page
+            g.save()
+
+    return HttpResponse(status=204)
+
+
+def old_experiment(request):
     print("Experimental")
 
     # from collector.models.deeds import Deed
