@@ -50300,3 +50300,7 @@ KeyError: 'items'
 [31/03 02:22:12] "GET /ajax/display/undefined/ HTTP/1.1" 404 12951
 [31/03 02:23:47] Not Found: /ajax/display/undefined/
 [31/03 02:23:47] "GET /ajax/display/undefined/ HTTP/1.1" 404 12951
+[31/03 16:10:02] "GET /static/collector/css?72bc76983e6e HTTP/1.1" 404 1804
+[31/03 16:10:46] "GET /static/collector/css?72bc76983e6e HTTP/1.1" 404 1805
+[31/03 16:10:53] Not Found: /ajax/display/undefined/
+[31/03 16:10:53] "GET /ajax/display/undefined/ HTTP/1.1" 404 12951

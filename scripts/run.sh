@@ -1,6 +1,6 @@
 #!/bin/bash
 sudo fuser -k 8090/tcp
-python ./manage.py makemigrations
-python ./manage.py migrate
-python ./manage.py collectstatic --noinput
-python ./manage.py runserver 0.0.0.0:8090
+uv run ./manage.py makemigrations
+uv run ./manage.py migrate
+uv run ./manage.py collectstatic --noinput
+uv run ./manage.py runserver 0.0.0.0:8090
