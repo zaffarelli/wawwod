@@ -5,49 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c5f4ae22-1e7a-419c-ac9f-80da089b72d4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/collector/migrations/0127_gift_date_pub.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collector/migrations/0128_gift_id.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collector/migrations/0129_remove_gift_date_pub.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collector/migrations/0130_alter_gift_id_alter_gift_name.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collector/migrations/0131_gift_lower_name.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collector/migrations/0132_gift_orphan.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storytelling/templates/storytelling/pdf/factions_kindred.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/story_book_SPI.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/story_book_The One With the Kinfolk.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/models/creatures.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/models/creatures.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/models/gifts.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/models/gifts.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/static/js/cross_over_sheet.es6" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/js/cross_over_sheet.es6" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/static/js/wawwod_sheet.es6" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/js/wawwod_sheet.es6" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/utils/helper.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/utils/helper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/views/actions.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/views/actions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/views/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/views/base.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/wawwod.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/wawwod.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storytelling/templates/storytelling/pdf/factions.html" beforeDir="false" afterPath="$PROJECT_DIR$/storytelling/templates/storytelling/pdf/factions_garou.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storytelling/views/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/storytelling/views/base.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/chronicle_book_RAMI.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/chronicle_book_RAMI.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_scarlet_sterling.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_scarlet_sterling.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_scarlet_sterling_p0.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_scarlet_sterling_p0.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_scarlet_sterling_p1.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_scarlet_sterling_p1.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_scarlet_sterling_p2.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_scarlet_sterling_p2.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_scarlet_sterling_p3.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_scarlet_sterling_p3.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_scarlet_sterling_p4.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_scarlet_sterling_p4.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_scarlet_sterling_p5.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_scarlet_sterling_p5.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_scarlet_sterling_p6.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_scarlet_sterling_p6.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_scarlet_sterling_p7.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/character_sheet_scarlet_sterling_p7.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/city_MNS_pundefined.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/pdf/city_MNS_pundefined.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_scarlet_sterling_p0.svg" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_scarlet_sterling_p0.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_scarlet_sterling_p1.svg" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_scarlet_sterling_p1.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_scarlet_sterling_p2.svg" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_scarlet_sterling_p2.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_scarlet_sterling_p3.svg" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_scarlet_sterling_p3.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_scarlet_sterling_p4.svg" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_scarlet_sterling_p4.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_scarlet_sterling_p5.svg" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_scarlet_sterling_p5.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_scarlet_sterling_p6.svg" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_scarlet_sterling_p6.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_scarlet_sterling_p7.svg" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/character_sheet_scarlet_sterling_p7.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/city_MNS_pundefined.svg" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/svg/city_MNS_pundefined.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod_static/js/cross_over_sheet.es6" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/js/cross_over_sheet.es6" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod_static/js/wawwod_sheet.es6" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/js/wawwod_sheet.es6" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,20 +41,20 @@
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "/home/zaffarelli/Projects/wawwod/storytelling/templates/storytelling/pdf",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/zaffarelli/Projects/wawwod/storytelling/templates/storytelling/pdf&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   },
-  "keyToStringList": {
-    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
-      "JSON",
-      "Markdown",
-      "PLAIN_TEXT"
+  &quot;keyToStringList&quot;: {
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;JSON&quot;,
+      &quot;Markdown&quot;,
+      &quot;PLAIN_TEXT&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="PyDebuggerOptionsProvider">
     <option name="mySaveCallSignatures" value="true" />
   </component>
