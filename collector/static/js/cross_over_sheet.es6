@@ -192,7 +192,7 @@ class CrossOverSheet extends WawwodSheet {
             .style("fill", me.user_fill)
             .style("stroke", me.user_stroke)
             .style("stroke-width", "0.05pt");
-        background_note_in_note.call(wrap, 7 * me.stepx, false,me.medium_font_size )
+        background_note_in_note.call(wrap, 9 * me.stepx, false,me.medium_font_size )
     }
 
     fillDisciplinesNotes(oy,page_index=0) {
@@ -678,10 +678,12 @@ class CrossOverSheet extends WawwodSheet {
     as_dots(value) {
         let str = ""
         for (let i = 0; i < value; i++) {
-            str += "●"
+            //str += "●"
+            str += "■"
         }
         for (let i = value; i < 5; i++) {
-            str += "○"
+            //str += "○"
+            str += "□"
         }
         return str
     }

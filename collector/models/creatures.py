@@ -1337,14 +1337,32 @@ class Creature(models.Model):
             # print("POOLS=", pools, pidx, ") WEIGHTS=", weights, "ATTR=", stats)
         return stats
 
-    def randomize_attributes(self):
-        attributes_points = STATS_TEMPLATES[self.creature]['attributes'].split('/')
-        pools = []
-        for x in range(3):
-            pools.append(int(attributes_points[x]))
-        attributes = self.randomize_stats(stats_count=9, min_value=1, pools=pools)
-        for x in range(9):
-            setattr(self, f'attribute{x}', attributes[x])
+    def randomize_stat(self, stats_count=3, min_value=0, pool=0):
+        from collector.utils.helper import roll
+        stats = []
+        for v in range(stats_count):
+            stats.append(min_value)
+        while pool > 0:
+            stats[roll(faces=stats_count) - 1] += 1
+            pool -= 1
+        return stats
+
+    def randomize_fields(self, field=['attribute'], pool=0, partition=0, partitions_count=1, partition_length=9, min=0):
+        if pool != 0:
+            points = [pool]
+        else:
+            points = self.reparts.split("__")[partition].split("_")
+        print(points)
+        for x in range(partitions_count):
+            array = self.randomize_stat(stats_count=partition_length, min_value=min, pool=int(points[x]))
+            print(array)
+            for y in range(partition_length):
+                if len(field) == 1:
+                    k = (x * partition_length) + y
+                    setattr(self, f'{field[0]}{k}', array[y])
+                else:
+                    setattr(self, f'{field[x]}{y}', array[y])
+
         self.need_fix = True
 
     def randomize_abilities(self):
@@ -1395,8 +1413,33 @@ class Creature(models.Model):
                 setattr(self, f'trait{x}', d)
                 x += 1
 
+    def randomize_reparts(self):
+        attributes = STATS_TEMPLATES[self.creature]["attributes"].split("/")
+        abilities = STATS_TEMPLATES[self.creature]["abilities"].split("/")
+        random.shuffle(attributes)
+        random.shuffle(abilities)
+        self.reparts = f"{"_".join(attributes)}__{"_".join(abilities)}"
+
     def randomize_all(self):
-        if self.creature == 'kinfolk':
+        if self.is_player:
+            return
+        self.randomize_reparts()
+        self.randomize_fields(field=['attribute'], partition=0, partitions_count=3, partition_length=3, min=1)
+        self.randomize_fields(field=['talent', 'skill', 'knowledge'], partition=1, partitions_count=3,
+                              partition_length=10, min=0)
+        self.randomize_fields(field=['background'], pool=5, partition_length=12, min=0)
+        # self.randomize_backgrounds()
+        if self.creature == 'garou':
+            self.glory = 0
+            self.honnor = 0
+            self.wisdom = 0
+            self.garou_rank = 0
+            self.willpower = 3
+            self.rage = 0
+            self.gnosis = 0
+            self.nature = ""
+            self.demeanor = ""
+        elif self.creature == 'kinfolk':
             self.glory = 0
             self.honnor = 0
             self.wisdom = 0
@@ -1408,12 +1451,7 @@ class Creature(models.Model):
             self.demeanor = ""
             self.age = random.randrange(18, 55)
             # self.expected_freebies = 21
-        self.randomize_attributes()
-        self.randomize_abilities()
-        self.randomize_archetypes()
-        self.randomize_backgrounds()
-
-        if self.creature == 'kindred':
+        elif self.creature == 'kindred':
             if self.family:
                 self.randomize_disciplines()
             virtues = 7
@@ -1427,7 +1465,7 @@ class Creature(models.Model):
                     setattr(self, f'virtue{a}', v + 1)
                     virtues -= 1
             self.weakness = CLANS_SPECIFICS[self.family]['clan_weakness']
-        if self.creature == 'ghoul':
+        elif self.creature == 'ghoul':
             virtues = 7
             self.virtue0 = 1
             self.virtue1 = 1
@@ -1444,7 +1482,6 @@ class Creature(models.Model):
             for x in range(16):
                 setattr(self, f'trait{x}', '')
             setattr(self, f'trait0', 'Potence (1)')
-
             domitors = Creature.objects.filter(rid=self.sire)
             if len(domitors) == 1:
                 domitor = domitors.first()
@@ -1458,10 +1495,10 @@ class Creature(models.Model):
                     setattr(self, f'trait1', 'Auspex(2)')
                 else:
                     setattr(self, f'trait0', 'Potence (2)')
-
             # due_willpower = int(STATS_TEMPLATES[self.creature]['willpower'])
             # if self.willpower < due_willpower:
             self.willpower = self.virtue2
+        self.randomize_archetypes()
 
     def balance_ghoul(self):
         if self.creature == "ghoul":

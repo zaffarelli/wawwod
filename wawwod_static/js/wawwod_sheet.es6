@@ -106,6 +106,7 @@ class WawwodSheet {
 
             me.small_font_size = 1.3 * me.stepy / 5;
             me.medium_font_size = 1.9 * me.stepy / 5;
+            me.user_medium_font_size = 1.7 * me.stepy / 5;
             me.big_font_size = 2 * me.stepy / 5;
             me.fat_font_size = 8 * me.stepy / 5;
         }else{
@@ -119,6 +120,7 @@ class WawwodSheet {
             me.stepy = me.height / 24
             me.small_font_size = 1.3 * me.stepy / 5;
             me.medium_font_size = 1.7 * me.stepy / 5;
+            me.user_medium_font_size = 1.9 * me.stepy / 5;
             me.big_font_size = 1 * me.stepy / 5;
             me.fat_font_size = 4 * me.stepy / 5;
         }
@@ -136,18 +138,18 @@ class WawwodSheet {
         me.user_fill = '#293b2d'
 
         me.overhead_fill = '#C22'
-        me.user_font = 'Gochi Hand'
+//         me.user_font = 'Gochi Hand'
+//         me.user_font = 'Slackside One'
         me.user_font = 'Slackside One'
-        me.user_font = 'Kalam'
         //me.user_font = "Tac One"
         //me.user_font = 'Whisper'
         me.mono_font = 'Syne Mono'
-        me.creature_font = 'Trade Winds'
+//         me.creature_font = 'Trade Winds'
         me.creature_font = 'Spectral SC'
         me.title_font = 'Khand'
         //me.title_font = 'Trade Winds';
-        me.logo_font = 'Splash';
-        me.base_font = 'Philosopher';
+//         me.logo_font = 'Splash';
+//         me.base_font = 'Philosopher';
         me.base_font = 'Khand'
 
 
@@ -1250,21 +1252,21 @@ class WawwodSheet {
         }
         let aline = source.append('line')
             .attr('x1',ox)
-            .attr('y1',oy-me.medium_font_size)
+            .attr('y1',oy)
             .attr('x2',ox+width)
-            .attr('y2',oy-me.medium_font_size)
+            .attr('y2',oy)
             .style("stroke", "#f02090")
             .style("stroke-width", '3pt')
             .attr("opacity",0)
         let text = source.append('text')
-            .attr('x',ox-me.medium_font_size)
+            .attr('x',ox-me.user_medium_font_size)
             .attr('y',oy)
             .attr('dx', 0)
             .attr('dy', 0)
 
             .style("text-anchor", 'start')
             .style("font-family", me.user_font)
-            .style("font-size", me.medium_font_size + "px")
+            .style("font-size", me.user_medium_font_size + "pt")
             .style("fill", me.user_fill)
             .style("stroke", me.user_stroke)
             .style("stroke-width", '0.5pt')
@@ -1280,7 +1282,7 @@ class WawwodSheet {
             let line = txt.shift()
             let tspan = text.append("tspan")
                 .attr('x', ox)
-                .attr("dy",me.medium_font_size+"pt")
+                .attr("dy",me.user_medium_font_size+"pt")
                 .text(line)
                 .attr("opacity",opacity)
             let next_line = []

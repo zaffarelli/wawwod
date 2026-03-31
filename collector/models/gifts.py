@@ -43,7 +43,9 @@ logger = logging.Logger(__name__)
 
 
 class Gift(models.Model):
-    name = models.CharField(max_length=128, default='', primary_key=True)
+    id = models.IntegerField(default=0, primary_key=True)
+    name = models.CharField(max_length=128, default='')
+    lower_name = models.CharField(max_length=128, default='')
     alternative_name = models.CharField(max_length=128, default='', blank=True)
     level = models.PositiveIntegerField(default=0)
     code = models.CharField(max_length=256, default='', blank=True)
@@ -85,6 +87,7 @@ class Gift(models.Model):
 
     references = models.CharField(max_length=256, blank=True, default='')
     source_page = models.CharField(max_length=8, blank=True, default='')
+    orphan = models.BooleanField(default=True, blank=True)
 
 
     def fix(self):
@@ -117,6 +120,8 @@ class Gift(models.Model):
         self.auspices = auspices
         self.tribes = tribes
         self.references = ", ".join(references)
+        self.lower_name = self.name.lower()
+        self.orphan = self.orphan_gift
 
     @property
     def gift_active_sources(self):
@@ -133,6 +138,20 @@ class Gift(models.Model):
                 list.append(ALL_TRIBES[n])
         return "/".join(list)
 
+    @property
+    def orphan_gift(self):
+        t = 0
+        for n in range(3):
+            if getattr(self, f'breed_{n}') == True:
+                t += 1
+        for n in range(5):
+            if getattr(self, f'auspice_{n}') == True:
+                t += 1
+        for n in range(16):
+            if getattr(self, f'tribe_{n}') == True:
+                t += 1
+        return t == 0
+
     def __str__(self):
         return f'GIFT {self.name.title()} ({self.level})'
 
@@ -142,18 +161,14 @@ class Gift(models.Model):
             data = list(yaml.load_all(f,Loader=SafeLoader))
             print(data)
 
-
-
-
-
-
 class GiftAdmin(admin.ModelAdmin):
-    list_display = ['pretty_str', 'references', 'alternative_name', 'description']
+    list_display = ['id','pretty_str','orphan', "lower_name",'level', 'references', 'source_page', 'description']
     ordering = ["level","name",'-breeds', '-auspices', '-tribes']
-    list_filter = ['level','breed_0', 'breed_1', 'breed_2', 'auspice_0', 'auspice_1', 'auspice_2', 'auspice_3', 'auspice_4',
+    list_filter = ['level', 'orphan', 'breed_0', 'breed_1', 'breed_2', 'auspice_0', 'auspice_1', 'auspice_2', 'auspice_3', 'auspice_4',
                    'tribe_0', 'tribe_1', 'tribe_2', 'tribe_3', 'tribe_4', 'tribe_5', 'tribe_6', 'tribe_7', 'tribe_8',
                    'tribe_9', 'tribe_10', 'tribe_11', 'tribe_12', 'tribe_13', 'tribe_14', 'tribe_15'
                    ]
     search_fields = ['name', 'description', 'alternative_name']
+    list_editable = ["level",'source_page']
     from collector.utils.helper import refix
     actions = [refix]

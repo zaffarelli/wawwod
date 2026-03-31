@@ -381,10 +381,11 @@ def pre_wawwod_creature(slug):
 
 def post_wawwod_creature(item):
     if item:
-        item.randomize_backgrounds()
-        item.randomize_archetypes()
-        item.randomize_attributes()
-        item.randomize_abilities()
+        # item.randomize_backgrounds()
+        # item.randomize_archetypes()
+        # item.randomize_attributes()
+        # item.randomize_abilities()
+        item.randomize_all()
         item.source = 'zaffarelli'
         item.save()
 
@@ -559,27 +560,47 @@ def display_crossover_sheet(request, slug=None, option=""):
 
 def display_chronicle_map(request):
     # if is_ajax(request):
-    chronicle = get_current_chronicle()
-    creatures = Creature.objects.filter(chronicle=chronicle.acronym) \
-        .exclude(mythic=True) \
-        .exclude(condition__startswith="DEAD=19") \
-        .exclude(condition__startswith="MISSING=19") \
-        .exclude(ghost=True) \
-        .exclude(hidden=True) \
-        .filter(adventure="TWT") \
-        .order_by('-is_player', 'faction', 'group', 'sire', 'adventure', 'creature', "name")
-    all_creatures = []
-    lines = []
-    for creature in creatures:
-        c = creature.toJSON()
-        k = json.loads(c)
-        k["edge_for"] = creature.edge_for
-        k["sire"] = creature.sire
-        k["is_player"] = creature.is_player
-        k["entrance"] = creature.entrance
-        # print(k["name"])
-        all_creatures.append(k)
-        lines.append(creature.extract_raw())
+    chronicle = Chronicle.current()
+    if chronicle.main_creature == "kindred":
+        creatures = Creature.objects.filter(chronicle=chronicle.acronym) \
+            .exclude(mythic=True) \
+            .exclude(condition__startswith="DEAD=19") \
+            .exclude(condition__startswith="MISSING=19") \
+            .exclude(ghost=True) \
+            .exclude(hidden=True) \
+            .order_by('-is_player', 'faction', 'group', 'sire', 'adventure', 'creature', "name")
+        all_creatures = []
+        lines = []
+        for creature in creatures:
+            c = creature.toJSON()
+            k = json.loads(c)
+            k["edge_for"] = creature.edge_for
+            k["sire"] = creature.sire
+            k["is_player"] = creature.is_player
+            k["entrance"] = creature.entrance
+            # print(k["name"])
+            all_creatures.append(k)
+            lines.append(creature.extract_raw())
+    elif chronicle.main_creature == "garou":
+        creatures = Creature.objects.filter(chronicle=chronicle.acronym) \
+            .exclude(mythic=True) \
+            .exclude(condition__startswith="DEAD=19") \
+            .exclude(condition__startswith="MISSING=19") \
+            .exclude(ghost=True) \
+            .exclude(hidden=True) \
+            .order_by('-is_player', 'faction', 'group', 'sire', 'adventure', 'creature', "name")
+        all_creatures = []
+        lines = []
+        for creature in creatures:
+            c = creature.toJSON()
+            k = json.loads(c)
+            k["edge_for"] = creature.edge_for
+            k["sire"] = creature.sire
+            k["is_player"] = creature.is_player
+            k["entrance"] = creature.entrance
+            # print(k["name"])
+            all_creatures.append(k)
+            lines.append(creature.extract_raw())
 
     txt_name = os.path.join(settings.MEDIA_ROOT, 'md/' + chronicle.acronym + "_cast.md")
 

@@ -150,47 +150,69 @@ def display_map(request, slug=None):
 
 def chronicle_book(request):
     from collector.models.creatures import Creature
+    from collector.models.chronicles import Chronicle
     settings = {}
-    chronicle = get_current_chronicle()
-    factions = {
-        "camarilla": {
-            "name": "camarilla",
-            "description": "",
-            "groups": []
-        },
-        "sabbat": {
-            "name": "sabbat",
-            "description": "",
-            "groups": []
-        },
-        "independents": {
-            "name": "independents",
-            "description": "",
-            "groups": []
-        },
-        "anarchs": {
-            "name": "anarchs",
-            "description": "",
-            "groups": []
-        },
+    chronicle = Chronicle.current()
+    if chronicle.main_creature == "kindred":
+        factions = {
+            "camarilla": {
+                "name": "camarilla",
+                "description": "",
+                "groups": {}
+            },
+            "sabbat": {
+                "name": "sabbat",
+                "description": "",
+                "groups": {}
+            },
+            "independents": {
+                "name": "independents",
+                "description": "",
+                "groups": {}
+            },
+            "anarchs": {
+                "name": "anarchs",
+                "description": "",
+                "groups": {}
+            },
 
-    }
+        }
+    elif chronicle.main_creature == "garou":
+        from collector.models.septs import Sept
+        septs = Sept.objects.filter(chronicle=chronicle.acronym)
+        factions = {}
+        factions["gaia"] = {"name": "Gaia", "description": "", "groups": {}}
+        factions["wyrm"] = {"name": "Wyrm", "description": "", "groups": {}}
+
     groups = {}
-    for c in (Creature.objects.filter(chronicle=chronicle.acronym, condition="OK").filter(creature="kindred",
-                                                                                          status="READY").order_by(
-            "groupspec")):
-        g = "_".join(c.groupspec.lower().split(" "))
-        if g not in groups:
-            groups[g] = {"code": g, "faction": c.faction, "name": f"{c.groupspec} ({c.faction})", "kindreds": []}
-        kindred_entry = {"data": c, "ghouls": []}
-        ghouls = c.retainers_vals
-        for h in ghouls:
-            kindred_entry["ghouls"].append(h)
-        groups[g]["kindreds"].append(kindred_entry)
+    for c in Creature.objects.filter(chronicle=chronicle.acronym, creature=chronicle.main_creature).exclude(
+            is_player=True).order_by("groupspec"):
+        if chronicle.main_creature == "kindred":
+            g = "_".join(c.group.lower().split(" "))
+            if g not in groups:
+                groups[g] = {"code": g, "faction": c.faction, "name": f"{c.group}", "kindreds": []}
+            kindred_entry = {"data": c, "ghouls": []}
+            ghouls = c.retainers_vals
+            for h in ghouls:
+                kindred_entry["ghouls"].append(h)
+            groups[g]["kindreds"].append(kindred_entry)
+        elif chronicle.main_creature == "garou":
+            g = "_".join(c.group.lower().split(" "))
+            if len(c.groupspec.lower())>0:
+                p = "_".join(c.groupspec.lower().split(" "))
+                if g not in groups:
+                    groups[g] = {"code": g, "faction": c.faction, "name": f"{c.group}", "packs": {}}
+                if p not in groups[g]["packs"]:
+                    groups[g]["packs"][p] = {"code": p, "name": c.groupspec, "garous": []}
+                groups[g]["packs"][p]["garous"].append(c)
+            else:
+                print("Cannot handle",c)
     for group, content in groups.items():
-        factions[content["faction"].lower()]["groups"].append(content)
+        x = content["faction"].lower()
+        factions[x]["groups"][group] = content
+    print(factions)
     context = {'data': factions, 'settings': settings, 'filename': chronicle.acronym, "chronicle": chronicle}
-    template = get_template("storytelling/pdf/factions.html")
+    template = get_template(f"storytelling/pdf/factions_{chronicle.main_creature}.html")
     html = template.render(context)
     filename = f'chronicle_book_{context['filename']}.pdf'
     fname = os.path.join('wawwod_media/', 'pdf/results/' + filename)
@@ -209,9 +231,7 @@ def story_book(request):
     from collector.models.seasons import Season
     from collector.models.adventures import Adventure
     settings = {}
-    chronicle = get_current_chronicle()
-    season = Season.current_season(chronicle.acronym)
-    adventure = Adventure.current_adventure(season)
+    adventure, chronicle, season = Adventure.current_full()
     factions = {
         # "camarilla": {
         #     "name": "camarilla",
@@ -243,9 +263,10 @@ def story_book(request):
     groups = {}
     g = "others"
     groups[g] = {"code": g, "faction": "None", "name": f"All", "characters": []}
-    all_characters = Creature.objects.filter(chronicle=chronicle.acronym).filter(adventure__contains=adventure,player="")
+    all_characters = Creature.objects.filter(chronicle=chronicle.acronym).filter(adventure__contains=adventure,
+                                                                                 player="")
     for c in all_characters:
-        print(c.name,c.adventure)
+        print(c.name, c.adventure)
         # g = "_".join(c.groupspec.lower().split(" "))
         # if g not in groups:
         #     groups[g] = {"code": g, "faction": c.faction, "name": f"{c.groupspec} ({c.faction})", "kindreds": []}
@@ -255,7 +276,7 @@ def story_book(request):
         #     entry["ghouls"].append(h)
         groups[g]["characters"].append(entry)
     factions[g]["groups"].append(groups[g])
-    context = {'data': factions, 'settings': settings, 'filename': adventure, "chronicle": adventure}
+    context = {'data': factions, 'settings': settings, 'filename': adventure.acronym, "chronicle": adventure}
     template = get_template("storytelling/pdf/new_story.html")
     html = template.render(context)
     filename = f'story_book_{context['filename']}.pdf'

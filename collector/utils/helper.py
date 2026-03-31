@@ -45,7 +45,7 @@ def refix(modeladmin, request, queryset):
     short_description = 'Refix'
 
 
-def roll(faces=10, whole_details=False):
+def roll(faces=10):
     def die():
         import math, os
         return math.floor((int.from_bytes(os.urandom(1)) / 256) * faces) + 1

@@ -163,6 +163,16 @@ def deed_select(request):
 
 def experiment(request):
     from collector.models.gifts import Gift
+    id = 1
+    for gift in Gift.objects.all().order_by("name"):
+        gift.id = id
+        id += 1
+        gift.save()
+    return HttpResponse(status=204)
+
+
+def old2_experiment(request):
+    from collector.models.gifts import Gift
     with open("all_wta20_gifts.txt", "r") as f:
         lines = f.readlines()
     for line in lines:
