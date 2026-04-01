@@ -734,7 +734,7 @@ def display_sept_rosters(request, slug=None):
 def save_to_svg(request, slug):
     response = {'status': 'error'}
     if is_ajax(request):
-        svg_name = os.path.join(settings.MEDIA_ROOT, 'pdf/results/svg/' + request.POST["svg_name"])
+        svg_name = os.path.join(settings.MEDIA_ROOT, 'drafts/' + request.POST["svg_name"])
         svgtxt = request.POST["svg"]
         with open(svg_name, "w") as f:
             f.write(svgtxt)
@@ -749,7 +749,7 @@ def svg_to_pdf(request, slug):
     logger.info(f'Saving to PDF.')
     if is_ajax(request):
         import cairosvg
-        svg_name = os.path.join(settings.MEDIA_ROOT, 'pdf/results/svg/' + request.POST["svg_name"])
+        svg_name = os.path.join(settings.MEDIA_ROOT, 'drafts/' + request.POST["svg_name"])
         svgtxt = request.POST["svg"]
         creature = request.POST["creature"]
         if creature != "ADV_CREATURE":
@@ -762,7 +762,7 @@ def svg_to_pdf(request, slug):
             f.close()
         logger.info(f'--> Created --> {svg_name}.')
 
-        pdf_name = os.path.join(settings.MEDIA_ROOT, 'pdf/results/pdf/' + request.POST["pdf_name"])
+        pdf_name = os.path.join(settings.MEDIA_ROOT, 'characters/' + request.POST["pdf_name"])
         if "rid" in request.POST:
             rid = request.POST["rid"]
         else:
@@ -780,8 +780,8 @@ def all_in_one_pdf(rid, pages, creature="mortal"):
     logger.info(f'Starting PDFing for [{rid}].')
     res = []
     from PyPDF2 import PdfMerger
-    media_results = os.path.join(settings.MEDIA_ROOT, 'pdf/results/pdf/')
-    csheet_results = os.path.join(settings.MEDIA_ROOT, 'pdf/results/pdf/')
+    media_results = os.path.join(settings.MEDIA_ROOT, 'characters/')
+    csheet_results = os.path.join(settings.MEDIA_ROOT, 'characters/')
     onlyfiles = [f for f in os.listdir(media_results) if os.path.isfile(os.path.join(media_results, f))]
     pdfs = onlyfiles
     merger = PdfMerger()

@@ -1378,16 +1378,19 @@ class Creature(models.Model):
         self.need_fix = True
 
     def randomize_backgrounds(self):
-        background_points = from_stats(self.creature, 'backgrounds')
-        pools = []
-        pools.append(background_points)
         total_backgrounds = len(STATS_NAMES[self.creature]['backgrounds'])
-        backgrounds = self.randomize_stats(stats_count=total_backgrounds, min_value=0, pools=pools)
-        for i in range(10):
-            if i < total_backgrounds:
-                setattr(self, f'background{i}', backgrounds[i])
-            else:
-                setattr(self, f'background{i}', 0)
+        self.randomize_fields(field=['background'], pool=5, partition_length=total_backgrounds, min=0)
+
+        # background_points = from_stats(self.creature, 'backgrounds')
+        # pools = []
+        # pools.append(background_points)
+        # total_backgrounds = len(STATS_NAMES[self.creature]['backgrounds'])
+        # backgrounds = self.randomize_stats(stats_count=total_backgrounds, min_value=0, pools=pools)
+        # for i in range(total_backgrounds):
+        #     if i < total_backgrounds:
+        #         setattr(self, f'background{i}', backgrounds[i])
+        #     else:
+        #         setattr(self, f'background{i}', 0)
         self.need_fix = True
 
     def randomize_archetypes(self):
@@ -1427,7 +1430,8 @@ class Creature(models.Model):
         self.randomize_fields(field=['attribute'], partition=0, partitions_count=3, partition_length=3, min=1)
         self.randomize_fields(field=['talent', 'skill', 'knowledge'], partition=1, partitions_count=3,
                               partition_length=10, min=0)
-        self.randomize_fields(field=['background'], pool=5, partition_length=12, min=0)
+        total_backgrounds = len(STATS_NAMES[self.creature]['backgrounds'])
+        self.randomize_fields(field=['background'], pool=5, partition_length=total_backgrounds, min=0)
         # self.randomize_backgrounds()
         if self.creature == 'garou':
             self.glory = 0
