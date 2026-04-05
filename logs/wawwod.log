@@ -50958,3 +50958,28 @@ NameError: name 'masteredges' is not defined
 [05/04 02:32:59] "GET /static/collector/css?72bc76983e6e HTTP/1.1" 404 1805
 [05/04 02:33:09] Not Found: /ajax/display/undefined/
 [05/04 02:33:09] "GET /ajax/display/undefined/ HTTP/1.1" 404 13168
+[05/04 12:09:11] "GET /static/collector/css?72bc76983e6e HTTP/1.1" 404 1805
+[05/04 12:09:15] Internal Server Error: /ajax/collector_action/experiment/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/actions.py", line 166, in experiment
+    Adventure.reid()
+    ~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/adventures.py", line 217, in reid
+    x.refcode = n
+    ^^^^^^^^^
+AttributeError: 'int' object has no attribute 'refcode' and no __dict__ for setting new attributes
+[05/04 12:09:15] "GET /ajax/collector_action/experiment/ HTTP/1.1" 500 80390
+[05/04 12:22:45] Internal Server Error: /ajax/collector_action/experiment/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/actions.py", line 165, in experiment
+    from collector.models.chronicles import Season
+ImportError: cannot import name 'Season' from 'collector.models.chronicles' (/home/zaffarelli/Projects/wawwod/collector/models/chronicles.py)
+[05/04 12:22:45] "GET /ajax/collector_action/experiment/ HTTP/1.1" 500 76368

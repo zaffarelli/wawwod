@@ -12,6 +12,7 @@ logger = logging.Logger(__name__)
 
 
 class Adventure(models.Model):
+    refcode = models.IntegerField(default=0)
     name = models.CharField(max_length=128, default="")
     chronicle = models.CharField(max_length=8, default='WOD', blank=True)
     season = models.CharField(max_length=8, default='DEF')
@@ -210,12 +211,17 @@ class Adventure(models.Model):
             return adventure, chronicle, season
         return None, None, None
 
+    @classmethod
+    def reid(cls):
+        for n,x in enumerate(cls.objects.all()):
+            x.refcode = n+1
+            x.save()
 
 class AdventureAdmin(admin.ModelAdmin):
-    list_display = ['acronym', 'name', 'season_order', 'is_current', 'season', 'chronicle', 'players_starting_freebies',
+    list_display = ['refcode', 'acronym', 'name', 'season_order', 'is_current', 'season', 'chronicle', 'players_starting_freebies',
                     'team',
                     'notes']
-    ordering = ['season', 'acronym']
+    ordering = ['refcode', 'acronym']
     list_editable = ['name', 'is_current', 'chronicle', 'season_order', 'players_starting_freebies']
     from collector.utils.helper import refix
     actions = [refix]

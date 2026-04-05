@@ -1,8 +1,8 @@
 import logging
 from django.conf import settings
-from collector.utils.wod_reference import get_current_chronicle
+from collector.models.chronicles import Chronicle
 
-chronicle = get_current_chronicle()
+chronicle = Chronicle.current()
 logger = logging.Logger(__name__)
 
 

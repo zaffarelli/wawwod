@@ -5,7 +5,7 @@ from xhtml2pdf import pisa
 from io import BytesIO
 
 from collector.models.adventures import Adventure
-from collector.utils.wod_reference import FONTSET, get_current_chronicle
+from collector.utils.wod_reference import FONTSET
 from storytelling.models.stories import Story
 from storytelling.models.scenes import Scene
 from collector.utils.helper import json_default, is_ajax

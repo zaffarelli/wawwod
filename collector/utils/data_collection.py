@@ -3,11 +3,11 @@ from collector.models.creatures import Creature
 import json
 import logging
 from django.conf import settings
-from collector.utils.wod_reference import get_current_chronicle, FONTSET
+from collector.utils.wod_reference import FONTSET
 from collector.utils.helper import toRID
 from collector.utils.kindred_stuff import resort
 
-chronicle = get_current_chronicle()
+chronicle = Chronicle.current()
 logger = logging.Logger(__name__)
 
 

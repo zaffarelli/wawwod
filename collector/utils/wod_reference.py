@@ -11,23 +11,9 @@ FONTSET = ['Cinzel', 'Trade+Winds', 'Imprima', 'Roboto', 'Philosopher', 'Ruda', 
            'Marcellus+SC', 'Lato', 'Atma', 'Splash', 'Trirong', 'Ubuntu+Mono', 'Inria+Sans', "Spectral+SC", "Hi+Melody",
            "East+Sea+Dokdo", "Slackside+One", "Do+Hyeon", "Tac+One", "Englebert", "Truculenta", "Kalam"]
 
-
-def get_current_chronicle():
-    # When migrating
-    # return None
-    ch = None
-    # try:
-    #     current_chronicle = Chronicle.objects.filter(is_current=True).first()
-    #     ch = current_chronicle
-    # except:
-    #     first_chronicle = Chronicle.objects.first()
-    #     first_chronicle.is_current = True
-    #     first_chronicle.is_storyteller_only = True
-    #     first_chronicle.save()
-    #     ch = first_chronicle
-    #     print(f"Error with get_chronicle {ch}")
-    # return ch
-    return Chronicle.current()
+#
+# def get_current_chronicle():
+#     return Chronicle.current()
 
 
 def set_chronicle(acro):

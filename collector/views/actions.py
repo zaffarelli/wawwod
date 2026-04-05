@@ -4,7 +4,7 @@ from django.views.decorators.csrf import csrf_exempt
 
 from collector.models.creatures import Creature
 from collector.utils.helper import is_ajax
-from collector.utils.wod_reference import get_current_chronicle
+# from collector.utils.wod_reference import get_current_chronicle
 import random
 
 
@@ -162,6 +162,12 @@ def deed_select(request):
 
 
 def experiment(request):
+    from collector.models.seasons import Season
+    Season.reid()
+    return HttpResponse(status=204)
+
+
+def old3_experiment(request):
     from collector.models.gifts import Gift
     id = 1
     for gift in Gift.objects.all().order_by("name"):

@@ -13,6 +13,7 @@ logger = logging.Logger(__name__)
 
 
 class Season(models.Model):
+    refcode = models.IntegerField(default=0)
     name = models.CharField(max_length=128, primary_key=True)
     # chronicle = models.CharField(max_length=8, default='WOD')
     era = models.PositiveIntegerField(default=1985, blank=True)
@@ -74,9 +75,14 @@ class Season(models.Model):
         from collector.models.adventures import Adventure
         return Adventure.objects.filter(season=self.acronym)
 
+    @classmethod
+    def reid(cls):
+        for n,x in enumerate(cls.objects.all()):
+            x.refcode = n+1
+            x.save()
 
 class SeasonAdmin(admin.ModelAdmin):
-    list_display = ['name','is_current', 'acronym', 'era', 'team',  'notes']
+    list_display = ['refcode','name','is_current', 'acronym', 'era', 'team',  'notes']
     ordering = ['-era']
     list_editable = ['acronym', 'is_current', 'era']
     from collector.utils.helper import refix

@@ -6,7 +6,7 @@ import json
 import logging
 
 from collector.templatetags.wod_filters import as_tribe_plural
-from collector.utils.wod_reference import get_current_chronicle, find_stat_property, STATS_NAMES, GM_SHORTCUTS, \
+from collector.utils.wod_reference import find_stat_property, STATS_NAMES, GM_SHORTCUTS, \
     bloodpool, STATS_TEMPLATES, CLANS_SPECIFICS, RAGE_PER_AUSPICE, GNOSIS_PER_BREED, PER_TRIBE, RANKS, \
     find_stat_category, ENLIGHTENMENT
 from collector.utils.helper import json_default, toRID
@@ -20,7 +20,7 @@ logger = logging.Logger(__name__)
 class Creature(models.Model):
     class Meta:
         verbose_name = 'Creature'
-        ordering = ['-extract_priority', 'name']
+        ordering = ['name']
 
     player = models.CharField(max_length=32, blank=True, default='')
     name = models.CharField(max_length=128, default='')

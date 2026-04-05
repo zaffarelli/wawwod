@@ -11,6 +11,7 @@ logger = logging.Logger(__name__)
 
 
 class Chronicle(models.Model):
+    refcode = models.IntegerField(default=0)
     name = models.CharField(max_length=128, default='', primary_key=True)
     acronym = models.CharField(max_length=16, blank=True, default='')
     era = models.IntegerField(default=2023)
@@ -105,9 +106,14 @@ class Chronicle(models.Model):
         data["is_current"] = self.is_current
         return data
 
+    @classmethod
+    def reid(cls):
+        for n,x in enumerate(cls.objects.all()):
+            x.refcode = n+1
+            x.save()
 
 class ChronicleAdmin(admin.ModelAdmin):
-    list_display = ['acronym', 'is_current', 'name', 'description', 'main_creature', 'population',
+    list_display = ['refcode','acronym', 'is_current', 'name', 'description', 'main_creature', 'population',
                     'is_storyteller_only']
     list_editable = ['is_current', 'is_storyteller_only']
     ordering = ['acronym']
