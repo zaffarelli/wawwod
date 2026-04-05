@@ -4,6 +4,7 @@ from django.shortcuts import render
 from xhtml2pdf import pisa
 from io import BytesIO
 
+from collector.models.adventures import Adventure
 from collector.utils.wod_reference import FONTSET, get_current_chronicle
 from storytelling.models.stories import Story
 from storytelling.models.scenes import Scene
@@ -175,7 +176,6 @@ def chronicle_book(request):
                 "description": "",
                 "groups": {}
             },
-
         }
     elif chronicle.main_creature == "garou":
         from collector.models.septs import Sept
@@ -215,7 +215,80 @@ def chronicle_book(request):
     template = get_template(f"storytelling/pdf/factions_{chronicle.main_creature}.html")
     html = template.render(context)
     filename = f'chronicle_book_{context['filename']}.pdf'
-    fname = os.path.join('wawwod_media/', 'pdf/results/' + filename)
+    fname = os.path.join('wawwod_media/', 'books/' + filename)
+    es_pdf = open(fname, 'wb')
+    pdf = pisa.pisaDocument(BytesIO(html.encode('utf-8')), es_pdf)
+    answer = {"status": "Ok"}
+    if not pdf.err:
+        es_pdf.close()
+        answer = {"status": pdf.err}
+        return HttpResponse(status=204)
+    return JsonResponse(answer)
+
+def story_book(request):
+    from collector.models.creatures import Creature
+    settings = {}
+    adventure, chronicle, season = Adventure.current_full()
+    if chronicle.main_creature == "kindred":
+        factions = {
+            "camarilla": {
+                "name": "camarilla",
+                "description": "",
+                "groups": {}
+            },
+            "sabbat": {
+                "name": "sabbat",
+                "description": "",
+                "groups": {}
+            },
+            "independents": {
+                "name": "independents",
+                "description": "",
+                "groups": {}
+            },
+            "anarchs": {
+                "name": "anarchs",
+                "description": "",
+                "groups": {}
+            },
+        }
+    elif chronicle.main_creature == "garou":
+        from collector.models.septs import Sept
+        factions = {}
+        factions["gaia"] = {"name": "Gaia", "description": "", "groups": {}}
+        factions["wyrm"] = {"name": "Wyrm", "description": "", "groups": {}}
+
+    groups = {}
+    for c in Creature.objects.filter(adventure__contains=adventure).exclude(is_player=True).order_by("group"):
+        if chronicle.main_creature == "kindred":
+            g = "_".join(c.group.lower().split(" "))
+            if g not in groups:
+                groups[g] = {"code": g, "faction": c.faction, "name": f"{c.group}", "kindreds": []}
+            kindred_entry = {"data": c, "ghouls": []}
+            ghouls = c.retainers_vals
+            for h in ghouls:
+                kindred_entry["ghouls"].append(h)
+            groups[g]["kindreds"].append(kindred_entry)
+        elif chronicle.main_creature == "garou":
+            g = "_".join(c.group.lower().split(" "))
+            if len(c.groupspec.lower())>0:
+                p = "_".join(c.groupspec.lower().split(" "))
+                if g not in groups:
+                    groups[g] = {"code": g, "faction": c.faction, "name": f"{c.group}", "packs": {}}
+                if p not in groups[g]["packs"]:
+                    groups[g]["packs"][p] = {"code": p, "name": c.groupspec, "garous": []}
+                groups[g]["packs"][p]["garous"].append(c)
+            else:
+                print("Cannot handle",c)
+    for group, content in groups.items():
+        x = content["faction"].lower()
+        factions[x]["groups"][group] = content
+    print(factions)
+    context = {'data': factions, 'settings': settings, 'filename': chronicle.acronym, "chronicle": chronicle}
+    template = get_template(f"storytelling/pdf/factions_{chronicle.main_creature}.html")
+    html = template.render(context)
+    filename = f'chronicle_book_{context['filename']}.pdf'
+    fname = os.path.join('wawwod_media/', 'books/' + filename)
     es_pdf = open(fname, 'wb')
     pdf = pisa.pisaDocument(BytesIO(html.encode('utf-8')), es_pdf)
     answer = {"status": "Ok"}
@@ -226,7 +299,7 @@ def chronicle_book(request):
     return JsonResponse(answer)
 
 
-def story_book(request):
+def old_story_book(request):
     from collector.models.creatures import Creature
     from collector.models.seasons import Season
     from collector.models.adventures import Adventure
@@ -280,7 +353,7 @@ def story_book(request):
     template = get_template("storytelling/pdf/new_story.html")
     html = template.render(context)
     filename = f'story_book_{context['filename']}.pdf'
-    fname = os.path.join('wawwod_media/', 'pdf/results/' + filename)
+    fname = os.path.join('wawwod_media/', 'books/' + filename)
     es_pdf = open(fname, 'wb')
     pdf = pisa.pisaDocument(BytesIO(html.encode('utf-8')), es_pdf)
     answer = {"status": "Ok"}

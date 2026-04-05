@@ -3,7 +3,7 @@ from collector.views.base import index, get_list, updown, userinputastext, useri
     change_adventure, \
     display_gaia_wheel, display_dashboard, display_lineage, display_crossover_sheet, add_kindred, svg_to_pdf, \
     save_to_svg, display_sept, moon_phase, calendar, weaver_code, display_sept_rosters, quaestor, adventure_sheet, \
-    display_chronicle_map, add_kinfolk, add_mortal, bulk_add, display_groups, renown, renown_records
+    display_chronicle_map, display_edge_map, add_kinfolk, add_mortal, bulk_add, display_groups, renown, renown_records
 from collector.views.actions import change_settings, extract_mechanics, extract_per_group, extract_raw, \
     extract_roster, randomize, balance, refix_all, experiment, deed_select
 from collector.views.creature_views import CreatureDetailView
@@ -17,6 +17,7 @@ urlpatterns = [
     re_path(r'^ajax/display/gaia_wheel/$', display_gaia_wheel, name='display_gaia_wheel'),
     re_path(r'^ajax/display/dashboard/$', display_dashboard, name='display_dashboard'),
     re_path(r'^ajax/display/chronicle_map/$', display_chronicle_map, name='display_chronicle_map'),
+    re_path(r'^ajax/display/edges_map/(?P<slug>\w+)/$', display_edge_map, name='display_edge_map'),
     re_path(r'^ajax/display/groups/(?P<slug>\w+)/$', display_groups, name='display_groups'),
     re_path(r'^ajax/display/adventure_sheet/$', adventure_sheet, name='adventure_sheet'),
     re_path(r'^ajax/display/kindred_lineage/(?P<slug>\w+)/$', display_lineage, name='display_lineage'),

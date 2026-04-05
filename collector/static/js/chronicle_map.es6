@@ -26,7 +26,7 @@ class ChronicleMap {
             }
         });
         me.boxWidth = 12;
-        me.boxHeight = 16;
+        me.boxHeight = 6;
         let re = new RegExp("\d+");
         me.width = me.step*((me.boxWidth+1)*6+1)
         me.height = me.step*((me.boxHeight+1)*6+1)
@@ -192,7 +192,7 @@ class ChronicleMap {
             ,"stroke-width":"0.25pt"},"order":1},
             {"text":`${x.creature=="kinfolk"?x.family+' '+x.creature:""}${entrance}`,"order":3},
             {"text":`${x.concept}`,"style":{"font-size":"11pt"},"order":2},
-            {"text":`${x.faction}`,"order":4},
+            {"text":`${x.group}`,"order":4},
             {"text":`${x.age} yo ${(x.sex?"male":"female")}`,"order":5},
             {"text":`${x.adventure}`,"order":6}
         ]

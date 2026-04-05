@@ -50879,3 +50879,82 @@ Traceback (most recent call last):
            ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
 django.db.utils.IntegrityError: CHECK constraint failed: talent9
 [01/04 01:51:39] "POST /ajax/editable/updown/ HTTP/1.1" 500 24434
+[01/04 08:52:33] "GET /static/collector/css?72bc76983e6e HTTP/1.1" 404 1805
+[01/04 20:59:35] "GET /static/collector/css?72bc76983e6e HTTP/1.1" 404 1805
+[01/04 21:19:23] "GET /static/collector/css?72bc76983e6e HTTP/1.1" 404 1805
+[01/04 21:19:39] "GET /static/collector/css?72bc76983e6e HTTP/1.1" 404 1805
+[01/04 21:20:13] "GET /static/collector/css?72bc76983e6e HTTP/1.1" 404 1805
+[01/04 21:23:12] "GET /static/collector/css?72bc76983e6e HTTP/1.1" 404 1805
+[01/04 22:52:16] Not Found: /ajax/display/undefined/
+[01/04 22:52:16] "GET /ajax/display/undefined/ HTTP/1.1" 404 12951
+[04/04 10:47:29] "GET /static/collector/css?72bc76983e6e HTTP/1.1" 404 1805
+[04/04 11:35:54] "GET /static/collector/css?72bc76983e6e HTTP/1.1" 404 1805
+[04/04 11:37:18] Not Found: /ajax/display/edges_map/_nathan_oconnell/
+[04/04 11:37:18] "GET /ajax/display/edges_map/_nathan_oconnell/ HTTP/1.1" 404 13218
+[04/04 11:37:22] Not Found: /ajax/display/edges_map/_nathan_oconnell/
+[04/04 11:37:22] "GET /ajax/display/edges_map/_nathan_oconnell/ HTTP/1.1" 404 13218
+[04/04 11:38:26] Internal Server Error: /ajax/display/edges_map/_nathan_oconnell/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 616, in display_edge_map
+    edges = master["edges"].split(", ")
+            ~~~~~~^^^^^^^^^
+TypeError: 'Creature' object is not subscriptable
+[04/04 11:38:26] "GET /ajax/display/edges_map/_nathan_oconnell/ HTTP/1.1" 500 76635
+[04/04 11:38:29] "GET /static/collector/css?72bc76983e6e HTTP/1.1" 404 1805
+[04/04 11:39:00] Internal Server Error: /ajax/display/edges_map/_nathan_oconnell/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 616, in display_edge_map
+    edges = master["edges"].split(", ")
+            ~~~~~~^^^^^^^^^
+TypeError: 'Creature' object is not subscriptable
+[04/04 11:39:00] "GET /ajax/display/edges_map/_nathan_oconnell/ HTTP/1.1" 500 76635
+[04/04 11:39:35] "GET /static/collector/css?72bc76983e6e HTTP/1.1" 404 1805
+[04/04 11:39:46] Internal Server Error: /ajax/display/edges_map/_nathan_oconnell/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 616, in display_edge_map
+    edges = masteredges.split(", ")
+            ^^^^^^^^^^^
+NameError: name 'masteredges' is not defined
+[04/04 11:39:46] "GET /ajax/display/edges_map/_nathan_oconnell/ HTTP/1.1" 500 76579
+[04/04 11:39:53] Internal Server Error: /ajax/display/edges_map/_nathan_oconnell/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 616, in display_edge_map
+    edges = masteredges.split(", ")
+            ^^^^^^^^^^^
+NameError: name 'masteredges' is not defined
+[04/04 11:39:53] "GET /ajax/display/edges_map/_nathan_oconnell/ HTTP/1.1" 500 76579
+[04/04 11:42:02] "GET /static/collector/css?72bc76983e6e HTTP/1.1" 404 1805
+[04/04 12:01:58] "GET /static/collector/css?72bc76983e6e HTTP/1.1" 404 1805
+[04/04 12:02:24] "GET /static/collector/css?72bc76983e6e HTTP/1.1" 404 1805
+[04/04 12:35:17] "GET /static/collector/css?72bc76983e6e HTTP/1.1" 404 1805
+[04/04 12:36:46] Not Found: /ajax/display/undefined/
+[04/04 12:36:46] "GET /ajax/display/undefined/ HTTP/1.1" 404 13168
+[04/04 12:39:20] Not Found: /ajax/display/undefined/
+[04/04 12:39:20] "GET /ajax/display/undefined/ HTTP/1.1" 404 13168
+[04/04 12:40:33] Not Found: /ajax/display/undefined/
+[04/04 12:40:33] "GET /ajax/display/undefined/ HTTP/1.1" 404 13168
+[04/04 12:40:59] "GET /static/collector/css?72bc76983e6e HTTP/1.1" 404 1805
+[04/04 12:41:02] Not Found: /ajax/display/undefined/
+[04/04 12:41:02] "GET /ajax/display/undefined/ HTTP/1.1" 404 13168
+[04/04 12:42:54] Not Found: /ajax/display/undefined/
+[04/04 12:42:54] "GET /ajax/display/undefined/ HTTP/1.1" 404 13168
+[04/04 13:51:32] "GET /static/collector/css?72bc76983e6e HTTP/1.1" 404 1805
+[05/04 02:32:59] "GET /static/collector/css?72bc76983e6e HTTP/1.1" 404 1805
+[05/04 02:33:09] Not Found: /ajax/display/undefined/
+[05/04 02:33:09] "GET /ajax/display/undefined/ HTTP/1.1" 404 13168

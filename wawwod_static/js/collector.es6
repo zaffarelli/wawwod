@@ -103,6 +103,13 @@ class WawwodCollector {
                         me.d3.setCollector(me)
                         me.d3.perform();
                     }
+                    if (action == 'edges_map') {
+                        console.log("Edges map")
+                        let d = JSON.parse(answer.data);
+                        me.d3 = new ChronicleMap(d, "#d3area");
+                        me.d3.setCollector(me)
+                        me.d3.perform();
+                    }
                     if (action == 'kindred_lineage') {
                         //console.log(answer)
                         let s = JSON.parse(answer.settings);

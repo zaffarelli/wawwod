@@ -24,6 +24,7 @@ class Adventure(models.Model):
     is_current = models.BooleanField(default=False, blank=True)
     adventure_teaser = models.CharField(max_length=128, default='', blank=True)
     deeds_map_str = models.TextField(max_length=2048, default="", blank=True)
+    new_acronym = models.CharField(max_length=32, default='')
 
     DEED_SEP = "|"
     WORD_SEP = ";"
@@ -93,6 +94,14 @@ class Adventure(models.Model):
         self.save()
         return result
 
+    def has_character(self, c):
+        res = False
+        advs = c.adventure.split(" ")
+        for adv in advs:
+            if adv == self.acronym:
+                res = True
+                break
+        return res
 
 
     def deeds_player_map(self):
@@ -125,6 +134,31 @@ class Adventure(models.Model):
                 team_list.append(f"{pc.name} [{pc.player}]")
             self.team = ", ".join(team_list)
             # print(self.team)
+        if len(self.new_acronym)>0:
+            if self.new_acronym != self.acronym:
+                self.acronym, self.new_acronym = self.new_acronym, self.acronym
+
+    def post_fix(self):
+        if self.new_acronym != self.acronym:
+            from collector.models.creatures import Creature
+            all_creatures = Creature.objects.all()
+            found_once = False
+            for creature in all_creatures:
+                found = False
+                re_acro = []
+                advs = creature.adventure.split(" ")
+                for adv in advs:
+                    if adv != self.acronym and adv != self.new_acronym:
+                        re_acro.append(adv)
+                    else:
+                        found = True
+                        found_once = True
+                if found:
+                    creature.append(self.acronym)
+                    creature.adventure = " ".join(re_acro)
+                    creature.save()
+            if found_once:
+                self.acronym = self.new_acronym
 
     @classmethod
     def current_adventure(cls, se):

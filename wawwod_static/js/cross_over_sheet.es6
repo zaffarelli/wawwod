@@ -2,7 +2,7 @@ class CrossOverSheet extends WawwodSheet {
     constructor(settings, parent) {
         super(settings, parent);
         this.init();
-        this.release = "VTM20-2026.03.09";
+        this.release = "VTM20-2026.04.03";
     }
 
     init() {
@@ -109,7 +109,7 @@ class CrossOverSheet extends WawwodSheet {
 
     drawButtons() {
         let me = this;
-        me.addButton(1, 'NPCs');
+        me.addButton(1, 'NPCs', "edges_map");
         me.addButton(2, 'Save PDF');
         let page_button = 0
         //while(page_button < me.config.labels.sheet.pages){
@@ -754,10 +754,11 @@ class CrossOverSheet extends WawwodSheet {
         if (me.data['creature'] == 'kindred'){
             me.creature_font = "Girassol"
             me.logo_font = "Angel wish"
-        }else if (me.data['creature'] == 'garou'){
+        }else if (['garou','kinfolk'].includes(me.data['creature'])){
             me.creature_font = "Girassol"
             me.logo_font = "Apocalypse Grunge"
         }
+
         me.drawWatermark();
         if (me.data['condition'] == "DEAD") {
             me.decorationText(12, 16, 0, 'middle', me.logo_font, me.fat_font_size * 3, me.shadow_fill, me.shadow_stroke, 0.5, "DEAD", me.back, 0.25);

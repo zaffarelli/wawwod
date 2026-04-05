@@ -193,7 +193,7 @@ STATS_NAMES = {
         'backgrounds': ['allies', 'ancestors', 'contacts', 'fate', 'fetish', 'kinfolk', 'mentor', 'pure breed',
                         'resources',
                         'rites', 'spirit heritage', 'totem'],
-        'sheet': {'pages': 4}
+        'sheet': {'pages': 8}
     },
     'ghoul': {
         'attributes': ['strength', 'dexterity', 'stamina', 'charisma', 'manipulation', 'appearance', 'perception',

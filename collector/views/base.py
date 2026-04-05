@@ -550,9 +550,10 @@ def display_crossover_sheet(request, slug=None, option=""):
                 all_glyphs.append({"image": glyph, "text": txt})
         all_glyphs = sorted(all_glyphs, key=lambda g: g["text"])
         j, k = character_for(slug, "")
+        max_pages = STATS_NAMES[k["creature"]]['sheet']['pages']
         settings = {'version': 1.0, 'labels': STATS_NAMES[k["creature"]], 'pre_title': pre_title, 'scenario': scenario,
                     'post_title': post_title, 'fontset': FONTSET, 'blank': blank, 'debug': False,
-                    'specialities': k["spe"], 'glyphs': all_glyphs,
+                    'specialities': k["spe"], 'glyphs': all_glyphs, 'max_pages': max_pages,
                     'shortcuts': k["shc"]}
         crossover_sheet_context = {'settings': json.dumps(settings, sort_keys=True, indent=4), 'data': j}
         return JsonResponse(crossover_sheet_context)
@@ -610,6 +611,31 @@ def display_chronicle_map(request):
 
     context = {'data': json.dumps(all_creatures, indent=4, sort_keys=True)}
     return JsonResponse(context)
+
+def display_edge_map(request, slug):
+    chronicle = Chronicle.current()
+    master = Creature.objects.get(rid=slug)
+    edges = master.edges.split(", ")
+    creatures = Creature.objects.filter(rid__in=edges).order_by("name")
+    all_creatures = []
+    lines = []
+    for creature in creatures:
+        c = creature.toJSON()
+        k = json.loads(c)
+        k["edge_for"] = creature.edge_for
+        k["sire"] = creature.sire
+        k["is_player"] = creature.is_player
+        k["entrance"] = creature.entrance
+        # print(k["name"])
+        all_creatures.append(k)
+        lines.append(creature.extract_raw())
+    txt_name = os.path.join(settings.MEDIA_ROOT, 'md/' + chronicle.acronym + "_cast.md")
+    with open(txt_name, "w") as f:
+        f.writelines(lines)
+        f.close()
+    context = {'data': json.dumps(all_creatures, indent=4, sort_keys=True)}
+    return JsonResponse(context)
+
 
 
 def display_dashboard(request):

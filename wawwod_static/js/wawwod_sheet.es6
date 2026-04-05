@@ -7,7 +7,7 @@ class WawwodSheet {
         this.disposition = "portrait"
         this.button_ox = 1
         this.button_oy = 1
-        this.max_pages = 8
+        this.max_pages = 1
     }
 
     setCollector(collector){
@@ -153,12 +153,13 @@ class WawwodSheet {
         me.base_font = 'Khand'
 
 
-        me.x = d3.scaleLinear().domain([0, me.width]).range([0, me.width]);
-        me.y = d3.scaleLinear().domain([0, me.height]).range([0, me.height]);
-        me.pre_title = me.config['pre_title'];
-        me.scenario = me.config['scenario'];
-        me.post_title = me.config['post_title'];
-        me.health_levels = ['Bruised/X', 'Hurt/-1', 'Injured/-1', 'Wounded/-2', 'Mauled/-2', 'Crippled/-5', 'Incapacitated/X'];
+        me.x = d3.scaleLinear().domain([0, me.width]).range([0, me.width])
+        me.y = d3.scaleLinear().domain([0, me.height]).range([0, me.height])
+        me.pre_title = me.config['pre_title']
+        me.scenario = me.config['scenario']
+        me.post_title = me.config['post_title']
+        me.health_levels = ['Bruised/X', 'Hurt/-1', 'Injured/-1', 'Wounded/-2', 'Mauled/-2', 'Crippled/-5', 'Incapacitated/X']
+        me.max_pages = me.config['max_pages']
     }
 
     midline(y, startx = 2, stopx = 22) {
@@ -1622,13 +1623,14 @@ class WawwodSheet {
     }
 
 
-    addButton(num, txt) {
+    addButton(num, txt, action="") {
         let me = this
         let ox = me.button_ox * me.stepy
         let oy = me.button_oy * me.stepy
         let button = me.back.append('g')
             .attr('class', 'do_not_print '+(num==1?"display":""))
-            .attr('action', (num==1?"chronicle_map":""))
+            .attr('param', me.data["rid"])
+            .attr('action', action)
             .on('click', function (e,d) {
                 e.stopPropagation()
                 e.preventDefault()
