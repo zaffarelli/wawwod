@@ -16,7 +16,8 @@ logger = logging.Logger(__name__)
 
 
 class Sept(models.Model):
-    name = models.CharField(max_length=128, primary_key=True)
+    id = models.IntegerField(primary_key=True)
+    name = models.CharField(max_length=128, unique=True)
     rid = models.CharField(max_length=128, blank=True)
     chronicle = models.CharField(max_length=8, default='WOD')
     season = models.CharField(max_length=8, default='DEF')
@@ -211,6 +212,12 @@ class Sept(models.Model):
         return data
 
 
+    # @classmethod
+    # def reid(cls):
+    #     for n,x in enumerate(cls.objects.all()):
+    #         x.refcode = n+1
+    #         x.save()
+
 def refix(modeladmin, request, queryset):
     for sept in queryset:
         sept.save()
@@ -218,7 +225,7 @@ def refix(modeladmin, request, queryset):
 
 
 class SeptAdmin(admin.ModelAdmin):
-    list_display = ['name', 'rid', 'faction', 'chronicle', 'garous', "kinfolks", 'notes']
+    list_display = ['id','name', 'rid', 'faction', 'chronicle', 'garous', "kinfolks", 'notes']
     ordering = ['chronicle', 'name']
     list_filter = ['faction', 'caern_level']
     actions = [refix]

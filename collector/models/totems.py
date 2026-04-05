@@ -13,6 +13,7 @@ logger = logging.Logger(__name__)
 
 
 class Totem(models.Model):
+    id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=128, default='')
     code = models.CharField(max_length=32, default='', blank=True)
     description = models.TextField(max_length=1024, default='', blank=True)
@@ -38,7 +39,7 @@ class Totem(models.Model):
 
 
 class TotemAdmin(admin.ModelAdmin):
-    list_display = ['name', 'code','description', 'ban', 'individual_traits', 'pack_traits', 'background_cost']
+    list_display = ['id', 'name', 'code','description', 'ban', 'individual_traits', 'pack_traits', 'background_cost']
     ordering = ['name']
     list_editable = ['code','individual_traits', 'pack_traits','background_cost', 'ban' ]
     from collector.utils.helper import refix

@@ -6,7 +6,7 @@ from django.dispatch import receiver
 import json
 
 class Rite(models.Model):
-    refcode = models.IntegerField(default=0, primary_key=True)
+    id = models.AutoField(primary_key=True)
     code = models.CharField(max_length=256, default='', blank=True)
     name = models.CharField(max_length=128, default='', unique=True)
     path = models.CharField(max_length=128, default='', blank=True)
@@ -22,15 +22,15 @@ class Rite(models.Model):
     def __str__(self):
         return f'{self.name} ({self.level})'
 
-    @classmethod
-    def reid(cls):
-        for n,x in enumerate(cls.objects.all()):
-            x.refcode = n+1
-            x.save()
+    # @classmethod
+    # def reid(cls):
+    #     for n,x in enumerate(cls.objects.all()):
+    #         x.refcode = n+1
+    #         x.save()
 
 
 class RiteAdmin(admin.ModelAdmin):
-    list_display = ['refcode', 'name','code', 'level', 'path', 'description', "system"]
+    list_display = ['id', 'name','code', 'level', 'path', 'description', "system"]
     ordering = ['path', 'level', 'name']
     list_filter = ['level','creature','path']
     search_fields = ['name','description']

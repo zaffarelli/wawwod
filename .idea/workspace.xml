@@ -5,8 +5,51 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c5f4ae22-1e7a-419c-ac9f-80da089b72d4" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/collector/migrations/0143_creature_refcode.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/collector/migrations/0144_alter_adventure_acronym_alter_adventure_refcode.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/collector/migrations/0145_alter_adventure_refcode.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/collector/migrations/0146_rename_refcode_adventure_id.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/collector/migrations/0147_sept_recode.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/collector/migrations/0148_rename_recode_sept_refcode.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/collector/migrations/0149_alter_sept_name_alter_sept_refcode.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/collector/migrations/0150_rename_refcode_sept_id.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/collector/migrations/0151_alter_season_name_alter_season_refcode.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/collector/migrations/0152_alter_season_refcode.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/collector/migrations/0153_rename_refcode_season_id.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/collector/migrations/0154_alter_gift_id.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/collector/migrations/0155_discipline_refcode.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/collector/migrations/0156_alter_discipline_code_alter_discipline_refcode.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/collector/migrations/0157_rename_refcode_discipline_id.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/collector/migrations/0158_alter_totem_id.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/collector/migrations/0159_alter_rite_name_alter_rite_refcode.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/collector/migrations/0160_alter_rite_name_alter_rite_refcode.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/collector/migrations/0161_rename_refcode_rite_id.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/collector/migrations/0162_remove_creature_id_alter_creature_refcode.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/collector/migrations/0163_rename_refcode_creature_id.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/collector/migrations/0164_background_refcode.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/collector/migrations/0165_alter_background_code_alter_background_refcode.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/collector/migrations/0166_alter_background_refcode.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/collector/migrations/0167_rename_refcode_background_id.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/collector/migrations/0168_archetype_refcode.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/collector/migrations/0169_alter_archetype_name_alter_archetype_refcode.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/collector/migrations/0170_alter_archetype_refcode.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/collector/migrations/0171_rename_refcode_archetype_id.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/collector/migrations/0172_alter_deed_id.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/models/adventures.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/models/adventures.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/models/archetypes.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/models/archetypes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/models/backgrounds.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/models/backgrounds.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/models/creatures.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/models/creatures.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/models/deeds.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/models/deeds.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/models/disciplines.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/models/disciplines.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/models/gifts.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/models/gifts.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/collector/models/rites.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/models/rites.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/models/seasons.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/models/seasons.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/models/septs.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/models/septs.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/models/totems.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/models/totems.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/views/actions.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/views/actions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/wawwod.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/wawwod.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -162,8 +162,8 @@ def deed_select(request):
 
 
 def experiment(request):
-    from collector.models.rites import Rite
-    Rite.reid()
+    # from collector.models.archetypes import Archetype
+    # Archetype.reid()
     return HttpResponse(status=204)
 
 

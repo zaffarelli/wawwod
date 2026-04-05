@@ -3,6 +3,7 @@ from django.contrib import admin
 
 
 class Deed(models.Model):
+    id = models.AutoField(primary_key=True)
     description = models.TextField(max_length=256, blank=True, default='')
     category = models.CharField(max_length=64, blank=True, default='')
     notes = models.TextField(max_length=256, blank=True, default='')
@@ -135,7 +136,7 @@ class Deed(models.Model):
 
 
 class DeedAdmin(admin.ModelAdmin):
-    list_display = ['category', 'code', 'description', 'notes', 'glory', 'honor', 'wisdom']
+    list_display = ['id', 'category', 'code', 'description', 'notes', 'glory', 'honor', 'wisdom']
     ordering = ['category', 'description', 'glory', 'honor', 'wisdom']
     list_filter = ['category', 'glory', 'honor', 'wisdom']
     search_fields = ['description', 'notes', 'category']

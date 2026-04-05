@@ -22,6 +22,7 @@ class Creature(models.Model):
         verbose_name = 'Creature'
         ordering = ['name']
 
+    id = models.IntegerField(primary_key=True)
     player = models.CharField(max_length=32, blank=True, default='')
     name = models.CharField(max_length=128, default='')
     new_name = models.CharField(max_length=128, default='', blank=True, null=True)
@@ -2565,6 +2566,13 @@ class Creature(models.Model):
                     data[domitor.rid][ghoul.rid] = ghoul_entry
         return data
 
+    @classmethod
+    def reid(cls):
+        for n,x in enumerate(cls.objects.all()):
+            x.refcode = n+1
+            x.save()
+
+
 
 def refix(modeladmin, request, queryset):
     for creature in queryset:
@@ -2671,7 +2679,7 @@ def randomize_all(modeladmin, request, queryset):
 
 class CreatureAdmin(admin.ModelAdmin):
     list_display = [  # 'domitor',
-        'name', 'age', 'season', 'adventure', 'chronicle', "equipment", 'edge_for', 'cast_figure', 'family',
+        'id','name', 'age', 'season', 'adventure', 'chronicle', "equipment", 'edge_for', 'cast_figure', 'family',
         'freebies', 'player', 'experience_expenditure', "experience", "exp_pool", "exp_spent",
         'family', 'groupspec', 'status', 'condition', "freebies_exp_offset"]
     ordering = ['-trueage', 'name', 'group', 'creature']

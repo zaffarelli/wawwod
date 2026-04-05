@@ -7,7 +7,8 @@ logger = logging.Logger(__name__)
 
 
 class Background(models.Model):
-    code = models.CharField(max_length=128, default='?', primary_key=True)
+    id = models.AutoField(primary_key=True)
+    code = models.CharField(max_length=128, default='?', unique=True)
     name = models.CharField(max_length=128, default='')
     level = models.PositiveIntegerField(default=1, blank=True)
     description = models.TextField(max_length=256, blank=True, default='')
@@ -19,12 +20,17 @@ class Background(models.Model):
     def __str__(self):
         return f'{self.code})'
 
+    # @classmethod
+    # def reid(cls):
+    #     for n,x in enumerate(cls.objects.all()):
+    #         x.refcode = n+1
+    #         x.save()
 
 
 
 
 class BackgroundAdmin(admin.ModelAdmin):
-    list_display = ['code', 'name', 'level', 'description','cumulate' ]
+    list_display = ['id','code', 'name', 'level', 'description','cumulate' ]
     ordering = ['code']
     list_filter = ['name', 'level']
     search_fields = ['name', 'description']

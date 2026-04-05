@@ -12,14 +12,14 @@ logger = logging.Logger(__name__)
 
 
 class Adventure(models.Model):
-    refcode = models.IntegerField(default=0)
+    id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=128, default="")
     chronicle = models.CharField(max_length=8, default='WOD', blank=True)
     season = models.CharField(max_length=8, default='DEF')
     season_order = models.IntegerField(default=0, blank=True)
     protagonists = models.TextField(default="", max_length=4096, blank=True)
     team = models.TextField(default="", max_length=1024, blank=True)
-    acronym = models.CharField(max_length=32, default='', primary_key=True)
+    acronym = models.CharField(max_length=32, default='')
     notes = models.TextField(max_length=1024, default='', blank=True)
     players_starting_freebies = models.IntegerField(default=15, blank=True)
     is_current = models.BooleanField(default=False, blank=True)
@@ -211,17 +211,17 @@ class Adventure(models.Model):
             return adventure, chronicle, season
         return None, None, None
 
-    @classmethod
-    def reid(cls):
-        for n,x in enumerate(cls.objects.all()):
-            x.refcode = n+1
-            x.save()
+    # @classmethod
+    # def reid(cls):
+    #     for n,x in enumerate(cls.objects.all()):
+    #         x.refcode = n+1
+    #         x.save()
 
 class AdventureAdmin(admin.ModelAdmin):
-    list_display = ['refcode', 'acronym', 'name', 'season_order', 'is_current', 'season', 'chronicle', 'players_starting_freebies',
+    list_display = ['id', 'acronym', 'name', 'season_order', 'is_current', 'season', 'chronicle', 'players_starting_freebies',
                     'team',
                     'notes']
-    ordering = ['refcode', 'acronym']
+    ordering = ['id', 'acronym']
     list_editable = ['name', 'is_current', 'chronicle', 'season_order', 'players_starting_freebies']
     from collector.utils.helper import refix
     actions = [refix]

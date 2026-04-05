@@ -7,7 +7,8 @@ logger = logging.Logger(__name__)
 
 
 class Discipline(models.Model):
-    code = models.CharField(max_length=128, default='?', primary_key=True)
+    id  = models.AutoField(primary_key=True)
+    code = models.CharField(max_length=128, default='?', unique=True)
     name = models.CharField(max_length=128, default='')
     path = models.CharField(max_length=128, default='', blank=True)
     alternative_name = models.CharField(max_length=128, default='', blank=True)
@@ -52,9 +53,14 @@ class Discipline(models.Model):
             result = True
         return result
 
+    # @classmethod
+    # def reid(cls):
+    #     for n,x in enumerate(cls.objects.all()):
+    #         x.refcode = n+1
+    #         x.save()
 
 class DisciplineAdmin(admin.ModelAdmin):
-    list_display = ['code', 'path', 'alternative_name', 'page', 'is_linear', 'description', 'technical_notes', ]
+    list_display = ['id','code', 'path', 'alternative_name', 'page', 'is_linear', 'description', 'technical_notes', ]
     ordering = ['code']
     list_filter = ['name', 'is_linear', 'path', 'level', 'clan_0', 'clan_1', 'clan_2', 'clan_3', 'clan_4', 'clan_5', 'clan_6']
     search_fields = ['name', 'description']

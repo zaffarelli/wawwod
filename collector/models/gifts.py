@@ -43,7 +43,7 @@ logger = logging.Logger(__name__)
 
 
 class Gift(models.Model):
-    id = models.IntegerField(default=0, primary_key=True)
+    id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=128, default='')
     lower_name = models.CharField(max_length=128, default='')
     alternative_name = models.CharField(max_length=128, default='', blank=True)
