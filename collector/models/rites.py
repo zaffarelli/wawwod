@@ -6,9 +6,9 @@ from django.dispatch import receiver
 import json
 
 class Rite(models.Model):
-    refcode = models.IntegerField(default=0)
+    refcode = models.IntegerField(default=0, primary_key=True)
     code = models.CharField(max_length=256, default='', blank=True)
-    name = models.CharField(max_length=128, default='', primary_key=True)
+    name = models.CharField(max_length=128, default='', unique=True)
     path = models.CharField(max_length=128, default='', blank=True)
     level = models.PositiveIntegerField(default=0)
     creature = models.CharField(max_length=32, default='', blank=True)
