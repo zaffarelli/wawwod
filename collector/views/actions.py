@@ -162,8 +162,8 @@ def deed_select(request):
 
 
 def experiment(request):
-    from collector.models.seasons import Season
-    Season.reid()
+    from collector.models.rites import Rite
+    Rite.reid()
     return HttpResponse(status=204)
 
 
