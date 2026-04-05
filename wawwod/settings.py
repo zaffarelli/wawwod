@@ -1,4 +1,5 @@
 import os
+import tomllib
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'y-he7pukz&#$z_9c_*r7st6p6cm+tu$i9&h*gbw+z!%p4paw3!'
@@ -178,4 +179,8 @@ if DEBUG:
     mimetypes.add_type("application/javascript;charset=utf-8", ".es6", True)
     mimetypes.add_type("application/javascript;charset=utf-8", ".js", True)
 
-VERSION = '1.6.0'
+VERSION = "unknown"
+with open("pyproject.toml", "rb") as f:
+    data = tomllib.load(f)
+    VERSION = data['project']['version']
+

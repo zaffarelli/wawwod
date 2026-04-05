@@ -50984,3 +50984,4 @@ Traceback (most recent call last):
 ImportError: cannot import name 'Season' from 'collector.models.chronicles' (/home/zaffarelli/Projects/wawwod/collector/models/chronicles.py)
 [05/04 12:22:45] "GET /ajax/collector_action/experiment/ HTTP/1.1" 500 76368
 [05/04 21:32:53] "GET /static/collector/css?72bc76983e6e HTTP/1.1" 404 1805
+[05/04 21:45:21] "GET /static/collector/css?72bc76983e6e HTTP/1.1" 404 1805
