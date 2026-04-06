@@ -25,7 +25,7 @@ class Adventure(models.Model):
     is_current = models.BooleanField(default=False, blank=True)
     adventure_teaser = models.CharField(max_length=128, default='', blank=True)
     deeds_map_str = models.TextField(max_length=2048, default="", blank=True)
-    new_acronym = models.CharField(max_length=32, default='')
+    new_acronym = models.CharField(max_length=32, default='', blank=True)
 
     DEED_SEP = "|"
     WORD_SEP = ";"
@@ -221,7 +221,8 @@ class AdventureAdmin(admin.ModelAdmin):
     list_display = ['id', 'acronym', 'name', 'season_order', 'is_current', 'season', 'chronicle', 'players_starting_freebies',
                     'team',
                     'notes']
-    ordering = ['id', 'acronym']
-    list_editable = ['name', 'is_current', 'chronicle', 'season_order', 'players_starting_freebies']
+    ordering = ['season',"season_order", 'acronym']
+    list_editable = ['name', 'acronym', 'is_current', 'chronicle', 'season_order', 'players_starting_freebies']
+    list_filter = ['season_order','season']
     from collector.utils.helper import refix
     actions = [refix]

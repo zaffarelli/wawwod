@@ -2500,9 +2500,9 @@ class Creature(models.Model):
 
     @classmethod
     def bulk_load(cls, txt=""):
+        from collector.models.adventures import Adventure
         report = []
-        chronicle = get_current_chronicle()
-        adventure = chronicle.adventure
+        adventure, chronicle, _ = Adventure.current_full()
         valid_keys = ["creature", "name", "age", "generation", "trueage", "sire", "family", "aka"]
         entries = txt.splitlines()
         for entry in entries:
@@ -2676,6 +2676,36 @@ def randomize_all(modeladmin, request, queryset):
         creature.save()
     short_description = 'Randomize All'
 
+def push_to_current(modeladmin, request, queryset):
+    current = Adventure.current()
+    for creature in queryset:
+        adventures = creature.adventure.split(" ")
+        if current.acronym not in adventures:
+            adventures.append(current.acronym)
+            creature.adventure = " ".join(adventures)
+            creature.save()
+    short_description = 'Push to current adventure'
+
+
+def pull_from_current(modeladmin, request, queryset):
+    current = Adventure.current()
+    print(current)
+    for creature in queryset:
+        adventures = creature.adventure.split(" ")
+        if current.acronym in adventures:
+            adventures.remove(current.acronym)
+            creature.adventure = " ".join(adventures)
+            print("Adventures",creature.adventure)
+            creature.save()
+    short_description = 'Pull from current adventure'
+
+def remove_from_all(modeladmin, request, queryset):
+    for creature in queryset:
+        creature.adventure = ""
+        creature.save()
+    short_description = 'Remove from all adentures'
+
+
 
 class CreatureAdmin(admin.ModelAdmin):
     list_display = [  # 'domitor',
@@ -2686,7 +2716,7 @@ class CreatureAdmin(admin.ModelAdmin):
 
     actions = [no_longer_new, randomize_backgrounds, randomize_all, randomize_archetypes, randomize_attributes,
                randomize_abilities,
-               refix, set_male, set_female, push_to_munich, push_to_newyork, push_to_hamburg]
+               refix, set_male, set_female, push_to_munich, push_to_newyork, push_to_hamburg, pull_from_current, push_to_current, remove_from_all]
     list_filter = ['chronicle', 'adventure', 'is_player', 'creature', 'faction', 'family', 'is_new', 'condition',
                    'group',
                    'groupspec']

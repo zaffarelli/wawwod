@@ -60,7 +60,7 @@ class Chronicle(models.Model):
     @property
     def adventures(self):
         from collector.models.adventures import Adventure
-        return Adventure.objects.filter(chronicle=self.acronym)
+        return Adventure.objects.filter(chronicle=self.acronym).order_by("season","season_order")
 
     @classmethod
     def set_current(cls, ch=""):

@@ -36,23 +36,15 @@ def prepare_index(request):
     chronicles = []
     players = []
     # Adventure.set_current("SPI")
-    chronicle = Chronicle.current()  # get_current_chronicle()
-    plist = Creature.objects.filter(chronicle=chronicle.acronym).exclude(is_player=False).exclude(
-        adventure="").order_by('adventure')
+    # chronicle = Chronicle.current()  # get_current_chronicle()
+    ad, chronicle, _ = Adventure.current_full()
+    plist = Creature.objects.filter(chronicle=chronicle.acronym).exclude(is_player=False).exclude(adventure="").order_by('name')
     prev_a = ""
-    for ad in chronicle.adventures:
-        for p in plist:
-            adventures = p.adventure.split(" ")
-            print(p, adventures, prev_a)
-            if ad.acronym != prev_a:
-                if prev_a != "":
-                    players.append(adventure)
-                prev_a = ad.acronym
-                adventure = {'adventure': ad.name, 'acronym': ad.acronym, 'players': []}
-            if ad.acronym in p.adventure:
-                adventure['players'].append(
-                    {'name': p.name, 'rid': p.rid, 'player': p.player, 'pre_change_access': p.pre_change_access})
-        # players.append(adventure)
+
+    adventure = {'adventure': ad.name, 'acronym': ad.acronym, 'players': []}
+    for p in plist:
+        adventure['players'].append({'name': p.name, 'rid': p.rid, 'player': p.player, 'pre_change_access': p.pre_change_access})
+    players.append(adventure)
     for c in Chronicle.objects.all():
         chronicles.append(c.to_json)
     cities = []
@@ -516,7 +508,7 @@ def character_for(slug, option="", idx=-1):
         tn = c.traits_notes()
         k["traits_notes"] = tn
         print(tn)
-        chronicle = get_current_chronicle()
+        chronicle = Chronicle.current()
         if chronicle:
             k["chronicle_name"] = chronicle.name
         else:

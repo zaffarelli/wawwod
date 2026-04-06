@@ -1,5 +1,6 @@
 
 {% for x in c %}
+
     <fieldset>
         <legend>{{ x.adventure }}</legend>
         {% for p in x.players %}
@@ -14,6 +15,7 @@
             </div>
         {% endfor %}
     </fieldset>
+
 {% endfor %}
     <fieldset>
         <legend>Others</legend>
