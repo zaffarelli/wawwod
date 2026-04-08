@@ -4,25 +4,24 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('collector', '0006_rename_total_gifts_creature_total_traits'),
+        ("collector", "0006_rename_total_gifts_creature_total_traits"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='creature',
-            name='total_fetters',
+            model_name="creature",
+            name="total_fetters",
             field=models.IntegerField(default=0),
         ),
         migrations.AddField(
-            model_name='creature',
-            name='total_passions',
+            model_name="creature",
+            name="total_passions",
             field=models.IntegerField(default=0),
         ),
         migrations.AddField(
-            model_name='creature',
-            name='total_realms',
+            model_name="creature",
+            name="total_realms",
             field=models.IntegerField(default=0),
         ),
     ]

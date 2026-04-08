@@ -5,10 +5,21 @@ from django.contrib import admin
 import json
 import logging
 
-from collector.templatetags.wod_filters import as_tribe_plural
-from collector.utils.wod_reference import find_stat_property, STATS_NAMES, GM_SHORTCUTS, \
-    bloodpool, STATS_TEMPLATES, CLANS_SPECIFICS, RAGE_PER_AUSPICE, GNOSIS_PER_BREED, PER_TRIBE, RANKS, \
-    find_stat_category, ENLIGHTENMENT
+from collector.templatetags.wod_filters import as_tribe_plural, as_rank, as_breed, as_auspice
+from collector.utils.wod_reference import (
+    find_stat_property,
+    STATS_NAMES,
+    GM_SHORTCUTS,
+    bloodpool,
+    STATS_TEMPLATES,
+    CLANS_SPECIFICS,
+    RAGE_PER_AUSPICE,
+    GNOSIS_PER_BREED,
+    PER_TRIBE,
+    RANKS,
+    find_stat_category,
+    ENLIGHTENMENT,
+)
 from collector.utils.helper import json_default, toRID
 from collector.utils.wod_reference import from_stats
 from collector.models.adventures import Adventure
@@ -19,55 +30,55 @@ logger = logging.Logger(__name__)
 
 class Creature(models.Model):
     class Meta:
-        verbose_name = 'Creature'
-        ordering = ['name']
+        verbose_name = "Creature"
+        ordering = ["name"]
 
     id = models.IntegerField(primary_key=True)
-    player = models.CharField(max_length=32, blank=True, default='')
-    name = models.CharField(max_length=128, default='')
-    new_name = models.CharField(max_length=128, default='', blank=True, null=True)
-    rid = models.CharField(max_length=128, blank=True, default='')
+    player = models.CharField(max_length=32, blank=True, default="")
+    name = models.CharField(max_length=128, default="")
+    new_name = models.CharField(max_length=128, default="", blank=True, null=True)
+    rid = models.CharField(max_length=128, blank=True, default="")
     extract_priority = models.PositiveIntegerField(default=0, blank=True)
-    nickname = models.CharField(max_length=128, blank=True, default='')
+    nickname = models.CharField(max_length=128, blank=True, default="")
     primogen = models.BooleanField(default=False)
     mythic = models.BooleanField(default=False)
-    family = models.CharField(max_length=32, blank=True, default='')
+    family = models.CharField(max_length=32, blank=True, default="")
     auspice = models.PositiveIntegerField(default=0)
     breed = models.PositiveIntegerField(default=0)
-    domitor = models.CharField(max_length=128, blank=True, default='')
-    group = models.CharField(max_length=128, blank=True, default='')
-    groupspec = models.CharField(max_length=128, blank=True, default='')
-    concept = models.CharField(max_length=128, blank=True, default='')
+    domitor = models.CharField(max_length=128, blank=True, default="")
+    group = models.CharField(max_length=128, blank=True, default="")
+    groupspec = models.CharField(max_length=128, blank=True, default="")
+    concept = models.CharField(max_length=128, blank=True, default="")
     age = models.PositiveIntegerField(default=0)
     trueage = models.PositiveIntegerField(default=0)
     embrace = models.IntegerField(default=0)
-    faction = models.CharField(max_length=64, blank=True, default='')
+    faction = models.CharField(max_length=64, blank=True, default="")
     lastmod = models.DateTimeField(auto_now=True)
-    chronicle = models.CharField(max_length=8, default='WOD')
-    creature = models.CharField(max_length=20, default='kindred')
-    species = models.CharField(max_length=20, default='human')
+    chronicle = models.CharField(max_length=8, default="WOD")
+    creature = models.CharField(max_length=20, default="kindred")
+    species = models.CharField(max_length=20, default="human")
     sex = models.BooleanField(default=False)
     display_gauge = models.IntegerField(default=0)
-    display_pole = models.CharField(max_length=64, default='', blank=True)
-    residence = models.CharField(max_length=64, default='', blank=True)
+    display_pole = models.CharField(max_length=64, default="", blank=True)
+    residence = models.CharField(max_length=64, default="", blank=True)
     list_pos = models.IntegerField(default=0, blank=True)
-    challenge = models.CharField(max_length=128, default='', blank=True)
+    challenge = models.CharField(max_length=128, default="", blank=True)
     edges = models.TextField(default="", blank=True, max_length=1024)
 
     pre_change_access = models.BooleanField(blank=False, default=False)
 
     finaldeath = models.IntegerField(default=0)
     timeintorpor = models.PositiveIntegerField(default=0)
-    picture = models.CharField(max_length=128, blank=True, default='')
-    sire = models.CharField(max_length=64, blank=True, default='')
-    patron = models.CharField(max_length=64, blank=True, default='')
-    rank = models.CharField(max_length=64, blank=True, default='', null=True)
+    picture = models.CharField(max_length=128, blank=True, default="")
+    sire = models.CharField(max_length=64, blank=True, default="")
+    patron = models.CharField(max_length=64, blank=True, default="")
+    rank = models.CharField(max_length=64, blank=True, default="", null=True)
     garou_rank = models.IntegerField(blank=True, default=0, null=True)
-    topic = models.TextField(max_length=1024, blank=True, default='')
-    status = models.CharField(max_length=32, blank=True, default='OK')
-    cast_figure = models.CharField(max_length=128, blank=True, default='')
-    position = models.CharField(max_length=64, blank=True, default='')
-    reparts = models.CharField(max_length=32, blank=True, default='7_5_3_13_9_5')
+    topic = models.TextField(max_length=1024, blank=True, default="")
+    status = models.CharField(max_length=32, blank=True, default="OK")
+    cast_figure = models.CharField(max_length=128, blank=True, default="")
+    position = models.CharField(max_length=64, blank=True, default="")
+    reparts = models.CharField(max_length=32, blank=True, default="7_5_3_13_9_5")
     maj = models.PositiveIntegerField(default=0)
     need_fix = models.BooleanField(default=False)
     is_new = models.BooleanField(default=True)
@@ -83,7 +94,7 @@ class Creature(models.Model):
     extra = models.IntegerField(default=0)
     hidden = models.BooleanField(default=False)
     ghost = models.BooleanField(default=False)
-    source = models.CharField(max_length=64, blank=True, default='zaffarelli')
+    source = models.CharField(max_length=64, blank=True, default="zaffarelli")
     total_physical = models.IntegerField(default=0)
     total_social = models.IntegerField(default=0)
     total_mental = models.IntegerField(default=0)
@@ -96,34 +107,34 @@ class Creature(models.Model):
     total_fetters = models.IntegerField(default=0)
     total_realms = models.IntegerField(default=0)
 
-    nature = models.CharField(max_length=32, blank=True, default='')
-    demeanor = models.CharField(max_length=32, blank=True, default='')
-    condition = models.CharField(max_length=32, blank=True, default='OK')
-    territory = models.CharField(max_length=128, blank=True, default='')
-    weakness = models.CharField(max_length=128, blank=True, default='')
-    specialities_rationale = models.TextField(max_length=512, blank=True, default='')
+    nature = models.CharField(max_length=32, blank=True, default="")
+    demeanor = models.CharField(max_length=32, blank=True, default="")
+    condition = models.CharField(max_length=32, blank=True, default="OK")
+    territory = models.CharField(max_length=128, blank=True, default="")
+    weakness = models.CharField(max_length=128, blank=True, default="")
+    specialities_rationale = models.TextField(max_length=512, blank=True, default="")
 
-    district = models.CharField(max_length=8, blank=True, default='d01')
-    community_job = models.CharField(max_length=32, blank=True, default='')
+    district = models.CharField(max_length=8, blank=True, default="d01")
+    community_job = models.CharField(max_length=32, blank=True, default="")
 
     # Player specific
-    notes_on_backgrounds = models.TextField(max_length=2048, default='', blank=True)
-    notes_on_meritsflaws = models.TextField(max_length=2048, default='', blank=True)
-    notes_on_history = models.TextField(max_length=6144, default='', blank=True)
-    notes_on_others = models.TextField(max_length=4096, default='', blank=True)
-    notes_on_naturedemeanor = models.TextField(max_length=2048, default='', blank=True)
-    notes_on_traits = models.TextField(max_length=2048, default='', blank=True)
-    # adventure = models.ForeignKey(Adventure, on_delete=models.SET_NULL, null=True, default=None, blank=True)
-    adventure = models.CharField(max_length=32, default='', blank=True)
-    season = models.CharField(max_length=32, default='', blank=True)
+    notes_on_backgrounds = models.TextField(max_length=2048, default="", blank=True)
+    notes_on_meritsflaws = models.TextField(max_length=2048, default="", blank=True)
+    notes_on_history = models.TextField(max_length=6144, default="", blank=True)
+    notes_on_others = models.TextField(max_length=4096, default="", blank=True)
+    notes_on_naturedemeanor = models.TextField(max_length=2048, default="", blank=True)
+    notes_on_traits = models.TextField(max_length=2048, default="", blank=True)
 
-    experience_expenditure = models.TextField(max_length=1024, default='', blank=True)
+    adventure = models.CharField(max_length=32, default="", blank=True)
+    season = models.CharField(max_length=32, default="", blank=True)
+
+    experience_expenditure = models.TextField(max_length=1024, default="", blank=True)
     freebies_exp_offset = models.IntegerField(default=0)
 
     # All
     willpower = models.PositiveIntegerField(default=1)
-    equipment = models.TextField(max_length=2048, default='', blank=True)
-    notes = models.TextField(max_length=1024, default='', blank=True)
+    equipment = models.TextField(max_length=2048, default="", blank=True)
+    notes = models.TextField(max_length=1024, default="", blank=True)
 
     fury_limit = models.PositiveIntegerField(default=0)
     body_limit = models.PositiveIntegerField(default=0)
@@ -132,34 +143,34 @@ class Creature(models.Model):
     glamour = models.PositiveIntegerField(default=0)
     banality = models.PositiveIntegerField(default=0)
     nightmare = models.PositiveIntegerField(default=0)
-    realm0 = models.CharField(max_length=64, blank=True, default='')
-    realm1 = models.CharField(max_length=64, blank=True, default='')
-    realm2 = models.CharField(max_length=64, blank=True, default='')
-    realm3 = models.CharField(max_length=64, blank=True, default='')
-    realm4 = models.CharField(max_length=64, blank=True, default='')
-    legacies = models.CharField(max_length=64, blank=True, default='')
-    birthright0 = models.CharField(max_length=64, blank=True, default='')
-    birthright1 = models.CharField(max_length=64, blank=True, default='')
-    birthright2 = models.CharField(max_length=64, blank=True, default='')
-    birthright3 = models.CharField(max_length=64, blank=True, default='')
-    birthright4 = models.CharField(max_length=64, blank=True, default='')
-    antithesis = models.CharField(max_length=64, blank=True, default='')
-    house = models.CharField(max_length=64, blank=True, default='')
-    motley = models.CharField(max_length=64, blank=True, default='')
-    seeming = models.CharField(max_length=64, blank=True, default='')
+    realm0 = models.CharField(max_length=64, blank=True, default="")
+    realm1 = models.CharField(max_length=64, blank=True, default="")
+    realm2 = models.CharField(max_length=64, blank=True, default="")
+    realm3 = models.CharField(max_length=64, blank=True, default="")
+    realm4 = models.CharField(max_length=64, blank=True, default="")
+    legacies = models.CharField(max_length=64, blank=True, default="")
+    birthright0 = models.CharField(max_length=64, blank=True, default="")
+    birthright1 = models.CharField(max_length=64, blank=True, default="")
+    birthright2 = models.CharField(max_length=64, blank=True, default="")
+    birthright3 = models.CharField(max_length=64, blank=True, default="")
+    birthright4 = models.CharField(max_length=64, blank=True, default="")
+    antithesis = models.CharField(max_length=64, blank=True, default="")
+    house = models.CharField(max_length=64, blank=True, default="")
+    motley = models.CharField(max_length=64, blank=True, default="")
+    seeming = models.CharField(max_length=64, blank=True, default="")
 
     # VTM
-    path = models.CharField(max_length=64, default='Humanity')
+    path = models.CharField(max_length=64, default="Humanity")
     humanity = models.PositiveIntegerField(default=0)
     bloodpool = models.PositiveIntegerField(default=0)
     virtue0 = models.PositiveIntegerField(default=0)
     virtue1 = models.PositiveIntegerField(default=0)
     virtue2 = models.PositiveIntegerField(default=0)
-    virtue_name0 = models.CharField(max_length=32, blank=True, default='')
-    virtue_name1 = models.CharField(max_length=32, blank=True, default='')
-    virtue_name2 = models.CharField(max_length=32, blank=True, default='')
+    virtue_name0 = models.CharField(max_length=32, blank=True, default="")
+    virtue_name1 = models.CharField(max_length=32, blank=True, default="")
+    virtue_name2 = models.CharField(max_length=32, blank=True, default="")
 
-    ritual_pathes = models.CharField(max_length=128, default='', blank=True)
+    ritual_pathes = models.CharField(max_length=128, default="", blank=True)
 
     # WTA
     gnosis = models.PositiveIntegerField(default=0)
@@ -179,34 +190,34 @@ class Creature(models.Model):
     # WTO
     corpus = models.PositiveIntegerField(default=0)
     pathos = models.PositiveIntegerField(default=0)
-    regret = models.CharField(max_length=64, blank=True, default='')
-    passion0 = models.CharField(max_length=64, blank=True, default='')
-    passion1 = models.CharField(max_length=64, blank=True, default='')
-    passion2 = models.CharField(max_length=64, blank=True, default='')
-    passion3 = models.CharField(max_length=64, blank=True, default='')
-    passion4 = models.CharField(max_length=64, blank=True, default='')
-    fetter0 = models.CharField(max_length=64, blank=True, default='')
-    fetter1 = models.CharField(max_length=64, blank=True, default='')
-    fetter2 = models.CharField(max_length=64, blank=True, default='')
-    fetter3 = models.CharField(max_length=64, blank=True, default='')
-    fetter4 = models.CharField(max_length=64, blank=True, default='')
+    regret = models.CharField(max_length=64, blank=True, default="")
+    passion0 = models.CharField(max_length=64, blank=True, default="")
+    passion1 = models.CharField(max_length=64, blank=True, default="")
+    passion2 = models.CharField(max_length=64, blank=True, default="")
+    passion3 = models.CharField(max_length=64, blank=True, default="")
+    passion4 = models.CharField(max_length=64, blank=True, default="")
+    fetter0 = models.CharField(max_length=64, blank=True, default="")
+    fetter1 = models.CharField(max_length=64, blank=True, default="")
+    fetter2 = models.CharField(max_length=64, blank=True, default="")
+    fetter3 = models.CharField(max_length=64, blank=True, default="")
+    fetter4 = models.CharField(max_length=64, blank=True, default="")
 
     angst = models.PositiveIntegerField(default=0)
     psyche_willpower = models.PositiveIntegerField(default=0)
-    psyche = models.CharField(max_length=32, blank=True, default='')
-    psyche_archetype = models.CharField(max_length=32, blank=True, default='')
-    darkpassion0 = models.CharField(max_length=64, blank=True, default='')
-    darkpassion1 = models.CharField(max_length=64, blank=True, default='')
-    darkpassion2 = models.CharField(max_length=64, blank=True, default='')
-    darkpassion3 = models.CharField(max_length=64, blank=True, default='')
-    darkpassion4 = models.CharField(max_length=64, blank=True, default='')
-    thorn0 = models.CharField(max_length=64, blank=True, default='')
-    thorn1 = models.CharField(max_length=64, blank=True, default='')
-    thorn2 = models.CharField(max_length=64, blank=True, default='')
-    thorn3 = models.CharField(max_length=64, blank=True, default='')
-    thorn4 = models.CharField(max_length=64, blank=True, default='')
+    psyche = models.CharField(max_length=32, blank=True, default="")
+    psyche_archetype = models.CharField(max_length=32, blank=True, default="")
+    darkpassion0 = models.CharField(max_length=64, blank=True, default="")
+    darkpassion1 = models.CharField(max_length=64, blank=True, default="")
+    darkpassion2 = models.CharField(max_length=64, blank=True, default="")
+    darkpassion3 = models.CharField(max_length=64, blank=True, default="")
+    darkpassion4 = models.CharField(max_length=64, blank=True, default="")
+    thorn0 = models.CharField(max_length=64, blank=True, default="")
+    thorn1 = models.CharField(max_length=64, blank=True, default="")
+    thorn2 = models.CharField(max_length=64, blank=True, default="")
+    thorn3 = models.CharField(max_length=64, blank=True, default="")
+    thorn4 = models.CharField(max_length=64, blank=True, default="")
 
-    summary = models.TextField(default='', blank=True, max_length=2048)
+    summary = models.TextField(default="", blank=True, max_length=2048)
     attribute0 = models.PositiveIntegerField(default=0)
     attribute1 = models.PositiveIntegerField(default=0)
     attribute2 = models.PositiveIntegerField(default=0)
@@ -258,42 +269,42 @@ class Creature(models.Model):
     background9 = models.PositiveIntegerField(default=0)
     background10 = models.PositiveIntegerField(default=0)
     background11 = models.PositiveIntegerField(default=0)
-    trait0 = models.CharField(max_length=64, blank=True, default='')
-    trait1 = models.CharField(max_length=64, blank=True, default='')
-    trait2 = models.CharField(max_length=64, blank=True, default='')
-    trait3 = models.CharField(max_length=64, blank=True, default='')
-    trait4 = models.CharField(max_length=64, blank=True, default='')
-    trait5 = models.CharField(max_length=64, blank=True, default='')
-    trait6 = models.CharField(max_length=64, blank=True, default='')
-    trait7 = models.CharField(max_length=64, blank=True, default='')
-    trait8 = models.CharField(max_length=64, blank=True, default='')
-    trait9 = models.CharField(max_length=64, blank=True, default='')
-    trait10 = models.CharField(max_length=64, blank=True, default='')
-    trait11 = models.CharField(max_length=64, blank=True, default='')
-    trait12 = models.CharField(max_length=64, blank=True, default='')
-    trait13 = models.CharField(max_length=64, blank=True, default='')
-    trait14 = models.CharField(max_length=64, blank=True, default='')
-    trait15 = models.CharField(max_length=64, blank=True, default='')
-    merit0 = models.CharField(max_length=64, blank=True, default='')
-    merit1 = models.CharField(max_length=64, blank=True, default='')
-    merit2 = models.CharField(max_length=64, blank=True, default='')
-    merit3 = models.CharField(max_length=64, blank=True, default='')
-    merit4 = models.CharField(max_length=64, blank=True, default='')
-    flaw0 = models.CharField(max_length=64, blank=True, default='')
-    flaw1 = models.CharField(max_length=64, blank=True, default='')
-    flaw2 = models.CharField(max_length=64, blank=True, default='')
-    flaw3 = models.CharField(max_length=64, blank=True, default='')
-    flaw4 = models.CharField(max_length=64, blank=True, default='')
-    rite0 = models.CharField(max_length=64, blank=True, default='')
-    rite1 = models.CharField(max_length=64, blank=True, default='')
-    rite2 = models.CharField(max_length=64, blank=True, default='')
-    rite3 = models.CharField(max_length=64, blank=True, default='')
-    rite4 = models.CharField(max_length=64, blank=True, default='')
-    rite5 = models.CharField(max_length=64, blank=True, default='')
-    rite6 = models.CharField(max_length=64, blank=True, default='')
-    rite7 = models.CharField(max_length=64, blank=True, default='')
-    rite8 = models.CharField(max_length=64, blank=True, default='')
-    rite9 = models.CharField(max_length=64, blank=True, default='')
+    trait0 = models.CharField(max_length=64, blank=True, default="")
+    trait1 = models.CharField(max_length=64, blank=True, default="")
+    trait2 = models.CharField(max_length=64, blank=True, default="")
+    trait3 = models.CharField(max_length=64, blank=True, default="")
+    trait4 = models.CharField(max_length=64, blank=True, default="")
+    trait5 = models.CharField(max_length=64, blank=True, default="")
+    trait6 = models.CharField(max_length=64, blank=True, default="")
+    trait7 = models.CharField(max_length=64, blank=True, default="")
+    trait8 = models.CharField(max_length=64, blank=True, default="")
+    trait9 = models.CharField(max_length=64, blank=True, default="")
+    trait10 = models.CharField(max_length=64, blank=True, default="")
+    trait11 = models.CharField(max_length=64, blank=True, default="")
+    trait12 = models.CharField(max_length=64, blank=True, default="")
+    trait13 = models.CharField(max_length=64, blank=True, default="")
+    trait14 = models.CharField(max_length=64, blank=True, default="")
+    trait15 = models.CharField(max_length=64, blank=True, default="")
+    merit0 = models.CharField(max_length=64, blank=True, default="")
+    merit1 = models.CharField(max_length=64, blank=True, default="")
+    merit2 = models.CharField(max_length=64, blank=True, default="")
+    merit3 = models.CharField(max_length=64, blank=True, default="")
+    merit4 = models.CharField(max_length=64, blank=True, default="")
+    flaw0 = models.CharField(max_length=64, blank=True, default="")
+    flaw1 = models.CharField(max_length=64, blank=True, default="")
+    flaw2 = models.CharField(max_length=64, blank=True, default="")
+    flaw3 = models.CharField(max_length=64, blank=True, default="")
+    flaw4 = models.CharField(max_length=64, blank=True, default="")
+    rite0 = models.CharField(max_length=64, blank=True, default="")
+    rite1 = models.CharField(max_length=64, blank=True, default="")
+    rite2 = models.CharField(max_length=64, blank=True, default="")
+    rite3 = models.CharField(max_length=64, blank=True, default="")
+    rite4 = models.CharField(max_length=64, blank=True, default="")
+    rite5 = models.CharField(max_length=64, blank=True, default="")
+    rite6 = models.CharField(max_length=64, blank=True, default="")
+    rite7 = models.CharField(max_length=64, blank=True, default="")
+    rite8 = models.CharField(max_length=64, blank=True, default="")
+    rite9 = models.CharField(max_length=64, blank=True, default="")
 
     @property
     def creature_is(self, creature):
@@ -301,35 +312,35 @@ class Creature(models.Model):
 
     @property
     def is_ghoul(self):
-        return self.creature_is('ghoul')
+        return self.creature_is("ghoul")
 
     @property
     def is_kindred(self):
-        return self.creature_is('kindred')
+        return self.creature_is("kindred")
 
     @property
     def is_mage(self):
-        return self.creature_is('mage')
+        return self.creature_is("mage")
 
     @property
     def is_garou(self):
-        return self.creature_is('garou')
+        return self.creature_is("garou")
 
     @property
     def is_kinfolk(self):
-        return self.creature_is('kinfolk')
+        return self.creature_is("kinfolk")
 
     @property
     def is_changeling(self):
-        return self.creature_is('changeling')
+        return self.creature_is("changeling")
 
     @property
     def is_mortal(self):
-        return self.creature_is('mortal')
+        return self.creature_is("mortal")
 
     @property
     def is_undefined(self):
-        return self.creature_is('undefined')
+        return self.creature_is("undefined")
 
     def add_edge(self, rid):
         edges = self.edges.split(", ")
@@ -365,38 +376,70 @@ class Creature(models.Model):
         list = []
         candidates = Creature.objects.exclude(edges="")
         for candidate in candidates:
-            edges = candidate.edges.split(', ')
+            edges = candidate.edges.split(", ")
             if self.rid in edges:
                 list.append(candidate.name)
         return ", ".join(list)
 
     @property
     def shapeshifter(self):
-        glabro = {'strength': +2, 'dexterity': 0, 'stamina': +2,
-                  'charisma': 0, 'manipulation': -1, 'appearance': -1,
-                  'perception': 0, 'intelligence': 0, 'wits': 0}
-        crinos = {'strength': +4, 'dexterity': +1, 'stamina': +3,
-                  'charisma': 0, 'manipulation': -3, 'appearance': -10,
-                  'perception': 0, 'intelligence': 0, 'wits': 0}
-        hispo = {'strength': +3, 'dexterity': +2, 'stamina': +3,
-                 'charisma': 0, 'manipulation': -3, 'appearance': 0,
-                 'perception': 0, 'intelligence': 0, 'wits': 0}
-        lupus = {'strength': +1, 'dexterity': +2, 'stamina': +2,
-                 'charisma': 0, 'manipulation': -3, 'appearance': 0,
-                 'perception': 0, 'intelligence': 0, 'wits': 0}
+        glabro = {
+            "strength": +2,
+            "dexterity": 0,
+            "stamina": +2,
+            "charisma": 0,
+            "manipulation": -1,
+            "appearance": -1,
+            "perception": 0,
+            "intelligence": 0,
+            "wits": 0,
+        }
+        crinos = {
+            "strength": +4,
+            "dexterity": +1,
+            "stamina": +3,
+            "charisma": 0,
+            "manipulation": -3,
+            "appearance": -10,
+            "perception": 0,
+            "intelligence": 0,
+            "wits": 0,
+        }
+        hispo = {
+            "strength": +3,
+            "dexterity": +2,
+            "stamina": +3,
+            "charisma": 0,
+            "manipulation": -3,
+            "appearance": 0,
+            "perception": 0,
+            "intelligence": 0,
+            "wits": 0,
+        }
+        lupus = {
+            "strength": +1,
+            "dexterity": +2,
+            "stamina": +2,
+            "charisma": 0,
+            "manipulation": -3,
+            "appearance": 0,
+            "perception": 0,
+            "intelligence": 0,
+            "wits": 0,
+        }
         return glabro, crinos, hispo, lupus
 
     def root_family(self):
-        if self.creature == 'kindred':
-            return self.family.replace(' Antitribu', '')
+        if self.creature == "kindred":
+            return self.family.replace(" Antitribu", "")
         else:
             return self.family
 
     def get_rites(self):
         list = []
         for x in range(10):
-            rite = getattr(self, f'rite{x}', '')
-            if rite != '':
+            rite = getattr(self, f"rite{x}", "")
+            if rite != "":
                 list.append(rite)
         print(list)
         return list
@@ -404,36 +447,36 @@ class Creature(models.Model):
     def get_traits(self):
         list = []
         for x in range(16):
-            trait = getattr(self, f'trait{x}', '')
-            if trait != '':
+            trait = getattr(self, f"trait{x}", "")
+            if trait != "":
                 list.append(trait)
         return list
 
     def get_trait_value(self, label):
-        code = ''
+        code = ""
         value = -1
-        trait = ''
+        trait = ""
         for x in range(16):
-            trait = getattr(self, f'trait{x}', '')
+            trait = getattr(self, f"trait{x}", "")
             if trait.startswith(label.lower()):
-                code = f'trait{x}'
+                code = f"trait{x}"
                 value = int(trait.split(" ")[1].replace(")", ""))
                 # print(trait, value, code)
         return value, code, trait
 
     def set_trait_value(self, label, val):
-        code = ''
-        value = ''
+        code = ""
+        value = ""
         cnt = -1
         for x in range(16):
-            trait = getattr(self, f'trait{x}', '')
+            trait = getattr(self, f"trait{x}", "")
             if len(trait) > 0:
                 cnt += 1
                 if trait.startswith(label.lower()):
-                    code = f'trait{x}'
-                    value = trait.split(" ")[0] + f'({val})'
+                    code = f"trait{x}"
+                    value = trait.split(" ")[0] + f"({val})"
             # print(trait, code, value)
-        if code != '':
+        if code != "":
             setattr(self, code, value)
         else:
             setattr(self, f"trait{cnt + 1}", f"{label.title()} ({val})")
@@ -448,21 +491,21 @@ class Creature(models.Model):
             return base
         else:
             found = find_stat_property(self.creature, stat)
-            logger.info(f'Searching value of {stat} for {self.creature} ({self.name})')
-            if found == 'n/a':
-                logger.error(f'Error finding {stat} for {self.creature} ({self.name})')
+            logger.info(f"Searching value of {stat} for {self.creature} ({self.name})")
+            if found == "n/a":
+                logger.error(f"Error finding {stat} for {self.creature} ({self.name})")
                 return -1
             return getattr(self, found)
 
     def get_specialities(self):
         base = STATS_NAMES[self.creature]
-        to_be_checked = ['attributes', 'talents', 'skills', 'knowledges']
+        to_be_checked = ["attributes", "talents", "skills", "knowledges"]
         specialities = []
         for category in to_be_checked:
             list = base[category]
             for stat in list:
                 if self.value_of(stat) > 3:
-                    specialities.append(f'{stat.title()} {self.value_of(stat)}')
+                    specialities.append(f"{stat.title()} {self.value_of(stat)}")
         return specialities
 
     def get_shortcuts(self):
@@ -471,53 +514,67 @@ class Creature(models.Model):
         for s in base:
             val_attribute = self.value_of(s[0])
             val_ability = self.value_of(s[1])
-            score = f'{val_attribute + val_ability}'
+            score = f"{val_attribute + val_ability}"
             if val_ability == 0:
                 if s[1] in STATS_NAMES[self.creature]["skills"]:
-                    score = f'{val_attribute + val_ability} (D+1)'
+                    score = f"{val_attribute + val_ability} (D+1)"
                 elif s[1] in STATS_NAMES[self.creature]["knowledges"]:
-                    score = f'(N/A)'
+                    score = f"(N/A)"
             if len(s) == 3:
-                sc = f'{s[0].title()}+{s[1].title()}={score}={s[2]}'
+                sc = f"{s[0].title()}+{s[1].title()}={score}={s[2]}"
             else:
-                sc = f'{s[0].title()}+{s[1].title()}={score}'
+                sc = f"{s[0].title()}+{s[1].title()}={score}"
             shortcuts.append(sc)
         return shortcuts
 
     @property
     def storyteller_entrance(self):
-        from collector.templatetags.wod_filters import as_generation, as_rank, as_breed, as_auspice, as_tribe_plural
-        entrance = ''
-        if self.creature == 'kindred':
-            entrance = f'{self.family} {as_generation(self.background3)} ({self.group}/{self.groupspec})'
-        elif self.creature == 'garou':
-            entrance = f'{as_rank(self.garou_rank)} {as_breed(self.breed)} {as_auspice(self.auspice)} of the  {as_tribe_plural(self.family)} ({self.group})'
-        elif self.creature == 'ghoul':
-            entrance = f'Ghoul of {self.sire_name}'
-        elif self.creature == 'mage':
-            entrance = f'{self.family} tradition mage'
+        from collector.templatetags.wod_filters import (
+            as_generation,
+            as_rank,
+            as_breed,
+            as_auspice,
+            as_tribe_plural,
+        )
+
+        entrance = ""
+        if self.creature == "kindred":
+            entrance = f"{self.family} {as_generation(self.background3)} ({self.group}/{self.groupspec})"
+        elif self.creature == "garou":
+            entrance = f"{as_rank(self.garou_rank)} {as_breed(self.breed)} {as_auspice(self.auspice)} of the  {as_tribe_plural(self.family)} ({self.group})"
+        elif self.creature == "ghoul":
+            entrance = f"Ghoul of {self.sire_name}"
+        elif self.creature == "mage":
+            entrance = f"{self.family} tradition mage"
         else:
-            entrance = f'{self.concept} ({self.group})'
+            entrance = f"{self.concept} ({self.group})"
         return entrance
 
     @property
     def entrance(self):
-        from collector.templatetags.wod_filters import as_generation, as_rank, as_breed, as_auspice, as_tribe_plural
-        entrance = ''
+        from collector.templatetags.wod_filters import (
+            as_generation,
+            as_rank,
+            as_breed,
+            as_auspice,
+            as_tribe_plural,
+        )
+
+        entrance = ""
         sx = "male" if self.sex else "female"
-        if self.creature == 'kindred':
+        if self.creature == "kindred":
             g = ""
             if self.group:
-                g = f' ({self.group})'
-            entrance = f'{as_generation(self.background3)} gen. {sx} {self.family} of the {self.faction}.'
-        elif self.creature == 'garou':
+                g = f" ({self.group})"
+            entrance = f"{as_generation(self.background3)} gen. {sx} {self.family} of the {self.faction}."
+        elif self.creature == "garou":
             entrance = self.short_desc
-        elif self.creature == 'ghoul':
-            entrance = f'Ghoul of {self.sire_name}'
-        elif self.creature == 'mage':
-            entrance = f'{self.family} mage'
+        elif self.creature == "ghoul":
+            entrance = f"Ghoul of {self.sire_name}"
+        elif self.creature == "mage":
+            entrance = f"{self.family} mage"
         else:
-            entrance = f'{self.concept} ({self.group}).'
+            entrance = f"{self.concept} ({self.group})."
 
         return entrance
 
@@ -531,46 +588,53 @@ class Creature(models.Model):
     def short_desc(self):
         # from collector.utils.wod_reference import BREEDS, AUSPICES
         # desc = f"({BREEDS[self.breed]} {AUSPICES[self.auspice]} of the {as_tribe_plural(self.family)})"
-        from collector.templatetags.wod_filters import as_sex, as_rank, as_breed, as_auspice, as_tribe_plural
-        desc = f'{as_sex(self.sex)} {as_rank(self.garou_rank)} {as_breed(self.breed)} {as_auspice(self.auspice)} of the {as_tribe_plural(self.family)}'
+        from collector.templatetags.wod_filters import (
+            as_sex,
+            as_rank,
+            as_breed,
+            as_auspice,
+            as_tribe_plural,
+        )
+
+        desc = f"{as_sex(self.sex)} {as_rank(self.garou_rank)} {as_breed(self.breed)} {as_auspice(self.auspice)} of the {as_tribe_plural(self.family)}"
         return desc
 
     @property
     def freebies_per_age_threshold(self):
         aging = {
-            '0': 15,  # Neonate
-            '10': 25,
-            '20': 35,
-            '30': 45,
-            '40': 55,
-            '50': 65,
-            '60': 75,
-            '75': 100,  # Ancilla
-            '100': 120,
-            '125': 140,
-            '150': 160,
-            '175': 180,
-            '200': 200,  # Elder
-            '250': 220,
-            '300': 240,
-            '350': 260,
-            '400': 280,
-            '450': 300,
-            '500': 330,
-            '550': 360,
-            '600': 390,
-            '650': 430,
-            '700': 470,
-            '800': 520,
-            '900': 550,
-            '1000': 600,
-            '1500': 700,
-            '2000': 800,
-            '2500': 900,
-            '3000': 1000
+            "0": 15,  # Neonate
+            "10": 25,
+            "20": 35,
+            "30": 45,
+            "40": 55,
+            "50": 65,
+            "60": 75,
+            "75": 100,  # Ancilla
+            "100": 120,
+            "125": 140,
+            "150": 160,
+            "175": 180,
+            "200": 200,  # Elder
+            "250": 220,
+            "300": 240,
+            "350": 260,
+            "400": 280,
+            "450": 300,
+            "500": 330,
+            "550": 360,
+            "600": 390,
+            "650": 430,
+            "700": 470,
+            "800": 520,
+            "900": 550,
+            "1000": 600,
+            "1500": 700,
+            "2000": 800,
+            "2500": 900,
+            "3000": 1000,
         }
         time_awake = int(self.trueage) - int(self.age) - int(self.timeintorpor)
-        logger.info(f'{self.name} time awake --> {time_awake}')
+        logger.info(f"{self.name} time awake --> {time_awake}")
         x = 0
         for key, val in aging.items():
             if int(key) <= time_awake:
@@ -620,10 +684,10 @@ class Creature(models.Model):
         # Humanity
         if self.humanity < self.virtue0 + self.virtue1:
             self.humanity = self.virtue0 + self.virtue1
-        self.path = 'Humanity'
-        self.virtue_name0 = ENLIGHTENMENT[self.path]['virtues'][0]
-        self.virtue_name1 = ENLIGHTENMENT[self.path]['virtues'][1]
-        self.virtue_name2 = ENLIGHTENMENT[self.path]['virtues'][2]
+        self.path = "Humanity"
+        self.virtue_name0 = ENLIGHTENMENT[self.path]["virtues"][0]
+        self.virtue_name1 = ENLIGHTENMENT[self.path]["virtues"][1]
+        self.virtue_name2 = ENLIGHTENMENT[self.path]["virtues"][2]
 
         # Bloodpool
         self.bloodpool = 1
@@ -644,11 +708,12 @@ class Creature(models.Model):
 
     def fix_kinfolk(self):
         from collector.utils.wod_reference import ALL_TRIBES
+
         self.trueage = self.age
         if len(self.family) == 0:
             while True:
                 self.family = random.choice(ALL_TRIBES)
-                if (self.family in ["Croatans", "Bunyips", "White Howlers"]):
+                if self.family in ["Croatans", "Bunyips", "White Howlers"]:
                     pass
                 else:
                     break
@@ -657,7 +722,11 @@ class Creature(models.Model):
         # print(f"Tribe: {self.family:30} Sex: {self.sex}")
         self.expectedfreebies = self.freebies_per_mortal_age
         self.display_pole = self.groupspec
-        self.display_gauge = self.value_of('renown') + self.value_of('status') + self.value_of('pure-breed')
+        self.display_gauge = (
+                self.value_of("renown")
+                + self.value_of("status")
+                + self.value_of("pure-breed")
+        )
 
     @property
     def total_renown(self):
@@ -681,13 +750,14 @@ class Creature(models.Model):
 
     def fix_garou(self):
         from collector.utils.wod_reference import garou_rank_from_renown
+
         self.trueage = self.age
         self.garou_rank = garou_rank_from_renown(
             {
                 "auspice": int(self.auspice),
                 "glory": self.glory,
                 "honor": self.honor,
-                "wisdom": self.wisdom
+                "wisdom": self.wisdom,
             }
         )
         # Breed
@@ -720,7 +790,7 @@ class Creature(models.Model):
 
         # Tribe
         if self.family:
-            minimum_willpower = PER_TRIBE[as_tribe_plural(self.family)]['willpower']
+            minimum_willpower = PER_TRIBE[as_tribe_plural(self.family)]["willpower"]
             if self.willpower < minimum_willpower:
                 self.willpower = minimum_willpower
 
@@ -729,7 +799,9 @@ class Creature(models.Model):
             self.display_gauge -= 1
         self.display_pole = self.groupspec
         expected_freebies_by_rank = [0, 0, 30, 60, 120, 240]
-        self.expectedfreebies = self.freebies_per_mortal_age + expected_freebies_by_rank[self.garou_rank]
+        self.expectedfreebies = (
+                self.freebies_per_mortal_age + expected_freebies_by_rank[self.garou_rank]
+        )
         if self.player:
             ch = self.mychronicle
             if ch:
@@ -741,12 +813,12 @@ class Creature(models.Model):
 
     def fix_kindred(self):
         # chronicle = get_current_chronicle()
-        print(f'---------------------------------------------------------------')
-        print(f'Fixing kindred {self.name}')
+        print(f"---------------------------------------------------------------")
+        print(f"Fixing kindred {self.name}")
         # Embrace and Age
-        condi = self.condition.split('=')
+        condi = self.condition.split("=")
         if condi.count == 2:
-            if condi[0] == 'DEAD':
+            if condi[0] == "DEAD":
                 self.finaldeath == int(condi[1])
         ch = self.mychronicle
         if not self.player:
@@ -765,32 +837,39 @@ class Creature(models.Model):
             ch = self.mychronicle
             if ch:
                 self.expectedfreebies = ch.players_starting_freebies
-                print(f'{self.name} expected freebies is {self.expectedfreebies} (Player) by chronicle')
+                print(
+                    f"{self.name} expected freebies is {self.expectedfreebies} (Player) by chronicle"
+                )
             ad = self.myadventure
             if ad:
                 self.expectedfreebies = ad.players_starting_freebies
-                print(f'{self.name} expected freebies is {self.expectedfreebies} (Player) by adventure')
+                print(
+                    f"{self.name} expected freebies is {self.expectedfreebies} (Player) by adventure"
+                )
         else:
             self.expectedfreebies = self.freebies_per_age_threshold
-            print(f'{self.name} expected freebies is {self.expectedfreebies} (NPC)')
+            print(f"{self.name} expected freebies is {self.expectedfreebies} (NPC)")
         # Willpower
         if self.willpower < self.virtue2:
             self.willpower = self.virtue2
         # Humanity
         from collector.utils.wod_reference import ENLIGHTENMENT
+
         if self.path not in ENLIGHTENMENT:
-            self.path = 'Humanity'
-        self.virtue_name0 = ENLIGHTENMENT[self.path]['virtues'][0]
-        self.virtue_name1 = ENLIGHTENMENT[self.path]['virtues'][1]
-        self.virtue_name2 = ENLIGHTENMENT[self.path]['virtues'][2]
+            self.path = "Humanity"
+        self.virtue_name0 = ENLIGHTENMENT[self.path]["virtues"][0]
+        self.virtue_name1 = ENLIGHTENMENT[self.path]["virtues"][1]
+        self.virtue_name2 = ENLIGHTENMENT[self.path]["virtues"][2]
 
         if self.humanity < self.virtue0 + self.virtue1:
             self.humanity = self.virtue0 + self.virtue1
         # Bloodpool
-        self.bloodpool = bloodpool[13 - self.value_of('generation')]
+        self.bloodpool = bloodpool[13 - self.value_of("generation")]
         self.family = self.family.title()
-        self.weakness = CLANS_SPECIFICS[self.family]['clan_weakness']
-        self.display_gauge = self.value_of('generation') * 2 + self.value_of('status') * 2
+        self.weakness = CLANS_SPECIFICS[self.family]["clan_weakness"]
+        self.display_gauge = (
+                self.value_of("generation") * 2 + self.value_of("status") * 2
+        )
         self.display_pole = self.groupspec
         self.disciplinepoints = self.total_traits
         if self.sire == "":
@@ -870,7 +949,9 @@ class Creature(models.Model):
                         realexp = 0
                         freebies_exp_offset += cr
 
-                    print(f"{stat:20} Progress: {progress:10} XP:{exp:5} (calc:{realexp:5}) ({category:20})")
+                    print(
+                        f"{stat:20} Progress: {progress:10} XP:{exp:5} (calc:{realexp:5}) ({category:20})"
+                    )
                     xp_spent += realexp
             print(f">>> Done")
             self.freebies_exp_offset = freebies_exp_offset
@@ -882,6 +963,7 @@ class Creature(models.Model):
     @property
     def mychronicle(self):
         from collector.models.chronicles import Chronicle
+
         chr = None
         if self.chronicle:
             chronicles = Chronicle.objects.filter(acronym=self.chronicle)
@@ -892,6 +974,7 @@ class Creature(models.Model):
     @property
     def myseason(self):
         from collector.models.seasons import Season
+
         season = None
         adv = self.myadventure
         if adv:
@@ -903,6 +986,7 @@ class Creature(models.Model):
     @property
     def myadventure(self):
         from collector.models.adventures import Adventure
+
         adv = None
         if self.adventure:
             adventures = Adventure.objects.filter(acronym=self.adventure)
@@ -931,6 +1015,7 @@ class Creature(models.Model):
             self.garou_rank = 0
         if self.adventure:
             from collector.models.adventures import Adventure
+
             a = Adventure.objects.filter(acronym=self.adventure).first()
             if a:
                 self.chronicle = a.chronicle
@@ -945,7 +1030,7 @@ class Creature(models.Model):
         #     if ch is None:
         #         self.chronicle = "WOD"
         self.is_player = len(self.player) > 0
-        logger.info(f'Fixing ............ [{self.name}] [{self.creature}]')
+        logger.info(f"Fixing ............ [{self.name}] [{self.creature}]")
         # at:3/3/3 ab:7/5/3 b:3 w:2 f:15
         # self.freebies = -((3 + 3 + 3 + 9) * 5 + (7 + 5 + 3) * 2 + 3 + 2 + 15)
         self.freebies = 0
@@ -953,25 +1038,25 @@ class Creature(models.Model):
         self.body_limit = min(self.attribute0, self.attribute8)
 
         self.freebies = 0
-        self.freebies -= from_stats(self.creature, 'attributes') * 5
-        self.freebies -= from_stats(self.creature, 'abilities') * 2
-        self.freebies -= from_stats(self.creature, 'backgrounds')
-        self.freebies -= from_stats(self.creature, 'freebies')
+        self.freebies -= from_stats(self.creature, "attributes") * 5
+        self.freebies -= from_stats(self.creature, "abilities") * 2
+        self.freebies -= from_stats(self.creature, "backgrounds")
+        self.freebies -= from_stats(self.creature, "freebies")
 
-        if 'changeling' == self.creature:
+        if "changeling" == self.creature:
             # traits:3 realms:5 backgrounds:5 willpower:4 glamour:4, banality:3 freebies:15
             # self.freebies = 0
             # self.freebies = -((7 + 5 + 3) * 5 + (13 + 9 + 5) * 2)
             # self.freebies = -(3 * 5 + 5 * 2 + 5 * 1 + 4 + 4 * 3 - 3 + 15)
-            self.freebies -= from_stats(self.creature, 'traits') * 5
-            self.freebies -= from_stats(self.creature, 'realms') * 2
-            self.freebies -= from_stats(self.creature, 'willpower') * 1
-            self.freebies -= from_stats(self.creature, 'glamour') * 1
-            self.freebies -= from_stats(self.creature, 'banality') * 1
+            self.freebies -= from_stats(self.creature, "traits") * 5
+            self.freebies -= from_stats(self.creature, "realms") * 2
+            self.freebies -= from_stats(self.creature, "willpower") * 1
+            self.freebies -= from_stats(self.creature, "glamour") * 1
+            self.freebies -= from_stats(self.creature, "banality") * 1
             self.fix_changeling()
         # Vampire
         logger.info(f"Creature: {self.creature}")
-        if 'kindred' == self.creature:
+        if "kindred" == self.creature:
             # at:7/5/3 ab:13/9/5 b:5 d:21 v:7 wh:10 f:15
             # self.freebies = 0
             # self.freebies -= (7 + 5 + 3) * 5  # Attributes
@@ -979,15 +1064,15 @@ class Creature(models.Model):
                 self.freebies += 5
                 logger.info("Nosferatu attribute special treatment")
             # self.freebies -= (13 + 9 + 5) * 2  # Abilities
-            self.freebies -= from_stats(self.creature, 'traits') * 7
+            self.freebies -= from_stats(self.creature, "traits") * 7
             # self.freebies -= 3 * 7  # Disciplines
             # self.freebies -= (7 + 3) * 2  # Virtues
-            self.freebies -= from_stats(self.creature, 'virtues') * 2
+            self.freebies -= from_stats(self.creature, "virtues") * 2
             # self.freebies -= 5 * 1  # Backgrounds
             # self.freebies -= 15  # Pure freebies
             self.fix_kindred()
             logger.info(f"Freebies: {self.freebies}")
-        elif 'ghoul' == self.creature:
+        elif "ghoul" == self.creature:
             # self.freebies = 0
             # self.freebies -= (6 + 4 + 3) * 5  # Attributes
             # self.freebies -= (11 + 7 + 4) * 2  # Abilities
@@ -995,22 +1080,24 @@ class Creature(models.Model):
             # self.freebies -= (7 + 3) * 2  # Virtues
             # self.freebies -= 5 * 1  # Backgrounds
             # self.freebies -= 21  # Pure freebies
-            self.freebies -= from_stats(self.creature, 'traits') * 10
-            self.freebies -= from_stats(self.creature, 'virtues') * 2
+            self.freebies -= from_stats(self.creature, "traits") * 10
+            self.freebies -= from_stats(self.creature, "virtues") * 2
             self.fix_ghoul()
         # Werewolf
-        elif 'garou' == self.creature:
+        elif "garou" == self.creature:
             # at:7/5/3 ab:13/9/5 b:5 g:21 rgw:16 f:15
             # self.freebies = 0
             # self.freebies -= (7 + 5 + 3) * 5  # Attributes
             # self.freebies -= (13 + 9 + 5) * 2  # Abilities
             # self.freebies -= 3 * 7  # Gifts
             # self.freebies -= 5 * 1  # Backgrounds
-            self.freebies -= from_stats(self.creature, 'traits') * 7
+            self.freebies -= from_stats(self.creature, "traits") * 7
             self.freebies -= RAGE_PER_AUSPICE[int(self.auspice)] * 1  # Rage per Auspice
             self.freebies -= GNOSIS_PER_BREED[int(self.breed)] * 2  # Gnosis per Breed
             if self.family:
-                self.freebies -= PER_TRIBE[as_tribe_plural(self.family)]['willpower'] * 1  # Willpower per Tribe
+                self.freebies -= (
+                        PER_TRIBE[as_tribe_plural(self.family)]["willpower"] * 1
+                )  # Willpower per Tribe
             else:
                 self.freebies -= 3
             # self.freebies -= 15  # Pure freebies
@@ -1019,42 +1106,42 @@ class Creature(models.Model):
             self.fix_garou()
             self.fury_limit = math.ceil(self.rage / 2)
             self.freebies -= self.freebies_exp_offset
-        elif 'kinfolk' == self.creature:
-            self.freebies -= from_stats(self.creature, 'willpower')
+        elif "kinfolk" == self.creature:
+            self.freebies -= from_stats(self.creature, "willpower")
             self.fix_kinfolk()
 
-        elif 'fomori' == self.creature:
+        elif "fomori" == self.creature:
             # self.freebies = -((6 + 4 + 3 + 9) * 5 + (11 + 7 + 4) * 2 + 5 + 3 + 21)
-            self.freebies -= from_stats(self.creature, 'willpower')
+            self.freebies -= from_stats(self.creature, "willpower")
             self.fix_fomori()
         # Mage
-        elif 'mage' == self.creature:
+        elif "mage" == self.creature:
             # at:7/5/3 ab:13/9/5 b:5 g:21 rgw:16 f:15
             # self.freebies = -((7 + 5 + 3 + 9) * 5 + (13 + 9 + 5) * 2 + 5 + 7 * 3 + 16 + 15)
-            self.freebies -= from_stats(self.creature, 'willpower')
-            self.freebies -= from_stats(self.creature, 'arete')
-            self.freebies -= from_stats(self.creature, 'spheres')
+            self.freebies -= from_stats(self.creature, "willpower")
+            self.freebies -= from_stats(self.creature, "arete")
+            self.freebies -= from_stats(self.creature, "spheres")
             self.fix_mage()
         # Wraith
-        elif self.creature == 'wraith':
+        elif self.creature == "wraith":
             # self.freebies = -((7 + 5 + 3 + 9) * 5 + (13 + 9 + 5) * 2 + 5 * 5 + 7 + 10 + 10 + 5 * 2)
-            self.freebies -= from_stats(self.creature, 'willpower')
-            self.freebies -= from_stats(self.creature, 'arcanos')
-            self.freebies -= from_stats(self.creature, 'passions')
-            self.freebies -= from_stats(self.creature, 'fetters')
-            self.freebies -= from_stats(self.creature, 'pathos')
+            self.freebies -= from_stats(self.creature, "willpower")
+            self.freebies -= from_stats(self.creature, "arcanos")
+            self.freebies -= from_stats(self.creature, "passions")
+            self.freebies -= from_stats(self.creature, "fetters")
+            self.freebies -= from_stats(self.creature, "pathos")
             self.fix_wraith()
         # Mortal
         else:
             # self.creature = 'mortal'
             # at:3/3/3 ab:7/5/3 b:3 w:2 f:15
             # self.freebies = -((3 + 3 + 3 + 9) * 5 + (7 + 5 + 3) * 2 + 3 + 2 + 15)
-            self.freebies -= from_stats(self.creature, 'willpower')
+            self.freebies -= from_stats(self.creature, "willpower")
             self.fix_mortal()
 
         self.expectedfreebies += self.extra
         # self.challenge += f"/ef:{self.expectedfreebies:3}"
-        self.summary = f'Freebies: {self.freebies}'
+        self.summary = f"Freebies: {self.freebies}"
         self.calculate_freebies()
         # print(f"FreebiesDif .............. {self.freebiesdif:4}")
         # print(f"Freebies ................. {self.freebies:4}")
@@ -1068,78 +1155,84 @@ class Creature(models.Model):
     @property
     def roster_base(self):
         lines = []
-        if self.creature == 'ghoul':
-            lines.append(f'<b><i>{self.group}</i> ({self.position.title()})</b>')
+        if self.creature == "ghoul":
+            lines.append(f"<b><i>{self.group}</i> ({self.position.title()})</b>")
         else:
-            if (self.position):
-                lines.append(f'<b>{self.position.title()}</b>')
-            if (self.entrance):
-                lines.append(f'<i>{self.entrance}</i>')
-            if (self.group):
-                lines.append(f'<i>{self.group}</i>')
-            if (self.groupspec):
-                lines.append(f'<i>{self.groupspec}</i>')
+            if self.position:
+                lines.append(f"<b>{self.position.title()}</b>")
+            if self.entrance:
+                lines.append(f"<i>{self.entrance}</i>")
+            if self.group:
+                lines.append(f"<i>{self.group}</i>")
+            if self.groupspec:
+                lines.append(f"<i>{self.groupspec}</i>")
         if self.concept:
-            lines.append(f'<b>Concept:</b> {self.concept}')
-        if self.creature in ['kindred', 'ghoul']:
-            lines.append(f'<b>Age:</b> {self.age} (Real: {self.trueage}, Embrace: {self.embrace})')
+            lines.append(f"<b>Concept:</b> {self.concept}")
+        if self.creature in ["kindred", "ghoul"]:
+            lines.append(
+                f"<b>Age:</b> {self.age} (Real: {self.trueage}, Embrace: {self.embrace})"
+            )
         else:
-            lines.append(f'<b>Age:</b> {self.age}')
-        lines.append(f'<b>Nature (Demeanor):</b> {self.nature} ({self.demeanor})')
+            lines.append(f"<b>Age:</b> {self.age}")
+        lines.append(f"<b>Nature (Demeanor):</b> {self.nature} ({self.demeanor})")
         if self.freebies == self.expectedfreebies:
-            lines.append(f'<b>Freebies:</b> {self.freebies} [{self.condition}]')
+            lines.append(f"<b>Freebies:</b> {self.freebies} [{self.condition}]")
         else:
             lines.append(
-                f'<b>Freebies:</b> {self.freebies} ({self.expectedfreebies} / {self.freebiedif}) [{self.status}]')
+                f"<b>Freebies:</b> {self.freebies} ({self.expectedfreebies} / {self.freebiedif}) [{self.status}]"
+            )
         return "<br/>".join(lines)
 
     @property
     def roster_attributes(self):
         lines = []
         lines.append(
-            f'<br/><b>Physical  <small>({self.total_physical})</small>:</b> Strength <tt>{self.attribute0}</tt>, Dexterity <tt>{self.attribute1}</tt>, Stamina <tt>{self.attribute2}</tt>')
+            f"<br/><b>Physical  <small>({self.total_physical})</small>:</b> Strength <tt>{self.attribute0}</tt>, Dexterity <tt>{self.attribute1}</tt>, Stamina <tt>{self.attribute2}</tt>"
+        )
         lines.append(
-            f'<br/><b>Social  <small>({self.total_social})</small>:</b> Charisma <tt>{self.attribute3}</tt>, Manipulation <tt>{self.attribute4}</tt>, Appearance <tt>{self.attribute5}</tt>')
+            f"<br/><b>Social  <small>({self.total_social})</small>:</b> Charisma <tt>{self.attribute3}</tt>, Manipulation <tt>{self.attribute4}</tt>, Appearance <tt>{self.attribute5}</tt>"
+        )
         lines.append(
-            f'<br/><b>Mental <small>({self.total_mental})</small>:</b> Perception <tt>{self.attribute6}</tt>, Intelligence <tt>{self.attribute7}</tt>, Wits <tt>{self.attribute8}</tt>')
+            f"<br/><b>Mental <small>({self.total_mental})</small>:</b> Perception <tt>{self.attribute6}</tt>, Intelligence <tt>{self.attribute7}</tt>, Wits <tt>{self.attribute8}</tt>"
+        )
         return "".join(lines)
 
     @property
     def roster_talents(self):
-        str = f'<br/><b>Talents <small>({self.total_talents})</small>:</b> '
+        str = f"<br/><b>Talents <small>({self.total_talents})</small>:</b> "
         abilities_list = []
-        topics = ['talents']
+        topics = ["talents"]
         for topic in topics:
             for ability in STATS_NAMES[self.creature][topic]:
                 val = self.value_of(ability)
                 if val > 0:
-                    abilities_list.append(f'{ability.title()} <tt>{val}</tt>')
+                    abilities_list.append(f"{ability.title()} <tt>{val}</tt>")
         str = str + ", ".join(abilities_list) + "."
         return str
 
     @property
     def roster_skills(self):
-        str = f'<br/><b>Skills <small>({self.total_skills})</small>:</b> '
+        str = f"<br/><b>Skills <small>({self.total_skills})</small>:</b> "
         abilities_list = []
-        topics = ['skills']
+        topics = ["skills"]
         for topic in topics:
             for ability in STATS_NAMES[self.creature][topic]:
                 val = self.value_of(ability)
                 if val > 0:
-                    abilities_list.append(f'{ability.title()} <tt>{val}</tt>')
+                    abilities_list.append(f"{ability.title()} <tt>{val}</tt>")
         str = str + ", ".join(abilities_list) + "."
         return str
 
     @property
     def roster_knowledges(self):
-        str = f'<br/><b>Knowledges <small>({self.total_knowledges})</small>:</b> '
+        str = f"<br/><b>Knowledges <small>({self.total_knowledges})</small>:</b> "
         abilities_list = []
-        topics = ['knowledges']
+        topics = ["knowledges"]
         for topic in topics:
             for ability in STATS_NAMES[self.creature][topic]:
                 val = self.value_of(ability)
                 if val > 0:
-                    abilities_list.append(f'{ability.title()} <tt>{val}</tt>')
+                    abilities_list.append(f"{ability.title()} <tt>{val}</tt>")
         str = str + ", ".join(abilities_list) + "."
         return str
 
@@ -1149,38 +1242,45 @@ class Creature(models.Model):
         backgrounds_list = []
         merits_list = []
         flaws_list = []
-        topics = ['backgrounds']
+        topics = ["backgrounds"]
         for topic in topics:
             for ability in STATS_NAMES[self.creature][topic]:
                 val = self.value_of(ability)
                 if val > 0:
-                    backgrounds_list.append(f'{ability.title()} <tt>{val}</tt>')
+                    backgrounds_list.append(f"{ability.title()} <tt>{val}</tt>")
         if len(backgrounds_list) > 0:
             lines.append(
-                f'<br/><b>Backgrounds</b> <small>({self.total_backgrounds})</small>: {", ".join(backgrounds_list)}.')
+                f"<br/><b>Backgrounds</b> <small>({self.total_backgrounds})</small>: {', '.join(backgrounds_list)}."
+            )
         gifts_list = []
         for n in range(10):
             if getattr(self, f"trait{n}"):
                 sentence = getattr(self, f"trait{n}")
                 words = sentence.split("(")
                 val = int(words[1].split(")")[0])
-                gifts_list.append(f'{sentence.replace(" (", "&nbsp; (")}')
+                gifts_list.append(f"{sentence.replace(' (', '&nbsp; (')}")
         if len(gifts_list) > 0:
-            if self.creature == 'kindred' or self.creature == 'ghoul':
-                lines.append(f'<br/><b>Disciplines</b>: {", ".join(gifts_list)}')
+            if self.creature == "kindred" or self.creature == "ghoul":
+                lines.append(f"<br/><b>Disciplines</b>: {', '.join(gifts_list)}")
             else:
-                lines.append(f'<br/><b>Gifts</b>: {", ".join(gifts_list)}')
+                lines.append(f"<br/><b>Gifts</b>: {', '.join(gifts_list)}")
         # lines.append(f'<br/><b>Willpower</b>: {self.as_dot(self.willpower, max=20, to_spend=True)}')
-        if self.creature == 'kindred' or self.creature == 'ghoul':
+        if self.creature == "kindred" or self.creature == "ghoul":
             # lines.append(f'<br/><b>Blood Pool</b>: {self.as_dot(self.bloodpool, max=20, to_spend=True)}')
             str = f"<table><tr>"
             str += f"<td><b>Blood Pool</b></td><td><tt>{self.bloodpool}</tt></td>"
             str += f"<td><b></b></td><td><tt></tt></td>"
             str += f"<td><b>Willpower</b></td><td><tt>{self.willpower}</tt></td>"
             str += f"</tr><tr>"
-            str += f"<td><b>{self.virtue_name0}</b></td><td><tt>{self.virtue0}</tt></td>"
-            str += f"<td><b>{self.virtue_name1}</b></td><td><tt>{self.virtue1}</tt></td>"
-            str += f"<td><b>{self.virtue_name2}</b></td><td><tt>{self.virtue2}</tt></td>"
+            str += (
+                f"<td><b>{self.virtue_name0}</b></td><td><tt>{self.virtue0}</tt></td>"
+            )
+            str += (
+                f"<td><b>{self.virtue_name1}</b></td><td><tt>{self.virtue1}</tt></td>"
+            )
+            str += (
+                f"<td><b>{self.virtue_name2}</b></td><td><tt>{self.virtue2}</tt></td>"
+            )
             str += f"</tr></table>"
             lines.append(str)
             # lines.append(
@@ -1218,19 +1318,19 @@ class Creature(models.Model):
             new_rid = toRID(self.new_name)
             self.name = self.new_name
             self.rid = new_rid
-            self.new_name = ''
+            self.new_name = ""
             for x in all:
                 x.sire = new_rid
                 x.need_fix = True
                 x.save()
 
     def val_as_dots(self, val):
-        res = ''
+        res = ""
         for x in range(5):
             if x < val:
-                res += 'x'
+                res += "x"
             else:
-                res += 'o'
+                res += "o"
         res = val
         return res
 
@@ -1340,6 +1440,7 @@ class Creature(models.Model):
 
     def randomize_stat(self, stats_count=3, min_value=0, pool=0):
         from collector.utils.helper import roll
+
         stats = []
         for v in range(stats_count):
             stats.append(min_value)
@@ -1348,39 +1449,51 @@ class Creature(models.Model):
             pool -= 1
         return stats
 
-    def randomize_fields(self, field=['attribute'], pool=0, partition=0, partitions_count=1, partition_length=9, min=0):
+    def randomize_fields(
+            self,
+            field=["attribute"],
+            pool=0,
+            partition=0,
+            partitions_count=1,
+            partition_length=9,
+            min=0,
+    ):
         if pool != 0:
             points = [pool]
         else:
             points = self.reparts.split("__")[partition].split("_")
         print(points)
         for x in range(partitions_count):
-            array = self.randomize_stat(stats_count=partition_length, min_value=min, pool=int(points[x]))
+            array = self.randomize_stat(
+                stats_count=partition_length, min_value=min, pool=int(points[x])
+            )
             print(array)
             for y in range(partition_length):
                 if len(field) == 1:
                     k = (x * partition_length) + y
-                    setattr(self, f'{field[0]}{k}', array[y])
+                    setattr(self, f"{field[0]}{k}", array[y])
                 else:
-                    setattr(self, f'{field[x]}{y}', array[y])
+                    setattr(self, f"{field[x]}{y}", array[y])
 
         self.need_fix = True
 
     def randomize_abilities(self):
-        abilities_points = STATS_TEMPLATES[self.creature]['abilities'].split('/')
+        abilities_points = STATS_TEMPLATES[self.creature]["abilities"].split("/")
         pools = []
         for x in range(3):
             pools.append(int(abilities_points[x]))
         abilities = self.randomize_stats(stats_count=30, min_value=0, pools=pools)
         for t in range(10):
-            setattr(self, f'talent{t}', abilities[t])
-            setattr(self, f'skill{t}', abilities[t + 10])
-            setattr(self, f'knowledge{t}', abilities[t + 20])
+            setattr(self, f"talent{t}", abilities[t])
+            setattr(self, f"skill{t}", abilities[t + 10])
+            setattr(self, f"knowledge{t}", abilities[t + 20])
         self.need_fix = True
 
     def randomize_backgrounds(self):
-        total_backgrounds = len(STATS_NAMES[self.creature]['backgrounds'])
-        self.randomize_fields(field=['background'], pool=5, partition_length=total_backgrounds, min=0)
+        total_backgrounds = len(STATS_NAMES[self.creature]["backgrounds"])
+        self.randomize_fields(
+            field=["background"], pool=5, partition_length=total_backgrounds, min=0
+        )
 
         # background_points = from_stats(self.creature, 'backgrounds')
         # pools = []
@@ -1396,6 +1509,7 @@ class Creature(models.Model):
 
     def randomize_archetypes(self):
         from collector.models.archetypes import Archetype
+
         source = "VTM"
         if self.creature in ["kinfolk", "garou"]:
             source = "WTA"
@@ -1411,10 +1525,10 @@ class Creature(models.Model):
     def randomize_disciplines(self):
         if self.family:
             for i in range(16):
-                setattr(self, f'trait{i}', '')
+                setattr(self, f"trait{i}", "")
             x = 0
-            for d in CLANS_SPECIFICS[self.family]['disciplines']:
-                setattr(self, f'trait{x}', d)
+            for d in CLANS_SPECIFICS[self.family]["disciplines"]:
+                setattr(self, f"trait{x}", d)
                 x += 1
 
     def randomize_reparts(self):
@@ -1422,19 +1536,32 @@ class Creature(models.Model):
         abilities = STATS_TEMPLATES[self.creature]["abilities"].split("/")
         random.shuffle(attributes)
         random.shuffle(abilities)
-        self.reparts = f"{"_".join(attributes)}__{"_".join(abilities)}"
+        self.reparts = f"{'_'.join(attributes)}__{'_'.join(abilities)}"
 
     def randomize_all(self):
         if self.is_player:
             return
         self.randomize_reparts()
-        self.randomize_fields(field=['attribute'], partition=0, partitions_count=3, partition_length=3, min=1)
-        self.randomize_fields(field=['talent', 'skill', 'knowledge'], partition=1, partitions_count=3,
-                              partition_length=10, min=0)
-        total_backgrounds = len(STATS_NAMES[self.creature]['backgrounds'])
-        self.randomize_fields(field=['background'], pool=5, partition_length=total_backgrounds, min=0)
+        self.randomize_fields(
+            field=["attribute"],
+            partition=0,
+            partitions_count=3,
+            partition_length=3,
+            min=1,
+        )
+        self.randomize_fields(
+            field=["talent", "skill", "knowledge"],
+            partition=1,
+            partitions_count=3,
+            partition_length=10,
+            min=0,
+        )
+        total_backgrounds = len(STATS_NAMES[self.creature]["backgrounds"])
+        self.randomize_fields(
+            field=["background"], pool=5, partition_length=total_backgrounds, min=0
+        )
         # self.randomize_backgrounds()
-        if self.creature == 'garou':
+        if self.creature == "garou":
             self.glory = 0
             self.honnor = 0
             self.wisdom = 0
@@ -1444,7 +1571,7 @@ class Creature(models.Model):
             self.gnosis = 0
             self.nature = ""
             self.demeanor = ""
-        elif self.creature == 'kinfolk':
+        elif self.creature == "kinfolk":
             self.glory = 0
             self.honnor = 0
             self.wisdom = 0
@@ -1456,7 +1583,7 @@ class Creature(models.Model):
             self.demeanor = ""
             self.age = random.randrange(18, 55)
             # self.expected_freebies = 21
-        elif self.creature == 'kindred':
+        elif self.creature == "kindred":
             if self.family:
                 self.randomize_disciplines()
             virtues = 7
@@ -1465,41 +1592,41 @@ class Creature(models.Model):
             self.virtue2 = 1
             while virtues > 0:
                 a = random.randrange(0, 3)
-                v = getattr(self, f'virtue{a}')
+                v = getattr(self, f"virtue{a}")
                 if v < 5:
-                    setattr(self, f'virtue{a}', v + 1)
+                    setattr(self, f"virtue{a}", v + 1)
                     virtues -= 1
-            self.weakness = CLANS_SPECIFICS[self.family]['clan_weakness']
-        elif self.creature == 'ghoul':
+            self.weakness = CLANS_SPECIFICS[self.family]["clan_weakness"]
+        elif self.creature == "ghoul":
             virtues = 7
             self.virtue0 = 1
             self.virtue1 = 1
             self.virtue2 = 1
             while virtues > 0:
                 a = random.randrange(0, 3)
-                v = getattr(self, f'virtue{a}')
+                v = getattr(self, f"virtue{a}")
                 if v < 5:
-                    setattr(self, f'virtue{a}', v + 1)
+                    setattr(self, f"virtue{a}", v + 1)
                     virtues -= 1
             for x in range(4):
-                setattr(self, f'merit{x}', '')
-                setattr(self, f'flaw{x}', '')
+                setattr(self, f"merit{x}", "")
+                setattr(self, f"flaw{x}", "")
             for x in range(16):
-                setattr(self, f'trait{x}', '')
-            setattr(self, f'trait0', 'Potence (1)')
+                setattr(self, f"trait{x}", "")
+            setattr(self, f"trait0", "Potence (1)")
             domitors = Creature.objects.filter(rid=self.sire)
             if len(domitors) == 1:
                 domitor = domitors.first()
                 if domitor.family in ["Gangrel", "Ventrue"]:
-                    setattr(self, f'trait1', 'Fortitude (1)')
+                    setattr(self, f"trait1", "Fortitude (1)")
                 elif domitor.family in ["Brujah", "Toreador"]:
-                    setattr(self, f'trait1', 'Celerity (1)')
+                    setattr(self, f"trait1", "Celerity (1)")
                 elif domitor.family in ["Nosferatu"]:
-                    setattr(self, f'trait1', 'Obfuscate (1)')
+                    setattr(self, f"trait1", "Obfuscate (1)")
                 elif domitor.family in ["Malkavian", "Tremere"]:
-                    setattr(self, f'trait1', 'Auspex(2)')
+                    setattr(self, f"trait1", "Auspex(2)")
                 else:
-                    setattr(self, f'trait0', 'Potence (2)')
+                    setattr(self, f"trait0", "Potence (2)")
             # due_willpower = int(STATS_TEMPLATES[self.creature]['willpower'])
             # if self.willpower < due_willpower:
             self.willpower = self.virtue2
@@ -1511,8 +1638,8 @@ class Creature(models.Model):
             # print(f"=> BALANCE GHOUL [{self.name}].")
             offset = self.expectedfreebies - self.freebies
             while offset > 0:
-                str = ''
-                str += f'[offset={offset:3}] '
+                str = ""
+                str += f"[offset={offset:3}] "
                 solution_pick = []
                 if offset >= 15:
                     solution_pick.append(1)
@@ -1530,12 +1657,12 @@ class Creature(models.Model):
                 solution = random.choice(solution_pick)
                 # str += f'[{",".join(solution_pick)} -> {solution:2}]'
                 if solution == 1:
-                    str += f'[{f"DISCIPLINES +1]":30}'
+                    str += f"[{f'DISCIPLINES +1]':30}"
                     discipline_points += 1
                     offset -= 7
                     str += "[spend -> 7]"
                 if solution == 2:
-                    str += f'[{f"ATTR {self.position}":30}]'
+                    str += f"[{f'ATTR {self.position}':30}]"
                     if self.position == "Intelligence":
                         targets = ["Perception", "Intelligence", "Wits"]
                     elif self.position == "Enforcer":
@@ -1552,26 +1679,66 @@ class Creature(models.Model):
                         str += l
                         str += "[spend -> 5]"
                 if solution == 3:
-                    str += f'[{f"SKILL {self.position}":30}]'
+                    str += f"[{f'SKILL {self.position}':30}]"
                     if self.position == "Intelligence":
-                        targets = ["Politics", "Investigation", "Subterfuge", "Stealth", "Linguistics", "Academics"]
+                        targets = [
+                            "Politics",
+                            "Investigation",
+                            "Subterfuge",
+                            "Stealth",
+                            "Linguistics",
+                            "Academics",
+                        ]
                     elif self.position == "Enforcer":
-                        targets = ["Athletics", "Brawl", "Dodge", "Melee", "Intimidation", "Firearms"]
+                        targets = [
+                            "Athletics",
+                            "Brawl",
+                            "Dodge",
+                            "Melee",
+                            "Intimidation",
+                            "Firearms",
+                        ]
                     elif self.position == "Valet":
-                        targets = ["Alertness", "Empathy", "Etiquette", "Drive", "Linguistics"]
+                        targets = [
+                            "Alertness",
+                            "Empathy",
+                            "Etiquette",
+                            "Drive",
+                            "Linguistics",
+                        ]
                     elif self.position == "Operative":
-                        targets = ["Survival", "Investigation", "Alertness", "Technology", "Stealth"]
+                        targets = [
+                            "Survival",
+                            "Investigation",
+                            "Alertness",
+                            "Technology",
+                            "Stealth",
+                        ]
                     elif self.position == "Leisure":
-                        targets = ["Athletics", "Empathy", "Etiquette", "Performance", "Subterfuge"]
+                        targets = [
+                            "Athletics",
+                            "Empathy",
+                            "Etiquette",
+                            "Performance",
+                            "Subterfuge",
+                        ]
                     r, l = self.increase_random_stat(targets)
                     if r == 1:
                         offset -= 2
                         str += l
                         str += "[spend -> 2]"
                 if solution == 4:
-                    str += f'[{"Willpower/backgrounds":30}]'
-                    targets = ["Willpower", "Allies", "Contacts", "Resources", "Equipment", "Innovation", "Trust",
-                               "Bond"]
+                    str += f"[{'Willpower/backgrounds':30}]"
+                    targets = [
+                        "Willpower",
+                        "Allies",
+                        "Contacts",
+                        "Resources",
+                        "Equipment",
+                        "Innovation",
+                        "Trust",
+                        "Bond",
+                    ]
                     r, l = self.increase_random_stat(targets)
                     if r == 1:
                         offset -= 1
@@ -1581,9 +1748,9 @@ class Creature(models.Model):
                     print(str)
 
             if discipline_points > 0:
-                str = ''
+                str = ""
                 # potence, ref, tr = self.get_trait_value("Potence")
-                str += f'[Boost potence --> value={discipline_points}]'
+                str += f"[Boost potence --> value={discipline_points}]"
                 self.set_trait_value("Potence", discipline_points)
                 # print(str)
             self.need_fix = True
@@ -1599,7 +1766,7 @@ class Creature(models.Model):
         ch = 0
         for x in stats_set:
             stat = find_stat_property(self.creature, x)
-            if stat == 'n/a':
+            if stat == "n/a":
                 log += f"[OOPS:{x}=>{stat}"
             else:
                 old_value = getattr(self, stat)
@@ -1626,44 +1793,50 @@ class Creature(models.Model):
         rep = self.reparts.split("_")
 
         lines = []
-        lines.append(f'\n')
-        lines.append(f'{self.name}\n')
+        lines.append(f"\n")
+        lines.append(f"{self.name}\n")
         # if self.status.startswith("OK"):
         # lines.append(f" ({self.status})")
         from collector.utils.wod_reference import BREEDS, AUSPICES
+
         gender = "Male" if self.sex == 1 else "Female"
         if self.creature == "garou":
             lines.append(
-                f"{self.trueage}yo {gender} {BREEDS[self.breed]} {RANKS[self.garou_rank]} {AUSPICES[self.auspice]} of the {as_tribe_plural(self.family)}\n")
+                f"{self.trueage}yo {gender} {BREEDS[self.breed]} {RANKS[self.garou_rank]} {AUSPICES[self.auspice]} of the {as_tribe_plural(self.family)}\n"
+            )
             if len(self.community_job) > 0:
-                lines.append(f'{self.community_job} of the {self.group} ')
+                lines.append(f"{self.community_job} of the {self.group} ")
             else:
-                lines.append(f'{self.group} ')
-            lines.append(f'(Rank {self.garou_rank})\n')
+                lines.append(f"{self.group} ")
+            lines.append(f"(Rank {self.garou_rank})\n")
         elif self.creature == "kindred":
-            txt = f'{gender} Kindred, {self.generation}th {self.family}, {self.age}/{self.trueage} yo [embrace: {self.embrace}]\n'
+            txt = f"{gender} Kindred, {self.generation}th {self.family}, {self.age}/{self.trueage} yo [embrace: {self.embrace}]\n"
             lines.append(txt)
         elif self.creature == "ghoul":
             lines.append("Ghoul")
-        lines.append(f'{self.challenge}\n')
+        lines.append(f"{self.challenge}\n")
         if len(self.nature) > 0 and len(self.demeanor) > 0:
-            lines.append(f'Nature/Demeanor: {self.nature}/{self.demeanor}\n')
+            lines.append(f"Nature/Demeanor: {self.nature}/{self.demeanor}\n")
         if len(self.concept) > 0:
-            lines.append(f'Concept: {self.concept}\n')
+            lines.append(f"Concept: {self.concept}\n")
         if len(self.groupspec) > 0:
-            lines.append(f'Pack: {self.groupspec}\n')
+            lines.append(f"Pack: {self.groupspec}\n")
 
         if self.is_player:
             lines.append(
-                f'Attributes: {self.total_physical}/{rep[0]}:{self.total_social}/{rep[1]}:{self.total_mental}/{rep[2]}\n')
+                f"Attributes: {self.total_physical}/{rep[0]}:{self.total_social}/{rep[1]}:{self.total_mental}/{rep[2]}\n"
+            )
         # lines.append("```\n")
 
         lines.append(
-            f'STR {self.attribute0:2} CHA {self.attribute3:2} PER {self.attribute6:2}\n')
+            f"STR {self.attribute0:2} CHA {self.attribute3:2} PER {self.attribute6:2}\n"
+        )
         lines.append(
-            f'DEX {self.attribute1:2} MAN {self.attribute4:2} INT {self.attribute7:2}\n')
+            f"DEX {self.attribute1:2} MAN {self.attribute4:2} INT {self.attribute7:2}\n"
+        )
         lines.append(
-            f'STA {self.attribute2:2} APP {self.attribute5:2} WIT {self.attribute8:2}\n')
+            f"STA {self.attribute2:2} APP {self.attribute5:2} WIT {self.attribute8:2}\n"
+        )
         # lines.append("\n")
         lines.append(f"Willpower {self.willpower:2}  {squared(self.willpower, 10)}\n")
         if self.creature == "garou":
@@ -1676,52 +1849,57 @@ class Creature(models.Model):
             lines.append("\n")
         if self.is_player:
             lines.append(
-                f'Abilities: {self.total_talents}/{rep[3]}:{self.total_skills}/{rep[4]}:{self.total_knowledges}/{rep[5]}\\\n')
+                f"Abilities: {self.total_talents}/{rep[3]}:{self.total_skills}/{rep[4]}:{self.total_knowledges}/{rep[5]}\\\n"
+            )
         tlines = []
         slines = []
         klines = []
         for n in range(10):
             if getattr(self, f"talent{n}") > 0:
                 tlines.append(
-                    f'{STATS_NAMES[self.creature]["talents"][n].title()} {self.val_as_dots(getattr(self, f"talent{n}"))}')
+                    f"{STATS_NAMES[self.creature]['talents'][n].title()} {self.val_as_dots(getattr(self, f'talent{n}'))}"
+                )
             if getattr(self, f"skill{n}") > 0:
                 slines.append(
-                    f'{STATS_NAMES[self.creature]["skills"][n].title()} {self.val_as_dots(getattr(self, f"skill{n}"))}')
+                    f"{STATS_NAMES[self.creature]['skills'][n].title()} {self.val_as_dots(getattr(self, f'skill{n}'))}"
+                )
             if getattr(self, f"knowledge{n}") > 0:
                 klines.append(
-                    f'{STATS_NAMES[self.creature]["knowledges"][n].title()} {self.val_as_dots(getattr(self, f"knowledge{n}"))}')
-        lines.append(f'Talents: {", ".join(tlines)}.\n')
-        lines.append(f'Skills: {", ".join(slines)}.\n')
-        lines.append(f'Knowledges: {", ".join(klines)}.\n')
+                    f"{STATS_NAMES[self.creature]['knowledges'][n].title()} {self.val_as_dots(getattr(self, f'knowledge{n}'))}"
+                )
+        lines.append(f"Talents: {', '.join(tlines)}.\n")
+        lines.append(f"Skills: {', '.join(slines)}.\n")
+        lines.append(f"Knowledges: {', '.join(klines)}.\n")
 
         blines = []
         bck_len = len(STATS_NAMES[self.creature]["backgrounds"])
         for n in range(bck_len):
             if getattr(self, f"background{n}") > 0:
                 blines.append(
-                    f'{STATS_NAMES[self.creature]["backgrounds"][n].title()} {getattr(self, f"background{n}")}')
-        lines.append(f'Backgrounds: {", ".join(blines)}.\n')
+                    f"{STATS_NAMES[self.creature]['backgrounds'][n].title()} {getattr(self, f'background{n}')}"
+                )
+        lines.append(f"Backgrounds: {', '.join(blines)}.\n")
         if self.creature == "garou":
             glines = []
             for n in range(16):
                 if getattr(self, f"trait{n}").title():
-                    glines.append(f'{getattr(self, f"trait{n}")}')
+                    glines.append(f"{getattr(self, f'trait{n}')}")
             traitname = "Gifts"
-            lines.append(f'{traitname}: {", ".join(glines)}.\n')
+            lines.append(f"{traitname}: {', '.join(glines)}.\n")
         if self.creature == "kindred":
             glines = []
             for n in range(16):
                 if getattr(self, f"trait{n}").title():
-                    glines.append(f'{getattr(self, f"trait{n}")}')
+                    glines.append(f"{getattr(self, f'trait{n}')}")
             traitname = ""
-            lines.append(f'Disciplines: {", ".join(glines)}.')
+            lines.append(f"Disciplines: {', '.join(glines)}.")
         if self.creature == "garou" or self.creature == "kindred":
             rlines = []
             for n in range(10):
                 if getattr(self, f"rite{n}").title():
-                    rlines.append(f'{getattr(self, f"rite{n}")}')
+                    rlines.append(f"{getattr(self, f'rite{n}')}")
             if len(rlines) > 0:
-                lines.append(f'**Rituals**: {", ".join(rlines)}.')
+                lines.append(f"**Rituals**: {', '.join(rlines)}.")
 
         # if ("shortcuts" in options):
         #     lines.append('\\\n')
@@ -1737,8 +1915,8 @@ class Creature(models.Model):
         #         lines.append("\\\n".join(scs))
         #         # lines.append("\n```\n")
         lines.append("Health: ◻ B-1◻ I-1◻ W-2◻ M-2◻ C-5◻ I◻")
-        if ("with_hard_edges" in options):
-            lines.append('\\\n')
+        if "with_hard_edges" in options:
+            lines.append("\\\n")
             edges = self.edges.split(", ")
             if len(self.edges) > 0:
                 cstr = ""
@@ -1763,9 +1941,9 @@ class Creature(models.Model):
         self.total_social = -3
         self.total_mental = -3
         for n in range(3):
-            p = getattr(self, 'attribute%d' % (n))
-            s = getattr(self, 'attribute%d' % (n + 3))
-            m = getattr(self, 'attribute%d' % (n + 6))
+            p = getattr(self, "attribute%d" % (n))
+            s = getattr(self, "attribute%d" % (n + 3))
+            m = getattr(self, "attribute%d" % (n + 6))
             # self.freebies += (p + s + m) * 5
             self.total_physical += p
             self.total_social += s
@@ -1773,7 +1951,7 @@ class Creature(models.Model):
         if self.creature == "kindred" and self.family == "Nosferatu":
             s += 1  # Missing Apparence
             print("APP nosferatu")
-        x = (self.total_physical + self.total_social + self.total_mental)
+        x = self.total_physical + self.total_social + self.total_mental
         self.challenge += f" at:{x * 5}/{5 * (7 + 5 + 3)}"
         self.freebies += x * 5
         print(f"Freebies + Attributes ........ {self.freebies:4} {x:4}x5 {x * 5:4}")
@@ -1782,9 +1960,9 @@ class Creature(models.Model):
         self.total_skills = 0
         self.total_knowledges = 0
         for n in range(10):
-            t = getattr(self, 'talent%d' % (n))
-            s = getattr(self, 'skill%d' % (n))
-            k = getattr(self, 'knowledge%d' % (n))
+            t = getattr(self, "talent%d" % (n))
+            s = getattr(self, "skill%d" % (n))
+            k = getattr(self, "knowledge%d" % (n))
             # self.freebies += (t + s + k) * 2
             self.total_talents += t
             self.total_skills += s
@@ -1795,35 +1973,37 @@ class Creature(models.Model):
         print(f"Freebies + Abilities ......... {self.freebies:4} {x:4}x2 {x * 2:4}")
         # *** Backgrounds
         self.total_backgrounds = 0
-        for n in range(len(STATS_NAMES[self.creature]['backgrounds'])):
-            b = getattr(self, 'background%d' % (n))
+        for n in range(len(STATS_NAMES[self.creature]["backgrounds"])):
+            b = getattr(self, "background%d" % (n))
             # self.freebies += b * 1
             self.total_backgrounds += b
         self.freebies += self.total_backgrounds
         self.challenge += f" bk:{self.total_backgrounds}/{5}"
         print(
-            f"Freebies + Backgrounds ....... {self.freebies:4}   {self.total_backgrounds:4} {self.total_backgrounds:4}")
+            f"Freebies + Backgrounds ....... {self.freebies:4}   {self.total_backgrounds:4} {self.total_backgrounds:4}"
+        )
         # Merits & Flaws
         total_merits_and_flaws = 0
         for n in range(4):
-            merit = getattr(self, 'merit%d' % (n))
-            if merit != '':
+            merit = getattr(self, "merit%d" % (n))
+            if merit != "":
                 s, v = self.str2pair(merit)
                 if s:
                     self.freebies += v
                     total_merits_and_flaws += v
-            flaw = getattr(self, 'flaw%d' % (n))
-            if flaw != '':
+            flaw = getattr(self, "flaw%d" % (n))
+            if flaw != "":
                 s, v = self.str2pair(flaw)
                 if s:
                     self.freebies -= v
                     total_merits_and_flaws -= v
         print(
-            f"Freebies + Merits & Flaws .... {self.freebies:4}   {total_merits_and_flaws:4} {total_merits_and_flaws:4}")
+            f"Freebies + Merits & Flaws .... {self.freebies:4}   {total_merits_and_flaws:4} {total_merits_and_flaws:4}"
+        )
         # Traits
         self.total_traits = 0
         for i in range(16):
-            trait = getattr(self, f'trait{i}')
+            trait = getattr(self, f"trait{i}")
             # print(trait)
             if trait:
                 s, v = self.str2pair(trait)
@@ -1832,61 +2012,67 @@ class Creature(models.Model):
         # Sort traits
         traits = []
         for i in range(10):
-            traits.append(getattr(self, f'trait{i}'))
+            traits.append(getattr(self, f"trait{i}"))
         traits = filter(None, traits)
         i = 0
         for trait in traits:
-            setattr(self, f'trait{i}', trait)
+            setattr(self, f"trait{i}", trait)
             i += 1
         # Specific
-        if 'changeling' == self.creature:
-            self.freebies += getattr(self, 'glamour') * 3
-            self.freebies += getattr(self, 'willpower') * 1
+        if "changeling" == self.creature:
+            self.freebies += getattr(self, "glamour") * 3
+            self.freebies += getattr(self, "willpower") * 1
             self.freebies += self.total_traits * 5  # 5 pts per art pts
             self.freebies += self.total_realms * 2  # 2 pts per realm pts
-        elif 'garou' == self.creature:
+        elif "garou" == self.creature:
             # self.freebies += getattr(self, 'rage')
             # self.freebies += getattr(self, 'gnosis') * 2
             # self.freebies += getattr(self, 'willpower')
             self.freebies += self.total_traits * 7  # 7 pts per gift level
-            print(f"Freebies + Traits ............ {self.freebies:4} {self.total_traits:4}x7")
+            print(
+                f"Freebies + Traits ............ {self.freebies:4} {self.total_traits:4}x7"
+            )
             self.challenge += f" tr:{self.total_traits * 7}/{21}"
-            x = getattr(self, 'willpower') * 1
-            y = getattr(self, 'gnosis') * 2
-            z = getattr(self, 'rage') * 1
+            x = getattr(self, "willpower") * 1
+            y = getattr(self, "gnosis") * 2
+            z = getattr(self, "rage") * 1
             ra = RAGE_PER_AUSPICE[int(self.auspice)] * 1  # Rage per Auspice
             gn = GNOSIS_PER_BREED[int(self.breed)] * 2  # Gnosis per Breed
             wp = 0
             if self.family:
-                wp = PER_TRIBE[as_tribe_plural(self.family)]['willpower'] * 1  # Willpower per Tribe
+                wp = (
+                        PER_TRIBE[as_tribe_plural(self.family)]["willpower"] * 1
+                )  # Willpower per Tribe
             self.freebies += x + y + z
             self.challenge += f" ot:{x + y + z}/{ra + gn + wp}"
             print(f"Freebies + other ............ {self.freebies:4} {x + y + z:4}")
-        elif 'kindred' == self.creature:
+        elif "kindred" == self.creature:
             vdot = self.value_of(f"{self.creature}:freebies_per_dot:virtue")
             wdot = self.value_of(f"{self.creature}:freebies_per_dot:willpower")
             hdot = self.value_of(f"{self.creature}:freebies_per_dot:humanity")
             # Virtues
             k = 0
             for i in range(3):
-                self.freebies += getattr(self, f'virtue{i}') * vdot
-                k += getattr(self, f'virtue{i}')
+                self.freebies += getattr(self, f"virtue{i}") * vdot
+                k += getattr(self, f"virtue{i}")
             # Additional freebies
-            h = (getattr(self, 'humanity') - self.virtue0 - self.virtue1) * hdot
-            w = (getattr(self, 'willpower') - self.virtue2) * wdot
+            h = (getattr(self, "humanity") - self.virtue0 - self.virtue1) * hdot
+            w = (getattr(self, "willpower") - self.virtue2) * wdot
             self.freebies += self.total_traits * 7  # 7 pts per discipline pts
             self.freebies += h + w
             print(f"Freebies + Virtues ........... {self.freebies:4}   {k:4} {k * 2:4}")
-            print(f"Freebies + Traits ............ {self.freebies:4} {self.total_traits:4}x7 {self.total_traits * 7:4}")
+            print(
+                f"Freebies + Traits ............ {self.freebies:4} {self.total_traits:4}x7 {self.total_traits * 7:4}"
+            )
             self.challenge += f" tr:{self.total_traits * 7}/21"
             self.challenge += f" h+w:{h + w}"
-        elif 'kinfolk' == self.creature:
-            self.freebies += getattr(self, 'rage')
-            self.freebies += getattr(self, 'gnosis') * 2
-            wp = getattr(self, 'willpower')
+        elif "kinfolk" == self.creature:
+            self.freebies += getattr(self, "rage")
+            self.freebies += getattr(self, "gnosis") * 2
+            wp = getattr(self, "willpower")
             self.freebies += wp
             print(f"Freebies + Special ........... {self.freebies} {wp}")
-        elif 'ghoul' == self.creature:
+        elif "ghoul" == self.creature:
             self.freebies += self.total_traits * 7  # 7 pts per discipline pts
             vdot = self.value_of(f"{self.creature}:freebies_per_dot:virtue")
             wdot = self.value_of(f"{self.creature}:freebies_per_dot:willpower")
@@ -1894,55 +2080,58 @@ class Creature(models.Model):
             # Virtues
             k = 0
             for i in range(3):
-                self.freebies += getattr(self, f'virtue{i}') * vdot
-                k += getattr(self, f'virtue{i}')
+                self.freebies += getattr(self, f"virtue{i}") * vdot
+                k += getattr(self, f"virtue{i}")
             # Additional freebies
-            h = (getattr(self, 'humanity') - self.virtue0 - self.virtue1) * hdot
-            w = (getattr(self, 'willpower') - self.virtue2) * wdot
+            h = (getattr(self, "humanity") - self.virtue0 - self.virtue1) * hdot
+            w = (getattr(self, "willpower") - self.virtue2) * wdot
             self.freebies += h + w
-        elif 'mage' == self.creature:
-            self.freebies += getattr(self, 'arete')
-            self.freebies += getattr(self, 'quintessence')
-            self.freebies += getattr(self, 'willpower')
+        elif "mage" == self.creature:
+            self.freebies += getattr(self, "arete")
+            self.freebies += getattr(self, "quintessence")
+            self.freebies += getattr(self, "willpower")
             self.freebies += self.total_traits * 7  # 7 pts per discipline pts
-        elif 'wraith' == self.creature:
-            self.freebies += getattr(self, 'pathos')
-            self.freebies += getattr(self, 'corpus')
-            self.freebies += getattr(self, 'willpower') * 2
+        elif "wraith" == self.creature:
+            self.freebies += getattr(self, "pathos")
+            self.freebies += getattr(self, "corpus")
+            self.freebies += getattr(self, "willpower") * 2
             self.freebies += self.total_traits * 5  # 5 pts per arcanos pts
             self.freebies += self.total_passions * 2  # 2 pts per passion pts
             self.freebies += self.total_fetters  # 1 pts per passion pts
         else:
-            self.freebies += getattr(self, 'willpower')
+            self.freebies += getattr(self, "willpower")
 
         # self.freebies += + self.expectedfreebies
         self.freebiesdif = self.freebies - self.expectedfreebies
         print(
-            f"Expected Freebies / Dif / free ........... {self.freebiesdif:4} =  {self.expectedfreebies:4} - {self.freebies:4}")
+            f"Expected Freebies / Dif / free ........... {self.freebiesdif:4} =  {self.expectedfreebies:4} - {self.freebies:4}"
+        )
 
         if self.freebies == self.expectedfreebies:
-            self.status = 'READY'
+            self.status = "READY"
             self.is_new = False
         elif self.freebies > self.expectedfreebies:
-            self.status = 'OKPLUS'
+            self.status = "OKPLUS"
             self.is_new = True
         elif self.freebiesdif == 0:
-            self.status = 'OK'
+            self.status = "OK"
             self.is_new = False
         else:
-            self.status = 'UNBALANCED'
+            self.status = "UNBALANCED"
             self.is_new = True
         print(f"{self.name} > {self.freebies} {self.expectedfreebies} > {self.status}")
 
     def str2pair(self, str):
-        w = str.split(' (')
+        w = str.split(" (")
         if len(w) != 2:
             s = ""
             v = 0
-            logger.warning(f"Warning str2pair: {str} --> [{s}][{v}]: computation might be broken!")
+            logger.warning(
+                f"Warning str2pair: {str} --> [{s}][{v}]: computation might be broken!"
+            )
         else:
             s = w[0]
-            v = int(w[1].replace(')', ''))
+            v = int(w[1].replace(")", ""))
         return s, v
 
     @property
@@ -1950,40 +2139,40 @@ class Creature(models.Model):
         sires = Creature.objects.filter(rid=self.sire)
         if len(sires) == 1:
             return sires.first().name
-        return ''
+        return ""
 
     @property
     def toDict(self):
         d = {
-            'name': self.name,
-            'player': self.player,
-            'creature': self.creature,
-            'family': self.family,
-            'faction': self.faction,
-            'group': self.group,
-            'groupspec': self.groupspec,
-            'display_gauge': self.display_gauge,
-            'display_pole': self.display_pole,
-            'freebies': self.freebies,
-            'auspice': self.auspice,
-            'breed': self.breed,
-            'rank': self.garou_rank,
-            'rank_name': self.rank,
-            'condition': self.condition,
-            'rid': self.rid,
-            'position': self.position,
-            'status': self.status,
-            'generation': self.generation,
-            'ghouls': ",".join(self.retainers),
-            'sire': self.sire,
-            'index': 0,
-            'is_dead': "dead_node" if self.condition.startswith("DEAD") else "",
-            'total_traits': self.total_traits,
+            "name": self.name,
+            "player": self.player,
+            "creature": self.creature,
+            "family": self.family,
+            "faction": self.faction,
+            "group": self.group,
+            "groupspec": self.groupspec,
+            "display_gauge": self.display_gauge,
+            "display_pole": self.display_pole,
+            "freebies": self.freebies,
+            "auspice": self.auspice,
+            "breed": self.breed,
+            "rank": self.garou_rank,
+            "rank_name": self.rank,
+            "condition": self.condition,
+            "rid": self.rid,
+            "position": self.position,
+            "status": self.status,
+            "generation": self.generation,
+            "ghouls": ",".join(self.retainers),
+            "sire": self.sire,
+            "index": 0,
+            "is_dead": "dead_node" if self.condition.startswith("DEAD") else "",
+            "total_traits": self.total_traits,
         }
         return d
 
     def json_str(self):
-        sire = ''
+        sire = ""
         if self.domitor:
             sire = self.domitor
         else:
@@ -1992,24 +2181,24 @@ class Creature(models.Model):
         if self.player:
             player = self.player
         d = {
-            'name': self.name,
-            'clan': self.family,
-            'family': self.root_family(),
-            'condition': self.condition,
-            'player': player,
-            'status': self.status,
-            'sire': sire,
-            'generation': (13 - self.background3),
-            'ghost': self.ghost,
-            'primogen': self.primogen,
-            'faction': self.faction,
-            'rid': self.rid,
-            'id': 0,
-            'key': self.id,
-            'trueage': self.trueage,
-            'is_ancient': self.isAncient,
-            'children': [],
-            'ghouls': ",".join(self.retainers)
+            "name": self.name,
+            "clan": self.family,
+            "family": self.root_family(),
+            "condition": self.condition,
+            "player": player,
+            "status": self.status,
+            "sire": sire,
+            "generation": (13 - self.background3),
+            "ghost": self.ghost,
+            "primogen": self.primogen,
+            "faction": self.faction,
+            "rid": self.rid,
+            "id": 0,
+            "key": self.id,
+            "trueage": self.trueage,
+            "is_ancient": self.isAncient,
+            "children": [],
+            "ghouls": ",".join(self.retainers),
         }
         return d
 
@@ -2029,45 +2218,48 @@ class Creature(models.Model):
         return res
 
     def find_lineage(self, lockup=False):
-        """ Find the full lineage for this character
-        """
+        """Find the full lineage for this character"""
         lineage = self.toJSON()
-        lineage['children'] = []
-        lineage['generation'] = 13 - self.background3
+        lineage["children"] = []
+        lineage["generation"] = 13 - self.background3
         # infans = Creature.objects.filter(creature='kindred', sire=self.name)
-        infans = Creature.objects.filter(creature='kindred', sire=self.rid)
+        infans = Creature.objects.filter(creature="kindred", sire=self.rid)
         if infans:
             for childer in infans:
                 if childer.ghost or childer.mythic:
-                    lineage['children'].append(childer.find_lineage(True))
+                    lineage["children"].append(childer.find_lineage(True))
                 else:
                     if childer.chronicle == chronicle.acronym:
-                        lineage['children'].append(childer.find_lineage(True))
+                        lineage["children"].append(childer.find_lineage(True))
         return lineage
 
     @property
     def retainers(self):
         list = []
-        if self.creature == 'kindred':
-            ghouls = Creature.objects.filter(sire=self.rid, creature='ghoul').order_by('-trueage', 'position')
-            cnt = self.value_of('retainers')
+        if self.creature == "kindred":
+            ghouls = Creature.objects.filter(sire=self.rid, creature="ghoul").order_by(
+                "-trueage", "position"
+            )
+            cnt = self.value_of("retainers")
             for g in ghouls:
                 # g.group = f"Ghouls of {self.name}"
                 # g.groupspec = self.groupspec
                 # g.save()
-                list.append(f'{g.name} ({g.position}/{g.trueage})')
+                list.append(f"{g.name} ({g.position}/{g.trueage})")
 
             if len(ghouls) < cnt:
                 for x in range(cnt - len(ghouls)):
-                    list.append(f'Unknown {x}')
+                    list.append(f"Unknown {x}")
         return list
 
     @property
     def retainers_vals(self):
         list = []
-        if self.creature == 'kindred':
-            ghouls = Creature.objects.filter(sire=self.rid, creature='ghoul').order_by('-trueage', 'position')
-            cnt = self.value_of('retainers')
+        if self.creature == "kindred":
+            ghouls = Creature.objects.filter(sire=self.rid, creature="ghoul").order_by(
+                "-trueage", "position"
+            )
+            cnt = self.value_of("retainers")
             for g in ghouls:
                 # g.group = f"Ghouls of {self.name}"
                 # g.groupspec = self.groupspec
@@ -2082,6 +2274,7 @@ class Creature(models.Model):
     def reghoul(self):
         # from collector.models.creatures import Creature
         from random import random, randrange
+
         if self.creature == "kindred":
             if self.condition.startswith("MISSING"):
                 words = self.condition.split("=")
@@ -2091,14 +2284,16 @@ class Creature(models.Model):
                 words = ["OK", 0]
             background_retainers = self.value_of("retainers")
             if background_retainers > 0:
-                print(f"{self.name} is supposed to have {background_retainers} ghoul(s).")
+                print(
+                    f"{self.name} is supposed to have {background_retainers} ghoul(s)."
+                )
                 # Get obvious retainers
-                ghouls = Creature.objects.filter(sire=self.rid, creature='ghoul')
+                ghouls = Creature.objects.filter(sire=self.rid, creature="ghoul")
                 if len(ghouls):
                     print("    ", "Current ghouls:")
                 for g in ghouls:
                     print(f" - {g.name} {g.group} {g.position}")
-                    if g.position == '':
+                    if g.position == "":
                         x = randrange(0, 10) + 1
                         if x > 9:  # 10
                             g.position = "Leisure"
@@ -2131,7 +2326,9 @@ class Creature(models.Model):
                         retainer.chronicle = self.chronicle
                         retainer.age = randrange(15, 45)
                         if self.trueage > 50:
-                            retainer.trueage = self.trueage - randrange(15, self.trueage - 15)
+                            retainer.trueage = self.trueage - randrange(
+                                15, self.trueage - 15
+                            )
                         retainer.faction = self.faction
                         retainer.family = self.family
                         retainer.group = f"Ghouls of {self.name}"
@@ -2140,30 +2337,34 @@ class Creature(models.Model):
                         retainer.randomize_archetypes()
                         retainer.randomize_attributes()
                         retainer.randomize_abilities()
-                        retainer.source = 'zaffarelli'
+                        retainer.source = "zaffarelli"
                         retainer.name = f"{'Male' if retainer.sex else 'Female'} ghoul {x + 1} of {self.name}"
                         retainer.save()
-                        print("    -+", retainer.name, f'(domitor={retainer.sire})')
+                        print("    -+", retainer.name, f"(domitor={retainer.sire})")
             else:
                 print(f"{self.name} is not supposed to have ghouls.")
-                ghouls = Creature.objects.filter(sire=self.rid, creature='ghoul')
+                ghouls = Creature.objects.filter(sire=self.rid, creature="ghoul")
                 for g in ghouls:
                     print(f" - {g.name} {g.group} {g.position} {g.condition}")
 
         elif self.creature == "ghoul":
-            domitors = Creature.objects.filter(rid=self.sire, creature='kindred')
+            domitors = Creature.objects.filter(rid=self.sire, creature="kindred")
             if len(domitors) == 0:
                 print(f"Domitor not found for {self.name} ({self.sire}).")
             elif len(domitors) > 1:
-                print(f"ERROR: {self.name} domitor has multiple occurences... {self.sire}")
+                print(
+                    f"ERROR: {self.name} domitor has multiple occurences... {self.sire}"
+                )
 
         else:
-            print("self.reghoul(): This is neither kindred nor ghoul, nothing to do to check.")
+            print(
+                "self.reghoul(): This is neither kindred nor ghoul, nothing to do to check."
+            )
 
     @property
     def generation(self):
-        if self.creature == 'kindred':
-            return 13 - self.value_of('generation')
+        if self.creature == "kindred":
+            return 13 - self.value_of("generation")
         else:
             return 0
 
@@ -2177,17 +2378,17 @@ class Creature(models.Model):
 
         list = []
         for v in STATS_TEMPLATES[self.creature]:
-            list.append(f'{v.title()}:{STATS_TEMPLATES[self.creature][v]}')
-        return '[' + ' '.join(list) + ']'
+            list.append(f"{v.title()}:{STATS_TEMPLATES[self.creature][v]}")
+        return "[" + " ".join(list) + "]"
 
     def debuff(self):
         for i in range(10):
-            setattr(self, f'trait{i}', '')
+            setattr(self, f"trait{i}", "")
         for i in range(5):
-            setattr(self, f'merit{i}', '')
-            setattr(self, f'flaw{i}', '')
+            setattr(self, f"merit{i}", "")
+            setattr(self, f"flaw{i}", "")
         for i in range(3):
-            setattr(self, f'virtue{i}', 0)
+            setattr(self, f"virtue{i}", 0)
         if self.breed == 0:  # homid
             self.virtue0 = 5
         elif self.breed == 1:  # metis
@@ -2206,27 +2407,23 @@ class Creature(models.Model):
             self.virtue2 = 5
         kn = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
         for i in range(10):
-            kn[i] = getattr(self, f'knowledge{i}')
+            kn[i] = getattr(self, f"knowledge{i}")
         for i in range(7):
-            setattr(self, f'knowledge{i + 1}', kn[i])
-        setattr(self, f'knowledge0', 0)
-        setattr(self, f'knowledge9', kn[9])
-        setattr(self, f'background1', 0)
-        setattr(self, f'background3', 0)
-        setattr(self, f'background4', 0)
-        setattr(self, f'background5', 0)
-        setattr(self, f'background6', 0)
-        setattr(self, f'background8', 0)
-        setattr(self, f'background9', 0)
+            setattr(self, f"knowledge{i + 1}", kn[i])
+        setattr(self, f"knowledge0", 0)
+        setattr(self, f"knowledge9", kn[9])
+        setattr(self, f"background1", 0)
+        setattr(self, f"background3", 0)
+        setattr(self, f"background4", 0)
+        setattr(self, f"background5", 0)
+        setattr(self, f"background6", 0)
+        setattr(self, f"background8", 0)
+        setattr(self, f"background9", 0)
 
     def background_notes(self):
-
         fmt_list = []
         from collector.models.backgrounds import Background
         from collector.utils.wod_reference import STATS_NAMES
-        # backgrounds = ['allies', 'contacts', 'fame', 'generation', 'herd', 'influence', 'mentor', 'resources',
-        #               'retainers', 'status', 'kinfolk', 'pure breed', 'ancestors', 'rites']
-        # if self.creature in ["garou", "kindred"]:
         backgrounds = STATS_NAMES[self.creature]["backgrounds"]
         idx = 0
         print(self.notes_on_backgrounds)
@@ -2243,7 +2440,9 @@ class Creature(models.Model):
             print("--------------------- ", b, v)
             if v > 0:
                 txt_lines = []
-                entries = Background.objects.filter(name=b.title(), level__lte=v).order_by('level')
+                entries = Background.objects.filter(
+                    name=b.title(), level__lte=v
+                ).order_by("level")
                 i = 0
                 if len(entries) > 0:
                     if entries.first().cumulate:
@@ -2267,7 +2466,9 @@ class Creature(models.Model):
 
                 print(b, v, txt_lines)
                 x = "\n".join(txt_lines)
-                fmt_list.append({'idx': idx, 'item': f'{b.title()} [{v}] ', 'notes': f'{x}'})
+                fmt_list.append(
+                    {"idx": idx, "item": f"{b.title()} [{v}] ", "notes": f"{x}"}
+                )
                 idx += 1
 
         # list = self.notes_on_backgrounds.split('\r\n');
@@ -2286,6 +2487,7 @@ class Creature(models.Model):
     def rite_notes(self):
         fmt_list = []
         from collector.models.rites import Rite
+
         extended_traits = []
         rites = self.get_rites()
         list = []
@@ -2310,39 +2512,56 @@ class Creature(models.Model):
         fmt_list = []
         for e in list:
             if len(e) > 2:
-                words = e.split('§')
+                words = e.split("§")
                 fmt_list.append(
-                    {'idx': idx, 'item': f'{words[0]}', 'title': f'{words[2]}',
-                     'notes': f'{words[3]}', 'lvl': f'{words[1]}'})
+                    {
+                        "idx": idx,
+                        "item": f"{words[0]}",
+                        "title": f"{words[2]}",
+                        "notes": f"{words[3]}",
+                        "lvl": f"{words[1]}",
+                    }
+                )
                 idx += 1
         print("Rites List:")
         # print(fmt_list)
         return fmt_list
 
     def timeline(self):
-        list = self.notes_on_history.split('\r\n')
+        list = self.notes_on_history.split("\r\n")
         fmt_list = []
         idx = 0
         for e in list:
             if len(e) > 2:
-                words = e.split('§')
-                fmt_list.append({'idx': idx, 'item': f'{words[0]}', 'date': f'{words[1]}', 'notes': f'{words[2]}'})
+                words = e.split("§")
+                fmt_list.append(
+                    {
+                        "idx": idx,
+                        "item": f"{words[0]}",
+                        "date": f"{words[1]}",
+                        "notes": f"{words[2]}",
+                    }
+                )
                 idx += 1
 
         return fmt_list
 
     def others(self):
-        list = self.notes_on_others.split('\r\n')
+        list = self.notes_on_others.split("\r\n")
         fmt_list = []
         idx = 0
 
         for e in list:
-
             if len(e) > 2:
                 print(e)
-                words = e.split('§')
+                words = e.split("§")
                 print(words)
-                datum = {'idx': idx, 'item': f'{words[0]}', 'date': f'{words[1]}', 'notes': f'{words[2]} '}
+                datum = {
+                    "idx": idx,
+                    "item": f"{words[0]}",
+                    "date": f"{words[1]}",
+                    "notes": f"{words[2]} ",
+                }
                 if len(words) > 3:
                     datum["dmg"] = words[3]
                 fmt_list.append(datum)
@@ -2355,20 +2574,23 @@ class Creature(models.Model):
         idx = 0
         if self.creature in ["kindred", "ghoul"]:
             from collector.models.disciplines import Discipline
+
             extended_traits = []
             traits = self.get_traits()
             print(traits)
             for t in traits:
-                words = t.split(' (')
+                words = t.split(" (")
                 d = words[0]
                 v = words[1]
                 v2 = v[:-1]
                 v3 = int(v2)
                 # print(t, ":", d, ":", v, ":", v2, ":", v3)
                 for y in range(v3):
-                    extended_traits.append(f'{d} ({y + 1})')
+                    extended_traits.append(f"{d} ({y + 1})")
             # print(extended_traits)
-            all = Discipline.objects.filter(code__in=extended_traits).order_by('name', 'level')
+            all = Discipline.objects.filter(code__in=extended_traits).order_by(
+                "name", "level"
+            )
 
             for z in all:
                 if z.is_linear:
@@ -2390,18 +2612,19 @@ class Creature(models.Model):
                     list.append(f"{a}§{b}§{c}§{d}")
         elif self.creature in ["garou"]:
             from collector.models.gifts import Gift
+
             extended_traits = []
             traits = self.get_traits()
             # print("traits", traits)
             for t in traits:
-                words = t.split(' (')
+                words = t.split(" (")
                 d = words[0]
                 v = words[1]
                 v2 = v[:-1]
                 v3 = int(v2)
                 # print(t, ":", d, ":", v, ":", v2, ":", v3)
                 for y in range(v3):
-                    extended_traits.append(f'{d} ({y + 1})')
+                    extended_traits.append(f"{d} ({y + 1})")
             list = []
             for et in reversed(traits):
                 # print("Looking for... ", et)
@@ -2411,36 +2634,60 @@ class Creature(models.Model):
                     a = trait.name
                     b = str(trait.level)
                     c = trait.alternative_name
-                    d = "-- " + trait.gift_active_sources + " gift µ " + trait.description + " µ -- System µ " + trait.system
+                    d = (
+                            "-- "
+                            + trait.gift_active_sources
+                            + " gift µ "
+                            + trait.description
+                            + " µ -- System µ "
+                            + trait.system
+                    )
                     list.append(f"{a}§{b}§{c}§{d}")
                 else:
                     pass  # print(f"Discarded... {et}")
 
         else:
-            list = self.notes_on_traits.split('\r\n');
+            list = self.notes_on_traits.split("\r\n")
         # print("List -->", list)
         for e in list:
             if len(e) > 2:
-                words = e.split('§')
+                words = e.split("§")
                 fmt_list.append(
-                    {'idx': idx, 'item': f'{words[0].upper()}', 'score': f'{words[1]}', 'title': f'{words[2]}',
-                     'notes': f'{words[3]}'})
+                    {
+                        "idx": idx,
+                        "item": f"{words[0].upper()}",
+                        "score": f"{words[1]}",
+                        "title": f"{words[2]}",
+                        "notes": f"{words[3]}",
+                    }
+                )
                 idx += 1
         return fmt_list
 
     def nature_notes(self):
         fmt_list = []
         from collector.models.archetypes import Archetype
+
         archetypes = Archetype.objects.filter(name=self.nature)
         if len(archetypes) == 1:
             archetype = archetypes.first()
-            fmt_list.append({'idx': 0, 'item': f'{archetype.name.upper()} [nature: what you are]',
-                             'notes': f'{archetype.description}µSystem:{archetype.system}'})
+            fmt_list.append(
+                {
+                    "idx": 0,
+                    "item": f"{archetype.name.upper()} [nature: what you are]",
+                    "notes": f"{archetype.description}µSystem:{archetype.system}",
+                }
+            )
         archetypes = Archetype.objects.filter(name=self.demeanor)
         if len(archetypes) == 1:
             archetype = archetypes.first()
-            fmt_list.append({'idx': 1, 'item': f'{archetype.name.upper()} [demeanor: how you behave]',
-                             'notes': f'{archetype.description}'})
+            fmt_list.append(
+                {
+                    "idx": 1,
+                    "item": f"{archetype.name.upper()} [demeanor: how you behave]",
+                    "notes": f"{archetype.description}",
+                }
+            )
 
         # else:
         #     list = self.notes_on_naturedemeanor.split('\r\n');
@@ -2453,18 +2700,24 @@ class Creature(models.Model):
         return fmt_list
 
     def meritsflaws_notes(self):
-        list = self.notes_on_meritsflaws.split('\r\n');
+        list = self.notes_on_meritsflaws.split("\r\n")
         print("meritsflaws:", len(list))
         fmt_list = []
         idx = 0
         for e in list:
             if len(e) > 2:
-                words = e.split('§')
+                words = e.split("§")
                 print("words:", len(words))
                 if len(words) >= 4:
                     fmt_list.append(
-                        {'idx': idx, 'item': f'{words[0].upper()}', 'type': f'{words[1]}', 'value': f'{words[2]}',
-                         'notes': f'{words[3]}'})
+                        {
+                            "idx": idx,
+                            "item": f"{words[0].upper()}",
+                            "type": f"{words[1]}",
+                            "value": f"{words[2]}",
+                            "notes": f"{words[3]}",
+                        }
+                    )
                     idx += 1
         return fmt_list
 
@@ -2472,6 +2725,49 @@ class Creature(models.Model):
         if self.creature in ["kindred", "ghoul"]:
             from collector.models.disciplines import Discipline
             pass
+
+    def randomize_gifts(self):
+        if self.creature == "garou":
+            from collector.utils.helper import roll
+            from collector.models.gifts import Gift
+            from collector.utils.wod_reference import ALL_TRIBES, BREEDS, AUSPICES
+            print("Randomize Gifts")
+            str = f'''Rank:    {self.garou_rank:<20} {as_rank(self.garou_rank)}
+Breed:   {self.breed:<20} {as_breed(self.breed)}
+Auspice: {self.auspice:<20} {as_auspice(self.auspice)}
+Tribe:   {self.family:<20} {as_tribe_plural(self.family)}
+'''
+            print(str)
+            if self.garou_rank > 0:
+                for x in range(16):
+                    setattr(self, f"trait{x}", "")
+                n = 0
+                for r in range(self.garou_rank):
+
+                    breed_gifts = Gift.breed_gifts(self.breed, r + 1)
+                    auspice_gifts = Gift.auspice_gifts(self.auspice, r+1)
+                    tribe_gifts = Gift.tribe_gifts(as_tribe_plural(self.family), r+1)
+                    print(f"Rank {r+1} Tribe: {self.family}")
+                    for tg in tribe_gifts:
+                        print(f"- {tg.pretty_str}")
+                    if len(breed_gifts)>0:
+                        breed_gift = breed_gifts[roll(faces=len(breed_gifts))-1]
+                        print(f"Breed: {breed_gift.pretty_str}")
+                        setattr(self, f"trait{n}", breed_gift.pretty_str)
+                        n += 1
+                    if len(auspice_gifts)>0:
+                        auspice_gift = auspice_gifts[roll(faces=len(auspice_gifts))-1]
+                        print(f"Auspice: {auspice_gift.pretty_str}")
+                        setattr(self, f"trait{n}", auspice_gift.pretty_str)
+                        n += 1
+                    if len(tribe_gifts)>0:
+                        tribe_gift = tribe_gifts[roll(faces=len(tribe_gifts))-1]
+                        print(f"Tribe: {tribe_gift.pretty_str}")
+                        setattr(self, f"trait{n}", tribe_gift.pretty_str)
+                        n += 1
+                self.save()
+        else:
+            logger.info("Not a garou.")
 
     @property
     def ritualistic_discipline(self):
@@ -2481,6 +2777,7 @@ class Creature(models.Model):
         result = ""
         if self.creature == "kindred":
             from collector.models.disciplines import Discipline
+
             disciplines = self.get_traits()
             for discipline in disciplines:
                 print(discipline)
@@ -2501,9 +2798,19 @@ class Creature(models.Model):
     @classmethod
     def bulk_load(cls, txt=""):
         from collector.models.adventures import Adventure
+
         report = []
         adventure, chronicle, _ = Adventure.current_full()
-        valid_keys = ["creature", "name", "age", "generation", "trueage", "sire", "family", "aka"]
+        valid_keys = [
+            "creature",
+            "name",
+            "age",
+            "generation",
+            "trueage",
+            "sire",
+            "family",
+            "aka",
+        ]
         entries = txt.splitlines()
         for entry in entries:
             properties = {}
@@ -2530,7 +2837,7 @@ class Creature(models.Model):
                                     if key == "generation":
                                         print("generation")
                                     elif key == "aka":
-                                        properties['nickname'] = value
+                                        properties["nickname"] = value
                                     elif key == "sire":
                                         properties[key] = toRID(value)
                                     else:
@@ -2554,8 +2861,13 @@ class Creature(models.Model):
         data = {}
         ghouls = cls.objects.filter(creature="ghoul", chronicle=chr)
         for ghoul in ghouls:
-            ghoul_entry = {"rid": ghoul.rid, "name": ghoul.name, "position": ghoul.position, "age": ghoul.age,
-                           "trueage": ghoul.trueage}
+            ghoul_entry = {
+                "rid": ghoul.rid,
+                "name": ghoul.name,
+                "position": ghoul.position,
+                "age": ghoul.age,
+                "trueage": ghoul.trueage,
+            }
             domitors = cls.objects.filter(creature="kindred", rid=ghoul.sire)
             if len(domitors) == 1:
                 domitor = domitors.first()
@@ -2568,25 +2880,24 @@ class Creature(models.Model):
 
     @classmethod
     def reid(cls):
-        for n,x in enumerate(cls.objects.all()):
-            x.refcode = n+1
+        for n, x in enumerate(cls.objects.all()):
+            x.refcode = n + 1
             x.save()
-
 
 
 def refix(modeladmin, request, queryset):
     for creature in queryset:
         creature.need_fix = True
         creature.save()
-    short_description = 'Fix creature'
+    short_description = "Fix creature"
 
 
 def push_to_RAM(modeladmin, request, queryset):
     for creature in queryset:
-        creature.chronicle = 'RAM'
+        creature.chronicle = "RAM"
         creature.need_fix = True
         creature.save()
-    short_description = 'Push to Rage Across Munich'
+    short_description = "Push to Rage Across Munich"
 
 
 def set_female(modeladmin, request, queryset):
@@ -2594,7 +2905,7 @@ def set_female(modeladmin, request, queryset):
         creature.sex = False
         creature.need_fix = True
         creature.save()
-    short_description = 'Make female'
+    short_description = "Make female"
 
 
 def set_male(modeladmin, request, queryset):
@@ -2602,7 +2913,7 @@ def set_male(modeladmin, request, queryset):
         creature.sex = True
         creature.need_fix = True
         creature.save()
-    short_description = 'Make male'
+    short_description = "Make male"
 
 
 def no_longer_new(modeladmin, request, queryset):
@@ -2610,32 +2921,32 @@ def no_longer_new(modeladmin, request, queryset):
         creature.is_new = False
         creature.need_fix = True
         creature.save()
-    short_description = 'No longer new'
+    short_description = "No longer new"
 
 
 def push_to_newyork(modeladmin, request, queryset):
     for creature in queryset:
-        creature.chronicle = 'UNY'
+        creature.chronicle = "UNY"
         creature.need_fix = True
         creature.save()
-    short_description = 'Push to New York City'
+    short_description = "Push to New York City"
 
 
 def push_to_munich(modeladmin, request, queryset):
     for creature in queryset:
-        creature.chronicle = 'GMU'
-        creature.adventure = 'TWT'
+        creature.chronicle = "GMU"
+        creature.adventure = "TWT"
         creature.need_fix = True
         creature.save()
-    short_description = 'Push to Munich'
+    short_description = "Push to Munich"
 
 
 def push_to_hamburg(modeladmin, request, queryset):
     for creature in queryset:
-        creature.chronicle = 'GHH'
+        creature.chronicle = "GHH"
         creature.need_fix = True
         creature.save()
-    short_description = 'Push to the Hamburg'
+    short_description = "Push to the Hamburg"
 
 
 def randomize_attributes(modeladmin, request, queryset):
@@ -2643,7 +2954,7 @@ def randomize_attributes(modeladmin, request, queryset):
         creature.randomize_attributes()
         creature.need_fix = True
         creature.save()
-    short_description = 'Randomize Attributes'
+    short_description = "Randomize Attributes"
 
 
 def randomize_abilities(modeladmin, request, queryset):
@@ -2651,7 +2962,7 @@ def randomize_abilities(modeladmin, request, queryset):
         creature.randomize_abilities()
         creature.need_fix = True
         creature.save()
-    short_description = 'Randomize Abilities'
+    short_description = "Randomize Abilities"
 
 
 def randomize_backgrounds(modeladmin, request, queryset):
@@ -2659,14 +2970,14 @@ def randomize_backgrounds(modeladmin, request, queryset):
         creature.randomize_backgrounds()
         creature.need_fix = True
         creature.save()
-    short_description = 'Randomize Backgrounds'
+    short_description = "Randomize Backgrounds"
 
 
 def randomize_archetypes(modeladmin, request, queryset):
     for creature in queryset:
         creature.randomize_archetypes()
         creature.save()
-    short_description = 'Randomize Backgrounds'
+    short_description = "Randomize Backgrounds"
 
 
 def randomize_all(modeladmin, request, queryset):
@@ -2674,7 +2985,14 @@ def randomize_all(modeladmin, request, queryset):
         creature.randomize_all()
         creature.need_fix = True
         creature.save()
-    short_description = 'Randomize All'
+    short_description = "Randomize All"
+
+
+def randomize_gifts(modeladmin, request, queryset):
+    for creature in queryset:
+        creature.randomize_gifts()
+    short_description = "Randomize Gifts"
+
 
 def push_to_current(modeladmin, request, queryset):
     current = Adventure.current()
@@ -2684,7 +3002,7 @@ def push_to_current(modeladmin, request, queryset):
             adventures.append(current.acronym)
             creature.adventure = " ".join(adventures)
             creature.save()
-    short_description = 'Push to current adventure'
+    short_description = "Push to current adventure"
 
 
 def pull_from_current(modeladmin, request, queryset):
@@ -2695,33 +3013,84 @@ def pull_from_current(modeladmin, request, queryset):
         if current.acronym in adventures:
             adventures.remove(current.acronym)
             creature.adventure = " ".join(adventures)
-            print("Adventures",creature.adventure)
+            print("Adventures", creature.adventure)
             creature.save()
-    short_description = 'Pull from current adventure'
+    short_description = "Pull from current adventure"
+
 
 def remove_from_all(modeladmin, request, queryset):
     for creature in queryset:
         creature.adventure = ""
         creature.save()
-    short_description = 'Remove from all adentures'
-
+    short_description = "Remove from all adentures"
 
 
 class CreatureAdmin(admin.ModelAdmin):
     list_display = [  # 'domitor',
-        'id','name', 'age', 'season', 'adventure', 'chronicle', "equipment", 'edge_for', 'cast_figure', 'family',
-        'freebies', 'player', 'experience_expenditure', "experience", "exp_pool", "exp_spent",
-        'family', 'groupspec', 'status', 'condition', "freebies_exp_offset"]
-    ordering = ['-trueage', 'name', 'group', 'creature']
+        "id",
+        "name",
+        "age",
+        "season",
+        "adventure",
+        "chronicle",
+        "equipment",
+        "edge_for",
+        "cast_figure",
+        "family",
+        "freebies",
+        "player",
+        "experience_expenditure",
+        "experience",
+        "exp_pool",
+        "exp_spent",
+        "family",
+        "groupspec",
+        "status",
+        "condition",
+        "freebies_exp_offset",
+    ]
+    ordering = ["-trueage", "name", "group", "creature"]
 
-    actions = [no_longer_new, randomize_backgrounds, randomize_all, randomize_archetypes, randomize_attributes,
-               randomize_abilities,
-               refix, set_male, set_female, push_to_munich, push_to_newyork, push_to_hamburg, pull_from_current, push_to_current, remove_from_all]
-    list_filter = ['chronicle', 'adventure', 'is_player', 'creature', 'faction', 'family', 'is_new', 'condition',
-                   'group',
-                   'groupspec']
-    search_fields = ['name', 'groupspec', 'sire']
-    list_editable = ['groupspec', 'adventure', 'cast_figure', "player", "experience", "exp_pool", "exp_spent",
-                     "experience_expenditure"]
+    actions = [
+        no_longer_new,
+        randomize_backgrounds,
+        randomize_all,
+        randomize_archetypes,
+        randomize_attributes,
+        randomize_abilities,
+        randomize_gifts,
+        refix,
+        set_male,
+        set_female,
+        push_to_munich,
+        push_to_newyork,
+        push_to_hamburg,
+        pull_from_current,
+        push_to_current,
+        remove_from_all,
+    ]
+    list_filter = [
+        "chronicle",
+        "adventure",
+        "is_player",
+        "creature",
+        "faction",
+        "family",
+        "is_new",
+        "condition",
+        "group",
+        "groupspec",
+    ]
+    search_fields = ["name", "groupspec", "sire"]
+    list_editable = [
+        "groupspec",
+        "adventure",
+        "cast_figure",
+        "player",
+        "experience",
+        "exp_pool",
+        "exp_spent",
+        "experience_expenditure",
+    ]
 
     list_per_page = 20

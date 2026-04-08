@@ -5,23 +5,38 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('storytelling', '0014_auto_20210806_1543'),
+        ("storytelling", "0014_auto_20210806_1543"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='ExternalLink',
+            name="ExternalLink",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('url', models.CharField(blank=True, default='', max_length=1024)),
-                ('name', models.CharField(blank=True, default='', max_length=256)),
-                ('notes', models.TextField(blank=True, default='', max_length=1024)),
-                ('parent_scene', models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, related_name='parent_scene', to='storytelling.scene')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("url", models.CharField(blank=True, default="", max_length=1024)),
+                ("name", models.CharField(blank=True, default="", max_length=256)),
+                ("notes", models.TextField(blank=True, default="", max_length=1024)),
+                (
+                    "parent_scene",
+                    models.ForeignKey(
+                        null=True,
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="parent_scene",
+                        to="storytelling.scene",
+                    ),
+                ),
             ],
             options={
-                'ordering': ['name'],
+                "ordering": ["name"],
             },
         ),
     ]

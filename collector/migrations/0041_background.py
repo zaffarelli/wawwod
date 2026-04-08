@@ -4,19 +4,26 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('collector', '0040_archetype'),
+        ("collector", "0040_archetype"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Background',
+            name="Background",
             fields=[
-                ('code', models.CharField(default='?', max_length=128, primary_key=True, serialize=False)),
-                ('name', models.CharField(default='', max_length=128)),
-                ('level', models.PositiveIntegerField(blank=True, default=1)),
-                ('description', models.TextField(blank=True, default='', max_length=1024)),
+                (
+                    "code",
+                    models.CharField(
+                        default="?", max_length=128, primary_key=True, serialize=False
+                    ),
+                ),
+                ("name", models.CharField(default="", max_length=128)),
+                ("level", models.PositiveIntegerField(blank=True, default=1)),
+                (
+                    "description",
+                    models.TextField(blank=True, default="", max_length=1024),
+                ),
             ],
         ),
     ]

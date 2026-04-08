@@ -4,15 +4,14 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('collector', '0110_rename_current_adventure_is_current_and_more'),
+        ("collector", "0110_rename_current_adventure_is_current_and_more"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='sept',
-            name='treemap',
-            field=models.TextField(blank=True, default='{}', max_length=16384),
+            model_name="sept",
+            name="treemap",
+            field=models.TextField(blank=True, default="{}", max_length=16384),
         ),
     ]

@@ -4,15 +4,14 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('collector', '0086_alter_sept_treemap'),
+        ("collector", "0086_alter_sept_treemap"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='gift',
-            name='references',
-            field=models.CharField(blank=True, default='', max_length=256),
+            model_name="gift",
+            name="references",
+            field=models.CharField(blank=True, default="", max_length=256),
         ),
     ]

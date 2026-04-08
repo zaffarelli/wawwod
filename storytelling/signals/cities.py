@@ -3,8 +3,6 @@ from django.dispatch import receiver
 from storytelling.models.cities import City
 
 
-@receiver(pre_save, sender=City, dispatch_uid='update_cities')
+@receiver(pre_save, sender=City, dispatch_uid="update_cities")
 def update_cities(sender, instance, **kwargs):
-   instance.fix()
-
-
+    instance.fix()

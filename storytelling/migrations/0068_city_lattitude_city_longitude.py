@@ -4,20 +4,19 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('storytelling', '0067_city_code_property_city_geojson_file_and_more'),
+        ("storytelling", "0067_city_code_property_city_geojson_file_and_more"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='city',
-            name='lattitude',
+            model_name="city",
+            name="lattitude",
             field=models.FloatField(blank=True, default=0.0),
         ),
         migrations.AddField(
-            model_name='city',
-            name='longitude',
+            model_name="city",
+            name="longitude",
             field=models.FloatField(blank=True, default=0.0),
         ),
     ]

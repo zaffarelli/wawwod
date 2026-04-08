@@ -4,30 +4,29 @@ from django.db import migrations
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('collector', '0003_auto_20210619_1336'),
+        ("collector", "0003_auto_20210619_1336"),
     ]
 
     operations = [
         migrations.RemoveField(
-            model_name='creature',
-            name='level0',
+            model_name="creature",
+            name="level0",
         ),
         migrations.RemoveField(
-            model_name='creature',
-            name='level1',
+            model_name="creature",
+            name="level1",
         ),
         migrations.RemoveField(
-            model_name='creature',
-            name='level2',
+            model_name="creature",
+            name="level2",
         ),
         migrations.RemoveField(
-            model_name='creature',
-            name='power1',
+            model_name="creature",
+            name="power1",
         ),
         migrations.RemoveField(
-            model_name='creature',
-            name='power2',
+            model_name="creature",
+            name="power2",
         ),
     ]

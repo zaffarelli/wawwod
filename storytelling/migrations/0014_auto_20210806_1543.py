@@ -4,25 +4,24 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('storytelling', '0013_alter_scene_preamble'),
+        ("storytelling", "0013_alter_scene_preamble"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='scene',
-            name='consequences',
-            field=models.TextField(blank=True, default='', max_length=2048),
+            model_name="scene",
+            name="consequences",
+            field=models.TextField(blank=True, default="", max_length=2048),
         ),
         migrations.AlterField(
-            model_name='scene',
-            name='fallback',
-            field=models.TextField(blank=True, default='', max_length=2048),
+            model_name="scene",
+            name="fallback",
+            field=models.TextField(blank=True, default="", max_length=2048),
         ),
         migrations.AlterField(
-            model_name='scene',
-            name='objectives',
-            field=models.TextField(blank=True, default='', max_length=2048),
+            model_name="scene",
+            name="objectives",
+            field=models.TextField(blank=True, default="", max_length=2048),
         ),
     ]

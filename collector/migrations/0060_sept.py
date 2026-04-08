@@ -5,19 +5,32 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('collector', '0059_alter_creature_chronicle'),
+        ("collector", "0059_alter_creature_chronicle"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Sept',
+            name="Sept",
             fields=[
-                ('name', models.CharField(max_length=128, primary_key=True, serialize=False)),
-                ('protagonists', models.CharField(blank=True, default='', max_length=1024)),
-                ('notes', models.TextField(blank=True, default='', max_length=1024)),
-                ('chronicle', models.ForeignKey(default=None, null=True, on_delete=django.db.models.deletion.CASCADE, to='collector.chronicle')),
+                (
+                    "name",
+                    models.CharField(max_length=128, primary_key=True, serialize=False),
+                ),
+                (
+                    "protagonists",
+                    models.CharField(blank=True, default="", max_length=1024),
+                ),
+                ("notes", models.TextField(blank=True, default="", max_length=1024)),
+                (
+                    "chronicle",
+                    models.ForeignKey(
+                        default=None,
+                        null=True,
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to="collector.chronicle",
+                    ),
+                ),
             ],
         ),
     ]

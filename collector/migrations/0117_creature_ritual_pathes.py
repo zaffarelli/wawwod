@@ -4,15 +4,14 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('collector', '0116_alter_discipline_path'),
+        ("collector", "0116_alter_discipline_path"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='creature',
-            name='ritual_pathes',
-            field=models.CharField(blank=True, default='', max_length=128),
+            model_name="creature",
+            name="ritual_pathes",
+            field=models.CharField(blank=True, default="", max_length=128),
         ),
     ]

@@ -6,55 +6,54 @@ from collector.utils.wod_reference import STATS_NAMES, AUSPICES, BREEDS, RANKS
 register = template.Library()
 
 
-@register.filter(name='as_generation')
+@register.filter(name="as_generation")
 def as_generation(value):
     return "%dth" % (13 - value)
 
 
-@register.filter(name='prev')
+@register.filter(name="prev")
 def prev(value):
     return value - 1
 
 
-@register.filter(name='next')
+@register.filter(name="next")
 def next(value):
     return value + 1
 
 
-@register.filter(name='modulo')
+@register.filter(name="modulo")
 def modulo(num, val):
     return num % val
 
 
-@register.filter(name='to_logo')
+@register.filter(name="to_logo")
 def modulo(val):
-    logo_str = '_'.join(val.lower().split(' '))
+    logo_str = "_".join(val.lower().split(" "))
     res = '<img src="/static/collector/clans/%s.webp"> ' % (logo_str)
     return res
 
 
-@register.filter(name='as_bullets')
-def as_bullets(value, options=''):
-    """ Change int value to list of bullet (Mark Rein*Hagen like)
-    """
-    if options == '':
+@register.filter(name="as_bullets")
+def as_bullets(value, options=""):
+    """Change int value to list of bullet (Mark Rein*Hagen like)"""
+    if options == "":
         max = 10
     else:
-        tokens = options.split(',')
+        tokens = options.split(",")
         max = int(tokens[0])
     one = '<i class="fas fa-circle fa-xs" title="%d"></i>' % (value)
     blank = '<i class="fas fa-circle fa-xs blank" title="%d"></i>' % (value)
     x = 0
-    res = ''
+    res = ""
     while x < max:
         if x < int(value):
             res += one
         else:
             res += blank
         if (x + 1) % 10 == 0:
-            res += '<br/>'
+            res += "<br/>"
         elif (x + 1) % 5 == 0:
-            res += '&nbsp;'
+            res += "&nbsp;"
         x += 1
     return res
 
@@ -75,50 +74,56 @@ def as_bullets(value, options=''):
 #         res = "<th>%s</th><td>%s</td>"%(text,as_bullets(val))
 #     return res
 
-@register.filter(name='param_stack')
-def param_stack(x_trait, x_id=''):
+
+@register.filter(name="param_stack")
+def param_stack(x_trait, x_id=""):
     return x_trait, x_id
 
 
-@register.filter(name='as_discipline2')
-def as_discipline2(stack, x_field=''):
-    """ Display table lines as editable disciplines """
+@register.filter(name="as_discipline2")
+def as_discipline2(stack, x_field=""):
+    """Display table lines as editable disciplines"""
     x_trait, x_id = stack
     text = ""
     val = 0
-    tokens = x_trait.split('(')
+    tokens = x_trait.split("(")
     if len(tokens) > 0:
         text = tokens[0]
         if len(tokens) > 1:
-            val = int(tokens[1].replace('(', '').replace(')', ''))
+            val = int(tokens[1].replace("(", "").replace(")", ""))
     if x_field != "":
-        res = "<th>%s</th><td class='editable userinput' id='%s__%s'>%s</td>" % (text, x_id, x_field, as_bullets(val))
+        res = "<th>%s</th><td class='editable userinput' id='%s__%s'>%s</td>" % (
+            text,
+            x_id,
+            x_field,
+            as_bullets(val),
+        )
     else:
         res = "<th>%s</th><td>%s</td>" % (text, as_bullets(val))
     return res
 
 
-@register.filter(name='as_stat_name')
-def as_stat_name(stack, x_field=''):
+@register.filter(name="as_stat_name")
+def as_stat_name(stack, x_field=""):
     x_creature, x_id = stack
     try:
-        value = STATS_NAMES[str(x_creature)][x_field + 's'][int(x_id)]
+        value = STATS_NAMES[str(x_creature)][x_field + "s"][int(x_id)]
         return value.title()
     except:
         print(x_creature, x_id, x_field, "NOT FOUND")
         return ""
 
 
-@register.filter(name='as_editable_updown')
-def as_editable_updown(value, options=''):
-    keys = options.split(',')
+@register.filter(name="as_editable_updown")
+def as_editable_updown(value, options=""):
+    keys = options.split(",")
     aid = int(keys[0])
     afield = keys[1]
     res = "<td class='editable updown' id='%d_%s'>" % (aid, afield)
     return res
 
 
-@register.filter(name='as_rank')
+@register.filter(name="as_rank")
 def as_rank(value):
     rank = "none"
     if value is not None:
@@ -127,72 +132,73 @@ def as_rank(value):
     return rank
 
 
-@register.filter(name='as_breed')
+@register.filter(name="as_breed")
 def as_breed(value):
     if int(value) <= len(BREEDS):
         breed = BREEDS[int(value)]
     else:
-        breed = 'none'
+        breed = "none"
     return breed
 
 
-@register.filter(name='as_auspice')
+@register.filter(name="as_auspice")
 def as_auspice(value):
     if int(value) <= len(AUSPICES):
         auspice = AUSPICES[int(value)]
     else:
-        auspice = 'none'
+        auspice = "none"
     return auspice
 
 
-@register.filter(name='as_sex')
+@register.filter(name="as_sex")
 def as_sex(value):
     if value:
-        sex = 'Male'
+        sex = "Male"
     else:
-        sex = 'Female'
+        sex = "Female"
     return sex
 
 
-@register.filter(name='as_tribe_plural')
+@register.filter(name="as_tribe_plural")
 def as_tribe_plural(value):
-    plural = f'{value}s'
-    if value == 'Get of Fenris':
-        plural = 'Gets of Fenris'
-    elif value == 'Child of Gaia':
-        plural = 'Children of Gaia'
-    elif value == 'Black Fury':
-        plural = 'Black Furies'
+    plural = f"{value}s"
+    if value == "Get of Fenris":
+        plural = "Gets of Fenris"
+    elif value == "Child of Gaia":
+        plural = "Children of Gaia"
+    elif value == "Black Fury":
+        plural = "Black Furies"
     elif value == "Black Spiral Dancer":
         plural = "Black Spiral Dancers"
     return plural
 
 
-@register.filter(name='from_rid')
+@register.filter(name="from_rid")
 def from_rid(value):
     from collector.models.creatures import Creature
-    name = f'Not found: ({value})'
-    if value != '':
+
+    name = f"Not found: ({value})"
+    if value != "":
         sire = Creature.objects.filter(rid=value)
         if len(sire) == 1:
             name = sire.first().name
     return name
 
 
-@register.filter(name='to_tribe_logo')
+@register.filter(name="to_tribe_logo")
 def to_tribe_logo(val):
-    logo_str = '_'.join(val.lower().split(' '))
+    logo_str = "_".join(val.lower().split(" "))
     res = f'<img src="/static/collector/tribes/{logo_str}.webp"> '
     return res
 
 
-@register.filter(name='to_tribe_logo_single')
+@register.filter(name="to_tribe_logo_single")
 def to_tribe_logo_single(val):
-    logo_str = '_'.join(val.lower().split(' '))
-    return '/static/collector/tribes/' + logo_str + ".webp"
+    logo_str = "_".join(val.lower().split(" "))
+    return "/static/collector/tribes/" + logo_str + ".webp"
 
 
-@register.filter(name='to_auspice_logo_single')
+@register.filter(name="to_auspice_logo_single")
 def to_auspice_logo_single(val):
     if val == 0:
         logo_str = "AuspiceRagabash"
@@ -206,25 +212,26 @@ def to_auspice_logo_single(val):
         logo_str = "AuspiceAhroun"
     else:
         logo_str = "AuspiceNone"
-    return '/static/collector/auspices/' + logo_str + ".webp"
+    return "/static/collector/auspices/" + logo_str + ".webp"
 
 
-@register.filter(name='to_tradition_logo')
+@register.filter(name="to_tradition_logo")
 def to_tradition_logo(val):
-    logo_str = '_'.join(val.lower().split(' '))
+    logo_str = "_".join(val.lower().split(" "))
     res = f'<img src="/static/collector/traditions/{logo_str}.webp"> '
     return res
 
 
-@register.filter(name='snake_case')
+@register.filter(name="snake_case")
 def snake_case(val):
     v = val.split(" ")
     return "_".join(v).lower()
 
 
-@register.filter(name='family_color')
+@register.filter(name="family_color")
 def family_color(val):
     from collector.utils.wod_reference import CLAN_COLORS
+
     v = val.lower()
     color = "#000000"
     if v in CLAN_COLORS:
@@ -232,7 +239,7 @@ def family_color(val):
     return color
 
 
-@register.filter(name='creature_code')
+@register.filter(name="creature_code")
 def creature_code(val):
     code = "xx"
     if val == "kindred":
@@ -246,18 +253,23 @@ def creature_code(val):
     return code
 
 
-@register.filter(name='faction_color')
+@register.filter(name="faction_color")
 def faction_color(val):
     # from collector.utils.wod_reference import CLAN_COLORS
     v = val.lower()
     color = "#000000"
-    FACTION_COLORS = {"camarilla": "#226fbd", "independents": "#ac22bd", "sabbat": "#bd2322", "anarchs": "#bda522"}
+    FACTION_COLORS = {
+        "camarilla": "#226fbd",
+        "independents": "#ac22bd",
+        "sabbat": "#bd2322",
+        "anarchs": "#bda522",
+    }
     if v in FACTION_COLORS:
         color = FACTION_COLORS[v]
     return color
 
 
-@register.filter(name='status_color')
+@register.filter(name="status_color")
 def status_color(val):
     code = "#808080"
     if val == "OK+":
@@ -269,12 +281,12 @@ def status_color(val):
     return code
 
 
-@register.filter(name='creatures_total')
+@register.filter(name="creatures_total")
 def creatures_total(items):
     return len(items)
 
 
-@register.filter(name='html_safe_status')
+@register.filter(name="html_safe_status")
 def html_safe_status(val):
     v = val.lower()
     v = v.replace("+", "plus")

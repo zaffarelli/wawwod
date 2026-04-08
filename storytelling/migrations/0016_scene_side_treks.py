@@ -4,15 +4,14 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('storytelling', '0015_externallink'),
+        ("storytelling", "0015_externallink"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='scene',
-            name='side_treks',
-            field=models.TextField(blank=True, default='', max_length=4096),
+            model_name="scene",
+            name="side_treks",
+            field=models.TextField(blank=True, default="", max_length=4096),
         ),
     ]

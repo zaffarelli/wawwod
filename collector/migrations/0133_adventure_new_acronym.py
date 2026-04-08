@@ -4,15 +4,14 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('collector', '0132_gift_orphan'),
+        ("collector", "0132_gift_orphan"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='adventure',
-            name='new_acronym',
-            field=models.CharField(default='', max_length=32),
+            model_name="adventure",
+            name="new_acronym",
+            field=models.CharField(default="", max_length=32),
         ),
     ]

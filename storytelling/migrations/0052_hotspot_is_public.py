@@ -4,15 +4,14 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('storytelling', '0051_alter_hotspot_type'),
+        ("storytelling", "0051_alter_hotspot_type"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='hotspot',
-            name='is_public',
+            model_name="hotspot",
+            name="is_public",
             field=models.BooleanField(blank=True, default=True),
         ),
     ]

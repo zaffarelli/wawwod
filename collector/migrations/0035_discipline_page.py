@@ -4,15 +4,14 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('collector', '0034_auto_20230530_0121'),
+        ("collector", "0034_auto_20230530_0121"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='discipline',
-            name='page',
-            field=models.CharField(blank=True, default='VtM3:pp', max_length=20),
+            model_name="discipline",
+            name="page",
+            field=models.CharField(blank=True, default="VtM3:pp", max_length=20),
         ),
     ]

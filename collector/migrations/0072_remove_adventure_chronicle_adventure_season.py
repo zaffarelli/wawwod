@@ -4,19 +4,18 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('collector', '0071_rename_code_adventure_acronym_and_more'),
+        ("collector", "0071_rename_code_adventure_acronym_and_more"),
     ]
 
     operations = [
         migrations.RemoveField(
-            model_name='adventure',
-            name='chronicle',
+            model_name="adventure",
+            name="chronicle",
         ),
         migrations.AddField(
-            model_name='adventure',
-            name='season',
-            field=models.CharField(default='DEF', max_length=8),
+            model_name="adventure",
+            name="season",
+            field=models.CharField(default="DEF", max_length=8),
         ),
     ]

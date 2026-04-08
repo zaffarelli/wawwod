@@ -4,15 +4,14 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('collector', '0104_creature_experience_expenditure'),
+        ("collector", "0104_creature_experience_expenditure"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='creature',
-            name='freebies_exp_offset',
+            model_name="creature",
+            name="freebies_exp_offset",
             field=models.IntegerField(default=0),
         ),
     ]

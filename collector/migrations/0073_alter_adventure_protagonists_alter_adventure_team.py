@@ -4,20 +4,19 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('collector', '0072_remove_adventure_chronicle_adventure_season'),
+        ("collector", "0072_remove_adventure_chronicle_adventure_season"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='adventure',
-            name='protagonists',
-            field=models.TextField(blank=True, default='', max_length=1024),
+            model_name="adventure",
+            name="protagonists",
+            field=models.TextField(blank=True, default="", max_length=1024),
         ),
         migrations.AlterField(
-            model_name='adventure',
-            name='team',
-            field=models.TextField(blank=True, default='', max_length=1024),
+            model_name="adventure",
+            name="team",
+            field=models.TextField(blank=True, default="", max_length=1024),
         ),
     ]

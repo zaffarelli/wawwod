@@ -4,25 +4,24 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('collector', '0050_creature_virtue_name0_creature_virtue_name1_and_more'),
+        ("collector", "0050_creature_virtue_name0_creature_virtue_name1_and_more"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='chronicle',
-            name='post_title',
-            field=models.CharField(blank=True, default='', max_length=128),
+            model_name="chronicle",
+            name="post_title",
+            field=models.CharField(blank=True, default="", max_length=128),
         ),
         migrations.AddField(
-            model_name='chronicle',
-            name='pre_title',
-            field=models.CharField(blank=True, default='', max_length=128),
+            model_name="chronicle",
+            name="pre_title",
+            field=models.CharField(blank=True, default="", max_length=128),
         ),
         migrations.AddField(
-            model_name='chronicle',
-            name='scenario',
-            field=models.CharField(blank=True, default='', max_length=128),
+            model_name="chronicle",
+            name="scenario",
+            field=models.CharField(blank=True, default="", max_length=128),
         ),
     ]

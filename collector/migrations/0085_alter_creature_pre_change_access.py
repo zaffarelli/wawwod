@@ -4,15 +4,17 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('collector', '0084_gift_tribe_16_sept_auspices_sept_breeds_sept_tribes_and_more'),
+        (
+            "collector",
+            "0084_gift_tribe_16_sept_auspices_sept_breeds_sept_tribes_and_more",
+        ),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='creature',
-            name='pre_change_access',
+            model_name="creature",
+            name="pre_change_access",
             field=models.BooleanField(default=False),
         ),
     ]

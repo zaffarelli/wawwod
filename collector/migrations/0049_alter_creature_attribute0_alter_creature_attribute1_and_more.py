@@ -4,55 +4,54 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('collector', '0048_alter_creature_chronicle'),
+        ("collector", "0048_alter_creature_chronicle"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='creature',
-            name='attribute0',
+            model_name="creature",
+            name="attribute0",
             field=models.PositiveIntegerField(default=0),
         ),
         migrations.AlterField(
-            model_name='creature',
-            name='attribute1',
+            model_name="creature",
+            name="attribute1",
             field=models.PositiveIntegerField(default=0),
         ),
         migrations.AlterField(
-            model_name='creature',
-            name='attribute2',
+            model_name="creature",
+            name="attribute2",
             field=models.PositiveIntegerField(default=0),
         ),
         migrations.AlterField(
-            model_name='creature',
-            name='attribute3',
+            model_name="creature",
+            name="attribute3",
             field=models.PositiveIntegerField(default=0),
         ),
         migrations.AlterField(
-            model_name='creature',
-            name='attribute4',
+            model_name="creature",
+            name="attribute4",
             field=models.PositiveIntegerField(default=0),
         ),
         migrations.AlterField(
-            model_name='creature',
-            name='attribute5',
+            model_name="creature",
+            name="attribute5",
             field=models.PositiveIntegerField(default=0),
         ),
         migrations.AlterField(
-            model_name='creature',
-            name='attribute6',
+            model_name="creature",
+            name="attribute6",
             field=models.PositiveIntegerField(default=0),
         ),
         migrations.AlterField(
-            model_name='creature',
-            name='attribute7',
+            model_name="creature",
+            name="attribute7",
             field=models.PositiveIntegerField(default=0),
         ),
         migrations.AlterField(
-            model_name='creature',
-            name='attribute8',
+            model_name="creature",
+            name="attribute8",
             field=models.PositiveIntegerField(default=0),
         ),
     ]

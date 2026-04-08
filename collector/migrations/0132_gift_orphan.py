@@ -4,15 +4,14 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('collector', '0131_gift_lower_name'),
+        ("collector", "0131_gift_lower_name"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='gift',
-            name='orphan',
+            model_name="gift",
+            name="orphan",
             field=models.BooleanField(blank=True, default=True),
         ),
     ]

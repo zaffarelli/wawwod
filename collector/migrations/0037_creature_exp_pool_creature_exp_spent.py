@@ -4,20 +4,19 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('collector', '0036_discipline_is_linear'),
+        ("collector", "0036_discipline_is_linear"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='creature',
-            name='exp_pool',
+            model_name="creature",
+            name="exp_pool",
             field=models.IntegerField(default=0),
         ),
         migrations.AddField(
-            model_name='creature',
-            name='exp_spent',
+            model_name="creature",
+            name="exp_spent",
             field=models.IntegerField(default=0),
         ),
     ]

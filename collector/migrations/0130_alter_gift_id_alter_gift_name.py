@@ -4,20 +4,19 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('collector', '0129_remove_gift_date_pub'),
+        ("collector", "0129_remove_gift_date_pub"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='gift',
-            name='id',
+            model_name="gift",
+            name="id",
             field=models.IntegerField(default=0, primary_key=True, serialize=False),
         ),
         migrations.AlterField(
-            model_name='gift',
-            name='name',
-            field=models.CharField(default='', max_length=128),
+            model_name="gift",
+            name="name",
+            field=models.CharField(default="", max_length=128),
         ),
     ]

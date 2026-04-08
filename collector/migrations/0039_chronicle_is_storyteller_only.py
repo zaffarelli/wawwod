@@ -4,15 +4,14 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('collector', '0038_alter_chronicle_is_current'),
+        ("collector", "0038_alter_chronicle_is_current"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='chronicle',
-            name='is_storyteller_only',
+            model_name="chronicle",
+            name="is_storyteller_only",
             field=models.BooleanField(blank=True, default=False),
         ),
     ]

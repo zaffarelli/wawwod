@@ -1,7 +1,9 @@
 # exec(open('scripts/hamburg_funky_stats.py').read())
 from collector.models.creatures import Creature
 
-hamburgers = Creature.objects.filter(chronicle="HbN", hidden=False,creature__in=["kindred","ghoul"]).order_by("-creature","-freebies")
+hamburgers = Creature.objects.filter(
+    chronicle="HbN", hidden=False, creature__in=["kindred", "ghoul"]
+).order_by("-creature", "-freebies")
 lines = []
 entry = []
 entry.append(f"Name")
@@ -28,7 +30,7 @@ for h in hamburgers:
     entry.append(f"{h.sire}")
     entry.append(f"{h.willpower}")
     if h.creature == "kindred":
-        entry.append(f"{13-h.background3}")
+        entry.append(f"{13 - h.background3}")
     else:
         entry.append(f"")
     entry.append(f"{h.background9}")

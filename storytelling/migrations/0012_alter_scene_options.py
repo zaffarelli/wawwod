@@ -4,14 +4,13 @@ from django.db import migrations
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('storytelling', '0011_scene_timeline'),
+        ("storytelling", "0011_scene_timeline"),
     ]
 
     operations = [
         migrations.AlterModelOptions(
-            name='scene',
-            options={'ordering': ['timeline', 'time_offset_hours']},
+            name="scene",
+            options={"ordering": ["timeline", "time_offset_hours"]},
         ),
     ]

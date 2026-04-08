@@ -19,17 +19,17 @@ class Sept(models.Model):
     id = models.IntegerField(primary_key=True)
     name = models.CharField(max_length=128, unique=True)
     rid = models.CharField(max_length=128, blank=True)
-    chronicle = models.CharField(max_length=8, default='WOD')
-    season = models.CharField(max_length=8, default='DEF')
+    chronicle = models.CharField(max_length=8, default="WOD")
+    season = models.CharField(max_length=8, default="DEF")
     garous = models.TextField(default="", max_length=4096, blank=True)
     kinfolks = models.TextField(default="", max_length=4096, blank=True)
-    notes = models.TextField(max_length=1024, default='', blank=True)
+    notes = models.TextField(max_length=1024, default="", blank=True)
 
     caern = models.CharField(default="", max_length=4096, blank=True)
     caern_level = models.PositiveIntegerField(default=1, blank=True)
     caern_type = models.CharField(default="", max_length=256, blank=True)
     caern_totem = models.CharField(default="", max_length=256, blank=True)
-    treemap = models.TextField(max_length=8192*2, default='{}', blank=True)
+    treemap = models.TextField(max_length=8192 * 2, default="{}", blank=True)
 
     faction = models.CharField(default="Gaia", max_length=32, blank=True)
 
@@ -48,22 +48,34 @@ class Sept(models.Model):
     talesinger = models.CharField(default="", max_length=128, blank=True)
     wyrmfoe = models.CharField(default="", max_length=128, blank=True)
     auspices = models.CharField(default="0 0 0 0 0", max_length=128, blank=True)
-    tribes = models.CharField(default="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0", max_length=128, blank=True)
+    tribes = models.CharField(
+        default="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0", max_length=128, blank=True
+    )
     breeds = models.CharField(default="0 0 0", max_length=128, blank=True)
 
-    def update_offices(self,garou):
+    def update_offices(self, garou):
         job = garou.community_job.lower()
-        if job in ["warder", "grand_elder", "gatekeeper", "master_of_the_rite", "master_of_challenge",
-                   "keeper_of_the_land", "wyrmfoe", "truthcatcher", "master_of_the_howl", "talesinger",
-                   "caller_of_the_wyld"]:
+        if job in [
+            "warder",
+            "grand_elder",
+            "gatekeeper",
+            "master_of_the_rite",
+            "master_of_challenge",
+            "keeper_of_the_land",
+            "wyrmfoe",
+            "truthcatcher",
+            "master_of_the_howl",
+            "talesinger",
+            "caller_of_the_wyld",
+        ]:
             setattr(self, job, garou.rid)
 
         if job in ["grand_elder", "elder"]:
-            self.elders = " "+garou.rid
+            self.elders = " " + garou.rid
         if job in ["guardian"]:
-            self.guardians = " "+garou.rid
+            self.guardians = " " + garou.rid
 
-    def update_stats(self,garou):
+    def update_stats(self, garou):
         auspices = [int(x) for x in self.auspices.split(" ")]
         breeds = [int(x) for x in self.breeds.split(" ")]
         tribes = [int(x) for x in self.tribes.split(" ")]
@@ -71,12 +83,11 @@ class Sept(models.Model):
         breeds[garou.breed] += 1
         plur = as_tribe_plural(garou.family)
         tidx = ALL_TRIBES.index(plur)
-        if tidx>-1:
+        if tidx > -1:
             tribes[tidx] += 1
         self.auspices = " ".join([str(x) for x in auspices])
         self.breeds = " ".join([str(x) for x in breeds])
         self.tribes = " ".join([str(x) for x in tribes])
-
 
     def build_statistics(self):
         statistics = {}
@@ -86,30 +97,53 @@ class Sept(models.Model):
         return statistics
 
     def initialize_offices(self):
-        all_jobs = ["warder", "grand_elder", "elders", "guardians","" "gatekeeper", "master_of_the_rite", "master_of_challenge",
-                   "keeper_of_the_land", "wyrmfoe", "truthcatcher", "master_of_the_howl", "talesinger",
-                   "caller_of_the_wyld"]
+        all_jobs = [
+            "warder",
+            "grand_elder",
+            "elders",
+            "guardians",
+            "gatekeeper",
+            "master_of_the_rite",
+            "master_of_challenge",
+            "keeper_of_the_land",
+            "wyrmfoe",
+            "truthcatcher",
+            "master_of_the_howl",
+            "talesinger",
+            "caller_of_the_wyld",
+        ]
         for job in all_jobs:
             setattr(self, job, "")
 
     def build_offices(self):
         from collector.models.creatures import Creature
+
         offices = {}
-        simple_jobs = ["warder", "grand_elder", "gatekeeper", "master_of_the_rite", "master_of_challenge",
-                   "keeper_of_the_land", "wyrmfoe", "truthcatcher", "master_of_the_howl", "talesinger",
-                   "caller_of_the_wyld"]
+        simple_jobs = [
+            "warder",
+            "grand_elder",
+            "gatekeeper",
+            "master_of_the_rite",
+            "master_of_challenge",
+            "keeper_of_the_land",
+            "wyrmfoe",
+            "truthcatcher",
+            "master_of_the_howl",
+            "talesinger",
+            "caller_of_the_wyld",
+        ]
         team_jobs = ["elders", "guardians"]
         for job in simple_jobs:
-            x = getattr(self,job)
+            x = getattr(self, job)
             if x:
                 garous = Creature.objects.filter(rid=x)
-                if len(garous)==1:
+                if len(garous) == 1:
                     garou = garous.first()
                     offices[job] = garou.name
                 else:
                     offices[job] = "---"
         for job in team_jobs:
-            x = getattr(self,job)
+            x = getattr(self, job)
             if x:
                 garous = Creature.objects.filter(rid__in=x)
                 for garou in garous:
@@ -122,7 +156,6 @@ class Sept(models.Model):
         self.elders = ", ".join(elders)
         self.guardians = ", ".join(guardians)
 
-
     def __str__(self):
         return f"{self.name}"
 
@@ -131,14 +164,16 @@ class Sept(models.Model):
             self.rid = toRID(self.name)
         if self.chronicle:
             from collector.models.creatures import Creature
-            protagonists = Creature.objects.filter(group=self.name, creature='garou')
+
+            protagonists = Creature.objects.filter(group=self.name, creature="garou")
             p = []
             for protagonist in protagonists:
                 p.append(protagonist.rid)
             self.garous = ", ".join(p)
 
             from collector.models.creatures import Creature
-            protagonists = Creature.objects.filter(group=self.name, creature='kinfolk')
+
+            protagonists = Creature.objects.filter(group=self.name, creature="kinfolk")
             p = []
             for protagonist in protagonists:
                 p.append(protagonist.rid)
@@ -147,13 +182,33 @@ class Sept(models.Model):
 
     def build_sept(self):
         from collector.models.creatures import Creature
-        from collector.templatetags.wod_filters import as_tribe_plural, to_tribe_logo_single
+        from collector.templatetags.wod_filters import (
+            as_tribe_plural,
+            to_tribe_logo_single,
+        )
+
         self.tribes = "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"
         self.breeds = "0 0 0"
         self.auspices = "0 0 0 0 0"
-        data = {"name":self.name,"caern": {"name":self.caern, "type": self.caern_type, "level": self.caern_level, "totem": self.caern_totem}, "moonbridges": [], "offices": {},"statistics": {}, "packs": []}
+        data = {
+            "name": self.name,
+            "caern": {
+                "name": self.caern,
+                "type": self.caern_type,
+                "level": self.caern_level,
+                "totem": self.caern_totem,
+            },
+            "moonbridges": [],
+            "offices": {},
+            "statistics": {},
+            "packs": [],
+        }
         garous_rids = self.garous.split(", ")
-        garous = Creature.objects.filter(creature="garou").filter(rid__in=garous_rids).order_by("groupspec")
+        garous = (
+            Creature.objects.filter(creature="garou")
+            .filter(rid__in=garous_rids)
+            .order_by("groupspec")
+        )
         packs_summary = []
         packs = {}
         pack_counter = 0
@@ -182,7 +237,11 @@ class Sept(models.Model):
             if garou.groupspec not in packs_summary:
                 packs_summary.append(garou.groupspec)
                 totem = garou.sire
-                packs[f"pack_{pack_counter:02}"] = {"name": garou.groupspec, "members": [], "totem": totem}
+                packs[f"pack_{pack_counter:02}"] = {
+                    "name": garou.groupspec,
+                    "members": [],
+                    "totem": totem,
+                }
                 packs[f"pack_{pack_counter:02}"]["total_renown"] = garou.total_renown
                 packs[f"pack_{pack_counter:02}"]["cnt"] = 1
                 packs[f"pack_{pack_counter:02}"]["avg_renown"] = 0
@@ -198,8 +257,10 @@ class Sept(models.Model):
         for k, v in packs.items():
             packs_list.append(v)
         for x in packs_list:
-            x["avg_renown"] = round(x["total_renown"]/x["cnt"])
-        sorted_packs = sorted(packs_list, key=lambda k: k.get('avg_renown', 0), reverse=True)
+            x["avg_renown"] = round(x["total_renown"] / x["cnt"])
+        sorted_packs = sorted(
+            packs_list, key=lambda k: k.get("avg_renown", 0), reverse=True
+        )
 
         data["packs"] = sorted_packs
 
@@ -207,10 +268,9 @@ class Sept(models.Model):
         data["statistics"] = self.build_statistics()
 
         self.finalize_offices()
-        #print("data", data)
+        # print("data", data)
         self.treemap = json.dumps(data)
         return data
-
 
     # @classmethod
     # def reid(cls):
@@ -218,14 +278,24 @@ class Sept(models.Model):
     #         x.refcode = n+1
     #         x.save()
 
+
 def refix(modeladmin, request, queryset):
     for sept in queryset:
         sept.save()
-    short_description = 'Fix sept'
+    short_description = "Fix sept"
 
 
 class SeptAdmin(admin.ModelAdmin):
-    list_display = ['id','name', 'rid', 'faction', 'chronicle', 'garous', "kinfolks", 'notes']
-    ordering = ['chronicle', 'name']
-    list_filter = ['faction', 'caern_level']
+    list_display = [
+        "id",
+        "name",
+        "rid",
+        "faction",
+        "chronicle",
+        "garous",
+        "kinfolks",
+        "notes",
+    ]
+    ordering = ["chronicle", "name"]
+    list_filter = ["faction", "caern_level"]
     actions = [refix]

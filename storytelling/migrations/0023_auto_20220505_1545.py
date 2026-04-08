@@ -5,20 +5,19 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('storytelling', '0022_city_district'),
+        ("storytelling", "0022_city_district"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='district',
-            name='color',
-            field=colorfield.fields.ColorField(default='#808080', max_length=18),
+            model_name="district",
+            name="color",
+            field=colorfield.fields.ColorField(default="#808080", max_length=18),
         ),
         migrations.AddField(
-            model_name='district',
-            name='proeminent',
-            field=models.CharField(default='', max_length=64),
+            model_name="district",
+            name="proeminent",
+            field=models.CharField(default="", max_length=64),
         ),
     ]

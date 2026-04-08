@@ -4,15 +4,14 @@ from django.db import migrations
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('collector', '0054_creature_pre_change_access_alter_gift_tribes'),
+        ("collector", "0054_creature_pre_change_access_alter_gift_tribes"),
     ]
 
     operations = [
         migrations.RenameField(
-            model_name='rite',
-            old_name='declaration',
-            new_name='code',
+            model_name="rite",
+            old_name="declaration",
+            new_name="code",
         ),
     ]

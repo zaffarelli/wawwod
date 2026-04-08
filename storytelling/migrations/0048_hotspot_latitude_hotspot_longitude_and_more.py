@@ -4,25 +4,24 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('storytelling', '0047_hotspot_city'),
+        ("storytelling", "0047_hotspot_city"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='hotspot',
-            name='latitude',
+            model_name="hotspot",
+            name="latitude",
             field=models.FloatField(blank=True, default=0.0),
         ),
         migrations.AddField(
-            model_name='hotspot',
-            name='longitude',
+            model_name="hotspot",
+            name="longitude",
             field=models.FloatField(blank=True, default=0.0),
         ),
         migrations.AlterField(
-            model_name='hotspot',
-            name='gps_coords',
-            field=models.CharField(blank=True, default='0,0', max_length=256),
+            model_name="hotspot",
+            name="gps_coords",
+            field=models.CharField(blank=True, default="0,0", max_length=256),
         ),
     ]

@@ -4,19 +4,18 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('storytelling', '0004_auto_20210718_0217'),
+        ("storytelling", "0004_auto_20210718_0217"),
     ]
 
     operations = [
         migrations.AlterModelOptions(
-            name='scene',
-            options={'ordering': ['time_offset_hours']},
+            name="scene",
+            options={"ordering": ["time_offset_hours"]},
         ),
         migrations.AddField(
-            model_name='scene',
-            name='objectives',
-            field=models.TextField(blank=True, default='', max_length=1024),
+            model_name="scene",
+            name="objectives",
+            field=models.TextField(blank=True, default="", max_length=1024),
         ),
     ]

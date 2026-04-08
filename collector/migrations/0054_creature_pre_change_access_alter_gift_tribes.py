@@ -4,20 +4,19 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('collector', '0053_rename_declaration_gift_code'),
+        ("collector", "0053_rename_declaration_gift_code"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='creature',
-            name='pre_change_access',
+            model_name="creature",
+            name="pre_change_access",
             field=models.BooleanField(blank=True, default=False),
         ),
         migrations.AlterField(
-            model_name='gift',
-            name='tribes',
-            field=models.CharField(default='................', max_length=16),
+            model_name="gift",
+            name="tribes",
+            field=models.CharField(default="................", max_length=16),
         ),
     ]

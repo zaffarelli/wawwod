@@ -4,20 +4,31 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('storytelling', '0052_hotspot_is_public'),
+        ("storytelling", "0052_hotspot_is_public"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='hotspot',
-            name='color',
-            field=models.CharField(default='#802020', max_length=9),
+            model_name="hotspot",
+            name="color",
+            field=models.CharField(default="#802020", max_length=9),
         ),
         migrations.AlterField(
-            model_name='hotspot',
-            name='type',
-            field=models.CharField(blank=True, choices=[('n/a', 'None'), ('ely', 'Camarilla Elysium'), ('hvn', 'Camarilla Haven'), ('ind', 'Indepentents PoI'), ('hou', 'House of'), ('poi', 'Point Of Interest')], default='n/a', max_length=3),
+            model_name="hotspot",
+            name="type",
+            field=models.CharField(
+                blank=True,
+                choices=[
+                    ("n/a", "None"),
+                    ("ely", "Camarilla Elysium"),
+                    ("hvn", "Camarilla Haven"),
+                    ("ind", "Indepentents PoI"),
+                    ("hou", "House of"),
+                    ("poi", "Point Of Interest"),
+                ],
+                default="n/a",
+                max_length=3,
+            ),
         ),
     ]

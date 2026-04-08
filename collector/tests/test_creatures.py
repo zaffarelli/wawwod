@@ -4,7 +4,7 @@ from collector.utils.wod_reference import get_current_chronicle
 
 
 class CreatureTest(TestCase):
-    fixtures = ['chronicles.xml', 'creatures.xml']
+    fixtures = ["chronicles.xml", "creatures.xml"]
 
     def test_creature_default_chronicle(self):
         chronicle = get_current_chronicle()

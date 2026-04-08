@@ -4,15 +4,14 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('storytelling', '0069_rename_lattitude_city_latitude'),
+        ("storytelling", "0069_rename_lattitude_city_latitude"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='city',
-            name='utc',
+            model_name="city",
+            name="utc",
             field=models.IntegerField(blank=True, default=0),
         ),
     ]

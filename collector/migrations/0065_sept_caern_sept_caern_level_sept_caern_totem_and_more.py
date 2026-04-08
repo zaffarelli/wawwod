@@ -4,30 +4,29 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('collector', '0064_rename_protagonists_sept_garous_sept_kinfolks_and_more'),
+        ("collector", "0064_rename_protagonists_sept_garous_sept_kinfolks_and_more"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='sept',
-            name='caern',
-            field=models.CharField(blank=True, default='', max_length=4096),
+            model_name="sept",
+            name="caern",
+            field=models.CharField(blank=True, default="", max_length=4096),
         ),
         migrations.AddField(
-            model_name='sept',
-            name='caern_level',
+            model_name="sept",
+            name="caern_level",
             field=models.PositiveIntegerField(blank=True, default=1),
         ),
         migrations.AddField(
-            model_name='sept',
-            name='caern_totem',
-            field=models.CharField(blank=True, default='', max_length=4096),
+            model_name="sept",
+            name="caern_totem",
+            field=models.CharField(blank=True, default="", max_length=4096),
         ),
         migrations.AddField(
-            model_name='sept',
-            name='treemap',
-            field=models.TextField(blank=True, default='{}', max_length=4096),
+            model_name="sept",
+            name="treemap",
+            field=models.TextField(blank=True, default="{}", max_length=4096),
         ),
     ]

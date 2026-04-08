@@ -16,5 +16,5 @@ class GiftLoader:
         self.load_gifts()
 
 
-gl = GiftLoader('./collector/static/js/gifts.yml')
+gl = GiftLoader("./collector/static/js/gifts.yml")
 gl.perform()

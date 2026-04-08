@@ -4,15 +4,30 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('storytelling', '0060_alter_hotspot_episode'),
+        ("storytelling", "0060_alter_hotspot_episode"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='hotspot',
-            name='type',
-            field=models.CharField(blank=True, choices=[('n/a', 'None'), ('ely', 'Camarilla Elysium'), ('hvn', 'Camarilla Haven'), ('ind', 'Indepentents PoI'), ('hou', 'House of'), ('poi', 'Point Of Interest'), ('uba', 'U-bahn'), ('foe', 'Foes'), ('upo', 'Unexplored Point Of Interest'), ('mys', 'Mystery location')], default='n/a', max_length=3),
+            model_name="hotspot",
+            name="type",
+            field=models.CharField(
+                blank=True,
+                choices=[
+                    ("n/a", "None"),
+                    ("ely", "Camarilla Elysium"),
+                    ("hvn", "Camarilla Haven"),
+                    ("ind", "Indepentents PoI"),
+                    ("hou", "House of"),
+                    ("poi", "Point Of Interest"),
+                    ("uba", "U-bahn"),
+                    ("foe", "Foes"),
+                    ("upo", "Unexplored Point Of Interest"),
+                    ("mys", "Mystery location"),
+                ],
+                default="n/a",
+                max_length=3,
+            ),
         ),
     ]

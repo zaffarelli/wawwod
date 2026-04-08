@@ -4,15 +4,14 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('collector', '0042_alter_background_description'),
+        ("collector", "0042_alter_background_description"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='background',
-            name='cumulate',
+            model_name="background",
+            name="cumulate",
             field=models.BooleanField(blank=True, default=False),
         ),
     ]

@@ -4,15 +4,27 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('storytelling', '0054_hotspot_hyperlink'),
+        ("storytelling", "0054_hotspot_hyperlink"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='hotspot',
-            name='type',
-            field=models.CharField(blank=True, choices=[('n/a', 'None'), ('ely', 'Camarilla Elysium'), ('hvn', 'Camarilla Haven'), ('ind', 'Indepentents PoI'), ('hou', 'House of'), ('poi', 'Point Of Interest'), ('uba', 'U-bahn')], default='n/a', max_length=3),
+            model_name="hotspot",
+            name="type",
+            field=models.CharField(
+                blank=True,
+                choices=[
+                    ("n/a", "None"),
+                    ("ely", "Camarilla Elysium"),
+                    ("hvn", "Camarilla Haven"),
+                    ("ind", "Indepentents PoI"),
+                    ("hou", "House of"),
+                    ("poi", "Point Of Interest"),
+                    ("uba", "U-bahn"),
+                ],
+                default="n/a",
+                max_length=3,
+            ),
         ),
     ]

@@ -3,6 +3,6 @@ from django.dispatch import receiver
 from collector.models.totems import Totem
 
 
-@receiver(pre_save, sender=Totem, dispatch_uid='update_totem')
+@receiver(pre_save, sender=Totem, dispatch_uid="update_totem")
 def update_totem(sender, instance, **kwargs):
     instance.fix()

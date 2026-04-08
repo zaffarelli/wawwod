@@ -4,15 +4,14 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('collector', '0137_alter_creature_options'),
+        ("collector", "0137_alter_creature_options"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='rite',
-            name='page',
-            field=models.CharField(blank=True, default='', max_length=16),
+            model_name="rite",
+            name="page",
+            field=models.CharField(blank=True, default="", max_length=16),
         ),
     ]

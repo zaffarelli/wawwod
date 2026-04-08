@@ -13,4 +13,3 @@ admin.site.register(Scene, SceneAdmin)
 admin.site.register(City, CityAdmin)
 admin.site.register(District, DistrictAdmin)
 admin.site.register(HotSpot, HotSpotAdmin)
-

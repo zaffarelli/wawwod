@@ -4,20 +4,19 @@ from django.db import migrations
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('collector', '0109_creature_species'),
+        ("collector", "0109_creature_species"),
     ]
 
     operations = [
         migrations.RenameField(
-            model_name='adventure',
-            old_name='current',
-            new_name='is_current',
+            model_name="adventure",
+            old_name="current",
+            new_name="is_current",
         ),
         migrations.RenameField(
-            model_name='season',
-            old_name='current',
-            new_name='is_current',
+            model_name="season",
+            old_name="current",
+            new_name="is_current",
         ),
     ]

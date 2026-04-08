@@ -5,15 +5,14 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('collector', '0126_gift_source_page'),
+        ("collector", "0126_gift_source_page"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='gift',
-            name='date_pub',
+            model_name="gift",
+            name="date_pub",
             field=models.DateTimeField(default=django.utils.timezone.now),
         ),
     ]

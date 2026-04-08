@@ -12,7 +12,7 @@ from storytelling.mixins.ajaxfromresponse import AjaxFromResponseMixin
 
 class SceneDetailView(DetailView):
     model = Scene
-    context_object_name = 'c'
+    context_object_name = "c"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -26,9 +26,9 @@ class SceneDetailView(DetailView):
 class SceneUpdateView(AjaxFromResponseMixin, UpdateView):
     model = Scene
     form_class = SceneForm
-    context_object_name = 'c'
-    template_name_suffix = '_update_form'
-    success_url = 'view_scene'
+    context_object_name = "c"
+    template_name_suffix = "_update_form"
+    success_url = "view_scene"
 
     # def form_valid(self, form):
     #     context = self.get_context_data(form=form)
@@ -54,4 +54,3 @@ class SceneUpdateView(AjaxFromResponseMixin, UpdateView):
     #         context['tourofdutys'] = TourOfDutyFormSet(instance=self.object)
     #         messages.info(self.request, 'Avatar displayed: %s' % (context['form']['full_name'].value()))
     #     return context
-

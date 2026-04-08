@@ -4,15 +4,14 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('collector', '0055_rename_declaration_rite_code'),
+        ("collector", "0055_rename_declaration_rite_code"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='rite',
-            name='system',
-            field=models.TextField(blank=True, default='', max_length=1024),
+            model_name="rite",
+            name="system",
+            field=models.TextField(blank=True, default="", max_length=1024),
         ),
     ]

@@ -4,23 +4,39 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('collector', '0100_alter_creature_notes'),
+        ("collector", "0100_alter_creature_notes"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Totem',
+            name="Totem",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(default='', max_length=128)),
-                ('code', models.CharField(blank=True, default='', max_length=32)),
-                ('description', models.TextField(blank=True, default='', max_length=1024)),
-                ('ban', models.TextField(blank=True, default='', max_length=1024)),
-                ('individual_traits', models.TextField(blank=True, default='', max_length=1024)),
-                ('pack_traits', models.TextField(blank=True, default='', max_length=1024)),
-                ('background_cost', models.PositiveIntegerField(blank=True, default=5)),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(default="", max_length=128)),
+                ("code", models.CharField(blank=True, default="", max_length=32)),
+                (
+                    "description",
+                    models.TextField(blank=True, default="", max_length=1024),
+                ),
+                ("ban", models.TextField(blank=True, default="", max_length=1024)),
+                (
+                    "individual_traits",
+                    models.TextField(blank=True, default="", max_length=1024),
+                ),
+                (
+                    "pack_traits",
+                    models.TextField(blank=True, default="", max_length=1024),
+                ),
+                ("background_cost", models.PositiveIntegerField(blank=True, default=5)),
             ],
         ),
     ]

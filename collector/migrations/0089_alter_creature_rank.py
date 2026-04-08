@@ -4,15 +4,14 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('collector', '0088_gift_pretty_str'),
+        ("collector", "0088_gift_pretty_str"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='creature',
-            name='rank',
+            model_name="creature",
+            name="rank",
             field=models.IntegerField(blank=True, default=0),
         ),
     ]

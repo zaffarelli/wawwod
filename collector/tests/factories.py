@@ -6,14 +6,16 @@ import factory
 class BlankCreatureFactory(factory.django.DjangoModelFactory):
     class Meta:
         model = Creature
+
     chronicle = get_current_chronicle().acronym
 
 
 class KindredFactory(factory.django.DjangoModelFactory):
     class Meta:
         model = Creature
-    name = 'Vlad the Vampire'
-    creature = 'kindred'
+
+    name = "Vlad the Vampire"
+    creature = "kindred"
     attribute0 = 2
     attribute1 = 2
     attribute2 = 2
@@ -29,8 +31,9 @@ class KindredFactory(factory.django.DjangoModelFactory):
 class GarouFactory(factory.django.DjangoModelFactory):
     class Meta:
         model = Creature
-    name = 'Tessa le Garou'
-    creature = 'garou'
+
+    name = "Tessa le Garou"
+    creature = "garou"
     attribute0 = 2
     attribute1 = 2
     attribute2 = 2
@@ -41,5 +44,3 @@ class GarouFactory(factory.django.DjangoModelFactory):
     attribute7 = 4
     attribute8 = 2
     sex = True
-
-

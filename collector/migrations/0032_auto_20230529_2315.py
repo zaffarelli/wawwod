@@ -4,20 +4,19 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('collector', '0031_auto_20230529_2303'),
+        ("collector", "0031_auto_20230529_2303"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='discipline',
-            name='has_rituals',
+            model_name="discipline",
+            name="has_rituals",
             field=models.BooleanField(default=False),
         ),
         migrations.AlterField(
-            model_name='discipline',
-            name='alternative_name',
-            field=models.CharField(blank=True, default='', max_length=128),
+            model_name="discipline",
+            name="alternative_name",
+            field=models.CharField(blank=True, default="", max_length=128),
         ),
     ]

@@ -5,28 +5,53 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('storytelling', '0021_auto_20220505_1532'),
+        ("storytelling", "0021_auto_20220505_1532"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='City',
+            name="City",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(default='', max_length=128)),
-                ('description', models.TextField(default='', max_length=1024)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(default="", max_length=128)),
+                ("description", models.TextField(default="", max_length=1024)),
             ],
         ),
         migrations.CreateModel(
-            name='District',
+            name="District",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(default='', max_length=128)),
-                ('code', models.CharField(default='', max_length=64)),
-                ('description', models.TextField(blank=True, default='', max_length=1024)),
-                ('city', models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, to='storytelling.city')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(default="", max_length=128)),
+                ("code", models.CharField(default="", max_length=64)),
+                (
+                    "description",
+                    models.TextField(blank=True, default="", max_length=1024),
+                ),
+                (
+                    "city",
+                    models.ForeignKey(
+                        null=True,
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to="storytelling.city",
+                    ),
+                ),
             ],
         ),
     ]

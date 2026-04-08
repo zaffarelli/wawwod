@@ -4,70 +4,69 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('collector', '0001_initial'),
+        ("collector", "0001_initial"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='creature',
-            name='arete',
+            model_name="creature",
+            name="arete",
             field=models.PositiveIntegerField(default=0),
         ),
         migrations.AddField(
-            model_name='creature',
-            name='bloodpool',
+            model_name="creature",
+            name="bloodpool",
             field=models.PositiveIntegerField(default=0),
         ),
         migrations.AddField(
-            model_name='creature',
-            name='glory',
+            model_name="creature",
+            name="glory",
             field=models.PositiveIntegerField(default=0),
         ),
         migrations.AddField(
-            model_name='creature',
-            name='gnosis',
+            model_name="creature",
+            name="gnosis",
             field=models.PositiveIntegerField(default=0),
         ),
         migrations.AddField(
-            model_name='creature',
-            name='honor',
+            model_name="creature",
+            name="honor",
             field=models.PositiveIntegerField(default=0),
         ),
         migrations.AddField(
-            model_name='creature',
-            name='humanity',
+            model_name="creature",
+            name="humanity",
             field=models.PositiveIntegerField(default=0),
         ),
         migrations.AddField(
-            model_name='creature',
-            name='quintessence',
+            model_name="creature",
+            name="quintessence",
             field=models.PositiveIntegerField(default=0),
         ),
         migrations.AddField(
-            model_name='creature',
-            name='rage',
+            model_name="creature",
+            name="rage",
             field=models.PositiveIntegerField(default=0),
         ),
         migrations.AddField(
-            model_name='creature',
-            name='virtue0',
+            model_name="creature",
+            name="virtue0",
             field=models.PositiveIntegerField(default=0),
         ),
         migrations.AddField(
-            model_name='creature',
-            name='virtue1',
+            model_name="creature",
+            name="virtue1",
             field=models.PositiveIntegerField(default=0),
         ),
         migrations.AddField(
-            model_name='creature',
-            name='virtue2',
+            model_name="creature",
+            name="virtue2",
             field=models.PositiveIntegerField(default=0),
         ),
         migrations.AddField(
-            model_name='creature',
-            name='wisdom',
+            model_name="creature",
+            name="wisdom",
             field=models.PositiveIntegerField(default=0),
         ),
     ]

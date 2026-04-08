@@ -4,25 +4,24 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('collector', '0063_alter_creature_adventure'),
+        ("collector", "0063_alter_creature_adventure"),
     ]
 
     operations = [
         migrations.RenameField(
-            model_name='sept',
-            old_name='protagonists',
-            new_name='garous',
+            model_name="sept",
+            old_name="protagonists",
+            new_name="garous",
         ),
         migrations.AddField(
-            model_name='sept',
-            name='kinfolks',
-            field=models.CharField(blank=True, default='', max_length=4096),
+            model_name="sept",
+            name="kinfolks",
+            field=models.CharField(blank=True, default="", max_length=4096),
         ),
         migrations.AlterField(
-            model_name='creature',
-            name='adventure',
-            field=models.CharField(blank=True, default='', max_length=8),
+            model_name="creature",
+            name="adventure",
+            field=models.CharField(blank=True, default="", max_length=8),
         ),
     ]

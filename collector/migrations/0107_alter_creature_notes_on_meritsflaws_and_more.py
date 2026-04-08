@@ -4,20 +4,19 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('collector', '0106_adventure_adventure_teaser'),
+        ("collector", "0106_adventure_adventure_teaser"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='creature',
-            name='notes_on_meritsflaws',
-            field=models.TextField(blank=True, default='', max_length=2048),
+            model_name="creature",
+            name="notes_on_meritsflaws",
+            field=models.TextField(blank=True, default="", max_length=2048),
         ),
         migrations.AlterField(
-            model_name='creature',
-            name='notes_on_naturedemeanor',
-            field=models.TextField(blank=True, default='', max_length=2048),
+            model_name="creature",
+            name="notes_on_naturedemeanor",
+            field=models.TextField(blank=True, default="", max_length=2048),
         ),
     ]

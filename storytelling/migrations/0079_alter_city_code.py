@@ -4,15 +4,14 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('storytelling', '0078_alter_hotspot_type'),
+        ("storytelling", "0078_alter_hotspot_type"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='city',
-            name='code',
-            field=models.CharField(default='', max_length=50),
+            model_name="city",
+            name="code",
+            field=models.CharField(default="", max_length=50),
         ),
     ]

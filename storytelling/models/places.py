@@ -9,18 +9,18 @@ logger = logging.Logger(__name__)
 
 
 class Place(models.Model):
-    name = models.CharField(max_length=128, default='')
-    acronym = models.CharField(max_length=24, default='')
+    name = models.CharField(max_length=128, default="")
+    acronym = models.CharField(max_length=24, default="")
     story = models.ForeignKey(Story, on_delete=models.SET_NULL, null=True)
-    description = models.TextField(max_length=1024, blank=True, default='')
-    special_rules = models.TextField(max_length=1024, blank=True, default='')
+    description = models.TextField(max_length=1024, blank=True, default="")
+    special_rules = models.TextField(max_length=1024, blank=True, default="")
     importance = models.PositiveIntegerField(default=0, blank=True)
 
     def __str__(self):
-        st = ''
+        st = ""
         if self.story is not None:
             st = self.story.acronym
-        return f'{self.acronym} [{st}]'
+        return f"{self.acronym} [{st}]"
 
     def toJSON(self):
         jstr = json.dumps(self, default=json_default, sort_keys=True, indent=4)
@@ -28,7 +28,7 @@ class Place(models.Model):
 
 
 class PlaceAdmin(admin.ModelAdmin):
-    list_display = ['name', 'importance', 'acronym', 'story']
-    ordering = ['story', '-importance', 'acronym']
-    list_filter = ['story']
-    search_fields = ['name', 'description']
+    list_display = ["name", "importance", "acronym", "story"]
+    ordering = ["story", "-importance", "acronym"]
+    list_filter = ["story"]
+    search_fields = ["name", "description"]

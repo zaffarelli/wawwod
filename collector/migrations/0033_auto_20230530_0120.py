@@ -4,15 +4,14 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('collector', '0032_auto_20230529_2315'),
+        ("collector", "0032_auto_20230529_2315"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='discipline',
-            name='description',
-            field=models.TextField(blank=True, default='', max_length=2048),
+            model_name="discipline",
+            name="description",
+            field=models.TextField(blank=True, default="", max_length=2048),
         ),
     ]

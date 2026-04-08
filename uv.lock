@@ -755,7 +755,7 @@ wheels = [
 
 [[package]]
 name = "wawwod"
-version = "1.6.3"
+version = "1.6.4"
 source = { virtual = "." }
 dependencies = [
     { name = "arabic-reshaper" },

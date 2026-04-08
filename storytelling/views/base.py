@@ -24,33 +24,47 @@ def display_storytelling(request):
             all_stories.append(s.toJSON())
             selected_story = s
     settings_json = json.dumps(settings, default=json_default, sort_keys=True, indent=4)
-    places_json = json.dumps(selected_story.all_places, default=json_default, sort_keys=True, indent=4)
-    scenes_json = json.dumps(selected_story.all_scenes, default=json_default, sort_keys=True, indent=4)
-    links_json = json.dumps(selected_story.all_links, default=json_default, sort_keys=True, indent=4)
-    timelines_json = json.dumps(selected_story.all_timelines, default=json_default, sort_keys=True, indent=4)
-    data = {'story': selected_story.toJSON(), 'end_time': selected_story.story_end_time, 'places': places_json,
-            'scenes': scenes_json, 'links': links_json, 'timelines': timelines_json}
+    places_json = json.dumps(
+        selected_story.all_places, default=json_default, sort_keys=True, indent=4
+    )
+    scenes_json = json.dumps(
+        selected_story.all_scenes, default=json_default, sort_keys=True, indent=4
+    )
+    links_json = json.dumps(
+        selected_story.all_links, default=json_default, sort_keys=True, indent=4
+    )
+    timelines_json = json.dumps(
+        selected_story.all_timelines, default=json_default, sort_keys=True, indent=4
+    )
+    data = {
+        "story": selected_story.toJSON(),
+        "end_time": selected_story.story_end_time,
+        "places": places_json,
+        "scenes": scenes_json,
+        "links": links_json,
+        "timelines": timelines_json,
+    }
     data_json = json.dumps(data, default=json_default, sort_keys=True, indent=4)
-    answer = {'data': data_json, 'settings': settings_json}
+    answer = {"data": data_json, "settings": settings_json}
     return JsonResponse(answer)
 
 
-def action_timeslip(request, slug='m0d_m0h__'):
-    targets = slug.split('__')[1]
+def action_timeslip(request, slug="m0d_m0h__"):
+    targets = slug.split("__")[1]
     # print(targets)
-    times = slug.split('__')[0]
-    times_off = times.split('_')
+    times = slug.split("__")[0]
+    times_off = times.split("_")
     # print(times_off)
     total_offset = 0
     for t in times_off:
         # print(t)
         offset = int(t[1])
-        if t[0] == 'm':
+        if t[0] == "m":
             offset *= -1
-        if t[2] == 'd':
+        if t[2] == "d":
             offset *= 24
         total_offset += offset
-    scenes = targets.split('_')
+    scenes = targets.split("_")
     # print(f'Time offset: {total_offset}')
     changes = []
     for s in scenes:
@@ -60,14 +74,21 @@ def action_timeslip(request, slug='m0d_m0h__'):
             obj.time_offset_hours += total_offset
             obj.fix()
             obj.save()
-            changes.append({'id': obj.id, 'time': obj.time_offset_hours, 'story_time': obj.story_time})
+            changes.append(
+                {
+                    "id": obj.id,
+                    "time": obj.time_offset_hours,
+                    "story_time": obj.story_time,
+                }
+            )
     changes_json = json.dumps(changes, default=json_default, sort_keys=True, indent=4)
-    answer = {'changes_on_scenes': changes_json}
+    answer = {"changes_on_scenes": changes_json}
     return JsonResponse(answer)
 
 
 def display_pdf_story(request):
     from collector.models.creatures import Creature
+
     all = Story.objects.all()
     all_stories = []
     settings = {}
@@ -77,16 +98,27 @@ def display_pdf_story(request):
             all_stories.append(s.toJSON())
             selected_story = s
     full_cast = []
-    casted = Creature.objects.filter(rid__in=selected_story.all_cast).order_by('faction', '-freebies', 'family',
-                                                                               '-background3', 'name')
+    casted = Creature.objects.filter(rid__in=selected_story.all_cast).order_by(
+        "faction", "-freebies", "family", "-background3", "name"
+    )
     # casted = Creature.objects.filter(chronicle="HbN", player="", status__in=["OK"],hidden=False, creature__in=["kindred","ghoul","mortal"]).order_by('faction','-freebies', 'family', 'groupspec', 'group')
     for c in casted:
         full_cast.append(c)
     # print(full_cast)
-    data = {'story': selected_story, 'end_time': selected_story.story_end_time, 'places': selected_story.all_places,
-            'scenes': selected_story.all_scenes, 'links': selected_story.all_links,
-            'timelines': selected_story.all_timelines, 'full_cast': full_cast}
-    context = {'data': data, 'settings': settings, 'filename': selected_story.name.lower()}
+    data = {
+        "story": selected_story,
+        "end_time": selected_story.story_end_time,
+        "places": selected_story.all_places,
+        "scenes": selected_story.all_scenes,
+        "links": selected_story.all_links,
+        "timelines": selected_story.all_timelines,
+        "full_cast": full_cast,
+    }
+    context = {
+        "data": data,
+        "settings": settings,
+        "filename": selected_story.name.lower(),
+    }
     # print(context)
     template = get_template("storytelling/pdf/story.html")
     html = template.render(context)
@@ -98,49 +130,52 @@ def display_pdf_story(request):
     #     content = "inline; filename='%s'" % filename
     #     response['content-disposition'] = content
     #     return response
-    filename = 'story_%s.pdf' % context['filename']
+    filename = "story_%s.pdf" % context["filename"]
 
     # fname = os.path.join(settings.MEDIA_ROOT, 'pdf/results/' + filename)
-    fname = os.path.join('wawwod_media/', 'pdf/results/' + filename)
-    es_pdf = open(fname, 'wb')
-    pdf = pisa.pisaDocument(BytesIO(html.encode('utf-8')), es_pdf)
+    fname = os.path.join("wawwod_media/", "pdf/results/" + filename)
+    es_pdf = open(fname, "wb")
+    pdf = pisa.pisaDocument(BytesIO(html.encode("utf-8")), es_pdf)
     if not pdf.err:
         es_pdf.close()
         return HttpResponse(status=204)
-    return HttpResponse(pdf.err, content_type='text/plain')
+    return HttpResponse(pdf.err, content_type="text/plain")
 
 
 @csrf_exempt
 def update_scene(request, id: None, field: None):
     if is_ajax(request):
-        answer = {'error': 'bad_id'}
+        answer = {"error": "bad_id"}
         if id:
             print(id, field)
             scene = Scene.objects.get(pk=id)
             print(getattr(scene, field))
-            answer = {'error': 'bad_scene'}
+            answer = {"error": "bad_scene"}
             if getattr(scene, field) is not None:
-                value = request.POST['text']
+                value = request.POST["text"]
                 setattr(scene, field, value)
                 scene.save()
-                changes = {'field': 'field_' + id + '__' + field, 'value': value}
-                changes_json = json.dumps(changes, default=json_default, sort_keys=True, indent=4)
-                answer = {'changes_on_scenes': changes_json}
+                changes = {"field": "field_" + id + "__" + field, "value": value}
+                changes_json = json.dumps(
+                    changes, default=json_default, sort_keys=True, indent=4
+                )
+                answer = {"changes_on_scenes": changes_json}
     return JsonResponse(answer)
 
 
 def display_map(request, slug=None):
     # from collector.utils.data_collection import get_districts
     from storytelling.models.cities import City
-    response = {'html': '', 'data': {}}
+
+    response = {"html": "", "data": {}}
     print("Display map:", slug)
     if is_ajax(request):
         if not slug:
-            slug = 'munich'
-        x = slug.replace('_', ' ')
+            slug = "munich"
+        x = slug.replace("_", " ")
         city = City.objects.get(code=x)
         context = city.get_districts()
-        response['data'] = context
+        response["data"] = context
     return JsonResponse(response)
 
 
@@ -152,45 +187,41 @@ def display_map(request, slug=None):
 def chronicle_book(request):
     from collector.models.creatures import Creature
     from collector.models.chronicles import Chronicle
+
     settings = {}
     chronicle = Chronicle.current()
     if chronicle.main_creature == "kindred":
         factions = {
-            "camarilla": {
-                "name": "camarilla",
-                "description": "",
-                "groups": {}
-            },
-            "sabbat": {
-                "name": "sabbat",
-                "description": "",
-                "groups": {}
-            },
-            "independents": {
-                "name": "independents",
-                "description": "",
-                "groups": {}
-            },
-            "anarchs": {
-                "name": "anarchs",
-                "description": "",
-                "groups": {}
-            },
+            "camarilla": {"name": "camarilla", "description": "", "groups": {}},
+            "sabbat": {"name": "sabbat", "description": "", "groups": {}},
+            "independents": {"name": "independents", "description": "", "groups": {}},
+            "anarchs": {"name": "anarchs", "description": "", "groups": {}},
         }
     elif chronicle.main_creature == "garou":
         from collector.models.septs import Sept
+
         septs = Sept.objects.filter(chronicle=chronicle.acronym)
         factions = {}
         factions["gaia"] = {"name": "Gaia", "description": "", "groups": {}}
         factions["wyrm"] = {"name": "Wyrm", "description": "", "groups": {}}
 
     groups = {}
-    for c in Creature.objects.filter(chronicle=chronicle.acronym, creature=chronicle.main_creature).exclude(
-            is_player=True).order_by("groupspec"):
+    for c in (
+        Creature.objects.filter(
+            chronicle=chronicle.acronym, creature=chronicle.main_creature
+        )
+        .exclude(is_player=True)
+        .order_by("groupspec")
+    ):
         if chronicle.main_creature == "kindred":
             g = "_".join(c.group.lower().split(" "))
             if g not in groups:
-                groups[g] = {"code": g, "faction": c.faction, "name": f"{c.group}", "kindreds": []}
+                groups[g] = {
+                    "code": g,
+                    "faction": c.faction,
+                    "name": f"{c.group}",
+                    "kindreds": [],
+                }
             kindred_entry = {"data": c, "ghouls": []}
             ghouls = c.retainers_vals
             for h in ghouls:
@@ -198,26 +229,40 @@ def chronicle_book(request):
             groups[g]["kindreds"].append(kindred_entry)
         elif chronicle.main_creature == "garou":
             g = "_".join(c.group.lower().split(" "))
-            if len(c.groupspec.lower())>0:
+            if len(c.groupspec.lower()) > 0:
                 p = "_".join(c.groupspec.lower().split(" "))
                 if g not in groups:
-                    groups[g] = {"code": g, "faction": c.faction, "name": f"{c.group}", "packs": {}}
+                    groups[g] = {
+                        "code": g,
+                        "faction": c.faction,
+                        "name": f"{c.group}",
+                        "packs": {},
+                    }
                 if p not in groups[g]["packs"]:
-                    groups[g]["packs"][p] = {"code": p, "name": c.groupspec, "garous": []}
+                    groups[g]["packs"][p] = {
+                        "code": p,
+                        "name": c.groupspec,
+                        "garous": [],
+                    }
                 groups[g]["packs"][p]["garous"].append(c)
             else:
-                print("Cannot handle",c)
+                print("Cannot handle", c)
     for group, content in groups.items():
         x = content["faction"].lower()
         factions[x]["groups"][group] = content
     print(factions)
-    context = {'data': factions, 'settings': settings, 'filename': chronicle.acronym, "chronicle": chronicle}
+    context = {
+        "data": factions,
+        "settings": settings,
+        "filename": chronicle.acronym,
+        "chronicle": chronicle,
+    }
     template = get_template(f"storytelling/pdf/factions_{chronicle.main_creature}.html")
     html = template.render(context)
-    filename = f'chronicle_book_{context['filename']}.pdf'
-    fname = os.path.join('wawwod_media/', 'books/' + filename)
-    es_pdf = open(fname, 'wb')
-    pdf = pisa.pisaDocument(BytesIO(html.encode('utf-8')), es_pdf)
+    filename = f"chronicle_book_{context['filename']}.pdf"
+    fname = os.path.join("wawwod_media/", "books/" + filename)
+    es_pdf = open(fname, "wb")
+    pdf = pisa.pisaDocument(BytesIO(html.encode("utf-8")), es_pdf)
     answer = {"status": "Ok"}
     if not pdf.err:
         es_pdf.close()
@@ -225,45 +270,41 @@ def chronicle_book(request):
         return HttpResponse(status=204)
     return JsonResponse(answer)
 
+
 def story_book(request):
     from collector.models.creatures import Creature
+
     settings = {}
     adventure, chronicle, season = Adventure.current_full()
     if chronicle.main_creature == "kindred":
         factions = {
-            "camarilla": {
-                "name": "camarilla",
-                "description": "",
-                "groups": {}
-            },
-            "sabbat": {
-                "name": "sabbat",
-                "description": "",
-                "groups": {}
-            },
-            "independents": {
-                "name": "independents",
-                "description": "",
-                "groups": {}
-            },
-            "anarchs": {
-                "name": "anarchs",
-                "description": "",
-                "groups": {}
-            },
+            "camarilla": {"name": "camarilla", "description": "", "groups": {}},
+            "sabbat": {"name": "sabbat", "description": "", "groups": {}},
+            "independents": {"name": "independents", "description": "", "groups": {}},
+            "anarchs": {"name": "anarchs", "description": "", "groups": {}},
         }
     elif chronicle.main_creature == "garou":
         from collector.models.septs import Sept
+
         factions = {}
         factions["gaia"] = {"name": "Gaia", "description": "", "groups": {}}
         factions["wyrm"] = {"name": "Wyrm", "description": "", "groups": {}}
 
     groups = {}
-    for c in Creature.objects.filter(adventure__contains=adventure).exclude(is_player=True).order_by("group"):
+    for c in (
+        Creature.objects.filter(adventure__contains=adventure)
+        .exclude(is_player=True)
+        .order_by("group")
+    ):
         if chronicle.main_creature == "kindred":
             g = "_".join(c.group.lower().split(" "))
             if g not in groups:
-                groups[g] = {"code": g, "faction": c.faction, "name": f"{c.group}", "kindreds": []}
+                groups[g] = {
+                    "code": g,
+                    "faction": c.faction,
+                    "name": f"{c.group}",
+                    "kindreds": [],
+                }
             kindred_entry = {"data": c, "ghouls": []}
             ghouls = c.retainers_vals
             for h in ghouls:
@@ -271,26 +312,40 @@ def story_book(request):
             groups[g]["kindreds"].append(kindred_entry)
         elif chronicle.main_creature == "garou":
             g = "_".join(c.group.lower().split(" "))
-            if len(c.groupspec.lower())>0:
+            if len(c.groupspec.lower()) > 0:
                 p = "_".join(c.groupspec.lower().split(" "))
                 if g not in groups:
-                    groups[g] = {"code": g, "faction": c.faction, "name": f"{c.group}", "packs": {}}
+                    groups[g] = {
+                        "code": g,
+                        "faction": c.faction,
+                        "name": f"{c.group}",
+                        "packs": {},
+                    }
                 if p not in groups[g]["packs"]:
-                    groups[g]["packs"][p] = {"code": p, "name": c.groupspec, "garous": []}
+                    groups[g]["packs"][p] = {
+                        "code": p,
+                        "name": c.groupspec,
+                        "garous": [],
+                    }
                 groups[g]["packs"][p]["garous"].append(c)
             else:
-                print("Cannot handle",c)
+                print("Cannot handle", c)
     for group, content in groups.items():
         x = content["faction"].lower()
         factions[x]["groups"][group] = content
     print(factions)
-    context = {'data': factions, 'settings': settings, 'filename': chronicle.acronym, "chronicle": chronicle}
+    context = {
+        "data": factions,
+        "settings": settings,
+        "filename": chronicle.acronym,
+        "chronicle": chronicle,
+    }
     template = get_template(f"storytelling/pdf/factions_{chronicle.main_creature}.html")
     html = template.render(context)
-    filename = f'chronicle_book_{context['filename']}.pdf'
-    fname = os.path.join('wawwod_media/', 'books/' + filename)
-    es_pdf = open(fname, 'wb')
-    pdf = pisa.pisaDocument(BytesIO(html.encode('utf-8')), es_pdf)
+    filename = f"chronicle_book_{context['filename']}.pdf"
+    fname = os.path.join("wawwod_media/", "books/" + filename)
+    es_pdf = open(fname, "wb")
+    pdf = pisa.pisaDocument(BytesIO(html.encode("utf-8")), es_pdf)
     answer = {"status": "Ok"}
     if not pdf.err:
         es_pdf.close()
@@ -303,6 +358,7 @@ def old_story_book(request):
     from collector.models.creatures import Creature
     from collector.models.seasons import Season
     from collector.models.adventures import Adventure
+
     settings = {}
     adventure, chronicle, season = Adventure.current_full()
     factions = {
@@ -329,15 +385,15 @@ def old_story_book(request):
         "others": {
             "name": "Miscellaneous",
             "description": "All other characters",
-            "groups": []
+            "groups": [],
         },
-
     }
     groups = {}
     g = "others"
     groups[g] = {"code": g, "faction": "None", "name": f"All", "characters": []}
-    all_characters = Creature.objects.filter(chronicle=chronicle.acronym).filter(adventure__contains=adventure,
-                                                                                 player="")
+    all_characters = Creature.objects.filter(chronicle=chronicle.acronym).filter(
+        adventure__contains=adventure, player=""
+    )
     for c in all_characters:
         print(c.name, c.adventure)
         # g = "_".join(c.groupspec.lower().split(" "))
@@ -349,13 +405,18 @@ def old_story_book(request):
         #     entry["ghouls"].append(h)
         groups[g]["characters"].append(entry)
     factions[g]["groups"].append(groups[g])
-    context = {'data': factions, 'settings': settings, 'filename': adventure.acronym, "chronicle": adventure}
+    context = {
+        "data": factions,
+        "settings": settings,
+        "filename": adventure.acronym,
+        "chronicle": adventure,
+    }
     template = get_template("storytelling/pdf/new_story.html")
     html = template.render(context)
-    filename = f'story_book_{context['filename']}.pdf'
-    fname = os.path.join('wawwod_media/', 'books/' + filename)
-    es_pdf = open(fname, 'wb')
-    pdf = pisa.pisaDocument(BytesIO(html.encode('utf-8')), es_pdf)
+    filename = f"story_book_{context['filename']}.pdf"
+    fname = os.path.join("wawwod_media/", "books/" + filename)
+    es_pdf = open(fname, "wb")
+    pdf = pisa.pisaDocument(BytesIO(html.encode("utf-8")), es_pdf)
     answer = {"status": "Ok"}
     if not pdf.err:
         es_pdf.close()

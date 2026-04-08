@@ -4,20 +4,19 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('collector', '0138_rite_page'),
+        ("collector", "0138_rite_page"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='rite',
-            name='description',
-            field=models.TextField(blank=True, default='', max_length=4096),
+            model_name="rite",
+            name="description",
+            field=models.TextField(blank=True, default="", max_length=4096),
         ),
         migrations.AlterField(
-            model_name='rite',
-            name='system',
-            field=models.TextField(blank=True, default='', max_length=2048),
+            model_name="rite",
+            name="system",
+            field=models.TextField(blank=True, default="", max_length=2048),
         ),
     ]

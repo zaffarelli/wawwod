@@ -8,13 +8,13 @@ import json
 
 class Archetype(models.Model):
     id = models.AutoField(primary_key=True)
-    name = models.CharField(max_length=128, default='', unique=True)
-    source = models.CharField(max_length=32, default='VTM3', blank=True)
-    description = models.TextField(max_length=1024, blank=True, default='')
-    system = models.TextField(max_length=1024, blank=True, default='')
+    name = models.CharField(max_length=128, default="", unique=True)
+    source = models.CharField(max_length=32, default="VTM3", blank=True)
+    description = models.TextField(max_length=1024, blank=True, default="")
+    system = models.TextField(max_length=1024, blank=True, default="")
 
     def __str__(self):
-        return f'{self.name}'
+        return f"{self.name}"
 
     # @classmethod
     # def reid(cls):
@@ -24,8 +24,8 @@ class Archetype(models.Model):
 
 
 class ArchetypeAdmin(admin.ModelAdmin):
-    list_display = ['id', 'name', 'source', 'description', 'system']
-    ordering = ['source', 'name']
-    list_filter = ['source']
-    search_fields = ['name', 'system', 'description']
-    list_editable = ['source', 'description', 'system']
+    list_display = ["id", "name", "source", "description", "system"]
+    ordering = ["source", "name"]
+    list_filter = ["source"]
+    search_fields = ["name", "system", "description"]
+    list_editable = ["source", "description", "system"]

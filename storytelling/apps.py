@@ -2,11 +2,11 @@ from django.apps import AppConfig
 
 
 class StorytellingConfig(AppConfig):
-    default_auto_field = 'django.db.models.BigAutoField'
-    name = 'storytelling'
+    default_auto_field = "django.db.models.BigAutoField"
+    name = "storytelling"
 
     def ready(self):
         import storytelling.signals.districts
         import storytelling.signals.cities
         import storytelling.signals.hotspots
-        #pass
+        # pass

@@ -4,20 +4,19 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('storytelling', '0065_city_options'),
+        ("storytelling", "0065_city_options"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='city',
-            name='description',
-            field=models.TextField(blank=True, default='', max_length=1024),
+            model_name="city",
+            name="description",
+            field=models.TextField(blank=True, default="", max_length=1024),
         ),
         migrations.AlterField(
-            model_name='city',
-            name='options',
-            field=models.CharField(blank=True, default='', max_length=128),
+            model_name="city",
+            name="options",
+            field=models.CharField(blank=True, default="", max_length=128),
         ),
     ]

@@ -4,15 +4,14 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('collector', '0153_rename_refcode_season_id'),
+        ("collector", "0153_rename_refcode_season_id"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='gift',
-            name='id',
+            model_name="gift",
+            name="id",
             field=models.AutoField(primary_key=True, serialize=False),
         ),
     ]

@@ -3,9 +3,6 @@ from django.dispatch import receiver
 from collector.models.seasons import Season
 
 
-@receiver(pre_save, sender=Season, dispatch_uid='update_season')
+@receiver(pre_save, sender=Season, dispatch_uid="update_season")
 def update_season(sender, instance, **kwargs):
     instance.fix()
-
-
-

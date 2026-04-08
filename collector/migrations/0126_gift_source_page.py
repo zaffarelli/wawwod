@@ -4,15 +4,14 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('collector', '0125_sept_faction'),
+        ("collector", "0125_sept_faction"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='gift',
-            name='source_page',
-            field=models.CharField(blank=True, default='', max_length=8),
+            model_name="gift",
+            name="source_page",
+            field=models.CharField(blank=True, default="", max_length=8),
         ),
     ]

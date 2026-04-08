@@ -4,25 +4,24 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('collector', '0018_auto_20220505_1422'),
+        ("collector", "0018_auto_20220505_1422"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='creature',
-            name='notes_on_history',
-            field=models.TextField(blank=True, default='', max_length=3072),
+            model_name="creature",
+            name="notes_on_history",
+            field=models.TextField(blank=True, default="", max_length=3072),
         ),
         migrations.AlterField(
-            model_name='creature',
-            name='notes_on_meritsflaws',
-            field=models.TextField(blank=True, default='', max_length=1024),
+            model_name="creature",
+            name="notes_on_meritsflaws",
+            field=models.TextField(blank=True, default="", max_length=1024),
         ),
         migrations.AlterField(
-            model_name='creature',
-            name='notes_on_naturedemeanor',
-            field=models.TextField(blank=True, default='', max_length=1024),
+            model_name="creature",
+            name="notes_on_naturedemeanor",
+            field=models.TextField(blank=True, default="", max_length=1024),
         ),
     ]

@@ -4,20 +4,19 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('collector', '0102_alter_totem_individual_traits_and_more'),
+        ("collector", "0102_alter_totem_individual_traits_and_more"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='creature',
-            name='body_limit',
+            model_name="creature",
+            name="body_limit",
             field=models.PositiveIntegerField(default=0),
         ),
         migrations.AddField(
-            model_name='creature',
-            name='fury_limit',
+            model_name="creature",
+            name="fury_limit",
             field=models.PositiveIntegerField(default=0),
         ),
     ]

@@ -4,15 +4,28 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('storytelling', '0041_remove_district_s_num'),
+        ("storytelling", "0041_remove_district_s_num"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='district',
-            name='status',
-            field=models.CharField(blank=True, choices=[('full', 'Full'), ('controlled', 'Controlled'), ('presence', 'Presence'), ('neutral', 'Neutral'), ('incursions', 'Incursions'), ('contested', 'Contested'), ('lost', 'Lost')], default='neutral', max_length=64, null=True),
+            model_name="district",
+            name="status",
+            field=models.CharField(
+                blank=True,
+                choices=[
+                    ("full", "Full"),
+                    ("controlled", "Controlled"),
+                    ("presence", "Presence"),
+                    ("neutral", "Neutral"),
+                    ("incursions", "Incursions"),
+                    ("contested", "Contested"),
+                    ("lost", "Lost"),
+                ],
+                default="neutral",
+                max_length=64,
+                null=True,
+            ),
         ),
     ]

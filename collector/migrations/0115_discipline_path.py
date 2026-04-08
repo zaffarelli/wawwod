@@ -4,15 +4,14 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('collector', '0114_remove_season_chronicle'),
+        ("collector", "0114_remove_season_chronicle"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='discipline',
-            name='path',
-            field=models.CharField(default='', max_length=128),
+            model_name="discipline",
+            name="path",
+            field=models.CharField(default="", max_length=128),
         ),
     ]

@@ -4,15 +4,14 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('collector', '0119_deed_code'),
+        ("collector", "0119_deed_code"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='adventure',
-            name='deeds_map_str',
-            field=models.TextField(blank=True, default='', max_length=2048),
+            model_name="adventure",
+            name="deeds_map_str",
+            field=models.TextField(blank=True, default="", max_length=2048),
         ),
     ]

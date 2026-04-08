@@ -4,19 +4,26 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('collector', '0039_chronicle_is_storyteller_only'),
+        ("collector", "0039_chronicle_is_storyteller_only"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Archetype',
+            name="Archetype",
             fields=[
-                ('name', models.CharField(default='', max_length=128, primary_key=True, serialize=False)),
-                ('source', models.CharField(blank=True, default='VTM3', max_length=32)),
-                ('description', models.TextField(blank=True, default='', max_length=1024)),
-                ('system', models.TextField(blank=True, default='', max_length=1024)),
+                (
+                    "name",
+                    models.CharField(
+                        default="", max_length=128, primary_key=True, serialize=False
+                    ),
+                ),
+                ("source", models.CharField(blank=True, default="VTM3", max_length=32)),
+                (
+                    "description",
+                    models.TextField(blank=True, default="", max_length=1024),
+                ),
+                ("system", models.TextField(blank=True, default="", max_length=1024)),
             ],
         ),
     ]

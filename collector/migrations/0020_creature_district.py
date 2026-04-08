@@ -4,15 +4,14 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('collector', '0019_auto_20220509_0151'),
+        ("collector", "0019_auto_20220509_0151"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='creature',
-            name='district',
-            field=models.CharField(blank=True, default='d01', max_length=8),
+            model_name="creature",
+            name="district",
+            field=models.CharField(blank=True, default="d01", max_length=8),
         ),
     ]

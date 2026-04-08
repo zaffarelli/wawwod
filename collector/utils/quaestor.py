@@ -1,6 +1,7 @@
 from itertools import chain
 import json
 
+
 class Quaestor:
     def __init__(self):
         self.request = ""
@@ -13,7 +14,7 @@ class Quaestor:
         status, rationale, data = self.do_command()
         if status:
             result = data
-        return status,rationale,result
+        return status, rationale, result
 
     def do_command(self):
         data = []
@@ -30,6 +31,7 @@ class Quaestor:
                         rationale += "all possible gifts for "
                         if w[2].startswith("_"):
                             from collector.models.creatures import Creature
+
                             rid = w[2]
                             creatures = Creature.objects.filter(rid=rid)
                             if len(creatures) == 1:
@@ -49,17 +51,21 @@ class Quaestor:
         from collector.models.gifts import Gift
         from collector.templatetags.wod_filters import as_tribe_plural
         from collector.utils.wod_reference import ALL_TRIBES
-        fb = {f"breed_{creature.breed}":True,"level__lte":creature.garou_rank}
-        datab = Gift.objects.filter(**fb).values("name","level","references")
-        fa = {f"auspice_{creature.auspice}": True,"level__lte":creature.garou_rank}
-        dataa = Gift.objects.filter(**fa).values("name","level","references")
+
+        fb = {f"breed_{creature.breed}": True, "level__lte": creature.garou_rank}
+        datab = Gift.objects.filter(**fb).values("name", "level", "references")
+        fa = {f"auspice_{creature.auspice}": True, "level__lte": creature.garou_rank}
+        dataa = Gift.objects.filter(**fa).values("name", "level", "references")
         tribe = as_tribe_plural(creature.family)
         # print(tribe)
-        ft = {f"tribe_{ALL_TRIBES.index(tribe)}": True, "level__lte": creature.garou_rank}
+        ft = {
+            f"tribe_{ALL_TRIBES.index(tribe)}": True,
+            "level__lte": creature.garou_rank,
+        }
         datat = Gift.objects.filter(**ft).values("name", "level", "references")
-        data = chain(datab,dataa,datat)
+        data = chain(datab, dataa, datat)
 
-        sorted_data = sorted(data, key=lambda k : k['level'])
+        sorted_data = sorted(data, key=lambda k: k["level"])
         print(sorted_data)
         return sorted_data
 

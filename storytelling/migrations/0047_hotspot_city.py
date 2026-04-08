@@ -5,15 +5,18 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('storytelling', '0046_hotspot'),
+        ("storytelling", "0046_hotspot"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='hotspot',
-            name='city',
-            field=models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, to='storytelling.city'),
+            model_name="hotspot",
+            name="city",
+            field=models.ForeignKey(
+                null=True,
+                on_delete=django.db.models.deletion.CASCADE,
+                to="storytelling.city",
+            ),
         ),
     ]

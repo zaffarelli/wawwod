@@ -8,9 +8,12 @@ logger = logging.Logger(__name__)
 
 def domitor_from_sire():
     from collector.models.creatures import Creature
-    ghouls = Creature.objects.filter(chronicle=chronicle.acronym, creature__in=['ghoul', 'kindred'])
+
+    ghouls = Creature.objects.filter(
+        chronicle=chronicle.acronym, creature__in=["ghoul", "kindred"]
+    )
     for g in ghouls:
-        if g.sire != '':
+        if g.sire != "":
             sires = Creature.objects.filter(name=g.sire)
             if len(sires) == 1:
                 s = sires.first()
@@ -18,7 +21,7 @@ def domitor_from_sire():
                 s = None
             if s is not None:
                 g.domitor = s
-                if g.creature == 'ghoul':
+                if g.creature == "ghoul":
                     g.subgroup = s.subgroup
                 g.save()
 
@@ -26,17 +29,22 @@ def domitor_from_sire():
 def manage_missing_ghouls():
     from collector.models.creatures import Creature
     from random import random, randrange
+
     # Get the chronicle kindreds having retainers:
-    kindreds = Creature.objects.filter(chronicle=chronicle.acronym, background8__gt=0, creature='kindred')
+    kindreds = Creature.objects.filter(
+        chronicle=chronicle.acronym, background8__gt=0, creature="kindred"
+    )
     for k in kindreds:
-        ghouls = Creature.objects.filter(chronicle=chronicle.acronym, sire=k.rid, creature='ghoul')
+        ghouls = Creature.objects.filter(
+            chronicle=chronicle.acronym, sire=k.rid, creature="ghoul"
+        )
         print()
         print("--", "Kindred", k.name, f"(Retainers={k.background8})")
         if len(ghouls):
             print("    ", "Current ghouls:")
         for g in ghouls:
-            print("    --", g.name, f'(domitor={g.sire})')
-            if g.position == '':
+            print("    --", g.name, f"(domitor={g.sire})")
+            if g.position == "":
                 x = randrange(0, 10) + 1
                 if x > 9:  # 10
                     g.position = "Leisure"
@@ -50,7 +58,7 @@ def manage_missing_ghouls():
                     g.position = "Valet"
             if k.condition.startswith("MISSING"):
                 words = k.condition.split("=")
-                g.condition = "DEAD="+words[1]
+                g.condition = "DEAD=" + words[1]
             elif k.condition.startswith("DEAD"):
                 g.condition = k.condition
             g.need_fix = True
@@ -76,19 +84,21 @@ def manage_missing_ghouls():
                 retainer.randomize_archetypes()
                 retainer.randomize_attributes()
                 retainer.randomize_abilities()
-                retainer.source = 'zaffarelli'
-                retainer.name = f"{'Male' if retainer.sex else 'Female'} ghoul {x + 1} of {k.name}"
+                retainer.source = "zaffarelli"
+                retainer.name = (
+                    f"{'Male' if retainer.sex else 'Female'} ghoul {x + 1} of {k.name}"
+                )
                 retainer.save()
-                print("    -+", retainer.name, f'(domitor={retainer.sire})')
+                print("    -+", retainer.name, f"(domitor={retainer.sire})")
 
 
 def resort(list):
     vampires = []
     ghouls = []
     for creature in list:
-        if creature['creature'] == 'kindred':
+        if creature["creature"] == "kindred":
             vampires.append(creature)
-        elif creature['creature'] == 'ghoul':
+        elif creature["creature"] == "ghoul":
             ghouls.append(creature)
 
     sorted_list = []
@@ -97,7 +107,7 @@ def resort(list):
         sublist = []
         sublist.append(vampire)
         for ghoul in ghouls:
-            if ghoul['sire'] == vampire['rid']:
+            if ghoul["sire"] == vampire["rid"]:
                 if pre:
                     sublist.insert(0, ghoul)
                 else:
@@ -107,12 +117,13 @@ def resort(list):
             sorted_list.append(creature)
     idx = 0
     for creature in sorted_list:
-        creature['index'] = idx
+        creature["index"] = idx
         idx += 1
     return sorted_list
 
 
 def roll(x):
     import random
+
     x = random.randint(0, x - 1) + 1
     return x

@@ -4,15 +4,14 @@ from django.db import migrations
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('storytelling', '0068_city_lattitude_city_longitude'),
+        ("storytelling", "0068_city_lattitude_city_longitude"),
     ]
 
     operations = [
         migrations.RenameField(
-            model_name='city',
-            old_name='lattitude',
-            new_name='latitude',
+            model_name="city",
+            old_name="lattitude",
+            new_name="latitude",
         ),
     ]

@@ -4,15 +4,14 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('collector', '0103_creature_body_limit_creature_fury_limit'),
+        ("collector", "0103_creature_body_limit_creature_fury_limit"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='creature',
-            name='experience_expenditure',
-            field=models.TextField(blank=True, default='', max_length=1024),
+            model_name="creature",
+            name="experience_expenditure",
+            field=models.TextField(blank=True, default="", max_length=1024),
         ),
     ]

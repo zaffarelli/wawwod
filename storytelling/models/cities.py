@@ -12,16 +12,16 @@ logger = logging.Logger(__name__)
 
 class City(models.Model):
     class Meta:
-        verbose_name_plural = 'Cities'
+        verbose_name_plural = "Cities"
 
-    name = models.CharField(max_length=128, default='')
-    chronicle = models.CharField(max_length=50, default='WOD')
-    code = models.CharField(max_length=50, default='')
-    description = models.TextField(max_length=1024, default='', blank=True)
-    geojson_file = models.CharField(max_length=128, default='', blank=True)
-    sector_property = models.CharField(max_length=128, default='sector', blank=True)
-    name_property = models.CharField(max_length=128, default='name', blank=True)
-    code_property = models.CharField(max_length=128, default='code', blank=True)
+    name = models.CharField(max_length=128, default="")
+    chronicle = models.CharField(max_length=50, default="WOD")
+    code = models.CharField(max_length=50, default="")
+    description = models.TextField(max_length=1024, default="", blank=True)
+    geojson_file = models.CharField(max_length=128, default="", blank=True)
+    sector_property = models.CharField(max_length=128, default="sector", blank=True)
+    name_property = models.CharField(max_length=128, default="name", blank=True)
+    code_property = models.CharField(max_length=128, default="code", blank=True)
     font_scale = models.FloatField(default=1.0, blank=True)
     longitude = models.FloatField(default=0.0, blank=True)
     latitude = models.FloatField(default=0.0, blank=True)
@@ -33,7 +33,7 @@ class City(models.Model):
             self.latitude = 44.977918783484476
         if self.longitude == 0:
             self.longitude = -93.27224591598777
-        url = f'https://api.sunrise-sunset.org/json?lat={self.latitude}&lng={self.longitude}&date=2024-06-01'
+        url = f"https://api.sunrise-sunset.org/json?lat={self.latitude}&lng={self.longitude}&date=2024-06-01"
         answer = requests.get(url, [])
         json_data = answer.json()
         print(url)
@@ -49,6 +49,7 @@ class City(models.Model):
         with open(file, "r") as f:
             j = json.load(f)
         from storytelling.models.districts import District
+
         for item in j["features"]:
             name = item["properties"]["name"]
             id = item["properties"]["cartodb_id"]
@@ -76,7 +77,9 @@ class City(models.Model):
             Example: {"number":"27", "name":"Minnesota"},{"number":"27", "name":"North Dakota"}
         :returns True if everything went well
         """
-        with open("/home/zaffarelli/Projects/wawwod/storytelling/static/storytelling/geojson/usa.geojson") as f:
+        with open(
+            "/home/zaffarelli/Projects/wawwod/storytelling/static/storytelling/geojson/usa.geojson"
+        ) as f:
             lines = f.readlines()
         new_lines = []
         final_file_name = []
@@ -86,7 +89,7 @@ class City(models.Model):
             acro += state["name"][:2].upper()
             print(acro)
         the_name = "_".join(final_file_name)
-        full_name = f'/home/zaffarelli/Projects/wawwod/storytelling/static/storytelling/geojson/{the_name.lower()}.geojson'
+        full_name = f"/home/zaffarelli/Projects/wawwod/storytelling/static/storytelling/geojson/{the_name.lower()}.geojson"
         for line in lines:
             if line.startswith('{ "type": "Feature",'):
                 push = False
@@ -135,7 +138,7 @@ class City(models.Model):
         return result
 
     def __str__(self):
-        return f'{self.name}'
+        return f"{self.name}"
 
     def toJSON(self):
         jstr = json.dumps(self, default=json_default, sort_keys=True, indent=4)
@@ -147,66 +150,71 @@ class City(models.Model):
         from storytelling.models.hotspots import HotSpot
         from collector.models.adventures import Adventure
         import json
+
         chronicle = Chronicle.current()
         adventure = Adventure.current()
         settings = {"player_safe": not chronicle.is_storyteller_only}
-        context = {'districts': {}, 'hotspots': [], 'settings': settings, 'fontset': []}
+        context = {"districts": {}, "hotspots": [], "settings": settings, "fontset": []}
         self.create_districts()
         districts = District.objects.filter(city=self)
         for d in districts:
-            context['districts'][d.code] = {
-                'code': d.code,
-                'fill': d.color,
-                'title': d.title,
-                'status': d.status,
-                'district_name': d.district_name,
-                'adventures': d.adventures,
-                'sector_name': d.sector_name,
-                'population': d.population,
-                'population_details': d.population_details,
-                'camarilla_resources': d.camarilla_resources,
-                'camarilla_power': d.camarilla_power,
-                'camarilla_intelligence': d.camarilla_intelligence,
-                'camarilla_leisure': d.camarilla_leisure
+            context["districts"][d.code] = {
+                "code": d.code,
+                "fill": d.color,
+                "title": d.title,
+                "status": d.status,
+                "district_name": d.district_name,
+                "adventures": d.adventures,
+                "sector_name": d.sector_name,
+                "population": d.population,
+                "population_details": d.population_details,
+                "camarilla_resources": d.camarilla_resources,
+                "camarilla_power": d.camarilla_power,
+                "camarilla_intelligence": d.camarilla_intelligence,
+                "camarilla_leisure": d.camarilla_leisure,
             }
         hotspots = HotSpot.objects.filter(city=self)
         # print(f"***** {self.name} {len(hotspots)}")
         for hs in hotspots:
-            context['hotspots'].append({
-                'type': 'feature',
-                'geometry': {
-                    'type': "Point",
-                    "coordinates": [hs.latitude, hs.longitude]
-                },
-                'properties': {
-                    'name': hs.name,
-                    'color': hs.color,
-                    'type': hs.type,
-                    'code': hs.id,
-                    'is_public': hs.is_public,
-                    'visible': True,
-                    'pos_visible': 500,
-                    'hyperlink': hs.hyperlink,
-                    'episode': hs.episode
+            context["hotspots"].append(
+                {
+                    "type": "feature",
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [hs.latitude, hs.longitude],
+                    },
+                    "properties": {
+                        "name": hs.name,
+                        "color": hs.color,
+                        "type": hs.type,
+                        "code": hs.id,
+                        "is_public": hs.is_public,
+                        "visible": True,
+                        "pos_visible": 500,
+                        "hyperlink": hs.hyperlink,
+                        "episode": hs.episode,
+                    },
                 }
-            })
+            )
         # print(context["hotspots"])
-        context['fontset'] = FONTSET
+        context["fontset"] = FONTSET
         x = json.dumps(context, indent=4, sort_keys=True)
         return x
 
     def create_districts(self):
         from storytelling.models.districts import District
+
         all = District.objects.filter(city=self)
-        if len(all)>0:
+        if len(all) > 0:
             return
         with open(
-                f"/home/zaffarelli/Projects/wawwod/storytelling/static/storytelling/geojson/{self.geojson_file}.geojson") as f:
+            f"/home/zaffarelli/Projects/wawwod/storytelling/static/storytelling/geojson/{self.geojson_file}.geojson"
+        ) as f:
             lines = f.readlines()
         for line in lines:
             if line.startswith('{ "type": "Feature",'):
                 sanitized_line = line.strip()
-                if sanitized_line.endswith(','):
+                if sanitized_line.endswith(","):
                     sanitized_line = line[:-2]
                 datum = json.loads(sanitized_line)
                 district_code = f"{self.code}_{datum['properties']['GEOID']}"
@@ -216,15 +224,23 @@ class City(models.Model):
                     d = District()
                     d.code = district_code
                     d.city = self
-                    d.district_name = datum['properties']['NAME']
-                    d.sector_name = datum['properties']['STATEFP']
+                    d.district_name = datum["properties"]["NAME"]
+                    d.sector_name = datum["properties"]["STATEFP"]
                     d.save()
 
 
 class CityAdmin(admin.ModelAdmin):
-    list_display = ['name', "chronicle", 'code', 'geojson_file', 'options', 'description']
-    list_editable = ["chronicle", 'code', 'geojson_file']
-    ordering = ['name']
-    search_fields = ['name', 'code', 'description']
+    list_display = [
+        "name",
+        "chronicle",
+        "code",
+        "geojson_file",
+        "options",
+        "description",
+    ]
+    list_editable = ["chronicle", "code", "geojson_file"]
+    ordering = ["name"]
+    search_fields = ["name", "code", "description"]
     from collector.utils.helper import refix
+
     actions = [refix]

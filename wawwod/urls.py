@@ -7,8 +7,8 @@ admin.site.site_title = "WaWWoD"
 admin.site.index_title = "Welcome to the WaWWoD collector."
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('collector.urls')),
-    path('', include('storytelling.urls')),
-    path('accounts/', include('django.contrib.auth.urls')),
+    path("admin/", admin.site.urls),
+    path("", include("collector.urls")),
+    path("", include("storytelling.urls")),
+    path("accounts/", include("django.contrib.auth.urls")),
 ]

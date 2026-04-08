@@ -4,20 +4,21 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('collector', '0030_auto_20230529_2301'),
+        ("collector", "0030_auto_20230529_2301"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='discipline',
-            name='alternative_name',
-            field=models.CharField(default='', max_length=128),
+            model_name="discipline",
+            name="alternative_name",
+            field=models.CharField(default="", max_length=128),
         ),
         migrations.AlterField(
-            model_name='discipline',
-            name='code',
-            field=models.CharField(default='?', max_length=128, primary_key=True, serialize=False),
+            model_name="discipline",
+            name="code",
+            field=models.CharField(
+                default="?", max_length=128, primary_key=True, serialize=False
+            ),
         ),
     ]

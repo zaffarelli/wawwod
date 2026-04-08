@@ -4,15 +4,14 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('collector', '0085_alter_creature_pre_change_access'),
+        ("collector", "0085_alter_creature_pre_change_access"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='sept',
-            name='treemap',
-            field=models.TextField(blank=True, default='{}', max_length=8192),
+            model_name="sept",
+            name="treemap",
+            field=models.TextField(blank=True, default="{}", max_length=8192),
         ),
     ]

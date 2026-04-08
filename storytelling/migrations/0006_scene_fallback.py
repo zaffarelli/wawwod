@@ -4,15 +4,14 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('storytelling', '0005_auto_20210718_1830'),
+        ("storytelling", "0005_auto_20210718_1830"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='scene',
-            name='fallback',
-            field=models.TextField(blank=True, default='', max_length=1024),
+            model_name="scene",
+            name="fallback",
+            field=models.TextField(blank=True, default="", max_length=1024),
         ),
     ]

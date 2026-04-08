@@ -4,20 +4,21 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('collector', '0120_adventure_deeds_map_str'),
+        ("collector", "0120_adventure_deeds_map_str"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='adventure',
-            name='acronym',
-            field=models.CharField(default='', max_length=32, primary_key=True, serialize=False),
+            model_name="adventure",
+            name="acronym",
+            field=models.CharField(
+                default="", max_length=32, primary_key=True, serialize=False
+            ),
         ),
         migrations.AlterField(
-            model_name='adventure',
-            name='name',
-            field=models.CharField(default='', max_length=128),
+            model_name="adventure",
+            name="name",
+            field=models.CharField(default="", max_length=128),
         ),
     ]

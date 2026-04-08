@@ -4,20 +4,19 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('collector', '0101_totem'),
+        ("collector", "0101_totem"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='totem',
-            name='individual_traits',
-            field=models.CharField(blank=True, default='', max_length=256),
+            model_name="totem",
+            name="individual_traits",
+            field=models.CharField(blank=True, default="", max_length=256),
         ),
         migrations.AlterField(
-            model_name='totem',
-            name='pack_traits',
-            field=models.CharField(blank=True, default='', max_length=256),
+            model_name="totem",
+            name="pack_traits",
+            field=models.CharField(blank=True, default="", max_length=256),
         ),
     ]

@@ -14,6 +14,7 @@ from django.template.loader import get_template
 from django.views.decorators.csrf import csrf_exempt
 from collector.templatetags.wod_filters import as_bullets
 from collector.utils.data_collection import build_per_primogen, build_gaia_wheel
+
 # from collector.utils.wod_reference import get_current_chronicle
 from collector.models.chronicles import Chronicle
 from collector.models.septs import Sept
@@ -38,12 +39,24 @@ def prepare_index(request):
     # Adventure.set_current("SPI")
     # chronicle = Chronicle.current()  # get_current_chronicle()
     ad, chronicle, _ = Adventure.current_full()
-    plist = Creature.objects.filter(chronicle=chronicle.acronym).exclude(is_player=False).exclude(adventure="").order_by('name')
+    plist = (
+        Creature.objects.filter(chronicle=chronicle.acronym)
+        .exclude(is_player=False)
+        .exclude(adventure="")
+        .order_by("name")
+    )
     prev_a = ""
 
-    adventure = {'adventure': ad.name, 'acronym': ad.acronym, 'players': []}
+    adventure = {"adventure": ad.name, "acronym": ad.acronym, "players": []}
     for p in plist:
-        adventure['players'].append({'name': p.name, 'rid': p.rid, 'player': p.player, 'pre_change_access': p.pre_change_access})
+        adventure["players"].append(
+            {
+                "name": p.name,
+                "rid": p.rid,
+                "player": p.player,
+                "pre_change_access": p.pre_change_access,
+            }
+        )
     players.append(adventure)
     for c in Chronicle.objects.all():
         chronicles.append(c.to_json)
@@ -63,8 +76,11 @@ def prepare_index(request):
     groups = {}
     grp = {}
     if chronicle.main_creature == "kindred":
-        for c in Creature.objects.filter(chronicle=chronicle.acronym, condition="OK").exclude(
-                creature__in=["ghoul", "kinfolk", "mortal"]).order_by("groupspec"):
+        for c in (
+            Creature.objects.filter(chronicle=chronicle.acronym, condition="OK")
+            .exclude(creature__in=["ghoul", "kinfolk", "mortal"])
+            .order_by("groupspec")
+        ):
             g = "_".join(c.groupspec.lower().split(" "))
             if g in groups:
                 groups[g]["count"] += 1
@@ -76,8 +92,14 @@ def prepare_index(request):
                     groups[g]["countg"] += 1
                 groups[g]["characters"].append(c)
             else:
-                groups[g] = {"code": g, "faction": c.faction, "name": f"{c.groupspec} ({c.faction})", "count": 1,
-                             "countg": 0, "characters": []}
+                groups[g] = {
+                    "code": g,
+                    "faction": c.faction,
+                    "name": f"{c.groupspec} ({c.faction})",
+                    "count": 1,
+                    "countg": 0,
+                    "characters": [],
+                }
                 ghouls = c.retainers_vals
                 c.retainers_list = []
                 for h in ghouls:
@@ -104,29 +126,33 @@ def prepare_index(request):
         "septs": septs,
         "cities": cities,
         "miscellaneous": misc,
-        "weeks": moon_phase(None)
+        "weeks": moon_phase(None),
     }
     return context
 
 
 def renown(request):
     from collector.models.adventures import Adventure
+
     print("Renown")
     adventure = Adventure.current()
     from collector.models.deeds import Deed
+
     html = Deed.adventure_to_html(adventure)
-    answer = {'html': html}
+    answer = {"html": html}
 
     return JsonResponse(answer)
 
 
 def renown_records(request):
     from collector.models.adventures import Adventure
+
     print("Renown Records")
     adventure = Adventure.current()
     from collector.models.deeds import Deed
+
     html = Deed.players_to_html(adventure)
-    answer = {'html': html}
+    answer = {"html": html}
 
     return JsonResponse(answer)
 
@@ -134,9 +160,9 @@ def renown_records(request):
 @login_required
 def index(request):
     if not request.user.is_authenticated:
-        return render(request, 'collector/registration/login_error.html')
+        return render(request, "collector/registration/login_error.html")
     context = prepare_index(request)
-    return render(request, 'collector/index.html', context=context)
+    return render(request, "collector/index.html", context=context)
 
 
 def change_chronicle(request, slug=None):
@@ -145,7 +171,7 @@ def change_chronicle(request, slug=None):
         print("Change Chronicle")
         Chronicle.set_current(slug)
         context = prepare_index(request)
-        return render(request, 'collector/index.html', context=context)
+        return render(request, "collector/index.html", context=context)
 
 
 def change_adventure(request, slug=None):
@@ -154,7 +180,7 @@ def change_adventure(request, slug=None):
         print("Change Adventure")
         Adventure.set_current(slug)
         context = prepare_index(request)
-        return render(request, 'collector/index.html', context=context)
+        return render(request, "collector/index.html", context=context)
 
 
 def display_groups(request, slug=None):
@@ -162,11 +188,9 @@ def display_groups(request, slug=None):
         if is_ajax(request):
             context = prepare_index(request)
             context["faction"] = context["groups"][slug.lower()]
-            template = get_template('collector/page/factions.html')
+            template = get_template("collector/page/factions.html")
             html = template.render(context)
-            answer = {
-                'html': html
-            }
+            answer = {"html": html}
             return JsonResponse(answer)
         else:
             return HttpResponse(status=204)
@@ -177,87 +201,97 @@ def display_groups(request, slug=None):
 def get_list(request, pid=1, slug=None):
     adventure, chronicle, season = Adventure.current_full()
     if is_ajax(request):
-        if 'vtm' == slug:
+        if "vtm" == slug:
             # print('vampires')
-            creature_items = Creature.objects \
-                .filter(chronicle=chronicle.acronym, creature__in=['ghoul', 'kindred']) \
-                .order_by('-is_new', 'is_player', 'name')
-        elif 'mta' == slug:
-            creature_items = Creature.objects \
-                .filter(chronicle=chronicle.acronym, creature__in=['mage']) \
-                .order_by('-is_new', 'is_player', 'name')
+            creature_items = Creature.objects.filter(
+                chronicle=chronicle.acronym, creature__in=["ghoul", "kindred"]
+            ).order_by("-is_new", "is_player", "name")
+        elif "mta" == slug:
+            creature_items = Creature.objects.filter(
+                chronicle=chronicle.acronym, creature__in=["mage"]
+            ).order_by("-is_new", "is_player", "name")
         # Chronicle: Camarilla Kindreds
-        elif 'cck' == slug:
-            creature_items = Creature.objects \
-                .filter(chronicle=chronicle.acronym, creature__in=['kindred'], faction="Camarilla", condition="OK") \
-                .order_by('family', 'garou_rank', 'name')
+        elif "cck" == slug:
+            creature_items = Creature.objects.filter(
+                chronicle=chronicle.acronym,
+                creature__in=["kindred"],
+                faction="Camarilla",
+                condition="OK",
+            ).order_by("family", "garou_rank", "name")
         # Chronicle: Camarilla Ghouls
-        elif 'ccg' == slug:
-            creature_items = Creature.objects \
-                .filter(chronicle=chronicle.acronym, creature__in=['ghoul'], faction="Camarilla", condition="OK") \
-                .order_by('-is_new', 'is_player', 'name')
+        elif "ccg" == slug:
+            creature_items = Creature.objects.filter(
+                chronicle=chronicle.acronym,
+                creature__in=["ghoul"],
+                faction="Camarilla",
+                condition="OK",
+            ).order_by("-is_new", "is_player", "name")
         # Chronicle: Sabbat Kindreds
-        elif 'csk' == slug:
-            creature_items = Creature.objects \
-                .filter(chronicle=chronicle.acronym, creature__in=['kindred'], faction="Sabbat", condition="OK") \
-                .order_by('-is_new', 'is_player', 'name')
+        elif "csk" == slug:
+            creature_items = Creature.objects.filter(
+                chronicle=chronicle.acronym,
+                creature__in=["kindred"],
+                faction="Sabbat",
+                condition="OK",
+            ).order_by("-is_new", "is_player", "name")
 
-
-        elif 'wta' == slug:
-            creature_items = Creature.objects \
-                .filter(chronicle=chronicle.acronym, creature__in=['garou', 'kinfolk']) \
-                .order_by('-is_new', 'creature', 'name')
-        elif 'ctd' == slug:
-            creature_items = Creature.objects \
-                .filter(chronicle=chronicle.acronym, creature__in=['changeling']) \
-                .order_by('-is_new', 'is_player', 'name')
-        elif 'wto' == slug:
-            creature_items = Creature.objects \
-                .filter(chronicle=chronicle.acronym, creature__in=['wraith']) \
-                .order_by(
-                '-is_new', 'is_player', 'name')
-        elif 'mor' == slug:
-            creature_items = Creature.objects \
-                .filter(chronicle=chronicle.acronym, creature__in=['mortal']) \
-                .order_by('-is_new', 'is_player', 'name')
-        elif 'new' == slug:
-            creature_items = Creature.objects \
-                .filter(chronicle=chronicle.acronym, is_new=True) \
-                .order_by('-is_new', 'is_player', 'name')
-        elif 'bal' == slug:
-            creature_items = Creature.objects \
-                .filter(chronicle=chronicle.acronym, status__in=["UNBALANCED", "OK+"], hidden=False) \
-                .order_by('-is_new', 'is_player', 'name')
-        elif 'pen' == slug:
-            creature_items = Creature.objects \
-                .filter(chronicle=chronicle.acronym, faction__in=['Pentex', 'Wyrm'],
-                        creature__in=['garou', 'kinfolk', 'fomori']) \
-                .order_by('-is_new', 'is_player', 'name')
-        elif 'ccm' == slug:
-            servants = ['mortal', 'ghoul', 'kinfolk', 'fomori', 'kithain']
-            creature_items = Creature.objects \
-                .filter(chronicle=chronicle.acronym, creature__in=servants) \
-                .order_by('name')
-        elif 'ccs' == slug:
-            masters = ['garou', 'kindred', 'wraith', 'changeling', 'mage']
-            creature_items = Creature.objects \
-                .filter(chronicle=chronicle.acronym, creature__in=masters) \
-                .order_by('name')
-        elif 'cca' == slug:
-            creature_items = Creature.objects \
-                .filter(adventure=adventure.acronym) \
-                .order_by('name')
+        elif "wta" == slug:
+            creature_items = Creature.objects.filter(
+                chronicle=chronicle.acronym, creature__in=["garou", "kinfolk"]
+            ).order_by("-is_new", "creature", "name")
+        elif "ctd" == slug:
+            creature_items = Creature.objects.filter(
+                chronicle=chronicle.acronym, creature__in=["changeling"]
+            ).order_by("-is_new", "is_player", "name")
+        elif "wto" == slug:
+            creature_items = Creature.objects.filter(
+                chronicle=chronicle.acronym, creature__in=["wraith"]
+            ).order_by("-is_new", "is_player", "name")
+        elif "mor" == slug:
+            creature_items = Creature.objects.filter(
+                chronicle=chronicle.acronym, creature__in=["mortal"]
+            ).order_by("-is_new", "is_player", "name")
+        elif "new" == slug:
+            creature_items = Creature.objects.filter(
+                chronicle=chronicle.acronym, is_new=True
+            ).order_by("-is_new", "is_player", "name")
+        elif "bal" == slug:
+            creature_items = Creature.objects.filter(
+                chronicle=chronicle.acronym,
+                status__in=["UNBALANCED", "OK+"],
+                hidden=False,
+            ).order_by("-is_new", "is_player", "name")
+        elif "pen" == slug:
+            creature_items = Creature.objects.filter(
+                chronicle=chronicle.acronym,
+                faction__in=["Pentex", "Wyrm"],
+                creature__in=["garou", "kinfolk", "fomori"],
+            ).order_by("-is_new", "is_player", "name")
+        elif "ccm" == slug:
+            servants = ["mortal", "ghoul", "kinfolk", "fomori", "kithain"]
+            creature_items = Creature.objects.filter(
+                chronicle=chronicle.acronym, creature__in=servants
+            ).order_by("name")
+        elif "ccs" == slug:
+            masters = ["garou", "kindred", "wraith", "changeling", "mage"]
+            creature_items = Creature.objects.filter(
+                chronicle=chronicle.acronym, creature__in=masters
+            ).order_by("name")
+        elif "cca" == slug:
+            creature_items = Creature.objects.filter(
+                adventure=adventure.acronym
+            ).order_by("name")
         else:
-            creature_items = Creature.objects \
-                .filter(chronicle=chronicle.acronym) \
-                .order_by('is_player', 'family', 'is_new', 'name')
+            creature_items = Creature.objects.filter(
+                chronicle=chronicle.acronym
+            ).order_by("is_player", "family", "is_new", "name")
         paginator = Paginator(creature_items, CHARACTERS_PER_PAGE)
         creature_items = paginator.get_page(pid)
-        list_context = {'creature_items': creature_items}
-        list_template = get_template('collector/list.html')
+        list_context = {"creature_items": creature_items}
+        list_template = get_template("collector/list.html")
         list_html = list_template.render(list_context)
         answer = {
-            'list': list_html,
+            "list": list_html,
         }
         return JsonResponse(answer)
     else:
@@ -267,23 +301,23 @@ def get_list(request, pid=1, slug=None):
 @csrf_exempt
 def updown(request):
     if is_ajax(request):
-        answer = 'error'
-        if request.method == 'POST':
+        answer = "error"
+        if request.method == "POST":
             answer = {}
-            rid = request.POST.get('id')
-            field = request.POST.get('field')
-            offset = int(request.POST.get('offset'))
+            rid = request.POST.get("id")
+            field = request.POST.get("field")
+            offset = int(request.POST.get("offset"))
             item = Creature.objects.get(rid=rid)
             if hasattr(item, field):
-                current_val = getattr(item, field, 'Oops, nothing found')
+                current_val = getattr(item, field, "Oops, nothing found")
                 new_val = int(current_val) + int(offset)
                 setattr(item, field, new_val)
                 item.need_fix = True
                 item.save()
-                answer['new_value'] = as_bullets(getattr(item, field))
-                answer['freebies'] = item.freebies
+                answer["new_value"] = as_bullets(getattr(item, field))
+                answer["freebies"] = item.freebies
             else:
-                answer['new_value'] = '<b>ERROR!</b>'
+                answer["new_value"] = "<b>ERROR!</b>"
         return JsonResponse(answer)
     return Http404
 
@@ -291,21 +325,21 @@ def updown(request):
 @csrf_exempt
 def userinput(request):
     if is_ajax(request):
-        answer = 'error'
-        if request.method == 'POST':
+        answer = "error"
+        if request.method == "POST":
             answer = {}
-            rid = request.POST.get('id')
-            field = request.POST.get('field')
-            value = request.POST.get('value')
+            rid = request.POST.get("id")
+            field = request.POST.get("field")
+            value = request.POST.get("value")
             item = Creature.objects.get(rid=rid)
             if hasattr(item, field):
                 setattr(item, field, value)
                 item.need_fix = True
                 item.save()
-                answer['new_value'] = value
-                answer['freebies'] = item.freebies
+                answer["new_value"] = value
+                answer["freebies"] = item.freebies
             else:
-                answer['new_value'] = '<b>ERROR!</b>'
+                answer["new_value"] = "<b>ERROR!</b>"
         return JsonResponse(answer)
     return HttpResponse(status=204)
 
@@ -313,47 +347,46 @@ def userinput(request):
 @csrf_exempt
 def userinputastext(request):
     if is_ajax(request):
-        answer = 'error'
-        if request.method == 'POST':
+        answer = "error"
+        if request.method == "POST":
             answer = {}
-            rid = request.POST.get('id')
-            field = request.POST.get('field')
-            value = request.POST.get('value')
+            rid = request.POST.get("id")
+            field = request.POST.get("field")
+            value = request.POST.get("value")
             item = Creature.objects.get(rid=rid)
             if hasattr(item, field):
                 setattr(item, field, value)
                 item.need_fix = True
                 item.save()
-                answer['new_value'] = value
-                answer['freebies'] = item.freebies
+                answer["new_value"] = value
+                answer["freebies"] = item.freebies
             else:
-                answer['new_value'] = '<b>ERROR!</b>'
+                answer["new_value"] = "<b>ERROR!</b>"
         return JsonResponse(answer)
     return HttpResponse(status=204)
 
 
 def add_creature(request, slug=None):
     if is_ajax(request):
-
         name = " ".join(slug.split("_"))
         chronicle = get_current_chronicle()
         item = Creature()
         item.name = name
         item.chronicle = chronicle.acronym
-        item.creature = 'mortal'
+        item.creature = "mortal"
         item.age = 25
-        if slug == 'kindred':
-            item.creature = 'kindred'
+        if slug == "kindred":
+            item.creature = "kindred"
             item.age = 0
-            item.family = 'Caitiff'
-            item.faction = 'Camarilla'
+            item.family = "Caitiff"
+            item.faction = "Camarilla"
             item.randomize_backgrounds()
             item.randomize_archetypes()
             item.randomize_attributes()
             item.randomize_abilities()
-        item.source = 'zaffarelli'
+        item.source = "zaffarelli"
         item.save()
-        context = {'answer': 'creature added'}
+        context = {"answer": "creature added"}
         return HttpResponse(status=204)
 
 
@@ -378,16 +411,16 @@ def post_wawwod_creature(item):
         # item.randomize_attributes()
         # item.randomize_abilities()
         item.randomize_all()
-        item.source = 'zaffarelli'
+        item.source = "zaffarelli"
         item.save()
 
 
 def add_kindred(request, slug=None):
     if is_ajax(request):
         item = pre_wawwod_creature(slug)
-        item.creature = 'kindred'
-        item.family = 'Caitiff'
-        item.faction = 'Camarilla'
+        item.creature = "kindred"
+        item.family = "Caitiff"
+        item.faction = "Camarilla"
         post_wawwod_creature(item)
         return HttpResponse(status=204)
 
@@ -395,9 +428,9 @@ def add_kindred(request, slug=None):
 def add_ghoul(request, slug=None):
     if is_ajax(request):
         item = pre_wawwod_creature(slug)
-        item.creature = 'ghoul'
-        item.family = 'Caitiff'
-        item.faction = 'Camarilla'
+        item.creature = "ghoul"
+        item.family = "Caitiff"
+        item.faction = "Camarilla"
         post_wawwod_creature(item)
         return HttpResponse(status=204)
 
@@ -405,9 +438,9 @@ def add_ghoul(request, slug=None):
 def add_garou(request, slug=None):
     if is_ajax(request):
         item = pre_wawwod_creature(slug)
-        item.creature = 'garou'
-        item.family = 'Child of Gaia'
-        item.faction = 'Gaia'
+        item.creature = "garou"
+        item.family = "Child of Gaia"
+        item.faction = "Gaia"
         post_wawwod_creature(item)
         return HttpResponse(status=204)
 
@@ -415,9 +448,9 @@ def add_garou(request, slug=None):
 def add_kinfolk(request, slug=None):
     if is_ajax(request):
         item = pre_wawwod_creature(slug)
-        item.creature = 'kinfolk'
-        item.family = 'Child of Gaia'
-        item.faction = 'Gaia'
+        item.creature = "kinfolk"
+        item.family = "Child of Gaia"
+        item.faction = "Gaia"
         post_wawwod_creature(item)
         return HttpResponse(status=204)
 
@@ -425,7 +458,7 @@ def add_kinfolk(request, slug=None):
 def add_mortal(request, slug=None):
     if is_ajax(request):
         item = pre_wawwod_creature(slug)
-        item.creature = 'mortal'
+        item.creature = "mortal"
         post_wawwod_creature(item)
         return HttpResponse(status=204)
 
@@ -434,17 +467,17 @@ def add_new_ghoul(request, slug=None):
     if is_ajax(request):
         needed_ghouls = 0
         domitor_rid = toRID(slug)
-        domitors = Creature.objects.filter(creature='kindred', rid=domitor_rid)
+        domitors = Creature.objects.filter(creature="kindred", rid=domitor_rid)
         if len(domitors) == 1:
             domitor = domitors.first()
             ghouls = Creature.objects.filter(sire=domitor.rid)
-            if len(ghouls) < domitor.value_of('retainers'):
-                needed_ghouls = domitor.value_of('retainers') - len(ghouls)
+            if len(ghouls) < domitor.value_of("retainers"):
+                needed_ghouls = domitor.value_of("retainers") - len(ghouls)
             for x in range(needed_ghouls):
                 item = Creature()
                 item.name = improvise_id()
                 item.chronicle = domitor.chronicle
-                item.creature = 'ghoul'
+                item.creature = "ghoul"
                 item.age = random.randrange(0, 19) + 20
                 item.family = domitor.family
                 item.groupspec = domitor.groupspec
@@ -454,7 +487,7 @@ def add_new_ghoul(request, slug=None):
                 item.randomize_archetypes()
                 item.randomize_attributes()
                 item.randomize_abilities()
-                item.source = 'zaffarelli'
+                item.source = "zaffarelli"
                 item.is_new = True
                 item.need_fix = True
                 item.save()
@@ -489,6 +522,7 @@ def character_for(slug, option="", idx=-1):
             k["idx"] = idx
         k["sire_name"] = c.sire_name
         from collector.utils.wod_reference import AUSPICES, BREEDS
+
         k["entrance"] = c.entrance
         k["auspice_name"] = AUSPICES[c.auspice]
         k["breed_name"] = BREEDS[c.breed]
@@ -525,6 +559,7 @@ def character_for(slug, option="", idx=-1):
 def display_crossover_sheet(request, slug=None, option=""):
     if is_ajax(request):
         from collector.models.adventures import Adventure
+
         blank = "blank" in option
         print(f"Blank:{blank}")
         adventure, chronicle, season = Adventure.current_full()
@@ -533,7 +568,7 @@ def display_crossover_sheet(request, slug=None, option=""):
             post_title = chronicle.post_title
             scenario = adventure.adventure_teaser
         if slug is None:
-            slug = '_julius_von_blow'
+            slug = "_julius_von_blow"
         all_glyphs = []
         glyphs = os.listdir("collector/static/collector/miscellaneous_garou_glyphs/")
         for glyph in glyphs:
@@ -542,12 +577,25 @@ def display_crossover_sheet(request, slug=None, option=""):
                 all_glyphs.append({"image": glyph, "text": txt})
         all_glyphs = sorted(all_glyphs, key=lambda g: g["text"])
         j, k = character_for(slug, "")
-        max_pages = STATS_NAMES[k["creature"]]['sheet']['pages']
-        settings = {'version': 1.0, 'labels': STATS_NAMES[k["creature"]], 'pre_title': pre_title, 'scenario': scenario,
-                    'post_title': post_title, 'fontset': FONTSET, 'blank': blank, 'debug': False,
-                    'specialities': k["spe"], 'glyphs': all_glyphs, 'max_pages': max_pages,
-                    'shortcuts': k["shc"]}
-        crossover_sheet_context = {'settings': json.dumps(settings, sort_keys=True, indent=4), 'data': j}
+        max_pages = STATS_NAMES[k["creature"]]["sheet"]["pages"]
+        settings = {
+            "version": 1.0,
+            "labels": STATS_NAMES[k["creature"]],
+            "pre_title": pre_title,
+            "scenario": scenario,
+            "post_title": post_title,
+            "fontset": FONTSET,
+            "blank": blank,
+            "debug": False,
+            "specialities": k["spe"],
+            "glyphs": all_glyphs,
+            "max_pages": max_pages,
+            "shortcuts": k["shc"],
+        }
+        crossover_sheet_context = {
+            "settings": json.dumps(settings, sort_keys=True, indent=4),
+            "data": j,
+        }
         return JsonResponse(crossover_sheet_context)
 
 
@@ -555,13 +603,23 @@ def display_chronicle_map(request):
     # if is_ajax(request):
     chronicle = Chronicle.current()
     if chronicle.main_creature == "kindred":
-        creatures = Creature.objects.filter(chronicle=chronicle.acronym) \
-            .exclude(mythic=True) \
-            .exclude(condition__startswith="DEAD=19") \
-            .exclude(condition__startswith="MISSING=19") \
-            .exclude(ghost=True) \
-            .exclude(hidden=True) \
-            .order_by('-is_player', 'faction', 'group', 'sire', 'adventure', 'creature', "name")
+        creatures = (
+            Creature.objects.filter(chronicle=chronicle.acronym)
+            .exclude(mythic=True)
+            .exclude(condition__startswith="DEAD=19")
+            .exclude(condition__startswith="MISSING=19")
+            .exclude(ghost=True)
+            .exclude(hidden=True)
+            .order_by(
+                "-is_player",
+                "faction",
+                "group",
+                "sire",
+                "adventure",
+                "creature",
+                "name",
+            )
+        )
         all_creatures = []
         lines = []
         for creature in creatures:
@@ -575,13 +633,23 @@ def display_chronicle_map(request):
             all_creatures.append(k)
             lines.append(creature.extract_raw())
     elif chronicle.main_creature == "garou":
-        creatures = Creature.objects.filter(chronicle=chronicle.acronym) \
-            .exclude(mythic=True) \
-            .exclude(condition__startswith="DEAD=19") \
-            .exclude(condition__startswith="MISSING=19") \
-            .exclude(ghost=True) \
-            .exclude(hidden=True) \
-            .order_by('-is_player', 'faction', 'group', 'sire', 'adventure', 'creature', "name")
+        creatures = (
+            Creature.objects.filter(chronicle=chronicle.acronym)
+            .exclude(mythic=True)
+            .exclude(condition__startswith="DEAD=19")
+            .exclude(condition__startswith="MISSING=19")
+            .exclude(ghost=True)
+            .exclude(hidden=True)
+            .order_by(
+                "-is_player",
+                "faction",
+                "group",
+                "sire",
+                "adventure",
+                "creature",
+                "name",
+            )
+        )
         all_creatures = []
         lines = []
         for creature in creatures:
@@ -595,14 +663,15 @@ def display_chronicle_map(request):
             all_creatures.append(k)
             lines.append(creature.extract_raw())
 
-    txt_name = os.path.join(settings.MEDIA_ROOT, 'md/' + chronicle.acronym + "_cast.md")
+    txt_name = os.path.join(settings.MEDIA_ROOT, "md/" + chronicle.acronym + "_cast.md")
 
     with open(txt_name, "w") as f:
         f.writelines(lines)
         f.close()
 
-    context = {'data': json.dumps(all_creatures, indent=4, sort_keys=True)}
+    context = {"data": json.dumps(all_creatures, indent=4, sort_keys=True)}
     return JsonResponse(context)
+
 
 def display_edge_map(request, slug):
     chronicle = Chronicle.current()
@@ -621,37 +690,39 @@ def display_edge_map(request, slug):
         # print(k["name"])
         all_creatures.append(k)
         lines.append(creature.extract_raw())
-    txt_name = os.path.join(settings.MEDIA_ROOT, 'md/' + chronicle.acronym + "_cast.md")
+    txt_name = os.path.join(settings.MEDIA_ROOT, "md/" + chronicle.acronym + "_cast.md")
     with open(txt_name, "w") as f:
         f.writelines(lines)
         f.close()
-    context = {'data': json.dumps(all_creatures, indent=4, sort_keys=True)}
+    context = {"data": json.dumps(all_creatures, indent=4, sort_keys=True)}
     return JsonResponse(context)
-
 
 
 def display_dashboard(request):
     # state_build()
     if is_ajax(request):
-        gaia_wheel_context = {'data': build_gaia_wheel()}
+        gaia_wheel_context = {"data": build_gaia_wheel()}
         return JsonResponse(gaia_wheel_context)
 
 
 def display_gaia_wheel(request):
     if is_ajax(request):
-        gaia_wheel_context = {'data': build_gaia_wheel()}
+        gaia_wheel_context = {"data": build_gaia_wheel()}
         return JsonResponse(gaia_wheel_context)
 
 
 def state_build():
     from storytelling.models.cities import City
-    City.usa_extract_states(numberStates=[
-        {"number": "27", "name": "Minnesota"},
-        {"number": "38", "name": "North Dakota"},
-        {"number": "46", "name": "South Dakota"},
-        {"number": "19", "name": "Iowa"},
-        {"number": "55", "name": "Wisconsin"}
-    ])
+
+    City.usa_extract_states(
+        numberStates=[
+            {"number": "27", "name": "Minnesota"},
+            {"number": "38", "name": "North Dakota"},
+            {"number": "46", "name": "South Dakota"},
+            {"number": "19", "name": "Iowa"},
+            {"number": "55", "name": "Wisconsin"},
+        ]
+    )
 
 
 def adventure_sheet(request):
@@ -676,7 +747,7 @@ def adventure_sheet(request):
                         j, k = character_for(rid, "", idx)
                         idx += 1
                         data["players"].append(k)
-            settings = {'fontset': FONTSET, 'labels': {'sheet': {"pages": 1}}}
+            settings = {"fontset": FONTSET, "labels": {"sheet": {"pages": 1}}}
             adv = {
                 "name": chronicle.name,
                 "adv_name": adventure.name,
@@ -686,14 +757,14 @@ def adventure_sheet(request):
                 "date_str": "",
                 "session_date_str": "",
                 "gamemaster": "Zaffarelli",
-                "experience": 0
+                "experience": 0,
             }
 
             data["adventure"] = adv
 
             adventure_sheet_context = {
-                'settings': json.dumps(settings, sort_keys=True, indent=4),
-                'data': json.dumps(data, sort_keys=True, indent=4)
+                "settings": json.dumps(settings, sort_keys=True, indent=4),
+                "data": json.dumps(data, sort_keys=True, indent=4),
             }
 
         return JsonResponse(adventure_sheet_context)
@@ -706,8 +777,11 @@ def display_lineage(request, slug=None):
         else:
             # print(slug)
             data = build_per_primogen(slug)
-        settings = {'fontset': FONTSET}
-        lineage_context = {'settings': json.dumps(settings, sort_keys=True, indent=4), 'data': data}
+        settings = {"fontset": FONTSET}
+        lineage_context = {
+            "settings": json.dumps(settings, sort_keys=True, indent=4),
+            "data": data,
+        }
         # print(lineage_context);
         return JsonResponse(lineage_context)
 
@@ -715,6 +789,7 @@ def display_lineage(request, slug=None):
 def display_sept(request, slug=None):
     if is_ajax(request):
         from collector.models.septs import Sept
+
         if slug is None:
             return HttpResponse(status=204)
         else:
@@ -722,15 +797,18 @@ def display_sept(request, slug=None):
             sept.need_fix = True
             sept.save()
             data = Sept.objects.get(rid=slug).build_sept()
-            settings = {'fontset': FONTSET}
-            sept_context = {'settings': json.dumps(settings, sort_keys=True, indent=4),
-                            'data': json.dumps(data, sort_keys=True, indent=4)};
+            settings = {"fontset": FONTSET}
+            sept_context = {
+                "settings": json.dumps(settings, sort_keys=True, indent=4),
+                "data": json.dumps(data, sort_keys=True, indent=4),
+            }
         return JsonResponse(sept_context)
 
 
 def display_sept_rosters(request, slug=None):
     # if is_ajax(request):
     from collector.models.septs import Sept
+
     if slug is None:
         return HttpResponse(status=204)
     else:
@@ -738,36 +816,43 @@ def display_sept_rosters(request, slug=None):
         rid_stack = []
         for pack in data["packs"]:
             for m in pack["members"]:
-                rid_stack.append(m['rid'])
+                rid_stack.append(m["rid"])
         # print(rid_stack)
         lines = []
-        for creature in Creature.objects.filter(rid__in=rid_stack).order_by('-rank'):
+        for creature in Creature.objects.filter(rid__in=rid_stack).order_by("-rank"):
             c = creature.extract_raw()
             lines.append(c)
 
-        return HttpResponse("\n".join(lines), content_type='text/plain', charset="utf-8")
+        return HttpResponse(
+            "\n".join(lines), content_type="text/plain", charset="utf-8"
+        )
 
 
 @csrf_exempt
 def save_to_svg(request, slug):
-    response = {'status': 'error'}
+    response = {"status": "error"}
     if is_ajax(request):
-        svg_name = os.path.join(settings.MEDIA_ROOT, 'drafts/' + request.POST["svg_name"])
+        svg_name = os.path.join(
+            settings.MEDIA_ROOT, "drafts/" + request.POST["svg_name"]
+        )
         svgtxt = request.POST["svg"]
         with open(svg_name, "w") as f:
             f.write(svgtxt)
             f.close()
-        response['status'] = 'ok'
+        response["status"] = "ok"
     return JsonResponse(response)
 
 
 @csrf_exempt
 def svg_to_pdf(request, slug):
-    response = {'status': 'error'}
-    logger.info(f'Saving to PDF.')
+    response = {"status": "error"}
+    logger.info(f"Saving to PDF.")
     if is_ajax(request):
         import cairosvg
-        svg_name = os.path.join(settings.MEDIA_ROOT, 'drafts/' + request.POST["svg_name"])
+
+        svg_name = os.path.join(
+            settings.MEDIA_ROOT, "drafts/" + request.POST["svg_name"]
+        )
         svgtxt = request.POST["svg"]
         creature = request.POST["creature"]
         if creature != "ADV_CREATURE":
@@ -778,16 +863,18 @@ def svg_to_pdf(request, slug):
         with open(svg_name, "w") as f:
             f.write(svgtxt)
             f.close()
-        logger.info(f'--> Created --> {svg_name}.')
+        logger.info(f"--> Created --> {svg_name}.")
 
-        pdf_name = os.path.join(settings.MEDIA_ROOT, 'characters/' + request.POST["pdf_name"])
+        pdf_name = os.path.join(
+            settings.MEDIA_ROOT, "characters/" + request.POST["pdf_name"]
+        )
         if "rid" in request.POST:
             rid = request.POST["rid"]
         else:
             rid = "adventure_sheet"
         cairosvg.svg2pdf(url=svg_name, write_to=pdf_name, scale=1.0, unsafe=True)
-        logger.info(f'--> Created --> {pdf_name}.')
-        response['status'] = 'ok'
+        logger.info(f"--> Created --> {pdf_name}.")
+        response["status"] = "ok"
         all_in_one_pdf(rid, pages, creature)
     return JsonResponse(response)
 
@@ -795,12 +882,17 @@ def svg_to_pdf(request, slug):
 @csrf_exempt
 def all_in_one_pdf(rid, pages, creature="mortal"):
     # print(f'Starting PDFing for [{rid}].')
-    logger.info(f'Starting PDFing for [{rid}].')
+    logger.info(f"Starting PDFing for [{rid}].")
     res = []
     from PyPDF2 import PdfMerger
-    media_results = os.path.join(settings.MEDIA_ROOT, 'characters/')
-    csheet_results = os.path.join(settings.MEDIA_ROOT, 'characters/')
-    onlyfiles = [f for f in os.listdir(media_results) if os.path.isfile(os.path.join(media_results, f))]
+
+    media_results = os.path.join(settings.MEDIA_ROOT, "characters/")
+    csheet_results = os.path.join(settings.MEDIA_ROOT, "characters/")
+    onlyfiles = [
+        f
+        for f in os.listdir(media_results)
+        if os.path.isfile(os.path.join(media_results, f))
+    ]
     pdfs = onlyfiles
     merger = PdfMerger()
     pdfs.sort()
@@ -808,14 +900,14 @@ def all_in_one_pdf(rid, pages, creature="mortal"):
     for pdf in pdfs:
         if pdf.startswith("character_sheet" + rid + "_p"):
             # print(pdf)
-            merger.append(open(media_results + pdf, 'rb'))
+            merger.append(open(media_results + pdf, "rb"))
             i += 1
     if i >= pages - 1:
-        des = f'{csheet_results}character_sheet{rid}.pdf'
-        with open(des, 'wb') as fout:
+        des = f"{csheet_results}character_sheet{rid}.pdf"
+        with open(des, "wb") as fout:
             merger.write(fout)
-        logger.info(f'Successfully merged {i} page(s) as [{des}].')
-        print(f'Successfully merged {i} page(s) as [{des}].')
+        logger.info(f"Successfully merged {i} page(s) as [{des}].")
+        print(f"Successfully merged {i} page(s) as [{des}].")
     return res
 
 
@@ -824,21 +916,20 @@ def moon_phase(request, dt=None):
 
     city = LocationInfo("Minneapolis", "Minnesota", "America/Chicago", 44.97, -93.27)
     timezone = zoneinfo.ZoneInfo("America/Chicago")
-    print((
-        f"Information for {city.name}/{city.region}\n"
-        f"Timezone: {city.timezone}\n"
-        f"Latitude: {city.latitude:.02f}; Longitude: {city.longitude:.02f}\n"
-    ))
+    print(
+        (
+            f"Information for {city.name}/{city.region}\n"
+            f"Timezone: {city.timezone}\n"
+            f"Latitude: {city.latitude:.02f}; Longitude: {city.longitude:.02f}\n"
+        )
+    )
     from astral.sun import sun
-
 
     weeks = []
     if dt is None:
         dt = datetime.date.today()
     firstday = datetime.date(dt.year, dt.month, 1)
     year = dt.year
-
-
 
     started = False
     day = 0
@@ -858,12 +949,20 @@ def moon_phase(request, dt=None):
                         started = True
                     else:
                         # print("before month",cur_day, dow,cur_day.weekday() )
-                        aweek.append({"str": "None", "num": "", "color": "#303030", "blank": True})
+                        aweek.append(
+                            {
+                                "str": "None",
+                                "num": "",
+                                "color": "#303030",
+                                "blank": True,
+                            }
+                        )
                 if started:
                     import math
+
                     # print("started")
                     x = moon.phase(cur_day)
-                    s = sun(city.observer, date=cur_day,tzinfo=timezone)
+                    s = sun(city.observer, date=cur_day, tzinfo=timezone)
                     # print((
                     #     f'Dawn:    {s["dawn"]}\n'
                     #     f'Sunrise: {s["sunrise"]}\n'
@@ -872,7 +971,16 @@ def moon_phase(request, dt=None):
                     #     f'Dusk:    {s["dusk"]}\n'
                     # ))
 
-                    icons = ["Ragabash", "Theurge", "Philodox", "Galliard", "Ahroun", "Galliard", "Philodox", "Theurge"]
+                    icons = [
+                        "Ragabash",
+                        "Theurge",
+                        "Philodox",
+                        "Galliard",
+                        "Ahroun",
+                        "Galliard",
+                        "Philodox",
+                        "Theurge",
+                    ]
                     # if x < 3.5 * 1 - 0.01:
                     #     str = icons[0]
                     # if x < 3.5 * 2 - 0.01:
@@ -899,7 +1007,16 @@ def moon_phase(request, dt=None):
 
                     sr = s["sunrise"].strftime("%H:%M")
                     ss = s["sunset"].strftime("%H:%M")
-                    aweek.append({"str": f"{str}", "num": f"{cur_day.day:02}", "color": col, "blank": False, "sunrise":sr, "sunset":ss})
+                    aweek.append(
+                        {
+                            "str": f"{str}",
+                            "num": f"{cur_day.day:02}",
+                            "color": col,
+                            "blank": False,
+                            "sunrise": sr,
+                            "sunset": ss,
+                        }
+                    )
                     day += 1
             else:
                 txt = "out"
@@ -907,7 +1024,9 @@ def moon_phase(request, dt=None):
                     out = True
                     txt = "HERE"
                 # print("after month", cur_day)
-                aweek.append({"str": "None", "num": "", "color": "#303030", "blank": True})
+                aweek.append(
+                    {"str": "None", "num": "", "color": "#303030", "blank": True}
+                )
                 day += 1
             dow += 1
         # print(aweek)
@@ -931,13 +1050,14 @@ def calendar(request, year=None):
 
     context = prepare_index(request)
     context["calendar"] = months
-    return render(request, 'collector/page/calendar.html', context=context)
+    return render(request, "collector/page/calendar.html", context=context)
 
 
 def quaestor(request, slug=None):
     response = {}
     if is_ajax(request):
         from collector.utils.quaestor import Quaestor
+
         q = Quaestor()
         s, r, d = q.perform(slug)
         response["status"] = s
@@ -965,7 +1085,7 @@ def weaver_code(request, code=None):
                 list.append(q)
         return list
 
-    if code == '_':
+    if code == "_":
         code = ""
         for a in "0123456789":
             code += f"{a}"
@@ -973,12 +1093,11 @@ def weaver_code(request, code=None):
         for a in "abcdefghijklmnopqrstuvwxyz".upper():
             code += f"{a}"
         code += "_"
-    if code == '___':
+    if code == "___":
         for a in range(128):
             code += f"{chr(a + 128)}"
         code += "_"
-    if code == '_PATTERN_RULES_':
-
+    if code == "_PATTERN_RULES_":
         t4p = "TOUCHER SUR 4 PATTES"
         t3p = "TOUCHER SUR 3 PATTES"
         t2p = "TOUCHER SUR 2 PATTES"
@@ -1027,7 +1146,7 @@ def weaver_code(request, code=None):
             code += "_"
             code += s["num"]
             code += s["rule"]
-    if code == '__':
+    if code == "__":
         code = ""
         code += chr(205)
         code += chr(239)
@@ -1044,7 +1163,7 @@ def weaver_code(request, code=None):
         "baseY": 5,
         "oX": [],
         "oY": [],
-        "debug": 0
+        "debug": 0,
     }
 
     special_names = {
@@ -1067,46 +1186,14 @@ def weaver_code(request, code=None):
         a = d * defi["scaleY"] + defi["baseY"]
         defi["oY"].append(a)
     powers = [
-        {
-            "power": 1,
-            "on": [{"x": 2, "y": 2}],
-            "color": "red"
-        },
-        {
-            "power": 2,
-            "on": [{"x": 1, "y": 3}, {"x": 3, "y": 2}],
-            "color": "orange"
-        },
-        {
-            "power": 4,
-            "on": [{"x": 1, "y": 2}, {"x": 3, "y": 3}],
-            "color": "green"
-        },
-        {
-            "power": 8,
-            "on": [{"x": 1, "y": 4}, {"x": 3, "y": 1}],
-            "color": "purple"
-        },
-        {
-            "power": 16,
-            "on": [{"x": 1, "y": 1}, {"x": 3, "y": 4}],
-            "color": "blue"
-        },
-        {
-            "power": 32,
-            "on": [{"x": 2, "y": 1}],
-            "color": "brown"
-        },
-        {
-            "power": 64,
-            "on": [{"x": 2, "y": 3}],
-            "color": "cyan"
-        },
-        {
-            "power": 128,
-            "on": [{"x": 2, "y": 4}],
-            "color": "fuchsia"
-        }
+        {"power": 1, "on": [{"x": 2, "y": 2}], "color": "red"},
+        {"power": 2, "on": [{"x": 1, "y": 3}, {"x": 3, "y": 2}], "color": "orange"},
+        {"power": 4, "on": [{"x": 1, "y": 2}, {"x": 3, "y": 3}], "color": "green"},
+        {"power": 8, "on": [{"x": 1, "y": 4}, {"x": 3, "y": 1}], "color": "purple"},
+        {"power": 16, "on": [{"x": 1, "y": 1}, {"x": 3, "y": 4}], "color": "blue"},
+        {"power": 32, "on": [{"x": 2, "y": 1}], "color": "brown"},
+        {"power": 64, "on": [{"x": 2, "y": 3}], "color": "cyan"},
+        {"power": 128, "on": [{"x": 2, "y": 4}], "color": "fuchsia"},
     ]
     # numbers = []
     # letters = []
@@ -1124,17 +1211,35 @@ def weaver_code(request, code=None):
             x = ord(y)
             if x > 127:
                 z = x
-                rune = {"value": z, "on": [], "letter": f"{chr(z)} {z}", "is_special": 1, "stroke": "#3030a0"}
+                rune = {
+                    "value": z,
+                    "on": [],
+                    "letter": f"{chr(z)} {z}",
+                    "is_special": 1,
+                    "stroke": "#3030a0",
+                }
                 if f"{z}" in special_names:
                     rune["letter"] = special_names[f"{z}"]
                 print("Special " + chr(230))
             elif x in [48, 49, 50, 51, 52, 53, 54, 55, 56, 57]:
                 z = x - 48
-                rune = {"value": z, "on": [], "letter": f"{z}", "is_number": 1, "stroke": "#30a030"}
+                rune = {
+                    "value": z,
+                    "on": [],
+                    "letter": f"{z}",
+                    "is_number": 1,
+                    "stroke": "#30a030",
+                }
                 print("Number")
             else:
                 z = x
-                rune = {"value": z, "on": [], "letter": f"{chr(z)}", "is_letter": 1, "stroke": "#a03030"}
+                rune = {
+                    "value": z,
+                    "on": [],
+                    "letter": f"{chr(z)}",
+                    "is_letter": 1,
+                    "stroke": "#a03030",
+                }
                 print("Letter")
             print(f"x:{x} y:{y} z:{z}")
             rune["on"] = split_cumulate(z, defi["debug"] > 0)
@@ -1142,16 +1247,17 @@ def weaver_code(request, code=None):
         l.append(combos)
     for p in powers:
         q = split_cumulate(p["power"], defi["debug"] > 0)
-        p['on'] = q
-        p['letter'] = p["power"]
+        p["on"] = q
+        p["letter"] = p["power"]
 
     context["weaver_code"] = {"defi": defi, "powers": powers, "combos": l}
-    return render(request, 'collector/page/weaver_code.html', context=context)
+    return render(request, "collector/page/weaver_code.html", context=context)
 
 
 @csrf_exempt
 def bulk_add(request):
     from collector.models.creatures import Creature
+
     answer = {"txt": "Yo"}
     if is_ajax(request):
         txt = request.POST["txt"]

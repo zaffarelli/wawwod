@@ -4,20 +4,19 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('storytelling', '0006_scene_fallback'),
+        ("storytelling", "0006_scene_fallback"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='scene',
-            name='tags',
-            field=models.TextField(blank=True, default='', max_length=256),
+            model_name="scene",
+            name="tags",
+            field=models.TextField(blank=True, default="", max_length=256),
         ),
         migrations.AlterField(
-            model_name='scene',
-            name='exact_place',
-            field=models.CharField(blank=True, default='', max_length=256),
+            model_name="scene",
+            name="exact_place",
+            field=models.CharField(blank=True, default="", max_length=256),
         ),
     ]

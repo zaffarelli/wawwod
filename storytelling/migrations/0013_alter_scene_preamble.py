@@ -4,15 +4,14 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('storytelling', '0012_alter_scene_options'),
+        ("storytelling", "0012_alter_scene_options"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='scene',
-            name='preamble',
-            field=models.TextField(blank=True, default='', max_length=2048),
+            model_name="scene",
+            name="preamble",
+            field=models.TextField(blank=True, default="", max_length=2048),
         ),
     ]

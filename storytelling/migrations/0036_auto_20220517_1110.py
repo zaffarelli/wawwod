@@ -4,30 +4,29 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('storytelling', '0035_district_population'),
+        ("storytelling", "0035_district_population"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='district',
-            name='camarilla_intelligence',
+            model_name="district",
+            name="camarilla_intelligence",
             field=models.PositiveIntegerField(blank=True, default=0, null=True),
         ),
         migrations.AddField(
-            model_name='district',
-            name='camarilla_leisure',
+            model_name="district",
+            name="camarilla_leisure",
             field=models.PositiveIntegerField(blank=True, default=0, null=True),
         ),
         migrations.AddField(
-            model_name='district',
-            name='camarilla_power',
+            model_name="district",
+            name="camarilla_power",
             field=models.PositiveIntegerField(blank=True, default=0, null=True),
         ),
         migrations.AddField(
-            model_name='district',
-            name='camarilla_resources',
+            model_name="district",
+            name="camarilla_resources",
             field=models.PositiveIntegerField(blank=True, default=0, null=True),
         ),
     ]

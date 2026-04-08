@@ -19,8 +19,8 @@ class Season(models.Model):
     era = models.PositiveIntegerField(default=1985, blank=True)
     protagonists = models.CharField(default="", max_length=1024, blank=True)
     team = models.CharField(default="", max_length=1024, blank=True)
-    acronym = models.CharField(max_length=32, default='', blank=True)
-    notes = models.TextField(max_length=1024, default='', blank=True)
+    acronym = models.CharField(max_length=32, default="", blank=True)
+    notes = models.TextField(max_length=1024, default="", blank=True)
     is_current = models.BooleanField(default=False, blank=True)
 
     # players_starting_freebies = models.IntegerField(default=15, blank=True)
@@ -34,6 +34,7 @@ class Season(models.Model):
 
     def fix(self):
         from collector.models.adventures import Adventure
+
         self.protagonists = ""
         self.team = ""
         adventures = Adventure.objects.filter(season=self.acronym)
@@ -73,6 +74,7 @@ class Season(models.Model):
     @property
     def adventures(self):
         from collector.models.adventures import Adventure
+
         return Adventure.objects.filter(season=self.acronym)
 
     # @classmethod
@@ -81,9 +83,11 @@ class Season(models.Model):
     #         x.refcode = n+1
     #         x.save()
 
+
 class SeasonAdmin(admin.ModelAdmin):
-    list_display = ['id','name','is_current', 'acronym', 'era', 'team',  'notes']
-    ordering = ['-era']
-    list_editable = ['acronym', 'is_current', 'era']
+    list_display = ["id", "name", "is_current", "acronym", "era", "team", "notes"]
+    ordering = ["-era"]
+    list_editable = ["acronym", "is_current", "era"]
     from collector.utils.helper import refix
+
     actions = [refix]

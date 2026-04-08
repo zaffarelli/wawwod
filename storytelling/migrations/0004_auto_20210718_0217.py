@@ -4,20 +4,19 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('storytelling', '0003_scene_exact_place'),
+        ("storytelling", "0003_scene_exact_place"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='scene',
-            name='is_briefing',
+            model_name="scene",
+            name="is_briefing",
             field=models.BooleanField(default=False),
         ),
         migrations.AddField(
-            model_name='scene',
-            name='is_debriefing',
+            model_name="scene",
+            name="is_debriefing",
             field=models.BooleanField(default=False),
         ),
     ]

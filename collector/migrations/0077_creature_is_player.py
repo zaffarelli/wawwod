@@ -4,15 +4,14 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('collector', '0076_season_era'),
+        ("collector", "0076_season_era"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='creature',
-            name='is_player',
+            model_name="creature",
+            name="is_player",
             field=models.BooleanField(default=False),
         ),
     ]

@@ -4,15 +4,14 @@ from django.db import migrations
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('collector', '0166_alter_background_refcode'),
+        ("collector", "0166_alter_background_refcode"),
     ]
 
     operations = [
         migrations.RenameField(
-            model_name='background',
-            old_name='refcode',
-            new_name='id',
+            model_name="background",
+            old_name="refcode",
+            new_name="id",
         ),
     ]

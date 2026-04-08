@@ -4,20 +4,19 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('collector', '0164_background_refcode'),
+        ("collector", "0164_background_refcode"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='background',
-            name='code',
-            field=models.CharField(default='?', max_length=128, unique=True),
+            model_name="background",
+            name="code",
+            field=models.CharField(default="?", max_length=128, unique=True),
         ),
         migrations.AlterField(
-            model_name='background',
-            name='refcode',
+            model_name="background",
+            name="refcode",
             field=models.IntegerField(primary_key=True, serialize=False),
         ),
     ]

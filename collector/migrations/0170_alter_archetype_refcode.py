@@ -4,15 +4,14 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('collector', '0169_alter_archetype_name_alter_archetype_refcode'),
+        ("collector", "0169_alter_archetype_name_alter_archetype_refcode"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='archetype',
-            name='refcode',
+            model_name="archetype",
+            name="refcode",
             field=models.AutoField(primary_key=True, serialize=False),
         ),
     ]

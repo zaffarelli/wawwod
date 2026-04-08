@@ -4,15 +4,14 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('collector', '0058_alter_creature_options'),
+        ("collector", "0058_alter_creature_options"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='creature',
-            name='chronicle',
-            field=models.CharField(default='WOD', max_length=8),
+            model_name="creature",
+            name="chronicle",
+            field=models.CharField(default="WOD", max_length=8),
         ),
     ]

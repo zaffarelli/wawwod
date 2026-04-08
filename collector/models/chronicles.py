@@ -1,9 +1,5 @@
 from django.db import models
 from django.contrib import admin
-from datetime import datetime
-from django.db.models.signals import pre_save, post_save
-from django.dispatch import receiver
-import json
 
 import logging
 
@@ -12,19 +8,19 @@ logger = logging.Logger(__name__)
 
 class Chronicle(models.Model):
     refcode = models.IntegerField(default=0)
-    name = models.CharField(max_length=128, default='', primary_key=True)
-    acronym = models.CharField(max_length=16, blank=True, default='')
+    name = models.CharField(max_length=128, default="", primary_key=True)
+    acronym = models.CharField(max_length=16, blank=True, default="")
     era = models.IntegerField(default=2023)
-    main_creature = models.CharField(max_length=128, blank=True, default='')
+    main_creature = models.CharField(max_length=128, blank=True, default="")
     players_starting_freebies = models.IntegerField(default=0, blank=True)
-    image_logo = models.CharField(max_length=128, blank=True, default='')
-    description = models.TextField(max_length=1024, blank=True, default='')
+    image_logo = models.CharField(max_length=128, blank=True, default="")
+    description = models.TextField(max_length=1024, blank=True, default="")
     is_current = models.BooleanField(default=False, blank=True)
     is_storyteller_only = models.BooleanField(default=False, blank=True)
 
-    scenario = models.CharField(max_length=128, blank=True, default='')
-    pre_title = models.CharField(max_length=128, blank=True, default='')
-    post_title = models.CharField(max_length=128, blank=True, default='')
+    scenario = models.CharField(max_length=128, blank=True, default="")
+    pre_title = models.CharField(max_length=128, blank=True, default="")
+    post_title = models.CharField(max_length=128, blank=True, default="")
 
     @property
     def code(self):
@@ -33,11 +29,13 @@ class Chronicle(models.Model):
     @property
     def population(self):
         from collector.models.creatures import Creature
+
         all = Creature.objects.filter(chronicle=self.acronym)
         return len(all)
 
     def population_of(self, creature=None):
         from collector.models.creatures import Creature
+
         if creature is None:
             all = Creature.objects.filter(chronicle=self.acronym)
         else:
@@ -47,20 +45,13 @@ class Chronicle(models.Model):
     def __str__(self):
         return self.acronym
 
-    # @property
-    # def season(self):
-    #     from collector.models.seasons import Season
-    #     return Season.current_season(self.acronym)
-
-    # @property
-    # def seasons(self):
-    #     from collector.models.seasons import Season
-    #     return Season.objects.filter(chronicle=self.acronym)
-
     @property
     def adventures(self):
         from collector.models.adventures import Adventure
-        return Adventure.objects.filter(chronicle=self.acronym).order_by("season","season_order")
+
+        return Adventure.objects.filter(chronicle=self.acronym).order_by(
+            "season", "season_order"
+        )
 
     @classmethod
     def set_current(cls, ch=""):
@@ -78,6 +69,7 @@ class Chronicle(models.Model):
                 c.is_current = True
                 c.save()
                 from collector.models.adventures import Adventure
+
                 adventures = Adventure.objects.filter(chronicle=c.acronym)
                 adventure = adventures.first()
                 if Adventure.current != adventure:
@@ -90,14 +82,6 @@ class Chronicle(models.Model):
             return all.first()
         return None
 
-    # @property
-    # def adventure(self):
-    #     from collector.models.adventures import Adventure
-    #     s = self.season
-    #     if s:
-    #         return Adventure.current_adventure(s.acronym)
-    #     return None
-
     @property
     def to_json(self):
         data = {}
@@ -108,14 +92,24 @@ class Chronicle(models.Model):
 
     @classmethod
     def reid(cls):
-        for n,x in enumerate(cls.objects.all()):
-            x.refcode = n+1
+        for n, x in enumerate(cls.objects.all()):
+            x.refcode = n + 1
             x.save()
 
+
 class ChronicleAdmin(admin.ModelAdmin):
-    list_display = ['refcode','acronym', 'is_current', 'name', 'description', 'main_creature', 'population',
-                    'is_storyteller_only']
-    list_editable = ['is_current', 'is_storyteller_only']
-    ordering = ['acronym']
+    list_display = [
+        "refcode",
+        "acronym",
+        "is_current",
+        "name",
+        "description",
+        "main_creature",
+        "population",
+        "is_storyteller_only",
+    ]
+    list_editable = ["is_current", "is_storyteller_only"]
+    ordering = ["acronym"]
     from collector.utils.helper import refix
+
     actions = [refix]

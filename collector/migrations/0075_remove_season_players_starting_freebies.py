@@ -4,14 +4,13 @@ from django.db import migrations
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('collector', '0074_alter_adventure_protagonists'),
+        ("collector", "0074_alter_adventure_protagonists"),
     ]
 
     operations = [
         migrations.RemoveField(
-            model_name='season',
-            name='players_starting_freebies',
+            model_name="season",
+            name="players_starting_freebies",
         ),
     ]

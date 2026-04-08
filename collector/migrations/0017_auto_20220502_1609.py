@@ -5,22 +5,39 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('collector', '0016_auto_20220425_0950'),
+        ("collector", "0016_auto_20220425_0950"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Adventure',
+            name="Adventure",
             fields=[
-                ('name', models.CharField(default='', max_length=128, primary_key=True, serialize=False)),
-                ('chronicle', models.ForeignKey(default=None, null=True, on_delete=django.db.models.deletion.CASCADE, to='collector.chronicle')),
+                (
+                    "name",
+                    models.CharField(
+                        default="", max_length=128, primary_key=True, serialize=False
+                    ),
+                ),
+                (
+                    "chronicle",
+                    models.ForeignKey(
+                        default=None,
+                        null=True,
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to="collector.chronicle",
+                    ),
+                ),
             ],
         ),
         migrations.AddField(
-            model_name='creature',
-            name='adventure',
-            field=models.ForeignKey(default=None, null=True, on_delete=django.db.models.deletion.SET_NULL, to='collector.adventure'),
+            model_name="creature",
+            name="adventure",
+            field=models.ForeignKey(
+                default=None,
+                null=True,
+                on_delete=django.db.models.deletion.SET_NULL,
+                to="collector.adventure",
+            ),
         ),
     ]

@@ -4,20 +4,19 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('collector', '0155_discipline_refcode'),
+        ("collector", "0155_discipline_refcode"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='discipline',
-            name='code',
-            field=models.CharField(default='?', max_length=128, unique=True),
+            model_name="discipline",
+            name="code",
+            field=models.CharField(default="?", max_length=128, unique=True),
         ),
         migrations.AlterField(
-            model_name='discipline',
-            name='refcode',
+            model_name="discipline",
+            name="refcode",
             field=models.AutoField(primary_key=True, serialize=False),
         ),
     ]

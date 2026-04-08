@@ -4,15 +4,14 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('storytelling', '0010_auto_20210729_2230'),
+        ("storytelling", "0010_auto_20210729_2230"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='scene',
-            name='timeline',
-            field=models.CharField(blank=True, default='', max_length=32),
+            model_name="scene",
+            name="timeline",
+            field=models.CharField(blank=True, default="", max_length=32),
         ),
     ]

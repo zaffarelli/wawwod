@@ -4,20 +4,19 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('storytelling', '0048_hotspot_latitude_hotspot_longitude_and_more'),
+        ("storytelling", "0048_hotspot_latitude_hotspot_longitude_and_more"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='hotspot',
-            name='color',
-            field=models.CharField(default='#FFCCCCCC', max_length=9),
+            model_name="hotspot",
+            name="color",
+            field=models.CharField(default="#FFCCCCCC", max_length=9),
         ),
         migrations.AddField(
-            model_name='hotspot',
-            name='type',
-            field=models.CharField(default='', max_length=256),
+            model_name="hotspot",
+            name="type",
+            field=models.CharField(default="", max_length=256),
         ),
     ]

@@ -4,22 +4,32 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('collector', '0117_creature_ritual_pathes'),
+        ("collector", "0117_creature_ritual_pathes"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Deed',
+            name="Deed",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('description', models.TextField(blank=True, default='', max_length=256)),
-                ('category', models.CharField(blank=True, default='', max_length=64)),
-                ('notes', models.TextField(blank=True, default='', max_length=256)),
-                ('glory', models.IntegerField(blank=True, default=0)),
-                ('honor', models.IntegerField(blank=True, default=0)),
-                ('wisdom', models.IntegerField(blank=True, default=0)),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "description",
+                    models.TextField(blank=True, default="", max_length=256),
+                ),
+                ("category", models.CharField(blank=True, default="", max_length=64)),
+                ("notes", models.TextField(blank=True, default="", max_length=256)),
+                ("glory", models.IntegerField(blank=True, default=0)),
+                ("honor", models.IntegerField(blank=True, default=0)),
+                ("wisdom", models.IntegerField(blank=True, default=0)),
             ],
         ),
     ]

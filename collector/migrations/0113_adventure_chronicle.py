@@ -4,15 +4,14 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('collector', '0112_sept_caern_type_alter_sept_caern_totem'),
+        ("collector", "0112_sept_caern_type_alter_sept_caern_totem"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='adventure',
-            name='chronicle',
-            field=models.CharField(blank=True, default='WOD', max_length=8),
+            model_name="adventure",
+            name="chronicle",
+            field=models.CharField(blank=True, default="WOD", max_length=8),
         ),
     ]

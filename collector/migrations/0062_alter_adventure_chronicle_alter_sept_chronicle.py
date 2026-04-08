@@ -4,20 +4,19 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('collector', '0061_sept_rid_alter_sept_protagonists'),
+        ("collector", "0061_sept_rid_alter_sept_protagonists"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='adventure',
-            name='chronicle',
-            field=models.CharField(default='WOD', max_length=8),
+            model_name="adventure",
+            name="chronicle",
+            field=models.CharField(default="WOD", max_length=8),
         ),
         migrations.AlterField(
-            model_name='sept',
-            name='chronicle',
-            field=models.CharField(default='WOD', max_length=8),
+            model_name="sept",
+            name="chronicle",
+            field=models.CharField(default="WOD", max_length=8),
         ),
     ]

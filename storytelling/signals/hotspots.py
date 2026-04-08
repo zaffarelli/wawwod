@@ -3,8 +3,6 @@ from django.dispatch import receiver
 from storytelling.models.hotspots import HotSpot
 
 
-@receiver(pre_save, sender=HotSpot, dispatch_uid='update_hotspots')
+@receiver(pre_save, sender=HotSpot, dispatch_uid="update_hotspots")
 def update_cities(sender, instance, **kwargs):
-   instance.fix()
-
-
+    instance.fix()

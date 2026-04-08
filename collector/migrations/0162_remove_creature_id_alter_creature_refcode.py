@@ -4,19 +4,18 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('collector', '0161_rename_refcode_rite_id'),
+        ("collector", "0161_rename_refcode_rite_id"),
     ]
 
     operations = [
         migrations.RemoveField(
-            model_name='creature',
-            name='id',
+            model_name="creature",
+            name="id",
         ),
         migrations.AlterField(
-            model_name='creature',
-            name='refcode',
+            model_name="creature",
+            name="refcode",
             field=models.IntegerField(primary_key=True, serialize=False),
         ),
     ]

@@ -4,11 +4,11 @@ from collector.models.disciplines import Discipline
 disciplines = Discipline.objects.filter(level=1)
 for d in disciplines:
     for x in range(8):
-        matches = Discipline.objects.filter(level=x+2, name=d.name)
+        matches = Discipline.objects.filter(level=x + 2, name=d.name)
         if len(matches) == 0:
             n = Discipline()
             n.name = d.name
-            n.level = x+2
+            n.level = x + 2
             n.clan_0 = d.clan_0
             n.clan_1 = d.clan_1
             n.clan_2 = d.clan_2
@@ -24,5 +24,4 @@ for d in disciplines:
             n.clan_12 = d.clan_12
             n.has_rituals = d.has_rituals
             n.save()
-            print(f'{n.code} created...')
-
+            print(f"{n.code} created...")

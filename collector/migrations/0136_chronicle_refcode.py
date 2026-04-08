@@ -4,15 +4,14 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('collector', '0135_season_refcode'),
+        ("collector", "0135_season_refcode"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='chronicle',
-            name='refcode',
+            model_name="chronicle",
+            name="refcode",
             field=models.IntegerField(default=0),
         ),
     ]

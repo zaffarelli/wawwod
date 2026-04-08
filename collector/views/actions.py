@@ -4,6 +4,7 @@ from django.views.decorators.csrf import csrf_exempt
 
 from collector.models.creatures import Creature
 from collector.utils.helper import is_ajax
+
 # from collector.utils.wod_reference import get_current_chronicle
 import random
 
@@ -12,7 +13,7 @@ def extract_raw(request, slug):
     found = Creature.objects.all().filter(rid=slug)
     if len(found) == 1:
         lines = found.first().extract_raw()
-        return HttpResponse(lines, content_type='text/plain', charset="utf-16")
+        return HttpResponse(lines, content_type="text/plain", charset="utf-16")
     return HttpResponse(status=204)
 
 
@@ -20,57 +21,58 @@ def extract_roster(request, slug):
     found = Creature.objects.all().filter(rid=slug)
     if len(found) == 1:
         lines = found.first().extract_roster()
-        return HttpResponse(lines, content_type='text/html', charset="utf-16")
+        return HttpResponse(lines, content_type="text/html", charset="utf-16")
     return HttpResponse(status=204)
 
 
 def extract_per_group(request, slug):
-    grp_name = slug.replace('_', ' ')
+    grp_name = slug.replace("_", " ")
     lines = []
-    creatures = Creature.objects.all().filter(group=grp_name).order_by('groupspec')
+    creatures = Creature.objects.all().filter(group=grp_name).order_by("groupspec")
     for creature in creatures:
         lines.append(creature.extract_roster())
-    return HttpResponse(lines, content_type='text/html', charset="utf-16")
+    return HttpResponse(lines, content_type="text/html", charset="utf-16")
 
 
 def extract_mechanics(request):
     all = Creature.objects.all().filter(creature="garou")
     stats_by_auspice = {
-        '0': {'power1': 0, 'power2': 0, 'willpower': 0, 'cnt': 0},
-        '1': {'power1': 0, 'power2': 0, 'willpower': 0, 'cnt': 0},
-        '2': {'power1': 0, 'power2': 0, 'willpower': 0, 'cnt': 0},
-        '3': {'power1': 0, 'power2': 0, 'willpower': 0, 'cnt': 0},
-        '4': {'power1': 0, 'power2': 0, 'willpower': 0, 'cnt': 0},
+        "0": {"power1": 0, "power2": 0, "willpower": 0, "cnt": 0},
+        "1": {"power1": 0, "power2": 0, "willpower": 0, "cnt": 0},
+        "2": {"power1": 0, "power2": 0, "willpower": 0, "cnt": 0},
+        "3": {"power1": 0, "power2": 0, "willpower": 0, "cnt": 0},
+        "4": {"power1": 0, "power2": 0, "willpower": 0, "cnt": 0},
     }
 
     all_known_gifts = []
     for c in all:
-        x = f'{c.auspice}'
-        stats_by_auspice[x]['power1'] += c.power1
-        stats_by_auspice[x]['power2'] += c.power2
-        stats_by_auspice[x]['willpower'] += c.willpower
-        stats_by_auspice[x]['cnt'] += 1
+        x = f"{c.auspice}"
+        stats_by_auspice[x]["power1"] += c.power1
+        stats_by_auspice[x]["power2"] += c.power2
+        stats_by_auspice[x]["willpower"] += c.willpower
+        stats_by_auspice[x]["cnt"] += 1
         for n in range(10):
-            gift = getattr(c, f'gift{n}')
+            gift = getattr(c, f"gift{n}")
             if gift:
                 from collector.models.gifts import Gift
+
                 gs = Gift.objects.filter(declaration=gift)
                 if not len(gs):
                     go = Gift()
-                    go.name = gift.split(' (')[0]
-                    go.level = int(gift.split(' (')[1].split(')')[0])
+                    go.name = gift.split(" (")[0]
+                    go.level = int(gift.split(" (")[1].split(")")[0])
                     go.fix()
                     go.save()
 
                 if not gift.title() in all_known_gifts:
-                    all_known_gifts.append(f'- {gift}')
+                    all_known_gifts.append(f"- {gift}")
     lines = "All known gifts:\n"
     all_known_gifts.sort()
     lines += "\n".join(all_known_gifts)
     all_kinfolks = []
     for c in all:
         num = 0
-        kinfolk = c.value_of('kinfolk')
+        kinfolk = c.value_of("kinfolk")
         if kinfolk == 1:
             num = 2
         elif kinfolk == 2:
@@ -83,20 +85,19 @@ def extract_mechanics(request):
             num = 50
         my_kinfolk = []
         for n in range(num):
-            my_kinfolk.append(f'- unknown #{n + 1} ({c.name})')
+            my_kinfolk.append(f"- unknown #{n + 1} ({c.name})")
         x = 0
-        found_folks = Creature.objects.filter(creature='kinfolk', patron=c.name)
+        found_folks = Creature.objects.filter(creature="kinfolk", patron=c.name)
         for k in found_folks:
-            my_kinfolk[x] = f'- {k.name} ({c.name})'
+            my_kinfolk[x] = f"- {k.name} ({c.name})"
             x += 1
         for n in range(num):
-
-            if my_kinfolk[n].startswith(f'- unknown #{n + 1}'):
+            if my_kinfolk[n].startswith(f"- unknown #{n + 1}"):
                 nk = Creature()
-                nk.faction = 'Gaia'
+                nk.faction = "Gaia"
                 nk.patron = c.name
-                nk.creature = 'kinfolk'
-                nk.name = f'NewKinfolk for {c.name} #{n + 1}'
+                nk.creature = "kinfolk"
+                nk.name = f"NewKinfolk for {c.name} #{n + 1}"
                 nk.age = random.randrange(18, 58)
                 nk.need_fix = True
                 nk.save()
@@ -106,24 +107,25 @@ def extract_mechanics(request):
             all_kinfolks.append("\n".join(my_kinfolk))
     lines += "\nAll kinfolks:\n"
     lines += "\n".join(all_kinfolks)
-    kinfolks = Creature.objects.filter(creature='kinfolk')
+    kinfolks = Creature.objects.filter(creature="kinfolk")
     for k in kinfolks:
-        if k.condition == 'recalculate':
+        if k.condition == "recalculate":
             k.randomize_kinfolk()
     lines += "\nPowers:\n"
     for a in range(5):
-        x = f'{a}'
-        stats_by_auspice[x]['power1'] /= stats_by_auspice[x]['cnt']
-        stats_by_auspice[x]['power2'] /= stats_by_auspice[x]['cnt']
-        stats_by_auspice[x]['willpower'] /= stats_by_auspice[x]['cnt']
-        str = f'R:{round(stats_by_auspice[x]["power1"])} '
-        str += f'G:{round(stats_by_auspice[x]["power2"])} '
-        str += f'W:{round(stats_by_auspice[x]["willpower"])} '
-        str += f'C:{stats_by_auspice[x]["cnt"]}\n'
+        x = f"{a}"
+        stats_by_auspice[x]["power1"] /= stats_by_auspice[x]["cnt"]
+        stats_by_auspice[x]["power2"] /= stats_by_auspice[x]["cnt"]
+        stats_by_auspice[x]["willpower"] /= stats_by_auspice[x]["cnt"]
+        str = f"R:{round(stats_by_auspice[x]['power1'])} "
+        str += f"G:{round(stats_by_auspice[x]['power2'])} "
+        str += f"W:{round(stats_by_auspice[x]['willpower'])} "
+        str += f"C:{stats_by_auspice[x]['cnt']}\n"
         lines += str
     from collector.models.rites import Rite
+
     rites = Rite.objects.all()
-    all_garous = Creature.objects.filter(creature='garou')
+    all_garous = Creature.objects.filter(creature="garou")
     for garou in all_garous:
         if garou.value_of("rites") > 0:
             pass
@@ -133,7 +135,7 @@ def extract_mechanics(request):
     #         c.new_domitor = c.domitor.name
     #         c.need_fix = True
     #         c.save()
-    return HttpResponse(lines, content_type='text/plain', charset="utf-16")
+    return HttpResponse(lines, content_type="text/plain", charset="utf-16")
 
 
 def change_settings(request):
@@ -150,6 +152,7 @@ def deed_select(request):
         adventure = words[0]
         if len(words) == 2:
             from collector.models.adventures import Adventure
+
             print("deed", deed_code, "adventure", adventure)
             adventure = Adventure.objects.filter(acronym=adventure).first()
             if adventure:
@@ -169,6 +172,7 @@ def experiment(request):
 
 def old3_experiment(request):
     from collector.models.gifts import Gift
+
     id = 1
     for gift in Gift.objects.all().order_by("name"):
         gift.id = id
@@ -179,6 +183,7 @@ def old3_experiment(request):
 
 def old2_experiment(request):
     from collector.models.gifts import Gift
+
     with open("all_wta20_gifts.txt", "r") as f:
         lines = f.readlines()
     for line in lines:
@@ -212,6 +217,7 @@ def old_experiment(request):
 
     def roll_hand(dice=4, diff=6):
         from collector.utils.helper import roll
+
         success = 0
         nominal_success = 0
         cancel = 0
@@ -258,28 +264,32 @@ def old_experiment(request):
         if k > 1:
             success += v
     html.append(
-        f"<tr><th>Ratio</th><td colspan=2>{(botch / much) * 100:.2f}% botch -- {(failure / much) * 100.0:.2f}% failure -- {(success / much) * 100:.2f}% success</td></tr>")
+        f"<tr><th>Ratio</th><td colspan=2>{(botch / much) * 100:.2f}% botch -- {(failure / much) * 100.0:.2f}% failure -- {(success / much) * 100:.2f}% success</td></tr>"
+    )
     html.append("</table>")
     html.append("</div>")
 
-    answer = {'html': "".join(html)}
+    answer = {"html": "".join(html)}
     return JsonResponse(answer)
 
 
 def refix_all(request):
     chronicle = get_current_chronicle()
     import json
-    all = Creature.objects.filter(concept='death_row')
+
+    all = Creature.objects.filter(concept="death_row")
     for c in all:
         c.delete()
     all = Creature.objects.filter(chronicle=chronicle.acronym)
     for c in all:
         c.save()
     from storytelling.models.districts import District
+
     alld = District.objects.all()
     for d in alld:
         d.save()
     from storytelling.models.hotspots import HotSpot
+
     allhp = HotSpot.objects.all()
     for h in allhp:
         h.save()
@@ -304,7 +314,7 @@ def balance(request, slug):
     if len(found) == 1:
         x = found.first()
         x.balance_ghoul()
-        answer['rid'] = x.rid
+        answer["rid"] = x.rid
     return JsonResponse(answer)
 
 
@@ -315,5 +325,5 @@ def randomize(request, slug):
         x = found.first()
         x.randomize_all()
         x.save()
-        answer['rid'] = x.rid
+        answer["rid"] = x.rid
     return JsonResponse(answer)

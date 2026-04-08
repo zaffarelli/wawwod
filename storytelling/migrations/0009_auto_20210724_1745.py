@@ -4,35 +4,52 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('storytelling', '0008_alter_scene_description'),
+        ("storytelling", "0008_alter_scene_description"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='place',
-            name='id',
-            field=models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID'),
+            model_name="place",
+            name="id",
+            field=models.AutoField(
+                auto_created=True, primary_key=True, serialize=False, verbose_name="ID"
+            ),
         ),
         migrations.AlterField(
-            model_name='scene',
-            name='id',
-            field=models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID'),
+            model_name="scene",
+            name="id",
+            field=models.AutoField(
+                auto_created=True, primary_key=True, serialize=False, verbose_name="ID"
+            ),
         ),
         migrations.AlterField(
-            model_name='sceneslink',
-            name='category',
-            field=models.CharField(choices=[('FOE', 'Enemies actions'), ('FRIEND', 'Allies actions'), ('THIRD', 'Others actions'), ('TIME', '-'), ('FATE', 'Fate or ill luck')], default='TIME', max_length=10),
+            model_name="sceneslink",
+            name="category",
+            field=models.CharField(
+                choices=[
+                    ("FOE", "Enemies actions"),
+                    ("FRIEND", "Allies actions"),
+                    ("THIRD", "Others actions"),
+                    ("TIME", "-"),
+                    ("FATE", "Fate or ill luck"),
+                ],
+                default="TIME",
+                max_length=10,
+            ),
         ),
         migrations.AlterField(
-            model_name='sceneslink',
-            name='id',
-            field=models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID'),
+            model_name="sceneslink",
+            name="id",
+            field=models.AutoField(
+                auto_created=True, primary_key=True, serialize=False, verbose_name="ID"
+            ),
         ),
         migrations.AlterField(
-            model_name='story',
-            name='id',
-            field=models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID'),
+            model_name="story",
+            name="id",
+            field=models.AutoField(
+                auto_created=True, primary_key=True, serialize=False, verbose_name="ID"
+            ),
         ),
     ]

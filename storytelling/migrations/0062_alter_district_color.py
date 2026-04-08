@@ -5,15 +5,16 @@ from django.db import migrations
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('storytelling', '0061_alter_hotspot_type'),
+        ("storytelling", "0061_alter_hotspot_type"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='district',
-            name='color',
-            field=colorfield.fields.ColorField(default='#808080', image_field=None, max_length=25, samples=None),
+            model_name="district",
+            name="color",
+            field=colorfield.fields.ColorField(
+                default="#808080", image_field=None, max_length=25, samples=None
+            ),
         ),
     ]

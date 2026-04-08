@@ -4,15 +4,14 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('collector', '0007_auto_20210620_0054'),
+        ("collector", "0007_auto_20210620_0054"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='creature',
-            name='display_gauge',
+            model_name="creature",
+            name="display_gauge",
             field=models.IntegerField(default=0),
         ),
     ]

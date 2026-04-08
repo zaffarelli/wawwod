@@ -4,30 +4,29 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('storytelling', '0070_city_utc'),
+        ("storytelling", "0070_city_utc"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='city',
-            name='code_property',
-            field=models.CharField(blank=True, default='', max_length=128),
+            model_name="city",
+            name="code_property",
+            field=models.CharField(blank=True, default="", max_length=128),
         ),
         migrations.AlterField(
-            model_name='city',
-            name='geojson_file',
-            field=models.CharField(blank=True, default='', max_length=128),
+            model_name="city",
+            name="geojson_file",
+            field=models.CharField(blank=True, default="", max_length=128),
         ),
         migrations.AlterField(
-            model_name='city',
-            name='name_property',
-            field=models.CharField(blank=True, default='', max_length=128),
+            model_name="city",
+            name="name_property",
+            field=models.CharField(blank=True, default="", max_length=128),
         ),
         migrations.AlterField(
-            model_name='city',
-            name='sector_property',
-            field=models.CharField(blank=True, default='', max_length=128),
+            model_name="city",
+            name="sector_property",
+            field=models.CharField(blank=True, default="", max_length=128),
         ),
     ]

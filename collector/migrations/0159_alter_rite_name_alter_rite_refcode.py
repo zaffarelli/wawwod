@@ -4,20 +4,21 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('collector', '0158_alter_totem_id'),
+        ("collector", "0158_alter_totem_id"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='rite',
-            name='name',
-            field=models.CharField(default='', max_length=128, primary_key=True, serialize=False),
+            model_name="rite",
+            name="name",
+            field=models.CharField(
+                default="", max_length=128, primary_key=True, serialize=False
+            ),
         ),
         migrations.AlterField(
-            model_name='rite',
-            name='refcode',
+            model_name="rite",
+            name="refcode",
             field=models.IntegerField(default=0),
         ),
     ]

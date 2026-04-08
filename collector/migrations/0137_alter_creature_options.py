@@ -4,14 +4,13 @@ from django.db import migrations
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('collector', '0136_chronicle_refcode'),
+        ("collector", "0136_chronicle_refcode"),
     ]
 
     operations = [
         migrations.AlterModelOptions(
-            name='creature',
-            options={'ordering': ['name'], 'verbose_name': 'Creature'},
+            name="creature",
+            options={"ordering": ["name"], "verbose_name": "Creature"},
         ),
     ]

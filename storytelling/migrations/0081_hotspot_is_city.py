@@ -4,15 +4,14 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('storytelling', '0080_district_adventures'),
+        ("storytelling", "0080_district_adventures"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='hotspot',
-            name='is_city',
+            model_name="hotspot",
+            name="is_city",
             field=models.BooleanField(blank=True, default=False),
         ),
     ]

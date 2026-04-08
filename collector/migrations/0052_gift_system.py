@@ -4,15 +4,14 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('collector', '0051_chronicle_post_title_chronicle_pre_title_and_more'),
+        ("collector", "0051_chronicle_post_title_chronicle_pre_title_and_more"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='gift',
-            name='system',
-            field=models.TextField(blank=True, default='', max_length=1024),
+            model_name="gift",
+            name="system",
+            field=models.TextField(blank=True, default="", max_length=1024),
         ),
     ]

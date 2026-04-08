@@ -6,7 +6,7 @@ from collector.models.creatures import Creature
 
 class CreatureDetailView(DetailView):
     model = Creature
-    context_object_name = 'c'
-    slug_field = 'rid'
-    slug_url_kwarg = 'slug'
+    context_object_name = "c"
+    slug_field = "rid"
+    slug_url_kwarg = "slug"
     query_pk_and_slug = True

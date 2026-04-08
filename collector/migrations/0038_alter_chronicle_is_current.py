@@ -4,15 +4,14 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('collector', '0037_creature_exp_pool_creature_exp_spent'),
+        ("collector", "0037_creature_exp_pool_creature_exp_spent"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='chronicle',
-            name='is_current',
+            model_name="chronicle",
+            name="is_current",
             field=models.BooleanField(blank=True, default=False),
         ),
     ]

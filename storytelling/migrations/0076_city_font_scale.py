@@ -4,15 +4,14 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('storytelling', '0075_remove_city_options'),
+        ("storytelling", "0075_remove_city_options"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='city',
-            name='font_scale',
+            model_name="city",
+            name="font_scale",
             field=models.FloatField(blank=True, default=1.0),
         ),
     ]

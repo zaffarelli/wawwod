@@ -4,15 +4,14 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('collector', '0165_alter_background_code_alter_background_refcode'),
+        ("collector", "0165_alter_background_code_alter_background_refcode"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='background',
-            name='refcode',
+            model_name="background",
+            name="refcode",
             field=models.AutoField(primary_key=True, serialize=False),
         ),
     ]

@@ -4,15 +4,14 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('storytelling', '0076_city_font_scale'),
+        ("storytelling", "0076_city_font_scale"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='hotspot',
-            name='city_code',
-            field=models.CharField(blank=True, default='UNY', max_length=128),
+            model_name="hotspot",
+            name="city_code",
+            field=models.CharField(blank=True, default="UNY", max_length=128),
         ),
     ]
