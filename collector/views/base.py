@@ -133,27 +133,19 @@ def prepare_index(request):
 
 def renown(request):
     from collector.models.adventures import Adventure
-
-    print("Renown")
     adventure = Adventure.current()
     from collector.models.deeds import Deed
-
     html = Deed.adventure_to_html(adventure)
     answer = {"html": html}
-
     return JsonResponse(answer)
 
 
 def renown_records(request):
     from collector.models.adventures import Adventure
-
-    print("Renown Records")
     adventure = Adventure.current()
     from collector.models.deeds import Deed
-
     html = Deed.players_to_html(adventure)
     answer = {"html": html}
-
     return JsonResponse(answer)
 
 
@@ -728,7 +720,7 @@ def state_build():
 def adventure_sheet(request):
     if is_ajax(request):
         adventure_sheet_context = {}
-        chronicle = get_current_chronicle()
+        chronicle = Chronicle.current()
         data = {"players": [], "adventure": {}}
         if chronicle:
             idx = 0

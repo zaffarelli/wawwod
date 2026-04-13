@@ -1,17 +1,17 @@
 from django.db import models
 from django.contrib import admin
-import datetime
-from django.db.models.signals import pre_save, post_save
-from django.dispatch import receiver
 from collector.models.seasons import Season
-import json
-
 import logging
 
 logger = logging.Logger(__name__)
 
 
 class Adventure(models.Model):
+    """
+    Adventure model notes:
+        - The player_starting_freebies is an amount added given to the freebies given by the creature type (e.g. to have garous starting with 21 freebies, just set players starting freebies to 6)
+        - the separators are embedded in the model (used for deeds) because they should not be used manyually (methods do that).
+    """
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=128, default="")
     chronicle = models.CharField(max_length=8, default="WOD", blank=True)
@@ -21,7 +21,7 @@ class Adventure(models.Model):
     team = models.TextField(default="", max_length=1024, blank=True)
     acronym = models.CharField(max_length=32, default="")
     notes = models.TextField(max_length=1024, default="", blank=True)
-    players_starting_freebies = models.IntegerField(default=15, blank=True)
+    players_starting_freebies = models.IntegerField(default=0, blank=True)
     is_current = models.BooleanField(default=False, blank=True)
     adventure_teaser = models.CharField(max_length=128, default="", blank=True)
     deeds_map_str = models.TextField(max_length=2048, default="", blank=True)
@@ -39,40 +39,89 @@ class Adventure(models.Model):
         return self.acronym
 
     def string_to_deeds(self):
-        import json
-
+        """
+        returns: deed_map_str to a json structure
+        """
         deeds_map = []
         items = self.deeds_map_str.split(self.DEED_SEP)
         for item in items:
-            deeds_map.append(item.strip())
-        print("deeds map", deeds_map)
+            parts = item.strip().split(self.ITEM_SEP)
+            s = {"code": parts[0], "players": []}
+            if len(parts) > 1:
+                for part in parts[1:]:
+                    s["players"].append(part)
+            deeds_map.append(s)
         return deeds_map
 
     def deeds_to_string(self, json_data_list):
+        """
+        Update deed_map_str from a list of json structures
+        param json_data_list: the json structure list
+        """
         self.deeds_map_str = ""
         data = []
         for item in json_data_list:
-            if len(item) > 0:
-                data.append(item)
+            st = item["code"]
+            for player in item["players"]:
+                st += self.ITEM_SEP + player
+            data.append(st)
         self.deeds_map_str = self.DEED_SEP.join(data)
 
     def push_deed(self, json_deed):
-        if json_deed.code not in self.deeds_map_str:
-            former = self.string_to_deeds()
-            former.append(json_deed)
-            self.deeds_to_string(former)
+        """
+        Add a deed to the deed string
+        param json_deed: the new deed structure
+        """
+        if json_deed["code"] in self.deeds_map_str:
+            deeds = self.string_to_deeds()
+            for deed in deeds:
+                if deed["code"] == json_deed["code"]:
+                    deeds.remove(deed)
+            deeds.append(json_deed)
+            self.deeds_to_string(deeds)
+
+    def compute_individual_renown(self):
+        """
+        Add a deed to the deed string
+        param json_deed: the new deed structure
+        """
+        from collector.models.creatures import Creature
+        from collector.models.deeds import Deed
+        pack = []
+        protlist = self.protagonists.split(",")
+        for protagonist in protlist:
+            x = Creature.objects.filter(rid=protagonist).first()
+            pack.append({"code": x.rid, "name": x.name, "glory": 0, "honor": 0, "wisdom": 0})
+        deeds = self.string_to_deeds()
+        for packmate in pack:
+            for deed in deeds:
+                if self.player_has_deed(packmate['code'], deed['code']) == "yes":
+                    deed_data = Deed.objects.get(code=deed['code'])
+                    packmate["glory"] += deed_data.glory
+                    packmate["honor"] += deed_data.honor
+                    packmate["wisdom"] += deed_data.wisdom
+        return pack
 
     def pull_deed(self, code):
+        """
+        Fetch a specific deed identified by its code.
+        :returns: the deed structure
+        """
         found = None
         if code in self.deeds_map_str:
             deeds = self.string_to_deeds()
             for deed in deeds:
+                print("*** pull_deed", deed)
                 if deed["code"] == code:
                     found = deed
                     break
         return found
 
     def update_deeds(self, code):
+        """
+        Update deed selection for the list of deeds available for this adventure
+        Each deed can be set once.
+        """
         result = ""
         if code in self.deeds_map_str:
             updated_deeds = []
@@ -86,16 +135,45 @@ class Adventure(models.Model):
             self.deeds_to_string(updated_deeds)
         else:
             deeds = self.string_to_deeds()
-            print(deeds)
-            print(code)
             deeds.append(code)
-            print(deeds)
             self.deeds_to_string(deeds)
             result = f"{self.acronym}__{code}___on"
         self.save()
         return result
 
+    def record_deed(self, code, player):
+        """
+        Activate this deed for the player in this adventure
+        """
+        result = ""
+        if code in self.deeds_map_str:
+            deed = self.pull_deed(code)
+            print("***", deed)
+            if player in deed["players"]:
+                deed["players"].remove(player)
+                result = f"{self.acronym}__{code}__{player}____off"
+            else:
+                deed["players"].append(player)
+                result = f"{self.acronym}__{code}__{player}____on"
+            self.push_deed(deed)
+        self.save()
+        return result
+
+    def player_has_deed(self, player_code, deed_code):
+        res = "no"
+        if deed_code in self.deeds_map_str:
+            print(deed_code)
+            deed = self.pull_deed(deed_code)
+            print(deed)
+            if player_code in deed["players"]:
+                res = "yes"
+        return res
+
     def has_character(self, c):
+        """
+        Check if a character is part of this adventure by checking the creature.aventure property
+        Be careful here to have discrete acronyms for the acronyms (avoid "toto" and "toto2" adventures, go for "toto1" and "toto2" instead)
+        """
         res = False
         advs = c.adventure.split(" ")
         for adv in advs:
@@ -105,7 +183,11 @@ class Adventure(models.Model):
         return res
 
     def deeds_player_map(self):
+        """
+        returns: the json structure with players
+        """
         ds = self.string_to_deeds()
+        print(ds)
         pmap = {}
         for d in ds:
             items = d.split(self.ITEM_SEP)
@@ -113,16 +195,12 @@ class Adventure(models.Model):
             for k, item in enumerate(items):
                 if k > 0:
                     pmap[items[0]].append(item)
-        print(pmap)
         return pmap
 
     def fix(self):
         if self.protagonists == "":
             from collector.models.creatures import Creature
-
-            pcs = Creature.objects.filter(
-                adventure__contains=self.acronym, is_player=True
-            )
+            pcs = Creature.objects.filter(adventure__contains=self.acronym, is_player=True)
             list = []
             for pc in pcs:
                 list.append(pc.rid)
@@ -165,25 +243,28 @@ class Adventure(models.Model):
             if found_once:
                 self.acronym = self.new_acronym
 
-    @classmethod
-    def current_adventure(cls, se):
-        adventure = None
-        all = cls.objects.filter(is_current=True)
-        if len(all) > 0:
-            adventure = all.first()
-        return adventure
+    # @classmethod
+    # def current_adventure(cls, se):
+    #     adventure = None
+    #     all = cls.objects.filter(is_current=True)
+    #     if len(all) > 0:
+    #         adventure = all.first()
+    #     return adventure
 
     @classmethod
     def set_current(cls, ad=""):
+        """
+        Set current adventure (by switching the is_current property, off for all, then on to this one)
+        If no adventure is given, falls back to the default adventure "DEF90"
+        """
         from collector.models.chronicles import Chronicle
-
-        print(f"ad={ad}")
         all = cls.objects.filter()
         for adventure in all:
             adventure.is_current = False
             adventure.save()
         if len(ad) == 0:
             ad = "DEF90"
+            logger.warning("Adventure not found. Falling back to default adventure.")
         currents = cls.objects.filter(acronym=ad)
         if len(currents) == 1:
             current = currents.first()
@@ -197,6 +278,9 @@ class Adventure(models.Model):
 
     @classmethod
     def current(cls):
+        """
+        Get current adventure
+        """
         all = cls.objects.filter(is_current=True)
         if len(all) == 1:
             return all.first()
@@ -205,6 +289,7 @@ class Adventure(models.Model):
     @classmethod
     def current_full(cls):
         """
+        Shortcut for Adventure.current(), Chronicle.current(), Season.current()
         :returns: adventure, chronicle and season
         """
         all = cls.objects.filter(is_current=True)
@@ -216,12 +301,6 @@ class Adventure(models.Model):
             season = Season.objects.filter(acronym=adventure.season).first()
             return adventure, chronicle, season
         return None, None, None
-
-    # @classmethod
-    # def reid(cls):
-    #     for n,x in enumerate(cls.objects.all()):
-    #         x.refcode = n+1
-    #         x.save()
 
 
 class AdventureAdmin(admin.ModelAdmin):

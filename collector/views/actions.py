@@ -163,6 +163,30 @@ def deed_select(request):
 
     return JsonResponse(answer)
 
+@csrf_exempt
+def deed_record_select(request):
+    answer = {"status":False}
+    if is_ajax(request):
+        params = request.POST.get("params")
+        words = params.split("__")
+        print(params)
+        adventure = words[0]
+        deed_code = words[1]
+        player_rid = words[2]
+        if len(words) == 3:
+            from collector.models.adventures import Adventure
+            print("deed", deed_code, "adventure", adventure, "player_rid", player_rid)
+            adventure = Adventure.objects.filter(acronym=adventure).first()
+            if adventure:
+                result = adventure.record_deed(deed_code, player_rid)
+                answer["entry"] = result
+                answer["renown"] = adventure.compute_individual_renown()
+                answer["status"] = True
+            else:
+                print(f"Adventure {adventure} not found!")
+
+
+    return JsonResponse(answer)
 
 def experiment(request):
     # from collector.models.archetypes import Archetype

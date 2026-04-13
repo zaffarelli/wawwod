@@ -50,6 +50,8 @@ class WawwodCollector {
     registerDisplay() {
         let me = this;
         $('.display').off().on('click', function (event) {
+            event.stopPropagation()
+            event.preventDefault()
             let action = $(this).attr('action');
             let param = $(this).attr('param');
             let id = $(this).attr('id');
@@ -312,6 +314,8 @@ class WawwodCollector {
     registerCollectorAction() {
         let me = this;
         $('.collector_action').off().on('click', function (event) {
+            event.stopPropagation()
+            event.preventDefault()
             let action = $(this).attr('action');
             let param = $('#userinput').val();
             let newparam = (param.split(" ")).join("_");
@@ -510,10 +514,53 @@ class WawwodCollector {
                     console.error('Error... ' + answer)
                     me.rebootLinks();
                 },
-            });
+            })
+        })
+        $('.player_deed_select').off().on('click', function (event) {
+            event.preventDefault()
+            event.stopPropagation()
+            let params = $(this).attr('params')
+            $.ajax({
+                url: 'ajax/deed_record_select/',
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                data: {
+                    params: params
+                },
+                dataType: 'json',
+                success: function (answer) {
+                    //$('#'+param).html(answer.report)
+                    console.log(answer.status)
+                    let words = answer['entry'].split("____")
+                    let target = '#'+words[0]
+                    if (words[1] == "on"){
+                        $(target).html('<i class="fas fa-check"></i>')
+                        $(target).removeClass("no")
+                        $(target).addClass("yes")
+                    }else{
+                        $(target).html('<i class="fas fa-times"></i>')
+                        $(target).removeClass("yes")
+                        $(target).addClass("no")
+                    }
+                    if (answer.hasOwnProperty("renown")){
+                        _.forEach(answer["renown"], (v) => {
+                            let player = "#title"+v.code
+                            let str = `${v.name}<br/>Glory: ${v.glory}<br/>Honor:${v.honor}<br/>Wisdom:${v.wisdom}`
+                            $(player).html(str)
+                        })
 
-            //me.rebootLinks();
-        });
+                    }
+                    me.rebootLinks()
+                },
+                error: function (answer) {
+                    console.error('Error... ' + answer)
+                    me.rebootLinks();
+                },
+            })
+        })
     }
 
 

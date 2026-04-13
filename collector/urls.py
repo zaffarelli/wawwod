@@ -42,6 +42,7 @@ from collector.views.actions import (
     refix_all,
     experiment,
     deed_select,
+    deed_record_select,
 )
 from collector.views.creature_views import CreatureDetailView
 
@@ -168,4 +169,5 @@ urlpatterns = [
     re_path(r"^weaver_code/(?P<code>\w+)/$", weaver_code, name="weaver_code"),
     re_path(r"^ajax/action/quaestor/(?P<slug>\w+)/$", quaestor, name="quaestor"),
     re_path(r"^ajax/deed_select/$", deed_select, name="deed_select"),
+    re_path(r"^ajax/deed_record_select/$", deed_record_select, name="deed_record_select"),
 ]

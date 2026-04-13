@@ -63,6 +63,8 @@ class Deed(models.Model):
         html.append("</div>")
         return "".join(html)
 
+
+
     @classmethod
     def adventure_to_html(cls, adventure=None):
         adventure_deeds = adventure.deeds_map_str
@@ -71,7 +73,7 @@ class Deed(models.Model):
         html = []
         html.append("<div class='html_block'>")
         html.append("<table class='renown'>")
-        html.append(f"<tr><th colspan='5'>Adventure: {adventure.name}</th></tr>")
+        html.append(f"<tr><th colspan='5' style='font-size:2em;'>Adventure Records: {adventure.name}</th></tr>")
         col1 = "#e0e0e0"
         col2 = "#f0e0e0"
         x = col1
@@ -87,7 +89,11 @@ class Deed(models.Model):
             else:
                 selector = f'<span class="deed_select no" id="{adventure.acronym}__{deed.code}" params="{adventure.acronym}__{deed.code}"><i class="fas fa-times"></i></span>&nbsp;'
             html.append(
-                f'<tr><td class="text" style="background:{x};">{selector} <tt>[{deed.code}]</tt> {deed.description}</td><td rowspan=2  style="background:{x};">{deed.glory}</td><td rowspan=2  style="background:{x};">{deed.honor}</td><td rowspan=2  style="background:{x};">{deed.wisdom}</td></tr><tr  style="background:{x};"><td class="notes"  style="background:{x};">{deed.notes}</td></tr>'
+                f'<tr><td class="text" style="background:{x};">{selector} <tt>[{deed.code}]</tt> {deed.description}</td>'+
+                f'<td rowspan=2  style="background:{x};">{deed.glory}</td>'+
+                f'<td rowspan=2  style="background:{x};">{deed.honor}</td>'+
+                f'<td rowspan=2  style="background:{x};">{deed.wisdom}</td></tr>'+
+                f'<tr style="background:{x};"><td class="notes" style="background:{x};">{deed.notes}</td></tr>'
             )
             if x == col1:
                 x = col2
@@ -103,8 +109,8 @@ class Deed(models.Model):
 
         adventure_deeds = adventure.deeds_map_str
         deeds = cls.objects.all().order_by("category", "notes", "description")
-        print("§§§§§§")
-        adventure_deeds_map = adventure.deeds_player_map()
+        # print("§§§§§§")
+        # adventure_deeds_map = adventure.deeds_player_map()
 
         pack = []
         protlist = adventure.protagonists.split(",")
@@ -116,24 +122,33 @@ class Deed(models.Model):
         html.append("<div class='html_block'>")
         html.append("<table class='renown'>")
         html.append(
-            f"<tr><th colspan='{5 + len(pack)}'>Adventure Records: {adventure.name}</th></tr>"
+            f"<tr><th colspan='{5 + len(pack)}' style='font-size:2em;'>Adventure Records: {adventure.name}</th></tr>"
         )
         col1 = "#e0e0e0"
         col2 = "#f0e0e0"
         x = col1
+        y = ["#3696d27f","#9a36d27f","#36d2637f","#d2363d7f"]
         nlist = ""
 
         for packmate in pack:
-            nlist += f"<th>{packmate['name']}</th>"
+            nlist += f"<th id='title{packmate['code']}'>{packmate['name']}</th>"
         html.append(
             f"<tr><th>{'Description'}</th><th>{'Glory'}</th><th>{'Honor'}</th><th>{'Wisdom'}</th>{nlist}</tr>"
         )
         for deed in deeds:
             plist = ""
+            r = 0
             for packmate in pack:
-                plist += f'<td rowspan=2 style="background:{x}; color:#808080;"><span class="adventure_record"  params="{deed.code}__{packmate["code"]}"><i class="fa fa-times"></i></span></td>'
+                is_on = adventure.player_has_deed(packmate["code"],deed.code)
+                plist += (f'<td rowspan=2 style="background:{x}; color:#808080; border:3pt solid {y[r]}">'+
+                          f'<span class="player_deed_select {is_on}" id="{adventure.acronym}__{deed.code}__{packmate["code"]}" params="{adventure.acronym}__{deed.code}__{packmate["code"]}"><i class="fa fa-times"></i></span></td>')
+                r+=1
             if deed.code in adventure_deeds:
-                h = f'<tr><td class="text" style="background:{x};"><tt>[{deed.code}]</tt> {deed.description}</td><td rowspan=2  style="background:{x};">{deed.glory}</td><td rowspan=2  style="background:{x};">{deed.honor}</td><td rowspan=2  style="background:{x};">{deed.wisdom}</td>{plist}</tr><tr  style="background:{x};"><td class="notes"  style="background:{x};">{deed.notes}</td></tr>'
+                h = (f'<tr><td class="text" style="background:{x};">{deed.description}<br/><tt><small>[{deed.code}]</small></tt></td>'+
+                     f'<td rowspan=2  style="background:{x};">{deed.glory}</td>'+
+                     f'<td rowspan=2  style="background:{x};">{deed.honor}</td>'+
+                     f'<td rowspan=2  style="background:{x};">{deed.wisdom}</td>'+
+                     f'{plist}</tr><tr  style="background:{x};"><td class="notes"  style="background:{x};">{deed.notes}</td></tr>')
                 html.append(h)
             if x == col1:
                 x = col2

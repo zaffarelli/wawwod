@@ -51963,3 +51963,522 @@ IndexError: list index out of range
 [07/04 16:12:26] "GET /ajax/display/undefined/ HTTP/1.1" 404 13168
 [07/04 16:12:39] Not Found: /ajax/display/undefined/
 [07/04 16:12:39] "GET /ajax/display/undefined/ HTTP/1.1" 404 13168
+[12/04 00:48:35] "GET /static/collector/css?72bc76983e6e HTTP/1.1" 404 1805
+[12/04 00:48:50] "GET /static/collector/css?72bc76983e6e HTTP/1.1" 404 1805
+[12/04 00:49:25] Not Found: /ajax/display/undefined/
+[12/04 00:49:25] "GET /ajax/display/undefined/ HTTP/1.1" 404 13168
+[12/04 00:55:19] Not Found: /ajax/display/undefined/
+[12/04 00:55:19] "GET /ajax/display/undefined/ HTTP/1.1" 404 13168
+[12/04 01:00:42] "GET /static/collector/css?72bc76983e6e HTTP/1.1" 404 1805
+[12/04 01:00:49] Not Found: /ajax/display/undefined/
+[12/04 01:00:49] "GET /ajax/display/undefined/ HTTP/1.1" 404 13168
+[12/04 01:34:53] "GET /static/collector/css?72bc76983e6e HTTP/1.1" 404 1805
+[12/04 01:35:16] Not Found: /ajax/display/undefined/
+[12/04 01:35:16] "GET /ajax/display/undefined/ HTTP/1.1" 404 13168
+[12/04 01:37:37] "GET /static/collector/css?72bc76983e6e HTTP/1.1" 404 1805
+[12/04 01:37:41] Not Found: /ajax/display/undefined/
+[12/04 01:37:41] "GET /ajax/display/undefined/ HTTP/1.1" 404 13168
+[12/04 16:02:41] "GET /static/collector/css?72bc76983e6e HTTP/1.1" 404 1805
+[12/04 16:02:45] "GET /static/collector/css?72bc76983e6e HTTP/1.1" 404 1805
+[12/04 16:02:53] Not Found: /ajax/display/undefined/
+[12/04 16:02:53] "GET /ajax/display/undefined/ HTTP/1.1" 404 13368
+[12/04 18:07:04] Not Found: /ajax/display/undefined/
+[12/04 18:07:04] "GET /ajax/display/undefined/ HTTP/1.1" 404 13368
+[12/04 18:08:27] "GET /static/collector/css?72bc76983e6e HTTP/1.1" 404 1805
+[12/04 18:08:31] "GET /static/collector/css?72bc76983e6e HTTP/1.1" 404 1805
+[12/04 18:08:35] "GET /static/collector/css?72bc76983e6e HTTP/1.1" 404 1805
+[12/04 18:08:45] Not Found: /ajax/display/undefined/
+[12/04 18:08:45] "GET /ajax/display/undefined/ HTTP/1.1" 404 13368
+[12/04 20:02:38] Not Found: /ajax/display/undefined/
+[12/04 20:02:38] "GET /ajax/display/undefined/ HTTP/1.1" 404 13368
+[12/04 20:04:28] "GET /static/collector/css?72bc76983e6e HTTP/1.1" 404 1805
+[12/04 20:04:35] Not Found: /ajax/display/undefined/
+[12/04 20:04:35] "GET /ajax/display/undefined/ HTTP/1.1" 404 13368
+[12/04 20:05:32] "GET /static/collector/css?72bc76983e6e HTTP/1.1" 404 1805
+[12/04 20:05:35] Not Found: /ajax/display/undefined/
+[12/04 20:05:35] "GET /ajax/display/undefined/ HTTP/1.1" 404 13368
+[12/04 20:06:08] "GET /static/collector/css?72bc76983e6e HTTP/1.1" 404 1805
+[12/04 20:06:12] Not Found: /ajax/display/undefined/
+[12/04 20:06:12] "GET /ajax/display/undefined/ HTTP/1.1" 404 13368
+[12/04 20:08:15] "GET /static/collector/css?72bc76983e6e HTTP/1.1" 404 1805
+[12/04 20:09:41] "GET /static/collector/css?72bc76983e6e HTTP/1.1" 404 1805
+[12/04 20:09:44] Not Found: /ajax/display/undefined/
+[12/04 20:09:44] "GET /ajax/display/undefined/ HTTP/1.1" 404 13368
+[12/04 20:10:37] "GET /static/collector/css?72bc76983e6e HTTP/1.1" 404 1805
+[12/04 20:10:54] "GET /static/collector/css?72bc76983e6e HTTP/1.1" 404 1805
+[12/04 20:11:02] Not Found: /ajax/display/undefined/
+[12/04 20:11:02] "GET /ajax/display/undefined/ HTTP/1.1" 404 13368
+[12/04 23:04:18] Not Found: /ajax/display/undefined/
+[12/04 23:04:18] "GET /ajax/display/undefined/ HTTP/1.1" 404 13368
+[12/04 23:08:16] Not Found: /ajax/display/undefined/
+[12/04 23:08:16] "GET /ajax/display/undefined/ HTTP/1.1" 404 13368
+[12/04 23:10:31] Not Found: /ajax/display/undefined/
+[12/04 23:10:31] "GET /ajax/display/undefined/ HTTP/1.1" 404 13368
+[12/04 23:10:38] Not Found: /ajax/display/undefined/
+[12/04 23:10:38] "GET /ajax/display/undefined/ HTTP/1.1" 404 13368
+[12/04 23:10:38] Internal Server Error: /ajax/display/adventure_sheet/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 723, in adventure_sheet
+    chronicle = get_current_chronicle()
+                ^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'get_current_chronicle' is not defined
+[12/04 23:10:38] "GET /ajax/display/adventure_sheet/ HTTP/1.1" 500 76234
+[12/04 23:11:00] "GET /static/collector/css?72bc76983e6e HTTP/1.1" 404 1805
+[12/04 23:12:14] Not Found: /ajax/display/undefined/
+[12/04 23:12:14] "GET /ajax/display/undefined/ HTTP/1.1" 404 13368
+[12/04 23:12:31] Not Found: /ajax/display/undefined/
+[12/04 23:12:31] "GET /ajax/display/undefined/ HTTP/1.1" 404 13368
+[12/04 23:14:02] "GET /static/collector/css?72bc76983e6e HTTP/1.1" 404 1805
+[12/04 23:14:54] Not Found: /ajax/display/undefined/
+[12/04 23:14:54] "GET /ajax/display/undefined/ HTTP/1.1" 404 13368
+[12/04 23:24:19] "GET /static/collector/css?72bc76983e6e HTTP/1.1" 404 1805
+[13/04 03:41:32] "GET /static/collector/css?72bc76983e6e HTTP/1.1" 404 1805
+[13/04 03:41:38] Internal Server Error: /ajax/deed_record_select/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/actions.py", line 181, in deed_record_select
+    result = adventure.record_deed(deed_code, player_rid)
+  File "/home/zaffarelli/Projects/wawwod/collector/models/adventures.py", line 116, in record_deed
+    deed = self.pull_deed(code)
+  File "/home/zaffarelli/Projects/wawwod/collector/models/adventures.py", line 81, in pull_deed
+    if deed["code"] == code:
+       ~~~~^^^^^^^^
+TypeError: string indices must be integers, not 'str'
+[13/04 03:41:38] "POST /ajax/deed_record_select/ HTTP/1.1" 500 21460
+[13/04 03:43:29] Internal Server Error: /ajax/deed_record_select/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/actions.py", line 181, in deed_record_select
+    result = adventure.record_deed(deed_code, player_rid)
+  File "/home/zaffarelli/Projects/wawwod/collector/models/adventures.py", line 117, in record_deed
+    deed = self.pull_deed(code)
+  File "/home/zaffarelli/Projects/wawwod/collector/models/adventures.py", line 82, in pull_deed
+    if deed["code"] == code:
+       ~~~~^^^^^^^^
+TypeError: string indices must be integers, not 'str'
+[13/04 03:43:29] "POST /ajax/deed_record_select/ HTTP/1.1" 500 21460
+[13/04 03:45:01] Internal Server Error: /ajax/deed_record_select/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/actions.py", line 181, in deed_record_select
+    result = adventure.record_deed(deed_code, player_rid)
+  File "/home/zaffarelli/Projects/wawwod/collector/models/adventures.py", line 117, in record_deed
+    deed = self.pull_deed(code)
+  File "/home/zaffarelli/Projects/wawwod/collector/models/adventures.py", line 82, in pull_deed
+    if deed["code"] == code:
+       ~~~~^^^^^^^^
+TypeError: string indices must be integers, not 'str'
+[13/04 03:45:01] "POST /ajax/deed_record_select/ HTTP/1.1" 500 21460
+[13/04 03:53:19] Internal Server Error: /ajax/deed_record_select/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/actions.py", line 181, in deed_record_select
+    result = adventure.record_deed(deed_code, player_rid)
+  File "/home/zaffarelli/Projects/wawwod/collector/models/adventures.py", line 132, in record_deed
+    self.push_deed(deed)
+    ~~~~~~~~~~~~~~^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/adventures.py", line 71, in push_deed
+    if json_deed.code not in self.deeds_map_str:
+       ^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'code'
+[13/04 03:53:19] "POST /ajax/deed_record_select/ HTTP/1.1" 500 21468
+[13/04 03:54:17] Internal Server Error: /ajax/deed_record_select/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/actions.py", line 181, in deed_record_select
+    result = adventure.record_deed(deed_code, player_rid)
+  File "/home/zaffarelli/Projects/wawwod/collector/models/adventures.py", line 132, in record_deed
+    self.push_deed(deed)
+    ~~~~~~~~~~~~~~^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/adventures.py", line 74, in push_deed
+    if deed["code"] == json_deed.code:
+                       ^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'code'
+[13/04 03:54:17] "POST /ajax/deed_record_select/ HTTP/1.1" 500 21474
+[13/04 03:54:32] Internal Server Error: /ajax/deed_record_select/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/actions.py", line 181, in deed_record_select
+    result = adventure.record_deed(deed_code, player_rid)
+  File "/home/zaffarelli/Projects/wawwod/collector/models/adventures.py", line 132, in record_deed
+    self.push_deed(deed)
+    ~~~~~~~~~~~~~~^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/adventures.py", line 77, in push_deed
+    self.deeds_to_string(deeds)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/adventures.py", line 64, in deeds_to_string
+    self.deeds_map_str = self.DEED_SEP.join(data)
+                         ~~~~~~~~~~~~~~~~~~^^^^^^
+TypeError: sequence item 0: expected str instance, dict found
+[13/04 03:54:32] "POST /ajax/deed_record_select/ HTTP/1.1" 500 21679
+[13/04 03:56:41] Internal Server Error: /ajax/deed_record_select/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/actions.py", line 181, in deed_record_select
+    result = adventure.record_deed(deed_code, player_rid)
+  File "/home/zaffarelli/Projects/wawwod/collector/models/adventures.py", line 134, in record_deed
+    self.push_deed(deed)
+    ~~~~~~~~~~~~~~^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/adventures.py", line 79, in push_deed
+    self.deeds_to_string(deeds)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/adventures.py", line 64, in deeds_to_string
+    st.append(self.ITEM_SEP+player)
+    ^^^^^^^^^
+AttributeError: 'str' object has no attribute 'append'
+[13/04 03:56:41] "POST /ajax/deed_record_select/ HTTP/1.1" 500 21615
+[13/04 03:57:39] Internal Server Error: /accounts/login/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/compressor/templatetags/compress.py", line 160, in render
+    return self.render_compressed(
+           ~~~~~~~~~~~~~~~~~~~~~~^
+        context, self.kind, self.mode, forced=forced, log=log, verbosity=verbosity
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/compressor/templatetags/compress.py", line 131, in render_compressed
+    rendered_output = compressor.output(mode, forced=forced, basename=file_basename)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/compressor/css.py", line 55, in output
+    ret.append(subnode.output(*args, **kwargs))
+               ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/compressor/css.py", line 57, in output
+    return super().output(*args, **kwargs)
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/compressor/base.py", line 367, in output
+    output = "\n".join(self.filter_input(forced))
+                       ~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/compressor/base.py", line 294, in filter_input
+    for hunk in self.hunks(forced):
+                ~~~~~~~~~~^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/compressor/base.py", line 269, in hunks
+    precompiled, value = self.precompile(value, **options)
+                         ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/compressor/base.py", line 347, in precompile
+    return True, filter.input(**kwargs)
+                 ~~~~~~~~~~~~^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django_libsass.py", line 148, in input
+    return compile(filename=self.filename,
+                   output_style=OUTPUT_STYLE,
+                   source_comments=SOURCE_COMMENTS)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django_libsass.py", line 135, in compile
+    output = sass.compile(**kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/sass.py", line 725, in compile
+    raise CompileError(v)
+sass.CompileError: Error: Invalid CSS after "  }": expected "}", was ".deed_select, . {"
+        on line 1275:4 of collector/static/collector/css/main.scss
+>>   }
+
+   ---^
+
+[13/04 03:57:39] "GET /accounts/login/?next=/ HTTP/1.1" 500 203400
+[13/04 03:58:05] "GET /static/collector/css?72bc76983e6e HTTP/1.1" 404 1805
+[13/04 03:58:36] "GET /static/collector/css?72bc76983e6e HTTP/1.1" 404 1805
+[13/04 03:58:47] Internal Server Error: /ajax/collector_action/renown_records/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 147, in renown_records
+    html = Deed.players_to_html(adventure)
+  File "/home/zaffarelli/Projects/wawwod/collector/models/deeds.py", line 111, in players_to_html
+    adventure_deeds_map = adventure.deeds_player_map()
+  File "/home/zaffarelli/Projects/wawwod/collector/models/adventures.py", line 156, in deeds_player_map
+    ds = self.string_to_deeds()
+  File "/home/zaffarelli/Projects/wawwod/collector/models/adventures.py", line 50, in string_to_deeds
+    s.players.append(part)
+    ^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'players'
+[13/04 03:58:47] "GET /ajax/collector_action/renown_records/ HTTP/1.1" 500 93350
+[13/04 03:59:34] Internal Server Error: /ajax/collector_action/renown_records/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 147, in renown_records
+    html = Deed.players_to_html(adventure)
+  File "/home/zaffarelli/Projects/wawwod/collector/models/deeds.py", line 111, in players_to_html
+    adventure_deeds_map = adventure.deeds_player_map()
+  File "/home/zaffarelli/Projects/wawwod/collector/models/adventures.py", line 157, in deeds_player_map
+    ds = self.string_to_deeds()
+  File "/home/zaffarelli/Projects/wawwod/collector/models/adventures.py", line 51, in string_to_deeds
+    s.players.append(part)
+    ^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'players'
+[13/04 03:59:34] "GET /ajax/collector_action/renown_records/ HTTP/1.1" 500 93367
+[13/04 03:59:48] Internal Server Error: /ajax/collector_action/renown_records/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 147, in renown_records
+    html = Deed.players_to_html(adventure)
+  File "/home/zaffarelli/Projects/wawwod/collector/models/deeds.py", line 111, in players_to_html
+    adventure_deeds_map = adventure.deeds_player_map()
+  File "/home/zaffarelli/Projects/wawwod/collector/models/adventures.py", line 160, in deeds_player_map
+    items = d.split(self.ITEM_SEP)
+            ^^^^^^^
+AttributeError: 'dict' object has no attribute 'split'
+[13/04 03:59:48] "GET /ajax/collector_action/renown_records/ HTTP/1.1" 500 88493
+[13/04 04:00:39] Internal Server Error: /ajax/collector_action/renown_records/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 147, in renown_records
+    html = Deed.players_to_html(adventure)
+  File "/home/zaffarelli/Projects/wawwod/collector/models/deeds.py", line 111, in players_to_html
+    adventure_deeds_map = adventure.deeds_player_map()
+  File "/home/zaffarelli/Projects/wawwod/collector/models/adventures.py", line 161, in deeds_player_map
+    items = d.split(self.ITEM_SEP)
+            ^^^^^^^
+AttributeError: 'dict' object has no attribute 'split'
+[13/04 04:00:39] "GET /ajax/collector_action/renown_records/ HTTP/1.1" 500 88479
+[13/04 04:04:37] "GET /static/collector/css?72bc76983e6e HTTP/1.1" 404 1805
+[13/04 04:05:13] "GET /static/collector/css?72bc76983e6e HTTP/1.1" 404 1805
+[13/04 04:06:54] "GET /static/collector/css?72bc76983e6e HTTP/1.1" 404 1805
+[13/04 04:07:36] "GET /static/collector/css?72bc76983e6e HTTP/1.1" 404 1805
+[13/04 04:09:50] "GET /static/collector/css?72bc76983e6e HTTP/1.1" 404 1805
+[13/04 04:15:09] "GET /static/collector/css?72bc76983e6e HTTP/1.1" 404 1805
+[13/04 04:15:59] "GET /static/collector/css?72bc76983e6e HTTP/1.1" 404 1805
+[13/04 04:16:28] "GET /static/collector/css?72bc76983e6e HTTP/1.1" 404 1805
+[13/04 04:19:15] "GET /static/collector/css?72bc76983e6e HTTP/1.1" 404 1805
+[13/04 04:19:29] "GET /static/collector/css?72bc76983e6e HTTP/1.1" 404 1805
+[13/04 04:19:43] "GET /static/collector/css?72bc76983e6e HTTP/1.1" 404 1805
+[13/04 04:19:53] "GET /static/collector/css?72bc76983e6e HTTP/1.1" 404 1805
+[13/04 04:20:13] "GET /static/collector/css?72bc76983e6e HTTP/1.1" 404 1805
+[13/04 04:20:53] "GET /static/collector/css?72bc76983e6e HTTP/1.1" 404 1805
+[13/04 04:21:11] "GET /static/collector/css?72bc76983e6e HTTP/1.1" 404 1805
+[13/04 04:21:24] "GET /static/collector/css?72bc76983e6e HTTP/1.1" 404 1805
+[13/04 04:23:30] "GET /static/collector/css?72bc76983e6e HTTP/1.1" 404 1805
+[13/04 04:25:08] "GET /static/collector/css?72bc76983e6e HTTP/1.1" 404 1805
+[13/04 04:25:40] "GET /static/collector/css?72bc76983e6e HTTP/1.1" 404 1805
+[13/04 04:26:15] "GET /static/collector/css?72bc76983e6e HTTP/1.1" 404 1805
+[13/04 04:28:36] Internal Server Error: /ajax/deed_select/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/actions.py", line 159, in deed_select
+    result = adventure.update_deeds(deed_code)
+  File "/home/zaffarelli/Projects/wawwod/collector/models/adventures.py", line 116, in update_deeds
+    self.deeds_to_string(deeds)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/adventures.py", line 63, in deeds_to_string
+    st = item["code"]
+         ~~~~^^^^^^^^
+TypeError: string indices must be integers, not 'str'
+[13/04 04:28:36] "POST /ajax/deed_select/ HTTP/1.1" 500 21383
+[13/04 05:24:02] Internal Server Error: /ajax/collector_action/renown_records/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 147, in renown_records
+    html = Deed.players_to_html(adventure)
+  File "/home/zaffarelli/Projects/wawwod/collector/models/deeds.py", line 147, in players_to_html
+    status = adventure.player_has_deed(packmate["code"],deed.code)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Adventure' object has no attribute 'player_has_deed'
+[13/04 05:24:02] "GET /ajax/collector_action/renown_records/ HTTP/1.1" 500 87178
+[13/04 05:24:32] Internal Server Error: /ajax/collector_action/renown_records/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 147, in renown_records
+    html = Deed.players_to_html(adventure)
+  File "/home/zaffarelli/Projects/wawwod/collector/models/deeds.py", line 142, in players_to_html
+    status = adventure.player_has_deed(packmate["code"],deed.code)
+  File "/home/zaffarelli/Projects/wawwod/collector/models/adventures.py", line 143, in player_has_deed
+    if player_code in deed.players:
+                      ^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'players'
+[13/04 05:24:32] "GET /ajax/collector_action/renown_records/ HTTP/1.1" 500 91500
+[13/04 05:25:32] Internal Server Error: /ajax/collector_action/renown_records/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 147, in renown_records
+    html = Deed.players_to_html(adventure)
+  File "/home/zaffarelli/Projects/wawwod/collector/models/deeds.py", line 142, in players_to_html
+    status = adventure.player_has_deed(packmate["code"],deed.code)
+  File "/home/zaffarelli/Projects/wawwod/collector/models/adventures.py", line 143, in player_has_deed
+    if player_code in deed.players:
+                      ^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'players'
+[13/04 05:25:32] "GET /ajax/collector_action/renown_records/ HTTP/1.1" 500 91500
+[13/04 05:25:54] Internal Server Error: /ajax/collector_action/renown_records/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 147, in renown_records
+    html = Deed.players_to_html(adventure)
+  File "/home/zaffarelli/Projects/wawwod/collector/models/deeds.py", line 142, in players_to_html
+    status = adventure.player_has_deed(packmate["code"],deed.code)
+  File "/home/zaffarelli/Projects/wawwod/collector/models/adventures.py", line 143, in player_has_deed
+    if player_code in deed["players"]:
+                      ~~~~^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+[13/04 05:25:54] "GET /ajax/collector_action/renown_records/ HTTP/1.1" 500 91438
+[13/04 05:26:11] Internal Server Error: /ajax/collector_action/renown_records/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 147, in renown_records
+    html = Deed.players_to_html(adventure)
+  File "/home/zaffarelli/Projects/wawwod/collector/models/deeds.py", line 142, in players_to_html
+    status = adventure.player_has_deed(packmate["code"],deed.code)
+  File "/home/zaffarelli/Projects/wawwod/collector/models/adventures.py", line 144, in player_has_deed
+    if player_code in deed["players"]:
+                      ~~~~^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+[13/04 05:26:11] "GET /ajax/collector_action/renown_records/ HTTP/1.1" 500 91457
+[13/04 05:26:40] Internal Server Error: /ajax/collector_action/renown_records/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 147, in renown_records
+    html = Deed.players_to_html(adventure)
+  File "/home/zaffarelli/Projects/wawwod/collector/models/deeds.py", line 142, in players_to_html
+    status = adventure.player_has_deed(packmate["code"],deed.code)
+  File "/home/zaffarelli/Projects/wawwod/collector/models/adventures.py", line 145, in player_has_deed
+    if player_code in deed["players"]:
+                      ~~~~^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+[13/04 05:26:40] "GET /ajax/collector_action/renown_records/ HTTP/1.1" 500 91462
+[13/04 05:27:43] Internal Server Error: /ajax/collector_action/renown_records/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 147, in renown_records
+    html = Deed.players_to_html(adventure)
+  File "/home/zaffarelli/Projects/wawwod/collector/models/deeds.py", line 144, in players_to_html
+    f'<span class="player_deed_select {is_on}" id="{adventure.acronym}__{deed.code}__{packmate["code"]}" params="{adventure.acronym}__{deed.code}__{packmate["code"]}"><i class="fa fa-times"></i></span></td>')
+                                       ^^^^^
+NameError: name 'is_on' is not defined
+[13/04 05:27:43] "GET /ajax/collector_action/renown_records/ HTTP/1.1" 500 87413
+[13/04 05:30:57] "GET /static/collector/css?72bc76983e6e HTTP/1.1" 404 1805
+[13/04 05:31:38] "GET /static/collector/css?72bc76983e6e HTTP/1.1" 404 1805
+[13/04 05:33:08] "GET /static/collector/css?72bc76983e6e HTTP/1.1" 404 1805
+[13/04 05:33:21] "GET /static/collector/css?72bc76983e6e HTTP/1.1" 404 1805
+[13/04 05:34:24] "GET /static/collector/css?72bc76983e6e HTTP/1.1" 404 1805
+[13/04 05:46:02] "GET /static/collector/css?72bc76983e6e HTTP/1.1" 404 1805
+[13/04 05:46:15] Internal Server Error: /ajax/deed_record_select/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/actions.py", line 181, in deed_record_select
+    result = adventure.record_deed(deed_code, player_rid)
+  File "/home/zaffarelli/Projects/wawwod/collector/models/adventures.py", line 160, in record_deed
+    renown = self.compute_individual_renown()
+  File "/home/zaffarelli/Projects/wawwod/collector/models/adventures.py", line 99, in compute_individual_renown
+    packmate["glory"] += deed_data["glory"]
+                         ~~~~~~~~~^^^^^^^^^
+TypeError: 'Deed' object is not subscriptable
+[13/04 05:46:15] "POST /ajax/deed_record_select/ HTTP/1.1" 500 21530
+[13/04 06:12:28] "GET /static/collector/css?72bc76983e6e HTTP/1.1" 404 1805
+[13/04 06:13:10] "GET /static/collector/css?72bc76983e6e HTTP/1.1" 404 1805
+[13/04 06:13:38] "GET /static/collector/css?72bc76983e6e HTTP/1.1" 404 1805
+[13/04 06:13:41] Not Found: /ajax/display/undefined/
+[13/04 06:13:41] "GET /ajax/display/undefined/ HTTP/1.1" 404 13368
+[13/04 06:16:28] "GET /static/collector/css?72bc76983e6e HTTP/1.1" 404 1805
+[13/04 06:18:56] "GET /static/collector/css?72bc76983e6e HTTP/1.1" 404 1805
