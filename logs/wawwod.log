@@ -52641,3 +52641,5 @@ AttributeError: 'list' object has no attribute 'sorted'. Did you mean: 'sort'?
 [14/04 13:38:44] "GET /static/collector/css?4ca516ceceda HTTP/1.1" 404 1805
 [14/04 15:14:48] "GET /static/collector/css?4ca516ceceda HTTP/1.1" 404 1805
 [14/04 18:38:29] "GET /static/collector/css?4ca516ceceda HTTP/1.1" 404 1805
+[14/04 18:51:19] "GET /static/collector/css?4ca516ceceda HTTP/1.1" 404 1860
+[14/04 18:57:46] "GET /static/collector/css?4ca516ceceda HTTP/1.1" 404 1860

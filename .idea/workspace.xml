@@ -5,34 +5,51 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c5f4ae22-1e7a-419c-ac9f-80da089b72d4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/collector/migrations/0175_alter_chronicle_name_alter_chronicle_refcode.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collector/migrations/0176_alter_creature_id.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storytelling/migrations/0082_alter_city_id.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storytelling/migrations/0083_alter_district_id.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storytelling/migrations/0084_alter_hotspot_id.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storytelling/migrations/0085_alter_place_id.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storytelling/migrations/0086_alter_scene_id.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storytelling/migrations/0087_alter_story_id.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/=1.2.4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/=3.1.0" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/models/adventures.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/models/adventures.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/models/chronicles.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/models/chronicles.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/models/creatures.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/models/creatures.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/models/deeds.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/models/deeds.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/models/seasons.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/models/seasons.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/models/septs.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/models/septs.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/static/collector/css/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/collector/css/main.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/templates/collector/page/current_chronicle_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/collector/templates/collector/page/current_chronicle_details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/views/actions.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/views/actions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.python-version" beforeDir="false" afterPath="$PROJECT_DIR$/.python-version" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/wawwod.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/wawwod.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storytelling/models/cities.py" beforeDir="false" afterPath="$PROJECT_DIR$/storytelling/models/cities.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storytelling/models/districts.py" beforeDir="false" afterPath="$PROJECT_DIR$/storytelling/models/districts.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storytelling/models/hotspots.py" beforeDir="false" afterPath="$PROJECT_DIR$/storytelling/models/hotspots.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storytelling/models/places.py" beforeDir="false" afterPath="$PROJECT_DIR$/storytelling/models/places.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storytelling/models/scenes.py" beforeDir="false" afterPath="$PROJECT_DIR$/storytelling/models/scenes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storytelling/models/stories.py" beforeDir="false" afterPath="$PROJECT_DIR$/storytelling/models/stories.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/uv.lock" beforeDir="false" afterPath="$PROJECT_DIR$/uv.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wawwod.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod_static/collector/css/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/collector/css/main.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod_static/js/collector.es6" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/js/collector.es6" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_static/admin/css/autocomplete.css" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/admin/css/autocomplete.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_static/admin/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/admin/css/base.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_static/admin/css/changelists.css" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/admin/css/changelists.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_static/admin/css/dark_mode.css" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/admin/css/dark_mode.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_static/admin/css/forms.css" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/admin/css/forms.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_static/admin/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/admin/css/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_static/admin/css/responsive.css" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/admin/css/responsive.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_static/admin/css/responsive_rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/admin/css/responsive_rtl.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_static/admin/css/rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/admin/css/rtl.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_static/admin/css/widgets.css" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/admin/css/widgets.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_static/admin/img/calendar-icons.svg" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/admin/img/calendar-icons.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_static/admin/img/icon-addlink.svg" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/admin/img/icon-addlink.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_static/admin/img/icon-alert.svg" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/admin/img/icon-alert.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_static/admin/img/icon-calendar.svg" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/admin/img/icon-calendar.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_static/admin/img/icon-changelink.svg" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/admin/img/icon-changelink.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_static/admin/img/icon-clock.svg" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/admin/img/icon-clock.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_static/admin/img/icon-deletelink.svg" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/admin/img/icon-deletelink.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_static/admin/img/icon-hidelink.svg" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/admin/img/icon-hidelink.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_static/admin/img/icon-no.svg" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/admin/img/icon-no.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_static/admin/img/icon-unknown-alt.svg" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/admin/img/icon-unknown-alt.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_static/admin/img/icon-unknown.svg" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/admin/img/icon-unknown.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_static/admin/img/icon-viewlink.svg" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/admin/img/icon-viewlink.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_static/admin/img/icon-yes.svg" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/admin/img/icon-yes.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_static/admin/img/inline-delete.svg" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/admin/img/inline-delete.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_static/admin/img/search.svg" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/admin/img/search.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_static/admin/img/selector-icons.svg" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/admin/img/selector-icons.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_static/admin/img/sorting-icons.svg" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/admin/img/sorting-icons.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_static/admin/img/tooltag-add.svg" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/admin/img/tooltag-add.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_static/admin/img/tooltag-arrowright.svg" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/admin/img/tooltag-arrowright.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_static/admin/js/SelectFilter2.js" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/admin/js/SelectFilter2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_static/admin/js/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/admin/js/actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_static/admin/js/admin/DateTimeShortcuts.js" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/admin/js/admin/DateTimeShortcuts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_static/admin/js/admin/RelatedObjectLookups.js" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/admin/js/admin/RelatedObjectLookups.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_static/admin/js/calendar.js" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/admin/js/calendar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_static/admin/js/inlines.js" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/admin/js/inlines.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_static/admin/js/popup_response.js" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/admin/js/popup_response.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_static/admin/js/theme.js" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/admin/js/theme.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
