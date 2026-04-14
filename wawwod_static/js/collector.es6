@@ -534,20 +534,24 @@ class WawwodCollector {
                 success: function (answer) {
                     //$('#'+param).html(answer.report)
                     console.log(answer.status)
-                    let words = answer['entry'].split("___")
-                    let target = '#'+words[0]+words[1]
-                    if (answer.status) {
+                    let words = answer['entry'].split("____")
+                    let target = '#'+words[0]
+                    if (words[1] == "on"){
+                        $(target).html('<i class="fas fa-check"></i>')
+                        $(target).removeClass("no")
+                        $(target).addClass("yes")
+                    }else{
+                        $(target).html('<i class="fas fa-times"></i>')
+                        $(target).removeClass("yes")
+                        $(target).addClass("no")
+                    }
+                    if (answer.hasOwnProperty("renown")){
+                        _.forEach(answer["renown"], (v) => {
+                            let player = "#title"+v.code
+                            let str = `${v.name}<br/>Glory: ${v.glory}<br/>Honor:${v.honor}<br/>Wisdom:${v.wisdom}`
+                            $(player).html(str)
+                        })
 
-                        // if (words[1] == "on"){
-                        //     $(target).html('<i class="fas fa-check"></i>')
-                        //     $(target).removeClass("no")
-                        //     $(target).addClass("yes")
-                        // }else{
-                        //     $(target).html('<i class="fas fa-times"></i>')
-                        //     $(target).removeClass("yes")
-                        //     $(target).addClass("no")
-                        // }
-                        console.log("status is ok")
                     }
                     me.rebootLinks()
                 },

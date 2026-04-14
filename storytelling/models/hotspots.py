@@ -42,6 +42,7 @@ POI_COLORS = {
 
 
 class HotSpot(models.Model):
+    id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=256, default="")
     type = models.CharField(max_length=3, default="n/a", choices=POI_TYPES, blank=True)
     color = models.CharField(max_length=9, default="#802020")

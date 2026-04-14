@@ -1237,7 +1237,7 @@ fieldset {
 
 .html_block {
   width: auto;
-  margin: 0 30vw;
+  margin: 0 5vw;
   height: 90vh;
   overflow-y: auto;
   & table.renown {
@@ -1250,41 +1250,47 @@ fieldset {
     & tr {
       //         minimum-height:3em;
       padding: 2pt;
-
+      height: 1.2em;
       & td {
         border-radius: 5pt;
         padding: 3pt;
         background: #e0e0e0;
         text-align: center;
+        font-size:1.5em;
         width: 10ex;
         &.text {
-          width: 70ex;
+          width: 90ex;
           text-align: justify;
+          font-size:1em;
         }
         &.notes {
           text-align: right;
           font-style: italic;
+          font-size:1em;
         }
       }
       & th {
         border-radius: 5pt;
         background: #c0c0c0;
         padding: 3pt;
+        width: 10ex;
       }
     }
   }
 
-  .deed_select {
+  .deed_select, .player_deed_select {
     display: inline-block;
     padding: 3pt;
     border-radius: 3pt;
     width: 2ex;
     text-align: center;
     &.yes {
-      background: aqua;
+      background: purple;
+      color:fuchsia;
     }
     &.no {
-      background: silver;
+      background: transparent;
+      color:silver;
     }
   }
 }

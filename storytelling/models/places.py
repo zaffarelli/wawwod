@@ -9,6 +9,7 @@ logger = logging.Logger(__name__)
 
 
 class Place(models.Model):
+    id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=128, default="")
     acronym = models.CharField(max_length=24, default="")
     story = models.ForeignKey(Story, on_delete=models.SET_NULL, null=True)

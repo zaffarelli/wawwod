@@ -20,8 +20,8 @@ class District(models.Model):
         CONTESTED = "contested", "Contested"
         LOST = "lost", "Lost"
 
+    id = models.AutoField(primary_key=True)
     code = models.CharField(max_length=64, default="", unique=True)
-
     name = models.CharField(max_length=96, default="")
     district_name = models.CharField(max_length=96, default="", blank=True, null=True)
     adventures = models.CharField(max_length=256, default="", blank=True)

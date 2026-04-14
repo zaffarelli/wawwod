@@ -14,6 +14,7 @@ class Story(models.Model):
     class Meta:
         verbose_name_plural = "stories"
 
+    id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=128, default="")
     acronym = models.CharField(max_length=16, default="")
     chronicle = models.ForeignKey(Chronicle, on_delete=models.SET_NULL, null=True)

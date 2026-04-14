@@ -7,7 +7,9 @@ from collector.utils.helper import is_ajax
 
 # from collector.utils.wod_reference import get_current_chronicle
 import random
+import logging
 
+logger = logging.Logger(__name__)
 
 def extract_raw(request, slug):
     found = Creature.objects.all().filter(rid=slug)
@@ -152,14 +154,12 @@ def deed_select(request):
         adventure = words[0]
         if len(words) == 2:
             from collector.models.adventures import Adventure
-
-            print("deed", deed_code, "adventure", adventure)
             adventure = Adventure.objects.filter(acronym=adventure).first()
             if adventure:
                 result = adventure.update_deeds(deed_code)
                 answer["deed"] = result
             else:
-                print(f"Adventure {adventure} not found!")
+                logger.warn(f"Adventure {adventure} not found!")
 
     return JsonResponse(answer)
 

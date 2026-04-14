@@ -59,13 +59,16 @@ class Adventure(models.Model):
         param json_data_list: the json structure list
         """
         self.deeds_map_str = ""
-        data = []
+        all_deeds = []
+        json_data_list.sort(key=lambda x: x["code"])
         for item in json_data_list:
-            st = item["code"]
+            deed_string = item["code"]
             for player in item["players"]:
-                st += self.ITEM_SEP + player
-            data.append(st)
-        self.deeds_map_str = self.DEED_SEP.join(data)
+                deed_string += self.ITEM_SEP + player
+            all_deeds.append(deed_string)
+        print(all_deeds)
+
+        self.deeds_map_str = self.DEED_SEP.join(all_deeds)
 
     def push_deed(self, json_deed):
         """
@@ -95,11 +98,12 @@ class Adventure(models.Model):
         deeds = self.string_to_deeds()
         for packmate in pack:
             for deed in deeds:
-                if self.player_has_deed(packmate['code'], deed['code']) == "yes":
+                if self.player_has_deed(packmate['code'], deed['code']):
                     deed_data = Deed.objects.get(code=deed['code'])
                     packmate["glory"] += deed_data.glory
                     packmate["honor"] += deed_data.honor
                     packmate["wisdom"] += deed_data.wisdom
+        print(pack)
         return pack
 
     def pull_deed(self, code):
@@ -119,25 +123,25 @@ class Adventure(models.Model):
 
     def update_deeds(self, code):
         """
-        Update deed selection for the list of deeds available for this adventure
+        Update deed selection for the list of deeds available for this adventure.
+        Either add deed if not found, or remove it
         Each deed can be set once.
         """
         result = ""
+        deeds = self.string_to_deeds()
         if code in self.deeds_map_str:
-            updated_deeds = []
-            deeds = self.string_to_deeds()
             for deed in deeds:
-                words = deed.split(self.WORD_SEP)
-                if code != words[0]:
-                    updated_deeds.append(deed)
-                else:
+                if code == deed["code"]:
+                    deed_to_remove = deed
                     result = f"{self.acronym}__{code}___off"
-            self.deeds_to_string(updated_deeds)
+            deeds.remove(deed_to_remove)
+            self.deeds_to_string(deeds)
+            logger.info(f"Deed {code} removed")
         else:
-            deeds = self.string_to_deeds()
-            deeds.append(code)
+            deeds.append({"code":code,"players":[]})
             self.deeds_to_string(deeds)
             result = f"{self.acronym}__{code}___on"
+            logger.info(f"Deed {code} added")
         self.save()
         return result
 
@@ -160,13 +164,13 @@ class Adventure(models.Model):
         return result
 
     def player_has_deed(self, player_code, deed_code):
-        res = "no"
+        res = False
         if deed_code in self.deeds_map_str:
             print(deed_code)
             deed = self.pull_deed(deed_code)
             print(deed)
             if player_code in deed["players"]:
-                res = "yes"
+                res = True
         return res
 
     def has_character(self, c):

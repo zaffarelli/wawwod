@@ -139,9 +139,14 @@ class Deed(models.Model):
             plist = ""
             r = 0
             for packmate in pack:
-                is_on = adventure.player_has_deed(packmate["code"],deed.code)
+                if adventure.player_has_deed(packmate["code"],deed.code):
+                    is_on = "yes"
+                    on_char= "fa-check"
+                else:
+                    is_on = "no"
+                    on_char = "fa-times"
                 plist += (f'<td rowspan=2 style="background:{x}; color:#808080; border:3pt solid {y[r]}">'+
-                          f'<span class="player_deed_select {is_on}" id="{adventure.acronym}__{deed.code}__{packmate["code"]}" params="{adventure.acronym}__{deed.code}__{packmate["code"]}"><i class="fa fa-times"></i></span></td>')
+                          f'<span class="player_deed_select {is_on}" id="{adventure.acronym}__{deed.code}__{packmate["code"]}" params="{adventure.acronym}__{deed.code}__{packmate["code"]}"><i class="fa {on_char}"></i></span></td>')
                 r+=1
             if deed.code in adventure_deeds:
                 h = (f'<tr><td class="text" style="background:{x};">{deed.description}<br/><tt><small>[{deed.code}]</small></tt></td>'+

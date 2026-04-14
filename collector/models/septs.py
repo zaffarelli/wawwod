@@ -16,7 +16,7 @@ logger = logging.Logger(__name__)
 
 
 class Sept(models.Model):
-    id = models.IntegerField(primary_key=True)
+    id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=128, unique=True)
     rid = models.CharField(max_length=128, blank=True)
     chronicle = models.CharField(max_length=8, default="WOD")

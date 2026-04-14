@@ -52482,3 +52482,162 @@ TypeError: 'Deed' object is not subscriptable
 [13/04 06:13:41] "GET /ajax/display/undefined/ HTTP/1.1" 404 13368
 [13/04 06:16:28] "GET /static/collector/css?72bc76983e6e HTTP/1.1" 404 1805
 [13/04 06:18:56] "GET /static/collector/css?72bc76983e6e HTTP/1.1" 404 1805
+[14/04 00:01:25] "GET /static/collector/css?39adcd45b4a9 HTTP/1.1" 404 1805
+[14/04 03:26:10] "GET /static/collector/css?39adcd45b4a9 HTTP/1.1" 404 1805
+[14/04 03:27:16] "GET /static/collector/css?39adcd45b4a9 HTTP/1.1" 404 1805
+[14/04 03:29:28] "GET /static/collector/css?39adcd45b4a9 HTTP/1.1" 404 1805
+[14/04 03:29:50] "GET /static/collector/css?39adcd45b4a9 HTTP/1.1" 404 1805
+[14/04 03:31:11] "GET /static/collector/css?39adcd45b4a9 HTTP/1.1" 404 1805
+[14/04 03:33:19] Internal Server Error: /ajax/deed_select/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/actions.py", line 159, in deed_select
+    result = adventure.update_deeds(deed_code)
+  File "/home/zaffarelli/Projects/wawwod/collector/models/adventures.py", line 139, in update_deeds
+    self.deeds_to_string(deeds)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/adventures.py", line 64, in deeds_to_string
+    st = item["code"]
+         ~~~~^^^^^^^^
+TypeError: string indices must be integers, not 'str'
+[14/04 03:33:19] "POST /ajax/deed_select/ HTTP/1.1" 500 21380
+[14/04 03:34:28] "GET /static/collector/css?39adcd45b4a9 HTTP/1.1" 404 1805
+[14/04 03:40:15] Internal Server Error: /ajax/deed_select/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/actions.py", line 159, in deed_select
+    result = adventure.update_deeds(deed_code)
+  File "/home/zaffarelli/Projects/wawwod/collector/models/adventures.py", line 139, in update_deeds
+    self.deeds_to_string(deeds)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/adventures.py", line 64, in deeds_to_string
+    st = item["code"]
+         ~~~~^^^^^^^^
+TypeError: string indices must be integers, not 'str'
+[14/04 03:40:15] "POST /ajax/deed_select/ HTTP/1.1" 500 21380
+[14/04 03:52:05] Internal Server Error: /ajax/deed_select/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/actions.py", line 159, in deed_select
+    result = adventure.update_deeds(deed_code)
+  File "/home/zaffarelli/Projects/wawwod/collector/models/adventures.py", line 130, in update_deeds
+    words = deed.split(self.WORD_SEP)
+            ^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'split'
+[14/04 03:52:05] "POST /ajax/deed_select/ HTTP/1.1" 500 21233
+[14/04 12:29:16] "GET /static/collector/css?39adcd45b4a9 HTTP/1.1" 404 1805
+[14/04 12:29:29] Internal Server Error: /ajax/deed_select/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/actions.py", line 159, in deed_select
+    result = adventure.update_deeds(deed_code)
+  File "/home/zaffarelli/Projects/wawwod/collector/models/adventures.py", line 139, in update_deeds
+    self.deeds_to_string(deeds)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/adventures.py", line 64, in deeds_to_string
+    st = item["code"]
+         ~~~~^^^^^^^^
+TypeError: string indices must be integers, not 'str'
+[14/04 12:29:29] "POST /ajax/deed_select/ HTTP/1.1" 500 21380
+[14/04 13:33:29] "GET /static/collector/css?4ca516ceceda HTTP/1.1" 404 1805
+[14/04 13:35:52] Internal Server Error: /ajax/deed_select/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/actions.py", line 159, in deed_select
+    result = adventure.update_deeds(deed_code)
+  File "/home/zaffarelli/Projects/wawwod/collector/models/adventures.py", line 135, in update_deeds
+    self.deeds_to_string(deeds)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/adventures.py", line 68, in deeds_to_string
+    all_deeds.sort(key=lambda x: x["code"])
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/adventures.py", line 68, in <lambda>
+    all_deeds.sort(key=lambda x: x["code"])
+                                 ~^^^^^^^^
+TypeError: string indices must be integers, not 'str'
+[14/04 13:35:52] "POST /ajax/deed_select/ HTTP/1.1" 500 21606
+[14/04 13:36:23] Internal Server Error: /ajax/deed_select/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/actions.py", line 159, in deed_select
+    result = adventure.update_deeds(deed_code)
+  File "/home/zaffarelli/Projects/wawwod/collector/models/adventures.py", line 136, in update_deeds
+    self.deeds_to_string(deeds)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/adventures.py", line 69, in deeds_to_string
+    all_deeds.sort(key=lambda x: x["code"])
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/adventures.py", line 69, in <lambda>
+    all_deeds.sort(key=lambda x: x["code"])
+                                 ~^^^^^^^^
+TypeError: string indices must be integers, not 'str'
+[14/04 13:36:23] "POST /ajax/deed_select/ HTTP/1.1" 500 21606
+[14/04 13:37:18] Internal Server Error: /ajax/deed_select/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/actions.py", line 159, in deed_select
+    result = adventure.update_deeds(deed_code)
+  File "/home/zaffarelli/Projects/wawwod/collector/models/adventures.py", line 137, in update_deeds
+    self.deeds_to_string(deeds)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/adventures.py", line 63, in deeds_to_string
+    json_data_list.sorted(key=lambda x: x["code"])
+    ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'sorted'. Did you mean: 'sort'?
+[14/04 13:37:18] "POST /ajax/deed_select/ HTTP/1.1" 500 21417
+[14/04 13:37:22] Internal Server Error: /ajax/deed_select/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/actions.py", line 159, in deed_select
+    result = adventure.update_deeds(deed_code)
+  File "/home/zaffarelli/Projects/wawwod/collector/models/adventures.py", line 137, in update_deeds
+    self.deeds_to_string(deeds)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/adventures.py", line 63, in deeds_to_string
+    json_data_list.sorted(key=lambda x: x["code"])
+    ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'sorted'. Did you mean: 'sort'?
+[14/04 13:37:22] "POST /ajax/deed_select/ HTTP/1.1" 500 21417
+[14/04 13:38:44] "GET /static/collector/css?4ca516ceceda HTTP/1.1" 404 1805
+[14/04 15:14:48] "GET /static/collector/css?4ca516ceceda HTTP/1.1" 404 1805
+[14/04 18:38:29] "GET /static/collector/css?4ca516ceceda HTTP/1.1" 404 1805

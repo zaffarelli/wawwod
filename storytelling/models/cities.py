@@ -13,7 +13,7 @@ logger = logging.Logger(__name__)
 class City(models.Model):
     class Meta:
         verbose_name_plural = "Cities"
-
+    id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=128, default="")
     chronicle = models.CharField(max_length=50, default="WOD")
     code = models.CharField(max_length=50, default="")

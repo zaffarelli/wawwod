@@ -33,7 +33,7 @@ class Creature(models.Model):
         verbose_name = "Creature"
         ordering = ["name"]
 
-    id = models.IntegerField(primary_key=True)
+    id = models.AutoField(primary_key=True)
     player = models.CharField(max_length=32, blank=True, default="")
     name = models.CharField(max_length=128, default="")
     new_name = models.CharField(max_length=128, default="", blank=True, null=True)

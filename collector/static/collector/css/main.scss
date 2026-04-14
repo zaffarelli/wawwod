@@ -1256,7 +1256,7 @@ fieldset {
         padding: 3pt;
         background: #e0e0e0;
         text-align: center;
-        font-size:2em;
+        font-size:1.5em;
         width: 10ex;
         &.text {
           width: 90ex;
@@ -1285,11 +1285,12 @@ fieldset {
     width: 2ex;
     text-align: center;
     &.yes {
-      background: orangered;
-      color:yellow;
+      background: purple;
+      color:fuchsia;
     }
     &.no {
       background: transparent;
+      color:silver;
     }
   }
 }

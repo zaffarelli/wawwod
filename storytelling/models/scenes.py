@@ -14,6 +14,7 @@ class Scene(models.Model):
     class Meta:
         ordering = ["timeline", "time_offset_hours"]
 
+    id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=128, default="")
     story = models.ForeignKey(Story, on_delete=models.SET_NULL, null=True)
     place = models.ForeignKey(Place, on_delete=models.SET_NULL, null=True)
