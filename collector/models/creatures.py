@@ -917,6 +917,8 @@ class Creature(models.Model):
                             realexp = 3
                     elif category == "high_rate":
                         realexp = cr * 2
+                        if cr == 0:
+                            realexp = 3
                         freebies_exp_offset += 2
                     elif category == "low_rate":
                         realexp = cr * 1
@@ -2335,8 +2337,8 @@ class Creature(models.Model):
                         retainer.groupspec = self.groupspec
                         retainer.randomize_backgrounds()
                         retainer.randomize_archetypes()
-                        retainer.randomize_attributes()
-                        retainer.randomize_abilities()
+                        # retainer.randomize_attributes()
+                        # retainer.randomize_abilities()
                         retainer.source = "zaffarelli"
                         retainer.name = f"{'Male' if retainer.sex else 'Female'} ghoul {x + 1} of {self.name}"
                         retainer.save()
@@ -3029,24 +3031,24 @@ class CreatureAdmin(admin.ModelAdmin):
     list_display = [  # 'domitor',
         "id",
         "name",
-        "age",
-        "season",
-        "adventure",
-        "chronicle",
-        "equipment",
-        "edge_for",
-        "cast_figure",
+        # "age",
+        # "season",
+        # "adventure",
+        # "chronicle",
+        # "equipment",
+        # "edge_for",
+        # "cast_figure",
         "family",
-        "freebies",
+        # "freebies",
         "player",
         "experience_expenditure",
         "experience",
         "exp_pool",
         "exp_spent",
-        "family",
-        "groupspec",
-        "status",
-        "condition",
+        # "family",
+        # "groupspec",
+        # "status",
+        # "condition",
         "freebies_exp_offset",
     ]
     ordering = ["-trueage", "name", "group", "creature"]
@@ -3074,18 +3076,16 @@ class CreatureAdmin(admin.ModelAdmin):
         "adventure",
         "is_player",
         "creature",
-        "faction",
-        "family",
+        # "faction",
+        # "family",
         "is_new",
-        "condition",
-        "group",
-        "groupspec",
+
     ]
     search_fields = ["name", "groupspec", "sire"]
     list_editable = [
-        "groupspec",
-        "adventure",
-        "cast_figure",
+        # "groupspec",
+        # "adventure",
+        # "cast_figure",
         "player",
         "experience",
         "exp_pool",

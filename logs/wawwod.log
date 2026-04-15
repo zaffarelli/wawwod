@@ -52643,3 +52643,255 @@ AttributeError: 'list' object has no attribute 'sorted'. Did you mean: 'sort'?
 [14/04 18:38:29] "GET /static/collector/css?4ca516ceceda HTTP/1.1" 404 1805
 [14/04 18:51:19] "GET /static/collector/css?4ca516ceceda HTTP/1.1" 404 1860
 [14/04 18:57:46] "GET /static/collector/css?4ca516ceceda HTTP/1.1" 404 1860
+[14/04 19:00:37] "GET /static/collector/css?4ca516ceceda HTTP/1.1" 404 1860
+[14/04 19:02:59] "GET /static/collector/css?4ca516ceceda HTTP/1.1" 404 1860
+[14/04 19:59:46] "GET /static/collector/css?4ca516ceceda HTTP/1.1" 404 1860
+[14/04 19:59:57] Not Found: /ajax/display/undefined/
+[14/04 19:59:57] "GET /ajax/display/undefined/ HTTP/1.1" 404 18153
+[14/04 20:01:07] "GET /static/collector/css?4ca516ceceda HTTP/1.1" 404 1860
+[14/04 20:03:54] "GET /static/collector/css?4ca516ceceda HTTP/1.1" 404 1860
+[14/04 20:04:24] "GET /static/collector/css?4ca516ceceda HTTP/1.1" 404 1860
+[14/04 20:08:17] "GET /static/collector/css?4ca516ceceda HTTP/1.1" 404 1860
+[14/04 20:09:16] "GET /static/collector/css?4ca516ceceda HTTP/1.1" 404 1860
+[14/04 20:09:43] "GET /static/collector/css?4ca516ceceda HTTP/1.1" 404 1860
+[14/04 20:10:15] "GET /static/collector/css?4ca516ceceda HTTP/1.1" 404 1860
+[14/04 20:10:49] "GET /static/collector/css?4ca516ceceda HTTP/1.1" 404 1860
+[14/04 20:11:24] "GET /static/collector/css?4ca516ceceda HTTP/1.1" 404 1860
+[14/04 20:11:52] "GET /static/collector/css?4ca516ceceda HTTP/1.1" 404 1860
+[14/04 20:12:13] "GET /static/collector/css?4ca516ceceda HTTP/1.1" 404 1860
+[14/04 20:14:18] "GET /static/collector/css?4ca516ceceda HTTP/1.1" 404 1860
+[14/04 20:15:55] "GET /static/collector/css?4ca516ceceda HTTP/1.1" 404 1860
+[14/04 20:16:38] "GET /static/collector/css?4ca516ceceda HTTP/1.1" 404 1860
+[14/04 20:17:01] "GET /static/collector/css?4ca516ceceda HTTP/1.1" 404 1860
+[14/04 20:17:12] "GET /static/collector/css?4ca516ceceda HTTP/1.1" 404 1860
+[14/04 20:17:50] "GET /static/collector/css?4ca516ceceda HTTP/1.1" 404 1860
+[14/04 20:18:11] "GET /static/collector/css?4ca516ceceda HTTP/1.1" 404 1860
+[14/04 20:18:16] "GET /static/collector/css?4ca516ceceda HTTP/1.1" 404 1860
+[14/04 20:19:06] "GET /static/collector/css?4ca516ceceda HTTP/1.1" 404 1860
+[14/04 20:19:22] "GET /static/collector/css?4ca516ceceda HTTP/1.1" 404 1860
+[14/04 20:19:35] "GET /static/collector/css?4ca516ceceda HTTP/1.1" 404 1860
+[14/04 20:20:54] "GET /static/collector/css?4ca516ceceda HTTP/1.1" 404 1860
+[14/04 20:21:28] "GET /static/collector/css?4ca516ceceda HTTP/1.1" 404 1860
+[14/04 20:21:45] "GET /static/collector/css?4ca516ceceda HTTP/1.1" 404 1860
+[14/04 20:21:58] "GET /static/collector/css?4ca516ceceda HTTP/1.1" 404 1860
+[14/04 20:22:20] "GET /static/collector/css?4ca516ceceda HTTP/1.1" 404 1860
+[14/04 20:23:01] "GET /static/collector/css?4ca516ceceda HTTP/1.1" 404 1860
+[14/04 20:23:11] "GET /static/collector/css?4ca516ceceda HTTP/1.1" 404 1860
+[14/04 20:23:15] "GET /static/collector/css?4ca516ceceda HTTP/1.1" 404 1860
+[14/04 20:25:54] Not Found: /favicon.ico
+[14/04 20:25:54] "GET /favicon.ico HTTP/1.1" 404 18117
+[14/04 20:50:55] "GET /static/collector/css?4ca516ceceda HTTP/1.1" 404 1860
+[14/04 20:52:18] "GET /static/collector/css?4ca516ceceda HTTP/1.1" 404 1860
+[14/04 20:53:20] "GET /static/collector/css?4ca516ceceda HTTP/1.1" 404 1860
+[14/04 21:23:16] Internal Server Error: /ajax/collector_action/add_kindred/Harvey_Woodbridge/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 412, in add_kindred
+    item = pre_wawwod_creature(slug)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 387, in pre_wawwod_creature
+    chronicle = get_current_chronicle()
+                ^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'get_current_chronicle' is not defined
+[14/04 21:23:16] "GET /ajax/collector_action/add_kindred/Harvey_Woodbridge/ HTTP/1.1" 500 81080
+[14/04 21:23:48] Not Found: /ajax/display/undefined/
+[14/04 21:23:48] "GET /ajax/display/undefined/ HTTP/1.1" 404 18153
+[14/04 21:24:48] Internal Server Error: /ajax/collector_action/add_kindred/Harvey_Woodbridge/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 412, in add_kindred
+    item = pre_wawwod_creature(slug)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 387, in pre_wawwod_creature
+    chronicle = get_current_chronicle()
+                ^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'get_current_chronicle' is not defined
+[14/04 21:24:48] "GET /ajax/collector_action/add_kindred/Harvey_Woodbridge/ HTTP/1.1" 500 81080
+[14/04 21:26:06] Internal Server Error: /ajax/collector_action/add_kindred/Harvey_Woodbridge/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 414, in add_kindred
+    post_wawwod_creature(item)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 405, in post_wawwod_creature
+    item.save()
+    ~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/base.py", line 874, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/base.py", line 946, in save_base
+    pre_save.send(
+    ~~~~~~~~~~~~~^
+        sender=origin,
+        ^^^^^^^^^^^^^^
+    ...<3 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/dispatch/dispatcher.py", line 209, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/zaffarelli/Projects/wawwod/collector/signals/creatures.py", line 19, in update_creature
+    instance.fix()
+    ~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 1075, in fix
+    self.fix_kindred()
+    ~~~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 889, in fix_kindred
+    self.reghoul()
+    ~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 2340, in reghoul
+    retainer.randomize_attributes()
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Creature' object has no attribute 'randomize_attributes'. Did you mean: 'randomize_abilities'?
+[14/04 21:26:06] "GET /ajax/collector_action/add_kindred/Harvey_Woodbridge/ HTTP/1.1" 500 117028
+[14/04 21:27:49] Not Found: /ajax/display/undefined/
+[14/04 21:27:49] "GET /ajax/display/undefined/ HTTP/1.1" 404 18153
+[14/04 21:29:15] Internal Server Error: /ajax/editable/updown/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/backends/sqlite3/base.py", line 359, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.IntegrityError: CHECK constraint failed: knowledge4
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 308, in updown
+    item.save()
+    ~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/base.py", line 874, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/base.py", line 966, in save_base
+    updated = self._save_table(
+        raw,
+    ...<4 lines>...
+        update_fields,
+    )
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/base.py", line 1110, in _save_table
+    results = self._do_update(
+        base_qs,
+    ...<5 lines>...
+        returning_fields,
+    )
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/base.py", line 1213, in _do_update
+    return filtered._update(values, returning_fields)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/query.py", line 1327, in _update
+    return query.get_compiler(self.db).execute_returning_sql(returning_fields)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/sql/compiler.py", line 2140, in execute_returning_sql
+    row_count = self.execute_sql(ROW_COUNT)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/sql/compiler.py", line 2111, in execute_sql
+    row_count = super().execute_sql(result_type)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/sql/compiler.py", line 1624, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/utils.py", line 94, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/backends/sqlite3/base.py", line 359, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: CHECK constraint failed: knowledge4
+[14/04 21:29:15] "POST /ajax/editable/updown/ HTTP/1.1" 500 24867
+[14/04 21:30:48] Not Found: /ajax/display/undefined/
+[14/04 21:30:48] "GET /ajax/display/undefined/ HTTP/1.1" 404 18153
+[14/04 21:33:13] Not Found: /ajax/display/undefined/
+[14/04 21:33:13] "GET /ajax/display/undefined/ HTTP/1.1" 404 18153
+[14/04 21:33:33] Not Found: /ajax/display/crossover_sheet/Harvey Woodbridge/
+[14/04 21:33:33] "GET /ajax/display/crossover_sheet/Harvey%20Woodbridge/ HTTP/1.1" 404 18227
+[14/04 21:33:37] "GET /static/collector/css?4ca516ceceda HTTP/1.1" 404 1860
+[14/04 21:33:43] Not Found: /ajax/display/undefined/
+[14/04 21:33:43] "GET /ajax/display/undefined/ HTTP/1.1" 404 18153
+[14/04 21:33:48] Not Found: /ajax/display/crossover_sheet/Harvey Woodbridge/
+[14/04 21:33:48] "GET /ajax/display/crossover_sheet/Harvey%20Woodbridge/ HTTP/1.1" 404 18227
+[14/04 22:11:43] Not Found: /ajax/display/undefined/
+[14/04 22:11:43] "GET /ajax/display/undefined/ HTTP/1.1" 404 18153
+[14/04 22:12:21] Not Found: /ajax/display/undefined/
+[14/04 22:12:21] "GET /ajax/display/undefined/ HTTP/1.1" 404 18153
+[14/04 22:13:03] Not Found: /ajax/display/undefined/
+[14/04 22:13:03] "GET /ajax/display/undefined/ HTTP/1.1" 404 18153
+[14/04 22:13:54] Internal Server Error: /ajax/display/kindred_lineage/Camarilla/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 769, in display_lineage
+    data = build_per_primogen(slug)
+  File "/home/zaffarelli/Projects/wawwod/collector/utils/data_collection.py", line 235, in build_per_primogen
+    chronicle = get_current_chronicle()
+                ^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'get_current_chronicle' is not defined
+[14/04 22:13:54] "GET /ajax/display/kindred_lineage/Camarilla/ HTTP/1.1" 500 80783
+[14/04 22:16:30] Internal Server Error: /ajax/display/gaia_wheel/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 700, in display_gaia_wheel
+    gaia_wheel_context = {"data": build_gaia_wheel()}
+                                  ~~~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/utils/data_collection.py", line 324, in build_gaia_wheel
+    chronicle = get_current_chronicle()
+                ^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'get_current_chronicle' is not defined
+[14/04 22:16:30] "GET /ajax/display/gaia_wheel/ HTTP/1.1" 500 79812
+[15/04 00:57:20] Not Found: /ajax/collector_action/renown/Livia_Woodbridge/
+[15/04 00:57:20] "GET /ajax/collector_action/renown/Livia_Woodbridge/ HTTP/1.1" 404 18222
+[15/04 00:57:25] "GET /static/collector/css?4ca516ceceda HTTP/1.1" 404 1860
+[15/04 00:57:31] Not Found: /ajax/collector_action/renown/Livia_Woodbridge/
+[15/04 00:57:31] "GET /ajax/collector_action/renown/Livia_Woodbridge/ HTTP/1.1" 404 18222
+[15/04 00:57:39] "GET /static/collector/css?4ca516ceceda HTTP/1.1" 404 1860
+[15/04 05:26:41] Not Found: /ajax/display/undefined/
+[15/04 05:26:41] "GET /ajax/display/undefined/ HTTP/1.1" 404 18153

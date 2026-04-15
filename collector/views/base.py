@@ -384,13 +384,11 @@ def add_creature(request, slug=None):
 
 def pre_wawwod_creature(slug):
     name = " ".join(slug.split("_"))
-    chronicle = get_current_chronicle()
+    adventure, chronicle, _ = Adventure.current_full()
     item = Creature()
     item.name = name
     item.chronicle = chronicle.acronym
-    adventure = Adventure.current()
-    if adventure:
-        item.adventure = adventure.acronym
+    item.adventure = adventure.acronym
     item.age = 25
     item.is_new = True
     return item

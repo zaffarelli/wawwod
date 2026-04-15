@@ -14,7 +14,9 @@ class AdventureSheet extends WawwodSheet {
         this.stokedebris = "2 1"
         this.line_stroke = "#202020"
         this.base_font = "Khand"
-        this.version = "0.8"
+        this.main_font = "Ubuntu Mono"
+        // this.user_font = "Mono"
+        this.version = "0.9"
     }
 
     drawButtons() {
@@ -50,6 +52,7 @@ class AdventureSheet extends WawwodSheet {
             .append('g')
             .data(me.data.players)
         console.debug(me.data.players)
+
         me.player = me.players.enter()
         me.player_in = me.player.append('g')
             .attr('class', 'sheet')
@@ -193,6 +196,31 @@ class AdventureSheet extends WawwodSheet {
             ly += lh
         }
 
+        let t = ['ALE','ATH','BRA','EMP','EXP','INT','LEA','PRI','STR','SUB']
+        let s = ['ANI','CRA','DRI','ETI','FIR','LAR','MEL','PER','STE','SUR']
+        let k = ['ACA','COM','ENI','INV','LAW','MED','OCC','RIT','SCI','TEC']
+        let mod = 3
+        _.forEach([0,1,2,3,4,5,6,7,8,9],(v) => {
+            options.y = ly
+            options.xfunc = xfunc
+            options.proplabel = t[v]
+            options.prop = `talent${v}`
+            me.shortSheetEntryO(options)
+            options.xfunc = xfunc1
+            options.proplabel = s[v]
+            options.prop = `skill${v}`
+            me.shortSheetEntryO(options)
+            options.xfunc = xfunc2
+            options.proplabel = k[v]
+            options.prop = `knowledge${v}`
+            me.shortSheetEntryO(options)
+            ly += lh
+            if (v % mod == mod-1){
+                ly += lh/2
+            }
+        })
+
+
         let backgrounds = {}
         let max_ly = 0
         let bg = me.player_in.append('g')
@@ -292,6 +320,9 @@ class AdventureSheet extends WawwodSheet {
             })
             ly = oldly
         })
+
+
+
         me.daddy = me.player_in
         me.drawHealthCompact(0,18)
     }

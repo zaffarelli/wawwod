@@ -232,7 +232,7 @@ def improvise_id():
 
 
 def build_per_primogen(param=None):
-    chronicle = get_current_chronicle()
+    chronicle = Chronicle.current()
     cainites = create_mythics()
     if param is None:
         kindreds = Creature.objects.filter(
@@ -321,7 +321,7 @@ CAM_CLANS = [
 
 
 def build_gaia_wheel():
-    chronicle = get_current_chronicle()
+    chronicle = Chronicle.current()
     creatures = (
         Creature.objects.filter(chronicle=chronicle.acronym)
         .exclude(mythic=True)
