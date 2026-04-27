@@ -1113,13 +1113,13 @@ fieldset {
   align-items: flex-start;
   align-content: flex-start;
   flex-flow: row nowrap;
-  gap: 2px;
+  gap: 1px;
   & .line_bit {
     padding: 3pt;
-    border: 3pt solid #1010107f;
+    border: 2pt solid #1010107f;
     border-radius: 3pt;
     &.name {
-      flex: 0 0 20ex;
+      flex: 0 0 30ex;
       order: 1;
       color: #f07f4f;
     }
@@ -1152,7 +1152,7 @@ fieldset {
     &.options {
       flex: 1 1 auto;
       order: 4;
-      overflow-x: hidden;
+      overflow: hidden;
     }
     &.tail {
       order: 5;
@@ -1256,8 +1256,8 @@ fieldset {
         padding: 3pt;
         background: #e0e0e0;
         text-align: center;
-        font-size:1.5em;
-        width: 10ex;
+        font-size:1em;
+        width: 6ex;
         &.text {
           width: 90ex;
           text-align: justify;
@@ -1273,7 +1273,7 @@ fieldset {
         border-radius: 5pt;
         background: #c0c0c0;
         padding: 3pt;
-        width: 10ex;
+        width: 6ex;
       }
     }
   }

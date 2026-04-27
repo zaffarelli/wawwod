@@ -1211,10 +1211,10 @@ class WawwodSheet {
                     let txt = ""
                     if (terms[0] == "loss"){
                         let vals = terms[1].split(">")
-                        txt = `- Special penalty: ${terms[2]} loses ${vals[0]} point(s).`
+                        txt = `- Special penalty: ${terms[2].toUpperCase()} looses ${vals[0]}.`
                      }else{
                         let vals = terms[1].split(">")
-                        txt = `- ${terms[2]} xp(s) to bring ${terms[0]} from ${vals[0]} to ${vals[1]} point(s).`
+                        txt = `- ${terms[2]} xp to bring ${terms[0].toUpperCase()} from ${vals[0]} to ${vals[1]}.`
                     }
                     all_histo_exp.push(txt)
                 }else{
@@ -1227,7 +1227,7 @@ class WawwodSheet {
             oy += 1 * me.stepy
 
             let atxt = all_histo_exp.join("µ")
-            me.appendText("Experience Details",atxt,ox,oy,8 * me.stepx,me.character)
+            me.appendText("Experience Details",atxt,ox,oy,9 * me.stepx,me.character)
 
 
 

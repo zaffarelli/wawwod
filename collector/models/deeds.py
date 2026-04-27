@@ -80,16 +80,17 @@ class Deed(models.Model):
         for deed in deeds:
             if deed.category != cat:
                 cat = deed.category
-                html.append(f"<tr><th colspan='5'>{cat}</th></tr>")
+                html.append(f"<tr><th colspan='6'>{cat}</th></tr>")
                 html.append(
-                    f"<tr><th>{'Description'}</th><th>{'Glory'}</th><th>{'Honor'}</th><th>{'Wisdom'}</th></tr>"
+                    f"<tr><th></th><th>{'Description'}</th><th>{'Glory'}</th><th>{'Honor'}</th><th>{'Wisdom'}</th></tr>"
                 )
             if deed.code in adventure_deeds:
                 selector = f'<span class="deed_select yes" id="{adventure.acronym}__{deed.code}" params="{adventure.acronym}__{deed.code}"><i class="fas fa-check"></i></span>&nbsp;'
             else:
                 selector = f'<span class="deed_select no" id="{adventure.acronym}__{deed.code}" params="{adventure.acronym}__{deed.code}"><i class="fas fa-times"></i></span>&nbsp;'
             html.append(
-                f'<tr><td class="text" style="background:{x};">{selector} <tt>[{deed.code}]</tt> {deed.description}</td>'+
+                f'<tr><td rowspan=2>{selector}</td><td class="text" style="background:{x};">{deed.description}<br/><tt><small> [{deed.code}]</small></tt></td>' +
+                #f'<tr><td class="text" style="background:{x};">{selector} <tt>[{deed.code}]</tt> {deed.description}</td>'+
                 f'<td rowspan=2  style="background:{x};">{deed.glory}</td>'+
                 f'<td rowspan=2  style="background:{x};">{deed.honor}</td>'+
                 f'<td rowspan=2  style="background:{x};">{deed.wisdom}</td></tr>'+
@@ -149,11 +150,12 @@ class Deed(models.Model):
                           f'<span class="player_deed_select {is_on}" id="{adventure.acronym}__{deed.code}__{packmate["code"]}" params="{adventure.acronym}__{deed.code}__{packmate["code"]}"><i class="fa {on_char}"></i></span></td>')
                 r+=1
             if deed.code in adventure_deeds:
-                h = (f'<tr><td class="text" style="background:{x};">{deed.description}<br/><tt><small>[{deed.code}]</small></tt></td>'+
-                     f'<td rowspan=2  style="background:{x};">{deed.glory}</td>'+
-                     f'<td rowspan=2  style="background:{x};">{deed.honor}</td>'+
-                     f'<td rowspan=2  style="background:{x};">{deed.wisdom}</td>'+
-                     f'{plist}</tr><tr  style="background:{x};"><td class="notes"  style="background:{x};">{deed.notes}</td></tr>')
+                h = f'''<tr><td class="text" style="background:{x};">{deed.description}<br/><tt><small>[{deed.code}]</small></tt></td>
+                    <td rowspan=2  style="background:{x};">{deed.glory}</td>
+                    <td rowspan=2  style="background:{x};">{deed.honor}</td>
+                    <td rowspan=2  style="background:{x};">{deed.wisdom}</td>
+                    {plist}</tr><tr  style="background:{x};"><td class="notes"  style="background:{x};">{deed.notes}</td></tr>
+'''
                 html.append(h)
             if x == col1:
                 x = col2

@@ -325,8 +325,8 @@ def build_gaia_wheel():
     creatures = (
         Creature.objects.filter(chronicle=chronicle.acronym)
         .exclude(mythic=True)
-        .exclude(condition__startswith="DEAD=19")
-        .exclude(condition__startswith="MISSING=19")
+        .exclude(condition__startswith="DEAD")
+        .exclude(condition__startswith="MISSING")
         .exclude(ghost=True)
         .exclude(hidden=True)
         .order_by("display_pole")
@@ -402,29 +402,30 @@ def build_gaia_wheel():
     total = 0
     for c in creatures:
         creature_dict = c.toDict
-        if (
-            (c.faction == "Camarilla")
-            or (c.faction == "Anarchs")
-            or (c.faction == "Inconnu")
-        ):
-            wyrm_list.append(creature_dict)
-        elif c.faction == "Sabbat":
-            sabbat_list.append(creature_dict)
-        elif c.faction == "Pentex":
+        if c.creature == "mortal":
+            weaver_list.append(creature_dict)
+        if c.creature in ["kindred","ghoul"]:
+
+            if c.faction in ["Camarilla","Anarchs",c.faction == "Inconnu"]:
+                wyrm_list.append(creature_dict)
+            elif c.faction == "Sabbat":
+                sabbat_list.append(creature_dict)
+            else:
+                inde_list.append(creature_dict)
+        if c.creature in ["garou", "kinfolk"]:
+            if c.faction in ["Pentex","Wyrm"]:
+                pentex_list.append(creature_dict)
+            else:
+                wyld_list.append(creature_dict)
+        elif c.creature == "fomori":
             pentex_list.append(creature_dict)
-        elif c.faction == "Gaia":
-            wyld_list.append(creature_dict)
         elif c.creature == "mage":
             traditions_list.append(creature_dict)
-        elif c.creature == "changeling":
+        elif c.creature in ["changeling","kithain"]:
             kith_list.append(creature_dict)
         elif c.creature == "wraith":
             underworld_list.append(creature_dict)
-        if c.faction == "Independents":
-            inde_list.append(creature_dict)
-        else:
-            if c.creature == "mortal":
-                weaver_list.append(creature_dict)
+
         total += 1
         if c.creature == "kindred" and c.faction == "Camarilla":
             stats["status"][c.background9]["value"] += 1

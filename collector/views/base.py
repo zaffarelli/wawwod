@@ -193,77 +193,32 @@ def display_groups(request, slug=None):
 def get_list(request, pid=1, slug=None):
     adventure, chronicle, season = Adventure.current_full()
     if is_ajax(request):
-        if "vtm" == slug:
-            # print('vampires')
-            creature_items = Creature.objects.filter(
-                chronicle=chronicle.acronym, creature__in=["ghoul", "kindred"]
-            ).order_by("-is_new", "is_player", "name")
-        elif "mta" == slug:
-            creature_items = Creature.objects.filter(
-                chronicle=chronicle.acronym, creature__in=["mage"]
-            ).order_by("-is_new", "is_player", "name")
-        # Chronicle: Camarilla Kindreds
-        elif "cck" == slug:
-            creature_items = Creature.objects.filter(
-                chronicle=chronicle.acronym,
-                creature__in=["kindred"],
-                faction="Camarilla",
-                condition="OK",
-            ).order_by("family", "garou_rank", "name")
-        # Chronicle: Camarilla Ghouls
-        elif "ccg" == slug:
-            creature_items = Creature.objects.filter(
-                chronicle=chronicle.acronym,
-                creature__in=["ghoul"],
-                faction="Camarilla",
-                condition="OK",
-            ).order_by("-is_new", "is_player", "name")
-        # Chronicle: Sabbat Kindreds
-        elif "csk" == slug:
-            creature_items = Creature.objects.filter(
-                chronicle=chronicle.acronym,
-                creature__in=["kindred"],
-                faction="Sabbat",
-                condition="OK",
-            ).order_by("-is_new", "is_player", "name")
-
-        elif "wta" == slug:
-            creature_items = Creature.objects.filter(
-                chronicle=chronicle.acronym, creature__in=["garou", "kinfolk"]
-            ).order_by("-is_new", "creature", "name")
-        elif "ctd" == slug:
-            creature_items = Creature.objects.filter(
-                chronicle=chronicle.acronym, creature__in=["changeling"]
-            ).order_by("-is_new", "is_player", "name")
-        elif "wto" == slug:
-            creature_items = Creature.objects.filter(
-                chronicle=chronicle.acronym, creature__in=["wraith"]
-            ).order_by("-is_new", "is_player", "name")
-        elif "mor" == slug:
-            creature_items = Creature.objects.filter(
-                chronicle=chronicle.acronym, creature__in=["mortal"]
-            ).order_by("-is_new", "is_player", "name")
-        elif "new" == slug:
-            creature_items = Creature.objects.filter(
-                chronicle=chronicle.acronym, is_new=True
-            ).order_by("-is_new", "is_player", "name")
-        elif "bal" == slug:
-            creature_items = Creature.objects.filter(
-                chronicle=chronicle.acronym,
-                status__in=["UNBALANCED", "OK+"],
-                hidden=False,
-            ).order_by("-is_new", "is_player", "name")
-        elif "pen" == slug:
-            creature_items = Creature.objects.filter(
-                chronicle=chronicle.acronym,
-                faction__in=["Pentex", "Wyrm"],
-                creature__in=["garou", "kinfolk", "fomori"],
-            ).order_by("-is_new", "is_player", "name")
-        elif "ccm" == slug:
-            servants = ["mortal", "ghoul", "kinfolk", "fomori", "kithain"]
-            creature_items = Creature.objects.filter(
-                chronicle=chronicle.acronym, creature__in=servants
-            ).order_by("name")
+        if "cck" == slug: # Chronicle: Camarilla Kindreds
+            creature_items = Creature.objects.filter(chronicle=chronicle.acronym, creature="kindred",faction="Camarilla").order_by("name")
+        elif "ccg" == slug: # Chronicle: Camarilla Ghouls
+            creature_items = Creature.objects.filter(chronicle=chronicle.acronym,creature="ghoul",faction="Camarilla").order_by("name")
+        elif "csk" == slug: # Chronicle: Sabbat Kindreds
+            creature_items = Creature.objects.filter(chronicle=chronicle.acronym,creature="kindred",faction="Sabbat").order_by("name")
+        elif "csg" == slug: # Chronicle: Sabbat Ghouls
+            creature_items = Creature.objects.filter(chronicle=chronicle.acronym,creature="ghoul",faction="Sabbat").order_by("name")
+        elif "cgl" == slug: # Chronicle: Gaia Lupines
+            creature_items = Creature.objects.filter(chronicle=chronicle.acronym, creature="garou",faction="Gaia").order_by("name")
+        elif "cgk" == slug: # Chronicle: Gaia Kinfolk
+            creature_items = Creature.objects.filter(chronicle=chronicle.acronym, creature="kinfolk",faction="Gaia").order_by("name")
+        elif "cgs" == slug: # Chronicle: Gaia Spirits
+            creature_items = Creature.objects.filter(chronicle=chronicle.acronym, creature="spirit",faction="Gaia").order_by("name")
+        elif "cwl" == slug: # Chronicle: Gaia Lupines
+            creature_items = Creature.objects.filter(chronicle=chronicle.acronym, creature="garou",faction="Wyrm").order_by("name")
+        elif "cwk" == slug: # Chronicle: Gaia Kinfolk
+            creature_items = Creature.objects.filter(chronicle=chronicle.acronym, creature="kinfolk",faction="Wyrm").order_by("name")
+        elif "cmo" == slug: # Chronicle: Mortals
+            creature_items = Creature.objects.filter(chronicle=chronicle.acronym, creature="mortal").order_by("name")
+        elif "cnc" == slug: # New characters
+            creature_items = Creature.objects.filter(chronicle=chronicle.acronym, is_new=True).order_by("name")
+        elif "bal" == slug: # Chronicle: Unbalanced
+            creature_items = Creature.objects.filter(chronicle=chronicle.acronym,status__in=["UNBALANCED","OK+"]).order_by("name")
+        elif "cwf" == slug: # Chronicle: Wyrm Fomori
+            creature_items = Creature.objects.filter(chronicle=chronicle.acronym, creature="fomori").order_by("name")
         elif "ccs" == slug:
             masters = ["garou", "kindred", "wraith", "changeling", "mage"]
             creature_items = Creature.objects.filter(
@@ -274,9 +229,7 @@ def get_list(request, pid=1, slug=None):
                 adventure=adventure.acronym
             ).order_by("name")
         else:
-            creature_items = Creature.objects.filter(
-                chronicle=chronicle.acronym
-            ).order_by("is_player", "family", "is_new", "name")
+            creature_items = Creature.objects.filter(chronicle=chronicle.acronym).order_by("name")
         paginator = Paginator(creature_items, CHARACTERS_PER_PAGE)
         creature_items = paginator.get_page(pid)
         list_context = {"creature_items": creature_items}
@@ -444,6 +397,14 @@ def add_kinfolk(request, slug=None):
         post_wawwod_creature(item)
         return HttpResponse(status=204)
 
+def add_fomori(request, slug=None):
+    if is_ajax(request):
+        item = pre_wawwod_creature(slug)
+        item.creature = "fomori"
+        item.family = "Gorehound"
+        item.faction = "Wyrm"
+        post_wawwod_creature(item)
+        return HttpResponse(status=204)
 
 def add_mortal(request, slug=None):
     if is_ajax(request):

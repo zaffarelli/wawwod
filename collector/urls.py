@@ -6,6 +6,7 @@ from collector.views.base import (
     userinputastext,
     userinput,
     add_garou,
+    add_fomori,
     change_chronicle,
     change_adventure,
     display_gaia_wheel,
@@ -43,6 +44,7 @@ from collector.views.actions import (
     experiment,
     deed_select,
     deed_record_select,
+    randomize_for,
 )
 from collector.views.creature_views import CreatureDetailView
 
@@ -138,6 +140,11 @@ urlpatterns = [
         name="add_kindred",
     ),
     re_path(
+        r"^ajax/collector_action/add_fomori/(?P<slug>\w+)/$",
+        add_fomori,
+        name="add_fomori",
+    ),
+    re_path(
         r"^ajax/collector_action/add_mortal/(?P<slug>\w+)/$",
         add_mortal,
         name="add_mortal",
@@ -170,4 +177,7 @@ urlpatterns = [
     re_path(r"^ajax/action/quaestor/(?P<slug>\w+)/$", quaestor, name="quaestor"),
     re_path(r"^ajax/deed_select/$", deed_select, name="deed_select"),
     re_path(r"^ajax/deed_record_select/$", deed_record_select, name="deed_record_select"),
+    re_path(
+        r"^ajax/randomize/(?P<topic>\w+)/for/(?P<crid>\w+)/$", randomize_for, name="randomize_for"
+    ),
 ]

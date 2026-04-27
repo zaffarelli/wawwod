@@ -700,7 +700,7 @@ class CrossOverSheet extends WawwodSheet {
             me.fillBackgroundNotes(3 * me.stepy)
             me.fillNatureNotes(3 * me.stepy)
             me.fillNewManyForms(28 * me.stepy)
-            me.fillExperience(21.0 * me.stepy)
+            me.fillExperience(18.0 * me.stepy)
         } else if (me.page === 2) {
 
             me.fillMeritsFlawsNotes(3 * me.stepy)

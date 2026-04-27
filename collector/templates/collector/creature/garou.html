@@ -6,10 +6,10 @@
     {% include "collector/creature/abilities_header.html" with c=c %}
     {% include "collector/creature/abilities_columns.html" with c=c %}
     <tr>
-        <td colspan=2>Backgrounds ({{c.total_backgrounds}})</td>
-        <td colspan=2>Gifts ({{c.total_gifts}})</td>
+        <td colspan=2>{% include "collector/creature/rando.html" with topic="backgrounds" %}Backgrounds ({{c.total_backgrounds}})</td>
+        <td colspan=2>{% include "collector/creature/rando.html" with topic="traits" %}Gifts ({{c.total_gifts}}) </td>
         <td colspan=2>Renown</td>
-        <td colspan=2>Rites</td>
+        <td colspan=2>{% include "collector/creature/rando.html" with topic="rites" %}Rites</td>
     </tr>
     {% include "collector/creature/backgrounds_columns.html" with c=c %}
 </table>

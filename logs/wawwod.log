@@ -52895,3 +52895,1497 @@ NameError: name 'get_current_chronicle' is not defined
 [15/04 00:57:39] "GET /static/collector/css?4ca516ceceda HTTP/1.1" 404 1860
 [15/04 05:26:41] Not Found: /ajax/display/undefined/
 [15/04 05:26:41] "GET /ajax/display/undefined/ HTTP/1.1" 404 18153
+[15/04 23:49:59] "GET /static/collector/css?4ca516ceceda HTTP/1.1" 404 1859
+[15/04 23:50:15] "GET /static/collector/css?4ca516ceceda HTTP/1.1" 404 1860
+[15/04 23:56:44] "GET /static/collector/css?4ca516ceceda HTTP/1.1" 404 1860
+[15/04 23:58:09] "GET /static/collector/css?4ca516ceceda HTTP/1.1" 404 1860
+[15/04 23:58:20] "GET /static/collector/css?4ca516ceceda HTTP/1.1" 404 1860
+[16/04 00:00:22] Not Found: /ajax/display/undefined/
+[16/04 00:00:22] "GET /ajax/display/undefined/ HTTP/1.1" 404 18153
+[16/04 00:02:57] "GET /static/collector/css?4ca516ceceda HTTP/1.1" 404 1860
+[16/04 00:03:04] Not Found: /ajax/display/undefined/
+[16/04 00:03:04] "GET /ajax/display/undefined/ HTTP/1.1" 404 18153
+[16/04 00:05:31] "GET /static/collector/css?4ca516ceceda HTTP/1.1" 404 1860
+[16/04 00:05:41] Not Found: /ajax/display/undefined/
+[16/04 00:05:41] "GET /ajax/display/undefined/ HTTP/1.1" 404 18153
+[16/04 00:05:49] "GET /static/collector/css?4ca516ceceda HTTP/1.1" 404 1860
+[16/04 00:05:54] Not Found: /ajax/display/undefined/
+[16/04 00:05:54] "GET /ajax/display/undefined/ HTTP/1.1" 404 18153
+[16/04 00:06:31] "GET /static/collector/css?4ca516ceceda HTTP/1.1" 404 1860
+[16/04 00:06:34] Not Found: /ajax/display/undefined/
+[16/04 00:06:34] "GET /ajax/display/undefined/ HTTP/1.1" 404 18153
+[16/04 00:06:51] "GET /static/collector/css?4ca516ceceda HTTP/1.1" 404 1860
+[16/04 00:06:54] Not Found: /ajax/display/undefined/
+[16/04 00:06:54] "GET /ajax/display/undefined/ HTTP/1.1" 404 18153
+[16/04 00:42:31] Not Found: /ajax/display/undefined/
+[16/04 00:42:31] "GET /ajax/display/undefined/ HTTP/1.1" 404 18153
+[16/04 00:46:56] Not Found: /favicon.ico
+[16/04 00:46:56] "GET /favicon.ico HTTP/1.1" 404 18117
+[16/04 00:47:37] Not Found: /favicon.ico
+[16/04 00:47:37] "GET /favicon.ico HTTP/1.1" 404 18117
+[16/04 00:56:30] Not Found: /favicon.ico
+[16/04 00:56:30] "GET /favicon.ico HTTP/1.1" 404 18117
+[16/04 00:57:02] Not Found: /favicon.ico
+[16/04 00:57:02] "GET /favicon.ico HTTP/1.1" 404 18117
+[16/04 01:00:51] Not Found: /ajax/display/undefined/
+[16/04 01:00:51] "GET /ajax/display/undefined/ HTTP/1.1" 404 18153
+[16/04 02:02:52] Not Found: /favicon.ico
+[16/04 02:02:52] "GET /favicon.ico HTTP/1.1" 404 18117
+[16/04 02:05:59] Not Found: /ajax/display/undefined/
+[16/04 02:05:59] "GET /ajax/display/undefined/ HTTP/1.1" 404 18153
+[16/04 02:07:17] Not Found: /ajax/display/undefined/
+[16/04 02:07:17] "GET /ajax/display/undefined/ HTTP/1.1" 404 18153
+[16/04 02:09:24] Not Found: /ajax/display/undefined/
+[16/04 02:09:24] "GET /ajax/display/undefined/ HTTP/1.1" 404 18153
+[16/04 02:12:26] Not Found: /ajax/display/undefined/
+[16/04 02:12:26] "GET /ajax/display/undefined/ HTTP/1.1" 404 18153
+[16/04 17:45:59] Not Found: /ajax/action/quaestor//
+[16/04 17:45:59] "GET /ajax/action/quaestor// HTTP/1.1" 404 18150
+[16/04 17:55:29] Not Found: /ajax/action/quaestor//
+[16/04 17:55:29] "GET /ajax/action/quaestor// HTTP/1.1" 404 18150
+[16/04 17:55:37] Not Found: /ajax/action/quaestor//
+[16/04 17:55:37] "GET /ajax/action/quaestor// HTTP/1.1" 404 18150
+[16/04 17:55:57] Not Found: /ajax/action/quaestor//
+[16/04 17:55:57] "GET /ajax/action/quaestor// HTTP/1.1" 404 18150
+[16/04 17:55:58] Not Found: /ajax/action/quaestor//
+[16/04 17:55:58] "GET /ajax/action/quaestor// HTTP/1.1" 404 18150
+[16/04 17:57:18] "GET /static/collector/css?4ca516ceceda HTTP/1.1" 404 1860
+[16/04 17:57:36] Internal Server Error: /ajax/action/quaestor/search_xsepx_lennard/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 1049, in quaestor
+    from collector.utils.quaestor import Quaestor
+  File "/home/zaffarelli/Projects/wawwod/collector/utils/quaestor.py", line 27
+    from collector.models.creatures import Creature
+IndentationError: unexpected indent
+[16/04 17:57:36] "GET /ajax/action/quaestor/search_xsepx_lennard/ HTTP/1.1" 500 77514
+[16/04 18:03:40] Not Found: /ajax/display/undefined/
+[16/04 18:03:40] "GET /ajax/display/undefined/ HTTP/1.1" 404 18153
+[16/04 18:06:24] Not Found: /favicon.ico
+[16/04 18:06:24] "GET /favicon.ico HTTP/1.1" 404 18117
+[17/04 00:25:39] "GET /static/collector/css?4ca516ceceda HTTP/1.1" 404 1860
+[17/04 00:26:17] "GET /static/collector/css?4ca516ceceda HTTP/1.1" 404 1860
+[17/04 00:26:22] "GET /static/collector/css?4ca516ceceda HTTP/1.1" 404 1860
+[17/04 00:29:27] Internal Server Error: /ajax/collector_action/renown_records/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 147, in renown_records
+    html = Deed.players_to_html(adventure)
+  File "/home/zaffarelli/Projects/wawwod/collector/models/deeds.py", line 120, in players_to_html
+    pack.append({"code": x.rid, "name": x.name})
+                         ^^^^^
+AttributeError: 'NoneType' object has no attribute 'rid'
+[17/04 00:29:27] "GET /ajax/collector_action/renown_records/ HTTP/1.1" 500 83732
+[17/04 00:30:41] "GET /static/collector/css?4ca516ceceda HTTP/1.1" 404 1860
+[17/04 00:32:17] "GET /static/collector/css?4ca516ceceda HTTP/1.1" 404 1860
+[17/04 13:10:44] Not Found: /ajax/display/undefined/
+[17/04 13:10:44] "GET /ajax/display/undefined/ HTTP/1.1" 404 18153
+[17/04 13:11:10] "GET /static/collector/css?4ca516ceceda HTTP/1.1" 404 1860
+[17/04 13:11:13] Not Found: /ajax/display/undefined/
+[17/04 13:11:13] "GET /ajax/display/undefined/ HTTP/1.1" 404 18153
+[17/04 13:11:39] "GET /static/collector/css?4ca516ceceda HTTP/1.1" 404 1860
+[17/04 13:11:56] Not Found: /ajax/display/undefined/
+[17/04 13:11:56] "GET /ajax/display/undefined/ HTTP/1.1" 404 18153
+[17/04 13:13:26] Not Found: /ajax/display/undefined/
+[17/04 13:13:26] "GET /ajax/display/undefined/ HTTP/1.1" 404 18153
+[17/04 13:16:05] Not Found: /ajax/display/undefined/
+[17/04 13:16:05] "GET /ajax/display/undefined/ HTTP/1.1" 404 18153
+[17/04 13:18:35] Not Found: /ajax/display/undefined/
+[17/04 13:18:35] "GET /ajax/display/undefined/ HTTP/1.1" 404 18153
+[17/04 13:21:17] Not Found: /ajax/display/undefined/
+[17/04 13:21:17] "GET /ajax/display/undefined/ HTTP/1.1" 404 18153
+[17/04 13:21:34] Not Found: /ajax/display/undefined/
+[17/04 13:21:34] "GET /ajax/display/undefined/ HTTP/1.1" 404 18153
+[17/04 13:21:45] Not Found: /ajax/display/undefined/
+[17/04 13:21:45] "GET /ajax/display/undefined/ HTTP/1.1" 404 18153
+[17/04 13:21:59] Not Found: /ajax/display/undefined/
+[17/04 13:21:59] "GET /ajax/display/undefined/ HTTP/1.1" 404 18153
+[17/04 13:33:16] "GET /static/collector/css?4ca516ceceda HTTP/1.1" 404 1860
+[17/04 13:33:31] "GET /static/collector/css?4ca516ceceda HTTP/1.1" 404 1860
+[17/04 13:34:05] "GET /static/collector/css?4ca516ceceda HTTP/1.1" 404 1860
+[17/04 13:37:52] "GET /static/collector/css?4ca516ceceda HTTP/1.1" 404 1860
+[17/04 13:38:08] "GET /static/collector/css?4ca516ceceda HTTP/1.1" 404 1860
+[17/04 13:41:01] "GET /static/collector/css?4ca516ceceda HTTP/1.1" 404 1860
+[17/04 13:42:32] "GET /static/collector/css?4ca516ceceda HTTP/1.1" 404 1860
+[17/04 13:43:31] "GET /static/collector/css?4ca516ceceda HTTP/1.1" 404 1860
+[17/04 13:44:27] "GET /static/collector/css?4ca516ceceda HTTP/1.1" 404 1860
+[17/04 13:44:43] "GET /static/collector/css?4ca516ceceda HTTP/1.1" 404 1860
+[17/04 13:45:00] "GET /static/collector/css?4ca516ceceda HTTP/1.1" 404 1860
+[17/04 13:45:09] "GET /static/collector/css?4ca516ceceda HTTP/1.1" 404 1860
+[17/04 13:46:06] "GET /static/collector/css?4ca516ceceda HTTP/1.1" 404 1860
+[17/04 15:58:27] "GET /static/collector/css?4ca516ceceda HTTP/1.1" 404 1860
+[17/04 19:49:10] "GET /static/collector/css?4ca516ceceda HTTP/1.1" 404 1860
+[18/04 03:22:01] Internal Server Error: /admin/collector/totem/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/backends/sqlite3/base.py", line 359, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such column: collector_totem.granted_powers
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/contrib/admin/options.py", line 711, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/contrib/admin/sites.py", line 247, in inner
+    return view(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/contrib/admin/options.py", line 2105, in changelist_view
+    media = self.media + formset.media
+                         ^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/forms/formsets.py", line 521, in media
+    if self.forms:
+       ^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/forms/formsets.py", line 207, in forms
+    for i in range(self.total_form_count())
+                   ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/forms/formsets.py", line 182, in total_form_count
+    initial_forms = self.initial_form_count()
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/forms/models.py", line 718, in initial_form_count
+    return len(self.get_queryset())
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/query.py", line 372, in __len__
+    self._fetch_all()
+    ~~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/query.py", line 2000, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/query.py", line 95, in __iter__
+    results = compiler.execute_sql(
+        chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size
+    )
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/sql/compiler.py", line 1624, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/utils.py", line 94, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/backends/sqlite3/base.py", line 359, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such column: collector_totem.granted_powers
+[18/04 03:22:01] "GET /admin/collector/totem/ HTTP/1.1" 500 207667
+[18/04 03:43:46] Internal Server Error: /admin/collector/totem/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/contrib/admin/options.py", line 711, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/contrib/admin/sites.py", line 247, in inner
+    return view(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/contrib/admin/options.py", line 2016, in changelist_view
+    response = self.response_action(
+        request, queryset=cl.get_queryset(request)
+    )
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/contrib/admin/options.py", line 1645, in response_action
+    response = func(self, request, queryset)
+  File "/home/zaffarelli/Projects/wawwod/collector/utils/helper.py", line 63, in refix
+    item.fix()
+    ~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/totems.py", line 39, in fix
+    print(self.roster_text())
+          ~~~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/totems.py", line 65, in roster_text
+    lines.append(f"{self.individual_traits_str}{new_line}")
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Totem' object has no attribute 'individual_traits_str'. Did you mean: 'individual_traits_string'?
+[18/04 03:43:46] "POST /admin/collector/totem/ HTTP/1.1" 500 165951
+[18/04 03:44:07] Internal Server Error: /admin/collector/totem/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/contrib/admin/options.py", line 711, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/contrib/admin/sites.py", line 247, in inner
+    return view(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/contrib/admin/options.py", line 2016, in changelist_view
+    response = self.response_action(
+        request, queryset=cl.get_queryset(request)
+    )
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/contrib/admin/options.py", line 1645, in response_action
+    response = func(self, request, queryset)
+  File "/home/zaffarelli/Projects/wawwod/collector/utils/helper.py", line 63, in refix
+    item.fix()
+    ~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/totems.py", line 39, in fix
+    print(self.roster_text())
+          ~~~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/totems.py", line 65, in roster_text
+    lines.append(f"{self.individual_traits_string}{new_line}")
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/totems.py", line 48, in individual_traits_string
+    lines.append(f"- {items[0]} {items[1]:+2} point(s)")
+                                ^^^^^^^^^^^^^
+ValueError: Sign not allowed in string format specifier
+[18/04 03:44:07] "POST /admin/collector/totem/ HTTP/1.1" 500 170249
+[18/04 03:47:54] Internal Server Error: /admin/collector/totem/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/contrib/admin/options.py", line 711, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/contrib/admin/sites.py", line 247, in inner
+    return view(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/contrib/admin/options.py", line 2016, in changelist_view
+    response = self.response_action(
+        request, queryset=cl.get_queryset(request)
+    )
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/contrib/admin/options.py", line 1645, in response_action
+    response = func(self, request, queryset)
+  File "/home/zaffarelli/Projects/wawwod/collector/utils/helper.py", line 63, in refix
+    item.fix()
+    ~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/totems.py", line 39, in fix
+    print(self.roster_text())
+          ~~~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/totems.py", line 65, in roster_text
+    lines.append(f"{self.individual_traits_string}{new_line}")
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/totems.py", line 48, in individual_traits_string
+    lines.append(f"- {items[0]} {items[1]:+} point(s)")
+                                ^^^^^^^^^^^^
+ValueError: Sign not allowed in string format specifier
+[18/04 03:47:54] "POST /admin/collector/totem/ HTTP/1.1" 500 170245
+[18/04 03:48:21] Internal Server Error: /admin/collector/totem/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/contrib/admin/options.py", line 711, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/contrib/admin/sites.py", line 247, in inner
+    return view(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/contrib/admin/options.py", line 2016, in changelist_view
+    response = self.response_action(
+        request, queryset=cl.get_queryset(request)
+    )
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/contrib/admin/options.py", line 1645, in response_action
+    response = func(self, request, queryset)
+  File "/home/zaffarelli/Projects/wawwod/collector/utils/helper.py", line 63, in refix
+    item.fix()
+    ~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/totems.py", line 39, in fix
+    print(self.roster_text())
+          ~~~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/totems.py", line 65, in roster_text
+    lines.append(f"{self.individual_traits_string}{new_line}")
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/totems.py", line 48, in individual_traits_string
+    lines.append(f"- {items[0]} {items[1]:+d} point(s)")
+                                ^^^^^^^^^^^^^
+ValueError: Unknown format code 'd' for object of type 'str'
+[18/04 03:48:21] "POST /admin/collector/totem/ HTTP/1.1" 500 170349
+[18/04 03:50:43] Internal Server Error: /admin/collector/totem/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/contrib/admin/options.py", line 711, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/contrib/admin/sites.py", line 247, in inner
+    return view(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/contrib/admin/options.py", line 2016, in changelist_view
+    response = self.response_action(
+        request, queryset=cl.get_queryset(request)
+    )
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/contrib/admin/options.py", line 1645, in response_action
+    response = func(self, request, queryset)
+  File "/home/zaffarelli/Projects/wawwod/collector/utils/helper.py", line 63, in refix
+    item.fix()
+    ~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/totems.py", line 39, in fix
+    print(self.roster_text())
+          ~~~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/totems.py", line 65, in roster_text
+    lines.append(f"{self.individual_traits_string}{new_line}")
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/totems.py", line 48, in individual_traits_string
+    lines.append(f"- {items[0]} {int(items[1]):+} point(s){new_line}")
+                                                           ^^^^^^^^
+NameError: name 'new_line' is not defined
+[18/04 03:50:43] "POST /admin/collector/totem/ HTTP/1.1" 500 170297
+[18/04 03:52:55] Internal Server Error: /admin/collector/totem/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/contrib/admin/options.py", line 711, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/contrib/admin/sites.py", line 247, in inner
+    return view(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/contrib/admin/options.py", line 2016, in changelist_view
+    response = self.response_action(
+        request, queryset=cl.get_queryset(request)
+    )
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/contrib/admin/options.py", line 1645, in response_action
+    response = func(self, request, queryset)
+  File "/home/zaffarelli/Projects/wawwod/collector/utils/helper.py", line 63, in refix
+    item.fix()
+    ~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/totems.py", line 39, in fix
+    print(self.roster_text())
+          ~~~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/totems.py", line 69, in roster_text
+    lines.append(f"{self.individual_traits_string}{new_line}")
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/totems.py", line 47, in individual_traits_string
+    lines(f"Individual Traits:{new_line}")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'list' object is not callable
+[18/04 03:52:55] "POST /admin/collector/totem/ HTTP/1.1" 500 169973
+[18/04 04:01:01] Internal Server Error: /admin/collector/totem/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/contrib/admin/options.py", line 711, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/contrib/admin/sites.py", line 247, in inner
+    return view(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/contrib/admin/options.py", line 2078, in changelist_view
+    self.save_model(request, obj, form, change=True)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/contrib/admin/options.py", line 1273, in save_model
+    obj.save()
+    ~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/base.py", line 874, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/base.py", line 946, in save_base
+    pre_save.send(
+    ~~~~~~~~~~~~~^
+        sender=origin,
+        ^^^^^^^^^^^^^^
+    ...<3 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/dispatch/dispatcher.py", line 209, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/zaffarelli/Projects/wawwod/collector/signals/totems.py", line 8, in update_totem
+    instance.fix()
+    ~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/totems.py", line 40, in fix
+    print(self.roster_text())
+          ~~~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/totems.py", line 68, in roster_text
+    lines.append(f"{self.pack_traits_string}")
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/totems.py", line 60, in pack_traits_string
+    lines.append(f"- {items[0]} {int(items[1]):+} dice")
+                                     ~~~~~^^^
+IndexError: list index out of range
+[18/04 04:01:01] "POST /admin/collector/totem/ HTTP/1.1" 500 180442
+[18/04 04:01:20] Internal Server Error: /admin/collector/totem/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/contrib/admin/options.py", line 711, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/contrib/admin/sites.py", line 247, in inner
+    return view(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/contrib/admin/options.py", line 2078, in changelist_view
+    self.save_model(request, obj, form, change=True)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/contrib/admin/options.py", line 1273, in save_model
+    obj.save()
+    ~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/base.py", line 874, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/base.py", line 946, in save_base
+    pre_save.send(
+    ~~~~~~~~~~~~~^
+        sender=origin,
+        ^^^^^^^^^^^^^^
+    ...<3 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/dispatch/dispatcher.py", line 209, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/zaffarelli/Projects/wawwod/collector/signals/totems.py", line 8, in update_totem
+    instance.fix()
+    ~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/totems.py", line 40, in fix
+    print(self.roster_text())
+          ~~~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/totems.py", line 68, in roster_text
+    lines.append(f"{self.pack_traits_string}")
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/totems.py", line 60, in pack_traits_string
+    lines.append(f"- {items[0]} {int(items[1]):+} dice")
+                                     ~~~~~^^^
+IndexError: list index out of range
+[18/04 04:01:20] "POST /admin/collector/totem/ HTTP/1.1" 500 180442
+[18/04 04:01:29] Internal Server Error: /admin/collector/totem/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/contrib/admin/options.py", line 711, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/contrib/admin/sites.py", line 247, in inner
+    return view(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/contrib/admin/options.py", line 2078, in changelist_view
+    self.save_model(request, obj, form, change=True)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/contrib/admin/options.py", line 1273, in save_model
+    obj.save()
+    ~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/base.py", line 874, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/base.py", line 946, in save_base
+    pre_save.send(
+    ~~~~~~~~~~~~~^
+        sender=origin,
+        ^^^^^^^^^^^^^^
+    ...<3 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/dispatch/dispatcher.py", line 209, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/zaffarelli/Projects/wawwod/collector/signals/totems.py", line 8, in update_totem
+    instance.fix()
+    ~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/totems.py", line 40, in fix
+    print(self.roster_text())
+          ~~~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/totems.py", line 68, in roster_text
+    lines.append(f"{self.pack_traits_string}")
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/totems.py", line 60, in pack_traits_string
+    lines.append(f"- {items[0]} {int(items[1]):+} dice")
+                                     ~~~~~^^^
+IndexError: list index out of range
+[18/04 04:01:29] "POST /admin/collector/totem/ HTTP/1.1" 500 180442
+[18/04 04:01:48] Not Found: /favicon.ico
+[18/04 04:01:48] "GET /favicon.ico HTTP/1.1" 404 18117
+[18/04 04:02:02] Internal Server Error: /admin/collector/totem/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/contrib/admin/options.py", line 711, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/contrib/admin/sites.py", line 247, in inner
+    return view(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/contrib/admin/options.py", line 2078, in changelist_view
+    self.save_model(request, obj, form, change=True)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/contrib/admin/options.py", line 1273, in save_model
+    obj.save()
+    ~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/base.py", line 874, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/base.py", line 946, in save_base
+    pre_save.send(
+    ~~~~~~~~~~~~~^
+        sender=origin,
+        ^^^^^^^^^^^^^^
+    ...<3 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/dispatch/dispatcher.py", line 209, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/zaffarelli/Projects/wawwod/collector/signals/totems.py", line 8, in update_totem
+    instance.fix()
+    ~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/totems.py", line 40, in fix
+    print(self.roster_text())
+          ~~~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/totems.py", line 68, in roster_text
+    lines.append(f"{self.pack_traits_string}")
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/totems.py", line 60, in pack_traits_string
+    lines.append(f"- {items[0]} {int(items[1]):+} dice")
+                                     ~~~~~^^^
+IndexError: list index out of range
+[18/04 04:02:02] "POST /admin/collector/totem/ HTTP/1.1" 500 180415
+[18/04 04:02:49] Internal Server Error: /admin/collector/totem/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/contrib/admin/options.py", line 711, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/contrib/admin/sites.py", line 247, in inner
+    return view(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/contrib/admin/options.py", line 2078, in changelist_view
+    self.save_model(request, obj, form, change=True)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/contrib/admin/options.py", line 1273, in save_model
+    obj.save()
+    ~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/base.py", line 874, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/base.py", line 946, in save_base
+    pre_save.send(
+    ~~~~~~~~~~~~~^
+        sender=origin,
+        ^^^^^^^^^^^^^^
+    ...<3 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/dispatch/dispatcher.py", line 209, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/zaffarelli/Projects/wawwod/collector/signals/totems.py", line 8, in update_totem
+    instance.fix()
+    ~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/totems.py", line 40, in fix
+    print(self.roster_text())
+          ~~~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/totems.py", line 68, in roster_text
+    lines.append(f"{self.pack_traits_string}")
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/totems.py", line 60, in pack_traits_string
+    lines.append(f"- {items[0]} {items[1]} dice")
+                                 ~~~~~^^^
+IndexError: list index out of range
+[18/04 04:02:49] "POST /admin/collector/totem/ HTTP/1.1" 500 180393
+[18/04 04:03:00] Internal Server Error: /admin/collector/totem/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/contrib/admin/options.py", line 711, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/contrib/admin/sites.py", line 247, in inner
+    return view(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/contrib/admin/options.py", line 2078, in changelist_view
+    self.save_model(request, obj, form, change=True)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/contrib/admin/options.py", line 1273, in save_model
+    obj.save()
+    ~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/base.py", line 874, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/base.py", line 946, in save_base
+    pre_save.send(
+    ~~~~~~~~~~~~~^
+        sender=origin,
+        ^^^^^^^^^^^^^^
+    ...<3 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/dispatch/dispatcher.py", line 209, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/zaffarelli/Projects/wawwod/collector/signals/totems.py", line 8, in update_totem
+    instance.fix()
+    ~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/totems.py", line 40, in fix
+    print(self.roster_text())
+          ~~~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/totems.py", line 68, in roster_text
+    lines.append(f"{self.pack_traits_string}")
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/totems.py", line 60, in pack_traits_string
+    lines.append(f"- {items[0]} {items[1]} dice")
+                                 ~~~~~^^^
+IndexError: list index out of range
+[18/04 04:03:00] "POST /admin/collector/totem/ HTTP/1.1" 500 180393
+[18/04 19:37:52] "GET /static/collector/css?eb96f3bdb36b HTTP/1.1" 404 1859
+[19/04 21:13:52] "GET /static/collector/css?eb96f3bdb36b HTTP/1.1" 404 1860
+[19/04 21:16:24] "GET /static/collector/css?eb96f3bdb36b HTTP/1.1" 404 1860
+[19/04 21:16:46] "GET /static/collector/css?eb96f3bdb36b HTTP/1.1" 404 1860
+[20/04 03:52:49] "GET /static/collector/css?eb96f3bdb36b HTTP/1.1" 404 1860
+[20/04 04:01:34] "GET /static/collector/css?eb96f3bdb36b HTTP/1.1" 404 1860
+[20/04 04:24:47] "GET /static/collector/css?eb96f3bdb36b HTTP/1.1" 404 1860
+[20/04 04:25:31] "GET /static/collector/css?eb96f3bdb36b HTTP/1.1" 404 1860
+[20/04 04:25:50] "GET /static/collector/css?eb96f3bdb36b HTTP/1.1" 404 1860
+[20/04 04:27:35] "GET /static/collector/css?eb96f3bdb36b HTTP/1.1" 404 1860
+[20/04 04:27:51] "GET /static/collector/css?eb96f3bdb36b HTTP/1.1" 404 1860
+[20/04 04:28:52] "GET /static/collector/css?eb96f3bdb36b HTTP/1.1" 404 1860
+[20/04 04:29:22] "GET /static/collector/css?eb96f3bdb36b HTTP/1.1" 404 1860
+[20/04 04:29:55] "GET /static/collector/css?eb96f3bdb36b HTTP/1.1" 404 1860
+[20/04 04:32:04] Not Found: /ajax/display/undefined/
+[20/04 04:32:04] "GET /ajax/display/undefined/ HTTP/1.1" 404 18153
+[20/04 04:32:20] Not Found: /ajax/display/undefined/
+[20/04 04:32:20] "GET /ajax/display/undefined/ HTTP/1.1" 404 18153
+[20/04 18:13:40] "GET /static/collector/css?eb96f3bdb36b HTTP/1.1" 404 1860
+[21/04 07:57:36] "GET /static/collector/css?eb96f3bdb36b HTTP/1.1" 404 1860
+[21/04 08:06:31] "GET /static/collector/css?eb96f3bdb36b HTTP/1.1" 404 1860
+[21/04 08:14:40] "GET /static/collector/css?eb96f3bdb36b HTTP/1.1" 404 1860
+[21/04 08:15:24] "GET /static/collector/css?eb96f3bdb36b HTTP/1.1" 404 1860
+[21/04 08:24:21] "GET /static/collector/css?eb96f3bdb36b HTTP/1.1" 404 1860
+[21/04 08:24:33] Forbidden (CSRF token from the 'X-Csrftoken' HTTP header has incorrect length.): /ajax/randomize/traits/for/_chief/
+[21/04 08:24:33] "POST /ajax/randomize/traits/for/_chief/ HTTP/1.1" 403 2549
+[21/04 08:25:04] "GET /static/collector/css?eb96f3bdb36b HTTP/1.1" 404 1860
+[21/04 08:34:41] "GET /static/collector/css?eb96f3bdb36b HTTP/1.1" 404 1860
+[21/04 09:05:09] Internal Server Error: /ajax/randomize/traits/for/_kyle_mirmidion/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/actions.py", line 362, in randomize_for
+    creature.randomize_traits()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 2726, in randomize_traits
+    t = bgifts[roll(len(tgifts))]
+        ~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/query.py", line 424, in __getitem__
+    return self._result_cache[k]
+           ~~~~~~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+[21/04 09:05:09] "POST /ajax/randomize/traits/for/_kyle_mirmidion/ HTTP/1.1" 500 21520
+[21/04 09:05:31] Internal Server Error: /ajax/randomize/traits/for/_kyle_mirmidion/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/actions.py", line 362, in randomize_for
+    creature.randomize_traits()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 2726, in randomize_traits
+    t = tgifts[roll(len(tgifts))]
+        ~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/query.py", line 424, in __getitem__
+    return self._result_cache[k]
+           ~~~~~~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+[21/04 09:05:31] "POST /ajax/randomize/traits/for/_kyle_mirmidion/ HTTP/1.1" 500 21520
+[21/04 09:05:46] Internal Server Error: /ajax/randomize/traits/for/_kyle_mirmidion/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/actions.py", line 362, in randomize_for
+    creature.randomize_traits()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 2725, in randomize_traits
+    b = bgifts[roll(len(bgifts))]
+        ~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/query.py", line 424, in __getitem__
+    return self._result_cache[k]
+           ~~~~~~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+[21/04 09:05:46] "POST /ajax/randomize/traits/for/_kyle_mirmidion/ HTTP/1.1" 500 21520
+[21/04 09:05:56] Internal Server Error: /ajax/randomize/traits/for/_kyle_mirmidion/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/actions.py", line 362, in randomize_for
+    creature.randomize_traits()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 2726, in randomize_traits
+    t = tgifts[roll(len(tgifts))]
+        ~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/query.py", line 424, in __getitem__
+    return self._result_cache[k]
+           ~~~~~~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+[21/04 09:05:56] "POST /ajax/randomize/traits/for/_kyle_mirmidion/ HTTP/1.1" 500 21520
+[21/04 09:06:57] Internal Server Error: /ajax/randomize/traits/for/_kyle_mirmidion/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/actions.py", line 362, in randomize_for
+    creature.randomize_traits()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 2725, in randomize_traits
+    a = agifts[roll(len(agifts))]
+        ~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/query.py", line 424, in __getitem__
+    return self._result_cache[k]
+           ~~~~~~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+[21/04 09:06:57] "POST /ajax/randomize/traits/for/_kyle_mirmidion/ HTTP/1.1" 500 21520
+[21/04 09:12:57] "GET /static/collector/css?eb96f3bdb36b HTTP/1.1" 404 1860
+[24/04 21:32:23] "GET /static/collector/css?eb96f3bdb36b HTTP/1.1" 404 1860
+[24/04 21:32:53] Not Found: /ajax/display/undefined/
+[24/04 21:32:53] "GET /ajax/display/undefined/ HTTP/1.1" 404 18470
+[24/04 21:34:47] "GET /static/collector/css?eb96f3bdb36b HTTP/1.1" 404 1860
+[25/04 11:45:29] "GET /static/collector/css?eb96f3bdb36b HTTP/1.1" 404 1860
+[25/04 11:52:02] "GET /static/collector/css?eb96f3bdb36b HTTP/1.1" 404 1860
+[25/04 11:52:29] "GET /static/collector/css?eb96f3bdb36b HTTP/1.1" 404 1860
+[25/04 12:06:51] "GET /static/collector/css?eb96f3bdb36b HTTP/1.1" 404 1860
+[25/04 18:33:07] "GET /static/collector/css?eb96f3bdb36b HTTP/1.1" 404 1860
+[25/04 18:34:15] "GET /static/collector/css?eb96f3bdb36b HTTP/1.1" 404 1860
+[25/04 18:34:38] "GET /static/collector/css?eb96f3bdb36b HTTP/1.1" 404 1860
+[25/04 18:36:27] "GET /static/collector/css?eb96f3bdb36b HTTP/1.1" 404 1860
+[25/04 18:37:50] "GET /static/collector/css?eb96f3bdb36b HTTP/1.1" 404 1860
+[25/04 18:45:20] "GET /static/collector/css?eb96f3bdb36b HTTP/1.1" 404 1860
+[25/04 18:45:44] "GET /static/collector/css?eb96f3bdb36b HTTP/1.1" 404 1860
+[25/04 18:46:37] "GET /static/collector/css?eb96f3bdb36b HTTP/1.1" 404 1860
+[25/04 18:47:47] "GET /static/collector/css?eb96f3bdb36b HTTP/1.1" 404 1860
+[25/04 18:49:47] "GET /static/collector/css?eb96f3bdb36b HTTP/1.1" 404 1860
+[25/04 18:50:37] "GET /static/collector/css?eb96f3bdb36b HTTP/1.1" 404 1860
+[25/04 18:53:09] "GET /static/collector/css?eb96f3bdb36b HTTP/1.1" 404 1860
+[26/04 00:26:08] "GET /static/collector/css?eb96f3bdb36b HTTP/1.1" 404 1860
+[26/04 00:41:36] "GET /static/collector/css?eb96f3bdb36b HTTP/1.1" 404 1860
+[26/04 00:46:09] Internal Server Error: /ajax/editable/userinput/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 283, in userinput
+    item.save()
+    ~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/base.py", line 874, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/base.py", line 946, in save_base
+    pre_save.send(
+    ~~~~~~~~~~~~~^
+        sender=origin,
+        ^^^^^^^^^^^^^^
+    ...<3 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/dispatch/dispatcher.py", line 209, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/zaffarelli/Projects/wawwod/collector/signals/creatures.py", line 19, in update_creature
+    instance.fix()
+    ~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 1101, in fix
+    PER_TRIBE[as_tribe_plural(self.family)]["willpower"] * 1
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'Black Spiral Dancerss'
+[26/04 00:46:09] "POST /ajax/editable/userinput/ HTTP/1.1" 500 21977
+[26/04 06:09:15] "GET /static/collector/css?eb96f3bdb36b HTTP/1.1" 404 1860
+[26/04 06:10:33] "GET /static/collector/css?eb96f3bdb36b HTTP/1.1" 404 1860
+[26/04 06:14:19] "GET /static/collector/css?eb96f3bdb36b HTTP/1.1" 404 1860
+[26/04 06:22:34] "GET /static/collector/css?eb96f3bdb36b HTTP/1.1" 404 1860
+[26/04 06:23:01] Internal Server Error: /ajax/editable/userinput/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 283, in userinput
+    item.save()
+    ~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/base.py", line 874, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/base.py", line 946, in save_base
+    pre_save.send(
+    ~~~~~~~~~~~~~^
+        sender=origin,
+        ^^^^^^^^^^^^^^
+    ...<3 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/dispatch/dispatcher.py", line 209, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/zaffarelli/Projects/wawwod/collector/signals/creatures.py", line 19, in update_creature
+    instance.fix()
+    ~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 1144, in fix
+    self.expectedfreebies += self.extra
+TypeError: unsupported operand type(s) for +=: 'int' and 'str'
+[26/04 06:23:01] "POST /ajax/editable/userinput/ HTTP/1.1" 500 21984
+[26/04 06:26:35] Internal Server Error: /ajax/randomize/traits/for/_oscar_lemper/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/actions.py", line 362, in randomize_for
+    creature.randomize_traits()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 2725, in randomize_traits
+    a = agifts[roll(len(agifts))-1]
+        ~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/query.py", line 424, in __getitem__
+    return self._result_cache[k]
+           ~~~~~~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+[26/04 06:26:35] "POST /ajax/randomize/traits/for/_oscar_lemper/ HTTP/1.1" 500 21519
+[26/04 06:27:25] Internal Server Error: /ajax/randomize/traits/for/_jonathan_vicars/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/actions.py", line 362, in randomize_for
+    creature.randomize_traits()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 2725, in randomize_traits
+    a = agifts[roll(len(agifts))-1]
+        ~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/query.py", line 424, in __getitem__
+    return self._result_cache[k]
+           ~~~~~~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+[26/04 06:27:25] "POST /ajax/randomize/traits/for/_jonathan_vicars/ HTTP/1.1" 500 21531
+[26/04 10:37:46] "GET /static/collector/css?eb96f3bdb36b HTTP/1.1" 404 1860
+[26/04 10:38:24] Internal Server Error: /ajax/randomize/talents/for/_isaac_solers/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/actions.py", line 364, in randomize_for
+    creature.randomize_abilities(topic)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 1499, in randomize_abilities
+    computed[x] = self.randomize_stat(stats_count=10, min_value=0, pools=pools[x])
+                  ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Creature.randomize_stat() got an unexpected keyword argument 'pools'. Did you mean 'pool'?
+[26/04 10:38:24] "POST /ajax/randomize/talents/for/_isaac_solers/ HTTP/1.1" 500 21571
+[26/04 10:40:45] Internal Server Error: /ajax/randomize/talents/for/_isaac_solers/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/actions.py", line 364, in randomize_for
+    creature.randomize_abilities(topic)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 1505, in randomize_abilities
+    logger.log(f"{prefixes[x]}:{x}:{t} = {computed[x][t]}")
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Logger.log() missing 1 required positional argument: 'msg'
+[26/04 10:40:45] "POST /ajax/randomize/talents/for/_isaac_solers/ HTTP/1.1" 500 21461
+[26/04 10:41:08] Internal Server Error: /ajax/randomize/talents/for/_isaac_solers/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/actions.py", line 364, in randomize_for
+    creature.randomize_abilities(topic)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 1505, in randomize_abilities
+    logger.log(msg=f"{prefixes[x]}:{x}:{t} = {computed[x][t]}")
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Logger.log() missing 1 required positional argument: 'level'
+[26/04 10:41:08] "POST /ajax/randomize/talents/for/_isaac_solers/ HTTP/1.1" 500 21473
+[26/04 10:41:11] Internal Server Error: /ajax/randomize/talents/for/_isaac_solers/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/actions.py", line 364, in randomize_for
+    creature.randomize_abilities(topic)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 1505, in randomize_abilities
+    logger.log(msg=f"{prefixes[x]}:{x}:{t} = {computed[x][t]}")
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Logger.log() missing 1 required positional argument: 'level'
+[26/04 10:41:11] "POST /ajax/randomize/talents/for/_isaac_solers/ HTTP/1.1" 500 21473
+[26/04 10:43:18] Internal Server Error: /ajax/randomize/skills/for/_isaac_solers/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/actions.py", line 366, in randomize_for
+    creature.randomize_abilities(topic)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 1499, in randomize_abilities
+    computed[x] = self.randomize_stat(stats_count=10, min_value=0, pool=pools[x])
+                                                                        ~~~~~^^^
+IndexError: list index out of range
+[26/04 10:43:18] "POST /ajax/randomize/skills/for/_isaac_solers/ HTTP/1.1" 500 21432
+[26/04 10:43:24] Internal Server Error: /ajax/randomize/skills/for/_isaac_solers/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/actions.py", line 366, in randomize_for
+    creature.randomize_abilities(topic)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 1499, in randomize_abilities
+    computed[x] = self.randomize_stat(stats_count=10, min_value=0, pool=pools[x])
+                                                                        ~~~~~^^^
+IndexError: list index out of range
+[26/04 10:43:24] "POST /ajax/randomize/skills/for/_isaac_solers/ HTTP/1.1" 500 21432
+[26/04 10:48:40] Internal Server Error: /ajax/randomize/skills/for/_isaac_solers/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/actions.py", line 366, in randomize_for
+    creature.randomize_abilities(topic)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 1499, in randomize_abilities
+    logger.warning(f"Pool:{polls[x]}")
+                           ^^^^^
+NameError: name 'polls' is not defined. Did you mean: 'pools'?
+[26/04 10:48:40] "POST /ajax/randomize/skills/for/_isaac_solers/ HTTP/1.1" 500 21347
+[26/04 10:48:50] Internal Server Error: /ajax/randomize/skills/for/_isaac_solers/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/actions.py", line 366, in randomize_for
+    creature.randomize_abilities(topic)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 1507, in randomize_abilities
+    setattr(self, f"{prefixes[x]}{t}", computed[x][t])
+                                       ~~~~~~~~~~~^^^
+IndexError: list index out of range
+[26/04 10:48:50] "POST /ajax/randomize/skills/for/_isaac_solers/ HTTP/1.1" 500 21378
+[26/04 10:53:57] Internal Server Error: /ajax/randomize/skills/for/_isaac_solers/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/actions.py", line 366, in randomize_for
+    creature.randomize_abilities(topic)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 1505, in randomize_abilities
+    setattr(self, f"{prefixes[x]}{t}", computed[x][t])
+                                       ~~~~~~~~~~~^^^
+IndexError: list index out of range
+[26/04 10:53:57] "POST /ajax/randomize/skills/for/_isaac_solers/ HTTP/1.1" 500 21378
+[26/04 10:54:06] Internal Server Error: /ajax/randomize/skills/for/_isaac_solers/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/actions.py", line 366, in randomize_for
+    creature.randomize_abilities(topic)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 1505, in randomize_abilities
+    setattr(self, f"{prefixes[x]}{t}", computed[x][t])
+                                       ~~~~~~~~~~~^^^
+IndexError: list index out of range
+[26/04 10:54:06] "POST /ajax/randomize/skills/for/_isaac_solers/ HTTP/1.1" 500 21378
+[26/04 10:54:45] Internal Server Error: /ajax/randomize/skills/for/_isaac_solers/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/actions.py", line 366, in randomize_for
+    creature.randomize_abilities(topic)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 1505, in randomize_abilities
+    setattr(self, f"{prefixes[x]}{t}", computed[x][t])
+                                       ~~~~~~~~~~~^^^
+IndexError: list index out of range
+[26/04 10:54:45] "POST /ajax/randomize/skills/for/_isaac_solers/ HTTP/1.1" 500 21378
+[26/04 10:55:49] Internal Server Error: /ajax/randomize/skills/for/_isaac_solers/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/actions.py", line 366, in randomize_for
+    creature.randomize_abilities(topic)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 1505, in randomize_abilities
+    setattr(self, f"{prefixes[x]}{t}", computed[x][t])
+                                       ~~~~~~~~~~~^^^
+IndexError: list index out of range
+[26/04 10:55:49] "POST /ajax/randomize/skills/for/_isaac_solers/ HTTP/1.1" 500 21378
+[26/04 10:57:11] Internal Server Error: /ajax/randomize/skills/for/_isaac_solers/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/actions.py", line 366, in randomize_for
+    creature.randomize_abilities(topic)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 1505, in randomize_abilities
+    setattr(self, f"{prefixes[x]}{t}", computed[x][t])
+                                       ~~~~~~~~~~~^^^
+IndexError: list index out of range
+[26/04 10:57:11] "POST /ajax/randomize/skills/for/_isaac_solers/ HTTP/1.1" 500 21378
+[26/04 10:57:45] Internal Server Error: /ajax/randomize/skills/for/_isaac_solers/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/actions.py", line 366, in randomize_for
+    creature.randomize_abilities(topic)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 1506, in randomize_abilities
+    setattr(self, f"{prefixes[x]}{t}", computed[x][t])
+                                       ~~~~~~~~~~~^^^
+IndexError: list index out of range
+[26/04 10:57:45] "POST /ajax/randomize/skills/for/_isaac_solers/ HTTP/1.1" 500 21378
+[26/04 10:59:04] Internal Server Error: /ajax/randomize/skills/for/_isaac_solers/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/actions.py", line 366, in randomize_for
+    creature.randomize_abilities(topic=topic)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 1506, in randomize_abilities
+    setattr(self, f"{prefixes[x]}{t}", computed[x][t])
+                                       ~~~~~~~~~~~^^^
+IndexError: list index out of range
+[26/04 10:59:04] "POST /ajax/randomize/skills/for/_isaac_solers/ HTTP/1.1" 500 21390
+[26/04 10:59:21] Internal Server Error: /ajax/randomize/skills/for/_isaac_solers/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/actions.py", line 366, in randomize_for
+    creature.randomize_abilities(topic=topic)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 1506, in randomize_abilities
+    setattr(self, f"{prefixes[x]}{t}", computed[x][t])
+                                       ~~~~~~~~~~~^^^
+IndexError: list index out of range
+[26/04 10:59:21] "POST /ajax/randomize/skills/for/_isaac_solers/ HTTP/1.1" 500 21390
+[26/04 11:00:44] Internal Server Error: /ajax/randomize/skills/for/_isaac_solers/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/actions.py", line 366, in randomize_for
+    creature.randomize_abilities(topic=topic)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 1507, in randomize_abilities
+    setattr(self, f"{prefixes[x]}{t}", computed[x][t])
+                                       ~~~~~~~~~~~^^^
+IndexError: list index out of range
+[26/04 11:00:44] "POST /ajax/randomize/skills/for/_isaac_solers/ HTTP/1.1" 500 21390
+[26/04 11:01:15] Internal Server Error: /ajax/randomize/skills/for/_isaac_solers/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/actions.py", line 366, in randomize_for
+    creature.randomize_abilities(topic=topic)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 1507, in randomize_abilities
+    setattr(self, f"{prefixes[x]}{t}", computed[x][t])
+                                       ~~~~~~~~~~~^^^
+IndexError: list index out of range
+[26/04 11:01:15] "POST /ajax/randomize/skills/for/_isaac_solers/ HTTP/1.1" 500 21390
+[26/04 11:14:06] Internal Server Error: /ajax/randomize/traits/for/_isaac_solers/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/actions.py", line 362, in randomize_for
+    creature.randomize_traits()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 2748, in randomize_traits
+    a = agifts[roll(len(agifts))-1]
+        ~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/query.py", line 424, in __getitem__
+    return self._result_cache[k]
+           ~~~~~~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+[26/04 11:14:06] "POST /ajax/randomize/traits/for/_isaac_solers/ HTTP/1.1" 500 21519
+[26/04 11:19:54] "GET /static/collector/css?eb96f3bdb36b HTTP/1.1" 404 1860
+[26/04 11:22:21] "GET /static/collector/css?eb96f3bdb36b HTTP/1.1" 404 1860
+[26/04 11:23:29] "GET /static/collector/css?eb96f3bdb36b HTTP/1.1" 404 1860
+[26/04 11:56:00] "GET /static/collector/css?eb96f3bdb36b HTTP/1.1" 404 1860
+[26/04 12:02:57] "GET /static/collector/css?eb96f3bdb36b HTTP/1.1" 404 1860
+[26/04 12:06:31] Internal Server Error: /api/randomize/_isaac_solers/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/actions.py", line 350, in randomize
+    x.randomize_all()
+    ~~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 1612, in randomize_all
+    self.randomize_traits()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 2771, in randomize_traits
+    a = agifts[roll(len(agifts))-1]
+        ~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/query.py", line 424, in __getitem__
+    return self._result_cache[k]
+           ~~~~~~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+[26/04 12:06:31] "GET /api/randomize/_isaac_solers/ HTTP/1.1" 500 91203
+[26/04 12:06:36] Internal Server Error: /api/randomize/_isaac_solers/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/actions.py", line 350, in randomize
+    x.randomize_all()
+    ~~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 1612, in randomize_all
+    self.randomize_traits()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 2771, in randomize_traits
+    a = agifts[roll(len(agifts))-1]
+        ~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/query.py", line 424, in __getitem__
+    return self._result_cache[k]
+           ~~~~~~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+[26/04 12:06:36] "GET /api/randomize/_isaac_solers/ HTTP/1.1" 500 91183
+[26/04 12:40:11] Internal Server Error: /ajax/collector_action/experiment/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/actions.py", line 206, in experiment
+    print(f"  * Auspice: {as_auspice(a)} [count:{len(gifts)}]")
+                          ^^^^^^^^^^
+NameError: name 'as_auspice' is not defined
+[26/04 12:40:11] "GET /ajax/collector_action/experiment/ HTTP/1.1" 500 78067

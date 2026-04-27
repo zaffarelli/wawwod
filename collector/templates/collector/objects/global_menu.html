@@ -4,38 +4,40 @@
     <li class="pull_down">
         <i id='toggle_list' class='fa fa-users'></i>&nbsp;Creatures
         <ul class="drop_down">
-            <li class="list" id="all">List: All</li>
-            <li class="list" id="cck">Chronicle: Camarilla Kindreds</li>
-            <li class="list" id="csk">Chronicle: Sabbat Kindreds</li>
-            <li class="list" id="ccg">Chronicle: Camarilla Ghouls</li>
-            <li class="list" id="ccl">Chronicle: Lupines</li>
+            <li class="list" id="cck"><i class="fas fa-list"></i> Chronicle: Camarilla Kindreds</li>
+            <li class="list" id="ccg"><i class="fas fa-list"></i> Chronicle: Camarilla Ghouls</li>
+            <li class="list" id="cgl"><i class="fas fa-list"></i> Chronicle: Gaia Lupines</li>
+            <li class="list" id="cgk"><i class="fas fa-list"></i> Chronicle: Gaia Kinfolks</li>
+            <li class="list" id="cgs"><i class="fas fa-list"></i> Chronicle: Gaia Spirits</li>
+            <li class="list" id="cmo"><i class="fas fa-list"></i> Chronicle: Mortals</li>
+            <li class="list" id="cnc"><i class="fas fa-list"></i> Chronicle: New creatures</li>
+            <li class="list" id="bal"><i class="fas fa-list"></i> Chronicle: TODO</li>
             <HR/>
-            <li class="list" id="vtm"><i class="fas fa-users"></i> Vampire the Masquerade</li>
-            <li class="list" id="wta"><i class="fas fa-users"></i> Werewolf the Apocalypse</li>
-            <li class="list" id="mta"><i class="fas fa-users"></i> Mage the Ascension</li>
-            <li class="list" id="wto"><i class="fas fa-users"></i> Wraith the Oblivion</li>
-            <li class="list" id="ctd"><i class="fas fa-users"></i> Changeling the Dreaming</li>
-            <HR/>
-            <li class="display" action="gaia_wheel"><i class="fas fa-globe"></i> Gaia Wheel</li>
-            <li class="display" action="dashboard"><i class="fas fa-star"></i> Dashboard</li>
-            <HR/>
-            <li class="list" id="pen"><i class="fas fa-list"></i> List: Pentex Forces</li>
-            <li class="list" id="mor"><i class="fas fa-list"></i> List: Mortals</li>
-            <li class="list" id="new"><i class="fas fa-list"></i> List: New creatures</li>
-            <li class="list" id="bal"><i class="fas fa-list"></i> List: TODO</li>
-            <HR/>
-            <li class="collector_action" action="add_mortal"><i class="fas fa-user-plus"></i> Add new mortal</li>
-            <li class="collector_action" action="add_garou"><i class="fas fa-user-plus"></i> Add new garou</li>
-            <li class="collector_action" action="add_kindred"><i class="fas fa-user-plus"></i> Add new kindred</li>
-            <li class="collector_action" action="add_kinfolk"><i class="fas fa-user-plus"></i> Add new kinfolk</li>
-            <li class="collector_action" action="add_ghoul"><i class="fas fa-user-plus"></i> Add new ghoul</li>
-            <li class="collector_action" action="refix_all"><i class="fas fa-cogs"></i> Refix all</li>
-            <li class="collector_action" action="experiment"><i class="fas fa-cogs"></i> Experiment</li>
+            <li class="list" id="cwl"><i class="fas fa-list"></i> Chronicle: Wyrm Garous</li>
+            <li class="list" id="cwk"><i class="fas fa-list"></i> Chronicle: Wyrm Kinfolks</li>
+            <li class="list" id="cwf"><i class="fas fa-list"></i> Chronicle: Wyrm Fomori</li>
+            <li class="list" id="csk"><i class="fas fa-list"></i> Chronicle: Sabbat Kindreds</li>
+            <li class="list" id="csg"><i class="fas fa-list"></i> Chronicle: Sabbat Ghouls</li>
+            <li class="list" id="all"><i class="fas fa-list"></i> Chronicle: All Creatures</li>
             <HR/>
             <li class="display" action="kindred_lineage"><i class="fas fa-sitemap"></i> Kindred Lineage</li>
             <li class="display" action="kindred_lineage" param="Camarilla"><i class="fas fa-sitemap"></i> Camarilla Lineage</li>
             <li class="display" action="kindred_lineage" param="Sabbat"><i class="fas fa-sitemap"></i> Sabbat Lineage</li>
             <li class="display" action="kindred_lineage" param="Independents"><i class="fas fa-sitemap"></i> Independents Lineage</li>
+            <li class="display" action="gaia_wheel"><i class="fas fa-globe"></i> Gaia Wheel</li>
+            <li class="display" action="dashboard"><i class="fas fa-star"></i> Dashboard</li>
+            <HR/>
+            <li class="collector_action" action="add_mortal"><i class="fas fa-user-plus"></i> Add new mortal</li>
+            <li class="collector_action" action="add_garou"><i class="fas fa-user-plus"></i> Add new garou</li>
+            <li class="collector_action" action="add_kinfolk"><i class="fas fa-user-plus"></i> Add new kinfolk</li>
+            <li class="collector_action" action="add_fomori"><i class="fas fa-user-plus"></i> Add new fomor</li>
+            <li class="collector_action" action="add_spirit"><i class="fas fa-user-plus"></i> Add new spirit</li>
+            <li class="collector_action" action="add_kindred"><i class="fas fa-user-plus"></i> Add new kindred</li>
+            <li class="collector_action" action="add_ghoul"><i class="fas fa-user-plus"></i> Add new ghoul</li>
+            <HR/>
+            <li class="collector_action" action="refix_all"><i class="fas fa-cogs"></i> Refix all</li>
+            <li class="collector_action" action="experiment"><i class="fas fa-cogs"></i> Experiment</li>
+
 
 
         </ul>
@@ -54,9 +56,9 @@
         <i id='toggle_chronicle' class='fa fa-cogs'></i>&nbsp;Options
         <ul class="drop_down">
             <li class="action" id="settings">Settings</li>
-            <li class="toggle" action="toggle" param="handler">Show/Hide Options</li>
-            <li class="toggle" action="toggle" param="details">Show/Hide Details</li>
-            <li class="toggle" action="toggle" param="moonphase">Show/Hide Moon Phases</li>
+            <li id="toggle_options" class="toggle" action="toggle" param="handler">Show/Hide Options</li>
+            <li id="toggle_details" class="toggle" action="toggle" param="details">Show/Hide Details</li>
+            <li id="toggle_moonphases" class="toggle" action="toggle" param="moonphase">Show/Hide Moon Phases</li>
             <HR/>
             <li><a href="accounts/logout">Disconnect</a></li>
         </ul>

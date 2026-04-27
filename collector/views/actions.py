@@ -3,11 +3,14 @@ from django.shortcuts import redirect
 from django.views.decorators.csrf import csrf_exempt
 
 from collector.models.creatures import Creature
+from collector.templatetags.wod_filters import as_breed
 from collector.utils.helper import is_ajax
 
 # from collector.utils.wod_reference import get_current_chronicle
 import random
 import logging
+
+from collector.utils.wod_reference import ALL_TRIBES
 
 logger = logging.Logger(__name__)
 
@@ -191,6 +194,39 @@ def deed_record_select(request):
 def experiment(request):
     # from collector.models.archetypes import Archetype
     # Archetype.reid()
+    from collector.templatetags.wod_filters import as_auspice
+    from collector.models.gifts import Gift
+    for l in range(5):
+        print(f"Level: {l+1}")
+        for b in range(3):
+            gifts = Gift.fetch(level=l+1,breed=b)
+            cnt = len(gifts)
+            cnttext = f"[count:{cnt}]" if cnt != 0 else "!!!!!"
+            print(f"  * Breed:   {as_breed(b):30} {cnttext}")
+            print("    ", end="")
+            for gift in gifts:
+                print(f"[{gift.pretty_str}]",end="")
+            print("\n")
+        for a in range(5):
+            gifts = Gift.fetch(level=l+1,auspice=a)
+            cnt = len(gifts)
+            cnttext = f"[count:{cnt}]" if cnt != 0 else "!!!!!"
+            print(f"  * Auspice: {as_auspice(a):30} {cnttext}")
+            print("    ",end="")
+            for gift in gifts:
+                print(f"[{gift.pretty_str}]",end="")
+            print("\n")
+        for t in ALL_TRIBES:
+            gifts = Gift.fetch(level=l+1,tribe=t)
+            cnt = len(gifts)
+            cnttext = f"[count:{cnt}]" if cnt != 0 else "!!!!!"
+            print(f"  * Tribe: {t:30} {cnttext}")
+            print("    ",end="")
+            for gift in gifts:
+                print(f"[{gift.pretty_str}]",end="")
+            print("\n")
+
+
     return HttpResponse(status=204)
 
 
@@ -350,4 +386,31 @@ def randomize(request, slug):
         x.randomize_all()
         x.save()
         answer["rid"] = x.rid
+    return JsonResponse(answer)
+
+@csrf_exempt
+def randomize_for(request, topic, crid):
+    answer = {}
+    found = Creature.objects.filter(rid=crid)
+    if len(found) == 1:
+        creature = found.first()
+        if topic == "traits":
+            creature.randomize_traits()
+        elif topic == "backgrounds":
+            creature.randomize_backgrounds()
+        elif topic == "talents":
+            creature.randomize_abilities(topic=topic)
+        elif topic == "skills":
+            creature.randomize_abilities(topic=topic)
+        elif topic == "knowledges":
+            creature.randomize_abilities(topic=topic)
+        elif topic == "physical":
+            creature.randomize_attributes(topic=topic)
+        elif topic == "social":
+            creature.randomize_attributes(topic=topic)
+        elif topic == "mental":
+            creature.randomize_attributes(topic=topic)
+        else:
+            logger.warning(f"Oops, I don't know what to do with [{topic}]")
+
     return JsonResponse(answer)

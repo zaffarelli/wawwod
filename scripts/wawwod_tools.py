@@ -6,9 +6,9 @@ from collector.utils.wod_reference import ARCHETYPES
 import random
 from collector.utils.kindred_stuff import manage_missing_ghouls, domitor_from_sire
 
-from collector.utils.wod_reference import get_current_chronicle
+from collector.models.adventures import Adventure
 
-chronicle = get_current_chronicle()
+adventure, chronicle, season = Adventure.current_full()
 
 
 class ToolsForWawwod:
@@ -23,6 +23,7 @@ class ToolsForWawwod:
         print("    7 - Name ghouls...")
         print("    8 - Reghoul (kindreds)...")
         print("    9 - To current chronicle")
+        print("    A - Populate from YAML")
         print("    0 - Quit")
         topic = ""
         while topic != "0":
@@ -46,7 +47,8 @@ class ToolsForWawwod:
                 domitor_from_sire()
             elif topic == "9":
                 self.to_current_chronicle()
-
+            elif topic == "A":
+                self.populate_from_yml()
     def fmt(self, txt):
         new_txt = "\033[1;39m".join(txt.split("µ"))
         new_txt = "\033[0;m".join(new_txt.split("§"))
@@ -265,6 +267,10 @@ class ToolsForWawwod:
                 print(c.name)
                 c.chronicle = chronicle.acronym
                 c.save()
+
+
+    def populate_from_yaml(self):
+        pass
 
 
 ToolsForWawwod()

@@ -1,17 +1,17 @@
 class GaiaWheel {
     constructor(data, parent, collector) {
-        let me = this;
-        me.parent = parent;
-        me.co = collector;
-        me.data = data['lists'];
-        me.stats = data['stats'];
-        me.init();
+        let me = this
+        me.parent = parent
+        me.co = collector
+        me.data = data['lists']
+        me.stats = data['stats']
+        me.init()
     }
 
     init() {
-        let me = this;
-        me.global_rotation = 0;
-        me.sector_size = 30;
+        let me = this
+        me.global_rotation = 0
+        me.sector_size = 30
         me.sector_data = []
         me.starts = []
         let total = 0
@@ -249,7 +249,7 @@ class GaiaWheel {
 
     polar_to_orthographic(idx, pow, span, total, angle, grandtotal) {
         let me = this;
-        let angular = (((idx + angle +0.5 ) / total) * (total / grandtotal) * 360) - 90;
+        let angular = (((idx + angle + 0.5) / total) * (total / (grandtotal-1)) * 360) - 90;
         //let angular = (((idx + angle +0.5) / total) * (total / grandtotal) * 360) - 90;
         let radial = me.radiused(pow);
         let coords = []
@@ -296,6 +296,9 @@ class GaiaWheel {
                 if (d.condition != 'OK') {
                     str += "<br/><i>" + d.condition + "</i>";
                 }
+
+                    str += "<br/><i>" + d.display_pole + "</i>";
+
                 if (d.faction) {
                     str += "<br/>" + d.faction + "";
                 }
@@ -364,25 +367,25 @@ class GaiaWheel {
             })
             .style("fill", 'transparent')
             .style("stroke", function (d) {
-                let x = (d.condition.startsWith("DEAD") ? "#A22" : (d.condition.startsWith("MISSING") ? "#FC4" : "transparent"))
+                let x = (d.status.startsWith("UNBALANCED") ? "#A22" : (d.status.startsWith("OK") ? "#FC4" : "transparent"))
                 return x;
             })
             .style("stroke-width", function (d) {
-                let x = (d.condition.startsWith("DEAD") ? "3pt" : (d.condition.startsWith("MISSING") ? "3pt" : "1pt"))
+                let x = (d.condition.startsWith("DEAD") ? "1pt" : (d.condition.startsWith("MISSING") ? "1pt" : "3pt"))
                 return x;
             })
         ;
         node_cross.append('text')
             .attr("transform", "rotate(" + (-me.global_rotation) + ")")
             .attr("dy", function(d){
-                if (d.index % 2 == 0) {
-                    return '-12px';
-                }
-                return "20px";
+                // if (d.index % 2 == 0) {
+                //     return '-12px';
+                // }
+                return "18px";
             })
             .style("text-anchor", 'middle')
             .style("font-family", 'Ruda')
-            .style("font-size", '12pt')
+            .style("font-size", '6pt')
             .style("fill", '#CCC')
             .style("stroke", '#111')
             .style("stroke-width", '0.125pt')
@@ -403,7 +406,7 @@ class GaiaWheel {
         node_cross.append("circle")
             .attr('class', function (d) {
                 let res = 'node_circle ' + ty + ' ' + d.creature;
-                if (d.status == 'OK') {
+                if (d.status == 'READY') {
                     res += ' balanced';
                 }
                 return res;
@@ -498,12 +501,13 @@ class GaiaWheel {
                 return "translate(" + sector_arc.centroid(d) + ")";
             })
             .attr('text-anchor', "middle")
-            .attr('font-size', "20pt")
+            .attr('font-size', "10pt")
             .attr('font-family', function (d) {
                 return d.data.font;
             })
             .style("fill", "#CCC")
-            .style("stroke", "#EEE")
+            .style("stroke", "#AAA")
+            .style("stroke-size", "0.5pt")
             .text(function (d) {
                 //console.log(d.data)
                 return d.data.name.charAt(0).toUpperCase() + d.data.name.slice(1)+" ["+d.data.value+"/"+d.data.total+"]";
@@ -538,7 +542,7 @@ class GaiaWheel {
     zoomActivate() {
         let me = this;
         let zoom = d3.zoom()
-            .scaleExtent([0.125, 8])
+            .scaleExtent([1, 32])
             .on('zoom', function (event) {
                 me.back.attr('transform', event.transform);
             });

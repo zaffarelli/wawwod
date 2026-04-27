@@ -1,8 +1,8 @@
 {% load wod_filters %}
 <tr>
-    <td colspan=2>Physical ({{c.total_physical}})</td>
-    <td colspan=2>Social ({{c.total_social}})</td>
-    <td colspan=2>Mental ({{c.total_mental}})</td>
+    <td colspan=2>{% include "collector/creature/rando.html" with topic="physical" %}Physical ({{c.total_physical}})</td>
+    <td colspan=2>{% include "collector/creature/rando.html" with topic="social" %}Social ({{c.total_social}})</td>
+    <td colspan=2>{% include "collector/creature/rando.html" with topic="mental" %}Mental ({{c.total_mental}})</td>
     <td colspan=2>Topic</td>
 </tr>
 

@@ -24,13 +24,14 @@ class Quaestor:
         if len(self.request) > 0:
             w = self.request.split(self.separator)
             print(w)
-            if 3 == len(w):
-                if "fetch" == w[0].lower():
+            from collector.models.creatures import Creature
+            if "fetch" == w[0].lower():
+                if 3 == len(w):
                     rationale += "Go fetch "
                     if "gifts" == w[1].lower():
                         rationale += "all possible gifts for "
                         if w[2].startswith("_"):
-                            from collector.models.creatures import Creature
+
 
                             rid = w[2]
                             creatures = Creature.objects.filter(rid=rid)
@@ -43,8 +44,18 @@ class Quaestor:
                                 rationale += "a missing creature"
                             else:
                                 rationale += "too many creatures!!!"
-                else:
-                    rationale = "I don't undetstand the request"
+            elif "search" == w[0].lower():
+                if 2 <= len(w):
+                    rationale += "Search for "
+                    pattern = w[1]
+                    data = ""
+                    creatures = Creature.objects.filter(name__icontains=pattern)
+                    if len(creatures)>0:
+                        status = True
+                        for creature in creatures:
+                            data += creature.rid+" "
+            else:
+                rationale = "I don't undertstand the request"
         return status, rationale, data
 
     def gift_for(self, creature):

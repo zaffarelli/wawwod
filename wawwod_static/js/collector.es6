@@ -180,6 +180,7 @@ class WawwodCollector {
             if (action == "quaestor"){
                 param = $("#user_command").val()
                 url = 'ajax/action/' + action + '/' + param.replaceAll(":","_xsepx_") +'/';
+                console.log(url)
             }else{
                 stories = me.d3.getStories();
                 url = 'ajax/action/' + action + '/' + param + "__" + stories + '/';
@@ -238,8 +239,42 @@ class WawwodCollector {
         })
     }
 
+    registerRandomizers(){
+        let me = this
+        $('.randomizer').off().on('click', function (event) {
+            let param = $(this).attr('param')
+            if (param) {
+                let data = param.split('__')
+                let crid = data[0]
+                let topic = data[1]
+                console.log("Randomizer for " + crid + " " + topic)
+                let jsondata = {}
+                let url = 'ajax/randomize/' + data[1] + '/for/' + data[0] + '/'
+                $.ajax({
+                    url: url,
+                    method: 'POST',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    },
+                    dataType: 'json',
+                    data: jsondata,
+                    success: function (answer) {
+                        console.log(answer)
+                        $("#"+data[0]).trigger("click")
+                        me.rebootLinks()
+                    },
+                    error: function (answer) {
+                        console.error(answer)
+                        me.rebootLinks()
+                    },
+                })
+            }
+        })
+    }
+
     registerResend() {
-        let me = this;
+        let me = this
         $('#resend').off().on('click', function (event) {
             let param = $(this).attr('param');
             if (param) {
@@ -563,6 +598,31 @@ class WawwodCollector {
         })
     }
 
+    registerShortcuts(){
+        let me = this
+        $("body").off().on("keyup", (e) => {
+            e.preventDefault()
+            e.stopPropagation()
+            if (e.ctrlKey && e.altKey){
+                console.log("Key:"+e.code, e.key)
+                switch (e.key){
+                    case "d":
+                        $("#toggle_details").trigger("click")
+                        break
+                    case "o":
+                        $("#toggle_options").trigger("click")
+                        break
+                    case "m":
+                        $("#toggle_moonphases").trigger("click")
+                        break
+                    default:
+                        //
+                        break
+                }
+            }
+        })
+    }
+
 
     rebootLinks() {
         let me = this;
@@ -579,6 +639,8 @@ class WawwodCollector {
             me.registerJump();
             me.registerLineLink();
             me.registerSelects();
+            me.registerShortcuts();
+            me.registerRandomizers();
             $('#go').off();
             $('#go').on('click', function (event) {
                 event.preventDefault();

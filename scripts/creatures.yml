@@ -1,0 +1,21 @@
+creatures:
+  common:
+    adventure: "SPITOT SPIDIS"
+    chroncile: "RAMI"
+  list:
+    - name: "Susana Orleane"
+      creature: "mortal"
+      age: 33
+      concept: "Comm. Officer"
+    - name: "Maurice Horton"
+      creature: "mortal"
+      age: 56
+      concept: ""
+    - name: "Leon Grasteiev"
+      creature: "mortal"
+      age: 41
+      concept: "Kitchen Chief"
+    - name: "Edmond Reeds"
+      creature: "mortal"
+      age: 55
+      concept: "Pioneer Press Editor in Chief"

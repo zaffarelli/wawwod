@@ -178,6 +178,20 @@ class Gift(models.Model):
         gifts = cls.objects.filter(**{f"tribe_{t}": True}).filter(level=max_level).order_by("level")
         return gifts
 
+    @classmethod
+    def fetch(cls,level=0,tribe="",auspice=-1,breed=-1):
+        gifts = []
+        if 6 > level > 0:
+            if len(tribe) > 0:
+                from collector.utils.wod_reference import ALL_TRIBES
+                t = ALL_TRIBES.index(tribe)
+                gifts = cls.objects.filter(**{f"tribe_{t}": True}).filter(level=level)
+            if auspice != -1:
+                gifts = cls.objects.filter(**{f"auspice_{auspice}": True}).filter(level=level)
+            if breed != -1:
+                gifts = cls.objects.filter(**{f"breed_{breed}": True}).filter(level=level)
+        return gifts
+
 
 class GiftAdmin(admin.ModelAdmin):
     list_display = [
