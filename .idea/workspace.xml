@@ -5,44 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c5f4ae22-1e7a-419c-ac9f-80da089b72d4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/collector/migrations/0184_remove_creature_extra_freebies.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collector/migrations/0185_alter_creature_reparts.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collector/templates/collector/creature/rando.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/collector/models/creatures.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/models/creatures.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/models/deeds.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/models/deeds.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/models/gifts.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/models/gifts.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/models/totems.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/models/totems.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/static/collector/css/_basics.scss" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/collector/css/_basics.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/static/collector/css/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/collector/css/main.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/collector/static/js/collector.es6" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/js/collector.es6" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/static/js/gaia_wheel.es6" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/js/gaia_wheel.es6" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/templates/collector/creature/abilities_header.html" beforeDir="false" afterPath="$PROJECT_DIR$/collector/templates/collector/creature/abilities_header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/templates/collector/creature/attributes_header.html" beforeDir="false" afterPath="$PROJECT_DIR$/collector/templates/collector/creature/attributes_header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/templates/collector/creature/backgrounds_columns.html" beforeDir="false" afterPath="$PROJECT_DIR$/collector/templates/collector/creature/backgrounds_columns.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/templates/collector/creature/garou.html" beforeDir="false" afterPath="$PROJECT_DIR$/collector/templates/collector/creature/garou.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/templates/collector/creature/mortal_header.html" beforeDir="false" afterPath="$PROJECT_DIR$/collector/templates/collector/creature/mortal_header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/templates/collector/creature/stat_line.html" beforeDir="false" afterPath="$PROJECT_DIR$/collector/templates/collector/creature/stat_line.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/templates/collector/objects/global_menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/collector/templates/collector/objects/global_menu.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/templates/collector/page/current_chronicle_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/collector/templates/collector/page/current_chronicle_details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/utils/data_collection.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/utils/data_collection.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/utils/quaestor.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/utils/quaestor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/views/actions.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/views/actions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/views/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/views/base.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/wawwod.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/wawwod.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/creatures.yml" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/creatures.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/wawwod_tools.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/wawwod_tools.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/uv.lock" beforeDir="false" afterPath="$PROJECT_DIR$/uv.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wawwod.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod_static/collector/css/_basics.scss" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/collector/css/_basics.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod_static/collector/css/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/collector/css/main.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod_static/js/adventure_sheet.es6" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/js/adventure_sheet.es6" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod_static/js/collector.es6" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/js/collector.es6" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod_static/js/cross_over_sheet.es6" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/js/cross_over_sheet.es6" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod_static/js/gaia_wheel.es6" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/js/gaia_wheel.es6" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod_static/js/wawwod_sheet.es6" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/js/wawwod_sheet.es6" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -54389,3 +54389,37 @@ Traceback (most recent call last):
                           ^^^^^^^^^^
 NameError: name 'as_auspice' is not defined
 [26/04 12:40:11] "GET /ajax/collector_action/experiment/ HTTP/1.1" 500 78067
+[27/04 14:20:11] Internal Server Error: /ajax/randomize/skills/for/_jonathan_vicars/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/actions.py", line 404, in randomize_for
+    creature.randomize_abilities(topic=topic)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 1514, in randomize_abilities
+    pieces = parts[1].split("_")
+             ~~~~~^^^
+IndexError: list index out of range
+[27/04 14:20:11] "POST /ajax/randomize/skills/for/_jonathan_vicars/ HTTP/1.1" 500 21353
+[27/04 14:20:13] Internal Server Error: /ajax/randomize/talents/for/_jonathan_vicars/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/actions.py", line 402, in randomize_for
+    creature.randomize_abilities(topic=topic)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 1514, in randomize_abilities
+    pieces = parts[1].split("_")
+             ~~~~~^^^
+IndexError: list index out of range
+[27/04 14:20:13] "POST /ajax/randomize/talents/for/_jonathan_vicars/ HTTP/1.1" 500 21357
+[27/04 18:01:07] "GET /static/collector/css?eb96f3bdb36b HTTP/1.1" 404 1860
+[27/04 18:02:02] "GET /static/collector/css?eb96f3bdb36b HTTP/1.1" 404 1860

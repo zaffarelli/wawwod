@@ -811,8 +811,10 @@ class WawwodCollector {
                         dataType: 'json',
                         data: keys_set,
                         success: function (answer) {
-                            $('td#' + target).html(answer.new_value);
-                            $('td#' + keys[0] + '_freebies').html(answer.freebies);
+                            // $('td#' + target).html(answer.new_value)
+                            // $('td#' + keys[0] + '_freebies').html(answer.freebies)
+                            $("#"+keys[0]).trigger("click")
+                            me.rebootLinks()
                         },
                         error: function (answer) {
                             $('td#' + target).html(answer);

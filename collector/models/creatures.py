@@ -1010,8 +1010,35 @@ class Creature(models.Model):
     def update_rid(self):
         self.rid = toRID(self.name)
 
+    def fix_reparts(self):
+        parts = self.reparts.split("__")
+        if len(parts) != 2:
+            pieces = self.reparts.split("_")
+            if len(pieces)==6:
+                self.reparts = f"{pieces[0]}_{pieces[1]}_{pieces[2]}__{pieces[3]}_{pieces[4]}_{pieces[5]}"
+            else:
+                x = STATS_TEMPLATES[self.creature]["attributes"]+"//"+STATS_TEMPLATES[self.creature]["abilities"]
+                self.reparts = x.replace("/","_")
+
+    def sanitize_traits(self):
+        if self.creature == "garou":
+            traits = []
+            for t in range(16):
+                trait = getattr(self,f"trait{t}")
+                if len(trait)>0:
+                    traits.append(trait)
+            for t in range(16):
+                if t<len(traits):
+                    setattr(self, f"trait{t}", traits[t])
+                else:
+                    setattr(self, f"trait{t}", "")
+            for t in range(16):
+                trait = getattr(self, f"trait{t}")
+                print(trait)
+
     def fix(self):
         self.challenge = ""
+        self.fix_reparts()
         logger.info("*** fix *******************************************************")
         if self.garou_rank is None:
             self.garou_rank = 0
@@ -1140,7 +1167,7 @@ class Creature(models.Model):
             # self.freebies = -((3 + 3 + 3 + 9) * 5 + (7 + 5 + 3) * 2 + 3 + 2 + 15)
             self.freebies -= from_stats(self.creature, "willpower")
             self.fix_mortal()
-
+        self.sanitize_traits()
         self.expectedfreebies += int(self.extra)
         # self.challenge += f"/ef:{self.expectedfreebies:3}"
         self.summary = f"Freebies: {self.freebies}"
@@ -1511,8 +1538,12 @@ class Creature(models.Model):
 
     def randomize_abilities(self,topic=""):
         parts = self.reparts.split("__")
-        pieces = parts[1].split("_")
-        logger.warning(f" Parts: {parts} Pieces: {pieces}")
+        if len(parts)==2:
+            pieces = parts[1].split("_")
+            logger.warning(f" Parts: {parts} Pieces: {pieces}")
+        else:
+            logger.error(f"Bad reparts: {self.reparts} ! Cannot Randomize abilities.")
+            return
 
 
         #abilities_points = STATS_TEMPLATES[self.creature]["abilities"].split("/")
