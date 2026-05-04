@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib import admin
-from storytelling.models.stories import Story
+# from storytelling.models.storyboards import StoryBoard
 from collector.utils.helper import json_default
 import json
 import logging

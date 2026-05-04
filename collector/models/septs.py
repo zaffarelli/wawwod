@@ -227,6 +227,7 @@ class Sept(models.Model):
                 "kinfolks": garou.value_of("kinfolk"),
                 "condition": garou.condition,
                 "player": garou.player,
+                "balanced": garou.status != "UNBALANCED",
                 "position": garou.community_job,
                 "short_desc": garou.short_desc,
                 "rank": garou.rank,

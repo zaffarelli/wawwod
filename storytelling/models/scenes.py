@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib import admin
-from storytelling.models.stories import Story
+# from storytelling.models.storyboards import StoryBoard
 from storytelling.models.places import Place
 from datetime import datetime, timedelta
 from collector.utils.helper import json_default
@@ -16,7 +16,7 @@ class Scene(models.Model):
 
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=128, default="")
-    story = models.ForeignKey(Story, on_delete=models.SET_NULL, null=True)
+    # story = models.ForeignKey(StoryBoard, on_delete=models.SET_NULL, null=True)
     place = models.ForeignKey(Place, on_delete=models.SET_NULL, null=True)
     time_offset_hours = models.IntegerField(default=-1, blank=True)
     time_offset_custom = models.CharField(default="", max_length=32, blank=True)
@@ -252,6 +252,7 @@ class ExternalLinkInline(admin.TabularInline):
 
 class SceneAdmin(admin.ModelAdmin):
     list_display = [
+        "id",
         "name",
         "place",
         "timeline",

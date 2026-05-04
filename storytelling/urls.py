@@ -1,6 +1,6 @@
 from django.urls import re_path
 from storytelling.views.base import (
-    display_pdf_story,
+    # display_pdf_story,
     display_storytelling,
     action_timeslip,
     update_scene,

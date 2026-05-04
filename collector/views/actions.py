@@ -192,40 +192,40 @@ def deed_record_select(request):
     return JsonResponse(answer)
 
 def experiment(request):
-    # from collector.models.archetypes import Archetype
-    # Archetype.reid()
-    from collector.templatetags.wod_filters import as_auspice
-    from collector.models.gifts import Gift
-    for l in range(5):
-        print(f"Level: {l+1}")
-        for b in range(3):
-            gifts = Gift.fetch(level=l+1,breed=b)
-            cnt = len(gifts)
-            cnttext = f"[count:{cnt}]" if cnt != 0 else "!!!!!"
-            print(f"  * Breed:   {as_breed(b):30} {cnttext}")
-            print("    ", end="")
-            for gift in gifts:
-                print(f"[{gift.pretty_str}]",end="")
-            print("\n")
-        for a in range(5):
-            gifts = Gift.fetch(level=l+1,auspice=a)
-            cnt = len(gifts)
-            cnttext = f"[count:{cnt}]" if cnt != 0 else "!!!!!"
-            print(f"  * Auspice: {as_auspice(a):30} {cnttext}")
-            print("    ",end="")
-            for gift in gifts:
-                print(f"[{gift.pretty_str}]",end="")
-            print("\n")
-        for t in ALL_TRIBES:
-            gifts = Gift.fetch(level=l+1,tribe=t)
-            cnt = len(gifts)
-            cnttext = f"[count:{cnt}]" if cnt != 0 else "!!!!!"
-            print(f"  * Tribe: {t:30} {cnttext}")
-            print("    ",end="")
-            for gift in gifts:
-                print(f"[{gift.pretty_str}]",end="")
-            print("\n")
-
+    from storytelling.models.stories import Story
+    Story.reid()
+    # from collector.templatetags.wod_filters import as_auspice
+    # from collector.models.gifts import Gift
+    # for l in range(5):
+    #     print(f"Level: {l+1}")
+    #     for b in range(3):
+    #         gifts = Gift.fetch(level=l+1,breed=b)
+    #         cnt = len(gifts)
+    #         cnttext = f"[count:{cnt}]" if cnt != 0 else "!!!!!"
+    #         print(f"  * Breed:   {as_breed(b):30} {cnttext}")
+    #         print("    ", end="")
+    #         for gift in gifts:
+    #             print(f"[{gift.pretty_str}]",end="")
+    #         print("\n")
+    #     for a in range(5):
+    #         gifts = Gift.fetch(level=l+1,auspice=a)
+    #         cnt = len(gifts)
+    #         cnttext = f"[count:{cnt}]" if cnt != 0 else "!!!!!"
+    #         print(f"  * Auspice: {as_auspice(a):30} {cnttext}")
+    #         print("    ",end="")
+    #         for gift in gifts:
+    #             print(f"[{gift.pretty_str}]",end="")
+    #         print("\n")
+    #     for t in ALL_TRIBES:
+    #         gifts = Gift.fetch(level=l+1,tribe=t)
+    #         cnt = len(gifts)
+    #         cnttext = f"[count:{cnt}]" if cnt != 0 else "!!!!!"
+    #         print(f"  * Tribe: {t:30} {cnttext}")
+    #         print("    ",end="")
+    #         for gift in gifts:
+    #             print(f"[{gift.pretty_str}]",end="")
+    #         print("\n")
+    #
 
     return HttpResponse(status=204)
 

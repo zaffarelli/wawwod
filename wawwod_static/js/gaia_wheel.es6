@@ -31,9 +31,9 @@ class GaiaWheel {
         let re = new RegExp("\d+");
         me.width = parseInt($(me.parent).css("width"));
         me.height = me.width;
-        me.step_x = me.width / 100;
-        me.step_y = me.height / 100;
-        me.radius = 800;
+        me.step_x = me.width / 10
+        me.step_y = me.height / 10
+        me.radius = me.step_x*6
         me.max_gauge = 25;
         me.scales_stroke = "#999";
         me.scales_stroke_special = "#666";
@@ -385,7 +385,7 @@ class GaiaWheel {
             })
             .style("text-anchor", 'middle')
             .style("font-family", 'Ruda')
-            .style("font-size", '6pt')
+            .style("font-size", '10pt')
             .style("fill", '#CCC')
             .style("stroke", '#111')
             .style("stroke-width", '0.125pt')
@@ -501,7 +501,7 @@ class GaiaWheel {
                 return "translate(" + sector_arc.centroid(d) + ")";
             })
             .attr('text-anchor', "middle")
-            .attr('font-size', "10pt")
+            .attr('font-size', "16pt")
             .attr('font-family', function (d) {
                 return d.data.font;
             })
@@ -542,7 +542,7 @@ class GaiaWheel {
     zoomActivate() {
         let me = this;
         let zoom = d3.zoom()
-            .scaleExtent([1, 32])
+            .scaleExtent([1, 16])
             .on('zoom', function (event) {
                 me.back.attr('transform', event.transform);
             });
