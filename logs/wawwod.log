@@ -57637,3 +57637,264 @@ Traceback (most recent call last):
 django.db.utils.OperationalError: no such table: storytelling_storyboard
 [04/05 07:44:05] "GET /admin/storytelling/place/ HTTP/1.1" 500 227427
 [05/05 00:40:52] "GET /static/collector/css?664d0c690718 HTTP/1.1" 404 1860
+[05/05 00:52:07] Internal Server Error: /ajax/display/storytelling/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/storytelling/views/base.py", line 48, in display_storytelling
+    answer = {"data": data_json, "settings": settings_json}
+                      ^^^^^^^^^
+NameError: name 'data_json' is not defined
+[05/05 00:52:07] "GET /ajax/display/storytelling/ HTTP/1.1" 500 76967
+[05/05 00:53:16] Internal Server Error: /admin/storytelling/place/add/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/contrib/admin/options.py", line 711, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/contrib/admin/sites.py", line 247, in inner
+    return view(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/contrib/admin/options.py", line 1943, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/contrib/admin/options.py", line 1802, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/contrib/admin/options.py", line 1859, in _changeform_view
+    self.log_addition(request, new_object, change_message)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/contrib/admin/options.py", line 944, in log_addition
+    return LogEntry.objects.log_actions(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        user_id=request.user.pk,
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        single_object=True,
+        ^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/contrib/admin/models.py", line 40, in log_actions
+    object_repr=str(obj)[:200],
+                ~~~^^^^^
+  File "/home/zaffarelli/Projects/wawwod/storytelling/models/places.py", line 23, in __str__
+    st = self.story.acronym
+         ^^^^^^^^^^^^^^^^^^
+AttributeError: 'Story' object has no attribute 'acronym'
+[05/05 00:53:16] "POST /admin/storytelling/place/add/ HTTP/1.1" 500 146146
+[05/05 00:56:44] Internal Server Error: /admin/storytelling/scene/add/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/contrib/admin/options.py", line 711, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/contrib/admin/sites.py", line 247, in inner
+    return view(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/contrib/admin/options.py", line 1943, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/contrib/admin/options.py", line 1802, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/contrib/admin/options.py", line 1859, in _changeform_view
+    self.log_addition(request, new_object, change_message)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/contrib/admin/options.py", line 944, in log_addition
+    return LogEntry.objects.log_actions(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        user_id=request.user.pk,
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        single_object=True,
+        ^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/contrib/admin/models.py", line 40, in log_actions
+    object_repr=str(obj)[:200],
+                ~~~^^^^^
+  File "/home/zaffarelli/Projects/wawwod/storytelling/models/scenes.py", line 78, in __str__
+    st = self.story.acronym
+         ^^^^^^^^^^^^^^^^^^
+AttributeError: 'Story' object has no attribute 'acronym'
+[05/05 00:56:44] "POST /admin/storytelling/scene/add/ HTTP/1.1" 500 162966
+[05/05 08:37:11] "GET /static/collector/css?664d0c690718 HTTP/1.1" 404 1860
+[05/05 08:38:27] "GET /static/collector/css?664d0c690718 HTTP/1.1" 404 1860
+[05/05 08:39:36] "GET /static/collector/css?664d0c690718 HTTP/1.1" 404 1860
+[05/05 08:39:50] "GET /static/collector/css?664d0c690718 HTTP/1.1" 404 1860
+[05/05 08:40:01] "GET /static/collector/css?664d0c690718 HTTP/1.1" 404 1860
+[05/05 08:40:12] "GET /static/collector/css?664d0c690718 HTTP/1.1" 404 1860
+[05/05 08:42:23] "GET /static/collector/css?664d0c690718 HTTP/1.1" 404 1860
+[05/05 09:11:24] "GET /static/collector/css?664d0c690718 HTTP/1.1" 404 1860
+[05/05 09:13:51] "GET /static/collector/css?664d0c690718 HTTP/1.1" 404 1860
+[05/05 09:14:43] "GET /static/collector/css?664d0c690718 HTTP/1.1" 404 1860
+[05/05 09:20:20] "GET /static/collector/css?664d0c690718 HTTP/1.1" 404 1860
+[05/05 09:20:36] "GET /static/collector/css?664d0c690718 HTTP/1.1" 404 1860
+[05/05 09:37:40] "GET /static/collector/css?664d0c690718 HTTP/1.1" 404 1860
+[05/05 09:55:35] Internal Server Error: /admin/collector/creature/1119/change/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/contrib/admin/options.py", line 711, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/contrib/admin/sites.py", line 247, in inner
+    return view(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/contrib/admin/options.py", line 1946, in change_view
+    return self.changeform_view(request, object_id, form_url, extra_context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/contrib/admin/options.py", line 1802, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/contrib/admin/options.py", line 1853, in _changeform_view
+    self.save_model(request, new_object, form, not add)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/contrib/admin/options.py", line 1273, in save_model
+    obj.save()
+    ~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/base.py", line 874, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/base.py", line 946, in save_base
+    pre_save.send(
+    ~~~~~~~~~~~~~^
+        sender=origin,
+        ^^^^^^^^^^^^^^
+    ...<3 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/dispatch/dispatcher.py", line 209, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/zaffarelli/Projects/wawwod/collector/signals/creatures.py", line 19, in update_creature
+    instance.fix()
+    ~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 1145, in fix
+    self.fix_kinfolk()
+    ~~~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 733, in fix_kinfolk
+    math.floor(self.true_age / 10)-1
+               ^^^^^^^^^^^^^
+AttributeError: 'Creature' object has no attribute 'true_age'. Did you mean: 'trueage'?
+[05/05 09:55:35] "POST /admin/collector/creature/1119/change/?_changelist_filters=q%3Djoel%26chronicle%3DRAMI HTTP/1.1" 500 206348
+[05/05 09:56:35] Internal Server Error: /ajax/editable/userinput/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/zaffarelli/Projects/wawwod/collector/views/base.py", line 283, in userinput
+    item.save()
+    ~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/base.py", line 874, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/base.py", line 946, in save_base
+    pre_save.send(
+    ~~~~~~~~~~~~~^
+        sender=origin,
+        ^^^^^^^^^^^^^^
+    ...<3 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/dispatch/dispatcher.py", line 209, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/home/zaffarelli/Projects/wawwod/collector/signals/creatures.py", line 19, in update_creature
+    instance.fix()
+    ~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 1145, in fix
+    self.fix_kinfolk()
+    ~~~~~~~~~~~~~~~~^^
+  File "/home/zaffarelli/Projects/wawwod/collector/models/creatures.py", line 733, in fix_kinfolk
+    math.floor(self.trueage / 10)-1
+               ~~~~~~~~~~~~~^~~~
+TypeError: unsupported operand type(s) for /: 'str' and 'int'
+[05/05 09:56:35] "POST /ajax/editable/userinput/ HTTP/1.1" 500 22126
+[05/05 11:28:15] "GET /static/collector/css?664d0c690718 HTTP/1.1" 404 1860
+[05/05 17:18:29] "GET /static/collector/css?664d0c690718 HTTP/1.1" 404 1860
+[05/05 17:21:12] Not Found: /ajax/action/undefined/84__description__/
+[05/05 17:21:12] "GET /ajax/action/undefined/84__description__/ HTTP/1.1" 404 18828
+[05/05 17:27:06] Not Found: /ajax/action/undefined/80__description__/
+[05/05 17:27:06] "GET /ajax/action/undefined/80__description__/ HTTP/1.1" 404 18828
+[05/05 17:38:21] "GET /static/collector/css?664d0c690718 HTTP/1.1" 404 1860
+[05/05 17:42:14] "GET /static/collector/css?664d0c690718 HTTP/1.1" 404 1860
+[05/05 17:43:13] "GET /static/collector/css?664d0c690718 HTTP/1.1" 404 1860
+[05/05 17:46:11] "GET /static/collector/css?664d0c690718 HTTP/1.1" 404 1860
+[05/05 17:47:07] "GET /static/collector/css?664d0c690718 HTTP/1.1" 404 1860
+[05/05 17:55:43] Not Found: /ajax/action/undefined/80__description__/
+[05/05 17:55:43] "GET /ajax/action/undefined/80__description__/ HTTP/1.1" 404 18828
+[05/05 17:56:35] "GET /static/collector/css?664d0c690718 HTTP/1.1" 404 1860
+[05/05 17:57:35] "GET /static/collector/css?664d0c690718 HTTP/1.1" 404 1860
+[05/05 17:59:31] "GET /static/collector/css?664d0c690718 HTTP/1.1" 404 1860
+[05/05 18:00:11] "GET /static/collector/css?664d0c690718 HTTP/1.1" 404 1860
+[05/05 18:00:31] "GET /static/collector/css?664d0c690718 HTTP/1.1" 404 1860
+[05/05 18:01:16] "GET /static/collector/css?664d0c690718 HTTP/1.1" 404 1860
+[06/05 00:13:43] "GET /static/collector/css?664d0c690718 HTTP/1.1" 404 1860
+[06/05 00:16:18] "GET /static/collector/css?664d0c690718 HTTP/1.1" 404 1860
+[06/05 00:17:48] "GET /static/collector/css?664d0c690718 HTTP/1.1" 404 1860
+[06/05 00:21:28] "GET /static/collector/css?664d0c690718 HTTP/1.1" 404 1860
+[06/05 00:22:22] "GET /static/collector/css?664d0c690718 HTTP/1.1" 404 1860
+[06/05 00:22:57] "GET /static/collector/css?664d0c690718 HTTP/1.1" 404 1860

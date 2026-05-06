@@ -5,31 +5,50 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c5f4ae22-1e7a-419c-ac9f-80da089b72d4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/storytelling/migrations/0087_remove_place_story_remove_scene_story_delete_story.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storytelling/models/xxxstoryboards.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backup/20260506/adventures.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backup/20260506/archetypes.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backup/20260506/backgrounds.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backup/20260506/chronicles.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backup/20260506/cities.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backup/20260506/creatures.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backup/20260506/deeds.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backup/20260506/disciplines.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backup/20260506/districts.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backup/20260506/gifts.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backup/20260506/hotspots.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backup/20260506/places.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backup/20260506/rites.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backup/20260506/scenes.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backup/20260506/seasons.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backup/20260506/septs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backup/20260506/stories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storytelling/migrations/0088_story.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storytelling/migrations/0089_scene_story.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storytelling/migrations/0090_place_story.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storytelling/migrations/0091_remove_story_chronicle_story_adventure.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storytelling/migrations/0092_remove_story_acronym.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storytelling/migrations/0093_scene_hours_duration_scene_is_optional.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storytelling/static/storytelling/fonts/AtkinsonHyperlegible-Bold.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storytelling/static/storytelling/fonts/AtkinsonHyperlegible-BoldItalic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storytelling/static/storytelling/fonts/AtkinsonHyperlegible-Italic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storytelling/static/storytelling/fonts/AtkinsonHyperlegible-Regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wawwod_media/pdf/results/story_storyboard: spidis.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/models/septs.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/models/septs.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/static/collector/css/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/collector/css/main.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/static/js/gaia_wheel.es6" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/js/gaia_wheel.es6" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/static/js/sept.es6" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/js/sept.es6" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/templates/registration/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/collector/templates/registration/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/views/actions.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/views/actions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/models/creatures.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/models/creatures.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/templates/collector/creature/mortal_header.html" beforeDir="false" afterPath="$PROJECT_DIR$/collector/templates/collector/creature/mortal_header.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/wawwod.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/wawwod.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storytelling/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/storytelling/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storytelling/migrations/0087_alter_story_id.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storytelling/models/hotspots.py" beforeDir="false" afterPath="$PROJECT_DIR$/storytelling/models/hotspots.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storytelling/models/places.py" beforeDir="false" afterPath="$PROJECT_DIR$/storytelling/models/places.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storytelling/models/scenes.py" beforeDir="false" afterPath="$PROJECT_DIR$/storytelling/models/scenes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storytelling/models/stories.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storytelling/models/xxxstoryboards.py" beforeDir="false" afterPath="$PROJECT_DIR$/storytelling/models/stories.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storytelling/static/js/storytelling.es6" beforeDir="false" afterPath="$PROJECT_DIR$/storytelling/static/js/storytelling.es6" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storytelling/templates/storytelling/pdf/story.html" beforeDir="false" afterPath="$PROJECT_DIR$/storytelling/templates/storytelling/pdf/story.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storytelling/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/storytelling/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storytelling/views/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/storytelling/views/base.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/uv.lock" beforeDir="false" afterPath="$PROJECT_DIR$/uv.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wawwod.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod_media/books/chronicle_book_RAMI.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/books/chronicle_book_RAMI.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod_static/collector/css/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/collector/css/main.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod_static/js/collector.es6" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/js/collector.es6" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod_static/js/gaia_wheel.es6" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/js/gaia_wheel.es6" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_static/js/storytelling.es6" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_static/js/storytelling.es6" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

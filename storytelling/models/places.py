@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib import admin
-# from storytelling.models.storyboards import StoryBoard
+from storytelling.models.stories import Story
 from collector.utils.helper import json_default
 import json
 import logging
@@ -12,7 +12,7 @@ class Place(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=128, default="")
     acronym = models.CharField(max_length=24, default="")
-    # story = models.ForeignKey(StoryBoard, on_delete=models.SET_NULL, null=True)
+    story = models.ForeignKey(Story, on_delete=models.SET_NULL, null=True)
     description = models.TextField(max_length=1024, blank=True, default="")
     special_rules = models.TextField(max_length=1024, blank=True, default="")
     importance = models.PositiveIntegerField(default=0, blank=True)
@@ -20,7 +20,7 @@ class Place(models.Model):
     def __str__(self):
         st = ""
         if self.story is not None:
-            st = self.story.acronym
+            st = self.name
         return f"{self.acronym} [{st}]"
 
     def toJSON(self):

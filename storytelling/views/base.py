@@ -6,7 +6,7 @@ from io import BytesIO
 
 from collector.models.adventures import Adventure
 from collector.utils.wod_reference import FONTSET
-# from storytelling.models.storyboards import StoryBoard
+from storytelling.models.stories import Story
 from storytelling.models.scenes import Scene
 from collector.utils.helper import json_default, is_ajax
 from django.views.decorators.csrf import csrf_exempt
@@ -15,37 +15,38 @@ import json
 
 
 def display_storytelling(request):
-#     all = StoryBoard.objects.all()
-#     all_stories = []
-#     settings = {}
-#     selected_story = None
-#     for s in all:
-#         if s.is_current:
-#             all_stories.append(s.toJSON())
-#             selected_story = s
-#     settings_json = json.dumps(settings, default=json_default, sort_keys=True, indent=4)
-#     places_json = json.dumps(
-#         selected_story.all_places, default=json_default, sort_keys=True, indent=4
-#     )
-#     scenes_json = json.dumps(
-#         selected_story.all_scenes, default=json_default, sort_keys=True, indent=4
-#     )
-#     links_json = json.dumps(
-#         selected_story.all_links, default=json_default, sort_keys=True, indent=4
-#     )
-#     timelines_json = json.dumps(
-#         selected_story.all_timelines, default=json_default, sort_keys=True, indent=4
-#     )
-#     data = {
-#         "story": selected_story.toJSON(),
-#         "end_time": selected_story.story_end_time,
-#         "places": places_json,
-#         "scenes": scenes_json,
-#         "links": links_json,
-#         "timelines": timelines_json,
-#     }
-#     data_json = json.dumps(data, default=json_default, sort_keys=True, indent=4)
+    all = Story.objects.all()
+    all_stories = []
+    settings = {}
+    selected_story = None
+    for s in all:
+        if s.is_current:
+            all_stories.append(s.toJSON())
+            selected_story = s
+    settings_json = json.dumps(settings, default=json_default, sort_keys=True, indent=4)
+    places_json = json.dumps(
+        selected_story.all_places, default=json_default, sort_keys=True, indent=4
+    )
+    scenes_json = json.dumps(
+        selected_story.all_scenes, default=json_default, sort_keys=True, indent=4
+    )
+    links_json = json.dumps(
+        selected_story.all_links, default=json_default, sort_keys=True, indent=4
+    )
+    timelines_json = json.dumps(
+        selected_story.all_timelines, default=json_default, sort_keys=True, indent=4
+    )
+    data = {
+        "story": selected_story.toJSON(),
+        "end_time": selected_story.story_end_time,
+        "places": places_json,
+        "scenes": scenes_json,
+        "links": links_json,
+        "timelines": timelines_json,
+    }
+    data_json = json.dumps(data, default=json_default, sort_keys=True, indent=4)
     answer = {"data": data_json, "settings": settings_json}
+    display_pdf_story(request)
     return JsonResponse(answer)
 
 

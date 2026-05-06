@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib import admin
-# from storytelling.models.storyboards import StoryBoard
+from storytelling.models.stories import Story
 from storytelling.models.places import Place
 from datetime import datetime, timedelta
 from collector.utils.helper import json_default
@@ -16,7 +16,7 @@ class Scene(models.Model):
 
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=128, default="")
-    # story = models.ForeignKey(StoryBoard, on_delete=models.SET_NULL, null=True)
+    story = models.ForeignKey(Story, on_delete=models.SET_NULL, null=True)
     place = models.ForeignKey(Place, on_delete=models.SET_NULL, null=True)
     time_offset_hours = models.IntegerField(default=-1, blank=True)
     time_offset_custom = models.CharField(default="", max_length=32, blank=True)
@@ -35,10 +35,14 @@ class Scene(models.Model):
     special = models.TextField(max_length=2048, blank=True, default="")
     cast = models.TextField(max_length=1024, blank=True, default="")
     # era = models.CharField(max_length=16, blank=True, default='2019')
+
+    hours_duration = models.PositiveIntegerField(default=1, blank=True)
+
     is_event = models.BooleanField(default=False)
     is_downtime = models.BooleanField(default=False)
     is_briefing = models.BooleanField(default=False)
     is_debriefing = models.BooleanField(default=False)
+    is_optional = models.BooleanField(default=False)
 
     def fix(self):
         if self.time_offset_hours >= 0:
@@ -75,8 +79,8 @@ class Scene(models.Model):
     def __str__(self):
         st = ""
         if self.story is not None:
-            st = self.story.acronym
-        return f"{self.name}"
+            st = self.story.name
+        return f"{self.name} ({st})"
 
     @property
     def timeline_name(self):

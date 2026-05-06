@@ -722,10 +722,15 @@ class Creature(models.Model):
         # print(f"Tribe: {self.family:30} Sex: {self.sex}")
         self.expectedfreebies = self.freebies_per_mortal_age
         self.display_pole = self.group+"__"+self.groupspec
+        # self.display_gauge = (
+        #
+        #         self.value_of("renown")
+        #         + self.value_of("status")
+        #         + self.value_of("pure-breed")
+        # )
+
         self.display_gauge = (
-                self.value_of("renown")
-                + self.value_of("status")
-                + self.value_of("pure-breed")
+            math.floor(int(self.trueage) / 10)-1
         )
 
     @property

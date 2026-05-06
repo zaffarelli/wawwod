@@ -220,7 +220,7 @@ class Storytelling {
             .attr('dy', 10)
             .style("text-anchor", 'end')
             .style("font-family", me.base_font)
-            .style("font-size", me.medium_font_size + 'px')
+            .style("font-size", me.small_font_size + 'px')
             .style("fill", me.draw_fill)
             .style("stroke", me.draw_stroke)
             .style("stroke-width", '0.5pt')
@@ -240,12 +240,12 @@ class Storytelling {
             .attr('dy', 40)
             .style("text-anchor", 'end')
             .style("font-family", me.base_font)
-            .style("font-size", me.small_font_size + 'px')
+            .style("font-size", me.medium_font_size + 'px')
             .style("fill", me.draw_fill)
             .style("stroke", me.draw_stroke)
             .style("stroke-width", '0.5pt')
             .text(function (d) {
-                return me.story.dday.day + d + "/" + me.story.dday.month + "/" + me.story.dday.year;
+                return me.story.dday.day + d + "." + me.story.dday.month + "." + me.story.dday.year;
             })
         ;
     }
@@ -290,12 +290,12 @@ class Storytelling {
             .attr('dy', -40)
             .style("text-anchor", 'start')
             .style("font-family", me.base_font)
-            .style("font-size", me.medium_font_size + 'px')
+            .style("font-size", me.small_font_size + 'px')
             .style("fill", me.draw_fill)
             .style("stroke", me.draw_stroke)
             .style("stroke-width", '0.5pt')
             .text(function (d) {
-                return d['acronym'];
+                return "("+d['acronym']+")"
             })
         ;
         place_in.append('text')
@@ -306,10 +306,10 @@ class Storytelling {
             .attr('y', function (d) {
                 return me.p_start_y + 0;
             })
-            .attr('dy', -20)
+            .attr('dy', -10)
             .style("text-anchor", 'start')
             .style("font-family", me.base_font)
-            .style("font-size", me.small_font_size + 'px')
+            .style("font-size", me.medium_font_size + 'px')
             .style("fill", me.draw_fill)
             .style("stroke", me.draw_stroke)
             .style("stroke-width", '0.5pt')
@@ -574,7 +574,7 @@ class Storytelling {
                 return d.y;
             })
             .attr('width', 15 )
-            .attr('height', me.scene_height)
+            .attr('height', (d) => {return d.hours_duration * me.hour})
             .style('stroke', "#CCC")
             .style('stroke-width', "1pt")
             .attr('fill-opacity', 0.90)
@@ -868,7 +868,8 @@ class Storytelling {
                     timeZone: 'Europe/Berlin'
                 }
                 let new_d = Intl.DateTimeFormat('de-DE', options).format(res);
-                return new_d + " [Sc:" + String(d.id).padStart(4, '0') + "]";
+                let dur = " (+"+d.hours_duration + " hrs)"
+                return new_d + dur + " [Sc:" + String(d.id).padStart(4, '0') + "]";
             })
         ;
 
