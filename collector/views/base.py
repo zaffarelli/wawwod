@@ -446,14 +446,14 @@ def add_new_ghoul(request, slug=None):
 
 
 def character_for(slug, option="", idx=-1):
-    print("hello: ", slug)
+    # print("hello: ", slug)
     c = None
     cs = Creature.objects.filter(rid=slug.strip())
     if len(cs) > 0:
         c = cs.first()
     else:
         print("oops,", slug)
-    print("good bye", cs)
+    # print("good bye", cs)
     if c:
         if option:
             alt_name = c.name + " (" + option + ")"
@@ -480,8 +480,8 @@ def character_for(slug, option="", idx=-1):
         k["background_notes"] = c.background_notes()
         k["rite_notes"] = c.rite_notes()
         k["ritualistic_discipline"] = c.ritualistic_discipline
-        print("Rites Notes")
-        print(k["rite_notes"])
+        # print("Rites Notes")
+        # print(k["rite_notes"])
         k["timeline"] = c.timeline()
         k["others"] = c.others()
         k["spe"] = c.get_specialities()
@@ -492,7 +492,7 @@ def character_for(slug, option="", idx=-1):
             k["srs"] = c.specialities_rationale
         tn = c.traits_notes()
         k["traits_notes"] = tn
-        print(tn)
+        # print(tn)
         chronicle = Chronicle.current()
         if chronicle:
             k["chronicle_name"] = chronicle.name

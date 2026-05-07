@@ -106,12 +106,11 @@ def as_discipline2(stack, x_field=""):
 @register.filter(name="as_stat_name")
 def as_stat_name(stack, x_field=""):
     x_creature, x_id = stack
-    try:
+    if int(x_id)<len(STATS_NAMES[str(x_creature)][x_field + "s"]):
         value = STATS_NAMES[str(x_creature)][x_field + "s"][int(x_id)]
         return value.title()
-    except:
-        print(x_creature, x_id, x_field, "NOT FOUND")
-        return ""
+    return ''
+
 
 
 @register.filter(name="as_editable_updown")

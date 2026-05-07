@@ -446,7 +446,7 @@ class Storytelling {
         me.crossline((me.width / me.stepx) - 1, 1, (me.height / me.stepy) - 1);
         me.midline(2, 1, (me.width / me.stepx) - 1);
         me.midline((me.height / me.stepy) - 1, 1, (me.width / me.stepx) - 1);
-        me.decorationText(1.25, 1.75, 0, 'start', me.title_font, me.large_font_size, me.draw_fill, me.draw_stroke, 0.5, "Story: " + me.story['name'], me.back);
+        me.decorationText(1.25, 1.75, 0, 'start', me.title_font, me.large_font_size, me.draw_fill, me.draw_stroke, 0.5, me.story['name'], me.back);
         me.decorationText((me.width - me.stepx * 1.25) / me.stepx, 1.75, 0, 'end', me.title_font, me.large_font_size, me.draw_fill, me.draw_stroke, 0.5, "Chronicle: " + me.story['chronicle_id'], me.back);
         // Sheet content
         me.story_map = me.back.append('g')

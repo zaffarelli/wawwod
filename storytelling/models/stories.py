@@ -128,7 +128,12 @@ class Story(models.Model):
         return list
 
     def toJSON(self):
+        from collector.models.adventures import Adventure
         jstr = json.dumps(self, default=json_default, sort_keys=True, indent=4)
+        kstr = json.loads(jstr)
+        adventure = Adventure.objects.filter(acronym=self.adventure).first()
+        kstr["chronicle_id"] = adventure.chronicle
+        jstr = json.dumps(kstr, sort_keys=True, indent=4)
         return jstr
 
     def __str__(self):

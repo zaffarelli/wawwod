@@ -27,6 +27,10 @@ import random
 
 logger = logging.Logger(__name__)
 
+MAX_TRAITS = 16
+MAX_MERITS = 5
+MAX_ADVANTAGES = 12
+
 
 class Creature(models.Model):
     class Meta:
@@ -641,16 +645,6 @@ class Creature(models.Model):
                 x = val
         return x
 
-    def fix_changeling(self):
-        if self.willpower < 4:
-            self.willpower = 4
-        if self.glamour < 4:
-            self.glamour = 4
-        if self.banality < 3:
-            self.banality = 3
-
-    def fix_wraith(self):
-        pass
 
     def fix_ghoul(self):
         self.display_gauge = 2
@@ -708,30 +702,15 @@ class Creature(models.Model):
 
     def fix_kinfolk(self):
         from collector.utils.wod_reference import ALL_TRIBES
-
         self.trueage = self.age
+        DISCARDED_TRIBES = ["Croatans", "Bunyips", "White Howlers"]
+        TRIBES = [tribe for tribe in ALL_TRIBES if tribe not in DISCARDED_TRIBES]
         if len(self.family) == 0:
-            while True:
-                self.family = random.choice(ALL_TRIBES)
-                if self.family in ["Croatans", "Bunyips", "White Howlers"]:
-                    pass
-                else:
-                    break
-            self.reparts = "6_4_3__11_7_4"
-            self.sex = random.randrange(0, 2)
-        # print(f"Tribe: {self.family:30} Sex: {self.sex}")
+            self.family = random.choice(TRIBES)
         self.expectedfreebies = self.freebies_per_mortal_age
         self.display_pole = self.group+"__"+self.groupspec
-        # self.display_gauge = (
-        #
-        #         self.value_of("renown")
-        #         + self.value_of("status")
-        #         + self.value_of("pure-breed")
-        # )
+        self.display_gauge = math.floor(int(self.trueage) / 10)-1
 
-        self.display_gauge = (
-            math.floor(int(self.trueage) / 10)-1
-        )
 
     @property
     def total_renown(self):
@@ -1617,14 +1596,14 @@ class Creature(models.Model):
         if not self.demeanor:
             self.demeanor = random.choice(ARCHS)
 
-    def randomize_disciplines(self):
-        if self.family:
-            for i in range(16):
-                setattr(self, f"trait{i}", "")
-            x = 0
-            for d in CLANS_SPECIFICS[self.family]["disciplines"]:
-                setattr(self, f"trait{x}", d)
-                x += 1
+    # def randomize_disciplines(self):
+    #     if self.family:
+    #         for i in range(MAX_TRAITS):
+    #             setattr(self, f"trait{i}", "")
+    #         x = 0
+    #         for d in CLANS_SPECIFICS[self.family]["disciplines"]:
+    #             setattr(self, f"trait{x}", d)
+    #             x += 1
 
     def randomize_reparts(self):
         attributes = STATS_TEMPLATES[self.creature]["attributes"].split("/")
@@ -1669,8 +1648,6 @@ class Creature(models.Model):
             self.age = random.randrange(18, 55)
             # self.expected_freebies = 21
         elif self.creature == "kindred":
-            if self.family:
-                self.randomize_disciplines()
             virtues = 7
             self.virtue0 = 1
             self.virtue1 = 1
@@ -1878,12 +1855,12 @@ class Creature(models.Model):
 
         # filename = f'./raw/{self.rid}.txt'
         rep = self.reparts.split("_")
-        new_line = "\n"
+        new_line = "\\\n"
         lines = []
         # lines.append(new_line)
-        lines.append(f"{self.name}")
+        lines.append(f"__{self.name}__")
         if len(self.nickname)>0 :
-            lines.append(f" aka {self.nickname}")
+            lines.append(f" aka _{self.nickname}_")
         lines.append(f"{new_line}")
         # if self.status.startswith("OK"):
         # lines.append(f" ({self.status})")
@@ -1905,12 +1882,14 @@ class Creature(models.Model):
         elif self.creature == "ghoul":
             lines.append(f"{gender} Ghoul of {self.sire_name} {self.age}/{self.trueage} yo [embrace: {self.embrace}]{new_line}")
 
+        if len(self.cast_figure) > 0:
+            lines.append(f"__Cast Figure__: {self.cast_figure}{new_line}")
         if len(self.nature) > 0 and len(self.demeanor) > 0:
-            lines.append(f"Nature/Demeanor: {self.nature}/{self.demeanor}{new_line}")
+            lines.append(f"__Nature/Demeanor__: {self.nature}/{self.demeanor}{new_line}")
         if len(self.concept) > 0:
-            lines.append(f"Concept: {self.concept}{new_line}")
+            lines.append(f"__Concept__: {self.concept}{new_line}")
         if len(self.groupspec) > 0:
-            lines.append(f"Pack: {self.groupspec}{new_line}")
+            lines.append(f"__Pack__: {self.groupspec}{new_line}")
 
         if self.is_player:
             lines.append(
@@ -1928,16 +1907,16 @@ class Creature(models.Model):
             f"STA {self.attribute2:2} APP {self.attribute5:2} WIT {self.attribute8:2}{new_line}"
         )
         # lines.append("\n")
-        lines.append(f"Willpower:    {self.willpower:2}  {squared(self.willpower, 10)}{new_line}")
+        lines.append(f"__Willpower__:    {self.willpower:2}  {squared(self.willpower, 10)}{new_line}")
         if self.creature == "garou":
-            lines.append(f"Rage:         {self.rage:2}  {squared(self.rage, 10)}{new_line}")
-            lines.append(f"Gnosis:       {self.gnosis:2}  {squared(self.gnosis, 10)}{new_line}")
+            lines.append(f"__Rage__:         {self.rage:2}  {squared(self.rage, 10)}{new_line}")
+            lines.append(f"__Gnosis__:       {self.gnosis:2}  {squared(self.gnosis, 10)}{new_line}")
         elif self.creature == "kindred":
-            lines.append(f"Humanity:     {self.humanity:2}  {squared(self.humanity, 10)}{new_line}")
-            lines.append(f"Bloodpool:    {self.bloodpool:2}  {squared(self.bloodpool, 20)}{new_line}")
-            lines.append(f"Conscience:   {self.virtue0:2}  ")
-            lines.append(f"Self-Control: {self.virtue1:2}  ")
-            lines.append(f"Courage:      {self.virtue2:2}{new_line}")
+            lines.append(f"__Humanity__:     {self.humanity:2}  {squared(self.humanity, 10)}{new_line}")
+            lines.append(f"__Bloodpool__:    {self.bloodpool:2}  {squared(self.bloodpool, 20)}{new_line}")
+            lines.append(f"__Conscience__:   {self.virtue0:2}  ")
+            lines.append(f"__Self-Control__: {self.virtue1:2}  ")
+            lines.append(f"__Courage__:      {self.virtue2:2}{new_line}")
         if self.is_player:
             lines.append(
                 f"Abilities: {self.total_talents}/{rep[3]}:{self.total_skills}/{rep[4]}:{self.total_knowledges}/{rep[5]}{new_line}"
@@ -1958,9 +1937,9 @@ class Creature(models.Model):
                 klines.append(
                     f"{STATS_NAMES[self.creature]['knowledges'][n].title()} {self.val_as_dots(getattr(self, f'knowledge{n}'))}"
                 )
-        lines.append(f"Talents: {', '.join(tlines)}.{new_line}")
-        lines.append(f"Skills: {', '.join(slines)}.{new_line}")
-        lines.append(f"Knowledges: {', '.join(klines)}.{new_line}")
+        lines.append(f"__Talents__: {', '.join(tlines)}.{new_line}")
+        lines.append(f"__Skills__: {', '.join(slines)}.{new_line}")
+        lines.append(f"__Knowledges__: {', '.join(klines)}.{new_line}")
 
         blines = []
         bck_len = len(STATS_NAMES[self.creature]["backgrounds"])
@@ -1969,27 +1948,27 @@ class Creature(models.Model):
                 blines.append(
                     f"{STATS_NAMES[self.creature]['backgrounds'][n].title()} {getattr(self, f'background{n}')}"
                 )
-        lines.append(f"Backgrounds: {', '.join(blines)}.{new_line}")
+        lines.append(f"__Backgrounds__: {', '.join(blines)}.{new_line}")
         if self.creature == "garou":
             glines = []
             for n in range(16):
                 if getattr(self, f"trait{n}").title():
                     glines.append(f"{getattr(self, f'trait{n}')}")
-            lines.append(f"Gifts: {', '.join(glines)}.{new_line}")
+            lines.append(f"__Gifts__: {', '.join(glines)}.{new_line}")
         if self.creature in ["kindred","ghoul"]:
             glines = []
             for n in range(16):
                 if getattr(self, f"trait{n}").title():
                     glines.append(f"{getattr(self, f'trait{n}')}")
             traitname = ""
-            lines.append(f"Disciplines: {', '.join(glines)}.{new_line}")
+            lines.append(f"__Disciplines__: {', '.join(glines)}.{new_line}")
         if self.creature in ["garou","kindred"]:
             rlines = []
             for n in range(10):
                 if getattr(self, f"rite{n}").title():
                     rlines.append(f"{getattr(self, f'rite{n}')}")
             if len(rlines) > 0:
-                lines.append(f"Rituals: {', '.join(rlines)}.{new_line}")
+                lines.append(f"__Rituals__: {', '.join(rlines)}.{new_line}")
 
         # if ("shortcuts" in options):
         #     lines.append('\\\n')
@@ -2473,9 +2452,9 @@ class Creature(models.Model):
         return "[" + " ".join(list) + "]"
 
     def debuff(self):
-        for i in range(10):
+        for i in range(MAX_TRAITS):
             setattr(self, f"trait{i}", "")
-        for i in range(5):
+        for i in range(MAX_MERITS):
             setattr(self, f"merit{i}", "")
             setattr(self, f"flaw{i}", "")
         for i in range(3):
@@ -2792,24 +2771,32 @@ class Creature(models.Model):
 
     def randomize_traits(self):
         traits = []
-        if self.creature == "garou":
-            print("Rank", self.rank)
-            print("Garou Rank", self.garou_rank)
+        if "kindred" == self.creature:
+            if self.family:
+                for i in range(MAX_TRAITS):
+                    setattr(self, f"trait{i}", "")
+                x = 0
+                for d in CLANS_SPECIFICS[self.family]["disciplines"]:
+                    setattr(self, f"trait{x}", d)
+                    x += 1
+        elif "garou" == self.creature:
+            # print("Rank", self.rank)
+            # print("Garou Rank", self.garou_rank)
             from collector.models.gifts import Gift
             for r in range(self.garou_rank):
                 level = r + 1
                 agifts = Gift.fetch(level=level, auspice=self.auspice)
                 bgifts = Gift.fetch(level=level, breed=self.breed)
                 tgifts = Gift.fetch(level=level, tribe=as_tribe_plural(self.family))
-                print(tgifts)
+                # print(tgifts)
                 a = b = t = None
                 while not (a != b and b!=t and t!=a):
                     a = agifts[roll(len(agifts))-1]
                     b = bgifts[roll(len(bgifts))-1]
                     t = tgifts[roll(len(tgifts))-1]
-                print("Tribe gifts:",t)
-                print("Breed gifts:",b)
-                print("Auspice gifts:",a)
+                # print("Tribe gifts:",t)
+                # print("Breed gifts:",b)
+                # print("Auspice gifts:",a)
                 traits.append(b)
                 traits.append(a)
                 traits.append(t)
@@ -2820,6 +2807,8 @@ class Creature(models.Model):
                 setattr(self, f"trait{idx}", trait.pretty_str)
                 idx += 1
             self.save()
+        else:
+            logger.info(f"No treatment to randomize traits for {self.creature}")
 
     def meritsflaws_notes(self):
         list = self.notes_on_meritsflaws.split("\r\n")
@@ -2848,48 +2837,48 @@ class Creature(models.Model):
             from collector.models.disciplines import Discipline
             pass
 
-    def randomize_gifts(self):
-        if self.creature == "garou":
-            from collector.utils.helper import roll
-            from collector.models.gifts import Gift
-            from collector.utils.wod_reference import ALL_TRIBES, BREEDS, AUSPICES
-            print("Randomize Gifts")
-            str = f'''Rank:    {self.garou_rank:<20} {as_rank(self.garou_rank)}
-Breed:   {self.breed:<20} {as_breed(self.breed)}
-Auspice: {self.auspice:<20} {as_auspice(self.auspice)}
-Tribe:   {self.family:<20} {as_tribe_plural(self.family)}
-'''
-            print(str)
-            if self.garou_rank > 0:
-                for x in range(16):
-                    setattr(self, f"trait{x}", "")
-                n = 0
-                for r in range(self.garou_rank):
-
-                    breed_gifts = Gift.breed_gifts(self.breed, r + 1)
-                    auspice_gifts = Gift.auspice_gifts(self.auspice, r+1)
-                    tribe_gifts = Gift.tribe_gifts(as_tribe_plural(self.family), r+1)
-                    print(f"Rank {r+1} Tribe: {self.family}")
-                    for tg in tribe_gifts:
-                        print(f"- {tg.pretty_str}")
-                    if len(breed_gifts)>0:
-                        breed_gift = breed_gifts[roll(faces=len(breed_gifts))-1]
-                        print(f"Breed: {breed_gift.pretty_str}")
-                        setattr(self, f"trait{n}", breed_gift.pretty_str)
-                        n += 1
-                    if len(auspice_gifts)>0:
-                        auspice_gift = auspice_gifts[roll(faces=len(auspice_gifts))-1]
-                        print(f"Auspice: {auspice_gift.pretty_str}")
-                        setattr(self, f"trait{n}", auspice_gift.pretty_str)
-                        n += 1
-                    if len(tribe_gifts)>0:
-                        tribe_gift = tribe_gifts[roll(faces=len(tribe_gifts))-1]
-                        print(f"Tribe: {tribe_gift.pretty_str}")
-                        setattr(self, f"trait{n}", tribe_gift.pretty_str)
-                        n += 1
-                self.save()
-        else:
-            logger.info("Not a garou.")
+#     def randomize_gifts(self):
+#         if self.creature == "garou":
+#             from collector.utils.helper import roll
+#             from collector.models.gifts import Gift
+#             from collector.utils.wod_reference import ALL_TRIBES, BREEDS, AUSPICES
+#             print("Randomize Gifts")
+#             str = f'''Rank:    {self.garou_rank:<20} {as_rank(self.garou_rank)}
+# Breed:   {self.breed:<20} {as_breed(self.breed)}
+# Auspice: {self.auspice:<20} {as_auspice(self.auspice)}
+# Tribe:   {self.family:<20} {as_tribe_plural(self.family)}
+# '''
+#             print(str)
+#             if self.garou_rank > 0:
+#                 for x in range(16):
+#                     setattr(self, f"trait{x}", "")
+#                 n = 0
+#                 for r in range(self.garou_rank):
+#
+#                     breed_gifts = Gift.breed_gifts(self.breed, r + 1)
+#                     auspice_gifts = Gift.auspice_gifts(self.auspice, r+1)
+#                     tribe_gifts = Gift.tribe_gifts(as_tribe_plural(self.family), r+1)
+#                     print(f"Rank {r+1} Tribe: {self.family}")
+#                     for tg in tribe_gifts:
+#                         print(f"- {tg.pretty_str}")
+#                     if len(breed_gifts)>0:
+#                         breed_gift = breed_gifts[roll(faces=len(breed_gifts))-1]
+#                         print(f"Breed: {breed_gift.pretty_str}")
+#                         setattr(self, f"trait{n}", breed_gift.pretty_str)
+#                         n += 1
+#                     if len(auspice_gifts)>0:
+#                         auspice_gift = auspice_gifts[roll(faces=len(auspice_gifts))-1]
+#                         print(f"Auspice: {auspice_gift.pretty_str}")
+#                         setattr(self, f"trait{n}", auspice_gift.pretty_str)
+#                         n += 1
+#                     if len(tribe_gifts)>0:
+#                         tribe_gift = tribe_gifts[roll(faces=len(tribe_gifts))-1]
+#                         print(f"Tribe: {tribe_gift.pretty_str}")
+#                         setattr(self, f"trait{n}", tribe_gift.pretty_str)
+#                         n += 1
+#                 self.save()
+#         else:
+#             logger.info("Not a garou.")
 
     @property
     def ritualistic_discipline(self):
@@ -3000,11 +2989,22 @@ Tribe:   {self.family:<20} {as_tribe_plural(self.family)}
                     data[domitor.rid][ghoul.rid] = ghoul_entry
         return data
 
-    @classmethod
-    def reid(cls):
-        for n, x in enumerate(cls.objects.all()):
-            x.refcode = n + 1
-            x.save()
+    # @classmethod
+    # def reid(cls):
+    #     for n, x in enumerate(cls.objects.all()):
+    #         x.refcode = n + 1
+    #         x.save()
+
+    def fix_changeling(self):
+        if self.willpower < 4:
+            self.willpower = 4
+        if self.glamour < 4:
+            self.glamour = 4
+        if self.banality < 3:
+            self.banality = 3
+
+    def fix_wraith(self):
+        pass
 
 
 def refix(modeladmin, request, queryset):
@@ -3045,61 +3045,62 @@ def no_longer_new(modeladmin, request, queryset):
         creature.save()
     short_description = "No longer new"
 
+#
+# def push_to_newyork(modeladmin, request, queryset):
+#     for creature in queryset:
+#         creature.chronicle = "UNY"
+#         creature.need_fix = True
+#         creature.save()
+#     short_description = "Push to New York City"
+#
+#
+# def push_to_munich(modeladmin, request, queryset):
+#     for creature in queryset:
+#         creature.chronicle = "GMU"
+#         creature.adventure = "TWT"
+#         creature.need_fix = True
+#         creature.save()
+#     short_description = "Push to Munich"
+#
+#
+# def push_to_hamburg(modeladmin, request, queryset):
+#     for creature in queryset:
+#         creature.chronicle = "GHH"
+#         creature.need_fix = True
+#         creature.save()
+#     short_description = "Push to the Hamburg"
 
-def push_to_newyork(modeladmin, request, queryset):
+#
+# def randomize_attributes(modeladmin, request, queryset):
+#     for creature in queryset:
+#         creature.randomize_attributes()
+#         creature.need_fix = True
+#         creature.save()
+#     short_description = "Randomize Attributes"
+#
+#
+# def randomize_abilities(modeladmin, request, queryset):
+#     for creature in queryset:
+#         creature.randomize_abilities()
+#         creature.need_fix = True
+#         creature.save()
+#     short_description = "Randomize Abilities"
+
+
+# def randomize_backgrounds(modeladmin, request, queryset):
+#     for creature in queryset:
+#         creature.randomize_backgrounds()
+#         creature.need_fix = True
+#         creature.save()
+#     short_description = "Randomize Backgrounds"
+
+
+def randomize_reps(modeladmin, request, queryset):
     for creature in queryset:
-        creature.chronicle = "UNY"
+        creature.randomize_reparts()
         creature.need_fix = True
         creature.save()
-    short_description = "Push to New York City"
-
-
-def push_to_munich(modeladmin, request, queryset):
-    for creature in queryset:
-        creature.chronicle = "GMU"
-        creature.adventure = "TWT"
-        creature.need_fix = True
-        creature.save()
-    short_description = "Push to Munich"
-
-
-def push_to_hamburg(modeladmin, request, queryset):
-    for creature in queryset:
-        creature.chronicle = "GHH"
-        creature.need_fix = True
-        creature.save()
-    short_description = "Push to the Hamburg"
-
-
-def randomize_attributes(modeladmin, request, queryset):
-    for creature in queryset:
-        creature.randomize_attributes()
-        creature.need_fix = True
-        creature.save()
-    short_description = "Randomize Attributes"
-
-
-def randomize_abilities(modeladmin, request, queryset):
-    for creature in queryset:
-        creature.randomize_abilities()
-        creature.need_fix = True
-        creature.save()
-    short_description = "Randomize Abilities"
-
-
-def randomize_backgrounds(modeladmin, request, queryset):
-    for creature in queryset:
-        creature.randomize_backgrounds()
-        creature.need_fix = True
-        creature.save()
-    short_description = "Randomize Backgrounds"
-
-
-def randomize_archetypes(modeladmin, request, queryset):
-    for creature in queryset:
-        creature.randomize_archetypes()
-        creature.save()
-    short_description = "Randomize Backgrounds"
+    short_description = "Randomize Reparts"
 
 
 def randomize_all(modeladmin, request, queryset):
@@ -3110,10 +3111,10 @@ def randomize_all(modeladmin, request, queryset):
     short_description = "Randomize All"
 
 
-def randomize_gifts(modeladmin, request, queryset):
-    for creature in queryset:
-        creature.randomize_gifts()
-    short_description = "Randomize Gifts"
+# def randomize_gifts(modeladmin, request, queryset):
+#     for creature in queryset:
+#         creature.randomize_traits()
+#     short_description = "Randomize Gifts"
 
 
 def push_to_current(modeladmin, request, queryset):
@@ -3167,7 +3168,7 @@ class CreatureAdmin(admin.ModelAdmin):
         "exp_pool",
         "exp_spent",
         # "family",
-        # "groupspec",
+        "groupspec",
         # "status",
         # "condition",
         "freebies_exp_offset",
@@ -3176,18 +3177,19 @@ class CreatureAdmin(admin.ModelAdmin):
 
     actions = [
         no_longer_new,
-        randomize_backgrounds,
+        # randomize_backgrounds,
         randomize_all,
-        randomize_archetypes,
-        randomize_attributes,
-        randomize_abilities,
-        randomize_gifts,
+        randomize_reps,
+        # randomize_archetypes,
+        # randomize_attributes,
+        # randomize_abilities,
+        # randomize_gifts,
         refix,
         set_male,
         set_female,
-        push_to_munich,
-        push_to_newyork,
-        push_to_hamburg,
+        # push_to_munich,
+        # push_to_newyork,
+        # push_to_hamburg,
         pull_from_current,
         push_to_current,
         remove_from_all,
@@ -3199,6 +3201,7 @@ class CreatureAdmin(admin.ModelAdmin):
         "creature",
         # "faction",
         # "family",
+        "groupspec",
         "is_new",
         "mythic",
         "hidden",
