@@ -1612,6 +1612,7 @@ class Creature(models.Model):
         random.shuffle(abilities)
         self.reparts = f"{'_'.join(attributes)}__{'_'.join(abilities)}"
 
+
     def randomize_all(self):
         if self.is_player:
             return

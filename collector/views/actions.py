@@ -410,6 +410,9 @@ def randomize_for(request, topic, crid):
             creature.randomize_attributes(topic=topic)
         elif topic == "mental":
             creature.randomize_attributes(topic=topic)
+        elif topic == "reparts":
+            creature.randomize_reparts()
+            creature.save()
         else:
             logger.warning(f"Oops, I don't know what to do with [{topic}]")
 

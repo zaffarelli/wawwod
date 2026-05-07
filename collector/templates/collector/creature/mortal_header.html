@@ -142,7 +142,9 @@
         <td class='editable userinput' id='{{c.rid}}__player'>{{ c.player }}</td>
 
 
-        <th>Repartitions</th>
+
+
+        <th>{% include "collector/creature/rando.html" with topic="reparts" %}&nbsp;Repartitions</th>
         <td class='editable userinput' id='{{c.rid}}__reparts'>{{ c.reparts }}</td>
 
     </tr>

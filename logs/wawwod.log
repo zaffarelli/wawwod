@@ -57918,3 +57918,100 @@ AttributeError: 'str' object has no attribute 'acronym'
 [06/05 16:45:37] "GET /static/collector/css?664d0c690718 HTTP/1.1" 404 1860
 [06/05 17:16:59] "GET /static/collector/css?664d0c690718 HTTP/1.1" 404 1860
 [06/05 17:41:40] "GET /static/collector/css?664d0c690718 HTTP/1.1" 404 1860
+[07/05 09:22:15] "GET /static/collector/css?b6b54162e513 HTTP/1.1" 404 1859
+[07/05 09:22:18] "GET /static/collector/css?b6b54162e513 HTTP/1.1" 404 1859
+[07/05 12:33:10] "GET /static/collector/css?b6b54162e513 HTTP/1.1" 404 1859
+[07/05 12:37:32] "GET /static/collector/css?b6b54162e513 HTTP/1.1" 404 1859
+[07/05 12:37:36] "GET /static/collector/css?b6b54162e513 HTTP/1.1" 404 1859
+[07/05 12:46:41] "GET /static/collector/css?b6b54162e513 HTTP/1.1" 404 1859
+[07/05 12:51:53] Internal Server Error: /ajax/display/chronicle_book/
+Traceback (most recent call last):
+  File "/home/zaffarelli/Perso/wawwod/.venv/lib64/python3.13/site-packages/django/template/base.py", line 964, in _resolve_lookup
+    raise TypeError
+TypeError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/zaffarelli/Perso/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/zaffarelli/Perso/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/zaffarelli/Perso/wawwod/storytelling/views/base.py", line 262, in chronicle_book
+    html = template.render(context)
+  File "/home/zaffarelli/Perso/wawwod/.venv/lib64/python3.13/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/Perso/wawwod/.venv/lib64/python3.13/site-packages/django/template/base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/Perso/wawwod/.venv/lib64/python3.13/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/Perso/wawwod/.venv/lib64/python3.13/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/Perso/wawwod/.venv/lib64/python3.13/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/Perso/wawwod/.venv/lib64/python3.13/site-packages/django/template/defaulttags.py", line 249, in render
+    nodelist.append(node.render_annotated(context))
+                    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/Perso/wawwod/.venv/lib64/python3.13/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/Perso/wawwod/.venv/lib64/python3.13/site-packages/django/template/defaulttags.py", line 249, in render
+    nodelist.append(node.render_annotated(context))
+                    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/Perso/wawwod/.venv/lib64/python3.13/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/Perso/wawwod/.venv/lib64/python3.13/site-packages/django/template/defaulttags.py", line 249, in render
+    nodelist.append(node.render_annotated(context))
+                    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/Perso/wawwod/.venv/lib64/python3.13/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/Perso/wawwod/.venv/lib64/python3.13/site-packages/django/template/defaulttags.py", line 249, in render
+    nodelist.append(node.render_annotated(context))
+                    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/Perso/wawwod/.venv/lib64/python3.13/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/Perso/wawwod/.venv/lib64/python3.13/site-packages/django/template/loader_tags.py", line 211, in render
+    return template.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/Perso/wawwod/.venv/lib64/python3.13/site-packages/django/template/base.py", line 176, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/Perso/wawwod/.venv/lib64/python3.13/site-packages/django/template/base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/Perso/wawwod/.venv/lib64/python3.13/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/Perso/wawwod/.venv/lib64/python3.13/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/Perso/wawwod/.venv/lib64/python3.13/site-packages/django/template/defaulttags.py", line 333, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/Perso/wawwod/.venv/lib64/python3.13/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/Perso/wawwod/.venv/lib64/python3.13/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/zaffarelli/Perso/wawwod/.venv/lib64/python3.13/site-packages/django/template/base.py", line 1150, in render
+    output = self.filter_expression.resolve(context)
+  File "/home/zaffarelli/Perso/wawwod/.venv/lib64/python3.13/site-packages/django/template/base.py", line 788, in resolve
+    obj = self.var.resolve(context)
+  File "/home/zaffarelli/Perso/wawwod/.venv/lib64/python3.13/site-packages/django/template/base.py", line 928, in resolve
+    value = self._resolve_lookup(context)
+  File "/home/zaffarelli/Perso/wawwod/.venv/lib64/python3.13/site-packages/django/template/base.py", line 976, in _resolve_lookup
+    current = getattr(current, bit)
+  File "/home/zaffarelli/Perso/wawwod/collector/models/creatures.py", line 1274, in roster_end
+    val = int(words[1].split(")")[0])
+              ~~~~~^^^
+IndexError: list index out of range
+[07/05 12:51:53] "GET /ajax/display/chronicle_book/ HTTP/1.1" 500 409531
