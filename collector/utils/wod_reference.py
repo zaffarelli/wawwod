@@ -437,7 +437,7 @@ STATS_NAMES = {
             "retainers",
             "status",
         ],
-        "sheet": {"pages": 4},
+        "sheet": {"pages": 8},
         "freebies_per_dot": {
             "attribute": 5,
             "ability": 2,

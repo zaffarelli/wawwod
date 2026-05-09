@@ -304,7 +304,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink"> \
             .attr('class', 'circ')
             .attr('cx', me.bit * 0)
             .attr('cy', me.bit * 1)
-            .attr('r', "4pt")
+            .attr('r', (d) => d.balanced ? "3pt":"12pt")
             .style("stroke", "#808080")
             .style("stroke-width", "1pt")
             .style("fill", (d) => d.balanced ? "#808080":"#a02020")

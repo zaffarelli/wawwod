@@ -77,9 +77,9 @@ def prepare_index(request):
     grp = {}
     if chronicle.main_creature == "kindred":
         for c in (
-            Creature.objects.filter(chronicle=chronicle.acronym, condition="OK")
-            .exclude(creature__in=["ghoul", "kinfolk", "mortal"])
-            .order_by("groupspec")
+                Creature.objects.filter(chronicle=chronicle.acronym, condition="OK")
+                        .exclude(creature__in=["ghoul", "kinfolk", "mortal"])
+                        .order_by("groupspec")
         ):
             g = "_".join(c.groupspec.lower().split(" "))
             if g in groups:
@@ -192,31 +192,41 @@ def display_groups(request, slug=None):
 def get_list(request, pid=1, slug=None):
     adventure, chronicle, season = Adventure.current_full()
     if is_ajax(request):
-        if "cck" == slug: # Chronicle: Camarilla Kindreds
-            creature_items = Creature.objects.filter(chronicle=chronicle.acronym, creature="kindred",faction="Camarilla").order_by("name")
-        elif "ccg" == slug: # Chronicle: Camarilla Ghouls
-            creature_items = Creature.objects.filter(chronicle=chronicle.acronym,creature="ghoul",faction="Camarilla").order_by("name")
-        elif "csk" == slug: # Chronicle: Sabbat Kindreds
-            creature_items = Creature.objects.filter(chronicle=chronicle.acronym,creature="kindred",faction="Sabbat").order_by("name")
-        elif "csg" == slug: # Chronicle: Sabbat Ghouls
-            creature_items = Creature.objects.filter(chronicle=chronicle.acronym,creature="ghoul",faction="Sabbat").order_by("name")
-        elif "cgl" == slug: # Chronicle: Gaia Lupines
-            creature_items = Creature.objects.filter(chronicle=chronicle.acronym, creature="garou",faction="Gaia").order_by("name")
-        elif "cgk" == slug: # Chronicle: Gaia Kinfolk
-            creature_items = Creature.objects.filter(chronicle=chronicle.acronym, creature="kinfolk",faction="Gaia").order_by("name")
-        elif "cgs" == slug: # Chronicle: Gaia Spirits
-            creature_items = Creature.objects.filter(chronicle=chronicle.acronym, creature="spirit",faction="Gaia").order_by("name")
-        elif "cwl" == slug: # Chronicle: Gaia Lupines
-            creature_items = Creature.objects.filter(chronicle=chronicle.acronym, creature="garou",faction="Wyrm").order_by("name")
-        elif "cwk" == slug: # Chronicle: Gaia Kinfolk
-            creature_items = Creature.objects.filter(chronicle=chronicle.acronym, creature="kinfolk",faction="Wyrm").order_by("name")
-        elif "cmo" == slug: # Chronicle: Mortals
+        if "cck" == slug:  # Chronicle: Camarilla Kindreds
+            creature_items = Creature.objects.filter(chronicle=chronicle.acronym, creature="kindred",
+                                                     faction="Camarilla").order_by("name")
+        elif "ccg" == slug:  # Chronicle: Camarilla Ghouls
+            creature_items = Creature.objects.filter(chronicle=chronicle.acronym, creature="ghoul",
+                                                     faction="Camarilla").order_by("name")
+        elif "csk" == slug:  # Chronicle: Sabbat Kindreds
+            creature_items = Creature.objects.filter(chronicle=chronicle.acronym, creature="kindred",
+                                                     faction="Sabbat").order_by("name")
+        elif "csg" == slug:  # Chronicle: Sabbat Ghouls
+            creature_items = Creature.objects.filter(chronicle=chronicle.acronym, creature="ghoul",
+                                                     faction="Sabbat").order_by("name")
+        elif "cgl" == slug:  # Chronicle: Gaia Lupines
+            creature_items = Creature.objects.filter(chronicle=chronicle.acronym, creature="garou",
+                                                     faction="Gaia").order_by("name")
+        elif "cgk" == slug:  # Chronicle: Gaia Kinfolk
+            creature_items = Creature.objects.filter(chronicle=chronicle.acronym, creature="kinfolk",
+                                                     faction="Gaia").order_by("name")
+        elif "cgs" == slug:  # Chronicle: Gaia Spirits
+            creature_items = Creature.objects.filter(chronicle=chronicle.acronym, creature="spirit",
+                                                     faction="Gaia").order_by("name")
+        elif "cwl" == slug:  # Chronicle: Gaia Lupines
+            creature_items = Creature.objects.filter(chronicle=chronicle.acronym, creature="garou",
+                                                     faction="Wyrm").order_by("name")
+        elif "cwk" == slug:  # Chronicle: Gaia Kinfolk
+            creature_items = Creature.objects.filter(chronicle=chronicle.acronym, creature="kinfolk",
+                                                     faction="Wyrm").order_by("name")
+        elif "cmo" == slug:  # Chronicle: Mortals
             creature_items = Creature.objects.filter(chronicle=chronicle.acronym, creature="mortal").order_by("name")
-        elif "cnc" == slug: # New characters
+        elif "cnc" == slug:  # New characters
             creature_items = Creature.objects.filter(chronicle=chronicle.acronym, is_new=True).order_by("name")
-        elif "bal" == slug: # Chronicle: Unbalanced
-            creature_items = Creature.objects.filter(chronicle=chronicle.acronym,status__in=["UNBALANCED","OK+"]).order_by("name")
-        elif "cwf" == slug: # Chronicle: Wyrm Fomori
+        elif "bal" == slug:  # Chronicle: Unbalanced
+            creature_items = Creature.objects.filter(chronicle=chronicle.acronym,
+                                                     status__in=["UNBALANCED", "OK+"]).order_by("name")
+        elif "cwf" == slug:  # Chronicle: Wyrm Fomori
             creature_items = Creature.objects.filter(chronicle=chronicle.acronym, creature="fomori").order_by("name")
         elif "ccs" == slug:
             masters = ["garou", "kindred", "wraith", "changeling", "mage"]
@@ -396,6 +406,7 @@ def add_kinfolk(request, slug=None):
         post_wawwod_creature(item)
         return HttpResponse(status=204)
 
+
 def add_fomori(request, slug=None):
     if is_ajax(request):
         item = pre_wawwod_creature(slug)
@@ -404,6 +415,7 @@ def add_fomori(request, slug=None):
         item.faction = "Wyrm"
         post_wawwod_creature(item)
         return HttpResponse(status=204)
+
 
 def add_mortal(request, slug=None):
     if is_ajax(request):
@@ -650,10 +662,8 @@ def display_edge_map(request, slug):
 
 def buildPolarArea(dataset):
     reorg = []
-    print(dataset)
     for i in range(len(dataset["names"])):
-        x = {"name": dataset["names"][i], "count": dataset["count"][i], "color":dataset["colors"][i]}
-        print(x)
+        x = {"name": dataset["names"][i], "count": dataset["count"][i], "color": dataset["colors"][i]}
         reorg.append(x)
 
     reorg.sort(key=lambda x: x["count"], reverse=True)
@@ -674,8 +684,8 @@ def buildPolarArea(dataset):
                 "label": dataset['tooltip'],
                 "data": counts,
                 "backgroundColor": colors,
-                "borderWidth": 0.5,
-                "borderColor": 'transparent',
+                "borderWidth": 1,
+                "borderColor": '#0000007f',
             }]
         },
         "options": {
@@ -696,7 +706,7 @@ def buildPolarArea(dataset):
             "plugins": {
 
                 "tooltip": {
-                    "backgroundColor":"black",
+                    "backgroundColor": "black",
                 },
                 "legend": {
                     "position": 'bottom',
@@ -707,7 +717,7 @@ def buildPolarArea(dataset):
                 },
                 "title": {
                     "display": True,
-                    "font":{
+                    "font": {
                         "size": 18,
                         "color": "white",
                     },
@@ -717,6 +727,118 @@ def buildPolarArea(dataset):
         },
     }
     return data
+
+
+def buildBars(datasets, title):
+    data = {
+        "type": 'bar',
+        "data": {
+            "labels": datasets[0]["names"],
+            "datasets": []
+        },
+        "options": {
+            "scales": {
+                "r": {
+                    "grid": {
+                        "color": "#404040",
+                    },
+                    "ticks": {
+                        "color": "white",
+                        "textStrokeColor": "transparent",
+                        "backdropColor": "transparent",
+                        "showLabelBackdrop": False,
+                    }
+                }
+            },
+            "responsive": False,
+            "plugins": {
+
+                "tooltip": {
+                    "backgroundColor": "black",
+                },
+                "legend": {
+                    "display":False,
+                    "position": 'right',
+                    "font": {
+                        "size": 16,
+                        "color": "white",
+                    },
+                },
+                "title": {
+                    "display": True,
+                    "font": {
+                        "size": 18,
+                        "color": "white",
+                    },
+                    "text": title
+                }
+            }
+        },
+    }
+
+    for dataset in datasets:
+        d = {
+            "label": dataset["tooltip"],
+            "data": dataset["count"],
+            "backgroundColor": dataset["colors"],
+            "borderWidth": 0.5,
+            "borderColor": 'transparent',
+        }
+        data["data"]["datasets"].append(d)
+
+    return data
+
+def buildBubble(dataset,title):
+    data = {
+        "type": 'bubble',
+        "data": {
+            "datasets": dataset
+        },
+        "options": {
+            "elements": {
+                "point": {
+                    "pointStyle": "circle",
+                    "hitRadius": 3,
+                    "borderWidth": 2,
+                }
+            },
+            "scale": {
+                "x": {
+                    "min": 0,
+                    "max": 9,
+                },
+                "y": {
+                    "min": 0,
+                    "max": 7,
+                },
+            },
+            "responsive": False,
+            "plugins": {
+
+                "tooltip": {
+                    "backgroundColor": "black",
+                },
+                "legend": {
+                    "display":True,
+                    "position": 'bottom',
+                    "font": {
+                        "size": 16,
+                        "color": "white",
+                    },
+                },
+                "title": {
+                    "display": True,
+                    "font": {
+                        "size": 18,
+                        "color": "white",
+                    },
+                    "text": title
+                }
+            }
+        },
+    }
+    return data
+
 
 def display_dashboard(request):
     figures = []
@@ -728,76 +850,73 @@ def display_dashboard(request):
     figure = {"html": html, "id": "ready_pps", "data": data}
     figures.append(figure)
 
-
     template = get_template("collector/dashboard/figure.html")
-    html = template.render({"id":"gpps"})
+    html = template.render({"id": "gpps"})
     s = Sept.garou_population()
     data = buildPolarArea(s)
-    figure = {"html": html, "id":"gpps", "data":data}
+    figure = {"html": html, "id": "gpps", "data": data}
     figures.append(figure)
 
     template = get_template("collector/dashboard/figure.html")
-    html = template.render({"id":"kpps"})
+    html = template.render({"id": "kpps"})
     s = Sept.kinfolk_population()
     data = buildPolarArea(s)
-    figure = {"html": html, "id":"kpps", "data":data}
+    figure = {"html": html, "id": "kpps", "data": data}
     figures.append(figure)
 
-    template = get_template("collector/dashboard/figure.html")
-    html = template.render({"id":"apps"})
-    s = Creature.auspice_population()
-    data = buildPolarArea(s)
-    figure = {"html": html, "id":"apps", "data":data}
-    figures.append(figure)
+
 
     template = get_template("collector/dashboard/figure.html")
-    html = template.render({"id":"bpps"})
-    s = Creature.breed_population()
-    data = buildPolarArea(s)
-    figure = {"html": html, "id":"bpps", "data":data}
-    figures.append(figure)
-
-    template = get_template("collector/dashboard/figure.html")
-    html = template.render({"id":"tpps"})
-    s = Creature.tribe_population()
-    data = buildPolarArea(s)
-    figure = {"html": html, "id":"tpps", "data":data}
-    figures.append(figure)
-
-    template = get_template("collector/dashboard/figure.html")
-    html = template.render({"id":"rapps"})
+    html = template.render({"id": "rapps"})
     s = Sept.rage_population()
     data = buildPolarArea(s)
-    figure = {"html": html, "id":"rapps", "data":data}
+    figure = {"html": html, "id": "rapps", "data": data}
     figures.append(figure)
 
     template = get_template("collector/dashboard/figure.html")
-    html = template.render({"id":"gnosispps"})
+    html = template.render({"id": "gnosispps"})
     s = Sept.gnosis_population()
     data = buildPolarArea(s)
-    figure = {"html": html, "id":"gnosispps", "data":data}
+    figure = {"html": html, "id": "gnosispps", "data": data}
     figures.append(figure)
 
+
+
     template = get_template("collector/dashboard/figure.html")
-    html = template.render({"id": "rgpps"})
+    html = template.render({"id": "renown_pop"})
     s = Sept.glory_population()
+    t = Sept.honor_population()
+    u = Sept.wisdom_population()
+    x = [s,t,u]
+    data = buildBars(x,"Total Renown per Sept")
+    figure = {"html": html, "id": "renown_pop", "data": data}
+    figures.append(figure)
+
+
+
+
+    template = get_template("collector/dashboard/figure.html")
+    html = template.render({"id": "apps"})
+    s = Creature.auspice_population()
     data = buildPolarArea(s)
-    figure = {"html": html, "id": "rgpps", "data": data}
+    figure = {"html": html, "id": "apps", "data": data}
     figures.append(figure)
 
     template = get_template("collector/dashboard/figure.html")
-    html = template.render({"id": "rhpps"})
-    s = Sept.honor_population()
+    html = template.render({"id": "bpps"})
+    s = Creature.breed_population()
     data = buildPolarArea(s)
-    figure = {"html": html, "id": "rhpps", "data": data}
+    figure = {"html": html, "id": "bpps", "data": data}
     figures.append(figure)
 
     template = get_template("collector/dashboard/figure.html")
-    html = template.render({"id": "rwpps"})
-    s = Sept.wisdom_population()
+    html = template.render({"id": "tpps"})
+    s = Creature.tribe_population()
     data = buildPolarArea(s)
-    figure = {"html": html, "id": "rwpps", "data": data}
+    figure = {"html": html, "id": "tpps", "data": data}
     figures.append(figure)
+
+
 
     template = get_template("collector/dashboard/figure.html")
     html = template.render({"id": "rankpps"})
@@ -806,9 +925,26 @@ def display_dashboard(request):
     figure = {"html": html, "id": "rankpps", "data": data}
     figures.append(figure)
 
+    adventure = Adventure.current()
+
+    attribute = "Perception"
+    ability = "Alertness"
+    parts = adventure.watch.split("+")
+    if len(parts)==2:
+        attribute = parts[0]
+        ability = parts[1]
+
+    template = get_template("collector/dashboard/figure_wide.html")
+    html = template.render({"id": "attriabs"})
+    x = Sept.stats_population(attribute=attribute,ability=ability.replace(" ","-"))
+    data = buildBubble(x,f"Watch {attribute} + {ability}")
+    figure = {"html": html, "id": "attriabs", "data": data}
+    figures.append(figure)
+
 
     answer = {"figures": json.dumps(figures)}
     return JsonResponse(answer)
+
 
 def display_gaia_wheel(request):
     if is_ajax(request):

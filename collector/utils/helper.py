@@ -1,5 +1,6 @@
 from django.contrib import admin
-
+from colour import Color
+import os
 
 def json_default(value):
     import datetime
@@ -73,3 +74,39 @@ def roll(faces=10):
 
     d = die()
     return d
+
+class Colorizer:
+    def __init__(self):
+        self.palette = []
+        self.current = 0
+        self.randomize(color_count=8)
+
+    def randomize(self, color_count=4):
+        a = Color("cyan")
+        b = Color("red")
+        self.palette = list(a.range_to(b, color_count))
+        palette = []
+        for p in self.palette:
+            p.saturation = 0.3
+            p.luminance = 0.3
+            palette.append(p)
+        self.palette = palette
+        self.current = 0
+
+    def get_palette(self):
+        d = []
+        for c in self.palette:
+            d.append(c.hex+"7f")
+        return d
+
+    def pop(self):
+        self.current = (self.current + 1) % len(self.palette)
+        return self.palette[self.current]
+
+    @classmethod
+    def random_color(cls):
+        red = int.from_bytes(os.urandom(1))
+        green = int.from_bytes(os.urandom(1))
+        blue = int.from_bytes(os.urandom(1))
+        c = f'#{red:02x}{green:02x}{blue:02x}'
+        return c

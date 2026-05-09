@@ -233,7 +233,7 @@ class Sept(models.Model):
                 "kinfolks": garou.value_of("kinfolk"),
                 "condition": garou.condition,
                 "player": garou.player,
-                "balanced": garou.status != "UNBALANCED",
+                "balanced": garou.status == "READY",
                 "position": garou.community_job,
                 "short_desc": garou.short_desc,
                 "rank": garou.rank,
@@ -294,19 +294,39 @@ class Sept(models.Model):
         septs = cls.objects.filter(faction="Gaia", chronicle=chronicle.acronym)
         for sept in septs:
             names.append(sept.name)
-            if len(sept.garous)>0:
+            if len(sept.garous) > 0:
                 garous = sept.garous.split(", ")
-                count.append(len(garous))
+                metric = 0
+                for garou in cls.get_garous(garous):
+                    metric += 1
+                count.append(metric)
             else:
                 count.append(0)
-            colors.append(sept.color+"7f")
+            colors.append(sept.color + "7f")
         data = {"count": count,
                 "colors": colors,
                 "names": names,
                 "tooltip": "Garou population",
                 "title": "Garou population per Sept",
-        }
+                }
         return data
+
+    @classmethod
+    def stats_population(cls, attribute="Dexterity", ability="Brawl"):
+        adventure, chronicle, season = Adventure.current_full()
+        datasets = []
+        septs = cls.objects.filter(faction="Gaia", chronicle=chronicle.acronym)
+        for sept in septs:
+            if len(sept.garous) > 0:
+                garous = sept.garous.split(", ")
+                for garou in cls.get_garous(garous):
+                    at = garou.value_of(attribute)
+                    ab = garou.value_of(ability)
+                    metric = [at, ab, (at + ab)*3]
+                    d = {"label": garou.name, "data": [metric], "backgroundColor": sept.color + "7f"}
+                    if ab>0:
+                        datasets.append(d)
+        return datasets
 
     @classmethod
     def rage_population(cls):
@@ -318,23 +338,22 @@ class Sept(models.Model):
         septs = cls.objects.filter(faction="Gaia", chronicle=chronicle.acronym)
         for sept in septs:
             names.append(sept.name)
-            if len(sept.garous)>0:
+            if len(sept.garous) > 0:
                 garous = sept.garous.split(", ")
                 metric = 0
-                for garou in garous:
-                    g = Creature.objects.filter(rid=garou).first()
-                    metric += g.rage
-                counts.append(metric/len(garous))
+                for garou in cls.get_garous(garous):
+                    metric += garou.rage
+                counts.append(metric / len(garous))
             else:
                 counts.append(0)
-            colors.append(sept.color+"7f")
+            colors.append(sept.color + "7f")
 
         data = {"count": counts,
                 "colors": colors,
                 "names": names,
-                "tooltip": "Average Garou Rage",
-                "title": "Rage per Sept",
-        }
+                "tooltip": "Average Rage",
+                "title": "Average Rage per Sept",
+                }
         return data
 
     @classmethod
@@ -347,27 +366,32 @@ class Sept(models.Model):
         septs = cls.objects.filter(faction="Gaia", chronicle=chronicle.acronym)
         for sept in septs:
             names.append(sept.name)
-            if len(sept.garous)>0:
+            if len(sept.garous) > 0:
                 garous = sept.garous.split(", ")
                 metric = 0
-                for garou in garous:
-                    g = Creature.objects.filter(rid=garou).first()
-                    metric += g.gnosis
-                counts.append(metric/len(garous))
+                for garou in cls.get_garous(garous):
+                    metric += garou.gnosis
+                counts.append(metric / len(garous))
             else:
                 counts.append(0)
-            colors.append(sept.color+"7f")
+            colors.append(sept.color + "7f")
         data = {"count": counts,
                 "colors": colors,
                 "names": names,
-                "tooltip": "Average Garou Gnosis",
-                "title": "Gnosis per Sept",
-        }
+                "tooltip": "Average Gnosis",
+                "title": "Average Gnosis per Sept",
+                }
         return data
 
     @classmethod
-    def glory_population(cls):
+    def get_garous(cls, rids):
         from collector.models.creatures import Creature
+        garous = Creature.objects.filter(rid__in=rids).exclude(condition__contains="MISSING").exclude(
+            condition__contains="DEAD")
+        return garous
+
+    @classmethod
+    def glory_population(cls):
         adventure, chronicle, season = Adventure.current_full()
         counts = []
         colors = []
@@ -375,22 +399,21 @@ class Sept(models.Model):
         septs = cls.objects.filter(faction="Gaia", chronicle=chronicle.acronym)
         for sept in septs:
             names.append(sept.name)
-            if len(sept.garous)>0:
+            if len(sept.garous) > 0:
                 garous = sept.garous.split(", ")
                 metric = 0
-                for garou in garous:
-                    g = Creature.objects.filter(rid=garou).first()
-                    metric += g.glory
-                counts.append(metric/len(garous))
+                for garou in cls.get_garous(garous):
+                    metric += garou.glory
+                counts.append(metric)
             else:
                 counts.append(0)
-            colors.append(sept.color+"7f")
+            colors.append(sept.color + "7f")
         data = {"count": counts,
                 "colors": colors,
                 "names": names,
-                "tooltip": "Average Garou Glory",
+                "tooltip": "GLORY",
                 "title": "Glory per Sept",
-        }
+                }
         return data
 
     @classmethod
@@ -403,22 +426,21 @@ class Sept(models.Model):
         septs = cls.objects.filter(faction="Gaia", chronicle=chronicle.acronym)
         for sept in septs:
             names.append(sept.name)
-            if len(sept.garous)>0:
+            if len(sept.garous) > 0:
                 garous = sept.garous.split(", ")
                 metric = 0
-                for garou in garous:
-                    g = Creature.objects.filter(rid=garou).first()
-                    metric += g.honor
-                counts.append(metric/len(garous))
+                for garou in cls.get_garous(garous):
+                    metric += garou.honor
+                counts.append(metric)
             else:
                 counts.append(0)
-            colors.append(sept.color+"7f")
+            colors.append(sept.color + "7f")
         data = {"count": counts,
                 "colors": colors,
                 "names": names,
-                "tooltip": "Average Garou Honor",
+                "tooltip": "HONOR",
                 "title": "Honor per Sept",
-        }
+                }
         return data
 
     @classmethod
@@ -431,22 +453,21 @@ class Sept(models.Model):
         septs = cls.objects.filter(faction="Gaia", chronicle=chronicle.acronym)
         for sept in septs:
             names.append(sept.name)
-            if len(sept.garous)>0:
+            if len(sept.garous) > 0:
                 garous = sept.garous.split(", ")
                 metric = 0
-                for garou in garous:
-                    g = Creature.objects.filter(rid=garou).first()
-                    metric += g.wisdom
-                counts.append(metric/len(garous))
+                for garou in cls.get_garous(garous):
+                    metric += garou.wisdom
+                counts.append(metric)
             else:
                 counts.append(0)
-            colors.append(sept.color+"7f")
+            colors.append(sept.color + "7f")
         data = {"count": counts,
                 "colors": colors,
                 "names": names,
-                "tooltip": "Average Garou Wisdom",
+                "tooltip": "WISDOM",
                 "title": "Wisdom per Sept",
-        }
+                }
         return data
 
     @classmethod
@@ -459,26 +480,22 @@ class Sept(models.Model):
         septs = cls.objects.filter(faction="Gaia", chronicle=chronicle.acronym)
         for sept in septs:
             names.append(sept.name)
-            if len(sept.garous)>0:
+            if len(sept.garous) > 0:
                 garous = sept.garous.split(", ")
                 metric = 0
-                for garou in garous:
-                    g = Creature.objects.filter(rid=garou).first()
-                    metric += g.garou_rank
-                counts.append(metric/len(garous))
+                for garou in cls.get_garous(garous):
+                    metric += garou.garou_rank
+                counts.append(metric / len(garous))
             else:
                 counts.append(0)
-            colors.append(sept.color+"7f")
+            colors.append(sept.color + "7f")
         data = {"count": counts,
                 "colors": colors,
                 "names": names,
-                "tooltip": "Average Garou Rank",
-                "title": "Rank per Sept",
-        }
+                "tooltip": "Average Rank",
+                "title": "Average Rank per Sept",
+                }
         return data
-
-
-
 
     @classmethod
     def kinfolk_population(cls):
@@ -492,21 +509,19 @@ class Sept(models.Model):
             sept_names.append(sept.name)
             garous = sept.garous.split(", ")
             total_k = 0
-            if len(garous)>0:
-                for garou in garous:
-                    g = Creature.objects.filter(rid=garou).first()
-                    if g:
-                        if len(g.edges)>0:
-                            edges = g.edges.split(", ")
-                            total_k += len(edges)
+            if len(garous) > 0:
+                for garou in cls.get_garous(garous):
+                    if len(garou.edges) > 0:
+                        edges = garou.edges.split(", ")
+                        total_k += len(edges)
             kinfolk_count.append(total_k)
-            kinfolk_colors.append(sept.color+"7f")
+            kinfolk_colors.append(sept.color + "7f")
         data = {"count": kinfolk_count,
                 "colors": kinfolk_colors,
                 "names": sept_names,
                 "tooltip": "Kinfolk population",
                 "title": "Kinfolk population per Sept",
-        }
+                }
         return data
 
     @classmethod
@@ -519,23 +534,22 @@ class Sept(models.Model):
         septs = cls.objects.filter(faction="Gaia", chronicle=chronicle.acronym)
         for sept in septs:
             names.append(sept.name)
-            if len(sept.garous)>0:
+            if len(sept.garous) > 0:
                 garous = sept.garous.split(", ")
                 metric = 0
-                for garou in garous:
-                    g = Creature.objects.filter(rid=garou).first()
-                    if g.status == "READY":
+                for garou in cls.get_garous(garous):
+                    if garou.status == "READY":
                         metric += 1
-                counts.append(metric/len(garous)*100)
+                counts.append(metric / len(garous) * 100)
             else:
                 counts.append(0)
-            colors.append(sept.color+"7f")
+            colors.append(sept.color + "7f")
         data = {"count": counts,
                 "colors": colors,
                 "names": names,
                 "tooltip": "Garous Ready",
-                "title": "Sept Completion",
-        }
+                "title": "Sept Completion (%)",
+                }
         return data
 
 

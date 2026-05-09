@@ -362,12 +362,19 @@ class GaiaWheel {
         node_cross.append('path')
             .attr("transform", "rotate(" + (-me.global_rotation) + ")")
             .attr("d", function (d) {
-                let s = 12;
-                return "M 0 " + s + " v -" + (s * 2) + " M " + s + " 0 h -" + (s * 2) + " "
+                let z = ""
+                if (d.creature == "kindred") {
+                    let s = 12;
+                    z = "M 0 " + s + " v -" + (s * 2) + " M " + s + " 0 h -" + (s * 2) + " "
+                }else if (d.creature == "garou") {
+                    let s = 16;
+                    z = "M 0 " + s + " v -" + (s * 2) + " M " + s + " 0 h -" + (s * 2) + " "
+                }
+                return z
             })
             .style("fill", 'transparent')
             .style("stroke", function (d) {
-                let x = (d.status.startsWith("UNBALANCED") ? "#A22" : (d.status.startsWith("OK") ? "#FC4" : "transparent"))
+                let x = (d.status.startsWith("UNBALANCED") ? "#A22" : (d.status.startsWith("OK") ? "#FC4" : "#9CF"))
                 return x;
             })
             .style("stroke-width", function (d) {

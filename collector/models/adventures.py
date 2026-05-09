@@ -26,6 +26,7 @@ class Adventure(models.Model):
     adventure_teaser = models.CharField(max_length=128, default="", blank=True)
     deeds_map_str = models.TextField(max_length=2048, default="", blank=True)
     new_acronym = models.CharField(max_length=32, default="", blank=True)
+    watch = models.CharField(max_length=64, default="Perception+Alertness", blank=True)
 
     DEED_SEP = "|"
     WORD_SEP = ";"
@@ -311,6 +312,7 @@ class AdventureAdmin(admin.ModelAdmin):
     list_display = [
         "id",
         "acronym",
+        "watch",
         "name",
         "season_order",
         "is_current",
@@ -324,6 +326,7 @@ class AdventureAdmin(admin.ModelAdmin):
     list_editable = [
         "name",
         "acronym",
+        "watch",
         "is_current",
         "chronicle",
         "season_order",

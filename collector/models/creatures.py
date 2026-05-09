@@ -1,4 +1,5 @@
 import math
+from collector.utils.helper import Colorizer
 
 from django.db import models
 from django.contrib import admin
@@ -20,7 +21,7 @@ from collector.utils.wod_reference import (
     find_stat_category,
     ENLIGHTENMENT, ALL_TRIBES,
 )
-from collector.utils.helper import json_default, toRID, roll
+from collector.utils.helper import json_default, toRID, roll, Colorizer
 from collector.utils.wod_reference import from_stats
 from collector.models.adventures import Adventure
 import random
@@ -308,6 +309,7 @@ class Creature(models.Model):
     rite7 = models.CharField(max_length=64, blank=True, default="")
     rite8 = models.CharField(max_length=64, blank=True, default="")
     rite9 = models.CharField(max_length=64, blank=True, default="")
+
 
     @property
     def creature_is(self, creature):
@@ -708,6 +710,21 @@ class Creature(models.Model):
         self.expectedfreebies = self.freebies_per_mortal_age
         self.display_pole = self.group + "__" + self.groupspec
         self.display_gauge = math.floor(int(self.trueage) / 10) - 1
+        edge_for = self.edge_for
+        if len(edge_for) > 0:
+            # print(edge_for)
+            edgers = edge_for.split(", ")
+            for edger in edgers:
+                # print("xxxxxxxxxxx")
+                if len(edger)>0:
+                    # print("uuu")
+                    c = Creature.objects.get(name=edger)
+                    if c:
+                        # print("aaa")
+                        self.groupspec = c.groupspec
+                        self.group = c.group
+                        # print(self.groupspec)
+
 
     @property
     def total_renown(self):
@@ -933,11 +950,12 @@ class Creature(models.Model):
                         freebies_exp_offset += cr
 
                     print(
-                        f"{stat:20} Progress: {progress:10} XP:{exp:5} (calc:{realexp:5}) ({category:20})"
+                        f"{stat:20} Progress: {progress:10} XP:{exp:5} (calc:{realexp:5}) ({category:20}) (Freebies:{cr})"
                     )
                     xp_spent += realexp
             print(f">>> Done")
             self.freebies_exp_offset = freebies_exp_offset
+            print(f">>> Freebie Experience Offset {self.freebies_exp_offset}")
             self.exp_spent = xp_spent
             self.exp_pool = self.experience - xp_spent
         else:
@@ -2990,6 +3008,31 @@ class Creature(models.Model):
     #         x.refcode = n + 1
     #         x.save()
 
+
+    def low_attr(self):
+        res = False
+        for a in range(9):
+            x = getattr(self,f"attribute{a}")
+            if x == 1:
+                res = True
+                break
+        return res
+
+    low_attr.boolean = True
+
+
+
+    def high_attr(self):
+        res = False
+        for a in range(9):
+            x = getattr(self,f"attribute{a}")
+            if x > 5:
+                res = True
+                break
+        return res
+
+    high_attr.boolean = True
+
     def fix_changeling(self):
         if self.willpower < 4:
             self.willpower = 4
@@ -3004,32 +3047,43 @@ class Creature(models.Model):
     @classmethod
     def auspice_population(cls):
         adventure, chronicle, season = Adventure.current_full()
-        garous = cls.objects.filter(creature="garou", chronicle=chronicle.acronym, faction="Gaia")
+        garous = cls.objects.filter(creature="garou", chronicle=chronicle.acronym, faction="Gaia").exclude(condition__contains="MISSING").exclude(condition__contains="DEAD")
         auspices = [0, 0, 0, 0, 0]
         for garou in garous:
             auspices[garou.auspice] += 1
+        c = Colorizer()
+        c.randomize(color_count=5)
+        pa = []
+        for a in auspices:
+            pa.append(a / len(garous)*100)
+
         data = {
-            "count": auspices,
-            "colors": ["#fff5007f", "#3b001c7f", "#C0C0C07f", "#003c7c7f", "#780c117f"],
+            "count": pa,
+            "colors": c.get_palette(),
             "names": ["Ragabash", "Theurge", "Philodox", "Galliard", "Ahroun"],
-            "tooltip": "Garou population",
-            "title": "Garou Population per Auspice"
+            "tooltip": "Auspice ratio",
+            "title": "Garou Population per Auspice (%)"
         }
         return data
 
     @classmethod
     def breed_population(cls):
         adventure, chronicle, season = Adventure.current_full()
-        garous = cls.objects.filter(creature="garou", chronicle=chronicle.acronym, faction="Gaia")
+        garous = cls.objects.filter(creature="garou", chronicle=chronicle.acronym, faction="Gaia").exclude(condition__contains="MISSING").exclude(condition__contains="DEAD")
         breeds = [0, 0, 0]
         for garou in garous:
             breeds[garou.breed] += 1
+        c = Colorizer()
+        c.randomize(color_count=5)
+        pb = []
+        for b in breeds:
+            pb.append(b / len(garous)*100)
         data = {
-            "count": breeds,
-            "colors": ["#3ab9dd7f", "#9d48cc7f", "#cc484f7f"],
+            "count": pb,
+            "colors": c.get_palette(),
             "names": ["Homid", "Metis", "Lupus"],
-            "tooltip": "Garou population",
-            "title": "Garou Population per Breed"
+            "tooltip": "Breed ratio",
+            "title": "Garou Population per Breed (%)"
         }
         return data
 
@@ -3037,7 +3091,7 @@ class Creature(models.Model):
     def tribe_population(cls):
         FORBIDDEN = ["Bunyips", "Croatans", "White Howlers", "Black Spiral Dancers"]
         adventure, chronicle, season = Adventure.current_full()
-        garous = cls.objects.filter(creature="garou", chronicle=chronicle.acronym, faction="Gaia")
+        garous = cls.objects.filter(creature="garou", chronicle=chronicle.acronym, faction="Gaia").exclude(condition__contains="MISSING").exclude(condition__contains="DEAD")
         TRIBES = [x for x in ALL_TRIBES if x not in FORBIDDEN]
         counts = [0 for x in ALL_TRIBES if x not in FORBIDDEN]
         for garou in garous:
@@ -3065,6 +3119,9 @@ class Creature(models.Model):
             "title": "Garou Population per Tribe"
         }
         return data
+
+
+
 
 
 def refix(modeladmin, request, queryset):
@@ -3222,6 +3279,8 @@ class CreatureAdmin(admin.ModelAdmin):
         # "cast_figure",
         "faction",
         "family",
+        "low_attr",
+        "high_attr",
         # "freebies",
         "player",
         "experience_expenditure",
@@ -3267,6 +3326,7 @@ class CreatureAdmin(admin.ModelAdmin):
         "mythic",
         "hidden",
         "condition",
+
     ]
     search_fields = ["name", "groupspec", "sire"]
     list_editable = [
