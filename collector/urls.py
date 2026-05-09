@@ -96,6 +96,10 @@ urlpatterns = [
     re_path(
         r"^ajax/display/kindred_lineage/$", display_lineage, name="display_lineage"
     ),
+
+
+
+
     re_path(r"^ajax/display/septs/(?P<slug>\w+)/$", display_sept, name="display_sept"),
     re_path(
         r"^sept/(?P<slug>\w+)/text/$", display_sept_rosters, name="display_sept_rosters"

@@ -1,8 +1,11 @@
+import math
 from django.db import models
 from django.contrib import admin
 import datetime
 from django.db.models.signals import pre_save, post_save
 from django.dispatch import receiver
+
+from collector.models.adventures import Adventure
 from collector.models.chronicles import Chronicle
 import json
 
@@ -11,6 +14,7 @@ import logging
 from collector.templatetags.wod_filters import as_tribe_plural, to_auspice_logo_single
 from collector.utils.helper import toRID
 from collector.utils.wod_reference import ALL_TRIBES
+from colorfield.fields import ColorField
 
 logger = logging.Logger(__name__)
 
@@ -24,6 +28,7 @@ class Sept(models.Model):
     garous = models.TextField(default="", max_length=4096, blank=True)
     kinfolks = models.TextField(default="", max_length=4096, blank=True)
     notes = models.TextField(max_length=1024, default="", blank=True)
+    color = ColorField(default="#808080")
 
     caern = models.CharField(default="", max_length=4096, blank=True)
     caern_level = models.PositiveIntegerField(default=1, blank=True)
@@ -197,6 +202,7 @@ class Sept(models.Model):
                 "type": self.caern_type,
                 "level": self.caern_level,
                 "totem": self.caern_totem,
+                "color": self.color
             },
             "moonbridges": [],
             "offices": {},
@@ -278,6 +284,259 @@ class Sept(models.Model):
     #     for n,x in enumerate(cls.objects.all()):
     #         x.refcode = n+1
     #         x.save()
+
+    @classmethod
+    def garou_population(cls):
+        adventure, chronicle, season = Adventure.current_full()
+        count = []
+        colors = []
+        names = []
+        septs = cls.objects.filter(faction="Gaia", chronicle=chronicle.acronym)
+        for sept in septs:
+            names.append(sept.name)
+            if len(sept.garous)>0:
+                garous = sept.garous.split(", ")
+                count.append(len(garous))
+            else:
+                count.append(0)
+            colors.append(sept.color+"7f")
+        data = {"count": count,
+                "colors": colors,
+                "names": names,
+                "tooltip": "Garou population",
+                "title": "Garou population per Sept",
+        }
+        return data
+
+    @classmethod
+    def rage_population(cls):
+        from collector.models.creatures import Creature
+        adventure, chronicle, season = Adventure.current_full()
+        counts = []
+        colors = []
+        names = []
+        septs = cls.objects.filter(faction="Gaia", chronicle=chronicle.acronym)
+        for sept in septs:
+            names.append(sept.name)
+            if len(sept.garous)>0:
+                garous = sept.garous.split(", ")
+                metric = 0
+                for garou in garous:
+                    g = Creature.objects.filter(rid=garou).first()
+                    metric += g.rage
+                counts.append(metric/len(garous))
+            else:
+                counts.append(0)
+            colors.append(sept.color+"7f")
+
+        data = {"count": counts,
+                "colors": colors,
+                "names": names,
+                "tooltip": "Average Garou Rage",
+                "title": "Rage per Sept",
+        }
+        return data
+
+    @classmethod
+    def gnosis_population(cls):
+        from collector.models.creatures import Creature
+        adventure, chronicle, season = Adventure.current_full()
+        counts = []
+        colors = []
+        names = []
+        septs = cls.objects.filter(faction="Gaia", chronicle=chronicle.acronym)
+        for sept in septs:
+            names.append(sept.name)
+            if len(sept.garous)>0:
+                garous = sept.garous.split(", ")
+                metric = 0
+                for garou in garous:
+                    g = Creature.objects.filter(rid=garou).first()
+                    metric += g.gnosis
+                counts.append(metric/len(garous))
+            else:
+                counts.append(0)
+            colors.append(sept.color+"7f")
+        data = {"count": counts,
+                "colors": colors,
+                "names": names,
+                "tooltip": "Average Garou Gnosis",
+                "title": "Gnosis per Sept",
+        }
+        return data
+
+    @classmethod
+    def glory_population(cls):
+        from collector.models.creatures import Creature
+        adventure, chronicle, season = Adventure.current_full()
+        counts = []
+        colors = []
+        names = []
+        septs = cls.objects.filter(faction="Gaia", chronicle=chronicle.acronym)
+        for sept in septs:
+            names.append(sept.name)
+            if len(sept.garous)>0:
+                garous = sept.garous.split(", ")
+                metric = 0
+                for garou in garous:
+                    g = Creature.objects.filter(rid=garou).first()
+                    metric += g.glory
+                counts.append(metric/len(garous))
+            else:
+                counts.append(0)
+            colors.append(sept.color+"7f")
+        data = {"count": counts,
+                "colors": colors,
+                "names": names,
+                "tooltip": "Average Garou Glory",
+                "title": "Glory per Sept",
+        }
+        return data
+
+    @classmethod
+    def honor_population(cls):
+        from collector.models.creatures import Creature
+        adventure, chronicle, season = Adventure.current_full()
+        counts = []
+        colors = []
+        names = []
+        septs = cls.objects.filter(faction="Gaia", chronicle=chronicle.acronym)
+        for sept in septs:
+            names.append(sept.name)
+            if len(sept.garous)>0:
+                garous = sept.garous.split(", ")
+                metric = 0
+                for garou in garous:
+                    g = Creature.objects.filter(rid=garou).first()
+                    metric += g.honor
+                counts.append(metric/len(garous))
+            else:
+                counts.append(0)
+            colors.append(sept.color+"7f")
+        data = {"count": counts,
+                "colors": colors,
+                "names": names,
+                "tooltip": "Average Garou Honor",
+                "title": "Honor per Sept",
+        }
+        return data
+
+    @classmethod
+    def wisdom_population(cls):
+        from collector.models.creatures import Creature
+        adventure, chronicle, season = Adventure.current_full()
+        counts = []
+        colors = []
+        names = []
+        septs = cls.objects.filter(faction="Gaia", chronicle=chronicle.acronym)
+        for sept in septs:
+            names.append(sept.name)
+            if len(sept.garous)>0:
+                garous = sept.garous.split(", ")
+                metric = 0
+                for garou in garous:
+                    g = Creature.objects.filter(rid=garou).first()
+                    metric += g.wisdom
+                counts.append(metric/len(garous))
+            else:
+                counts.append(0)
+            colors.append(sept.color+"7f")
+        data = {"count": counts,
+                "colors": colors,
+                "names": names,
+                "tooltip": "Average Garou Wisdom",
+                "title": "Wisdom per Sept",
+        }
+        return data
+
+    @classmethod
+    def rank_population(cls):
+        from collector.models.creatures import Creature
+        adventure, chronicle, season = Adventure.current_full()
+        counts = []
+        colors = []
+        names = []
+        septs = cls.objects.filter(faction="Gaia", chronicle=chronicle.acronym)
+        for sept in septs:
+            names.append(sept.name)
+            if len(sept.garous)>0:
+                garous = sept.garous.split(", ")
+                metric = 0
+                for garou in garous:
+                    g = Creature.objects.filter(rid=garou).first()
+                    metric += g.garou_rank
+                counts.append(metric/len(garous))
+            else:
+                counts.append(0)
+            colors.append(sept.color+"7f")
+        data = {"count": counts,
+                "colors": colors,
+                "names": names,
+                "tooltip": "Average Garou Rank",
+                "title": "Rank per Sept",
+        }
+        return data
+
+
+
+
+    @classmethod
+    def kinfolk_population(cls):
+        from collector.models.creatures import Creature
+        adventure, chronicle, season = Adventure.current_full()
+        kinfolk_count = []
+        kinfolk_colors = []
+        sept_names = []
+        septs = cls.objects.filter(faction="Gaia", chronicle=chronicle.acronym)
+        for sept in septs:
+            sept_names.append(sept.name)
+            garous = sept.garous.split(", ")
+            total_k = 0
+            if len(garous)>0:
+                for garou in garous:
+                    g = Creature.objects.filter(rid=garou).first()
+                    if g:
+                        if len(g.edges)>0:
+                            edges = g.edges.split(", ")
+                            total_k += len(edges)
+            kinfolk_count.append(total_k)
+            kinfolk_colors.append(sept.color+"7f")
+        data = {"count": kinfolk_count,
+                "colors": kinfolk_colors,
+                "names": sept_names,
+                "tooltip": "Kinfolk population",
+                "title": "Kinfolk population per Sept",
+        }
+        return data
+
+    @classmethod
+    def balanced_population(cls):
+        from collector.models.creatures import Creature
+        adventure, chronicle, season = Adventure.current_full()
+        counts = []
+        colors = []
+        names = []
+        septs = cls.objects.filter(faction="Gaia", chronicle=chronicle.acronym)
+        for sept in septs:
+            names.append(sept.name)
+            if len(sept.garous)>0:
+                garous = sept.garous.split(", ")
+                metric = 0
+                for garou in garous:
+                    g = Creature.objects.filter(rid=garou).first()
+                    if g.status == "READY":
+                        metric += 1
+                counts.append(metric/len(garous)*100)
+            else:
+                counts.append(0)
+            colors.append(sept.color+"7f")
+        data = {"count": counts,
+                "colors": colors,
+                "names": names,
+                "tooltip": "Garous Ready",
+                "title": "Sept Completion",
+        }
+        return data
 
 
 def refix(modeladmin, request, queryset):

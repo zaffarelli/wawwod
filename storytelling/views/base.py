@@ -12,7 +12,9 @@ from collector.utils.helper import json_default, is_ajax
 from django.views.decorators.csrf import csrf_exempt
 import os
 import json
+import logging
 
+logger = logging.Logger(__name__)
 
 def display_storytelling(request):
     all = Story.objects.all()
@@ -89,7 +91,6 @@ def action_timeslip(request, slug="m0d_m0h__"):
 
 def display_pdf_story(request):
     from collector.models.creatures import Creature
-
     all = Story.objects.all()
     all_stories = []
     settings = {}
@@ -106,6 +107,7 @@ def display_pdf_story(request):
     for c in casted:
         full_cast.append(c)
     # print(full_cast)
+    logger.info(f"Exporting story {selected_story}]")
     data = {
         "story": selected_story,
         "end_time": selected_story.story_end_time,
@@ -134,7 +136,7 @@ def display_pdf_story(request):
     filename = "story_%s.pdf" % context["filename"]
 
     # fname = os.path.join(settings.MEDIA_ROOT, 'pdf/results/' + filename)
-    fname = os.path.join("wawwod_media/", "pdf/results/" + filename)
+    fname = os.path.join("wawwod_media/", "books/" + filename)
     es_pdf = open(fname, "wb")
     pdf = pisa.pisaDocument(BytesIO(html.encode("utf-8")), es_pdf)
     if not pdf.err:
@@ -251,7 +253,8 @@ def chronicle_book(request):
     for group, content in groups.items():
         x = content["faction"].lower()
         factions[x]["groups"][group] = content
-    print(factions)
+
+    logger.debug(factions)
     context = {
         "data": factions,
         "settings": settings,

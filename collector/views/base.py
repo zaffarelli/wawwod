@@ -154,13 +154,13 @@ def index(request):
     if not request.user.is_authenticated:
         return render(request, "collector/registration/login_error.html")
     context = prepare_index(request)
+    logger.info("Index")
     return render(request, "collector/index.html", context=context)
 
 
 def change_chronicle(request, slug=None):
     if is_ajax(request):
-        print(slug)
-        print("Change Chronicle")
+        logger.info(f"Change Chronicle: {slug}")
         Chronicle.set_current(slug)
         context = prepare_index(request)
         return render(request, "collector/index.html", context=context)
@@ -168,8 +168,7 @@ def change_chronicle(request, slug=None):
 
 def change_adventure(request, slug=None):
     if is_ajax(request):
-        print(slug)
-        print("Change Adventure")
+        logger.info(f"Change Adventure: {slug}")
         Adventure.set_current(slug)
         context = prepare_index(request)
         return render(request, "collector/index.html", context=context)
@@ -649,12 +648,167 @@ def display_edge_map(request, slug):
     return JsonResponse(context)
 
 
-def display_dashboard(request):
-    # state_build()
-    if is_ajax(request):
-        gaia_wheel_context = {"data": build_gaia_wheel()}
-        return JsonResponse(gaia_wheel_context)
+def buildPolarArea(dataset):
+    reorg = []
+    print(dataset)
+    for i in range(len(dataset["names"])):
+        x = {"name": dataset["names"][i], "count": dataset["count"][i], "color":dataset["colors"][i]}
+        print(x)
+        reorg.append(x)
 
+    reorg.sort(key=lambda x: x["count"], reverse=True)
+    names = []
+    counts = []
+    colors = []
+    for r in reorg:
+        names.append(r["name"])
+        counts.append(r["count"])
+        colors.append(r["color"])
+
+    data = {
+        "type": 'polarArea',
+        "data": {
+            "labels": names,
+            "sorted": True,
+            "datasets": [{
+                "label": dataset['tooltip'],
+                "data": counts,
+                "backgroundColor": colors,
+                "borderWidth": 0.5,
+                "borderColor": 'transparent',
+            }]
+        },
+        "options": {
+            "scales": {
+                "r": {
+                    "grid": {
+                        "color": "#404040",
+                    },
+                    "ticks": {
+                        "color": "white",
+                        "textStrokeColor": "transparent",
+                        "backdropColor": "transparent",
+                        "showLabelBackdrop": False,
+                    }
+                }
+            },
+            "responsive": False,
+            "plugins": {
+
+                "tooltip": {
+                    "backgroundColor":"black",
+                },
+                "legend": {
+                    "position": 'bottom',
+                    "font": {
+                        "size": 16,
+                        "color": "white",
+                    },
+                },
+                "title": {
+                    "display": True,
+                    "font":{
+                        "size": 18,
+                        "color": "white",
+                    },
+                    "text": dataset['title']
+                }
+            }
+        },
+    }
+    return data
+
+def display_dashboard(request):
+    figures = []
+
+    template = get_template("collector/dashboard/figure.html")
+    html = template.render({"id": "ready_pps"})
+    s = Sept.balanced_population()
+    data = buildPolarArea(s)
+    figure = {"html": html, "id": "ready_pps", "data": data}
+    figures.append(figure)
+
+
+    template = get_template("collector/dashboard/figure.html")
+    html = template.render({"id":"gpps"})
+    s = Sept.garou_population()
+    data = buildPolarArea(s)
+    figure = {"html": html, "id":"gpps", "data":data}
+    figures.append(figure)
+
+    template = get_template("collector/dashboard/figure.html")
+    html = template.render({"id":"kpps"})
+    s = Sept.kinfolk_population()
+    data = buildPolarArea(s)
+    figure = {"html": html, "id":"kpps", "data":data}
+    figures.append(figure)
+
+    template = get_template("collector/dashboard/figure.html")
+    html = template.render({"id":"apps"})
+    s = Creature.auspice_population()
+    data = buildPolarArea(s)
+    figure = {"html": html, "id":"apps", "data":data}
+    figures.append(figure)
+
+    template = get_template("collector/dashboard/figure.html")
+    html = template.render({"id":"bpps"})
+    s = Creature.breed_population()
+    data = buildPolarArea(s)
+    figure = {"html": html, "id":"bpps", "data":data}
+    figures.append(figure)
+
+    template = get_template("collector/dashboard/figure.html")
+    html = template.render({"id":"tpps"})
+    s = Creature.tribe_population()
+    data = buildPolarArea(s)
+    figure = {"html": html, "id":"tpps", "data":data}
+    figures.append(figure)
+
+    template = get_template("collector/dashboard/figure.html")
+    html = template.render({"id":"rapps"})
+    s = Sept.rage_population()
+    data = buildPolarArea(s)
+    figure = {"html": html, "id":"rapps", "data":data}
+    figures.append(figure)
+
+    template = get_template("collector/dashboard/figure.html")
+    html = template.render({"id":"gnosispps"})
+    s = Sept.gnosis_population()
+    data = buildPolarArea(s)
+    figure = {"html": html, "id":"gnosispps", "data":data}
+    figures.append(figure)
+
+    template = get_template("collector/dashboard/figure.html")
+    html = template.render({"id": "rgpps"})
+    s = Sept.glory_population()
+    data = buildPolarArea(s)
+    figure = {"html": html, "id": "rgpps", "data": data}
+    figures.append(figure)
+
+    template = get_template("collector/dashboard/figure.html")
+    html = template.render({"id": "rhpps"})
+    s = Sept.honor_population()
+    data = buildPolarArea(s)
+    figure = {"html": html, "id": "rhpps", "data": data}
+    figures.append(figure)
+
+    template = get_template("collector/dashboard/figure.html")
+    html = template.render({"id": "rwpps"})
+    s = Sept.wisdom_population()
+    data = buildPolarArea(s)
+    figure = {"html": html, "id": "rwpps", "data": data}
+    figures.append(figure)
+
+    template = get_template("collector/dashboard/figure.html")
+    html = template.render({"id": "rankpps"})
+    s = Sept.rank_population()
+    data = buildPolarArea(s)
+    figure = {"html": html, "id": "rankpps", "data": data}
+    figures.append(figure)
+
+
+    answer = {"figures": json.dumps(figures)}
+    return JsonResponse(answer)
 
 def display_gaia_wheel(request):
     if is_ajax(request):
@@ -858,7 +1012,6 @@ def all_in_one_pdf(rid, pages, creature="mortal"):
         with open(des, "wb") as fout:
             merger.write(fout)
         logger.info(f"Successfully merged {i} page(s) as [{des}].")
-        print(f"Successfully merged {i} page(s) as [{des}].")
     return res
 
 
@@ -867,7 +1020,7 @@ def moon_phase(request, dt=None):
 
     city = LocationInfo("Minneapolis", "Minnesota", "America/Chicago", 44.97, -93.27)
     timezone = zoneinfo.ZoneInfo("America/Chicago")
-    print(
+    logger.debug(
         (
             f"Information for {city.name}/{city.region}\n"
             f"Timezone: {city.timezone}\n"
@@ -1014,7 +1167,7 @@ def quaestor(request, slug=None):
         response["status"] = s
         response["rationale"] = r
         response["data"] = d
-        print(response)
+        logger.info(response)
     return JsonResponse(response)
 
 
@@ -1171,7 +1324,7 @@ def weaver_code(request, code=None):
                 }
                 if f"{z}" in special_names:
                     rune["letter"] = special_names[f"{z}"]
-                print("Special " + chr(230))
+                logger.info("Weaver Code: Special " + chr(230))
             elif x in [48, 49, 50, 51, 52, 53, 54, 55, 56, 57]:
                 z = x - 48
                 rune = {
@@ -1181,7 +1334,7 @@ def weaver_code(request, code=None):
                     "is_number": 1,
                     "stroke": "#30a030",
                 }
-                print("Number")
+                logger.info("Number")
             else:
                 z = x
                 rune = {
@@ -1191,8 +1344,8 @@ def weaver_code(request, code=None):
                     "is_letter": 1,
                     "stroke": "#a03030",
                 }
-                print("Letter")
-            print(f"x:{x} y:{y} z:{z}")
+                logger.info("Letter")
+            logger.info(f"x:{x} y:{y} z:{z}")
             rune["on"] = split_cumulate(z, defi["debug"] > 0)
             combos.append(rune)
         l.append(combos)

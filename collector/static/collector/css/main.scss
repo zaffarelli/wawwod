@@ -502,6 +502,7 @@ table {
     font-family: "Ruda";
     font-size: 12px;
     @include panel;
+//     border: 1px solid red;
     &.chronicle {
       text-align: center;
       font-family: Titre;
@@ -515,25 +516,38 @@ table {
       margin-left: 0;
       text-indent: 0;
       list-style-type: none;
+//       border: 1px solid pink;
 
       & li {
         padding: 5px;
         margin: 2px;
         border-radius: 5px;
+//         border: 1px solid yellow;
         & ul.pull_right {
           list-style-type: none;
           padding-left: 2ex;
           margin-left: 0;
           text-indent: 0;
           list-style-type: none;
-          display:block;
-          border-color:red;
+
+//           border-color:red;
+//           border: 1px solid green;
+          //margin-left:20ex;
           & li {
             padding: 5px;
             margin: 2px;
             border-radius: 5px;
+//             border: 1px solid blue;
           }
         }
+        & ul.pull_right {
+            display:none;
+        }
+        &:hover{
+            & ul.pull_right {
+                display:block;
+            }
+         }
       }
     }
 
@@ -548,23 +562,27 @@ table {
           //background: complement($panel_background);
           cursor: pointer;
           & ul.pull_right {
-            display: block;
-            & li {
-              //                 background:#300542;
-              &:hover {
-                  background: black;
-                //                   background: #200d65;
-              }
+
+            &:hover{
+                & li {
+                  display: block;
+                  background:#505050;
+                  &:hover {
+                    background:#ffcc44;
+                    color:black,
+                  }
+                }
             }
+
           }
         }
       }
     }
   }
 
-  //   &.hidden {
-  //     display: none;
-  //   }
+  &.hidden {
+    display: none;
+  }
 }
 
 #caine_roots {
@@ -1312,3 +1330,26 @@ fieldset {
     font-family:TexteLibre;
 }
 
+.dashboard{
+    width:92vw;
+    height:88vh;
+    overflow:scroll;
+    display:flex;
+    flex-flow:row wrap;
+    justify-content: flex-start;
+    align-content: space-around;
+    align-items: baseline;
+    gap:5px;
+    & .figure{
+        flex: 0 1 auto;
+//         border:1px solid #c0c0C0;
+        background:#1010107f;
+        border-radius:15pt;
+        padding:15pt;
+
+    }
+}
+
+// .dashboard{
+//     display:block;
+// }

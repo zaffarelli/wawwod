@@ -2,7 +2,12 @@ class WawwodCollector {
     constructor() {
         this.d3 = undefined;
         this.init();
+        Chart.defaults.backgroundColor = "#1010107f"
+        Chart.defaults.borderColor = '#7a7569'
+        Chart.defaults.color = '#e3dbcb'
     }
+
+
 
     init() {
         let me = this;
@@ -83,15 +88,26 @@ class WawwodCollector {
                 success: function (answer) {
                     $("#htmlarea").html("")
                     if (action == 'gaia_wheel') {
-                        let d = JSON.parse(answer.data);
+                        let d = JSON.parse(answer.data)
                         me.d3 = new GaiaWheel(d, "#d3area", me);
                         me.d3.perform();
                     }
                     if (action == 'dashboard') {
-                        let d = JSON.parse(answer.data);
-                        me.d3 = new Dashboard(d, "#d3area", me);
-                        //me.d3.setCollector(me)
-                        me.d3.perform();
+                        // let d = JSON.parse(answer.data);
+                        // me.d3 = new Dashboard(d, "#d3area", me);
+                        // //me.d3.setCollector(me)
+                        // me.d3.perform();
+                        if (answer.hasOwnProperty('figures')){
+                            let figures = JSON.parse(answer.figures)
+                            $("#d3area").html("")
+                            let $dash = $("<div>",{class:"dashboard",id:"generic_dashboard"})
+                            $("#d3area").append($dash)
+                            _.forEach(figures, (figure) => {
+                                $("#generic_dashboard").append(figure.html)
+                                let $ctx = $("#"+figure.id)
+                                new Chart($ctx,figure.data)
+                            })
+                        }
                     }
                     if (action == 'groups') {
                         console.log("done:::")

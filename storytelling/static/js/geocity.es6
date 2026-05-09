@@ -436,24 +436,24 @@ xmlns:xlink="http://www.w3.org/1999/xlink" width="' + me.width + '" height="' + 
             .attr("d", me.geoPath)
             .style("fill", function (e) {
                 return "url(#" + e.status + ")"
-                if (e.properties.hasOwnProperty("STATEFP")){
-                    let x = e.properties["STATEFP"]
-                    if (x == "27"){// Minnesota
-                        return "#c0c0c07f"
-                    }else if (x == "38"){// North Dakota
-                        return "#b3c7db"
-                    }else if (x == "55"){// Wisconsin
-                        return "#dbb3d8"
-                    }else if (x == "19"){// Iowa
-                        return "#dbb6b3"
-                    }else if (x == "46"){// South Dakota
-                        return "#d2dbb3"
-                    }else{
-                        return "#606060"
-                    }
-                }else{
-                    return "url(#" + e.status + ")"
-                }
+                // if (e.properties.hasOwnProperty("STATEFP")){
+                //     let x = e.properties["STATEFP"]
+                //     if (x == "27"){// Minnesota
+                //         return "#c0c0c07f"
+                //     }else if (x == "38"){// North Dakota
+                //         return "#b3c7db"
+                //     }else if (x == "55"){// Wisconsin
+                //         return "#dbb3d8"
+                //     }else if (x == "19"){// Iowa
+                //         return "#dbb6b3"
+                //     }else if (x == "46"){// South Dakota
+                //         return "#d2dbb3"
+                //     }else{
+                //         return "#606060"
+                //     }
+                // }else{
+                //     return "url(#" + e.status + ")"
+                // }
 
             })
             .style("stroke", me.lineColor)

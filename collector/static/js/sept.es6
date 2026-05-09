@@ -581,7 +581,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink"> \
             width = me.boxWidth * 60 - margin.left - margin.right,
             height = me.boxWidth * 20 - margin.top - margin.bottom;
         let ox = 10, oy = 10
-        d3.select(me.parent).selectAll("svg").remove();
+        $(me.parent).html("")
+        d3.select(me.parent).selectAll().remove();
         let pwidth = d3.select(me.parent).style("width");
         let pheight = d3.select(me.parent).style("height");
         let pox = -(parseInt(pwidth) / 2);
@@ -624,8 +625,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink"> \
             .attr('width', me.bit * cw)
             .attr('height', me.bit * cw / 2)
             .style('fill', "#E0E0E0")
-            .style('stroke', "#101010")
-            .style('stroke-width', "0.5pt")
+            .style('stroke', me.data.caern.color)
+            .style('stroke-width', "5pt")
 
         me.vis.append("text")
             .attr('x', me.bit * (full_width - ((cw + 1) / 2)))

@@ -47,7 +47,7 @@
         <ul class="drop_down">
             {% include "collector/page/chronicles.html" with c=chronicles %}
             <HR/>
-            {% include "collector/page/current_chronicle_details.html" with c=chronicles %}
+            {% include "collector/objects/current_chronicle_details.html" with c=chronicles %}
             <HR/>
             {% include "collector/page/players_sheets.html" with c=players %}
         </ul>
@@ -56,9 +56,9 @@
         <i id='toggle_chronicle' class='fa fa-cogs'></i>&nbsp;Options
         <ul class="drop_down">
             <li class="action" id="settings">Settings</li>
-            <li id="toggle_options" class="toggle" action="toggle" param="handler">Show/Hide Options</li>
-            <li id="toggle_details" class="toggle" action="toggle" param="details">Show/Hide Details</li>
-            <li id="toggle_moonphases" class="toggle" action="toggle" param="moonphase">Show/Hide Moon Phases</li>
+            <li id="toggle_options" class="toggle" action="toggle" param="handler">Show/Hide Options (Ctrl+Alt+o)</li>
+            <li id="toggle_details" class="toggle" action="toggle" param="details">Show/Hide Details (Ctrl+Alt+d)</li>
+            <li id="toggle_moonphases" class="toggle" action="toggle" param="moonphase">Show/Hide Moon Phases (Ctrl+Alt+m)</li>
             <HR/>
             <li><a href="accounts/logout">Disconnect</a></li>
         </ul>

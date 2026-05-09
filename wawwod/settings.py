@@ -66,7 +66,7 @@ LOGGING = {
     "disable_existing_loggers": True,
     "formatters": {
         "standard": {
-            "format": "[%(asctime)s] %(message)s",
+            "format": "[%(asctime)s] | %(message)s",
             "datefmt": "%d/%m %H:%M:%S",
         },
     },
@@ -74,30 +74,21 @@ LOGGING = {
         "logfile": {
             "class": "logging.handlers.RotatingFileHandler",
             "filename": LOGPATH + "wawwod.log",
-            "maxBytes": 10000000,
-            "backupCount": 3,
+            "maxBytes": 1000000,
+            "backupCount": 5,
             "formatter": "standard",
         },
         "console": {"class": "logging.StreamHandler", "formatter": "standard"},
     },
     "loggers": {
-        "django": {
+        "": {
             "handlers": ["console", "logfile"],
-            "propagate": False,
+            # "propagate": False,
             "level": "WARNING",
         },
-        "django.db.backends": {
-            "handlers": ["console", "logfile"],
-            "level": "WARNING",
-            "propagate": False,
-        },
-        "wawwod.collector": {
-            "handlers": ["console", "logfile"],
-            "level": "DEBUG",
-        },
-        "wawwod.storytelling": {
-            "handlers": ["console", "logfile"],
-            "level": "DEBUG",
+        "wawwod": {
+             "handlers": ["console", "logfile"],
+             "level": "DEBUG",
         },
     },
 }
