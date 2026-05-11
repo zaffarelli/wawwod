@@ -3,7 +3,7 @@ from django.contrib import admin
 
 import logging
 
-logger = logging.Logger(__name__)
+logger = logging.getLogger(__name__)
 
 
 class Background(models.Model):

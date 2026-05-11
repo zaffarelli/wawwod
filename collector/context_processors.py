@@ -1,7 +1,9 @@
 from collector.utils import wod_reference
 from django.conf import settings
 import logging
-logger = logging.Logger('wawwod.collector')
+
+logger = logging.getLogger(__name__)
+
 
 def commons(request):
     from collector.models.chronicles import Chronicle
@@ -15,7 +17,7 @@ def commons(request):
     else:
         repair_mode = True
     if not repair_mode:
-        logger.info("** Context Processor:", chronicle.name, season.name, adventure.name)
+        #logger.debug(f"** Context Processor: {chronicle.name}, {season.name}, {adventure.name}")
         context = {
             "chronicle": chronicle.acronym,
             "chronicle_name": chronicle.name,
@@ -25,7 +27,7 @@ def commons(request):
             "adventure_name": adventure.name,
         }
     else:
-        print("** Context Processor: Adventure not found!")
+        logger.warning("** Context Processor: Adventure not found!")
         context = {
             "chronicle": "",
             "chronicle_name": "",
@@ -33,5 +35,5 @@ def commons(request):
             "season": "",
             "adventure": "",
         }
-
+    context["user"] = request.user
     return context

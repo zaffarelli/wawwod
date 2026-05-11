@@ -9,7 +9,7 @@ import json
 import hashlib
 import logging
 
-logger = logging.Logger(__name__)
+logger = logging.getLogger(__name__)
 
 
 class Totem(models.Model):

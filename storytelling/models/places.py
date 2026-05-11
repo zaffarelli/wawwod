@@ -5,7 +5,7 @@ from collector.utils.helper import json_default
 import json
 import logging
 
-logger = logging.Logger(__name__)
+logger = logging.getLogger(__name__)
 
 
 class Place(models.Model):

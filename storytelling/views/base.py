@@ -14,7 +14,7 @@ import os
 import json
 import logging
 
-logger = logging.Logger(__name__)
+logger = logging.getLogger(__name__)
 
 def display_storytelling(request):
     all = Story.objects.all()

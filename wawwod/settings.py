@@ -1,5 +1,6 @@
 import os
 import tomllib
+import colorlog
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = "y-he7pukz&#$z_9c_*r7st6p6cm+tu$i9&h*gbw+z!%p4paw3!"
@@ -7,10 +8,10 @@ DEBUG = True
 ALLOWED_HOSTS = ["*"]
 
 INSTALLED_APPS = [
+    "django.contrib.auth",
     "collector.apps.CollectorConfig",
     "storytelling.apps.StorytellingConfig",
     "django.contrib.admin",
-    "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
@@ -63,11 +64,12 @@ LOGPATH = os.path.join(BASE_DIR, "logs/")
 
 LOGGING = {
     "version": 1,
-    "disable_existing_loggers": True,
+    "disable_existing_loggers": False,
     "formatters": {
         "standard": {
-            "format": "[%(asctime)s] | %(message)s",
-            "datefmt": "%d/%m %H:%M:%S",
+            "format": "%(log_color)s%(asctime)s | %(name)s %(white)s| %(message)s",
+            "datefmt": "%d %H:%M:%S",
+            "()": 'colorlog.ColoredFormatter'
         },
     },
     "handlers": {
@@ -77,20 +79,36 @@ LOGGING = {
             "maxBytes": 1000000,
             "backupCount": 5,
             "formatter": "standard",
+            "level": "DEBUG"
         },
-        "console": {"class": "logging.StreamHandler", "formatter": "standard"},
+        "console": {
+            "class": "logging.StreamHandler",
+            "formatter": "standard",
+            "level": "DEBUG"
+        },
     },
     "loggers": {
-        "": {
-            "handlers": ["console", "logfile"],
-            # "propagate": False,
-            "level": "WARNING",
+        "django": {
+            "handlers": ["console"],
+            "propagate": True,
         },
-        "wawwod": {
-             "handlers": ["console", "logfile"],
-             "level": "DEBUG",
+        "core": {
+            "handlers": ["logfile", "console"],
+            "propagate": True,
         },
+        "collector": {
+            "handlers": ["logfile", "console"],
+            "propagate": True,
+        },
+        "storytelling": {
+            "handlers": ["logfile", "console"],
+            "propagate": True,
+        }
     },
+    "root": {
+        "handlers": ["console"],
+        "level": "DEBUG",
+    }
 }
 WSGI_APPLICATION = "wawwod.wsgi.application"
 

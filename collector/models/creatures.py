@@ -26,7 +26,9 @@ from collector.utils.wod_reference import from_stats
 from collector.models.adventures import Adventure
 import random
 
-logger = logging.Logger('wawwod')
+logger = logging.getLogger(__name__)
+
+
 MAX_TRAITS = 16
 MAX_MERITS = 5
 MAX_ADVANTAGES = 12
@@ -446,7 +448,7 @@ class Creature(models.Model):
             rite = getattr(self, f"rite{x}", "")
             if rite != "":
                 list.append(rite)
-        print(list)
+        logger.debug(f"Rites: f{list}")
         return list
 
     def get_traits(self):
@@ -473,7 +475,7 @@ class Creature(models.Model):
         code = ""
         value = ""
         cnt = -1
-        for x in range(16):
+        for x in range(MAX_TRAITS):
             trait = getattr(self, f"trait{x}", "")
             if len(trait) > 0:
                 cnt += 1
@@ -653,7 +655,7 @@ class Creature(models.Model):
             if ch:
                 if int(self.trueage) != 0:
                     self.embrace = ch.era - (int(self.trueage) - int(self.age))
-                    print(self.embrace)
+                    logger.info(f"Embrace: f{self.embrace}")
             else:
                 self.trueage = 0
                 self.embrace = 0
@@ -712,18 +714,14 @@ class Creature(models.Model):
         self.display_gauge = math.floor(int(self.trueage) / 10) - 1
         edge_for = self.edge_for
         if len(edge_for) > 0:
-            # print(edge_for)
             edgers = edge_for.split(", ")
             for edger in edgers:
-                # print("xxxxxxxxxxx")
                 if len(edger)>0:
-                    # print("uuu")
                     c = Creature.objects.get(name=edger)
                     if c:
-                        # print("aaa")
                         self.groupspec = c.groupspec
                         self.group = c.group
-                        # print(self.groupspec)
+
 
 
     @property
@@ -748,7 +746,6 @@ class Creature(models.Model):
 
     def fix_garou(self):
         from collector.utils.wod_reference import garou_rank_from_renown
-
         self.trueage = self.age
         self.garou_rank = garou_rank_from_renown(
             {
@@ -797,22 +794,20 @@ class Creature(models.Model):
             self.display_gauge -= 1
         self.display_pole = self.group + "__" + self.groupspec
         expected_freebies_by_rank = [0, 0, 30, 60, 120, 240]
-        self.expectedfreebies = (
-                self.freebies_per_mortal_age + expected_freebies_by_rank[self.garou_rank]
-        )
-        if self.player:
-            ch = self.mychronicle
-            if ch:
-                self.expectedfreebies = ch.players_starting_freebies
-            ad = self.myadventure
-            if ad:
-                self.expectedfreebies = ad.players_starting_freebies
+        if self.is_player:
+            self.expectedfreebies = self.mychronicle.players_starting_freebies
+        else:
+            self.expectedfreebies = self.freebies_per_mortal_age + expected_freebies_by_rank[self.garou_rank]
         self.check_expenditure()
+
+    @property
+    def mychronicle(self):
+        from collector.models.chronicles import Chronicle
+        ch = Chronicle.objects.filter(acronym=self.chronicle).first()
+        return ch
 
     def fix_kindred(self):
         # chronicle = get_current_chronicle()
-        print(f"---------------------------------------------------------------")
-        print(f"Fixing kindred {self.name}")
         # Embrace and Age
         condi = self.condition.split("=")
         if condi.count == 2:
@@ -831,22 +826,22 @@ class Creature(models.Model):
                 self.trueage = 0
                 self.embrace = 0
         if self.player:
-            print(self.player)
+            logger.debug(f"Player: {self.player}")
             ch = self.mychronicle
             if ch:
                 self.expectedfreebies = ch.players_starting_freebies
-                print(
+                logger.debug(
                     f"{self.name} expected freebies is {self.expectedfreebies} (Player) by chronicle"
                 )
             ad = self.myadventure
             if ad:
                 self.expectedfreebies = ad.players_starting_freebies
-                print(
+                logger.debug(
                     f"{self.name} expected freebies is {self.expectedfreebies} (Player) by adventure"
                 )
         else:
             self.expectedfreebies = self.freebies_per_age_threshold
-            print(f"{self.name} expected freebies is {self.expectedfreebies} (NPC)")
+            logger.debug(f"{self.name} expected freebies is {self.expectedfreebies} (NPC)")
         # Willpower
         if self.willpower < self.virtue2:
             self.willpower = self.virtue2
@@ -888,7 +883,7 @@ class Creature(models.Model):
 
     def check_expenditure(self):
         if len(self.experience_expenditure) > 0:
-            print(f">>> Experience Expenditure Check")
+            logger.info(f"--- Experience Expenditure Check")
             changes = self.experience_expenditure.split(";")
             freebies_exp_offset = 0
             xp_spent = 0
@@ -899,67 +894,71 @@ class Creature(models.Model):
                     progress = terms[1]
                     if len(progress.split(">")) == 2:
                         cr = int(progress.split(">")[0])
+                        nr = int(progress.split(">")[1])
                     else:
                         cr = 0
-                    exp = terms[2]
+                        nr = 1
+                    fb = terms[2]
                     category = find_stat_category(self.creature, stat)
-
+                    realfb = 0
                     realexp = 0
                     if category == "attributes":
                         realexp = cr * 4
-                        freebies_exp_offset += 5
+                        realfb = (nr-cr)*5
                     elif category in ["talents", "skills", "knowledges"]:
                         realexp = cr * 2
-                        freebies_exp_offset += 2
+                        realfb = (nr-cr) * 2
                         if cr == 0:
                             realexp = 3
                     elif category == "high_rate":
                         realexp = cr * 2
+                        realfb = (nr-cr) * 2
                         if cr == 0:
                             realexp = 3
-                        freebies_exp_offset += 2
                     elif category == "low_rate":
                         realexp = cr * 1
-                        freebies_exp_offset += 1
+                        realfb = (nr-cr)
                     elif category == "gift_in":
                         realexp = cr * 3
-                        freebies_exp_offset += 7
+                        realfb = (nr-cr)*7
                     elif category in ["gift_out", "disc_in"]:
                         realexp = cr * 5
+                        realfb = (nr-cr)*7
                         if cr == 0:
                             realexp = 10
-                        freebies_exp_offset += 7
                     elif category in ["disc_ext"]:
                         realexp = cr * 6
-                        freebies_exp_offset += 7
+                        realfb = (nr-cr) * 7
                         if cr == 0:
                             realexp = 10
                     elif category in ["disc_out"]:
                         realexp = cr * 7
-                        freebies_exp_offset += 7
+                        realfb = (nr-cr) * 7
                         if cr == 0:
                             realexp = 10
                     elif category == "loss":
                         realexp = 0
-                        freebies_exp_offset -= cr
+                        realfb = -(nr-cr)
                     elif category == "free":
                         realexp = 0
-                        freebies_exp_offset -= cr
+                        realfb = (nr-cr)
                     elif category == "backgrounds":
                         realexp = 0
-                        freebies_exp_offset += cr
-
-                    print(
-                        f"{stat:20} Progress: {progress:10} XP:{exp:5} (calc:{realexp:5}) ({category:20}) (Freebies:{cr})"
-                    )
+                        realfb = nr-cr
+                        if "garou" == self.creature:
+                            if stat.lower() in ["fate","totem"]:
+                                realexp = (nr-cr) *2
+                    freebies_exp_offset += realfb
+                    logger.info(f"--- {stat:20} Change: {progress:10} [XP:{realexp} / freebies:{realfb}] (Type:{category} from {cr} to {nr}) {change}")
                     xp_spent += realexp
-            print(f">>> Done")
+            logger.debug(f"--- Experience ... {xp_spent}")
+            logger.debug(f"--- Freebies ..... {freebies_exp_offset}")
             self.freebies_exp_offset = freebies_exp_offset
-            print(f">>> Freebie Experience Offset {self.freebies_exp_offset}")
+            self.expectedfreebies += freebies_exp_offset
             self.exp_spent = xp_spent
             self.exp_pool = self.experience - xp_spent
         else:
-            print(f">>> No experience here")
+            logger.info(f"--- No experience to compute.")
 
     @property
     def mychronicle(self):
@@ -999,7 +998,7 @@ class Creature(models.Model):
     def freebies_per_mortal_age(self):
         age = int(self.age)
         fb = math.floor((age - 20) / 10) * 5
-        # print(f"{self.name:20}: freebies per mortal age: {fb:2} (age: {self.age:2})")
+        logger.info(f"Freebies per mortal age ....... {fb:3} (age: {self.age})")
         return fb
 
     @property
@@ -1033,12 +1032,13 @@ class Creature(models.Model):
                     setattr(self, f"trait{t}", "")
             for t in range(16):
                 trait = getattr(self, f"trait{t}")
-                print(trait)
 
     def fix(self):
         self.challenge = ""
+        logger.warning("* * * * * fix")
+        logger.info(f"Fixing ........................ {self.name.upper()}")
+        logger.info(f"Creature ...................... {self.creature}")
         self.fix_reparts()
-        logger.info("*** fix *******************************************************")
         if self.garou_rank is None:
             self.garou_rank = 0
         if self.adventure:
@@ -1051,31 +1051,15 @@ class Creature(models.Model):
                     words = self.season.split(" ")
                     words.append(a.season)
                     self.season = " ".join(words)
-        #     if self.chronicle != self.adventure.chronicle.acronym:
-        #         self.chronicle = self.adventure.chronicle.acronym
-        # else:
-        #     ch = self.mychronicle
-        #     if ch is None:
-        #         self.chronicle = "WOD"
         self.is_player = len(self.player) > 0
-        logger.info(f"Fixing ............ [{self.name}] [{self.creature}]")
-        # at:3/3/3 ab:7/5/3 b:3 w:2 f:15
-        # self.freebies = -((3 + 3 + 3 + 9) * 5 + (7 + 5 + 3) * 2 + 3 + 2 + 15)
+        # Common to all creatures
         self.freebies = 0
-
         self.body_limit = min(self.attribute0, self.attribute8)
-
-        self.freebies = 0
         self.freebies -= from_stats(self.creature, "attributes") * 5
         self.freebies -= from_stats(self.creature, "abilities") * 2
         self.freebies -= from_stats(self.creature, "backgrounds")
         self.freebies -= from_stats(self.creature, "freebies")
-
-        if "changeling" == self.creature:
-            # traits:3 realms:5 backgrounds:5 willpower:4 glamour:4, banality:3 freebies:15
-            # self.freebies = 0
-            # self.freebies = -((7 + 5 + 3) * 5 + (13 + 9 + 5) * 2)
-            # self.freebies = -(3 * 5 + 5 * 2 + 5 * 1 + 4 + 4 * 3 - 3 + 15)
+        if "changeling" == self.creature: # Fae
             self.freebies -= from_stats(self.creature, "traits") * 5
             self.freebies -= from_stats(self.creature, "realms") * 2
             self.freebies -= from_stats(self.creature, "willpower") * 1
@@ -1083,103 +1067,60 @@ class Creature(models.Model):
             self.freebies -= from_stats(self.creature, "banality") * 1
             self.fix_changeling()
         # Vampire
-        logger.info(f"Creature: {self.creature}")
-        if "kindred" == self.creature:
-            # at:7/5/3 ab:13/9/5 b:5 d:21 v:7 wh:10 f:15
-            # self.freebies = 0
-            # self.freebies -= (7 + 5 + 3) * 5  # Attributes
-            if "Nosferatu" == self.family:
+        if "kindred" == self.creature: # Vampire
+            if "nosferatu" in self.family.lower():
                 self.freebies += 5
                 logger.info("Nosferatu attribute special treatment")
-            # self.freebies -= (13 + 9 + 5) * 2  # Abilities
             self.freebies -= from_stats(self.creature, "traits") * 7
-            # self.freebies -= 3 * 7  # Disciplines
-            # self.freebies -= (7 + 3) * 2  # Virtues
             self.freebies -= from_stats(self.creature, "virtues") * 2
-            # self.freebies -= 5 * 1  # Backgrounds
-            # self.freebies -= 15  # Pure freebies
             self.fix_kindred()
-            logger.info(f"Freebies: {self.freebies}")
-        elif "ghoul" == self.creature:
-            # self.freebies = 0
-            # self.freebies -= (6 + 4 + 3) * 5  # Attributes
-            # self.freebies -= (11 + 7 + 4) * 2  # Abilities
-            # self.freebies -= 2 * 10  # Disciplines
-            # self.freebies -= (7 + 3) * 2  # Virtues
-            # self.freebies -= 5 * 1  # Backgrounds
-            # self.freebies -= 21  # Pure freebies
+        elif "ghoul" == self.creature:  # Ghoul
             self.freebies -= from_stats(self.creature, "traits") * 10
             self.freebies -= from_stats(self.creature, "virtues") * 2
             self.fix_ghoul()
-        # Werewolf
-        elif "garou" == self.creature:
-            # at:7/5/3 ab:13/9/5 b:5 g:21 rgw:16 f:15
-            # self.freebies = 0
-            # self.freebies -= (7 + 5 + 3) * 5  # Attributes
-            # self.freebies -= (13 + 9 + 5) * 2  # Abilities
-            # self.freebies -= 3 * 7  # Gifts
-            # self.freebies -= 5 * 1  # Backgrounds
+        elif "garou" == self.creature: # Werewolf
             self.freebies -= from_stats(self.creature, "traits") * 7
-            self.freebies -= RAGE_PER_AUSPICE[int(self.auspice)] * 1  # Rage per Auspice
-            self.freebies -= GNOSIS_PER_BREED[int(self.breed)] * 2  # Gnosis per Breed
+            self.freebies -= RAGE_PER_AUSPICE[int(self.auspice)] * 1
+            self.freebies -= GNOSIS_PER_BREED[int(self.breed)] * 2
             if self.family:
-                self.freebies -= (
-                        PER_TRIBE[as_tribe_plural(self.family)]["willpower"] * 1
-                )  # Willpower per Tribe
+                self.freebies -= PER_TRIBE[as_tribe_plural(self.family)]["willpower"] * 1
             else:
                 self.freebies -= 3
-            # self.freebies -= 15  # Pure freebies
-            # self.challenge += f"ba:{self.freebies:3}"
-            # self.freebies
             self.fix_garou()
             self.fury_limit = math.ceil(self.rage / 2)
-            self.freebies -= self.freebies_exp_offset
-        elif "kinfolk" == self.creature:
+            #self.freebies += self.freebies_exp_offset
+        elif "kinfolk" == self.creature: # Kinfolk
             self.freebies -= from_stats(self.creature, "willpower")
             self.fix_kinfolk()
-
-        elif "fomori" == self.creature:
-            # self.freebies = -((6 + 4 + 3 + 9) * 5 + (11 + 7 + 4) * 2 + 5 + 3 + 21)
+        elif "fomori" == self.creature: # Fomori
             self.freebies -= from_stats(self.creature, "willpower")
             self.fix_fomori()
         # Mage
         elif "mage" == self.creature:
-            # at:7/5/3 ab:13/9/5 b:5 g:21 rgw:16 f:15
-            # self.freebies = -((7 + 5 + 3 + 9) * 5 + (13 + 9 + 5) * 2 + 5 + 7 * 3 + 16 + 15)
             self.freebies -= from_stats(self.creature, "willpower")
             self.freebies -= from_stats(self.creature, "arete")
             self.freebies -= from_stats(self.creature, "spheres")
             self.fix_mage()
-        # Wraith
-        elif self.creature == "wraith":
-            # self.freebies = -((7 + 5 + 3 + 9) * 5 + (13 + 9 + 5) * 2 + 5 * 5 + 7 + 10 + 10 + 5 * 2)
+
+        elif "wraith" == self.creature:
             self.freebies -= from_stats(self.creature, "willpower")
             self.freebies -= from_stats(self.creature, "arcanos")
             self.freebies -= from_stats(self.creature, "passions")
             self.freebies -= from_stats(self.creature, "fetters")
             self.freebies -= from_stats(self.creature, "pathos")
             self.fix_wraith()
-        # Mortal
         else:
-            # self.creature = 'mortal'
-            # at:3/3/3 ab:7/5/3 b:3 w:2 f:15
-            # self.freebies = -((3 + 3 + 3 + 9) * 5 + (7 + 5 + 3) * 2 + 3 + 2 + 15)
             self.freebies -= from_stats(self.creature, "willpower")
             self.fix_mortal()
         self.sanitize_traits()
         self.expectedfreebies += int(self.extra)
-        # self.challenge += f"/ef:{self.expectedfreebies:3}"
-        self.summary = f"Freebies: {self.freebies}"
         self.calculate_freebies()
-        # print(f"FreebiesDif .............. {self.freebiesdif:4}")
-        # print(f"Freebies ................. {self.freebies:4}")
-        # print(f"Expected Freebies ........ {self.expectedfreebies:4}")
-        # print(f"Freebies per mortal age .. {self.freebies_per_mortal_age:4}")
-        # self.balance_ghoul()
+        logger.info(f"Characters condition ..... {self.condition}")
+        logger.info(f"Characters status ........ {self.status}")
         self.display_pole = self.group + "__" + self.groupspec
         self.changeName()
         self.need_fix = False
-        # print("===============================================================")
+        logger.warning("* * * * * fix done")
 
     @property
     def roster_base(self):
@@ -1489,12 +1430,10 @@ class Creature(models.Model):
             points = [pool]
         else:
             points = self.reparts.split("__")[partition].split("_")
-        print(points)
         for x in range(partitions_count):
             array = self.randomize_stat(
                 stats_count=partition_length, min_value=min, pool=int(points[x])
             )
-            print(array)
             for y in range(partition_length):
                 if len(field) == 1:
                     k = (x * partition_length) + y
@@ -1576,10 +1515,79 @@ class Creature(models.Model):
         self.save()
 
     def randomize_backgrounds(self):
-        total_backgrounds = len(STATS_NAMES[self.creature]["backgrounds"])
-        self.randomize_fields(
-            field=["background"], pool=5, partition_length=total_backgrounds, min=0
-        )
+        restrictions = PER_TRIBE[as_tribe_plural(self.family)]["restrictions"]
+        backgrounds = STATS_NAMES[self.creature]["backgrounds"]
+        points = int(STATS_TEMPLATES[self.creature]["backgrounds"])
+        vector = []
+        favored = []
+        restricted = []
+        discouraged = []
+        mandatory = []
+        ress = restrictions.split(";")
+        for res in ress:
+            if len(res)>0:
+                r = res.split(":")
+                if "F"==r[0]:
+                    ks = r[1].split(",")
+                    for k in ks:
+                        favored.append(k)
+                elif "R"==r[0]:
+                    ks = r[1].split(",")
+                    for k in ks:
+                        restricted.append(k)
+                elif "D"==r[0]:
+                    ks = r[1].split(",")
+                    for k in ks:
+                        discouraged.append(k)
+                elif "M"==r[0]:
+                    ks = r[1].split(",")
+                    for k in ks:
+                        l = k.split("/")
+                        mandatory.append(l[0])
+                else:
+                    logger.error(f"I don't know what to do with {r}")
+        total_weights = 0
+        for background in backgrounds:
+            v = {"background":background,"status":"","weight":3,"value":0}
+            if background in favored:
+                v["weight"] += 2
+                v["status"] += "favored"
+            elif background in discouraged:
+                v["weight"] -= 2
+                v["status"] += "discouraged"
+            elif background in restricted:
+                v["weight"] = 0
+                v["status"] += "restricted"
+            elif background in mandatory:
+                #s = background.split("/")
+                # v["background"] = background
+                points -= 3
+                v['value'] = 3
+                v["status"] += "mandatory"
+            total_weights += v["weight"]
+            vector.append(v)
+        logger.debug(f"{restrictions}")
+        # logger.debug(f"{vector}")
+        # logger.debug(f"Pts: {points} Weights: {total_weights}")
+
+        for z in range(points):
+            choice = roll(total_weights)-1
+            start = 0
+            for v in vector:
+                start += v["weight"]
+                if choice < start:
+                    v["value"] += 1
+                    break
+
+        for v in vector:
+            i = STATS_NAMES[self.creature]["backgrounds"].index(v["background"])
+            if i != -1:
+                setattr(self,f"background{i}", v["value"])
+
+        # total_backgrounds = len(backgrounds)
+        # self.randomize_fields(
+        #     field=["background"], pool=5, partition_length=total_backgrounds, min=0
+        # )
 
         # background_points = from_stats(self.creature, 'backgrounds')
         # pools = []
@@ -1709,7 +1717,6 @@ class Creature(models.Model):
     def balance_ghoul(self):
         if self.creature == "ghoul":
             discipline_points = 0
-            # print(f"=> BALANCE GHOUL [{self.name}].")
             offset = self.expectedfreebies - self.freebies
             while offset > 0:
                 str = ""
@@ -2018,7 +2025,8 @@ class Creature(models.Model):
         return "".join(lines)
 
     def calculate_freebies(self):
-        print(f"Freebies ..................... {self.freebies} (*)")
+        logger.info("+++++")
+        logger.info(f"Freebies ..................... {self.freebies} (*)")
         # *** Attributes
         self.total_physical = -3
         self.total_social = -3
@@ -2033,11 +2041,11 @@ class Creature(models.Model):
             self.total_mental += m
         if self.creature == "kindred" and self.family == "Nosferatu":
             s += 1  # Missing Apparence
-            print("APP nosferatu")
+            logger.info("APP nosferatu")
         x = self.total_physical + self.total_social + self.total_mental
         self.challenge += f" at:{x * 5}/{5 * (7 + 5 + 3)}"
         self.freebies += x * 5
-        print(f"Freebies + Attributes ........ {self.freebies:4} {x:4}x5 {x * 5:4}")
+        logger.info(f"Freebies + Attributes ........ {self.freebies:4} {x:4}x5 {x * 5:4}")
         # *** Abilities
         self.total_talents = 0
         self.total_skills = 0
@@ -2053,7 +2061,7 @@ class Creature(models.Model):
         x = self.total_talents + self.total_skills + self.total_knowledges
         self.challenge += f" ab:{x * 2}/{2 * (13 + 9 + 5)}"
         self.freebies += (x) * 2
-        print(f"Freebies + Abilities ......... {self.freebies:4} {x:4}x2 {x * 2:4}")
+        logger.info(f"Freebies + Abilities ......... {self.freebies:4} {x:4}x2 {x * 2:4}")
         # *** Backgrounds
         self.total_backgrounds = 0
         for n in range(len(STATS_NAMES[self.creature]["backgrounds"])):
@@ -2062,7 +2070,7 @@ class Creature(models.Model):
             self.total_backgrounds += b
         self.freebies += self.total_backgrounds
         self.challenge += f" bk:{self.total_backgrounds}/{5}"
-        print(
+        logger.info(
             f"Freebies + Backgrounds ....... {self.freebies:4}   {self.total_backgrounds:4} {self.total_backgrounds:4}"
         )
         # Merits & Flaws
@@ -2080,7 +2088,7 @@ class Creature(models.Model):
                 if s:
                     self.freebies -= v
                     total_merits_and_flaws -= v
-        print(
+        logger.info(
             f"Freebies + Merits & Flaws .... {self.freebies:4}   {total_merits_and_flaws:4} {total_merits_and_flaws:4}"
         )
         # Traits
@@ -2143,8 +2151,8 @@ class Creature(models.Model):
             w = (getattr(self, "willpower") - self.virtue2) * wdot
             self.freebies += self.total_traits * 7  # 7 pts per discipline pts
             self.freebies += h + w
-            print(f"Freebies + Virtues ........... {self.freebies:4}   {k:4} {k * 2:4}")
-            print(
+            logger.info(f"Freebies + Virtues ........... {self.freebies:4}   {k:4} {k * 2:4}")
+            logger.info(
                 f"Freebies + Traits ............ {self.freebies:4} {self.total_traits:4}x7 {self.total_traits * 7:4}"
             )
             self.challenge += f" tr:{self.total_traits * 7}/21"
@@ -2154,7 +2162,7 @@ class Creature(models.Model):
             self.freebies += getattr(self, "gnosis") * 2
             wp = getattr(self, "willpower")
             self.freebies += wp
-            print(f"Freebies + Special ........... {self.freebies} {wp}")
+            logger.info(f"Freebies + Special ........... {self.freebies} {wp}")
         elif "ghoul" == self.creature:
             self.freebies += self.total_traits * 7  # 7 pts per discipline pts
             vdot = self.value_of(f"{self.creature}:freebies_per_dot:virtue")
@@ -2186,9 +2194,12 @@ class Creature(models.Model):
 
         # self.freebies += + self.expectedfreebies
         self.freebiesdif = self.freebies - self.expectedfreebies
-        print(
-            f"Expected Freebies / Dif / free ........... {self.freebiesdif:4} =  {self.expectedfreebies:4} - {self.freebies:4}"
-        )
+        # logger.info(
+        #     f"Expected Freebies / Dif / free ........... {self.freebiesdif:4} =  {self.expectedfreebies:4} - {self.freebies:4}"
+        # )
+        logger.info(f"FreebiesDif .................. {self.freebiesdif:4}")
+        logger.info(f"Freebies ..................... {self.freebies:4}")
+        logger.info(f"Expected Freebies ............ {self.expectedfreebies:4}")
 
         if self.freebies == self.expectedfreebies:
             self.status = "READY"
@@ -2202,7 +2213,8 @@ class Creature(models.Model):
         else:
             self.status = "UNBALANCED"
             self.is_new = True
-        print(f"{self.name} > {self.freebies} {self.expectedfreebies} > {self.status}")
+        logger.info(f"{self.name} with {self.freebies} vs {self.expectedfreebies} is {self.status}")
+        logger.info("+++++")
 
     def str2pair(self, str):
         w = str.split(" (")

@@ -30,7 +30,7 @@ import logging
 import datetime
 from astral import moon
 
-logger = logging.Logger(__name__)
+logger = logging.getLogger(__name__)
 
 
 def prepare_index(request):
@@ -929,6 +929,7 @@ def display_dashboard(request):
 
     attribute = "Perception"
     ability = "Alertness"
+
     parts = adventure.watch.split("+")
     if len(parts)==2:
         attribute = parts[0]

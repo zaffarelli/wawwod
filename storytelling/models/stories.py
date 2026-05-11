@@ -8,7 +8,7 @@ from django.utils import timezone
 
 import logging
 
-logger = logging.Logger(__name__)
+logger = logging.getLogger(__name__)
 
 
 class Story(models.Model):

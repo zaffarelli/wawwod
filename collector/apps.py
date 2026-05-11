@@ -11,3 +11,4 @@ class CollectorConfig(AppConfig):
         import collector.signals.septs
         import collector.signals.gifts
         import collector.signals.totems
+        import collector.signals.users

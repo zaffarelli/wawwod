@@ -1,60 +1,69 @@
-[08/05 13:01:01] | "GET /static/collector/css?664d0c690718 HTTP/1.1" 404 1860
-[08/05 13:41:48] | "GET /static/collector/css?664d0c690718 HTTP/1.1" 404 1860
-[08/05 15:10:13] | "GET /static/collector/css?664d0c690718 HTTP/1.1" 404 1860
-[08/05 15:11:14] | "GET /static/collector/css?664d0c690718 HTTP/1.1" 404 1860
-[08/05 15:12:04] | "GET /static/collector/css?664d0c690718 HTTP/1.1" 404 1860
-[08/05 15:12:37] | "GET /static/collector/css?664d0c690718 HTTP/1.1" 404 1860
-[08/05 15:12:49] | "GET /static/collector/css?664d0c690718 HTTP/1.1" 404 1860
-[08/05 15:14:02] | "GET /static/collector/css?664d0c690718 HTTP/1.1" 404 1860
-[08/05 15:14:58] | "GET /static/collector/css?664d0c690718 HTTP/1.1" 404 1860
-[08/05 15:17:04] | "GET /static/collector/css?664d0c690718 HTTP/1.1" 404 1860
-[08/05 15:17:58] | "GET /static/collector/css?664d0c690718 HTTP/1.1" 404 1860
-[08/05 15:20:33] | "GET /static/collector/css?664d0c690718 HTTP/1.1" 404 1860
-[08/05 15:20:54] | "GET /static/collector/css?664d0c690718 HTTP/1.1" 404 1860
-[08/05 15:21:23] | "GET /static/collector/css?664d0c690718 HTTP/1.1" 404 1860
-[08/05 15:21:37] | "GET /static/collector/css?664d0c690718 HTTP/1.1" 404 1860
-[08/05 15:21:53] | "GET /static/collector/css?664d0c690718 HTTP/1.1" 404 1860
-[08/05 15:23:53] | "GET /static/collector/css?664d0c690718 HTTP/1.1" 404 1860
-[08/05 15:24:47] | "GET /static/collector/css?664d0c690718 HTTP/1.1" 404 1860
-[08/05 15:24:49] | "GET /static/collector/css?664d0c690718 HTTP/1.1" 404 1860
-[08/05 15:25:45] | "GET /static/collector/css?664d0c690718 HTTP/1.1" 404 1860
-[08/05 15:26:19] | "GET /static/collector/css?664d0c690718 HTTP/1.1" 404 1860
-[08/05 15:27:18] | "GET /static/collector/css?664d0c690718 HTTP/1.1" 404 1860
-[08/05 15:27:35] | "GET /static/collector/css?664d0c690718 HTTP/1.1" 404 1860
-[08/05 15:27:55] | "GET /static/collector/css?664d0c690718 HTTP/1.1" 404 1860
-[08/05 15:28:13] | "GET /static/collector/css?664d0c690718 HTTP/1.1" 404 1860
-[08/05 15:28:31] | Internal Server Error: /ajax/display/chronicle_book/
-Traceback (most recent call last):
-  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
-    response = get_response(request)
-  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 198, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/zaffarelli/Projects/wawwod/storytelling/views/base.py", line 257, in chronicle_book
-    logger.log(factions)
-    ~~~~~~~~~~^^^^^^^^^^
-TypeError: Logger.log() missing 1 required positional argument: 'msg'
-[08/05 15:28:31] | "GET /ajax/display/chronicle_book/ HTTP/1.1" 500 90396
-[08/05 19:13:39] | Not Found: /ajax/display/undefined/
-[08/05 19:13:39] | "GET /ajax/display/undefined/ HTTP/1.1" 404 18777
-[08/05 19:14:05] | "GET /static/collector/css?664d0c690718 HTTP/1.1" 404 1860
-[08/05 19:14:09] | Method Not Allowed (GET): /accounts/logout/
-[08/05 19:14:09] | "GET /accounts/logout/ HTTP/1.1" 405 0
-[08/05 19:14:09] | Method Not Allowed (GET): /accounts/logout/
-[08/05 19:14:09] | "GET /accounts/logout/ HTTP/1.1" 405 0
-[08/05 19:14:18] | "GET /static/collector/css?664d0c690718 HTTP/1.1" 404 1860
-[08/05 19:15:02] | "GET /static/collector/css?664d0c690718 HTTP/1.1" 404 1860
-[08/05 19:18:56] | Internal Server Error: /ajax/display/chronicle_book/
-Traceback (most recent call last):
-  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
-    response = get_response(request)
-  File "/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 198, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/zaffarelli/Projects/wawwod/storytelling/views/base.py", line 257, in chronicle_book
-    logger.log(factions)
-    ~~~~~~~~~~^^^^^^^^^^
-TypeError: Logger.log() missing 1 required positional argument: 'msg'
-[08/05 19:18:56] | "GET /ajax/display/chronicle_book/ HTTP/1.1" 500 90396
-[08/05 19:25:49] | "GET /static/collector/css?e9711a6f8d36 HTTP/1.1" 404 1860
-[08/05 19:28:04] | "GET /static/collector/css?e9711a6f8d36 HTTP/1.1" 404 1860
-[08/05 19:28:58] | "GET /static/collector/css?e9711a6f8d36 HTTP/1.1" 404 1860
-[08/05 19:29:07] | "GET /static/collector/css?e9711a6f8d36 HTTP/1.1" 404 1860
+[32m12 01:45:32 | collector.models.creatures [37m| Searching value of Brawl for garou (Oscar Lemper)[0m
+[32m12 01:45:32 | collector.models.creatures [37m| Searching value of Dexterity for garou (Samantha Sheppard)[0m
+[32m12 01:45:32 | collector.models.creatures [37m| Searching value of Brawl for garou (Samantha Sheppard)[0m
+[32m12 01:45:32 | collector.models.creatures [37m| Searching value of Dexterity for garou (Scarlet Sterling)[0m
+[32m12 01:45:32 | collector.models.creatures [37m| Searching value of Brawl for garou (Scarlet Sterling)[0m
+[32m12 01:45:32 | collector.models.creatures [37m| Searching value of Dexterity for garou (Tabatha Eatlon)[0m
+[32m12 01:45:32 | collector.models.creatures [37m| Searching value of Brawl for garou (Tabatha Eatlon)[0m
+[32m12 01:45:32 | collector.models.creatures [37m| Searching value of Dexterity for garou (Tictactoe)[0m
+[32m12 01:45:32 | collector.models.creatures [37m| Searching value of Brawl for garou (Tictactoe)[0m
+[32m12 01:45:32 | collector.models.creatures [37m| Searching value of Dexterity for garou (Arvin Mettlock)[0m
+[32m12 01:45:32 | collector.models.creatures [37m| Searching value of Brawl for garou (Arvin Mettlock)[0m
+[32m12 01:45:32 | collector.models.creatures [37m| Searching value of Dexterity for garou (Clara Stubbard)[0m
+[32m12 01:45:32 | collector.models.creatures [37m| Searching value of Brawl for garou (Clara Stubbard)[0m
+[32m12 01:45:32 | collector.models.creatures [37m| Searching value of Dexterity for garou (Cole Hutchinson)[0m
+[32m12 01:45:32 | collector.models.creatures [37m| Searching value of Brawl for garou (Cole Hutchinson)[0m
+[32m12 01:45:32 | collector.models.creatures [37m| Searching value of Dexterity for garou (Donna Furlowe)[0m
+[32m12 01:45:32 | collector.models.creatures [37m| Searching value of Brawl for garou (Donna Furlowe)[0m
+[32m12 01:45:32 | collector.models.creatures [37m| Searching value of Dexterity for garou (Erica Stravis)[0m
+[32m12 01:45:32 | collector.models.creatures [37m| Searching value of Brawl for garou (Erica Stravis)[0m
+[32m12 01:45:32 | collector.models.creatures [37m| Searching value of Dexterity for garou (Graham Demitz)[0m
+[32m12 01:45:32 | collector.models.creatures [37m| Searching value of Brawl for garou (Graham Demitz)[0m
+[32m12 01:45:32 | collector.models.creatures [37m| Searching value of Dexterity for garou (Irvine Jeffreys)[0m
+[32m12 01:45:32 | collector.models.creatures [37m| Searching value of Brawl for garou (Irvine Jeffreys)[0m
+[32m12 01:45:32 | collector.models.creatures [37m| Searching value of Dexterity for garou (Jerry Wintersmith)[0m
+[32m12 01:45:32 | collector.models.creatures [37m| Searching value of Brawl for garou (Jerry Wintersmith)[0m
+[32m12 01:45:32 | collector.models.creatures [37m| Searching value of Dexterity for garou (Klaus Hennegardt)[0m
+[32m12 01:45:32 | collector.models.creatures [37m| Searching value of Brawl for garou (Klaus Hennegardt)[0m
+[32m12 01:45:32 | collector.models.creatures [37m| Searching value of Dexterity for garou (Max Cunningham)[0m
+[32m12 01:45:32 | collector.models.creatures [37m| Searching value of Brawl for garou (Max Cunningham)[0m
+[32m12 01:45:32 | collector.models.creatures [37m| Searching value of Dexterity for garou (Ottis Mayfield)[0m
+[32m12 01:45:32 | collector.models.creatures [37m| Searching value of Brawl for garou (Ottis Mayfield)[0m
+[32m12 01:45:32 | collector.models.creatures [37m| Searching value of Dexterity for garou (Roman Kipp)[0m
+[32m12 01:45:32 | collector.models.creatures [37m| Searching value of Brawl for garou (Roman Kipp)[0m
+[32m12 01:45:32 | collector.models.creatures [37m| Searching value of Dexterity for garou (Sarah Blidge)[0m
+[32m12 01:45:32 | collector.models.creatures [37m| Searching value of Brawl for garou (Sarah Blidge)[0m
+[32m12 01:45:32 | collector.models.creatures [37m| Searching value of Dexterity for garou (Alex Nostroiev)[0m
+[32m12 01:45:32 | collector.models.creatures [37m| Searching value of Brawl for garou (Alex Nostroiev)[0m
+[32m12 01:45:32 | collector.models.creatures [37m| Searching value of Dexterity for garou (Dalton Murphy)[0m
+[32m12 01:45:32 | collector.models.creatures [37m| Searching value of Brawl for garou (Dalton Murphy)[0m
+[32m12 01:45:32 | collector.models.creatures [37m| Searching value of Dexterity for garou (Dean Caralias)[0m
+[32m12 01:45:32 | collector.models.creatures [37m| Searching value of Brawl for garou (Dean Caralias)[0m
+[32m12 01:45:32 | collector.models.creatures [37m| Searching value of Dexterity for garou (Derek Hamsley)[0m
+[32m12 01:45:32 | collector.models.creatures [37m| Searching value of Brawl for garou (Derek Hamsley)[0m
+[32m12 01:45:32 | collector.models.creatures [37m| Searching value of Dexterity for garou (Dustin Priella)[0m
+[32m12 01:45:32 | collector.models.creatures [37m| Searching value of Brawl for garou (Dustin Priella)[0m
+[32m12 01:45:32 | collector.models.creatures [37m| Searching value of Dexterity for garou (Elias Varanti)[0m
+[32m12 01:45:32 | collector.models.creatures [37m| Searching value of Brawl for garou (Elias Varanti)[0m
+[32m12 01:45:32 | collector.models.creatures [37m| Searching value of Dexterity for garou (Emma Oldbrim)[0m
+[32m12 01:45:32 | collector.models.creatures [37m| Searching value of Brawl for garou (Emma Oldbrim)[0m
+[32m12 01:45:32 | collector.models.creatures [37m| Searching value of Dexterity for garou (Erin Caubert)[0m
+[32m12 01:45:32 | collector.models.creatures [37m| Searching value of Brawl for garou (Erin Caubert)[0m
+[32m12 01:45:32 | collector.models.creatures [37m| Searching value of Dexterity for garou (Jenna Garley)[0m
+[32m12 01:45:32 | collector.models.creatures [37m| Searching value of Brawl for garou (Jenna Garley)[0m
+[32m12 01:45:32 | collector.models.creatures [37m| Searching value of Dexterity for garou (Jim Cassavetes)[0m
+[32m12 01:45:32 | collector.models.creatures [37m| Searching value of Brawl for garou (Jim Cassavetes)[0m
+[32m12 01:45:32 | collector.models.creatures [37m| Searching value of Dexterity for garou (Jonas Delprey)[0m
+[32m12 01:45:32 | collector.models.creatures [37m| Searching value of Brawl for garou (Jonas Delprey)[0m
+[32m12 01:45:32 | collector.models.creatures [37m| Searching value of Dexterity for garou (Jordan Merrick)[0m
+[32m12 01:45:32 | collector.models.creatures [37m| Searching value of Brawl for garou (Jordan Merrick)[0m
+[32m12 01:45:32 | collector.models.creatures [37m| Searching value of Dexterity for garou (Phil Burchnow)[0m
+[32m12 01:45:32 | collector.models.creatures [37m| Searching value of Brawl for garou (Phil Burchnow)[0m
+[32m12 01:45:32 | collector.models.creatures [37m| Searching value of Dexterity for garou (Rufus Medville)[0m
+[32m12 01:45:32 | collector.models.creatures [37m| Searching value of Brawl for garou (Rufus Medville)[0m
+[32m12 01:45:32 | collector.models.creatures [37m| Searching value of Dexterity for garou (Thomas Garlof)[0m
+[32m12 01:45:32 | collector.models.creatures [37m| Searching value of Brawl for garou (Thomas Garlof)[0m
+[32m12 01:45:32 | collector.models.creatures [37m| Searching value of Dexterity for garou (Yoko Dremel)[0m
+[32m12 01:45:32 | collector.models.creatures [37m| Searching value of Brawl for garou (Yoko Dremel)[0m
+[32m12 01:45:32 | collector.models.creatures [37m| Searching value of Dexterity for garou (Julius Mawen)[0m
+[32m12 01:45:32 | collector.models.creatures [37m| Searching value of Brawl for garou (Julius Mawen)[0m

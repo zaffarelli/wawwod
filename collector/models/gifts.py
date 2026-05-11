@@ -4,7 +4,7 @@ import yaml
 from yaml.loader import SafeLoader
 import logging
 
-logger = logging.Logger(__name__)
+logger = logging.getLogger(__name__)
 
 
 # CH_BREEDS = (

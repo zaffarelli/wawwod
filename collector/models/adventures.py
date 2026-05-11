@@ -3,7 +3,7 @@ from django.contrib import admin
 from collector.models.seasons import Season
 import logging
 
-logger = logging.Logger(__name__)
+logger = logging.getLogger(__name__)
 
 
 class Adventure(models.Model):

@@ -6,7 +6,7 @@ import json
 import logging
 from storytelling.models.cities import City
 
-logger = logging.Logger(__name__)
+logger = logging.getLogger(__name__)
 
 DEFAULT_GPS = "0,0"
 

@@ -12,7 +12,7 @@ import logging
 
 from collector.utils.wod_reference import ALL_TRIBES
 
-logger = logging.Logger(__name__)
+logger = logging.getLogger(__name__)
 
 def extract_raw(request, slug):
     found = Creature.objects.all().filter(rid=slug)

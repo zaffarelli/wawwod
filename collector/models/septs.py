@@ -16,7 +16,7 @@ from collector.utils.helper import toRID
 from collector.utils.wod_reference import ALL_TRIBES
 from colorfield.fields import ColorField
 
-logger = logging.Logger(__name__)
+logger = logging.getLogger(__name__)
 
 
 class Sept(models.Model):
@@ -537,10 +537,12 @@ class Sept(models.Model):
             if len(sept.garous) > 0:
                 garous = sept.garous.split(", ")
                 metric = 0
+                total = 0
                 for garou in cls.get_garous(garous):
                     if garou.status == "READY":
                         metric += 1
-                counts.append(metric / len(garous) * 100)
+                    total += 1
+                counts.append(metric/total *100 )
             else:
                 counts.append(0)
             colors.append(sept.color + "7f")
