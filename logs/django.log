@@ -1,0 +1,2026 @@
+[32m13 23:09:32 | django.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+[32m13 23:09:55 | django.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/models/creatures.py changed, reloading.[0m
+[32m13 23:09:56 | django.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+[32m13 23:10:00 | django [37m| Index[0m
+[32m13 23:10:00 | django.server [37m| "GET / HTTP/1.1" 200 29736[0m
+[32m13 23:10:00 | django.server [37m| "GET /static/js/cross_over_sheet.es6 HTTP/1.1" 200 29818[0m
+[32m13 23:10:00 | django.server [37m| "GET /static/js/wawwod_sheet.es6 HTTP/1.1" 200 193921[0m
+[32m13 23:10:00 | django.server [37m| "GET /static/js/collector.es6 HTTP/1.1" 200 32949[0m
+[32m13 23:10:00 | django.server [37m| "GET /static/js/gaia_wheel.es6 HTTP/1.1" 200 22105[0m
+[32m13 23:10:00 | django.server [37m| "GET /static/js/dashboard.es6 HTTP/1.1" 200 7184[0m
+[32m13 23:10:00 | django.server [37m| "GET /static/js/chronicle_map.es6 HTTP/1.1" 200 8750[0m
+[32m13 23:10:00 | django.server [37m| "GET /static/js/kindred_lineage.es6 HTTP/1.1" 200 19223[0m
+[32m13 23:10:00 | django.server [37m| "GET /static/js/sept.es6 HTTP/1.1" 200 26068[0m
+[32m13 23:10:00 | django.server [37m| "GET /static/js/storytelling.es6 HTTP/1.1" 200 35244[0m
+[32m13 23:10:00 | django.server [37m| "GET /static/js/geocity.es6 HTTP/1.1" 200 31321[0m
+[32m13 23:10:00 | django.server [37m| "GET /static/js/adventure_sheet.es6 HTTP/1.1" 200 22609[0m
+[32m13 23:10:00 | django.server [37m| "GET /static/CACHE/css/main.29806351fcdb.css HTTP/1.1" 200 35153[0m
+[32m13 23:10:00 | django.server [37m| "GET /static/CACHE/css/storytelling.7fa70340cb63.css HTTP/1.1" 200 8665[0m
+[32m13 23:10:00 | django.server [37m| "GET /static/collector/auspices/AuspiceRagabash.webp HTTP/1.1" 200 6994[0m
+[32m13 23:10:00 | django.server [37m| "GET /static/collector/auspices/AuspicePhilodox.webp HTTP/1.1" 200 5954[0m
+[32m13 23:10:00 | django.server [37m| "GET /static/collector/auspices/AuspiceAhroun.webp HTTP/1.1" 200 6578[0m
+[32m13 23:10:00 | django.server [37m| "GET /static/collector/auspices/AuspiceTheurge.webp HTTP/1.1" 200 7154[0m
+[32m13 23:10:00 | django.server [37m| "GET /static/collector/auspices/AuspiceNone.webp HTTP/1.1" 200 1274[0m
+[32m13 23:10:00 | django.server [37m| "GET /static/collector/auspices/AuspiceGalliard.webp HTTP/1.1" 200 5762[0m
+[33m13 23:10:00 | django.server [37m| "GET /static/collector/css?49593e59b3a7 HTTP/1.1" 404 1860[0m
+[32m13 23:10:00 | django.server [37m| "GET /static/collector/colorful-grunge-texture-10.jpg?35428083bd4f HTTP/1.1" 200 218025[0m
+[32m13 23:10:00 | django.server [37m| "GET /static/collector/wawwod.ico HTTP/1.1" 200 73478[0m
+[32m13 23:10:06 | django.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+[32m13 23:10:16 | django [37m| Index[0m
+[32m13 23:10:16 | django.server [37m| "GET / HTTP/1.1" 200 29736[0m
+[32m13 23:10:16 | django.server [37m| "GET /static/CACHE/css/main.29806351fcdb.css HTTP/1.1" 200 35153[0m
+[32m13 23:10:16 | django.server [37m| "GET /static/CACHE/css/storytelling.7fa70340cb63.css HTTP/1.1" 200 8665[0m
+[33m13 23:10:16 | django.server [37m| "GET /static/collector/css?49593e59b3a7 HTTP/1.1" 404 1860[0m
+[32m13 23:10:35 | django.server [37m| "GET /ajax/display/dashboard/ HTTP/1.1" 200 19830[0m
+[32m13 23:11:14 | django.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/wawwod/settings.py changed, reloading.[0m
+[32m13 23:11:14 | django.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+[32m13 23:11:37 | django.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/models/adventures.py changed, reloading.[0m
+[32m13 23:11:37 | django.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+[32m13 23:12:42 | django.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/models/chronicles.py changed, reloading.[0m
+[32m13 23:12:43 | django.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+[32m13 23:13:22 | django.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/.venv/lib/python3.13/site-packages/xhtml2pdf/context.py changed, reloading.[0m
+[32m13 23:13:22 | django.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+[32m13 23:14:36 | django.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+[32m13 23:14:42 | django [37m| Index[0m
+[32m13 23:14:42 | django.server [37m| "GET / HTTP/1.1" 200 29736[0m
+[32m13 23:14:43 | django.server [37m| "GET /static/CACHE/css/storytelling.7fa70340cb63.css HTTP/1.1" 200 8665[0m
+[32m13 23:14:43 | django.server [37m| "GET /static/CACHE/css/main.29806351fcdb.css HTTP/1.1" 200 35153[0m
+[33m13 23:14:43 | django.server [37m| "GET /static/collector/css?49593e59b3a7 HTTP/1.1" 404 1860[0m
+[32m13 23:15:10 | django.server [37m| "GET /ajax/display/dashboard/ HTTP/1.1" 200 19830[0m
+[32m13 23:15:32 | django.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/models/creatures.py changed, reloading.[0m
+[32m13 23:15:33 | django.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+[32m13 23:15:39 | django.server [37m| "GET /ajax/display/dashboard/ HTTP/1.1" 200 19830[0m
+[32m13 23:15:54 | django.server [37m| "GET /ajax/display/septs/_sept_of_the_great_tree/ HTTP/1.1" 200 27466[0m
+[32m13 23:16:09 | django.server [37m| "GET /ajax/display/septs/_pit_of_the_fallen_depths/ HTTP/1.1" 200 6257[0m
+[32m13 23:16:11 | django.server [37m| "GET /ajax/view/creature/_wallinda/ HTTP/1.1" 200 59339[0m
+[32m13 23:16:16 | django.server [37m| "POST /ajax/randomize/reparts/for/_wallinda/ HTTP/1.1" 200 2[0m
+[32m13 23:16:16 | django.server [37m| "GET /ajax/view/creature/_wallinda/ HTTP/1.1" 200 59339[0m
+[32m13 23:16:19 | django.server [37m| "POST /ajax/randomize/reparts/for/_wallinda/ HTTP/1.1" 200 2[0m
+[32m13 23:16:19 | django.server [37m| "GET /ajax/view/creature/_wallinda/ HTTP/1.1" 200 59339[0m
+[32m13 23:16:25 | django.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 577[0m
+[32m13 23:16:25 | django.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 571[0m
+[32m13 23:16:25 | django.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 565[0m
+[32m13 23:16:26 | django.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 577[0m
+[32m13 23:16:26 | django.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 577[0m
+[32m13 23:16:31 | django.server [37m| "GET /ajax/view/creature/_wallinda/ HTTP/1.1" 200 59312[0m
+[32m13 23:16:34 | django.server [37m| "POST /ajax/randomize/reparts/for/_wallinda/ HTTP/1.1" 200 2[0m
+[32m13 23:16:34 | django.server [37m| "GET /ajax/view/creature/_wallinda/ HTTP/1.1" 200 59312[0m
+[32m13 23:16:35 | django.server [37m| "POST /ajax/randomize/physical/for/_wallinda/ HTTP/1.1" 200 2[0m
+[32m13 23:16:35 | django.server [37m| "GET /ajax/view/creature/_wallinda/ HTTP/1.1" 200 59312[0m
+[32m13 23:16:37 | django.server [37m| "POST /ajax/randomize/social/for/_wallinda/ HTTP/1.1" 200 2[0m
+[32m13 23:16:38 | django.server [37m| "GET /ajax/view/creature/_wallinda/ HTTP/1.1" 200 59324[0m
+[32m13 23:16:39 | django.server [37m| "POST /ajax/randomize/mental/for/_wallinda/ HTTP/1.1" 200 2[0m
+[32m13 23:16:39 | django.server [37m| "GET /ajax/view/creature/_wallinda/ HTTP/1.1" 200 59312[0m
+[32m13 23:16:40 | django.server [37m| "POST /ajax/randomize/talents/for/_wallinda/ HTTP/1.1" 200 2[0m
+[32m13 23:16:40 | django.server [37m| "GET /ajax/view/creature/_wallinda/ HTTP/1.1" 200 59288[0m
+[32m13 23:16:41 | django.server [37m| "POST /ajax/randomize/skills/for/_wallinda/ HTTP/1.1" 200 2[0m
+[32m13 23:16:41 | django.server [37m| "GET /ajax/view/creature/_wallinda/ HTTP/1.1" 200 59288[0m
+[32m13 23:16:42 | django.server [37m| "POST /ajax/randomize/knowledges/for/_wallinda/ HTTP/1.1" 200 2[0m
+[32m13 23:16:42 | django.server [37m| "GET /ajax/view/creature/_wallinda/ HTTP/1.1" 200 59312[0m
+[32m13 23:16:44 | django.server [37m| "POST /ajax/randomize/backgrounds/for/_wallinda/ HTTP/1.1" 200 2[0m
+[32m13 23:16:44 | django.server [37m| "GET /ajax/view/creature/_wallinda/ HTTP/1.1" 200 59306[0m
+[32m13 23:16:45 | django.server [37m| "POST /ajax/randomize/skills/for/_wallinda/ HTTP/1.1" 200 2[0m
+[32m13 23:16:45 | django.server [37m| "GET /ajax/view/creature/_wallinda/ HTTP/1.1" 200 59306[0m
+[32m13 23:16:49 | django.server [37m| "POST /ajax/randomize/skills/for/_wallinda/ HTTP/1.1" 200 2[0m
+[32m13 23:16:49 | django.server [37m| "GET /ajax/view/creature/_wallinda/ HTTP/1.1" 200 59306[0m
+[32m13 23:16:53 | django.server [37m| "POST /ajax/randomize/traits/for/_wallinda/ HTTP/1.1" 200 2[0m
+[32m13 23:16:53 | django.server [37m| "GET /ajax/view/creature/_wallinda/ HTTP/1.1" 200 59326[0m
+[32m13 23:16:57 | django.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 576[0m
+[32m13 23:17:27 | django.server [37m| "GET /ajax/display/septs/_pit_of_the_fallen_depths/ HTTP/1.1" 200 6258[0m
+[32m13 23:17:53 | django.server [37m| "GET /ajax/view/creature/_roy_bensworth/ HTTP/1.1" 200 59943[0m
+[32m13 23:17:57 | django.server [37m| "POST /ajax/randomize/reparts/for/_roy_bensworth/ HTTP/1.1" 200 2[0m
+[32m13 23:17:57 | django.server [37m| "GET /ajax/view/creature/_roy_bensworth/ HTTP/1.1" 200 59943[0m
+[32m13 23:17:59 | django.server [37m| "POST /ajax/randomize/traits/for/_roy_bensworth/ HTTP/1.1" 200 2[0m
+[32m13 23:17:59 | django.server [37m| "GET /ajax/view/creature/_roy_bensworth/ HTTP/1.1" 200 59968[0m
+[32m13 23:18:02 | django.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 565[0m
+[32m13 23:18:02 | django.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 559[0m
+[32m13 23:18:02 | django.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 553[0m
+[32m13 23:18:04 | django.server [37m| "POST /ajax/randomize/reparts/for/_roy_bensworth/ HTTP/1.1" 200 2[0m
+[32m13 23:18:04 | django.server [37m| "GET /ajax/view/creature/_roy_bensworth/ HTTP/1.1" 200 59953[0m
+[32m13 23:18:06 | django.server [37m| "GET /ajax/view/creature/_roy_bensworth/ HTTP/1.1" 200 59953[0m
+[32m13 23:18:08 | django.server [37m| "POST /ajax/randomize/physical/for/_roy_bensworth/ HTTP/1.1" 200 2[0m
+[32m13 23:18:08 | django.server [37m| "GET /ajax/view/creature/_roy_bensworth/ HTTP/1.1" 200 59953[0m
+[32m13 23:18:09 | django.server [37m| "POST /ajax/randomize/physical/for/_roy_bensworth/ HTTP/1.1" 200 2[0m
+[32m13 23:18:09 | django.server [37m| "GET /ajax/view/creature/_roy_bensworth/ HTTP/1.1" 200 59953[0m
+[32m13 23:18:10 | django.server [37m| "POST /ajax/randomize/social/for/_roy_bensworth/ HTTP/1.1" 200 2[0m
+[32m13 23:18:10 | django.server [37m| "GET /ajax/view/creature/_roy_bensworth/ HTTP/1.1" 200 59977[0m
+[32m13 23:18:12 | django.server [37m| "POST /ajax/randomize/social/for/_roy_bensworth/ HTTP/1.1" 200 2[0m
+[32m13 23:18:12 | django.server [37m| "GET /ajax/view/creature/_roy_bensworth/ HTTP/1.1" 200 59977[0m
+[32m13 23:18:13 | django.server [37m| "POST /ajax/randomize/social/for/_roy_bensworth/ HTTP/1.1" 200 2[0m
+[32m13 23:18:13 | django.server [37m| "GET /ajax/view/creature/_roy_bensworth/ HTTP/1.1" 200 59977[0m
+[32m13 23:18:14 | django.server [37m| "POST /ajax/randomize/social/for/_roy_bensworth/ HTTP/1.1" 200 2[0m
+[32m13 23:18:14 | django.server [37m| "GET /ajax/view/creature/_roy_bensworth/ HTTP/1.1" 200 59977[0m
+[32m13 23:18:15 | django.server [37m| "POST /ajax/randomize/social/for/_roy_bensworth/ HTTP/1.1" 200 2[0m
+[32m13 23:18:15 | django.server [37m| "GET /ajax/view/creature/_roy_bensworth/ HTTP/1.1" 200 59977[0m
+[32m13 23:18:16 | django.server [37m| "POST /ajax/randomize/social/for/_roy_bensworth/ HTTP/1.1" 200 2[0m
+[32m13 23:18:16 | django.server [37m| "GET /ajax/view/creature/_roy_bensworth/ HTTP/1.1" 200 59977[0m
+[32m13 23:18:17 | django.server [37m| "POST /ajax/randomize/social/for/_roy_bensworth/ HTTP/1.1" 200 2[0m
+[32m13 23:18:17 | django.server [37m| "GET /ajax/view/creature/_roy_bensworth/ HTTP/1.1" 200 59977[0m
+[32m13 23:18:17 | django.server [37m| "POST /ajax/randomize/social/for/_roy_bensworth/ HTTP/1.1" 200 2[0m
+[32m13 23:18:17 | django.server [37m| "GET /ajax/view/creature/_roy_bensworth/ HTTP/1.1" 200 59977[0m
+[32m13 23:18:18 | django.server [37m| "POST /ajax/randomize/social/for/_roy_bensworth/ HTTP/1.1" 200 2[0m
+[32m13 23:18:18 | django.server [37m| "GET /ajax/view/creature/_roy_bensworth/ HTTP/1.1" 200 59977[0m
+[32m13 23:18:18 | django.server [37m| "POST /ajax/randomize/social/for/_roy_bensworth/ HTTP/1.1" 200 2[0m
+[32m13 23:18:18 | django.server [37m| "GET /ajax/view/creature/_roy_bensworth/ HTTP/1.1" 200 59977[0m
+[32m13 23:18:19 | django.server [37m| "POST /ajax/randomize/social/for/_roy_bensworth/ HTTP/1.1" 200 2[0m
+[32m13 23:18:19 | django.server [37m| "GET /ajax/view/creature/_roy_bensworth/ HTTP/1.1" 200 59977[0m
+[32m13 23:18:20 | django.server [37m| "POST /ajax/randomize/social/for/_roy_bensworth/ HTTP/1.1" 200 2[0m
+[32m13 23:18:20 | django.server [37m| "GET /ajax/view/creature/_roy_bensworth/ HTTP/1.1" 200 59977[0m
+[32m13 23:18:20 | django.server [37m| "POST /ajax/randomize/social/for/_roy_bensworth/ HTTP/1.1" 200 2[0m
+[32m13 23:18:20 | django.server [37m| "GET /ajax/view/creature/_roy_bensworth/ HTTP/1.1" 200 59977[0m
+[32m13 23:18:22 | django.server [37m| "POST /ajax/randomize/mental/for/_roy_bensworth/ HTTP/1.1" 200 2[0m
+[32m13 23:18:22 | django.server [37m| "GET /ajax/view/creature/_roy_bensworth/ HTTP/1.1" 200 59953[0m
+[32m13 23:18:23 | django.server [37m| "POST /ajax/randomize/mental/for/_roy_bensworth/ HTTP/1.1" 200 2[0m
+[32m13 23:18:23 | django.server [37m| "GET /ajax/view/creature/_roy_bensworth/ HTTP/1.1" 200 59953[0m
+[32m13 23:18:26 | django.server [37m| "POST /ajax/randomize/talents/for/_roy_bensworth/ HTTP/1.1" 200 2[0m
+[32m13 23:18:26 | django.server [37m| "GET /ajax/view/creature/_roy_bensworth/ HTTP/1.1" 200 59905[0m
+[32m13 23:18:27 | django.server [37m| "POST /ajax/randomize/skills/for/_roy_bensworth/ HTTP/1.1" 200 2[0m
+[32m13 23:18:27 | django.server [37m| "GET /ajax/view/creature/_roy_bensworth/ HTTP/1.1" 200 59953[0m
+[32m13 23:18:30 | django.server [37m| "POST /ajax/randomize/knowledges/for/_roy_bensworth/ HTTP/1.1" 200 2[0m
+[32m13 23:18:30 | django.server [37m| "GET /ajax/view/creature/_roy_bensworth/ HTTP/1.1" 200 59953[0m
+[32m13 23:18:33 | django.server [37m| "POST /ajax/randomize/traits/for/_roy_bensworth/ HTTP/1.1" 200 2[0m
+[32m13 23:18:33 | django.server [37m| "GET /ajax/view/creature/_roy_bensworth/ HTTP/1.1" 200 59956[0m
+[32m13 23:18:36 | django.server [37m| "POST /ajax/randomize/backgrounds/for/_roy_bensworth/ HTTP/1.1" 200 2[0m
+[32m13 23:18:36 | django.server [37m| "GET /ajax/view/creature/_roy_bensworth/ HTTP/1.1" 200 59956[0m
+[32m13 23:18:40 | django.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 582[0m
+[32m13 23:18:42 | django.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 576[0m
+[32m13 23:18:45 | django.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 582[0m
+[32m13 23:18:55 | django.server [37m| "GET /ajax/display/septs/_pit_of_the_fallen_depths/ HTTP/1.1" 200 6258[0m
+[32m13 23:19:29 | django.server [37m| "GET /admin/collector/sept/ HTTP/1.1" 200 31925[0m
+[32m13 23:19:29 | django.server [37m| "GET /static/admin/css/changelists.css HTTP/1.1" 304 0[0m
+[32m13 23:19:29 | django.server [37m| "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0[0m
+[32m13 23:19:29 | django.server [37m| "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0[0m
+[32m13 23:19:29 | django.server [37m| "GET /admin/jsi18n/ HTTP/1.1" 200 3342[0m
+[32m13 23:19:29 | django.server [37m| "GET /static/admin/js/core.js HTTP/1.1" 304 0[0m
+[32m13 23:19:29 | django.server [37m| "GET /static/admin/js/actions.js HTTP/1.1" 304 0[0m
+[32m13 23:19:29 | django.server [37m| "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0[0m
+[32m13 23:19:29 | django.server [37m| "GET /static/admin/js/urlify.js HTTP/1.1" 304 0[0m
+[32m13 23:19:29 | django.server [37m| "GET /static/admin/js/filters.js HTTP/1.1" 304 0[0m
+[32m13 23:19:29 | django.server [37m| "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0[0m
+[32m13 23:19:29 | django.server [37m| "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0[0m
+[32m13 23:19:29 | django.server [37m| "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1761[0m
+[32m13 23:19:29 | django.server [37m| "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 928[0m
+[32m13 23:19:29 | django.server [37m| "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 593[0m
+[32m13 23:19:36 | django.server [37m| "GET /admin/collector/sept/add/ HTTP/1.1" 200 37728[0m
+[32m13 23:19:36 | django.server [37m| "GET /static/admin/css/forms.css HTTP/1.1" 304 0[0m
+[32m13 23:19:36 | django.server [37m| "GET /static/colorfield/coloris/coloris.css HTTP/1.1" 304 0[0m
+[32m13 23:19:36 | django.server [37m| "GET /static/colorfield/coloris/coloris.js HTTP/1.1" 304 0[0m
+[32m13 23:19:36 | django.server [37m| "GET /static/colorfield/colorfield.js HTTP/1.1" 304 0[0m
+[32m13 23:19:36 | django.server [37m| "GET /admin/jsi18n/ HTTP/1.1" 200 3342[0m
+[32m13 23:19:36 | django.server [37m| "GET /static/admin/js/change_form.js HTTP/1.1" 304 0[0m
+[32m13 23:19:36 | django.server [37m| "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0[0m
+[32m13 23:19:36 | django.server [37m| "GET /static/admin/css/widgets.css HTTP/1.1" 304 0[0m
+[32m13 23:20:13 | django.server [37m| "POST /admin/collector/sept/add/ HTTP/1.1" 302 0[0m
+[32m13 23:20:13 | django.server [37m| "GET /admin/collector/sept/ HTTP/1.1" 200 32648[0m
+[32m13 23:20:13 | django.server [37m| "GET /admin/jsi18n/ HTTP/1.1" 200 3342[0m
+[32m13 23:20:13 | django.server [37m| "GET /static/admin/img/icon-yes-dark.svg HTTP/1.1" 200 558[0m
+[32m13 23:20:23 | django [37m| Index[0m
+[32m13 23:20:23 | django.server [37m| "GET / HTTP/1.1" 200 29905[0m
+[32m13 23:20:23 | django.server [37m| "GET /static/CACHE/css/main.29806351fcdb.css HTTP/1.1" 200 35153[0m
+[32m13 23:20:23 | django.server [37m| "GET /static/CACHE/css/storytelling.7fa70340cb63.css HTTP/1.1" 200 8665[0m
+[33m13 23:20:23 | django.server [37m| "GET /static/collector/css?49593e59b3a7 HTTP/1.1" 404 1860[0m
+[32m13 23:20:30 | django.server [37m| "GET /ajax/display/septs/_north_star_hive/ HTTP/1.1" 200 1605[0m
+[32m13 23:20:41 | django.server [37m| "GET /ajax/list/creatures/1/cwl/ HTTP/1.1" 200 6059[0m
+[32m13 23:20:47 | django.server [37m| "GET /ajax/view/creature/_cash_cornell/ HTTP/1.1" 200 59693[0m
+[32m13 23:20:58 | django.server [37m| "POST /ajax/editable/userinput/ HTTP/1.1" 200 48[0m
+[32m13 23:21:08 | django.server [37m| "POST /ajax/editable/userinput/ HTTP/1.1" 200 48[0m
+[32m13 23:21:14 | django.server [37m| "GET /ajax/list/creatures/1/cwk/ HTTP/1.1" 200 56[0m
+[32m13 23:21:18 | django.server [37m| "GET /ajax/list/creatures/1/cwl/ HTTP/1.1" 200 6089[0m
+[32m13 23:21:22 | django.server [37m| "GET /ajax/view/creature/_dallas_laundry/ HTTP/1.1" 200 60078[0m
+[32m13 23:21:24 | django.server [37m| "POST /ajax/editable/userinput/ HTTP/1.1" 200 49[0m
+[32m13 23:21:30 | django.server [37m| "GET /accounts/login/?next=/ HTTP/1.1" 200 12919[0m
+[32m13 23:21:38 | django.server [37m| "POST /ajax/editable/userinput/ HTTP/1.1" 200 49[0m
+[32m13 23:21:45 | django.server [37m| "POST /ajax/editable/userinput/ HTTP/1.1" 200 49[0m
+[32m13 23:21:53 | django.server [37m| "GET /ajax/view/creature/_dallas_laundry/ HTTP/1.1" 200 60108[0m
+[32m13 23:21:58 | django.server [37m| "POST /ajax/editable/userinput/ HTTP/1.1" 200 35[0m
+[32m13 23:22:03 | django.server [37m| "POST /ajax/editable/userinput/ HTTP/1.1" 200 49[0m
+[32m13 23:22:08 | django.server [37m| "POST /ajax/editable/userinput/ HTTP/1.1" 200 35[0m
+[32m13 23:22:10 | django.server [37m| "GET /ajax/view/creature/_dallas_laundry/ HTTP/1.1" 200 60106[0m
+[32m13 23:22:19 | django.server [37m| "GET /ajax/display/septs/_north_star_hive/ HTTP/1.1" 200 3485[0m
+[32m13 23:22:24 | django.server [37m| "GET /ajax/view/creature/_cash_cornell/ HTTP/1.1" 200 59723[0m
+[32m13 23:22:27 | django.server [37m| "POST /ajax/editable/userinput/ HTTP/1.1" 200 34[0m
+[32m13 23:23:08 | django.server [37m| "GET /ajax/view/creature/_dallas_laundry/ HTTP/1.1" 200 60106[0m
+[32m13 23:23:11 | django.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 589[0m
+[32m13 23:23:11 | django.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 583[0m
+[32m13 23:23:11 | django.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 577[0m
+[32m13 23:23:12 | django.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 571[0m
+[32m13 23:23:12 | django.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 589[0m
+[32m13 23:23:12 | django.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 583[0m
+[32m13 23:23:13 | django.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 577[0m
+[32m13 23:23:13 | django.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 589[0m
+[32m13 23:23:13 | django.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 583[0m
+[32m13 23:23:14 | django.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 577[0m
+[32m13 23:23:14 | django.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 571[0m
+[32m13 23:23:14 | django.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 565[0m
+[32m13 23:23:16 | django.server [37m| "GET /ajax/view/creature/_dallas_laundry/ HTTP/1.1" 200 60039[0m
+[32m13 23:23:20 | django.server [37m| "POST /ajax/randomize/traits/for/_dallas_laundry/ HTTP/1.1" 200 2[0m
+[32m13 23:23:32 | django.server [37m| "GET /ajax/view/creature/_cash_cornell/ HTTP/1.1" 200 59721[0m
+[32m13 23:23:33 | django.server [37m| "GET /ajax/view/creature/_dallas_laundry/ HTTP/1.1" 200 60064[0m
+[32m13 23:23:37 | django.server [37m| "GET /ajax/view/creature/_dallas_laundry/ HTTP/1.1" 200 60064[0m
+[32m13 23:33:55 | django.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/wawwod/settings.py changed, reloading.[0m
+[32m13 23:33:56 | django.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+[32m13 23:34:05 | django.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+[32m13 23:34:35 | django [37m| Index[0m
+[32m13 23:34:35 | django.server [37m| "GET / HTTP/1.1" 200 29905[0m
+[32m13 23:34:35 | django.server [37m| "GET /static/js/gaia_wheel.es6 HTTP/1.1" 200 22105[0m
+[32m13 23:34:35 | django.server [37m| "GET /static/js/cross_over_sheet.es6 HTTP/1.1" 200 29818[0m
+[32m13 23:34:35 | django.server [37m| "GET /static/js/collector.es6 HTTP/1.1" 200 32949[0m
+[32m13 23:34:35 | django.server [37m| "GET /static/js/dashboard.es6 HTTP/1.1" 200 7184[0m
+[32m13 23:34:35 | django.server [37m| "GET /static/js/chronicle_map.es6 HTTP/1.1" 200 8750[0m
+[32m13 23:34:35 | django.server [37m| "GET /static/js/kindred_lineage.es6 HTTP/1.1" 200 19223[0m
+[32m13 23:34:35 | django.server [37m| "GET /static/js/sept.es6 HTTP/1.1" 200 26068[0m
+[32m13 23:34:35 | django.server [37m| "GET /static/js/wawwod_sheet.es6 HTTP/1.1" 200 193921[0m
+[32m13 23:34:35 | django.server [37m| "GET /static/js/storytelling.es6 HTTP/1.1" 200 35244[0m
+[32m13 23:34:35 | django.server [37m| "GET /static/js/geocity.es6 HTTP/1.1" 200 31321[0m
+[32m13 23:34:35 | django.server [37m| "GET /static/js/adventure_sheet.es6 HTTP/1.1" 200 22609[0m
+[32m13 23:34:36 | django.server [37m| "GET /static/CACHE/css/storytelling.7fa70340cb63.css HTTP/1.1" 200 8665[0m
+[32m13 23:34:36 | django.server [37m| "GET /static/CACHE/css/main.29806351fcdb.css HTTP/1.1" 200 35153[0m
+[32m13 23:34:36 | django.server [37m| "GET /static/collector/auspices/AuspiceTheurge.webp HTTP/1.1" 200 7154[0m
+[32m13 23:34:36 | django.server [37m| "GET /static/collector/auspices/AuspiceNone.webp HTTP/1.1" 200 1274[0m
+[32m13 23:34:36 | django.server [37m| "GET /static/collector/auspices/AuspiceRagabash.webp HTTP/1.1" 200 6994[0m
+[32m13 23:34:36 | django.server [37m| "GET /static/collector/auspices/AuspicePhilodox.webp HTTP/1.1" 200 5954[0m
+[32m13 23:34:36 | django.server [37m| "GET /static/collector/auspices/AuspiceAhroun.webp HTTP/1.1" 200 6578[0m
+[32m13 23:34:36 | django.server [37m| "GET /static/collector/auspices/AuspiceGalliard.webp HTTP/1.1" 200 5762[0m
+[32m13 23:34:36 | django.server [37m| "GET /static/collector/colorful-grunge-texture-10.jpg?35428083bd4f HTTP/1.1" 200 218025[0m
+[33m13 23:34:36 | django.server [37m| "GET /static/collector/css?49593e59b3a7 HTTP/1.1" 404 1860[0m
+[32m13 23:34:36 | django.server [37m| "GET /static/collector/wawwod.ico HTTP/1.1" 200 73478[0m
+[32m13 23:34:48 | django.server [37m| "GET /ajax/display/septs/_north_star_hive/ HTTP/1.1" 200 3486[0m
+[32m13 23:34:48 | django.server [37m| "GET /static/collector/tribes/black_spiral_dancers.webp HTTP/1.1" 200 17508[0m
+[32m13 23:34:48 | django.server [37m| "GET /static/collector/tribes/silver_fangs.webp HTTP/1.1" 200 16630[0m
+[32m13 23:34:55 | django.server [37m| "GET /ajax/display/dashboard/ HTTP/1.1" 200 19830[0m
+[32m14 10:00:08 | django.server [37m| "GET /admin/ HTTP/1.1" 200 23165[0m
+[32m14 10:00:08 | django.server [37m| "GET /static/admin/js/theme.js HTTP/1.1" 304 0[0m
+[32m14 10:00:08 | django.server [37m| "GET /static/admin/css/base.css HTTP/1.1" 304 0[0m
+[32m14 10:00:08 | django.server [37m| "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0[0m
+[32m14 10:00:08 | django.server [37m| "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0[0m
+[32m14 10:00:08 | django.server [37m| "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0[0m
+[32m14 10:00:08 | django.server [37m| "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0[0m
+[32m14 10:00:08 | django.server [37m| "GET /static/admin/css/responsive.css HTTP/1.1" 304 0[0m
+[32m14 10:00:08 | django.server [37m| "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 593[0m
+[32m14 10:00:08 | django.server [37m| "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 978[0m
+[32m14 10:00:11 | django.server [37m| "GET /admin/auth/user/ HTTP/1.1" 200 23272[0m
+[32m14 10:00:11 | django.server [37m| "GET /admin/jsi18n/ HTTP/1.1" 200 3342[0m
+[32m14 10:00:11 | django.server [37m| "GET /static/admin/img/search.svg HTTP/1.1" 200 607[0m
+[32m14 10:00:11 | django.server [37m| "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 558[0m
+[32m14 10:00:11 | django.server [37m| "GET /static/admin/img/icon-no.svg HTTP/1.1" 200 645[0m
+[32m14 10:00:14 | django.server [37m| "GET /admin/ HTTP/1.1" 200 23165[0m
+[32m14 10:00:18 | django.server [37m| "GET /admin/collector/profile/ HTTP/1.1" 200 24264[0m
+[32m14 10:00:18 | django.server [37m| "GET /admin/jsi18n/ HTTP/1.1" 200 3342[0m
+[32m14 10:01:00 | django.server [37m| "POST /admin/collector/profile/ HTTP/1.1" 302 0[0m
+[32m14 10:01:00 | django.server [37m| "GET /admin/collector/profile/ HTTP/1.1" 200 24412[0m
+[32m14 10:01:01 | django.server [37m| "GET /admin/jsi18n/ HTTP/1.1" 200 3342[0m
+[32m14 10:01:06 | django.server [37m| "GET /ajax/display/dashboard/ HTTP/1.1" 200 19830[0m
+[32m14 10:03:14 | django.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/views/base.py changed, reloading.[0m
+[32m14 10:03:14 | django.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+[32m14 10:03:21 | django.server [37m| "GET /ajax/display/dashboard/ HTTP/1.1" 200 18990[0m
+[32m14 12:03:17 | django.server [37m| "POST /admin/collector/profile/ HTTP/1.1" 302 0[0m
+[32m14 12:03:17 | django.server [37m| "GET /admin/collector/profile/ HTTP/1.1" 200 24410[0m
+[32m14 12:03:17 | django.server [37m| "GET /static/admin/css/changelists.css HTTP/1.1" 304 0[0m
+[32m14 12:03:17 | django.server [37m| "GET /static/admin/css/forms.css HTTP/1.1" 304 0[0m
+[32m14 12:03:17 | django.server [37m| "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0[0m
+[32m14 12:03:17 | django.server [37m| "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0[0m
+[32m14 12:03:17 | django.server [37m| "GET /static/admin/js/core.js HTTP/1.1" 304 0[0m
+[32m14 12:03:17 | django.server [37m| "GET /admin/jsi18n/ HTTP/1.1" 200 3342[0m
+[32m14 12:03:17 | django.server [37m| "GET /static/admin/js/actions.js HTTP/1.1" 304 0[0m
+[32m14 12:03:17 | django.server [37m| "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0[0m
+[32m14 12:03:17 | django.server [37m| "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0[0m
+[32m14 12:03:17 | django.server [37m| "GET /static/admin/js/urlify.js HTTP/1.1" 304 0[0m
+[32m14 12:03:17 | django.server [37m| "GET /static/admin/js/filters.js HTTP/1.1" 304 0[0m
+[32m14 12:03:17 | django.server [37m| "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0[0m
+[32m14 12:03:17 | django.server [37m| "GET /static/admin/css/widgets.css HTTP/1.1" 304 0[0m
+[32m14 12:03:17 | django.server [37m| "GET /static/admin/img/icon-yes-dark.svg HTTP/1.1" 200 558[0m
+[32m14 12:03:23 | django.server [37m| "GET /ajax/display/dashboard/ HTTP/1.1" 200 18990[0m
+[32m14 12:04:10 | django.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/views/base.py changed, reloading.[0m
+[32m14 12:04:10 | django.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+[32m14 12:04:58 | django.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/views/base.py changed, reloading.[0m
+[32m14 12:04:59 | django.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+[32m14 12:05:03 | django [37m| User:zaffarelli[0m
+[32m14 12:05:03 | django [37m| Parts:['Intelligence', 'Enigmas'][0m
+[32m14 12:05:03 | django.server [37m| "GET /ajax/display/dashboard/ HTTP/1.1" 200 18899[0m
+[32m14 12:10:00 | django.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/utils/helper.py changed, reloading.[0m
+[32m14 12:10:00 | django.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+[32m14 13:55:47 | django [37m| User:zaffarelli[0m
+[32m14 13:55:47 | django [37m| Parts:['Intelligence', 'Enigmas'][0m
+[32m14 13:55:47 | django.server [37m| "GET /ajax/display/dashboard/ HTTP/1.1" 200 18899[0m
+[32m14 13:56:04 | django.server [37m| "GET /ajax/display/septs/_sept_of_the_great_tree/ HTTP/1.1" 200 27466[0m
+[32m14 13:56:04 | django.server [37m| "GET /static/collector/auspices/AuspiceGalliard.webp HTTP/1.1" 200 5762[0m
+[32m14 13:56:04 | django.server [37m| "GET /static/collector/auspices/AuspiceRagabash.webp HTTP/1.1" 200 6994[0m
+[32m14 13:56:04 | django.server [37m| "GET /static/collector/auspices/AuspicePhilodox.webp HTTP/1.1" 200 5954[0m
+[32m14 13:56:04 | django.server [37m| "GET /static/collector/tribes/children_of_gaia.webp HTTP/1.1" 200 10762[0m
+[32m14 13:56:04 | django.server [37m| "GET /static/collector/auspices/AuspiceAhroun.webp HTTP/1.1" 200 6578[0m
+[32m14 13:56:04 | django.server [37m| "GET /static/collector/tribes/uktenas.webp HTTP/1.1" 200 9410[0m
+[32m14 13:56:04 | django.server [37m| "GET /static/collector/auspices/AuspiceTheurge.webp HTTP/1.1" 200 7154[0m
+[32m14 13:56:04 | django.server [37m| "GET /static/collector/tribes/wendigos.webp HTTP/1.1" 200 14786[0m
+[32m14 13:56:07 | django.server [37m| "GET /ajax/view/creature/_norman_coleman/ HTTP/1.1" 200 60016[0m
+[32m15 11:07:09 | django.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/models/creatures.py changed, reloading.[0m
+[32m15 11:07:10 | django.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+[32m15 11:09:15 | django.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/utils/helper.py changed, reloading.[0m
+[32m15 11:09:15 | django.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+[32m15 11:12:08 | django.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/utils/helper.py changed, reloading.[0m
+[32m15 11:12:08 | django.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+[32m15 11:14:59 | django.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/utils/helper.py changed, reloading.[0m
+[32m15 11:14:59 | django.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+[32m15 11:15:19 | django.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/utils/helper.py changed, reloading.[0m
+[32m15 11:15:20 | django.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+[32m15 11:15:36 | django.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/utils/helper.py changed, reloading.[0m
+[32m15 11:15:37 | django.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+[32m15 11:15:39 | django.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/utils/helper.py changed, reloading.[0m
+[32m15 11:15:39 | django.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+[32m15 11:16:10 | django.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/utils/helper.py changed, reloading.[0m
+[32m15 11:16:11 | django.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+[32m15 11:17:25 | django.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/utils/helper.py changed, reloading.[0m
+[32m15 11:17:25 | django.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+[32m15 11:17:46 | django.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/utils/helper.py changed, reloading.[0m
+[32m15 11:17:46 | django.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+[32m15 11:18:22 | django.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/utils/helper.py changed, reloading.[0m
+[32m15 11:18:22 | django.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+[32m15 12:44:06 | django.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/utils/helper.py changed, reloading.[0m
+[32m15 12:44:07 | django.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+[32m15 12:45:03 | django.server [37m| "GET /admin/collector/ HTTP/1.1" 200 13517[0m
+[32m15 12:45:03 | django.server [37m| "GET /static/admin/css/base.css HTTP/1.1" 304 0[0m
+[32m15 12:45:03 | django.server [37m| "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0[0m
+[32m15 12:45:03 | django.server [37m| "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0[0m
+[32m15 12:45:03 | django.server [37m| "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0[0m
+[32m15 12:45:03 | django.server [37m| "GET /static/admin/js/theme.js HTTP/1.1" 304 0[0m
+[32m15 12:45:03 | django.server [37m| "GET /static/admin/css/responsive.css HTTP/1.1" 304 0[0m
+[32m15 12:45:03 | django.server [37m| "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0[0m
+[32m15 12:45:03 | django.server [37m| "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 593[0m
+[32m15 12:45:03 | django.server [37m| "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 978[0m
+[32m15 12:45:09 | django.server [37m| "GET /admin/collector/creature/ HTTP/1.1" 200 68584[0m
+[32m15 12:45:09 | django.server [37m| "GET /static/admin/css/changelists.css HTTP/1.1" 304 0[0m
+[32m15 12:45:09 | django.server [37m| "GET /static/admin/css/forms.css HTTP/1.1" 304 0[0m
+[32m15 12:45:09 | django.server [37m| "GET /static/admin/js/core.js HTTP/1.1" 304 0[0m
+[32m15 12:45:09 | django.server [37m| "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0[0m
+[32m15 12:45:09 | django.server [37m| "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0[0m
+[32m15 12:45:09 | django.server [37m| "GET /static/admin/js/actions.js HTTP/1.1" 304 0[0m
+[32m15 12:45:09 | django.server [37m| "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0[0m
+[32m15 12:45:09 | django.server [37m| "GET /static/admin/js/urlify.js HTTP/1.1" 304 0[0m
+[32m15 12:45:09 | django.server [37m| "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0[0m
+[32m15 12:45:09 | django.server [37m| "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0[0m
+[32m15 12:45:09 | django.server [37m| "GET /static/admin/js/filters.js HTTP/1.1" 304 0[0m
+[32m15 12:45:09 | django.server [37m| "GET /admin/jsi18n/ HTTP/1.1" 200 3342[0m
+[32m15 12:45:09 | django.server [37m| "GET /static/admin/css/widgets.css HTTP/1.1" 304 0[0m
+[32m15 12:45:09 | django.server [37m| "GET /static/admin/img/search.svg HTTP/1.1" 200 607[0m
+[32m15 12:45:09 | django.server [37m| "GET /static/admin/img/icon-no.svg HTTP/1.1" 200 645[0m
+[32m15 12:45:09 | django.server [37m| "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 558[0m
+[32m15 12:45:09 | django.server [37m| "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1761[0m
+[32m15 12:45:09 | django.server [37m| "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 593[0m
+[32m15 12:45:09 | django.server [37m| "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 928[0m
+[32m15 12:45:14 | django.server [37m| "GET /admin/collector/creature/?q=tania HTTP/1.1" 200 44443[0m
+[32m15 12:45:14 | django.server [37m| "GET /admin/jsi18n/ HTTP/1.1" 200 3342[0m
+[32m15 12:45:19 | django.server [37m| "GET /admin/collector/creature/999/change/?_changelist_filters=q%3Dtania HTTP/1.1" 200 180083[0m
+[32m15 12:45:20 | django.server [37m| "GET /admin/jsi18n/ HTTP/1.1" 200 3342[0m
+[32m15 12:45:20 | django.server [37m| "GET /static/admin/js/change_form.js HTTP/1.1" 304 0[0m
+[32m15 12:45:20 | django.server [37m| "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0[0m
+[32m15 12:45:33 | django.server [37m| "POST /admin/collector/creature/999/change/?_changelist_filters=q%3Dtania HTTP/1.1" 302 0[0m
+[32m15 12:45:33 | django.server [37m| "GET /admin/collector/creature/?q=tania HTTP/1.1" 200 44728[0m
+[32m15 12:45:33 | django.server [37m| "GET /admin/jsi18n/ HTTP/1.1" 200 3342[0m
+[32m15 12:45:33 | django.server [37m| "GET /static/admin/img/icon-yes-dark.svg HTTP/1.1" 200 558[0m
+[32m15 12:52:14 | django.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/models/creatures.py changed, reloading.[0m
+[32m15 12:52:15 | django.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+[32m15 12:58:17 | django.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/utils/wod_reference.py changed, reloading.[0m
+[32m15 12:58:18 | django.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+[32m15 12:59:13 | django.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/models/creatures.py changed, reloading.[0m
+[32m15 12:59:14 | django.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+[32m15 12:59:29 | django.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/models/creatures.py changed, reloading.[0m
+[32m15 12:59:30 | django.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+[32m15 13:01:49 | django.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/templatetags/wod_filters.py changed, reloading.[0m
+[32m15 13:01:49 | django.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+[32m15 13:02:36 | django [37m| User:zaffarelli[0m
+[32m15 13:02:36 | django [37m| Parts:['Intelligence', 'Enigmas'][0m
+[32m15 13:02:36 | django.server [37m| "GET /ajax/display/dashboard/ HTTP/1.1" 200 18810[0m
+[32m15 13:03:06 | django.server [37m| "GET /ajax/display/septs/_sept_of_the_sinner/ HTTP/1.1" 200 21980[0m
+[32m15 13:03:06 | django.server [37m| "GET /static/collector/auspices/AuspiceTheurge.webp HTTP/1.1" 200 7154[0m
+[32m15 13:03:06 | django.server [37m| "GET /static/collector/auspices/AuspiceRagabash.webp HTTP/1.1" 200 6994[0m
+[32m15 13:03:06 | django.server [37m| "GET /static/collector/auspices/AuspiceAhroun.webp HTTP/1.1" 200 6578[0m
+[32m15 13:03:06 | django.server [37m| "GET /static/collector/auspices/AuspicePhilodox.webp HTTP/1.1" 200 5954[0m
+[32m15 13:03:06 | django.server [37m| "GET /static/collector/tribes/bone_gnawers.webp HTTP/1.1" 200 14416[0m
+[32m15 13:03:06 | django.server [37m| "GET /static/collector/auspices/AuspiceGalliard.webp HTTP/1.1" 200 5762[0m
+[32m15 13:03:06 | django.server [37m| "GET /static/collector/tribes/fiannas.webp HTTP/1.1" 200 10624[0m
+[32m15 13:03:06 | django.server [37m| "GET /static/collector/tribes/shadow_lords.webp HTTP/1.1" 200 15162[0m
+[32m15 13:03:06 | django.server [37m| "GET /static/collector/tribes/glass_walkers.webp HTTP/1.1" 200 15876[0m
+[32m15 13:03:06 | django.server [37m| "GET /static/collector/tribes/silver_fangs.webp HTTP/1.1" 200 16630[0m
+[32m15 13:03:06 | django.server [37m| "GET /static/collector/tribes/wendigos.webp HTTP/1.1" 200 14786[0m
+[32m15 13:04:19 | django.server [37m| "GET /ajax/display/septs/_sept_of_the_great_tree/ HTTP/1.1" 200 27889[0m
+[32m15 13:04:19 | django.server [37m| "GET /static/collector/tribes/children_of_gaia.webp HTTP/1.1" 200 10762[0m
+[32m15 13:04:19 | django.server [37m| "GET /static/collector/tribes/uktenas.webp HTTP/1.1" 200 9410[0m
+[32m15 13:04:21 | django.server [37m| "GET /ajax/display/septs/_sept_of_the_moonlit_woods/ HTTP/1.1" 200 11851[0m
+[32m15 13:04:21 | django.server [37m| "GET /static/collector/tribes/red_talons.webp HTTP/1.1" 200 8896[0m
+[32m15 13:04:21 | django.server [37m| "GET /static/collector/tribes/black_furies.webp HTTP/1.1" 200 10352[0m
+[32m15 13:04:23 | django.server [37m| "GET /ajax/display/septs/_sept_of_the_shattered_mountain/ HTTP/1.1" 200 13801[0m
+[32m15 13:04:23 | django.server [37m| "GET /static/collector/tribes/gets_of_fenris.webp HTTP/1.1" 200 11694[0m
+[32m15 13:05:17 | django.server [37m| "GET /ajax/list/creatures/1/cgk/ HTTP/1.1" 200 13496[0m
+[32m15 13:05:30 | django.server [37m| "GET /ajax/list/creatures/1/cca/ HTTP/1.1" 200 13525[0m
+[33m15 13:05:30 | django.request [37m| Not Found: /ajax/display/undefined/[0m
+[33m15 13:05:30 | django.server [37m| "GET /ajax/display/undefined/ HTTP/1.1" 404 18777[0m
+[32m15 13:05:34 | django.server [37m| "GET /ajax/list/creatures/2/cca/ HTTP/1.1" 200 13680[0m
+[32m15 13:05:35 | django.server [37m| "GET /ajax/list/creatures/3/cca/ HTTP/1.1" 200 4734[0m
+[32m15 13:05:37 | django.server [37m| "GET /ajax/list/creatures/2/cca/ HTTP/1.1" 200 13680[0m
+[32m15 13:05:38 | django.server [37m| "GET /ajax/list/creatures/1/cca/ HTTP/1.1" 200 13525[0m
+[32m15 13:05:50 | django.server [37m| "GET /admin/collector/creature/?q=lybe HTTP/1.1" 200 42671[0m
+[32m15 13:05:50 | django.server [37m| "GET /admin/jsi18n/ HTTP/1.1" 200 3342[0m
+[32m15 13:06:15 | django.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/models/creatures.py changed, reloading.[0m
+[32m15 13:06:15 | django.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+[32m15 13:06:16 | django.server [37m| "GET /admin/collector/creature/?q=lybe HTTP/1.1" 200 42849[0m
+[32m15 13:06:16 | django.server [37m| "GET /admin/jsi18n/ HTTP/1.1" 200 3342[0m
+[32m15 13:06:42 | django.server [37m| "GET /ajax/display/gaia_wheel/ HTTP/1.1" 200 259772[0m
+[32m15 13:07:03 | django.server [37m| "GET /ajax/view/creature/_mxwnqfcx_egosoeki_/ HTTP/1.1" 200 58102[0m
+[32m15 13:07:03 | django.server [37m| "GET /ajax/view/creature/_mxwnqfcx_egosoeki_/ HTTP/1.1" 200 58102[0m
+[32m15 13:07:03 | django.server [37m| "GET /static/collector/clans/kinfolk.webp HTTP/1.1" 200 13142[0m
+[32m15 13:08:28 | django.server [37m| "GET /ajax/view/creature/_mxwnqfcx_egosoeki_/ HTTP/1.1" 200 58122[0m
+[31m15 13:08:52 | django.request [37m| Internal Server Error: /ajax/editable/userinput/[0m
+Traceback (most recent call last):
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py"[0m, line [35m55[0m, in [35minner[0m
+    response = get_response(request)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py"[0m, line [35m198[0m, in [35m_get_response[0m
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py"[0m, line [35m65[0m, in [35m_view_wrapper[0m
+    return view_func(request, *args, **kwargs)
+  File [35m"/home/zaffarelli/Projects/wawwod/collector/views/base.py"[0m, line [35m283[0m, in [35muserinput[0m
+    item = Creature.objects.get(rid=rid)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/manager.py"[0m, line [35m87[0m, in [35mmanager_method[0m
+    return [31mgetattr(self.get_queryset(), name)[0m[1;31m(*args, **kwargs)[0m
+           [31m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m[1;31m^^^^^^^^^^^^^^^^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/query.py"[0m, line [35m639[0m, in [35mget[0m
+    raise self.model.DoesNotExist(
+        "%s matching query does not exist." % self.model._meta.object_name
+    )
+[1;35mcollector.models.creatures.Creature.DoesNotExist[0m: [35mCreature matching query does not exist.[0m
+[31m15 13:08:52 | django.server [37m| "POST /ajax/editable/userinput/ HTTP/1.1" 500 21740[0m
+[31m15 13:08:52 | django.request [37m| Internal Server Error: /ajax/editable/userinput/[0m
+Traceback (most recent call last):
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py"[0m, line [35m55[0m, in [35minner[0m
+    response = get_response(request)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py"[0m, line [35m198[0m, in [35m_get_response[0m
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py"[0m, line [35m65[0m, in [35m_view_wrapper[0m
+    return view_func(request, *args, **kwargs)
+  File [35m"/home/zaffarelli/Projects/wawwod/collector/views/base.py"[0m, line [35m283[0m, in [35muserinput[0m
+    item = Creature.objects.get(rid=rid)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/manager.py"[0m, line [35m87[0m, in [35mmanager_method[0m
+    return [31mgetattr(self.get_queryset(), name)[0m[1;31m(*args, **kwargs)[0m
+           [31m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m[1;31m^^^^^^^^^^^^^^^^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/query.py"[0m, line [35m639[0m, in [35mget[0m
+    raise self.model.DoesNotExist(
+        "%s matching query does not exist." % self.model._meta.object_name
+    )
+[1;35mcollector.models.creatures.Creature.DoesNotExist[0m: [35mCreature matching query does not exist.[0m
+[31m15 13:08:52 | django.server [37m| "POST /ajax/editable/userinput/ HTTP/1.1" 500 21740[0m
+[32m15 13:09:01 | django.server [37m| "GET /ajax/view/creature/_mxwnqfcx_egosoeki_/ HTTP/1.1" 200 58122[0m
+[32m15 13:09:02 | django.server [37m| "GET /ajax/view/creature/_mxwnqfcx_egosoeki_/ HTTP/1.1" 200 58122[0m
+[31m15 13:09:09 | django.request [37m| Internal Server Error: /ajax/editable/userinput/[0m
+Traceback (most recent call last):
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py"[0m, line [35m55[0m, in [35minner[0m
+    response = get_response(request)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py"[0m, line [35m198[0m, in [35m_get_response[0m
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py"[0m, line [35m65[0m, in [35m_view_wrapper[0m
+    return view_func(request, *args, **kwargs)
+  File [35m"/home/zaffarelli/Projects/wawwod/collector/views/base.py"[0m, line [35m283[0m, in [35muserinput[0m
+    item = Creature.objects.get(rid=rid)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/manager.py"[0m, line [35m87[0m, in [35mmanager_method[0m
+    return [31mgetattr(self.get_queryset(), name)[0m[1;31m(*args, **kwargs)[0m
+           [31m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m[1;31m^^^^^^^^^^^^^^^^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/query.py"[0m, line [35m639[0m, in [35mget[0m
+    raise self.model.DoesNotExist(
+        "%s matching query does not exist." % self.model._meta.object_name
+    )
+[1;35mcollector.models.creatures.Creature.DoesNotExist[0m: [35mCreature matching query does not exist.[0m
+[31m15 13:09:09 | django.server [37m| "POST /ajax/editable/userinput/ HTTP/1.1" 500 21740[0m
+[31m15 13:09:35 | django.request [37m| Internal Server Error: /ajax/editable/userinput/[0m
+Traceback (most recent call last):
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py"[0m, line [35m55[0m, in [35minner[0m
+    response = get_response(request)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py"[0m, line [35m198[0m, in [35m_get_response[0m
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py"[0m, line [35m65[0m, in [35m_view_wrapper[0m
+    return view_func(request, *args, **kwargs)
+  File [35m"/home/zaffarelli/Projects/wawwod/collector/views/base.py"[0m, line [35m283[0m, in [35muserinput[0m
+    item = Creature.objects.get(rid=rid)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/manager.py"[0m, line [35m87[0m, in [35mmanager_method[0m
+    return [31mgetattr(self.get_queryset(), name)[0m[1;31m(*args, **kwargs)[0m
+           [31m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m[1;31m^^^^^^^^^^^^^^^^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/query.py"[0m, line [35m639[0m, in [35mget[0m
+    raise self.model.DoesNotExist(
+        "%s matching query does not exist." % self.model._meta.object_name
+    )
+[1;35mcollector.models.creatures.Creature.DoesNotExist[0m: [35mCreature matching query does not exist.[0m
+[31m15 13:09:35 | django.server [37m| "POST /ajax/editable/userinput/ HTTP/1.1" 500 21740[0m
+[32m15 13:10:48 | django.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/views/base.py changed, reloading.[0m
+[32m15 13:10:48 | django.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+[32m15 13:11:03 | django.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/views/base.py changed, reloading.[0m
+[32m15 13:11:03 | django.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+[31m15 13:11:07 | django.request [37m| Internal Server Error: /ajax/editable/userinput/[0m
+Traceback (most recent call last):
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/fields/__init__.py"[0m, line [35m2128[0m, in [35mget_prep_value[0m
+    return int(value)
+[1;35mTypeError[0m: [35mint() argument must be a string, a bytes-like object or a real number, not 'builtin_function_or_method'[0m
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py"[0m, line [35m55[0m, in [35minner[0m
+    response = get_response(request)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py"[0m, line [35m198[0m, in [35m_get_response[0m
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py"[0m, line [35m65[0m, in [35m_view_wrapper[0m
+    return view_func(request, *args, **kwargs)
+  File [35m"/home/zaffarelli/Projects/wawwod/collector/views/base.py"[0m, line [35m283[0m, in [35muserinput[0m
+    item = Creature.objects.get(id=id)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/manager.py"[0m, line [35m87[0m, in [35mmanager_method[0m
+    return [31mgetattr(self.get_queryset(), name)[0m[1;31m(*args, **kwargs)[0m
+           [31m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m[1;31m^^^^^^^^^^^^^^^^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/query.py"[0m, line [35m625[0m, in [35mget[0m
+    clone = self._chain() if self.query.combinator else [31mself.filter[0m[1;31m(*args, **kwargs)[0m
+                                                        [31m~~~~~~~~~~~[0m[1;31m^^^^^^^^^^^^^^^^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/query.py"[0m, line [35m1542[0m, in [35mfilter[0m
+    return [31mself._filter_or_exclude[0m[1;31m(False, args, kwargs)[0m
+           [31m~~~~~~~~~~~~~~~~~~~~~~~[0m[1;31m^^^^^^^^^^^^^^^^^^^^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/query.py"[0m, line [35m1560[0m, in [35m_filter_or_exclude[0m
+    [31mclone._filter_or_exclude_inplace[0m[1;31m(negate, args, kwargs)[0m
+    [31m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m[1;31m^^^^^^^^^^^^^^^^^^^^^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/query.py"[0m, line [35m1570[0m, in [35m_filter_or_exclude_inplace[0m
+    [31mself._query.add_q[0m[1;31m(Q(*args, **kwargs))[0m
+    [31m~~~~~~~~~~~~~~~~~[0m[1;31m^^^^^^^^^^^^^^^^^^^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/sql/query.py"[0m, line [35m1676[0m, in [35madd_q[0m
+    clause, _ = [31mself._add_q[0m[1;31m(q_object, can_reuse)[0m
+                [31m~~~~~~~~~~~[0m[1;31m^^^^^^^^^^^^^^^^^^^^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/sql/query.py"[0m, line [35m1708[0m, in [35m_add_q[0m
+    child_clause, needed_inner = [31mself.build_filter[0m[1;31m([0m
+                                 [31m~~~~~~~~~~~~~~~~~[0m[1;31m^[0m
+        [1;31mchild,[0m
+        [1;31m^^^^^^[0m
+    ...<7 lines>...
+        [1;31mupdate_join_types=update_join_types,[0m
+        [1;31m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+    [1;31m)[0m
+    [1;31m^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/sql/query.py"[0m, line [35m1618[0m, in [35mbuild_filter[0m
+    condition = self.build_lookup(lookups, col, value)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/sql/query.py"[0m, line [35m1445[0m, in [35mbuild_lookup[0m
+    lookup = lookup_class(lhs, rhs)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/lookups.py"[0m, line [35m35[0m, in [35m__init__[0m
+    self.rhs = [31mself.get_prep_lookup[0m[1;31m()[0m
+               [31m~~~~~~~~~~~~~~~~~~~~[0m[1;31m^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/lookups.py"[0m, line [35m391[0m, in [35mget_prep_lookup[0m
+    return [31msuper().get_prep_lookup[0m[1;31m()[0m
+           [31m~~~~~~~~~~~~~~~~~~~~~~~[0m[1;31m^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/lookups.py"[0m, line [35m93[0m, in [35mget_prep_lookup[0m
+    return [31mself.lhs.output_field.get_prep_value[0m[1;31m(self.rhs)[0m
+           [31m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m[1;31m^^^^^^^^^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/fields/__init__.py"[0m, line [35m2130[0m, in [35mget_prep_value[0m
+    raise e.__class__(
+        "Field '%s' expected a number but got %r." % (self.name, value),
+    ) from e
+[1;35mTypeError[0m: [35mField 'id' expected a number but got <built-in function id>.[0m
+[31m15 13:11:07 | django.server [37m| "POST /ajax/editable/userinput/ HTTP/1.1" 500 24743[0m
+[32m15 13:11:19 | django.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/views/base.py changed, reloading.[0m
+[32m15 13:11:20 | django.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+[31m15 13:11:22 | django.request [37m| Internal Server Error: /ajax/editable/userinput/[0m
+Traceback (most recent call last):
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/fields/__init__.py"[0m, line [35m2128[0m, in [35mget_prep_value[0m
+    return int(value)
+[1;35mValueError[0m: [35minvalid literal for int() with base 10: '_mxwnqfcx_egosoeki'[0m
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py"[0m, line [35m55[0m, in [35minner[0m
+    response = get_response(request)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py"[0m, line [35m198[0m, in [35m_get_response[0m
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py"[0m, line [35m65[0m, in [35m_view_wrapper[0m
+    return view_func(request, *args, **kwargs)
+  File [35m"/home/zaffarelli/Projects/wawwod/collector/views/base.py"[0m, line [35m283[0m, in [35muserinput[0m
+    item = Creature.objects.get(id=id)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/manager.py"[0m, line [35m87[0m, in [35mmanager_method[0m
+    return [31mgetattr(self.get_queryset(), name)[0m[1;31m(*args, **kwargs)[0m
+           [31m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m[1;31m^^^^^^^^^^^^^^^^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/query.py"[0m, line [35m625[0m, in [35mget[0m
+    clone = self._chain() if self.query.combinator else [31mself.filter[0m[1;31m(*args, **kwargs)[0m
+                                                        [31m~~~~~~~~~~~[0m[1;31m^^^^^^^^^^^^^^^^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/query.py"[0m, line [35m1542[0m, in [35mfilter[0m
+    return [31mself._filter_or_exclude[0m[1;31m(False, args, kwargs)[0m
+           [31m~~~~~~~~~~~~~~~~~~~~~~~[0m[1;31m^^^^^^^^^^^^^^^^^^^^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/query.py"[0m, line [35m1560[0m, in [35m_filter_or_exclude[0m
+    [31mclone._filter_or_exclude_inplace[0m[1;31m(negate, args, kwargs)[0m
+    [31m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m[1;31m^^^^^^^^^^^^^^^^^^^^^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/query.py"[0m, line [35m1570[0m, in [35m_filter_or_exclude_inplace[0m
+    [31mself._query.add_q[0m[1;31m(Q(*args, **kwargs))[0m
+    [31m~~~~~~~~~~~~~~~~~[0m[1;31m^^^^^^^^^^^^^^^^^^^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/sql/query.py"[0m, line [35m1676[0m, in [35madd_q[0m
+    clause, _ = [31mself._add_q[0m[1;31m(q_object, can_reuse)[0m
+                [31m~~~~~~~~~~~[0m[1;31m^^^^^^^^^^^^^^^^^^^^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/sql/query.py"[0m, line [35m1708[0m, in [35m_add_q[0m
+    child_clause, needed_inner = [31mself.build_filter[0m[1;31m([0m
+                                 [31m~~~~~~~~~~~~~~~~~[0m[1;31m^[0m
+        [1;31mchild,[0m
+        [1;31m^^^^^^[0m
+    ...<7 lines>...
+        [1;31mupdate_join_types=update_join_types,[0m
+        [1;31m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+    [1;31m)[0m
+    [1;31m^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/sql/query.py"[0m, line [35m1618[0m, in [35mbuild_filter[0m
+    condition = self.build_lookup(lookups, col, value)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/sql/query.py"[0m, line [35m1445[0m, in [35mbuild_lookup[0m
+    lookup = lookup_class(lhs, rhs)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/lookups.py"[0m, line [35m35[0m, in [35m__init__[0m
+    self.rhs = [31mself.get_prep_lookup[0m[1;31m()[0m
+               [31m~~~~~~~~~~~~~~~~~~~~[0m[1;31m^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/lookups.py"[0m, line [35m391[0m, in [35mget_prep_lookup[0m
+    return [31msuper().get_prep_lookup[0m[1;31m()[0m
+           [31m~~~~~~~~~~~~~~~~~~~~~~~[0m[1;31m^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/lookups.py"[0m, line [35m93[0m, in [35mget_prep_lookup[0m
+    return [31mself.lhs.output_field.get_prep_value[0m[1;31m(self.rhs)[0m
+           [31m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m[1;31m^^^^^^^^^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/fields/__init__.py"[0m, line [35m2130[0m, in [35mget_prep_value[0m
+    raise e.__class__(
+        "Field '%s' expected a number but got %r." % (self.name, value),
+    ) from e
+[1;35mValueError[0m: [35mField 'id' expected a number but got '_mxwnqfcx_egosoeki'.[0m
+[31m15 13:11:22 | django.server [37m| "POST /ajax/editable/userinput/ HTTP/1.1" 500 24698[0m
+[32m15 13:11:47 | django.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/views/base.py changed, reloading.[0m
+[32m15 13:11:48 | django.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+[31m15 13:11:50 | django.request [37m| Internal Server Error: /ajax/editable/userinput/[0m
+Traceback (most recent call last):
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py"[0m, line [35m55[0m, in [35minner[0m
+    response = get_response(request)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py"[0m, line [35m198[0m, in [35m_get_response[0m
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py"[0m, line [35m65[0m, in [35m_view_wrapper[0m
+    return view_func(request, *args, **kwargs)
+  File [35m"/home/zaffarelli/Projects/wawwod/collector/views/base.py"[0m, line [35m283[0m, in [35muserinput[0m
+    item = Creature.objects.get(rid=rid)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/manager.py"[0m, line [35m87[0m, in [35mmanager_method[0m
+    return [31mgetattr(self.get_queryset(), name)[0m[1;31m(*args, **kwargs)[0m
+           [31m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m[1;31m^^^^^^^^^^^^^^^^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/query.py"[0m, line [35m639[0m, in [35mget[0m
+    raise self.model.DoesNotExist(
+        "%s matching query does not exist." % self.model._meta.object_name
+    )
+[1;35mcollector.models.creatures.Creature.DoesNotExist[0m: [35mCreature matching query does not exist.[0m
+[31m15 13:11:50 | django.server [37m| "POST /ajax/editable/userinput/ HTTP/1.1" 500 21740[0m
+[32m15 13:12:39 | django.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/views/base.py changed, reloading.[0m
+[32m15 13:12:39 | django.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+[31m15 13:12:42 | django.request [37m| Internal Server Error: /ajax/editable/userinput/[0m
+Traceback (most recent call last):
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py"[0m, line [35m55[0m, in [35minner[0m
+    response = get_response(request)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py"[0m, line [35m198[0m, in [35m_get_response[0m
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py"[0m, line [35m65[0m, in [35m_view_wrapper[0m
+    return view_func(request, *args, **kwargs)
+  File [35m"/home/zaffarelli/Projects/wawwod/collector/views/base.py"[0m, line [35m283[0m, in [35muserinput[0m
+    item = Creature.objects.get(rid=rid)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/manager.py"[0m, line [35m87[0m, in [35mmanager_method[0m
+    return [31mgetattr(self.get_queryset(), name)[0m[1;31m(*args, **kwargs)[0m
+           [31m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m[1;31m^^^^^^^^^^^^^^^^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/query.py"[0m, line [35m639[0m, in [35mget[0m
+    raise self.model.DoesNotExist(
+        "%s matching query does not exist." % self.model._meta.object_name
+    )
+[1;35mcollector.models.creatures.Creature.DoesNotExist[0m: [35mCreature matching query does not exist.[0m
+[31m15 13:12:42 | django.server [37m| "POST /ajax/editable/userinput/ HTTP/1.1" 500 21740[0m
+[32m15 13:13:06 | django.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/views/base.py changed, reloading.[0m
+[32m15 13:13:06 | django.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+[31m15 13:13:12 | django.request [37m| Internal Server Error: /ajax/editable/userinput/[0m
+Traceback (most recent call last):
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py"[0m, line [35m55[0m, in [35minner[0m
+    response = get_response(request)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py"[0m, line [35m198[0m, in [35m_get_response[0m
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py"[0m, line [35m65[0m, in [35m_view_wrapper[0m
+    return view_func(request, *args, **kwargs)
+  File [35m"/home/zaffarelli/Projects/wawwod/collector/views/base.py"[0m, line [35m281[0m, in [35muserinput[0m
+    [31mlogger.log[0m[1;31m(f"RID .......... {rid}")[0m
+    [31m~~~~~~~~~~[0m[1;31m^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[1;35mTypeError[0m: [35mLogger.log() missing 1 required positional argument: 'msg'[0m
+[31m15 13:13:12 | django.server [37m| "POST /ajax/editable/userinput/ HTTP/1.1" 500 21345[0m
+[32m15 13:14:37 | django.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/views/base.py changed, reloading.[0m
+[32m15 13:14:38 | django.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+[32m15 13:14:39 | django [37m| RID .......... None[0m
+[31m15 13:14:39 | django.request [37m| Internal Server Error: /ajax/editable/userinput/[0m
+Traceback (most recent call last):
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py"[0m, line [35m55[0m, in [35minner[0m
+    response = get_response(request)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py"[0m, line [35m198[0m, in [35m_get_response[0m
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py"[0m, line [35m65[0m, in [35m_view_wrapper[0m
+    return view_func(request, *args, **kwargs)
+  File [35m"/home/zaffarelli/Projects/wawwod/collector/views/base.py"[0m, line [35m284[0m, in [35muserinput[0m
+    item = Creature.objects.get(rid=rid)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/manager.py"[0m, line [35m87[0m, in [35mmanager_method[0m
+    return [31mgetattr(self.get_queryset(), name)[0m[1;31m(*args, **kwargs)[0m
+           [31m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m[1;31m^^^^^^^^^^^^^^^^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/query.py"[0m, line [35m639[0m, in [35mget[0m
+    raise self.model.DoesNotExist(
+        "%s matching query does not exist." % self.model._meta.object_name
+    )
+[1;35mcollector.models.creatures.Creature.DoesNotExist[0m: [35mCreature matching query does not exist.[0m
+[31m15 13:14:39 | django.server [37m| "POST /ajax/editable/userinput/ HTTP/1.1" 500 21740[0m
+[32m15 13:19:02 | django.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/views/base.py changed, reloading.[0m
+[32m15 13:19:02 | django.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+[32m15 13:19:07 | django [37m| RID .......... <QueryDict: {'id': ['_mxwnqfcx_egosoeki'], 'field': ['_new_name'], 'value': ['Stana Rodhes']}>[0m
+[31m15 13:19:07 | django.request [37m| Internal Server Error: /ajax/editable/userinput/[0m
+Traceback (most recent call last):
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py"[0m, line [35m55[0m, in [35minner[0m
+    response = get_response(request)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py"[0m, line [35m198[0m, in [35m_get_response[0m
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py"[0m, line [35m65[0m, in [35m_view_wrapper[0m
+    return view_func(request, *args, **kwargs)
+  File [35m"/home/zaffarelli/Projects/wawwod/collector/views/base.py"[0m, line [35m284[0m, in [35muserinput[0m
+    item = Creature.objects.get(rid=rid)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/manager.py"[0m, line [35m87[0m, in [35mmanager_method[0m
+    return [31mgetattr(self.get_queryset(), name)[0m[1;31m(*args, **kwargs)[0m
+           [31m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m[1;31m^^^^^^^^^^^^^^^^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/query.py"[0m, line [35m639[0m, in [35mget[0m
+    raise self.model.DoesNotExist(
+        "%s matching query does not exist." % self.model._meta.object_name
+    )
+[1;35mcollector.models.creatures.Creature.DoesNotExist[0m: [35mCreature matching query does not exist.[0m
+[31m15 13:19:07 | django.server [37m| "POST /ajax/editable/userinput/ HTTP/1.1" 500 21740[0m
+[32m15 13:19:47 | django.server [37m| "GET /admin/collector/creature/?q=_mxwnqfcx_egosoeki HTTP/1.1" 200 41346[0m
+[32m15 13:19:47 | django.server [37m| "GET /admin/jsi18n/ HTTP/1.1" 200 3342[0m
+[32m15 13:19:54 | django.server [37m| "GET /admin/collector/creature/?q=mxwnqfcx HTTP/1.1" 200 43761[0m
+[32m15 13:19:54 | django.server [37m| "GET /admin/jsi18n/ HTTP/1.1" 200 3342[0m
+[32m15 13:19:57 | django.server [37m| "GET /admin/collector/creature/1250/change/?_changelist_filters=q%3Dmxwnqfcx HTTP/1.1" 200 179655[0m
+[32m15 13:19:57 | django.server [37m| "GET /admin/jsi18n/ HTTP/1.1" 200 3342[0m
+[32m15 13:20:19 | django.server [37m| "POST /admin/collector/creature/1250/change/?_changelist_filters=q%3Dmxwnqfcx HTTP/1.1" 302 0[0m
+[32m15 13:20:19 | django.server [37m| "GET /admin/collector/creature/?q=mxwnqfcx HTTP/1.1" 200 43980[0m
+[32m15 13:20:19 | django.server [37m| "GET /admin/jsi18n/ HTTP/1.1" 200 3342[0m
+[33m15 13:20:29 | django.request [37m| Not Found: /ajax/view/creature/_mxwnqfcx_egosoeki_/[0m
+[33m15 13:20:29 | django.server [37m| "GET /ajax/view/creature/_mxwnqfcx_egosoeki_/ HTTP/1.1" 404 8137[0m
+[32m15 13:20:33 | django.server [37m| "GET /ajax/display/gaia_wheel/ HTTP/1.1" 200 259770[0m
+[32m15 13:20:38 | django.server [37m| "GET /ajax/view/creature/_mxwnqfcx_egosoeki/ HTTP/1.1" 200 57989[0m
+[32m15 13:20:42 | django [37m| RID .......... <QueryDict: {'id': ['_mxwnqfcx_egosoeki'], 'field': ['new_name'], 'value': ['Stana Rodhes']}>[0m
+[31m15 13:20:42 | django.request [37m| Internal Server Error: /ajax/editable/userinput/[0m
+Traceback (most recent call last):
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py"[0m, line [35m55[0m, in [35minner[0m
+    response = get_response(request)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py"[0m, line [35m198[0m, in [35m_get_response[0m
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py"[0m, line [35m65[0m, in [35m_view_wrapper[0m
+    return view_func(request, *args, **kwargs)
+  File [35m"/home/zaffarelli/Projects/wawwod/collector/views/base.py"[0m, line [35m284[0m, in [35muserinput[0m
+    item = Creature.objects.get(rid=rid)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/manager.py"[0m, line [35m87[0m, in [35mmanager_method[0m
+    return [31mgetattr(self.get_queryset(), name)[0m[1;31m(*args, **kwargs)[0m
+           [31m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m[1;31m^^^^^^^^^^^^^^^^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/query.py"[0m, line [35m639[0m, in [35mget[0m
+    raise self.model.DoesNotExist(
+        "%s matching query does not exist." % self.model._meta.object_name
+    )
+[1;35mcollector.models.creatures.Creature.DoesNotExist[0m: [35mCreature matching query does not exist.[0m
+[31m15 13:20:42 | django.server [37m| "POST /ajax/editable/userinput/ HTTP/1.1" 500 21739[0m
+[32m15 13:20:42 | django [37m| RID .......... <QueryDict: {'id': ['_mxwnqfcx_egosoeki'], 'field': ['new_name'], 'value': ['Stana Rodhes']}>[0m
+[31m15 13:20:42 | django.request [37m| Internal Server Error: /ajax/editable/userinput/[0m
+Traceback (most recent call last):
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py"[0m, line [35m55[0m, in [35minner[0m
+    response = get_response(request)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py"[0m, line [35m198[0m, in [35m_get_response[0m
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py"[0m, line [35m65[0m, in [35m_view_wrapper[0m
+    return view_func(request, *args, **kwargs)
+  File [35m"/home/zaffarelli/Projects/wawwod/collector/views/base.py"[0m, line [35m284[0m, in [35muserinput[0m
+    item = Creature.objects.get(rid=rid)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/manager.py"[0m, line [35m87[0m, in [35mmanager_method[0m
+    return [31mgetattr(self.get_queryset(), name)[0m[1;31m(*args, **kwargs)[0m
+           [31m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m[1;31m^^^^^^^^^^^^^^^^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/query.py"[0m, line [35m639[0m, in [35mget[0m
+    raise self.model.DoesNotExist(
+        "%s matching query does not exist." % self.model._meta.object_name
+    )
+[1;35mcollector.models.creatures.Creature.DoesNotExist[0m: [35mCreature matching query does not exist.[0m
+[31m15 13:20:42 | django.server [37m| "POST /ajax/editable/userinput/ HTTP/1.1" 500 21739[0m
+[32m15 13:21:15 | django.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/views/base.py changed, reloading.[0m
+[32m15 13:21:16 | django.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+[32m15 13:21:26 | django.server [37m| "GET /ajax/view/creature/_mxwnqfcx_egosoeki/ HTTP/1.1" 200 57989[0m
+[32m15 13:21:27 | django [37m| RID .......... <QueryDict: {'id': ['_mxwnqfcx_egosoeki'], 'field': ['new_name'], 'value': ['Stana Rodhes']}>[0m
+[31m15 13:21:27 | django.request [37m| Internal Server Error: /ajax/editable/userinput/[0m
+Traceback (most recent call last):
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py"[0m, line [35m55[0m, in [35minner[0m
+    response = get_response(request)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py"[0m, line [35m198[0m, in [35m_get_response[0m
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py"[0m, line [35m65[0m, in [35m_view_wrapper[0m
+    return view_func(request, *args, **kwargs)
+  File [35m"/home/zaffarelli/Projects/wawwod/collector/views/base.py"[0m, line [35m284[0m, in [35muserinput[0m
+    item = Creature.objects.get(rid=rid)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/manager.py"[0m, line [35m87[0m, in [35mmanager_method[0m
+    return [31mgetattr(self.get_queryset(), name)[0m[1;31m(*args, **kwargs)[0m
+           [31m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m[1;31m^^^^^^^^^^^^^^^^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/query.py"[0m, line [35m639[0m, in [35mget[0m
+    raise self.model.DoesNotExist(
+        "%s matching query does not exist." % self.model._meta.object_name
+    )
+[1;35mcollector.models.creatures.Creature.DoesNotExist[0m: [35mCreature matching query does not exist.[0m
+[31m15 13:21:27 | django.server [37m| "POST /ajax/editable/userinput/ HTTP/1.1" 500 21739[0m
+[32m15 13:22:07 | django.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/views/base.py changed, reloading.[0m
+[32m15 13:22:07 | django.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+[32m15 13:22:10 | django.server [37m| "GET /ajax/view/creature/_mxwnqfcx_egosoeki/ HTTP/1.1" 200 57989[0m
+[32m15 13:22:12 | django [37m| RID .......... <QueryDict: {'id': ['_mxwnqfcx_egosoeki'], 'field': ['new_name'], 'value': ['Stana Rodhes']}>[0m
+[32m15 13:22:12 | django.server [37m| "POST /ajax/editable/userinput/ HTTP/1.1" 200 2[0m
+[32m15 13:22:12 | django.server [37m| "GET /ajax/view/creature/_mxwnqfcx_egosoeki/ HTTP/1.1" 200 57989[0m
+[32m15 13:22:23 | django.server [37m| "GET /ajax/view/creature/_mxwnqfcx_egosoeki/ HTTP/1.1" 200 57989[0m
+[32m15 13:22:28 | django.server [37m| "GET /ajax/view/creature/_mxwnqfcx_egosoeki/ HTTP/1.1" 200 57989[0m
+[32m15 13:22:34 | django.server [37m| "GET /ajax/display/gaia_wheel/ HTTP/1.1" 200 259770[0m
+[32m15 13:22:38 | django.server [37m| "GET /ajax/view/creature/_mxwnqfcx_egosoeki/ HTTP/1.1" 200 57989[0m
+[32m15 13:22:54 | django [37m| RID .......... <QueryDict: {'id': ['_mxwnqfcx_egosoeki'], 'field': ['new_name'], 'value': ['Stana Rodhes']}>[0m
+[32m15 13:22:54 | django.server [37m| "POST /ajax/editable/userinput/ HTTP/1.1" 200 2[0m
+[32m15 13:22:54 | django.server [37m| "GET /ajax/view/creature/_mxwnqfcx_egosoeki/ HTTP/1.1" 200 57989[0m
+[32m15 13:23:09 | django.server [37m| "GET /admin/collector/creature/?q=mxwnqfcx HTTP/1.1" 200 43749[0m
+[32m15 13:23:09 | django.server [37m| "GET /admin/jsi18n/ HTTP/1.1" 200 3342[0m
+[32m15 13:23:13 | django.server [37m| "GET /admin/collector/creature/1250/change/?_changelist_filters=q%3Dmxwnqfcx HTTP/1.1" 200 179651[0m
+[32m15 13:23:13 | django.server [37m| "GET /admin/jsi18n/ HTTP/1.1" 200 3342[0m
+[32m15 13:23:28 | django.server [37m| "POST /admin/collector/creature/1250/change/?_changelist_filters=q%3Dmxwnqfcx HTTP/1.1" 302 0[0m
+[32m15 13:23:28 | django.server [37m| "GET /admin/collector/creature/?q=mxwnqfcx HTTP/1.1" 200 39412[0m
+[32m15 13:23:28 | django.server [37m| "GET /admin/jsi18n/ HTTP/1.1" 200 3342[0m
+[32m15 13:23:34 | django.server [37m| "GET /ajax/display/gaia_wheel/ HTTP/1.1" 200 259760[0m
+[32m15 13:23:39 | django.server [37m| "GET /ajax/view/creature/_stana_rhodes/ HTTP/1.1" 200 57355[0m
+[32m15 13:23:48 | django.server [37m| "POST /ajax/randomize/reparts/for/_stana_rhodes/ HTTP/1.1" 200 2[0m
+[32m15 13:23:48 | django.server [37m| "GET /ajax/view/creature/_stana_rhodes/ HTTP/1.1" 200 57355[0m
+[32m15 13:23:48 | django.server [37m| "POST /ajax/randomize/reparts/for/_stana_rhodes/ HTTP/1.1" 200 2[0m
+[32m15 13:23:48 | django.server [37m| "GET /ajax/view/creature/_stana_rhodes/ HTTP/1.1" 200 57355[0m
+[32m15 13:23:49 | django.server [37m| "POST /ajax/randomize/mental/for/_stana_rhodes/ HTTP/1.1" 200 2[0m
+[32m15 13:23:49 | django.server [37m| "GET /ajax/view/creature/_stana_rhodes/ HTTP/1.1" 200 57361[0m
+[32m15 13:23:50 | django.server [37m| "POST /ajax/randomize/mental/for/_stana_rhodes/ HTTP/1.1" 200 2[0m
+[32m15 13:23:50 | django.server [37m| "GET /ajax/view/creature/_stana_rhodes/ HTTP/1.1" 200 57361[0m
+[32m15 13:23:50 | django.server [37m| "POST /ajax/randomize/mental/for/_stana_rhodes/ HTTP/1.1" 200 2[0m
+[32m15 13:23:50 | django.server [37m| "GET /ajax/view/creature/_stana_rhodes/ HTTP/1.1" 200 57361[0m
+[32m15 13:23:52 | django.server [37m| "POST /ajax/randomize/mental/for/_stana_rhodes/ HTTP/1.1" 200 2[0m
+[32m15 13:23:52 | django.server [37m| "GET /ajax/view/creature/_stana_rhodes/ HTTP/1.1" 200 57361[0m
+[32m15 13:23:52 | django.server [37m| "POST /ajax/randomize/mental/for/_stana_rhodes/ HTTP/1.1" 200 2[0m
+[32m15 13:23:52 | django.server [37m| "GET /ajax/view/creature/_stana_rhodes/ HTTP/1.1" 200 57361[0m
+[32m15 13:23:54 | django.server [37m| "POST /ajax/randomize/social/for/_stana_rhodes/ HTTP/1.1" 200 2[0m
+[32m15 13:23:54 | django.server [37m| "GET /ajax/view/creature/_stana_rhodes/ HTTP/1.1" 200 57361[0m
+[32m15 13:23:55 | django.server [37m| "POST /ajax/randomize/physical/for/_stana_rhodes/ HTTP/1.1" 200 2[0m
+[32m15 13:23:55 | django.server [37m| "GET /ajax/view/creature/_stana_rhodes/ HTTP/1.1" 200 57355[0m
+[32m15 13:23:57 | django.server [37m| "POST /ajax/randomize/talents/for/_stana_rhodes/ HTTP/1.1" 200 2[0m
+[32m15 13:23:57 | django.server [37m| "GET /ajax/view/creature/_stana_rhodes/ HTTP/1.1" 200 57378[0m
+[32m15 13:23:59 | django.server [37m| "POST /ajax/randomize/skills/for/_stana_rhodes/ HTTP/1.1" 200 2[0m
+[32m15 13:23:59 | django.server [37m| "GET /ajax/view/creature/_stana_rhodes/ HTTP/1.1" 200 57355[0m
+[32m15 13:24:00 | django.server [37m| "POST /ajax/randomize/knowledges/for/_stana_rhodes/ HTTP/1.1" 200 2[0m
+[32m15 13:24:00 | django.server [37m| "GET /ajax/view/creature/_stana_rhodes/ HTTP/1.1" 200 57355[0m
+[32m15 13:24:03 | django.server [37m| "GET /ajax/view/creature/_stana_rhodes/ HTTP/1.1" 200 57355[0m
+[32m15 13:24:24 | django.server [37m| "GET /ajax/display/septs/_sept_of_the_big_bog/ HTTP/1.1" 200 16515[0m
+[32m15 13:24:24 | django.server [37m| "GET /static/collector/tribes/silent_striders.webp HTTP/1.1" 200 14756[0m
+[32m15 13:24:24 | django.server [37m| "GET /static/collector/tribes/stargazers.webp HTTP/1.1" 200 14818[0m
+[32m15 13:24:24 | django.server [37m| "GET /ajax/display/septs/_sept_of_the_big_bog/ HTTP/1.1" 200 16515[0m
+[32m15 13:24:45 | django.server [37m| "GET /ajax/view/creature/_yoko_dremel/ HTTP/1.1" 200 59651[0m
+[32m15 13:25:08 | django [37m| RID .......... <QueryDict: {'id': ['_yoko_dremel'], 'field': ['edges'], 'value': ['_yyymdmwg_pxvgnkjh_, _vnpjvufr_rfdqyedh_, _eaigepxs_vftddugr_, _zideviwz_upybrnfv_, _stana_rhodes']}>[0m
+[32m15 13:25:08 | django.server [37m| "POST /ajax/editable/userinput/ HTTP/1.1" 200 2[0m
+[32m15 13:25:08 | django.server [37m| "GET /ajax/view/creature/_yoko_dremel/ HTTP/1.1" 200 59651[0m
+[32m15 13:25:14 | django.server [37m| "GET /ajax/display/septs/_sept_of_the_big_bog/ HTTP/1.1" 200 16515[0m
+[32m15 13:25:41 | django.server [37m| "GET /admin/collector/creature/?q= HTTP/1.1" 200 71484[0m
+[32m15 13:25:41 | django.server [37m| "GET /admin/jsi18n/ HTTP/1.1" 200 3342[0m
+[32m15 13:25:42 | django.server [37m| "GET /admin/collector/creature/?chronicle=RAMI&q= HTTP/1.1" 200 76893[0m
+[32m15 13:25:42 | django.server [37m| "GET /admin/jsi18n/ HTTP/1.1" 200 3342[0m
+[32m15 13:25:47 | django.server [37m| "GET /admin/collector/creature/170/change/?_changelist_filters=chronicle%3DRAMI%26q%3D HTTP/1.1" 200 180336[0m
+[32m15 13:25:47 | django.server [37m| "GET /admin/jsi18n/ HTTP/1.1" 200 3342[0m
+[32m15 13:33:28 | django.server [37m| "GET /admin/collector/creature/170/change/?_changelist_filters=chronicle%3DRAMI%26q%3D HTTP/1.1" 200 180336[0m
+[32m15 13:33:28 | django.server [37m| "GET /admin/jsi18n/ HTTP/1.1" 200 3342[0m
+[32m15 13:33:35 | django.server [37m| "GET /ajax/display/gaia_wheel/ HTTP/1.1" 200 262354[0m
+[32m15 13:33:40 | django.server [37m| "GET /ajax/view/creature/_stana_rhodes/ HTTP/1.1" 200 57355[0m
+[32m15 13:33:40 | django.server [37m| "GET /static/collector/clans/kinfolk.webp HTTP/1.1" 200 13142[0m
+[32m15 13:33:50 | django.server [37m| "GET /ajax/view/creature/_zeiyqntm_wnzyizfe_/ HTTP/1.1" 200 58120[0m
+[32m15 13:34:01 | django.server [37m| "GET /ajax/view/creature/_stana_rhodes/ HTTP/1.1" 200 57355[0m
+[32m15 13:34:03 | django.server [37m| "GET /ajax/view/creature/_qwcymiwy_xcpgoaeg_/ HTTP/1.1" 200 58119[0m
+[32m15 13:34:17 | django [37m| RID .......... <QueryDict: {'id': ['_qwcymiwy_xcpgoaeg'], 'field': ['_new_name'], 'value': ['Lutami']}>[0m
+[32m15 13:34:17 | django.server [37m| "POST /ajax/editable/userinput/ HTTP/1.1" 200 2[0m
+[32m15 13:34:19 | django.server [37m| "GET /ajax/view/creature/_qwcymiwy_xcpgoaeg_/ HTTP/1.1" 200 58119[0m
+[32m15 13:34:20 | django.server [37m| "GET /ajax/view/creature/_qwcymiwy_xcpgoaeg_/ HTTP/1.1" 200 58119[0m
+[32m15 13:34:20 | django.server [37m| "GET /ajax/view/creature/_qwcymiwy_xcpgoaeg_/ HTTP/1.1" 200 58119[0m
+[32m15 13:34:20 | django.server [37m| "GET /ajax/view/creature/_qwcymiwy_xcpgoaeg_/ HTTP/1.1" 200 58119[0m
+[32m15 15:14:53 | django.server [37m| "GET /ajax/view/creature/_uxpzyeoa_stkpdcii_/ HTTP/1.1" 200 58113[0m
+[32m15 15:14:53 | django.server [37m| "GET /ajax/view/creature/_uxpzyeoa_stkpdcii_/ HTTP/1.1" 200 58113[0m
+[31m15 15:15:17 | django.request [37m| Internal Server Error: /ajax/editable/updown/[0m
+Traceback (most recent call last):
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py"[0m, line [35m55[0m, in [35minner[0m
+    response = get_response(request)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py"[0m, line [35m198[0m, in [35m_get_response[0m
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py"[0m, line [35m65[0m, in [35m_view_wrapper[0m
+    return view_func(request, *args, **kwargs)
+  File [35m"/home/zaffarelli/Projects/wawwod/collector/views/base.py"[0m, line [35m259[0m, in [35mupdown[0m
+    item = Creature.objects.get(rid=rid)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/manager.py"[0m, line [35m87[0m, in [35mmanager_method[0m
+    return [31mgetattr(self.get_queryset(), name)[0m[1;31m(*args, **kwargs)[0m
+           [31m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m[1;31m^^^^^^^^^^^^^^^^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/query.py"[0m, line [35m639[0m, in [35mget[0m
+    raise self.model.DoesNotExist(
+        "%s matching query does not exist." % self.model._meta.object_name
+    )
+[1;35mcollector.models.creatures.Creature.DoesNotExist[0m: [35mCreature matching query does not exist.[0m
+[31m15 15:15:17 | django.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 500 21711[0m
+[31m15 15:15:19 | django.request [37m| Internal Server Error: /ajax/editable/updown/[0m
+Traceback (most recent call last):
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py"[0m, line [35m55[0m, in [35minner[0m
+    response = get_response(request)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py"[0m, line [35m198[0m, in [35m_get_response[0m
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py"[0m, line [35m65[0m, in [35m_view_wrapper[0m
+    return view_func(request, *args, **kwargs)
+  File [35m"/home/zaffarelli/Projects/wawwod/collector/views/base.py"[0m, line [35m259[0m, in [35mupdown[0m
+    item = Creature.objects.get(rid=rid)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/manager.py"[0m, line [35m87[0m, in [35mmanager_method[0m
+    return [31mgetattr(self.get_queryset(), name)[0m[1;31m(*args, **kwargs)[0m
+           [31m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m[1;31m^^^^^^^^^^^^^^^^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/query.py"[0m, line [35m639[0m, in [35mget[0m
+    raise self.model.DoesNotExist(
+        "%s matching query does not exist." % self.model._meta.object_name
+    )
+[1;35mcollector.models.creatures.Creature.DoesNotExist[0m: [35mCreature matching query does not exist.[0m
+[31m15 15:15:19 | django.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 500 21712[0m
+[31m15 15:15:27 | django.request [37m| Internal Server Error: /ajax/collector_action/refix_all/[0m
+Traceback (most recent call last):
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py"[0m, line [35m55[0m, in [35minner[0m
+    response = get_response(request)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py"[0m, line [35m198[0m, in [35m_get_response[0m
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File [35m"/home/zaffarelli/Projects/wawwod/collector/views/actions.py"[0m, line [35m337[0m, in [35mrefix_all[0m
+    chronicle = [1;31mget_current_chronicle[0m()
+                [1;31m^^^^^^^^^^^^^^^^^^^^^[0m
+[1;35mNameError[0m: [35mname 'get_current_chronicle' is not defined[0m
+[31m15 15:15:27 | django.server [37m| "GET /ajax/collector_action/refix_all/ HTTP/1.1" 500 77029[0m
+[32m15 15:15:47 | django.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/views/actions.py changed, reloading.[0m
+[32m15 15:15:47 | django.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+[32m15 15:16:30 | django.server [37m| "GET /ajax/display/gaia_wheel/ HTTP/1.1" 200 262354[0m
+[32m15 15:16:35 | django.server [37m| "GET /ajax/display/gaia_wheel/ HTTP/1.1" 200 262354[0m
+[32m15 15:16:40 | django.server [37m| "GET /ajax/view/creature/_sbwjxhfv_fqaihcww_/ HTTP/1.1" 200 58112[0m
+[31m15 15:16:46 | django.request [37m| Internal Server Error: /ajax/view/creature/_sbwjxhfv_fqaihcww_/[0m
+Traceback (most recent call last):
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/backends/base/base.py"[0m, line [35m279[0m, in [35mensure_connection[0m
+    [31mself.connect[0m[1;31m()[0m
+    [31m~~~~~~~~~~~~[0m[1;31m^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/asyncio.py"[0m, line [35m26[0m, in [35minner[0m
+    return func(*args, **kwargs)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/backends/base/base.py"[0m, line [35m256[0m, in [35mconnect[0m
+    self.connection = [31mself.get_new_connection[0m[1;31m(conn_params)[0m
+                      [31m~~~~~~~~~~~~~~~~~~~~~~~[0m[1;31m^^^^^^^^^^^^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/asyncio.py"[0m, line [35m26[0m, in [35minner[0m
+    return func(*args, **kwargs)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/backends/sqlite3/base.py"[0m, line [35m206[0m, in [35mget_new_connection[0m
+    [31mregister_functions[0m[1;31m(conn)[0m
+    [31m~~~~~~~~~~~~~~~~~~[0m[1;31m^^^^^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/backends/sqlite3/_functions.py"[0m, line [35m86[0m, in [35mregister[0m
+    if not [31mconnection.execute[0m[1;31m(sql)[0m.fetchone()[0]:
+           [31m~~~~~~~~~~~~~~~~~~[0m[1;31m^^^^^[0m
+[1;35msqlite3.OperationalError[0m: [35mdatabase is locked[0m
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py"[0m, line [35m55[0m, in [35minner[0m
+    response = get_response(request)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py"[0m, line [35m198[0m, in [35m_get_response[0m
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/views/generic/base.py"[0m, line [35m106[0m, in [35mview[0m
+    return [31mself.dispatch[0m[1;31m(request, *args, **kwargs)[0m
+           [31m~~~~~~~~~~~~~[0m[1;31m^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/views/generic/base.py"[0m, line [35m145[0m, in [35mdispatch[0m
+    return handler(request, *args, **kwargs)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/views/generic/detail.py"[0m, line [35m112[0m, in [35mget[0m
+    self.object = [31mself.get_object[0m[1;31m()[0m
+                  [31m~~~~~~~~~~~~~~~[0m[1;31m^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/views/generic/detail.py"[0m, line [35m53[0m, in [35mget_object[0m
+    obj = queryset.get()
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/query.py"[0m, line [35m635[0m, in [35mget[0m
+    num = len(clone)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/query.py"[0m, line [35m372[0m, in [35m__len__[0m
+    [31mself._fetch_all[0m[1;31m()[0m
+    [31m~~~~~~~~~~~~~~~[0m[1;31m^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/query.py"[0m, line [35m2000[0m, in [35m_fetch_all[0m
+    self._result_cache = [31mlist[0m[1;31m(self._iterable_class(self))[0m
+                         [31m~~~~[0m[1;31m^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/query.py"[0m, line [35m95[0m, in [35m__iter__[0m
+    results = compiler.execute_sql(
+        chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size
+    )
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/sql/compiler.py"[0m, line [35m1622[0m, in [35mexecute_sql[0m
+    cursor = self.connection.cursor()
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/asyncio.py"[0m, line [35m26[0m, in [35minner[0m
+    return func(*args, **kwargs)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/backends/base/base.py"[0m, line [35m320[0m, in [35mcursor[0m
+    return [31mself._cursor[0m[1;31m()[0m
+           [31m~~~~~~~~~~~~[0m[1;31m^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/backends/base/base.py"[0m, line [35m296[0m, in [35m_cursor[0m
+    [31mself.ensure_connection[0m[1;31m()[0m
+    [31m~~~~~~~~~~~~~~~~~~~~~~[0m[1;31m^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/asyncio.py"[0m, line [35m26[0m, in [35minner[0m
+    return func(*args, **kwargs)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/backends/base/base.py"[0m, line [35m278[0m, in [35mensure_connection[0m
+    with [1;31mself.wrap_database_errors[0m:
+         [1;31m^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/utils.py"[0m, line [35m94[0m, in [35m__exit__[0m
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/backends/base/base.py"[0m, line [35m279[0m, in [35mensure_connection[0m
+    [31mself.connect[0m[1;31m()[0m
+    [31m~~~~~~~~~~~~[0m[1;31m^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/asyncio.py"[0m, line [35m26[0m, in [35minner[0m
+    return func(*args, **kwargs)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/backends/base/base.py"[0m, line [35m256[0m, in [35mconnect[0m
+    self.connection = [31mself.get_new_connection[0m[1;31m(conn_params)[0m
+                      [31m~~~~~~~~~~~~~~~~~~~~~~~[0m[1;31m^^^^^^^^^^^^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/asyncio.py"[0m, line [35m26[0m, in [35minner[0m
+    return func(*args, **kwargs)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/backends/sqlite3/base.py"[0m, line [35m206[0m, in [35mget_new_connection[0m
+    [31mregister_functions[0m[1;31m(conn)[0m
+    [31m~~~~~~~~~~~~~~~~~~[0m[1;31m^^^^^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/backends/sqlite3/_functions.py"[0m, line [35m86[0m, in [35mregister[0m
+    if not [31mconnection.execute[0m[1;31m(sql)[0m.fetchone()[0]:
+           [31m~~~~~~~~~~~~~~~~~~[0m[1;31m^^^^^[0m
+[1;35mdjango.db.utils.OperationalError[0m: [35mdatabase is locked[0m
+[31m15 15:16:50 | django.request [37m| Internal Server Error: /ajax/display/gaia_wheel/[0m
+Traceback (most recent call last):
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/backends/base/base.py"[0m, line [35m279[0m, in [35mensure_connection[0m
+    [31mself.connect[0m[1;31m()[0m
+    [31m~~~~~~~~~~~~[0m[1;31m^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/asyncio.py"[0m, line [35m26[0m, in [35minner[0m
+    return func(*args, **kwargs)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/backends/base/base.py"[0m, line [35m256[0m, in [35mconnect[0m
+    self.connection = [31mself.get_new_connection[0m[1;31m(conn_params)[0m
+                      [31m~~~~~~~~~~~~~~~~~~~~~~~[0m[1;31m^^^^^^^^^^^^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/asyncio.py"[0m, line [35m26[0m, in [35minner[0m
+    return func(*args, **kwargs)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/backends/sqlite3/base.py"[0m, line [35m206[0m, in [35mget_new_connection[0m
+    [31mregister_functions[0m[1;31m(conn)[0m
+    [31m~~~~~~~~~~~~~~~~~~[0m[1;31m^^^^^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/backends/sqlite3/_functions.py"[0m, line [35m86[0m, in [35mregister[0m
+    if not [31mconnection.execute[0m[1;31m(sql)[0m.fetchone()[0]:
+           [31m~~~~~~~~~~~~~~~~~~[0m[1;31m^^^^^[0m
+[1;35msqlite3.OperationalError[0m: [35mdatabase is locked[0m
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py"[0m, line [35m55[0m, in [35minner[0m
+    response = get_response(request)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py"[0m, line [35m198[0m, in [35m_get_response[0m
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File [35m"/home/zaffarelli/Projects/wawwod/collector/views/base.py"[0m, line [35m952[0m, in [35mdisplay_gaia_wheel[0m
+    gaia_wheel_context = {"data": [31mbuild_gaia_wheel[0m[1;31m()[0m}
+                                  [31m~~~~~~~~~~~~~~~~[0m[1;31m^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/collector/utils/data_collection.py"[0m, line [35m324[0m, in [35mbuild_gaia_wheel[0m
+    chronicle = Chronicle.current()
+  File [35m"/home/zaffarelli/Projects/wawwod/collector/models/chronicles.py"[0m, line [35m81[0m, in [35mcurrent[0m
+    if [31mlen[0m[1;31m(all)[0m == 1:
+       [31m~~~[0m[1;31m^^^^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/query.py"[0m, line [35m372[0m, in [35m__len__[0m
+    [31mself._fetch_all[0m[1;31m()[0m
+    [31m~~~~~~~~~~~~~~~[0m[1;31m^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/query.py"[0m, line [35m2000[0m, in [35m_fetch_all[0m
+    self._result_cache = [31mlist[0m[1;31m(self._iterable_class(self))[0m
+                         [31m~~~~[0m[1;31m^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/query.py"[0m, line [35m95[0m, in [35m__iter__[0m
+    results = compiler.execute_sql(
+        chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size
+    )
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/sql/compiler.py"[0m, line [35m1622[0m, in [35mexecute_sql[0m
+    cursor = self.connection.cursor()
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/asyncio.py"[0m, line [35m26[0m, in [35minner[0m
+    return func(*args, **kwargs)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/backends/base/base.py"[0m, line [35m320[0m, in [35mcursor[0m
+    return [31mself._cursor[0m[1;31m()[0m
+           [31m~~~~~~~~~~~~[0m[1;31m^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/backends/base/base.py"[0m, line [35m296[0m, in [35m_cursor[0m
+    [31mself.ensure_connection[0m[1;31m()[0m
+    [31m~~~~~~~~~~~~~~~~~~~~~~[0m[1;31m^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/asyncio.py"[0m, line [35m26[0m, in [35minner[0m
+    return func(*args, **kwargs)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/backends/base/base.py"[0m, line [35m278[0m, in [35mensure_connection[0m
+    with [1;31mself.wrap_database_errors[0m:
+         [1;31m^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/utils.py"[0m, line [35m94[0m, in [35m__exit__[0m
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/backends/base/base.py"[0m, line [35m279[0m, in [35mensure_connection[0m
+    [31mself.connect[0m[1;31m()[0m
+    [31m~~~~~~~~~~~~[0m[1;31m^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/asyncio.py"[0m, line [35m26[0m, in [35minner[0m
+    return func(*args, **kwargs)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/backends/base/base.py"[0m, line [35m256[0m, in [35mconnect[0m
+    self.connection = [31mself.get_new_connection[0m[1;31m(conn_params)[0m
+                      [31m~~~~~~~~~~~~~~~~~~~~~~~[0m[1;31m^^^^^^^^^^^^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/asyncio.py"[0m, line [35m26[0m, in [35minner[0m
+    return func(*args, **kwargs)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/backends/sqlite3/base.py"[0m, line [35m206[0m, in [35mget_new_connection[0m
+    [31mregister_functions[0m[1;31m(conn)[0m
+    [31m~~~~~~~~~~~~~~~~~~[0m[1;31m^^^^^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/backends/sqlite3/_functions.py"[0m, line [35m86[0m, in [35mregister[0m
+    if not [31mconnection.execute[0m[1;31m(sql)[0m.fetchone()[0]:
+           [31m~~~~~~~~~~~~~~~~~~[0m[1;31m^^^^^[0m
+[1;35mdjango.db.utils.OperationalError[0m: [35mdatabase is locked[0m
+[31m15 15:17:08 | django.request [37m| Internal Server Error: /[0m
+Traceback (most recent call last):
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/backends/utils.py"[0m, line [35m105[0m, in [35m_execute[0m
+    return [31mself.cursor.execute[0m[1;31m(sql, params)[0m
+           [31m~~~~~~~~~~~~~~~~~~~[0m[1;31m^^^^^^^^^^^^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/backends/sqlite3/base.py"[0m, line [35m359[0m, in [35mexecute[0m
+    return [31msuper().execute[0m[1;31m(query, params)[0m
+           [31m~~~~~~~~~~~~~~~[0m[1;31m^^^^^^^^^^^^^^^[0m
+[1;35msqlite3.OperationalError[0m: [35mdatabase is locked[0m
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py"[0m, line [35m55[0m, in [35minner[0m
+    response = get_response(request)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py"[0m, line [35m198[0m, in [35m_get_response[0m
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py"[0m, line [35m59[0m, in [35m_view_wrapper[0m
+    return view_func(request, *args, **kwargs)
+  File [35m"/home/zaffarelli/Projects/wawwod/collector/views/base.py"[0m, line [35m151[0m, in [35mindex[0m
+    context = prepare_index(request)
+  File [35m"/home/zaffarelli/Projects/wawwod/collector/views/base.py"[0m, line [35m36[0m, in [35mprepare_index[0m
+    ad, chronicle, _ = [31mAdventure.current_full[0m[1;31m()[0m
+                       [31m~~~~~~~~~~~~~~~~~~~~~~[0m[1;31m^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/collector/models/adventures.py"[0m, line [35m304[0m, in [35mcurrent_full[0m
+    adventure = all.first()
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/query.py"[0m, line [35m1145[0m, in [35mfirst[0m
+    for obj in [31mqueryset[0m[1;31m[:1][0m:
+               [31m~~~~~~~~[0m[1;31m^^^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/query.py"[0m, line [35m390[0m, in [35m__iter__[0m
+    [31mself._fetch_all[0m[1;31m()[0m
+    [31m~~~~~~~~~~~~~~~[0m[1;31m^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/query.py"[0m, line [35m2000[0m, in [35m_fetch_all[0m
+    self._result_cache = [31mlist[0m[1;31m(self._iterable_class(self))[0m
+                         [31m~~~~[0m[1;31m^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/query.py"[0m, line [35m95[0m, in [35m__iter__[0m
+    results = compiler.execute_sql(
+        chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size
+    )
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/sql/compiler.py"[0m, line [35m1624[0m, in [35mexecute_sql[0m
+    [31mcursor.execute[0m[1;31m(sql, params)[0m
+    [31m~~~~~~~~~~~~~~[0m[1;31m^^^^^^^^^^^^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/backends/utils.py"[0m, line [35m122[0m, in [35mexecute[0m
+    return [31msuper().execute[0m[1;31m(sql, params)[0m
+           [31m~~~~~~~~~~~~~~~[0m[1;31m^^^^^^^^^^^^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/backends/utils.py"[0m, line [35m79[0m, in [35mexecute[0m
+    return [31mself._execute_with_wrappers[0m[1;31m([0m
+           [31m~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m[1;31m^[0m
+        [1;31msql, params, many=False, executor=self._execute[0m
+        [1;31m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+    [1;31m)[0m
+    [1;31m^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/backends/utils.py"[0m, line [35m92[0m, in [35m_execute_with_wrappers[0m
+    return executor(sql, params, many, context)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/backends/utils.py"[0m, line [35m100[0m, in [35m_execute[0m
+    with [1;31mself.db.wrap_database_errors[0m:
+         [1;31m^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/utils.py"[0m, line [35m94[0m, in [35m__exit__[0m
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/backends/utils.py"[0m, line [35m105[0m, in [35m_execute[0m
+    return [31mself.cursor.execute[0m[1;31m(sql, params)[0m
+           [31m~~~~~~~~~~~~~~~~~~~[0m[1;31m^^^^^^^^^^^^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/backends/sqlite3/base.py"[0m, line [35m359[0m, in [35mexecute[0m
+    return [31msuper().execute[0m[1;31m(query, params)[0m
+           [31m~~~~~~~~~~~~~~~[0m[1;31m^^^^^^^^^^^^^^^[0m
+[1;35mdjango.db.utils.OperationalError[0m: [35mdatabase is locked[0m
+[31m15 15:17:08 | django.request [37m| Internal Server Error: /[0m
+Traceback (most recent call last):
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/contrib/sessions/backends/base.py"[0m, line [35m246[0m, in [35m_get_session[0m
+    return [1;31mself._session_cache[0m
+           [1;31m^^^^^^^^^^^^^^^^^^^[0m
+[1;35mAttributeError[0m: [35m'SessionStore' object has no attribute '_session_cache'[0m
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/backends/base/base.py"[0m, line [35m279[0m, in [35mensure_connection[0m
+    [31mself.connect[0m[1;31m()[0m
+    [31m~~~~~~~~~~~~[0m[1;31m^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/asyncio.py"[0m, line [35m26[0m, in [35minner[0m
+    return func(*args, **kwargs)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/backends/base/base.py"[0m, line [35m256[0m, in [35mconnect[0m
+    self.connection = [31mself.get_new_connection[0m[1;31m(conn_params)[0m
+                      [31m~~~~~~~~~~~~~~~~~~~~~~~[0m[1;31m^^^^^^^^^^^^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/asyncio.py"[0m, line [35m26[0m, in [35minner[0m
+    return func(*args, **kwargs)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/backends/sqlite3/base.py"[0m, line [35m206[0m, in [35mget_new_connection[0m
+    [31mregister_functions[0m[1;31m(conn)[0m
+    [31m~~~~~~~~~~~~~~~~~~[0m[1;31m^^^^^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/backends/sqlite3/_functions.py"[0m, line [35m86[0m, in [35mregister[0m
+    if not [31mconnection.execute[0m[1;31m(sql)[0m.fetchone()[0]:
+           [31m~~~~~~~~~~~~~~~~~~[0m[1;31m^^^^^[0m
+[1;35msqlite3.OperationalError[0m: [35mdatabase is locked[0m
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py"[0m, line [35m55[0m, in [35minner[0m
+    response = get_response(request)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py"[0m, line [35m198[0m, in [35m_get_response[0m
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py"[0m, line [35m56[0m, in [35m_view_wrapper[0m
+    test_pass = test_func(request.user)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py"[0m, line [35m79[0m, in [35m<lambda>[0m
+    lambda u: [1;31mu.is_authenticated[0m,
+              [1;31m^^^^^^^^^^^^^^^^^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/functional.py"[0m, line [35m251[0m, in [35minner[0m
+    [31mself._setup[0m[1;31m()[0m
+    [31m~~~~~~~~~~~[0m[1;31m^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/functional.py"[0m, line [35m404[0m, in [35m_setup[0m
+    self._wrapped = [31mself._setupfunc[0m[1;31m()[0m
+                    [31m~~~~~~~~~~~~~~~[0m[1;31m^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/contrib/auth/middleware.py"[0m, line [35m40[0m, in [35m<lambda>[0m
+    request.user = SimpleLazyObject(lambda: [31mget_user[0m[1;31m(request)[0m)
+                                            [31m~~~~~~~~[0m[1;31m^^^^^^^^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/contrib/auth/middleware.py"[0m, line [35m20[0m, in [35mget_user[0m
+    request._cached_user = [31mauth.get_user[0m[1;31m(request)[0m
+                           [31m~~~~~~~~~~~~~[0m[1;31m^^^^^^^^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/contrib/auth/__init__.py"[0m, line [35m321[0m, in [35mget_user[0m
+    user_id = _get_user_session_key(request)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/contrib/auth/__init__.py"[0m, line [35m95[0m, in [35m_get_user_session_key[0m
+    return get_user_model()._meta.pk.to_python([31mrequest.session[0m[1;31m[SESSION_KEY][0m)
+                                               [31m~~~~~~~~~~~~~~~[0m[1;31m^^^^^^^^^^^^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/contrib/sessions/backends/base.py"[0m, line [35m55[0m, in [35m__getitem__[0m
+    return [1;31mself._session[0m[key]
+           [1;31m^^^^^^^^^^^^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/contrib/sessions/backends/base.py"[0m, line [35m251[0m, in [35m_get_session[0m
+    self._session_cache = [31mself.load[0m[1;31m()[0m
+                          [31m~~~~~~~~~[0m[1;31m^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/contrib/sessions/backends/db.py"[0m, line [35m55[0m, in [35mload[0m
+    s = self._get_session_from_db()
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/contrib/sessions/backends/db.py"[0m, line [35m34[0m, in [35m_get_session_from_db[0m
+    return [31mself.model.objects.get[0m[1;31m([0m
+           [31m~~~~~~~~~~~~~~~~~~~~~~[0m[1;31m^[0m
+        [1;31msession_key=self.session_key, expire_date__gt=timezone.now()[0m
+        [1;31m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+    [1;31m)[0m
+    [1;31m^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/manager.py"[0m, line [35m87[0m, in [35mmanager_method[0m
+    return [31mgetattr(self.get_queryset(), name)[0m[1;31m(*args, **kwargs)[0m
+           [31m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m[1;31m^^^^^^^^^^^^^^^^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/query.py"[0m, line [35m635[0m, in [35mget[0m
+    num = len(clone)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/query.py"[0m, line [35m372[0m, in [35m__len__[0m
+    [31mself._fetch_all[0m[1;31m()[0m
+    [31m~~~~~~~~~~~~~~~[0m[1;31m^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/query.py"[0m, line [35m2000[0m, in [35m_fetch_all[0m
+    self._result_cache = [31mlist[0m[1;31m(self._iterable_class(self))[0m
+                         [31m~~~~[0m[1;31m^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/query.py"[0m, line [35m95[0m, in [35m__iter__[0m
+    results = compiler.execute_sql(
+        chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size
+    )
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/sql/compiler.py"[0m, line [35m1622[0m, in [35mexecute_sql[0m
+    cursor = self.connection.cursor()
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/asyncio.py"[0m, line [35m26[0m, in [35minner[0m
+    return func(*args, **kwargs)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/backends/base/base.py"[0m, line [35m320[0m, in [35mcursor[0m
+    return [31mself._cursor[0m[1;31m()[0m
+           [31m~~~~~~~~~~~~[0m[1;31m^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/backends/base/base.py"[0m, line [35m296[0m, in [35m_cursor[0m
+    [31mself.ensure_connection[0m[1;31m()[0m
+    [31m~~~~~~~~~~~~~~~~~~~~~~[0m[1;31m^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/asyncio.py"[0m, line [35m26[0m, in [35minner[0m
+    return func(*args, **kwargs)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/backends/base/base.py"[0m, line [35m278[0m, in [35mensure_connection[0m
+    with [1;31mself.wrap_database_errors[0m:
+         [1;31m^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/utils.py"[0m, line [35m94[0m, in [35m__exit__[0m
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/backends/base/base.py"[0m, line [35m279[0m, in [35mensure_connection[0m
+    [31mself.connect[0m[1;31m()[0m
+    [31m~~~~~~~~~~~~[0m[1;31m^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/asyncio.py"[0m, line [35m26[0m, in [35minner[0m
+    return func(*args, **kwargs)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/backends/base/base.py"[0m, line [35m256[0m, in [35mconnect[0m
+    self.connection = [31mself.get_new_connection[0m[1;31m(conn_params)[0m
+                      [31m~~~~~~~~~~~~~~~~~~~~~~~[0m[1;31m^^^^^^^^^^^^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/utils/asyncio.py"[0m, line [35m26[0m, in [35minner[0m
+    return func(*args, **kwargs)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/backends/sqlite3/base.py"[0m, line [35m206[0m, in [35mget_new_connection[0m
+    [31mregister_functions[0m[1;31m(conn)[0m
+    [31m~~~~~~~~~~~~~~~~~~[0m[1;31m^^^^^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/backends/sqlite3/_functions.py"[0m, line [35m86[0m, in [35mregister[0m
+    if not [31mconnection.execute[0m[1;31m(sql)[0m.fetchone()[0]:
+           [31m~~~~~~~~~~~~~~~~~~[0m[1;31m^^^^^[0m
+[1;35mdjango.db.utils.OperationalError[0m: [35mdatabase is locked[0m
+[31m15 15:17:08 | django.server [37m| "GET / HTTP/1.1" 500 164625[0m
+[33m15 15:17:09 | django.request [37m| Not Found: /favicon.ico[0m
+[33m15 15:17:09 | django.server [37m| "GET /favicon.ico HTTP/1.1" 404 18741[0m
+[32m15 15:17:11 | django [37m| Index[0m
+[32m15 15:17:11 | django.server [37m| "GET / HTTP/1.1" 200 29905[0m
+[32m15 15:17:11 | django.server [37m| "GET /static/js/collector.es6 HTTP/1.1" 304 0[0m
+[32m15 15:17:11 | django.server [37m| "GET /static/js/gaia_wheel.es6 HTTP/1.1" 304 0[0m
+[32m15 15:17:11 | django.server [37m| "GET /static/js/storytelling.es6 HTTP/1.1" 304 0[0m
+[32m15 15:17:11 | django.server [37m| "GET /static/js/sept.es6 HTTP/1.1" 304 0[0m
+[32m15 15:17:11 | django.server [37m| "GET /static/js/geocity.es6 HTTP/1.1" 304 0[0m
+[32m15 15:17:11 | django.server [37m| "GET /static/CACHE/css/main.29806351fcdb.css HTTP/1.1" 200 35153[0m
+[32m15 15:17:11 | django.server [37m| "GET /static/CACHE/css/storytelling.7fa70340cb63.css HTTP/1.1" 200 8665[0m
+[33m15 15:17:11 | django.server [37m| "GET /static/collector/css?49593e59b3a7 HTTP/1.1" 404 1860[0m
+[32m15 15:18:25 | django.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/views/actions.py changed, reloading.[0m
+[32m15 15:18:25 | django.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+[32m15 15:19:32 | django.server [37m| "GET /ajax/collector_action/refix_all/ HTTP/1.1" 204 0[0m
+[32m15 15:19:37 | django.server [37m| "GET /ajax/display/gaia_wheel/ HTTP/1.1" 200 262354[0m
+[32m15 15:19:47 | django.server [37m| "GET /ajax/view/creature/_qwcymiwy_xcpgoaeg_/ HTTP/1.1" 200 58119[0m
+[32m15 15:20:05 | django.server [37m| "GET /ajax/view/creature/_lennard_eastridge/ HTTP/1.1" 200 60338[0m
+[32m15 19:17:39 | django.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+[32m15 20:59:28 | django.server [37m| "GET /admin/ HTTP/1.1" 200 23217[0m
+[32m15 20:59:28 | django.server [37m| "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 593[0m
+[32m15 20:59:28 | django.server [37m| "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 978[0m
+[32m15 20:59:31 | django [37m| Index[0m
+[32m15 20:59:32 | django.server [37m| "GET / HTTP/1.1" 200 29905[0m
+[32m15 20:59:32 | django.server [37m| "GET /static/CACHE/css/main.29806351fcdb.css HTTP/1.1" 200 35153[0m
+[32m15 20:59:32 | django.server [37m| "GET /static/CACHE/css/storytelling.7fa70340cb63.css HTTP/1.1" 200 8665[0m
+[33m15 20:59:32 | django.server [37m| "GET /static/collector/css?49593e59b3a7 HTTP/1.1" 404 1860[0m
+[32m15 21:03:23 | django.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/context_processors.py changed, reloading.[0m
+[32m15 21:03:23 | django.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+[32m15 21:03:32 | django.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+[32m15 21:05:39 | django.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/models/creatures.py changed, reloading.[0m
+[32m15 21:05:40 | django.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+[32m15 21:06:53 | django [37m| Edge for .................... [0m
+[32m15 21:06:53 | django [37m| Edge for .................... [0m
+[32m15 21:06:53 | django [37m| Edge for .................... [0m
+[32m15 21:06:53 | django [37m| Edge for .................... [0m
+[32m15 21:06:53 | django [37m| Edge for .................... [0m
+[32m15 21:06:54 | django [37m| Edge for .................... [0m
+[32m15 21:06:54 | django [37m| Edge for .................... [0m
+[32m15 21:06:54 | django [37m| Edge for .................... [0m
+[32m15 21:06:54 | django [37m| Edge for .................... [0m
+[32m15 21:06:54 | django [37m| Edge for .................... [0m
+[32m15 21:06:54 | django [37m| Edge for .................... [0m
+[32m15 21:06:54 | django [37m| Edge for .................... [0m
+[32m15 21:06:54 | django [37m| Edge for .................... [0m
+[32m15 21:06:54 | django [37m| Edge for .................... [0m
+[32m15 21:06:54 | django [37m| Edge for .................... [0m
+[32m15 21:06:54 | django [37m| Edge for .................... [0m
+[32m15 21:06:54 | django [37m| Edge for .................... [0m
+[32m15 21:06:54 | django [37m| Edge for .................... [0m
+[32m15 21:06:54 | django [37m| Edge for .................... [0m
+[32m15 21:06:54 | django [37m| Edge for .................... [0m
+[32m15 21:06:55 | django [37m| Edge for .................... [0m
+[32m15 21:06:55 | django [37m| Edge for .................... [0m
+[32m15 21:06:55 | django [37m| Edge for .................... [0m
+[32m15 21:06:55 | django [37m| Edge for .................... [0m
+[32m15 21:06:55 | django [37m| Edge for .................... [0m
+[32m15 21:06:55 | django [37m| Edge for .................... [0m
+[32m15 21:06:55 | django [37m| Edge for .................... [0m
+[32m15 21:06:55 | django [37m| Edge for .................... Ears of the Bear[0m
+[32m15 21:06:55 | django [37m| Edge for .................... Nathan O'Connell[0m
+[32m15 21:06:55 | django [37m| Edge for .................... [0m
+[32m15 21:06:55 | django [37m| Edge for .................... [0m
+[32m15 21:06:55 | django [37m| Edge for .................... [0m
+[32m15 21:06:55 | django [37m| Edge for .................... [0m
+[32m15 21:06:55 | django [37m| Edge for .................... [0m
+[32m15 21:06:55 | django [37m| Edge for .................... [0m
+[32m15 21:06:55 | django [37m| Edge for .................... [0m
+[32m15 21:06:56 | django [37m| Edge for .................... [0m
+[32m15 21:06:56 | django [37m| Edge for .................... [0m
+[32m15 21:06:56 | django [37m| Edge for .................... [0m
+[32m15 21:06:56 | django [37m| Edge for .................... [0m
+[32m15 21:06:56 | django [37m| Edge for .................... Ears of the Bear[0m
+[32m15 21:06:56 | django [37m| Edge for .................... [0m
+[32m15 21:06:56 | django [37m| Edge for .................... [0m
+[32m15 21:06:56 | django [37m| Edge for .................... [0m
+[32m15 21:06:56 | django [37m| Edge for .................... [0m
+[32m15 21:06:56 | django [37m| Edge for .................... [0m
+[32m15 21:06:56 | django [37m| Edge for .................... [0m
+[32m15 21:06:56 | django [37m| Edge for .................... [0m
+[32m15 21:06:57 | django [37m| Edge for .................... Johnny Fiddler[0m
+[32m15 21:06:57 | django [37m| Edge for .................... Chris Jones[0m
+[32m15 21:06:57 | django [37m| Edge for .................... [0m
+[32m15 21:06:57 | django [37m| Edge for .................... [0m
+[32m15 21:06:57 | django [37m| Edge for .................... [0m
+[32m15 21:06:57 | django [37m| Edge for .................... [0m
+[32m15 21:06:58 | django [37m| Edge for .................... Johnny Fiddler[0m
+[32m15 21:06:58 | django [37m| Edge for .................... [0m
+[32m15 21:06:58 | django [37m| Edge for .................... [0m
+[32m15 21:06:58 | django [37m| Edge for .................... [0m
+[32m15 21:06:58 | django [37m| Edge for .................... [0m
+[32m15 21:06:58 | django [37m| Edge for .................... [0m
+[32m15 21:06:58 | django [37m| Edge for .................... Eliot Bloom[0m
+[32m15 21:06:58 | django [37m| Edge for .................... Eliot Bloom[0m
+[32m15 21:06:58 | django [37m| Edge for .................... [0m
+[32m15 21:06:58 | django [37m| Edge for .................... Chris Jones[0m
+[32m15 21:06:58 | django [37m| Edge for .................... [0m
+[32m15 21:06:58 | django [37m| Edge for .................... Grasshopper[0m
+[32m15 21:06:59 | django [37m| Edge for .................... [0m
+[32m15 21:06:59 | django [37m| Edge for .................... [0m
+[32m15 21:06:59 | django [37m| Edge for .................... [0m
+[32m15 21:06:59 | django [37m| Edge for .................... [0m
+[32m15 21:06:59 | django [37m| Edge for .................... [0m
+[32m15 21:06:59 | django [37m| Edge for .................... [0m
+[32m15 21:06:59 | django [37m| Edge for .................... [0m
+[32m15 21:06:59 | django [37m| Edge for .................... [0m
+[32m15 21:06:59 | django [37m| Edge for .................... [0m
+[32m15 21:06:59 | django [37m| Edge for .................... [0m
+[32m15 21:06:59 | django [37m| Edge for .................... [0m
+[32m15 21:06:59 | django [37m| Edge for .................... [0m
+[32m15 21:06:59 | django [37m| Edge for .................... [0m
+[32m15 21:06:59 | django [37m| Edge for .................... [0m
+[32m15 21:06:59 | django [37m| Edge for .................... [0m
+[32m15 21:07:00 | django [37m| Edge for .................... [0m
+[32m15 21:07:00 | django [37m| Edge for .................... [0m
+[32m15 21:07:00 | django [37m| Edge for .................... Nathan O'Connell[0m
+[32m15 21:07:00 | django [37m| Edge for .................... [0m
+[32m15 21:07:00 | django [37m| Edge for .................... [0m
+[32m15 21:07:00 | django [37m| Edge for .................... [0m
+[32m15 21:07:00 | django [37m| Edge for .................... [0m
+[32m15 21:07:00 | django [37m| Edge for .................... Grasshopper[0m
+[32m15 21:07:00 | django [37m| Edge for .................... [0m
+[32m15 21:07:00 | django [37m| Edge for .................... [0m
+[32m15 21:07:00 | django [37m| Edge for .................... [0m
+[32m15 21:07:00 | django [37m| Edge for .................... [0m
+[32m15 21:07:00 | django [37m| Edge for .................... [0m
+[32m15 21:07:01 | django [37m| Edge for .................... [0m
+[32m15 21:07:01 | django [37m| Edge for .................... [0m
+[32m15 21:07:01 | django [37m| Edge for .................... [0m
+[32m15 21:07:01 | django [37m| Edge for .................... [0m
+[32m15 21:07:01 | django [37m| Edge for .................... [0m
+[32m15 21:07:01 | django [37m| Edge for .................... [0m
+[32m15 21:07:01 | django [37m| Edge for .................... [0m
+[32m15 21:07:01 | django [37m| Edge for .................... [0m
+[32m15 21:07:01 | django [37m| Edge for .................... [0m
+[32m15 21:07:01 | django [37m| Edge for .................... [0m
+[32m15 21:07:01 | django [37m| Edge for .................... [0m
+[32m15 21:07:01 | django [37m| Edge for .................... [0m
+[32m15 21:07:01 | django [37m| Edge for .................... [0m
+[32m15 21:07:01 | django [37m| Edge for .................... [0m
+[32m15 21:07:01 | django [37m| Edge for .................... [0m
+[32m15 21:07:01 | django [37m| Edge for .................... [0m
+[32m15 21:07:01 | django [37m| Edge for .................... [0m
+[32m15 21:07:01 | django [37m| Edge for .................... [0m
+[32m15 21:07:01 | django [37m| Edge for .................... [0m
+[32m15 21:07:01 | django [37m| Edge for .................... [0m
+[32m15 21:07:01 | django [37m| Edge for .................... [0m
+[32m15 21:07:01 | django [37m| Edge for .................... [0m
+[32m15 21:07:01 | django [37m| Edge for .................... [0m
+[32m15 21:07:01 | django [37m| Edge for .................... [0m
+[32m15 21:07:01 | django [37m| Edge for .................... [0m
+[32m15 21:07:01 | django [37m| Edge for .................... [0m
+[32m15 21:07:02 | django.server [37m| "GET /ajax/collector_action/refix_all/ HTTP/1.1" 204 0[0m
+[32m15 21:07:23 | django.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/models/creatures.py changed, reloading.[0m
+[32m15 21:07:24 | django.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+[32m15 21:07:42 | django.server [37m| "GET /ajax/collector_action/refix_all/ HTTP/1.1" 204 0[0m
+[32m15 21:45:15 | django.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/models/creatures.py changed, reloading.[0m
+[32m15 21:45:16 | django.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+[32m15 21:45:29 | django.server [37m| "GET /ajax/collector_action/refix_all/ HTTP/1.1" 204 0[0m
+[32m15 21:45:44 | django.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/models/creatures.py changed, reloading.[0m
+[32m15 21:45:45 | django.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+[32m15 21:46:33 | django.server [37m| "GET /ajax/collector_action/refix_all/ HTTP/1.1" 204 0[0m
+[32m15 21:58:42 | django.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/models/creatures.py changed, reloading.[0m
+[32m15 21:58:43 | django.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+[32m15 21:58:57 | django.server [37m| "GET /ajax/collector_action/refix_all/ HTTP/1.1" 204 0[0m
+[32m15 22:07:23 | django.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/models/creatures.py changed, reloading.[0m
+[32m15 22:07:24 | django.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+[32m15 22:07:33 | django.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/models/creatures.py changed, reloading.[0m
+[32m15 22:07:34 | django.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+[32m15 22:07:52 | django.server [37m| "GET /ajax/collector_action/refix_all/ HTTP/1.1" 204 0[0m
+[32m15 22:08:38 | django.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/models/creatures.py changed, reloading.[0m
+[32m15 22:08:39 | django.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+[32m15 22:08:54 | django.server [37m| "GET /ajax/collector_action/refix_all/ HTTP/1.1" 204 0[0m
+[32m15 22:10:29 | django.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/models/creatures.py changed, reloading.[0m
+[32m15 22:10:29 | django.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+[32m15 22:11:15 | django.server [37m| "GET /ajax/collector_action/refix_all/ HTTP/1.1" 204 0[0m
+[32m15 22:11:44 | django.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/models/creatures.py changed, reloading.[0m
+[32m15 22:11:45 | django.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+[32m15 22:12:25 | django.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/models/creatures.py changed, reloading.[0m
+[32m15 22:12:25 | django.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+[32m15 22:12:48 | django.server [37m| "GET /ajax/collector_action/refix_all/ HTTP/1.1" 204 0[0m
+[32m15 22:12:58 | django.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/models/creatures.py changed, reloading.[0m
+[32m15 22:12:59 | django.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+[32m15 22:13:17 | django.server [37m| "GET /ajax/collector_action/refix_all/ HTTP/1.1" 204 0[0m
+[32m15 22:15:59 | django.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/wawwod/settings.py changed, reloading.[0m
+15 22:15:59 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+15 22:16:15 | [32mdjango.server [37m| "GET /ajax/collector_action/refix_all/ HTTP/1.1" 204 0[0m
+15 22:39:01 | [32mdjango.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/models/creatures.py changed, reloading.[0m
+15 22:39:02 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+15 22:39:17 | [32mdjango.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/models/creatures.py changed, reloading.[0m
+15 22:39:18 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+15 22:39:39 | [32mdjango.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/models/creatures.py changed, reloading.[0m
+15 22:39:39 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+15 22:40:03 | [32mdjango.server [37m| "GET /ajax/collector_action/refix_all/ HTTP/1.1" 204 0[0m
+15 23:37:15 | [32mdjango.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/models/creatures.py changed, reloading.[0m
+15 23:37:15 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+15 23:38:40 | [32mdjango.server [37m| "GET /ajax/collector_action/refix_all/ HTTP/1.1" 204 0[0m
+15 23:56:19 | [32mdjango.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/models/creatures.py changed, reloading.[0m
+15 23:56:20 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+15 23:56:25 | [32mdjango [37m| User:zaffarelli[0m
+15 23:56:25 | [32mdjango [37m| Parts:['Intelligence', 'Enigmas'][0m
+15 23:56:25 | [32mdjango.server [37m| "GET /ajax/display/dashboard/ HTTP/1.1" 200 18904[0m
+15 23:56:37 | [32mdjango.server [37m| "GET /ajax/collector_action/refix_all/ HTTP/1.1" 204 0[0m
+15 23:58:38 | [32mdjango.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/models/creatures.py changed, reloading.[0m
+15 23:58:39 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+15 23:58:54 | [32mdjango.server [37m| "GET /ajax/collector_action/refix_all/ HTTP/1.1" 204 0[0m
+16 00:02:23 | [32mdjango.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/models/creatures.py changed, reloading.[0m
+16 00:02:23 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+16 00:02:35 | [32mdjango.server [37m| "GET /ajax/collector_action/refix_all/ HTTP/1.1" 204 0[0m
+16 00:04:26 | [32mdjango.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/models/creatures.py changed, reloading.[0m
+16 00:04:27 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+16 00:05:40 | [32mdjango.server [37m| "GET /ajax/collector_action/refix_all/ HTTP/1.1" 204 0[0m
+16 00:07:50 | [32mdjango.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/models/creatures.py changed, reloading.[0m
+16 00:07:51 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+16 00:08:03 | [32mdjango.server [37m| "GET /ajax/collector_action/refix_all/ HTTP/1.1" 204 0[0m
+16 00:12:33 | [32mdjango.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/models/creatures.py changed, reloading.[0m
+16 00:12:33 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+16 00:14:18 | [32mdjango.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/models/creatures.py changed, reloading.[0m
+16 00:14:19 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+16 00:16:24 | [32mdjango.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/models/creatures.py changed, reloading.[0m
+16 00:16:24 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+16 00:17:24 | [32mdjango.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/models/creatures.py changed, reloading.[0m
+16 00:17:25 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+16 00:17:53 | [32mdjango.server [37m| "GET /ajax/collector_action/refix_all/ HTTP/1.1" 204 0[0m
+16 00:18:44 | [32mdjango.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/models/creatures.py changed, reloading.[0m
+16 00:18:44 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+16 00:19:07 | [32mdjango.server [37m| "GET /ajax/collector_action/refix_all/ HTTP/1.1" 204 0[0m
+16 00:20:23 | [32mdjango.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/models/creatures.py changed, reloading.[0m
+16 00:20:23 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+16 00:20:39 | [32mdjango.server [37m| "GET /ajax/collector_action/refix_all/ HTTP/1.1" 204 0[0m
+16 00:20:46 | [32mdjango.server [37m| "GET /ajax/collector_action/refix_all/ HTTP/1.1" 204 0[0m
+16 00:21:10 | [32mdjango.server [37m| "GET /ajax/collector_action/refix_all/ HTTP/1.1" 204 0[0m
+16 00:26:48 | [32mdjango.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/models/creatures.py changed, reloading.[0m
+16 00:26:48 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+16 00:27:02 | [32mdjango.server [37m| "GET /ajax/collector_action/refix_all/ HTTP/1.1" 204 0[0m
+16 00:32:00 | [32mdjango.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/models/creatures.py changed, reloading.[0m
+16 00:32:01 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+16 00:32:22 | [32mdjango [37m| Index[0m
+16 00:32:22 | [32mdjango.server [37m| "GET / HTTP/1.1" 200 29905[0m
+16 00:32:22 | [32mdjango.server [37m| "GET /static/js/cross_over_sheet.es6 HTTP/1.1" 200 29818[0m
+16 00:32:22 | [32mdjango.server [37m| "GET /static/js/collector.es6 HTTP/1.1" 200 32949[0m
+16 00:32:22 | [32mdjango.server [37m| "GET /static/js/gaia_wheel.es6 HTTP/1.1" 200 22105[0m
+16 00:32:22 | [32mdjango.server [37m| "GET /static/js/dashboard.es6 HTTP/1.1" 200 7184[0m
+16 00:32:22 | [32mdjango.server [37m| "GET /static/js/chronicle_map.es6 HTTP/1.1" 200 8750[0m
+16 00:32:22 | [32mdjango.server [37m| "GET /static/js/wawwod_sheet.es6 HTTP/1.1" 200 193921[0m
+16 00:32:22 | [32mdjango.server [37m| "GET /static/js/sept.es6 HTTP/1.1" 200 26068[0m
+16 00:32:22 | [32mdjango.server [37m| "GET /static/js/kindred_lineage.es6 HTTP/1.1" 200 19223[0m
+16 00:32:22 | [32mdjango.server [37m| "GET /static/js/geocity.es6 HTTP/1.1" 200 31321[0m
+16 00:32:22 | [32mdjango.server [37m| "GET /static/js/storytelling.es6 HTTP/1.1" 200 35244[0m
+16 00:32:22 | [32mdjango.server [37m| "GET /static/js/adventure_sheet.es6 HTTP/1.1" 200 22609[0m
+16 00:32:22 | [32mdjango.server [37m| "GET /static/CACHE/css/main.29806351fcdb.css HTTP/1.1" 200 35153[0m
+16 00:32:22 | [32mdjango.server [37m| "GET /static/CACHE/css/storytelling.7fa70340cb63.css HTTP/1.1" 200 8665[0m
+16 00:32:22 | [32mdjango.server [37m| "GET /static/collector/auspices/AuspiceNone.webp HTTP/1.1" 200 1274[0m
+16 00:32:22 | [32mdjango.server [37m| "GET /static/collector/auspices/AuspiceAhroun.webp HTTP/1.1" 200 6578[0m
+16 00:32:22 | [32mdjango.server [37m| "GET /static/collector/auspices/AuspicePhilodox.webp HTTP/1.1" 200 5954[0m
+16 00:32:22 | [32mdjango.server [37m| "GET /static/collector/auspices/AuspiceRagabash.webp HTTP/1.1" 200 6994[0m
+16 00:32:22 | [32mdjango.server [37m| "GET /static/collector/auspices/AuspiceGalliard.webp HTTP/1.1" 200 5762[0m
+16 00:32:22 | [32mdjango.server [37m| "GET /static/collector/auspices/AuspiceTheurge.webp HTTP/1.1" 200 7154[0m
+16 00:32:22 | [32mdjango.server [37m| "GET /static/collector/colorful-grunge-texture-10.jpg?35428083bd4f HTTP/1.1" 200 218025[0m
+16 00:32:22 | [33mdjango.server [37m| "GET /static/collector/css?49593e59b3a7 HTTP/1.1" 404 1860[0m
+16 00:32:23 | [32mdjango.server [37m| "GET /static/collector/wawwod.ico HTTP/1.1" 200 73478[0m
+16 00:32:40 | [32mdjango.server [37m| "GET /ajax/collector_action/refix_all/ HTTP/1.1" 204 0[0m
+16 00:35:33 | [32mdjango.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/models/creatures.py changed, reloading.[0m
+16 00:35:34 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+16 00:36:03 | [32mdjango.server [37m| "GET /ajax/collector_action/refix_all/ HTTP/1.1" 204 0[0m
+16 00:37:27 | [32mdjango.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/models/creatures.py changed, reloading.[0m
+16 00:37:27 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+16 00:37:29 | [32mdjango.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/models/creatures.py changed, reloading.[0m
+16 00:37:29 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+16 00:37:40 | [32mdjango.server [37m| "GET /ajax/collector_action/refix_all/ HTTP/1.1" 204 0[0m
+16 00:43:30 | [32mdjango.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/utils/helper.py changed, reloading.[0m
+16 00:43:30 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+16 00:55:44 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+16 01:05:28 | [32mdjango.server [37m| "GET /admin/collector/creature/ HTTP/1.1" 200 69374[0m
+16 01:05:28 | [32mdjango.server [37m| "GET /admin/jsi18n/ HTTP/1.1" 200 3342[0m
+16 01:05:28 | [32mdjango.server [37m| "GET /static/admin/img/search.svg HTTP/1.1" 200 607[0m
+16 01:05:28 | [32mdjango.server [37m| "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 558[0m
+16 01:05:28 | [32mdjango.server [37m| "GET /static/admin/img/icon-no.svg HTTP/1.1" 200 645[0m
+16 01:05:28 | [32mdjango.server [37m| "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 593[0m
+16 01:05:28 | [32mdjango.server [37m| "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 928[0m
+16 01:05:28 | [32mdjango.server [37m| "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 593[0m
+16 01:05:28 | [32mdjango.server [37m| "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1761[0m
+16 01:05:31 | [32mdjango.server [37m| "GET /admin/collector/creature/?q=ZIDEVIWZ+UPYBRNFV HTTP/1.1" 200 45836[0m
+16 01:05:31 | [32mdjango.server [37m| "GET /admin/jsi18n/ HTTP/1.1" 200 3342[0m
+16 01:05:33 | [32mdjango.server [37m| "GET /admin/collector/creature/1249/change/?_changelist_filters=q%3DZIDEVIWZ%2BUPYBRNFV HTTP/1.1" 200 179682[0m
+16 01:05:33 | [32mdjango.server [37m| "GET /admin/jsi18n/ HTTP/1.1" 200 3342[0m
+16 01:06:13 | [32mdjango.server [37m| "GET /ajax/display/septs/_sept_of_the_great_tree/ HTTP/1.1" 200 27867[0m
+16 01:06:13 | [32mdjango.server [37m| "GET /static/collector/tribes/children_of_gaia.webp HTTP/1.1" 200 10762[0m
+16 01:06:13 | [32mdjango.server [37m| "GET /static/collector/tribes/uktenas.webp HTTP/1.1" 200 9410[0m
+16 01:06:13 | [32mdjango.server [37m| "GET /static/collector/tribes/wendigos.webp HTTP/1.1" 200 14786[0m
+16 01:21:50 | [32mdjango.server [37m| "GET /ajax/collector_action/refix_all/ HTTP/1.1" 204 0[0m
+16 01:34:54 | [32mdjango.server [37m| "GET /ajax/display/gaia_wheel/ HTTP/1.1" 200 266010[0m
+16 01:35:12 | [32mdjango.server [37m| "GET /ajax/view/creature/_qwcymiwy_xcpgoaeg/ HTTP/1.1" 200 58031[0m
+16 01:35:12 | [32mdjango.server [37m| "GET /static/collector/clans/kinfolk.webp HTTP/1.1" 200 13142[0m
+16 01:35:12 | [32mdjango.server [37m| "GET /static/storytelling/fonts/Lato-Regular.ttf?35428083bd4f HTTP/1.1" 304 0[0m
+16 01:53:33 | [32mdjango [37m| RID .......... <QueryDict: {'id': ['_qwcymiwy_xcpgoaeg'], 'field': ['new_name'], 'value': ['Nadja Giorlo']}>[0m
+16 01:53:33 | [32mdjango.server [37m| "POST /ajax/editable/userinput/ HTTP/1.1" 200 2[0m
+16 01:53:33 | [32mdjango.server [37m| "GET /ajax/view/creature/_qwcymiwy_xcpgoaeg/ HTTP/1.1" 200 58031[0m
+16 01:53:38 | [32mdjango.server [37m| "GET /ajax/view/creature/_qwcymiwy_xcpgoaeg/ HTTP/1.1" 200 58031[0m
+16 01:53:48 | [32mdjango.server [37m| "GET /ajax/display/gaia_wheel/ HTTP/1.1" 200 266010[0m
+16 01:54:03 | [32mdjango.server [37m| "GET /admin/collector/creature/ HTTP/1.1" 200 69374[0m
+16 01:54:03 | [32mdjango.server [37m| "GET /admin/jsi18n/ HTTP/1.1" 200 3342[0m
+16 01:54:06 | [32mdjango.server [37m| "GET /admin/collector/creature/?q=qwcy HTTP/1.1" 200 42850[0m
+16 01:54:06 | [32mdjango.server [37m| "GET /admin/jsi18n/ HTTP/1.1" 200 3342[0m
+16 03:04:15 | [32mdjango.server [37m| "GET /ajax/view/creature/_wallinda/ HTTP/1.1" 200 59353[0m
+16 03:04:15 | [32mdjango.server [37m| "GET /static/collector/tribes/black_spiral_dancers.webp HTTP/1.1" 200 17508[0m
+16 03:04:17 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 570[0m
+16 03:04:18 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 576[0m
+16 03:04:29 | [32mdjango.server [37m| "GET /ajax/view/creature/_odzrxwxg_oglqrnzd/ HTTP/1.1" 200 58024[0m
+16 03:04:29 | [32mdjango.server [37m| "GET /static/collector/clans/kinfolk.webp HTTP/1.1" 200 13142[0m
+16 03:04:32 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 571[0m
+16 03:04:33 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 577[0m
+16 03:04:39 | [32mdjango [37m| RID .......... <QueryDict: {'id': ['_odzrxwxg_oglqrnzd'], 'field': ['new_name'], 'value': ['Nadja Giorlo']}>[0m
+16 03:04:39 | [32mdjango.server [37m| "POST /ajax/editable/userinput/ HTTP/1.1" 200 2[0m
+16 03:04:39 | [32mdjango.server [37m| "GET /ajax/view/creature/_odzrxwxg_oglqrnzd/ HTTP/1.1" 200 58024[0m
+16 03:05:49 | [32mdjango [37m| RID .......... <QueryDict: {'id': ['_odzrxwxg_oglqrnzd'], 'field': ['new_name'], 'value': ['Nadja Giorlo']}>[0m
+16 03:05:49 | [32mdjango.server [37m| "POST /ajax/editable/userinput/ HTTP/1.1" 200 2[0m
+16 03:05:49 | [32mdjango.server [37m| "GET /ajax/view/creature/_odzrxwxg_oglqrnzd/ HTTP/1.1" 200 58024[0m
+16 03:05:55 | [32mdjango.server [37m| "GET /ajax/view/creature/_odzrxwxg_oglqrnzd/ HTTP/1.1" 200 58024[0m
+16 03:05:57 | [32mdjango [37m| RID .......... <QueryDict: {'id': ['_odzrxwxg_oglqrnzd'], 'field': ['new_name'], 'value': ['Nadja Giorlo']}>[0m
+16 03:05:57 | [32mdjango.server [37m| "POST /ajax/editable/userinput/ HTTP/1.1" 200 2[0m
+16 03:05:57 | [32mdjango.server [37m| "GET /ajax/view/creature/_odzrxwxg_oglqrnzd/ HTTP/1.1" 200 58024[0m
+16 03:06:03 | [32mdjango [37m| RID .......... <QueryDict: {'id': ['_odzrxwxg_oglqrnzd'], 'field': ['position'], 'value': ['Nadja Giorlo']}>[0m
+16 03:06:03 | [32mdjango.server [37m| "POST /ajax/editable/userinput/ HTTP/1.1" 200 2[0m
+16 03:06:03 | [32mdjango.server [37m| "GET /ajax/view/creature/_odzrxwxg_oglqrnzd/ HTTP/1.1" 200 58024[0m
+16 03:06:05 | [32mdjango [37m| RID .......... <QueryDict: {'id': ['_odzrxwxg_oglqrnzd'], 'field': ['concept'], 'value': ['Nadja Giorlo']}>[0m
+16 03:06:05 | [32mdjango.server [37m| "POST /ajax/editable/userinput/ HTTP/1.1" 200 2[0m
+16 03:06:05 | [32mdjango.server [37m| "GET /ajax/view/creature/_odzrxwxg_oglqrnzd/ HTTP/1.1" 200 58024[0m
+16 03:06:07 | [32mdjango.server [37m| "GET /ajax/view/creature/_odzrxwxg_oglqrnzd/ HTTP/1.1" 200 58024[0m
+16 03:06:11 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 583[0m
+16 03:06:12 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 589[0m
+16 03:06:17 | [32mdjango [37m| RID .......... <QueryDict: {'id': ['_odzrxwxg_oglqrnzd'], 'field': ['new_name'], 'value': ['Nadja Giorlo']}>[0m
+16 03:06:17 | [32mdjango.server [37m| "POST /ajax/editable/userinput/ HTTP/1.1" 200 2[0m
+16 03:06:17 | [32mdjango.server [37m| "GET /ajax/view/creature/_odzrxwxg_oglqrnzd/ HTTP/1.1" 200 58024[0m
+16 03:07:51 | [32mdjango [37m| Index[0m
+16 03:07:51 | [32mdjango.server [37m| "GET / HTTP/1.1" 200 29905[0m
+16 03:07:51 | [32mdjango.server [37m| "GET /static/js/cross_over_sheet.es6 HTTP/1.1" 200 29818[0m
+16 03:07:51 | [32mdjango.server [37m| "GET /static/js/collector.es6 HTTP/1.1" 200 32983[0m
+16 03:07:51 | [32mdjango.server [37m| "GET /static/js/gaia_wheel.es6 HTTP/1.1" 200 22105[0m
+16 03:07:51 | [32mdjango.server [37m| "GET /static/js/dashboard.es6 HTTP/1.1" 200 7184[0m
+16 03:07:51 | [32mdjango.server [37m| "GET /static/js/sept.es6 HTTP/1.1" 200 26068[0m
+16 03:07:51 | [32mdjango.server [37m| "GET /static/js/wawwod_sheet.es6 HTTP/1.1" 200 193921[0m
+16 03:07:51 | [32mdjango.server [37m| "GET /static/js/chronicle_map.es6 HTTP/1.1" 200 8750[0m
+16 03:07:51 | [32mdjango.server [37m| "GET /static/js/kindred_lineage.es6 HTTP/1.1" 200 19223[0m
+16 03:07:51 | [32mdjango.server [37m| "GET /static/js/storytelling.es6 HTTP/1.1" 200 35244[0m
+16 03:07:51 | [32mdjango.server [37m| "GET /static/js/geocity.es6 HTTP/1.1" 200 31321[0m
+16 03:07:51 | [32mdjango.server [37m| "GET /static/js/adventure_sheet.es6 HTTP/1.1" 200 22609[0m
+16 03:07:51 | [32mdjango.server [37m| "GET /static/CACHE/css/storytelling.7fa70340cb63.css HTTP/1.1" 200 8665[0m
+16 03:07:51 | [32mdjango.server [37m| "GET /static/CACHE/css/main.29806351fcdb.css HTTP/1.1" 200 35153[0m
+16 03:07:51 | [32mdjango.server [37m| "GET /static/collector/auspices/AuspicePhilodox.webp HTTP/1.1" 200 5954[0m
+16 03:07:51 | [32mdjango.server [37m| "GET /static/collector/auspices/AuspiceGalliard.webp HTTP/1.1" 200 5762[0m
+16 03:07:51 | [32mdjango.server [37m| "GET /static/collector/auspices/AuspiceRagabash.webp HTTP/1.1" 200 6994[0m
+16 03:07:51 | [32mdjango.server [37m| "GET /static/collector/auspices/AuspiceNone.webp HTTP/1.1" 200 1274[0m
+16 03:07:51 | [32mdjango.server [37m| "GET /static/collector/auspices/AuspiceAhroun.webp HTTP/1.1" 200 6578[0m
+16 03:07:51 | [32mdjango.server [37m| "GET /static/collector/auspices/AuspiceTheurge.webp HTTP/1.1" 200 7154[0m
+16 03:07:52 | [33mdjango.server [37m| "GET /static/collector/css?49593e59b3a7 HTTP/1.1" 404 1860[0m
+16 03:07:52 | [32mdjango.server [37m| "GET /static/collector/colorful-grunge-texture-10.jpg?35428083bd4f HTTP/1.1" 200 218025[0m
+16 03:07:52 | [32mdjango.server [37m| "GET /static/collector/wawwod.ico HTTP/1.1" 200 73478[0m
+16 03:07:59 | [32mdjango.server [37m| "GET /ajax/display/gaia_wheel/ HTTP/1.1" 200 266010[0m
+16 03:08:06 | [32mdjango.server [37m| "GET /ajax/view/creature/_upqbcvhe_utirihal/ HTTP/1.1" 200 58007[0m
+16 03:08:06 | [32mdjango.server [37m| "GET /static/collector/clans/kinfolk.webp HTTP/1.1" 200 13142[0m
+16 03:08:14 | [32mdjango [37m| RID .......... <QueryDict: {'id': ['_upqbcvhe_utirihal'], 'field': ['new_name'], 'value': ['aaa']}>[0m
+16 03:08:14 | [32mdjango.server [37m| "POST /ajax/editable/userinput/ HTTP/1.1" 200 2[0m
+16 03:08:14 | [32mdjango.server [37m| "GET /ajax/view/creature/_upqbcvhe_utirihal/ HTTP/1.1" 200 58007[0m
+16 03:10:50 | [32mdjango.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/views/base.py changed, reloading.[0m
+16 03:10:51 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+16 03:10:56 | [32mdjango [37m| RID .......... <QueryDict: {'id': ['_upqbcvhe_utirihal'], 'field': ['new_name'], 'value': ['aaa']}>[0m
+16 03:10:56 | [32mdjango.server [37m| "POST /ajax/editable/userinput/ HTTP/1.1" 200 2[0m
+16 03:10:56 | [32mdjango.server [37m| "GET /ajax/view/creature/_upqbcvhe_utirihal/ HTTP/1.1" 200 58007[0m
+16 03:13:22 | [32mdjango.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/views/base.py changed, reloading.[0m
+16 03:13:23 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+16 03:13:35 | [31mdjango.request [37m| Internal Server Error: /ajax/editable/userinput/[0m
+Traceback (most recent call last):
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py"[0m, line [35m55[0m, in [35minner[0m
+    response = get_response(request)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py"[0m, line [35m198[0m, in [35m_get_response[0m
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py"[0m, line [35m65[0m, in [35m_view_wrapper[0m
+    return view_func(request, *args, **kwargs)
+  File [35m"/home/zaffarelli/Projects/wawwod/collector/views/base.py"[0m, line [35m285[0m, in [35muserinput[0m
+    item = Creature.objects.get(rid=rid)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/manager.py"[0m, line [35m87[0m, in [35mmanager_method[0m
+    return [31mgetattr(self.get_queryset(), name)[0m[1;31m(*args, **kwargs)[0m
+           [31m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m[1;31m^^^^^^^^^^^^^^^^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/query.py"[0m, line [35m639[0m, in [35mget[0m
+    raise self.model.DoesNotExist(
+        "%s matching query does not exist." % self.model._meta.object_name
+    )
+[1;35mcollector.models.creatures.Creature.DoesNotExist[0m: [35mCreature matching query does not exist.[0m
+16 03:13:35 | [31mdjango.server [37m| "POST /ajax/editable/userinput/ HTTP/1.1" 500 21733[0m
+16 03:13:35 | [31mdjango.request [37m| Internal Server Error: /ajax/editable/userinput/[0m
+Traceback (most recent call last):
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py"[0m, line [35m55[0m, in [35minner[0m
+    response = get_response(request)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py"[0m, line [35m198[0m, in [35m_get_response[0m
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py"[0m, line [35m65[0m, in [35m_view_wrapper[0m
+    return view_func(request, *args, **kwargs)
+  File [35m"/home/zaffarelli/Projects/wawwod/collector/views/base.py"[0m, line [35m285[0m, in [35muserinput[0m
+    item = Creature.objects.get(rid=rid)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/manager.py"[0m, line [35m87[0m, in [35mmanager_method[0m
+    return [31mgetattr(self.get_queryset(), name)[0m[1;31m(*args, **kwargs)[0m
+           [31m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m[1;31m^^^^^^^^^^^^^^^^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/query.py"[0m, line [35m639[0m, in [35mget[0m
+    raise self.model.DoesNotExist(
+        "%s matching query does not exist." % self.model._meta.object_name
+    )
+[1;35mcollector.models.creatures.Creature.DoesNotExist[0m: [35mCreature matching query does not exist.[0m
+16 03:13:35 | [31mdjango.server [37m| "POST /ajax/editable/userinput/ HTTP/1.1" 500 21733[0m
+16 03:14:30 | [32mdjango.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/views/base.py changed, reloading.[0m
+16 03:14:31 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+16 03:14:36 | [31mdjango.request [37m| Internal Server Error: /ajax/editable/userinput/[0m
+Traceback (most recent call last):
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py"[0m, line [35m55[0m, in [35minner[0m
+    response = get_response(request)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py"[0m, line [35m198[0m, in [35m_get_response[0m
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py"[0m, line [35m65[0m, in [35m_view_wrapper[0m
+    return view_func(request, *args, **kwargs)
+  File [35m"/home/zaffarelli/Projects/wawwod/collector/views/base.py"[0m, line [35m285[0m, in [35muserinput[0m
+    item = Creature.objects.get(rid=rid)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/manager.py"[0m, line [35m87[0m, in [35mmanager_method[0m
+    return [31mgetattr(self.get_queryset(), name)[0m[1;31m(*args, **kwargs)[0m
+           [31m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m[1;31m^^^^^^^^^^^^^^^^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/query.py"[0m, line [35m639[0m, in [35mget[0m
+    raise self.model.DoesNotExist(
+        "%s matching query does not exist." % self.model._meta.object_name
+    )
+[1;35mcollector.models.creatures.Creature.DoesNotExist[0m: [35mCreature matching query does not exist.[0m
+16 03:14:36 | [31mdjango.server [37m| "POST /ajax/editable/userinput/ HTTP/1.1" 500 21733[0m
+16 03:15:19 | [32mdjango.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/views/base.py changed, reloading.[0m
+16 03:15:19 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+16 03:15:36 | [32mdjango.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/views/base.py changed, reloading.[0m
+16 03:15:36 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+16 03:15:44 | [32mdjango.server [37m| "POST /ajax/editable/userinput/ HTTP/1.1" 200 37[0m
+16 03:15:44 | [33mdjango.request [37m| Not Found: /ajax/view/creature/_upqbcvhe_utirihal/[0m
+16 03:15:44 | [33mdjango.server [37m| "GET /ajax/view/creature/_upqbcvhe_utirihal/ HTTP/1.1" 404 8134[0m
+16 03:16:14 | [33mdjango.request [37m| Not Found: /ajax/view/creature/_upqbcvhe_utirihal/[0m
+16 03:16:14 | [33mdjango.server [37m| "GET /ajax/view/creature/_upqbcvhe_utirihal/ HTTP/1.1" 404 8134[0m
+16 03:16:21 | [32mdjango.server [37m| "GET /ajax/view/creature/_dluvvsbx_gwhuqggg/ HTTP/1.1" 200 57994[0m
+16 03:16:29 | [32mdjango.server [37m| "POST /ajax/editable/userinput/ HTTP/1.1" 200 42[0m
+16 03:16:29 | [33mdjango.request [37m| Not Found: /ajax/view/creature/_dluvvsbx_gwhuqggg/[0m
+16 03:16:29 | [33mdjango.server [37m| "GET /ajax/view/creature/_dluvvsbx_gwhuqggg/ HTTP/1.1" 404 8134[0m
+16 03:16:46 | [31mdjango.request [37m| Internal Server Error: /ajax/editable/userinput/[0m
+Traceback (most recent call last):
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py"[0m, line [35m55[0m, in [35minner[0m
+    response = get_response(request)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py"[0m, line [35m198[0m, in [35m_get_response[0m
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py"[0m, line [35m65[0m, in [35m_view_wrapper[0m
+    return view_func(request, *args, **kwargs)
+  File [35m"/home/zaffarelli/Projects/wawwod/collector/views/base.py"[0m, line [35m286[0m, in [35muserinput[0m
+    item = Creature.objects.get(rid=rid)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/manager.py"[0m, line [35m87[0m, in [35mmanager_method[0m
+    return [31mgetattr(self.get_queryset(), name)[0m[1;31m(*args, **kwargs)[0m
+           [31m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m[1;31m^^^^^^^^^^^^^^^^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/query.py"[0m, line [35m639[0m, in [35mget[0m
+    raise self.model.DoesNotExist(
+        "%s matching query does not exist." % self.model._meta.object_name
+    )
+[1;35mcollector.models.creatures.Creature.DoesNotExist[0m: [35mCreature matching query does not exist.[0m
+16 03:16:46 | [31mdjango.server [37m| "POST /ajax/editable/userinput/ HTTP/1.1" 500 21738[0m
+16 03:17:19 | [32mdjango.server [37m| "GET /ajax/display/gaia_wheel/ HTTP/1.1" 200 265964[0m
+16 03:17:31 | [32mdjango.server [37m| "GET /ajax/view/creature/_aaa/ HTTP/1.1" 200 56243[0m
+16 03:17:31 | [32mdjango.server [37m| "GET /ajax/view/creature/_aaa/ HTTP/1.1" 200 56243[0m
+16 03:17:43 | [32mdjango.server [37m| "POST /ajax/editable/userinput/ HTTP/1.1" 200 42[0m
+16 03:17:43 | [33mdjango.request [37m| Not Found: /ajax/view/creature/_aaa/[0m
+16 03:17:43 | [33mdjango.server [37m| "GET /ajax/view/creature/_aaa/ HTTP/1.1" 404 8092[0m
+16 03:17:45 | [32mdjango.server [37m| "GET /ajax/view/creature/_tmcfscwf_hidjvclz/ HTTP/1.1" 200 58023[0m
+16 03:17:51 | [32mdjango.server [37m| "POST /ajax/editable/userinput/ HTTP/1.1" 200 35[0m
+16 03:17:51 | [32mdjango.server [37m| "GET /ajax/view/creature/_tmcfscwf_hidjvclz/ HTTP/1.1" 200 58021[0m
+16 03:18:38 | [32mdjango.server [37m| "POST /ajax/editable/userinput/ HTTP/1.1" 200 47[0m
+16 03:18:38 | [33mdjango.request [37m| Not Found: /ajax/view/creature/_tmcfscwf_hidjvclz/[0m
+16 03:18:38 | [33mdjango.server [37m| "GET /ajax/view/creature/_tmcfscwf_hidjvclz/ HTTP/1.1" 404 8134[0m
+16 03:18:41 | [32mdjango.server [37m| "GET /ajax/display/gaia_wheel/ HTTP/1.1" 200 265966[0m
+16 03:18:58 | [32mdjango.server [37m| "GET /ajax/view/creature/_lisa_kay/ HTTP/1.1" 200 56873[0m
+16 03:18:58 | [32mdjango.server [37m| "GET /ajax/view/creature/_lisa_kay/ HTTP/1.1" 200 56873[0m
+16 03:20:25 | [32mdjango.server [37m| "GET /ajax/view/creature/_vblymqrr_vfcceeha/ HTTP/1.1" 200 58040[0m
+16 03:20:32 | [32mdjango.server [37m| "GET /ajax/view/creature/_vklfwmfw_xbqozeju/ HTTP/1.1" 200 58291[0m
+16 03:20:39 | [32mdjango.server [37m| "GET /ajax/view/creature/_prpliuuj_yhhoustd/ HTTP/1.1" 200 57997[0m
+16 03:20:39 | [32mdjango.server [37m| "GET /ajax/view/creature/_prpliuuj_yhhoustd/ HTTP/1.1" 200 57997[0m
+16 03:20:49 | [32mdjango.server [37m| "POST /ajax/editable/userinput/ HTTP/1.1" 200 38[0m
+16 03:20:49 | [32mdjango.server [37m| "GET /ajax/view/creature/_prpliuuj_yhhoustd/ HTTP/1.1" 200 58005[0m
+16 03:21:11 | [32mdjango.server [37m| "POST /ajax/randomize/reparts/for/_prpliuuj_yhhoustd/ HTTP/1.1" 200 2[0m
+16 03:21:11 | [32mdjango.server [37m| "GET /ajax/view/creature/_prpliuuj_yhhoustd/ HTTP/1.1" 200 58005[0m
+16 03:21:21 | [32mdjango.server [37m| "POST /ajax/editable/userinput/ HTTP/1.1" 200 40[0m
+16 03:21:21 | [32mdjango.server [37m| "GET /ajax/view/creature/_prpliuuj_yhhoustd/ HTTP/1.1" 200 58004[0m
+16 03:21:30 | [32mdjango.server [37m| "POST /ajax/editable/userinput/ HTTP/1.1" 200 35[0m
+16 03:21:30 | [32mdjango.server [37m| "GET /ajax/view/creature/_prpliuuj_yhhoustd/ HTTP/1.1" 200 58002[0m
+16 03:21:45 | [32mdjango.server [37m| "POST /ajax/editable/userinput/ HTTP/1.1" 200 48[0m
+16 03:21:45 | [33mdjango.request [37m| Not Found: /ajax/view/creature/_prpliuuj_yhhoustd/[0m
+16 03:21:45 | [33mdjango.server [37m| "GET /ajax/view/creature/_prpliuuj_yhhoustd/ HTTP/1.1" 404 8134[0m
+16 03:21:48 | [32mdjango.server [37m| "GET /ajax/display/gaia_wheel/ HTTP/1.1" 200 265963[0m
+16 03:21:48 | [32mdjango.server [37m| "GET /ajax/display/gaia_wheel/ HTTP/1.1" 200 265963[0m
+16 03:22:43 | [32mdjango.server [37m| "GET /ajax/list/creatures/1/all/ HTTP/1.1" 200 13888[0m
+16 03:42:33 | [32mdjango.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/models/creatures.py changed, reloading.[0m
+16 03:42:34 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+16 03:42:43 | [32mdjango.server [37m| "GET /ajax/view/creature/_bvvtbnpn_pmbdrxhp/ HTTP/1.1" 200 58033[0m
+16 03:42:57 | [32mdjango.server [37m| "POST /ajax/editable/userinput/ HTTP/1.1" 200 35[0m
+16 03:43:07 | [32mdjango.server [37m| "POST /ajax/editable/userinput/ HTTP/1.1" 200 45[0m
+16 03:43:15 | [33mdjango.request [37m| Not Found: /ajax/view/creature/_bvvtbnpn_pmbdrxhp/[0m
+16 03:43:15 | [33mdjango.server [37m| "GET /ajax/view/creature/_bvvtbnpn_pmbdrxhp/ HTTP/1.1" 404 8134[0m
+16 03:43:19 | [32mdjango.server [37m| "GET /ajax/display/gaia_wheel/ HTTP/1.1" 200 266339[0m
+16 03:43:22 | [32mdjango.server [37m| "GET /ajax/view/creature/_jack_travis/ HTTP/1.1" 200 57275[0m
+16 03:45:05 | [32mdjango.server [37m| "POST /ajax/editable/userinput/ HTTP/1.1" 200 48[0m
+16 03:45:05 | [32mdjango.server [37m| "GET /ajax/view/creature/_jack_travis/ HTTP/1.1" 200 57274[0m
+16 03:45:09 | [32mdjango.server [37m| "POST /ajax/randomize/reparts/for/_jack_travis/ HTTP/1.1" 200 2[0m
+16 03:45:09 | [32mdjango.server [37m| "GET /ajax/view/creature/_jack_travis/ HTTP/1.1" 200 57274[0m
+16 03:45:11 | [32mdjango.server [37m| "POST /ajax/randomize/talents/for/_jack_travis/ HTTP/1.1" 200 2[0m
+16 03:45:11 | [32mdjango.server [37m| "GET /ajax/view/creature/_jack_travis/ HTTP/1.1" 200 57232[0m
+16 03:45:12 | [32mdjango.server [37m| "POST /ajax/randomize/physical/for/_jack_travis/ HTTP/1.1" 200 2[0m
+16 03:45:12 | [32mdjango.server [37m| "GET /ajax/view/creature/_jack_travis/ HTTP/1.1" 200 57219[0m
+16 03:45:14 | [32mdjango.server [37m| "POST /ajax/randomize/mental/for/_jack_travis/ HTTP/1.1" 200 2[0m
+16 03:45:14 | [32mdjango.server [37m| "GET /ajax/view/creature/_jack_travis/ HTTP/1.1" 200 57219[0m
+16 03:45:17 | [32mdjango.server [37m| "POST /ajax/randomize/knowledges/for/_jack_travis/ HTTP/1.1" 200 2[0m
+16 03:45:17 | [32mdjango.server [37m| "GET /ajax/view/creature/_jack_travis/ HTTP/1.1" 200 57238[0m
+16 03:45:18 | [32mdjango.server [37m| "POST /ajax/randomize/skills/for/_jack_travis/ HTTP/1.1" 200 2[0m
+16 03:45:18 | [32mdjango.server [37m| "GET /ajax/view/creature/_jack_travis/ HTTP/1.1" 200 57262[0m
+16 03:45:27 | [32mdjango.server [37m| "POST /ajax/randomize/mental/for/_jack_travis/ HTTP/1.1" 200 2[0m
+16 03:45:27 | [32mdjango.server [37m| "GET /ajax/view/creature/_jack_travis/ HTTP/1.1" 200 57262[0m
+16 03:45:27 | [32mdjango.server [37m| "POST /ajax/randomize/mental/for/_jack_travis/ HTTP/1.1" 200 2[0m
+16 03:45:27 | [32mdjango.server [37m| "GET /ajax/view/creature/_jack_travis/ HTTP/1.1" 200 57262[0m
+16 03:45:29 | [32mdjango.server [37m| "POST /ajax/randomize/physical/for/_jack_travis/ HTTP/1.1" 200 2[0m
+16 03:45:29 | [32mdjango.server [37m| "GET /ajax/view/creature/_jack_travis/ HTTP/1.1" 200 57262[0m
+16 03:45:30 | [32mdjango.server [37m| "POST /ajax/randomize/physical/for/_jack_travis/ HTTP/1.1" 200 2[0m
+16 03:45:30 | [32mdjango.server [37m| "GET /ajax/view/creature/_jack_travis/ HTTP/1.1" 200 57262[0m
+16 03:45:32 | [32mdjango.server [37m| "POST /ajax/randomize/physical/for/_jack_travis/ HTTP/1.1" 200 2[0m
+16 03:45:32 | [32mdjango.server [37m| "GET /ajax/view/creature/_jack_travis/ HTTP/1.1" 200 57262[0m
+16 03:45:33 | [32mdjango.server [37m| "POST /ajax/randomize/physical/for/_jack_travis/ HTTP/1.1" 200 2[0m
+16 03:45:33 | [32mdjango.server [37m| "GET /ajax/view/creature/_jack_travis/ HTTP/1.1" 200 57262[0m
+16 03:45:44 | [32mdjango.server [37m| "GET /ajax/view/creature/_jack_travis/ HTTP/1.1" 200 57262[0m
+16 03:45:46 | [32mdjango.server [37m| "GET /ajax/view/creature/_jack_travis/ HTTP/1.1" 200 57262[0m
+16 03:45:46 | [32mdjango.server [37m| "GET /ajax/view/creature/_jack_travis/ HTTP/1.1" 200 57262[0m
+16 03:47:08 | [32mdjango.server [37m| "POST /ajax/editable/userinput/ HTTP/1.1" 200 45[0m
+16 03:47:08 | [32mdjango.server [37m| "GET /ajax/view/creature/_jack_travis/ HTTP/1.1" 200 57259[0m
+16 03:47:10 | [32mdjango.server [37m| "GET /ajax/view/creature/_jack_travis/ HTTP/1.1" 200 57259[0m
+16 03:47:10 | [32mdjango.server [37m| "GET /ajax/view/creature/_jack_travis/ HTTP/1.1" 200 57259[0m
+16 03:47:21 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 588[0m
+16 03:47:22 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 582[0m
+16 03:47:22 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 576[0m
+16 03:47:24 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 588[0m
+16 03:47:24 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 588[0m
+16 03:47:28 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 569[0m
+16 03:47:30 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 581[0m
+16 03:47:31 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 587[0m
+16 03:47:35 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 563[0m
+16 03:48:10 | [32mdjango [37m| User:zaffarelli[0m
+16 03:48:10 | [32mdjango [37m| Parts:['Intelligence', 'Enigmas'][0m
+16 03:48:10 | [32mdjango.server [37m| "GET /ajax/display/dashboard/ HTTP/1.1" 200 18904[0m
+16 04:22:27 | [32mdjango.server [37m| "GET /ajax/display/gaia_wheel/ HTTP/1.1" 200 266329[0m
+16 04:23:27 | [32mdjango.server [37m| "GET /ajax/display/gaia_wheel/ HTTP/1.1" 200 266329[0m
+16 04:23:31 | [32mdjango [37m| Index[0m
+16 04:23:31 | [32mdjango.server [37m| "GET / HTTP/1.1" 200 29905[0m
+16 04:23:31 | [32mdjango.server [37m| "GET /static/js/collector.es6 HTTP/1.1" 304 0[0m
+16 04:23:31 | [32mdjango.server [37m| "GET /static/CACHE/css/main.29806351fcdb.css HTTP/1.1" 200 35153[0m
+16 04:23:31 | [32mdjango.server [37m| "GET /static/CACHE/css/storytelling.7fa70340cb63.css HTTP/1.1" 200 8665[0m
+16 04:23:31 | [33mdjango.server [37m| "GET /static/collector/css?49593e59b3a7 HTTP/1.1" 404 1860[0m
+16 04:23:36 | [32mdjango.server [37m| "GET /ajax/display/gaia_wheel/ HTTP/1.1" 200 266329[0m
+16 04:23:49 | [32mdjango.server [37m| "GET /ajax/view/creature/_xfdesacd_qpmzpqbr/ HTTP/1.1" 200 58031[0m
+16 04:24:11 | [32mdjango.server [37m| "POST /ajax/editable/userinput/ HTTP/1.1" 200 35[0m
+16 04:24:11 | [32mdjango.server [37m| "GET /ajax/view/creature/_xfdesacd_qpmzpqbr/ HTTP/1.1" 200 58029[0m
+16 04:24:19 | [32mdjango.server [37m| "POST /ajax/editable/userinput/ HTTP/1.1" 200 46[0m
+16 04:24:19 | [33mdjango.request [37m| Not Found: /ajax/view/creature/_xfdesacd_qpmzpqbr/[0m
+16 04:24:19 | [33mdjango.server [37m| "GET /ajax/view/creature/_xfdesacd_qpmzpqbr/ HTTP/1.1" 404 8134[0m
+16 04:24:24 | [32mdjango.server [37m| "GET /ajax/display/gaia_wheel/ HTTP/1.1" 200 266319[0m
+16 04:24:40 | [32mdjango.server [37m| "GET /ajax/view/creature/_odzrxwxg_oglqrnzd/ HTTP/1.1" 200 58032[0m
+16 04:24:52 | [32mdjango.server [37m| "POST /ajax/editable/userinput/ HTTP/1.1" 200 46[0m
+16 04:24:52 | [33mdjango.request [37m| Not Found: /ajax/view/creature/_odzrxwxg_oglqrnzd/[0m
+16 04:24:52 | [33mdjango.server [37m| "GET /ajax/view/creature/_odzrxwxg_oglqrnzd/ HTTP/1.1" 404 8134[0m
+16 04:24:57 | [32mdjango.server [37m| "GET /ajax/display/gaia_wheel/ HTTP/1.1" 200 266309[0m
+16 04:24:57 | [32mdjango.server [37m| "GET /ajax/display/gaia_wheel/ HTTP/1.1" 200 266309[0m
+16 04:25:14 | [32mdjango.server [37m| "GET /ajax/view/creature/_ella_furlowe/ HTTP/1.1" 200 57402[0m
+16 04:25:25 | [32mdjango.server [37m| "POST /ajax/editable/userinput/ HTTP/1.1" 200 40[0m
+16 04:25:25 | [32mdjango.server [37m| "GET /ajax/view/creature/_ella_furlowe/ HTTP/1.1" 200 57401[0m
+16 04:25:25 | [32mdjango.server [37m| "POST /ajax/editable/userinput/ HTTP/1.1" 200 40[0m
+16 04:25:28 | [32mdjango.server [37m| "GET /ajax/view/creature/_ella_furlowe/ HTTP/1.1" 200 57401[0m
+16 04:25:29 | [32mdjango.server [37m| "GET /ajax/view/creature/_ella_furlowe/ HTTP/1.1" 200 57401[0m
+16 04:25:32 | [32mdjango.server [37m| "POST /ajax/randomize/reparts/for/_ella_furlowe/ HTTP/1.1" 200 2[0m
+16 04:25:32 | [32mdjango.server [37m| "GET /ajax/view/creature/_ella_furlowe/ HTTP/1.1" 200 57401[0m
+16 04:25:33 | [32mdjango.server [37m| "POST /ajax/randomize/reparts/for/_ella_furlowe/ HTTP/1.1" 200 2[0m
+16 04:25:33 | [32mdjango.server [37m| "GET /ajax/view/creature/_ella_furlowe/ HTTP/1.1" 200 57401[0m
+16 04:25:34 | [32mdjango.server [37m| "POST /ajax/randomize/physical/for/_ella_furlowe/ HTTP/1.1" 200 2[0m
+16 04:25:34 | [32mdjango.server [37m| "GET /ajax/view/creature/_ella_furlowe/ HTTP/1.1" 200 57413[0m
+16 04:25:35 | [32mdjango.server [37m| "POST /ajax/randomize/social/for/_ella_furlowe/ HTTP/1.1" 200 2[0m
+16 04:25:35 | [32mdjango.server [37m| "GET /ajax/view/creature/_ella_furlowe/ HTTP/1.1" 200 57401[0m
+16 04:25:37 | [32mdjango.server [37m| "POST /ajax/randomize/mental/for/_ella_furlowe/ HTTP/1.1" 200 2[0m
+16 04:25:37 | [32mdjango.server [37m| "GET /ajax/view/creature/_ella_furlowe/ HTTP/1.1" 200 57401[0m
+16 04:25:38 | [32mdjango.server [37m| "POST /ajax/randomize/knowledges/for/_ella_furlowe/ HTTP/1.1" 200 2[0m
+16 04:25:38 | [32mdjango.server [37m| "GET /ajax/view/creature/_ella_furlowe/ HTTP/1.1" 200 57378[0m
+16 04:25:40 | [32mdjango.server [37m| "POST /ajax/randomize/skills/for/_ella_furlowe/ HTTP/1.1" 200 2[0m
+16 04:25:40 | [32mdjango.server [37m| "GET /ajax/view/creature/_ella_furlowe/ HTTP/1.1" 200 57359[0m
+16 04:25:41 | [32mdjango.server [37m| "POST /ajax/randomize/talents/for/_ella_furlowe/ HTTP/1.1" 200 2[0m
+16 04:25:41 | [32mdjango.server [37m| "GET /ajax/view/creature/_ella_furlowe/ HTTP/1.1" 200 57401[0m
+16 04:25:42 | [32mdjango.server [37m| "GET /ajax/view/creature/_ella_furlowe/ HTTP/1.1" 200 57401[0m
+16 04:26:05 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 583[0m
+16 04:26:05 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 577[0m
+16 04:26:05 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 571[0m
+16 04:26:07 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 583[0m
+16 04:26:07 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 577[0m
+16 04:26:07 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 570[0m
+16 04:26:10 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 582[0m
+16 04:26:19 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 575[0m
+16 04:26:26 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 587[0m
+16 04:26:26 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 581[0m
+16 04:26:28 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 575[0m
+16 04:26:32 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 587[0m
+16 04:26:34 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 587[0m
+16 04:26:36 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 588[0m
+16 04:26:37 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 588[0m
+16 04:26:39 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 594[0m
+16 04:26:43 | [32mdjango.server [37m| "GET /ajax/display/gaia_wheel/ HTTP/1.1" 200 266302[0m
+16 04:26:51 | [32mdjango.server [37m| "GET /ajax/view/creature/_nadja_mohendri/ HTTP/1.1" 200 57651[0m
+16 04:26:59 | [32mdjango.server [37m| "POST /ajax/randomize/reparts/for/_nadja_mohendri/ HTTP/1.1" 200 2[0m
+16 04:26:59 | [32mdjango.server [37m| "GET /ajax/view/creature/_nadja_mohendri/ HTTP/1.1" 200 57651[0m
+16 04:27:00 | [32mdjango.server [37m| "POST /ajax/randomize/reparts/for/_nadja_mohendri/ HTTP/1.1" 200 2[0m
+16 04:27:00 | [32mdjango.server [37m| "GET /ajax/view/creature/_nadja_mohendri/ HTTP/1.1" 200 57651[0m
+16 04:27:01 | [32mdjango.server [37m| "POST /ajax/randomize/reparts/for/_nadja_mohendri/ HTTP/1.1" 200 2[0m
+16 04:27:01 | [32mdjango.server [37m| "GET /ajax/view/creature/_nadja_mohendri/ HTTP/1.1" 200 57651[0m
+16 04:27:05 | [32mdjango.server [37m| "POST /ajax/randomize/physical/for/_nadja_mohendri/ HTTP/1.1" 200 2[0m
+16 04:27:05 | [32mdjango.server [37m| "GET /ajax/view/creature/_nadja_mohendri/ HTTP/1.1" 200 57632[0m
+16 04:27:06 | [32mdjango.server [37m| "POST /ajax/randomize/social/for/_nadja_mohendri/ HTTP/1.1" 200 2[0m
+16 04:27:06 | [32mdjango.server [37m| "GET /ajax/view/creature/_nadja_mohendri/ HTTP/1.1" 200 57645[0m
+16 04:27:06 | [32mdjango.server [37m| "POST /ajax/randomize/social/for/_nadja_mohendri/ HTTP/1.1" 200 2[0m
+16 04:27:06 | [32mdjango.server [37m| "GET /ajax/view/creature/_nadja_mohendri/ HTTP/1.1" 200 57645[0m
+16 04:27:07 | [32mdjango.server [37m| "POST /ajax/randomize/mental/for/_nadja_mohendri/ HTTP/1.1" 200 2[0m
+16 04:27:07 | [32mdjango.server [37m| "GET /ajax/view/creature/_nadja_mohendri/ HTTP/1.1" 200 57651[0m
+16 04:27:10 | [32mdjango.server [37m| "POST /ajax/randomize/talents/for/_nadja_mohendri/ HTTP/1.1" 200 2[0m
+16 04:27:10 | [32mdjango.server [37m| "GET /ajax/view/creature/_nadja_mohendri/ HTTP/1.1" 200 57628[0m
+16 04:27:12 | [32mdjango.server [37m| "POST /ajax/randomize/skills/for/_nadja_mohendri/ HTTP/1.1" 200 2[0m
+16 04:27:12 | [32mdjango.server [37m| "GET /ajax/view/creature/_nadja_mohendri/ HTTP/1.1" 200 57651[0m
+16 04:27:20 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 583[0m
+16 04:27:21 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 589[0m
+16 04:27:23 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 589[0m
+16 04:27:23 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 583[0m
+16 04:27:24 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 577[0m
+16 04:27:27 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 595[0m
+16 04:27:32 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 583[0m
+16 04:27:34 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 595[0m
+16 04:27:35 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 589[0m
+16 04:27:38 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 583[0m
+16 04:27:39 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 589[0m
+16 04:27:39 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 577[0m
+16 04:27:41 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 589[0m
+16 04:27:42 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 582[0m
+16 04:27:47 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 588[0m
+16 04:27:47 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 582[0m
+16 04:32:05 | [32mdjango.server [37m| "GET /admin/ HTTP/1.1" 302 0[0m
+16 04:32:05 | [32mdjango.server [37m| "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4074[0m
+16 04:32:05 | [32mdjango.server [37m| "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 3538[0m
+16 04:32:05 | [32mdjango.server [37m| "GET /static/admin/js/theme.js HTTP/1.1" 200 1653[0m
+16 04:32:05 | [32mdjango.server [37m| "GET /static/admin/css/base.css HTTP/1.1" 200 23100[0m
+16 04:32:05 | [32mdjango.server [37m| "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063[0m
+16 04:32:05 | [32mdjango.server [37m| "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2810[0m
+16 04:32:05 | [32mdjango.server [37m| "GET /static/admin/css/login.css HTTP/1.1" 200 951[0m
+16 04:32:05 | [32mdjango.server [37m| "GET /static/admin/css/responsive.css HTTP/1.1" 200 16273[0m
+16 15:06:28 | [32mdjango.server [37m| "GET /ajax/view/creature/_mark_simson/ HTTP/1.1" 200 57285[0m
+16 15:06:29 | [32mdjango.server [37m| "GET /ajax/view/creature/_sraqtoto_nnqajjwo/ HTTP/1.1" 200 58027[0m
+16 15:06:32 | [32mdjango.server [37m| "GET /ajax/view/creature/_xdletblh_vzwawgpi/ HTTP/1.1" 200 58038[0m
+16 15:06:35 | [32mdjango.server [37m| "GET /ajax/view/creature/_qotctaec_uvzxtphv/ HTTP/1.1" 200 58032[0m
+16 15:07:41 | [32mdjango.server [37m| "GET /ajax/view/creature/_ryan_dolan/ HTTP/1.1" 200 57128[0m
+16 15:07:42 | [32mdjango.server [37m| "GET /ajax/view/creature/_evangeline_jones/ HTTP/1.1" 200 57907[0m
+16 15:08:44 | [32mdjango.server [37m| "GET /ajax/list/creatures/1/cck/ HTTP/1.1" 200 1220[0m
+16 15:08:51 | [32mdjango.server [37m| "GET /ajax/list/creatures/1/csk/ HTTP/1.1" 200 1181[0m
+16 15:09:28 | [31mdjango.request [37m| Internal Server Error: /ajax/collector_action/add_kindred/Jurgen_Felbs/[0m
+Traceback (most recent call last):
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py"[0m, line [35m55[0m, in [35minner[0m
+    response = get_response(request)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py"[0m, line [35m198[0m, in [35m_get_response[0m
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File [35m"/home/zaffarelli/Projects/wawwod/collector/views/base.py"[0m, line [35m378[0m, in [35madd_kindred[0m
+    [31mpost_wawwod_creature[0m[1;31m(item)[0m
+    [31m~~~~~~~~~~~~~~~~~~~~[0m[1;31m^^^^^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/collector/views/base.py"[0m, line [35m367[0m, in [35mpost_wawwod_creature[0m
+    [31mitem.randomize_all[0m[1;31m()[0m
+    [31m~~~~~~~~~~~~~~~~~~[0m[1;31m^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/collector/models/creatures.py"[0m, line [35m1718[0m, in [35mrandomize_all[0m
+    [31mself.randomize_backgrounds[0m[1;31m()[0m
+    [31m~~~~~~~~~~~~~~~~~~~~~~~~~~[0m[1;31m^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/collector/models/creatures.py"[0m, line [35m1582[0m, in [35mrandomize_backgrounds[0m
+    restrictions = [31mPER_TRIBE[0m[1;31m[as_tribe_plural(self.family)][0m["restrictions"]
+                   [31m~~~~~~~~~[0m[1;31m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[1;35mKeyError[0m: [35m'Caitiffs'[0m
+16 15:09:28 | [31mdjango.server [37m| "GET /ajax/collector_action/add_kindred/Jurgen_Felbs/ HTTP/1.1" 500 88807[0m
+16 15:09:37 | [32mdjango.server [37m| "GET /ajax/list/creatures/1/csk/ HTTP/1.1" 200 1181[0m
+16 15:09:46 | [32mdjango.server [37m| "GET /ajax/list/creatures/1/cck/ HTTP/1.1" 200 1981[0m
+16 15:09:49 | [32mdjango.server [37m| "GET /ajax/view/creature/_jurgen_felbs/ HTTP/1.1" 200 59138[0m
+16 15:09:49 | [32mdjango.server [37m| "GET /static/collector/clans/caitiff.webp HTTP/1.1" 200 32192[0m
+16 15:10:08 | [32mdjango.server [37m| "POST /ajax/editable/userinput/ HTTP/1.1" 200 51[0m
+16 15:10:09 | [32mdjango.server [37m| "POST /ajax/editable/userinput/ HTTP/1.1" 200 51[0m
+16 15:10:16 | [32mdjango.server [37m| "POST /ajax/editable/userinput/ HTTP/1.1" 200 51[0m
+16 15:10:28 | [32mdjango.server [37m| "POST /ajax/editable/userinput/ HTTP/1.1" 200 40[0m
+16 15:10:31 | [32mdjango.server [37m| "GET /ajax/view/creature/_jurgen_felbs/ HTTP/1.1" 200 59176[0m
+16 15:10:31 | [32mdjango.server [37m| "GET /static/collector/clans/ventrue_antitribu.webp HTTP/1.1" 200 32146[0m
+16 15:10:48 | [32mdjango.server [37m| "GET /ajax/list/creatures/1/csk/ HTTP/1.1" 200 1956[0m
+16 15:10:52 | [32mdjango.server [37m| "GET /ajax/display/kindred_lineage/ HTTP/1.1" 200 61893[0m
+16 15:10:52 | [32mdjango.server [37m| "GET /static/collector/clans/ventrue.webp HTTP/1.1" 200 13030[0m
+16 15:10:52 | [32mdjango.server [37m| "GET /static/collector/independant.webp HTTP/1.1" 200 27217[0m
+16 15:10:52 | [32mdjango.server [37m| "GET /static/collector/clans/malkavian.webp HTTP/1.1" 200 22266[0m
+16 15:10:52 | [32mdjango.server [37m| "GET /static/collector/clans/true_brujah.webp HTTP/1.1" 200 37406[0m
+16 15:10:52 | [32mdjango.server [37m| "GET /static/collector/clans/salubri.webp HTTP/1.1" 200 26775[0m
+16 15:10:52 | [32mdjango.server [37m| "GET /static/collector/clans/toreador.webp HTTP/1.1" 200 25591[0m
+16 15:10:52 | [32mdjango.server [37m| "GET /static/collector/clans/lasombra.webp HTTP/1.1" 200 18129[0m
+16 15:10:52 | [32mdjango.server [37m| "GET /static/collector/clans/cappadocian.webp HTTP/1.1" 200 76646[0m
+16 15:10:52 | [32mdjango.server [37m| "GET /static/collector/clans/setite.webp HTTP/1.1" 200 22545[0m
+16 15:10:52 | [32mdjango.server [37m| "GET /static/collector/clans/nosferatu.webp HTTP/1.1" 200 24268[0m
+16 15:10:52 | [32mdjango.server [37m| "GET /static/collector/clans/assamite.webp HTTP/1.1" 200 32796[0m
+16 15:10:52 | [32mdjango.server [37m| "GET /static/collector/clans/ravnos.webp HTTP/1.1" 200 10806[0m
+16 15:10:52 | [32mdjango.server [37m| "GET /static/collector/clans/tzimisce.webp HTTP/1.1" 200 22603[0m
+16 15:10:52 | [32mdjango.server [37m| "GET /static/collector/clans/tremere.webp HTTP/1.1" 200 15991[0m
+16 15:10:52 | [32mdjango.server [37m| "GET /static/collector/clans/gangrel.webp HTTP/1.1" 200 11675[0m
+16 15:10:52 | [32mdjango.server [37m| "GET /static/collector/clans/giovanni.webp HTTP/1.1" 200 114038[0m
+16 15:10:52 | [32mdjango.server [37m| "GET /static/collector/clans/brujah.webp HTTP/1.1" 200 84478[0m
+16 15:10:52 | [32mdjango.server [37m| "GET /static/collector/clans/harbinger_of_skulls.webp HTTP/1.1" 200 12448[0m
+16 15:10:52 | [32mdjango.server [37m| "GET /static/collector/clans/panders.webp HTTP/1.1" 200 34124[0m
+16 15:10:52 | [33mdjango.server [37m| "GET /static/collector/clans/blood_brothers.webp HTTP/1.1" 404 1918[0m
+16 15:10:52 | [32mdjango.server [37m| "GET /static/collector/clans/gargoyle.webp HTTP/1.1" 200 10774[0m
+16 15:10:52 | [32mdjango.server [37m| "GET /static/collector/clans/samedi.webp HTTP/1.1" 200 24718[0m
+16 15:10:52 | [32mdjango.server [37m| "GET /static/collector/clans/baali.webp HTTP/1.1" 200 30372[0m
+16 15:11:48 | [33mdjango.request [37m| Not Found: /ajax/display/undefined/[0m
+16 15:11:48 | [33mdjango.server [37m| "GET /ajax/display/undefined/ HTTP/1.1" 404 18777[0m
+16 15:11:48 | [32mdjango.server [37m| "GET /ajax/list/creatures/1/cca/ HTTP/1.1" 200 13525[0m
+16 15:12:05 | [32mdjango.server [37m| "GET /ajax/display/story_book/ HTTP/1.1" 204 0[0m
+16 15:12:07 | [32mdjango.server [37m| "GET /ajax/display/storytelling/ HTTP/1.1" 200 10872[0m
+16 15:12:09 | [32mdjango.server [37m| "GET /ajax/display/story_book/ HTTP/1.1" 204 0[0m
+16 15:12:25 | [32mdjango.server [37m| "GET /ajax/display/chronicle_book/ HTTP/1.1" 204 0[0m

@@ -7,7 +7,7 @@ import logging
 
 from collector.utils.wod_reference import FONTSET
 
-logger = logging.getLogger(__name__)
+logger = logging.getLogger('wawwod')
 
 
 class City(models.Model):

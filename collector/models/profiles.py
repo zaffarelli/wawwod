@@ -5,7 +5,7 @@ import logging
 
 from collector.views.base import adventure_sheet
 
-logger = logging.getLogger(__name__)
+logger = logging.getLogger('wawwod')
 
 
 class Profile(models.Model):

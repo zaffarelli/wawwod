@@ -126,6 +126,10 @@
         {% elif c.creature == 'garou' %}
         <th>Edges</th>
         <td class='editable userinput' id='{{c.rid}}__edges'>{{ c.edges }}</td>
+        {% elif c.creature == 'kinfolk' %}
+        <th>Edge for</th>
+        <td>{{ c.edge_for }}</td>
+
         {% else %}
         <th></th>
         <td></td>

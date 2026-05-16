@@ -3,7 +3,7 @@ from django.conf import settings
 from collector.models.chronicles import Chronicle
 
 chronicle = Chronicle.current()
-logger = logging.getLogger(__name__)
+logger = logging.getLogger('wawwod')
 
 
 def domitor_from_sire():

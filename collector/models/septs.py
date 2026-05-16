@@ -16,7 +16,7 @@ from collector.utils.helper import toRID
 from collector.utils.wod_reference import ALL_TRIBES
 from colorfield.fields import ColorField
 
-logger = logging.getLogger(__name__)
+logger = logging.getLogger('wawwod')
 
 
 class Sept(models.Model):

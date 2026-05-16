@@ -1,6 +1,18 @@
+import os
+import sys
+import django
+
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "myapp.settings")
+django.setup()
+from django.conf import settings
+
+print("HELLO!!!")
+
 # exec(open('scripts/wawwod_tools.py').read())
 from collector.models.creatures import Creature
-from collector.utils.wod_reference import ARCHETYPES
+# from collector.utils.wod_reference import ARCHETYPES
+
+
 
 # import xmltodict
 import random

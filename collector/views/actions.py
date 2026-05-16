@@ -2,6 +2,7 @@ from django.http import HttpResponse, JsonResponse
 from django.shortcuts import redirect
 from django.views.decorators.csrf import csrf_exempt
 
+from collector.models.chronicles import Chronicle
 from collector.models.creatures import Creature
 from collector.templatetags.wod_filters import as_breed
 from collector.utils.helper import is_ajax
@@ -12,7 +13,7 @@ import logging
 
 from collector.utils.wod_reference import ALL_TRIBES
 
-logger = logging.getLogger(__name__)
+logger = logging.getLogger('wawwod')
 
 def extract_raw(request, slug):
     found = Creature.objects.all().filter(rid=slug)
@@ -334,28 +335,33 @@ def old_experiment(request):
 
 
 def refix_all(request):
-    chronicle = get_current_chronicle()
-    import json
+    chronicle = Chronicle.current()
+    #import json
 
-    all = Creature.objects.filter(concept="death_row")
-    for c in all:
-        c.delete()
-    all = Creature.objects.filter(chronicle=chronicle.acronym)
-    for c in all:
-        c.save()
-    from storytelling.models.districts import District
+    creatures = Creature.objects.filter(chronicle=chronicle.acronym)
+    for creature in creatures:
+        creature.need_fix = True
+        creature.save()
 
-    alld = District.objects.all()
-    for d in alld:
-        d.save()
-    from storytelling.models.hotspots import HotSpot
-
-    allhp = HotSpot.objects.all()
-    for h in allhp:
-        h.save()
-    data = Creature.extract_ghouls(chronicle.acronym)
-    with open("kindred_ghouls.json", "w") as f:
-        f.write(json.dumps(data, sort_keys=True, indent=4))
+    # all = Creature.objects.filter(concept="death_row")
+    # for c in all:
+    #     c.delete()
+    # all = Creature.objects.filter(chronicle=chronicle.acronym)
+    # for c in all:
+    #     c.save()
+    # from storytelling.models.districts import District
+    #
+    # alld = District.objects.all()
+    # for d in alld:
+    #     d.save()
+    # from storytelling.models.hotspots import HotSpot
+    #
+    # allhp = HotSpot.objects.all()
+    # for h in allhp:
+    #     h.save()
+    # data = Creature.extract_ghouls(chronicle.acronym)
+    # with open("kindred_ghouls.json", "w") as f:
+    #     f.write(json.dumps(data, sort_keys=True, indent=4))
     return HttpResponse(status=204)
 
 

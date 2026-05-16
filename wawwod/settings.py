@@ -8,10 +8,10 @@ DEBUG = True
 ALLOWED_HOSTS = ["*"]
 
 INSTALLED_APPS = [
-    "django.contrib.auth",
     "collector.apps.CollectorConfig",
     "storytelling.apps.StorytellingConfig",
     "django.contrib.admin",
+    "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
@@ -67,7 +67,7 @@ LOGGING = {
     "disable_existing_loggers": False,
     "formatters": {
         "standard": {
-            "format": "%(log_color)s%(asctime)s | %(name)s %(white)s| %(message)s",
+            "format": "%(asctime)s | %(log_color)s%(name)s %(white)s| %(message)s",
             "datefmt": "%d %H:%M:%S",
             "()": 'colorlog.ColoredFormatter'
         },
@@ -75,12 +75,21 @@ LOGGING = {
     "handlers": {
         "logfile": {
             "class": "logging.handlers.RotatingFileHandler",
-            "filename": LOGPATH + "wawwod.log",
-            "maxBytes": 1000000,
+            "filename": LOGPATH + "django.log",
+            "maxBytes": 10000000,
             "backupCount": 5,
             "formatter": "standard",
             "level": "DEBUG"
         },
+        "wodlog": {
+            "class": "logging.handlers.RotatingFileHandler",
+            "filename": LOGPATH + "wawwod.log",
+            "maxBytes": 10000000,
+            "backupCount": 5,
+            "formatter": "standard",
+            "level": "DEBUG"
+        },
+
         "console": {
             "class": "logging.StreamHandler",
             "formatter": "standard",
@@ -89,19 +98,11 @@ LOGGING = {
     },
     "loggers": {
         "django": {
-            "handlers": ["console"],
+            "handlers": ["logfile"],
             "propagate": True,
         },
-        "core": {
-            "handlers": ["logfile", "console"],
-            "propagate": True,
-        },
-        "collector": {
-            "handlers": ["logfile", "console"],
-            "propagate": True,
-        },
-        "storytelling": {
-            "handlers": ["logfile", "console"],
+        "wawwod": {
+            "handlers": ["wodlog"],
             "propagate": True,
         }
     },

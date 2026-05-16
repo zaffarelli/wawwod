@@ -3,7 +3,7 @@ from django.contrib import admin
 
 import logging
 
-logger = logging.getLogger(__name__)
+logger = logging.getLogger('wawwod')
 
 
 class Discipline(models.Model):

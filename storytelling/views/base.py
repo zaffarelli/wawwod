@@ -14,7 +14,7 @@ import os
 import json
 import logging
 
-logger = logging.getLogger(__name__)
+logger = logging.getLogger('wawwod')
 
 def display_storytelling(request):
     all = Story.objects.all()
@@ -209,13 +209,7 @@ def chronicle_book(request):
         factions["wyrm"] = {"name": "Wyrm", "description": "", "groups": {}}
 
     groups = {}
-    for c in (
-        Creature.objects.filter(
-            chronicle=chronicle.acronym, creature=chronicle.main_creature
-        )
-        .exclude(is_player=True)
-        .order_by("groupspec")
-    ):
+    for c in Creature.objects.filter( chronicle=chronicle.acronym, creature=chronicle.main_creature).exclude(is_player=True).order_by("groupspec"):
         if chronicle.main_creature == "kindred":
             g = "_".join(c.group.lower().split(" "))
             if g not in groups:

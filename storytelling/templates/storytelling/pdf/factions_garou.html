@@ -7,23 +7,42 @@
     <style>
         @font-face {
             font-family: 'TextFont';
-            src: url('collector/static/collector/fonts/Lato-Regular.ttf');
+            src: url('storytelling/static/storytelling/fonts/AtkinsonHyperlegible-Regular.ttf');
+        }
+
+        @font-face {
+            font-family: 'TextFont';
+            font-weight:bold;
+            src: url('storytelling/static/storytelling/fonts/AtkinsonHyperlegible-Bold.ttf');
+        }
+
+        @font-face {
+            font-family: 'TextFont';
+            font-style:italic;
+            src: url('storytelling/static/storytelling/fonts/AtkinsonHyperlegible-Italic.ttf');
+        }
+
+        @font-face {
+            font-family: 'TextFont';
+            font-style:italic;
+            font-weight:bold;
+            src: url('storytelling/static/storytelling/fonts/AtkinsonHyperlegible-BoldItalic.ttf');
         }
 
         @font-face {
             font-family: 'TitleFont';
-            src: url('collector/static/collector/fonts/MarcellusSC-Regular.ttf');
+            src: url('collector/static/collector/fonts/Eczar-Medium.ttf');
         }
 
         @font-face {
             font-family: 'TechnicalFont';
-            src: url('collector/static/collector/fonts/Lato-Regular.ttf');
+            src: url('collector/static/collector/fonts/WorkSans-Regular.ttf');
         }
 
         @font-face {
             font-family: 'TechnicalFont';
             font-weight: bold;
-            src: url('collector/static/collector/fonts/Lato-Bold.ttf');
+            src: url('collector/static/collector/fonts/UbuntuMono-Bold.ttf');
 
         }
 
@@ -31,25 +50,18 @@
         @page {
             size: a4 portrait;
             @frame col_left {
-                left: 0.8cm;
-                width: 6cm;
+                left: 1.5cm;
+                width: 9cm;
                 top: 2cm;
                 height: 26cm;
-                padding: 0.125cm;
-            }
-            @frame col_center {
-                left: 7.6cm;
-                width: 6cm;
-                top: 2cm;
-                height: 26cm;
-                padding: 0.125cm;
+
             }
             @frame col_right {
-                left: 14.4cm;
-                width: 6cm;
+                left: 11cm;
+                width: 9cm;
                 top: 2cm;
                 height: 26cm;
-                padding: 0.125cm;
+
             }
             @frame footer_frame {
                 -pdf-frame-content:footer_content;
@@ -139,44 +151,17 @@
             -pdf-keep-with-next: true;
         }
 
-        li{
-            margin-left:0.25cm;
-            /*list-style-type: square;*/
-        }
+        /*li{*/
+        /*    margin-left:0.25cm;*/
+        /*    !*list-style-type: square;*!*/
+        /*}*/
 
-        ol, ul{
-            margin-left:0.5cm;
-            text-indent:-0.25cm;
-        }
-
-        ul.boxed{
-            /*list-style-type: square;*/
-            vertical-align: middle;
-            font-height:0.75em;
-            padding-top:0.1cm;
-            padding-bottom:0.1cm;
-        }
-
-        ul.boxed.from{
-            border-color:#ccc;
-
-        }
-
-        ul.boxed.to{
-            border-color:#444;
-        }
+        /*ol, ul{*/
+        /*    margin-left:0.5cm;*/
+        /*    text-indent:-0.25cm;*/
+        /*}*/
 
 
-
-        ul.boxed li{
-            list-style-type: none;
-
-        }
-
-        ul.boxed li a {
-            text-decoration:none;
-            color:purple;
-        }
 
         p {
 
@@ -184,7 +169,6 @@
             text-align: justify;
             line-height: 0.97em;
             margin: 0;
-            padding-left: 2ex;
             -pdf-keep-with-next: false;
         }
 
@@ -300,24 +284,30 @@
         }
 
         pdftoc{
-            color:#666;
+            color:#111;
             font-size:8pt;
-            width:6cm;
+            width:9cm;
         }
         pdftoc.pdftoclevel0 {
-            color:#222;
+            font-size:12pt;
+            margin-top:0.25cm;
         }
         pdftoc.pdftoclevel1 {
-            color:#333;
+            font-size:11pt;
+            margin-left:0.25cm;
         }
         pdftoc.pdftoclevel2 {
-            color:#444;
+            font-size:10pt;
+            margin-left:0.25cm;
         }
         pdftoc.pdftoclevel3 {
-            color:#555;
+            font-size:9pt;
+            margin-left:0.5cm;
         }
         pdftoc.pdftoclevel4 {
-            color:#666;
+            font-size:8pt;
+            margin-top:0;
+            margin-left:0.75cm;
         }
 
         .tag{
@@ -335,9 +325,18 @@
             padding:0;
             margin-left:3mm;
             margin:0;
-            font-family: 'TechnicalFont';
-            font-size: 7pt;
+            font-family: 'TextFont';
+            font-size: 8pt;
             line-height:9pt;
+        }
+
+        .roster li{
+            margin:0;
+            padding:0;
+            text-indent:2mm;
+            margin-left:-4mm;
+            line-height:8pt;
+            font-size: 7pt;
         }
 
         .roster.kindred{
@@ -360,7 +359,7 @@
 <body>
 
 <div id="footer_content">
-    {{chronicle.acronym}} Chronicle Book, page <pdf:pagenumber/>/<pdf:pagecount/>
+    WARNING - Storyteller Document - <b>{{chronicle.name}}</b> Chronicle Book - page <pdf:pagenumber/> of <pdf:pagecount/>
 </div>
 
 
@@ -379,11 +378,11 @@
 
 <pdf:nextpage/>
 {% for faction,fcontent in data.items %}
-    <H2>Faction: {{fcontent.name|title}}</H2>
-    <pdf:nextpage/>
+    <H2>{{fcontent.name|title}} Creatures</H2>
+
     {% for group,gcontent in fcontent.groups.items %}
-        <H3>Group: {{gcontent.name|title}}</H3>
-        <pdf:nextframe/>
+        <H3>{{gcontent.name|title}}</H3>
+
         {% for pack,pcontent in gcontent.packs.items %}
             <H4>Pack: {{pcontent.name|title }}</H4>
             {% for garou in pcontent.garous %}

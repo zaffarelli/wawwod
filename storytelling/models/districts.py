@@ -7,7 +7,7 @@ import logging
 from colorfield.fields import ColorField
 from collector.utils.wod_reference import CLAN_COLORS
 
-logger = logging.getLogger(__name__)
+logger = logging.getLogger('wawwod')
 
 
 class District(models.Model):

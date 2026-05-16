@@ -18,8 +18,8 @@ from collector.models.legacy import CollectorNybnKindreds, CollectorNybnKindreds
 from django.contrib.auth.models import Group,User
 
 
-admin.site.unregister(Group)
-admin.site.unregister(User)
+# admin.site.unregister(Group)
+# admin.site.unregister(User)
 
 admin.site.register(Creature, CreatureAdmin)
 admin.site.register(Chronicle, ChronicleAdmin)
@@ -34,17 +34,17 @@ admin.site.register(Sept, SeptAdmin)
 admin.site.register(Totem, TotemAdmin)
 admin.site.register(Deed, DeedAdmin)
 admin.site.register(CollectorNybnKindreds, CollectorNybnKindredsAdmin)
+admin.site.register(Profile, ProfileAdmin)
 
 
-
-class ProfileInline(admin.StackedInline):
-    model = Profile
-
-class UserAdmin(admin.ModelAdmin):
-    model = User
-    fields = ["username","first_name","last_name","email"]
-    inlines = [ProfileInline]
-
-admin.site.register(User, UserAdmin)
+# class ProfileInline(admin.StackedInline):
+#     model = Profile
+#
+# class UserAdmin(admin.ModelAdmin):
+#     model = User
+#     fields = ["username","first_name","last_name","email"]
+#     inlines = [ProfileInline]
+#
+# admin.site.register(User, UserAdmin)
 # admin.site.register(Profile, ProfileAdmin)
 

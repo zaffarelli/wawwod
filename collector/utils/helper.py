@@ -2,6 +2,7 @@ from django.contrib import admin
 from colour import Color
 import os
 
+
 def json_default(value):
     import datetime
 
@@ -75,6 +76,7 @@ def roll(faces=10):
     d = die()
     return d
 
+
 class Colorizer:
     def __init__(self):
         self.palette = []
@@ -96,7 +98,7 @@ class Colorizer:
     def get_palette(self):
         d = []
         for c in self.palette:
-            d.append(c.hex+"7f")
+            d.append(c.hex + "7f")
         return d
 
     def pop(self):
@@ -110,3 +112,19 @@ class Colorizer:
         blue = int.from_bytes(os.urandom(1))
         c = f'#{red:02x}{green:02x}{blue:02x}'
         return c
+
+def ponderate(stats=[], points=5, rules=""):
+    values = []
+
+    return values
+
+def fake_name():
+    name = ""
+    alphabet = [chr(i) for i in range(ord('A'), ord('Z') + 1)]
+    count = 16
+    for x in range(count):
+        y = roll(len(alphabet)) - 1
+        name += alphabet[y]
+        if x % 8 == 7:
+            name += " "
+    return name.strip().title()

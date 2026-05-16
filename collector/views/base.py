@@ -1,12 +1,8 @@
 import zoneinfo
-from time import strptime
-
 from django.http import HttpResponse, Http404, JsonResponse
 from django.shortcuts import render
 import random
-
 from collector.models.adventures import Adventure
-from collector.models.seasons import Season
 from collector.models.creatures import Creature
 from storytelling.models.cities import City
 from django.core.paginator import Paginator
@@ -14,8 +10,6 @@ from django.template.loader import get_template
 from django.views.decorators.csrf import csrf_exempt
 from collector.templatetags.wod_filters import as_bullets
 from collector.utils.data_collection import build_per_primogen, build_gaia_wheel
-
-# from collector.utils.wod_reference import get_current_chronicle
 from collector.models.chronicles import Chronicle
 from collector.models.septs import Sept
 from collector.utils.wod_reference import STATS_NAMES, CHARACTERS_PER_PAGE
@@ -30,7 +24,8 @@ import logging
 import datetime
 from astral import moon
 
-logger = logging.getLogger(__name__)
+logger = logging.getLogger("django")
+wodlog = logging.getLogger("wawwod")
 
 
 def prepare_index(request):
@@ -279,21 +274,27 @@ def updown(request):
 @csrf_exempt
 def userinput(request):
     if is_ajax(request):
+        wodlog.info(f"UserInput :{request.POST}")
         answer = "error"
         if request.method == "POST":
             answer = {}
             rid = request.POST.get("id")
+            wodlog.info(f" {request.POST}")
             field = request.POST.get("field")
             value = request.POST.get("value")
+            wodlog.info(f"rid {rid}")
             item = Creature.objects.get(rid=rid)
-            if hasattr(item, field):
-                setattr(item, field, value)
-                item.need_fix = True
-                item.save()
-                answer["new_value"] = value
-                answer["freebies"] = item.freebies
-            else:
-                answer["new_value"] = "<b>ERROR!</b>"
+            wodlog.info("item")
+            wodlog.info(item)
+            if item:
+                if hasattr(item, field):
+                    setattr(item, field, value)
+                    item.need_fix = True
+                    item.save()
+                    answer["new_value"] = value
+                    answer["freebies"] = item.freebies
+                else:
+                    answer["new_value"] = "<b>ERROR!</b>"
         return JsonResponse(answer)
     return HttpResponse(status=204)
 
@@ -301,6 +302,7 @@ def userinput(request):
 @csrf_exempt
 def userinputastext(request):
     if is_ajax(request):
+        wodlog.info(f"UserInputAsText :{request.POST}")
         answer = "error"
         if request.method == "POST":
             answer = {}
@@ -521,9 +523,7 @@ def character_for(slug, option="", idx=-1):
 def display_crossover_sheet(request, slug=None, option=""):
     if is_ajax(request):
         from collector.models.adventures import Adventure
-
         blank = "blank" in option
-        print(f"Blank:{blank}")
         adventure, chronicle, season = Adventure.current_full()
         if chronicle:
             pre_title = chronicle.pre_title
@@ -930,7 +930,12 @@ def display_dashboard(request):
     attribute = "Perception"
     ability = "Alertness"
 
-    parts = adventure.watch.split("+")
+    from collector.models.profiles import Profile
+    logger.info(f"User:{request.user}")
+    profile = Profile.objects.filter(user=request.user).first()
+    parts = profile.dashboard_watch_criteria.split("+")
+    logger.info(f"Parts:{parts}")
+    #parts = adventure.watch.split("+")
     if len(parts)==2:
         attribute = parts[0]
         ability = parts[1]
@@ -1154,18 +1159,12 @@ def all_in_one_pdf(rid, pages, creature="mortal"):
 
 def moon_phase(request, dt=None):
     from astral import LocationInfo
-
     city = LocationInfo("Minneapolis", "Minnesota", "America/Chicago", 44.97, -93.27)
     timezone = zoneinfo.ZoneInfo("America/Chicago")
-    logger.debug(
-        (
-            f"Information for {city.name}/{city.region}\n"
-            f"Timezone: {city.timezone}\n"
-            f"Latitude: {city.latitude:.02f}; Longitude: {city.longitude:.02f}\n"
-        )
-    )
+    wodlog.info(f"Information for {city.name}/{city.region}")
+    wodlog.info(f"Timezone: {city.timezone}")
+    wodlog.info(f"Latitude: {city.latitude:.02f}; Longitude: {city.longitude:.02f}")
     from astral.sun import sun
-
     weeks = []
     if dt is None:
         dt = datetime.date.today()

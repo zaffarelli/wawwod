@@ -1,7 +1,7 @@
 from django import template
 import re
 import string
-from collector.utils.wod_reference import STATS_NAMES, AUSPICES, BREEDS, RANKS
+from collector.utils.wod_reference import STATS_NAMES, AUSPICES, BREEDS, RANKS, PER_TRIBE
 
 register = template.Library()
 
@@ -160,6 +160,9 @@ def as_sex(value):
 
 @register.filter(name="as_tribe_plural")
 def as_tribe_plural(value):
+    if value in PER_TRIBE:
+        return value
+
     plural = f"{value}s"
     if value == "Get of Fenris":
         plural = "Gets of Fenris"

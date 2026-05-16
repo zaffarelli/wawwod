@@ -1,10 +1,8 @@
 {% load static %}
 {% load storytelling_filters %}
-<a id="{{c.rid}}"><h6>{{c.name|safe}}</h6></a>
 <div class="roster {{c.creature}}">
-{% if c.nickname %}
-aka <i>{{ c.nickname }}</i><br/>
-{% endif %} {{c.roster_base|safe}}
+<a id="{{c.rid}}"><h6>{{c.name|safe}}{% if c.nickname %}&nbsp;(aka {{ c.nickname }}){% endif %}</h6></a>
+    {{c.roster_base|safe}}
 {% if c.status == "READY" %}
 <!--table>
     <tr>
@@ -28,9 +26,18 @@ aka <i>{{ c.nickname }}</i><br/>
 {{c.roster_skills|safe}}
 {{c.roster_knowledges|safe}}
 {{c.roster_end|safe}}
+{{c.roster_others|safe}}
     {% if c.equipment %}
         {{c.equipment|safe}}
     {% endif  %}
 <!--{{c.roster_shortcuts|safe}}-->
 {% endif  %}
 </div>
+{% if c.cast_figure %}
+<p>Cast: {{c.cast_figure}}</p>
+{% endif%}
+{% if c.cast_figure %}
+    <p>{{c.notes}}</p>
+{%endif%}
+<br/>
+

@@ -4,7 +4,7 @@ import logging
 
 from collector.models.seasons import Season
 
-logger = logging.getLogger(__name__)
+logger = logging.getLogger("wawwod")
 
 FONTSET = [
     "Cinzel",
@@ -1076,23 +1076,23 @@ RAGE_PER_AUSPICE = [1, 2, 3, 4, 5]
 GNOSIS_PER_BREED = [1, 3, 5]
 # Restrictions: F=Favored D=Discouraged R=Restricted M=Mandatory
 PER_TRIBE = {
-    "Black Furies": {"willpower": 3, "restrictions":""},
-    "Black Spiral Dancers": {"willpower": 3, "restrictions":""},
-    "Bone Gnawers": {"willpower": 4, "restrictions":"D:resources;R:ancestors,pure breed"},
-    "Bunyips": {"willpower": 3, "restrictions":""},
-    "Children of Gaia": {"willpower": 4, "restrictions":""},
-    "Croatans": {"willpower": 3, "restrictions":""},
-    "Fiannas": {"willpower": 3, "restrictions":"F:kinfolk"},
-    "Gets of Fenris": {"willpower": 3, "restrictions":"D:contacts"},
-    "Glass Walkers": {"willpower": 3, "restrictions":"R:ancestor,pure breed;D:mentor"},
-    "Red Talons": {"willpower": 3, "restrictions":"D:allies,contact;R:resources"},
-    "Shadow Lords": {"willpower": 3, "restrictions":"D:allies,mentor"},
-    "Silent Striders": {"willpower": 3, "restrictions":"R:ancestors;D:resources"},
-    "Silver Fangs": {"willpower": 3, "restrictions":"M:pure breed/3"},
-    "Stargazers": {"willpower": 4, "restrictions":"D:allies,fetish,resources"},
-    "Uktenas": {"willpower": 3, "restrictions":""},
-    "Wendigos": {"willpower": 4, "restrictions":"D:contacts,resources"},
-    "White Howlers": {"willpower": 3, "restrictions":""},
+    "Black Furies": {"willpower": 3,"restrictions":"", 'verbose_singular':'Black Fury'},
+    "Black Spiral Dancers": {"willpower": 3, "restrictions":"", 'verbose_singular':'Black Spiral Dancer'},
+    "Bone Gnawers": {"willpower": 4, "restrictions":"D:resources;R:ancestors,pure breed", 'verbose_singular':'Bone Gnawer'},
+    "Bunyips": {"willpower": 3, "restrictions":"", 'verbose_singular':'Bunyip'},
+    "Children of Gaia": {"willpower": 4, "restrictions":"", 'verbose_singular':'Child of Gaia'},
+    "Croatans": {"willpower": 3, "restrictions":"", 'verbose_singular':'Croatan'},
+    "Fiannas": {"willpower": 3, "restrictions":"F:kinfolk", 'verbose_singular':'Fianna'},
+    "Gets of Fenris": {"willpower": 3, "restrictions":"D:contacts", 'verbose_singular':'Get of Fenris'},
+    "Glass Walkers": {"willpower": 3, "restrictions":"R:ancestor,pure breed;D:mentor", 'verbose_singular':'Glass Walker'},
+    "Red Talons": {"willpower": 3, "restrictions":"D:allies,contact;R:resources", 'verbose_singular':'Red Talons'},
+    "Shadow Lords": {"willpower": 3, "restrictions":"D:allies,mentor", 'verbose_singular':'Shadow Lord'},
+    "Silent Striders": {"willpower": 3, "restrictions":"R:ancestors;D:resources", 'verbose_singular':'Silent Strider'},
+    "Silver Fangs": {"willpower": 3, "restrictions":"M:pure breed/3", 'verbose_singular':'Silver Fangs'},
+    "Stargazers": {"willpower": 4, "restrictions":"D:allies,fetish,resources", 'verbose_singular':'Stargazer'},
+    "Uktenas": {"willpower": 3, "restrictions":"", 'verbose_singular':'Uktena'},
+    "Wendigos": {"willpower": 4, "restrictions":"D:contacts,resources", 'verbose_singular':'Wendigo'},
+    "White Howlers": {"willpower": 3, "restrictions":"", 'verbose_singular':'White Howler'},
 }
 
 GM_SHORTCUTS = {

@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib import admin
 import logging
 
-logger = logging.getLogger(__name__)
+logger = logging.getLogger('wawwod')
 
 
 class Season(models.Model):

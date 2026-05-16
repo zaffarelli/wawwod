@@ -1,6 +1,4 @@
 import math
-from collector.utils.helper import Colorizer
-
 from django.db import models
 from django.contrib import admin
 import json
@@ -26,13 +24,13 @@ from collector.utils.wod_reference import from_stats
 from collector.models.adventures import Adventure
 import random
 
-logger = logging.getLogger(__name__)
-
+logger = logging.getLogger("django")
+wodlog = logging.getLogger("wawwod")
 
 MAX_TRAITS = 16
 MAX_MERITS = 5
 MAX_ADVANTAGES = 12
-
+EDGE_SEP = ', '
 
 class Creature(models.Model):
     class Meta:
@@ -448,13 +446,27 @@ class Creature(models.Model):
             rite = getattr(self, f"rite{x}", "")
             if rite != "":
                 list.append(rite)
-        logger.debug(f"Rites: f{list}")
+        wodlog.debug(f"Rites: f{list}")
         return list
 
     def get_traits(self):
         list = []
-        for x in range(16):
+        for x in range(MAX_TRAITS):
             trait = getattr(self, f"trait{x}", "")
+            if trait != "":
+                list.append(trait)
+        return list
+
+    def get_traits_pdf(self):
+        from collector.models.gifts import Gift
+        list = []
+        for x in range(MAX_TRAITS):
+            trait = getattr(self, f"trait{x}", "")
+            if "garou" == self.creature:
+                gift = Gift.objects.filter(pretty_str=trait).first()
+                if gift:
+                    if gift.source_page:
+                        trait += f" [p.{gift.source_page}]"
             if trait != "":
                 list.append(trait)
         return list
@@ -498,9 +510,9 @@ class Creature(models.Model):
             return base
         else:
             found = find_stat_property(self.creature, stat)
-            logger.info(f"Searching value of {stat} for {self.creature} ({self.name})")
+            #wodlog.info(f"Searching value of {stat} for {self.creature} ({self.name})")
             if found == "n/a":
-                logger.error(f"Error finding {stat} for {self.creature} ({self.name})")
+                wodlog.error(f"Error finding {stat} for {self.creature} ({self.name})")
                 return -1
             return getattr(self, found)
 
@@ -641,7 +653,7 @@ class Creature(models.Model):
             "3000": 1000,
         }
         time_awake = int(self.trueage) - int(self.age) - int(self.timeintorpor)
-        logger.info(f"{self.name} time awake --> {time_awake}")
+        wodlog.info(f"{self.name} time awake --> {time_awake}")
         x = 0
         for key, val in aging.items():
             if int(key) <= time_awake:
@@ -649,13 +661,14 @@ class Creature(models.Model):
         return x
 
     def fix_ghoul(self):
+        wodlog.warning("🔺 * Fix Ghoul")
         self.display_gauge = 2
         if self.chronicle:
             ch = self.mychronicle
             if ch:
                 if int(self.trueage) != 0:
                     self.embrace = ch.era - (int(self.trueage) - int(self.age))
-                    logger.info(f"Embrace: f{self.embrace}")
+                    wodlog.info(f"Embrace: f{self.embrace}")
             else:
                 self.trueage = 0
                 self.embrace = 0
@@ -694,6 +707,7 @@ class Creature(models.Model):
         self.reghoul()
 
     def fix_mortal(self):
+        wodlog.warning("🔺 * Fix Mortal")
         self.trueage = self.age
         # self.power2 = 5 + self.attribute2 + self.attribute3
         if self.willpower < 2:
@@ -703,6 +717,7 @@ class Creature(models.Model):
         self.display_pole = self.group + "__" + self.groupspec
 
     def fix_kinfolk(self):
+        wodlog.warning("🔺 * Fix Kinfolk")
         from collector.utils.wod_reference import ALL_TRIBES
         self.trueage = self.age
         DISCARDED_TRIBES = ["Croatans", "Bunyips", "White Howlers"]
@@ -721,7 +736,10 @@ class Creature(models.Model):
                     if c:
                         self.groupspec = c.groupspec
                         self.group = c.group
-
+        if len(self.edge_for)>0:
+            wodlog.info(f"Edge for ...................... {self.edge_for}")
+        else:
+            wodlog.info(f"Edge for ...................... <none>")
 
 
     @property
@@ -732,19 +750,23 @@ class Creature(models.Model):
         return renown
 
     def fix_fomori(self):
+        wodlog.warning("🔺 * Fix Fomori")
         # self.display_gauge = self.power2
         self.expectedfreebies = self.freebies_per_mortal_age
         self.display_gauge = 1
 
     def fix_bane(self):
+        wodlog.warning("🔺 * Fix Bane")
         self.display_gauge = self.power2 * 2
         self.display_pole = self.group + "__" + self.groupspec
 
     def fix_mage(self):
+        wodlog.warning("🔺 * Fix Mage")
         self.expectedfreebies = self.freebies_per_mortal_age
         self.display_gauge = self.arete * 2
 
     def fix_garou(self):
+        wodlog.warning("🔺 * Fix Garou")
         from collector.utils.wod_reference import garou_rank_from_renown
         self.trueage = self.age
         self.garou_rank = garou_rank_from_renown(
@@ -807,6 +829,7 @@ class Creature(models.Model):
         return ch
 
     def fix_kindred(self):
+        wodlog.warning("* * Fix Kindred")
         # chronicle = get_current_chronicle()
         # Embrace and Age
         condi = self.condition.split("=")
@@ -826,22 +849,22 @@ class Creature(models.Model):
                 self.trueage = 0
                 self.embrace = 0
         if self.player:
-            logger.debug(f"Player: {self.player}")
+            wodlog.debug(f"Player: {self.player}")
             ch = self.mychronicle
             if ch:
                 self.expectedfreebies = ch.players_starting_freebies
-                logger.debug(
+                wodlog.debug(
                     f"{self.name} expected freebies is {self.expectedfreebies} (Player) by chronicle"
                 )
             ad = self.myadventure
             if ad:
                 self.expectedfreebies = ad.players_starting_freebies
-                logger.debug(
+                wodlog.debug(
                     f"{self.name} expected freebies is {self.expectedfreebies} (Player) by adventure"
                 )
         else:
             self.expectedfreebies = self.freebies_per_age_threshold
-            logger.debug(f"{self.name} expected freebies is {self.expectedfreebies} (NPC)")
+            wodlog.debug(f"{self.name} expected freebies is {self.expectedfreebies} (NPC)")
         # Willpower
         if self.willpower < self.virtue2:
             self.willpower = self.virtue2
@@ -883,7 +906,7 @@ class Creature(models.Model):
 
     def check_expenditure(self):
         if len(self.experience_expenditure) > 0:
-            logger.info(f"--- Experience Expenditure Check")
+            wodlog.info(f"--- Experience Expenditure Check")
             changes = self.experience_expenditure.split(";")
             freebies_exp_offset = 0
             xp_spent = 0
@@ -949,16 +972,16 @@ class Creature(models.Model):
                             if stat.lower() in ["fate","totem"]:
                                 realexp = (nr-cr) *2
                     freebies_exp_offset += realfb
-                    logger.info(f"--- {stat:20} Change: {progress:10} [XP:{realexp} / freebies:{realfb}] (Type:{category} from {cr} to {nr}) {change}")
+                    wodlog.info(f"--- {stat:20} Change: {progress:10} [XP:{realexp} / freebies:{realfb}] (Type:{category} from {cr} to {nr}) {change}")
                     xp_spent += realexp
-            logger.debug(f"--- Experience ... {xp_spent}")
-            logger.debug(f"--- Freebies ..... {freebies_exp_offset}")
+            wodlog.debug(f"--- Experience ... {xp_spent}")
+            wodlog.debug(f"--- Freebies ..... {freebies_exp_offset}")
             self.freebies_exp_offset = freebies_exp_offset
             self.expectedfreebies += freebies_exp_offset
             self.exp_spent = xp_spent
             self.exp_pool = self.experience - xp_spent
         else:
-            logger.info(f"--- No experience to compute.")
+            wodlog.info(f"--- No experience to compute.")
 
     @property
     def mychronicle(self):
@@ -998,7 +1021,7 @@ class Creature(models.Model):
     def freebies_per_mortal_age(self):
         age = int(self.age)
         fb = math.floor((age - 20) / 10) * 5
-        logger.info(f"Freebies per mortal age ....... {fb:3} (age: {self.age})")
+        wodlog.info(f"Freebies per mortal age ....... {fb:3} (age: {self.age})")
         return fb
 
     @property
@@ -1035,9 +1058,11 @@ class Creature(models.Model):
 
     def fix(self):
         self.challenge = ""
-        logger.warning("* * * * * fix")
-        logger.info(f"Fixing ........................ {self.name.upper()}")
-        logger.info(f"Creature ...................... {self.creature}")
+        wodlog.warning(" ")
+        wodlog.warning("🟩 Fix")
+        wodlog.info(f"Fixing ........................ {self.name.upper()}")
+        wodlog.info(f"Creature ...................... {self.creature}")
+        wodlog.info(f"RID ........................... {self.rid}")
         self.fix_reparts()
         if self.garou_rank is None:
             self.garou_rank = 0
@@ -1070,7 +1095,7 @@ class Creature(models.Model):
         if "kindred" == self.creature: # Vampire
             if "nosferatu" in self.family.lower():
                 self.freebies += 5
-                logger.info("Nosferatu attribute special treatment")
+                wodlog.info("Nosferatu attribute special treatment")
             self.freebies -= from_stats(self.creature, "traits") * 7
             self.freebies -= from_stats(self.creature, "virtues") * 2
             self.fix_kindred()
@@ -1115,12 +1140,18 @@ class Creature(models.Model):
         self.sanitize_traits()
         self.expectedfreebies += int(self.extra)
         self.calculate_freebies()
-        logger.info(f"Characters condition ..... {self.condition}")
-        logger.info(f"Characters status ........ {self.status}")
+        if self.condition == "OK":
+            wodlog.info(f"Characters condition .......... {self.condition}")
+        else:
+            wodlog.error(f"Characters condition .......... {self.condition}")
+        if self.condition != "UNBALANCED":
+            wodlog.error(f"Characters status ............. {self.status}")
+        else:
+            wodlog.info(f"Characters status ............. {self.status}")
         self.display_pole = self.group + "__" + self.groupspec
         self.changeName()
         self.need_fix = False
-        logger.warning("* * * * * fix done")
+        wodlog.warning("🟩 Done")
 
     @property
     def roster_base(self):
@@ -1131,20 +1162,23 @@ class Creature(models.Model):
             if self.position:
                 lines.append(f"<b>{self.position.title()}</b>")
             if self.entrance:
-                lines.append(f"<i>{self.entrance}</i>")
+                lines.append(f"<i><b>{self.entrance}</b></i>")
+            g = ""
             if self.group:
-                lines.append(f"<i>{self.group}</i>")
+                g = f"{self.group}"
             if self.groupspec:
-                lines.append(f"<i>{self.groupspec}</i>")
+                g += f" ({self.groupspec})"
+            lines.append(f"<i>{g}</i>")
         if self.concept:
             lines.append(f"<b>Concept:</b> {self.concept}")
         if self.creature in ["kindred", "ghoul"]:
             lines.append(
-                f"<b>Age:</b> {self.age} (Real: {self.trueage}, Embrace: {self.embrace})"
+                f"<b>Age:</b> {self.age} yo (Real: {self.trueage}, Embrace: {self.embrace})"
             )
         else:
-            lines.append(f"<b>Age:</b> {self.age}")
-        lines.append(f"<b>Nature (Demeanor):</b> {self.nature} ({self.demeanor})")
+            lines.append(f"<b>Age:</b> {self.age} yo")
+        if self.nature:
+            lines.append(f"<b>Nature (Demeanor):</b> {self.nature} ({self.demeanor})")
         if self.freebies == self.expectedfreebies:
             lines.append(f"<b>Freebies:</b> {self.freebies} [{self.condition}]")
         else:
@@ -1166,6 +1200,16 @@ class Creature(models.Model):
             f"<br/><b>Mental <small>({self.total_mental})</small>:</b> Perception <tt>{self.attribute6}</tt>, Intelligence <tt>{self.attribute7}</tt>, Wits <tt>{self.attribute8}</tt>"
         )
         return "".join(lines)
+
+    @property
+    def roster_others(self):
+        lines = []
+        if self.creature == "garou":
+            lines.append(f"<b>Rage</b> "+self.as_dot(value=self.rage,max=10,to_spend=True))
+            lines.append(f"<b>Gnosis</b> "+self.as_dot(value=self.gnosis,max=10,to_spend=True))
+        lines.append(f"<b>Willpower</b> "+self.as_dot(value=self.willpower,max=10,to_spend=True))
+
+        return "<br/>".join(lines)
 
     @property
     def roster_talents(self):
@@ -1223,18 +1267,20 @@ class Creature(models.Model):
                 f"<br/><b>Backgrounds</b> <small>({self.total_backgrounds})</small>: {', '.join(backgrounds_list)}."
             )
         gifts_list = []
-        for n in range(MAX_TRAITS):
-            if getattr(self, f"trait{n}"):
-                sentence = getattr(self, f"trait{n}")
-                # words = sentence.split("(")
-                # if len(words):
-                #     val = int(words[1].split(")")[0])
-                gifts_list.append(f"{sentence.replace(' (', '&nbsp; (')}")
+        # for n in range(MAX_TRAITS):
+        #     if getattr(self, f"trait{n}"):
+        #         sentence = getattr(self, f"trait{n}")
+        #         gifts_list.append(f"{sentence.replace(' (', '&nbsp;(')}")
+        gifts = self.get_traits_pdf()
+        gifts_list.append("<ul>")
+        for gift in gifts:
+            gifts_list.append(f"<li>{gift.replace(' (', '&nbsp;(')}</li>")
+        gifts_list.append("</ul>")
         if len(gifts_list) > 0:
             if self.creature == "kindred" or self.creature == "ghoul":
                 lines.append(f"<br/><b>Disciplines</b>: {', '.join(gifts_list)}")
             else:
-                lines.append(f"<br/><b>Gifts</b>: {', '.join(gifts_list)}")
+                lines.append(f"<br/><b>Gifts</b>: {''.join(gifts_list)}")
         # lines.append(f'<br/><b>Willpower</b>: {self.as_dot(self.willpower, max=20, to_spend=True)}')
         if self.creature == "kindred" or self.creature == "ghoul":
             # lines.append(f'<br/><b>Blood Pool</b>: {self.as_dot(self.bloodpool, max=20, to_spend=True)}')
@@ -1256,7 +1302,7 @@ class Creature(models.Model):
             lines.append(str)
             # lines.append(
             #     f'<br/><b>Conscience</b>:{self.as_dot(self.virtue0)}  <b>Self-control</b>:{self.as_dot(self.virtue1)}  <b>Courage</b>:{self.as_dot(self.virtue2)}')
-        return "".join(lines) + "."
+        return "".join(lines)
 
     @property
     def roster_shortcuts(self):
@@ -1284,16 +1330,34 @@ class Creature(models.Model):
         return "<tt>" + str + "</tt>"
 
     def changeName(self):
+        """
+        Name change: we have to fix
+        - Sires
+        - Edges on patrons
+        """
         if self.new_name:
-            all = Creature.objects.filter(sire=self.rid)
+            childers = Creature.objects.filter(sire=self.rid)
+            patrons = Creature.objects.filter(edges__contains=self.rid)
             new_rid = toRID(self.new_name)
+            for x in patrons:
+                new_edges = []
+                words = x.edges.split(EDGE_SEP)
+                for word in words:
+                    if len(word):
+                        if word != self.rid:
+                            new_edges.append(word)
+                        else:
+                            new_edges.append(new_rid)
+                x.edges = EDGE_SEP.join(new_edges)
+                x.save()
             self.name = self.new_name
             self.rid = new_rid
             self.new_name = ""
-            for x in all:
+            for x in childers:
                 x.sire = new_rid
                 x.need_fix = True
                 x.save()
+
 
     def val_as_dots(self, val):
         res = ""
@@ -1446,13 +1510,13 @@ class Creature(models.Model):
     def randomize_attributes(self, topic=""):
         parts = self.reparts.split("__")
         pieces = parts[0].split("_")
-        logger.warning(f" Parts: {parts} Pieces: {pieces}")
+        wodlog.warning(f" Parts: {parts} Pieces: {pieces}")
 
         MAX = 3
         # abilities_points = STATS_TEMPLATES[self.creature]["abilities"].split("/")
         pools = [0, 0, 0]
         discarded = []
-        logger.warning(f"Randomizing [{topic}]")
+        wodlog.warning(f"Randomizing [{topic}]")
         if topic == "physical":
             discarded = [1, 2]
         elif topic == "social":
@@ -1477,16 +1541,16 @@ class Creature(models.Model):
         parts = self.reparts.split("__")
         if len(parts) == 2:
             pieces = parts[1].split("_")
-            logger.warning(f" Parts: {parts} Pieces: {pieces}")
+            wodlog.warning(f" Parts: {parts} Pieces: {pieces}")
         else:
-            logger.error(f"Bad reparts: {self.reparts} ! Cannot Randomize abilities.")
+            wodlog.error(f"Bad reparts: {self.reparts} ! Cannot Randomize abilities.")
             return
 
         # abilities_points = STATS_TEMPLATES[self.creature]["abilities"].split("/")
         pools = [0, 0, 0]
         prefixes = ["talent", "skill", "knowledge"]
         discarded = []
-        logger.warning(f"Randomizing [{topic}]")
+        wodlog.warning(f"Randomizing [{topic}]")
         if topic == "talents":
             discarded = [1, 2]
         elif topic == "skills":
@@ -1501,16 +1565,16 @@ class Creature(models.Model):
         for x in range(3):
             # if x not in discarded:
             computed[x] = self.randomize_stat(stats_count=10, min_value=0, pool=pools[x])
-            logger.warning(f"***Pool:{pools[x]} ({prefixes[x]}) : {computed[x]}")
+            wodlog.warning(f"***Pool:{pools[x]} ({prefixes[x]}) : {computed[x]}")
             # else:
-            #     logger.warning(f"{x} is discarded.")
+            #     wodlog.warning(f"{x} is discarded.")
 
-        logger.warning(f"{computed}")
+        wodlog.warning(f"{computed}")
         for x in range(3):
             if x not in discarded:
                 for t in range(10):
                     setattr(self, f"{prefixes[x]}{t}", computed[x][t])
-                    logger.warning(f"{prefixes[x]}:{x}:{t} = {computed[x][t]}")
+                    wodlog.warning(f"{prefixes[x]}:{x}:{t} = {computed[x][t]}")
         self.need_fix = True
         self.save()
 
@@ -1545,7 +1609,7 @@ class Creature(models.Model):
                         l = k.split("/")
                         mandatory.append(l[0])
                 else:
-                    logger.error(f"I don't know what to do with {r}")
+                    wodlog.error(f"I don't know what to do with {r}")
         total_weights = 0
         for background in backgrounds:
             v = {"background":background,"status":"","weight":3,"value":0}
@@ -1566,9 +1630,9 @@ class Creature(models.Model):
                 v["status"] += "mandatory"
             total_weights += v["weight"]
             vector.append(v)
-        logger.debug(f"{restrictions}")
-        # logger.debug(f"{vector}")
-        # logger.debug(f"Pts: {points} Weights: {total_weights}")
+        wodlog.debug(f"{restrictions}")
+        # wodlog.debug(f"{vector}")
+        # wodlog.debug(f"Pts: {points} Weights: {total_weights}")
 
         for z in range(points):
             choice = roll(total_weights)-1
@@ -1633,9 +1697,16 @@ class Creature(models.Model):
         random.shuffle(abilities)
         self.reparts = f"{'_'.join(attributes)}__{'_'.join(abilities)}"
 
+    def randomize_family(self):
+        families = [y['verbose_singular'] for x,y in PER_TRIBE.items()]
+        random.shuffle(families)
+        return families[0]
+
     def randomize_all(self):
         if self.is_player:
             return
+        if self.creature == "kinfolk":
+            self.randomize_family()
         self.randomize_reparts()
         self.randomize_archetypes()
         self.randomize_attributes(topic="physical")
@@ -1664,8 +1735,8 @@ class Creature(models.Model):
             self.willpower = 3
             self.rage = 0
             self.gnosis = 0
-            self.nature = ""
-            self.demeanor = ""
+            # self.nature = ""
+            # self.demeanor = ""
             self.age = random.randrange(18, 55)
             # self.expected_freebies = 21
         elif self.creature == "kindred":
@@ -2025,8 +2096,8 @@ class Creature(models.Model):
         return "".join(lines)
 
     def calculate_freebies(self):
-        logger.info("+++++")
-        logger.info(f"Freebies ..................... {self.freebies} (*)")
+        wodlog.info("+++++")
+        wodlog.info(f"Freebies ..................... {self.freebies} (*)")
         # *** Attributes
         self.total_physical = -3
         self.total_social = -3
@@ -2041,11 +2112,11 @@ class Creature(models.Model):
             self.total_mental += m
         if self.creature == "kindred" and self.family == "Nosferatu":
             s += 1  # Missing Apparence
-            logger.info("APP nosferatu")
+            wodlog.info("APP nosferatu")
         x = self.total_physical + self.total_social + self.total_mental
         self.challenge += f" at:{x * 5}/{5 * (7 + 5 + 3)}"
         self.freebies += x * 5
-        logger.info(f"Freebies + Attributes ........ {self.freebies:4} {x:4}x5 {x * 5:4}")
+        wodlog.info(f"Freebies + Attributes ........ {self.freebies:4} {x:4}x5 {x * 5:4}")
         # *** Abilities
         self.total_talents = 0
         self.total_skills = 0
@@ -2061,7 +2132,7 @@ class Creature(models.Model):
         x = self.total_talents + self.total_skills + self.total_knowledges
         self.challenge += f" ab:{x * 2}/{2 * (13 + 9 + 5)}"
         self.freebies += (x) * 2
-        logger.info(f"Freebies + Abilities ......... {self.freebies:4} {x:4}x2 {x * 2:4}")
+        wodlog.info(f"Freebies + Abilities ......... {self.freebies:4} {x:4}x2 {x * 2:4}")
         # *** Backgrounds
         self.total_backgrounds = 0
         for n in range(len(STATS_NAMES[self.creature]["backgrounds"])):
@@ -2070,7 +2141,7 @@ class Creature(models.Model):
             self.total_backgrounds += b
         self.freebies += self.total_backgrounds
         self.challenge += f" bk:{self.total_backgrounds}/{5}"
-        logger.info(
+        wodlog.info(
             f"Freebies + Backgrounds ....... {self.freebies:4}   {self.total_backgrounds:4} {self.total_backgrounds:4}"
         )
         # Merits & Flaws
@@ -2088,7 +2159,7 @@ class Creature(models.Model):
                 if s:
                     self.freebies -= v
                     total_merits_and_flaws -= v
-        logger.info(
+        wodlog.info(
             f"Freebies + Merits & Flaws .... {self.freebies:4}   {total_merits_and_flaws:4} {total_merits_and_flaws:4}"
         )
         # Traits
@@ -2151,8 +2222,8 @@ class Creature(models.Model):
             w = (getattr(self, "willpower") - self.virtue2) * wdot
             self.freebies += self.total_traits * 7  # 7 pts per discipline pts
             self.freebies += h + w
-            logger.info(f"Freebies + Virtues ........... {self.freebies:4}   {k:4} {k * 2:4}")
-            logger.info(
+            wodlog.info(f"Freebies + Virtues ........... {self.freebies:4}   {k:4} {k * 2:4}")
+            wodlog.info(
                 f"Freebies + Traits ............ {self.freebies:4} {self.total_traits:4}x7 {self.total_traits * 7:4}"
             )
             self.challenge += f" tr:{self.total_traits * 7}/21"
@@ -2162,7 +2233,7 @@ class Creature(models.Model):
             self.freebies += getattr(self, "gnosis") * 2
             wp = getattr(self, "willpower")
             self.freebies += wp
-            logger.info(f"Freebies + Special ........... {self.freebies} {wp}")
+            wodlog.info(f"Freebies + Special ........... {self.freebies} {wp}")
         elif "ghoul" == self.creature:
             self.freebies += self.total_traits * 7  # 7 pts per discipline pts
             vdot = self.value_of(f"{self.creature}:freebies_per_dot:virtue")
@@ -2194,12 +2265,12 @@ class Creature(models.Model):
 
         # self.freebies += + self.expectedfreebies
         self.freebiesdif = self.freebies - self.expectedfreebies
-        # logger.info(
+        # wodlog.info(
         #     f"Expected Freebies / Dif / free ........... {self.freebiesdif:4} =  {self.expectedfreebies:4} - {self.freebies:4}"
         # )
-        logger.info(f"FreebiesDif .................. {self.freebiesdif:4}")
-        logger.info(f"Freebies ..................... {self.freebies:4}")
-        logger.info(f"Expected Freebies ............ {self.expectedfreebies:4}")
+        wodlog.info(f"FreebiesDif .................. {self.freebiesdif:4}")
+        wodlog.info(f"Freebies ..................... {self.freebies:4}")
+        wodlog.info(f"Expected Freebies ............ {self.expectedfreebies:4}")
 
         if self.freebies == self.expectedfreebies:
             self.status = "READY"
@@ -2213,15 +2284,15 @@ class Creature(models.Model):
         else:
             self.status = "UNBALANCED"
             self.is_new = True
-        logger.info(f"{self.name} with {self.freebies} vs {self.expectedfreebies} is {self.status}")
-        logger.info("+++++")
+        wodlog.info(f"{self.name} with {self.freebies} vs {self.expectedfreebies} is {self.status}")
+        wodlog.info("+++++")
 
     def str2pair(self, str):
         w = str.split(" (")
         if len(w) != 2:
             s = ""
             v = 0
-            logger.warning(
+            wodlog.warning(
                 f"Warning str2pair: {str} --> [{s}][{v}]: computation might be broken!"
             )
         else:
@@ -2833,7 +2904,7 @@ class Creature(models.Model):
                 idx += 1
             self.save()
         else:
-            logger.info(f"No treatment to randomize traits for {self.creature}")
+            wodlog.info(f"No treatment to randomize traits for {self.creature}")
 
     def meritsflaws_notes(self):
         list = self.notes_on_meritsflaws.split("\r\n")
@@ -2903,7 +2974,7 @@ class Creature(models.Model):
     #                         n += 1
     #                 self.save()
     #         else:
-    #             logger.info("Not a garou.")
+    #             wodlog.info("Not a garou.")
 
     @property
     def ritualistic_discipline(self):
@@ -3046,6 +3117,7 @@ class Creature(models.Model):
     high_attr.boolean = True
 
     def fix_changeling(self):
+        wodlog.warning("* * Fix Changeling")
         if self.willpower < 4:
             self.willpower = 4
         if self.glamour < 4:
@@ -3054,6 +3126,7 @@ class Creature(models.Model):
             self.banality = 3
 
     def fix_wraith(self):
+        wodlog.warning("* * Fix Wraith")
         pass
 
     @classmethod
@@ -3287,7 +3360,7 @@ class CreatureAdmin(admin.ModelAdmin):
         # "adventure",
         # "chronicle",
         # "equipment",
-        # "edge_for",
+        "edge_for",
         # "cast_figure",
         "faction",
         "family",

@@ -812,6 +812,7 @@ class WawwodCollector {
                 let param = $(this).attr("param") | undefined
                 let block = $(this).parent();
                 let myurl = 'ajax/editable/userinput/'
+                console.log(keys)
                 if (param){
                     myurl += param+"/"
                 }

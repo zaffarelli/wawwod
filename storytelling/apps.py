@@ -9,4 +9,4 @@ class StorytellingConfig(AppConfig):
         import storytelling.signals.districts
         import storytelling.signals.cities
         import storytelling.signals.hotspots
-        # pass
+

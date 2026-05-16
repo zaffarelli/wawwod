@@ -8,7 +8,7 @@ from collector.utils.helper import toRID
 from collector.utils.kindred_stuff import resort
 
 chronicle = Chronicle.current()
-logger = logging.getLogger(__name__)
+logger = logging.getLogger('wawwod')
 
 
 # def cleanup_spare_unknown():

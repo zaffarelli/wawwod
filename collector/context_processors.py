@@ -2,22 +2,17 @@ from collector.utils import wod_reference
 from django.conf import settings
 import logging
 
-logger = logging.getLogger(__name__)
+# logger = logging.getLogger('wawwod')
 
 
 def commons(request):
-    from collector.models.chronicles import Chronicle
     from collector.models.adventures import Adventure
-    from collector.models.seasons import Season
-
-    # Adventure.set_current("REB")
     adventure, chronicle, season = Adventure.current_full()
     if adventure:
         repair_mode = False
     else:
         repair_mode = True
     if not repair_mode:
-        #logger.debug(f"** Context Processor: {chronicle.name}, {season.name}, {adventure.name}")
         context = {
             "chronicle": chronicle.acronym,
             "chronicle_name": chronicle.name,
@@ -26,8 +21,9 @@ def commons(request):
             "adventure": adventure.code,
             "adventure_name": adventure.name,
         }
+        # logger.warning(f"{context}")
     else:
-        logger.warning("** Context Processor: Adventure not found!")
+        # logger.warning("** Context Processor: Adventure not found!")
         context = {
             "chronicle": "",
             "chronicle_name": "",

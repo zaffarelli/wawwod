@@ -1,0 +1,18 @@
+{
+    "_harvey_woodbridge": {
+        "_konrad_dent": {
+            "age": 27,
+            "name": "Konrad Dent",
+            "position": "Valet",
+            "rid": "_konrad_dent",
+            "trueage": 0
+        },
+        "_livia_woodbridge": {
+            "age": 31,
+            "name": "Livia Woodbridge",
+            "position": "Leisure",
+            "rid": "_livia_woodbridge",
+            "trueage": 37
+        }
+    }
+}
