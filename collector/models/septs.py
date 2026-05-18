@@ -229,7 +229,7 @@ class Sept(models.Model):
                 "name": garou.name,
                 "aka": garou.nickname,
                 "age": garou.age,
-                "edges": garou.edges_str,
+                "edges": garou.edge_list,
                 "kinfolks": garou.value_of("kinfolk"),
                 "condition": garou.condition,
                 "player": garou.player,

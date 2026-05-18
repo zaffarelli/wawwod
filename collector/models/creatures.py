@@ -17,7 +17,7 @@ from collector.utils.wod_reference import (
     PER_TRIBE,
     RANKS,
     find_stat_category,
-    ENLIGHTENMENT, ALL_TRIBES,
+    ENLIGHTENMENT, ALL_TRIBES, GarouFamilySolver,
 )
 from collector.utils.helper import json_default, toRID, roll, Colorizer
 from collector.utils.wod_reference import from_stats
@@ -354,7 +354,7 @@ class Creature(models.Model):
             self.edges = ", ".join(edges)
 
     def remove_edge(self, rid):
-        edges = self.edges.split(", ")
+        edges = self.edges.split(EDGE_SEP)
         if rid in edges:
             edges.remove(rid)
             self.edges = ", ".join(edges)
@@ -362,7 +362,7 @@ class Creature(models.Model):
     @property
     def edges_str(self):
         list = []
-        edges = self.edges.split(", ")
+        edges = self.edges.split(EDGE_SEP)
         # candidates = Creature.objects.filter(rid__in=edges)
         for rid in edges:
             if len(rid) > 0:
@@ -374,7 +374,7 @@ class Creature(models.Model):
                     list.append(f"Not Found: {rid}")
                 elif len(candidates) > 1:
                     list.append(f"Multiple Entries: {rid}")
-        return ", ".join(list)
+        return EDGE_SEP.join(list)
 
     @property
     def edge_for(self):
@@ -384,7 +384,23 @@ class Creature(models.Model):
             edges = candidate.edges.split(", ")
             if self.rid in edges:
                 list.append(candidate.name)
-        return ", ".join(list)
+        return EDGE_SEP.join(list)
+
+    @property
+    def edge_list(self):
+        list = []
+        edges = self.edges.split(EDGE_SEP)
+        for rid in edges:
+            if len(rid) > 0:
+                candidates = Creature.objects.filter(rid=rid)
+                if len(candidates) == 1:
+                    candidate = candidates.first()
+                    list.append(candidate.name)
+                elif len(candidates) == 0:
+                    list.append(f"Not Found: {rid}")
+                elif len(candidates) > 1:
+                    list.append(f"Multiple Entries: {rid}")
+        return list
 
     @property
     def shapeshifter(self):
@@ -1579,7 +1595,8 @@ class Creature(models.Model):
         self.save()
 
     def randomize_backgrounds(self):
-        restrictions = PER_TRIBE[as_tribe_plural(self.family)]["restrictions"]
+        tribe = GarouFamilySolver(self.family)
+        restrictions = tribe.restrictions
         backgrounds = STATS_NAMES[self.creature]["backgrounds"]
         points = int(STATS_TEMPLATES[self.creature]["backgrounds"])
         vector = []
@@ -1630,7 +1647,7 @@ class Creature(models.Model):
                 v["status"] += "mandatory"
             total_weights += v["weight"]
             vector.append(v)
-        wodlog.debug(f"{restrictions}")
+        wodlog.info(f"{restrictions}")
         # wodlog.debug(f"{vector}")
         # wodlog.debug(f"Pts: {points} Weights: {total_weights}")
 
@@ -2096,8 +2113,7 @@ class Creature(models.Model):
         return "".join(lines)
 
     def calculate_freebies(self):
-        wodlog.info("+++++")
-        wodlog.info(f"Freebies ..................... {self.freebies} (*)")
+        wodlog.info(f"🔹 Freebies ..................... {self.freebies} (*)")
         # *** Attributes
         self.total_physical = -3
         self.total_social = -3
@@ -2116,7 +2132,7 @@ class Creature(models.Model):
         x = self.total_physical + self.total_social + self.total_mental
         self.challenge += f" at:{x * 5}/{5 * (7 + 5 + 3)}"
         self.freebies += x * 5
-        wodlog.info(f"Freebies + Attributes ........ {self.freebies:4} {x:4}x5 {x * 5:4}")
+        wodlog.info(f"🔹 Freebies + Attributes ........ {self.freebies:4} {x:4}x5 {x * 5:4}")
         # *** Abilities
         self.total_talents = 0
         self.total_skills = 0
@@ -2132,7 +2148,7 @@ class Creature(models.Model):
         x = self.total_talents + self.total_skills + self.total_knowledges
         self.challenge += f" ab:{x * 2}/{2 * (13 + 9 + 5)}"
         self.freebies += (x) * 2
-        wodlog.info(f"Freebies + Abilities ......... {self.freebies:4} {x:4}x2 {x * 2:4}")
+        wodlog.info(f"🔹 Freebies + Abilities ......... {self.freebies:4} {x:4}x2 {x * 2:4}")
         # *** Backgrounds
         self.total_backgrounds = 0
         for n in range(len(STATS_NAMES[self.creature]["backgrounds"])):
@@ -2142,7 +2158,7 @@ class Creature(models.Model):
         self.freebies += self.total_backgrounds
         self.challenge += f" bk:{self.total_backgrounds}/{5}"
         wodlog.info(
-            f"Freebies + Backgrounds ....... {self.freebies:4}   {self.total_backgrounds:4} {self.total_backgrounds:4}"
+            f"🔹 Freebies + Backgrounds ....... {self.freebies:4}   {self.total_backgrounds:4} {self.total_backgrounds:4}"
         )
         # Merits & Flaws
         total_merits_and_flaws = 0
@@ -2160,7 +2176,7 @@ class Creature(models.Model):
                     self.freebies -= v
                     total_merits_and_flaws -= v
         wodlog.info(
-            f"Freebies + Merits & Flaws .... {self.freebies:4}   {total_merits_and_flaws:4} {total_merits_and_flaws:4}"
+            f"🔹 Freebies + Merits & Flaws .... {self.freebies:4}   {total_merits_and_flaws:4} {total_merits_and_flaws:4}"
         )
         # Traits
         self.total_traits = 0
@@ -2192,7 +2208,7 @@ class Creature(models.Model):
             # self.freebies += getattr(self, 'willpower')
             self.freebies += self.total_traits * 7  # 7 pts per gift level
             print(
-                f"Freebies + Traits ............ {self.freebies:4} {self.total_traits:4}x7"
+                f"🔹 Freebies + Traits ............ {self.freebies:4} {self.total_traits:4}x7"
             )
             self.challenge += f" tr:{self.total_traits * 7}/{21}"
             x = getattr(self, "willpower") * 1
@@ -2207,7 +2223,7 @@ class Creature(models.Model):
                 )  # Willpower per Tribe
             self.freebies += x + y + z
             self.challenge += f" ot:{x + y + z}/{ra + gn + wp}"
-            print(f"Freebies + other ............ {self.freebies:4} {x + y + z:4}")
+            print(f"🔹 Freebies + other ............ {self.freebies:4} {x + y + z:4}")
         elif "kindred" == self.creature:
             vdot = self.value_of(f"{self.creature}:freebies_per_dot:virtue")
             wdot = self.value_of(f"{self.creature}:freebies_per_dot:willpower")
@@ -2222,9 +2238,9 @@ class Creature(models.Model):
             w = (getattr(self, "willpower") - self.virtue2) * wdot
             self.freebies += self.total_traits * 7  # 7 pts per discipline pts
             self.freebies += h + w
-            wodlog.info(f"Freebies + Virtues ........... {self.freebies:4}   {k:4} {k * 2:4}")
+            wodlog.info(f"🔹 Freebies + Virtues ........... {self.freebies:4}   {k:4} {k * 2:4}")
             wodlog.info(
-                f"Freebies + Traits ............ {self.freebies:4} {self.total_traits:4}x7 {self.total_traits * 7:4}"
+                f"🔹 Freebies + Traits ............ {self.freebies:4} {self.total_traits:4}x7 {self.total_traits * 7:4}"
             )
             self.challenge += f" tr:{self.total_traits * 7}/21"
             self.challenge += f" h+w:{h + w}"
@@ -2233,7 +2249,7 @@ class Creature(models.Model):
             self.freebies += getattr(self, "gnosis") * 2
             wp = getattr(self, "willpower")
             self.freebies += wp
-            wodlog.info(f"Freebies + Special ........... {self.freebies} {wp}")
+            wodlog.info(f"🔹 Freebies + Special ........... {self.freebies} {wp}")
         elif "ghoul" == self.creature:
             self.freebies += self.total_traits * 7  # 7 pts per discipline pts
             vdot = self.value_of(f"{self.creature}:freebies_per_dot:virtue")
@@ -2268,9 +2284,9 @@ class Creature(models.Model):
         # wodlog.info(
         #     f"Expected Freebies / Dif / free ........... {self.freebiesdif:4} =  {self.expectedfreebies:4} - {self.freebies:4}"
         # )
-        wodlog.info(f"FreebiesDif .................. {self.freebiesdif:4}")
-        wodlog.info(f"Freebies ..................... {self.freebies:4}")
-        wodlog.info(f"Expected Freebies ............ {self.expectedfreebies:4}")
+        wodlog.info(f"🔹 FreebiesDif .................. {self.freebiesdif:4}")
+        wodlog.info(f"🔹 Freebies ..................... {self.freebies:4}")
+        wodlog.info(f"🔹 Expected Freebies ............ {self.expectedfreebies:4}")
 
         if self.freebies == self.expectedfreebies:
             self.status = "READY"
@@ -2284,8 +2300,7 @@ class Creature(models.Model):
         else:
             self.status = "UNBALANCED"
             self.is_new = True
-        wodlog.info(f"{self.name} with {self.freebies} vs {self.expectedfreebies} is {self.status}")
-        wodlog.info("+++++")
+        wodlog.info(f"🔹 With {self.freebies} vs {self.expectedfreebies} expected character is {self.status}")
 
     def str2pair(self, str):
         w = str.split(" (")

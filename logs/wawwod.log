@@ -50632,3 +50632,409 @@
 16 15:12:22 | [37mwawwod [37m| Unrecognized scheme, assuming local file path[0m
 16 15:12:22 | [37mwawwod [37m| Load font 'collector/static/collector/fonts/UbuntuMono-Bold.ttf'[0m
 16 15:12:22 | [37mwawwod [37m| Unrecognized scheme, assuming local file path[0m
+17 02:32:17 | [32mwawwod [37m| Information for Minneapolis/Minnesota[0m
+17 02:32:17 | [32mwawwod [37m| Timezone: America/Chicago[0m
+17 02:32:17 | [32mwawwod [37m| Latitude: 44.97; Longitude: -93.27[0m
+17 02:33:24 | [37mwawwod [37m| R:pure breed[0m
+17 02:33:24 | [33mwawwod [37m|  [0m
+17 02:33:24 | [33mwawwod [37m| 🟩 Fix[0m
+17 02:33:24 | [32mwawwod [37m| Fixing ........................ CASH CORNELL[0m
+17 02:33:24 | [32mwawwod [37m| Creature ...................... garou[0m
+17 02:33:24 | [32mwawwod [37m| RID ........................... _cash_cornell[0m
+17 02:33:24 | [33mwawwod [37m| 🔺 * Fix Garou[0m
+17 02:33:24 | [32mwawwod [37m| Freebies per mortal age .......   0 (age: 25)[0m
+17 02:33:24 | [32mwawwod [37m| --- No experience to compute.[0m
+17 02:33:24 | [32mwawwod [37m| +++++[0m
+17 02:33:24 | [32mwawwod [37m| Freebies ..................... -180 (*)[0m
+17 02:33:24 | [32mwawwod [37m| Freebies + Attributes ........ -105   15x5   75[0m
+17 02:33:24 | [32mwawwod [37m| Freebies + Abilities .........  -51   27x2   54[0m
+17 02:33:24 | [32mwawwod [37m| Freebies + Backgrounds .......  -46      5    5[0m
+17 02:33:24 | [32mwawwod [37m| Freebies + Merits & Flaws ....  -46      0    0[0m
+17 02:33:24 | [32mwawwod [37m| FreebiesDif ..................   31[0m
+17 02:33:24 | [32mwawwod [37m| Freebies .....................   91[0m
+17 02:33:24 | [32mwawwod [37m| Expected Freebies ............   60[0m
+17 02:33:24 | [32mwawwod [37m| Cash Cornell with 91 vs 60 is OKPLUS[0m
+17 02:33:24 | [32mwawwod [37m| +++++[0m
+17 02:33:24 | [32mwawwod [37m| Characters condition .......... OK[0m
+17 02:33:24 | [31mwawwod [37m| Characters status ............. OKPLUS[0m
+17 02:33:24 | [33mwawwod [37m| 🟩 Done[0m
+17 02:33:53 | [32mwawwod [37m| None / None[0m
+17 02:33:53 | [37mwawwod [37m| R:pure breed[0m
+17 02:33:53 | [33mwawwod [37m|  [0m
+17 02:33:53 | [33mwawwod [37m| 🟩 Fix[0m
+17 02:33:53 | [32mwawwod [37m| Fixing ........................ CASH CORNELL[0m
+17 02:33:53 | [32mwawwod [37m| Creature ...................... garou[0m
+17 02:33:53 | [32mwawwod [37m| RID ........................... _cash_cornell[0m
+17 02:33:53 | [33mwawwod [37m| 🔺 * Fix Garou[0m
+17 02:33:53 | [32mwawwod [37m| Freebies per mortal age .......   0 (age: 25)[0m
+17 02:33:53 | [32mwawwod [37m| --- No experience to compute.[0m
+17 02:33:53 | [32mwawwod [37m| +++++[0m
+17 02:33:53 | [32mwawwod [37m| Freebies ..................... -180 (*)[0m
+17 02:33:53 | [32mwawwod [37m| Freebies + Attributes ........ -105   15x5   75[0m
+17 02:33:53 | [32mwawwod [37m| Freebies + Abilities .........  -51   27x2   54[0m
+17 02:33:53 | [32mwawwod [37m| Freebies + Backgrounds .......  -46      5    5[0m
+17 02:33:53 | [32mwawwod [37m| Freebies + Merits & Flaws ....  -46      0    0[0m
+17 02:33:53 | [32mwawwod [37m| FreebiesDif ..................   31[0m
+17 02:33:53 | [32mwawwod [37m| Freebies .....................   91[0m
+17 02:33:53 | [32mwawwod [37m| Expected Freebies ............   60[0m
+17 02:33:53 | [32mwawwod [37m| Cash Cornell with 91 vs 60 is OKPLUS[0m
+17 02:33:53 | [32mwawwod [37m| +++++[0m
+17 02:33:53 | [32mwawwod [37m| Characters condition .......... OK[0m
+17 02:33:53 | [31mwawwod [37m| Characters status ............. OKPLUS[0m
+17 02:33:53 | [33mwawwod [37m| 🟩 Done[0m
+17 02:36:18 | [33mwawwod [37m| None / 1[0m
+17 02:36:18 | [32mwawwod [37m| None / None[0m
+17 02:36:18 | [37mwawwod [37m| R:pure breed[0m
+17 02:36:18 | [33mwawwod [37m|  [0m
+17 02:36:18 | [33mwawwod [37m| 🟩 Fix[0m
+17 02:36:18 | [32mwawwod [37m| Fixing ........................ CASH CORNELL[0m
+17 02:36:18 | [32mwawwod [37m| Creature ...................... garou[0m
+17 02:36:18 | [32mwawwod [37m| RID ........................... _cash_cornell[0m
+17 02:36:18 | [33mwawwod [37m| 🔺 * Fix Garou[0m
+17 02:36:18 | [32mwawwod [37m| Freebies per mortal age .......   0 (age: 25)[0m
+17 02:36:18 | [32mwawwod [37m| --- No experience to compute.[0m
+17 02:36:18 | [32mwawwod [37m| +++++[0m
+17 02:36:18 | [32mwawwod [37m| Freebies ..................... -180 (*)[0m
+17 02:36:18 | [32mwawwod [37m| Freebies + Attributes ........ -105   15x5   75[0m
+17 02:36:18 | [32mwawwod [37m| Freebies + Abilities .........  -51   27x2   54[0m
+17 02:36:18 | [32mwawwod [37m| Freebies + Backgrounds .......  -46      5    5[0m
+17 02:36:18 | [32mwawwod [37m| Freebies + Merits & Flaws ....  -46      0    0[0m
+17 02:36:18 | [32mwawwod [37m| FreebiesDif ..................   31[0m
+17 02:36:18 | [32mwawwod [37m| Freebies .....................   91[0m
+17 02:36:18 | [32mwawwod [37m| Expected Freebies ............   60[0m
+17 02:36:18 | [32mwawwod [37m| Cash Cornell with 91 vs 60 is OKPLUS[0m
+17 02:36:18 | [32mwawwod [37m| +++++[0m
+17 02:36:18 | [32mwawwod [37m| Characters condition .......... OK[0m
+17 02:36:18 | [31mwawwod [37m| Characters status ............. OKPLUS[0m
+17 02:36:18 | [33mwawwod [37m| 🟩 Done[0m
+17 02:36:58 | [33mwawwod [37m| Black Spiral Dancers / 1[0m
+17 02:36:58 | [32mwawwod [37m| Black Spiral Dancer / Black Spiral Dancers[0m
+17 02:36:58 | [37mwawwod [37m| R:pure breed[0m
+17 02:36:58 | [33mwawwod [37m|  [0m
+17 02:36:58 | [33mwawwod [37m| 🟩 Fix[0m
+17 02:36:58 | [32mwawwod [37m| Fixing ........................ CASH CORNELL[0m
+17 02:36:58 | [32mwawwod [37m| Creature ...................... garou[0m
+17 02:36:58 | [32mwawwod [37m| RID ........................... _cash_cornell[0m
+17 02:36:58 | [33mwawwod [37m| 🔺 * Fix Garou[0m
+17 02:36:58 | [32mwawwod [37m| Freebies per mortal age .......   0 (age: 25)[0m
+17 02:36:58 | [32mwawwod [37m| --- No experience to compute.[0m
+17 02:36:58 | [32mwawwod [37m| +++++[0m
+17 02:36:58 | [32mwawwod [37m| Freebies ..................... -180 (*)[0m
+17 02:36:58 | [32mwawwod [37m| Freebies + Attributes ........ -105   15x5   75[0m
+17 02:36:58 | [32mwawwod [37m| Freebies + Abilities .........  -51   27x2   54[0m
+17 02:36:58 | [32mwawwod [37m| Freebies + Backgrounds .......  -46      5    5[0m
+17 02:36:58 | [32mwawwod [37m| Freebies + Merits & Flaws ....  -46      0    0[0m
+17 02:36:58 | [32mwawwod [37m| FreebiesDif ..................   31[0m
+17 02:36:58 | [32mwawwod [37m| Freebies .....................   91[0m
+17 02:36:58 | [32mwawwod [37m| Expected Freebies ............   60[0m
+17 02:36:58 | [32mwawwod [37m| Cash Cornell with 91 vs 60 is OKPLUS[0m
+17 02:36:58 | [32mwawwod [37m| +++++[0m
+17 02:36:58 | [32mwawwod [37m| Characters condition .......... OK[0m
+17 02:36:58 | [31mwawwod [37m| Characters status ............. OKPLUS[0m
+17 02:36:58 | [33mwawwod [37m| 🟩 Done[0m
+17 02:38:02 | [32mwawwod [37m| R:pure breed[0m
+17 02:38:02 | [33mwawwod [37m|  [0m
+17 02:38:02 | [33mwawwod [37m| 🟩 Fix[0m
+17 02:38:02 | [32mwawwod [37m| Fixing ........................ CASH CORNELL[0m
+17 02:38:02 | [32mwawwod [37m| Creature ...................... garou[0m
+17 02:38:02 | [32mwawwod [37m| RID ........................... _cash_cornell[0m
+17 02:38:02 | [33mwawwod [37m| 🔺 * Fix Garou[0m
+17 02:38:02 | [32mwawwod [37m| Freebies per mortal age .......   0 (age: 25)[0m
+17 02:38:02 | [32mwawwod [37m| --- No experience to compute.[0m
+17 02:38:02 | [32mwawwod [37m| +++++[0m
+17 02:38:02 | [32mwawwod [37m| Freebies ..................... -180 (*)[0m
+17 02:38:02 | [32mwawwod [37m| Freebies + Attributes ........ -105   15x5   75[0m
+17 02:38:02 | [32mwawwod [37m| Freebies + Abilities .........  -51   27x2   54[0m
+17 02:38:02 | [32mwawwod [37m| Freebies + Backgrounds .......  -46      5    5[0m
+17 02:38:02 | [32mwawwod [37m| Freebies + Merits & Flaws ....  -46      0    0[0m
+17 02:38:02 | [32mwawwod [37m| FreebiesDif ..................   31[0m
+17 02:38:02 | [32mwawwod [37m| Freebies .....................   91[0m
+17 02:38:02 | [32mwawwod [37m| Expected Freebies ............   60[0m
+17 02:38:02 | [32mwawwod [37m| Cash Cornell with 91 vs 60 is OKPLUS[0m
+17 02:38:02 | [32mwawwod [37m| +++++[0m
+17 02:38:02 | [32mwawwod [37m| Characters condition .......... OK[0m
+17 02:38:02 | [31mwawwod [37m| Characters status ............. OKPLUS[0m
+17 02:38:02 | [33mwawwod [37m| 🟩 Done[0m
+17 02:39:06 | [32mwawwod [37m| R:pure breed[0m
+17 02:39:06 | [33mwawwod [37m|  [0m
+17 02:39:06 | [33mwawwod [37m| 🟩 Fix[0m
+17 02:39:06 | [32mwawwod [37m| Fixing ........................ CASH CORNELL[0m
+17 02:39:06 | [32mwawwod [37m| Creature ...................... garou[0m
+17 02:39:06 | [32mwawwod [37m| RID ........................... _cash_cornell[0m
+17 02:39:06 | [33mwawwod [37m| 🔺 * Fix Garou[0m
+17 02:39:06 | [32mwawwod [37m| Freebies per mortal age .......   0 (age: 25)[0m
+17 02:39:06 | [32mwawwod [37m| --- No experience to compute.[0m
+17 02:39:06 | [32mwawwod [37m| +++++[0m
+17 02:39:06 | [32mwawwod [37m| Freebies ..................... -180 (*)[0m
+17 02:39:06 | [32mwawwod [37m| Freebies + Attributes ........ -105   15x5   75[0m
+17 02:39:06 | [32mwawwod [37m| Freebies + Abilities .........  -51   27x2   54[0m
+17 02:39:06 | [32mwawwod [37m| Freebies + Backgrounds .......  -46      5    5[0m
+17 02:39:06 | [32mwawwod [37m| Freebies + Merits & Flaws ....  -46      0    0[0m
+17 02:39:06 | [32mwawwod [37m| FreebiesDif ..................   31[0m
+17 02:39:06 | [32mwawwod [37m| Freebies .....................   91[0m
+17 02:39:06 | [32mwawwod [37m| Expected Freebies ............   60[0m
+17 02:39:06 | [32mwawwod [37m| Cash Cornell with 91 vs 60 is OKPLUS[0m
+17 02:39:06 | [32mwawwod [37m| +++++[0m
+17 02:39:06 | [32mwawwod [37m| Characters condition .......... OK[0m
+17 02:39:06 | [31mwawwod [37m| Characters status ............. OKPLUS[0m
+17 02:39:06 | [33mwawwod [37m| 🟩 Done[0m
+17 14:44:49 | [33mwawwod [37m|  [0m
+17 14:44:49 | [33mwawwod [37m| 🟩 Fix[0m
+17 14:44:49 | [32mwawwod [37m| Fixing ........................ CASH CORNELL[0m
+17 14:44:49 | [32mwawwod [37m| Creature ...................... garou[0m
+17 14:44:49 | [32mwawwod [37m| RID ........................... _cash_cornell[0m
+17 14:44:49 | [33mwawwod [37m| 🔺 * Fix Garou[0m
+17 14:44:49 | [32mwawwod [37m| Freebies per mortal age .......   0 (age: 25)[0m
+17 14:44:49 | [32mwawwod [37m| --- No experience to compute.[0m
+17 14:44:49 | [32mwawwod [37m| ⭐ Freebies ..................... -180 (*)[0m
+17 14:44:49 | [32mwawwod [37m| Freebies + Attributes ........ -105   15x5   75[0m
+17 14:44:49 | [32mwawwod [37m| Freebies + Abilities .........  -51   27x2   54[0m
+17 14:44:49 | [32mwawwod [37m| Freebies + Backgrounds .......  -45      6    6[0m
+17 14:44:49 | [32mwawwod [37m| Freebies + Merits & Flaws ....  -45      0    0[0m
+17 14:44:49 | [32mwawwod [37m| FreebiesDif ..................   32[0m
+17 14:44:49 | [32mwawwod [37m| Freebies .....................   92[0m
+17 14:44:49 | [32mwawwod [37m| Expected Freebies ............   60[0m
+17 14:44:49 | [32mwawwod [37m| Cash Cornell with 92 vs 60 is OKPLUS[0m
+17 14:44:49 | [32mwawwod [37m| +++++[0m
+17 14:44:49 | [32mwawwod [37m| Characters condition .......... OK[0m
+17 14:44:49 | [31mwawwod [37m| Characters status ............. OKPLUS[0m
+17 14:44:49 | [33mwawwod [37m| 🟩 Done[0m
+17 14:46:23 | [33mwawwod [37m|  [0m
+17 14:46:23 | [33mwawwod [37m| 🟩 Fix[0m
+17 14:46:23 | [32mwawwod [37m| Fixing ........................ CASH CORNELL[0m
+17 14:46:23 | [32mwawwod [37m| Creature ...................... garou[0m
+17 14:46:23 | [32mwawwod [37m| RID ........................... _cash_cornell[0m
+17 14:46:23 | [33mwawwod [37m| 🔺 * Fix Garou[0m
+17 14:46:23 | [32mwawwod [37m| Freebies per mortal age .......   0 (age: 25)[0m
+17 14:46:23 | [32mwawwod [37m| --- No experience to compute.[0m
+17 14:46:23 | [32mwawwod [37m| 🔹 Freebies ..................... -180 (*)[0m
+17 14:46:23 | [32mwawwod [37m| Freebies + Attributes ........ -105   15x5   75[0m
+17 14:46:23 | [32mwawwod [37m| 🔹 Freebies + Abilities .........  -51   27x2   54[0m
+17 14:46:23 | [32mwawwod [37m| 🔹 Freebies + Backgrounds .......  -44      7    7[0m
+17 14:46:23 | [32mwawwod [37m| 🔹 Freebies + Merits & Flaws ....  -44      0    0[0m
+17 14:46:23 | [32mwawwod [37m| 🔹 FreebiesDif ..................   33[0m
+17 14:46:23 | [32mwawwod [37m| 🔹 Freebies .....................   93[0m
+17 14:46:23 | [32mwawwod [37m| 🔹 Expected Freebies ............   60[0m
+17 14:46:23 | [32mwawwod [37m| 🔹 Cash Cornell with 93 vs 60 is OKPLUS[0m
+17 14:46:23 | [32mwawwod [37m| Characters condition .......... OK[0m
+17 14:46:23 | [31mwawwod [37m| Characters status ............. OKPLUS[0m
+17 14:46:23 | [33mwawwod [37m| 🟩 Done[0m
+17 14:46:49 | [33mwawwod [37m|  [0m
+17 14:46:49 | [33mwawwod [37m| 🟩 Fix[0m
+17 14:46:49 | [32mwawwod [37m| Fixing ........................ CASH CORNELL[0m
+17 14:46:49 | [32mwawwod [37m| Creature ...................... garou[0m
+17 14:46:49 | [32mwawwod [37m| RID ........................... _cash_cornell[0m
+17 14:46:49 | [33mwawwod [37m| 🔺 * Fix Garou[0m
+17 14:46:49 | [32mwawwod [37m| Freebies per mortal age .......   0 (age: 25)[0m
+17 14:46:49 | [32mwawwod [37m| --- No experience to compute.[0m
+17 14:46:49 | [32mwawwod [37m| 🔹 Freebies ..................... -180 (*)[0m
+17 14:46:49 | [32mwawwod [37m| 🔹 Freebies + Attributes ........ -105   15x5   75[0m
+17 14:46:49 | [32mwawwod [37m| 🔹 Freebies + Abilities .........  -51   27x2   54[0m
+17 14:46:49 | [32mwawwod [37m| 🔹 Freebies + Backgrounds .......  -43      8    8[0m
+17 14:46:49 | [32mwawwod [37m| 🔹 Freebies + Merits & Flaws ....  -43      0    0[0m
+17 14:46:49 | [32mwawwod [37m| 🔹 FreebiesDif ..................   34[0m
+17 14:46:49 | [32mwawwod [37m| 🔹 Freebies .....................   94[0m
+17 14:46:49 | [32mwawwod [37m| 🔹 Expected Freebies ............   60[0m
+17 14:46:49 | [32mwawwod [37m| 🔹 Cash Cornell with 94 vs 60 is OKPLUS[0m
+17 14:46:49 | [32mwawwod [37m| Characters condition .......... OK[0m
+17 14:46:49 | [31mwawwod [37m| Characters status ............. OKPLUS[0m
+17 14:46:49 | [33mwawwod [37m| 🟩 Done[0m
+17 14:48:10 | [33mwawwod [37m|  [0m
+17 14:48:10 | [33mwawwod [37m| 🟩 Fix[0m
+17 14:48:10 | [32mwawwod [37m| Fixing ........................ CASH CORNELL[0m
+17 14:48:10 | [32mwawwod [37m| Creature ...................... garou[0m
+17 14:48:10 | [32mwawwod [37m| RID ........................... _cash_cornell[0m
+17 14:48:10 | [33mwawwod [37m| 🔺 * Fix Garou[0m
+17 14:48:10 | [32mwawwod [37m| Freebies per mortal age .......   0 (age: 25)[0m
+17 14:48:10 | [32mwawwod [37m| --- No experience to compute.[0m
+17 14:48:10 | [32mwawwod [37m| 🔹 Freebies ..................... -180 (*)[0m
+17 14:48:10 | [32mwawwod [37m| 🔹 Freebies + Attributes ........ -105   15x5   75[0m
+17 14:48:10 | [32mwawwod [37m| 🔹 Freebies + Abilities .........  -51   27x2   54[0m
+17 14:48:10 | [32mwawwod [37m| 🔹 Freebies + Backgrounds .......  -42      9    9[0m
+17 14:48:10 | [32mwawwod [37m| 🔹 Freebies + Merits & Flaws ....  -42      0    0[0m
+17 14:48:10 | [32mwawwod [37m| 🔹 FreebiesDif ..................   35[0m
+17 14:48:10 | [32mwawwod [37m| 🔹 Freebies .....................   95[0m
+17 14:48:10 | [32mwawwod [37m| 🔹 Expected Freebies ............   60[0m
+17 14:48:10 | [32mwawwod [37m| 🔹 With 95 vs 60 character is OKPLUS[0m
+17 14:48:10 | [32mwawwod [37m| Characters condition .......... OK[0m
+17 14:48:10 | [31mwawwod [37m| Characters status ............. OKPLUS[0m
+17 14:48:10 | [33mwawwod [37m| 🟩 Done[0m
+17 14:48:25 | [33mwawwod [37m|  [0m
+17 14:48:25 | [33mwawwod [37m| 🟩 Fix[0m
+17 14:48:25 | [32mwawwod [37m| Fixing ........................ CASH CORNELL[0m
+17 14:48:25 | [32mwawwod [37m| Creature ...................... garou[0m
+17 14:48:25 | [32mwawwod [37m| RID ........................... _cash_cornell[0m
+17 14:48:25 | [33mwawwod [37m| 🔺 * Fix Garou[0m
+17 14:48:25 | [32mwawwod [37m| Freebies per mortal age .......   0 (age: 25)[0m
+17 14:48:25 | [32mwawwod [37m| --- No experience to compute.[0m
+17 14:48:25 | [32mwawwod [37m| 🔹 Freebies ..................... -180 (*)[0m
+17 14:48:25 | [32mwawwod [37m| 🔹 Freebies + Attributes ........ -105   15x5   75[0m
+17 14:48:25 | [32mwawwod [37m| 🔹 Freebies + Abilities .........  -51   27x2   54[0m
+17 14:48:25 | [32mwawwod [37m| 🔹 Freebies + Backgrounds .......  -41     10   10[0m
+17 14:48:25 | [32mwawwod [37m| 🔹 Freebies + Merits & Flaws ....  -41      0    0[0m
+17 14:48:25 | [32mwawwod [37m| 🔹 FreebiesDif ..................   36[0m
+17 14:48:25 | [32mwawwod [37m| 🔹 Freebies .....................   96[0m
+17 14:48:25 | [32mwawwod [37m| 🔹 Expected Freebies ............   60[0m
+17 14:48:25 | [32mwawwod [37m| 🔹 With 96 vs 60 expected character is OKPLUS[0m
+17 14:48:25 | [32mwawwod [37m| Characters condition .......... OK[0m
+17 14:48:25 | [31mwawwod [37m| Characters status ............. OKPLUS[0m
+17 14:48:25 | [33mwawwod [37m| 🟩 Done[0m
+17 15:19:54 | [32mwawwod [37m| Information for Minneapolis/Minnesota[0m
+17 15:19:54 | [32mwawwod [37m| Timezone: America/Chicago[0m
+17 15:19:54 | [32mwawwod [37m| Latitude: 44.97; Longitude: -93.27[0m
+17 15:20:00 | [32mwawwod [37m| Information for Minneapolis/Minnesota[0m
+17 15:20:00 | [32mwawwod [37m| Timezone: America/Chicago[0m
+17 15:20:00 | [32mwawwod [37m| Latitude: 44.97; Longitude: -93.27[0m
+17 15:21:34 | [32mwawwod [37m| Information for Minneapolis/Minnesota[0m
+17 15:21:34 | [32mwawwod [37m| Timezone: America/Chicago[0m
+17 15:21:34 | [32mwawwod [37m| Latitude: 44.97; Longitude: -93.27[0m
+17 15:22:43 | [32mwawwod [37m| Information for Minneapolis/Minnesota[0m
+17 15:22:43 | [32mwawwod [37m| Timezone: America/Chicago[0m
+17 15:22:43 | [32mwawwod [37m| Latitude: 44.97; Longitude: -93.27[0m
+17 15:24:04 | [32mwawwod [37m| Information for Minneapolis/Minnesota[0m
+17 15:24:04 | [32mwawwod [37m| Timezone: America/Chicago[0m
+17 15:24:04 | [32mwawwod [37m| Latitude: 44.97; Longitude: -93.27[0m
+17 15:25:28 | [32mwawwod [37m| Information for Minneapolis/Minnesota[0m
+17 15:25:28 | [32mwawwod [37m| Timezone: America/Chicago[0m
+17 15:25:28 | [32mwawwod [37m| Latitude: 44.97; Longitude: -93.27[0m
+17 15:26:15 | [32mwawwod [37m| Information for Minneapolis/Minnesota[0m
+17 15:26:15 | [32mwawwod [37m| Timezone: America/Chicago[0m
+17 15:26:15 | [32mwawwod [37m| Latitude: 44.97; Longitude: -93.27[0m
+17 15:27:24 | [32mwawwod [37m| Information for Minneapolis/Minnesota[0m
+17 15:27:24 | [32mwawwod [37m| Timezone: America/Chicago[0m
+17 15:27:24 | [32mwawwod [37m| Latitude: 44.97; Longitude: -93.27[0m
+17 15:28:21 | [32mwawwod [37m| Information for Minneapolis/Minnesota[0m
+17 15:28:21 | [32mwawwod [37m| Timezone: America/Chicago[0m
+17 15:28:21 | [32mwawwod [37m| Latitude: 44.97; Longitude: -93.27[0m
+17 17:59:36 | [32mwawwod [37m| Information for Minneapolis/Minnesota[0m
+17 17:59:36 | [32mwawwod [37m| Timezone: America/Chicago[0m
+17 17:59:36 | [32mwawwod [37m| Latitude: 44.97; Longitude: -93.27[0m
+17 18:00:02 | [32mwawwod [37m| Information for Minneapolis/Minnesota[0m
+17 18:00:02 | [32mwawwod [37m| Timezone: America/Chicago[0m
+17 18:00:02 | [32mwawwod [37m| Latitude: 44.97; Longitude: -93.27[0m
+17 18:01:20 | [32mwawwod [37m| Information for Minneapolis/Minnesota[0m
+17 18:01:20 | [32mwawwod [37m| Timezone: America/Chicago[0m
+17 18:01:20 | [32mwawwod [37m| Latitude: 44.97; Longitude: -93.27[0m
+17 18:02:01 | [32mwawwod [37m| Information for Minneapolis/Minnesota[0m
+17 18:02:01 | [32mwawwod [37m| Timezone: America/Chicago[0m
+17 18:02:01 | [32mwawwod [37m| Latitude: 44.97; Longitude: -93.27[0m
+17 18:02:48 | [32mwawwod [37m| Information for Minneapolis/Minnesota[0m
+17 18:02:48 | [32mwawwod [37m| Timezone: America/Chicago[0m
+17 18:02:48 | [32mwawwod [37m| Latitude: 44.97; Longitude: -93.27[0m
+17 18:02:51 | [32mwawwod [37m| Information for Minneapolis/Minnesota[0m
+17 18:02:51 | [32mwawwod [37m| Timezone: America/Chicago[0m
+17 18:02:51 | [32mwawwod [37m| Latitude: 44.97; Longitude: -93.27[0m
+17 18:02:52 | [32mwawwod [37m| Information for Minneapolis/Minnesota[0m
+17 18:02:52 | [32mwawwod [37m| Timezone: America/Chicago[0m
+17 18:02:52 | [32mwawwod [37m| Latitude: 44.97; Longitude: -93.27[0m
+17 18:02:55 | [32mwawwod [37m| Information for Minneapolis/Minnesota[0m
+17 18:02:55 | [32mwawwod [37m| Timezone: America/Chicago[0m
+17 18:02:55 | [32mwawwod [37m| Latitude: 44.97; Longitude: -93.27[0m
+17 18:02:55 | [32mwawwod [37m| Information for Minneapolis/Minnesota[0m
+17 18:02:55 | [32mwawwod [37m| Timezone: America/Chicago[0m
+17 18:02:55 | [32mwawwod [37m| Latitude: 44.97; Longitude: -93.27[0m
+17 18:03:35 | [32mwawwod [37m| Information for Minneapolis/Minnesota[0m
+17 18:03:35 | [32mwawwod [37m| Timezone: America/Chicago[0m
+17 18:03:35 | [32mwawwod [37m| Latitude: 44.97; Longitude: -93.27[0m
+17 18:05:29 | [32mwawwod [37m| Information for Minneapolis/Minnesota[0m
+17 18:05:29 | [32mwawwod [37m| Timezone: America/Chicago[0m
+17 18:05:29 | [32mwawwod [37m| Latitude: 44.97; Longitude: -93.27[0m
+17 18:07:03 | [32mwawwod [37m| Information for Minneapolis/Minnesota[0m
+17 18:07:03 | [32mwawwod [37m| Timezone: America/Chicago[0m
+17 18:07:03 | [32mwawwod [37m| Latitude: 44.97; Longitude: -93.27[0m
+17 18:10:37 | [32mwawwod [37m| Information for Minneapolis/Minnesota[0m
+17 18:10:37 | [32mwawwod [37m| Timezone: America/Chicago[0m
+17 18:10:37 | [32mwawwod [37m| Latitude: 44.97; Longitude: -93.27[0m
+17 18:10:53 | [32mwawwod [37m| Information for Minneapolis/Minnesota[0m
+17 18:10:53 | [32mwawwod [37m| Timezone: America/Chicago[0m
+17 18:10:53 | [32mwawwod [37m| Latitude: 44.97; Longitude: -93.27[0m
+17 18:12:04 | [32mwawwod [37m| Information for Minneapolis/Minnesota[0m
+17 18:12:04 | [32mwawwod [37m| Timezone: America/Chicago[0m
+17 18:12:04 | [32mwawwod [37m| Latitude: 44.97; Longitude: -93.27[0m
+17 18:12:50 | [32mwawwod [37m| Information for Minneapolis/Minnesota[0m
+17 18:12:50 | [32mwawwod [37m| Timezone: America/Chicago[0m
+17 18:12:50 | [32mwawwod [37m| Latitude: 44.97; Longitude: -93.27[0m
+17 18:13:36 | [32mwawwod [37m| Information for Minneapolis/Minnesota[0m
+17 18:13:36 | [32mwawwod [37m| Timezone: America/Chicago[0m
+17 18:13:36 | [32mwawwod [37m| Latitude: 44.97; Longitude: -93.27[0m
+17 18:14:56 | [32mwawwod [37m| Information for Minneapolis/Minnesota[0m
+17 18:14:56 | [32mwawwod [37m| Timezone: America/Chicago[0m
+17 18:14:56 | [32mwawwod [37m| Latitude: 44.97; Longitude: -93.27[0m
+17 18:15:28 | [32mwawwod [37m| Information for Minneapolis/Minnesota[0m
+17 18:15:28 | [32mwawwod [37m| Timezone: America/Chicago[0m
+17 18:15:28 | [32mwawwod [37m| Latitude: 44.97; Longitude: -93.27[0m
+17 18:16:02 | [32mwawwod [37m| Information for Minneapolis/Minnesota[0m
+17 18:16:02 | [32mwawwod [37m| Timezone: America/Chicago[0m
+17 18:16:02 | [32mwawwod [37m| Latitude: 44.97; Longitude: -93.27[0m
+17 18:17:15 | [32mwawwod [37m| Information for Minneapolis/Minnesota[0m
+17 18:17:15 | [32mwawwod [37m| Timezone: America/Chicago[0m
+17 18:17:15 | [32mwawwod [37m| Latitude: 44.97; Longitude: -93.27[0m
+17 18:17:30 | [32mwawwod [37m| Information for Minneapolis/Minnesota[0m
+17 18:17:30 | [32mwawwod [37m| Timezone: America/Chicago[0m
+17 18:17:30 | [32mwawwod [37m| Latitude: 44.97; Longitude: -93.27[0m
+17 18:18:02 | [32mwawwod [37m| Information for Minneapolis/Minnesota[0m
+17 18:18:02 | [32mwawwod [37m| Timezone: America/Chicago[0m
+17 18:18:02 | [32mwawwod [37m| Latitude: 44.97; Longitude: -93.27[0m
+17 18:18:17 | [32mwawwod [37m| Information for Minneapolis/Minnesota[0m
+17 18:18:17 | [32mwawwod [37m| Timezone: America/Chicago[0m
+17 18:18:17 | [32mwawwod [37m| Latitude: 44.97; Longitude: -93.27[0m
+17 18:18:34 | [32mwawwod [37m| Information for Minneapolis/Minnesota[0m
+17 18:18:34 | [32mwawwod [37m| Timezone: America/Chicago[0m
+17 18:18:34 | [32mwawwod [37m| Latitude: 44.97; Longitude: -93.27[0m
+17 18:18:51 | [32mwawwod [37m| Information for Minneapolis/Minnesota[0m
+17 18:18:51 | [32mwawwod [37m| Timezone: America/Chicago[0m
+17 18:18:51 | [32mwawwod [37m| Latitude: 44.97; Longitude: -93.27[0m
+17 18:19:18 | [32mwawwod [37m| Information for Minneapolis/Minnesota[0m
+17 18:19:18 | [32mwawwod [37m| Timezone: America/Chicago[0m
+17 18:19:18 | [32mwawwod [37m| Latitude: 44.97; Longitude: -93.27[0m
+17 18:19:32 | [32mwawwod [37m| Information for Minneapolis/Minnesota[0m
+17 18:19:32 | [32mwawwod [37m| Timezone: America/Chicago[0m
+17 18:19:32 | [32mwawwod [37m| Latitude: 44.97; Longitude: -93.27[0m
+17 18:19:58 | [32mwawwod [37m| Information for Minneapolis/Minnesota[0m
+17 18:19:58 | [32mwawwod [37m| Timezone: America/Chicago[0m
+17 18:19:58 | [32mwawwod [37m| Latitude: 44.97; Longitude: -93.27[0m
+17 18:20:12 | [32mwawwod [37m| Information for Minneapolis/Minnesota[0m
+17 18:20:12 | [32mwawwod [37m| Timezone: America/Chicago[0m
+17 18:20:12 | [32mwawwod [37m| Latitude: 44.97; Longitude: -93.27[0m
+17 18:20:48 | [32mwawwod [37m| Information for Minneapolis/Minnesota[0m
+17 18:20:48 | [32mwawwod [37m| Timezone: America/Chicago[0m
+17 18:20:48 | [32mwawwod [37m| Latitude: 44.97; Longitude: -93.27[0m
+17 18:21:04 | [32mwawwod [37m| Information for Minneapolis/Minnesota[0m
+17 18:21:04 | [32mwawwod [37m| Timezone: America/Chicago[0m
+17 18:21:04 | [32mwawwod [37m| Latitude: 44.97; Longitude: -93.27[0m
+17 18:21:36 | [32mwawwod [37m| Information for Minneapolis/Minnesota[0m
+17 18:21:36 | [32mwawwod [37m| Timezone: America/Chicago[0m
+17 18:21:36 | [32mwawwod [37m| Latitude: 44.97; Longitude: -93.27[0m
+17 18:22:14 | [32mwawwod [37m| Information for Minneapolis/Minnesota[0m
+17 18:22:14 | [32mwawwod [37m| Timezone: America/Chicago[0m
+17 18:22:14 | [32mwawwod [37m| Latitude: 44.97; Longitude: -93.27[0m
+17 18:22:26 | [32mwawwod [37m| Information for Minneapolis/Minnesota[0m
+17 18:22:26 | [32mwawwod [37m| Timezone: America/Chicago[0m
+17 18:22:26 | [32mwawwod [37m| Latitude: 44.97; Longitude: -93.27[0m
+18 10:12:13 | [32mwawwod [37m| Information for Minneapolis/Minnesota[0m
+18 10:12:13 | [32mwawwod [37m| Timezone: America/Chicago[0m
+18 10:12:13 | [32mwawwod [37m| Latitude: 44.97; Longitude: -93.27[0m
+18 10:12:32 | [32mwawwod [37m| Information for Minneapolis/Minnesota[0m
+18 10:12:32 | [32mwawwod [37m| Timezone: America/Chicago[0m
+18 10:12:32 | [32mwawwod [37m| Latitude: 44.97; Longitude: -93.27[0m
+18 10:12:44 | [32mwawwod [37m| Information for Minneapolis/Minnesota[0m
+18 10:12:44 | [32mwawwod [37m| Timezone: America/Chicago[0m
+18 10:12:44 | [32mwawwod [37m| Latitude: 44.97; Longitude: -93.27[0m
+18 10:13:22 | [32mwawwod [37m| Information for Minneapolis/Minnesota[0m
+18 10:13:22 | [32mwawwod [37m| Timezone: America/Chicago[0m
+18 10:13:22 | [32mwawwod [37m| Latitude: 44.97; Longitude: -93.27[0m
+18 10:13:56 | [32mwawwod [37m| Information for Minneapolis/Minnesota[0m
+18 10:13:56 | [32mwawwod [37m| Timezone: America/Chicago[0m
+18 10:13:56 | [32mwawwod [37m| Latitude: 44.97; Longitude: -93.27[0m
+18 10:14:23 | [32mwawwod [37m| Information for Minneapolis/Minnesota[0m
+18 10:14:23 | [32mwawwod [37m| Timezone: America/Chicago[0m
+18 10:14:23 | [32mwawwod [37m| Latitude: 44.97; Longitude: -93.27[0m
+18 10:15:12 | [32mwawwod [37m| Information for Minneapolis/Minnesota[0m
+18 10:15:12 | [32mwawwod [37m| Timezone: America/Chicago[0m
+18 10:15:12 | [32mwawwod [37m| Latitude: 44.97; Longitude: -93.27[0m
+18 10:16:03 | [32mwawwod [37m| Information for Minneapolis/Minnesota[0m
+18 10:16:03 | [32mwawwod [37m| Timezone: America/Chicago[0m
+18 10:16:03 | [32mwawwod [37m| Latitude: 44.97; Longitude: -93.27[0m
+18 10:16:23 | [32mwawwod [37m| Information for Minneapolis/Minnesota[0m
+18 10:16:23 | [32mwawwod [37m| Timezone: America/Chicago[0m
+18 10:16:23 | [32mwawwod [37m| Latitude: 44.97; Longitude: -93.27[0m

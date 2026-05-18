@@ -42,6 +42,7 @@ FONTSET = [
     "Kalam",
 ]
 
+
 #
 # def get_current_chronicle():
 #     return Chronicle.current()
@@ -1034,9 +1035,9 @@ def garou_rank_from_renown(dataset={"auspice": 0, "glory": 0, "honor": 0, "wisdo
     for line in auspice_subset:
         if line["total"] == -1:
             if (
-                dataset["glory"] >= line["glory"]
-                and dataset["honor"] >= line["honor"]
-                and dataset["wisdom"] >= line["wisdom"]
+                    dataset["glory"] >= line["glory"]
+                    and dataset["honor"] >= line["honor"]
+                    and dataset["wisdom"] >= line["wisdom"]
             ):
                 rank = idx
         else:
@@ -1076,23 +1077,26 @@ RAGE_PER_AUSPICE = [1, 2, 3, 4, 5]
 GNOSIS_PER_BREED = [1, 3, 5]
 # Restrictions: F=Favored D=Discouraged R=Restricted M=Mandatory
 PER_TRIBE = {
-    "Black Furies": {"willpower": 3,"restrictions":"", 'verbose_singular':'Black Fury'},
-    "Black Spiral Dancers": {"willpower": 3, "restrictions":"", 'verbose_singular':'Black Spiral Dancer'},
-    "Bone Gnawers": {"willpower": 4, "restrictions":"D:resources;R:ancestors,pure breed", 'verbose_singular':'Bone Gnawer'},
-    "Bunyips": {"willpower": 3, "restrictions":"", 'verbose_singular':'Bunyip'},
-    "Children of Gaia": {"willpower": 4, "restrictions":"", 'verbose_singular':'Child of Gaia'},
-    "Croatans": {"willpower": 3, "restrictions":"", 'verbose_singular':'Croatan'},
-    "Fiannas": {"willpower": 3, "restrictions":"F:kinfolk", 'verbose_singular':'Fianna'},
-    "Gets of Fenris": {"willpower": 3, "restrictions":"D:contacts", 'verbose_singular':'Get of Fenris'},
-    "Glass Walkers": {"willpower": 3, "restrictions":"R:ancestor,pure breed;D:mentor", 'verbose_singular':'Glass Walker'},
-    "Red Talons": {"willpower": 3, "restrictions":"D:allies,contact;R:resources", 'verbose_singular':'Red Talons'},
-    "Shadow Lords": {"willpower": 3, "restrictions":"D:allies,mentor", 'verbose_singular':'Shadow Lord'},
-    "Silent Striders": {"willpower": 3, "restrictions":"R:ancestors;D:resources", 'verbose_singular':'Silent Strider'},
-    "Silver Fangs": {"willpower": 3, "restrictions":"M:pure breed/3", 'verbose_singular':'Silver Fangs'},
-    "Stargazers": {"willpower": 4, "restrictions":"D:allies,fetish,resources", 'verbose_singular':'Stargazer'},
-    "Uktenas": {"willpower": 3, "restrictions":"", 'verbose_singular':'Uktena'},
-    "Wendigos": {"willpower": 4, "restrictions":"D:contacts,resources", 'verbose_singular':'Wendigo'},
-    "White Howlers": {"willpower": 3, "restrictions":"", 'verbose_singular':'White Howler'},
+    "Black Furies": {"willpower": 3, "restrictions": "", 'verbose_singular': 'Black Fury'},
+    "Black Spiral Dancers": {"willpower": 3, "restrictions": "", 'verbose_singular': 'Black Spiral Dancer'},
+    "Bone Gnawers": {"willpower": 4, "restrictions": "D:resources;R:ancestors,pure breed",
+                     'verbose_singular': 'Bone Gnawer'},
+    "Bunyips": {"willpower": 3, "restrictions": "", 'verbose_singular': 'Bunyip'},
+    "Children of Gaia": {"willpower": 4, "restrictions": "", 'verbose_singular': 'Child of Gaia'},
+    "Croatans": {"willpower": 3, "restrictions": "", 'verbose_singular': 'Croatan'},
+    "Fiannas": {"willpower": 3, "restrictions": "F:kinfolk", 'verbose_singular': 'Fianna'},
+    "Gets of Fenris": {"willpower": 3, "restrictions": "D:contacts", 'verbose_singular': 'Get of Fenris'},
+    "Glass Walkers": {"willpower": 3, "restrictions": "R:ancestor,pure breed;D:mentor",
+                      'verbose_singular': 'Glass Walker'},
+    "Red Talons": {"willpower": 3, "restrictions": "D:allies,contact;R:resources", 'verbose_singular': 'Red Talons'},
+    "Shadow Lords": {"willpower": 3, "restrictions": "D:allies,mentor", 'verbose_singular': 'Shadow Lord'},
+    "Silent Striders": {"willpower": 3, "restrictions": "R:ancestors;D:resources",
+                        'verbose_singular': 'Silent Strider'},
+    "Silver Fangs": {"willpower": 3, "restrictions": "M:pure breed/3", 'verbose_singular': 'Silver Fangs'},
+    "Stargazers": {"willpower": 4, "restrictions": "D:allies,fetish,resources", 'verbose_singular': 'Stargazer'},
+    "Uktenas": {"willpower": 3, "restrictions": "", 'verbose_singular': 'Uktena'},
+    "Wendigos": {"willpower": 4, "restrictions": "D:contacts,resources", 'verbose_singular': 'Wendigo'},
+    "White Howlers": {"willpower": 3, "restrictions": "", 'verbose_singular': 'White Howler'},
 }
 
 GM_SHORTCUTS = {
@@ -1537,3 +1541,81 @@ CLAN_COLORS = {
         "idx": 29,
     },
 }
+
+
+class GarouFamilySolver:
+    TRIBES_PLURAL = ["Black Furies", "Black Spiral Dancers", "Bone Gnawers", "Bunyips", "Children of Gaia", "Croatans",
+                     "Fiannas", "Gets of Fenris", "Glass Walkers", "Red Talons", "Shadow Lords", "Silent Striders",
+                     "Silver Fangs", "Stargazers", "Uktenas", "Wendigos", "White Howlers"]
+    TRIBES_SINGULAR = ["Black Fury", "Black Spiral Dancer", "Bone Gnawer", "Bunyip", "Child of Gaia", "Croatan",
+                       "Fianna", "Get of Fenris", "Glass Walker", "Red Talons", "Shadow Lord", "Silent Strider",
+                       "Silver Fangs", "Stargazer", "Uktena", "Wendigo", "White Howler"]
+
+    def __init__(self, tribe=""):
+        self.current = -1
+        self.check(value=tribe)
+
+
+    def check(self, value=""):
+        self.current = -1
+        if len(value) > 0:
+            for tribe in self.TRIBES_PLURAL:
+                if tribe.lower() == value.lower():
+                    self.current = self.TRIBES_PLURAL.index(tribe)
+                    break
+            if self.current == -1:
+                for tribe in self.TRIBES_SINGULAR:
+                    if tribe.lower() == value.lower():
+                        self.current = self.TRIBES_SINGULAR.index(tribe)
+                        break
+        return self.current
+
+    @property
+    def plural(self):
+        plural = None
+        if self.current != -1:
+            plural = self.TRIBES_PLURAL[self.current]
+        return plural
+
+    @property
+    def singular(self):
+        singular = None
+        if self.current != -1:
+            singular = self.TRIBES_SINGULAR[self.current]
+        return singular
+
+    @property
+    def willpower(self):
+        wp = None
+        if self.current == -1:
+            wp = 3
+            if self.current in [2, 4, 13, 15]:
+                wp = 4
+        return wp
+
+    @property
+    def restrictions(self):
+        restrictions = None
+        if self.current == 1:
+            restrictions = "R:pure breed"
+        elif self.current == 2:
+            restrictions = "D:resources;R:ancestors,pure breed"
+        elif self.current == 6:
+            restrictions = "F:kinfolk"
+        elif self.current == 7:
+            restrictions = "D:contacts"
+        elif self.current == 8:
+            restrictions = "R:ancestor,pure breed;D:mentor"
+        elif self.current == 9:
+            restrictions = "D:allies,contact;R:resources"
+        elif self.current == 10:
+            restrictions = "D:allies,mentor"
+        elif self.current == 11:
+            restrictions = "R:ancestors;D:resources"
+        elif self.current == 12:
+            restrictions = "M:pure breed/3"
+        elif self.current == 13:
+            restrictions = "D:allies,fetish,resources"
+        elif self.current == 15:
+            restrictions = "D:contacts,resources"
+        return restrictions

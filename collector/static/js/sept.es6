@@ -51,7 +51,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink"> \
             },
             error: function (answer) {
                 console.error('Error saving svg...');
-                console.error(answer);
+                // console.error(answer);
             }
         });
     }
@@ -103,13 +103,13 @@ xmlns:xlink="http://www.w3.org/1999/xlink"> \
     insertGarou(x) {
         let me = this;
         let pack = d3.select("#" + btoa(x.pack_code))
-        console.log(x)
+        // console.log(x)
         let r = x.enter().append("g")
             //pack.select("#"+x.garou_code).remove()
             //let r = pack.append("g")
             .attr("class", (d) => {
                 let str = "garou ";
-                console.log(d)
+                // console.log(d)
                 return str;
             })
             .attr("id", (d) => d.garou_code)
@@ -264,26 +264,32 @@ xmlns:xlink="http://www.w3.org/1999/xlink"> \
                 return d.position
             })
         ;
-
-        r.append("text")
+        let edges = {}
+        let el = r.append("text")
             .attr('class', 'garou_edges')
+            .attr('id', (d) => 'ref'+d.rid)
             .attr('x', me.bit)
             .attr('y', me.bit)
             .attr('dy', (me.bit * 5) + "pt")
-            .style('fill', "#501010")
-            .style('stroke', "#F03030")
+            .style('fill', "#101010")
+            .style('stroke', "#303030")
             .style('stroke-width', "0.25pt")
             .style('font-family', "Khand")
             .style('font-size', "12pt")
             .style('text-anchor', "start")
             .text(function (d) {
+                edges[d.rid] = []
                 if (d.kinfolks > 0) {
                     let score_to_num = [0, 2, 5, 10, 20, 50, 100]
-                    return score_to_num[d.kinfolks] + " kinfolks: " + d.edges
+                    edges[d.rid] = d.edges
+                    console.log("yo",d.edges)
+                    return score_to_num[d.kinfolks] + " kinfolks: "
                 }
-                return ""
-            })
+                return "[no kinfolks]"
+                })
         ;
+
+
         r.append("image")
             .attr('class', 'band')
             .attr('x', me.bit * 16.5)
@@ -352,7 +358,16 @@ xmlns:xlink="http://www.w3.org/1999/xlink"> \
 //             .style('stroke', "#000000")
 //             .style('stroke-width', "1pt")
 //             .attr('transform', "scale(2)")
-
+        _.forEach(edges, (v,k)=>{
+            let txt = d3.select("#ref"+k)
+            _.forEach(v,(w,i)=> {
+                txt.append("tspan")
+                    .attr("x", me.bit*1.2)
+                    .attr("dy", "12pt")
+                    .text(w)
+                console.debug(i,w)
+            })
+        })
 
         return r;
     }
@@ -371,7 +386,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink"> \
             .attr("transform", function (d) {
                 let x = Math.floor(d.order % me.max_line) * me.bit * 22 + me.bit * 4
                 let y = Math.floor(d.order / me.max_line) * me.bit * 9 * 6 + me.bit * 8
-                console.log(d.order, x, y)
+                // console.log(d.order, x, y)
                 return "translate(" + x + "," + y + ")";
                 //return "translate(" + (d.x*me.bit*22) + "," + (d.y*me.bit) + ")";
             });
@@ -534,8 +549,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink"> \
         let order = 0
         let packorder = 0
         _.forEach(me.data.packs, (v, k) => {
-                console.log("Pack")
-                console.log(v)
+                // console.log("Pack")
+                // console.log(v)
                 let pack = {"name": v.name, "totem": v.totem, "cnt": 0}
                 pack["y"] = -1
                 pack["id"] = idx++
@@ -572,7 +587,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink"> \
             stat["id"] = ++idx
             me.mapping.stats.push(stat)
         });
-        console.log(me.mapping)
+        // console.log(me.mapping)
     }
 
     go() {
@@ -598,7 +613,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink"> \
             .on("click", function (e, d) {
                 if (e.altKey) {
                     me.saveSVG()
-                    console.log("Saved!!")
+                    // console.log("Saved!!")
                 }
             })
 

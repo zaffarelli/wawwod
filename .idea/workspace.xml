@@ -5,55 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c5f4ae22-1e7a-419c-ac9f-80da089b72d4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/collector/management/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collector/management/commands/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collector/management/commands/tools.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kindred_ghouls.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/django.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/wawwod.log.4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/wawwod.log.5" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/context_processors.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/context_processors.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/models/adventures.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/models/adventures.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/models/backgrounds.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/models/backgrounds.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/models/chronicles.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/models/chronicles.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/collector/models/creatures.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/models/creatures.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/models/disciplines.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/models/disciplines.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/models/gifts.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/models/gifts.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/models/profiles.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/models/profiles.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/models/seasons.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/models/seasons.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/collector/models/septs.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/models/septs.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/models/totems.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/models/totems.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/static/js/collector.es6" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/js/collector.es6" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/templates/collector/creature/mortal_header.html" beforeDir="false" afterPath="$PROJECT_DIR$/collector/templates/collector/creature/mortal_header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/templates/collector/pdf/creature_roster.html" beforeDir="false" afterPath="$PROJECT_DIR$/collector/templates/collector/pdf/creature_roster.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/templatetags/wod_filters.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/templatetags/wod_filters.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/utils/data_collection.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/utils/data_collection.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/utils/helper.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/utils/helper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/utils/kindred_stuff.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/utils/kindred_stuff.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/static/js/sept.es6" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/js/sept.es6" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/collector/utils/wod_reference.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/utils/wod_reference.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/views/actions.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/views/actions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/views/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/views/base.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/django.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/django.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/wawwod.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/wawwod.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/wawwod.log.1" beforeDir="false" afterPath="$PROJECT_DIR$/logs/wawwod.log.1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/wawwod.log.2" beforeDir="false" afterPath="$PROJECT_DIR$/logs/wawwod.log.2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/wawwod.log.3" beforeDir="false" afterPath="$PROJECT_DIR$/logs/wawwod.log.3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/wawwod_tools.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/wawwod_tools.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storytelling/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/storytelling/apps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storytelling/models/cities.py" beforeDir="false" afterPath="$PROJECT_DIR$/storytelling/models/cities.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storytelling/models/districts.py" beforeDir="false" afterPath="$PROJECT_DIR$/storytelling/models/districts.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storytelling/models/hotspots.py" beforeDir="false" afterPath="$PROJECT_DIR$/storytelling/models/hotspots.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storytelling/models/places.py" beforeDir="false" afterPath="$PROJECT_DIR$/storytelling/models/places.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storytelling/models/scenes.py" beforeDir="false" afterPath="$PROJECT_DIR$/storytelling/models/scenes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storytelling/models/stories.py" beforeDir="false" afterPath="$PROJECT_DIR$/storytelling/models/stories.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storytelling/templates/storytelling/pdf/factions_garou.html" beforeDir="false" afterPath="$PROJECT_DIR$/storytelling/templates/storytelling/pdf/factions_garou.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storytelling/views/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/storytelling/views/base.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/uv.lock" beforeDir="false" afterPath="$PROJECT_DIR$/uv.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wawwod.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod_media/books/chronicle_book_RAMI.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/books/chronicle_book_RAMI.pdf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
