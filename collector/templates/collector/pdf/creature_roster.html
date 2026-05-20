@@ -32,12 +32,11 @@
     {% endif  %}
 <!--{{c.roster_shortcuts|safe}}-->
 {% endif  %}
-</div>
+<br/>
+{% if c.cast_figure %}<br/><b>Cast:</b> {{c.cast_figure}} {% endif%}
 {% if c.cast_figure %}
-<p>Cast: {{c.cast_figure}}</p>
-{% endif%}
-{% if c.cast_figure %}
+    <br/>
     <p>{{c.notes}}</p>
 {%endif%}
+</div>
 <br/>
-

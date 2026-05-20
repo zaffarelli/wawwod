@@ -216,6 +216,17 @@ def to_auspice_logo_single(val):
         logo_str = "AuspiceNone"
     return "/static/collector/auspices/" + logo_str + ".webp"
 
+@register.filter(name="to_breed_logo_single")
+def to_breed_logo_single(val):
+    logo_str = ""
+    if val == 0:
+        logo_str = "GlyphHomid"
+    elif val == 1:
+        logo_str = "GlyphMetis"
+    elif val == 2:
+        logo_str = "GlyphLupus"
+    return "/static/collector/breed/" + logo_str + ".webp"
+
 
 @register.filter(name="to_tradition_logo")
 def to_tradition_logo(val):
@@ -292,4 +303,34 @@ def creatures_total(items):
 def html_safe_status(val):
     v = val.lower()
     v = v.replace("+", "plus")
+    return v
+
+@register.filter(name="creature_edit_link")
+def creature_edit_link(val):
+    if "|" in val:
+        parts = val.split("|")
+        v = f'<span class ="view_creature" id="{parts[1]}" title="Edit {parts[0]}" style="cursor:pointer;"><i class="fas fa-eye" ></i></span>'
+    else:
+        v = val + " error"
+    return v
+
+@register.filter(name="creature_edit_link_named")
+def creature_edit_link_named(val):
+    if "|" in val:
+        parts = val.split("|")
+        v = f'<span class ="view_creature" id="{parts[1]}" title="Edit {parts[0]}" style="cursor:pointer;color:#F0C040"><i class="fas fa-eye"></i>&nbsp;{parts[0]}</span>'
+    else:
+        v = val + " error"
+    return v
+
+
+@register.filter(name="poscol")
+def poscol(val):
+    v = "#8080807f"
+    if val.lower() in [ "warder", "master of the rite", "keeper of the land","master of challenge","gatekeeper"]:
+        v = "#9030307f"
+    elif val.lower() in ["talesinger", "wyrmfoe","truthcatcher","master of the howl","caller of the wyld"]:
+        v = "#3030907f"
+    elif val.lower() in ["guardian","elder"]:
+        v = "#3090307f"
     return v

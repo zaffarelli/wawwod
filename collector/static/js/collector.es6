@@ -136,11 +136,13 @@ class WawwodCollector {
                         me.d3.perform(d);
                     }
                     if (action == 'septs') {
-                        console.log(answer)
-                        let s = JSON.parse(answer.settings);
-                        let dat = JSON.parse(answer.data);
-                        me.d3 = new Sept(s, "#d3area", me);
-                        me.d3.perform(dat);
+                        // console.log(answer)
+                        // let s = JSON.parse(answer.settings);
+                        // let dat = JSON.parse(answer.data);
+                        // me.d3 = new Sept(s, "#d3area", me);
+                        // me.d3.perform(dat);
+                        $("#d3area svg").remove()
+                        $("#htmlarea").html(answer.html)
                     }
                     if (action == 'crossover_sheet') {
                         console.log("Character Sheet!")

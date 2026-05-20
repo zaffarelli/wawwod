@@ -5,16 +5,39 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c5f4ae22-1e7a-419c-ac9f-80da089b72d4" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/collector/migrations/0191_creature_quirks.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/collector/static/collector/fonts/AtkinsonHyperlegible-Bold.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/collector/static/collector/fonts/AtkinsonHyperlegible-BoldItalic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/collector/static/collector/fonts/AtkinsonHyperlegible-Italic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/collector/static/collector/fonts/AtkinsonHyperlegible-Regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/collector/static/collector/fonts/Khand-Bold.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/collector/static/collector/fonts/Khand-Light.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/collector/static/collector/fonts/Khand-Medium.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/collector/static/collector/fonts/Khand-Regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/collector/static/collector/fonts/Khand-SemiBold.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/collector/static/collector/fonts/Underdog-Regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/collector/templates/collector/page/sept.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/collector/models/creatures.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/models/creatures.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/collector/models/septs.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/models/septs.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/static/js/sept.es6" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/js/sept.es6" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/static/collector/css/_basics.scss" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/collector/css/_basics.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/static/collector/css/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/collector/css/main.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/static/js/collector.es6" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/js/collector.es6" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/templates/collector/creature/mortal_header.html" beforeDir="false" afterPath="$PROJECT_DIR$/collector/templates/collector/creature/mortal_header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/templates/collector/objects/global_menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/collector/templates/collector/objects/global_menu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/templates/collector/pdf/creature_roster.html" beforeDir="false" afterPath="$PROJECT_DIR$/collector/templates/collector/pdf/creature_roster.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/templatetags/wod_filters.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/templatetags/wod_filters.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/utils/helper.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/utils/helper.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/collector/utils/wod_reference.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/utils/wod_reference.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/views/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/views/base.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/django.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/django.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/wawwod.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/wawwod.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storytelling/templates/storytelling/pdf/factions_garou.html" beforeDir="false" afterPath="$PROJECT_DIR$/storytelling/templates/storytelling/pdf/factions_garou.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storytelling/views/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/storytelling/views/base.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/uv.lock" beforeDir="false" afterPath="$PROJECT_DIR$/uv.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wawwod.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wawwod_media/books/chronicle_book_RAMI.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/books/chronicle_book_RAMI.pdf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,40 +81,40 @@
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/zaffarelli/Projects/wawwod/collector/signals&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.smartKeys&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "/home/zaffarelli/Projects/wawwod/collector/static/collector/fonts",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "editor.preferences.smartKeys"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
-      &quot;HTML&quot;,
-      &quot;Markdown&quot;,
-      &quot;JSON&quot;,
-      &quot;PLAIN_TEXT&quot;
+  "keyToStringList": {
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "HTML",
+      "Markdown",
+      "JSON",
+      "PLAIN_TEXT"
     ]
   }
-}</component>
+}]]></component>
   <component name="PyDebuggerOptionsProvider">
     <option name="mySaveCallSignatures" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/collector/static/collector/fonts" />
       <recent name="$PROJECT_DIR$/collector/signals" />
       <recent name="$PROJECT_DIR$/collector/templates/collector/dashboard" />
       <recent name="$PROJECT_DIR$/dbrescue" />
-      <recent name="$PROJECT_DIR$/collector/static/collector/fonts" />
       <recent name="$PROJECT_DIR$/storytelling/models" />
     </key>
     <key name="MoveFile.RECENT_KEYS">

@@ -31,7 +31,8 @@
 
         @font-face {
             font-family: 'TitleFont';
-            src: url('collector/static/collector/fonts/Eczar-Medium.ttf');
+            font-weight:bold;
+            src: url('collector/static/collector/fonts/Khand-Bold.ttf');
         }
 
         @font-face {
@@ -98,7 +99,7 @@
         }
 
         h2 {
-            font-size: 16pt;
+            font-size: 18pt;
             line-height: 0.83em;
             margin-top:0.5em;
             -pdf-keep-with-next: true;
@@ -108,7 +109,7 @@
         }
 
         h3 {
-            font-size: 12pt;
+            font-size: 16pt;
             line-height: 0.8em;
             color: #606060;
             line-height: 0.83em;
@@ -120,7 +121,7 @@
         }
 
         h4 {
-            font-size: 10pt;
+            font-size: 14pt;
             color: #701070;
             line-height: 0.83em;
             -pdf-outline: true;
@@ -130,7 +131,7 @@
         }
 
         h5 {
-            font-size: 9pt;
+            font-size: 12pt;
             line-height: 0.73em;
             color: #707010;
             -pdf-outline: true;
@@ -141,7 +142,7 @@
 
         h6{
 
-            font-size: 9pt;
+            font-size: 10pt;
             line-height: 0.83em;
             -pdf-outline: true;
             -pdf-level:5;
@@ -328,6 +329,8 @@
             font-family: 'TextFont';
             font-size: 8pt;
             line-height:9pt;
+
+
         }
 
         .roster li{
@@ -359,7 +362,7 @@
 <body>
 
 <div id="footer_content">
-    WARNING - Storyteller Document - <b>{{chronicle.name}}</b> Chronicle Book - page <pdf:pagenumber/> of <pdf:pagecount/>
+    page <pdf:pagenumber/> / <pdf:pagecount/> - WARNING - Storyteller Document - <b>{{chronicle.name}}</b> - Chronicle Book
 </div>
 
 
@@ -367,11 +370,11 @@
 <p>The Chronicle Book</p>
 <p>Notes: {{chronicle.description}}
     <br/>Acronym:    {{chronicle.acronym}}
-    <br/>Era:    {{chronicle.era}}
-    <br/>Creature: {{chronicle.main_creature}}
+    <br/>Era:        {{chronicle.era}}
+    <br/>Creature:   {{chronicle.main_creature}}
 </p>
 
-<hr/>
+<pdf:nextpage/>
 <div>
    <pdf:toc />
 </div>
@@ -379,18 +382,16 @@
 <pdf:nextpage/>
 {% for faction,fcontent in data.items %}
     <H2>{{fcontent.name|title}} Creatures</H2>
-
     {% for group,gcontent in fcontent.groups.items %}
+        <pdf:nextpage/>
         <H3>{{gcontent.name|title}}</H3>
-
         {% for pack,pcontent in gcontent.packs.items %}
-            <H4>Pack: {{pcontent.name|title }}</H4>
+            <pdf:nextframe/>
+            <H4>{{pcontent.name|title }}</H4>
             {% for garou in pcontent.garous %}
                 {% include "collector/pdf/creature_roster.html" with c=garou %}
             {% endfor %}
-            <pdf:nextframe/>
         {% endfor %}
-        <pdf:nextpage/>
     {% endfor %}
 {% endfor %}
 

@@ -1,0 +1,45 @@
+{% load static %}
+{% load wod_filters %}
+<div class="sept">
+    <div class="header">
+        <h1>{{data.name}}</h1>
+        <div class="caern" style="border:3pt solid {{data.caern.color}};">
+            <h1>{{data.caern.name}}</h1>
+            <div>{{data.caern.type}}</div>
+            <div>{{data.totem}}</div>
+            <h2>Level: {{data.caern.level}}</h2>
+        </div>
+    </div>
+    {% for pack in data.packs %}
+        <div class="pack">
+            <div class="info">
+               <h1>{{pack.name}}</h1>
+               <div>{{pack.totem}}</div>
+            </div>
+            {% for member in pack.members %}
+                <div class="member rank{{member.rank}}" style="background:{{member.position|poscol|safe}}">
+                    <h1>{% if member.balanced %}🟥{%else%}🟩{%endif%}&nbsp;{{member.name}} {% if member.aka %}(aka {{member.aka}}){%endif%}{{member.anchor|creature_edit_link|safe}}</h1>
+                    {% if member.player %}{{member.player}}{%endif%}
+                    <div class="basic">{{member.age}} yo {% if member.condition == "OK" %}{%else%}({{member.condition}}){%endif%} Renown: {{member.renown}}</div>
+                    <div class="basic">{{member.short_desc}}</div>
+                    {% if member.edges %}
+                    <div class="edges">Kinfolks
+                    {% for edge in member.edges %}
+                        <span param="{{edge}}" title="{{edge}}">{{edge|creature_edit_link_named|safe}}</span>
+                    {% endfor %}
+                    </div>
+                    {% else %}
+                    <div class="edges">[No kinfolks]</div>
+                    {% endif %}
+                    <div class="spare"> </div>
+                    <h2>{{member.position}}</h2>
+                    <div class="glyph_set">
+                    <img class="glyph" src="{{member.breed_logo}}"/>
+                    <img class="glyph" src="{{member.auspice_logo}}"/>
+                    <img class="glyph" src="{{member.logo}}"/>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% endfor %}
+</div>

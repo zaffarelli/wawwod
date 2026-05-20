@@ -1,4 +1,5 @@
 @import "basics";
+@import "basics";
 
 body {
   font-family: Texte;
@@ -839,7 +840,7 @@ td.editable.updown {
   top: 4vh;
   left: 1vw;
   width: 98vw;
-  height: 88vh;
+  height: 98vh;
   //border:1px solid saddlebrown;
   //background:lightgoldenrodyellow;
   //   &.hidden{
@@ -1353,3 +1354,176 @@ fieldset {
 // .dashboard{
 //     display:block;
 // }
+
+.sept{
+    font-family: Lato;
+    display:flex;
+    flex-flow: column nowrap;
+    justify-content:flex-start;
+    align-items:flex-start;
+    align-content:stretch;
+
+    gap:2px;
+    height:98%;
+    width:98%;
+    & .header{
+        display:flex;
+        flex-flow: row wrap;
+        justify-content:space-between;
+        align-items:center;
+        align-content:flex-start;
+
+        gap:5pt;
+        order:1;
+        flex:5 1 100%;
+//         border:1px solid red;
+        height:3em;
+        width:100%;
+        border-radius:10pt;
+        padding:10pt;
+        & h1{
+            order:1;
+            font-family:khand;
+            flex:1 1 5fr;
+            font-size:3em;
+            text-shadow:0 0 20pt black;
+            color:#F0F0F07f;
+        }
+        & .caern{
+            order:2;
+            border-radius:10pt;
+            padding:10pt;
+            flex:0 1 auto;
+            width:60ex;
+            text-align:center;
+            color:black;
+            background:#909090c0;
+            color:black;
+            & h1{
+                font-family:khand;
+                font-size:1.4em;
+                color:black;
+            }
+            & h2{
+                font-family:khand;
+                font-size:1.2em;
+            }
+        }
+    }
+    & .pack{
+        display:flex;
+        flex-flow: row nowrap;
+        justify-content:flex-start;
+        align-content:flex-start;
+        align-items:flex-start;
+        order:2;
+        flex:0 1 auto;
+        padding:10pt;
+        gap:5pt;
+        & .info{
+            order:1;
+            border:1px solid transparent;
+            background:#909090;
+            height:9em;
+            width:30ex;
+            border-radius:10pt;
+            padding:10pt;
+            & h1{
+                order:1;
+                font-family:khand;
+                font-size:1.2em;
+                font-weight:bold;
+                line-height:1.2em;
+                margin:0;
+                text-align:center;
+            }
+        }
+        & .member{
+            &.rank0{border:1px solid #303030;}
+            &.rank1{border:4px solid #505050;}
+            &.rank2{border:4px solid #707050;}
+            &.rank3{border:6px solid #907050;}
+            &.rank4{border:6px solid #B09050;}
+            &.rank5{border:6px solid #F0C050;}
+            color:#F0F0F0c0;
+            background:#B0B0B03f;
+            order:2;
+            border:1px solid transparent;
+            height:18em;
+            width:50ex;
+            border-radius:10pt;
+            padding:5pt;
+            gap:5pt;
+            font-family:wta_text;
+            box-shadow:2pt 2pt 3pt black;
+            display:flex;
+            flex-flow: column nowrap;
+            justify-content:flex-start;
+            align-items:flex-start;
+            align-content:flex-start;
+
+            & h1{
+                order:1;
+                font-family:khand;
+                font-size:1.3em;
+                font-weight:bold;
+                line-height:1.2em;
+                margin:0;
+                width:100%;
+                flex:0 1 auto;
+
+//                 background:orange;
+            }
+            & h2{
+                order:6;
+                font-family:khand;
+                font-size:1.2em;
+                font-weight:bold;
+                line-height:1.2em;
+                margin:0;
+                color:#F0F0F07f;
+                text-shadow:0pt 0pt 5pt #101010;
+                text-align:center;
+                width:100%;
+                flex:0 1 auto;
+
+            }
+            & .spare {
+                order:4;
+                width:100%;
+                flex:1 1 auto;
+//                 background:cyan;
+                border-radius:5pt;
+            }
+            & .basic {
+                order:2;
+                width:100%;
+                flex:0 1 auto;
+
+            }
+            & .edges {
+                order:3;
+                width:100%;
+                flex:0 1 auto;
+
+            }
+            & .glyph_set{
+                width:100%;
+                order:5;
+                display:flex;
+                flex-flow: row nowrap;
+                justify-content:space-around;
+                align-items:flex-start;
+                align-content:stretch;
+                border:8pt solid transparent;
+                gap:5pt;
+                flex:0 1 auto;
+                & .glyph{
+                    max-height:65px;
+                    max-width:65px;
+                }
+            }
+        }
+    }
+
+}

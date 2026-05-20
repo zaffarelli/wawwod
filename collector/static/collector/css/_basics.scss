@@ -98,6 +98,25 @@ $independents_fill: #0c253b;
   src: url("../fonts/Lato-Regular.ttf");
 }
 
+@font-face {
+  font-family: 'wta_title';
+  src: url("../fonts/Lato-Black.ttf");
+}
+
+@font-face {
+  font-family: 'wta_text';
+  src: url("../fonts/Lato-Regular.ttf");
+}
+
+@font-face {
+  font-family: 'massive';
+  src: url("../fonts/Eczar-ExtraBold.ttf");
+}
+
+// @font-face {
+//   font-family: 'Khand';
+//
+// }
 
 @mixin panel {
   background: $panel_background;

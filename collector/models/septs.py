@@ -11,7 +11,7 @@ import json
 
 import logging
 
-from collector.templatetags.wod_filters import as_tribe_plural, to_auspice_logo_single
+from collector.templatetags.wod_filters import as_tribe_plural, to_auspice_logo_single, to_breed_logo_single
 from collector.utils.helper import toRID
 from collector.utils.wod_reference import ALL_TRIBES
 from colorfield.fields import ColorField
@@ -225,6 +225,7 @@ class Sept(models.Model):
             self.update_stats(garou)
             g = {
                 "rid": garou.rid,
+                "anchor": garou.anchor,
                 "renown": garou.total_renown,
                 "name": garou.name,
                 "aka": garou.nickname,
@@ -236,10 +237,11 @@ class Sept(models.Model):
                 "balanced": garou.status == "READY",
                 "position": garou.community_job,
                 "short_desc": garou.short_desc,
-                "rank": garou.rank,
+                "rank": garou.garou_rank,
                 "auspice": garou.auspice,
                 "logo": to_tribe_logo_single(as_tribe_plural(garou.family)),
                 "auspice_logo": to_auspice_logo_single(garou.auspice),
+                "breed_logo": to_breed_logo_single(garou.breed),
             }
             if garou.groupspec not in packs_summary:
                 packs_summary.append(garou.groupspec)

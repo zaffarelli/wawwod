@@ -67,6 +67,7 @@ class Creature(models.Model):
     residence = models.CharField(max_length=64, default="", blank=True)
     list_pos = models.IntegerField(default=0, blank=True)
     challenge = models.CharField(max_length=128, default="", blank=True)
+    quirks = models.CharField(max_length=256, default="", blank=True)
     edges = models.TextField(default="", blank=True, max_length=1024)
 
     pre_change_access = models.BooleanField(blank=False, default=False)
@@ -387,6 +388,10 @@ class Creature(models.Model):
         return EDGE_SEP.join(list)
 
     @property
+    def anchor(self):
+        return f"{self.name}|{self.rid}"
+
+    @property
     def edge_list(self):
         list = []
         edges = self.edges.split(EDGE_SEP)
@@ -395,7 +400,7 @@ class Creature(models.Model):
                 candidates = Creature.objects.filter(rid=rid)
                 if len(candidates) == 1:
                     candidate = candidates.first()
-                    list.append(candidate.name)
+                    list.append(candidate.anchor)
                 elif len(candidates) == 0:
                     list.append(f"Not Found: {rid}")
                 elif len(candidates) > 1:
@@ -698,8 +703,8 @@ class Creature(models.Model):
                         self.family = domitor.family
                         self.faction = domitor.faction
                         self.display_gauge = domitor.display_gauge / 3
-                        self.group = "Ghouls of " + domitor.name
-                        self.groupspec = domitor.groupspec
+                        self.groupspec = "Ghouls of " + domitor.name
+                        self.group = domitor.group
                         self.hidden = domitor.hidden
                         if self.district is None:
                             self.district = domitor.district
@@ -1294,30 +1299,15 @@ class Creature(models.Model):
         gifts_list.append("</ul>")
         if len(gifts_list) > 0:
             if self.creature == "kindred" or self.creature == "ghoul":
-                lines.append(f"<br/><b>Disciplines</b>: {', '.join(gifts_list)}")
+                lines.append(f"<br/><b>Disciplines</b>: {' '.join(gifts_list)}")
             else:
                 lines.append(f"<br/><b>Gifts</b>: {''.join(gifts_list)}")
         # lines.append(f'<br/><b>Willpower</b>: {self.as_dot(self.willpower, max=20, to_spend=True)}')
         if self.creature == "kindred" or self.creature == "ghoul":
-            # lines.append(f'<br/><b>Blood Pool</b>: {self.as_dot(self.bloodpool, max=20, to_spend=True)}')
-            str = f"<table><tr>"
-            str += f"<td><b>Blood Pool</b></td><td><tt>{self.bloodpool}</tt></td>"
-            str += f"<td><b></b></td><td><tt></tt></td>"
-            str += f"<td><b>Willpower</b></td><td><tt>{self.willpower}</tt></td>"
-            str += f"</tr><tr>"
-            str += (
-                f"<td><b>{self.virtue_name0}</b></td><td><tt>{self.virtue0}</tt></td>"
-            )
-            str += (
-                f"<td><b>{self.virtue_name1}</b></td><td><tt>{self.virtue1}</tt></td>"
-            )
-            str += (
-                f"<td><b>{self.virtue_name2}</b></td><td><tt>{self.virtue2}</tt></td>"
-            )
-            str += f"</tr></table>"
-            lines.append(str)
-            # lines.append(
-            #     f'<br/><b>Conscience</b>:{self.as_dot(self.virtue0)}  <b>Self-control</b>:{self.as_dot(self.virtue1)}  <b>Courage</b>:{self.as_dot(self.virtue2)}')
+            lines.append(f'<b>Blood Pool</b>: {self.as_dot(self.bloodpool, max=20, to_spend=True)}<br/>')
+            lines.append(f'<b>{self.virtue_name0}</b>: {self.as_dot(self.virtue0, max=5, to_spend=True)}<br/>')
+            lines.append(f'<b>{self.virtue_name1}</b>: {self.as_dot(self.virtue1, max=5, to_spend=True)}<br/>')
+            lines.append(f'<b>{self.virtue_name2}</b>: {self.as_dot(self.virtue2, max=5, to_spend=True)}<br/>')
         return "".join(lines)
 
     @property
@@ -1595,8 +1585,11 @@ class Creature(models.Model):
         self.save()
 
     def randomize_backgrounds(self):
-        tribe = GarouFamilySolver(self.family)
-        restrictions = tribe.restrictions
+        if 'garou'==self.creature:
+            tribe = GarouFamilySolver(self.family)
+            restrictions = tribe.restrictions
+        else:
+            restrictions = ''
         backgrounds = STATS_NAMES[self.creature]["backgrounds"]
         points = int(STATS_TEMPLATES[self.creature]["backgrounds"])
         vector = []

@@ -207,9 +207,11 @@ def chronicle_book(request):
         factions = {}
         factions["gaia"] = {"name": "Gaia", "description": "", "groups": {}}
         factions["wyrm"] = {"name": "Wyrm", "description": "", "groups": {}}
-
+        factions["camarilla"] = {"name": "Camarilla", "description": "", "groups": {}}
+        factions["sabbat"] = {"name": "Sabbat", "description": "", "groups": {}}
+        factions["traditions"] = {"name": "Traditions", "description": "", "groups": {}}
     groups = {}
-    for c in Creature.objects.filter( chronicle=chronicle.acronym, creature=chronicle.main_creature).exclude(is_player=True).order_by("groupspec"):
+    for c in Creature.objects.filter( chronicle=chronicle.acronym).exclude(creature='mortal').exclude(is_player=True).order_by("groupspec"):
         if chronicle.main_creature == "kindred":
             g = "_".join(c.group.lower().split(" "))
             if g not in groups:

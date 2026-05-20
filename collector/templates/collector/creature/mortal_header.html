@@ -15,6 +15,10 @@
         {% elif c.creature == 'garou' %}
             <th>Breed</th>
             <td class="editable userinput" id='{{c.rid}}__breed'>{{ c.breed | as_breed }}</td>
+        {% elif c.creature == 'kinfolk' %}
+            <th>Quirks</th>
+            <td class="editable userinput" id='{{c.rid}}__quirks'>{{ c.quirks }}</td>
+
         {%else%}
             <th></th>
             <td></td>
@@ -155,7 +159,7 @@
 
 
     <tr>
-        {% if c.creature == 'garou' or c.creature == "kinfolk" %}
+        {% if c.creature == 'garou' or c.creature == "kinfolk" or c.creature == "mage" %}
         <th>Sept Position</th>
         <td class='editable userinput' id='{{c.rid}}__community_job'>{{ c.community_job }}</td>
         <th>Residence</th>

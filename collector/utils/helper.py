@@ -113,10 +113,12 @@ class Colorizer:
         c = f'#{red:02x}{green:02x}{blue:02x}'
         return c
 
+
 def ponderate(stats=[], points=5, rules=""):
     values = []
 
     return values
+
 
 def fake_name():
     name = ""
@@ -128,3 +130,68 @@ def fake_name():
         if x % 8 == 7:
             name += " "
     return name.strip().title()
+
+
+class Randomizer:
+    """
+        Won't work with
+    """
+
+    def __init__(self, data):
+        self.setData(data)
+
+    def roll(faces=10):
+        def die():
+            import math, os
+            return math.floor((int.from_bytes(os.urandom(1)) / 256) * faces) + 1
+
+        d = die()
+        return d
+
+    def setData(self, data):
+        self.data = data
+        self.weights = []
+        self.labels = []
+        self.labels = [f"label{x + 1:03}" for x in range(len(self.data))]
+
+    def setWeights(self, weights):
+        if len(weights) == len(self.data):
+            for index in range(len(self.data)):
+                self.weights[index] = weights[index]
+            return True
+        else:
+            return False
+
+    def setLabels(self, labels):
+        if len(labels) == len(self.data):
+            for index in range(len(self.data)):
+                self.labels[index] = labels[index]
+            return True
+        else:
+            return False
+
+    @property
+    def length(self):
+        return len(self.data)
+
+    def randomize(self, pts):
+        max = sum(self.weights)
+        for x in range(pts):
+            r = self.roll(faces=max) - 1
+            i = 0
+            for w in self.weights:
+                i += w
+                if r < i:
+                    self.data[i] += 1
+                    break
+
+    @property
+    def raw_result(self):
+        return self.data
+
+    def result(self):
+        outcome = []
+        for idx in range(self.length):
+            x = {'label': self.labels[idx], 'value':self.data[idx], 'weight':self.weights[idx]}
+            outcome.append(x)
+        return outcome

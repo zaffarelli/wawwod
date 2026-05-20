@@ -1033,7 +1033,7 @@ def display_lineage(request, slug=None):
         return JsonResponse(lineage_context)
 
 
-def display_sept(request, slug=None):
+def olddisplay_sept(request, slug=None):
     if is_ajax(request):
         from collector.models.septs import Sept
 
@@ -1049,8 +1049,30 @@ def display_sept(request, slug=None):
                 "settings": json.dumps(settings, sort_keys=True, indent=4),
                 "data": json.dumps(data, sort_keys=True, indent=4),
             }
+            template = get_template("collector/dashboard/figure.html")
+            html = template.render({"id": "ready_pps"})
         return JsonResponse(sept_context)
 
+def display_sept(request, slug=None):
+    if is_ajax(request):
+        from collector.models.septs import Sept
+        if slug is None:
+            return HttpResponse(status=204)
+        else:
+            sept = Sept.objects.get(rid=slug)
+            sept.need_fix = True
+            sept.save()
+            data = Sept.objects.get(rid=slug).build_sept()
+            settings = {"fontset": FONTSET}
+            sept_context = {
+                "settings": settings,#json.dumps(settings, sort_keys=True, indent=4),
+                "data": data, #json.dumps(data, sort_keys=True, indent=4),
+            }
+            template = get_template("collector/page/sept.html")
+            html = template.render(sept_context)
+        return JsonResponse({"html":html})
+    else:
+        return HttpResponse(status=204)
 
 def display_sept_rosters(request, slug=None):
     # if is_ajax(request):
