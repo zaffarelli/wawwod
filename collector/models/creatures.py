@@ -840,7 +840,8 @@ class Creature(models.Model):
         if self.is_player:
             self.expectedfreebies = self.mychronicle.players_starting_freebies
         else:
-            self.expectedfreebies = self.freebies_per_mortal_age + expected_freebies_by_rank[self.garou_rank]
+            #self.expectedfreebies = self.freebies_per_mortal_age + expected_freebies_by_rank[self.garou_rank]
+            self.expectedfreebies = self.freebies_per_mortal_age + (self.glory + self.honor + self.wisdom)*4
         self.check_expenditure()
 
     @property
