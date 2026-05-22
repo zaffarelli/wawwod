@@ -159,16 +159,16 @@
 
 
     <tr>
-        {% if c.creature == 'garou' or c.creature == "kinfolk" or c.creature == "mage" %}
         <th>Sept Position</th>
         <td class='editable userinput' id='{{c.rid}}__community_job'>{{ c.community_job }}</td>
         <th>Residence</th>
         <td class='editable userinput' id='{{c.rid}}__residence'>{{ c.residence }}</td>
         <th>Extra Freebies</th>
         <td class='editable userinput' id='{{c.rid}}__extra'>{{ c.extra }}</td>
-        <th>Timeline</th>
-        <td class='editable userinput packed' param="as_text" id='{{c.rid}}__notes_on_history' >{{c.notes_on_history}}</td>
-        {% else %}
+        <th></th>
+        <td></td>
+    </tr>
+    <tr>
         <th>Backgrounds</th>
         <td class='editable userinput packed' param="as_text" id='{{c.rid}}__notes_on_backgrounds' >{{c.notes_on_backgrounds}}</td>
         <th>Others</th>
@@ -177,7 +177,6 @@
         <td class='editable userinput packed' param="as_text" id='{{c.rid}}__notes_on_history' >{{c.notes_on_history}}</td>
         <th>Specialities</th>
         <td class='editable userinput packed' param="as_text" id='{{c.rid}}__specialities_rationale' >{{c.specialities_rationale}}</td>
-        {% endif %}
     </tr>
 
     <tr>

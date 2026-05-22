@@ -828,7 +828,7 @@ class Creature(models.Model):
 
         # Tribe
         if self.family:
-            minimum_willpower = PER_TRIBE[as_tribe_plural(self.family)]["willpower"]
+            minimum_willpower = GarouFamilySolver(self.family).willpower
             if self.willpower < minimum_willpower:
                 self.willpower = minimum_willpower
 
@@ -836,12 +836,12 @@ class Creature(models.Model):
         if self.breed == 1:
             self.display_gauge -= 1
         self.display_pole = self.group + "__" + self.groupspec
-        expected_freebies_by_rank = [0, 0, 30, 60, 120, 240]
+        expected_freebies_by_rank = [0, 0+5, 14+10, 14+21+15, 14+21+28+20, 14+21+28+35+25]
         if self.is_player:
             self.expectedfreebies = self.mychronicle.players_starting_freebies
         else:
             #self.expectedfreebies = self.freebies_per_mortal_age + expected_freebies_by_rank[self.garou_rank]
-            self.expectedfreebies = self.freebies_per_mortal_age + (self.glory + self.honor + self.wisdom)*4
+            self.expectedfreebies = self.freebies_per_mortal_age + (self.glory + self.honor + self.wisdom)*3 + expected_freebies_by_rank[self.garou_rank]
         self.check_expenditure()
 
     @property
@@ -1130,7 +1130,7 @@ class Creature(models.Model):
             self.freebies -= RAGE_PER_AUSPICE[int(self.auspice)] * 1
             self.freebies -= GNOSIS_PER_BREED[int(self.breed)] * 2
             if self.family:
-                self.freebies -= PER_TRIBE[as_tribe_plural(self.family)]["willpower"] * 1
+                self.freebies -= GarouFamilySolver(self.family).willpower * 1
             else:
                 self.freebies -= 3
             self.fix_garou()
@@ -1587,8 +1587,7 @@ class Creature(models.Model):
 
     def randomize_backgrounds(self):
         if 'garou'==self.creature:
-            tribe = GarouFamilySolver(self.family)
-            restrictions = tribe.restrictions
+            restrictions = GarouFamilySolver(self.family).restrictions
         else:
             restrictions = ''
         backgrounds = STATS_NAMES[self.creature]["backgrounds"]
@@ -1709,9 +1708,13 @@ class Creature(models.Model):
         self.reparts = f"{'_'.join(attributes)}__{'_'.join(abilities)}"
 
     def randomize_family(self):
-        families = [y['verbose_singular'] for x,y in PER_TRIBE.items()]
-        random.shuffle(families)
-        return families[0]
+        if self.creature in ["kinfolk", "garou"]:
+            family = GarouFamilySolver.randomize()
+        else:
+            families = [y['verbose_singular'] for x,y in PER_TRIBE.items()]
+            random.shuffle(families)
+            family = families[0]
+        return family
 
     def randomize_all(self):
         if self.is_player:

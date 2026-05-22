@@ -698,7 +698,9 @@ class WawwodSheet {
             oy += 1.5 * me.stepy;
         }
 
-        let reparts = me.data.reparts.split("_")
+        let allreparts = me.data.reparts.split("__")
+        let reparts = allreparts[0].split("_")
+
 
         if (me.blank) {
             me.title('Physical ___', ox + me.stepx * 5, oy, me.character);
@@ -725,16 +727,17 @@ class WawwodSheet {
         let oy = basey;
         let stat = '';
 
-        let reparts = me.data.reparts.split("_")
+        let allreparts = me.data.reparts.split("__")
+        let reparts = allreparts[1].split("_")
 
         if (me.blank) {
             me.title('Talents ___', ox + me.stepx * 5, oy, me.character);
             me.title('Skills ___', ox + me.stepx * 12, oy, me.character);
             me.title('Knowledges ___', ox + me.stepx * 19, oy, me.character);
         } else {
-            me.title('Talents (' + me.data['total_talents'] +'/'+reparts[3]+ ')', ox + me.stepx * 5, oy, me.character);
-            me.title('Skills (' + me.data['total_skills'] +'/'+reparts[4]+ ')', ox + me.stepx * 12, oy, me.character);
-            me.title('Knowledges (' + me.data['total_knowledges'] +'/'+reparts[5]+ ')', ox + me.stepx * 19, oy, me.character);
+            me.title('Talents (' + me.data['total_talents'] +'/'+reparts[0]+ ')', ox + me.stepx * 5, oy, me.character);
+            me.title('Skills (' + me.data['total_skills'] +'/'+reparts[1]+ ')', ox + me.stepx * 12, oy, me.character);
+            me.title('Knowledges (' + me.data['total_knowledges'] +'/'+reparts[2]+ ')', ox + me.stepx * 19, oy, me.character);
         }
         oy += 0.5 * me.stepy;
         let overheads = []

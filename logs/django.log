@@ -13674,3 +13674,666 @@ Traceback (most recent call last):
 21 01:11:35 | [32mdjango [37m| User:zaffarelli[0m
 21 01:11:35 | [32mdjango [37m| Parts:['Intelligence', 'Enigmas'][0m
 21 01:11:35 | [32mdjango.server [37m| "GET /ajax/display/dashboard/ HTTP/1.1" 200 18954[0m
+21 11:09:50 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+21 11:09:57 | [32mdjango.server [37m| "GET /admin/ HTTP/1.1" 200 23243[0m
+21 11:09:57 | [32mdjango.server [37m| "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0[0m
+21 11:09:57 | [32mdjango.server [37m| "GET /static/admin/css/base.css HTTP/1.1" 304 0[0m
+21 11:09:57 | [32mdjango.server [37m| "GET /static/admin/js/theme.js HTTP/1.1" 304 0[0m
+21 11:09:57 | [32mdjango.server [37m| "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0[0m
+21 11:09:57 | [32mdjango.server [37m| "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0[0m
+21 11:09:57 | [32mdjango.server [37m| "GET /static/admin/css/responsive.css HTTP/1.1" 304 0[0m
+21 11:09:57 | [32mdjango.server [37m| "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 978[0m
+21 11:09:57 | [32mdjango.server [37m| "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 593[0m
+21 11:10:01 | [32mdjango.server [37m| "GET /admin/collector/gift/ HTTP/1.1" 200 134201[0m
+21 11:10:01 | [32mdjango.server [37m| "GET /static/admin/css/forms.css HTTP/1.1" 304 0[0m
+21 11:10:01 | [32mdjango.server [37m| "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0[0m
+21 11:10:01 | [32mdjango.server [37m| "GET /static/admin/js/actions.js HTTP/1.1" 304 0[0m
+21 11:10:01 | [32mdjango.server [37m| "GET /static/admin/js/core.js HTTP/1.1" 304 0[0m
+21 11:10:01 | [32mdjango.server [37m| "GET /static/admin/css/changelists.css HTTP/1.1" 304 0[0m
+21 11:10:01 | [32mdjango.server [37m| "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0[0m
+21 11:10:01 | [32mdjango.server [37m| "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0[0m
+21 11:10:01 | [32mdjango.server [37m| "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0[0m
+21 11:10:01 | [32mdjango.server [37m| "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0[0m
+21 11:10:01 | [32mdjango.server [37m| "GET /static/admin/js/urlify.js HTTP/1.1" 304 0[0m
+21 11:10:01 | [32mdjango.server [37m| "GET /admin/jsi18n/ HTTP/1.1" 200 3342[0m
+21 11:10:01 | [32mdjango.server [37m| "GET /static/admin/js/filters.js HTTP/1.1" 304 0[0m
+21 11:10:01 | [32mdjango.server [37m| "GET /static/admin/css/widgets.css HTTP/1.1" 304 0[0m
+21 11:10:01 | [32mdjango.server [37m| "GET /static/admin/img/icon-no.svg HTTP/1.1" 200 645[0m
+21 11:10:01 | [32mdjango.server [37m| "GET /static/admin/img/search.svg HTTP/1.1" 200 607[0m
+21 11:10:01 | [32mdjango.server [37m| "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 558[0m
+21 11:10:02 | [32mdjango.server [37m| "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1761[0m
+21 11:10:02 | [32mdjango.server [37m| "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 928[0m
+21 11:10:02 | [32mdjango.server [37m| "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 593[0m
+21 11:10:58 | [32mdjango.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/models/gifts.py changed, reloading.[0m
+21 11:10:59 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+21 11:11:04 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+21 11:11:26 | [32mdjango.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/models/gifts.py changed, reloading.[0m
+21 11:11:27 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+21 11:11:42 | [32mdjango.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/models/gifts.py changed, reloading.[0m
+21 11:11:42 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+21 11:11:45 | [32mdjango.server [37m| "GET /admin/collector/gift/ HTTP/1.1" 200 134507[0m
+21 11:11:45 | [32mdjango.server [37m| "GET /admin/jsi18n/ HTTP/1.1" 200 3342[0m
+21 11:12:10 | [32mdjango.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/models/gifts.py changed, reloading.[0m
+21 11:12:11 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+21 11:12:41 | [32mdjango.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/models/gifts.py changed, reloading.[0m
+21 11:12:42 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+21 11:12:47 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+21 11:12:50 | [32mdjango.server [37m| "GET /admin/collector/gift/ HTTP/1.1" 200 146255[0m
+21 11:12:50 | [32mdjango.server [37m| "GET /admin/jsi18n/ HTTP/1.1" 200 3342[0m
+21 11:13:29 | [32mdjango.server [37m| "POST /admin/collector/gift/ HTTP/1.1" 302 0[0m
+21 11:13:29 | [32mdjango.server [37m| "GET /admin/collector/gift/ HTTP/1.1" 200 146419[0m
+21 11:13:29 | [32mdjango.server [37m| "GET /admin/jsi18n/ HTTP/1.1" 200 3342[0m
+21 11:13:29 | [32mdjango.server [37m| "GET /static/admin/img/icon-yes-dark.svg HTTP/1.1" 200 558[0m
+21 11:13:35 | [32mdjango.server [37m| "GET /admin/collector/gift/?kinfolk_gift__exact=0 HTTP/1.1" 200 153398[0m
+21 11:13:35 | [32mdjango.server [37m| "GET /admin/jsi18n/ HTTP/1.1" 200 3342[0m
+21 11:14:16 | [32mdjango.server [37m| "GET /admin/collector/gift/36/change/?_changelist_filters=kinfolk_gift__exact%3D0 HTTP/1.1" 200 41282[0m
+21 11:14:16 | [32mdjango.server [37m| "GET /admin/jsi18n/ HTTP/1.1" 200 3342[0m
+21 11:14:16 | [32mdjango.server [37m| "GET /static/admin/js/change_form.js HTTP/1.1" 304 0[0m
+21 11:14:16 | [32mdjango.server [37m| "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0[0m
+21 11:14:50 | [32mdjango.server [37m| "POST /admin/collector/gift/36/change/?_changelist_filters=kinfolk_gift__exact%3D0 HTTP/1.1" 302 0[0m
+21 11:14:50 | [32mdjango.server [37m| "GET /admin/collector/gift/?kinfolk_gift__exact=0 HTTP/1.1" 200 153846[0m
+21 11:14:50 | [32mdjango.server [37m| "GET /admin/jsi18n/ HTTP/1.1" 200 3342[0m
+21 11:15:18 | [32mdjango.server [37m| "GET /admin/collector/gift/101/change/?_changelist_filters=kinfolk_gift__exact%3D0 HTTP/1.1" 200 41292[0m
+21 11:15:18 | [32mdjango.server [37m| "GET /admin/jsi18n/ HTTP/1.1" 200 3342[0m
+21 11:15:35 | [32mdjango.server [37m| "POST /admin/collector/gift/101/change/?_changelist_filters=kinfolk_gift__exact%3D0 HTTP/1.1" 302 0[0m
+21 11:15:35 | [32mdjango.server [37m| "GET /admin/collector/gift/?kinfolk_gift__exact=0 HTTP/1.1" 200 153953[0m
+21 11:15:35 | [32mdjango.server [37m| "GET /admin/jsi18n/ HTTP/1.1" 200 3342[0m
+21 11:16:29 | [32mdjango.server [37m| "GET /admin/collector/gift/111/change/?_changelist_filters=kinfolk_gift__exact%3D0 HTTP/1.1" 200 41340[0m
+21 11:16:29 | [32mdjango.server [37m| "GET /admin/jsi18n/ HTTP/1.1" 200 3342[0m
+21 11:16:47 | [32mdjango.server [37m| "POST /admin/collector/gift/111/change/?_changelist_filters=kinfolk_gift__exact%3D0 HTTP/1.1" 302 0[0m
+21 11:16:47 | [32mdjango.server [37m| "GET /admin/collector/gift/?kinfolk_gift__exact=0 HTTP/1.1" 200 154082[0m
+21 11:16:47 | [32mdjango.server [37m| "GET /admin/jsi18n/ HTTP/1.1" 200 3342[0m
+21 11:18:24 | [32mdjango.server [37m| "GET /admin/collector/gift/335/change/?_changelist_filters=kinfolk_gift__exact%3D0 HTTP/1.1" 200 41277[0m
+21 11:18:24 | [32mdjango.server [37m| "GET /admin/jsi18n/ HTTP/1.1" 200 3342[0m
+21 11:19:10 | [32mdjango.server [37m| "POST /admin/collector/gift/335/change/?_changelist_filters=kinfolk_gift__exact%3D0 HTTP/1.1" 302 0[0m
+21 11:19:10 | [32mdjango.server [37m| "GET /admin/collector/gift/?kinfolk_gift__exact=0 HTTP/1.1" 200 154433[0m
+21 11:19:10 | [32mdjango.server [37m| "GET /admin/jsi18n/ HTTP/1.1" 200 3342[0m
+21 11:19:47 | [32mdjango.server [37m| "GET /admin/collector/gift/345/change/?_changelist_filters=kinfolk_gift__exact%3D0 HTTP/1.1" 200 41207[0m
+21 11:19:47 | [32mdjango.server [37m| "GET /admin/jsi18n/ HTTP/1.1" 200 3342[0m
+21 11:20:24 | [32mdjango.server [37m| "POST /admin/collector/gift/345/change/?_changelist_filters=kinfolk_gift__exact%3D0 HTTP/1.1" 302 0[0m
+21 11:20:24 | [32mdjango.server [37m| "GET /admin/collector/gift/?kinfolk_gift__exact=0 HTTP/1.1" 200 154808[0m
+21 11:20:24 | [32mdjango.server [37m| "GET /admin/jsi18n/ HTTP/1.1" 200 3342[0m
+21 11:21:23 | [32mdjango [37m| Index[0m
+21 11:21:23 | [32mdjango.server [37m| "GET / HTTP/1.1" 200 30015[0m
+21 11:21:23 | [32mdjango.server [37m| "GET /static/js/collector.es6 HTTP/1.1" 304 0[0m
+21 11:21:23 | [32mdjango.server [37m| "GET /static/js/gaia_wheel.es6 HTTP/1.1" 304 0[0m
+21 11:21:23 | [32mdjango.server [37m| "GET /static/js/sept.es6 HTTP/1.1" 304 0[0m
+21 11:21:23 | [32mdjango.server [37m| "GET /static/js/geocity.es6 HTTP/1.1" 304 0[0m
+21 11:21:23 | [32mdjango.server [37m| "GET /static/CACHE/css/main.2b58472b2b94.css HTTP/1.1" 200 41917[0m
+21 11:21:23 | [32mdjango.server [37m| "GET /static/CACHE/css/storytelling.0d576c4d3101.css HTTP/1.1" 200 8998[0m
+21 11:21:24 | [33mdjango.server [37m| "GET /static/collector/css?cc99f8c0e6f6 HTTP/1.1" 404 1860[0m
+21 11:21:27 | [32mdjango [37m| Index[0m
+21 11:21:27 | [32mdjango.server [37m| "GET / HTTP/1.1" 200 30015[0m
+21 11:21:27 | [32mdjango.server [37m| "GET /static/CACHE/css/storytelling.0d576c4d3101.css HTTP/1.1" 200 8998[0m
+21 11:21:27 | [32mdjango.server [37m| "GET /static/CACHE/css/main.2b58472b2b94.css HTTP/1.1" 200 41917[0m
+21 11:21:27 | [33mdjango.server [37m| "GET /static/collector/css?cc99f8c0e6f6 HTTP/1.1" 404 1860[0m
+21 11:21:33 | [32mdjango.server [37m| "GET /ajax/display/septs/_sept_of_the_sinner/ HTTP/1.1" 200 33699[0m
+21 11:21:37 | [32mdjango.server [37m| "GET /ajax/view/creature/_tabatha_eatlon/ HTTP/1.1" 200 59851[0m
+21 11:23:19 | [32mdjango.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/models/creatures.py changed, reloading.[0m
+21 11:23:20 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+21 11:23:22 | [32mdjango [37m| Index[0m
+21 11:23:22 | [32mdjango.server [37m| "GET / HTTP/1.1" 200 30015[0m
+21 11:23:22 | [32mdjango.server [37m| "GET /static/CACHE/css/main.2b58472b2b94.css HTTP/1.1" 200 41917[0m
+21 11:23:22 | [32mdjango.server [37m| "GET /static/CACHE/css/storytelling.0d576c4d3101.css HTTP/1.1" 200 8998[0m
+21 11:23:22 | [33mdjango.server [37m| "GET /static/collector/css?cc99f8c0e6f6 HTTP/1.1" 404 1860[0m
+21 11:23:34 | [32mdjango.server [37m| "GET /ajax/collector_action/refix_all/ HTTP/1.1" 204 0[0m
+21 11:23:40 | [32mdjango.server [37m| "GET /ajax/display/septs/_sept_of_the_sinner/ HTTP/1.1" 200 33699[0m
+21 11:23:45 | [32mdjango.server [37m| "GET /ajax/view/creature/_jonathan_vicars/ HTTP/1.1" 200 60221[0m
+21 11:23:51 | [32mdjango.server [37m| "GET /ajax/view/creature/_tabatha_eatlon/ HTTP/1.1" 200 59852[0m
+21 11:24:00 | [32mdjango.server [37m| "GET /ajax/view/creature/_lukas_wheeler/ HTTP/1.1" 200 59689[0m
+21 20:07:05 | [32mdjango.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/models/creatures.py changed, reloading.[0m
+21 20:07:06 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+21 20:07:21 | [32mdjango.server [37m| "GET /ajax/collector_action/refix_all/ HTTP/1.1" 204 0[0m
+21 20:07:25 | [32mdjango.server [37m| "GET /ajax/display/septs/_sept_of_the_sinner/ HTTP/1.1" 200 33699[0m
+21 20:07:33 | [32mdjango.server [37m| "GET /ajax/view/creature/_tabatha_eatlon/ HTTP/1.1" 200 59852[0m
+21 20:07:36 | [32mdjango.server [37m| "GET /ajax/view/creature/_lukas_wheeler/ HTTP/1.1" 200 59689[0m
+21 20:07:44 | [32mdjango.server [37m| "GET /ajax/view/creature/_chief/ HTTP/1.1" 200 58786[0m
+21 20:07:50 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 588[0m
+21 20:07:50 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 582[0m
+21 20:07:51 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 576[0m
+21 20:07:52 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 582[0m
+21 20:07:53 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 576[0m
+21 20:07:55 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 570[0m
+21 20:07:55 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 570[0m
+21 20:07:58 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 582[0m
+21 20:08:04 | [32mdjango.server [37m| "POST /ajax/randomize/traits/for/_chief/ HTTP/1.1" 200 2[0m
+21 20:08:04 | [32mdjango.server [37m| "GET /ajax/view/creature/_chief/ HTTP/1.1" 200 58745[0m
+21 20:08:07 | [32mdjango.server [37m| "POST /ajax/randomize/traits/for/_chief/ HTTP/1.1" 200 2[0m
+21 20:08:07 | [32mdjango.server [37m| "GET /ajax/view/creature/_chief/ HTTP/1.1" 200 58741[0m
+21 20:08:10 | [32mdjango.server [37m| "POST /ajax/editable/userinput/ HTTP/1.1" 200 34[0m
+21 20:08:10 | [32mdjango.server [37m| "GET /ajax/view/creature/_chief/ HTTP/1.1" 200 58749[0m
+21 20:08:16 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 577[0m
+21 20:08:17 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 571[0m
+21 20:08:25 | [32mdjango.server [37m| "GET /ajax/display/septs/_sept_of_the_sinner/ HTTP/1.1" 200 33699[0m
+22 05:24:43 | [32mdjango.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/utils/wod_reference.py changed, reloading.[0m
+22 05:24:43 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+22 05:27:11 | [32mdjango.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/models/creatures.py changed, reloading.[0m
+22 05:27:12 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+22 05:27:30 | [31mdjango.request [37m| Internal Server Error: /ajax/collector_action/refix_all/[0m
+Traceback (most recent call last):
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py"[0m, line [35m55[0m, in [35minner[0m
+    response = get_response(request)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py"[0m, line [35m198[0m, in [35m_get_response[0m
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File [35m"/home/zaffarelli/Projects/wawwod/collector/views/actions.py"[0m, line [35m344[0m, in [35mrefix_all[0m
+    [31mcreature.save[0m[1;31m()[0m
+    [31m~~~~~~~~~~~~~[0m[1;31m^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/base.py"[0m, line [35m874[0m, in [35msave[0m
+    [31mself.save_base[0m[1;31m([0m
+    [31m~~~~~~~~~~~~~~[0m[1;31m^[0m
+        [1;31musing=using,[0m
+        [1;31m^^^^^^^^^^^^[0m
+    ...<2 lines>...
+        [1;31mupdate_fields=update_fields,[0m
+        [1;31m^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+    [1;31m)[0m
+    [1;31m^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/base.py"[0m, line [35m946[0m, in [35msave_base[0m
+    [31mpre_save.send[0m[1;31m([0m
+    [31m~~~~~~~~~~~~~[0m[1;31m^[0m
+        [1;31msender=origin,[0m
+        [1;31m^^^^^^^^^^^^^^[0m
+    ...<3 lines>...
+        [1;31mupdate_fields=update_fields,[0m
+        [1;31m^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+    [1;31m)[0m
+    [1;31m^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/dispatch/dispatcher.py"[0m, line [35m209[0m, in [35msend[0m
+    response = receiver(signal=self, sender=sender, **named)
+  File [35m"/home/zaffarelli/Projects/wawwod/collector/signals/creatures.py"[0m, line [35m19[0m, in [35mupdate_creature[0m
+    [31minstance.fix[0m[1;31m()[0m
+    [31m~~~~~~~~~~~~[0m[1;31m^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/collector/models/creatures.py"[0m, line [35m1137[0m, in [35mfix[0m
+    [31mself.fix_garou[0m[1;31m()[0m
+    [31m~~~~~~~~~~~~~~[0m[1;31m^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/collector/models/creatures.py"[0m, line [35m831[0m, in [35mfix_garou[0m
+    minimum_willpower = [1;31mGarouFamilySolver(self.family).willpower[0m
+                        [1;31m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/collector/utils/wod_reference.py"[0m, line [35m1589[0m, in [35mwillpower[0m
+    return [1;31mwp[0m
+           [1;31m^^[0m
+[1;35mUnboundLocalError[0m: [35mcannot access local variable 'wp' where it is not associated with a value[0m
+22 05:27:30 | [31mdjango.server [37m| "GET /ajax/collector_action/refix_all/ HTTP/1.1" 500 110281[0m
+22 05:27:46 | [32mdjango.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/utils/wod_reference.py changed, reloading.[0m
+22 05:27:46 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+22 05:27:49 | [32mdjango.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/utils/wod_reference.py changed, reloading.[0m
+22 05:27:49 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+22 05:28:12 | [32mdjango.server [37m| "GET /ajax/collector_action/refix_all/ HTTP/1.1" 204 0[0m
+22 05:36:45 | [32mdjango.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/models/creatures.py changed, reloading.[0m
+22 05:36:45 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+22 05:40:20 | [32mdjango.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/utils/wod_reference.py changed, reloading.[0m
+22 05:40:20 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+22 05:42:20 | [32mdjango.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/models/creatures.py changed, reloading.[0m
+22 05:42:21 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+22 05:42:33 | [32mdjango.server [37m| "GET /ajax/collector_action/refix_all/ HTTP/1.1" 204 0[0m
+22 05:44:37 | [32mdjango.server [37m| "GET /ajax/view/creature/_chris_jones/ HTTP/1.1" 200 59709[0m
+22 05:44:44 | [32mdjango.server [37m| "GET /ajax/view/creature/_darwin/ HTTP/1.1" 200 59015[0m
+22 05:44:46 | [32mdjango.server [37m| "GET /ajax/view/creature/_eliot_bloom/ HTTP/1.1" 200 59722[0m
+22 05:44:51 | [32mdjango.server [37m| "GET /ajax/view/creature/_tictactoe/ HTTP/1.1" 200 59369[0m
+22 05:45:18 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 552[0m
+22 05:45:20 | [32mdjango.server [37m| "GET /ajax/view/creature/_tictactoe/ HTTP/1.1" 200 59375[0m
+22 05:45:25 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 564[0m
+22 05:45:25 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 570[0m
+22 05:45:29 | [32mdjango.server [37m| "GET /ajax/view/creature/_tictactoe/ HTTP/1.1" 200 59387[0m
+22 05:45:33 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 558[0m
+22 05:45:34 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 576[0m
+22 05:45:36 | [32mdjango.server [37m| "GET /ajax/view/creature/_tictactoe/ HTTP/1.1" 200 59398[0m
+22 05:45:43 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 564[0m
+22 05:45:44 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 558[0m
+22 05:45:46 | [32mdjango.server [37m| "GET /ajax/view/creature/_tictactoe/ HTTP/1.1" 200 59386[0m
+22 05:45:50 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 552[0m
+22 05:45:52 | [32mdjango.server [37m| "GET /ajax/view/creature/_tictactoe/ HTTP/1.1" 200 59379[0m
+22 05:46:21 | [32mdjango.server [37m| "GET /ajax/display/crossover_sheet/_tictactoe/ HTTP/1.1" 200 32821[0m
+22 05:46:55 | [32mdjango.server [37m| "POST /ajax/editable/userinput/ HTTP/1.1" 200 49[0m
+22 05:47:03 | [32mdjango.server [37m| "GET /ajax/view/creature/_tictactoe/ HTTP/1.1" 200 59392[0m
+22 05:47:49 | [32mdjango.server [37m| "GET /admin/collector/gift/?kinfolk_gift__exact=0&level=2 HTTP/1.1" 200 153344[0m
+22 05:47:49 | [32mdjango.server [37m| "GET /admin/jsi18n/ HTTP/1.1" 200 3342[0m
+22 05:47:53 | [32mdjango.server [37m| "GET /admin/collector/gift/?kinfolk_gift__exact=0&level=2 HTTP/1.1" 200 153344[0m
+22 05:47:53 | [32mdjango.server [37m| "GET /admin/jsi18n/ HTTP/1.1" 200 3342[0m
+22 05:47:57 | [32mdjango.server [37m| "GET /admin/collector/gift/?auspice_2__exact=1&kinfolk_gift__exact=0&level=2 HTTP/1.1" 200 39918[0m
+22 05:47:57 | [32mdjango.server [37m| "GET /admin/jsi18n/ HTTP/1.1" 200 3342[0m
+22 05:49:10 | [32mdjango.server [37m| "GET /admin/collector/gift/52/change/?_changelist_filters=auspice_2__exact%3D1%26kinfolk_gift__exact%3D0%26level%3D2 HTTP/1.1" 200 41401[0m
+22 05:49:10 | [32mdjango.server [37m| "GET /admin/jsi18n/ HTTP/1.1" 200 3342[0m
+22 05:50:02 | [32mdjango.server [37m| "POST /admin/collector/gift/52/change/?_changelist_filters=auspice_2__exact%3D1%26kinfolk_gift__exact%3D0%26level%3D2 HTTP/1.1" 302 0[0m
+22 05:50:02 | [32mdjango.server [37m| "GET /admin/collector/gift/?auspice_2__exact=1&kinfolk_gift__exact=0&level=2 HTTP/1.1" 200 40463[0m
+22 05:50:02 | [32mdjango.server [37m| "GET /admin/jsi18n/ HTTP/1.1" 200 3342[0m
+22 05:50:21 | [32mdjango.server [37m| "GET /admin/collector/gift/227/change/?_changelist_filters=auspice_2__exact%3D1%26kinfolk_gift__exact%3D0%26level%3D2 HTTP/1.1" 200 41385[0m
+22 05:50:21 | [32mdjango.server [37m| "GET /admin/jsi18n/ HTTP/1.1" 200 3342[0m
+22 05:50:56 | [32mdjango.server [37m| "POST /admin/collector/gift/227/change/?_changelist_filters=auspice_2__exact%3D1%26kinfolk_gift__exact%3D0%26level%3D2 HTTP/1.1" 302 0[0m
+22 05:50:56 | [32mdjango.server [37m| "GET /admin/collector/gift/?auspice_2__exact=1&kinfolk_gift__exact=0&level=2 HTTP/1.1" 200 40724[0m
+22 05:50:56 | [32mdjango.server [37m| "GET /admin/jsi18n/ HTTP/1.1" 200 3342[0m
+22 05:51:02 | [32mdjango.server [37m| "GET /admin/collector/gift/410/change/?_changelist_filters=auspice_2__exact%3D1%26kinfolk_gift__exact%3D0%26level%3D2 HTTP/1.1" 200 41392[0m
+22 05:51:02 | [32mdjango.server [37m| "GET /admin/jsi18n/ HTTP/1.1" 200 3342[0m
+22 05:51:31 | [32mdjango.server [37m| "POST /admin/collector/gift/410/change/?_changelist_filters=auspice_2__exact%3D1%26kinfolk_gift__exact%3D0%26level%3D2 HTTP/1.1" 302 0[0m
+22 05:51:31 | [32mdjango.server [37m| "GET /admin/collector/gift/?auspice_2__exact=1&kinfolk_gift__exact=0&level=2 HTTP/1.1" 200 40896[0m
+22 05:51:31 | [32mdjango.server [37m| "GET /admin/jsi18n/ HTTP/1.1" 200 3342[0m
+22 05:54:06 | [32mdjango.server [37m| "POST /ajax/editable/userinput/ HTTP/1.1" 200 49[0m
+22 05:54:08 | [32mdjango.server [37m| "GET /ajax/view/creature/_tictactoe/ HTTP/1.1" 200 59383[0m
+22 05:56:24 | [32mdjango.server [37m| "GET /admin/collector/gift/?auspice_2__exact=1&kinfolk_gift__exact=0&level=1 HTTP/1.1" 200 46239[0m
+22 05:56:24 | [32mdjango.server [37m| "GET /admin/jsi18n/ HTTP/1.1" 200 3342[0m
+22 05:57:20 | [32mdjango.server [37m| "POST /ajax/editable/userinput/ HTTP/1.1" 200 59[0m
+22 05:57:22 | [32mdjango.server [37m| "GET /ajax/view/creature/_tictactoe/ HTTP/1.1" 200 59396[0m
+22 05:58:54 | [32mdjango.server [37m| "POST /ajax/editable/userinput/ HTTP/1.1" 200 55[0m
+22 05:58:56 | [32mdjango.server [37m| "GET /ajax/view/creature/_tictactoe/ HTTP/1.1" 200 59407[0m
+22 06:00:01 | [32mdjango.server [37m| "POST /ajax/editable/userinput/ HTTP/1.1" 200 55[0m
+22 06:00:05 | [32mdjango.server [37m| "GET /ajax/view/creature/_tictactoe/ HTTP/1.1" 200 59407[0m
+22 06:06:45 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 594[0m
+22 06:06:52 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 594[0m
+22 06:07:01 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 588[0m
+22 06:07:01 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 594[0m
+22 06:07:06 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 588[0m
+22 06:07:08 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 588[0m
+22 06:07:28 | [32mdjango.server [37m| "POST /ajax/editable/userinput/ HTTP/1.1" 200 64[0m
+22 06:07:29 | [32mdjango.server [37m| "GET /ajax/view/creature/_tictactoe/ HTTP/1.1" 200 59446[0m
+22 06:10:52 | [32mdjango.server [37m| "GET /ajax/display/crossover_sheet/_tictactoe/ HTTP/1.1" 200 35087[0m
+22 06:13:30 | [32mdjango.server [37m| "POST /ajax/editable/userinput/ HTTP/1.1" 200 39[0m
+22 06:13:32 | [32mdjango.server [37m| "GET /ajax/view/creature/_tictactoe/ HTTP/1.1" 200 59446[0m
+22 06:13:40 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 564[0m
+22 06:13:51 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 588[0m
+22 06:14:10 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 594[0m
+22 06:14:22 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 576[0m
+22 06:14:24 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 570[0m
+22 06:14:25 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 564[0m
+22 06:14:34 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 576[0m
+22 06:14:36 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 558[0m
+22 06:14:46 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 570[0m
+22 06:14:47 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 576[0m
+22 06:14:47 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 582[0m
+22 06:14:50 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 552[0m
+22 06:14:57 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 582[0m
+22 06:14:59 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 546[0m
+22 06:15:15 | [32mdjango.server [37m| "GET /ajax/display/crossover_sheet/_tictactoe/ HTTP/1.1" 200 35006[0m
+22 06:18:52 | [32mdjango.server [37m| "POST /ajax/editable/userinput/ HTTP/1.1" 200 46[0m
+22 06:18:58 | [32mdjango.server [37m| "GET /ajax/view/creature/_tictactoe/ HTTP/1.1" 200 59442[0m
+22 06:19:00 | [32mdjango.server [37m| "GET /ajax/display/crossover_sheet/_tictactoe/ HTTP/1.1" 200 35019[0m
+22 06:19:25 | [32mdjango.server [37m| "POST /ajax/editable/userinput/ HTTP/1.1" 200 46[0m
+22 06:19:27 | [32mdjango.server [37m| "GET /ajax/view/creature/_tictactoe/ HTTP/1.1" 200 59455[0m
+22 06:19:29 | [32mdjango.server [37m| "GET /ajax/display/crossover_sheet/_tictactoe/ HTTP/1.1" 200 35032[0m
+22 06:21:20 | [32mdjango.server [37m| "POST /ajax/editable/userinput/ HTTP/1.1" 200 46[0m
+22 06:21:23 | [32mdjango.server [37m| "GET /ajax/view/creature/_tictactoe/ HTTP/1.1" 200 59455[0m
+22 06:21:30 | [32mdjango.server [37m| "GET /ajax/display/crossover_sheet/_tictactoe/ HTTP/1.1" 200 35032[0m
+22 06:22:52 | [32mdjango.server [37m| "GET /api/text/_tictactoe/ HTTP/1.1" 200 2146[0m
+22 06:23:06 | [32mdjango.server [37m| "GET /ajax/display/crossover_sheet/_tictactoe/ HTTP/1.1" 200 35032[0m
+22 06:25:16 | [32mdjango.server [37m| "GET /ajax/display/crossover_sheet/_tictactoe/ HTTP/1.1" 200 35032[0m
+22 06:25:19 | [32mdjango [37m| Index[0m
+22 06:25:19 | [32mdjango.server [37m| "GET / HTTP/1.1" 200 30015[0m
+22 06:25:19 | [32mdjango.server [37m| "GET /static/js/wawwod_sheet.es6 HTTP/1.1" 200 194024[0m
+22 06:25:19 | [32mdjango.server [37m| "GET /static/js/dashboard.es6 HTTP/1.1" 200 7184[0m
+22 06:25:19 | [32mdjango.server [37m| "GET /static/js/chronicle_map.es6 HTTP/1.1" 200 8750[0m
+22 06:25:19 | [32mdjango.server [37m| "GET /static/js/cross_over_sheet.es6 HTTP/1.1" 200 29818[0m
+22 06:25:19 | [32mdjango.server [37m| "GET /static/js/gaia_wheel.es6 HTTP/1.1" 200 22105[0m
+22 06:25:19 | [32mdjango.server [37m| "GET /static/js/collector.es6 HTTP/1.1" 200 33105[0m
+22 06:25:19 | [32mdjango.server [37m| "GET /static/js/kindred_lineage.es6 HTTP/1.1" 200 19223[0m
+22 06:25:19 | [32mdjango.server [37m| "GET /static/js/sept.es6 HTTP/1.1" 200 26617[0m
+22 06:25:19 | [32mdjango.server [37m| "GET /static/js/adventure_sheet.es6 HTTP/1.1" 200 22609[0m
+22 06:25:19 | [32mdjango.server [37m| "GET /static/js/storytelling.es6 HTTP/1.1" 200 35244[0m
+22 06:25:19 | [32mdjango.server [37m| "GET /static/js/geocity.es6 HTTP/1.1" 200 31321[0m
+22 06:25:19 | [32mdjango.server [37m| "GET /static/CACHE/css/main.2b58472b2b94.css HTTP/1.1" 200 41917[0m
+22 06:25:19 | [32mdjango.server [37m| "GET /static/CACHE/css/storytelling.0d576c4d3101.css HTTP/1.1" 200 8998[0m
+22 06:25:19 | [32mdjango.server [37m| "GET /static/collector/auspices/AuspiceNone.webp HTTP/1.1" 200 1274[0m
+22 06:25:19 | [32mdjango.server [37m| "GET /static/collector/auspices/AuspiceRagabash.webp HTTP/1.1" 200 6994[0m
+22 06:25:19 | [32mdjango.server [37m| "GET /static/collector/auspices/AuspiceAhroun.webp HTTP/1.1" 200 6578[0m
+22 06:25:19 | [32mdjango.server [37m| "GET /static/collector/auspices/AuspiceTheurge.webp HTTP/1.1" 200 7154[0m
+22 06:25:19 | [32mdjango.server [37m| "GET /static/collector/auspices/AuspiceGalliard.webp HTTP/1.1" 200 5762[0m
+22 06:25:19 | [32mdjango.server [37m| "GET /static/collector/auspices/AuspicePhilodox.webp HTTP/1.1" 200 5954[0m
+22 06:25:19 | [32mdjango.server [37m| "GET /static/collector/colorful-grunge-texture-10.jpg?35428083bd4f HTTP/1.1" 200 218025[0m
+22 06:25:19 | [33mdjango.server [37m| "GET /static/collector/css?cc99f8c0e6f6 HTTP/1.1" 404 1860[0m
+22 06:25:19 | [32mdjango.server [37m| "GET /static/collector/wawwod.ico HTTP/1.1" 200 73478[0m
+22 06:25:26 | [32mdjango.server [37m| "GET /ajax/display/septs/_sept_of_the_sinner/ HTTP/1.1" 200 33701[0m
+22 06:25:26 | [32mdjango.server [37m| "GET /static/collector/breed/GlyphHomid.webp HTTP/1.1" 200 6538[0m
+22 06:25:26 | [32mdjango.server [37m| "GET /static/collector/tribes/shadow_lords.webp HTTP/1.1" 200 15162[0m
+22 06:25:26 | [32mdjango.server [37m| "GET /static/collector/tribes/glass_walkers.webp HTTP/1.1" 200 15876[0m
+22 06:25:26 | [32mdjango.server [37m| "GET /static/collector/tribes/fiannas.webp HTTP/1.1" 200 10624[0m
+22 06:25:26 | [32mdjango.server [37m| "GET /static/collector/tribes/bone_gnawers.webp HTTP/1.1" 200 14416[0m
+22 06:25:26 | [32mdjango.server [37m| "GET /static/collector/breed/GlyphMetis.webp HTTP/1.1" 200 8474[0m
+22 06:25:26 | [32mdjango.server [37m| "GET /static/collector/tribes/wendigos.webp HTTP/1.1" 200 14786[0m
+22 06:25:26 | [32mdjango.server [37m| "GET /static/collector/tribes/silver_fangs.webp HTTP/1.1" 200 16630[0m
+22 06:25:30 | [32mdjango.server [37m| "GET /ajax/view/creature/_tictactoe/ HTTP/1.1" 200 59455[0m
+22 06:25:31 | [32mdjango.server [37m| "GET /ajax/display/crossover_sheet/_tictactoe/ HTTP/1.1" 200 35032[0m
+22 06:26:07 | [32mdjango.server [37m| "GET /ajax/display/crossover_sheet/_tictactoe/ HTTP/1.1" 200 35032[0m
+22 06:26:09 | [32mdjango [37m| Index[0m
+22 06:26:09 | [32mdjango.server [37m| "GET / HTTP/1.1" 200 30015[0m
+22 06:26:09 | [32mdjango.server [37m| "GET /static/js/cross_over_sheet.es6 HTTP/1.1" 200 29818[0m
+22 06:26:09 | [32mdjango.server [37m| "GET /static/js/gaia_wheel.es6 HTTP/1.1" 200 22105[0m
+22 06:26:09 | [32mdjango.server [37m| "GET /static/js/collector.es6 HTTP/1.1" 200 33105[0m
+22 06:26:09 | [32mdjango.server [37m| "GET /static/js/dashboard.es6 HTTP/1.1" 200 7184[0m
+22 06:26:09 | [32mdjango.server [37m| "GET /static/js/chronicle_map.es6 HTTP/1.1" 200 8750[0m
+22 06:26:09 | [32mdjango.server [37m| "GET /static/js/wawwod_sheet.es6 HTTP/1.1" 200 194024[0m
+22 06:26:09 | [32mdjango.server [37m| "GET /static/js/kindred_lineage.es6 HTTP/1.1" 200 19223[0m
+22 06:26:09 | [32mdjango.server [37m| "GET /static/js/sept.es6 HTTP/1.1" 200 26617[0m
+22 06:26:09 | [32mdjango.server [37m| "GET /static/js/storytelling.es6 HTTP/1.1" 200 35244[0m
+22 06:26:09 | [32mdjango.server [37m| "GET /static/js/geocity.es6 HTTP/1.1" 200 31321[0m
+22 06:26:09 | [32mdjango.server [37m| "GET /static/js/adventure_sheet.es6 HTTP/1.1" 200 22609[0m
+22 06:26:09 | [32mdjango.server [37m| "GET /static/CACHE/css/main.2b58472b2b94.css HTTP/1.1" 200 41917[0m
+22 06:26:09 | [32mdjango.server [37m| "GET /static/CACHE/css/storytelling.0d576c4d3101.css HTTP/1.1" 200 8998[0m
+22 06:26:10 | [32mdjango.server [37m| "GET /static/collector/auspices/AuspiceNone.webp HTTP/1.1" 200 1274[0m
+22 06:26:10 | [32mdjango.server [37m| "GET /static/collector/auspices/AuspiceAhroun.webp HTTP/1.1" 200 6578[0m
+22 06:26:10 | [32mdjango.server [37m| "GET /static/collector/auspices/AuspiceRagabash.webp HTTP/1.1" 200 6994[0m
+22 06:26:10 | [32mdjango.server [37m| "GET /static/collector/auspices/AuspicePhilodox.webp HTTP/1.1" 200 5954[0m
+22 06:26:10 | [32mdjango.server [37m| "GET /static/collector/auspices/AuspiceGalliard.webp HTTP/1.1" 200 5762[0m
+22 06:26:10 | [32mdjango.server [37m| "GET /static/collector/auspices/AuspiceTheurge.webp HTTP/1.1" 200 7154[0m
+22 06:26:10 | [32mdjango.server [37m| "GET /static/collector/colorful-grunge-texture-10.jpg?35428083bd4f HTTP/1.1" 200 218025[0m
+22 06:26:10 | [33mdjango.server [37m| "GET /static/collector/css?cc99f8c0e6f6 HTTP/1.1" 404 1860[0m
+22 06:26:10 | [32mdjango.server [37m| "GET /static/collector/wawwod.ico HTTP/1.1" 200 73478[0m
+22 06:26:13 | [32mdjango.server [37m| "GET /ajax/display/septs/_sept_of_the_sinner/ HTTP/1.1" 200 33701[0m
+22 06:26:13 | [32mdjango.server [37m| "GET /static/collector/tribes/fiannas.webp HTTP/1.1" 200 10624[0m
+22 06:26:13 | [32mdjango.server [37m| "GET /static/collector/breed/GlyphHomid.webp HTTP/1.1" 200 6538[0m
+22 06:26:13 | [32mdjango.server [37m| "GET /static/collector/breed/GlyphMetis.webp HTTP/1.1" 200 8474[0m
+22 06:26:13 | [32mdjango.server [37m| "GET /static/collector/tribes/bone_gnawers.webp HTTP/1.1" 200 14416[0m
+22 06:26:13 | [32mdjango.server [37m| "GET /static/collector/tribes/glass_walkers.webp HTTP/1.1" 200 15876[0m
+22 06:26:13 | [32mdjango.server [37m| "GET /static/collector/tribes/shadow_lords.webp HTTP/1.1" 200 15162[0m
+22 06:26:13 | [32mdjango.server [37m| "GET /static/collector/tribes/wendigos.webp HTTP/1.1" 200 14786[0m
+22 06:26:13 | [32mdjango.server [37m| "GET /static/collector/tribes/silver_fangs.webp HTTP/1.1" 200 16630[0m
+22 06:26:15 | [32mdjango.server [37m| "GET /ajax/view/creature/_tictactoe/ HTTP/1.1" 200 59455[0m
+22 06:26:17 | [32mdjango.server [37m| "GET /ajax/display/crossover_sheet/_tictactoe/ HTTP/1.1" 200 35032[0m
+22 06:29:07 | [32mdjango.server [37m| "GET /ajax/display/septs/_sept_of_the_sinner/ HTTP/1.1" 200 33701[0m
+22 06:29:07 | [32mdjango.server [37m| "GET /static/collector/breed/GlyphHomid.webp HTTP/1.1" 200 6538[0m
+22 06:29:07 | [32mdjango.server [37m| "GET /static/collector/tribes/glass_walkers.webp HTTP/1.1" 200 15876[0m
+22 06:29:07 | [32mdjango.server [37m| "GET /static/collector/tribes/shadow_lords.webp HTTP/1.1" 200 15162[0m
+22 06:29:07 | [32mdjango.server [37m| "GET /static/collector/breed/GlyphMetis.webp HTTP/1.1" 200 8474[0m
+22 06:29:07 | [32mdjango.server [37m| "GET /static/collector/tribes/fiannas.webp HTTP/1.1" 200 10624[0m
+22 06:29:07 | [32mdjango.server [37m| "GET /static/collector/tribes/silver_fangs.webp HTTP/1.1" 200 16630[0m
+22 06:29:07 | [32mdjango.server [37m| "GET /static/collector/tribes/wendigos.webp HTTP/1.1" 200 14786[0m
+22 06:29:11 | [32mdjango.server [37m| "GET /ajax/view/creature/_tictactoe/ HTTP/1.1" 200 59893[0m
+22 06:29:26 | [32mdjango.server [37m| "GET /admin/collector/ HTTP/1.1" 200 13517[0m
+22 06:29:26 | [32mdjango.server [37m| "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0[0m
+22 06:29:28 | [32mdjango.server [37m| "GET /admin/collector/creature/ HTTP/1.1" 200 69544[0m
+22 06:29:28 | [32mdjango.server [37m| "GET /admin/jsi18n/ HTTP/1.1" 200 3342[0m
+22 06:29:30 | [32mdjango.server [37m| "GET /admin/collector/creature/?chronicle=RAMI HTTP/1.1" 200 75415[0m
+22 06:29:30 | [32mdjango.server [37m| "GET /admin/jsi18n/ HTTP/1.1" 200 3342[0m
+22 06:29:32 | [32mdjango.server [37m| "GET /admin/collector/creature/?chronicle=RAMI&is_player__exact=1 HTTP/1.1" 200 55451[0m
+22 06:29:32 | [32mdjango.server [37m| "GET /admin/jsi18n/ HTTP/1.1" 200 3342[0m
+22 06:29:37 | [32mdjango.server [37m| "GET /admin/collector/creature/795/change/?_changelist_filters=chronicle%3DRAMI%26is_player__exact%3D1 HTTP/1.1" 200 181074[0m
+22 06:29:37 | [32mdjango.server [37m| "GET /admin/jsi18n/ HTTP/1.1" 200 3342[0m
+22 06:32:15 | [32mdjango.server [37m| "POST /ajax/editable/userinput/ HTTP/1.1" 200 69[0m
+22 06:32:15 | [32mdjango.server [37m| "GET /ajax/view/creature/_tictactoe/ HTTP/1.1" 200 59929[0m
+22 06:32:18 | [32mdjango.server [37m| "GET /ajax/display/crossover_sheet/_tictactoe/ HTTP/1.1" 200 35119[0m
+22 06:33:55 | [32mdjango.server [37m| "GET /ajax/display/crossover_sheet/_tictactoe/ HTTP/1.1" 200 35119[0m
+22 06:33:57 | [32mdjango [37m| Saving to PDF.[0m
+22 06:33:57 | [32mdjango [37m| --> Created --> wawwod_media/drafts/character_sheet_tictactoe_p0.svg.[0m
+22 06:33:58 | [32mdjango [37m| --> Created --> wawwod_media/characters/character_sheet_tictactoe_p0.pdf.[0m
+22 06:33:58 | [32mdjango [37m| Starting PDFing for [_tictactoe].[0m
+22 06:33:58 | [32mdjango.server [37m| "POST /ajax/character/svg2pdf/_tictactoe/ HTTP/1.1" 200 16[0m
+22 06:34:13 | [32mdjango.server [37m| "GET /ajax/display/septs/_sept_of_the_sinner/ HTTP/1.1" 200 33701[0m
+22 06:34:16 | [32mdjango.server [37m| "GET /ajax/view/creature/_tictactoe/ HTTP/1.1" 200 59929[0m
+22 06:34:29 | [32mdjango.server [37m| "GET /admin/collector/creature/ HTTP/1.1" 200 69544[0m
+22 06:34:29 | [32mdjango.server [37m| "GET /admin/jsi18n/ HTTP/1.1" 200 3342[0m
+22 06:34:34 | [32mdjango.server [37m| "GET /admin/collector/creature/?q=tict HTTP/1.1" 200 43062[0m
+22 06:34:34 | [32mdjango.server [37m| "GET /admin/jsi18n/ HTTP/1.1" 200 3342[0m
+22 06:34:36 | [32mdjango.server [37m| "GET /admin/collector/creature/1019/change/?_changelist_filters=q%3Dtict HTTP/1.1" 200 180935[0m
+22 06:34:36 | [32mdjango.server [37m| "GET /admin/jsi18n/ HTTP/1.1" 200 3342[0m
+22 06:34:40 | [32mdjango.server [37m| "GET /admin/collector/ HTTP/1.1" 200 13517[0m
+22 06:34:45 | [32mdjango.server [37m| "GET /admin/collector/archetype/ HTTP/1.1" 200 77542[0m
+22 06:34:45 | [32mdjango.server [37m| "GET /admin/jsi18n/ HTTP/1.1" 200 3342[0m
+22 06:35:26 | [32mdjango.server [37m| "POST /ajax/editable/userinput/ HTTP/1.1" 200 38[0m
+22 06:35:26 | [32mdjango.server [37m| "GET /ajax/view/creature/_tictactoe/ HTTP/1.1" 200 59925[0m
+22 06:36:28 | [32mdjango.server [37m| "POST /ajax/editable/userinput/ HTTP/1.1" 200 40[0m
+22 06:36:28 | [32mdjango.server [37m| "GET /ajax/view/creature/_tictactoe/ HTTP/1.1" 200 59923[0m
+22 06:36:39 | [32mdjango.server [37m| "GET /ajax/display/crossover_sheet/_tictactoe/ HTTP/1.1" 200 35904[0m
+22 06:36:42 | [32mdjango [37m| Saving to PDF.[0m
+22 06:36:42 | [32mdjango [37m| --> Created --> wawwod_media/drafts/character_sheet_tictactoe_p0.svg.[0m
+22 06:36:42 | [32mdjango [37m| --> Created --> wawwod_media/characters/character_sheet_tictactoe_p0.pdf.[0m
+22 06:36:42 | [32mdjango [37m| Starting PDFing for [_tictactoe].[0m
+22 06:36:42 | [32mdjango.server [37m| "POST /ajax/character/svg2pdf/_tictactoe/ HTTP/1.1" 200 16[0m
+22 06:36:46 | [32mdjango [37m| Saving to PDF.[0m
+22 06:36:46 | [32mdjango [37m| --> Created --> wawwod_media/drafts/character_sheet_tictactoe_p1.svg.[0m
+22 06:36:46 | [32mdjango [37m| --> Created --> wawwod_media/characters/character_sheet_tictactoe_p1.pdf.[0m
+22 06:36:46 | [32mdjango [37m| Starting PDFing for [_tictactoe].[0m
+22 06:36:46 | [32mdjango.server [37m| "POST /ajax/character/svg2pdf/_tictactoe/ HTTP/1.1" 200 16[0m
+22 06:36:50 | [32mdjango [37m| Saving to PDF.[0m
+22 06:36:50 | [32mdjango [37m| --> Created --> wawwod_media/drafts/character_sheet_tictactoe_p2.svg.[0m
+22 06:36:50 | [32mdjango [37m| --> Created --> wawwod_media/characters/character_sheet_tictactoe_p2.pdf.[0m
+22 06:36:50 | [32mdjango [37m| Starting PDFing for [_tictactoe].[0m
+22 06:36:50 | [32mdjango.server [37m| "POST /ajax/character/svg2pdf/_tictactoe/ HTTP/1.1" 200 16[0m
+22 06:36:54 | [32mdjango [37m| Saving to PDF.[0m
+22 06:36:54 | [32mdjango [37m| --> Created --> wawwod_media/drafts/character_sheet_tictactoe_p3.svg.[0m
+22 06:36:54 | [32mdjango [37m| --> Created --> wawwod_media/characters/character_sheet_tictactoe_p3.pdf.[0m
+22 06:36:54 | [32mdjango [37m| Starting PDFing for [_tictactoe].[0m
+22 06:36:54 | [32mdjango.server [37m| "POST /ajax/character/svg2pdf/_tictactoe/ HTTP/1.1" 200 16[0m
+22 06:37:00 | [32mdjango [37m| Saving to PDF.[0m
+22 06:37:00 | [32mdjango [37m| --> Created --> wawwod_media/drafts/character_sheet_tictactoe_p4.svg.[0m
+22 06:37:01 | [32mdjango [37m| --> Created --> wawwod_media/characters/character_sheet_tictactoe_p4.pdf.[0m
+22 06:37:01 | [32mdjango [37m| Starting PDFing for [_tictactoe].[0m
+22 06:37:01 | [32mdjango.server [37m| "POST /ajax/character/svg2pdf/_tictactoe/ HTTP/1.1" 200 16[0m
+22 06:37:08 | [32mdjango [37m| Saving to PDF.[0m
+22 06:37:08 | [32mdjango [37m| --> Created --> wawwod_media/drafts/character_sheet_tictactoe_p5.svg.[0m
+22 06:37:08 | [32mdjango [37m| --> Created --> wawwod_media/characters/character_sheet_tictactoe_p5.pdf.[0m
+22 06:37:08 | [32mdjango [37m| Starting PDFing for [_tictactoe].[0m
+22 06:37:08 | [32mdjango.server [37m| "POST /ajax/character/svg2pdf/_tictactoe/ HTTP/1.1" 200 16[0m
+22 06:37:11 | [32mdjango [37m| Saving to PDF.[0m
+22 06:37:11 | [32mdjango [37m| --> Created --> wawwod_media/drafts/character_sheet_tictactoe_p6.svg.[0m
+22 06:37:11 | [32mdjango [37m| --> Created --> wawwod_media/characters/character_sheet_tictactoe_p6.pdf.[0m
+22 06:37:11 | [32mdjango [37m| Starting PDFing for [_tictactoe].[0m
+22 06:37:11 | [32mdjango [37m| Successfully merged 7 page(s) as [wawwod_media/characters/character_sheet_tictactoe.pdf].[0m
+22 06:37:11 | [32mdjango.server [37m| "POST /ajax/character/svg2pdf/_tictactoe/ HTTP/1.1" 200 16[0m
+22 06:37:13 | [32mdjango [37m| Saving to PDF.[0m
+22 06:37:13 | [32mdjango [37m| --> Created --> wawwod_media/drafts/character_sheet_tictactoe_p7.svg.[0m
+22 06:37:13 | [32mdjango [37m| --> Created --> wawwod_media/characters/character_sheet_tictactoe_p7.pdf.[0m
+22 06:37:13 | [32mdjango [37m| Starting PDFing for [_tictactoe].[0m
+22 06:37:13 | [32mdjango [37m| Successfully merged 8 page(s) as [wawwod_media/characters/character_sheet_tictactoe.pdf].[0m
+22 06:37:13 | [32mdjango.server [37m| "POST /ajax/character/svg2pdf/_tictactoe/ HTTP/1.1" 200 16[0m
+22 06:38:31 | [32mdjango.server [37m| "GET /admin/collector/ HTTP/1.1" 200 13517[0m
+22 06:38:42 | [32mdjango.server [37m| "GET /admin/collector/gift/ HTTP/1.1" 200 147475[0m
+22 06:38:42 | [32mdjango.server [37m| "GET /admin/jsi18n/ HTTP/1.1" 200 3342[0m
+22 06:38:46 | [32mdjango.server [37m| "GET /admin/collector/gift/?q=form+mastery HTTP/1.1" 200 32226[0m
+22 06:38:46 | [32mdjango.server [37m| "GET /admin/jsi18n/ HTTP/1.1" 200 3342[0m
+22 06:38:49 | [32mdjango.server [37m| "GET /admin/collector/gift/157/change/?_changelist_filters=q%3Dform%2Bmastery HTTP/1.1" 200 41259[0m
+22 06:38:49 | [32mdjango.server [37m| "GET /admin/jsi18n/ HTTP/1.1" 200 3342[0m
+22 06:39:37 | [32mdjango.server [37m| "POST /admin/collector/gift/157/change/?_changelist_filters=q%3Dform%2Bmastery HTTP/1.1" 302 0[0m
+22 06:39:37 | [32mdjango.server [37m| "GET /admin/collector/gift/?q=form+mastery HTTP/1.1" 200 32607[0m
+22 06:39:37 | [32mdjango.server [37m| "GET /admin/jsi18n/ HTTP/1.1" 200 3342[0m
+22 06:39:57 | [32mdjango [37m| Index[0m
+22 06:39:57 | [32mdjango.server [37m| "GET / HTTP/1.1" 200 30015[0m
+22 06:39:57 | [32mdjango.server [37m| "GET /static/js/cross_over_sheet.es6 HTTP/1.1" 200 29818[0m
+22 06:39:57 | [32mdjango.server [37m| "GET /static/js/collector.es6 HTTP/1.1" 200 33105[0m
+22 06:39:57 | [32mdjango.server [37m| "GET /static/js/gaia_wheel.es6 HTTP/1.1" 200 22105[0m
+22 06:39:57 | [32mdjango.server [37m| "GET /static/js/dashboard.es6 HTTP/1.1" 200 7184[0m
+22 06:39:57 | [32mdjango.server [37m| "GET /static/js/chronicle_map.es6 HTTP/1.1" 200 8750[0m
+22 06:39:57 | [32mdjango.server [37m| "GET /static/js/kindred_lineage.es6 HTTP/1.1" 200 19223[0m
+22 06:39:57 | [32mdjango.server [37m| "GET /static/js/geocity.es6 HTTP/1.1" 200 31321[0m
+22 06:39:57 | [32mdjango.server [37m| "GET /static/js/storytelling.es6 HTTP/1.1" 200 35244[0m
+22 06:39:57 | [32mdjango.server [37m| "GET /static/js/wawwod_sheet.es6 HTTP/1.1" 200 194024[0m
+22 06:39:57 | [32mdjango.server [37m| "GET /static/js/sept.es6 HTTP/1.1" 200 26617[0m
+22 06:39:57 | [32mdjango.server [37m| "GET /static/js/adventure_sheet.es6 HTTP/1.1" 200 22609[0m
+22 06:39:57 | [32mdjango.server [37m| "GET /static/CACHE/css/main.2b58472b2b94.css HTTP/1.1" 200 41917[0m
+22 06:39:57 | [32mdjango.server [37m| "GET /static/CACHE/css/storytelling.0d576c4d3101.css HTTP/1.1" 200 8998[0m
+22 06:39:57 | [32mdjango.server [37m| "GET /static/collector/auspices/AuspicePhilodox.webp HTTP/1.1" 200 5954[0m
+22 06:39:57 | [32mdjango.server [37m| "GET /static/collector/auspices/AuspiceAhroun.webp HTTP/1.1" 200 6578[0m
+22 06:39:57 | [32mdjango.server [37m| "GET /static/collector/auspices/AuspiceGalliard.webp HTTP/1.1" 200 5762[0m
+22 06:39:57 | [32mdjango.server [37m| "GET /static/collector/auspices/AuspiceTheurge.webp HTTP/1.1" 200 7154[0m
+22 06:39:57 | [32mdjango.server [37m| "GET /static/collector/auspices/AuspiceNone.webp HTTP/1.1" 200 1274[0m
+22 06:39:57 | [32mdjango.server [37m| "GET /static/collector/auspices/AuspiceRagabash.webp HTTP/1.1" 200 6994[0m
+22 06:39:57 | [32mdjango.server [37m| "GET /static/collector/colorful-grunge-texture-10.jpg?35428083bd4f HTTP/1.1" 200 218025[0m
+22 06:39:57 | [33mdjango.server [37m| "GET /static/collector/css?cc99f8c0e6f6 HTTP/1.1" 404 1860[0m
+22 06:39:57 | [32mdjango.server [37m| "GET /static/collector/wawwod.ico HTTP/1.1" 200 73478[0m
+22 06:40:06 | [32mdjango.server [37m| "GET /ajax/display/septs/_sept_of_the_sinner/ HTTP/1.1" 200 33701[0m
+22 06:40:06 | [32mdjango.server [37m| "GET /static/collector/tribes/shadow_lords.webp HTTP/1.1" 200 15162[0m
+22 06:40:06 | [32mdjango.server [37m| "GET /static/collector/tribes/bone_gnawers.webp HTTP/1.1" 200 14416[0m
+22 06:40:06 | [32mdjango.server [37m| "GET /static/collector/tribes/fiannas.webp HTTP/1.1" 200 10624[0m
+22 06:40:06 | [32mdjango.server [37m| "GET /static/collector/breed/GlyphHomid.webp HTTP/1.1" 200 6538[0m
+22 06:40:06 | [32mdjango.server [37m| "GET /static/collector/breed/GlyphMetis.webp HTTP/1.1" 200 8474[0m
+22 06:40:06 | [32mdjango.server [37m| "GET /static/collector/tribes/glass_walkers.webp HTTP/1.1" 200 15876[0m
+22 06:40:06 | [32mdjango.server [37m| "GET /static/collector/tribes/wendigos.webp HTTP/1.1" 200 14786[0m
+22 06:40:06 | [32mdjango.server [37m| "GET /static/collector/tribes/silver_fangs.webp HTTP/1.1" 200 16630[0m
+22 06:40:08 | [32mdjango.server [37m| "GET /ajax/view/creature/_tictactoe/ HTTP/1.1" 200 59923[0m
+22 06:40:10 | [32mdjango.server [37m| "GET /ajax/display/crossover_sheet/_tictactoe/ HTTP/1.1" 200 36332[0m
+22 06:40:15 | [32mdjango [37m| Saving to PDF.[0m
+22 06:40:15 | [32mdjango [37m| --> Created --> wawwod_media/drafts/character_sheet_tictactoe_p0.svg.[0m
+22 06:40:15 | [32mdjango [37m| --> Created --> wawwod_media/characters/character_sheet_tictactoe_p0.pdf.[0m
+22 06:40:15 | [32mdjango [37m| Starting PDFing for [_tictactoe].[0m
+22 06:40:15 | [32mdjango [37m| Successfully merged 8 page(s) as [wawwod_media/characters/character_sheet_tictactoe.pdf].[0m
+22 06:40:15 | [32mdjango.server [37m| "POST /ajax/character/svg2pdf/_tictactoe/ HTTP/1.1" 200 16[0m
+22 06:40:18 | [32mdjango [37m| Saving to PDF.[0m
+22 06:40:18 | [32mdjango [37m| --> Created --> wawwod_media/drafts/character_sheet_tictactoe_p1.svg.[0m
+22 06:40:18 | [32mdjango [37m| --> Created --> wawwod_media/characters/character_sheet_tictactoe_p1.pdf.[0m
+22 06:40:18 | [32mdjango [37m| Starting PDFing for [_tictactoe].[0m
+22 06:40:18 | [32mdjango [37m| Successfully merged 8 page(s) as [wawwod_media/characters/character_sheet_tictactoe.pdf].[0m
+22 06:40:18 | [32mdjango.server [37m| "POST /ajax/character/svg2pdf/_tictactoe/ HTTP/1.1" 200 16[0m
+22 06:40:21 | [32mdjango [37m| Saving to PDF.[0m
+22 06:40:21 | [32mdjango [37m| --> Created --> wawwod_media/drafts/character_sheet_tictactoe_p2.svg.[0m
+22 06:40:21 | [32mdjango [37m| --> Created --> wawwod_media/characters/character_sheet_tictactoe_p2.pdf.[0m
+22 06:40:21 | [32mdjango [37m| Starting PDFing for [_tictactoe].[0m
+22 06:40:21 | [32mdjango [37m| Successfully merged 8 page(s) as [wawwod_media/characters/character_sheet_tictactoe.pdf].[0m
+22 06:40:21 | [32mdjango.server [37m| "POST /ajax/character/svg2pdf/_tictactoe/ HTTP/1.1" 200 16[0m
+22 06:40:23 | [32mdjango [37m| Saving to PDF.[0m
+22 06:40:23 | [32mdjango [37m| --> Created --> wawwod_media/drafts/character_sheet_tictactoe_p3.svg.[0m
+22 06:40:23 | [32mdjango [37m| --> Created --> wawwod_media/characters/character_sheet_tictactoe_p3.pdf.[0m
+22 06:40:23 | [32mdjango [37m| Starting PDFing for [_tictactoe].[0m
+22 06:40:23 | [32mdjango [37m| Successfully merged 8 page(s) as [wawwod_media/characters/character_sheet_tictactoe.pdf].[0m
+22 06:40:23 | [32mdjango.server [37m| "POST /ajax/character/svg2pdf/_tictactoe/ HTTP/1.1" 200 16[0m
+22 06:40:26 | [32mdjango [37m| Saving to PDF.[0m
+22 06:40:26 | [32mdjango [37m| --> Created --> wawwod_media/drafts/character_sheet_tictactoe_p4.svg.[0m
+22 06:40:27 | [32mdjango [37m| --> Created --> wawwod_media/characters/character_sheet_tictactoe_p4.pdf.[0m
+22 06:40:27 | [32mdjango [37m| Starting PDFing for [_tictactoe].[0m
+22 06:40:27 | [32mdjango [37m| Successfully merged 8 page(s) as [wawwod_media/characters/character_sheet_tictactoe.pdf].[0m
+22 06:40:27 | [32mdjango.server [37m| "POST /ajax/character/svg2pdf/_tictactoe/ HTTP/1.1" 200 16[0m
+22 06:40:30 | [32mdjango [37m| Saving to PDF.[0m
+22 06:40:30 | [32mdjango [37m| --> Created --> wawwod_media/drafts/character_sheet_tictactoe_p5.svg.[0m
+22 06:40:30 | [32mdjango [37m| --> Created --> wawwod_media/characters/character_sheet_tictactoe_p5.pdf.[0m
+22 06:40:30 | [32mdjango [37m| Starting PDFing for [_tictactoe].[0m
+22 06:40:30 | [32mdjango [37m| Successfully merged 8 page(s) as [wawwod_media/characters/character_sheet_tictactoe.pdf].[0m
+22 06:40:30 | [32mdjango.server [37m| "POST /ajax/character/svg2pdf/_tictactoe/ HTTP/1.1" 200 16[0m
+22 06:40:32 | [32mdjango [37m| Saving to PDF.[0m
+22 06:40:32 | [32mdjango [37m| --> Created --> wawwod_media/drafts/character_sheet_tictactoe_p6.svg.[0m
+22 06:40:32 | [32mdjango [37m| --> Created --> wawwod_media/characters/character_sheet_tictactoe_p6.pdf.[0m
+22 06:40:32 | [32mdjango [37m| Starting PDFing for [_tictactoe].[0m
+22 06:40:32 | [32mdjango [37m| Successfully merged 8 page(s) as [wawwod_media/characters/character_sheet_tictactoe.pdf].[0m
+22 06:40:32 | [32mdjango.server [37m| "POST /ajax/character/svg2pdf/_tictactoe/ HTTP/1.1" 200 16[0m
+22 06:40:35 | [32mdjango [37m| Saving to PDF.[0m
+22 06:40:35 | [32mdjango [37m| --> Created --> wawwod_media/drafts/character_sheet_tictactoe_p7.svg.[0m
+22 06:40:35 | [32mdjango [37m| --> Created --> wawwod_media/characters/character_sheet_tictactoe_p7.pdf.[0m
+22 06:40:35 | [32mdjango [37m| Starting PDFing for [_tictactoe].[0m
+22 06:40:35 | [32mdjango [37m| Successfully merged 8 page(s) as [wawwod_media/characters/character_sheet_tictactoe.pdf].[0m
+22 06:40:35 | [32mdjango.server [37m| "POST /ajax/character/svg2pdf/_tictactoe/ HTTP/1.1" 200 16[0m
+22 06:53:23 | [32mdjango.server [37m| "GET /ajax/display/septs/_sept_of_the_sinner/ HTTP/1.1" 200 33701[0m
+22 06:53:23 | [32mdjango.server [37m| "GET /static/collector/breed/GlyphHomid.webp HTTP/1.1" 200 6538[0m
+22 06:53:23 | [32mdjango.server [37m| "GET /static/collector/tribes/glass_walkers.webp HTTP/1.1" 200 15876[0m
+22 06:53:23 | [32mdjango.server [37m| "GET /static/collector/breed/GlyphMetis.webp HTTP/1.1" 200 8474[0m
+22 06:53:23 | [32mdjango.server [37m| "GET /static/collector/tribes/shadow_lords.webp HTTP/1.1" 200 15162[0m
+22 06:53:23 | [32mdjango.server [37m| "GET /static/collector/tribes/fiannas.webp HTTP/1.1" 200 10624[0m
+22 06:53:23 | [32mdjango.server [37m| "GET /static/collector/tribes/wendigos.webp HTTP/1.1" 200 14786[0m
+22 06:53:23 | [32mdjango.server [37m| "GET /static/collector/tribes/silver_fangs.webp HTTP/1.1" 200 16630[0m
+22 06:53:26 | [32mdjango.server [37m| "GET /ajax/view/creature/_chris_jones/ HTTP/1.1" 200 60153[0m
+22 06:53:43 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 570[0m
+22 06:53:43 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 576[0m
+22 06:53:45 | [32mdjango.server [37m| "GET /ajax/view/creature/_chris_jones/ HTTP/1.1" 200 60164[0m
+22 06:53:49 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 582[0m
+22 06:53:52 | [32mdjango.server [37m| "GET /ajax/view/creature/_chris_jones/ HTTP/1.1" 200 60170[0m
+22 06:53:56 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 564[0m
+22 06:53:58 | [32mdjango.server [37m| "GET /ajax/view/creature/_chris_jones/ HTTP/1.1" 200 60176[0m
+22 06:54:35 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 576[0m
+22 06:54:44 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 582[0m
+22 06:54:51 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 582[0m
+22 06:54:56 | [32mdjango.server [37m| "GET /ajax/view/creature/_chris_jones/ HTTP/1.1" 200 60181[0m
+22 06:55:06 | [32mdjango.server [37m| "POST /ajax/editable/userinput/ HTTP/1.1" 200 33[0m
+22 06:55:06 | [32mdjango.server [37m| "GET /ajax/view/creature/_chris_jones/ HTTP/1.1" 200 60189[0m
+22 06:55:08 | [32mdjango.server [37m| "POST /ajax/editable/userinput/ HTTP/1.1" 200 33[0m
+22 06:55:08 | [32mdjango.server [37m| "GET /ajax/view/creature/_chris_jones/ HTTP/1.1" 200 60196[0m
+22 06:55:20 | [32mdjango.server [37m| "POST /ajax/randomize/traits/for/_chris_jones/ HTTP/1.1" 200 2[0m
+22 06:55:20 | [32mdjango.server [37m| "GET /ajax/view/creature/_chris_jones/ HTTP/1.1" 200 60202[0m
+22 06:55:21 | [32mdjango.server [37m| "POST /ajax/randomize/traits/for/_chris_jones/ HTTP/1.1" 200 2[0m
+22 06:55:21 | [32mdjango.server [37m| "GET /ajax/view/creature/_chris_jones/ HTTP/1.1" 200 60195[0m
+22 06:55:22 | [32mdjango.server [37m| "POST /ajax/randomize/traits/for/_chris_jones/ HTTP/1.1" 200 2[0m
+22 06:55:22 | [32mdjango.server [37m| "GET /ajax/view/creature/_chris_jones/ HTTP/1.1" 200 60215[0m
+22 06:55:23 | [32mdjango.server [37m| "POST /ajax/randomize/traits/for/_chris_jones/ HTTP/1.1" 200 2[0m
+22 06:55:23 | [32mdjango.server [37m| "GET /ajax/view/creature/_chris_jones/ HTTP/1.1" 200 60217[0m
+22 06:55:24 | [32mdjango.server [37m| "POST /ajax/randomize/traits/for/_chris_jones/ HTTP/1.1" 200 2[0m
+22 06:55:24 | [32mdjango.server [37m| "GET /ajax/view/creature/_chris_jones/ HTTP/1.1" 200 60207[0m
+22 06:55:25 | [32mdjango.server [37m| "POST /ajax/randomize/traits/for/_chris_jones/ HTTP/1.1" 200 2[0m
+22 06:55:25 | [32mdjango.server [37m| "GET /ajax/view/creature/_chris_jones/ HTTP/1.1" 200 60221[0m
+22 06:55:27 | [32mdjango.server [37m| "POST /ajax/randomize/traits/for/_chris_jones/ HTTP/1.1" 200 2[0m
+22 06:55:27 | [32mdjango.server [37m| "GET /ajax/view/creature/_chris_jones/ HTTP/1.1" 200 60206[0m
+22 06:55:50 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 588[0m
+22 06:55:51 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 582[0m
+22 06:55:51 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 576[0m
+22 06:55:57 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 582[0m
+22 06:56:05 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 588[0m
+22 06:56:10 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 582[0m
+22 06:56:14 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 588[0m
+22 06:56:18 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 582[0m
+22 06:56:18 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 582[0m
+22 06:56:20 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 588[0m
+22 06:56:26 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 588[0m
+22 06:56:27 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 582[0m
+22 06:56:28 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 576[0m
+22 06:56:50 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 588[0m
+22 07:00:13 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 582[0m
+22 07:00:15 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 588[0m
+22 07:00:20 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 582[0m
+22 07:00:25 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 582[0m
+22 07:00:30 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 588[0m
+22 07:00:33 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 576[0m
+22 07:01:53 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 594[0m
+22 07:01:55 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 570[0m
+22 07:07:39 | [32mdjango.server [37m| "POST /ajax/editable/userinput/ HTTP/1.1" 200 58[0m
+22 07:07:39 | [32mdjango.server [37m| "GET /ajax/view/creature/_chris_jones/ HTTP/1.1" 200 60123[0m
+22 07:09:26 | [32mdjango.server [37m| "POST /ajax/editable/userinput/ HTTP/1.1" 200 55[0m
+22 07:09:26 | [32mdjango.server [37m| "GET /ajax/view/creature/_chris_jones/ HTTP/1.1" 200 60124[0m
+22 07:11:23 | [32mdjango.server [37m| "GET /ajax/display/septs/_sept_of_the_sinner/ HTTP/1.1" 200 33703[0m
+22 07:11:29 | [32mdjango.server [37m| "GET /ajax/view/creature/_darwin/ HTTP/1.1" 200 59444[0m
+22 07:11:40 | [32mdjango.server [37m| "GET /ajax/view/creature/_eliot_bloom/ HTTP/1.1" 200 60166[0m
+22 07:13:09 | [32mdjango.server [37m| "GET /admin/collector/gift/?q=unified+force HTTP/1.1" 200 32549[0m
+22 07:13:10 | [32mdjango.server [37m| "GET /admin/jsi18n/ HTTP/1.1" 200 3342[0m
+22 07:14:19 | [32mdjango.server [37m| "POST /ajax/editable/userinput/ HTTP/1.1" 200 49[0m
+22 07:14:19 | [32mdjango.server [37m| "GET /ajax/view/creature/_eliot_bloom/ HTTP/1.1" 200 60165[0m
+22 07:15:25 | [32mdjango.server [37m| "POST /ajax/editable/userinput/ HTTP/1.1" 200 54[0m
+22 07:15:25 | [32mdjango.server [37m| "GET /ajax/view/creature/_eliot_bloom/ HTTP/1.1" 200 60169[0m
+22 07:15:25 | [32mdjango.server [37m| "GET /static/collector/tribes/glass_walkers.webp HTTP/1.1" 200 15876[0m
+22 07:16:05 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 588[0m
+22 07:16:05 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 582[0m
+22 07:16:05 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 576[0m
+22 07:16:16 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 582[0m
+22 07:16:16 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 588[0m
+22 07:16:17 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 582[0m
+22 07:16:18 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 576[0m
+22 07:16:46 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 582[0m
+22 07:16:57 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 582[0m
+22 07:16:59 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 576[0m
+22 07:17:07 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 582[0m
+22 07:17:22 | [32mdjango.server [37m| "POST /ajax/editable/userinput/ HTTP/1.1" 200 39[0m
+22 07:17:22 | [32mdjango.server [37m| "GET /ajax/view/creature/_eliot_bloom/ HTTP/1.1" 200 60122[0m
+22 07:17:36 | [32mdjango.server [37m| "POST /ajax/editable/userinput/ HTTP/1.1" 200 46[0m
+22 07:17:36 | [32mdjango.server [37m| "GET /ajax/view/creature/_eliot_bloom/ HTTP/1.1" 200 60135[0m
+22 07:19:33 | [32mdjango.server [37m| "POST /ajax/editable/userinput/ HTTP/1.1" 200 46[0m
+22 07:19:33 | [32mdjango.server [37m| "GET /ajax/view/creature/_eliot_bloom/ HTTP/1.1" 200 60139[0m
+22 07:19:55 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 594[0m
+22 07:19:56 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 588[0m
+22 07:20:03 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 588[0m
+22 07:20:03 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 594[0m
+22 07:20:04 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 582[0m
+22 07:20:05 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 576[0m
+22 07:20:28 | [32mdjango.server [37m| "GET /ajax/display/septs/_sept_of_the_sinner/ HTTP/1.1" 200 33703[0m
+22 07:20:28 | [32mdjango.server [37m| "GET /static/collector/breed/GlyphHomid.webp HTTP/1.1" 200 6538[0m
+22 07:20:28 | [32mdjango.server [37m| "GET /static/collector/auspices/AuspiceGalliard.webp HTTP/1.1" 200 5762[0m
+22 07:20:28 | [32mdjango.server [37m| "GET /static/collector/auspices/AuspiceTheurge.webp HTTP/1.1" 200 7154[0m
+22 07:20:28 | [32mdjango.server [37m| "GET /static/collector/auspices/AuspiceAhroun.webp HTTP/1.1" 200 6578[0m
+22 07:20:28 | [32mdjango.server [37m| "GET /static/collector/tribes/bone_gnawers.webp HTTP/1.1" 200 14416[0m
+22 07:20:28 | [32mdjango.server [37m| "GET /static/collector/breed/GlyphMetis.webp HTTP/1.1" 200 8474[0m
+22 07:20:28 | [32mdjango.server [37m| "GET /static/collector/tribes/shadow_lords.webp HTTP/1.1" 200 15162[0m
+22 07:20:28 | [32mdjango.server [37m| "GET /static/collector/auspices/AuspicePhilodox.webp HTTP/1.1" 200 5954[0m
+22 07:20:28 | [32mdjango.server [37m| "GET /static/collector/auspices/AuspiceRagabash.webp HTTP/1.1" 200 6994[0m
+22 07:20:28 | [32mdjango.server [37m| "GET /static/collector/tribes/wendigos.webp HTTP/1.1" 200 14786[0m
+22 07:20:28 | [32mdjango.server [37m| "GET /static/collector/tribes/fiannas.webp HTTP/1.1" 200 10624[0m
+22 07:20:28 | [32mdjango.server [37m| "GET /static/collector/tribes/silver_fangs.webp HTTP/1.1" 200 16630[0m
+22 07:20:35 | [32mdjango.server [37m| "GET /ajax/view/creature/_darwin/ HTTP/1.1" 200 59444[0m
+22 07:20:53 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 594[0m
+22 07:20:54 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 594[0m
+22 07:20:55 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 588[0m
+22 07:20:55 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 582[0m
+22 07:20:57 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 576[0m
+22 07:21:05 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 594[0m
+22 07:21:06 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 582[0m
+22 07:21:08 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 582[0m
+22 07:22:19 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 582[0m
+22 07:22:20 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 582[0m
+22 07:22:21 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 576[0m
+22 07:22:24 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 576[0m
+22 07:22:35 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 576[0m
+22 07:25:23 | [32mdjango.server [37m| "GET /ajax/view/creature/_eliot_bloom/ HTTP/1.1" 200 60139[0m
+22 07:25:27 | [32mdjango.server [37m| "GET /ajax/view/creature/_darwin/ HTTP/1.1" 200 59427[0m
+22 07:26:52 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 582[0m
+22 07:26:54 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 570[0m
+22 07:26:59 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 588[0m
+22 07:26:59 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 582[0m
+22 07:27:06 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 564[0m
+22 07:27:14 | [32mdjango.server [37m| "GET /ajax/display/septs/_sept_of_the_sinner/ HTTP/1.1" 200 33703[0m

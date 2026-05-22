@@ -81,6 +81,8 @@ class Gift(models.Model):
     tribe_15 = models.BooleanField(default=False, verbose_name="Wendigos")
     tribe_16 = models.BooleanField(default=False, verbose_name="White Howlers")
 
+    kinfolk_gift = models.BooleanField(default=False)
+
     description = models.TextField(max_length=1024, blank=True, default="")
     system = models.TextField(max_length=1024, blank=True, default="")
 
@@ -198,6 +200,7 @@ class GiftAdmin(admin.ModelAdmin):
         "id",
         "pretty_str",
         "orphan",
+        "kinfolk_gift",
         "lower_name",
         "level",
         "references",
@@ -208,6 +211,7 @@ class GiftAdmin(admin.ModelAdmin):
     list_filter = [
         "level",
         "orphan",
+        "kinfolk_gift",
         "breed_0",
         "breed_1",
         "breed_2",
@@ -234,7 +238,7 @@ class GiftAdmin(admin.ModelAdmin):
         "tribe_15",
     ]
     search_fields = ["name", "description", "alternative_name"]
-    list_editable = ["level", "source_page"]
+    list_editable = ["level", "source_page","kinfolk_gift"]
     from collector.utils.helper import refix
 
     actions = [refix]

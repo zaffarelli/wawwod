@@ -1543,30 +1543,26 @@ CLAN_COLORS = {
 }
 
 
-class GarouFamilySolver:
-    TRIBES_PLURAL = ["Black Furies", "Black Spiral Dancers", "Bone Gnawers", "Bunyips", "Children of Gaia", "Croatans",
-                     "Fiannas", "Gets of Fenris", "Glass Walkers", "Red Talons", "Shadow Lords", "Silent Striders",
-                     "Silver Fangs", "Stargazers", "Uktenas", "Wendigos", "White Howlers"]
-    TRIBES_SINGULAR = ["Black Fury", "Black Spiral Dancer", "Bone Gnawer", "Bunyip", "Child of Gaia", "Croatan",
-                       "Fianna", "Get of Fenris", "Glass Walker", "Red Talons", "Shadow Lord", "Silent Strider",
-                       "Silver Fangs", "Stargazer", "Uktena", "Wendigo", "White Howler"]
+class FamilySolver:
+    PLURALS = []
+    SINGULARS = []
+    WILLPOWERS = []
+    RESTRICTIONS = []
 
-    def __init__(self, tribe=""):
+    def __init__(self, creature=""):
+        self.creature = creature
+
+    def check(self, family=""):
         self.current = -1
-        self.check(value=tribe)
-
-
-    def check(self, value=""):
-        self.current = -1
-        if len(value) > 0:
-            for tribe in self.TRIBES_PLURAL:
-                if tribe.lower() == value.lower():
-                    self.current = self.TRIBES_PLURAL.index(tribe)
+        if len(family) > 0:
+            for tribe in self.PLURALS:
+                if tribe.lower() == family.lower():
+                    self.current = self.PLURALS.index(tribe)
                     break
             if self.current == -1:
-                for tribe in self.TRIBES_SINGULAR:
-                    if tribe.lower() == value.lower():
-                        self.current = self.TRIBES_SINGULAR.index(tribe)
+                for tribe in self.SINGULARS:
+                    if tribe.lower() == family.lower():
+                        self.current = self.SINGULARS.index(tribe)
                         break
         return self.current
 
@@ -1574,20 +1570,20 @@ class GarouFamilySolver:
     def plural(self):
         plural = None
         if self.current != -1:
-            plural = self.TRIBES_PLURAL[self.current]
+            plural = self.PLURALS[self.current]
         return plural
 
     @property
     def singular(self):
         singular = None
         if self.current != -1:
-            singular = self.TRIBES_SINGULAR[self.current]
+            singular = self.SINGULARS[self.current]
         return singular
 
     @property
     def willpower(self):
-        wp = None
-        if self.current == -1:
+        wp = 2
+        if self.current != -1:
             wp = 3
             if self.current in [2, 4, 13, 15]:
                 wp = 4
@@ -1595,27 +1591,62 @@ class GarouFamilySolver:
 
     @property
     def restrictions(self):
-        restrictions = None
-        if self.current == 1:
-            restrictions = "R:pure breed"
-        elif self.current == 2:
-            restrictions = "D:resources;R:ancestors,pure breed"
-        elif self.current == 6:
-            restrictions = "F:kinfolk"
-        elif self.current == 7:
-            restrictions = "D:contacts"
-        elif self.current == 8:
-            restrictions = "R:ancestor,pure breed;D:mentor"
-        elif self.current == 9:
-            restrictions = "D:allies,contact;R:resources"
-        elif self.current == 10:
-            restrictions = "D:allies,mentor"
-        elif self.current == 11:
-            restrictions = "R:ancestors;D:resources"
-        elif self.current == 12:
-            restrictions = "M:pure breed/3"
-        elif self.current == 13:
-            restrictions = "D:allies,fetish,resources"
-        elif self.current == 15:
-            restrictions = "D:contacts,resources"
+        restrictions = ""
+        if self.current != -1:
+            restrictions = self.RESTRICTIONS[self.current]
         return restrictions
+
+    @classmethod
+    def randomize(cls):
+        from helper import roll
+        alea = roll(faces=len(cls.PLURALS))-1
+        plural = cls.PLURALS[alea]
+        return plural
+
+
+
+class GarouFamilySolver(FamilySolver):
+    PLURALS = ["Black Furies", "Black Spiral Dancers", "Bone Gnawers", "Bunyips", "Children of Gaia", "Croatans",
+               "Fiannas", "Gets of Fenris", "Glass Walkers", "Red Talons", "Shadow Lords", "Silent Striders",
+               "Silver Fangs", "Stargazers", "Uktenas", "Wendigos", "White Howlers"]
+    SINGULARS = ["Black Fury", "Black Spiral Dancer", "Bone Gnawer", "Bunyip", "Child of Gaia", "Croatan",
+                 "Fianna", "Get of Fenris", "Glass Walker", "Red Talons", "Shadow Lord", "Silent Strider",
+                 "Silver Fangs", "Stargazer", "Uktena", "Wendigo", "White Howler"]
+    WILLPOWERS = [3, 3, 4, 3, 4, 3, 3, 3, 3, 3, 3, 3, 3, 4, 3, 4, 3]
+    RESTRICTIONS = [
+        "",
+        "R:pure breed",
+        "D:resources;R:ancestors,pure breed",
+        "",
+        "",
+        "",
+        "F:kinfolk",
+        "D:contacts",
+        "R:ancestor,pure breed;D:mentor",
+        "D:allies,contact;R:resources",
+        "D:allies,mentor",
+        "R:ancestors;D:resources",
+        "M:pure breed/3",
+        "D:allies,fetish,resources",
+        "",
+        "D:contacts,resources",
+        "",
+    ]
+
+    def __init__(self, tribe=""):
+        super().__init__("garou")
+        self.current = -1
+        self.check(family=tribe)
+
+    @classmethod
+    def randomize(cls, limit=""):
+        if limit is "only_current_tribes":
+            plurals_to_avoid = ["Black Spiral Dancers","Bunyips","Croatans","White Howlers",""]
+        else:
+            plurals_to_avoid = [""]
+        from helper import roll
+        plural = ""
+        while plural in plurals_to_avoid:
+            alea = roll(faces=len(cls.PLURALS))-1
+            plural = cls.PLURALS[alea]
+        return plural
