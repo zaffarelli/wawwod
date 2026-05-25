@@ -247,7 +247,7 @@ def get_list(request, pid=1, slug=None):
         return HttpResponse(status=204)
 
 
-@csrf_exempt
+
 def updown(request):
     if is_ajax(request):
         answer = "error"
@@ -271,7 +271,7 @@ def updown(request):
     return Http404
 
 
-@csrf_exempt
+
 def userinput(request):
     if is_ajax(request):
         wodlog.info(f"UserInput :{request.POST}")
@@ -299,7 +299,7 @@ def userinput(request):
     return HttpResponse(status=204)
 
 
-@csrf_exempt
+
 def userinputastext(request):
     if is_ajax(request):
         wodlog.info(f"UserInputAsText :{request.POST}")
@@ -1097,7 +1097,7 @@ def display_sept_rosters(request, slug=None):
         )
 
 
-@csrf_exempt
+
 def save_to_svg(request, slug):
     response = {"status": "error"}
     if is_ajax(request):
@@ -1112,7 +1112,7 @@ def save_to_svg(request, slug):
     return JsonResponse(response)
 
 
-@csrf_exempt
+
 def svg_to_pdf(request, slug):
     response = {"status": "error"}
     logger.info(f"Saving to PDF.")
@@ -1148,7 +1148,7 @@ def svg_to_pdf(request, slug):
     return JsonResponse(response)
 
 
-@csrf_exempt
+
 def all_in_one_pdf(rid, pages, creature="mortal"):
     # print(f'Starting PDFing for [{rid}].')
     logger.info(f"Starting PDFing for [{rid}].")
@@ -1516,7 +1516,7 @@ def weaver_code(request, code=None):
     return render(request, "collector/page/weaver_code.html", context=context)
 
 
-@csrf_exempt
+
 def bulk_add(request):
     from collector.models.creatures import Creature
 

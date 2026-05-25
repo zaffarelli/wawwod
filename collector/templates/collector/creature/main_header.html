@@ -1,4 +1,5 @@
 {% load wod_filters %}
+{% csrf_token %}
 <tr class="tainted">
     <th colspan=2 class='tainted clan_logo'>
         {% if c.creature == 'ghoul' %}

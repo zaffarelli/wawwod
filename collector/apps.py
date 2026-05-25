@@ -5,6 +5,7 @@ class CollectorConfig(AppConfig):
     name = "collector"
 
     def ready(self):
+        #pass
         import collector.signals.creatures
         import collector.signals.adventures
         import collector.signals.seasons

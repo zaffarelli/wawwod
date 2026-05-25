@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<django-objects version="1.0"><object model="storytelling.story" pk="1"><field name="name" type="CharField">Storyboard: SPIDIS</field><field name="adventure" type="CharField">SPIDIS</field><field name="description" type="TextField">The train job</field><field name="dday" type="DateTimeField">2025-02-15T12:00:00</field><field name="is_current" type="BooleanField">True</field></object></django-objects>

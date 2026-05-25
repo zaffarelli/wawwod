@@ -30,6 +30,7 @@ wodlog = logging.getLogger("wawwod")
 MAX_TRAITS = 16
 MAX_MERITS = 5
 MAX_ADVANTAGES = 12
+MAX_ABILITIES = 10
 EDGE_SEP = ', '
 
 class Creature(models.Model):
@@ -838,7 +839,15 @@ class Creature(models.Model):
         self.display_pole = self.group + "__" + self.groupspec
         expected_freebies_by_rank = [0, 0+5, 14+10, 14+21+15, 14+21+28+20, 14+21+28+35+25]
         if self.is_player:
-            self.expectedfreebies = self.mychronicle.players_starting_freebies
+            wodlog.debug(f"Player: {self.player}")
+            ch = self.mychronicle
+            if ch:
+                self.expectedfreebies = ch.players_starting_freebies
+                wodlog.debug(f"{self.name} expected freebies is {self.expectedfreebies} (Player) by chronicle")
+            ad = self.myadventure
+            if ad:
+                self.expectedfreebies = ad.players_starting_freebies
+                wodlog.debug(f"{self.name} expected freebies is {self.expectedfreebies} (Player) by adventure")
         else:
             #self.expectedfreebies = self.freebies_per_mortal_age + expected_freebies_by_rank[self.garou_rank]
             self.expectedfreebies = self.freebies_per_mortal_age + (self.glory + self.honor + self.wisdom)*3 + expected_freebies_by_rank[self.garou_rank]
@@ -847,7 +856,9 @@ class Creature(models.Model):
     @property
     def mychronicle(self):
         from collector.models.chronicles import Chronicle
-        ch = Chronicle.objects.filter(acronym=self.chronicle).first()
+        chs = Chronicle.objects.filter(acronym=self.chronicle)
+        if len(chs)==1:
+            ch = chs.first()
         return ch
 
     def fix_kindred(self):
@@ -996,8 +1007,9 @@ class Creature(models.Model):
                     freebies_exp_offset += realfb
                     wodlog.info(f"--- {stat:20} Change: {progress:10} [XP:{realexp} / freebies:{realfb}] (Type:{category} from {cr} to {nr}) {change}")
                     xp_spent += realexp
-            wodlog.debug(f"--- Experience ... {xp_spent}")
+            wodlog.debug(f"--- Exp. Spent ... {xp_spent}")
             wodlog.debug(f"--- Freebies ..... {freebies_exp_offset}")
+            wodlog.debug(f"--- Expected ..... {self.expectedfreebies}")
             self.freebies_exp_offset = freebies_exp_offset
             self.expectedfreebies += freebies_exp_offset
             self.exp_spent = xp_spent
@@ -1191,6 +1203,10 @@ class Creature(models.Model):
             if self.groupspec:
                 g += f" ({self.groupspec})"
             lines.append(f"<i>{g}</i>")
+        if self.freebies == self.expectedfreebies:
+            lines.append(f"<b>Challenge:</b> {self.freebies}")
+        else:
+            lines.append(f"<b>Freebies:</b> {self.freebies}  [{self.condition}]")
         if self.concept:
             lines.append(f"<b>Concept:</b> {self.concept}")
         if self.creature in ["kindred", "ghoul"]:
@@ -1201,8 +1217,6 @@ class Creature(models.Model):
             lines.append(f"<b>Age:</b> {self.age} yo")
         if self.nature:
             lines.append(f"<b>Nature (Demeanor):</b> {self.nature} ({self.demeanor})")
-        if self.freebies == self.expectedfreebies:
-            lines.append(f"<b>Freebies:</b> {self.freebies} [{self.condition}]")
         else:
             lines.append(
                 f"<b>Freebies:</b> {self.freebies} ({self.expectedfreebies} / {self.freebiedif}) [{self.status}]"
@@ -2134,7 +2148,7 @@ class Creature(models.Model):
         self.total_talents = 0
         self.total_skills = 0
         self.total_knowledges = 0
-        for n in range(10):
+        for n in range(MAX_ABILITIES):
             t = getattr(self, "talent%d" % (n))
             s = getattr(self, "skill%d" % (n))
             k = getattr(self, "knowledge%d" % (n))
@@ -2159,7 +2173,7 @@ class Creature(models.Model):
         )
         # Merits & Flaws
         total_merits_and_flaws = 0
-        for n in range(4):
+        for n in range(MAX_MERITS):
             merit = getattr(self, "merit%d" % (n))
             if merit != "":
                 s, v = self.str2pair(merit)
@@ -2177,7 +2191,7 @@ class Creature(models.Model):
         )
         # Traits
         self.total_traits = 0
-        for i in range(16):
+        for i in range(MAX_TRAITS):
             trait = getattr(self, f"trait{i}")
             # print(trait)
             if trait:
@@ -2186,7 +2200,7 @@ class Creature(models.Model):
                     self.total_traits += v
         # Sort traits
         traits = []
-        for i in range(10):
+        for i in range(MAX_TRAITS):
             traits.append(getattr(self, f"trait{i}"))
         traits = filter(None, traits)
         i = 0
@@ -2204,23 +2218,19 @@ class Creature(models.Model):
             # self.freebies += getattr(self, 'gnosis') * 2
             # self.freebies += getattr(self, 'willpower')
             self.freebies += self.total_traits * 7  # 7 pts per gift level
-            print(
-                f"🔹 Freebies + Traits ............ {self.freebies:4} {self.total_traits:4}x7"
-            )
+            wodlog.info(f"🔹 Freebies + Traits ............ {self.freebies:4} {self.total_traits:4}x7")
             self.challenge += f" tr:{self.total_traits * 7}/{21}"
-            x = getattr(self, "willpower") * 1
-            y = getattr(self, "gnosis") * 2
-            z = getattr(self, "rage") * 1
+            w = getattr(self, "willpower") * 1
+            g = getattr(self, "gnosis") * 2
+            r = getattr(self, "rage") * 1
             ra = RAGE_PER_AUSPICE[int(self.auspice)] * 1  # Rage per Auspice
             gn = GNOSIS_PER_BREED[int(self.breed)] * 2  # Gnosis per Breed
             wp = 0
             if self.family:
-                wp = (
-                        PER_TRIBE[as_tribe_plural(self.family)]["willpower"] * 1
-                )  # Willpower per Tribe
-            self.freebies += x + y + z
-            self.challenge += f" ot:{x + y + z}/{ra + gn + wp}"
-            print(f"🔹 Freebies + other ............ {self.freebies:4} {x + y + z:4}")
+                wp = (PER_TRIBE[as_tribe_plural(self.family)]["willpower"] * 1)  # Willpower per Tribe
+            self.freebies += w + g + r
+            self.challenge += f" ot:{w + g + r}/{ra + gn + wp}"
+            wodlog.info(f"🔹 Freebies + Other ............. {self.freebies:4} {w + g + r:4}")
         elif "kindred" == self.creature:
             vdot = self.value_of(f"{self.creature}:freebies_per_dot:virtue")
             wdot = self.value_of(f"{self.creature}:freebies_per_dot:willpower")

@@ -1599,38 +1599,37 @@ class FamilySolver:
     @classmethod
     def randomize(cls):
         from helper import roll
-        alea = roll(faces=len(cls.PLURALS))-1
+        alea = roll(faces=len(cls.PLURALS)) - 1
         plural = cls.PLURALS[alea]
         return plural
 
 
-
 class GarouFamilySolver(FamilySolver):
-    PLURALS = ["Black Furies", "Black Spiral Dancers", "Bone Gnawers", "Bunyips", "Children of Gaia", "Croatans",
-               "Fiannas", "Gets of Fenris", "Glass Walkers", "Red Talons", "Shadow Lords", "Silent Striders",
-               "Silver Fangs", "Stargazers", "Uktenas", "Wendigos", "White Howlers"]
-    SINGULARS = ["Black Fury", "Black Spiral Dancer", "Bone Gnawer", "Bunyip", "Child of Gaia", "Croatan",
-                 "Fianna", "Get of Fenris", "Glass Walker", "Red Talons", "Shadow Lord", "Silent Strider",
-                 "Silver Fangs", "Stargazer", "Uktena", "Wendigo", "White Howler"]
-    WILLPOWERS = [3, 3, 4, 3, 4, 3, 3, 3, 3, 3, 3, 3, 3, 4, 3, 4, 3]
+    PLURALS = ["Black Furies", "Black Spiral Dancers", "Bone Gnawers",
+               "Bunyips", "Children of Gaia", "Croatans",
+               "Fiannas", "Gets of Fenris", "Glass Walkers",
+               "Red Talons", "Shadow Lords", "Silent Striders",
+               "Silver Fangs", "Stargazers", "Uktenas",
+               "Wendigos", "White Howlers"]
+    SINGULARS = ["Black Fury", "Black Spiral Dancer", "Bone Gnawer",
+                 "Bunyip", "Child of Gaia", "Croatan",
+                 "Fianna", "Get of Fenris", "Glass Walker",
+                 "Red Talons", "Shadow Lord", "Silent Strider",
+                 "Silver Fangs", "Stargazer", "Uktena",
+                 "Wendigo", "White Howler"]
+    WILLPOWERS = [3, 3, 4,
+                  3, 4, 3,
+                  3, 3, 3,
+                  3, 3, 3,
+                  3, 4, 3,
+                  4, 3]
     RESTRICTIONS = [
-        "",
-        "R:pure breed",
-        "D:resources;R:ancestors,pure breed",
-        "",
-        "",
-        "",
-        "F:kinfolk",
-        "D:contacts",
-        "R:ancestor,pure breed;D:mentor",
-        "D:allies,contact;R:resources",
-        "D:allies,mentor",
-        "R:ancestors;D:resources",
-        "M:pure breed/3",
-        "D:allies,fetish,resources",
-        "",
-        "D:contacts,resources",
-        "",
+        "", "R:pure breed", "D:resources;R:ancestors,pure breed",
+        "", "", "",
+        "F:kinfolk", "D:contacts", "R:ancestor,pure breed;D:mentor",
+        "D:allies,contact;R:resources", "D:allies,mentor", "R:ancestors;D:resources",
+        "M:pure breed/3", "D:allies,fetish,resources", "",
+        "D:contacts,resources", "",
     ]
 
     def __init__(self, tribe=""):
@@ -1641,12 +1640,12 @@ class GarouFamilySolver(FamilySolver):
     @classmethod
     def randomize(cls, limit=""):
         if limit is "only_current_tribes":
-            plurals_to_avoid = ["Black Spiral Dancers","Bunyips","Croatans","White Howlers",""]
+            plurals_to_avoid = ["Black Spiral Dancers", "Bunyips", "Croatans", "White Howlers", ""]
         else:
             plurals_to_avoid = [""]
         from helper import roll
         plural = ""
         while plural in plurals_to_avoid:
-            alea = roll(faces=len(cls.PLURALS))-1
+            alea = roll(faces=len(cls.PLURALS)) - 1
             plural = cls.PLURALS[alea]
         return plural

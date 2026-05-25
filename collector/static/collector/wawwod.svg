@@ -2,15 +2,12 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="30.443277mm"
-   height="18.359575mm"
-   viewBox="0 0 30.443277 18.359575"
+   width="57.770004mm"
+   height="14.262668mm"
+   viewBox="0 0 57.770004 14.262668"
    version="1.1"
    id="svg1"
-   inkscape:export-filename="wawwod.png"
-   inkscape:export-xdpi="96"
-   inkscape:export-ydpi="96"
-   inkscape:version="1.4.3 (0d15f75042, 2025-12-25)"
+   inkscape:version="1.4.4 (dcaf3e7d9e, 2026-05-05)"
    sodipodi:docname="wawwod.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -26,10 +23,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
-     inkscape:export-bgcolor="#ffffff00"
      inkscape:zoom="2.0667789"
-     inkscape:cx="86.850122"
-     inkscape:cy="102.09123"
+     inkscape:cx="184.82867"
+     inkscape:cy="64.351344"
      inkscape:window-width="2560"
      inkscape:window-height="1371"
      inkscape:window-x="0"
@@ -42,28 +38,17 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-64.289867,-89.574544)">
+     transform="translate(-39.847578,-105.48846)">
     <text
        xml:space="preserve"
-       style="font-size:3.35219px;line-height:0.45;font-family:Girassol;-inkscape-font-specification:'Girassol, Normal';font-variant-caps:small-caps;text-align:center;letter-spacing:0px;writing-mode:lr-tb;direction:ltr;text-orientation:upright;text-anchor:middle;fill:#3fa6c1;fill-opacity:0.840122;stroke:#bc9484;stroke-width:0.0167609;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-       x="76.38681"
-       y="101.11274"
+       style="font-size:2.82223px;line-height:0.9;font-family:'Courier New';-inkscape-font-specification:'Courier New, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;direction:ltr;text-orientation:upright;text-anchor:middle;fill:#000000;stroke-width:0.705556;stroke-linecap:round;stroke-linejoin:round"
+       x="69.001297"
+       y="118.54397"
        id="text1"><tspan
          sodipodi:role="line"
          id="tspan1"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.04519px;font-family:Girassol;-inkscape-font-specification:'Girassol, Normal';font-variant-ligatures:normal;font-variant-caps:small-caps;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#3fa6c1;fill-opacity:0.840122;stroke:#bc9484;stroke-width:0.0167609;stroke-dasharray:none;stroke-opacity:1"
-         x="76.38681"
-         y="101.11274">WoD</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.04519px;line-height:0.45;font-family:Girassol;-inkscape-font-specification:'Girassol, Normal';font-variant-ligatures:normal;font-variant-caps:small-caps;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;letter-spacing:0px;writing-mode:lr-tb;direction:ltr;text-orientation:upright;text-anchor:middle;fill:#3fa6c1;fill-opacity:0.840122;stroke:#bc9484;stroke-width:0.0167609;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-       x="76.38681"
-       y="94.300621"
-       id="text2"><tspan
-         sodipodi:role="line"
-         id="tspan2"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.35219px;font-family:Allison;-inkscape-font-specification:'Allison, Normal';font-variant-ligatures:normal;font-variant-caps:small-caps;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#3fa6c1;fill-opacity:0.840122;stroke:#bc9484;stroke-width:0.0167609;stroke-dasharray:none;stroke-opacity:1"
-         x="76.38681"
-         y="94.300621">what a wonderful</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16.9333px;font-family:'Apocalypse Grunge';-inkscape-font-specification:'Apocalypse Grunge, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#e4e7fa;fill-opacity:0.592724;stroke:none;stroke-width:0.705556;stroke-opacity:1"
+         x="69.001297"
+         y="118.54397">WaWWoD</tspan></text>
   </g>
 </svg>
