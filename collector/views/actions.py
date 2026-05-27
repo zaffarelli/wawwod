@@ -378,9 +378,10 @@ def balance(request, slug):
     answer = {}
     found = Creature.objects.filter(rid=slug)
     if len(found) == 1:
-        x = found.first()
-        x.balance_ghoul()
-        answer["rid"] = x.rid
+        if x.status != "READY":
+            x = found.first()
+            x.balance()
+            answer["rid"] = x.rid
     return JsonResponse(answer)
 
 
@@ -389,8 +390,9 @@ def randomize(request, slug):
     found = Creature.objects.filter(rid=slug)
     if len(found) == 1:
         x = found.first()
-        x.randomize_all()
-        x.save()
+        if x.status != "READY":
+            x.randomize_all()
+            x.save()
         answer["rid"] = x.rid
     return JsonResponse(answer)
 

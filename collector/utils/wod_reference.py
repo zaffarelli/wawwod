@@ -1643,7 +1643,7 @@ class GarouFamilySolver(FamilySolver):
             plurals_to_avoid = ["Black Spiral Dancers", "Bunyips", "Croatans", "White Howlers", ""]
         else:
             plurals_to_avoid = [""]
-        from helper import roll
+        from collector.utils.helper import roll
         plural = ""
         while plural in plurals_to_avoid:
             alea = roll(faces=len(cls.PLURALS)) - 1

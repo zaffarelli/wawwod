@@ -1226,14 +1226,15 @@ class Creature(models.Model):
     @property
     def roster_attributes(self):
         lines = []
+        MAX = 6
         lines.append(
-            f"<br/><b>Physical  <small>({self.total_physical})</small>:</b> Strength <tt>{self.attribute0}</tt>, Dexterity <tt>{self.attribute1}</tt>, Stamina <tt>{self.attribute2}</tt>"
+            f"<br/><tt> Str {self.as_dot(value=self.attribute0,max=MAX,to_spend=False)} Cha {self.as_dot(value=self.attribute3,max=MAX,to_spend=False)} Per {self.as_dot(value=self.attribute6,max=MAX,to_spend=False)}</tt> <b>Physical  <small>({self.total_physical})</small></b>"
         )
         lines.append(
-            f"<br/><b>Social  <small>({self.total_social})</small>:</b> Charisma <tt>{self.attribute3}</tt>, Manipulation <tt>{self.attribute4}</tt>, Appearance <tt>{self.attribute5}</tt>"
+            f"<br/><tt> Dex {self.as_dot(value=self.attribute1,max=MAX,to_spend=False)} Man {self.as_dot(value=self.attribute4,max=MAX,to_spend=False)} Int {self.as_dot(value=self.attribute7,max=MAX,to_spend=False)}</tt> <b>Social  <small>({self.total_social})</small></b>"
         )
         lines.append(
-            f"<br/><b>Mental <small>({self.total_mental})</small>:</b> Perception <tt>{self.attribute6}</tt>, Intelligence <tt>{self.attribute7}</tt>, Wits <tt>{self.attribute8}</tt>"
+            f"<br/><tt> Sta {self.as_dot(value=self.attribute2,max=MAX,to_spend=False)} App {self.as_dot(value=self.attribute5,max=MAX,to_spend=False)}  Wit {self.as_dot(value=self.attribute8,max=MAX,to_spend=False)}</tt> <b>Mental <small>({self.total_mental})</small></b>"
         )
         return "".join(lines)
 
@@ -1245,6 +1246,16 @@ class Creature(models.Model):
             lines.append(f"<b>Gnosis</b> "+self.as_dot(value=self.gnosis,max=10,to_spend=True))
         lines.append(f"<b>Willpower</b> "+self.as_dot(value=self.willpower,max=10,to_spend=True))
 
+        lines.append(f"<tt>"
+                     f"Ok............❏ "
+                     f"Bruised(-1)...❏ "
+                     f"Injured(-1)...❏ "
+                     f"Wounded(-2)...❏ "
+                     f"Mauled(-2)....❏ "
+                     f"Crippled(-5)..❏ "
+                     f"Incapacited...❏ "
+                     f"Dead..........❏"
+                     f"</tt>")
         return "<br/>".join(lines)
 
     @property
@@ -1287,6 +1298,23 @@ class Creature(models.Model):
         return str
 
     @property
+    def roster_abilities(self):
+        str = f"<br/><b>Talents <small>({self.total_talents})</small></b> "
+        str += f"<b>Skills <small>({self.total_skills})</small></b> "
+        str += f"<b>Knowledges <small>({self.total_knowledges})</small></b><br/>"
+        abilities_list = []
+        topics = ["talents","skills","knowledges"]
+        for idx in range(len(STATS_NAMES[self.creature][topics[0]])):
+            line = []
+            for topic in topics:
+                ability = STATS_NAMES[self.creature][topic][idx]
+                val = self.value_of(ability)
+                line.append(f"{ability.title()[:3]} {self.as_dot(val,max=6)} ")
+            abilities_list.append("".join(line)+"<br/>")
+        str += "<tt>"+"".join(abilities_list) + "</tt>"
+        return str
+
+    @property
     def roster_end(self):
         lines = []
         backgrounds_list = []
@@ -1297,10 +1325,10 @@ class Creature(models.Model):
             for ability in STATS_NAMES[self.creature][topic]:
                 val = self.value_of(ability)
                 if val > 0:
-                    backgrounds_list.append(f"{ability.title()} <tt>{val}</tt>")
+                    backgrounds_list.append(f"{ability.title()}&nbsp;<tt>{val}</tt>")
         if len(backgrounds_list) > 0:
             lines.append(
-                f"<br/><b>Backgrounds</b> <small>({self.total_backgrounds})</small>: {', '.join(backgrounds_list)}."
+                f"<b>Backgrounds</b> <small>({self.total_backgrounds})</small>: {', '.join(backgrounds_list)}."
             )
         gifts_list = []
         # for n in range(MAX_TRAITS):
@@ -1337,17 +1365,17 @@ class Creature(models.Model):
             for x in range(value):
                 if x % 5 == 0:
                     str += " "
-                str += "O"
+                str += "❍"
 
         else:
             for x in range(value):
-                str += "X"
+                str += "●"
                 if x % 5 == 4:
-                    str += " "
+                    str += ""
             for x in range(max - value):
-                str += "O"
-                if x % 5 == 4:
-                    str += " "
+                str += "<span style='color:#d0d0d0;'>●</span>"
+                # if x % 5 == 4:
+                #     str += "<span style='color:white;'>●</span>"
         return "<tt>" + str + "</tt>"
 
     def changeName(self):
@@ -1733,87 +1761,91 @@ class Creature(models.Model):
     def randomize_all(self):
         if self.is_player:
             return
-        if self.creature == "kinfolk":
-            self.randomize_family()
-        self.randomize_reparts()
-        self.randomize_archetypes()
-        self.randomize_attributes(topic="physical")
-        self.randomize_attributes(topic="social")
-        self.randomize_attributes(topic="mental")
-        self.randomize_abilities(topic="talents")
-        self.randomize_abilities(topic="skills")
-        self.randomize_abilities(topic="knowledges")
-        self.randomize_backgrounds()
-        self.randomize_traits()
-        if self.creature == "garou":
-            self.glory = 0
-            self.honnor = 0
-            self.wisdom = 0
-            self.garou_rank = 0
-            self.willpower = 3
-            self.rage = 0
-            self.gnosis = 0
-            self.nature = ""
-            self.demeanor = ""
-        elif self.creature == "kinfolk":
-            self.glory = 0
-            self.honnor = 0
-            self.wisdom = 0
-            self.garou_rank = 0
-            self.willpower = 3
-            self.rage = 0
-            self.gnosis = 0
-            # self.nature = ""
-            # self.demeanor = ""
-            self.age = random.randrange(18, 55)
-            # self.expected_freebies = 21
-        elif self.creature == "kindred":
-            virtues = 7
-            self.virtue0 = 1
-            self.virtue1 = 1
-            self.virtue2 = 1
-            while virtues > 0:
-                a = random.randrange(0, 3)
-                v = getattr(self, f"virtue{a}")
-                if v < 5:
-                    setattr(self, f"virtue{a}", v + 1)
-                    virtues -= 1
-            self.weakness = CLANS_SPECIFICS[self.family]["clan_weakness"]
-        elif self.creature == "ghoul":
-            virtues = 7
-            self.virtue0 = 1
-            self.virtue1 = 1
-            self.virtue2 = 1
-            while virtues > 0:
-                a = random.randrange(0, 3)
-                v = getattr(self, f"virtue{a}")
-                if v < 5:
-                    setattr(self, f"virtue{a}", v + 1)
-                    virtues -= 1
-            for x in range(4):
-                setattr(self, f"merit{x}", "")
-                setattr(self, f"flaw{x}", "")
-            for x in range(16):
-                setattr(self, f"trait{x}", "")
-            setattr(self, f"trait0", "Potence (1)")
-            domitors = Creature.objects.filter(rid=self.sire)
-            if len(domitors) == 1:
-                domitor = domitors.first()
-                if domitor.family in ["Gangrel", "Ventrue"]:
-                    setattr(self, f"trait1", "Fortitude (1)")
-                elif domitor.family in ["Brujah", "Toreador"]:
-                    setattr(self, f"trait1", "Celerity (1)")
-                elif domitor.family in ["Nosferatu"]:
-                    setattr(self, f"trait1", "Obfuscate (1)")
-                elif domitor.family in ["Malkavian", "Tremere"]:
-                    setattr(self, f"trait1", "Auspex(2)")
-                else:
-                    setattr(self, f"trait0", "Potence (2)")
-            # due_willpower = int(STATS_TEMPLATES[self.creature]['willpower'])
-            # if self.willpower < due_willpower:
-            self.willpower = self.virtue2
+        quirks = ['action','support','intelligence','services','jack-of-all-trades']
+        if self.status != "READY":
+            if self.creature == "kinfolk":
+                self.randomize_family()
+                self.nature = ""
+                self.demeanor = ""
+            self.randomize_reparts()
+            self.randomize_archetypes()
+            self.randomize_attributes(topic="physical")
+            self.randomize_attributes(topic="social")
+            self.randomize_attributes(topic="mental")
+            self.randomize_abilities(topic="talents")
+            self.randomize_abilities(topic="skills")
+            self.randomize_abilities(topic="knowledges")
+            self.randomize_backgrounds()
+            self.randomize_traits()
+            if self.creature == "garou":
+                self.glory = 0
+                self.honor = 0
+                self.wisdom = 0
+                self.garou_rank = 0
+                self.willpower = 3
+                self.rage = 0
+                self.gnosis = 0
+                self.nature = ""
+                self.demeanor = ""
+            elif self.creature == "kinfolk":
+                self.glory = 0
+                self.honor = 0
+                self.wisdom = 0
+                self.garou_rank = 0
+                self.willpower = 3
+                self.rage = 0
+                self.gnosis = 0
+                # self.nature = ""
+                # self.demeanor = ""
+                self.age = random.randrange(18, 55)
+                # self.expected_freebies = 21
+            elif self.creature == "kindred":
+                virtues = 7
+                self.virtue0 = 1
+                self.virtue1 = 1
+                self.virtue2 = 1
+                while virtues > 0:
+                    a = random.randrange(0, 3)
+                    v = getattr(self, f"virtue{a}")
+                    if v < 5:
+                        setattr(self, f"virtue{a}", v + 1)
+                        virtues -= 1
+                self.weakness = CLANS_SPECIFICS[self.family]["clan_weakness"]
+            elif self.creature == "ghoul":
+                virtues = 7
+                self.virtue0 = 1
+                self.virtue1 = 1
+                self.virtue2 = 1
+                while virtues > 0:
+                    a = random.randrange(0, 3)
+                    v = getattr(self, f"virtue{a}")
+                    if v < 5:
+                        setattr(self, f"virtue{a}", v + 1)
+                        virtues -= 1
+                for x in range(4):
+                    setattr(self, f"merit{x}", "")
+                    setattr(self, f"flaw{x}", "")
+                for x in range(16):
+                    setattr(self, f"trait{x}", "")
+                setattr(self, f"trait0", "Potence (1)")
+                domitors = Creature.objects.filter(rid=self.sire)
+                if len(domitors) == 1:
+                    domitor = domitors.first()
+                    if domitor.family in ["Gangrel", "Ventrue"]:
+                        setattr(self, f"trait1", "Fortitude (1)")
+                    elif domitor.family in ["Brujah", "Toreador"]:
+                        setattr(self, f"trait1", "Celerity (1)")
+                    elif domitor.family in ["Nosferatu"]:
+                        setattr(self, f"trait1", "Obfuscate (1)")
+                    elif domitor.family in ["Malkavian", "Tremere"]:
+                        setattr(self, f"trait1", "Auspex(2)")
+                    else:
+                        setattr(self, f"trait0", "Potence (2)")
+                # due_willpower = int(STATS_TEMPLATES[self.creature]['willpower'])
+                # if self.willpower < due_willpower:
+                self.willpower = self.virtue2
 
-    def balance_ghoul(self):
+    def balance(self):
         if self.creature == "ghoul":
             discipline_points = 0
             offset = self.expectedfreebies - self.freebies
@@ -1936,6 +1968,9 @@ class Creature(models.Model):
             self.need_fix = True
             self.save()
             # print(f'{self.name} has been balanced...')
+        elif "kinfolk" == self.creature:
+            self.need_fix = True
+            self.save()
 
     def increase_random_stat(self, stats_set=[]):
         res = 0
@@ -2102,7 +2137,7 @@ class Creature(models.Model):
         #         # lines.append("\n```\n")
         #         lines.append("\\\n".join(scs))
         #         # lines.append("\n```\n")
-        lines.append(f"Health: ◻ B-1◻ I-1◻ W-2◻ M-2◻ C-5◻ I◻{new_line}")
+        lines.append(f"Health: Ok ◻ Bruised (-1) ◻ Injured (-1) ◻ Wounded (-2)◻ Mauled (-2)◻ Crippled(-5)◻ Incapacited ◻{new_line}")
         if "with_hard_edges" in options:
             lines.append(f"{new_line}")
             edges = self.edges.split(", ")

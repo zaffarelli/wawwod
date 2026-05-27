@@ -633,6 +633,9 @@ class WawwodCollector {
                     case "m":
                         $("#toggle_moonphases").trigger("click")
                         break
+                    case "c":
+                        $("#trigger_chronicle_book").trigger("click")
+                        break
                     default:
                         //
                         break

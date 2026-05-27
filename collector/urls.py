@@ -175,6 +175,8 @@ urlpatterns = [
     ),
     re_path(r"^api/balance/(?P<slug>\w+)/$", balance, name="balance"),
     re_path(r"^api/randomize/(?P<slug>\w+)/$", randomize, name="randomize"),
+
+
     re_path(r"^api/moon_phase/(?P<dt>[\w-]+)$", moon_phase, name="moon_phase"),
     re_path(r"^calendar/(?P<year>\w+)/$", calendar, name="calendar"),
     re_path(r"^weaver_code/(?P<code>\w+)/$", weaver_code, name="weaver_code"),

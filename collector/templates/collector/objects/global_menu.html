@@ -3,6 +3,7 @@
 <ul class='bar hidden'>
     <li class="pull_down">
         <i class='fa fa-users'></i>&nbsp;Creatures
+        {% if request.user.profile.storyteller_of_current %}
         <ul class="drop_down">
             <li class="display"><i class='fa fa-arrow-right'></i> Protagonists
                 <ul class="pull_right">
@@ -34,7 +35,7 @@
                     <li class="display" action="kindred_lineage" param="Independents"><i class="fas fa-sitemap"></i> Independents Lineage</li>
                 </ul>
             </li>
-            {% if request.user.profile.storyteller_of_current %}
+
             <li class="display"><i class='fa fa-arrow-right'></i>&nbsp;Add creature
                 <ul class="pull_right">
                     <li class="collector_action" action="add_mortal"><i class="fas fa-user-plus"></i> Add new mortal</li>
@@ -47,21 +48,30 @@
                     <li class="collector_action" action="add_mage"><i class="fas fa-user-plus"></i> Add new mage</li>
                 </ul>
             </li>
-            {% endif %}
+
             <hr/>
             <li class="display"><i class='fa fa-arrow-right'></i>&nbsp;Others
                 <ul class="pull_right">
                     <li class="display" action="dashboard"><i class="fas fa-star"></i> Dashboard</li>
-                    {% if request.user.profile.storyteller_of_current %}
                     <li class="display" action="gaia_wheel"><i class="fas fa-globe"></i> Gaia Wheel</li>
                     <li class="collector_action" action="refix_all"><i class="fas fa-cogs"></i> Refix all</li>
                     <li class="collector_action" action="experiment"><i class="fas fa-cogs"></i> Experiment</li>
-                    {% endif %}
                 </ul>
 
             </li>
-
         </ul>
+        {% else %}
+        <ul class="drop_down">
+            <li class="display"><i class='fa fa-arrow-right'></i>&nbsp;Statistics
+                <ul class="pull_right">
+                    <li class="display" action="dashboard"><i class="fas fa-star"></i> Dashboard</li>
+
+
+                </ul>
+
+            </li>
+        </ul>
+        {% endif %}
     </li>
 
 
@@ -77,13 +87,12 @@
     <li class="pull_down">
         <i id='toggle_chronicle' class='fa fa-cogs'></i>&nbsp;Options
         <ul class="drop_down">
-            <li class="action" id="settings">Settings</li>
+
             <li id="toggle_options" class="toggle" action="toggle" param="handler">Show/Hide Options (Ctrl+Alt+o)</li>
             <li id="toggle_details" class="toggle" action="toggle" param="details">Show/Hide Details (Ctrl+Alt+d)</li>
-            <li id="toggle_moonphases" class="toggle" action="toggle" param="moonphase">Show/Hide Moon Phases (Ctrl+Alt+m)
-            </li>
-            <hr/>
-            <li><form action="{% url 'logout' %}" method="POST">{% csrf_token %}<button type="submit" >Disconnect {{request.user}}</button></form></li>
+
+            <li id="toggle_moonphases" class="toggle" action="toggle" param="moonphase">Show/Hide Moon Phases (Ctrl+Alt+m)</li>
+            <li><form action="{% url 'logout' %}" method="POST">{% csrf_token %}<button type="submit" >Disconnect {{request.user|upper}}</button></form></li>
         </ul>
     </li>
 </ul>

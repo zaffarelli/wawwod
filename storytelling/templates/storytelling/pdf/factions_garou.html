@@ -149,6 +149,7 @@
             -pdf-open:false;
             font-weight:normal;
             color:#902020;
+            padding-left:2mm;
             -pdf-keep-with-next: true;
         }
 
@@ -324,22 +325,37 @@
         .roster{
             border-left: 2mm solid silver;
             padding:0;
-            margin-left:3mm;
             margin:0;
+            padding-left:4mm;
+            padding-right:2mm;
+
+
             font-family: 'TextFont';
             font-size: 8pt;
-            line-height:9pt;
+            line-height:8pt;
+        }
+
+        .roster.kinfolk{
+            border-left: 0.5mm solid #0c253b;
+
+        }
+
+        .roster.garou{
+            border-left: 1.0mm solid #254a6a;
+        }
 
 
+        .roster ul{
+            margin:0;
+            padding:0;
         }
 
         .roster li{
             margin:0;
             padding:0;
-            text-indent:2mm;
-            margin-left:-4mm;
+            padding-left:5mm;
             line-height:8pt;
-            font-size: 7pt;
+            font-size: 8pt;
         }
 
         .roster.kindred{
@@ -383,15 +399,15 @@
 {% for faction,fcontent in data.items %}
     <H2>{{fcontent.name|title}} Creatures</H2>
     {% for group,gcontent in fcontent.groups.items %}
-        <pdf:nextpage/>
+<!--        <pdf:nextframe/>-->
         <H3>{{gcontent.name|title}}</H3>
         {% for pack,pcontent in gcontent.packs.items %}
-            <pdf:nextframe/>
             <H4>{{pcontent.name|title }}</H4>
             {% for garou in pcontent.garous %}
                 {% include "collector/pdf/creature_roster.html" with c=garou %}
             {% endfor %}
         {% endfor %}
+        <pdf:nextframe/>
     {% endfor %}
 {% endfor %}
 

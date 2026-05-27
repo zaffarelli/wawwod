@@ -38,9 +38,14 @@ class Profile(models.Model):
         from collector.models.adventures import Adventure
         is_in = False
         adventure, chronicle, season = Adventure.current_full()
-        chronicles = self.storyteller_for.split(", ")
-        if chronicle in chronicles:
-            is_in = True
+        if len(self.storyteller_for.strip())>0:
+            chronicles = self.storyteller_for.split(", ")
+            logger.info(chronicles)
+            logger.info(chronicle)
+
+            for chronicle.acronym in chronicles:
+                is_in = True
+                logger.info(f"{chronicle} is in {chronicles}")
         return is_in
 
 

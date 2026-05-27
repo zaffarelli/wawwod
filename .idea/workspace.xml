@@ -5,29 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c5f4ae22-1e7a-419c-ac9f-80da089b72d4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/collector/static/collector/wawwod_mibn.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collector/utils/decorators.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/apps.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/collector/models/creatures.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/models/creatures.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/collector/models/profiles.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/models/profiles.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/static/collector/css/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/collector/css/main.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/static/collector/wawwod.svg" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/collector/wawwod.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/static/collector/wawwod_mibn.svg" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/collector/wawwod_mibn.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/templates/collector/creature/main_header.html" beforeDir="false" afterPath="$PROJECT_DIR$/collector/templates/collector/creature/main_header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/static/js/collector.es6" beforeDir="false" afterPath="$PROJECT_DIR$/collector/static/js/collector.es6" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/templates/collector/creature/stat_line.html" beforeDir="false" afterPath="$PROJECT_DIR$/collector/templates/collector/creature/stat_line.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/templates/collector/objects/current_chronicle_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/collector/templates/collector/objects/current_chronicle_details.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/collector/templates/collector/objects/global_menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/collector/templates/collector/objects/global_menu.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collector/templates/registration/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/collector/templates/registration/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/templates/collector/pdf/creature_roster.html" beforeDir="false" afterPath="$PROJECT_DIR$/collector/templates/collector/pdf/creature_roster.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/collector/utils/wod_reference.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/utils/wod_reference.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector/views/actions.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/views/actions.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/collector/views/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/views/base.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/django.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/django.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/wawwod.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/wawwod.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/wawwod.log.1" beforeDir="false" afterPath="$PROJECT_DIR$/logs/wawwod.log.1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/wawwod.log.2" beforeDir="false" afterPath="$PROJECT_DIR$/logs/wawwod.log.2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/wawwod.log.3" beforeDir="false" afterPath="$PROJECT_DIR$/logs/wawwod.log.3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/wawwod.log.4" beforeDir="false" afterPath="$PROJECT_DIR$/logs/wawwod.log.4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/wawwod.log.5" beforeDir="false" afterPath="$PROJECT_DIR$/logs/wawwod.log.5" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storytelling/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/storytelling/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storytelling/templates/storytelling/pdf/factions_garou.html" beforeDir="false" afterPath="$PROJECT_DIR$/storytelling/templates/storytelling/pdf/factions_garou.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/uv.lock" beforeDir="false" afterPath="$PROJECT_DIR$/uv.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wawwod.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wawwod/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wawwod_media/books/chronicle_book_RAMI.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/wawwod_media/books/chronicle_book_RAMI.pdf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

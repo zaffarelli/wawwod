@@ -159,6 +159,7 @@ def change_chronicle(request, slug=None):
         Chronicle.set_current(slug)
         context = prepare_index(request)
         return render(request, "collector/index.html", context=context)
+    return HttpResponse(status=204)
 
 
 def change_adventure(request, slug=None):
@@ -167,6 +168,7 @@ def change_adventure(request, slug=None):
         Adventure.set_current(slug)
         context = prepare_index(request)
         return render(request, "collector/index.html", context=context)
+    return HttpResponse(status=204)
 
 
 def display_groups(request, slug=None):
@@ -325,7 +327,7 @@ def userinputastext(request):
 def add_creature(request, slug=None):
     if is_ajax(request):
         name = " ".join(slug.split("_"))
-        chronicle = get_current_chronicle()
+        adventure, chronicle, _ = Adventure.current_full()
         item = Creature()
         item.name = name
         item.chronicle = chronicle.acronym
