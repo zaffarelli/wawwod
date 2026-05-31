@@ -6,7 +6,6 @@ class StorytellingConfig(AppConfig):
     name = "storytelling"
 
     def ready(self):
-        #pass
         import storytelling.signals.districts
         import storytelling.signals.cities
         import storytelling.signals.hotspots

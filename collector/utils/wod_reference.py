@@ -822,6 +822,9 @@ STATS_NAMES = {
     },
 }
 
+
+
+
 STATS_TEMPLATES = {
     "changeling": {
         "attributes": "7/5/3",

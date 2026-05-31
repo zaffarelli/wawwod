@@ -1,5 +1,4 @@
 from django.contrib import admin
-
 from collector.models.gifts import Gift, GiftAdmin
 from collector.models.disciplines import Discipline, DisciplineAdmin
 from collector.models.rites import Rite, RiteAdmin
@@ -15,12 +14,6 @@ from collector.models.deeds import Deed, DeedAdmin
 from collector.models.profiles import Profile, ProfileAdmin
 from collector.models.legacy import CollectorNybnKindreds, CollectorNybnKindredsAdmin
 
-from django.contrib.auth.models import User
-admin.site.unregister(User)
-
-
-
-
 admin.site.register(Creature, CreatureAdmin)
 admin.site.register(Chronicle, ChronicleAdmin)
 admin.site.register(Season, SeasonAdmin)
@@ -34,18 +27,4 @@ admin.site.register(Sept, SeptAdmin)
 admin.site.register(Totem, TotemAdmin)
 admin.site.register(Deed, DeedAdmin)
 admin.site.register(CollectorNybnKindreds, CollectorNybnKindredsAdmin)
-# admin.site.register(Profile, ProfileAdmin)
-
-
-class ProfileInline(admin.StackedInline):
-    model = Profile
-
-# admin.site.unregister(User)
-class UserAdmin(admin.ModelAdmin):
-    model = User
-    fields = ["username","first_name","last_name","email"]
-    inlines = [ProfileInline]
-
-admin.site.register(User, UserAdmin)
 admin.site.register(Profile, ProfileAdmin)
-

@@ -128,6 +128,7 @@
             -pdf-level:3;
             -pdf-open:true;
             margin-top:0.1cm;
+            -pdf-keep-with-next: true;
         }
 
         h5 {
@@ -398,6 +399,7 @@
 <pdf:nextpage/>
 {% for faction,fcontent in data.items %}
     <H2>{{fcontent.name|title}} Creatures</H2>
+    <pdf:nextpage/>
     {% for group,gcontent in fcontent.groups.items %}
 <!--        <pdf:nextframe/>-->
         <H3>{{gcontent.name|title}}</H3>
@@ -407,7 +409,7 @@
                 {% include "collector/pdf/creature_roster.html" with c=garou %}
             {% endfor %}
         {% endfor %}
-        <pdf:nextframe/>
+        <pdf:nextpage/>
     {% endfor %}
 {% endfor %}
 

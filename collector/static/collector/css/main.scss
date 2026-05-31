@@ -137,7 +137,7 @@ body {
 }
 
 .charlist {
-  @include panel;
+  //@include panel;
 
   & .pagination {
     width: $list_width;
@@ -187,7 +187,7 @@ body {
     }
   }
 
-  @include panel;
+  //@include panel;
   //background: $plate;
   position: fixed;
   top: 0;
@@ -945,7 +945,7 @@ text.kindred_name {
 }
 
 #user_wrapper {
-  position: absolute;
+  position: fixed;
   display: flex;
   z-index: 10000;
   justify-content: space-evenly;

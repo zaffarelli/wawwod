@@ -942,6 +942,7 @@ class Creature(models.Model):
             wodlog.info(f"--- Experience Expenditure Check")
             changes = self.experience_expenditure.split(";")
             freebies_exp_offset = 0
+            computed_freebies = 0
             xp_spent = 0
             for change in changes:
                 terms = change.split("=")
@@ -1005,11 +1006,11 @@ class Creature(models.Model):
                             if stat.lower() in ["fate","totem"]:
                                 realexp = (nr-cr) *2
                     freebies_exp_offset += realfb
-                    wodlog.info(f"--- {stat:20} Change: {progress:10} [XP:{realexp} / freebies:{realfb}] (Type:{category} from {cr} to {nr}) {change}")
+                    wodlog.info(f"--- {stat:20} Change: {progress:10} [XP:{realexp} / FB:{realfb}] (Type:{category} from {cr} to {nr}) {change}")
                     xp_spent += realexp
-            wodlog.debug(f"--- Exp. Spent ... {xp_spent}")
-            wodlog.debug(f"--- Freebies ..... {freebies_exp_offset}")
-            wodlog.debug(f"--- Expected ..... {self.expectedfreebies}")
+            wodlog.debug(f"--- XP Spent ..... {xp_spent}")
+            wodlog.debug(f"--- XP Freebies .. {freebies_exp_offset}")
+            wodlog.debug(f"--- Expected Fb .. {self.expectedfreebies}")
             self.freebies_exp_offset = freebies_exp_offset
             self.expectedfreebies += freebies_exp_offset
             self.exp_spent = xp_spent
@@ -2159,6 +2160,11 @@ class Creature(models.Model):
         return "".join(lines)
 
     def calculate_freebies(self):
+        """
+            Here, freebies is the challenge of the character.
+            Everything that is free is removed
+            Everything in the creature is added
+        """
         wodlog.info(f"🔹 Freebies ..................... {self.freebies} (*)")
         # *** Attributes
         self.total_physical = -3
@@ -2178,7 +2184,7 @@ class Creature(models.Model):
         x = self.total_physical + self.total_social + self.total_mental
         self.challenge += f" at:{x * 5}/{5 * (7 + 5 + 3)}"
         self.freebies += x * 5
-        wodlog.info(f"🔹 Freebies + Attributes ........ {self.freebies:4} {x:4}x5 {x * 5:4}")
+        wodlog.info(f"🔹 Freebies + Attributes ........ +{x * 5:3} ({x:2}x5) => {self.freebies:4}")
         # *** Abilities
         self.total_talents = 0
         self.total_skills = 0
@@ -2194,7 +2200,7 @@ class Creature(models.Model):
         x = self.total_talents + self.total_skills + self.total_knowledges
         self.challenge += f" ab:{x * 2}/{2 * (13 + 9 + 5)}"
         self.freebies += (x) * 2
-        wodlog.info(f"🔹 Freebies + Abilities ......... {self.freebies:4} {x:4}x2 {x * 2:4}")
+        wodlog.info(f"🔹 Freebies + Abilities ......... +{x*2:3} ({x:2}x2) => {self.freebies:4}")
         # *** Backgrounds
         self.total_backgrounds = 0
         for n in range(len(STATS_NAMES[self.creature]["backgrounds"])):
@@ -2204,7 +2210,7 @@ class Creature(models.Model):
         self.freebies += self.total_backgrounds
         self.challenge += f" bk:{self.total_backgrounds}/{5}"
         wodlog.info(
-            f"🔹 Freebies + Backgrounds ....... {self.freebies:4}   {self.total_backgrounds:4} {self.total_backgrounds:4}"
+            f"🔹 Freebies + Backgrounds ....... +{self.total_backgrounds:3} ({self.total_backgrounds:2}x1) => {self.freebies:4}"
         )
         # Merits & Flaws
         total_merits_and_flaws = 0
@@ -2222,7 +2228,7 @@ class Creature(models.Model):
                     self.freebies -= v
                     total_merits_and_flaws -= v
         wodlog.info(
-            f"🔹 Freebies + Merits & Flaws .... {self.freebies:4}   {total_merits_and_flaws:4} {total_merits_and_flaws:4}"
+            f"🔹 Freebies + Merits & Flaws .... +{total_merits_and_flaws:3} ({total_merits_and_flaws:2}x1) => {self.freebies:4} "
         )
         # Traits
         self.total_traits = 0
@@ -2253,7 +2259,7 @@ class Creature(models.Model):
             # self.freebies += getattr(self, 'gnosis') * 2
             # self.freebies += getattr(self, 'willpower')
             self.freebies += self.total_traits * 7  # 7 pts per gift level
-            wodlog.info(f"🔹 Freebies + Traits ............ {self.freebies:4} {self.total_traits:4}x7")
+            wodlog.info(f"🔹 Freebies + Traits ............ +{self.total_traits * 7:3} ({self.total_traits:2}x7) => {self.freebies:4}")
             self.challenge += f" tr:{self.total_traits * 7}/{21}"
             w = getattr(self, "willpower") * 1
             g = getattr(self, "gnosis") * 2
@@ -2262,10 +2268,16 @@ class Creature(models.Model):
             gn = GNOSIS_PER_BREED[int(self.breed)] * 2  # Gnosis per Breed
             wp = 0
             if self.family:
-                wp = (PER_TRIBE[as_tribe_plural(self.family)]["willpower"] * 1)  # Willpower per Tribe
-            self.freebies += w + g + r
+                wp = (GarouFamilySolver(self.family).willpower * 1)  # Willpower per Tribe
+            # self.freebies -= ra + gn + wp
+            self.freebies += w
             self.challenge += f" ot:{w + g + r}/{ra + gn + wp}"
-            wodlog.info(f"🔹 Freebies + Other ............. {self.freebies:4} {w + g + r:4}")
+            wodlog.info(f"🔹 Freebies + Willpower ......... +{w:3} ({w:2}x1) => {self.freebies:4} (Tribe:    {wp})")
+            self.freebies += r
+            wodlog.info(f"🔹 Freebies + Rage .............. +{r:3} ({r:2}x1) => {self.freebies:4} (Auspice:  {ra})")
+            self.freebies += g
+            wodlog.info(f"🔹 Freebies + Gnosis ............ +{g:3} ({round(g/2):2}x2) => {self.freebies:4} (Breed:    {round(gn/2)})")
+
         elif "kindred" == self.creature:
             vdot = self.value_of(f"{self.creature}:freebies_per_dot:virtue")
             wdot = self.value_of(f"{self.creature}:freebies_per_dot:willpower")
@@ -2326,6 +2338,7 @@ class Creature(models.Model):
         # wodlog.info(
         #     f"Expected Freebies / Dif / free ........... {self.freebiesdif:4} =  {self.expectedfreebies:4} - {self.freebies:4}"
         # )
+        wodlog.info(f"🔹")
         wodlog.info(f"🔹 FreebiesDif .................. {self.freebiesdif:4}")
         wodlog.info(f"🔹 Freebies ..................... {self.freebies:4}")
         wodlog.info(f"🔹 Expected Freebies ............ {self.expectedfreebies:4}")
@@ -2336,9 +2349,6 @@ class Creature(models.Model):
         elif self.freebies > self.expectedfreebies:
             self.status = "OKPLUS"
             self.is_new = True
-        elif self.freebiesdif == 0:
-            self.status = "OK"
-            self.is_new = False
         else:
             self.status = "UNBALANCED"
             self.is_new = True
