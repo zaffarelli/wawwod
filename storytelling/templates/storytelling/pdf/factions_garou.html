@@ -134,11 +134,12 @@
         h5 {
             font-size: 12pt;
             line-height: 0.73em;
-            color: #707010;
-            -pdf-outline: true;
+            color: #707070;
+            -pdf-outline: false;
             -pdf-level:4;
             -pdf-open:true;
-            margin-left:0.5cm;
+            -pdf-keep-with-next: true;
+            margin-left:0.15cm;
         }
 
         h6{
@@ -153,6 +154,7 @@
             padding-left:2mm;
             -pdf-keep-with-next: true;
         }
+
 
         /*li{*/
         /*    margin-left:0.25cm;*/
@@ -337,12 +339,15 @@
         }
 
         .roster.kinfolk{
-            border-left: 0.5mm solid #0c253b;
-
+            border-left: 0.25mm solid #909090;
         }
 
+
+
+
+
         .roster.garou{
-            border-left: 1.0mm solid #254a6a;
+            border-left: 1.0mm solid #101010;
         }
 
 
@@ -396,17 +401,23 @@
    <pdf:toc />
 </div>
 
+
 <pdf:nextpage/>
-{% for faction,fcontent in data.items %}
-    <H2>{{fcontent.name|title}} Creatures</H2>
+{% for fk,fv in data.items %}
+    <H2>{{fv.name|title}} Creatures</H2>
     <pdf:nextpage/>
-    {% for group,gcontent in fcontent.groups.items %}
-<!--        <pdf:nextframe/>-->
-        <H3>{{gcontent.name|title}}</H3>
-        {% for pack,pcontent in gcontent.packs.items %}
-            <H4>{{pcontent.name|title }}</H4>
-            {% for garou in pcontent.garous %}
-                {% include "collector/pdf/creature_roster.html" with c=garou %}
+    {% for gk,gv in fv.groups.items %}
+        <H3>{{gv.name|title}}</H3>
+        {% for sk,sv in gv.groupspecs.items %}
+            <H4>{{sv.name|title }}</H4>
+            {% for mk,mv in sv.members.items %}
+                {% include "collector/pdf/creature_roster.html" with c=mv.data %}
+                {% if mv.edges %}
+                <h5>Kinfolks</h5>
+                {% for ke, kv in mv.edges.items %}
+                    {% include "collector/pdf/creature_roster.html" with c=kv %}
+                {% endfor %}
+                {% endif %}
             {% endfor %}
         {% endfor %}
         <pdf:nextpage/>

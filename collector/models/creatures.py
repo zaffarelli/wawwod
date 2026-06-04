@@ -1847,7 +1847,87 @@ class Creature(models.Model):
                 self.willpower = self.virtue2
 
     def balance(self):
-        if self.creature == "ghoul":
+        if "kinfolk" == self.creature:
+            discipline_points = 0
+            offset = self.expectedfreebies - self.freebies
+            while offset > 0:
+                str = ""
+                str += f"[offset={offset:3}] "
+                solution_pick = []
+                if offset >= 5:
+                    solution_pick.append(2)
+                if offset >= 2:
+                    solution_pick.append(3)
+                    solution_pick.append(3)
+                if offset > 0:
+                    solution_pick.append(4)
+                random.shuffle(solution_pick)
+                solution = random.choice(solution_pick)
+                # str += f'[{",".join(solution_pick)} -> {solution:2}]'
+                if solution == 1:
+                    str += f"[{f'TRAITS +1]':30}"
+                    discipline_points += 1
+                    offset -= 7
+                    str += "[spend -> 7]"
+                if solution == 2:
+                    str += f"[{f'ATTR {self.quirks}':30}]"
+                    targets = STATS_NAMES[self.creature]["attributes"]
+                    if "action" in self.quirks:
+                        targets += ["Strength", "Dexterity", "Stamina"]
+                    if "intelligence" in self.quirks:
+                        targets += ["Manipulation", "Intelligence", "Wits"]
+                    if "operative" in self.quirks:
+                        targets += ["Dexterity", "Appareance", "Perception"]
+                    if "support" in self.quirks:
+                        targets += ["Stamina", "Charisma", "Wits"]
+                    if "mystic" in self.quirks:
+                        targets += ["Intelligence", "Charisma", "Wits"]
+                    r, l = self.increase_random_stat(targets)
+                    if r == 1:
+                        offset -= 5
+                        str += l
+                        str += "[spend -> 5]"
+                if solution == 3:
+                    str += f"[{f'SKILL {self.quirks}':30}]"
+                    targets = STATS_NAMES[self.creature]["talents"]+STATS_NAMES[self.creature]["skills"]+STATS_NAMES[self.creature]["knowledges"]
+
+                    if "action" in self.quirks:
+                        targets += ["athletics","brawl","melee","firearms","intimidation"]
+                    if "operative" in self.quirks:
+                        targets += ["drive", "crafts", "streetwise"]
+                    if "support" in self.quirks:
+                        targets += ["empathy", "survival", "medicine"]
+                    if "intelligence" in self.quirks:
+                        targets += ["subterfuge", "larceny", "academics"]
+                    if "mystic" in self.quirks:
+                        targets += ["primal-urge", "performance", "occult"]
+                    r, l = self.increase_random_stat(targets)
+                    if r == 1:
+                        offset -= 2
+                        str += l
+                        str += "[spend -> 2]"
+                if solution == 4:
+                    str += f"[{'Willpower/backgrounds':30}]"
+                    targets = [
+                        "Willpower",
+                        "Allies",
+                        "Contacts",
+                        "Equipment",
+                        "Mentor",
+                        "Pure-Breed",
+                        "Resources",
+                    ]
+                    r, l = self.increase_random_stat(targets)
+                    if r == 1:
+                        offset -= 1
+                        str += l
+                        str += "[spend -> 1]"
+                if str:
+                    logger.info(str)
+            self.need_fix = True
+            self.save()
+            logger.info(f'{self.name} ({self.creature}) has been balanced...')
+        elif "ghoul" == self.creature:
             discipline_points = 0
             offset = self.expectedfreebies - self.freebies
             while offset > 0:
@@ -1968,10 +2048,9 @@ class Creature(models.Model):
                 # print(str)
             self.need_fix = True
             self.save()
-            # print(f'{self.name} has been balanced...')
-        elif "kinfolk" == self.creature:
-            self.need_fix = True
-            self.save()
+            logger.info(f'{self.name} ({self.creature}) has been balanced...')
+        else:
+            logger.warning(f"No balancing rules implemented for this type of creature {self.creature}.")
 
     def increase_random_stat(self, stats_set=[]):
         res = 0

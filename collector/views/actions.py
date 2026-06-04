@@ -378,8 +378,8 @@ def balance(request, slug):
     answer = {}
     found = Creature.objects.filter(rid=slug)
     if len(found) == 1:
+        x = found.first()
         if x.status != "READY":
-            x = found.first()
             x.balance()
             answer["rid"] = x.rid
     return JsonResponse(answer)

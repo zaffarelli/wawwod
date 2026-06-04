@@ -187,7 +187,7 @@ def display_map(request, slug=None):
 #     return render(request, 'storytelling/geojson.html')
 
 
-def chronicle_book(request):
+def old_chronicle_book(request):
     from collector.models.creatures import Creature
     from collector.models.chronicles import Chronicle
 
@@ -211,7 +211,7 @@ def chronicle_book(request):
         factions["sabbat"] = {"name": "Sabbat", "description": "", "groups": {}}
         factions["traditions"] = {"name": "Traditions", "description": "", "groups": {}}
     groups = {}
-    for c in Creature.objects.filter( chronicle=chronicle.acronym).exclude(creature='mortal').exclude(is_player=True).order_by("groupspec"):
+    for c in Creature.objects.filter( chronicle=chronicle.acronym).filter(creature__in=['garou','kindrd','mage','changeling','wraith']).exclude(is_player=True).order_by("faction","group","groupspec"):
         if chronicle.main_creature == "kindred":
             g = "_".join(c.group.lower().split(" "))
             if g not in groups:
@@ -269,6 +269,89 @@ def chronicle_book(request):
         answer = {"status": pdf.err}
         return HttpResponse(status=204)
     return JsonResponse(answer)
+
+def chronicle_book(request):
+    from collector.models.creatures import Creature
+    from collector.models.chronicles import Chronicle
+    settings = {}
+    chronicle = Chronicle.current()
+    factions = {}
+    for c in Creature.objects.filter(chronicle=chronicle.acronym).filter(creature='garou').exclude(is_player=True).order_by("faction","group","groupspec"):
+        faction_name = "_".join(c.faction.lower().split(" "))
+        group_name = "_".join(c.group.lower().split(" "))
+        groupspec_name = "_".join(c.groupspec.lower().split(" "))
+        if faction_name not in factions:
+            factions[faction_name] = {"name": c.faction, "description":"", "groups": {}}
+        if group_name not in factions[faction_name]["groups"]:
+            factions[faction_name]['groups'][group_name] = {"name": c.group, "description": "", "groupspecs": {}}
+        if groupspec_name not in factions[faction_name]["groups"][group_name]["groupspecs"]:
+            factions[faction_name]["groups"][group_name]["groupspecs"][groupspec_name] = {"name": c.groupspec, "description": "", "members": {}}
+
+        member_entry = {"data": c, "edges": {}}
+        edges = c.edges.split(", ")
+        for e in Creature.objects.filter(rid__in=edges):
+            member_entry["edges"][e.rid] = e
+        factions[faction_name]["groups"][group_name]["groupspecs"][groupspec_name]['members'][c.rid] = member_entry
+
+
+    #     if chronicle.main_creature == "kindred":
+    #         g = "_".join(c.group.lower().split(" "))
+    #         if g not in groups:
+    #             groups[g] = {
+    #                 "code": g,
+    #                 "faction": c.faction,
+    #                 "name": f"{c.group}",
+    #                 "kindreds": [],
+    #             }
+    #         kindred_entry = {"data": c, "ghouls": []}
+    #         ghouls = c.retainers_vals
+    #         for h in ghouls:
+    #             kindred_entry["ghouls"].append(h)
+    #         groups[g]["kindreds"].append(kindred_entry)
+    #     elif chronicle.main_creature == "garou":
+    #         g = "_".join(c.group.lower().split(" "))
+    #         if len(c.groupspec.lower()) > 0:
+    #             p = "_".join(c.groupspec.lower().split(" "))
+    #             if g not in groups:
+    #                 groups[g] = {
+    #                     "code": g,
+    #                     "faction": c.faction,
+    #                     "name": f"{c.group}",
+    #                     "packs": {},
+    #                 }
+    #             if p not in groups[g]["packs"]:
+    #                 groups[g]["packs"][p] = {
+    #                     "code": p,
+    #                     "name": c.groupspec,
+    #                     "garous": [],
+    #                 }
+    #             groups[g]["packs"][p]["garous"].append(c)
+    #         else:
+    #             print("Cannot handle", c)
+    # for group, content in groups.items():
+    #     x = content["faction"].lower()
+    #     factions[x]["groups"][group] = content
+
+    logger.debug(factions)
+    context = {
+        "data": factions,
+        "settings": settings,
+        "filename": chronicle.acronym,
+        "chronicle": chronicle,
+    }
+    template = get_template(f"storytelling/pdf/factions_{chronicle.main_creature}.html")
+    html = template.render(context)
+    filename = f"chronicle_book_{context['filename']}.pdf"
+    fname = os.path.join("wawwod_media/", "books/" + filename)
+    es_pdf = open(fname, "wb")
+    pdf = pisa.pisaDocument(BytesIO(html.encode("utf-8")), es_pdf)
+    answer = {"status": "Ok"}
+    if not pdf.err:
+        es_pdf.close()
+        answer = {"status": pdf.err}
+        return HttpResponse(status=204)
+    return JsonResponse(answer)
+
 
 
 def story_book(request):

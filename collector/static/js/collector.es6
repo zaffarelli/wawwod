@@ -99,9 +99,9 @@ class WawwodCollector {
                         // me.d3.perform();
                         if (answer.hasOwnProperty('figures')){
                             let figures = JSON.parse(answer.figures)
-                            $("#d3area").html("")
+                            $("#d3area svg").remove("")
                             let $dash = $("<div>",{class:"dashboard",id:"generic_dashboard"})
-                            $("#d3area").append($dash)
+                            $("#htmlarea").append($dash)
                             _.forEach(figures, (figure) => {
                                 $("#generic_dashboard").append(figure.html)
                                 let $ctx = $("#"+figure.id)
