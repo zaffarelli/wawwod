@@ -3,6 +3,7 @@ from collector.models.creatures import Creature
 from collector.utils.helper import fake_name
 from collector.utils.kindred_stuff import manage_missing_ghouls, domitor_from_sire
 from collector.models.adventures import Adventure
+import random
 
 class Command(BaseCommand):
     def handle(self, **options):
@@ -24,6 +25,7 @@ class ToolsForWawwod:
         print("    A - Populate from YAML")
         print("    B - Manage kinfolks")
         print("    C - Fix kinfolks (safe)")
+        print("    S - Django Secret generator (safe)")
         print("    0 - Quit")
         topic = ""
         while topic != "0":
@@ -53,6 +55,9 @@ class ToolsForWawwod:
                 self.manage_kinfolks()
             elif topic == "C":
                 self.fix_kinfolks()
+            elif topic == "S":
+                self.secret_key()
+
     def fmt(self, txt):
         new_txt = "\033[1;39m".join(txt.split("µ"))
         new_txt = "\033[0;m".join(new_txt.split("§"))
@@ -319,3 +324,13 @@ class ToolsForWawwod:
                 creature.group = patron.group
                 creature.groupspec = patron.groupspec
                 creature.save()
+
+    def secret_key(self):
+        chars = 'abcdefghijklmnopqrstuvwxyz' \
+                'ABCDEFGHIJKLMNOPQRSTUVXYZ' \
+                '0123456789' \
+                '#()^[]-_*%&=+/'
+
+        SECRET_KEY = ''.join([random.SystemRandom().choice(chars) for i in range(50)])
+
+        print(SECRET_KEY)
