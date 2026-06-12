@@ -822,9 +822,6 @@ STATS_NAMES = {
     },
 }
 
-
-
-
 STATS_TEMPLATES = {
     "changeling": {
         "attributes": "7/5/3",
@@ -1079,28 +1076,28 @@ ALL_TRIBES = [
 RAGE_PER_AUSPICE = [1, 2, 3, 4, 5]
 GNOSIS_PER_BREED = [1, 3, 5]
 # Restrictions: F=Favored D=Discouraged R=Restricted M=Mandatory
-PER_TRIBE = {
-    "Black Furies": {"willpower": 3, "restrictions": "", 'verbose_singular': 'Black Fury'},
-    "Black Spiral Dancers": {"willpower": 3, "restrictions": "", 'verbose_singular': 'Black Spiral Dancer'},
-    "Bone Gnawers": {"willpower": 4, "restrictions": "D:resources;R:ancestors,pure breed",
-                     'verbose_singular': 'Bone Gnawer'},
-    "Bunyips": {"willpower": 3, "restrictions": "", 'verbose_singular': 'Bunyip'},
-    "Children of Gaia": {"willpower": 4, "restrictions": "", 'verbose_singular': 'Child of Gaia'},
-    "Croatans": {"willpower": 3, "restrictions": "", 'verbose_singular': 'Croatan'},
-    "Fiannas": {"willpower": 3, "restrictions": "F:kinfolk", 'verbose_singular': 'Fianna'},
-    "Gets of Fenris": {"willpower": 3, "restrictions": "D:contacts", 'verbose_singular': 'Get of Fenris'},
-    "Glass Walkers": {"willpower": 3, "restrictions": "R:ancestor,pure breed;D:mentor",
-                      'verbose_singular': 'Glass Walker'},
-    "Red Talons": {"willpower": 3, "restrictions": "D:allies,contact;R:resources", 'verbose_singular': 'Red Talons'},
-    "Shadow Lords": {"willpower": 3, "restrictions": "D:allies,mentor", 'verbose_singular': 'Shadow Lord'},
-    "Silent Striders": {"willpower": 3, "restrictions": "R:ancestors;D:resources",
-                        'verbose_singular': 'Silent Strider'},
-    "Silver Fangs": {"willpower": 3, "restrictions": "M:pure breed/3", 'verbose_singular': 'Silver Fangs'},
-    "Stargazers": {"willpower": 4, "restrictions": "D:allies,fetish,resources", 'verbose_singular': 'Stargazer'},
-    "Uktenas": {"willpower": 3, "restrictions": "", 'verbose_singular': 'Uktena'},
-    "Wendigos": {"willpower": 4, "restrictions": "D:contacts,resources", 'verbose_singular': 'Wendigo'},
-    "White Howlers": {"willpower": 3, "restrictions": "", 'verbose_singular': 'White Howler'},
-}
+# PER_TRIBE = {
+#     "Black Furies": {"willpower": 3, "restrictions": "", 'verbose_singular': 'Black Fury'},
+#     "Black Spiral Dancers": {"willpower": 3, "restrictions": "", 'verbose_singular': 'Black Spiral Dancer'},
+#     "Bone Gnawers": {"willpower": 4, "restrictions": "D:resources;R:ancestors,pure breed",
+#                      'verbose_singular': 'Bone Gnawer'},
+#     "Bunyips": {"willpower": 3, "restrictions": "", 'verbose_singular': 'Bunyip'},
+#     "Children of Gaia": {"willpower": 4, "restrictions": "", 'verbose_singular': 'Child of Gaia'},
+#     "Croatans": {"willpower": 3, "restrictions": "", 'verbose_singular': 'Croatan'},
+#     "Fiannas": {"willpower": 3, "restrictions": "F:kinfolk", 'verbose_singular': 'Fianna'},
+#     "Gets of Fenris": {"willpower": 3, "restrictions": "D:contacts", 'verbose_singular': 'Get of Fenris'},
+#     "Glass Walkers": {"willpower": 3, "restrictions": "R:ancestor,pure breed;D:mentor",
+#                       'verbose_singular': 'Glass Walker'},
+#     "Red Talons": {"willpower": 3, "restrictions": "D:allies,contact;R:resources", 'verbose_singular': 'Red Talons'},
+#     "Shadow Lords": {"willpower": 3, "restrictions": "D:allies,mentor", 'verbose_singular': 'Shadow Lord'},
+#     "Silent Striders": {"willpower": 3, "restrictions": "R:ancestors;D:resources",
+#                         'verbose_singular': 'Silent Strider'},
+#     "Silver Fangs": {"willpower": 3, "restrictions": "M:pure breed/3", 'verbose_singular': 'Silver Fangs'},
+#     "Stargazers": {"willpower": 4, "restrictions": "D:allies,fetish,resources", 'verbose_singular': 'Stargazer'},
+#     "Uktenas": {"willpower": 3, "restrictions": "", 'verbose_singular': 'Uktena'},
+#     "Wendigos": {"willpower": 4, "restrictions": "D:contacts,resources", 'verbose_singular': 'Wendigo'},
+#     "White Howlers": {"willpower": 3, "restrictions": "", 'verbose_singular': 'White Howler'},
+# }
 
 GM_SHORTCUTS = {
     "garou": [
@@ -1546,109 +1543,3 @@ CLAN_COLORS = {
 }
 
 
-class FamilySolver:
-    PLURALS = []
-    SINGULARS = []
-    WILLPOWERS = []
-    RESTRICTIONS = []
-
-    def __init__(self, creature=""):
-        self.creature = creature
-
-    def check(self, family=""):
-        self.current = -1
-        if len(family) > 0:
-            for tribe in self.PLURALS:
-                if tribe.lower() == family.lower():
-                    self.current = self.PLURALS.index(tribe)
-                    break
-            if self.current == -1:
-                for tribe in self.SINGULARS:
-                    if tribe.lower() == family.lower():
-                        self.current = self.SINGULARS.index(tribe)
-                        break
-        return self.current
-
-    @property
-    def plural(self):
-        plural = None
-        if self.current != -1:
-            plural = self.PLURALS[self.current]
-        return plural
-
-    @property
-    def singular(self):
-        singular = None
-        if self.current != -1:
-            singular = self.SINGULARS[self.current]
-        return singular
-
-    @property
-    def willpower(self):
-        wp = 2
-        if self.current != -1:
-            wp = 3
-            if self.current in [2, 4, 13, 15]:
-                wp = 4
-        return wp
-
-    @property
-    def restrictions(self):
-        restrictions = ""
-        if self.current != -1:
-            restrictions = self.RESTRICTIONS[self.current]
-        return restrictions
-
-    @classmethod
-    def randomize(cls):
-        from helper import roll
-        alea = roll(faces=len(cls.PLURALS)) - 1
-        plural = cls.PLURALS[alea]
-        return plural
-
-
-class GarouFamilySolver(FamilySolver):
-    PLURALS = ["Black Furies", "Black Spiral Dancers", "Bone Gnawers",
-               "Bunyips", "Children of Gaia", "Croatans",
-               "Fiannas", "Gets of Fenris", "Glass Walkers",
-               "Red Talons", "Shadow Lords", "Silent Striders",
-               "Silver Fangs", "Stargazers", "Uktenas",
-               "Wendigos", "White Howlers"]
-    SINGULARS = ["Black Fury", "Black Spiral Dancer", "Bone Gnawer",
-                 "Bunyip", "Child of Gaia", "Croatan",
-                 "Fianna", "Get of Fenris", "Glass Walker",
-                 "Red Talons", "Shadow Lord", "Silent Strider",
-                 "Silver Fangs", "Stargazer", "Uktena",
-                 "Wendigo", "White Howler"]
-    WILLPOWERS = [3, 3, 4,
-                  3, 4, 3,
-                  3, 3, 3,
-                  3, 3, 3,
-                  3, 4, 3,
-                  4, 3]
-    RESTRICTIONS = [
-        "", "R:pure breed", "D:resources;R:ancestors,pure breed",
-        "", "", "",
-        "F:kinfolk", "D:contacts", "R:ancestor,pure breed;D:mentor",
-        "D:allies,contact;R:resources", "D:allies,mentor", "R:ancestors;D:resources",
-        "M:pure breed/3", "D:allies,fetish,resources", "",
-        "D:contacts,resources", "",
-    ]
-
-    def __init__(self, tribe=""):
-        super().__init__("garou")
-        self.current = -1
-        self.check(family=tribe)
-
-    @classmethod
-    def randomize(cls, limit=""):
-        if limit is "only_current_tribes":
-            plurals_to_avoid = ["Black Spiral Dancers", "Bunyips", "Croatans", "White Howlers", ""]
-        else:
-            plurals_to_avoid = [""]
-        from collector.utils.helper import roll
-        plural = ""
-        while plural in plurals_to_avoid:
-            alea = roll(faces=len(cls.PLURALS)) - 1
-            plural = cls.PLURALS[alea]
-        return plural

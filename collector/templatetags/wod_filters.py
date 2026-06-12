@@ -1,14 +1,14 @@
 from django import template
-import re
-import string
-from collector.utils.wod_reference import STATS_NAMES, AUSPICES, BREEDS, RANKS, PER_TRIBE
+from collector.utils.solvers import GarouFamilySolver, KindredFamilySolver, KindredGenerationSolver
+from collector.utils.wod_reference import STATS_NAMES, AUSPICES, BREEDS, RANKS
 
 register = template.Library()
 
 
 @register.filter(name="as_generation")
 def as_generation(value):
-    return "%dth" % (13 - value)
+    solver = KindredGenerationSolver(generation_background=value)
+    return solver.textual_generation
 
 
 @register.filter(name="prev")
@@ -158,21 +158,11 @@ def as_sex(value):
     return sex
 
 
+
 @register.filter(name="as_tribe_plural")
 def as_tribe_plural(value):
-    if value in PER_TRIBE:
-        return value
-
-    plural = f"{value}s"
-    if value == "Get of Fenris":
-        plural = "Gets of Fenris"
-    elif value == "Child of Gaia":
-        plural = "Children of Gaia"
-    elif value == "Black Fury":
-        plural = "Black Furies"
-    elif value == "Black Spiral Dancer":
-        plural = "Black Spiral Dancers"
-    return plural
+    solver = GarouFamilySolver(tribe=value)
+    return solver.plural
 
 
 @register.filter(name="from_rid")

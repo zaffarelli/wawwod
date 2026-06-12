@@ -3,6 +3,7 @@ from django.contrib import admin
 import yaml
 from yaml.loader import SafeLoader
 import logging
+from collector.utils.solvers import GarouFamilySolver
 
 logger = logging.getLogger('wawwod')
 
@@ -114,7 +115,7 @@ class Gift(models.Model):
         for n in range(16):
             if getattr(self, f"tribe_{n}") == True:
                 tribes = tribes[0:n] + "X" + tribes[n + 1:]
-                references.append(ALL_TRIBES[n])
+                references.append(GarouFamilySolver.all_plurals()[n])
             else:
                 tribes = tribes[0:n] + "o" + tribes[n + 1:]
         self.breeds = breeds
@@ -175,8 +176,9 @@ class Gift(models.Model):
 
     @classmethod
     def tribe_gifts(cls, plural_tribe, max_level):
-        from collector.utils.wod_reference import ALL_TRIBES
-        t = ALL_TRIBES.index(plural_tribe)
+        # from collector.utils.wod_reference import ALL_TRIBES
+        # t = ALL_TRIBES.index(plural_tribe)
+        t = GarouFamilySolver.all_plurals().index(plural_tribe)
         gifts = cls.objects.filter(**{f"tribe_{t}": True}).filter(level=max_level).order_by("level")
         return gifts
 
@@ -185,8 +187,9 @@ class Gift(models.Model):
         gifts = []
         if 6 > level > 0:
             if len(tribe) > 0:
-                from collector.utils.wod_reference import ALL_TRIBES
-                t = ALL_TRIBES.index(tribe)
+                #from collector.utils.wod_reference import ALL_TRIBES
+                #t = ALL_TRIBES.index(tribe)
+                t = GarouFamilySolver.all_plurals().index(tribe)
                 gifts = cls.objects.filter(**{f"tribe_{t}": True}).filter(level=level)
             if auspice != -1:
                 gifts = cls.objects.filter(**{f"auspice_{auspice}": True}).filter(level=level)

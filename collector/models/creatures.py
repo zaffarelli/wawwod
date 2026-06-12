@@ -11,14 +11,15 @@ from collector.utils.wod_reference import (
     GM_SHORTCUTS,
     bloodpool,
     STATS_TEMPLATES,
-    CLANS_SPECIFICS,
+    # CLANS_SPECIFICS,
     RAGE_PER_AUSPICE,
     GNOSIS_PER_BREED,
-    PER_TRIBE,
+    # PER_TRIBE,
     RANKS,
     find_stat_category,
-    ENLIGHTENMENT, ALL_TRIBES, GarouFamilySolver,
+    ENLIGHTENMENT, ALL_TRIBES
 )
+from collector.utils.solvers import FamilySolver, KindredFamilySolver, GarouFamilySolver
 from collector.utils.helper import json_default, toRID, roll, Colorizer
 from collector.utils.wod_reference import from_stats
 from collector.models.adventures import Adventure
@@ -915,7 +916,8 @@ class Creature(models.Model):
         # Bloodpool
         self.bloodpool = bloodpool[13 - self.value_of("generation")]
         self.family = self.family.title()
-        self.weakness = CLANS_SPECIFICS[self.family]["clan_weakness"]
+        kfs = KindredFamilySolver(clan=self.family)
+        self.weakness = kfs.weakness
         self.display_gauge = (
                 self.value_of("generation") * 2 + self.value_of("status") * 2
         )
@@ -936,6 +938,9 @@ class Creature(models.Model):
         self.check_expenditure()
         self.garou_rank = 13 - self.background3
         self.reghoul()
+        kfs = KindredFamilySolver(clan=self.family)
+        wodlog.info(kfs.info())
+
 
     def check_expenditure(self):
         if len(self.experience_expenditure) > 0:
@@ -1753,10 +1758,17 @@ class Creature(models.Model):
     def randomize_family(self):
         if self.creature in ["kinfolk", "garou"]:
             family = GarouFamilySolver.randomize()
+        elif self.creature in ["kindred"]:
+            family = KindredFamilySolver.randomize()
+        elif self.creature in ["ghoul"]:
+            sires = Creature.objects.filter(rid=self.sire)
+            if len(sires)==1:
+                sire = sires.first()
+                family = sire.family
+            else:
+                family = ""
         else:
-            families = [y['verbose_singular'] for x,y in PER_TRIBE.items()]
-            random.shuffle(families)
-            family = families[0]
+            family = ""
         return family
 
     def randomize_all(self):
@@ -1811,7 +1823,8 @@ class Creature(models.Model):
                     if v < 5:
                         setattr(self, f"virtue{a}", v + 1)
                         virtues -= 1
-                self.weakness = CLANS_SPECIFICS[self.family]["clan_weakness"]
+                kfs = KindredFamilySolver(clan=self.family)
+                self.weakness = kfs.weakness
             elif self.creature == "ghoul":
                 virtues = 7
                 self.virtue0 = 1
@@ -3018,7 +3031,8 @@ class Creature(models.Model):
                 for i in range(MAX_TRAITS):
                     setattr(self, f"trait{i}", "")
                 x = 0
-                for d in CLANS_SPECIFICS[self.family]["disciplines"]:
+                kfs = KindredFamilySolver(clan=self.family)
+                for d in kfs.disciplines:
                     setattr(self, f"trait{x}", d)
                     x += 1
         elif "garou" == self.creature:

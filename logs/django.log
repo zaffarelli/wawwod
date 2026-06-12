@@ -22651,3 +22651,668 @@ Traceback (most recent call last):
 07 08:24:33 | [32mdjango.server [37m| "GET /static/CACHE/css/storytelling.3158685cde6f.css HTTP/1.1" 200 8998[0m
 07 08:24:34 | [33mdjango.server [37m| "GET /static/collector/css?19b0721e72a1 HTTP/1.1" 404 1859[0m
 07 09:56:36 | [32mdjango.server [37m| "GET /ajax/view/creature/_jayden_jones/ HTTP/1.1" 200 61391[0m
+09 20:41:33 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+09 20:43:15 | [32mdjango.server [37m| "GET /admin/ HTTP/1.1" 200 23495[0m
+09 20:43:15 | [32mdjango.server [37m| "GET /static/admin/css/base.css HTTP/1.1" 304 0[0m
+09 20:43:15 | [32mdjango.server [37m| "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0[0m
+09 20:43:15 | [32mdjango.server [37m| "GET /static/admin/js/theme.js HTTP/1.1" 304 0[0m
+09 20:43:15 | [32mdjango.server [37m| "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0[0m
+09 20:43:15 | [32mdjango.server [37m| "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0[0m
+09 20:43:15 | [32mdjango.server [37m| "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0[0m
+09 20:43:15 | [32mdjango.server [37m| "GET /static/admin/css/responsive.css HTTP/1.1" 304 0[0m
+09 20:43:15 | [32mdjango.server [37m| "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 593[0m
+09 20:43:15 | [32mdjango.server [37m| "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 689[0m
+09 20:43:15 | [32mdjango.server [37m| "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 978[0m
+09 20:43:20 | [32mdjango [37m| Index[0m
+09 20:43:20 | [32mdjango.server [37m| "GET / HTTP/1.1" 200 31119[0m
+09 20:43:20 | [32mdjango.server [37m| "GET /static/js/wawwod_sheet.es6 HTTP/1.1" 304 0[0m
+09 20:43:20 | [32mdjango.server [37m| "GET /static/js/cross_over_sheet.es6 HTTP/1.1" 304 0[0m
+09 20:43:20 | [32mdjango.server [37m| "GET /static/js/gaia_wheel.es6 HTTP/1.1" 304 0[0m
+09 20:43:20 | [32mdjango.server [37m| "GET /static/js/collector.es6 HTTP/1.1" 304 0[0m
+09 20:43:20 | [32mdjango.server [37m| "GET /static/js/sept.es6 HTTP/1.1" 304 0[0m
+09 20:43:20 | [32mdjango.server [37m| "GET /static/js/storytelling.es6 HTTP/1.1" 304 0[0m
+09 20:43:20 | [32mdjango.server [37m| "GET /static/js/geocity.es6 HTTP/1.1" 304 0[0m
+09 20:43:20 | [32mdjango.server [37m| "GET /static/js/adventure_sheet.es6 HTTP/1.1" 304 0[0m
+09 20:43:20 | [32mdjango.server [37m| "GET /static/CACHE/css/storytelling.0d576c4d3101.css HTTP/1.1" 200 8998[0m
+09 20:43:20 | [32mdjango.server [37m| "GET /static/CACHE/css/main.84c61a4a4394.css HTTP/1.1" 200 42049[0m
+09 20:43:20 | [33mdjango.server [37m| "GET /static/collector/css?bde45b9cf049 HTTP/1.1" 404 1860[0m
+09 20:43:37 | [32mdjango [37m| Change Chronicle: VMI[0m
+09 20:43:37 | [32mdjango.server [37m| "GET /ajax/switch/chronicle/VMI/ HTTP/1.1" 200 28952[0m
+09 20:43:37 | [32mdjango [37m| Index[0m
+09 20:43:37 | [32mdjango.server [37m| "GET / HTTP/1.1" 200 28952[0m
+09 20:43:38 | [32mdjango.server [37m| "GET /static/CACHE/css/main.84c61a4a4394.css HTTP/1.1" 200 42049[0m
+09 20:43:38 | [32mdjango.server [37m| "GET /static/CACHE/css/storytelling.0d576c4d3101.css HTTP/1.1" 200 8998[0m
+09 20:43:38 | [33mdjango.server [37m| "GET /static/collector/css?bde45b9cf049 HTTP/1.1" 404 1860[0m
+09 20:44:58 | [32mdjango.server [37m| "GET /ajax/collector_action/add_kindred/Jake_Bardo/ HTTP/1.1" 204 0[0m
+09 20:45:20 | [33mdjango.request [37m| Not Found: /ajax/display/undefined/[0m
+09 20:45:20 | [33mdjango.server [37m| "GET /ajax/display/undefined/ HTTP/1.1" 404 18779[0m
+09 20:45:22 | [33mdjango.request [37m| Not Found: /ajax/display/undefined/[0m
+09 20:45:22 | [33mdjango.server [37m| "GET /ajax/display/undefined/ HTTP/1.1" 404 18779[0m
+09 20:45:22 | [32mdjango.server [37m| "GET /ajax/list/creatures/1/cck/ HTTP/1.1" 200 5097[0m
+09 20:45:22 | [32mdjango.server [37m| "GET /static/storytelling/fonts/Lato-Regular.ttf?35428083bd4f HTTP/1.1" 304 0[0m
+09 20:45:37 | [32mdjango.server [37m| "GET /ajax/view/creature/_jake_bardo/ HTTP/1.1" 200 59267[0m
+09 20:45:37 | [32mdjango.server [37m| "GET /static/collector/clans/caitiff.webp HTTP/1.1" 200 32192[0m
+09 20:45:54 | [32mdjango.server [37m| "POST /ajax/editable/userinput/ HTTP/1.1" 200 37[0m
+09 20:46:03 | [33mdjango.request [37m| Not Found: /ajax/display/undefined/[0m
+09 20:46:03 | [33mdjango.server [37m| "GET /ajax/display/undefined/ HTTP/1.1" 404 18779[0m
+09 20:46:03 | [32mdjango.server [37m| "GET /ajax/list/creatures/1/cck/ HTTP/1.1" 200 5094[0m
+09 20:46:07 | [32mdjango.server [37m| "GET /ajax/view/creature/_jake_bardo/ HTTP/1.1" 200 59304[0m
+09 20:46:22 | [32mdjango.server [37m| "POST /ajax/editable/userinput/ HTTP/1.1" 200 41[0m
+09 20:46:32 | [32mdjango.server [37m| "GET /ajax/view/creature/_jake_bardo/ HTTP/1.1" 200 59316[0m
+09 20:46:32 | [32mdjango.server [37m| "GET /static/collector/clans/tremere.webp HTTP/1.1" 200 15991[0m
+09 20:46:42 | [32mdjango.server [37m| "POST /ajax/randomize/reparts/for/_jake_bardo/ HTTP/1.1" 200 2[0m
+09 20:46:44 | [32mdjango.server [37m| "POST /ajax/randomize/reparts/for/_jake_bardo/ HTTP/1.1" 200 2[0m
+09 20:46:45 | [32mdjango.server [37m| "GET /ajax/view/creature/_jake_bardo/ HTTP/1.1" 200 59316[0m
+09 20:46:47 | [32mdjango.server [37m| "POST /ajax/randomize/physical/for/_jake_bardo/ HTTP/1.1" 200 2[0m
+09 20:46:49 | [32mdjango.server [37m| "GET /ajax/view/creature/_jake_bardo/ HTTP/1.1" 200 59340[0m
+09 20:46:51 | [32mdjango.server [37m| "POST /ajax/randomize/physical/for/_jake_bardo/ HTTP/1.1" 200 2[0m
+09 20:46:53 | [32mdjango.server [37m| "GET /ajax/view/creature/_jake_bardo/ HTTP/1.1" 200 59340[0m
+09 20:54:26 | [32mdjango.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/utils/wod_reference.py changed, reloading.[0m
+09 20:54:26 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+09 20:57:38 | [32mdjango.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/utils/wod_reference.py changed, reloading.[0m
+09 20:57:38 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+09 21:01:24 | [32mdjango.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/utils/wod_reference.py changed, reloading.[0m
+09 21:01:24 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+09 22:54:31 | [32mdjango.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/utils/wod_reference.py changed, reloading.[0m
+09 22:54:32 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+09 22:55:06 | [32mdjango.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/utils/wod_reference.py changed, reloading.[0m
+09 22:55:06 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+09 22:59:25 | [32mdjango.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/utils/wod_reference.py changed, reloading.[0m
+09 22:59:25 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+09 22:59:42 | [32mdjango.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/utils/wod_reference.py changed, reloading.[0m
+09 22:59:42 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+09 22:59:51 | [32mdjango.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/utils/wod_reference.py changed, reloading.[0m
+09 22:59:52 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+09 23:18:37 | [32mdjango.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/utils/wod_reference.py changed, reloading.[0m
+09 23:18:37 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+10 16:38:51 | [32mdjango.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/utils/wod_reference.py changed, reloading.[0m
+10 16:38:51 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+10 16:42:36 | [32mdjango.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/utils/wod_reference.py changed, reloading.[0m
+10 16:42:37 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+10 16:43:42 | [32mdjango.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/models/creatures.py changed, reloading.[0m
+10 16:43:43 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+10 16:43:49 | [31mdjango.request [37m| Internal Server Error: /ajax/editable/updown/[0m
+Traceback (most recent call last):
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py"[0m, line [35m55[0m, in [35minner[0m
+    response = get_response(request)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py"[0m, line [35m198[0m, in [35m_get_response[0m
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File [35m"/home/zaffarelli/Projects/wawwod/collector/views/base.py"[0m, line [35m267[0m, in [35mupdown[0m
+    [31mitem.save[0m[1;31m()[0m
+    [31m~~~~~~~~~[0m[1;31m^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/base.py"[0m, line [35m874[0m, in [35msave[0m
+    [31mself.save_base[0m[1;31m([0m
+    [31m~~~~~~~~~~~~~~[0m[1;31m^[0m
+        [1;31musing=using,[0m
+        [1;31m^^^^^^^^^^^^[0m
+    ...<2 lines>...
+        [1;31mupdate_fields=update_fields,[0m
+        [1;31m^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+    [1;31m)[0m
+    [1;31m^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/base.py"[0m, line [35m946[0m, in [35msave_base[0m
+    [31mpre_save.send[0m[1;31m([0m
+    [31m~~~~~~~~~~~~~[0m[1;31m^[0m
+        [1;31msender=origin,[0m
+        [1;31m^^^^^^^^^^^^^^[0m
+    ...<3 lines>...
+        [1;31mupdate_fields=update_fields,[0m
+        [1;31m^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+    [1;31m)[0m
+    [1;31m^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/dispatch/dispatcher.py"[0m, line [35m209[0m, in [35msend[0m
+    response = receiver(signal=self, sender=sender, **named)
+  File [35m"/home/zaffarelli/Projects/wawwod/collector/signals/creatures.py"[0m, line [35m19[0m, in [35mupdate_creature[0m
+    [31minstance.fix[0m[1;31m()[0m
+    [31m~~~~~~~~~~~~[0m[1;31m^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/collector/models/creatures.py"[0m, line [35m1137[0m, in [35mfix[0m
+    [31mself.fix_kindred[0m[1;31m()[0m
+    [31m~~~~~~~~~~~~~~~~[0m[1;31m^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/collector/models/creatures.py"[0m, line [35m939[0m, in [35mfix_kindred[0m
+    wodlog.info([1;31mKindredFamilySolver(clan=self.family).info[0m)
+                [1;31m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/collector/utils/wod_reference.py"[0m, line [35m1750[0m, in [35minfo[0m
+    data = [1;31msuper.data[0m
+           [1;31m^^^^^^^^^^[0m
+[1;35mAttributeError[0m: [35mtype object 'super' has no attribute 'data'[0m
+10 16:43:49 | [31mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 500 22194[0m
+10 16:44:08 | [32mdjango.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/utils/wod_reference.py changed, reloading.[0m
+10 16:44:08 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+10 16:44:11 | [31mdjango.request [37m| Internal Server Error: /ajax/editable/updown/[0m
+Traceback (most recent call last):
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py"[0m, line [35m55[0m, in [35minner[0m
+    response = get_response(request)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py"[0m, line [35m198[0m, in [35m_get_response[0m
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File [35m"/home/zaffarelli/Projects/wawwod/collector/views/base.py"[0m, line [35m267[0m, in [35mupdown[0m
+    [31mitem.save[0m[1;31m()[0m
+    [31m~~~~~~~~~[0m[1;31m^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/base.py"[0m, line [35m874[0m, in [35msave[0m
+    [31mself.save_base[0m[1;31m([0m
+    [31m~~~~~~~~~~~~~~[0m[1;31m^[0m
+        [1;31musing=using,[0m
+        [1;31m^^^^^^^^^^^^[0m
+    ...<2 lines>...
+        [1;31mupdate_fields=update_fields,[0m
+        [1;31m^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+    [1;31m)[0m
+    [1;31m^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/base.py"[0m, line [35m946[0m, in [35msave_base[0m
+    [31mpre_save.send[0m[1;31m([0m
+    [31m~~~~~~~~~~~~~[0m[1;31m^[0m
+        [1;31msender=origin,[0m
+        [1;31m^^^^^^^^^^^^^^[0m
+    ...<3 lines>...
+        [1;31mupdate_fields=update_fields,[0m
+        [1;31m^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+    [1;31m)[0m
+    [1;31m^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/dispatch/dispatcher.py"[0m, line [35m209[0m, in [35msend[0m
+    response = receiver(signal=self, sender=sender, **named)
+  File [35m"/home/zaffarelli/Projects/wawwod/collector/signals/creatures.py"[0m, line [35m19[0m, in [35mupdate_creature[0m
+    [31minstance.fix[0m[1;31m()[0m
+    [31m~~~~~~~~~~~~[0m[1;31m^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/collector/models/creatures.py"[0m, line [35m1137[0m, in [35mfix[0m
+    [31mself.fix_kindred[0m[1;31m()[0m
+    [31m~~~~~~~~~~~~~~~~[0m[1;31m^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/collector/models/creatures.py"[0m, line [35m939[0m, in [35mfix_kindred[0m
+    wodlog.info([1;31mKindredFamilySolver(clan=self.family).info[0m)
+                [1;31m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/collector/utils/wod_reference.py"[0m, line [35m1750[0m, in [35minfo[0m
+    data = [1;31msuper.info[0m
+           [1;31m^^^^^^^^^^[0m
+[1;35mAttributeError[0m: [35mtype object 'super' has no attribute 'info'[0m
+10 16:44:11 | [31mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 500 22194[0m
+10 16:45:13 | [32mdjango.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/utils/wod_reference.py changed, reloading.[0m
+10 16:45:13 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+10 16:45:17 | [31mdjango.request [37m| Internal Server Error: /ajax/editable/updown/[0m
+Traceback (most recent call last):
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py"[0m, line [35m55[0m, in [35minner[0m
+    response = get_response(request)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py"[0m, line [35m198[0m, in [35m_get_response[0m
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File [35m"/home/zaffarelli/Projects/wawwod/collector/views/base.py"[0m, line [35m267[0m, in [35mupdown[0m
+    [31mitem.save[0m[1;31m()[0m
+    [31m~~~~~~~~~[0m[1;31m^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/base.py"[0m, line [35m874[0m, in [35msave[0m
+    [31mself.save_base[0m[1;31m([0m
+    [31m~~~~~~~~~~~~~~[0m[1;31m^[0m
+        [1;31musing=using,[0m
+        [1;31m^^^^^^^^^^^^[0m
+    ...<2 lines>...
+        [1;31mupdate_fields=update_fields,[0m
+        [1;31m^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+    [1;31m)[0m
+    [1;31m^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/base.py"[0m, line [35m946[0m, in [35msave_base[0m
+    [31mpre_save.send[0m[1;31m([0m
+    [31m~~~~~~~~~~~~~[0m[1;31m^[0m
+        [1;31msender=origin,[0m
+        [1;31m^^^^^^^^^^^^^^[0m
+    ...<3 lines>...
+        [1;31mupdate_fields=update_fields,[0m
+        [1;31m^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+    [1;31m)[0m
+    [1;31m^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/dispatch/dispatcher.py"[0m, line [35m209[0m, in [35msend[0m
+    response = receiver(signal=self, sender=sender, **named)
+  File [35m"/home/zaffarelli/Projects/wawwod/collector/signals/creatures.py"[0m, line [35m19[0m, in [35mupdate_creature[0m
+    [31minstance.fix[0m[1;31m()[0m
+    [31m~~~~~~~~~~~~[0m[1;31m^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/collector/models/creatures.py"[0m, line [35m1137[0m, in [35mfix[0m
+    [31mself.fix_kindred[0m[1;31m()[0m
+    [31m~~~~~~~~~~~~~~~~[0m[1;31m^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/collector/models/creatures.py"[0m, line [35m939[0m, in [35mfix_kindred[0m
+    wodlog.info([1;31mKindredFamilySolver(clan=self.family).info[0m)
+                [1;31m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/collector/utils/wod_reference.py"[0m, line [35m1750[0m, in [35minfo[0m
+    data = [1;31msuper.info[0m()
+           [1;31m^^^^^^^^^^[0m
+[1;35mAttributeError[0m: [35mtype object 'super' has no attribute 'info'[0m
+10 16:45:17 | [31mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 500 22196[0m
+10 16:46:02 | [32mdjango.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/utils/wod_reference.py changed, reloading.[0m
+10 16:46:03 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+10 16:46:05 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 589[0m
+10 16:46:20 | [32mdjango.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/models/creatures.py changed, reloading.[0m
+10 16:46:21 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+10 16:46:24 | [31mdjango.request [37m| Internal Server Error: /ajax/editable/updown/[0m
+Traceback (most recent call last):
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py"[0m, line [35m55[0m, in [35minner[0m
+    response = get_response(request)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py"[0m, line [35m198[0m, in [35m_get_response[0m
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File [35m"/home/zaffarelli/Projects/wawwod/collector/views/base.py"[0m, line [35m267[0m, in [35mupdown[0m
+    [31mitem.save[0m[1;31m()[0m
+    [31m~~~~~~~~~[0m[1;31m^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/base.py"[0m, line [35m874[0m, in [35msave[0m
+    [31mself.save_base[0m[1;31m([0m
+    [31m~~~~~~~~~~~~~~[0m[1;31m^[0m
+        [1;31musing=using,[0m
+        [1;31m^^^^^^^^^^^^[0m
+    ...<2 lines>...
+        [1;31mupdate_fields=update_fields,[0m
+        [1;31m^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+    [1;31m)[0m
+    [1;31m^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/base.py"[0m, line [35m946[0m, in [35msave_base[0m
+    [31mpre_save.send[0m[1;31m([0m
+    [31m~~~~~~~~~~~~~[0m[1;31m^[0m
+        [1;31msender=origin,[0m
+        [1;31m^^^^^^^^^^^^^^[0m
+    ...<3 lines>...
+        [1;31mupdate_fields=update_fields,[0m
+        [1;31m^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+    [1;31m)[0m
+    [1;31m^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/dispatch/dispatcher.py"[0m, line [35m209[0m, in [35msend[0m
+    response = receiver(signal=self, sender=sender, **named)
+  File [35m"/home/zaffarelli/Projects/wawwod/collector/signals/creatures.py"[0m, line [35m19[0m, in [35mupdate_creature[0m
+    [31minstance.fix[0m[1;31m()[0m
+    [31m~~~~~~~~~~~~[0m[1;31m^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/collector/models/creatures.py"[0m, line [35m1137[0m, in [35mfix[0m
+    [31mself.fix_kindred[0m[1;31m()[0m
+    [31m~~~~~~~~~~~~~~~~[0m[1;31m^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/collector/models/creatures.py"[0m, line [35m939[0m, in [35mfix_kindred[0m
+    wodlog.info([31mKindredFamilySolver(clan=self.family).info[0m[1;31m()[0m)
+                [31m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m[1;31m^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/collector/utils/wod_reference.py"[0m, line [35m1751[0m, in [35minfo[0m
+    data = [1;31msuper.info[0m()
+           [1;31m^^^^^^^^^^[0m
+[1;35mAttributeError[0m: [35mtype object 'super' has no attribute 'info'[0m
+10 16:46:24 | [31mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 500 22200[0m
+10 16:47:00 | [32mdjango.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/utils/wod_reference.py changed, reloading.[0m
+10 16:47:01 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+10 16:47:02 | [31mdjango.request [37m| Internal Server Error: /ajax/editable/updown/[0m
+Traceback (most recent call last):
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py"[0m, line [35m55[0m, in [35minner[0m
+    response = get_response(request)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py"[0m, line [35m198[0m, in [35m_get_response[0m
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File [35m"/home/zaffarelli/Projects/wawwod/collector/views/base.py"[0m, line [35m267[0m, in [35mupdown[0m
+    [31mitem.save[0m[1;31m()[0m
+    [31m~~~~~~~~~[0m[1;31m^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/base.py"[0m, line [35m874[0m, in [35msave[0m
+    [31mself.save_base[0m[1;31m([0m
+    [31m~~~~~~~~~~~~~~[0m[1;31m^[0m
+        [1;31musing=using,[0m
+        [1;31m^^^^^^^^^^^^[0m
+    ...<2 lines>...
+        [1;31mupdate_fields=update_fields,[0m
+        [1;31m^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+    [1;31m)[0m
+    [1;31m^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/base.py"[0m, line [35m946[0m, in [35msave_base[0m
+    [31mpre_save.send[0m[1;31m([0m
+    [31m~~~~~~~~~~~~~[0m[1;31m^[0m
+        [1;31msender=origin,[0m
+        [1;31m^^^^^^^^^^^^^^[0m
+    ...<3 lines>...
+        [1;31mupdate_fields=update_fields,[0m
+        [1;31m^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+    [1;31m)[0m
+    [1;31m^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/dispatch/dispatcher.py"[0m, line [35m209[0m, in [35msend[0m
+    response = receiver(signal=self, sender=sender, **named)
+  File [35m"/home/zaffarelli/Projects/wawwod/collector/signals/creatures.py"[0m, line [35m19[0m, in [35mupdate_creature[0m
+    [31minstance.fix[0m[1;31m()[0m
+    [31m~~~~~~~~~~~~[0m[1;31m^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/collector/models/creatures.py"[0m, line [35m1137[0m, in [35mfix[0m
+    [31mself.fix_kindred[0m[1;31m()[0m
+    [31m~~~~~~~~~~~~~~~~[0m[1;31m^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/collector/models/creatures.py"[0m, line [35m939[0m, in [35mfix_kindred[0m
+    wodlog.info([31mKindredFamilySolver(clan=self.family).info[0m[1;31m()[0m)
+                [31m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m[1;31m^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/collector/utils/wod_reference.py"[0m, line [35m1751[0m, in [35minfo[0m
+    data = [1;31msuper.info[0m()
+           [1;31m^^^^^^^^^^[0m
+[1;35mAttributeError[0m: [35mtype object 'super' has no attribute 'info'[0m
+10 16:47:02 | [31mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 500 22200[0m
+10 16:49:28 | [32mdjango.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/utils/wod_reference.py changed, reloading.[0m
+10 16:49:28 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+10 16:49:33 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+10 16:49:39 | [31mdjango.request [37m| Internal Server Error: /ajax/editable/updown/[0m
+Traceback (most recent call last):
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py"[0m, line [35m55[0m, in [35minner[0m
+    response = get_response(request)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py"[0m, line [35m198[0m, in [35m_get_response[0m
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File [35m"/home/zaffarelli/Projects/wawwod/collector/views/base.py"[0m, line [35m267[0m, in [35mupdown[0m
+    [31mitem.save[0m[1;31m()[0m
+    [31m~~~~~~~~~[0m[1;31m^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/base.py"[0m, line [35m874[0m, in [35msave[0m
+    [31mself.save_base[0m[1;31m([0m
+    [31m~~~~~~~~~~~~~~[0m[1;31m^[0m
+        [1;31musing=using,[0m
+        [1;31m^^^^^^^^^^^^[0m
+    ...<2 lines>...
+        [1;31mupdate_fields=update_fields,[0m
+        [1;31m^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+    [1;31m)[0m
+    [1;31m^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/base.py"[0m, line [35m946[0m, in [35msave_base[0m
+    [31mpre_save.send[0m[1;31m([0m
+    [31m~~~~~~~~~~~~~[0m[1;31m^[0m
+        [1;31msender=origin,[0m
+        [1;31m^^^^^^^^^^^^^^[0m
+    ...<3 lines>...
+        [1;31mupdate_fields=update_fields,[0m
+        [1;31m^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+    [1;31m)[0m
+    [1;31m^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/dispatch/dispatcher.py"[0m, line [35m209[0m, in [35msend[0m
+    response = receiver(signal=self, sender=sender, **named)
+  File [35m"/home/zaffarelli/Projects/wawwod/collector/signals/creatures.py"[0m, line [35m19[0m, in [35mupdate_creature[0m
+    [31minstance.fix[0m[1;31m()[0m
+    [31m~~~~~~~~~~~~[0m[1;31m^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/collector/models/creatures.py"[0m, line [35m1137[0m, in [35mfix[0m
+    [31mself.fix_kindred[0m[1;31m()[0m
+    [31m~~~~~~~~~~~~~~~~[0m[1;31m^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/collector/models/creatures.py"[0m, line [35m939[0m, in [35mfix_kindred[0m
+    wodlog.info([31mKindredFamilySolver(clan=self.family).info[0m[1;31m()[0m)
+                [31m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m[1;31m^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/collector/utils/wod_reference.py"[0m, line [35m1764[0m, in [35minfo[0m
+    data = [1;31msuper.info[0m()
+           [1;31m^^^^^^^^^^[0m
+[1;35mAttributeError[0m: [35mtype object 'super' has no attribute 'info'[0m
+10 16:49:39 | [31mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 500 22200[0m
+10 16:50:48 | [32mdjango.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/models/creatures.py changed, reloading.[0m
+10 16:50:49 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+10 16:51:11 | [31mdjango.request [37m| Internal Server Error: /ajax/editable/updown/[0m
+Traceback (most recent call last):
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py"[0m, line [35m55[0m, in [35minner[0m
+    response = get_response(request)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py"[0m, line [35m198[0m, in [35m_get_response[0m
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File [35m"/home/zaffarelli/Projects/wawwod/collector/views/base.py"[0m, line [35m267[0m, in [35mupdown[0m
+    [31mitem.save[0m[1;31m()[0m
+    [31m~~~~~~~~~[0m[1;31m^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/base.py"[0m, line [35m874[0m, in [35msave[0m
+    [31mself.save_base[0m[1;31m([0m
+    [31m~~~~~~~~~~~~~~[0m[1;31m^[0m
+        [1;31musing=using,[0m
+        [1;31m^^^^^^^^^^^^[0m
+    ...<2 lines>...
+        [1;31mupdate_fields=update_fields,[0m
+        [1;31m^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+    [1;31m)[0m
+    [1;31m^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/base.py"[0m, line [35m946[0m, in [35msave_base[0m
+    [31mpre_save.send[0m[1;31m([0m
+    [31m~~~~~~~~~~~~~[0m[1;31m^[0m
+        [1;31msender=origin,[0m
+        [1;31m^^^^^^^^^^^^^^[0m
+    ...<3 lines>...
+        [1;31mupdate_fields=update_fields,[0m
+        [1;31m^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+    [1;31m)[0m
+    [1;31m^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/dispatch/dispatcher.py"[0m, line [35m209[0m, in [35msend[0m
+    response = receiver(signal=self, sender=sender, **named)
+  File [35m"/home/zaffarelli/Projects/wawwod/collector/signals/creatures.py"[0m, line [35m19[0m, in [35mupdate_creature[0m
+    [31minstance.fix[0m[1;31m()[0m
+    [31m~~~~~~~~~~~~[0m[1;31m^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/collector/models/creatures.py"[0m, line [35m1138[0m, in [35mfix[0m
+    [31mself.fix_kindred[0m[1;31m()[0m
+    [31m~~~~~~~~~~~~~~~~[0m[1;31m^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/collector/models/creatures.py"[0m, line [35m940[0m, in [35mfix_kindred[0m
+    wodlog.info([31mkfs.info[0m[1;31m()[0m)
+                [31m~~~~~~~~[0m[1;31m^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/collector/utils/wod_reference.py"[0m, line [35m1764[0m, in [35minfo[0m
+    data = [1;31msuper.info[0m()
+           [1;31m^^^^^^^^^^[0m
+[1;35mAttributeError[0m: [35mtype object 'super' has no attribute 'info'[0m
+10 16:51:11 | [31mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 500 22132[0m
+10 16:51:49 | [32mdjango.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/utils/wod_reference.py changed, reloading.[0m
+10 16:51:49 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+10 16:52:02 | [32mdjango.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/utils/wod_reference.py changed, reloading.[0m
+10 16:52:02 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+10 16:52:05 | [31mdjango.request [37m| Internal Server Error: /ajax/editable/updown/[0m
+Traceback (most recent call last):
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py"[0m, line [35m55[0m, in [35minner[0m
+    response = get_response(request)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py"[0m, line [35m198[0m, in [35m_get_response[0m
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File [35m"/home/zaffarelli/Projects/wawwod/collector/views/base.py"[0m, line [35m267[0m, in [35mupdown[0m
+    [31mitem.save[0m[1;31m()[0m
+    [31m~~~~~~~~~[0m[1;31m^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/base.py"[0m, line [35m874[0m, in [35msave[0m
+    [31mself.save_base[0m[1;31m([0m
+    [31m~~~~~~~~~~~~~~[0m[1;31m^[0m
+        [1;31musing=using,[0m
+        [1;31m^^^^^^^^^^^^[0m
+    ...<2 lines>...
+        [1;31mupdate_fields=update_fields,[0m
+        [1;31m^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+    [1;31m)[0m
+    [1;31m^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/base.py"[0m, line [35m946[0m, in [35msave_base[0m
+    [31mpre_save.send[0m[1;31m([0m
+    [31m~~~~~~~~~~~~~[0m[1;31m^[0m
+        [1;31msender=origin,[0m
+        [1;31m^^^^^^^^^^^^^^[0m
+    ...<3 lines>...
+        [1;31mupdate_fields=update_fields,[0m
+        [1;31m^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+    [1;31m)[0m
+    [1;31m^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/dispatch/dispatcher.py"[0m, line [35m209[0m, in [35msend[0m
+    response = receiver(signal=self, sender=sender, **named)
+  File [35m"/home/zaffarelli/Projects/wawwod/collector/signals/creatures.py"[0m, line [35m19[0m, in [35mupdate_creature[0m
+    [31minstance.fix[0m[1;31m()[0m
+    [31m~~~~~~~~~~~~[0m[1;31m^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/collector/models/creatures.py"[0m, line [35m1138[0m, in [35mfix[0m
+    [31mself.fix_kindred[0m[1;31m()[0m
+    [31m~~~~~~~~~~~~~~~~[0m[1;31m^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/collector/models/creatures.py"[0m, line [35m940[0m, in [35mfix_kindred[0m
+    wodlog.info([31mkfs.info[0m[1;31m()[0m)
+                [31m~~~~~~~~[0m[1;31m^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/collector/utils/wod_reference.py"[0m, line [35m1761[0m, in [35minfo[0m
+    data = [1;31msuper.info[0m()
+           [1;31m^^^^^^^^^^[0m
+[1;35mAttributeError[0m: [35mtype object 'super' has no attribute 'info'[0m
+10 16:52:05 | [31mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 500 22132[0m
+10 16:53:14 | [32mdjango.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/utils/wod_reference.py changed, reloading.[0m
+10 16:53:15 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+10 16:53:23 | [32mdjango.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/utils/wod_reference.py changed, reloading.[0m
+10 16:53:24 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+10 16:53:29 | [32mdjango [37m| Index[0m
+10 16:53:30 | [32mdjango.server [37m| "GET / HTTP/1.1" 200 29376[0m
+10 16:53:30 | [32mdjango.server [37m| "GET /static/js/gaia_wheel.es6 HTTP/1.1" 200 22105[0m
+10 16:53:30 | [32mdjango.server [37m| "GET /static/js/collector.es6 HTTP/1.1" 200 33243[0m
+10 16:53:30 | [32mdjango.server [37m| "GET /static/js/cross_over_sheet.es6 HTTP/1.1" 200 29818[0m
+10 16:53:30 | [32mdjango.server [37m| "GET /static/js/dashboard.es6 HTTP/1.1" 200 7184[0m
+10 16:53:30 | [32mdjango.server [37m| "GET /static/js/chronicle_map.es6 HTTP/1.1" 200 8750[0m
+10 16:53:30 | [32mdjango.server [37m| "GET /static/js/kindred_lineage.es6 HTTP/1.1" 200 19223[0m
+10 16:53:30 | [32mdjango.server [37m| "GET /static/js/wawwod_sheet.es6 HTTP/1.1" 200 194024[0m
+10 16:53:30 | [32mdjango.server [37m| "GET /static/js/sept.es6 HTTP/1.1" 200 26617[0m
+10 16:53:30 | [32mdjango.server [37m| "GET /static/js/storytelling.es6 HTTP/1.1" 200 35244[0m
+10 16:53:30 | [32mdjango.server [37m| "GET /static/js/geocity.es6 HTTP/1.1" 200 31321[0m
+10 16:53:30 | [32mdjango.server [37m| "GET /static/js/adventure_sheet.es6 HTTP/1.1" 200 22609[0m
+10 16:53:30 | [32mdjango.server [37m| "GET /static/CACHE/css/main.84c61a4a4394.css HTTP/1.1" 200 42049[0m
+10 16:53:30 | [32mdjango.server [37m| "GET /static/CACHE/css/storytelling.0d576c4d3101.css HTTP/1.1" 200 8998[0m
+10 16:53:30 | [32mdjango.server [37m| "GET /static/collector/auspices/AuspiceNone.webp HTTP/1.1" 200 1274[0m
+10 16:53:30 | [32mdjango.server [37m| "GET /static/collector/auspices/AuspiceTheurge.webp HTTP/1.1" 200 7154[0m
+10 16:53:30 | [32mdjango.server [37m| "GET /static/collector/auspices/AuspiceGalliard.webp HTTP/1.1" 200 5762[0m
+10 16:53:30 | [32mdjango.server [37m| "GET /static/collector/auspices/AuspiceRagabash.webp HTTP/1.1" 200 6994[0m
+10 16:53:30 | [32mdjango.server [37m| "GET /static/collector/auspices/AuspicePhilodox.webp HTTP/1.1" 200 5954[0m
+10 16:53:30 | [32mdjango.server [37m| "GET /static/collector/auspices/AuspiceAhroun.webp HTTP/1.1" 200 6578[0m
+10 16:53:30 | [32mdjango.server [37m| "GET /static/collector/colorful-grunge-texture-10.jpg?35428083bd4f HTTP/1.1" 200 218025[0m
+10 16:53:30 | [33mdjango.server [37m| "GET /static/collector/css?bde45b9cf049 HTTP/1.1" 404 1860[0m
+10 16:53:30 | [32mdjango.server [37m| "GET /static/collector/wawwod.ico HTTP/1.1" 200 73478[0m
+10 16:53:34 | [32mdjango.server [37m| "GET /ajax/view/creature/_jake_bardo/ HTTP/1.1" 200 59335[0m
+10 16:53:34 | [32mdjango.server [37m| "GET /static/collector/clans/tremere.webp HTTP/1.1" 200 15991[0m
+10 16:53:36 | [31mdjango.request [37m| Internal Server Error: /ajax/editable/updown/[0m
+Traceback (most recent call last):
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py"[0m, line [35m55[0m, in [35minner[0m
+    response = get_response(request)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py"[0m, line [35m198[0m, in [35m_get_response[0m
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File [35m"/home/zaffarelli/Projects/wawwod/collector/views/base.py"[0m, line [35m267[0m, in [35mupdown[0m
+    [31mitem.save[0m[1;31m()[0m
+    [31m~~~~~~~~~[0m[1;31m^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/base.py"[0m, line [35m874[0m, in [35msave[0m
+    [31mself.save_base[0m[1;31m([0m
+    [31m~~~~~~~~~~~~~~[0m[1;31m^[0m
+        [1;31musing=using,[0m
+        [1;31m^^^^^^^^^^^^[0m
+    ...<2 lines>...
+        [1;31mupdate_fields=update_fields,[0m
+        [1;31m^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+    [1;31m)[0m
+    [1;31m^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/base.py"[0m, line [35m946[0m, in [35msave_base[0m
+    [31mpre_save.send[0m[1;31m([0m
+    [31m~~~~~~~~~~~~~[0m[1;31m^[0m
+        [1;31msender=origin,[0m
+        [1;31m^^^^^^^^^^^^^^[0m
+    ...<3 lines>...
+        [1;31mupdate_fields=update_fields,[0m
+        [1;31m^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+    [1;31m)[0m
+    [1;31m^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/dispatch/dispatcher.py"[0m, line [35m209[0m, in [35msend[0m
+    response = receiver(signal=self, sender=sender, **named)
+  File [35m"/home/zaffarelli/Projects/wawwod/collector/signals/creatures.py"[0m, line [35m19[0m, in [35mupdate_creature[0m
+    [31minstance.fix[0m[1;31m()[0m
+    [31m~~~~~~~~~~~~[0m[1;31m^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/collector/models/creatures.py"[0m, line [35m1138[0m, in [35mfix[0m
+    [31mself.fix_kindred[0m[1;31m()[0m
+    [31m~~~~~~~~~~~~~~~~[0m[1;31m^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/collector/models/creatures.py"[0m, line [35m940[0m, in [35mfix_kindred[0m
+    wodlog.info([31mkfs.info[0m[1;31m()[0m)
+                [31m~~~~~~~~[0m[1;31m^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/collector/utils/wod_reference.py"[0m, line [35m1765[0m, in [35minfo[0m
+    data = [1;31msuper.info[0m()
+           [1;31m^^^^^^^^^^[0m
+[1;35mAttributeError[0m: [35mtype object 'super' has no attribute 'info'[0m
+10 16:53:36 | [31mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 500 22132[0m
+10 16:54:56 | [32mdjango.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/utils/wod_reference.py changed, reloading.[0m
+10 16:54:56 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+10 16:55:03 | [31mdjango.request [37m| Internal Server Error: /ajax/editable/updown/[0m
+Traceback (most recent call last):
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py"[0m, line [35m55[0m, in [35minner[0m
+    response = get_response(request)
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py"[0m, line [35m198[0m, in [35m_get_response[0m
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File [35m"/home/zaffarelli/Projects/wawwod/collector/views/base.py"[0m, line [35m267[0m, in [35mupdown[0m
+    [31mitem.save[0m[1;31m()[0m
+    [31m~~~~~~~~~[0m[1;31m^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/base.py"[0m, line [35m874[0m, in [35msave[0m
+    [31mself.save_base[0m[1;31m([0m
+    [31m~~~~~~~~~~~~~~[0m[1;31m^[0m
+        [1;31musing=using,[0m
+        [1;31m^^^^^^^^^^^^[0m
+    ...<2 lines>...
+        [1;31mupdate_fields=update_fields,[0m
+        [1;31m^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+    [1;31m)[0m
+    [1;31m^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/db/models/base.py"[0m, line [35m946[0m, in [35msave_base[0m
+    [31mpre_save.send[0m[1;31m([0m
+    [31m~~~~~~~~~~~~~[0m[1;31m^[0m
+        [1;31msender=origin,[0m
+        [1;31m^^^^^^^^^^^^^^[0m
+    ...<3 lines>...
+        [1;31mupdate_fields=update_fields,[0m
+        [1;31m^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+    [1;31m)[0m
+    [1;31m^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/.venv/lib64/python3.13/site-packages/django/dispatch/dispatcher.py"[0m, line [35m209[0m, in [35msend[0m
+    response = receiver(signal=self, sender=sender, **named)
+  File [35m"/home/zaffarelli/Projects/wawwod/collector/signals/creatures.py"[0m, line [35m19[0m, in [35mupdate_creature[0m
+    [31minstance.fix[0m[1;31m()[0m
+    [31m~~~~~~~~~~~~[0m[1;31m^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/collector/models/creatures.py"[0m, line [35m1138[0m, in [35mfix[0m
+    [31mself.fix_kindred[0m[1;31m()[0m
+    [31m~~~~~~~~~~~~~~~~[0m[1;31m^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/collector/models/creatures.py"[0m, line [35m940[0m, in [35mfix_kindred[0m
+    wodlog.info([31mkfs.info[0m[1;31m()[0m)
+                [31m~~~~~~~~[0m[1;31m^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/collector/utils/wod_reference.py"[0m, line [35m1765[0m, in [35minfo[0m
+    data = super().info()
+  File [35m"/home/zaffarelli/Projects/wawwod/collector/utils/wod_reference.py"[0m, line [35m1586[0m, in [35minfo[0m
+    "restrictions": [1;31mself.restrictions[0m}
+                    [1;31m^^^^^^^^^^^^^^^^^[0m
+  File [35m"/home/zaffarelli/Projects/wawwod/collector/utils/wod_reference.py"[0m, line [35m1600[0m, in [35mrestrictions[0m
+    restrictions = [31mself.RESTRICTIONS[0m[1;31m[self.current][0m
+                   [31m~~~~~~~~~~~~~~~~~[0m[1;31m^^^^^^^^^^^^^^[0m
+[1;35mIndexError[0m: [35mlist index out of range[0m
+10 16:55:03 | [31mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 500 22467[0m
+10 16:56:19 | [32mdjango.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/utils/wod_reference.py changed, reloading.[0m
+10 16:56:19 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+10 16:56:26 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 583[0m
+10 16:58:26 | [32mdjango.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/utils/wod_reference.py changed, reloading.[0m
+10 16:58:26 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+10 16:58:36 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 577[0m
+10 17:00:32 | [32mdjango.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/utils/wod_reference.py changed, reloading.[0m
+10 17:00:33 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+10 17:00:35 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 571[0m
+10 23:03:07 | [32mdjango.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/utils/wod_reference.py changed, reloading.[0m
+10 23:03:07 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+10 23:03:22 | [32mdjango.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/utils/wod_reference.py changed, reloading.[0m
+10 23:03:22 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+10 23:03:37 | [32mdjango.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/models/creatures.py changed, reloading.[0m
+10 23:03:38 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+10 23:03:49 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 577[0m
+10 23:05:14 | [32mdjango.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/models/creatures.py changed, reloading.[0m
+10 23:05:14 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+11 10:51:07 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 583[0m
+11 10:53:38 | [32mdjango.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/utils/wod_reference.py changed, reloading.[0m
+11 10:53:38 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+11 10:53:58 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+11 10:54:28 | [32mdjango.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/models/creatures.py changed, reloading.[0m
+11 10:54:28 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+11 10:54:43 | [32mdjango.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/models/creatures.py changed, reloading.[0m
+11 10:54:44 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+11 10:58:20 | [32mdjango.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/models/creatures.py changed, reloading.[0m
+11 10:58:21 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+11 11:01:41 | [32mdjango.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/models/creatures.py changed, reloading.[0m
+11 11:01:42 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+11 11:01:49 | [32mdjango.server [37m| "GET /ajax/view/creature/_jake_bardo/ HTTP/1.1" 200 59329[0m
+11 11:01:49 | [32mdjango.server [37m| "GET /static/collector/clans/tremere.webp HTTP/1.1" 200 15991[0m
+11 11:01:54 | [32mdjango.server [37m| "GET /api/randomize/_jake_bardo/ HTTP/1.1" 200 22[0m
+11 11:01:54 | [32mdjango.server [37m| "GET /ajax/view/creature/_jake_bardo/ HTTP/1.1" 200 59329[0m
+11 11:01:59 | [32mdjango.server [37m| "GET /ajax/view/creature/_jake_bardo/ HTTP/1.1" 200 59329[0m
+11 11:02:00 | [32mdjango.server [37m| "GET /ajax/view/creature/_jake_bardo/ HTTP/1.1" 200 59329[0m
+11 11:02:04 | [32mdjango.server [37m| "GET /ajax/view/creature/_jake_bardo/ HTTP/1.1" 200 59329[0m
+11 11:07:11 | [32mdjango.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/utils/solvers.py changed, reloading.[0m
+11 11:07:11 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+11 11:07:32 | [32mdjango.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/utils/solvers.py changed, reloading.[0m
+11 11:07:32 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+11 11:08:10 | [32mdjango.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/utils/solvers.py changed, reloading.[0m
+11 11:08:10 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+11 17:34:02 | [32mdjango.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/templatetags/wod_filters.py changed, reloading.[0m
+11 17:34:02 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+11 17:35:33 | [32mdjango.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/templatetags/wod_filters.py changed, reloading.[0m
+11 17:35:33 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+11 17:38:07 | [32mdjango.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/utils/solvers.py changed, reloading.[0m
+11 17:38:07 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+11 17:39:02 | [32mdjango.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/utils/solvers.py changed, reloading.[0m
+11 17:39:03 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+11 17:42:51 | [32mdjango.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/models/gifts.py changed, reloading.[0m
+11 17:42:52 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+11 17:45:41 | [32mdjango.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/models/gifts.py changed, reloading.[0m
+11 17:45:41 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+11 17:45:46 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+11 17:58:05 | [32mdjango.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/models/gifts.py changed, reloading.[0m
+11 17:58:05 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+11 21:46:46 | [32mdjango.server [37m| "GET /admin/ HTTP/1.1" 200 23495[0m
+11 21:46:57 | [32mdjango [37m| Index[0m
+11 21:46:57 | [32mdjango.server [37m| "GET / HTTP/1.1" 200 29376[0m
+11 21:46:57 | [32mdjango.server [37m| "GET /static/js/collector.es6 HTTP/1.1" 304 0[0m
+11 21:46:57 | [32mdjango.server [37m| "GET /static/CACHE/css/storytelling.0d576c4d3101.css HTTP/1.1" 200 8998[0m
+11 21:46:57 | [32mdjango.server [37m| "GET /static/CACHE/css/main.84c61a4a4394.css HTTP/1.1" 200 42049[0m
+11 21:46:57 | [33mdjango.server [37m| "GET /static/collector/css?bde45b9cf049 HTTP/1.1" 404 1860[0m
+11 21:50:45 | [32mdjango.server [37m| "GET /ajax/view/creature/_jake_bardo/ HTTP/1.1" 200 59329[0m
+11 21:50:48 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 583[0m
+11 21:50:48 | [32mdjango.server [37m| "POST /ajax/editable/updown/ HTTP/1.1" 200 589[0m
+11 21:58:54 | [32mdjango.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/utils/solvers.py changed, reloading.[0m
+11 21:58:54 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+12 09:02:08 | [32mdjango.utils.autoreload [37m| /home/zaffarelli/Projects/wawwod/collector/utils/solvers.py changed, reloading.[0m
+12 09:02:09 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+12 09:02:17 | [32mdjango.utils.autoreload [37m| Watching for file changes with StatReloader[0m
+12 09:02:29 | [32mdjango [37m| Index[0m
+12 09:02:29 | [32mdjango.server [37m| "GET / HTTP/1.1" 200 29376[0m
+12 09:02:29 | [32mdjango.server [37m| "GET /static/CACHE/css/storytelling.0d576c4d3101.css HTTP/1.1" 200 8998[0m
+12 09:02:29 | [32mdjango.server [37m| "GET /static/CACHE/css/main.84c61a4a4394.css HTTP/1.1" 200 42049[0m
+12 09:02:30 | [33mdjango.server [37m| "GET /static/collector/css?bde45b9cf049 HTTP/1.1" 404 1860[0m
