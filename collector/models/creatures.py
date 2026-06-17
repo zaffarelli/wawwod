@@ -1148,6 +1148,7 @@ class Creature(models.Model):
             self.freebies -= RAGE_PER_AUSPICE[int(self.auspice)] * 1
             self.freebies -= GNOSIS_PER_BREED[int(self.breed)] * 2
             if self.family:
+                wodlog.error(f"*** Family: {self.family}")
                 self.freebies -= GarouFamilySolver(self.family).willpower * 1
             else:
                 self.freebies -= 3
@@ -3334,13 +3335,17 @@ class Creature(models.Model):
 
     @classmethod
     def tribe_population(cls):
-        FORBIDDEN = ["Bunyips", "Croatans", "White Howlers", "Black Spiral Dancers"]
+        # FORBIDDEN = ["Bunyips", "Croatans", "White Howlers", "Black Spiral Dancers"]
         adventure, chronicle, season = Adventure.current_full()
         garous = cls.objects.filter(creature="garou", chronicle=chronicle.acronym, faction="Gaia").exclude(condition__contains="MISSING").exclude(condition__contains="DEAD")
-        TRIBES = [x for x in ALL_TRIBES if x not in FORBIDDEN]
-        counts = [0 for x in ALL_TRIBES if x not in FORBIDDEN]
+        #TRIBES = [x for x in ALL_TRIBES if x not in FORBIDDEN]
+        TRIBES = GarouFamilySolver.all_garou_nation()
+        counts = [0 for x in TRIBES]
         for garou in garous:
-            t = TRIBES.index(as_tribe_plural(garou.family))
+            #t = TRIBES.index(as_tribe_plural(garou.family))
+            tr = GarouFamilySolver(tribe=garou.family).plural
+            print(f"{garou.name} => {tr}")
+            t = TRIBES.index(tr)
             counts[t] += 1
         data = {
             "count": counts,
@@ -3573,7 +3578,7 @@ class CreatureAdmin(admin.ModelAdmin):
         "condition",
 
     ]
-    search_fields = ["name", "groupspec", "sire"]
+    search_fields = ["name", "groupspec", "sire", "family"]
     list_editable = [
         # "groupspec",
         # "adventure",

@@ -462,7 +462,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" width="' + me.width + '" height="' + 
             .style("stroke-opacity", 0.95)
 
         ;
-        let scaled_size = 2*me.options.font_scale;
+        let scaled_size = 4*me.options.font_scale;
         let itemt = title_in.append("g")
         itemt.append('text')
             .attr('class', 'district_text')
@@ -477,10 +477,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" width="' + me.width + '" height="' + 
             .style("text-anchor", "middle")
             .style("font-size", scaled_size+'pt')
             .style("font-weight", "bold")
-            .style("stroke", me.strokeColor)
+            .style("stroke", "#a0a0a0") //me.strokeColor)
             .style("stroke-width", (scaled_size/2*0.15)+"pt")
-            .style("fill", me.fillColor)
-            .attr("opacity", 1.0)
+            .style("fill", "#606060")//me.fillColor)
+            .attr("opacity", 0.5)
             .text((e,i) =>  e.properties[me.options["sector_property"]])
             .append("tspan")
                 .attr("x", (e,i) => me.geoPath.centroid(e)[0])
@@ -491,9 +491,9 @@ xmlns:xlink="http://www.w3.org/1999/xlink" width="' + me.width + '" height="' + 
                 .style("text-anchor", "middle")
                 .style("font-size", (2*scaled_size)+'pt')
                 .style("font-weight", "bold")
-                .style("stroke", me.strokeColor)
+                .style("stroke", "#a0a0a0")
 //                 .style("stroke-width", "0.15pt")
-                .style("fill", me.fillColor)
+                .style("fill", "#606060")
                 .text((e,i) => e.properties[me.options["name_property"]])
             .append("tspan")
                 .attr("x", (e,i) => me.geoPath.centroid(e)[0])
@@ -519,7 +519,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" width="' + me.width + '" height="' + 
             .selectAll(".poi_item")
             .data(me.wawwod_poi)
         ;
-        me.updateHotSpots();
+        me.updateHotSpots()
     }
 
     updateHotSpots() {
@@ -537,7 +537,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink" width="' + me.width + '" height="' + 
             })
         ;
         me.poi_in.append('path')
-            .attr('class', 'poi_circle  zoom_immunity')
+            .attr('class', 'poi_circle zoom_immunity')
             .attr('id', function (d) {
                 return "poi_label_" + d.properties.code;
             })
@@ -575,24 +575,23 @@ xmlns:xlink="http://www.w3.org/1999/xlink" width="' + me.width + '" height="' + 
             });
 
         me.poi_in.append('text')
-            .attr('class', 'poi_text_mark  zoom_immunity')
+            .attr('class', 'poi_text_mark zoom_immunity')
             .attr('id', function (d) {
-                return "poi_text_mark_" + d.properties.code;
+                return "poi_text_mark_" + d.properties.code
             })
             .attr('dx', 0)
-            .attr('dy', 8)
+            .attr('dy', 6)
             .style("font-family", "Ruda")
             .style("text-anchor", "middle")
-            .style("font-size", "3pt")
+            .style("font-size", "2pt")
             .style("stroke", "#7070703f")
-            .style("stroke-width", "0.45pt")
+            .style("stroke-width", "0.15pt")
             .style("fill", "#000")
             .text(function (d) {
-                return d.properties.name;
+                return d.properties.name
             })
-        ;
-        me.poi_out = me.hotspots.exit();
-        me.poi_out.remove();
+        me.poi_out = me.hotspots.exit()
+        me.poi_out.remove()
     }
 
     drawMasterText() {
@@ -648,11 +647,10 @@ xmlns:xlink="http://www.w3.org/1999/xlink" width="' + me.width + '" height="' + 
     zoomActivate() {
         let me = this;
         me.zoom = d3.zoom()
-            //.scaleExtent([1, 128])
             .scaleExtent([1, 8])
             .on('zoom', function (event) {
                 me.g.attr('transform', event.transform)
-                if (event.transform.k > 3){
+                if (event.transform.k < 5){
                     me.g.selectAll(".zoom_immunity")
                         .attr('transform', "scale(" + (4 / event.transform.k) + ")")
                 }
@@ -709,6 +707,4 @@ xmlns:xlink="http://www.w3.org/1999/xlink" width="' + me.width + '" height="' + 
 
         me.zoomActivate();
     }
-
-
 }

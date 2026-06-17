@@ -87,6 +87,12 @@ class HotSpot(models.Model):
         return jstr
 
 
+def toggle_public(modeladmin, request, queryset):
+    for item in queryset:
+        item.is_public = not item.is_public
+        item.save()
+    short_description = "Toggle public"
+
 class HotSpotAdmin(admin.ModelAdmin):
     list_display = [
         "id",
@@ -110,3 +116,4 @@ class HotSpotAdmin(admin.ModelAdmin):
         "city_code",
     ]
     list_filter = ["type", "is_public", "city", "episode"]
+    actions = [toggle_public]
